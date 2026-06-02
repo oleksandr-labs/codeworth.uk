@@ -38,7 +38,8 @@ export function proxy(request: NextRequest) {
   }
 
   // Default locale (en): rewrite internally to /en/... but keep URL clean
-  request.nextUrl.pathname = `/en${pathname}`;
+  const rewritePath = pathname === '/' ? '/en' : `/en${pathname}`;
+  request.nextUrl.pathname = rewritePath;
   return NextResponse.rewrite(request.nextUrl);
 }
 
