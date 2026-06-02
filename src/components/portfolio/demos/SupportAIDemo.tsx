@@ -260,10 +260,10 @@ export function SupportAIDemo({ lang }: { lang: string }) {
       </section>
 
       {/* ═══════════════ FEATURES ═══════════════ */}
-      <section className="bg-gray-50 px-4 py-20 sm:px-6">
+      <section className="bg-gray-50 dark:bg-neutral-900 px-4 py-20 sm:px-6">
         <div className="mx-auto max-w-6xl">
           <div className="mb-12 text-center">
-            <h2 className="mb-3 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            <h2 className="mb-3 text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
               {isUk ? "Потужні Можливості" : "Powerful Features"}
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-gray-500">
@@ -277,7 +277,7 @@ export function SupportAIDemo({ lang }: { lang: string }) {
             {features.map((f) => (
               <div
                 key={f.title}
-                className="group rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-violet-100"
+                className="group rounded-2xl border border-gray-100 dark:border-neutral-700 bg-white dark:bg-neutral-800 p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-violet-100"
               >
                 <div className="mb-4 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-violet-500 to-indigo-600 text-2xl shadow-lg shadow-violet-500/20">
                   {f.icon}
@@ -294,7 +294,7 @@ export function SupportAIDemo({ lang }: { lang: string }) {
       <section className="bg-white px-4 py-20 sm:px-6">
         <div className="mx-auto max-w-3xl">
           <div className="mb-10 text-center">
-            <h2 className="mb-3 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            <h2 className="mb-3 text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
               {isUk ? "Спробуйте Живий Чат" : "Try the Live Chat"}
             </h2>
             <p className="text-lg text-gray-500">
@@ -304,7 +304,7 @@ export function SupportAIDemo({ lang }: { lang: string }) {
             </p>
           </div>
 
-          <div className="overflow-hidden rounded-2xl border border-gray-200 shadow-xl shadow-indigo-100/50">
+          <div className="overflow-hidden rounded-2xl border border-gray-200 dark:border-neutral-700 shadow-xl shadow-indigo-100/50">
             {/* chat header */}
             <div className="flex items-center gap-3 bg-linear-to-br from-[#312e81] to-[#3730a3] px-5 py-3.5">
               <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-violet-500 text-lg text-white">🤖</div>
@@ -318,14 +318,14 @@ export function SupportAIDemo({ lang }: { lang: string }) {
             </div>
 
             {/* messages */}
-            <div className="flex h-80 flex-col gap-3 overflow-y-auto bg-gray-50 p-4">
+            <div className="flex h-80 flex-col gap-3 overflow-y-auto bg-gray-50 dark:bg-neutral-900 p-4">
               {chatMessages.map((m, i) => (
                 <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
                   <div
                     className={`max-w-[75%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
                       m.role === "user"
                         ? "rounded-br-md bg-violet-600 text-white"
-                        : "rounded-bl-md bg-white text-gray-700 shadow-sm"
+                        : "rounded-bl-md bg-white text-gray-700 dark:text-neutral-300 shadow-sm"
                     }`}
                   >
                     {m.text}
@@ -334,7 +334,7 @@ export function SupportAIDemo({ lang }: { lang: string }) {
               ))}
               {botTyping && (
                 <div className="flex justify-start">
-                  <div className="rounded-2xl rounded-bl-md bg-white px-4 py-2.5 text-sm text-gray-400 shadow-sm">
+                  <div className="rounded-2xl rounded-bl-md bg-white px-4 py-2.5 text-sm text-gray-400 dark:text-neutral-500 shadow-sm">
                     {isUk ? "Друкує..." : "Typing..."}
                   </div>
                 </div>
@@ -342,14 +342,14 @@ export function SupportAIDemo({ lang }: { lang: string }) {
             </div>
 
             {/* input */}
-            <div className="flex items-center gap-2 border-t border-gray-200 bg-white px-4 py-3">
+            <div className="flex items-center gap-2 border-t border-gray-200 dark:border-neutral-700 bg-white px-4 py-3">
               <input
                 type="text"
                 value={chatInput}
                 onChange={(e) => setChatInput(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && sendMessage()}
                 placeholder={isUk ? "Введіть повідомлення..." : "Type a message..."}
-                className="flex-1 rounded-lg border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm text-gray-700 outline-none transition-colors focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20"
+                className="flex-1 rounded-lg border border-gray-200 dark:border-neutral-700 bg-gray-50 dark:bg-neutral-900 px-4 py-2.5 text-sm text-gray-700 dark:text-neutral-300 outline-none transition-colors focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20"
               />
               <button
                 onClick={sendMessage}
@@ -390,10 +390,10 @@ export function SupportAIDemo({ lang }: { lang: string }) {
       </section>
 
       {/* ═══════════════ PRICING ═══════════════ */}
-      <section className="bg-gray-50 px-4 py-20 sm:px-6">
+      <section className="bg-gray-50 dark:bg-neutral-900 px-4 py-20 sm:px-6">
         <div className="mx-auto max-w-6xl">
           <div className="mb-10 text-center">
-            <h2 className="mb-3 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            <h2 className="mb-3 text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
               {isUk ? "Прості та Прозорі Ціни" : "Simple, Transparent Pricing"}
             </h2>
             <p className="mb-6 text-lg text-gray-500">
@@ -405,7 +405,7 @@ export function SupportAIDemo({ lang }: { lang: string }) {
               <button
                 onClick={() => setAnnual(false)}
                 className={`rounded-full px-5 py-2 text-sm font-semibold transition-all ${
-                  !annual ? "bg-white text-gray-900 shadow-sm" : "text-gray-500"
+                  !annual ? "bg-white text-gray-900 dark:text-white shadow-sm" : "text-gray-500"
                 }`}
               >
                 {isUk ? "Щомісяця" : "Monthly"}
@@ -413,7 +413,7 @@ export function SupportAIDemo({ lang }: { lang: string }) {
               <button
                 onClick={() => setAnnual(true)}
                 className={`rounded-full px-5 py-2 text-sm font-semibold transition-all ${
-                  annual ? "bg-white text-gray-900 shadow-sm" : "text-gray-500"
+                  annual ? "bg-white text-gray-900 dark:text-white shadow-sm" : "text-gray-500"
                 }`}
               >
                 {isUk ? "Щорічно" : "Annual"}
@@ -430,8 +430,8 @@ export function SupportAIDemo({ lang }: { lang: string }) {
                   key={tier.name}
                   className={`relative rounded-2xl border p-7 transition-all ${
                     tier.popular
-                      ? "border-violet-300 bg-white shadow-xl shadow-violet-100 ring-2 ring-violet-500"
-                      : "border-gray-200 bg-white shadow-sm hover:shadow-md"
+                      ? "border-violet-300 bg-white dark:bg-neutral-800 shadow-xl shadow-violet-100 ring-2 ring-violet-500"
+                      : "border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 shadow-sm hover:shadow-md"
                   }`}
                 >
                   {tier.popular && (
@@ -462,7 +462,7 @@ export function SupportAIDemo({ lang }: { lang: string }) {
                     className={`w-full rounded-xl py-3 text-sm font-bold transition-all ${
                       tier.popular
                         ? "bg-violet-600 text-white shadow-lg shadow-violet-600/20 hover:bg-violet-500"
-                        : "border border-gray-200 bg-gray-50 text-gray-700 hover:bg-gray-100"
+                        : "border border-gray-200 dark:border-neutral-700 bg-gray-50 dark:bg-neutral-900 text-gray-700 dark:text-neutral-300 hover:bg-gray-100"
                     }`}
                   >
                     {tier.cta}
@@ -494,10 +494,10 @@ export function SupportAIDemo({ lang }: { lang: string }) {
       </section>
 
       {/* ═══════════════ TESTIMONIALS ═══════════════ */}
-      <section className="bg-gray-50 px-4 py-20 sm:px-6">
+      <section className="bg-gray-50 dark:bg-neutral-900 px-4 py-20 sm:px-6">
         <div className="mx-auto max-w-6xl">
           <div className="mb-12 text-center">
-            <h2 className="mb-3 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            <h2 className="mb-3 text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
               {isUk ? "Що Кажуть Наші Клієнти" : "What Our Customers Say"}
             </h2>
             <p className="text-lg text-gray-500">
@@ -535,7 +535,7 @@ export function SupportAIDemo({ lang }: { lang: string }) {
             ].map((t) => (
               <div
                 key={t.name}
-                className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm"
+                className="rounded-2xl border border-gray-100 dark:border-neutral-700 bg-white dark:bg-neutral-800 p-6 shadow-sm"
               >
                 <div className="mb-4 text-violet-400">★★★★★</div>
                 <p className="mb-5 text-sm leading-relaxed text-gray-600">
@@ -557,10 +557,10 @@ export function SupportAIDemo({ lang }: { lang: string }) {
       </section>
 
       {/* ═══════════════ INTEGRATIONS ═══════════════ */}
-      <section className="bg-gray-50 px-4 py-20 sm:px-6">
+      <section className="bg-gray-50 dark:bg-neutral-900 px-4 py-20 sm:px-6">
         <div className="mx-auto max-w-4xl">
           <div className="mb-10 text-center">
-            <h2 className="mb-3 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            <h2 className="mb-3 text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
               {isUk ? "Інтеграції" : "Integrations"}
             </h2>
             <p className="text-lg text-gray-500">
@@ -573,7 +573,7 @@ export function SupportAIDemo({ lang }: { lang: string }) {
             {INTEGRATIONS.map((intg) => (
               <div
                 key={intg.name}
-                className="flex flex-col items-center gap-2 rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
+                className="flex flex-col items-center gap-2 rounded-xl border border-gray-200 dark:border-neutral-700 bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
               >
                 <span className="text-3xl">{intg.icon}</span>
                 <span className="text-sm font-semibold text-gray-700">{intg.name}</span>
@@ -584,10 +584,10 @@ export function SupportAIDemo({ lang }: { lang: string }) {
       </section>
 
       {/* ═══════════════ SECURITY ═══════════════ */}
-      <section className="bg-gray-50 px-4 py-16 sm:px-6">
+      <section className="bg-gray-50 dark:bg-neutral-900 px-4 py-16 sm:px-6">
         <div className="mx-auto max-w-5xl">
           <div className="mb-10 text-center">
-            <h2 className="mb-3 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            <h2 className="mb-3 text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
               {isUk ? "Безпека та Відповідність" : "Security & Compliance"}
             </h2>
             <p className="text-lg text-gray-500">
@@ -605,7 +605,7 @@ export function SupportAIDemo({ lang }: { lang: string }) {
             ].map((s) => (
               <div
                 key={s.title}
-                className="flex flex-col items-center gap-2 rounded-xl border border-gray-200 bg-white p-5 text-center shadow-sm"
+                className="flex flex-col items-center gap-2 rounded-xl border border-gray-200 dark:border-neutral-700 bg-white p-5 text-center shadow-sm"
               >
                 <span className="text-3xl">{s.icon}</span>
                 <span className="text-sm font-bold text-gray-900">{s.title}</span>
@@ -619,12 +619,12 @@ export function SupportAIDemo({ lang }: { lang: string }) {
       {/* ═══════════════ FAQ ═══════════════ */}
       <section className="bg-white px-4 py-20 sm:px-6">
         <div className="mx-auto max-w-3xl">
-          <h2 className="mb-10 text-center text-3xl font-extrabold text-gray-900 sm:text-4xl">
+          <h2 className="mb-10 text-center text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
             {isUk ? "Часті Запитання" : "Frequently Asked Questions"}
           </h2>
           <div className="space-y-3">
             {faq.map((item, i) => (
-              <div key={i} className="rounded-xl border border-gray-200 bg-gray-50 transition-all">
+              <div key={i} className="rounded-xl border border-gray-200 dark:border-neutral-700 bg-gray-50 dark:bg-neutral-900 transition-all">
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                   className="flex w-full items-center justify-between px-5 py-4 text-left"
@@ -633,7 +633,7 @@ export function SupportAIDemo({ lang }: { lang: string }) {
                   <span className="shrink-0 text-lg text-violet-500">{openFaq === i ? "−" : "+"}</span>
                 </button>
                 {openFaq === i && (
-                  <div className="border-t border-gray-200 px-5 py-4 text-sm leading-relaxed text-gray-600">
+                  <div className="border-t border-gray-200 dark:border-neutral-700 px-5 py-4 text-sm leading-relaxed text-gray-600">
                     {item.a}
                   </div>
                 )}
@@ -670,7 +670,7 @@ export function SupportAIDemo({ lang }: { lang: string }) {
       </section>
 
       {/* ═══════════════ FOOTER ═══════════════ */}
-      <footer className="border-t border-gray-100 bg-[#0f0e17] px-4 py-14 sm:px-6">
+      <footer className="border-t border-gray-100 dark:border-neutral-700 bg-[#0f0e17] px-4 py-14 sm:px-6">
         <div className="mx-auto grid max-w-6xl gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* brand */}
           <div>
@@ -686,7 +686,7 @@ export function SupportAIDemo({ lang }: { lang: string }) {
 
           {/* Product */}
           <div>
-            <h4 className="mb-3 text-xs font-bold tracking-widest text-gray-400 uppercase">
+            <h4 className="mb-3 text-xs font-bold tracking-widest text-gray-400 dark:text-neutral-500 uppercase">
               {isUk ? "Продукт" : "Product"}
             </h4>
             <ul className="space-y-2 text-sm text-gray-400">
@@ -703,7 +703,7 @@ export function SupportAIDemo({ lang }: { lang: string }) {
 
           {/* Company */}
           <div>
-            <h4 className="mb-3 text-xs font-bold tracking-widest text-gray-400 uppercase">
+            <h4 className="mb-3 text-xs font-bold tracking-widest text-gray-400 dark:text-neutral-500 uppercase">
               {isUk ? "Компанія" : "Company"}
             </h4>
             <ul className="space-y-2 text-sm text-gray-400">
@@ -720,7 +720,7 @@ export function SupportAIDemo({ lang }: { lang: string }) {
 
           {/* Legal */}
           <div>
-            <h4 className="mb-3 text-xs font-bold tracking-widest text-gray-400 uppercase">
+            <h4 className="mb-3 text-xs font-bold tracking-widest text-gray-400 dark:text-neutral-500 uppercase">
               {isUk ? "Юридичне" : "Legal"}
             </h4>
             <ul className="space-y-2 text-sm text-gray-400">

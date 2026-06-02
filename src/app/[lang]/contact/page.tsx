@@ -110,7 +110,7 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
               <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-4">
                 {isUk ? "Контакти" : "Contact"}
               </p>
-              <h1 className="text-5xl lg:text-6xl font-heading font-extrabold text-neutral-900 mb-4">
+              <h1 className="text-5xl lg:text-6xl font-heading font-extrabold text-neutral-900 dark:text-white mb-4">
                 {isUk
                   ? <>{`Обговоримо`}<br /><span className="gradient-text">{`ваш проєкт?`}</span></>
                   : <>{"Let's discuss"}<br /><span className="gradient-text">{"your project?"}</span></>}
@@ -125,32 +125,32 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
         </section>
 
         {/* Quick FAQ */}
-        <section className="py-12 bg-neutral-50 border-b border-neutral-100">
+        <section className="py-12 bg-neutral-50 dark:bg-neutral-900 border-b border-neutral-100">
           <Container>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
               {QUICK_FAQ.map((item) => (
-                <div key={item.q} className="p-5 rounded-2xl bg-white border border-neutral-100 hover:border-indigo-200 hover:shadow-sm transition-all">
+                <div key={item.q} className="p-5 rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 hover:border-indigo-200 hover:shadow-sm transition-all">
                   <div className="flex items-center gap-2 mb-2">
                     <HelpCircle className="w-4 h-4 text-indigo-500 shrink-0" />
                     <h3 className="text-sm font-heading font-bold text-neutral-900">{item.q}</h3>
                   </div>
-                  <p className="text-xs text-neutral-500 leading-relaxed">{item.a}</p>
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed">{item.a}</p>
                 </div>
               ))}
             </div>
           </Container>
         </section>
 
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-white dark:bg-neutral-950">
           <Container>
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
 
               {/* Contact form */}
               <div className="lg:col-span-3">
-                <h2 className="text-2xl font-heading font-bold text-neutral-900 mb-8">
+                <h2 className="text-2xl font-heading font-bold text-neutral-900 dark:text-white mb-8">
                   {isUk ? "Написати нам" : "Write to Us"}
                 </h2>
-                <Suspense fallback={<div className="h-96 animate-pulse bg-neutral-100 rounded-2xl" />}>
+                <Suspense fallback={<div className="h-96 animate-pulse bg-neutral-100 dark:bg-neutral-800 rounded-2xl" />}>
                   <ContactForm />
                 </Suspense>
               </div>
@@ -159,7 +159,7 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
               <div className="lg:col-span-2 space-y-8">
                 {/* Contact info */}
                 <div>
-                  <h3 className="text-lg font-heading font-bold text-neutral-900 mb-5">
+                  <h3 className="text-lg font-heading font-bold text-neutral-900 dark:text-white mb-5">
                     {isUk ? "Контактна інформація" : "Contact Information"}
                   </h3>
                   <div className="space-y-4">
@@ -169,7 +169,7 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
                       </div>
                       <div>
                         <p className="text-xs text-neutral-400 mb-0.5">{isUk ? "Телефон" : "Phone"}</p>
-                        <a href="tel:+380000000000" className="font-medium text-neutral-900 hover:text-indigo-600 transition-colors">
+                        <a href="tel:+380000000000" className="font-medium text-neutral-900 dark:text-white hover:text-indigo-600 transition-colors">
                           +38 (000) 000-00-00
                         </a>
                       </div>
@@ -180,7 +180,7 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
                       </div>
                       <div>
                         <p className="text-xs text-neutral-400 mb-0.5">Email</p>
-                        <a href="mailto:hello@codeworth.uk" className="font-medium text-neutral-900 hover:text-indigo-600 transition-colors">
+                        <a href="mailto:hello@codeworth.uk" className="font-medium text-neutral-900 dark:text-white hover:text-indigo-600 transition-colors">
                           hello@codeworth.uk
                         </a>
                       </div>
@@ -214,7 +214,7 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
 
                 {/* Messengers */}
                 <div>
-                  <h3 className="text-lg font-heading font-bold text-neutral-900 mb-5">
+                  <h3 className="text-lg font-heading font-bold text-neutral-900 dark:text-white mb-5">
                     {isUk ? "Месенджери" : "Messengers"}
                   </h3>
                   <div className="space-y-3">
@@ -224,13 +224,13 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
                         href={m.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-3 p-3 rounded-xl border border-neutral-100 hover:border-indigo-200 hover:bg-indigo-50 transition-all group"
+                        className="flex items-center gap-3 p-3 rounded-xl border border-neutral-100 dark:border-neutral-700 hover:border-indigo-200 hover:bg-indigo-50 transition-all group"
                       >
                         <div className={`w-10 h-10 rounded-xl ${m.bg} flex items-center justify-center text-lg`}>
                           {m.emoji}
                         </div>
                         <div>
-                          <p className="font-medium text-neutral-900 text-sm group-hover:text-indigo-700 transition-colors">{m.name}</p>
+                          <p className="font-medium text-neutral-900 dark:text-white text-sm group-hover:text-indigo-700 transition-colors">{m.name}</p>
                           <p className="text-xs text-neutral-400">{m.handle}</p>
                         </div>
                         <MessageCircle className="w-4 h-4 text-neutral-300 group-hover:text-indigo-400 ml-auto transition-colors" />

@@ -79,27 +79,27 @@ export function IntCrmDemo({ isUk }: Props) {
   return (
     <div className="space-y-6">
       {/* Status bar */}
-      <div className="rounded-2xl border border-neutral-200 bg-white p-4 flex flex-wrap items-center gap-4">
+      <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 p-4 flex flex-wrap items-center gap-4">
         <div className="flex items-center gap-2">
           <div className="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center">
             <Users className="w-5 h-5" />
           </div>
           <div>
-            <p className="text-xs text-neutral-500 uppercase tracking-wider">Bitrix24</p>
+            <p className="text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">Bitrix24</p>
             <p className="text-sm font-bold text-emerald-600">● {isUk ? "Підключено" : "Connected"}</p>
           </div>
         </div>
         <div className="flex items-center gap-4 text-sm">
           <div>
-            <p className="text-xs text-neutral-500 uppercase">{isUk ? "Лідів" : "Leads"}</p>
-            <p className="font-bold text-neutral-900 tabular-nums">{leads.length}</p>
+            <p className="text-xs text-neutral-500 dark:text-neutral-400 uppercase">{isUk ? "Лідів" : "Leads"}</p>
+            <p className="font-bold text-neutral-900 dark:text-white tabular-nums">{leads.length}</p>
           </div>
           <div>
-            <p className="text-xs text-neutral-500 uppercase">{isUk ? "Pipeline" : "Pipeline"}</p>
+            <p className="text-xs text-neutral-500 dark:text-neutral-400 uppercase">{isUk ? "Pipeline" : "Pipeline"}</p>
             <p className="font-bold text-indigo-700 tabular-nums">{fmt(totalPipeline)}</p>
           </div>
           <div>
-            <p className="text-xs text-neutral-500 uppercase">{isUk ? "Закрито" : "Won"}</p>
+            <p className="text-xs text-neutral-500 dark:text-neutral-400 uppercase">{isUk ? "Закрито" : "Won"}</p>
             <p className="font-bold text-emerald-600 tabular-nums">{fmt(wonValue)}</p>
           </div>
         </div>
@@ -121,7 +121,7 @@ export function IntCrmDemo({ isUk }: Props) {
         {STAGES.map((stage) => {
           const stageLeads = leads.filter((l) => l.stage === stage.id);
           return (
-            <div key={stage.id} className="rounded-xl border border-neutral-200 bg-neutral-50 overflow-hidden">
+            <div key={stage.id} className="rounded-xl border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900 overflow-hidden">
               <div className={`px-3 py-2 ${stage.color} text-white flex items-center justify-between`}>
                 <span className="font-semibold text-sm">{isUk ? stage.labelUk : stage.labelEn}</span>
                 <span className="px-1.5 py-0.5 rounded-full bg-white/20 text-xs font-bold tabular-nums">{stageLeads.length}</span>
@@ -132,13 +132,13 @@ export function IntCrmDemo({ isUk }: Props) {
                     key={l.id}
                     onClick={() => advance(l.id)}
                     disabled={l.stage === "won"}
-                    className="w-full text-left p-2 rounded-md bg-white border border-neutral-200 hover:border-indigo-300 hover:shadow-sm transition-all disabled:opacity-60 disabled:cursor-default group"
+                    className="w-full text-left p-2 rounded-md bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 hover:border-indigo-300 hover:shadow-sm transition-all disabled:opacity-60 disabled:cursor-default group"
                   >
-                    <p className="font-semibold text-neutral-900 text-xs leading-tight mb-0.5 flex items-center gap-1">
+                    <p className="font-semibold text-neutral-900 dark:text-white text-xs leading-tight mb-0.5 flex items-center gap-1">
                       <span>{SOURCES[l.source]}</span>
                       <span className="truncate">{l.name}</span>
                     </p>
-                    <p className="text-[10px] text-neutral-500 tabular-nums truncate">{l.email}</p>
+                    <p className="text-[10px] text-neutral-500 dark:text-neutral-400 tabular-nums truncate">{l.email}</p>
                     <div className="mt-1 flex items-center justify-between">
                       <span className="text-xs font-bold text-indigo-700 tabular-nums">{fmt(l.value)}</span>
                       {l.stage !== "won" && (

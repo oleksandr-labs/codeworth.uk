@@ -62,7 +62,7 @@ export default async function ExtraDemoGalleryPage({ params }: Props) {
   return (
     <main className="min-h-screen bg-white">
       {/* Breadcrumb */}
-      <nav className="border-b border-neutral-100 bg-neutral-50">
+      <nav className="border-b border-neutral-100 dark:border-neutral-700 bg-neutral-50">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center gap-2 text-sm text-neutral-500">
           <Link href={`/${lang}`} className="hover:text-indigo-600 transition-colors">
             {isUk ? "Головна" : "Home"}
@@ -72,17 +72,17 @@ export default async function ExtraDemoGalleryPage({ params }: Props) {
             {isUk ? "Модулі" : "Add-ons"}
           </Link>
           <span>/</span>
-          <span className="text-neutral-900 font-medium">{isUk ? "Демо" : "Demo"}</span>
+          <span className="text-neutral-900 dark:text-white font-medium">{isUk ? "Демо" : "Demo"}</span>
         </div>
       </nav>
 
       {/* Hero */}
       <section className="max-w-6xl mx-auto px-4 py-16 text-center">
         <div className="text-5xl mb-5">{extra.emoji}</div>
-        <h1 className="font-heading text-4xl md:text-5xl font-bold text-neutral-900 mb-4">
+        <h1 className="font-heading text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-4">
           {extra.title}
         </h1>
-        <p className="text-lg text-neutral-500 max-w-2xl mx-auto mb-8">
+        <p className="text-lg text-neutral-500 dark:text-neutral-400 max-w-2xl mx-auto mb-8">
           {isUk
             ? `Перегляньте ${examples.length} живих приклади цього модуля в різних нішах. Кожен приклад — унікальний дизайн та контекст.`
             : `See ${examples.length} live examples of this module in different niches. Each example has a unique design and context.`}
@@ -91,13 +91,13 @@ export default async function ExtraDemoGalleryPage({ params }: Props) {
           <span className="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-sm font-medium">
             {extra.priceFrom.toLocaleString("uk-UA")} {isUk ? "грн" : "UAH"}
           </span>
-          <span className="px-3 py-1 rounded-full bg-neutral-100 text-neutral-700 text-sm font-medium">
+          <span className="px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 text-sm font-medium">
             {extra.deliveryDays} {isUk ? "дні" : "days"}
           </span>
           {extra.tags.map((tag) => (
             <span
               key={tag}
-              className="px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 text-sm"
+              className="px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 text-sm"
             >
               {tag}
             </span>
@@ -111,7 +111,7 @@ export default async function ExtraDemoGalleryPage({ params }: Props) {
           {examples.map((example, index) => (
             <div
               key={example.id}
-              className="group rounded-3xl border border-neutral-100 overflow-hidden hover:shadow-2xl hover:shadow-neutral-200/80 hover:-translate-y-1 transition-all duration-300"
+              className="group rounded-3xl border border-neutral-100 dark:border-neutral-700 overflow-hidden hover:shadow-2xl hover:shadow-neutral-200/80 hover:-translate-y-1 transition-all duration-300"
             >
               {/* Preview card */}
               <div
@@ -139,10 +139,10 @@ export default async function ExtraDemoGalleryPage({ params }: Props) {
                 <div className="mb-1 text-xs font-semibold text-indigo-600 uppercase tracking-wide">
                   {isUk ? "Приклад" : "Example"} {index + 1}
                 </div>
-                <h2 className="font-heading text-xl font-bold text-neutral-900 mb-3">
+                <h2 className="font-heading text-xl font-bold text-neutral-900 dark:text-white mb-3">
                   {isUk ? example.titleUk : example.title}
                 </h2>
-                <p className="text-sm text-neutral-500 leading-relaxed mb-6">
+                <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-6">
                   {isUk ? example.descriptionUk : example.description}
                 </p>
                 <Link
@@ -158,12 +158,12 @@ export default async function ExtraDemoGalleryPage({ params }: Props) {
       </section>
 
       {/* CTA */}
-      <section className="border-t border-neutral-100 bg-neutral-50">
+      <section className="border-t border-neutral-100 dark:border-neutral-700 bg-neutral-50">
         <div className="max-w-3xl mx-auto px-4 py-16 text-center">
-          <h2 className="font-heading text-3xl font-bold text-neutral-900 mb-4">
+          <h2 className="font-heading text-3xl font-bold text-neutral-900 dark:text-white mb-4">
             {isUk ? "Підключимо до вашого сайту" : "We'll integrate it into your site"}
           </h2>
-          <p className="text-neutral-500 mb-8">
+          <p className="text-neutral-500 dark:text-neutral-400 mb-8">
             {isUk
               ? "Налаштуємо модуль під ваш дизайн і стек. Передаємо чистий код."
               : "We'll customize the module to your design and stack. Clean code delivery."}
@@ -177,7 +177,7 @@ export default async function ExtraDemoGalleryPage({ params }: Props) {
             </Link>
             <Link
               href={`/${lang}/extras`}
-              className="px-8 py-3 rounded-xl border border-neutral-200 text-neutral-700 font-semibold hover:bg-neutral-100 transition-colors"
+              className="px-8 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 font-semibold hover:bg-neutral-100 dark:hover:bg-neutral-700 dark:bg-neutral-800 transition-colors"
             >
               {isUk ? "Інші модулі" : "Other modules"}
             </Link>

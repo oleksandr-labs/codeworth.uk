@@ -1,10 +1,10 @@
 export function CommunityPlatformPreview() {
   return (
     <div className="font-sans">
-      <nav className="flex items-center justify-between px-8 py-4 bg-white border-b border-gray-100">
+      <nav className="flex items-center justify-between px-8 py-4 bg-white dark:bg-neutral-800 border-b border-gray-100">
         <div className="flex items-center gap-2">
           <div className="w-7 h-7 rounded-full bg-purple-600 flex items-center justify-center text-white text-xs font-bold">🏛</div>
-          <span className="font-bold text-gray-900 text-sm">BuildersCircle</span>
+          <span className="font-bold text-gray-900 dark:text-white text-sm">BuildersCircle</span>
         </div>
         <div className="flex items-center gap-4 text-xs text-gray-500">
           <span>Members</span><span>Events</span>
@@ -28,8 +28,8 @@ export function CommunityPlatformPreview() {
         <p className="text-xs text-purple-300 mt-3">Regular price $97/mo · Lock in your rate forever</p>
       </section>
 
-      <section className="px-8 py-10 bg-white border-b border-gray-100">
-        <h2 className="text-xl font-bold text-gray-900 text-center mb-6">What&apos;s inside</h2>
+      <section className="px-8 py-10 bg-white dark:bg-neutral-800 border-b border-gray-100">
+        <h2 className="text-xl font-bold text-gray-900 dark:text-white text-center mb-6">What&apos;s inside</h2>
         <div className="grid grid-cols-2 gap-4 max-w-3xl mx-auto">
           {[
             { icon: "🎤", title: "Weekly expert sessions", desc: "Live calls with operators who've done it before. Ask anything." },
@@ -40,7 +40,7 @@ export function CommunityPlatformPreview() {
             <div key={f.title} className="flex items-start gap-3 p-4 rounded-xl bg-purple-50 border border-purple-100">
               <span className="text-xl">{f.icon}</span>
               <div>
-                <div className="font-bold text-gray-900 text-sm mb-1">{f.title}</div>
+                <div className="font-bold text-gray-900 dark:text-white text-sm mb-1">{f.title}</div>
                 <div className="text-xs text-gray-500">{f.desc}</div>
               </div>
             </div>

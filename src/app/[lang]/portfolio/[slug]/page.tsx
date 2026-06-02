@@ -392,7 +392,7 @@ export default async function PortfolioProjectPage({ params }: Props) {
               : `codeworth.uk/niches/${project.nicheSlug}`;
 
             return (
-              <section className="py-16 bg-neutral-50 dark:bg-neutral-900/80">
+              <section className="py-16 bg-neutral-50 dark:bg-neutral-900 /80">
                 <Container>
                   <div className="flex items-center justify-between mb-6 flex-wrap gap-4">
                     <div>
@@ -468,11 +468,11 @@ export default async function PortfolioProjectPage({ params }: Props) {
                     <>
                       <div>
                         <h2 className="text-2xl font-heading font-bold text-neutral-900 dark:text-white mb-4">🎯 {isUk ? "Задача клієнта" : "Client's Challenge"}</h2>
-                        <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">{caseStudy.challenge}</p>
+                        <p className="text-neutral-600 dark:text-neutral-300 dark:text-neutral-400 leading-relaxed">{caseStudy.challenge}</p>
                       </div>
                       <div>
                         <h2 className="text-2xl font-heading font-bold text-neutral-900 dark:text-white mb-4">🔧 {isUk ? "Наше рішення" : "Our Solution"}</h2>
-                        <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">{caseStudy.solution}</p>
+                        <p className="text-neutral-600 dark:text-neutral-300 dark:text-neutral-400 leading-relaxed">{caseStudy.solution}</p>
                       </div>
                       <div>
                         <h2 className="text-2xl font-heading font-bold text-neutral-900 dark:text-white mb-4">📈 {isUk ? "Результати" : "Results"}</h2>
@@ -493,7 +493,7 @@ export default async function PortfolioProjectPage({ params }: Props) {
                     <>
                       <div>
                         <h2 className="text-2xl font-heading font-bold text-neutral-900 dark:text-white mb-4">{isUk ? "Задача клієнта" : "Client's Challenge"}</h2>
-                        <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                        <p className="text-neutral-600 dark:text-neutral-300 dark:text-neutral-400 leading-relaxed">
                           {isUk
                             ? <>Клієнт звернувся з запитом на розробку сучасного сайту для <strong>{project.client}</strong>. Основні вимоги: конвертувати відвідувачів у клієнтів, бути швидким, адаптивним та SEO-оптимізованим.</>
                             : <>The client requested a modern website for <strong>{project.client}</strong>. Key requirements: convert visitors into customers, be fast, mobile-friendly, and SEO-optimized.</>}
@@ -501,7 +501,7 @@ export default async function PortfolioProjectPage({ params }: Props) {
                       </div>
                       <div>
                         <h2 className="text-2xl font-heading font-bold text-neutral-900 dark:text-white mb-4">{isUk ? "Наше рішення" : "Our Solution"}</h2>
-                        <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed mb-4">
+                        <p className="text-neutral-600 dark:text-neutral-300 dark:text-neutral-400 leading-relaxed mb-4">
                           {isUk
                             ? `Розробили сучасне рішення на стеку: ${project.tech.join(", ")}.`
                             : `Built a modern solution using: ${project.tech.join(", ")}.`}
@@ -553,7 +553,7 @@ export default async function PortfolioProjectPage({ params }: Props) {
                           </div>
                           <ul className="space-y-1.5 flex-1">
                             {pkg.includes.map((item) => (
-                              <li key={item} className="flex items-start gap-2 text-xs text-neutral-600 dark:text-neutral-400">
+                              <li key={item} className="flex items-start gap-2 text-xs text-neutral-600 dark:text-neutral-300 dark:text-neutral-400">
                                 <Check className="w-3 h-3 text-emerald-500 shrink-0 mt-0.5" />
                                 {item}
                               </li>
@@ -562,7 +562,7 @@ export default async function PortfolioProjectPage({ params }: Props) {
                         </div>
                       ))}
                     </div>
-                    <div className="p-5 bg-white dark:bg-neutral-800/80 flex flex-col sm:flex-row gap-3 border-t border-neutral-100 dark:border-neutral-700/50">
+                    <div className="p-5 bg-white dark:bg-neutral-800/80 flex flex-col sm:flex-row gap-3 border-t border-neutral-100 dark:border-neutral-700 /50">
                       <Link
                         href={`/${lang}/contact?project=${project.slug}&complexity=${project.complexity}`}
                         className="flex-1 text-center px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm flex items-center justify-center gap-2 transition-colors"
@@ -572,13 +572,13 @@ export default async function PortfolioProjectPage({ params }: Props) {
                       </Link>
                       <Link
                         href={`/${lang}/marketplace`}
-                        className="px-5 py-3 rounded-xl border border-neutral-200 dark:border-neutral-600 text-neutral-700 dark:text-neutral-300 font-semibold text-sm flex items-center justify-center gap-2 hover:bg-neutral-50 dark:hover:bg-neutral-700/50 transition-colors"
+                        className="px-5 py-3 rounded-xl border border-neutral-200 dark:border-neutral-600 text-neutral-700 dark:text-neutral-300 font-semibold text-sm flex items-center justify-center gap-2 hover:bg-neutral-50 dark:hover:bg-neutral-800 dark:bg-neutral-900 dark:hover:bg-neutral-700/50 transition-colors"
                       >
                         <Package className="w-4 h-4" />
                         {isUk ? "Всі пакети" : "All packages"}
                       </Link>
                     </div>
-                    <div className="px-5 py-2.5 bg-neutral-50 dark:bg-neutral-900/40 border-t border-neutral-100 dark:border-neutral-700/30 text-center">
+                    <div className="px-5 py-2.5 bg-neutral-50 dark:bg-neutral-900 /40 border-t border-neutral-100 dark:border-neutral-700 /30 text-center">
                       <Link
                         href={`/${lang}/compare`}
                         className="text-xs text-neutral-400 dark:text-neutral-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
@@ -591,7 +591,7 @@ export default async function PortfolioProjectPage({ params }: Props) {
 
                 {/* Sidebar */}
                 <aside className="space-y-5">
-                  <div className="p-6 rounded-2xl border border-neutral-100 dark:border-neutral-700/50 bg-white dark:bg-neutral-800/60">
+                  <div className="p-6 rounded-2xl border border-neutral-100 dark:border-neutral-700 /50 bg-white dark:bg-neutral-800/60">
                     <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-4 text-xs uppercase tracking-wider">{isUk ? "Деталі проєкту" : "Project Details"}</h3>
                     <dl className="space-y-3 text-sm">
                       {[
@@ -609,7 +609,7 @@ export default async function PortfolioProjectPage({ params }: Props) {
                     </dl>
                   </div>
 
-                  <div className="p-6 rounded-2xl border border-neutral-100 dark:border-neutral-700/50 bg-white dark:bg-neutral-800/60">
+                  <div className="p-6 rounded-2xl border border-neutral-100 dark:border-neutral-700 /50 bg-white dark:bg-neutral-800/60">
                     <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-4 text-xs uppercase tracking-wider">{isUk ? "Технологічний стек" : "Tech Stack"}</h3>
                     <div className="flex flex-wrap gap-2">
                       {project.tech.map((t) => (
@@ -620,7 +620,7 @@ export default async function PortfolioProjectPage({ params }: Props) {
                     </div>
                   </div>
 
-                  <div className="p-6 rounded-2xl border border-neutral-100 dark:border-neutral-700/50 bg-white dark:bg-neutral-800/60">
+                  <div className="p-6 rounded-2xl border border-neutral-100 dark:border-neutral-700 /50 bg-white dark:bg-neutral-800/60">
                     <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-4 text-xs uppercase tracking-wider">{isUk ? "Особливості" : "Features"}</h3>
                     <div className="flex flex-wrap gap-2">
                       {project.tags.map((tag) => (
@@ -713,7 +713,7 @@ export default async function PortfolioProjectPage({ params }: Props) {
 
           {/* ── Related ───────────────────────────────────────────────── */}
           {suggestions.length > 0 && (
-            <section className="py-16 bg-neutral-50 dark:bg-neutral-900/80 border-t border-neutral-100 dark:border-neutral-800">
+            <section className="py-16 bg-neutral-50 dark:bg-neutral-900 /80 border-t border-neutral-100 dark:border-neutral-700 dark:border-neutral-800">
               <Container>
                 <h3 className="text-xl font-heading font-bold text-neutral-900 dark:text-white mb-8">{isUk ? "Схожі проєкти" : "Similar Projects"}</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
@@ -721,7 +721,7 @@ export default async function PortfolioProjectPage({ params }: Props) {
                     <Link
                       key={p.slug}
                       href={`/${lang}/portfolio/${p.slug}`}
-                      className="group p-5 rounded-2xl border border-neutral-100 dark:border-neutral-700/50 bg-white dark:bg-neutral-800/60 hover:shadow-md hover:-translate-y-1 transition-all duration-200"
+                      className="group p-5 rounded-2xl border border-neutral-100 dark:border-neutral-700 /50 bg-white dark:bg-neutral-800/60 hover:shadow-md hover:-translate-y-1 transition-all duration-200"
                     >
                       <div className={cn("h-28 rounded-xl bg-linear-to-br flex items-center justify-center text-4xl mb-4", p.color)}>
                         {p.emoji}
@@ -738,12 +738,12 @@ export default async function PortfolioProjectPage({ params }: Props) {
           )}
 
           {/* ── Prev / Next ───────────────────────────────────────────── */}
-          <section className="py-10 pb-28 md:pb-10 bg-white dark:bg-neutral-900 border-t border-neutral-100 dark:border-neutral-800">
+          <section className="py-10 pb-28 md:pb-10 bg-white dark:bg-neutral-900 border-t border-neutral-100 dark:border-neutral-700 dark:border-neutral-800">
             <Container>
               <div className="flex items-center justify-between gap-4">
                 {prevProject ? (
                   <Link href={`/${lang}/portfolio/${prevProject.slug}`}
-                    className="group flex items-center gap-3 p-3 rounded-xl hover:bg-neutral-50 dark:hover:bg-neutral-800/60 transition-colors">
+                    className="group flex items-center gap-3 p-3 rounded-xl hover:bg-neutral-50 dark:hover:bg-neutral-800 dark:bg-neutral-900 dark:hover:bg-neutral-800/60 transition-colors">
                     <ArrowLeft className="w-5 h-5 text-neutral-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 shrink-0 transition-colors" />
                     <div>
                       <div className="text-xs text-neutral-400 mb-0.5">{isUk ? "Попередній" : "Previous"}</div>
@@ -760,7 +760,7 @@ export default async function PortfolioProjectPage({ params }: Props) {
 
                 {nextProject ? (
                   <Link href={`/${lang}/portfolio/${nextProject.slug}`}
-                    className="group flex items-center gap-3 p-3 rounded-xl hover:bg-neutral-50 dark:hover:bg-neutral-800/60 transition-colors text-right">
+                    className="group flex items-center gap-3 p-3 rounded-xl hover:bg-neutral-50 dark:hover:bg-neutral-800 dark:bg-neutral-900 dark:hover:bg-neutral-800/60 transition-colors text-right">
                     <div>
                       <div className="text-xs text-neutral-400 mb-0.5">{isUk ? "Наступний" : "Next"}</div>
                       <div className="font-semibold text-sm text-neutral-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors line-clamp-1">

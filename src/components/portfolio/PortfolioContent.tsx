@@ -72,7 +72,7 @@ export function PortfolioContent() {
   }, [activeCategory, activeComplexity, activeIndustry, query]);
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-white dark:bg-neutral-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Search */}
         <div className="relative mb-6">
@@ -82,7 +82,7 @@ export function PortfolioContent() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder={isUk ? "Пошук проєктів..." : "Search projects..."}
-            className="w-full pl-11 pr-10 py-3 rounded-xl border border-neutral-200 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all placeholder:text-neutral-400 text-sm"
+            className="w-full pl-11 pr-10 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all placeholder:text-neutral-400 text-sm"
           />
           {query && (
             <button
@@ -97,7 +97,7 @@ export function PortfolioContent() {
 
         {/* Legend */}
         <div className={cn("flex flex-wrap items-center gap-3 mb-6", query && "opacity-40 pointer-events-none")}>
-          <span className="text-sm text-neutral-500 mr-2">{isUk ? "Складність:" : "Complexity:"}</span>
+          <span className="text-sm text-neutral-500 dark:text-neutral-400 mr-2">{isUk ? "Складність:" : "Complexity:"}</span>
           {Object.entries(COMPLEXITY_LABELS).map(([key, val]) => (
             <span key={key} className={cn("px-3 py-1 rounded-full text-xs font-semibold", val.color)}>
               {val.label}
@@ -113,7 +113,7 @@ export function PortfolioContent() {
               "px-4 py-2 rounded-xl text-sm font-medium transition-all",
               activeCategory === ""
                 ? "bg-indigo-600 text-white shadow-sm"
-                : "bg-neutral-100 text-neutral-600 hover:bg-indigo-50 hover:text-indigo-700"
+                : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-indigo-50 hover:text-indigo-700"
             )}
           >
             {isUk ? "Всі" : "All"}
@@ -126,7 +126,7 @@ export function PortfolioContent() {
                 "px-4 py-2 rounded-xl text-sm font-medium transition-all",
                 activeCategory === cat
                   ? "bg-indigo-600 text-white shadow-sm"
-                  : "bg-neutral-100 text-neutral-600 hover:bg-indigo-50 hover:text-indigo-700"
+                  : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-indigo-50 hover:text-indigo-700"
               )}
             >
               {cat}
@@ -143,7 +143,7 @@ export function PortfolioContent() {
                 "px-3 py-1.5 rounded-lg text-xs font-medium transition-all",
                 activeIndustry === ""
                   ? "bg-violet-600 text-white shadow-sm"
-                  : "bg-neutral-100 text-neutral-600 hover:bg-violet-50 hover:text-violet-700"
+                  : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-violet-50 hover:text-violet-700"
               )}
             >
               {isUk ? "Всі галузі" : "All industries"}
@@ -156,7 +156,7 @@ export function PortfolioContent() {
                   "px-3 py-1.5 rounded-lg text-xs font-medium transition-all",
                   activeIndustry === ind
                     ? "bg-violet-600 text-white shadow-sm"
-                    : "bg-neutral-100 text-neutral-600 hover:bg-violet-50 hover:text-violet-700"
+                    : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-violet-50 hover:text-violet-700"
                 )}
               >
                 {ind}
@@ -175,7 +175,7 @@ export function PortfolioContent() {
                 "px-4 py-2 rounded-xl text-sm font-medium transition-all",
                 activeComplexity === c.value
                   ? "bg-neutral-900 text-white shadow-sm"
-                  : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
+                  : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200"
               )}
             >
               {c.label}
@@ -207,7 +207,7 @@ export function PortfolioContent() {
               return (
                 <div
                   key={project.slug}
-                  className="group relative rounded-2xl border border-neutral-100 bg-white overflow-hidden hover:shadow-xl hover:shadow-neutral-200/60 transition-all duration-300 hover:-translate-y-1"
+                  className="group relative rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white overflow-hidden hover:shadow-xl hover:shadow-neutral-200/60 transition-all duration-300 hover:-translate-y-1"
                 >
                   {/* Visual preview — click to open lightbox */}
                   <button
@@ -233,7 +233,7 @@ export function PortfolioContent() {
                   <div className="p-6">
                     <div className="flex items-start justify-between mb-2">
                       <div>
-                        <h3 className="font-heading font-bold text-neutral-900 group-hover:text-indigo-700 transition-colors">
+                        <h3 className="font-heading font-bold text-neutral-900 dark:text-white group-hover:text-indigo-700 transition-colors">
                           {project.title}
                         </h3>
                         <p className="text-xs text-neutral-400 mt-0.5">{project.category} · {project.year}</p>
@@ -248,7 +248,7 @@ export function PortfolioContent() {
                       </div>
                     </div>
 
-                    <p className="text-sm text-neutral-500 leading-relaxed mb-4">{project.description}</p>
+                    <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-4">{project.description}</p>
 
                     <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-100 text-xs text-emerald-700 font-medium mb-4">
                       📈 {project.result}

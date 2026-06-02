@@ -1,10 +1,10 @@
 export function ImpactNgoPreview() {
   return (
     <div className="font-sans">
-      <nav className="flex items-center justify-between px-8 py-4 bg-white border-b border-green-100">
+      <nav className="flex items-center justify-between px-8 py-4 bg-white dark:bg-neutral-800 border-b border-green-100">
         <div className="flex items-center gap-2">
           <div className="w-7 h-7 rounded-full bg-green-600 flex items-center justify-center text-white text-xs font-bold">🌱</div>
-          <span className="font-bold text-gray-900 text-sm">GreenFuture</span>
+          <span className="font-bold text-gray-900 dark:text-white text-sm">GreenFuture</span>
         </div>
         <div className="flex items-center gap-4 text-xs text-gray-500">
           <span>Projects</span><span>Impact</span><span>Team</span>
@@ -37,8 +37,8 @@ export function ImpactNgoPreview() {
         <p className="text-xs text-green-300 mt-3">Tax deductible · 100% to planting · Full transparency</p>
       </section>
 
-      <section className="px-8 py-10 bg-white border-b border-gray-100">
-        <h2 className="text-xl font-bold text-gray-900 text-center mb-6">Our impact so far</h2>
+      <section className="px-8 py-10 bg-white dark:bg-neutral-800 border-b border-gray-100">
+        <h2 className="text-xl font-bold text-gray-900 dark:text-white text-center mb-6">Our impact so far</h2>
         <div className="grid grid-cols-4 gap-4 max-w-3xl mx-auto text-center">
           {[
             { n: "347K", l: "Trees planted" },
@@ -55,12 +55,12 @@ export function ImpactNgoPreview() {
       </section>
 
       <section className="px-8 py-8 bg-green-50 text-center">
-        <h3 className="font-bold text-gray-900 mb-3">Transparent financials</h3>
+        <h3 className="font-bold text-gray-900 dark:text-white mb-3">Transparent financials</h3>
         <div className="flex items-center justify-center gap-4 text-xs flex-wrap">
           {[["82%", "Direct to planting"], ["11%", "Operations"], ["7%", "Education programs"]].map(([p, l]) => (
             <div key={l} className="bg-white border border-green-200 px-4 py-2 rounded-full">
               <span className="font-bold text-green-700">{p}</span>
-              <span className="text-gray-500 ml-1">{l}</span>
+              <span className="text-gray-500 dark:text-neutral-400 ml-1">{l}</span>
             </div>
           ))}
         </div>

@@ -397,7 +397,7 @@ export function CodeKidsDemo({ lang }: { lang: string }) {
       </section>
 
       {/* ── Courses ──────────────────────────────────────────────────────── */}
-      <section id="courses" className="py-20 bg-white">
+      <section id="courses" className="py-20 bg-white dark:bg-neutral-950">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-extrabold text-slate-900 mb-2">
@@ -547,7 +547,7 @@ export function CodeKidsDemo({ lang }: { lang: string }) {
       </section>
 
       {/* ── Student Projects ─────────────────────────────────────────────── */}
-      <section id="projects" className="py-20 bg-white">
+      <section id="projects" className="py-20 bg-white dark:bg-neutral-950">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-extrabold text-slate-900 mb-2">

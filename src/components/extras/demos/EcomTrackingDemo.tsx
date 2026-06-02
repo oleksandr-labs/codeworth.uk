@@ -75,8 +75,8 @@ export function EcomTrackingDemo({ isUk }: Props) {
   return (
     <div className="space-y-6">
       {/* Search */}
-      <form onSubmit={track} className="rounded-2xl border border-neutral-200 bg-white p-4">
-        <label htmlFor="tracking-input" className="block text-sm font-semibold text-neutral-900 mb-2">
+      <form onSubmit={track} className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 p-4">
+        <label htmlFor="tracking-input" className="block text-sm font-semibold text-neutral-900 dark:text-white mb-2">
           {isUk ? "Номер накладної" : "Tracking number"}
         </label>
         <div className="flex gap-2">
@@ -118,16 +118,16 @@ export function EcomTrackingDemo({ isUk }: Props) {
           <div className={`rounded-2xl p-5 ${tracked.stage === 4 ? "bg-emerald-50 border border-emerald-200" : "bg-indigo-50 border border-indigo-200"}`}>
             <div className="flex items-start justify-between flex-wrap gap-3">
               <div>
-                <p className="text-xs uppercase tracking-wider text-neutral-500 mb-1">
+                <p className="text-xs uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-1">
                   {isUk ? "Накладна" : "Tracking #"} · {tracked.carrierLabel}
                 </p>
                 <p className="font-mono font-bold text-neutral-900">{tracked.trackingNo}</p>
               </div>
               <div className="text-right">
-                <p className="text-xs uppercase tracking-wider text-neutral-500 mb-1">
+                <p className="text-xs uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-1">
                   {tracked.stage === 4 ? (isUk ? "Доставлено" : "Delivered") : (isUk ? "Очікувана доставка" : "Est. delivery")}
                 </p>
-                <p className="font-bold text-neutral-900 flex items-center gap-1 justify-end">
+                <p className="font-bold text-neutral-900 dark:text-white flex items-center gap-1 justify-end">
                   <Clock className="w-4 h-4" />
                   {tracked.estimatedDelivery}
                 </p>
@@ -136,7 +136,7 @@ export function EcomTrackingDemo({ isUk }: Props) {
           </div>
 
           {/* Progress stepper */}
-          <div className="rounded-2xl border border-neutral-200 bg-white p-5">
+          <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white p-5">
             <div className="relative flex justify-between">
               <div className="absolute top-5 left-0 right-0 h-0.5 bg-neutral-200">
                 <div
@@ -154,7 +154,7 @@ export function EcomTrackingDemo({ isUk }: Props) {
                       className={`relative z-10 w-10 h-10 rounded-full flex items-center justify-center transition-all ${
                         done
                           ? "bg-emerald-500 text-white"
-                          : "bg-neutral-100 text-neutral-400 border-2 border-neutral-200"
+                          : "bg-neutral-100 dark:bg-neutral-800 text-neutral-400 border-2 border-neutral-200"
                       } ${active && tracked.stage < 4 ? "ring-4 ring-emerald-100 scale-110" : ""}`}
                     >
                       <Icon className="w-4 h-4" />
@@ -169,8 +169,8 @@ export function EcomTrackingDemo({ isUk }: Props) {
           </div>
 
           {/* Timeline */}
-          <div className="rounded-2xl border border-neutral-200 bg-white p-5">
-            <h3 className="font-bold text-neutral-900 mb-4">{isUk ? "Історія" : "Event history"}</h3>
+          <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white p-5">
+            <h3 className="font-bold text-neutral-900 dark:text-white mb-4">{isUk ? "Історія" : "Event history"}</h3>
             <div className="space-y-3">
               {tracked.events.slice().reverse().map((e, i) => (
                 <div key={i} className="flex gap-3">
@@ -179,8 +179,8 @@ export function EcomTrackingDemo({ isUk }: Props) {
                     {i < tracked.events.length - 1 && <div className="flex-1 w-0.5 bg-neutral-200 mt-1" />}
                   </div>
                   <div className="flex-1 pb-2">
-                    <p className="font-semibold text-neutral-900 text-sm">{isUk ? e.statusUk : e.statusEn}</p>
-                    <div className="flex items-center gap-2 text-xs text-neutral-500 mt-0.5">
+                    <p className="font-semibold text-neutral-900 dark:text-white text-sm">{isUk ? e.statusUk : e.statusEn}</p>
+                    <div className="flex items-center gap-2 text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">
                       <span>{e.date} · {e.time}</span>
                       <span>·</span>
                       <span>{isUk ? e.locationUk : e.locationEn}</span>

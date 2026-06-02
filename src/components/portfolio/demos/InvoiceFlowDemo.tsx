@@ -290,7 +290,7 @@ export function InvoiceFlowDemo({ lang }: { lang: string }) {
             {features.map((f) => (
               <div
                 key={f.title}
-                className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+                className="rounded-xl border border-slate-200 bg-white dark:bg-neutral-800 p-6 shadow-sm transition-shadow hover:shadow-md"
               >
                 <span className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-50 text-2xl">
                   {f.icon}
@@ -317,7 +317,7 @@ export function InvoiceFlowDemo({ lang }: { lang: string }) {
             </p>
           </div>
 
-          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-lg sm:p-8">
+          <div className="rounded-2xl border border-slate-200 bg-white dark:bg-neutral-800 p-6 shadow-lg sm:p-8">
             {/* Header fields */}
             <div className="mb-6 grid gap-4 sm:grid-cols-2">
               <div>
@@ -508,7 +508,7 @@ export function InvoiceFlowDemo({ lang }: { lang: string }) {
                 aria-label="Toggle annual billing"
               >
                 <span
-                  className={`absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform ${annual ? "translate-x-5" : ""}`}
+                  className={`absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-white dark:bg-neutral-800 shadow transition-transform ${annual ? "translate-x-5" : ""}`}
                 />
               </button>
               <span className={`text-sm font-medium ${annual ? "text-slate-900" : "text-slate-400"}`}>
@@ -621,7 +621,7 @@ export function InvoiceFlowDemo({ lang }: { lang: string }) {
             </p>
           </div>
 
-          <div className="grid gap-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-lg sm:grid-cols-2 sm:p-8">
+          <div className="grid gap-8 rounded-2xl border border-slate-200 bg-white dark:bg-neutral-800 p-6 shadow-lg sm:grid-cols-2 sm:p-8">
             {/* Inputs */}
             <div className="space-y-5">
               <div>
@@ -703,7 +703,7 @@ export function InvoiceFlowDemo({ lang }: { lang: string }) {
             {testimonials.map((t) => (
               <div
                 key={t.name}
-                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+                className="rounded-2xl border border-slate-200 bg-white dark:bg-neutral-800 p-6 shadow-sm"
               >
                 <div className="mb-3 flex gap-1 text-emerald-400">
                   {"★★★★★".split("").map((s, i) => (

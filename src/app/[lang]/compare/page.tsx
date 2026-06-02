@@ -48,12 +48,12 @@ export default async function CompareIndexPage({ params }: { params: Promise<{ l
                 <Scale className="w-4 h-4" />
                 {isUk ? "Об'єктивний аналіз" : "Objective analysis"}
               </div>
-              <h1 className="text-4xl lg:text-5xl font-heading font-extrabold text-neutral-900 mb-6 leading-tight">
+              <h1 className="text-4xl lg:text-5xl font-heading font-extrabold text-neutral-900 dark:text-white mb-6 leading-tight">
                 {isUk
                   ? <>{`Codeworth `}<span className="gradient-text">{"vs Альтернативи"}</span></>
                   : <>{`Codeworth `}<span className="gradient-text">{"vs Alternatives"}</span></>}
               </h1>
-              <p className="text-lg text-neutral-500 max-w-2xl mx-auto">
+              <p className="text-lg text-neutral-500 dark:text-neutral-400 max-w-2xl mx-auto">
                 {isUk
                   ? "Порівняємо Codeworth з найпопулярнішими рішеннями для створення сайтів — чесно та об'єктивно, щоб ви обрали правильний варіант."
                   : "We compare Codeworth with the most popular website solutions — honestly and objectively, so you can make the right choice."}
@@ -63,7 +63,7 @@ export default async function CompareIndexPage({ params }: { params: Promise<{ l
         </section>
 
         {/* Comparisons grid */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-white dark:bg-neutral-950">
           <Container>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {COMPARE_DATA.map((item) => {
@@ -73,7 +73,7 @@ export default async function CompareIndexPage({ params }: { params: Promise<{ l
                   <Link
                     key={item.slug}
                     href={`/${lang}/compare/${item.slug}`}
-                    className="group rounded-2xl border border-neutral-100 overflow-hidden hover:shadow-lg hover:shadow-neutral-100 hover:-translate-y-1 transition-all duration-300"
+                    className="group rounded-2xl border border-neutral-100 dark:border-neutral-700 overflow-hidden hover:shadow-lg hover:shadow-neutral-100 hover:-translate-y-1 transition-all duration-300"
                   >
                     {/* Color header */}
                     <div className={`h-24 bg-linear-to-br ${item.competitorBg} flex items-center justify-between px-6`}>
@@ -88,10 +88,10 @@ export default async function CompareIndexPage({ params }: { params: Promise<{ l
 
                     {/* Content */}
                     <div className="p-5">
-                      <p className="text-xs text-neutral-500 font-medium mb-3">
+                      <p className="text-xs text-neutral-500 dark:text-neutral-400 font-medium mb-3">
                         {isUk ? item.taglineUk : item.taglineEn}
                       </p>
-                      <p className="text-sm text-neutral-600 leading-relaxed mb-4 line-clamp-2">
+                      <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed mb-4 line-clamp-2">
                         {isUk ? item.summaryUk : item.summaryEn}
                       </p>
                       <div className="flex items-center justify-between">

@@ -65,7 +65,7 @@ export function NewsletterForm({ variant = "inline", className = "" }: Props) {
           placeholder="your@email.com"
           required
           aria-describedby={errorMsg ? "newsletter-error-compact" : undefined}
-          className="w-full px-3 py-2 rounded-lg border border-indigo-200 bg-white text-sm mb-2 focus:outline-none focus:border-indigo-400"
+          className="w-full px-3 py-2 rounded-lg border border-indigo-200 bg-white dark:bg-neutral-900 text-sm dark:text-white mb-2 focus:outline-none focus:border-indigo-400 dark:border-indigo-700 placeholder:text-neutral-400 dark:placeholder:text-neutral-500"
         />
         {errorMsg && (
           <p id="newsletter-error-compact" role="alert" aria-live="assertive" className="text-xs text-red-500 mb-2">
@@ -98,7 +98,7 @@ export function NewsletterForm({ variant = "inline", className = "" }: Props) {
         placeholder="your@email.com"
         required
         aria-describedby={errorMsg ? "newsletter-error-inline" : undefined}
-        className="flex-1 px-5 py-3 rounded-xl border border-indigo-200 bg-white text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-indigo-400 transition-colors"
+        className="flex-1 px-5 py-3 rounded-xl border border-indigo-200 bg-white text-neutral-900 dark:text-white placeholder:text-neutral-400 focus:outline-none focus:border-indigo-400 transition-colors"
       />
       <button
         type="submit"

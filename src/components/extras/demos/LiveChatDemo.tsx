@@ -82,7 +82,7 @@ export function LiveChatDemo({ isUk }: Props) {
           : "Chat widget with operator simulation, quick replies, read receipts. Production stack: Chatwoot / Crisp / Tawk."}
       </p>
 
-      <div className="relative h-[500px] rounded-2xl border border-neutral-200 bg-linear-to-br from-neutral-50 to-neutral-100 overflow-hidden">
+      <div className="relative h-[500px] rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-linear-to-br from-neutral-50 to-neutral-100 overflow-hidden">
         {/* Faux page content */}
         <div className="p-6 text-neutral-400 text-sm leading-relaxed">
           <p className="mb-2">{isUk ? "Це приклад сторінки сайту з підключеним live-chat віджетом." : "This is a sample website page with live-chat widget enabled."}</p>
@@ -105,7 +105,7 @@ export function LiveChatDemo({ isUk }: Props) {
           <div
             role="dialog"
             aria-label={isUk ? "Live chat" : "Live chat"}
-            className="absolute bottom-4 right-4 w-80 max-w-[calc(100%-2rem)] h-[420px] rounded-2xl bg-white border border-neutral-200 shadow-2xl flex flex-col overflow-hidden"
+            className="absolute bottom-4 right-4 w-80 max-w-[calc(100%-2rem)] h-[420px] rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 shadow-2xl flex flex-col overflow-hidden"
           >
             {/* Header */}
             <div className="bg-linear-to-r from-indigo-600 to-violet-600 text-white p-3 flex items-center justify-between">
@@ -138,7 +138,7 @@ export function LiveChatDemo({ isUk }: Props) {
                     className={`max-w-[80%] rounded-2xl px-3 py-2 text-sm ${
                       m.from === "user"
                         ? "bg-indigo-600 text-white rounded-br-sm"
-                        : "bg-white border border-neutral-200 text-neutral-800 rounded-bl-sm"
+                        : "bg-white border border-neutral-200 dark:border-neutral-700 text-neutral-800 dark:text-neutral-200 rounded-bl-sm"
                     }`}
                   >
                     <p className="leading-relaxed">{m.text}</p>
@@ -153,7 +153,7 @@ export function LiveChatDemo({ isUk }: Props) {
               ))}
               {typing && (
                 <div className="flex justify-start" aria-live="polite">
-                  <div className="bg-white border border-neutral-200 rounded-2xl rounded-bl-sm px-3 py-2.5 flex gap-1">
+                  <div className="bg-white border border-neutral-200 dark:border-neutral-700 rounded-2xl rounded-bl-sm px-3 py-2.5 flex gap-1">
                     <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 animate-bounce" style={{ animationDelay: "0ms" }} />
                     <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 animate-bounce" style={{ animationDelay: "150ms" }} />
                     <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 animate-bounce" style={{ animationDelay: "300ms" }} />
@@ -164,7 +164,7 @@ export function LiveChatDemo({ isUk }: Props) {
 
             {/* Quick replies */}
             {messages.length <= 1 && (
-              <div className="px-3 py-2 border-t border-neutral-100 bg-white flex flex-wrap gap-1.5">
+              <div className="px-3 py-2 border-t border-neutral-100 dark:border-neutral-700 bg-white flex flex-wrap gap-1.5">
                 {QUICK_REPLIES.map((q, i) => (
                   <button
                     key={i}
@@ -178,7 +178,7 @@ export function LiveChatDemo({ isUk }: Props) {
             )}
 
             {/* Input */}
-            <form onSubmit={handleSubmit} className="border-t border-neutral-200 p-2 flex items-center gap-1 bg-white">
+            <form onSubmit={handleSubmit} className="border-t border-neutral-200 dark:border-neutral-700 p-2 flex items-center gap-1 bg-white">
               <button type="button" className="p-2 text-neutral-400 hover:text-neutral-700" aria-label={isUk ? "Додати файл" : "Attach file"}>
                 <Paperclip className="w-4 h-4" />
               </button>

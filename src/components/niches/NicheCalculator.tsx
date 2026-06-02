@@ -50,7 +50,7 @@ export function NicheCalculator({ steps, color, title }: NicheCalculatorProps) {
           </p>
         </div>
 
-        <div className="bg-neutral-50 dark:bg-neutral-800/60 rounded-3xl border border-neutral-100 dark:border-neutral-700/50 overflow-hidden">
+        <div className="bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-800/60 rounded-3xl border border-neutral-100 dark:border-neutral-700 /50 overflow-hidden">
           {/* Steps */}
           <div className="p-6 md:p-8 space-y-4">
             {steps.map((step, stepIdx) => {
@@ -124,7 +124,7 @@ export function NicheCalculator({ steps, color, title }: NicheCalculatorProps) {
                             "flex items-center justify-between px-4 py-3 text-sm text-left transition-colors cursor-pointer",
                             selections[stepIdx] === optIdx
                               ? "font-semibold"
-                              : "text-neutral-700 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-700/50"
+                              : "text-neutral-700 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-800 dark:bg-neutral-900 dark:hover:bg-neutral-700/50"
                           )}
                           style={selections[stepIdx] === optIdx ? { color, backgroundColor: color + "10" } : {}}
                         >
@@ -143,7 +143,7 @@ export function NicheCalculator({ steps, color, title }: NicheCalculatorProps) {
 
           {/* Result */}
           <div
-            className="px-6 md:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-5 border-t border-neutral-100 dark:border-neutral-700/50"
+            className="px-6 md:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-5 border-t border-neutral-100 dark:border-neutral-700 /50"
             style={{ background: `linear-gradient(135deg, ${color}12 0%, ${color}06 100%)` }}
           >
             <div>

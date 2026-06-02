@@ -210,10 +210,10 @@ export function AiHospitalityDemo({ isUk }: Props) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "AI-Консьєрж Готелю — live демо" : "Hotel AI Concierge — Live Demo"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk
           ? "Мультимовний голосовий AI для готелів. Оберіть сценарій та мову гостя."
           : "Multilingual voice AI for hotels. Pick a scenario and guest language."}
@@ -223,7 +223,7 @@ export function AiHospitalityDemo({ isUk }: Props) {
         {/* Controls */}
         <div className="space-y-5">
           <div>
-            <label className="block text-xs font-semibold text-neutral-700 mb-3 uppercase tracking-wide">
+            <label className="block text-xs font-semibold text-neutral-700 dark:text-neutral-300 mb-3 uppercase tracking-wide">
               {isUk ? "1. Сценарій" : "1. Scenario"}
             </label>
             <div className="grid grid-cols-2 gap-2">
@@ -234,7 +234,7 @@ export function AiHospitalityDemo({ isUk }: Props) {
                   className={`flex items-center gap-2 px-3 py-3 rounded-xl text-sm font-medium transition-all ${
                     scenario === s.id
                       ? "bg-indigo-600 text-white shadow-lg shadow-indigo-200"
-                      : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200"
+                      : "bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200"
                   }`}
                 >
                   <span>{s.emoji}</span>
@@ -245,7 +245,7 @@ export function AiHospitalityDemo({ isUk }: Props) {
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-neutral-700 mb-3 uppercase tracking-wide">
+            <label className="block text-xs font-semibold text-neutral-700 dark:text-neutral-300 mb-3 uppercase tracking-wide">
               {isUk ? "2. Мова гостя" : "2. Guest language"}
             </label>
             <div className="flex flex-wrap gap-2">
@@ -256,7 +256,7 @@ export function AiHospitalityDemo({ isUk }: Props) {
                   className={`px-3 py-2 rounded-xl text-sm font-semibold transition-all ${
                     lang === l
                       ? "bg-indigo-600 text-white"
-                      : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
+                      : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200"
                   }`}
                 >
                   {LANG_LABELS[l]}
@@ -270,7 +270,7 @@ export function AiHospitalityDemo({ isUk }: Props) {
               <p className="text-xs font-semibold text-indigo-500 mb-1.5">
                 {isUk ? "Наступне повідомлення гостя:" : "Next guest message:"}
               </p>
-              <p className="text-sm text-neutral-700 italic">"{nextGuestMsg}"</p>
+              <p className="text-sm text-neutral-700 dark:text-neutral-300 italic">"{nextGuestMsg}"</p>
             </div>
           ) : step >= 2 ? (
             <div className="p-4 bg-emerald-50 rounded-2xl border border-emerald-100 text-center">
@@ -303,7 +303,7 @@ export function AiHospitalityDemo({ isUk }: Props) {
           ) : (
             <button
               onClick={() => { reset(); }}
-              className="w-full py-4 rounded-2xl bg-neutral-100 text-neutral-700 font-bold text-base hover:bg-neutral-200 transition-all"
+              className="w-full py-4 rounded-2xl bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 font-bold text-base hover:bg-neutral-200 transition-all"
             >
               🔄 {isUk ? "Спробувати ще раз" : "Try Again"}
             </button>

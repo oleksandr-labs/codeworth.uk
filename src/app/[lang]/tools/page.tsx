@@ -64,10 +64,10 @@ const CATEGORY_COLORS: Record<string, string> = {
 
 function ToolCard({ tool, isUk, lang }: { tool: Tool; isUk: boolean; lang: string }) {
   const categoryLabel = CATEGORY_LABELS[tool.category];
-  const categoryColor = CATEGORY_COLORS[tool.category] ?? "bg-neutral-100 text-neutral-600";
+  const categoryColor = CATEGORY_COLORS[tool.category] ?? "bg-neutral-100 dark:bg-neutral-800 text-neutral-600";
 
   return (
-    <div className="group relative flex flex-col p-6 rounded-2xl border border-neutral-200 bg-white hover:shadow-md transition-shadow duration-200">
+    <div className="group relative flex flex-col p-6 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:shadow-md transition-shadow duration-200">
       {/* Badges */}
       <div className="absolute top-4 right-4 flex gap-1.5">
         {tool.badge && (
@@ -92,12 +92,12 @@ function ToolCard({ tool, isUk, lang }: { tool: Tool; isUk: boolean; lang: strin
       <div className="text-4xl mb-4">{tool.icon}</div>
 
       {/* Title */}
-      <h3 className="font-heading font-bold text-neutral-900 text-lg mb-2 leading-snug pr-20">
+      <h3 className="font-heading font-bold text-neutral-900 dark:text-white text-lg mb-2 leading-snug pr-20">
         {isUk ? tool.title : tool.titleEn}
       </h3>
 
       {/* Description */}
-      <p className="text-sm text-neutral-500 leading-relaxed mb-4 flex-1">
+      <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-4 flex-1">
         {isUk ? tool.description : tool.descriptionEn}
       </p>
 
@@ -116,7 +116,7 @@ function ToolCard({ tool, isUk, lang }: { tool: Tool; isUk: boolean; lang: strin
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         ) : (
-          <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-neutral-100 text-neutral-400 text-xs font-semibold cursor-not-allowed">
+          <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-neutral-100 dark:bg-neutral-800 text-neutral-400 text-xs font-semibold cursor-not-allowed">
             {isUk ? "Відкрити →" : "Open Tool →"}
           </span>
         )}
@@ -169,13 +169,13 @@ export default async function ToolsPage({
 
         {/* Tools grid by category */}
         {byCategory.map((cat) => (
-          <section key={cat.id} className="py-16 border-b border-neutral-100 last:border-0">
+          <section key={cat.id} className="py-16 border-b border-neutral-100 dark:border-neutral-700 last:border-0">
             <Container>
               <div className="flex items-center gap-3 mb-8">
                 <h2 className="text-2xl font-heading font-extrabold text-neutral-900">
                   {isUk ? cat.labelUk : cat.labelEn}
                 </h2>
-                <span className="px-2.5 py-1 rounded-lg bg-neutral-100 text-neutral-500 text-xs font-semibold">
+                <span className="px-2.5 py-1 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400 text-xs font-semibold">
                   {cat.tools.length}
                 </span>
               </div>
@@ -189,14 +189,14 @@ export default async function ToolsPage({
         ))}
 
         {/* Bottom CTA */}
-        <section className="py-24 bg-neutral-50">
+        <section className="py-24 bg-neutral-50 dark:bg-neutral-900 ">
           <Container>
             <div className="max-w-2xl mx-auto text-center p-10 rounded-3xl bg-linear-to-br from-indigo-50 to-violet-50 border border-indigo-100">
               <span className="text-5xl mb-5 block">🛠️</span>
-              <h2 className="text-3xl font-heading font-extrabold text-neutral-900 mb-3">
+              <h2 className="text-3xl font-heading font-extrabold text-neutral-900 dark:text-white mb-3">
                 {isUk ? "Потрібен власний інструмент?" : "Need a custom tool?"}
               </h2>
-              <p className="text-neutral-600 mb-6 leading-relaxed">
+              <p className="text-neutral-600 dark:text-neutral-300 mb-6 leading-relaxed">
                 {isUk
                   ? "Ми розробляємо кастомні калькулятори, аудит-інструменти та генератори спеціально для вашого бізнесу."
                   : "We build custom calculators, audit tools and generators tailored to your business needs."}

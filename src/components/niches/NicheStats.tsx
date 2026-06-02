@@ -36,7 +36,7 @@ export function NicheStats({ color }: NicheStatsProps) {
       {STATS.map((stat) => (
         <div
           key={stat.label}
-          className="text-center p-6 rounded-2xl bg-white dark:bg-neutral-800/60 border border-neutral-100 dark:border-neutral-700/50 shadow-sm hover:shadow-md transition-shadow"
+          className="text-center p-6 rounded-2xl bg-white dark:bg-neutral-800/60 border border-neutral-100 dark:border-neutral-700 /50 shadow-sm hover:shadow-md transition-shadow"
         >
           <div
             className="text-4xl font-bold font-syne mb-1"

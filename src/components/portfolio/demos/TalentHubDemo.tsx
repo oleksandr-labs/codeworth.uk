@@ -323,10 +323,10 @@ export function TalentHubDemo({ lang }: { lang: string }) {
   ];
 
   return (
-    <div className="bg-white text-gray-900 font-sans min-h-screen">
+    <div className="bg-white text-gray-900 dark:text-white font-sans min-h-screen">
 
       {/* ── HEADER ── */}
-      <header className="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+      <header className="bg-white border-b border-gray-100 dark:border-neutral-700 sticky top-0 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
@@ -389,14 +389,14 @@ export function TalentHubDemo({ lang }: { lang: string }) {
                 <input
                   type="text"
                   placeholder={isUk ? "🔍 Роль або технологія..." : "🔍 Role or technology..."}
-                  className="flex-1 px-4 py-3 text-gray-900 rounded-xl text-sm focus:outline-none"
+                  className="flex-1 px-4 py-3 text-gray-900 dark:text-white rounded-xl text-sm focus:outline-none"
                 />
                 <input
                   type="text"
                   placeholder={isUk ? "📍 Місто або Remote" : "📍 City or Remote"}
-                  className="flex-1 px-4 py-3 text-gray-900 rounded-xl text-sm focus:outline-none"
+                  className="flex-1 px-4 py-3 text-gray-900 dark:text-white rounded-xl text-sm focus:outline-none"
                 />
-                <select className="px-4 py-3 text-gray-600 rounded-xl text-sm bg-gray-50 focus:outline-none">
+                <select className="px-4 py-3 text-gray-600 dark:text-neutral-300 rounded-xl text-sm bg-gray-50 dark:bg-neutral-900 focus:outline-none">
                   <option>{isUk ? "💰 Зарплата" : "💰 Salary"}</option>
                   <option>$1k+</option>
                   <option>$2k+</option>
@@ -462,20 +462,20 @@ export function TalentHubDemo({ lang }: { lang: string }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
             <h2 className="text-3xl font-bold text-indigo-900">{isUk ? "Актуальні вакансії" : "Open Positions"}</h2>
-            <p className="text-gray-500 mt-1">{isUk ? `${filteredJobs.length} вакансій знайдено` : `${filteredJobs.length} positions found`}</p>
+            <p className="text-gray-500 dark:text-neutral-400 mt-1">{isUk ? `${filteredJobs.length} вакансій знайдено` : `${filteredJobs.length} positions found`}</p>
           </div>
 
           {/* Filters */}
-          <div className="bg-white rounded-2xl p-4 mb-6 shadow-sm border border-gray-100 space-y-4">
+          <div className="bg-white rounded-2xl p-4 mb-6 shadow-sm border border-gray-100 dark:border-neutral-700 space-y-4">
             {/* Specialization */}
             <div>
-              <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">{isUk ? "Спеціалізація" : "Specialization"}</p>
+              <p className="text-xs font-semibold text-gray-500 dark:text-neutral-400 uppercase tracking-wider mb-2">{isUk ? "Спеціалізація" : "Specialization"}</p>
               <div className="flex flex-wrap gap-2">
                 {specs.map((s) => (
                   <button
                     key={s}
                     onClick={() => setActiveSpec(s)}
-                    className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${activeSpec === s ? "bg-indigo-700 text-white" : "bg-gray-100 text-gray-600 hover:bg-indigo-50 hover:text-indigo-700"}`}
+                    className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${activeSpec === s ? "bg-indigo-700 text-white" : "bg-gray-100 dark:bg-neutral-800 text-gray-600 dark:text-neutral-300 hover:bg-indigo-50 hover:text-indigo-700"}`}
                   >
                     {s}
                   </button>
@@ -485,13 +485,13 @@ export function TalentHubDemo({ lang }: { lang: string }) {
             {/* Format + Experience */}
             <div className="flex flex-col sm:flex-row gap-4">
               <div>
-                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">{isUk ? "Формат" : "Format"}</p>
+                <p className="text-xs font-semibold text-gray-500 dark:text-neutral-400 uppercase tracking-wider mb-2">{isUk ? "Формат" : "Format"}</p>
                 <div className="flex flex-wrap gap-2">
                   {formats.map((f) => (
                     <button
                       key={f}
                       onClick={() => setActiveFormat(f)}
-                      className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${activeFormat === f ? "bg-orange-500 text-white" : "bg-gray-100 text-gray-600 hover:bg-orange-50 hover:text-orange-600"}`}
+                      className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${activeFormat === f ? "bg-orange-500 text-white" : "bg-gray-100 dark:bg-neutral-800 text-gray-600 dark:text-neutral-300 hover:bg-orange-50 hover:text-orange-600"}`}
                     >
                       {f === "Remote" ? "🌍 " : f === "Hybrid" ? "🏙️ " : f === "Office" ? "🏢 " : ""}{f}
                     </button>
@@ -499,13 +499,13 @@ export function TalentHubDemo({ lang }: { lang: string }) {
                 </div>
               </div>
               <div>
-                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">{isUk ? "Досвід" : "Experience"}</p>
+                <p className="text-xs font-semibold text-gray-500 dark:text-neutral-400 uppercase tracking-wider mb-2">{isUk ? "Досвід" : "Experience"}</p>
                 <div className="flex flex-wrap gap-2">
                   {experiences.map((e) => (
                     <button
                       key={e}
                       onClick={() => setActiveExp(e)}
-                      className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${activeExp === e ? "bg-indigo-700 text-white" : "bg-gray-100 text-gray-600 hover:bg-indigo-50 hover:text-indigo-700"}`}
+                      className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${activeExp === e ? "bg-indigo-700 text-white" : "bg-gray-100 dark:bg-neutral-800 text-gray-600 dark:text-neutral-300 hover:bg-indigo-50 hover:text-indigo-700"}`}
                     >
                       {e}
                     </button>
@@ -515,7 +515,7 @@ export function TalentHubDemo({ lang }: { lang: string }) {
             </div>
             {/* Salary slider */}
             <div>
-              <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
+              <p className="text-xs font-semibold text-gray-500 dark:text-neutral-400 uppercase tracking-wider mb-2">
                 {isUk ? `Мінімальна зарплата: $${salaryMin.toLocaleString()}` : `Min Salary: $${salaryMin.toLocaleString()}`}
               </p>
               <input
@@ -542,7 +542,7 @@ export function TalentHubDemo({ lang }: { lang: string }) {
               filteredJobs.map((job) => (
                 <div
                   key={job.id}
-                  className={`bg-white rounded-2xl p-5 border-2 transition-all cursor-pointer hover:shadow-md ${selectedJob === job.id ? "border-indigo-500 shadow-md" : "border-gray-100 hover:border-indigo-200"}`}
+                  className={`bg-white rounded-2xl p-5 border-2 transition-all cursor-pointer hover:shadow-md ${selectedJob === job.id ? "border-indigo-500 shadow-md" : "border-gray-100 dark:border-neutral-700 hover:border-indigo-200"}`}
                   onClick={() => setSelectedJob(selectedJob === job.id ? null : job.id)}
                 >
                   <div className="flex items-start justify-between mb-3">
@@ -551,8 +551,8 @@ export function TalentHubDemo({ lang }: { lang: string }) {
                         {job.company}
                       </div>
                       <div>
-                        <p className="font-bold text-gray-900 text-sm leading-tight">{job.title}</p>
-                        <p className="text-gray-500 text-xs mt-0.5">{job.companyName}</p>
+                        <p className="font-bold text-gray-900 dark:text-white text-sm leading-tight">{job.title}</p>
+                        <p className="text-gray-500 dark:text-neutral-400 text-xs mt-0.5">{job.companyName}</p>
                       </div>
                     </div>
                     <span className={`text-xs px-2.5 py-1 rounded-full font-medium shrink-0 ${job.format === "Remote" ? "bg-green-100 text-green-700" : job.format === "Hybrid" ? "bg-blue-100 text-blue-700" : "bg-amber-100 text-amber-700"}`}>
@@ -587,7 +587,7 @@ export function TalentHubDemo({ lang }: { lang: string }) {
                         e.stopPropagation();
                         setSavedJobs((prev) => prev.includes(job.id) ? prev.filter((id) => id !== job.id) : [...prev, job.id]);
                       }}
-                      className={`px-3 py-2 rounded-xl border-2 text-sm transition-colors ${savedJobs.includes(job.id) ? "border-orange-400 text-orange-500 bg-orange-50" : "border-gray-200 text-gray-400 hover:border-orange-300 hover:text-orange-400"}`}
+                      className={`px-3 py-2 rounded-xl border-2 text-sm transition-colors ${savedJobs.includes(job.id) ? "border-orange-400 text-orange-500 bg-orange-50" : "border-gray-200 dark:border-neutral-700 text-gray-400 dark:text-neutral-500 hover:border-orange-300 hover:text-orange-400"}`}
                     >
                       {savedJobs.includes(job.id) ? "🔖" : "🔖"}
                     </button>
@@ -599,7 +599,7 @@ export function TalentHubDemo({ lang }: { lang: string }) {
 
           {/* Job Detail Panel */}
           {selectedJobData && (
-            <div className="mt-6 bg-white rounded-2xl border-2 border-indigo-200 shadow-lg overflow-hidden">
+            <div className="mt-6 bg-white dark:bg-neutral-800 rounded-2xl border-2 border-indigo-200 shadow-lg overflow-hidden">
               <div className="bg-linear-to-br from-indigo-700 to-indigo-800 px-6 py-5 text-white">
                 <div className="flex items-start justify-between">
                   <div className="flex items-center gap-4">
@@ -622,29 +622,29 @@ export function TalentHubDemo({ lang }: { lang: string }) {
               <div className="p-6 grid md:grid-cols-2 gap-6">
                 <div className="space-y-4">
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-2">{isUk ? "Про роль" : "About the Role"}</h4>
-                    <p className="text-gray-600 text-sm leading-relaxed">{selectedJobData.description}</p>
+                    <h4 className="font-bold text-gray-900 dark:text-white mb-2">{isUk ? "Про роль" : "About the Role"}</h4>
+                    <p className="text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">{selectedJobData.description}</p>
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-2">✅ {isUk ? "Вимоги" : "Requirements"}</h4>
+                    <h4 className="font-bold text-gray-900 dark:text-white mb-2">✅ {isUk ? "Вимоги" : "Requirements"}</h4>
                     <ul className="space-y-1">
                       {selectedJobData.requirements.map((r) => (
-                        <li key={r} className="text-sm text-gray-600 flex items-start gap-2"><span className="text-indigo-500 mt-0.5">•</span>{r}</li>
+                        <li key={r} className="text-sm text-gray-600 dark:text-neutral-300 flex items-start gap-2"><span className="text-indigo-500 mt-0.5">•</span>{r}</li>
                       ))}
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-2">⭐ {isUk ? "Буде плюсом" : "Nice to Have"}</h4>
+                    <h4 className="font-bold text-gray-900 dark:text-white mb-2">⭐ {isUk ? "Буде плюсом" : "Nice to Have"}</h4>
                     <ul className="space-y-1">
                       {selectedJobData.niceToHave.map((n) => (
-                        <li key={n} className="text-sm text-gray-500 flex items-start gap-2"><span className="text-orange-400 mt-0.5">◦</span>{n}</li>
+                        <li key={n} className="text-sm text-gray-500 dark:text-neutral-400 flex items-start gap-2"><span className="text-orange-400 mt-0.5">◦</span>{n}</li>
                       ))}
                     </ul>
                   </div>
                 </div>
                 <div className="space-y-4">
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-2">🎁 {isUk ? "Переваги" : "Benefits"}</h4>
+                    <h4 className="font-bold text-gray-900 dark:text-white mb-2">🎁 {isUk ? "Переваги" : "Benefits"}</h4>
                     <div className="flex flex-wrap gap-2">
                       {selectedJobData.benefits.map((b) => (
                         <span key={b} className="text-xs bg-green-50 text-green-700 border border-green-200 px-2.5 py-1 rounded-full font-medium">{b}</span>
@@ -652,10 +652,10 @@ export function TalentHubDemo({ lang }: { lang: string }) {
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-2">🌅 {isUk ? "Типовий день" : "Day in the Life"}</h4>
+                    <h4 className="font-bold text-gray-900 dark:text-white mb-2">🌅 {isUk ? "Типовий день" : "Day in the Life"}</h4>
                     <ul className="space-y-1.5">
                       {selectedJobData.dayInLife.map((d, i) => (
-                        <li key={i} className="text-sm text-gray-600 flex items-start gap-2"><span className="text-orange-400 font-bold shrink-0">{i + 1}.</span>{d}</li>
+                        <li key={i} className="text-sm text-gray-600 dark:text-neutral-300 flex items-start gap-2"><span className="text-orange-400 font-bold shrink-0">{i + 1}.</span>{d}</li>
                       ))}
                     </ul>
                   </div>
@@ -664,7 +664,7 @@ export function TalentHubDemo({ lang }: { lang: string }) {
                       <span className="text-2xl font-extrabold text-gray-900">
                         ${selectedJobData.salaryMin.toLocaleString()}–${selectedJobData.salaryMax.toLocaleString()}
                       </span>
-                      <span className="text-gray-400 text-sm">{isUk ? "/міс" : "/mo"}</span>
+                      <span className="text-gray-400 dark:text-neutral-500 text-sm">{isUk ? "/міс" : "/mo"}</span>
                     </div>
                     <button className="w-full py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl transition-colors text-sm">
                       📨 {isUk ? "Подати заявку" : "Apply Now"}
@@ -678,32 +678,32 @@ export function TalentHubDemo({ lang }: { lang: string }) {
       </section>
 
       {/* ── SALARY CALCULATOR ── */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-neutral-950">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-indigo-900">💰 {isUk ? "Калькулятор зарплат" : "Salary Calculator"}</h2>
-            <p className="text-gray-500 mt-2">{isUk ? "Дізнайтесь ринковий рівень зарплати для вашої ролі в Україні" : "Discover market salary levels for your role in Ukraine"}</p>
+            <p className="text-gray-500 dark:text-neutral-400 mt-2">{isUk ? "Дізнайтесь ринковий рівень зарплати для вашої ролі в Україні" : "Discover market salary levels for your role in Ukraine"}</p>
           </div>
           <div className="bg-indigo-50 rounded-3xl p-6 sm:p-8">
             <div className="grid sm:grid-cols-2 gap-4 mb-8">
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">{isUk ? "Роль" : "Role"}</label>
+                <label className="block text-sm font-semibold text-gray-700 dark:text-neutral-300 mb-2">{isUk ? "Роль" : "Role"}</label>
                 <select
                   value={calcRole}
                   onChange={(e) => setCalcRole(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl border border-indigo-200 text-gray-900 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                  className="w-full px-4 py-3 rounded-xl border border-indigo-200 text-gray-900 dark:text-white bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
                 >
                   {salaryRoles.map((r) => <option key={r}>{r}</option>)}
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">{isUk ? "Рівень досвіду" : "Experience Level"}</label>
+                <label className="block text-sm font-semibold text-gray-700 dark:text-neutral-300 mb-2">{isUk ? "Рівень досвіду" : "Experience Level"}</label>
                 <div className="flex gap-2">
                   {expLevels.map((lvl) => (
                     <button
                       key={lvl}
                       onClick={() => setCalcExp(lvl)}
-                      className={`flex-1 py-3 rounded-xl text-sm font-semibold transition-colors ${calcExp === lvl ? "bg-indigo-700 text-white shadow" : "bg-white text-gray-600 hover:bg-indigo-100 border border-indigo-200"}`}
+                      className={`flex-1 py-3 rounded-xl text-sm font-semibold transition-colors ${calcExp === lvl ? "bg-indigo-700 text-white shadow" : "bg-white text-gray-600 dark:text-neutral-300 hover:bg-indigo-100 border border-indigo-200"}`}
                     >
                       {lvl}
                     </button>
@@ -715,15 +715,15 @@ export function TalentHubDemo({ lang }: { lang: string }) {
             <div className="bg-white rounded-2xl p-6">
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-4">
                 <div>
-                  <p className="text-sm text-gray-500 mb-1">{isUk ? "Медіанна зарплата" : "Median Salary Range"}</p>
+                  <p className="text-sm text-gray-500 dark:text-neutral-400 mb-1">{isUk ? "Медіанна зарплата" : "Median Salary Range"}</p>
                   <p className="text-3xl font-extrabold text-indigo-800">
                     ${currentSalary.min.toLocaleString()} – ${currentSalary.max.toLocaleString()}
                   </p>
-                  <p className="text-sm text-gray-500 mt-1">{isUk ? "на місяць (USD)" : "per month (USD)"}</p>
+                  <p className="text-sm text-gray-500 dark:text-neutral-400 mt-1">{isUk ? "на місяць (USD)" : "per month (USD)"}</p>
                 </div>
                 <div className="text-right">
                   <p className="text-xs text-gray-400">{isUk ? "Ринок:" : "Market:"} 🇺🇦 {isUk ? "Україна" : "Ukraine"}</p>
-                  <p className="text-xs text-gray-400 mt-1">2025–2026</p>
+                  <p className="text-xs text-gray-400 dark:text-neutral-500 mt-1">2025–2026</p>
                 </div>
               </div>
               {/* Percentile bars */}
@@ -735,14 +735,14 @@ export function TalentHubDemo({ lang }: { lang: string }) {
                   { label: "Max", value: currentSalary.max, color: "bg-orange-500" },
                 ].map((bar) => (
                   <div key={bar.label} className="flex items-center gap-3">
-                    <span className="text-xs font-semibold text-gray-500 w-16 shrink-0">{bar.label}</span>
-                    <div className="flex-1 bg-gray-100 rounded-full h-4 overflow-hidden">
+                    <span className="text-xs font-semibold text-gray-500 dark:text-neutral-400 w-16 shrink-0">{bar.label}</span>
+                    <div className="flex-1 bg-gray-100 dark:bg-neutral-800 rounded-full h-4 overflow-hidden">
                       <div
                         className={`${bar.color} h-4 rounded-full transition-all duration-500`}
                         style={{ width: `${Math.min((bar.value / maxBar) * 100, 100)}%` }}
                       />
                     </div>
-                    <span className="text-sm font-bold text-gray-800 w-20 text-right shrink-0">${bar.value.toLocaleString()}</span>
+                    <span className="text-sm font-bold text-gray-800 dark:text-neutral-200 w-20 text-right shrink-0">${bar.value.toLocaleString()}</span>
                   </div>
                 ))}
               </div>
@@ -756,7 +756,7 @@ export function TalentHubDemo({ lang }: { lang: string }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-indigo-900">🏢 {isUk ? "Для компаній" : "For Companies"}</h2>
-            <p className="text-gray-500 mt-2">{isUk ? "Наймайте кращих IT-спеціалістів швидше та ефективніше" : "Hire the best IT specialists faster and more efficiently"}</p>
+            <p className="text-gray-500 dark:text-neutral-400 mt-2">{isUk ? "Наймайте кращих IT-спеціалістів швидше та ефективніше" : "Hire the best IT specialists faster and more efficiently"}</p>
           </div>
 
           {/* 3-Step Process */}
@@ -766,24 +766,24 @@ export function TalentHubDemo({ lang }: { lang: string }) {
               { step: "02", icon: "👀", title: isUk ? "Переглядайте" : "Review", desc: isUk ? "Отримуйте відфільтровані заявки з AI-оцінкою відповідності" : "Receive filtered applications with AI match scoring" },
               { step: "03", icon: "🤝", title: isUk ? "Наймайте" : "Hire", desc: isUk ? "Проводьте співбесіди та надсилайте офери прямо в платформі" : "Conduct interviews and send offers right on the platform" },
             ].map((s) => (
-              <div key={s.step} className="bg-white rounded-2xl p-6 text-center border border-gray-100 shadow-sm relative overflow-hidden">
+              <div key={s.step} className="bg-white rounded-2xl p-6 text-center border border-gray-100 dark:border-neutral-700 shadow-sm relative overflow-hidden">
                 <div className="absolute top-4 right-4 text-5xl font-black text-indigo-50">{s.step}</div>
                 <div className="text-3xl mb-3">{s.icon}</div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{s.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{s.title}</h3>
+                <p className="text-gray-500 dark:text-neutral-400 text-sm leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
 
           {/* Pricing */}
           <div className="mb-12">
-            <h3 className="text-xl font-bold text-center text-gray-900 mb-6">{isUk ? "Тарифні плани" : "Pricing Plans"}</h3>
+            <h3 className="text-xl font-bold text-center text-gray-900 dark:text-white mb-6">{isUk ? "Тарифні плани" : "Pricing Plans"}</h3>
             <div className="grid md:grid-cols-3 gap-4">
               {pricingPlans.map((plan) => (
                 <div
                   key={plan.name}
                   onClick={() => setPricingTier(plan.name as typeof pricingTier)}
-                  className={`rounded-2xl p-6 border-2 cursor-pointer transition-all ${pricingTier === plan.name ? "border-indigo-500 bg-indigo-50 shadow-md" : "border-gray-200 bg-white hover:border-indigo-200"}`}
+                  className={`rounded-2xl p-6 border-2 cursor-pointer transition-all ${pricingTier === plan.name ? "border-indigo-500 bg-indigo-50 shadow-md" : "border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-indigo-200"}`}
                 >
                   {plan.name === "Pro" && (
                     <div className="inline-block bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">
@@ -794,10 +794,10 @@ export function TalentHubDemo({ lang }: { lang: string }) {
                   <div className="text-2xl font-extrabold text-indigo-700 my-2">{plan.price}</div>
                   <ul className="space-y-1.5 mt-3">
                     {plan.features.map((f) => (
-                      <li key={f} className="text-sm text-gray-600 flex items-start gap-2"><span className="text-green-500 mt-0.5">✓</span>{f}</li>
+                      <li key={f} className="text-sm text-gray-600 dark:text-neutral-300 flex items-start gap-2"><span className="text-green-500 mt-0.5">✓</span>{f}</li>
                     ))}
                   </ul>
-                  <button className={`w-full mt-4 py-2.5 rounded-xl text-sm font-semibold transition-colors ${pricingTier === plan.name ? "bg-indigo-700 text-white" : "bg-gray-100 text-gray-700 hover:bg-indigo-100 hover:text-indigo-700"}`}>
+                  <button className={`w-full mt-4 py-2.5 rounded-xl text-sm font-semibold transition-colors ${pricingTier === plan.name ? "bg-indigo-700 text-white" : "bg-gray-100 dark:bg-neutral-800 text-gray-700 dark:text-neutral-300 hover:bg-indigo-100 hover:text-indigo-700"}`}>
                     {isUk ? "Обрати план" : "Choose Plan"}
                   </button>
                 </div>
@@ -807,7 +807,7 @@ export function TalentHubDemo({ lang }: { lang: string }) {
 
           {/* Anonymous Candidate Preview */}
           <div>
-            <h3 className="text-xl font-bold text-center text-gray-900 mb-6">
+            <h3 className="text-xl font-bold text-center text-gray-900 dark:text-white mb-6">
               🔒 {isUk ? "Анонімний перегляд кандидатів" : "Anonymous Candidate Preview"}
             </h3>
             <div className="grid sm:grid-cols-3 gap-4">
@@ -816,12 +816,12 @@ export function TalentHubDemo({ lang }: { lang: string }) {
                 { skills: ["Node.js", "PostgreSQL", "Docker"], exp: "4 years", salary: "$4,500" },
                 { skills: ["Python", "ML", "TensorFlow"], exp: "3 years", salary: "$4,000" },
               ].map((c, i) => (
-                <div key={i} className="bg-white rounded-2xl p-5 border border-gray-200 relative overflow-hidden">
+                <div key={i} className="bg-white rounded-2xl p-5 border border-gray-200 dark:border-neutral-700 relative overflow-hidden">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-10 h-10 rounded-full bg-gray-200 blur-sm" />
                     <div className="space-y-1.5">
                       <div className="h-3 bg-gray-200 rounded w-24 blur-sm" />
-                      <div className="h-2.5 bg-gray-100 rounded w-16 blur-sm" />
+                      <div className="h-2.5 bg-gray-100 dark:bg-neutral-800 rounded w-16 blur-sm" />
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-1.5 mb-3">
@@ -846,27 +846,27 @@ export function TalentHubDemo({ lang }: { lang: string }) {
       </section>
 
       {/* ── COMPANY PROFILES ── */}
-      <section id="company-profiles" className="py-16 bg-white">
+      <section id="company-profiles" className="py-16 bg-white dark:bg-neutral-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-indigo-900">⭐ {isUk ? "Топ роботодавці" : "Featured Companies"}</h2>
-            <p className="text-gray-500 mt-2">{isUk ? "Кращі IT-компанії, які активно наймають" : "Top IT companies actively hiring"}</p>
+            <p className="text-gray-500 dark:text-neutral-400 mt-2">{isUk ? "Кращі IT-компанії, які активно наймають" : "Top IT companies actively hiring"}</p>
           </div>
           <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-5">
             {companies.map((co) => (
-              <div key={co.name} className="bg-white rounded-2xl p-5 border border-gray-200 hover:border-indigo-300 hover:shadow-md transition-all group">
+              <div key={co.name} className="bg-white rounded-2xl p-5 border border-gray-200 dark:border-neutral-700 hover:border-indigo-300 hover:shadow-md transition-all group">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-2xl shrink-0 group-hover:bg-indigo-100 transition-colors">
                     {co.emoji}
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900 text-sm">{co.name}</h3>
-                    <p className="text-gray-400 text-xs">{isUk ? "👥" : "👥"} {co.size}</p>
+                    <h3 className="font-bold text-gray-900 dark:text-white text-sm">{co.name}</h3>
+                    <p className="text-gray-400 dark:text-neutral-500 text-xs">{isUk ? "👥" : "👥"} {co.size}</p>
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-1.5 mb-3">
                   {co.stack.map((t) => (
-                    <span key={t} className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-md">{t}</span>
+                    <span key={t} className="text-xs bg-gray-100 dark:bg-neutral-800 text-gray-600 dark:text-neutral-300 px-2 py-0.5 rounded-md">{t}</span>
                   ))}
                 </div>
                 <div className="flex flex-wrap gap-1.5 mb-4">
@@ -933,21 +933,21 @@ export function TalentHubDemo({ lang }: { lang: string }) {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-indigo-900">🎉 {isUk ? "Успішні кейси" : "Success Stories"}</h2>
-            <p className="text-gray-500 mt-2">{isUk ? "Реальні люди, реальні результати" : "Real people, real results"}</p>
+            <p className="text-gray-500 dark:text-neutral-400 mt-2">{isUk ? "Реальні люди, реальні результати" : "Real people, real results"}</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {reviews.map((r, i) => (
-              <div key={i} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+              <div key={i} className="bg-white rounded-2xl p-6 border border-gray-100 dark:border-neutral-700 shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-lg font-bold text-indigo-700 shrink-0">
                     {r.name.charAt(0)}
                   </div>
                   <div>
-                    <p className="font-bold text-gray-900 text-sm">{r.name}</p>
-                    <p className="text-gray-500 text-xs">{r.role}</p>
+                    <p className="font-bold text-gray-900 dark:text-white text-sm">{r.name}</p>
+                    <p className="text-gray-500 dark:text-neutral-400 text-xs">{r.role}</p>
                   </div>
                 </div>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">"{r.text}"</p>
+                <p className="text-gray-600 dark:text-neutral-300 text-sm leading-relaxed mb-4">"{r.text}"</p>
                 <div className="flex items-center justify-between pt-3 border-t border-gray-100">
                   <span className="text-xs text-gray-400">{isUk ? "Найнятий в:" : "Hired at:"} <strong className="text-gray-700">{r.company}</strong></span>
                   <span className="text-xs font-bold text-orange-500 bg-orange-50 px-2.5 py-1 rounded-full">
@@ -983,7 +983,7 @@ export function TalentHubDemo({ lang }: { lang: string }) {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={isUk ? "✉️ Ваш email..." : "✉️ Your email..."}
-                className="flex-1 px-5 py-3.5 rounded-xl text-gray-900 text-sm focus:outline-none shadow-md"
+                className="flex-1 px-5 py-3.5 rounded-xl text-gray-900 dark:text-white text-sm focus:outline-none shadow-md"
               />
               <button
                 onClick={() => { if (email.includes("@")) setSubscribed(true); }}

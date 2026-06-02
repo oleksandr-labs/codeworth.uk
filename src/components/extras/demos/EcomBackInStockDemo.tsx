@@ -43,7 +43,7 @@ export function EcomBackInStockDemo({ isUk }: Props) {
 
   return (
     <div className="space-y-6">
-      <div className="rounded-2xl border border-neutral-200 bg-white overflow-hidden">
+      <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white overflow-hidden">
         <div className={`relative aspect-video bg-linear-to-br ${PRODUCT.color} flex items-center justify-center text-8xl`}>
           {PRODUCT.emoji}
           <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-rose-500 text-white text-xs font-bold flex items-center gap-1">
@@ -51,11 +51,11 @@ export function EcomBackInStockDemo({ isUk }: Props) {
           </div>
         </div>
         <div className="p-5">
-          <h3 className="font-bold text-neutral-900 text-lg mb-1">{isUk ? PRODUCT.nameUk : PRODUCT.nameEn}</h3>
-          <p className="text-sm text-neutral-500 mb-3">
+          <h3 className="font-bold text-neutral-900 dark:text-white text-lg mb-1">{isUk ? PRODUCT.nameUk : PRODUCT.nameEn}</h3>
+          <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-3">
             {isUk ? `Розмір ${PRODUCT.size}` : `Size ${PRODUCT.size}`}
           </p>
-          <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-600 pb-3 border-b border-neutral-100">
+          <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-600 dark:text-neutral-300 pb-3 border-b border-neutral-100">
             <div className="flex items-center gap-1.5">
               <Users className="w-4 h-4 text-indigo-500" />
               <span><strong>{PRODUCT.inQueue}</strong> {isUk ? "в черзі" : "in queue"}</span>
@@ -91,7 +91,7 @@ export function EcomBackInStockDemo({ isUk }: Props) {
           ) : (
             <form onSubmit={submit} className="mt-4 space-y-4">
               <div>
-                <p className="text-sm font-semibold text-neutral-900 mb-2 flex items-center gap-1.5">
+                <p className="text-sm font-semibold text-neutral-900 dark:text-white mb-2 flex items-center gap-1.5">
                   <Bell className="w-4 h-4 text-indigo-500" />
                   {isUk ? "Канали сповіщень" : "Notification channels"}
                 </p>
@@ -111,7 +111,7 @@ export function EcomBackInStockDemo({ isUk }: Props) {
                         className={`flex flex-col items-center gap-1 p-3 rounded-lg border transition-all ${
                           active
                             ? "border-indigo-500 bg-indigo-50 text-indigo-700"
-                            : "border-neutral-200 hover:border-neutral-400 text-neutral-600"
+                            : "border-neutral-200 dark:border-neutral-700 hover:border-neutral-400 text-neutral-600"
                         }`}
                         aria-pressed={active}
                       >
@@ -129,7 +129,7 @@ export function EcomBackInStockDemo({ isUk }: Props) {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="your@email.com"
                 required
-                className="w-full px-3 py-2.5 rounded-lg border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 text-sm"
+                className="w-full px-3 py-2.5 rounded-lg border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 text-sm"
                 aria-label="Email"
               />
 
@@ -139,7 +139,7 @@ export function EcomBackInStockDemo({ isUk }: Props) {
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   placeholder="+380 ..."
-                  className="w-full px-3 py-2.5 rounded-lg border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 text-sm"
+                  className="w-full px-3 py-2.5 rounded-lg border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 text-sm"
                   aria-label={isUk ? "Телефон" : "Phone"}
                 />
               )}

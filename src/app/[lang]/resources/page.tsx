@@ -120,9 +120,9 @@ export default async function ResourcesPage({
         </section>
 
         {/* Popular */}
-        <section className="py-12 bg-white border-b">
+        <section className="py-12 bg-white dark:bg-neutral-800 border-b">
           <Container>
-            <h2 className="text-xl font-bold text-gray-900 mb-6">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6">
               🔥 {isUk ? "Популярне" : "Popular"}
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -134,9 +134,9 @@ export default async function ResourcesPage({
         </section>
 
         {/* Checklists */}
-        <section className="py-12 bg-gray-50 border-b">
+        <section className="py-12 bg-gray-50 dark:bg-neutral-900 border-b">
           <Container>
-            <h2 className="text-xl font-bold text-gray-900 mb-6">✅ {isUk ? "Чек-листи" : "Checklists"}</h2>
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6">✅ {isUk ? "Чек-листи" : "Checklists"}</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {checklists.map((r) => (
                 <ResourceCard key={r.slug} resource={r} lang={lang} isUk={isUk} />
@@ -146,9 +146,9 @@ export default async function ResourcesPage({
         </section>
 
         {/* Guides */}
-        <section className="py-12 bg-white border-b">
+        <section className="py-12 bg-white dark:bg-neutral-800 border-b">
           <Container>
-            <h2 className="text-xl font-bold text-gray-900 mb-6">📖 {isUk ? "Гайди" : "Guides"}</h2>
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6">📖 {isUk ? "Гайди" : "Guides"}</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {guides.map((r) => (
                 <ResourceCard key={r.slug} resource={r} lang={lang} isUk={isUk} />
@@ -160,7 +160,7 @@ export default async function ResourcesPage({
         {/* Tools & Templates */}
         <section className="py-12 bg-gray-50">
           <Container>
-            <h2 className="text-xl font-bold text-gray-900 mb-6">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6">
               🔧 {isUk ? "Інструменти та шаблони" : "Tools & Templates"}
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -219,7 +219,7 @@ function ResourceCard({
   return (
     <Link
       href={`/${lang}/resources/${resource.slug}`}
-      className="bg-white rounded-xl p-5 border border-gray-200 hover:border-indigo-300 hover:shadow-md transition-all group flex flex-col"
+      className="bg-white rounded-xl p-5 border border-gray-200 dark:border-neutral-700 hover:border-indigo-300 hover:shadow-md transition-all group flex flex-col"
     >
       <div className="flex items-center justify-between mb-3">
         <span className="text-xs font-medium text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full">
@@ -229,10 +229,10 @@ function ResourceCard({
           <span className="text-xs text-orange-600 font-medium">🔥 {isUk ? "Популярне" : "Popular"}</span>
         )}
       </div>
-      <h3 className="font-semibold text-gray-900 text-sm mb-2 group-hover:text-indigo-700 transition-colors leading-snug flex-1">
+      <h3 className="font-semibold text-gray-900 dark:text-white text-sm mb-2 group-hover:text-indigo-700 transition-colors leading-snug flex-1">
         {isUk ? resource.titleUk : resource.titleEn}
       </h3>
-      <p className="text-xs text-gray-500 line-clamp-2 mb-4">
+      <p className="text-xs text-gray-500 dark:text-neutral-400 line-clamp-2 mb-4">
         {isUk ? resource.descriptionUk : resource.descriptionEn}
       </p>
       <div className="flex items-center justify-between mt-auto pt-3 border-t border-gray-100">

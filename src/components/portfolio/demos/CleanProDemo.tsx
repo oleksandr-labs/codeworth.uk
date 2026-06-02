@@ -215,7 +215,7 @@ export function CleanProDemo({ lang }: { lang: string }) {
   };
 
   return (
-    <div className="min-h-screen bg-white text-gray-800 font-sans overflow-x-hidden">
+    <div className="min-h-screen bg-white text-gray-800 dark:text-neutral-200 font-sans overflow-x-hidden">
       {/* ── Header ── */}
       <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-sky-100">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
@@ -244,10 +244,10 @@ export function CleanProDemo({ lang }: { lang: string }) {
           <span className="inline-block bg-lime-100 text-lime-700 text-xs font-semibold px-3 py-1 rounded-full mb-6">
             🌿 {isUk ? "Екологічно чисті засоби" : "Eco-Friendly Products"}
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
             {isUk ? "Чистота без Зусиль" : "Effortless Cleanliness"}
           </h1>
-          <p className="text-lg text-gray-500 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-500 dark:text-neutral-400 mb-8 max-w-2xl mx-auto">
             {isUk
               ? "Професійне прибирання вашого дому та офісу. Довірте чистоту експертам — ми подбаємо про кожен куточок."
               : "Professional cleaning for your home and office. Trust the experts with cleanliness — we take care of every corner."}
@@ -273,10 +273,10 @@ export function CleanProDemo({ lang }: { lang: string }) {
       {/* ── Services ── */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-3">
+          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-3">
             {isUk ? "Наші послуги" : "Our Services"}
           </h2>
-          <p className="text-center text-gray-400 mb-10">
+          <p className="text-center text-gray-400 dark:text-neutral-500 mb-10">
             {isUk ? "Повний спектр професійних клінінгових послуг" : "Full range of professional cleaning services"}
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -286,10 +286,10 @@ export function CleanProDemo({ lang }: { lang: string }) {
                 className="border border-sky-100 rounded-2xl p-6 hover:shadow-lg hover:border-sky-200 transition-all group"
               >
                 <div className="text-4xl mb-4">{s.emoji}</div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-sky-600 transition-colors">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-sky-600 transition-colors">
                   {s.title}
                 </h3>
-                <p className="text-sm text-gray-500 mb-4">{s.desc}</p>
+                <p className="text-sm text-gray-500 dark:text-neutral-400 mb-4">{s.desc}</p>
                 <div className="flex items-center justify-between text-sm">
                   <span className="font-bold text-sky-600">{s.price}</span>
                   <span className="text-gray-400">⏱ {s.duration}</span>
@@ -303,17 +303,17 @@ export function CleanProDemo({ lang }: { lang: string }) {
       {/* ── Price Calculator ── */}
       <section className="py-16 px-4 bg-sky-50">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-3">
+          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-3">
             {isUk ? "Калькулятор вартості" : "Price Calculator"}
           </h2>
-          <p className="text-center text-gray-400 mb-10">
+          <p className="text-center text-gray-400 dark:text-neutral-500 mb-10">
             {isUk ? "Розрахуйте приблизну вартість прибирання" : "Calculate the approximate cleaning cost"}
           </p>
 
           <div className="bg-white rounded-2xl shadow-sm p-6 md:p-8 space-y-6">
             {/* Property type */}
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label className="block text-sm font-semibold text-gray-700 dark:text-neutral-300 mb-2">
                 {isUk ? "Тип приміщення" : "Property Type"}
               </label>
               <div className="flex gap-3">
@@ -324,7 +324,7 @@ export function CleanProDemo({ lang }: { lang: string }) {
                     className={`flex-1 py-2.5 rounded-xl text-sm font-medium transition-colors ${
                       propertyType === t
                         ? "bg-sky-500 text-white"
-                        : "bg-sky-50 text-gray-600 hover:bg-sky-100"
+                        : "bg-sky-50 text-gray-600 dark:text-neutral-300 hover:bg-sky-100"
                     }`}
                   >
                     {t === "apartment"
@@ -339,7 +339,7 @@ export function CleanProDemo({ lang }: { lang: string }) {
 
             {/* Area */}
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label className="block text-sm font-semibold text-gray-700 dark:text-neutral-300 mb-2">
                 {isUk ? "Площа (м²)" : "Area (m²)"}: <span className="text-sky-600">{area}</span>
               </label>
               <input
@@ -350,7 +350,7 @@ export function CleanProDemo({ lang }: { lang: string }) {
                 onChange={(e) => setArea(Number(e.target.value))}
                 className="w-full accent-sky-500"
               />
-              <div className="flex justify-between text-xs text-gray-400 mt-1">
+              <div className="flex justify-between text-xs text-gray-400 dark:text-neutral-500 mt-1">
                 <span>20 m²</span>
                 <span>300 m²</span>
               </div>
@@ -358,7 +358,7 @@ export function CleanProDemo({ lang }: { lang: string }) {
 
             {/* Rooms */}
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label className="block text-sm font-semibold text-gray-700 dark:text-neutral-300 mb-2">
                 {isUk ? "Кількість кімнат" : "Number of Rooms"}
               </label>
               <div className="flex gap-2">
@@ -369,7 +369,7 @@ export function CleanProDemo({ lang }: { lang: string }) {
                     className={`w-11 h-11 rounded-xl text-sm font-semibold transition-colors ${
                       rooms === n
                         ? "bg-sky-500 text-white"
-                        : "bg-sky-50 text-gray-600 hover:bg-sky-100"
+                        : "bg-sky-50 text-gray-600 dark:text-neutral-300 hover:bg-sky-100"
                     }`}
                   >
                     {n}
@@ -380,7 +380,7 @@ export function CleanProDemo({ lang }: { lang: string }) {
 
             {/* Extras */}
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label className="block text-sm font-semibold text-gray-700 dark:text-neutral-300 mb-2">
                 {isUk ? "Додаткові послуги" : "Extra Services"}
               </label>
               <div className="grid grid-cols-2 gap-3">
@@ -396,7 +396,7 @@ export function CleanProDemo({ lang }: { lang: string }) {
                     className={`py-2.5 px-4 rounded-xl text-sm text-left font-medium transition-colors ${
                       extras[item.key]
                         ? "bg-sky-500 text-white"
-                        : "bg-sky-50 text-gray-600 hover:bg-sky-100"
+                        : "bg-sky-50 text-gray-600 dark:text-neutral-300 hover:bg-sky-100"
                     }`}
                   >
                     {item.label}
@@ -433,7 +433,7 @@ export function CleanProDemo({ lang }: { lang: string }) {
 
             {/* Frequency */}
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label className="block text-sm font-semibold text-gray-700 dark:text-neutral-300 mb-2">
                 {isUk ? "Частота" : "Frequency"}
               </label>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -449,7 +449,7 @@ export function CleanProDemo({ lang }: { lang: string }) {
                     className={`py-2.5 rounded-xl text-sm font-medium transition-colors ${
                       frequency === f.key
                         ? "bg-sky-500 text-white"
-                        : "bg-sky-50 text-gray-600 hover:bg-sky-100"
+                        : "bg-sky-50 text-gray-600 dark:text-neutral-300 hover:bg-sky-100"
                     }`}
                   >
                     {f.label}
@@ -487,10 +487,10 @@ export function CleanProDemo({ lang }: { lang: string }) {
       {/* ── How it works ── */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-3">
+          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-3">
             {isUk ? "Як це працює" : "How It Works"}
           </h2>
-          <p className="text-center text-gray-400 mb-12">
+          <p className="text-center text-gray-400 dark:text-neutral-500 mb-12">
             {isUk ? "Чотири простих кроки до чистоти" : "Four simple steps to a clean space"}
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -500,7 +500,7 @@ export function CleanProDemo({ lang }: { lang: string }) {
                   {s.num}
                 </div>
                 <div className="text-3xl mb-2">{s.emoji}</div>
-                <h3 className="font-semibold text-gray-900 mb-1">{s.title}</h3>
+                <h3 className="font-semibold text-gray-900 dark:text-white mb-1">{s.title}</h3>
                 <p className="text-sm text-gray-400">{s.desc}</p>
                 {i < steps.length - 1 && (
                   <div className="hidden lg:block text-sky-300 text-2xl mt-4">→</div>
@@ -514,10 +514,10 @@ export function CleanProDemo({ lang }: { lang: string }) {
       {/* ── Before / After ── */}
       <section className="py-16 px-4 bg-sky-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-3">
+          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-3">
             {isUk ? "До та Після" : "Before & After"}
           </h2>
-          <p className="text-center text-gray-400 mb-10">
+          <p className="text-center text-gray-400 dark:text-neutral-500 mb-10">
             {isUk ? "Подивіться на різницю" : "See the difference"}
           </p>
           <div className="grid sm:grid-cols-2 gap-6">
@@ -552,10 +552,10 @@ export function CleanProDemo({ lang }: { lang: string }) {
       {/* ── Team ── */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-3">
+          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-3">
             {isUk ? "Наша професійна команда" : "Our Professional Team"}
           </h2>
-          <p className="text-center text-gray-400 mb-10">
+          <p className="text-center text-gray-400 dark:text-neutral-500 mb-10">
             {isUk ? "Досвідчені та перевірені фахівці" : "Experienced and verified professionals"}
           </p>
           <div className="grid sm:grid-cols-3 gap-6">
@@ -565,9 +565,9 @@ export function CleanProDemo({ lang }: { lang: string }) {
                 className="text-center bg-sky-50 rounded-2xl p-6 hover:shadow-md transition-shadow"
               >
                 <div className="text-5xl mb-3">{t.avatar}</div>
-                <h3 className="font-semibold text-gray-900 mb-1">{t.name}</h3>
+                <h3 className="font-semibold text-gray-900 dark:text-white mb-1">{t.name}</h3>
                 <p className="text-sm text-sky-600 font-medium mb-1">{t.spec}</p>
-                <p className="text-xs text-gray-400 mb-3">
+                <p className="text-xs text-gray-400 dark:text-neutral-500 mb-3">
                   {isUk ? `${t.years} років досвіду` : `${t.years} years experience`}
                 </p>
                 <span className="inline-flex items-center gap-1 text-xs bg-lime-100 text-lime-700 px-3 py-1 rounded-full font-semibold">
@@ -640,10 +640,10 @@ export function CleanProDemo({ lang }: { lang: string }) {
       {/* ── Reviews ── */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-3">
+          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-3">
             {isUk ? "Відгуки клієнтів" : "Client Reviews"}
           </h2>
-          <p className="text-center text-gray-400 mb-10">
+          <p className="text-center text-gray-400 dark:text-neutral-500 mb-10">
             {isUk ? "Що кажуть наші клієнти" : "What our clients say"}
           </p>
           <div className="grid sm:grid-cols-2 gap-6">
@@ -659,7 +659,7 @@ export function CleanProDemo({ lang }: { lang: string }) {
                 <div className="text-yellow-400 mb-2">
                   {"★".repeat(r.stars)}{"☆".repeat(5 - r.stars)}
                 </div>
-                <p className="text-sm text-gray-500 leading-relaxed">{r.text}</p>
+                <p className="text-sm text-gray-500 dark:text-neutral-400 leading-relaxed">{r.text}</p>
               </div>
             ))}
           </div>
@@ -669,10 +669,10 @@ export function CleanProDemo({ lang }: { lang: string }) {
       {/* ── FAQ ── */}
       <section className="py-16 px-4 bg-sky-50">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-3">
+          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-3">
             {isUk ? "Часті запитання" : "Frequently Asked Questions"}
           </h2>
-          <p className="text-center text-gray-400 mb-10">
+          <p className="text-center text-gray-400 dark:text-neutral-500 mb-10">
             {isUk ? "Відповіді на популярні питання" : "Answers to common questions"}
           </p>
           <div className="space-y-3">
@@ -682,13 +682,13 @@ export function CleanProDemo({ lang }: { lang: string }) {
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                   className="w-full text-left px-6 py-4 flex items-center justify-between gap-4"
                 >
-                  <span className="font-medium text-gray-800 text-sm">{f.q}</span>
+                  <span className="font-medium text-gray-800 dark:text-neutral-200 text-sm">{f.q}</span>
                   <span className="text-sky-500 text-xl shrink-0">
                     {openFaq === i ? "−" : "+"}
                   </span>
                 </button>
                 {openFaq === i && (
-                  <div className="px-6 pb-4 text-sm text-gray-500 leading-relaxed">{f.a}</div>
+                  <div className="px-6 pb-4 text-sm text-gray-500 dark:text-neutral-400 leading-relaxed">{f.a}</div>
                 )}
               </div>
             ))}
@@ -702,7 +702,7 @@ export function CleanProDemo({ lang }: { lang: string }) {
           {/* Brand */}
           <div>
             <div className="text-xl font-bold text-white mb-3">✨ CleanPro</div>
-            <p className="text-sm text-gray-400 leading-relaxed">
+            <p className="text-sm text-gray-400 dark:text-neutral-500 leading-relaxed">
               {isUk
                 ? "Професійний клінінговий сервіс з 2018 року. Довіряйте чистоту експертам."
                 : "Professional cleaning service since 2018. Trust the experts with cleanliness."}

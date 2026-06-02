@@ -53,7 +53,7 @@ export function A11yToolbarDemo({ isUk }: Props) {
         </button>
         <button
           onClick={() => setState(DEFAULTS)}
-          className="flex items-center gap-1.5 px-3 py-2 text-sm text-neutral-500 hover:text-neutral-900 transition-colors"
+          className="flex items-center gap-1.5 px-3 py-2 text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:text-white transition-colors"
         >
           <RotateCcw className="w-4 h-4" />
           {isUk ? "Скинути" : "Reset"}
@@ -81,7 +81,7 @@ export function A11yToolbarDemo({ isUk }: Props) {
                   className={`px-3 py-1.5 rounded-md text-xs font-semibold transition-colors ${
                     state.fontSize === s
                       ? "bg-indigo-600 text-white"
-                      : "bg-white text-neutral-600 hover:bg-indigo-100"
+                      : "bg-white text-neutral-600 dark:text-neutral-300 hover:bg-indigo-100"
                   }`}
                   aria-pressed={state.fontSize === s}
                 >
@@ -105,7 +105,7 @@ export function A11yToolbarDemo({ isUk }: Props) {
                   className={`px-3 py-1.5 rounded-md text-xs font-semibold capitalize transition-colors ${
                     state.contrast === c
                       ? "bg-indigo-600 text-white"
-                      : "bg-white text-neutral-600 hover:bg-indigo-100"
+                      : "bg-white text-neutral-600 dark:text-neutral-300 hover:bg-indigo-100"
                   }`}
                   aria-pressed={state.contrast === c}
                 >
@@ -117,7 +117,7 @@ export function A11yToolbarDemo({ isUk }: Props) {
 
           {/* Toggles */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <label className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white text-sm text-neutral-700 cursor-pointer">
+            <label className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white text-sm text-neutral-700 dark:text-neutral-300 cursor-pointer">
               <input
                 type="checkbox"
                 checked={state.underlineLinks}
@@ -127,7 +127,7 @@ export function A11yToolbarDemo({ isUk }: Props) {
               <Underline className="w-4 h-4 text-indigo-500" />
               {isUk ? "Підкреслювати посилання" : "Underline links"}
             </label>
-            <label className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white text-sm text-neutral-700 cursor-pointer">
+            <label className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white text-sm text-neutral-700 dark:text-neutral-300 cursor-pointer">
               <input
                 type="checkbox"
                 checked={state.pauseAnimations}
@@ -143,7 +143,7 @@ export function A11yToolbarDemo({ isUk }: Props) {
 
       {/* Live sample */}
       <div
-        className={`rounded-2xl border border-neutral-200 p-6 transition-colors ${contrastClass} ${state.pauseAnimations ? "[&_*]:!animate-none [&_*]:!transition-none" : ""}`}
+        className={`rounded-2xl border border-neutral-200 dark:border-neutral-700 p-6 transition-colors ${contrastClass} ${state.pauseAnimations ? "[&_*]:!animate-none [&_*]:!transition-none" : ""}`}
         style={containerStyle}
       >
         <h3 className="font-bold text-lg mb-3">

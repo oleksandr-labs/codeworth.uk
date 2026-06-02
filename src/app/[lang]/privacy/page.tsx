@@ -50,13 +50,13 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <main id="main-content" className="flex-1">
         {/* Hero */}
-        <section className="pt-32 pb-12 bg-neutral-50 border-b border-neutral-100">
+        <section className="pt-32 pb-12 bg-neutral-50 dark:bg-neutral-900 border-b border-neutral-100">
           <Container>
             <div className="max-w-3xl">
               <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
                 {isUk ? "Юридична інформація" : "Legal Information"}
               </p>
-              <h1 className="text-4xl font-heading font-extrabold text-neutral-900 mb-3">
+              <h1 className="text-4xl font-heading font-extrabold text-neutral-900 dark:text-white mb-3">
                 {isUk ? "Політика конфіденційності" : "Privacy Policy"}
               </h1>
               <p className="text-neutral-500">
@@ -69,7 +69,7 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
         </section>
 
         {/* Content */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-white dark:bg-neutral-950">
           <Container>
             <div className="max-w-3xl prose prose-neutral prose-headings:font-heading prose-headings:font-bold prose-a:text-indigo-600 prose-a:no-underline hover:prose-a:underline">
 

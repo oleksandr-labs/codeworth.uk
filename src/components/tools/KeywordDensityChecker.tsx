@@ -103,26 +103,26 @@ export function KeywordDensityChecker({ isUk }: Props) {
       <div className="grid lg:grid-cols-3 gap-4">
         {/* Text input */}
         <div className="lg:col-span-2">
-          <label className="block text-sm font-semibold text-neutral-700 mb-1.5">{t.textLabel}</label>
+          <label className="block text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-1.5">{t.textLabel}</label>
           <textarea
             value={text}
             onChange={(e) => setText(e.target.value)}
             placeholder={t.textPh}
             rows={10}
-            className="w-full px-4 py-3 rounded-xl border border-neutral-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 resize-none"
+            className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 resize-none"
           />
         </div>
 
         {/* Focus keyword + stats */}
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-semibold text-neutral-700 mb-1.5">{t.focusLabel}</label>
+            <label className="block text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-1.5">{t.focusLabel}</label>
             <input
               type="text"
               value={focusKeyword}
               onChange={(e) => setFocusKeyword(e.target.value)}
               placeholder={t.focusPh}
-              className="w-full px-4 py-3 rounded-xl border border-neutral-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
+              className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
             />
           </div>
 
@@ -134,7 +134,7 @@ export function KeywordDensityChecker({ isUk }: Props) {
                 { label: t.chars, value: stats.chars },
                 { label: t.avgWord, value: `${stats.avgWordLen.toFixed(1)} ${t.chars_sym}` },
               ].map((s) => (
-                <div key={s.label} className="flex items-center justify-between p-3 rounded-xl bg-neutral-50 border border-neutral-100">
+                <div key={s.label} className="flex items-center justify-between p-3 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-100">
                   <span className="text-xs text-neutral-500">{s.label}</span>
                   <span className="text-sm font-bold text-neutral-900">{s.value}</span>
                 </div>
@@ -142,7 +142,7 @@ export function KeywordDensityChecker({ isUk }: Props) {
 
               {stats.focusDensity !== null && (
                 <div className="p-3 rounded-xl bg-indigo-50 border border-indigo-100">
-                  <p className="text-xs text-neutral-500 mb-0.5">{t.focusDensity}</p>
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400 mb-0.5">{t.focusDensity}</p>
                   <p className="text-xl font-extrabold text-indigo-700">{stats.focusDensity.toFixed(1)}%</p>
                   <p className={`text-xs mt-1 ${focusStatus(stats.focusDensity).color}`}>
                     {focusStatus(stats.focusDensity).label}
@@ -157,11 +157,11 @@ export function KeywordDensityChecker({ isUk }: Props) {
       {/* Word frequency table */}
       {stats ? (
         <div>
-          <h3 className="text-sm font-semibold text-neutral-700 mb-3">{t.top}</h3>
+          <h3 className="text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-3">{t.top}</h3>
           <div className="overflow-x-auto rounded-xl border border-neutral-200">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-neutral-100 bg-neutral-50">
+                <tr className="border-b border-neutral-100 dark:border-neutral-700 bg-neutral-50">
                   <th className="text-left px-4 py-3 text-xs font-semibold text-neutral-500">#</th>
                   <th className="text-left px-4 py-3 text-xs font-semibold text-neutral-500">{t.word}</th>
                   <th className="text-right px-4 py-3 text-xs font-semibold text-neutral-500">{t.count}</th>

@@ -73,7 +73,7 @@ export function StarRating({
               {partial ? (
                 // Half-filled star via clip
                 <span className="relative inline-block">
-                  <Star className={cn(sizeMap[size], "text-neutral-200 dark:text-neutral-700 fill-neutral-200 dark:fill-neutral-700")} />
+                  <Star className={cn(sizeMap[size], "text-neutral-200 dark:text-neutral-700 dark:text-neutral-300 fill-neutral-200 dark:fill-neutral-700")} />
                   <span className="absolute inset-0 overflow-hidden" style={{ width: `${(display - (star - 1)) * 100}%` }}>
                     <Star className={cn(sizeMap[size], "text-amber-400 fill-amber-400")} />
                   </span>
@@ -85,7 +85,7 @@ export function StarRating({
                     "transition-colors duration-100",
                     filled
                       ? "text-amber-400 fill-amber-400"
-                      : "text-neutral-200 dark:text-neutral-700 fill-neutral-200 dark:fill-neutral-700",
+                      : "text-neutral-200 dark:text-neutral-700 dark:text-neutral-300 fill-neutral-200 dark:fill-neutral-700",
                     !readonly && !filled && "group-hover:text-amber-200"
                   )}
                 />
@@ -96,7 +96,7 @@ export function StarRating({
       </div>
 
       {showValue && (
-        <span className={cn("font-semibold text-neutral-700 dark:text-neutral-300", textSizeMap[size])}>
+        <span className={cn("font-semibold text-neutral-700 dark:text-neutral-300 ", textSizeMap[size])}>
           {value.toFixed(1)}
         </span>
       )}
@@ -125,7 +125,7 @@ export function RatingBars({ distribution, total, className }: RatingBarProps) {
         const count = distribution[star] ?? 0;
         const pct = total > 0 ? (count / total) * 100 : 0;
         return (
-          <div key={star} className="flex items-center gap-2 text-xs text-neutral-500 dark:text-neutral-400">
+          <div key={star} className="flex items-center gap-2 text-xs text-neutral-500 dark:text-neutral-400 ">
             <span className="w-3 shrink-0 text-right">{star}</span>
             <Star className="w-3 h-3 text-amber-400 fill-amber-400 shrink-0" />
             <div className="flex-1 h-2 rounded-full bg-neutral-100 dark:bg-neutral-800 overflow-hidden">

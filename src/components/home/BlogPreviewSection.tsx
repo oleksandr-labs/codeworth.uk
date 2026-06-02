@@ -18,7 +18,7 @@ export function BlogPreviewSection({ lang }: { lang: string }) {
   const posts = BLOG_POSTS.slice(0, 3);
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-white dark:bg-neutral-950">
       <Container>
         <div className="flex items-end justify-between mb-12">
           <div>
@@ -48,7 +48,7 @@ export function BlogPreviewSection({ lang }: { lang: string }) {
             <Link
               key={post.slug}
               href={`/${lang}/blog/${post.slug}`}
-              className="group rounded-2xl border border-neutral-100 overflow-hidden hover:shadow-lg hover:shadow-neutral-200/60 transition-all duration-300 hover:-translate-y-1 bg-white"
+              className="group rounded-2xl border border-neutral-100 dark:border-neutral-700 overflow-hidden hover:shadow-lg hover:shadow-neutral-200/60 transition-all duration-300 hover:-translate-y-1 bg-white"
             >
               {/* Visual */}
               <div className={cn("h-40 bg-linear-to-br flex items-center justify-center text-5xl", post.color)}>
@@ -59,10 +59,10 @@ export function BlogPreviewSection({ lang }: { lang: string }) {
                 <span className="inline-block px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold mb-3">
                   {post.category}
                 </span>
-                <h3 className="font-heading font-bold text-neutral-900 mb-2 leading-tight group-hover:text-indigo-700 transition-colors line-clamp-2">
+                <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-2 leading-tight group-hover:text-indigo-700 transition-colors line-clamp-2">
                   {post.title}
                 </h3>
-                <p className="text-sm text-neutral-500 leading-relaxed mb-4 line-clamp-2">
+                <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-4 line-clamp-2">
                   {post.excerpt}
                 </p>
                 <div className="flex items-center justify-between text-xs text-neutral-400 pt-3 border-t border-neutral-100">

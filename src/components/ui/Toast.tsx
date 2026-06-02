@@ -81,11 +81,11 @@ function ToastItem({ toast: t, dismiss }: { toast: Toast; dismiss: (id: string) 
       aria-atomic="true"
     >
       {ICONS[t.type]}
-      <p className="text-sm text-gray-800 flex-1 leading-snug">{t.message}</p>
+      <p className="text-sm text-gray-800 dark:text-neutral-200 flex-1 leading-snug">{t.message}</p>
       <button
         onClick={() => dismiss(t.id)}
         aria-label={isUk ? "Закрити повідомлення" : "Dismiss notification"}
-        className="text-gray-400 hover:text-gray-600 transition-colors -mt-0.5 -mr-1 p-0.5 rounded"
+        className="text-gray-400 dark:text-neutral-500 hover:text-gray-600 dark:text-neutral-300 transition-colors -mt-0.5 -mr-1 p-0.5 rounded"
       >
         <X className="w-4 h-4" aria-hidden="true" />
       </button>

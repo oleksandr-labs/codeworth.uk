@@ -1,10 +1,10 @@
 export function FintechAppPreview() {
   return (
     <div className="font-sans">
-      <nav className="flex items-center justify-between px-8 py-4 bg-white border-b border-gray-100">
+      <nav className="flex items-center justify-between px-8 py-4 bg-white dark:bg-neutral-800 border-b border-gray-100">
         <div className="flex items-center gap-2">
           <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center text-white text-xs font-bold">$</div>
-          <span className="font-bold text-gray-900 text-sm">ClearBank</span>
+          <span className="font-bold text-gray-900 dark:text-white text-sm">ClearBank</span>
         </div>
         <div className="flex items-center gap-5 text-xs text-gray-500">
           <span>Features</span><span>Security</span><span>Pricing</span>
@@ -43,8 +43,8 @@ export function FintechAppPreview() {
         </div>
       </section>
 
-      <section className="px-8 py-10 bg-white border-b border-gray-100">
-        <h2 className="text-xl font-bold text-gray-900 text-center mb-6">Why 50,000+ people switched</h2>
+      <section className="px-8 py-10 bg-white dark:bg-neutral-800 border-b border-gray-100">
+        <h2 className="text-xl font-bold text-gray-900 dark:text-white text-center mb-6">Why 50,000+ people switched</h2>
         <div className="grid grid-cols-4 gap-4 max-w-3xl mx-auto text-center">
           {[
             { icon: "💸", title: "3% Cashback", desc: "On all purchases" },
@@ -54,7 +54,7 @@ export function FintechAppPreview() {
           ].map((f) => (
             <div key={f.title} className="p-4 rounded-xl bg-emerald-50">
               <div className="text-2xl mb-2">{f.icon}</div>
-              <div className="font-bold text-gray-900 text-sm">{f.title}</div>
+              <div className="font-bold text-gray-900 dark:text-white text-sm">{f.title}</div>
               <div className="text-xs text-gray-500">{f.desc}</div>
             </div>
           ))}
@@ -62,9 +62,9 @@ export function FintechAppPreview() {
       </section>
 
       <section className="px-8 py-8 bg-emerald-50 text-center">
-        <div className="flex items-center justify-center gap-4 text-xs text-gray-500 flex-wrap">
+        <div className="flex items-center justify-center gap-4 text-xs text-gray-500 dark:text-neutral-400 flex-wrap">
           {["🔒 256-bit encryption", "🏦 FSCS protected up to £85,000", "⭐ 4.8/5 on Trustpilot", "📱 iOS & Android"].map((b) => (
-            <span key={b} className="bg-white border border-gray-200 px-3 py-1.5 rounded-full">{b}</span>
+            <span key={b} className="bg-white border border-gray-200 dark:border-neutral-700 px-3 py-1.5 rounded-full">{b}</span>
           ))}
         </div>
       </section>

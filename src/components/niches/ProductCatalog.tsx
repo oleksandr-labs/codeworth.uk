@@ -74,7 +74,7 @@ export function ProductCatalog({ products, lang, color }: ProductCatalogProps) {
           {filtered.map((product) => (
             <div
               key={product.id}
-              className="group flex flex-col bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-100 dark:border-neutral-700/50 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all"
+              className="group flex flex-col bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-100 dark:border-neutral-700 /50 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all"
             >
               <div className={`relative h-44 bg-linear-to-br ${product.gradient} flex items-center justify-center`}>
                 <span className="text-6xl opacity-90">{product.icon}</span>

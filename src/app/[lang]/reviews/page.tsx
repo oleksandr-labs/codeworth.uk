@@ -115,7 +115,7 @@ export default async function ReviewsPage({
         <section className="bg-linear-to-br from-amber-50 via-white to-orange-50 py-16 sm:py-20 border-b">
           <Container>
             <nav className="mb-6 text-sm text-gray-500">
-              <Link href={`/${lang}`} className="hover:text-gray-900 transition-colors">
+              <Link href={`/${lang}`} className="hover:text-gray-900 dark:text-white transition-colors">
                 {isUk ? "Головна" : "Home"}
               </Link>
               <span className="mx-2">›</span>
@@ -123,12 +123,12 @@ export default async function ReviewsPage({
             </nav>
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
                   {isUk
                     ? "Відгуки клієнтів Codeworth — реальні проєкти та результати"
                     : "Codeworth Client Reviews — Real Projects & Results"}
                 </h1>
-                <p className="text-gray-600 text-lg mb-8">
+                <p className="text-gray-600 dark:text-neutral-300 text-lg mb-8">
                   {isUk
                     ? `${totalCount}+ компаній обрали Codeworth для розробки свого сайту. Ось що вони кажуть.`
                     : `${totalCount}+ companies chose Codeworth for their website development. Here's what they say.`}
@@ -138,16 +138,16 @@ export default async function ReviewsPage({
                   <div className="text-6xl font-bold text-amber-500">{averageRating}</div>
                   <div>
                     <StarRatingLg rating={Math.round(averageRating)} />
-                    <p className="text-sm text-gray-500 mt-1">
+                    <p className="text-sm text-gray-500 dark:text-neutral-400 mt-1">
                       {isUk ? `з 5 — на основі ${totalCount} відгуків` : `out of 5 — based on ${totalCount} reviews`}
                     </p>
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-2 justify-center">
                   {[
-                    { label: "Google Business", href: "https://g.page/r/codenest", color: "bg-white border border-gray-200 text-gray-700 hover:border-blue-400" },
-                    { label: "Clutch", href: "https://clutch.co", color: "bg-white border border-gray-200 text-gray-700 hover:border-red-400" },
-                    { label: "DOU", href: "https://dou.ua", color: "bg-white border border-gray-200 text-gray-700 hover:border-emerald-400" },
+                    { label: "Google Business", href: "https://g.page/r/codenest", color: "bg-white border border-gray-200 dark:border-neutral-700 text-gray-700 dark:text-neutral-300 hover:border-blue-400" },
+                    { label: "Clutch", href: "https://clutch.co", color: "bg-white border border-gray-200 dark:border-neutral-700 text-gray-700 dark:text-neutral-300 hover:border-red-400" },
+                    { label: "DOU", href: "https://dou.ua", color: "bg-white border border-gray-200 dark:border-neutral-700 text-gray-700 dark:text-neutral-300 hover:border-emerald-400" },
                   ].map(({ label, href, color }) => (
                     <a key={label} href={href} target="_blank" rel="noopener noreferrer"
                       className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium transition-colors ${color}`}>
@@ -161,7 +161,7 @@ export default async function ReviewsPage({
 
               {/* Rating breakdown */}
               <div className="bg-white rounded-2xl shadow-sm border p-6">
-                <h2 className="font-semibold text-gray-800 mb-4">
+                <h2 className="font-semibold text-gray-800 dark:text-neutral-200 mb-4">
                   {isUk ? "Розподіл оцінок" : "Rating Breakdown"}
                 </h2>
                 <div className="space-y-2.5">
@@ -171,14 +171,14 @@ export default async function ReviewsPage({
                         <span className="text-sm text-gray-600">{stars}</span>
                         <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
                       </div>
-                      <div className="flex-1 bg-gray-100 rounded-full h-2.5 overflow-hidden">
+                      <div className="flex-1 bg-gray-100 dark:bg-neutral-800 rounded-full h-2.5 overflow-hidden">
                         <div
                           className="bg-amber-400 h-full rounded-full transition-all"
                           style={{ width: `${pct}%` }}
                         />
                       </div>
                       <div className="flex items-center gap-1.5 w-14 shrink-0">
-                        <span className="text-sm text-gray-700 font-medium">{count}</span>
+                        <span className="text-sm text-gray-700 dark:text-neutral-300 font-medium">{count}</span>
                         <span className="text-xs text-gray-400">{pct > 0 ? `${pct}%` : ""}</span>
                       </div>
                     </div>
@@ -205,12 +205,12 @@ export default async function ReviewsPage({
         <section className="py-16 bg-amber-50 border-t border-amber-100">
           <Container>
             <div className="max-w-2xl mx-auto">
-              <h2 className="text-2xl font-bold text-gray-900 mb-2 text-center">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 text-center">
                 {isUk
                   ? "Як залишити відгук у Google за 3 кроки"
                   : "How to Leave a Google Review in 3 Steps"}
               </h2>
-              <p className="text-gray-500 text-center mb-10 text-sm">
+              <p className="text-gray-500 dark:text-neutral-400 text-center mb-10 text-sm">
                 {isUk
                   ? "Займає 2 хвилини — і дуже допомагає іншим клієнтам нас знайти"
                   : "Takes 2 minutes — and really helps other clients find us"}
@@ -257,8 +257,8 @@ export default async function ReviewsPage({
                     <div className="w-12 h-12 rounded-full bg-amber-400 text-white font-bold text-lg flex items-center justify-center mb-4 shrink-0">
                       {step}
                     </div>
-                    <h3 className="font-semibold text-gray-900 mb-2">{title}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">{desc}</p>
+                    <h3 className="font-semibold text-gray-900 dark:text-white mb-2">{title}</h3>
+                    <p className="text-sm text-gray-600 dark:text-neutral-300 leading-relaxed">{desc}</p>
                   </div>
                 ))}
               </div>
@@ -267,7 +267,7 @@ export default async function ReviewsPage({
                   href="https://g.page/r/codenest"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-500 text-gray-900 font-semibold px-8 py-3 rounded-xl transition-colors"
+                  className="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-500 text-gray-900 dark:text-white font-semibold px-8 py-3 rounded-xl transition-colors"
                 >
                   <Star className="w-5 h-5 fill-current" />
                   {isUk ? "Залишити відгук у Google" : "Leave a Google Review"}
@@ -284,13 +284,13 @@ export default async function ReviewsPage({
         </section>
 
         {/* Leave a review */}
-        <section className="py-16 bg-white border-t">
+        <section className="py-16 bg-white dark:bg-neutral-800 border-t">
           <Container>
             <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-2xl font-bold text-gray-900 mb-3">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
                 {isUk ? "Ви наш клієнт? Залиште відгук" : "Are You Our Client? Leave a Review"}
               </h2>
-              <p className="text-gray-600 mb-8">
+              <p className="text-gray-600 dark:text-neutral-300 mb-8">
                 {isUk
                   ? "Ваш відгук допомагає іншим власникам бізнесу обрати надійного партнера для розробки сайту."
                   : "Your review helps other business owners choose a reliable web development partner."}
@@ -300,7 +300,7 @@ export default async function ReviewsPage({
                   href="https://g.page/r/codenest"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-white text-gray-800 border-2 border-gray-200 font-semibold px-6 py-3 rounded-xl hover:border-indigo-400 transition-colors"
+                  className="inline-flex items-center justify-center gap-2 bg-white text-gray-800 dark:text-neutral-200 border-2 border-gray-200 dark:border-neutral-700 font-semibold px-6 py-3 rounded-xl hover:border-indigo-400 transition-colors"
                 >
                   <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
                   {isUk ? "Google відгук" : "Google Review"}

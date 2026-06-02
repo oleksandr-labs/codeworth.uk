@@ -246,8 +246,8 @@ export default async function ExtraDemoExamplePage({ params }: Props) {
   return (
     <main className="min-h-screen bg-white">
       {/* Breadcrumb */}
-      <nav className="border-b border-neutral-100 bg-neutral-50">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center gap-2 text-sm text-neutral-500 flex-wrap">
+      <nav className="border-b border-neutral-100 dark:border-neutral-700 bg-neutral-50">
+        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400 flex-wrap">
           <Link href={`/${lang}`} className="hover:text-indigo-600 transition-colors">
             {isUk ? "Головна" : "Home"}
           </Link>
@@ -263,14 +263,14 @@ export default async function ExtraDemoExamplePage({ params }: Props) {
             {extra.title}
           </Link>
           <span>/</span>
-          <span className="text-neutral-900 font-medium">
+          <span className="text-neutral-900 dark:text-white font-medium">
             {isUk ? ex.titleUk : ex.title}
           </span>
         </div>
       </nav>
 
       {/* Demo header */}
-      <header className="border-b border-neutral-100 bg-white sticky top-0 z-10">
+      <header className="border-b border-neutral-100 dark:border-neutral-700 bg-white sticky top-0 z-10">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <span className="text-2xl">{extra.emoji}</span>
@@ -278,7 +278,7 @@ export default async function ExtraDemoExamplePage({ params }: Props) {
               <div className="text-xs text-neutral-400 mb-0.5">
                 {isUk ? ex.industryUk : ex.industry}
               </div>
-              <h1 className="font-heading font-bold text-neutral-900 text-lg leading-tight">
+              <h1 className="font-heading font-bold text-neutral-900 dark:text-white text-lg leading-tight">
                 {isUk ? ex.titleUk : ex.title}
               </h1>
             </div>
@@ -286,7 +286,7 @@ export default async function ExtraDemoExamplePage({ params }: Props) {
           <div className="flex items-center gap-3 shrink-0">
             <Link
               href={`/${lang}/extras/demo/${id}`}
-              className="hidden sm:block text-sm text-neutral-500 hover:text-indigo-600 transition-colors"
+              className="hidden sm:block text-sm text-neutral-500 dark:text-neutral-400 hover:text-indigo-600 transition-colors"
             >
               ← {isUk ? "Всі приклади" : "All examples"}
             </Link>
@@ -307,9 +307,9 @@ export default async function ExtraDemoExamplePage({ params }: Props) {
 
       {/* Other example CTA */}
       {examples.length > 1 && (
-        <section className="border-t border-neutral-100 bg-neutral-50 py-12">
+        <section className="border-t border-neutral-100 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900 py-12">
           <div className="max-w-6xl mx-auto px-4">
-            <h2 className="font-heading text-xl font-bold text-neutral-900 mb-6 text-center">
+            <h2 className="font-heading text-xl font-bold text-neutral-900 dark:text-white mb-6 text-center">
               {isUk ? "Інший приклад цього модуля" : "Another example of this module"}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
@@ -319,7 +319,7 @@ export default async function ExtraDemoExamplePage({ params }: Props) {
                   <Link
                     key={e.id}
                     href={`/${lang}/extras/demo/${id}/${e.id}`}
-                    className={`group rounded-2xl overflow-hidden border border-neutral-200 hover:shadow-lg transition-all`}
+                    className={`group rounded-2xl overflow-hidden border border-neutral-200 dark:border-neutral-700 hover:shadow-lg transition-all`}
                   >
                     <div
                       className={`h-28 bg-linear-to-br ${e.previewGradient} flex items-center justify-center`}
@@ -329,7 +329,7 @@ export default async function ExtraDemoExamplePage({ params }: Props) {
                       </span>
                     </div>
                     <div className="p-4 bg-white">
-                      <p className="font-semibold text-neutral-900 text-sm group-hover:text-indigo-700 transition-colors">
+                      <p className="font-semibold text-neutral-900 dark:text-white text-sm group-hover:text-indigo-700 transition-colors">
                         {isUk ? e.titleUk : e.title}
                       </p>
                     </div>

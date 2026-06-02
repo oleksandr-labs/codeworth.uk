@@ -38,17 +38,17 @@ export function Breadcrumb({ items, className = "" }: BreadcrumbProps) {
       <nav aria-label="Breadcrumb" className={`flex items-center gap-1.5 text-sm ${className}`}>
         {all.map((item, idx) => (
           <span key={idx} className="flex items-center gap-1.5">
-            {idx > 0 && <ChevronRight className="w-3.5 h-3.5 text-gray-400 shrink-0" />}
-            {idx === 0 && <Home className="w-3.5 h-3.5 text-gray-400 shrink-0" />}
+            {idx > 0 && <ChevronRight className="w-3.5 h-3.5 text-gray-400 dark:text-neutral-500 shrink-0" />}
+            {idx === 0 && <Home className="w-3.5 h-3.5 text-gray-400 dark:text-neutral-500 shrink-0" />}
             {item.href && idx < all.length - 1 ? (
               <Link
                 href={item.href}
-                className="text-gray-500 hover:text-gray-700 transition-colors"
+                className="text-gray-500 dark:text-neutral-400 hover:text-gray-700 dark:text-neutral-300 transition-colors"
               >
                 {item.label}
               </Link>
             ) : (
-              <span className="text-gray-800 font-medium">{item.label}</span>
+              <span className="text-gray-800 dark:text-neutral-200 font-medium">{item.label}</span>
             )}
           </span>
         ))}

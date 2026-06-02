@@ -168,9 +168,9 @@ export default async function NichesPage({ params }: { params: Promise<{ lang: s
           const niches = NICHES_DATA.filter((n) => n.category === ukCategory);
           const categoryLabel = isUk ? ukCategory : (NICHE_CATEGORY_EN[ukCategory] ?? ukCategory);
           return (
-            <section key={ukCategory} className="py-16 border-b border-neutral-100 last:border-b-0">
+            <section key={ukCategory} className="py-16 border-b border-neutral-100 dark:border-neutral-700 last:border-b-0">
               <Container>
-                <h2 className="text-2xl font-heading font-extrabold text-neutral-900 mb-8">
+                <h2 className="text-2xl font-heading font-extrabold text-neutral-900 dark:text-white mb-8">
                   {categoryLabel}
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
@@ -180,7 +180,7 @@ export default async function NichesPage({ params }: { params: Promise<{ lang: s
                     <Link
                       key={niche.slug}
                       href={`/${lang}/niches/${niche.slug}`}
-                      className="group rounded-2xl border border-neutral-100 overflow-hidden hover:shadow-lg hover:shadow-neutral-200/60 transition-all duration-300 hover:-translate-y-1 bg-white"
+                      className="group rounded-2xl border border-neutral-100 dark:border-neutral-700 overflow-hidden hover:shadow-lg hover:shadow-neutral-200/60 transition-all duration-300 hover:-translate-y-1 bg-white"
                     >
                       {/* Gradient header */}
                       <div className={`h-24 bg-linear-to-br ${niche.gradient} flex items-center justify-center relative`}>
@@ -193,10 +193,10 @@ export default async function NichesPage({ params }: { params: Promise<{ lang: s
                       </div>
                       {/* Content */}
                       <div className="p-5">
-                        <h3 className="font-heading font-bold text-neutral-900 mb-1 group-hover:text-indigo-700 transition-colors">
+                        <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-1 group-hover:text-indigo-700 transition-colors">
                           {niche.title}
                         </h3>
-                        <p className="text-xs text-neutral-500 leading-relaxed mb-3 line-clamp-2">
+                        <p className="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed mb-3 line-clamp-2">
                           {niche.subtitle}
                         </p>
                         <div className="flex items-center justify-between">
@@ -217,7 +217,7 @@ export default async function NichesPage({ params }: { params: Promise<{ lang: s
         })}
 
         {/* Custom vs Ready-Made comparison */}
-        <section className="py-24 bg-white border-t border-neutral-100">
+        <section className="py-24 bg-white dark:bg-neutral-800 border-t border-neutral-100">
           <Container>
             <div className="max-w-3xl mx-auto text-center mb-12">
               <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
@@ -236,11 +236,11 @@ export default async function NichesPage({ params }: { params: Promise<{ lang: s
               <table className="w-full text-sm">
                 <thead>
                   <tr>
-                    <th className="text-left px-5 py-4 font-heading font-bold text-neutral-500 bg-neutral-50 rounded-tl-xl w-1/3">{isUk ? "Параметр" : "Feature"}</th>
+                    <th className="text-left px-5 py-4 font-heading font-bold text-neutral-500 dark:text-neutral-400 bg-neutral-50 dark:bg-neutral-900 rounded-tl-xl w-1/3">{isUk ? "Параметр" : "Feature"}</th>
                     <th className="px-5 py-4 font-heading font-bold text-white bg-indigo-600 text-center">
                       {isUk ? "✅ Готове рішення" : "✅ Ready-Made"}
                     </th>
-                    <th className="px-5 py-4 font-heading font-bold text-neutral-700 bg-neutral-100 text-center rounded-tr-xl">
+                    <th className="px-5 py-4 font-heading font-bold text-neutral-700 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-800 text-center rounded-tr-xl">
                       {isUk ? "Розробка з нуля" : "Custom Build"}
                     </th>
                   </tr>
@@ -270,7 +270,7 @@ export default async function NichesPage({ params }: { params: Promise<{ lang: s
               <Link href={`/${lang}/marketplace`} className="flex-1 text-center px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold transition-colors">
                 {isUk ? "Обрати готове рішення" : "Choose Ready-Made"}
               </Link>
-              <Link href={`/${lang}/services/website-dev`} className="flex-1 text-center px-6 py-3.5 rounded-xl border-2 border-neutral-200 text-neutral-700 font-semibold hover:border-indigo-200 hover:bg-indigo-50 transition-all">
+              <Link href={`/${lang}/services/website-dev`} className="flex-1 text-center px-6 py-3.5 rounded-xl border-2 border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 font-semibold hover:border-indigo-200 hover:bg-indigo-50 transition-all">
                 {isUk ? "Замовити розробку з нуля" : "Order Custom Development"}
               </Link>
             </div>
@@ -278,13 +278,13 @@ export default async function NichesPage({ params }: { params: Promise<{ lang: s
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-neutral-50">
+        <section className="py-20 bg-neutral-50 dark:bg-neutral-900 ">
           <Container>
             <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-3xl font-heading font-extrabold text-neutral-900 mb-4">
+              <h2 className="text-3xl font-heading font-extrabold text-neutral-900 dark:text-white mb-4">
                 {isUk ? "Не знайшли свою нішу?" : "Don't see your niche?"}
               </h2>
-              <p className="text-neutral-500 mb-8">
+              <p className="text-neutral-500 dark:text-neutral-400 mb-8">
                 {isUk
                   ? "Ми розробляємо сайти для будь-якого типу бізнесу. Напишіть нам — обговоримо ваш проєкт."
                   : "We build websites for any type of business. Write to us — let's discuss your project."}
@@ -298,7 +298,7 @@ export default async function NichesPage({ params }: { params: Promise<{ lang: s
                 </Link>
                 <Link
                   href={`/${lang}/services`}
-                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl border-2 border-neutral-200 text-neutral-700 font-semibold hover:border-indigo-200 hover:bg-indigo-50 transition-all"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl border-2 border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 font-semibold hover:border-indigo-200 hover:bg-indigo-50 transition-all"
                 >
                   {isUk ? "Послуги під замовлення" : "Custom Services"}
                 </Link>

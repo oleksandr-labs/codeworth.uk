@@ -126,7 +126,7 @@ export function CourseFilter({ courses, lang, color }: CourseFilterProps) {
           {filtered.map((course) => (
             <div
               key={course.id}
-              className="group flex flex-col bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-100 dark:border-neutral-700/50 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all"
+              className="group flex flex-col bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-100 dark:border-neutral-700 /50 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all"
             >
               <div className={`relative h-32 bg-linear-to-br ${course.gradient} flex items-center justify-center`}>
                 <span className="text-5xl opacity-90">{course.icon}</span>

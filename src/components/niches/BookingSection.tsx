@@ -75,7 +75,7 @@ export function BookingSection({ services, color, gradient, title }: BookingSect
   }
 
   return (
-    <section className="py-20 bg-neutral-50 dark:bg-neutral-800/40">
+    <section className="py-20 bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-800/40">
       <Container className="max-w-4xl">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold font-syne text-neutral-900 dark:text-white mb-3">
@@ -125,7 +125,7 @@ export function BookingSection({ services, color, gradient, title }: BookingSect
         </div>
         </nav>
 
-        <div className="bg-white dark:bg-neutral-800/80 rounded-3xl border border-neutral-100 dark:border-neutral-700/50 p-6 md:p-10 shadow-sm">
+        <div className="bg-white dark:bg-neutral-800/80 rounded-3xl border border-neutral-100 dark:border-neutral-700 /50 p-6 md:p-10 shadow-sm">
 
           {/* Step 0 — Service */}
           {step === 0 && (
@@ -147,7 +147,7 @@ export function BookingSection({ services, color, gradient, title }: BookingSect
                       "flex items-start gap-4 p-4 rounded-2xl border-2 text-left transition-all",
                       selectedService === i
                         ? "border-current bg-current/5"
-                        : "border-neutral-100 dark:border-neutral-700/50 hover:border-neutral-200 dark:hover:border-neutral-600"
+                        : "border-neutral-100 dark:border-neutral-700 /50 hover:border-neutral-200 dark:border-neutral-700 dark:hover:border-neutral-600"
                     )}
                     style={selectedService === i ? { borderColor: color, backgroundColor: color + "10" } : {}}
                   >
@@ -196,7 +196,7 @@ export function BookingSection({ services, color, gradient, title }: BookingSect
                         "flex flex-col items-center py-3 rounded-xl border-2 text-xs font-medium transition-all",
                         selectedDay === i
                           ? "text-white border-current"
-                          : "border-neutral-100 dark:border-neutral-700/50 text-neutral-700 dark:text-neutral-300 hover:border-neutral-200 dark:hover:border-neutral-600"
+                          : "border-neutral-100 dark:border-neutral-700 /50 text-neutral-700 dark:text-neutral-300 hover:border-neutral-200 dark:border-neutral-700 dark:hover:border-neutral-600"
                       )}
                       style={selectedDay === i ? { backgroundColor: color, borderColor: color } : {}}
                     >
@@ -217,7 +217,7 @@ export function BookingSection({ services, color, gradient, title }: BookingSect
                         "py-2.5 rounded-xl border-2 text-sm font-medium transition-all",
                         selectedTime === time
                           ? "text-white"
-                          : "border-neutral-100 dark:border-neutral-700/50 text-neutral-700 dark:text-neutral-300 hover:border-neutral-200 dark:hover:border-neutral-600"
+                          : "border-neutral-100 dark:border-neutral-700 /50 text-neutral-700 dark:text-neutral-300 hover:border-neutral-200 dark:border-neutral-700 dark:hover:border-neutral-600"
                       )}
                       style={selectedTime === time ? { backgroundColor: color, borderColor: color } : {}}
                     >
@@ -250,7 +250,7 @@ export function BookingSection({ services, color, gradient, title }: BookingSect
                     value={form.name}
                     onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
                     placeholder={isUk ? "Наприклад: Олена Коваль" : "e.g. Jane Smith"}
-                    className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-600 bg-white dark:bg-neutral-700 text-neutral-900 dark:text-white placeholder:text-neutral-400 focus:outline-none focus:ring-2 transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 dark:border-neutral-600 bg-white dark:bg-neutral-700 text-neutral-900 dark:text-white placeholder:text-neutral-400 focus:outline-none focus:ring-2 transition-all"
                     style={{ ["--tw-ring-color" as string]: color }}
                   />
                 </div>
@@ -265,7 +265,7 @@ export function BookingSection({ services, color, gradient, title }: BookingSect
                       value={form.phone}
                       onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
                       placeholder="+38 (___) ___-__-__"
-                      className="w-full pl-11 pr-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-600 bg-white dark:bg-neutral-700 text-neutral-900 dark:text-white placeholder:text-neutral-400 focus:outline-none focus:ring-2 transition-all"
+                      className="w-full pl-11 pr-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 dark:border-neutral-600 bg-white dark:bg-neutral-700 text-neutral-900 dark:text-white placeholder:text-neutral-400 focus:outline-none focus:ring-2 transition-all"
                     />
                   </div>
                 </div>
@@ -299,7 +299,7 @@ export function BookingSection({ services, color, gradient, title }: BookingSect
               <p className="text-neutral-500 dark:text-neutral-400 mb-6 max-w-sm mx-auto">
                 {isUk ? "Ми надішлемо підтвердження у Telegram або SMS на ваш номер. Чекаємо на вас!" : "We'll send a confirmation via Telegram or SMS to your number. See you soon!"}
               </p>
-              <div className="inline-flex flex-col gap-2 text-sm bg-neutral-50 dark:bg-neutral-700/50 rounded-2xl px-6 py-4 text-left">
+              <div className="inline-flex flex-col gap-2 text-sm bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-700/50 rounded-2xl px-6 py-4 text-left">
                 <div className="flex gap-3 text-neutral-700 dark:text-neutral-300">
                   <span>🛠</span> <strong>{selectedService !== null ? services[selectedService].name : ""}</strong>
                 </div>
@@ -323,7 +323,7 @@ export function BookingSection({ services, color, gradient, title }: BookingSect
 
           {/* Navigation */}
           {step < 3 && (
-            <div className="flex items-center justify-between mt-8 pt-6 border-t border-neutral-100 dark:border-neutral-700/50">
+            <div className="flex items-center justify-between mt-8 pt-6 border-t border-neutral-100 dark:border-neutral-700 /50">
               <button
                 onClick={() => setStep((s) => Math.max(0, s - 1))}
                 disabled={step === 0}

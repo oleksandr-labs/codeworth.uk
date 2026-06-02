@@ -61,24 +61,24 @@ export function EcomInvoiceGenDemo({ isUk }: Props) {
     <div className="space-y-6">
       {/* Toolbar */}
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <div className="flex gap-1 rounded-lg bg-neutral-100 p-1">
+        <div className="flex gap-1 rounded-lg bg-neutral-100 dark:bg-neutral-800 p-1">
           {TEMPLATES.map((t) => (
             <button
               key={t.id}
               onClick={() => setTemplate(t)}
               className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all ${
-                template.id === t.id ? "bg-white text-neutral-900 shadow-sm" : "text-neutral-500"
+                template.id === t.id ? "bg-white text-neutral-900 dark:text-white shadow-sm" : "text-neutral-500"
               }`}
             >
               {isUk ? t.labelUk : t.labelEn}
             </button>
           ))}
         </div>
-        <div className="flex gap-1 rounded-lg bg-neutral-100 p-1">
+        <div className="flex gap-1 rounded-lg bg-neutral-100 dark:bg-neutral-800 p-1">
           <button
             onClick={() => setView("preview")}
             className={`flex items-center gap-1 px-3 py-1.5 rounded-md text-sm font-medium ${
-              view === "preview" ? "bg-white text-neutral-900 shadow-sm" : "text-neutral-500"
+              view === "preview" ? "bg-white text-neutral-900 dark:text-white shadow-sm" : "text-neutral-500"
             }`}
           >
             <Eye className="w-3.5 h-3.5" />
@@ -87,7 +87,7 @@ export function EcomInvoiceGenDemo({ isUk }: Props) {
           <button
             onClick={() => setView("html")}
             className={`flex items-center gap-1 px-3 py-1.5 rounded-md text-sm font-medium ${
-              view === "html" ? "bg-white text-neutral-900 shadow-sm" : "text-neutral-500"
+              view === "html" ? "bg-white text-neutral-900 dark:text-white shadow-sm" : "text-neutral-500"
             }`}
           >
             <Code className="w-3.5 h-3.5" />
@@ -97,7 +97,7 @@ export function EcomInvoiceGenDemo({ isUk }: Props) {
       </div>
 
       {view === "preview" ? (
-        <div className="rounded-2xl border border-neutral-200 bg-white p-8 max-w-3xl mx-auto shadow-sm">
+        <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 p-8 max-w-3xl mx-auto shadow-sm">
           {/* Header */}
           <div className={`-mx-8 -mt-8 mb-6 p-6 bg-linear-to-r ${template.color} text-white rounded-t-2xl`}>
             <div className="flex justify-between items-start">
@@ -115,16 +115,16 @@ export function EcomInvoiceGenDemo({ isUk }: Props) {
           {/* Parties */}
           <div className="grid grid-cols-2 gap-6 mb-6 text-sm">
             <div>
-              <p className="text-xs uppercase tracking-wider text-neutral-500 mb-1">{isUk ? "Від" : "From"}</p>
+              <p className="text-xs uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-1">{isUk ? "Від" : "From"}</p>
               <p className="font-semibold text-neutral-900">{INVOICE.seller.name}</p>
               <p className="text-neutral-600">{INVOICE.seller.address}</p>
-              <p className="text-xs text-neutral-500 mt-1">VAT: {INVOICE.seller.vat}</p>
+              <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">VAT: {INVOICE.seller.vat}</p>
             </div>
             <div>
-              <p className="text-xs uppercase tracking-wider text-neutral-500 mb-1">{isUk ? "Кому" : "To"}</p>
+              <p className="text-xs uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-1">{isUk ? "Кому" : "To"}</p>
               <p className="font-semibold text-neutral-900">{INVOICE.client.name}</p>
               <p className="text-neutral-600">{INVOICE.client.address}</p>
-              <p className="text-xs text-neutral-500 mt-1">VAT: {INVOICE.client.vat}</p>
+              <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">VAT: {INVOICE.client.vat}</p>
             </div>
           </div>
 
@@ -143,7 +143,7 @@ export function EcomInvoiceGenDemo({ isUk }: Props) {
           {/* Items */}
           <table className="w-full text-sm mb-4">
             <thead>
-              <tr className="border-b-2 border-neutral-200 text-xs uppercase tracking-wider text-neutral-500">
+              <tr className="border-b-2 border-neutral-200 dark:border-neutral-700 text-xs uppercase tracking-wider text-neutral-500">
                 <th className="text-left pb-2">{isUk ? "Опис" : "Description"}</th>
                 <th className="text-right pb-2 w-12">{isUk ? "К-сть" : "Qty"}</th>
                 <th className="text-right pb-2 w-24">{isUk ? "Ціна" : "Rate"}</th>
@@ -154,8 +154,8 @@ export function EcomInvoiceGenDemo({ isUk }: Props) {
               {INVOICE.items.map((item, i) => (
                 <tr key={i} className="border-b border-neutral-100">
                   <td className="py-3 text-neutral-700">{isUk ? item.descUk : item.descEn}</td>
-                  <td className="py-3 text-right text-neutral-600 tabular-nums">{item.qty}</td>
-                  <td className="py-3 text-right text-neutral-600 tabular-nums">{fmt(item.rate)}</td>
+                  <td className="py-3 text-right text-neutral-600 dark:text-neutral-300 tabular-nums">{item.qty}</td>
+                  <td className="py-3 text-right text-neutral-600 dark:text-neutral-300 tabular-nums">{fmt(item.rate)}</td>
                   <td className="py-3 text-right font-semibold tabular-nums">{fmt(item.amount)}</td>
                 </tr>
               ))}
@@ -217,13 +217,13 @@ export function EcomInvoiceGenDemo({ isUk }: Props) {
         <button
           onClick={handleSend}
           className={`flex items-center gap-2 px-4 py-2.5 rounded-lg font-semibold text-sm border transition-colors ${
-            sent ? "bg-emerald-50 border-emerald-300 text-emerald-700" : "border-neutral-200 text-neutral-700 hover:bg-neutral-50"
+            sent ? "bg-emerald-50 border-emerald-300 text-emerald-700" : "border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-50"
           }`}
         >
           <Mail className="w-4 h-4" />
           {sent ? (isUk ? "✓ Надіслано" : "✓ Sent") : (isUk ? "Надіслати на email" : "Send to email")}
         </button>
-        <button className="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-neutral-200 text-sm text-neutral-700 hover:bg-neutral-50 transition-colors">
+        <button className="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-neutral-200 dark:border-neutral-700 text-sm text-neutral-700 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-800 dark:bg-neutral-900 transition-colors">
           <Printer className="w-4 h-4" />
           {isUk ? "Друк" : "Print"}
         </button>

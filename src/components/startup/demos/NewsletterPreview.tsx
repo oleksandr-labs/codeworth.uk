@@ -53,22 +53,22 @@ export function NewsletterPreview() {
 
       {/* Recent issues preview */}
       <section className="px-8 py-10 bg-white">
-        <h2 className="text-xl font-extrabold text-gray-900 mb-6">Recent issues</h2>
+        <h2 className="text-xl font-extrabold text-gray-900 dark:text-white mb-6">Recent issues</h2>
         <div className="space-y-3 max-w-3xl">
           {[
             { issue: "#52", date: "Apr 24", title: "OpenAI's new model vs Claude 4 — what matters for builders", tag: "AI" },
             { issue: "#51", date: "Apr 17", title: "The 5 startup trends reshaping B2B SaaS in 2026", tag: "Trends" },
             { issue: "#50", date: "Apr 10", title: "Bootstrapped to $1M ARR: 6 founders share their playbook", tag: "Founders" },
           ].map((item) => (
-            <div key={item.issue} className="flex items-center gap-4 p-4 rounded-xl border border-gray-100 hover:border-amber-200 hover:bg-amber-50 transition-all cursor-pointer group">
+            <div key={item.issue} className="flex items-center gap-4 p-4 rounded-xl border border-gray-100 dark:border-neutral-700 hover:border-amber-200 hover:bg-amber-50 transition-all cursor-pointer group">
               <div className="text-xs font-bold text-amber-600 bg-amber-50 w-10 h-10 rounded-lg flex items-center justify-center shrink-0 border border-amber-100">
                 {item.issue}
               </div>
               <div className="flex-1 min-w-0">
-                <div className="font-semibold text-gray-900 text-sm truncate group-hover:text-amber-700 transition-colors">
+                <div className="font-semibold text-gray-900 dark:text-white text-sm truncate group-hover:text-amber-700 transition-colors">
                   {item.title}
                 </div>
-                <div className="text-xs text-gray-400 mt-0.5">{item.date}</div>
+                <div className="text-xs text-gray-400 dark:text-neutral-500 mt-0.5">{item.date}</div>
               </div>
               <span className="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full font-medium shrink-0">
                 {item.tag}
@@ -80,7 +80,7 @@ export function NewsletterPreview() {
 
       {/* Benefits */}
       <section className="px-8 py-10 bg-amber-50 border-t border-amber-100">
-        <h2 className="text-xl font-extrabold text-gray-900 mb-6 text-center">What you get every Thursday</h2>
+        <h2 className="text-xl font-extrabold text-gray-900 dark:text-white mb-6 text-center">What you get every Thursday</h2>
         <div className="grid grid-cols-4 gap-4 max-w-3xl mx-auto">
           {[
             { icon: "⚡", title: "5-min read", desc: "Concise. Dense. No filler." },
@@ -90,7 +90,7 @@ export function NewsletterPreview() {
           ].map((b) => (
             <div key={b.title} className="text-center">
               <div className="text-2xl mb-2">{b.icon}</div>
-              <div className="font-bold text-gray-900 text-xs mb-1">{b.title}</div>
+              <div className="font-bold text-gray-900 dark:text-white text-xs mb-1">{b.title}</div>
               <div className="text-xs text-gray-500">{b.desc}</div>
             </div>
           ))}
@@ -98,12 +98,12 @@ export function NewsletterPreview() {
       </section>
 
       {/* About / author */}
-      <section className="px-8 py-8 bg-white border-t border-gray-100 flex items-center gap-6 max-w-3xl mx-auto">
+      <section className="px-8 py-8 bg-white dark:bg-neutral-800 border-t border-gray-100 dark:border-neutral-700 flex items-center gap-6 max-w-3xl mx-auto">
         <div className="w-14 h-14 rounded-full bg-amber-200 flex items-center justify-center text-2xl shrink-0">👤</div>
         <div>
           <div className="font-bold text-gray-900">Alex Romanov</div>
-          <div className="text-xs text-gray-500 mt-0.5">ex-Google · 3× founder · Investor</div>
-          <div className="text-xs text-gray-600 mt-2 leading-relaxed">
+          <div className="text-xs text-gray-500 dark:text-neutral-400 mt-0.5">ex-Google · 3× founder · Investor</div>
+          <div className="text-xs text-gray-600 dark:text-neutral-300 mt-2 leading-relaxed">
             I read 200+ articles a week so you don't have to. Building in public since 2019.
           </div>
         </div>

@@ -96,21 +96,21 @@ export function EcomReviewsDemo({ isUk }: Props) {
   return (
     <div className="space-y-6">
       {/* Aggregate */}
-      <div className="rounded-2xl border border-neutral-200 bg-white p-5">
+      <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white p-5">
         <div className="flex items-start gap-6 flex-wrap">
           <div className="text-center">
-            <div className="text-5xl font-bold text-neutral-900 tabular-nums">{avg.toFixed(1)}</div>
+            <div className="text-5xl font-bold text-neutral-900 dark:text-white tabular-nums">{avg.toFixed(1)}</div>
             <StarRow value={Math.round(avg)} />
-            <div className="text-xs text-neutral-500 mt-1">{reviews.length} {isUk ? "відгуків" : "reviews"}</div>
+            <div className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">{reviews.length} {isUk ? "відгуків" : "reviews"}</div>
           </div>
           <div className="flex-1 min-w-[200px] space-y-1.5">
             {distribution.map((d) => {
               const pct = reviews.length > 0 ? (d.count / reviews.length) * 100 : 0;
               return (
                 <div key={d.star} className="flex items-center gap-2 text-xs">
-                  <span className="w-3 text-neutral-500 tabular-nums">{d.star}</span>
+                  <span className="w-3 text-neutral-500 dark:text-neutral-400 tabular-nums">{d.star}</span>
                   <Star className="w-3 h-3 text-amber-400 fill-amber-400" />
-                  <div className="flex-1 h-1.5 rounded-full bg-neutral-100 overflow-hidden">
+                  <div className="flex-1 h-1.5 rounded-full bg-neutral-100 dark:bg-neutral-800 overflow-hidden">
                     <div
                       className="h-full bg-amber-400 rounded-full"
                       style={{ width: `${pct}%` }}
@@ -121,7 +121,7 @@ export function EcomReviewsDemo({ isUk }: Props) {
                       aria-label={`${d.star} stars: ${d.count} reviews`}
                     />
                   </div>
-                  <span className="w-8 text-right text-neutral-500 tabular-nums">{d.count}</span>
+                  <span className="w-8 text-right text-neutral-500 dark:text-neutral-400 tabular-nums">{d.count}</span>
                 </div>
               );
             })}
@@ -132,7 +132,7 @@ export function EcomReviewsDemo({ isUk }: Props) {
       {/* Review list */}
       <div className="space-y-3">
         {reviews.map((r) => (
-          <div key={r.id} className="rounded-xl border border-neutral-200 bg-white p-4">
+          <div key={r.id} className="rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 p-4">
             <div className="flex items-start justify-between mb-2">
               <div>
                 <div className="flex items-center gap-2">
@@ -150,14 +150,14 @@ export function EcomReviewsDemo({ isUk }: Props) {
                 </div>
               </div>
             </div>
-            <p className="text-sm text-neutral-700 leading-relaxed mb-3">{isUk ? r.textUk : r.textEn}</p>
+            <p className="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed mb-3">{isUk ? r.textUk : r.textEn}</p>
             <button
               onClick={() => voteHelpful(r.id)}
               disabled={helpfulVotes.has(r.id)}
               className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs transition-colors ${
                 helpfulVotes.has(r.id)
                   ? "bg-emerald-50 text-emerald-700"
-                  : "text-neutral-500 hover:bg-neutral-100"
+                  : "text-neutral-500 dark:text-neutral-400 hover:bg-neutral-100"
               }`}
             >
               <ThumbsUp className="w-3 h-3" />
@@ -168,8 +168,8 @@ export function EcomReviewsDemo({ isUk }: Props) {
       </div>
 
       {/* Submit form */}
-      <form onSubmit={submit} className="rounded-2xl border border-neutral-200 bg-white p-5 space-y-4">
-        <h3 className="font-bold text-neutral-900 flex items-center gap-2">
+      <form onSubmit={submit} className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white p-5 space-y-4">
+        <h3 className="font-bold text-neutral-900 dark:text-white flex items-center gap-2">
           <MessageSquare className="w-5 h-5 text-indigo-600" />
           {isUk ? "Залишити відгук" : "Write a review"}
         </h3>
@@ -187,11 +187,11 @@ export function EcomReviewsDemo({ isUk }: Props) {
               onChange={(e) => setName(e.target.value)}
               placeholder={isUk ? "Ваше ім'я" : "Your name"}
               required
-              className="w-full px-3 py-2.5 rounded-lg border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 text-sm"
+              className="w-full px-3 py-2.5 rounded-lg border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 text-sm"
               aria-label={isUk ? "Ім'я" : "Name"}
             />
             <div>
-              <p className="text-xs text-neutral-500 mb-2">{isUk ? "Оцінка:" : "Rating:"}</p>
+              <p className="text-xs text-neutral-500 dark:text-neutral-400 mb-2">{isUk ? "Оцінка:" : "Rating:"}</p>
               <StarRow value={rating} onChange={setRating} size="lg" interactive />
             </div>
             <textarea
@@ -200,7 +200,7 @@ export function EcomReviewsDemo({ isUk }: Props) {
               placeholder={isUk ? "Ваш відгук..." : "Your review..."}
               required
               rows={3}
-              className="w-full px-3 py-2.5 rounded-lg border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 text-sm resize-none"
+              className="w-full px-3 py-2.5 rounded-lg border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 text-sm resize-none"
               aria-label={isUk ? "Текст відгуку" : "Review text"}
             />
             <button

@@ -311,7 +311,7 @@ export function RepairProDemo({ lang }: { lang: string }) {
     <div className="min-h-screen bg-white text-[#1F2937] font-sans">
 
       {/* ── NAV ── */}
-      <nav className="bg-white border-b border-gray-100 sticky top-0 z-30">
+      <nav className="bg-white border-b border-gray-100 dark:border-neutral-700 sticky top-0 z-30">
         <div className="max-w-6xl mx-auto px-4 flex items-center justify-between h-14">
           <div className="flex items-center gap-2">
             <span className="text-2xl">🔧</span>
@@ -343,7 +343,7 @@ export function RepairProDemo({ lang }: { lang: string }) {
                 ? "Швидкий ремонт.\nЧесна ціна.\nГарантія."
                 : "Fast Repair.\nFair Price.\nWarranty."}
             </h1>
-            <p className="text-gray-500 text-lg mb-8">
+            <p className="text-gray-500 dark:text-neutral-400 text-lg mb-8">
               {isUk
                 ? "Ремонтуємо смартфони, ноутбуки, планшети та смарт-годинники. Безкоштовна діагностика 30 хв."
                 : "We repair smartphones, laptops, tablets and smartwatches. Free 30-min diagnostics."}
@@ -356,7 +356,7 @@ export function RepairProDemo({ lang }: { lang: string }) {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder={isUk ? "Введіть пристрій або модель…" : "Enter device or model…"}
-                className="flex-1 border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#F97316] bg-white"
+                className="flex-1 border border-gray-200 dark:border-neutral-700 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#F97316] bg-white"
               />
               <button className="bg-[#F97316] hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold text-sm transition-colors shrink-0">
                 {isUk ? "Знайти" : "Search"}
@@ -370,7 +370,7 @@ export function RepairProDemo({ lang }: { lang: string }) {
                 { icon: "✅", en: "90-day warranty",            uk: "Гарантія 90 днів" },
                 { icon: "📍", en: "3 locations in Dnipro",      uk: "3 точки в Дніпрі" },
               ].map((t) => (
-                <div key={t.en} className="flex items-center gap-2 bg-white rounded-xl px-4 py-2 shadow-sm border border-gray-100 text-sm font-medium">
+                <div key={t.en} className="flex items-center gap-2 bg-white dark:bg-neutral-800 rounded-xl px-4 py-2 shadow-sm border border-gray-100 dark:border-neutral-700 text-sm font-medium">
                   <span>{t.icon}</span>
                   <span>{isUk ? t.uk : t.en}</span>
                 </div>
@@ -394,21 +394,21 @@ export function RepairProDemo({ lang }: { lang: string }) {
       <section className="py-14 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-2">{isUk ? "Калькулятор вартості ремонту" : "Repair Cost Calculator"}</h2>
-          <p className="text-gray-500 text-center text-sm mb-8">{isUk ? "Дізнайтесь орієнтовну вартість за 3 кроки" : "Get an instant price estimate in 3 steps"}</p>
+          <p className="text-gray-500 dark:text-neutral-400 text-center text-sm mb-8">{isUk ? "Дізнайтесь орієнтовну вартість за 3 кроки" : "Get an instant price estimate in 3 steps"}</p>
 
           {/* Progress */}
           <div className="flex items-center justify-center gap-2 mb-8">
             {[1, 2, 3].map((s) => (
               <div key={s} className="flex items-center gap-2">
                 <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-colors ${
-                  calcStep > s ? "bg-[#F97316] text-white" : calcStep === s ? "bg-[#F97316] text-white ring-4 ring-orange-100" : "bg-gray-100 text-gray-400"
+                  calcStep > s ? "bg-[#F97316] text-white" : calcStep === s ? "bg-[#F97316] text-white ring-4 ring-orange-100" : "bg-gray-100 dark:bg-neutral-800 text-gray-400"
                 }`}>{calcStep > s ? "✓" : s}</div>
                 {s < 3 && <div className={`w-12 h-1 rounded-full ${calcStep > s ? "bg-[#F97316]" : "bg-gray-100"}`} />}
               </div>
             ))}
           </div>
 
-          <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+          <div className="bg-gray-50 dark:bg-neutral-900 rounded-2xl p-6 border border-gray-100">
 
             {/* Step 1: Device */}
             {calcStep === 1 && (
@@ -420,7 +420,7 @@ export function RepairProDemo({ lang }: { lang: string }) {
                       key={d.key}
                       onClick={() => { setCalcDevice(d.key); setCalcBrand(""); setCalcIssue(""); setCalcStep(2); }}
                       className={`flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all font-medium text-sm ${
-                        calcDevice === d.key ? "border-[#F97316] bg-orange-50 text-[#F97316]" : "border-gray-200 bg-white hover:border-orange-200"
+                        calcDevice === d.key ? "border-[#F97316] bg-orange-50 text-[#F97316]" : "border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-orange-200"
                       }`}
                     >
                       <span className="text-3xl">{d.emoji}</span>
@@ -441,14 +441,14 @@ export function RepairProDemo({ lang }: { lang: string }) {
                       key={b}
                       onClick={() => { setCalcBrand(b); setCalcStep(3); }}
                       className={`px-5 py-2 rounded-full border-2 text-sm font-semibold transition-all ${
-                        calcBrand === b ? "border-[#F97316] bg-orange-50 text-[#F97316]" : "border-gray-200 bg-white hover:border-orange-300"
+                        calcBrand === b ? "border-[#F97316] bg-orange-50 text-[#F97316]" : "border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-orange-300"
                       }`}
                     >
                       {b === "Other" ? (isUk ? "Інший" : "Other") : b}
                     </button>
                   ))}
                 </div>
-                <button onClick={() => setCalcStep(1)} className="text-sm text-gray-400 hover:text-gray-600 flex items-center gap-1 mx-auto">
+                <button onClick={() => setCalcStep(1)} className="text-sm text-gray-400 dark:text-neutral-500 hover:text-gray-600 dark:text-neutral-300 flex items-center gap-1 mx-auto">
                   ← {isUk ? "Назад" : "Back"}
                 </button>
               </div>
@@ -464,14 +464,14 @@ export function RepairProDemo({ lang }: { lang: string }) {
                       key={i.key}
                       onClick={() => setCalcIssue(i.key)}
                       className={`px-4 py-3 rounded-xl border-2 text-sm font-medium text-left transition-all ${
-                        calcIssue === i.key ? "border-[#F97316] bg-orange-50 text-[#F97316]" : "border-gray-200 bg-white hover:border-orange-200"
+                        calcIssue === i.key ? "border-[#F97316] bg-orange-50 text-[#F97316]" : "border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-orange-200"
                       }`}
                     >
                       {isUk ? i.uk : i.en}
                     </button>
                   ))}
                 </div>
-                <button onClick={() => setCalcStep(2)} className="text-sm text-gray-400 hover:text-gray-600 flex items-center gap-1 mx-auto">
+                <button onClick={() => setCalcStep(2)} className="text-sm text-gray-400 dark:text-neutral-500 hover:text-gray-600 dark:text-neutral-300 flex items-center gap-1 mx-auto">
                   ← {isUk ? "Назад" : "Back"}
                 </button>
               </div>
@@ -483,13 +483,13 @@ export function RepairProDemo({ lang }: { lang: string }) {
             <div className="mt-6 bg-linear-to-br from-orange-50 to-amber-50 border border-orange-200 rounded-2xl p-6">
               <div className="flex items-start justify-between gap-4 flex-wrap">
                 <div>
-                  <p className="text-sm text-gray-500 mb-1">{isUk ? "Орієнтовна вартість" : "Estimated price"}</p>
+                  <p className="text-sm text-gray-500 dark:text-neutral-400 mb-1">{isUk ? "Орієнтовна вартість" : "Estimated price"}</p>
                   <p className="text-3xl font-extrabold text-[#F97316]">
                     {calcResult.priceMin === calcResult.priceMax
                       ? `₴${calcResult.priceMin.toLocaleString()}`
                       : `₴${calcResult.priceMin.toLocaleString()} – ₴${calcResult.priceMax.toLocaleString()}`}
                   </p>
-                  <p className="text-sm text-gray-600 mt-1">⏱ {isUk ? calcResult.timeUk : calcResult.timeEn}</p>
+                  <p className="text-sm text-gray-600 dark:text-neutral-300 mt-1">⏱ {isUk ? calcResult.timeUk : calcResult.timeEn}</p>
                   <p className="text-sm text-emerald-600 font-medium mt-1">✅ {isUk ? "Гарантія 90 днів включена" : "90-day warranty included"}</p>
                 </div>
                 <button
@@ -512,7 +512,7 @@ export function RepairProDemo({ lang }: { lang: string }) {
             <div className="text-center mt-4">
               <button
                 onClick={() => { setCalcStep(1); setCalcDevice(""); setCalcBrand(""); setCalcIssue(""); }}
-                className="text-xs text-gray-400 hover:text-[#F97316] transition-colors"
+                className="text-xs text-gray-400 dark:text-neutral-500 hover:text-[#F97316] transition-colors"
               >
                 {isUk ? "Скинути калькулятор" : "Reset calculator"}
               </button>
@@ -527,7 +527,7 @@ export function RepairProDemo({ lang }: { lang: string }) {
       <section className="py-14 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-2">{isUk ? "Каталог послуг" : "Service Catalog"}</h2>
-          <p className="text-gray-500 text-center text-sm mb-8">{isUk ? "Фіксовані ціни. Без прихованих доплат." : "Fixed prices. No hidden fees."}</p>
+          <p className="text-gray-500 dark:text-neutral-400 text-center text-sm mb-8">{isUk ? "Фіксовані ціни. Без прихованих доплат." : "Fixed prices. No hidden fees."}</p>
 
           {/* Category tabs */}
           <div className="flex flex-wrap gap-2 justify-center mb-6">
@@ -541,7 +541,7 @@ export function RepairProDemo({ lang }: { lang: string }) {
                 key={cat.key}
                 onClick={() => { setActiveCategory(cat.key); setActiveBrand("All"); }}
                 className={`flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold border-2 transition-all ${
-                  activeCategory === cat.key ? "bg-[#F97316] border-[#F97316] text-white" : "bg-white border-gray-200 text-gray-600 hover:border-orange-200"
+                  activeCategory === cat.key ? "bg-[#F97316] border-[#F97316] text-white" : "bg-white border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-300 hover:border-orange-200"
                 }`}
               >
                 {cat.emoji} {isUk ? cat.uk : cat.en}
@@ -556,7 +556,7 @@ export function RepairProDemo({ lang }: { lang: string }) {
                 key={b}
                 onClick={() => setActiveBrand(b)}
                 className={`px-4 py-1.5 rounded-full text-xs font-medium border transition-all ${
-                  activeBrand === b ? "bg-[#1F2937] text-white border-[#1F2937]" : "bg-white text-gray-500 border-gray-200 hover:border-gray-400"
+                  activeBrand === b ? "bg-[#1F2937] text-white border-[#1F2937]" : "bg-white text-gray-500 dark:text-neutral-400 border-gray-200 dark:border-neutral-700 hover:border-gray-400"
                 }`}
               >
                 {b === "All" ? (isUk ? "Всі" : "All") : b}
@@ -582,7 +582,7 @@ export function RepairProDemo({ lang }: { lang: string }) {
                 <div className="flex items-center justify-between text-sm">
                   <span className="text-[#F97316] font-bold text-lg">{r.price}</span>
                   <div className="text-right">
-                    <p className="text-gray-400 text-xs">⏱ {isUk ? r.timeUk : r.timeEn}</p>
+                    <p className="text-gray-400 dark:text-neutral-500 text-xs">⏱ {isUk ? r.timeUk : r.timeEn}</p>
                     <p className="text-emerald-600 text-xs">✅ {isUk ? r.warrantyUk : r.warrantyEn}</p>
                   </div>
                 </div>
@@ -591,7 +591,7 @@ export function RepairProDemo({ lang }: { lang: string }) {
           </div>
 
           {filteredRepairs.length === 0 && (
-            <p className="text-center text-gray-400 py-8">{isUk ? "Не знайдено. Оберіть інший бренд." : "No results. Try a different brand."}</p>
+            <p className="text-center text-gray-400 dark:text-neutral-500 py-8">{isUk ? "Не знайдено. Оберіть інший бренд." : "No results. Try a different brand."}</p>
           )}
         </div>
       </section>
@@ -602,7 +602,7 @@ export function RepairProDemo({ lang }: { lang: string }) {
       <section className="py-14 px-4 bg-white">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-2">{isUk ? "Відстеження замовлення" : "Order Tracking"}</h2>
-          <p className="text-gray-500 text-center text-sm mb-8">
+          <p className="text-gray-500 dark:text-neutral-400 text-center text-sm mb-8">
             {isUk ? "Введіть номер замовлення, щоб дізнатись статус ремонту" : "Enter your order number to check repair status"}
           </p>
 
@@ -613,7 +613,7 @@ export function RepairProDemo({ lang }: { lang: string }) {
               value={trackingNumber}
               onChange={(e) => { setTrackingNumber(e.target.value); setTrackingResult(null); }}
               placeholder={isUk ? "Наприклад: RP-1042" : "e.g. RP-1042"}
-              className="flex-1 border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#F97316]"
+              className="flex-1 border border-gray-200 dark:border-neutral-700 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#F97316]"
               onKeyDown={(e) => e.key === "Enter" && handleTrack()}
             />
             <button
@@ -623,13 +623,13 @@ export function RepairProDemo({ lang }: { lang: string }) {
               {isUk ? "Знайти" : "Track"}
             </button>
           </div>
-          <p className="text-xs text-gray-400 text-center mb-8">
+          <p className="text-xs text-gray-400 dark:text-neutral-500 text-center mb-8">
             {isUk ? "Спробуйте: RP-1042 · RP-0987 · RP-2201 · RP-3310" : "Try: RP-1042 · RP-0987 · RP-2201 · RP-3310"}
           </p>
 
           {/* Result */}
           {trackingResult && (
-            <div className="bg-gray-50 rounded-2xl border border-gray-100 p-6">
+            <div className="bg-gray-50 dark:bg-neutral-900 rounded-2xl border border-gray-100 dark:border-neutral-700 p-6">
               {!trackingResult.found ? (
                 <p className="text-center text-gray-500">{isUk ? "Замовлення не знайдено. Перевірте номер." : "Order not found. Please check the number."}</p>
               ) : (
@@ -638,7 +638,7 @@ export function RepairProDemo({ lang }: { lang: string }) {
                     <div>
                       <p className="font-bold text-[#1F2937]">{trackingNumber.toUpperCase()}</p>
                       <p className="text-sm text-gray-600">{isUk ? trackingResult.deviceUk : trackingResult.deviceEn}</p>
-                      <p className="text-xs text-gray-400 mt-0.5">{isUk ? "Майстер:" : "Master:"} {isUk ? trackingResult.masterUk : trackingResult.masterEn}</p>
+                      <p className="text-xs text-gray-400 dark:text-neutral-500 mt-0.5">{isUk ? "Майстер:" : "Master:"} {isUk ? trackingResult.masterUk : trackingResult.masterEn}</p>
                     </div>
                     <div className="text-right">
                       <p className="text-xs text-gray-400">{isUk ? "Очікуване завершення" : "Estimated completion"}</p>
@@ -664,7 +664,7 @@ export function RepairProDemo({ lang }: { lang: string }) {
                             <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold border-2 transition-all ${
                               done    ? "bg-[#F97316] border-[#F97316] text-white" :
                               current ? "bg-white border-[#F97316] text-[#F97316] ring-4 ring-orange-100" :
-                                        "bg-white border-gray-200 text-gray-300"
+                                        "bg-white border-gray-200 dark:border-neutral-700 text-gray-300"
                             }`}>
                               {done ? "✓" : idx + 1}
                             </div>
@@ -689,7 +689,7 @@ export function RepairProDemo({ lang }: { lang: string }) {
       <section className="py-14 px-4 bg-gray-50">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-2">{isUk ? "Онлайн-запис" : "Online Booking"}</h2>
-          <p className="text-gray-500 text-center text-sm mb-8">{isUk ? "Запишіться за 4 прості кроки" : "Book your repair in 4 simple steps"}</p>
+          <p className="text-gray-500 dark:text-neutral-400 text-center text-sm mb-8">{isUk ? "Запишіться за 4 прості кроки" : "Book your repair in 4 simple steps"}</p>
 
           {/* Booking progress */}
           {!bookingData.confirmed && (
@@ -705,19 +705,19 @@ export function RepairProDemo({ lang }: { lang: string }) {
             </div>
           )}
 
-          <div className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
+          <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-6 shadow-sm">
 
             {/* Confirmed */}
             {bookingData.confirmed ? (
               <div className="text-center py-6">
                 <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">✅</div>
                 <h3 className="text-xl font-bold text-[#1F2937] mb-2">{isUk ? "Запис підтверджено!" : "Booking Confirmed!"}</h3>
-                <p className="text-gray-500 text-sm mb-4">
+                <p className="text-gray-500 dark:text-neutral-400 text-sm mb-4">
                   {isUk
                     ? `Ми зв'яжемося з вами за номером ${bookingData.phone} для підтвердження.`
                     : `We'll contact you at ${bookingData.phone} to confirm.`}
                 </p>
-                <div className="bg-gray-50 rounded-xl p-4 text-left text-sm space-y-1.5 mb-6">
+                <div className="bg-gray-50 dark:bg-neutral-900 rounded-xl p-4 text-left text-sm space-y-1.5 mb-6">
                   <p><span className="text-gray-400">{isUk ? "Адреса:" : "Location:"}</span> <span className="font-medium">{isUk ? bookingLocationObj?.nameUk : bookingLocationObj?.nameEn}</span></p>
                   <p><span className="text-gray-400">{isUk ? "Майстер:" : "Master:"}</span> <span className="font-medium">{isUk ? bookingMasterObj?.nameUk : bookingMasterObj?.nameEn}</span></p>
                   <p><span className="text-gray-400">{isUk ? "Дата та час:" : "Date & time:"}</span> <span className="font-medium">{bookingData.date} {bookingData.time}</span></p>
@@ -742,11 +742,11 @@ export function RepairProDemo({ lang }: { lang: string }) {
                           key={loc.id}
                           onClick={() => setBookingData((p) => ({ ...p, location: loc.id }))}
                           className={`w-full text-left p-4 rounded-xl border-2 transition-all ${
-                            bookingData.location === loc.id ? "border-[#F97316] bg-orange-50" : "border-gray-200 hover:border-orange-200"
+                            bookingData.location === loc.id ? "border-[#F97316] bg-orange-50" : "border-gray-200 dark:border-neutral-700 hover:border-orange-200"
                           }`}
                         >
                           <p className="font-medium text-sm">📍 {isUk ? loc.nameUk : loc.nameEn}</p>
-                          <p className="text-xs text-gray-400 mt-0.5">{isUk ? loc.hoursUk : loc.hoursEn}</p>
+                          <p className="text-xs text-gray-400 dark:text-neutral-500 mt-0.5">{isUk ? loc.hoursUk : loc.hoursEn}</p>
                         </button>
                       ))}
                     </div>
@@ -772,7 +772,7 @@ export function RepairProDemo({ lang }: { lang: string }) {
                           key={m.id}
                           onClick={() => setBookingData((p) => ({ ...p, master: m.id }))}
                           className={`w-full text-left p-4 rounded-xl border-2 flex items-center gap-4 transition-all ${
-                            bookingData.master === m.id ? "border-[#F97316] bg-orange-50" : "border-gray-200 hover:border-orange-200"
+                            bookingData.master === m.id ? "border-[#F97316] bg-orange-50" : "border-gray-200 dark:border-neutral-700 hover:border-orange-200"
                           }`}
                         >
                           <div className={`${m.color} shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-sm`}>{m.initials}</div>
@@ -788,7 +788,7 @@ export function RepairProDemo({ lang }: { lang: string }) {
                       ))}
                     </div>
                     <div className="mt-6 flex justify-between">
-                      <button onClick={() => setBookingStep(1)} className="text-sm text-gray-400 hover:text-gray-600">← {isUk ? "Назад" : "Back"}</button>
+                      <button onClick={() => setBookingStep(1)} className="text-sm text-gray-400 dark:text-neutral-500 hover:text-gray-600">← {isUk ? "Назад" : "Back"}</button>
                       <button
                         disabled={!bookingData.master}
                         onClick={() => setBookingStep(3)}
@@ -809,18 +809,18 @@ export function RepairProDemo({ lang }: { lang: string }) {
                       value={bookingData.date}
                       min={new Date().toISOString().split("T")[0]}
                       onChange={(e) => setBookingData((p) => ({ ...p, date: e.target.value, time: "" }))}
-                      className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm mb-4 focus:outline-none focus:ring-2 focus:ring-[#F97316]"
+                      className="w-full border border-gray-200 dark:border-neutral-700 rounded-lg px-4 py-3 text-sm mb-4 focus:outline-none focus:ring-2 focus:ring-[#F97316]"
                     />
                     {bookingData.date && (
                       <>
-                        <p className="text-sm text-gray-500 mb-3">{isUk ? "Доступний час:" : "Available slots:"}</p>
+                        <p className="text-sm text-gray-500 dark:text-neutral-400 mb-3">{isUk ? "Доступний час:" : "Available slots:"}</p>
                         <div className="grid grid-cols-5 gap-2">
                           {timeSlots.map((t) => (
                             <button
                               key={t}
                               onClick={() => setBookingData((p) => ({ ...p, time: t }))}
                               className={`py-2 rounded-lg text-sm font-medium border-2 transition-all ${
-                                bookingData.time === t ? "border-[#F97316] bg-orange-50 text-[#F97316]" : "border-gray-200 bg-white hover:border-orange-200"
+                                bookingData.time === t ? "border-[#F97316] bg-orange-50 text-[#F97316]" : "border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-orange-200"
                               }`}
                             >
                               {t}
@@ -830,7 +830,7 @@ export function RepairProDemo({ lang }: { lang: string }) {
                       </>
                     )}
                     <div className="mt-6 flex justify-between">
-                      <button onClick={() => setBookingStep(2)} className="text-sm text-gray-400 hover:text-gray-600">← {isUk ? "Назад" : "Back"}</button>
+                      <button onClick={() => setBookingStep(2)} className="text-sm text-gray-400 dark:text-neutral-500 hover:text-gray-600">← {isUk ? "Назад" : "Back"}</button>
                       <button
                         disabled={!bookingData.date || !bookingData.time}
                         onClick={() => setBookingStep(4)}
@@ -852,31 +852,31 @@ export function RepairProDemo({ lang }: { lang: string }) {
                         placeholder={isUk ? "Ваше ім'я" : "Your name"}
                         value={bookingData.name}
                         onChange={(e) => setBookingData((p) => ({ ...p, name: e.target.value }))}
-                        className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#F97316]"
+                        className="w-full border border-gray-200 dark:border-neutral-700 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#F97316]"
                       />
                       <input
                         type="tel"
                         placeholder={isUk ? "Номер телефону" : "Phone number"}
                         value={bookingData.phone}
                         onChange={(e) => setBookingData((p) => ({ ...p, phone: e.target.value }))}
-                        className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#F97316]"
+                        className="w-full border border-gray-200 dark:border-neutral-700 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#F97316]"
                       />
                       <textarea
                         placeholder={isUk ? "Опишіть пристрій та проблему (наприклад: iPhone 14 Pro, розбитий екран)" : "Describe your device and issue (e.g. iPhone 14 Pro, cracked screen)"}
                         value={bookingData.device}
                         onChange={(e) => setBookingData((p) => ({ ...p, device: e.target.value }))}
                         rows={3}
-                        className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#F97316] resize-none"
+                        className="w-full border border-gray-200 dark:border-neutral-700 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#F97316] resize-none"
                       />
                     </div>
                     {/* Summary */}
-                    <div className="mt-4 bg-gray-50 rounded-xl p-4 text-xs text-gray-500 space-y-1">
+                    <div className="mt-4 bg-gray-50 dark:bg-neutral-900 rounded-xl p-4 text-xs text-gray-500 dark:text-neutral-400 space-y-1">
                       <p>📍 {isUk ? bookingLocationObj?.nameUk : bookingLocationObj?.nameEn}</p>
                       <p>👤 {isUk ? bookingMasterObj?.nameUk : bookingMasterObj?.nameEn}</p>
                       <p>📅 {bookingData.date} {bookingData.time}</p>
                     </div>
                     <div className="mt-6 flex justify-between">
-                      <button onClick={() => setBookingStep(3)} className="text-sm text-gray-400 hover:text-gray-600">← {isUk ? "Назад" : "Back"}</button>
+                      <button onClick={() => setBookingStep(3)} className="text-sm text-gray-400 dark:text-neutral-500 hover:text-gray-600">← {isUk ? "Назад" : "Back"}</button>
                       <button
                         disabled={!bookingData.name || !bookingData.phone || !bookingData.device}
                         onClick={() => setBookingData((p) => ({ ...p, confirmed: true }))}
@@ -908,7 +908,7 @@ export function RepairProDemo({ lang }: { lang: string }) {
               { value: "90",     en: "Days warranty",      uk: "Днів гарантії" },
               { value: "3",      en: "Locations in Dnipro", uk: "Точки в Дніпрі" },
             ].map((s) => (
-              <div key={s.value} className="bg-gray-50 rounded-2xl p-5 text-center border border-gray-100">
+              <div key={s.value} className="bg-gray-50 dark:bg-neutral-900 rounded-2xl p-5 text-center border border-gray-100">
                 <p className="text-3xl font-extrabold text-[#F97316] mb-1">{s.value}</p>
                 <p className="text-sm text-gray-500">{isUk ? s.uk : s.en}</p>
               </div>
@@ -924,7 +924,7 @@ export function RepairProDemo({ lang }: { lang: string }) {
                 { label: "MacBook Air M2", issueEn: "Spilled liquid",  issueUk: "Рідина потрапила" },
                 { label: "Samsung S23",   issueEn: "Won't charge",    issueUk: "Не заряджається" },
               ].map((item, idx) => (
-                <div key={idx} className="bg-gray-50 rounded-2xl overflow-hidden border border-gray-100">
+                <div key={idx} className="bg-gray-50 dark:bg-neutral-900 rounded-2xl overflow-hidden border border-gray-100">
                   <div className="flex">
                     <div className="flex-1 p-4 bg-red-50 flex flex-col items-center justify-center gap-1 min-h-28">
                       <span className="text-red-400 font-bold text-xs uppercase tracking-wide">{isUk ? "До" : "Before"}</span>
@@ -938,7 +938,7 @@ export function RepairProDemo({ lang }: { lang: string }) {
                       <span className="text-xs text-emerald-600 text-center">{isUk ? "Відремонтовано" : "Repaired"}</span>
                     </div>
                   </div>
-                  <div className="px-4 py-2 border-t border-gray-100 text-center text-xs text-gray-500">{item.label}</div>
+                  <div className="px-4 py-2 border-t border-gray-100 dark:border-neutral-700 text-center text-xs text-gray-500">{item.label}</div>
                 </div>
               ))}
             </div>
@@ -954,7 +954,7 @@ export function RepairProDemo({ lang }: { lang: string }) {
                 { icon: "🛡️", en: "ISO 9001 Quality",          uk: "ISO 9001 Якість" },
                 { icon: "⚡", en: "Express Repair Certified",  uk: "Сертифікат Expres Repair" },
               ].map((c) => (
-                <div key={c.en} className="flex items-center gap-2 bg-white rounded-xl px-4 py-2 text-sm font-medium border border-gray-100 shadow-sm">
+                <div key={c.en} className="flex items-center gap-2 bg-white dark:bg-neutral-800 rounded-xl px-4 py-2 text-sm font-medium border border-gray-100 dark:border-neutral-700 shadow-sm">
                   <span>{c.icon}</span>
                   <span>{isUk ? c.uk : c.en}</span>
                 </div>
@@ -966,7 +966,7 @@ export function RepairProDemo({ lang }: { lang: string }) {
           <h3 className="text-lg font-bold text-center mb-6">{isUk ? "Відгуки клієнтів" : "Customer Reviews"}</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {reviews.map((r, idx) => (
-              <div key={idx} className="bg-gray-50 rounded-2xl p-5 border border-gray-100">
+              <div key={idx} className="bg-gray-50 dark:bg-neutral-900 rounded-2xl p-5 border border-gray-100">
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-2">
                     <div className="w-9 h-9 bg-[#F97316] rounded-full flex items-center justify-center text-white font-bold text-xs shrink-0">
@@ -976,7 +976,7 @@ export function RepairProDemo({ lang }: { lang: string }) {
                   </div>
                   <span className="text-[#F97316] font-bold text-sm">{"★".repeat(r.rating)}</span>
                 </div>
-                <p className="text-sm text-gray-600 leading-relaxed">{isUk ? r.textUk : r.textEn}</p>
+                <p className="text-sm text-gray-600 dark:text-neutral-300 leading-relaxed">{isUk ? r.textUk : r.textEn}</p>
               </div>
             ))}
           </div>
@@ -995,7 +995,7 @@ export function RepairProDemo({ lang }: { lang: string }) {
                   📍 {isUk ? loc.nameUk.split("—")[0].trim() : loc.nameEn.split("—")[0].trim()}
                 </p>
                 <p className="text-sm text-gray-400">{isUk ? loc.nameUk.split("—")[1]?.trim() : loc.nameEn.split("—")[1]?.trim()}</p>
-                <p className="text-xs text-gray-500 mt-1">{isUk ? loc.hoursUk : loc.hoursEn}</p>
+                <p className="text-xs text-gray-500 dark:text-neutral-400 mt-1">{isUk ? loc.hoursUk : loc.hoursEn}</p>
               </div>
             ))}
           </div>
@@ -1004,7 +1004,7 @@ export function RepairProDemo({ lang }: { lang: string }) {
             <div className="flex items-center gap-2">
               <span className="text-xl">🔧</span>
               <span className="font-bold text-white">RepairPro</span>
-              <span className="text-gray-500 text-sm">— {isUk ? "Сервісний центр №1 в Дніпрі" : "Service Center #1 in Dnipro"}</span>
+              <span className="text-gray-500 dark:text-neutral-400 text-sm">— {isUk ? "Сервісний центр №1 в Дніпрі" : "Service Center #1 in Dnipro"}</span>
             </div>
             <div className="flex gap-4 text-sm text-gray-500">
               <span className="hover:text-[#F97316] cursor-pointer transition-colors">{isUk ? "Конфіденційність" : "Privacy"}</span>
@@ -1012,7 +1012,7 @@ export function RepairProDemo({ lang }: { lang: string }) {
               <span className="hover:text-[#F97316] cursor-pointer transition-colors">{isUk ? "Контакти" : "Contact"}</span>
             </div>
           </div>
-          <p className="text-center text-gray-600 text-xs mt-4">© 2026 RepairPro. {isUk ? "Всі права захищені." : "All rights reserved."}</p>
+          <p className="text-center text-gray-600 dark:text-neutral-300 text-xs mt-4">© 2026 RepairPro. {isUk ? "Всі права захищені." : "All rights reserved."}</p>
         </div>
       </footer>
 

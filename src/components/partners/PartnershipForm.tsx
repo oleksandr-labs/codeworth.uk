@@ -74,7 +74,7 @@ export function PartnershipForm({ lang }: { lang: string }) {
         <h3 className="text-xl font-semibold text-gray-900">
           {isUk ? "Заявку отримано!" : "Application received!"}
         </h3>
-        <p className="text-gray-600 max-w-sm">
+        <p className="text-gray-600 dark:text-neutral-300 max-w-sm">
           {isUk
             ? "Ми розглянемо вашу заявку та зв'яжемося протягом 2 робочих днів."
             : "We'll review your application and get back to you within 2 business days."}
@@ -99,7 +99,7 @@ export function PartnershipForm({ lang }: { lang: string }) {
 
       <div className="grid sm:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="partner-name" className="block text-sm font-medium text-gray-700 mb-1.5">
+          <label htmlFor="partner-name" className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-1.5">
             {isUk ? "Ім'я та прізвище" : "Full Name"} <span className="text-red-500">*</span>
           </label>
           <input
@@ -109,11 +109,11 @@ export function PartnershipForm({ lang }: { lang: string }) {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder={isUk ? "Олена Коваль" : "Jane Smith"}
-            className="w-full px-4 py-2.5 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm"
+            className="w-full px-4 py-2.5 border border-gray-300 rounded-xl text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm"
           />
         </div>
         <div>
-          <label htmlFor="partner-email" className="block text-sm font-medium text-gray-700 mb-1.5">
+          <label htmlFor="partner-email" className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-1.5">
             Email <span className="text-red-500">*</span>
           </label>
           <input
@@ -123,13 +123,13 @@ export function PartnershipForm({ lang }: { lang: string }) {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="you@company.com"
-            className="w-full px-4 py-2.5 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm"
+            className="w-full px-4 py-2.5 border border-gray-300 rounded-xl text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm"
           />
         </div>
       </div>
 
       <div>
-        <p className="block text-sm font-medium text-gray-700 mb-2">
+        <p className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-2">
           {isUk ? "Тип партнерства" : "Partnership Type"} <span className="text-red-500">*</span>
         </p>
         <div className="grid sm:grid-cols-3 gap-3">
@@ -139,7 +139,7 @@ export function PartnershipForm({ lang }: { lang: string }) {
               className={`relative flex flex-col gap-1 p-3 border-2 rounded-xl cursor-pointer transition-colors ${
                 type === opt.value
                   ? "border-indigo-500 bg-indigo-50"
-                  : "border-gray-200 hover:border-indigo-300"
+                  : "border-gray-200 dark:border-neutral-700 hover:border-indigo-300"
               }`}
             >
               <input
@@ -151,16 +151,16 @@ export function PartnershipForm({ lang }: { lang: string }) {
                 className="sr-only"
               />
               <span className="text-sm font-semibold text-gray-900">{opt.label[isUk ? "uk" : "en"]}</span>
-              <span className="text-xs text-gray-500 leading-snug">{opt.description[isUk ? "uk" : "en"]}</span>
+              <span className="text-xs text-gray-500 dark:text-neutral-400 leading-snug">{opt.description[isUk ? "uk" : "en"]}</span>
             </label>
           ))}
         </div>
       </div>
 
       <div>
-        <label htmlFor="partner-audience" className="block text-sm font-medium text-gray-700 mb-1.5">
+        <label htmlFor="partner-audience" className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-1.5">
           {isUk ? "Розмір аудиторії або клієнтської бази" : "Audience or client base size"}
-          <span className="ml-1 text-gray-400 text-xs">{isUk ? "(необов'язково)" : "(optional)"}</span>
+          <span className="ml-1 text-gray-400 dark:text-neutral-500 text-xs">{isUk ? "(необов'язково)" : "(optional)"}</span>
         </label>
         <input
           id="partner-audience"
@@ -168,12 +168,12 @@ export function PartnershipForm({ lang }: { lang: string }) {
           value={audience}
           onChange={(e) => setAudience(e.target.value)}
           placeholder={isUk ? "напр. 500+ підписників, 20 клієнтів/міс" : "e.g. 500+ followers, 20 clients/mo"}
-          className="w-full px-4 py-2.5 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm"
+          className="w-full px-4 py-2.5 border border-gray-300 rounded-xl text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm"
         />
       </div>
 
       <div>
-        <label htmlFor="partner-description" className="block text-sm font-medium text-gray-700 mb-1.5">
+        <label htmlFor="partner-description" className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-1.5">
           {isUk ? "Розкажіть про себе та свій бізнес" : "Tell us about yourself and your business"}{" "}
           <span className="text-red-500">*</span>
         </label>
@@ -189,7 +189,7 @@ export function PartnershipForm({ lang }: { lang: string }) {
               ? "Хто ви, чим займаєтесь, чому хочете стати партнером Codeworth..."
               : "Who you are, what you do, why you want to partner with Codeworth..."
           }
-          className="w-full px-4 py-2.5 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm resize-none"
+          className="w-full px-4 py-2.5 border border-gray-300 rounded-xl text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm resize-none"
         />
       </div>
 

@@ -104,7 +104,7 @@ export function WhyUsSection({ lang }: { lang: string }) {
             <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
               {isUk ? "Чому Codeworth" : "Why Codeworth"}
             </p>
-            <h2 className="text-4xl lg:text-5xl font-heading font-extrabold text-neutral-900 mb-4">
+            <h2 className="text-4xl lg:text-5xl font-heading font-extrabold text-neutral-900 dark:text-white mb-4">
               {isUk ? (
                 <>Обирають нас,{" "}<span className="gradient-text">бо ми результат</span></>
               ) : (
@@ -119,13 +119,13 @@ export function WhyUsSection({ lang }: { lang: string }) {
               return (
                 <div
                   key={reason.title}
-                  className="p-6 rounded-2xl bg-white border border-neutral-100 shadow-sm hover:shadow-md transition-shadow duration-200"
+                  className="p-6 rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 shadow-sm hover:shadow-md transition-shadow duration-200"
                 >
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${reason.bg}`}>
                     <Icon className={`w-6 h-6 ${reason.color}`} />
                   </div>
-                  <h3 className="font-heading font-bold text-neutral-900 mb-2">{reason.title}</h3>
-                  <p className="text-sm text-neutral-500 leading-relaxed">{reason.description}</p>
+                  <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-2">{reason.title}</h3>
+                  <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">{reason.description}</p>
                 </div>
               );
             })}

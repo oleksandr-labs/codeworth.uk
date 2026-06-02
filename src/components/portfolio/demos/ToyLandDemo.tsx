@@ -198,7 +198,7 @@ export function ToyLandDemo({ lang }: { lang: string }) {
     <div className="min-h-screen bg-white font-sans">
 
       {/* ── 1. STICKY NAV ── */}
-      <nav className="sticky top-0 z-50 bg-white border-b border-yellow-200 shadow-sm">
+      <nav className="sticky top-0 z-50 bg-white dark:bg-neutral-800 border-b border-yellow-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center gap-4">
           {/* Logo */}
           <div className="shrink-0 flex items-center gap-2">

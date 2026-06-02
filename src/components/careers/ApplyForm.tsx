@@ -72,7 +72,7 @@ export function ApplyForm({ positionTitle, lang: _lang, isUk }: Props) {
       <input type="text" name="website" className="hidden" aria-hidden="true" tabIndex={-1} />
 
       <div>
-        <label htmlFor="apply-name" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="apply-name" className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-1">
           {isUk ? "Ім'я та прізвище" : "Full Name"} <span className="text-red-500">*</span>
         </label>
         <input
@@ -89,7 +89,7 @@ export function ApplyForm({ positionTitle, lang: _lang, isUk }: Props) {
       </div>
 
       <div>
-        <label htmlFor="apply-email" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="apply-email" className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-1">
           Email <span className="text-red-500">*</span>
         </label>
         <input
@@ -105,7 +105,7 @@ export function ApplyForm({ positionTitle, lang: _lang, isUk }: Props) {
       </div>
 
       <div>
-        <label htmlFor="apply-portfolio" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="apply-portfolio" className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-1">
           {isUk ? "Портфоліо / GitHub / LinkedIn" : "Portfolio / GitHub / LinkedIn"}
         </label>
         <input
@@ -119,7 +119,7 @@ export function ApplyForm({ positionTitle, lang: _lang, isUk }: Props) {
       </div>
 
       <div>
-        <label htmlFor="apply-cover" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="apply-cover" className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-1">
           {isUk ? "Про себе / Cover letter" : "About You / Cover Letter"}{" "}
           <span className="text-red-500">*</span>
         </label>
@@ -165,7 +165,7 @@ export function ApplyForm({ positionTitle, lang: _lang, isUk }: Props) {
         )}
       </button>
 
-      <p className="text-xs text-gray-400 text-center">
+      <p className="text-xs text-gray-400 dark:text-neutral-500 text-center">
         {isUk
           ? "Надсилаючи заявку, ви погоджуєтесь з нашою Політикою конфіденційності."
           : "By submitting, you agree to our Privacy Policy."}

@@ -29,7 +29,7 @@ export function VideoDemo({ isUk }: Props) {
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
               variant === v.id
                 ? "bg-indigo-600 text-white shadow-sm"
-                : "bg-neutral-100 text-neutral-600 hover:bg-indigo-50"
+                : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-indigo-50"
             }`}
           >
             {isUk ? v.labelUk : v.labelEn}
@@ -97,7 +97,7 @@ export function VideoDemo({ isUk }: Props) {
       )}
 
       {variant === "case-study" && (
-        <div className="rounded-2xl border border-neutral-200 bg-white overflow-hidden">
+        <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white overflow-hidden">
           <div className="aspect-video bg-neutral-900 relative group">
             <div className="absolute inset-0 bg-linear-to-br from-emerald-600 to-teal-700 flex items-center justify-center">
               <button
@@ -118,10 +118,10 @@ export function VideoDemo({ isUk }: Props) {
             </div>
           </div>
           <div className="p-5">
-            <h3 className="font-bold text-neutral-900 mb-2">
+            <h3 className="font-bold text-neutral-900 dark:text-white mb-2">
               {isUk ? "Кейс: FoodCo SaaS — 47% конверсія за місяць" : "Case: FoodCo SaaS — 47% conversion in 1 month"}
             </h3>
-            <p className="text-sm text-neutral-500 leading-relaxed">
+            <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">
               {isUk
                 ? "Розповідаємо як ми переробили лендінг для FoodCo: A/B тести, hero оптимізація, новий checkout flow."
                 : "We rebuilt FoodCo's landing page: A/B tests, hero optimization, new checkout flow."}

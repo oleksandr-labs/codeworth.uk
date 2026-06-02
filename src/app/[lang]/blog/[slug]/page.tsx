@@ -274,7 +274,7 @@ export default async function BlogPostPage({ params }: Props) {
           </Container>
         </section>
 
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-white dark:bg-neutral-950">
           <Container>
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
 
@@ -287,19 +287,19 @@ export default async function BlogPostPage({ params }: Props) {
                     <div key={i} className="mb-6">
                       {para.split('\n').map((line, j) => {
                         if (line.startsWith('**') && line.endsWith('**')) {
-                          return <h2 key={j} className="text-2xl font-heading font-bold text-neutral-900 mt-8 mb-3">{line.replace(/\*\*/g, '')}</h2>;
+                          return <h2 key={j} className="text-2xl font-heading font-bold text-neutral-900 dark:text-white mt-8 mb-3">{line.replace(/\*\*/g, '')}</h2>;
                         }
                         if (line.match(/^\d+\./)) {
-                          return <p key={j} className="text-neutral-700 leading-relaxed pl-4">{line}</p>;
+                          return <p key={j} className="text-neutral-700 dark:text-neutral-300 leading-relaxed pl-4">{line}</p>;
                         }
-                        return line ? <p key={j} className="text-neutral-600 leading-relaxed text-base">{line}</p> : null;
+                        return line ? <p key={j} className="text-neutral-600 dark:text-neutral-300 leading-relaxed text-base">{line}</p> : null;
                       })}
                     </div>
                   ))}
                 </div>
 
                 {/* Tags */}
-                <div className="mt-10 pt-6 border-t border-neutral-100 flex flex-wrap gap-2">
+                <div className="mt-10 pt-6 border-t border-neutral-100 dark:border-neutral-700 flex flex-wrap gap-2">
                   {post.tags.map((tag) => (
                     <Link
                       key={tag}
@@ -320,8 +320,8 @@ export default async function BlogPostPage({ params }: Props) {
 
                 {/* Related services */}
                 {relatedServices.length > 0 && (
-                  <div className="mt-8 p-6 rounded-2xl border border-neutral-100 bg-neutral-50">
-                    <h3 className="text-sm font-semibold text-neutral-500 uppercase tracking-wider mb-4">
+                  <div className="mt-8 p-6 rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-neutral-50">
+                    <h3 className="text-sm font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mb-4">
                       {isUk ? "Пов'язані послуги Codeworth" : "Related Codeworth Services"}
                     </h3>
                     <div className="flex flex-wrap gap-3">
@@ -332,7 +332,7 @@ export default async function BlogPostPage({ params }: Props) {
                           <Link
                             key={svc.slug}
                             href={`/${lang}/services/${svc.slug}`}
-                            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-neutral-200 text-sm font-medium text-neutral-700 hover:border-indigo-300 hover:text-indigo-700 transition-colors"
+                            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:border-indigo-300 hover:text-indigo-700 transition-colors"
                           >
                             <Icon className="w-4 h-4 text-indigo-500 shrink-0" />
                             {svc.shortTitle}
@@ -363,12 +363,12 @@ export default async function BlogPostPage({ params }: Props) {
                 {(() => {
                   const authorData = getAuthorByName(post.author);
                   return (
-                    <div className="mt-8 p-6 rounded-2xl border border-neutral-100 bg-neutral-50 flex gap-5">
+                    <div className="mt-8 p-6 rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900 flex gap-5">
                       <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-indigo-100 to-indigo-200 flex items-center justify-center text-2xl shrink-0">
                         {authorData?.emoji ?? post.author[0]}
                       </div>
                       <div className="min-w-0">
-                        <div className="font-heading font-bold text-neutral-900 text-base leading-tight">
+                        <div className="font-heading font-bold text-neutral-900 dark:text-white text-base leading-tight">
                           {authorData ? (
                             <Link href={`/${lang}/blog/author/${authorData.slug}`} className="hover:text-indigo-700 transition-colors">
                               {post.author}
@@ -378,7 +378,7 @@ export default async function BlogPostPage({ params }: Props) {
                         <div className="text-xs text-indigo-600 font-medium mt-0.5 mb-2">
                           {authorData ? (isUk ? authorData.role : authorData.roleEn) : "Codeworth Team"}
                         </div>
-                        <p className="text-sm text-neutral-600 leading-relaxed">
+                        <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
                           {authorData ? (isUk ? authorData.bio : authorData.bioEn) : (isUk ? "Спеціаліст команди Codeworth." : "Codeworth team specialist.")}
                         </p>
                       </div>
@@ -391,20 +391,20 @@ export default async function BlogPostPage({ params }: Props) {
                   {prevPost ? (
                     <Link
                       href={`/${lang}/blog/${prevPost.slug}`}
-                      className="group p-4 rounded-2xl border border-neutral-100 hover:border-indigo-100 hover:shadow-md transition-all"
+                      className="group p-4 rounded-2xl border border-neutral-100 dark:border-neutral-700 hover:border-indigo-100 hover:shadow-md transition-all"
                     >
                       <div className="flex items-center gap-2 text-xs text-neutral-400 mb-1.5">
                         <ArrowLeft className="w-3 h-3" />
                         {isUk ? "Попередня стаття" : "Previous Article"}
                       </div>
-                      <div className="text-sm font-medium text-neutral-800 group-hover:text-indigo-700 transition-colors line-clamp-2 leading-tight">
+                      <div className="text-sm font-medium text-neutral-800 dark:text-neutral-200 group-hover:text-indigo-700 transition-colors line-clamp-2 leading-tight">
                         {prevPost.title}
                       </div>
                     </Link>
                   ) : (
                     <Link
                       href={`/${lang}/blog`}
-                      className="group p-4 rounded-2xl border border-neutral-100 hover:border-indigo-100 hover:shadow-md transition-all flex items-center gap-2 text-sm font-medium text-neutral-600 hover:text-indigo-700"
+                      className="group p-4 rounded-2xl border border-neutral-100 dark:border-neutral-700 hover:border-indigo-100 hover:shadow-md transition-all flex items-center gap-2 text-sm font-medium text-neutral-600 dark:text-neutral-300 hover:text-indigo-700"
                     >
                       <ArrowLeft className="w-4 h-4" />
                       {isUk ? "Всі статті" : "All Articles"}
@@ -413,13 +413,13 @@ export default async function BlogPostPage({ params }: Props) {
                   {nextPost ? (
                     <Link
                       href={`/${lang}/blog/${nextPost.slug}`}
-                      className="group p-4 rounded-2xl border border-neutral-100 hover:border-indigo-100 hover:shadow-md transition-all text-right"
+                      className="group p-4 rounded-2xl border border-neutral-100 dark:border-neutral-700 hover:border-indigo-100 hover:shadow-md transition-all text-right"
                     >
                       <div className="flex items-center justify-end gap-2 text-xs text-neutral-400 mb-1.5">
                         {isUk ? "Наступна стаття" : "Next Article"}
                         <ArrowRight className="w-3 h-3" />
                       </div>
-                      <div className="text-sm font-medium text-neutral-800 group-hover:text-indigo-700 transition-colors line-clamp-2 leading-tight">
+                      <div className="text-sm font-medium text-neutral-800 dark:text-neutral-200 group-hover:text-indigo-700 transition-colors line-clamp-2 leading-tight">
                         {nextPost.title}
                       </div>
                     </Link>
@@ -432,8 +432,8 @@ export default async function BlogPostPage({ params }: Props) {
               {/* Sidebar */}
               <aside className="lg:col-span-1 space-y-8">
                 {/* Author */}
-                <div className="p-5 rounded-2xl border border-neutral-100 bg-white">
-                  <h3 className="font-heading font-bold text-neutral-900 mb-4 text-sm uppercase tracking-wider">{isUk ? "Автор" : "Author"}</h3>
+                <div className="p-5 rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white">
+                  <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-4 text-sm uppercase tracking-wider">{isUk ? "Автор" : "Author"}</h3>
                   {(() => {
                     const sidebarAuthor = getAuthorByName(post.author);
                     return (
@@ -442,7 +442,7 @@ export default async function BlogPostPage({ params }: Props) {
                           {sidebarAuthor?.emoji ?? post.author[0]}
                         </div>
                         <div>
-                          <div className="font-semibold text-neutral-900 text-sm">
+                          <div className="font-semibold text-neutral-900 dark:text-white text-sm">
                             {sidebarAuthor ? (
                               <Link href={`/${lang}/blog/author/${sidebarAuthor.slug}`} className="hover:text-indigo-700 transition-colors">
                                 {post.author}
@@ -460,12 +460,12 @@ export default async function BlogPostPage({ params }: Props) {
 
                 {/* Related posts */}
                 {suggestions.length > 0 && (
-                  <div className="p-5 rounded-2xl border border-neutral-100 bg-white">
-                    <h3 className="font-heading font-bold text-neutral-900 mb-4 text-sm uppercase tracking-wider">{isUk ? "Схожі статті" : "Related Articles"}</h3>
+                  <div className="p-5 rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white">
+                    <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-4 text-sm uppercase tracking-wider">{isUk ? "Схожі статті" : "Related Articles"}</h3>
                     <div className="space-y-4">
                       {suggestions.map((related) => (
                         <Link key={related.slug} href={`/${lang}/blog/${related.slug}`} className="group block">
-                          <div className="text-sm font-medium text-neutral-800 group-hover:text-indigo-700 transition-colors leading-tight mb-1">
+                          <div className="text-sm font-medium text-neutral-800 dark:text-neutral-200 group-hover:text-indigo-700 transition-colors leading-tight mb-1">
                             {related.title}
                           </div>
                           <div className="text-xs text-neutral-400 flex items-center gap-1">
@@ -499,8 +499,8 @@ export default async function BlogPostPage({ params }: Props) {
 
                 {/* Subscribe */}
                 <div className="p-5 rounded-2xl bg-indigo-50 border border-indigo-100">
-                  <h3 className="font-heading font-bold text-neutral-900 mb-2 text-sm">{isUk ? "Підписка на блог" : "Blog Newsletter"}</h3>
-                  <p className="text-xs text-neutral-500 mb-3">{isUk ? "Нові статті раз на тиждень." : "New articles once a week."}</p>
+                  <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-2 text-sm">{isUk ? "Підписка на блог" : "Blog Newsletter"}</h3>
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400 mb-3">{isUk ? "Нові статті раз на тиждень." : "New articles once a week."}</p>
                   <NewsletterForm variant="compact" />
                 </div>
               </aside>
@@ -510,7 +510,7 @@ export default async function BlogPostPage({ params }: Props) {
 
         {/* Related Articles — full-width bottom section */}
         {suggestions.length > 0 && (
-          <section className="py-16 bg-neutral-50 border-t border-neutral-100">
+          <section className="py-16 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100">
             <Container>
               <div className="flex items-center justify-between mb-8">
                 <div>
@@ -534,7 +534,7 @@ export default async function BlogPostPage({ params }: Props) {
                   <Link
                     key={s.slug}
                     href={`/${lang}/blog/${s.slug}`}
-                    className="group bg-white rounded-2xl border border-neutral-100 overflow-hidden hover:shadow-lg hover:border-indigo-100 hover:-translate-y-1 transition-all duration-300"
+                    className="group bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-100 dark:border-neutral-700 overflow-hidden hover:shadow-lg hover:border-indigo-100 hover:-translate-y-1 transition-all duration-300"
                   >
                     <div className={`h-36 bg-linear-to-br ${s.color} flex items-center justify-center text-5xl`}>
                       {s.emoji}
@@ -543,10 +543,10 @@ export default async function BlogPostPage({ params }: Props) {
                       <span className="inline-block text-xs font-semibold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-full mb-3">
                         {s.category}
                       </span>
-                      <h3 className="font-heading font-bold text-neutral-900 group-hover:text-indigo-700 transition-colors leading-snug mb-2 line-clamp-2">
+                      <h3 className="font-heading font-bold text-neutral-900 dark:text-white group-hover:text-indigo-700 transition-colors leading-snug mb-2 line-clamp-2">
                         {s.title}
                       </h3>
-                      <p className="text-sm text-neutral-500 leading-relaxed line-clamp-2 mb-4">
+                      <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed line-clamp-2 mb-4">
                         {s.excerpt}
                       </p>
                       <div className="flex items-center justify-between text-xs text-neutral-400 pt-3 border-t border-neutral-100">

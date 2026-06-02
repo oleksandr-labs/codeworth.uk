@@ -49,7 +49,7 @@ export function LightboxDemo({ isUk }: Props) {
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
               k === preset
                 ? "bg-indigo-600 text-white shadow-sm"
-                : "bg-neutral-100 text-neutral-600 hover:bg-indigo-50"
+                : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-indigo-50"
             }`}
           >
             {isUk ? PRESETS[k].labelUk : PRESETS[k].labelEn}

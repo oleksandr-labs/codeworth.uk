@@ -61,7 +61,7 @@ export function AnalyticsFunnelDemo({ isUk }: Props) {
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
               k === funnel
                 ? "bg-indigo-600 text-white shadow-sm"
-                : "bg-neutral-100 text-neutral-600 hover:bg-indigo-50"
+                : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-indigo-50"
             }`}
           >
             {isUk ? FUNNELS[k].labelUk : FUNNELS[k].labelEn}
@@ -69,7 +69,7 @@ export function AnalyticsFunnelDemo({ isUk }: Props) {
         ))}
         <button
           onClick={() => setFunnel(funnel)}
-          className="ml-auto flex items-center gap-1.5 px-3 py-2 text-sm text-neutral-500 hover:text-neutral-900 transition-colors"
+          className="ml-auto flex items-center gap-1.5 px-3 py-2 text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:text-white transition-colors"
           aria-label={isUk ? "Оновити дані" : "Refresh data"}
         >
           <RefreshCw className="w-3.5 h-3.5" />
@@ -77,7 +77,7 @@ export function AnalyticsFunnelDemo({ isUk }: Props) {
         </button>
       </div>
 
-      <div className="rounded-2xl border border-neutral-200 bg-white p-6">
+      <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 p-6">
         <div className="space-y-3">
           {current.steps.map((step, i) => {
             const Icon = step.icon;
@@ -92,7 +92,7 @@ export function AnalyticsFunnelDemo({ isUk }: Props) {
                     {isUk ? step.labelUk : step.labelEn}
                   </div>
                   <div className="flex items-center gap-3 text-sm">
-                    <span className="font-bold text-neutral-900 tabular-nums">
+                    <span className="font-bold text-neutral-900 dark:text-white tabular-nums">
                       {step.value.toLocaleString()}
                     </span>
                     {i > 0 && (
@@ -125,9 +125,9 @@ export function AnalyticsFunnelDemo({ isUk }: Props) {
         </div>
 
         {/* Summary */}
-        <div className="mt-6 pt-6 border-t border-neutral-100 grid grid-cols-3 gap-4 text-center">
+        <div className="mt-6 pt-6 border-t border-neutral-100 dark:border-neutral-700 grid grid-cols-3 gap-4 text-center">
           <div>
-            <div className="text-xs text-neutral-500 uppercase tracking-wider mb-1">
+            <div className="text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mb-1">
               {isUk ? "Загальна конверсія" : "Overall conversion"}
             </div>
             <div className="text-2xl font-bold text-indigo-600 tabular-nums">
@@ -135,7 +135,7 @@ export function AnalyticsFunnelDemo({ isUk }: Props) {
             </div>
           </div>
           <div>
-            <div className="text-xs text-neutral-500 uppercase tracking-wider mb-1">
+            <div className="text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mb-1">
               {isUk ? "Втрати" : "Drop-offs"}
             </div>
             <div className="text-2xl font-bold text-rose-600 tabular-nums">
@@ -143,10 +143,10 @@ export function AnalyticsFunnelDemo({ isUk }: Props) {
             </div>
           </div>
           <div>
-            <div className="text-xs text-neutral-500 uppercase tracking-wider mb-1">
+            <div className="text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mb-1">
               {isUk ? "Кроків" : "Steps"}
             </div>
-            <div className="text-2xl font-bold text-neutral-900 tabular-nums">
+            <div className="text-2xl font-bold text-neutral-900 dark:text-white tabular-nums">
               {current.steps.length}
             </div>
           </div>

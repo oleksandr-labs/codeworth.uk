@@ -79,7 +79,7 @@ export function PricingToggle({ plans, lang, color }: PricingToggleProps) {
               className={`relative flex flex-col rounded-2xl border p-6 transition-all ${
                 plan.highlighted
                   ? "border-2 shadow-xl shadow-indigo-500/10 bg-white dark:bg-neutral-800"
-                  : "border-neutral-100 dark:border-neutral-700/50 bg-white dark:bg-neutral-800/60 hover:shadow-md"
+                  : "border-neutral-100 dark:border-neutral-700 /50 bg-white dark:bg-neutral-800/60 hover:shadow-md"
               }`}
               style={plan.highlighted ? { borderColor: color } : undefined}
             >
@@ -129,7 +129,7 @@ export function PricingToggle({ plans, lang, color }: PricingToggleProps) {
                     <span
                       className={
                         f.included
-                          ? "text-neutral-700 dark:text-neutral-300"
+                          ? "text-neutral-700 dark:text-neutral-300 "
                           : "text-neutral-400 dark:text-neutral-600"
                       }
                     >

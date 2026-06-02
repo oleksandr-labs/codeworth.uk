@@ -115,7 +115,7 @@ export function MiniShopDemo({ isUk }: Props) {
               className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
                 k === filter
                   ? "bg-indigo-600 text-white shadow-sm"
-                  : "bg-neutral-100 text-neutral-600 hover:bg-indigo-50"
+                  : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-indigo-50"
               }`}
               aria-pressed={k === filter}
             >
@@ -142,12 +142,12 @@ export function MiniShopDemo({ isUk }: Props) {
           {visible.map((p) => {
             const inCart = cart.find((i) => i.id === p.id);
             return (
-              <div key={p.id} className="rounded-xl border border-neutral-200 bg-white overflow-hidden hover:shadow-md transition-shadow">
+              <div key={p.id} className="rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white overflow-hidden hover:shadow-md transition-shadow">
                 <div className={`h-28 bg-linear-to-br ${p.color} flex items-center justify-center text-5xl`}>
                   {p.emoji}
                 </div>
                 <div className="p-3 space-y-2">
-                  <h3 className="font-semibold text-neutral-900 text-sm leading-tight">
+                  <h3 className="font-semibold text-neutral-900 dark:text-white text-sm leading-tight">
                     {isUk ? p.nameUk : p.nameEn}
                   </h3>
                   <div className="flex items-center justify-between">
@@ -156,7 +156,7 @@ export function MiniShopDemo({ isUk }: Props) {
                       <div className="flex items-center gap-1.5">
                         <button
                           onClick={() => updateQty(p.id, -1)}
-                          className="w-7 h-7 rounded-md bg-neutral-100 hover:bg-neutral-200 text-neutral-700 flex items-center justify-center"
+                          className="w-7 h-7 rounded-md bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 text-neutral-700 dark:text-neutral-300 flex items-center justify-center"
                           aria-label={isUk ? "Зменшити" : "Decrease"}
                         >
                           <Minus className="w-3 h-3" />
@@ -187,7 +187,7 @@ export function MiniShopDemo({ isUk }: Props) {
       )}
 
       {stage === "cart" && (
-        <div className="rounded-2xl border border-neutral-200 bg-white p-5 space-y-4">
+        <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white p-5 space-y-4">
           {cart.length === 0 ? (
             <p className="text-center py-8 text-neutral-500">
               {isUk ? "Кошик порожній" : "Cart is empty"}
@@ -204,13 +204,13 @@ export function MiniShopDemo({ isUk }: Props) {
                         {p.emoji}
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="font-medium text-neutral-900 text-sm truncate">{isUk ? p.nameUk : p.nameEn}</div>
+                        <div className="font-medium text-neutral-900 dark:text-white text-sm truncate">{isUk ? p.nameUk : p.nameEn}</div>
                         <div className="text-xs text-neutral-500">{fmt(p.price)} × {item.qty}</div>
                       </div>
                       <div className="flex items-center gap-1.5">
-                        <button onClick={() => updateQty(item.id, -1)} className="w-6 h-6 rounded bg-neutral-100 text-neutral-700 flex items-center justify-center" aria-label="−"><Minus className="w-3 h-3" /></button>
+                        <button onClick={() => updateQty(item.id, -1)} className="w-6 h-6 rounded bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 flex items-center justify-center" aria-label="−"><Minus className="w-3 h-3" /></button>
                         <span className="text-sm font-semibold w-5 text-center tabular-nums">{item.qty}</span>
-                        <button onClick={() => updateQty(item.id, 1)} className="w-6 h-6 rounded bg-neutral-100 text-neutral-700 flex items-center justify-center" aria-label="+"><Plus className="w-3 h-3" /></button>
+                        <button onClick={() => updateQty(item.id, 1)} className="w-6 h-6 rounded bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 flex items-center justify-center" aria-label="+"><Plus className="w-3 h-3" /></button>
                       </div>
                       <button onClick={() => removeItem(item.id)} className="text-rose-400 hover:text-rose-600 p-1" aria-label={isUk ? "Видалити" : "Remove"}>
                         <Trash2 className="w-3.5 h-3.5" />
@@ -235,7 +235,7 @@ export function MiniShopDemo({ isUk }: Props) {
       )}
 
       {stage === "checkout" && (
-        <form onSubmit={placeOrder} className="rounded-2xl border border-neutral-200 bg-white p-5 space-y-4">
+        <form onSubmit={placeOrder} className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white p-5 space-y-4">
           <h3 className="font-bold text-neutral-900">{isUk ? "Контактні дані" : "Contact details"}</h3>
           <input
             type="text"
@@ -243,7 +243,7 @@ export function MiniShopDemo({ isUk }: Props) {
             onChange={(e) => setName(e.target.value)}
             placeholder={isUk ? "Ваше ім'я" : "Your name"}
             required
-            className="w-full px-3 py-2.5 rounded-lg border border-neutral-200 focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-100 text-sm"
+            className="w-full px-3 py-2.5 rounded-lg border border-neutral-200 dark:border-neutral-700 focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-100 text-sm"
             aria-label={isUk ? "Ім'я" : "Name"}
           />
           <input
@@ -252,10 +252,10 @@ export function MiniShopDemo({ isUk }: Props) {
             onChange={(e) => setPhone(e.target.value)}
             placeholder="+380 ..."
             required
-            className="w-full px-3 py-2.5 rounded-lg border border-neutral-200 focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-100 text-sm"
+            className="w-full px-3 py-2.5 rounded-lg border border-neutral-200 dark:border-neutral-700 focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-100 text-sm"
             aria-label={isUk ? "Телефон" : "Phone"}
           />
-          <div className="flex items-center justify-between p-3 rounded-lg bg-neutral-50 text-sm">
+          <div className="flex items-center justify-between p-3 rounded-lg bg-neutral-50 dark:bg-neutral-900 text-sm">
             <span className="text-neutral-500">{isUk ? "До оплати:" : "Total:"}</span>
             <span className="font-bold text-indigo-700">{fmt(totalPrice)}</span>
           </div>
@@ -263,7 +263,7 @@ export function MiniShopDemo({ isUk }: Props) {
             <button
               type="button"
               onClick={() => setStage("cart")}
-              className="px-4 py-2.5 rounded-lg border border-neutral-200 text-neutral-700 text-sm font-medium hover:bg-neutral-50 transition-colors"
+              className="px-4 py-2.5 rounded-lg border border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 text-sm font-medium hover:bg-neutral-50 dark:hover:bg-neutral-800 dark:bg-neutral-900 transition-colors"
             >
               {isUk ? "Назад" : "Back"}
             </button>

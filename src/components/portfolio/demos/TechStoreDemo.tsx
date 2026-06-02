@@ -204,7 +204,7 @@ export function TechStoreDemo({ lang }: { lang: string }) {
     : [];
 
   return (
-    <div className="bg-gray-50 font-sans text-gray-900 min-h-screen text-sm">
+    <div className="bg-gray-50 dark:bg-neutral-900 font-sans text-gray-900 dark:text-white min-h-screen text-sm">
 
       {/* ── HEADER ── */}
       <header className="bg-[#111827] text-white sticky top-0 z-40 shadow-lg">
@@ -232,7 +232,7 @@ export function TechStoreDemo({ lang }: { lang: string }) {
               className="w-full bg-gray-700 text-white placeholder-gray-400 rounded-lg px-4 py-2 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500"
             />
             {searchQuery && (
-              <button onClick={() => setSearchQuery("")} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white">✕</button>
+              <button onClick={() => setSearchQuery("")} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-neutral-500 hover:text-white">✕</button>
             )}
           </div>
           {/* Actions */}
@@ -278,7 +278,7 @@ export function TechStoreDemo({ lang }: { lang: string }) {
             <div className="text-5xl mb-2">{banners[activeBanner].emoji}</div>
             <h2 className="text-2xl font-bold mb-1">{isUk ? banners[activeBanner].titleUk : banners[activeBanner].titleEn}</h2>
             <p className="text-white/80 mb-4 text-sm">{isUk ? banners[activeBanner].subtitleUk : banners[activeBanner].subtitleEn}</p>
-            <button className="bg-white text-gray-900 font-bold px-5 py-2 rounded-lg text-sm hover:bg-gray-100 transition-colors">
+            <button className="bg-white text-gray-900 dark:text-white font-bold px-5 py-2 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-neutral-700 dark:bg-neutral-800 transition-colors">
               {isUk ? banners[activeBanner].ctaUk : banners[activeBanner].ctaEn} →
             </button>
           </div>
@@ -299,7 +299,7 @@ export function TechStoreDemo({ lang }: { lang: string }) {
             <button
               key={link.cat}
               onClick={() => setActiveCategory(link.cat)}
-              className={`shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${activeCategory === link.cat ? "bg-cyan-500 text-white" : "bg-white text-gray-700 hover:bg-cyan-50 hover:text-cyan-700 border border-gray-200"}`}
+              className={`shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${activeCategory === link.cat ? "bg-cyan-500 text-white" : "bg-white text-gray-700 dark:text-neutral-300 hover:bg-cyan-50 hover:text-cyan-700 border border-gray-200"}`}
             >
               <span>{link.emoji}</span>
               <span>{isUk ? link.uk : link.en}</span>
@@ -319,7 +319,7 @@ export function TechStoreDemo({ lang }: { lang: string }) {
             <button
               key={cat.key}
               onClick={() => { setActiveCategory(cat.key); setSelectedBrands([]); setSpecFilter("Any"); setPriceRange(50000); }}
-              className={`shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${activeCategory === cat.key ? "bg-[#111827] text-cyan-400" : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200"}`}
+              className={`shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${activeCategory === cat.key ? "bg-[#111827] text-cyan-400" : "bg-white text-gray-600 dark:text-neutral-300 hover:bg-gray-100 dark:hover:bg-neutral-700 dark:bg-neutral-800 border border-gray-200"}`}
             >
               <span>{cat.emoji}</span>
               <span>{isUk ? cat.uk : cat.en}</span>
@@ -332,7 +332,7 @@ export function TechStoreDemo({ lang }: { lang: string }) {
           <div className="hidden md:block w-44 shrink-0 space-y-4">
             {/* Brand filter */}
             <div className="bg-white rounded-lg p-3 border border-gray-200">
-              <div className="font-semibold text-xs text-gray-700 mb-2 uppercase tracking-wide">{isUk ? "Бренд" : "Brand"}</div>
+              <div className="font-semibold text-xs text-gray-700 dark:text-neutral-300 mb-2 uppercase tracking-wide">{isUk ? "Бренд" : "Brand"}</div>
               <div className="space-y-1.5">
                 {brands.map((brand) => (
                   <label key={brand} className="flex items-center gap-2 cursor-pointer">
@@ -349,7 +349,7 @@ export function TechStoreDemo({ lang }: { lang: string }) {
             </div>
             {/* Price range */}
             <div className="bg-white rounded-lg p-3 border border-gray-200">
-              <div className="font-semibold text-xs text-gray-700 mb-2 uppercase tracking-wide">{isUk ? "Ціна до" : "Max Price"}</div>
+              <div className="font-semibold text-xs text-gray-700 dark:text-neutral-300 mb-2 uppercase tracking-wide">{isUk ? "Ціна до" : "Max Price"}</div>
               <input
                 type="range"
                 min={1000}
@@ -363,7 +363,7 @@ export function TechStoreDemo({ lang }: { lang: string }) {
             </div>
             {/* Spec filter */}
             <div className="bg-white rounded-lg p-3 border border-gray-200">
-              <div className="font-semibold text-xs text-gray-700 mb-2 uppercase tracking-wide">
+              <div className="font-semibold text-xs text-gray-700 dark:text-neutral-300 mb-2 uppercase tracking-wide">
                 {isUk ? specMeta.labelUk : specMeta.labelEn}
               </div>
               <div className="space-y-1.5">
@@ -405,7 +405,7 @@ export function TechStoreDemo({ lang }: { lang: string }) {
                   const inCompare = compareList.some((p) => p.id === product.id);
                   const inCart = cartItems.some((i) => i.id === product.id);
                   return (
-                    <div key={product.id} className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-shadow flex flex-col">
+                    <div key={product.id} className="bg-white rounded-xl border border-gray-200 dark:border-neutral-700 overflow-hidden hover:shadow-md transition-shadow flex flex-col">
                       {/* Image placeholder */}
                       <div
                         className="bg-linear-to-br from-gray-50 to-gray-100 h-28 flex items-center justify-center text-4xl cursor-pointer"
@@ -416,7 +416,7 @@ export function TechStoreDemo({ lang }: { lang: string }) {
                       <div className="p-2.5 flex flex-col flex-1">
                         <button
                           onClick={() => setQuickViewProduct(product)}
-                          className="text-xs font-semibold text-gray-800 hover:text-cyan-600 text-left line-clamp-2 mb-1"
+                          className="text-xs font-semibold text-gray-800 dark:text-neutral-200 hover:text-cyan-600 text-left line-clamp-2 mb-1"
                         >
                           {isUk ? product.nameUk : product.nameEn}
                         </button>
@@ -429,7 +429,7 @@ export function TechStoreDemo({ lang }: { lang: string }) {
                         <div className="flex items-baseline gap-1.5 mb-1.5">
                           <span className="text-sm font-bold text-gray-900">₴{product.price.toLocaleString()}</span>
                           {product.oldPrice && (
-                            <span className="text-[10px] text-gray-400 line-through">₴{product.oldPrice.toLocaleString()}</span>
+                            <span className="text-[10px] text-gray-400 dark:text-neutral-500 line-through">₴{product.oldPrice.toLocaleString()}</span>
                           )}
                         </div>
                         {/* Stock badge */}
@@ -447,7 +447,7 @@ export function TechStoreDemo({ lang }: { lang: string }) {
                           </button>
                           <button
                             onClick={() => toggleCompare(product)}
-                            className={`text-[10px] font-semibold px-2 py-1.5 rounded-lg border transition-colors ${inCompare ? "bg-blue-100 border-blue-400 text-blue-700" : "border-gray-300 text-gray-500 hover:border-blue-400 hover:text-blue-600"}`}
+                            className={`text-[10px] font-semibold px-2 py-1.5 rounded-lg border transition-colors ${inCompare ? "bg-blue-100 border-blue-400 text-blue-700" : "border-gray-300 text-gray-500 dark:text-neutral-400 hover:border-blue-400 hover:text-blue-600"}`}
                             title={isUk ? "Порівняти" : "Compare"}
                           >
                             ⚖️
@@ -476,11 +476,11 @@ export function TechStoreDemo({ lang }: { lang: string }) {
               <div className="text-xs font-semibold text-white mb-1 line-clamp-2 text-center">{isUk ? deal.nameUk : deal.nameEn}</div>
               <div className="flex items-center justify-center gap-1.5 mb-1">
                 <span className="text-sm font-bold text-cyan-400">₴{deal.price.toLocaleString()}</span>
-                <span className="text-[10px] text-gray-500 line-through">₴{deal.oldPrice.toLocaleString()}</span>
+                <span className="text-[10px] text-gray-500 dark:text-neutral-400 line-through">₴{deal.oldPrice.toLocaleString()}</span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">-{deal.discount}%</span>
-                <span className="text-[10px] text-gray-400 font-mono">⏱ {deal.timer}</span>
+                <span className="text-[10px] text-gray-400 dark:text-neutral-500 font-mono">⏱ {deal.timer}</span>
               </div>
               <button
                 onClick={() => addToCart({ id: deal.id + 100, emoji: deal.emoji, nameEn: deal.nameEn, nameUk: deal.nameUk, brand: "", price: deal.price, rating: 4.5, reviews: 0, inStock: true, specsEn: {}, specsUk: {} })}
@@ -496,10 +496,10 @@ export function TechStoreDemo({ lang }: { lang: string }) {
       {/* ── CREDIT CALCULATOR ── */}
       <section className="px-4 py-4">
         <h2 className="text-lg font-bold mb-3 text-gray-800">💳 {isUk ? "Кредитний калькулятор" : "Credit Calculator"}</h2>
-        <div className="bg-white rounded-xl border border-gray-200 p-4">
+        <div className="bg-white rounded-xl border border-gray-200 dark:border-neutral-700 p-4">
           {/* Product selector */}
           <div className="mb-4">
-            <label className="block text-xs font-semibold text-gray-600 mb-1">{isUk ? "Оберіть товар" : "Select product"}</label>
+            <label className="block text-xs font-semibold text-gray-600 dark:text-neutral-300 mb-1">{isUk ? "Оберіть товар" : "Select product"}</label>
             <select
               value={creditProductId ?? ""}
               onChange={(e) => setCreditProductId(e.target.value ? Number(e.target.value) : null)}
@@ -517,7 +517,7 @@ export function TechStoreDemo({ lang }: { lang: string }) {
               <div className="space-y-4">
                 {/* Down payment slider */}
                 <div>
-                  <label className="flex justify-between text-xs font-semibold text-gray-600 mb-1">
+                  <label className="flex justify-between text-xs font-semibold text-gray-600 dark:text-neutral-300 mb-1">
                     <span>{isUk ? "Перший внесок" : "Down Payment"}</span>
                     <span className="text-cyan-600">{downPaymentPct}% — ₴{downAmount.toLocaleString()}</span>
                   </label>
@@ -530,19 +530,19 @@ export function TechStoreDemo({ lang }: { lang: string }) {
                     onChange={(e) => setDownPaymentPct(Number(e.target.value))}
                     className="w-full accent-cyan-500"
                   />
-                  <div className="flex justify-between text-[10px] text-gray-400 mt-0.5">
+                  <div className="flex justify-between text-[10px] text-gray-400 dark:text-neutral-500 mt-0.5">
                     <span>0%</span><span>50%</span>
                   </div>
                 </div>
                 {/* Term selector */}
                 <div>
-                  <label className="block text-xs font-semibold text-gray-600 mb-1">{isUk ? "Термін кредиту" : "Loan Term"}</label>
+                  <label className="block text-xs font-semibold text-gray-600 dark:text-neutral-300 mb-1">{isUk ? "Термін кредиту" : "Loan Term"}</label>
                   <div className="flex gap-2">
                     {[6, 12, 18, 24].map((months) => (
                       <button
                         key={months}
                         onClick={() => setCreditTerm(months)}
-                        className={`flex-1 text-xs font-semibold py-1.5 rounded-lg border transition-colors ${creditTerm === months ? "bg-cyan-500 text-white border-cyan-500" : "border-gray-300 text-gray-600 hover:border-cyan-400"}`}
+                        className={`flex-1 text-xs font-semibold py-1.5 rounded-lg border transition-colors ${creditTerm === months ? "bg-cyan-500 text-white border-cyan-500" : "border-gray-300 text-gray-600 dark:text-neutral-300 hover:border-cyan-400"}`}
                       >
                         {months}{isUk ? " міс" : " mo"}
                       </button>
@@ -551,12 +551,12 @@ export function TechStoreDemo({ lang }: { lang: string }) {
                 </div>
               </div>
               {/* Summary */}
-              <div className="bg-gray-50 rounded-xl p-4 flex flex-col justify-between">
+              <div className="bg-gray-50 dark:bg-neutral-900 rounded-xl p-4 flex flex-col justify-between">
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between"><span className="text-gray-600">{isUk ? "Ціна товару" : "Product Price"}:</span><span className="font-semibold">₴{creditPrice.toLocaleString()}</span></div>
                   <div className="flex justify-between"><span className="text-gray-600">{isUk ? "Перший внесок" : "Down Payment"}:</span><span className="font-semibold text-green-600">₴{downAmount.toLocaleString()}</span></div>
                   <div className="flex justify-between"><span className="text-gray-600">{isUk ? "Сума кредиту" : "Loan Amount"}:</span><span className="font-semibold">₴{loanAmount.toLocaleString()}</span></div>
-                  <div className="border-t border-gray-200 pt-2 flex justify-between">
+                  <div className="border-t border-gray-200 dark:border-neutral-700 pt-2 flex justify-between">
                     <span className="font-bold text-gray-800">{isUk ? "Щомісячний платіж" : "Monthly Payment"}:</span>
                     <span className="font-bold text-xl text-cyan-600">₴{monthlyPayment.toLocaleString()}</span>
                   </div>
@@ -583,7 +583,7 @@ export function TechStoreDemo({ lang }: { lang: string }) {
         <div className="mb-2 text-sm text-gray-500">{isUk ? "Для: Samsung Galaxy S25" : "For: Samsung Galaxy S25"}</div>
         <div className="space-y-3">
           {reviews.map((review, i) => (
-            <div key={i} className="bg-white rounded-xl border border-gray-200 p-4">
+            <div key={i} className="bg-white rounded-xl border border-gray-200 dark:border-neutral-700 p-4">
               <div className="flex items-start justify-between mb-2">
                 <div>
                   <span className="font-semibold text-sm text-gray-800">{review.author}</span>
@@ -594,7 +594,7 @@ export function TechStoreDemo({ lang }: { lang: string }) {
                 <span className="text-[10px] text-gray-400">{isUk ? review.dateUk : review.dateEn}</span>
               </div>
               <div className="text-yellow-400 text-sm mb-1.5">{"⭐".repeat(review.rating)}</div>
-              <p className="text-sm text-gray-600 leading-relaxed">{isUk ? review.textUk : review.textEn}</p>
+              <p className="text-sm text-gray-600 dark:text-neutral-300 leading-relaxed">{isUk ? review.textUk : review.textEn}</p>
             </div>
           ))}
         </div>
@@ -605,7 +605,7 @@ export function TechStoreDemo({ lang }: { lang: string }) {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-6">
           <div>
             <div className="text-cyan-400 font-bold text-base mb-3">💻 TechStore UA</div>
-            <p className="text-xs text-gray-400 leading-relaxed">{isUk ? "Офіційний інтернет-магазин електроніки в Україні. Тільки оригінальна продукція." : "Official electronics online store in Ukraine. Original products only."}</p>
+            <p className="text-xs text-gray-400 dark:text-neutral-500 leading-relaxed">{isUk ? "Офіційний інтернет-магазин електроніки в Україні. Тільки оригінальна продукція." : "Official electronics online store in Ukraine. Original products only."}</p>
           </div>
           <div>
             <div className="font-semibold text-sm text-white mb-3">{isUk ? "Категорії" : "Categories"}</div>
@@ -640,7 +640,7 @@ export function TechStoreDemo({ lang }: { lang: string }) {
         </div>
         {/* Payment methods */}
         <div className="border-t border-gray-700 pt-4 mb-4">
-          <div className="text-xs text-gray-500 mb-2">{isUk ? "Способи оплати:" : "Payment Methods:"}</div>
+          <div className="text-xs text-gray-500 dark:text-neutral-400 mb-2">{isUk ? "Способи оплати:" : "Payment Methods:"}</div>
           <div className="flex flex-wrap gap-2">
             {paymentMethods.map((pm) => (
               <span key={pm} className="text-xs bg-gray-800 px-2 py-1 rounded border border-gray-700 text-gray-300">{pm}</span>
@@ -668,29 +668,29 @@ export function TechStoreDemo({ lang }: { lang: string }) {
           <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
             <div className="p-5">
               <div className="flex items-start justify-between mb-3">
-                <h3 className="font-bold text-gray-900 text-base pr-4">{isUk ? quickViewProduct.nameUk : quickViewProduct.nameEn}</h3>
-                <button onClick={() => setQuickViewProduct(null)} className="text-gray-400 hover:text-gray-600 text-xl shrink-0">✕</button>
+                <h3 className="font-bold text-gray-900 dark:text-white text-base pr-4">{isUk ? quickViewProduct.nameUk : quickViewProduct.nameEn}</h3>
+                <button onClick={() => setQuickViewProduct(null)} className="text-gray-400 dark:text-neutral-500 hover:text-gray-600 dark:text-neutral-300 text-xl shrink-0">✕</button>
               </div>
               {/* Product image placeholder */}
-              <div className="bg-gray-50 rounded-xl h-36 flex items-center justify-center text-6xl mb-4">{quickViewProduct.emoji}</div>
+              <div className="bg-gray-50 dark:bg-neutral-900 rounded-xl h-36 flex items-center justify-center text-6xl mb-4">{quickViewProduct.emoji}</div>
               {/* Price & stock */}
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-baseline gap-2">
                   <span className="text-2xl font-bold text-gray-900">₴{quickViewProduct.price.toLocaleString()}</span>
-                  {quickViewProduct.oldPrice && <span className="text-sm text-gray-400 line-through">₴{quickViewProduct.oldPrice.toLocaleString()}</span>}
+                  {quickViewProduct.oldPrice && <span className="text-sm text-gray-400 dark:text-neutral-500 line-through">₴{quickViewProduct.oldPrice.toLocaleString()}</span>}
                 </div>
                 <span className={`text-xs font-medium px-2 py-1 rounded-full ${quickViewProduct.inStock ? "bg-green-100 text-green-700" : "bg-orange-100 text-orange-700"}`}>
                   {quickViewProduct.inStock ? (isUk ? "✅ В наявності" : "✅ In stock") : (isUk ? "⏳ Передзамовлення" : "⏳ Pre-order")}
                 </span>
               </div>
               {/* Specs table */}
-              <div className="border border-gray-200 rounded-xl overflow-hidden mb-4">
+              <div className="border border-gray-200 dark:border-neutral-700 rounded-xl overflow-hidden mb-4">
                 <table className="w-full text-sm">
                   <tbody>
                     {Object.entries(isUk ? quickViewProduct.specsUk : quickViewProduct.specsEn).map(([key, val], i) => (
                       <tr key={key} className={i % 2 === 0 ? "bg-gray-50" : "bg-white"}>
-                        <td className="py-2 px-3 font-medium text-gray-500 text-xs w-2/5">{key}</td>
-                        <td className="py-2 px-3 text-gray-800 text-xs">{val}</td>
+                        <td className="py-2 px-3 font-medium text-gray-500 dark:text-neutral-400 text-xs w-2/5">{key}</td>
+                        <td className="py-2 px-3 text-gray-800 dark:text-neutral-200 text-xs">{val}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -739,7 +739,7 @@ export function TechStoreDemo({ lang }: { lang: string }) {
                   <div key={p.id} className="flex items-center gap-1 bg-gray-700 rounded-lg px-2 py-1">
                     <span className="text-xs">{p.emoji}</span>
                     <span className="text-xs text-gray-300 max-w-[80px] truncate">{isUk ? p.nameUk : p.nameEn}</span>
-                    <button onClick={() => toggleCompare(p)} className="text-gray-400 hover:text-red-400 text-xs ml-1">✕</button>
+                    <button onClick={() => toggleCompare(p)} className="text-gray-400 dark:text-neutral-500 hover:text-red-400 text-xs ml-1">✕</button>
                   </div>
                 ))}
               </div>
@@ -751,7 +751,7 @@ export function TechStoreDemo({ lang }: { lang: string }) {
               >
                 {showCompare ? (isUk ? "Сховати" : "Hide") : (isUk ? "Порівняти" : "Compare")}
               </button>
-              <button onClick={() => setCompareList([])} className="text-xs text-gray-400 hover:text-red-400 px-2 py-1.5">
+              <button onClick={() => setCompareList([])} className="text-xs text-gray-400 dark:text-neutral-500 hover:text-red-400 px-2 py-1.5">
                 {isUk ? "Очистити" : "Clear"}
               </button>
             </div>
@@ -763,7 +763,7 @@ export function TechStoreDemo({ lang }: { lang: string }) {
                 <table className="w-full text-xs">
                   <thead>
                     <tr className="bg-gray-900">
-                      <th className="text-left py-2 px-3 text-gray-400 font-medium w-1/5">{isUk ? "Характеристика" : "Spec"}</th>
+                      <th className="text-left py-2 px-3 text-gray-400 dark:text-neutral-500 font-medium w-1/5">{isUk ? "Характеристика" : "Spec"}</th>
                       {compareList.map((p) => (
                         <th key={p.id} className="py-2 px-3 text-center text-cyan-400 font-semibold">
                           <div>{p.emoji}</div>
@@ -837,10 +837,10 @@ export function TechStoreDemo({ lang }: { lang: string }) {
               ) : (
                 <div className="space-y-3">
                   {cartItems.map((item) => (
-                    <div key={item.id} className="flex items-center gap-3 bg-gray-50 rounded-xl p-3 border border-gray-200">
+                    <div key={item.id} className="flex items-center gap-3 bg-gray-50 dark:bg-neutral-900 rounded-xl p-3 border border-gray-200">
                       <div className="text-2xl shrink-0">{item.emoji}</div>
                       <div className="flex-1 min-w-0">
-                        <div className="text-xs font-semibold text-gray-800 truncate">{item.name}</div>
+                        <div className="text-xs font-semibold text-gray-800 dark:text-neutral-200 truncate">{item.name}</div>
                         <div className="text-xs text-cyan-600 font-bold">₴{item.price.toLocaleString()}</div>
                       </div>
                       <div className="flex items-center gap-1 shrink-0">
@@ -856,7 +856,7 @@ export function TechStoreDemo({ lang }: { lang: string }) {
             </div>
             {/* Cart footer */}
             {cartItems.length > 0 && (
-              <div className="border-t border-gray-200 p-4 space-y-3">
+              <div className="border-t border-gray-200 dark:border-neutral-700 p-4 space-y-3">
                 {/* Promo code */}
                 <div className="flex gap-2">
                   <input
@@ -888,7 +888,7 @@ export function TechStoreDemo({ lang }: { lang: string }) {
                       <span>−₴{(cartTotal - discountedTotal).toLocaleString()}</span>
                     </div>
                   )}
-                  <div className="flex justify-between font-bold text-gray-900 text-base border-t border-gray-200 pt-1">
+                  <div className="flex justify-between font-bold text-gray-900 dark:text-white text-base border-t border-gray-200 dark:border-neutral-700 pt-1">
                     <span>{isUk ? "Разом" : "Total"}:</span>
                     <span className="text-cyan-600">₴{discountedTotal.toLocaleString()}</span>
                   </div>

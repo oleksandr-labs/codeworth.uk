@@ -359,7 +359,7 @@ export function BloomDemo({ lang }: { lang: string }) {
 
         {/* Mobile nav */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-white border-t border-rose-100 px-4 pb-4 flex flex-col gap-3 text-sm text-rose-600" style={{ fontFamily: "sans-serif" }}>
+          <div className="md:hidden bg-white dark:bg-neutral-800 border-t border-rose-100 px-4 pb-4 flex flex-col gap-3 text-sm text-rose-600" style={{ fontFamily: "sans-serif" }}>
             {[
               { en: "Bouquets", uk: "Букети" },
               { en: "Occasions", uk: "Свята" },
@@ -503,7 +503,7 @@ export function BloomDemo({ lang }: { lang: string }) {
       </section>
 
       {/* ── BOUQUET BUILDER ── */}
-      <section className="py-16 px-4 bg-white border-t border-b border-rose-100">
+      <section className="py-16 px-4 bg-white dark:bg-neutral-800 border-t border-b border-rose-100">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-2xl sm:text-3xl font-bold text-rose-800 mb-2">
@@ -869,7 +869,7 @@ export function BloomDemo({ lang }: { lang: string }) {
       </section>
 
       {/* ── TESTIMONIALS ── */}
-      <section className="py-16 px-4 bg-white border-t border-rose-100">
+      <section className="py-16 px-4 bg-white dark:bg-neutral-800 border-t border-rose-100">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-2xl sm:text-3xl font-bold text-rose-800 mb-2">

@@ -88,7 +88,7 @@ export function MobileReadinessChecker({ isUk }: Props) {
         </div>
       </div>
 
-      <div className="h-3 bg-neutral-100 rounded-full overflow-hidden mb-8">
+      <div className="h-3 bg-neutral-100 dark:bg-neutral-800 rounded-full overflow-hidden mb-8">
         <div
           className={`h-full bg-linear-to-r ${barColor} rounded-full transition-all duration-500`}
           style={{ width: `${pct}%` }}
@@ -102,7 +102,7 @@ export function MobileReadinessChecker({ isUk }: Props) {
           return (
             <div key={cat.id}>
               <div className="flex items-center justify-between mb-3">
-                <h3 className="font-heading font-bold text-neutral-900 flex items-center gap-2 text-sm">
+                <h3 className="font-heading font-bold text-neutral-900 dark:text-white flex items-center gap-2 text-sm">
                   <span>{cat.icon}</span>
                   {isUk ? cat.label : cat.labelEn}
                 </h3>
@@ -116,7 +116,7 @@ export function MobileReadinessChecker({ isUk }: Props) {
                     className={`flex items-start gap-3 w-full p-3.5 rounded-xl border text-left transition-all ${
                       checked.has(item.id)
                         ? "border-green-200 bg-green-50"
-                        : "border-neutral-200 bg-white hover:border-neutral-300"
+                        : "border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-neutral-300"
                     }`}
                   >
                     <div className={`w-5 h-5 rounded-md border-2 flex items-center justify-center shrink-0 mt-0.5 transition-colors ${checked.has(item.id) ? "bg-green-500 border-green-500" : "border-neutral-300 bg-white"}`}>
@@ -133,11 +133,11 @@ export function MobileReadinessChecker({ isUk }: Props) {
         })}
       </div>
 
-      <div className="mt-8 pt-6 border-t border-neutral-100 flex justify-between items-center">
+      <div className="mt-8 pt-6 border-t border-neutral-100 dark:border-neutral-700 flex justify-between items-center">
         <p className="text-xs text-neutral-400">{isUk ? "Прогрес зберігається під час сесії" : "Progress is saved during this session"}</p>
         <button
           onClick={() => setChecked(new Set())}
-          className="text-xs text-neutral-500 hover:text-neutral-700 underline underline-offset-2 transition-colors"
+          className="text-xs text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:text-neutral-300 underline underline-offset-2 transition-colors"
         >
           {isUk ? "Скинути" : "Reset"}
         </button>

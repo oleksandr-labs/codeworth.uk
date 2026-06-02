@@ -249,10 +249,10 @@ export function QuickBiteDemo({ lang }: { lang: string }) {
   const selectedRest = RESTAURANTS.find((r) => r.id === selectedRestaurant);
 
   return (
-    <div className="min-h-screen bg-gray-50 font-sans text-gray-800 relative">
+    <div className="min-h-screen bg-gray-50 dark:bg-neutral-900 font-sans text-gray-800 dark:text-neutral-200 relative">
 
       {/* HEADER */}
-      <header className="bg-white border-b border-gray-100 sticky top-0 z-40 shadow-sm">
+      <header className="bg-white border-b border-gray-100 dark:border-neutral-700 sticky top-0 z-40 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center gap-3">
           {/* Logo */}
           <div className="flex items-center gap-1 shrink-0">
@@ -261,10 +261,10 @@ export function QuickBiteDemo({ lang }: { lang: string }) {
           </div>
 
           {/* Location */}
-          <div className="hidden sm:flex items-center gap-1 bg-gray-100 rounded-lg px-3 py-1.5 shrink-0 cursor-pointer hover:bg-gray-200 transition">
+          <div className="hidden sm:flex items-center gap-1 bg-gray-100 dark:bg-neutral-800 rounded-lg px-3 py-1.5 shrink-0 cursor-pointer hover:bg-gray-200 transition">
             <span className="text-sm">📍</span>
-            <span className="text-xs font-medium text-gray-700 max-w-[120px] truncate">{location}</span>
-            <span className="text-gray-400 text-xs">▼</span>
+            <span className="text-xs font-medium text-gray-700 dark:text-neutral-300 max-w-[120px] truncate">{location}</span>
+            <span className="text-gray-400 dark:text-neutral-500 text-xs">▼</span>
           </div>
 
           {/* Search */}
@@ -275,7 +275,7 @@ export function QuickBiteDemo({ lang }: { lang: string }) {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder={t("Search restaurants or dishes…", "Пошук ресторанів або страв…")}
-              className="w-full pl-9 pr-4 py-2 bg-gray-100 rounded-xl text-sm outline-none focus:ring-2 focus:ring-red-400 transition"
+              className="w-full pl-9 pr-4 py-2 bg-gray-100 dark:bg-neutral-800 rounded-xl text-sm outline-none focus:ring-2 focus:ring-red-400 transition"
             />
           </div>
 
@@ -292,7 +292,7 @@ export function QuickBiteDemo({ lang }: { lang: string }) {
             <span>🛒</span>
             <span className="hidden sm:inline">{t("Cart", "Кошик")}</span>
             {cartCount > 0 && (
-              <span className="absolute -top-2 -right-2 bg-yellow-400 text-gray-900 text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+              <span className="absolute -top-2 -right-2 bg-yellow-400 text-gray-900 dark:text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
                 {cartCount}
               </span>
             )}
@@ -303,7 +303,7 @@ export function QuickBiteDemo({ lang }: { lang: string }) {
       {/* HERO */}
       <section className="bg-linear-to-br from-red-600 via-red-500 to-orange-500 text-white py-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-block bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">
+          <div className="inline-block bg-yellow-400 text-gray-900 dark:text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">
             {t("🚀 Fast Delivery", "🚀 Швидка доставка")}
           </div>
           <h1 className="text-4xl sm:text-5xl font-extrabold mb-3 leading-tight">
@@ -320,9 +320,9 @@ export function QuickBiteDemo({ lang }: { lang: string }) {
               value={location}
               onChange={(e) => setLocation(e.target.value)}
               placeholder={t("Enter your address…", "Введіть вашу адресу…")}
-              className="flex-1 px-4 py-3 rounded-xl text-gray-800 text-sm outline-none focus:ring-2 focus:ring-yellow-400"
+              className="flex-1 px-4 py-3 rounded-xl text-gray-800 dark:text-neutral-200 text-sm outline-none focus:ring-2 focus:ring-yellow-400"
             />
-            <button className="bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold px-6 py-3 rounded-xl text-sm transition shrink-0">
+            <button className="bg-yellow-400 hover:bg-yellow-300 text-gray-900 dark:text-white font-bold px-6 py-3 rounded-xl text-sm transition shrink-0">
               {t("Find Restaurants", "Знайти ресторани")}
             </button>
           </div>
@@ -351,14 +351,14 @@ export function QuickBiteDemo({ lang }: { lang: string }) {
 
         {/* ORDER TRACKER */}
         {orderPlaced && (
-          <div className="mb-8 bg-white rounded-2xl shadow-md border border-gray-100 p-6">
+          <div className="mb-8 bg-white dark:bg-neutral-800 rounded-2xl shadow-md border border-gray-100 dark:border-neutral-700 p-6">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-lg font-extrabold text-gray-800">
                 {t("Order Tracker", "Відстеження замовлення")} 🛵
               </h2>
               <button
                 onClick={() => { setOrderPlaced(false); setOrderStep(-1); setCart([]); setPromoApplied(false); setPromoCode(""); }}
-                className="text-xs text-gray-400 hover:text-gray-600"
+                className="text-xs text-gray-400 dark:text-neutral-500 hover:text-gray-600"
               >
                 {t("Reset", "Скинути")}
               </button>
@@ -371,7 +371,7 @@ export function QuickBiteDemo({ lang }: { lang: string }) {
                     className={`flex flex-col items-center gap-1 px-3 py-2 rounded-xl transition ${
                       idx <= orderStep
                         ? "bg-red-600 text-white"
-                        : "bg-gray-100 text-gray-400 hover:bg-gray-200"
+                        : "bg-gray-100 dark:bg-neutral-800 text-gray-400 dark:text-neutral-500 hover:bg-gray-200"
                     }`}
                   >
                     <span className="text-xl">{step.emoji}</span>
@@ -408,7 +408,7 @@ export function QuickBiteDemo({ lang }: { lang: string }) {
               <div className="text-red-200 text-sm">{t("On orders over ₴300", "При замовленні від ₴300")}</div>
             </div>
           </div>
-          <div className="bg-linear-to-br from-yellow-400 to-orange-500 text-gray-900 rounded-2xl p-5 flex gap-3 items-center">
+          <div className="bg-linear-to-br from-yellow-400 to-orange-500 text-gray-900 dark:text-white rounded-2xl p-5 flex gap-3 items-center">
             <span className="text-4xl shrink-0">🎁</span>
             <div>
               <div className="font-bold text-lg">{t("20% Off", "Знижка 20%")}</div>
@@ -433,7 +433,7 @@ export function QuickBiteDemo({ lang }: { lang: string }) {
               className={`shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold transition border ${
                 activeCategory === cat.key
                   ? "bg-red-600 text-white border-red-600"
-                  : "bg-white text-gray-600 border-gray-200 hover:border-red-300 hover:text-red-600"
+                  : "bg-white text-gray-600 dark:text-neutral-300 border-gray-200 dark:border-neutral-700 hover:border-red-300 hover:text-red-600"
               }`}
             >
               <span>{cat.emoji}</span>
@@ -445,7 +445,7 @@ export function QuickBiteDemo({ lang }: { lang: string }) {
         {/* RESTAURANT CATALOG */}
         {!selectedRestaurant && (
           <>
-            <h2 className="text-xl font-extrabold text-gray-800 mb-4">
+            <h2 className="text-xl font-extrabold text-gray-800 dark:text-neutral-200 mb-4">
               {t("Restaurants near you", "Ресторани поруч")} ({filteredRestaurants.length})
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
@@ -453,7 +453,7 @@ export function QuickBiteDemo({ lang }: { lang: string }) {
                 <button
                   key={r.id}
                   onClick={() => { if (r.open) { setSelectedRestaurant(r.id); setMenuTab("Mains"); } }}
-                  className={`bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 text-left transition group ${
+                  className={`bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 dark:border-neutral-700 text-left transition group ${
                     r.open ? "hover:shadow-md hover:border-red-200 cursor-pointer" : "opacity-60 cursor-not-allowed"
                   }`}
                 >
@@ -473,14 +473,14 @@ export function QuickBiteDemo({ lang }: { lang: string }) {
                       {r.open ? t("Open", "Відкрито") : t("Closed", "Зачинено")}
                     </span>
                     {r.deliveryFee === 0 && (
-                      <span className="absolute top-2 left-2 text-xs font-bold bg-yellow-400 text-gray-900 px-2 py-0.5 rounded-full">
+                      <span className="absolute top-2 left-2 text-xs font-bold bg-yellow-400 text-gray-900 dark:text-white px-2 py-0.5 rounded-full">
                         {t("Free delivery", "Безкоштовно")}
                       </span>
                     )}
                   </div>
                   <div className="p-3">
-                    <div className="font-bold text-gray-900 truncate">{r.name}</div>
-                    <div className="text-xs text-gray-500 mb-2">{isUk ? r.cuisine.uk : r.cuisine.en}</div>
+                    <div className="font-bold text-gray-900 dark:text-white truncate">{r.name}</div>
+                    <div className="text-xs text-gray-500 dark:text-neutral-400 mb-2">{isUk ? r.cuisine.uk : r.cuisine.en}</div>
                     <div className="flex items-center gap-3 text-xs text-gray-600">
                       <span>⭐ {r.rating}</span>
                       <span>⏱ {r.time} {t("min", "хв")}</span>
@@ -504,7 +504,7 @@ export function QuickBiteDemo({ lang }: { lang: string }) {
 
         {/* FEATURED RESTAURANT EXPANDED */}
         {selectedRestaurant && selectedRest && (
-          <div className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden">
+          <div className="bg-white rounded-2xl shadow-md border border-gray-100 dark:border-neutral-700 overflow-hidden">
             {/* Restaurant header */}
             <div className="bg-linear-to-br from-red-600 to-red-500 text-white p-6 flex items-center gap-4">
               <button
@@ -528,7 +528,7 @@ export function QuickBiteDemo({ lang }: { lang: string }) {
             {/* Menu tabs */}
             {selectedMenu && (
               <>
-                <div className="flex border-b border-gray-100 overflow-x-auto">
+                <div className="flex border-b border-gray-100 dark:border-neutral-700 overflow-x-auto">
                   {selectedMenu.categories.map((cat) => (
                     <button
                       key={cat}
@@ -536,7 +536,7 @@ export function QuickBiteDemo({ lang }: { lang: string }) {
                       className={`shrink-0 px-5 py-3 text-sm font-semibold transition border-b-2 ${
                         menuTab === cat
                           ? "border-red-500 text-red-600"
-                          : "border-transparent text-gray-500 hover:text-gray-700"
+                          : "border-transparent text-gray-500 dark:text-neutral-400 hover:text-gray-700"
                       }`}
                     >
                       {t(
@@ -556,13 +556,13 @@ export function QuickBiteDemo({ lang }: { lang: string }) {
                     .map((item) => {
                       const inCart = cart.find((c) => c.id === item.id);
                       return (
-                        <div key={item.id} className="flex gap-3 p-3 bg-gray-50 rounded-xl border border-gray-100 hover:border-red-200 transition">
-                          <div className="text-3xl shrink-0 w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm">
+                        <div key={item.id} className="flex gap-3 p-3 bg-gray-50 dark:bg-neutral-900 rounded-xl border border-gray-100 dark:border-neutral-700 hover:border-red-200 transition">
+                          <div className="text-3xl shrink-0 w-12 h-12 bg-white dark:bg-neutral-800 rounded-xl flex items-center justify-center shadow-sm">
                             {item.emoji}
                           </div>
                           <div className="flex-1 min-w-0">
                             <div className="font-semibold text-sm text-gray-900">{isUk ? item.name.uk : item.name.en}</div>
-                            <div className="text-xs text-gray-500 mb-1">{isUk ? item.desc.uk : item.desc.en}</div>
+                            <div className="text-xs text-gray-500 dark:text-neutral-400 mb-1">{isUk ? item.desc.uk : item.desc.en}</div>
                             <div className="font-bold text-red-600">₴{item.price}</div>
                           </div>
                           <div className="shrink-0 flex flex-col items-end justify-between">
@@ -604,21 +604,21 @@ export function QuickBiteDemo({ lang }: { lang: string }) {
             <div className="text-2xl font-extrabold mb-2">
               {t("Download our app 📱", "Завантажте наш додаток 📱")}
             </div>
-            <p className="text-gray-400 text-sm mb-4">
+            <p className="text-gray-400 dark:text-neutral-500 text-sm mb-4">
               {t("Track your order in real time, get exclusive deals and reorder with one tap.", "Відстежуйте замовлення в реальному часі, отримуйте ексклюзивні пропозиції.")}
             </p>
             <div className="flex gap-3 flex-wrap">
-              <button className="flex items-center gap-2 bg-white text-gray-900 font-bold px-4 py-2.5 rounded-xl text-sm hover:bg-gray-100 transition">
+              <button className="flex items-center gap-2 bg-white text-gray-900 dark:text-white font-bold px-4 py-2.5 rounded-xl text-sm hover:bg-gray-100 dark:hover:bg-neutral-700 dark:bg-neutral-800 transition">
                 <span className="text-xl">🍎</span>
                 <div className="text-left">
-                  <div className="text-xs text-gray-500 leading-none">{t("Download on the", "Завантажити в")}</div>
+                  <div className="text-xs text-gray-500 dark:text-neutral-400 leading-none">{t("Download on the", "Завантажити в")}</div>
                   <div className="leading-tight">App Store</div>
                 </div>
               </button>
-              <button className="flex items-center gap-2 bg-white text-gray-900 font-bold px-4 py-2.5 rounded-xl text-sm hover:bg-gray-100 transition">
+              <button className="flex items-center gap-2 bg-white text-gray-900 dark:text-white font-bold px-4 py-2.5 rounded-xl text-sm hover:bg-gray-100 dark:hover:bg-neutral-700 dark:bg-neutral-800 transition">
                 <span className="text-xl">🤖</span>
                 <div className="text-left">
-                  <div className="text-xs text-gray-500 leading-none">{t("Get it on", "Доступно в")}</div>
+                  <div className="text-xs text-gray-500 dark:text-neutral-400 leading-none">{t("Get it on", "Доступно в")}</div>
                   <div className="leading-tight">Google Play</div>
                 </div>
               </button>
@@ -644,7 +644,7 @@ export function QuickBiteDemo({ lang }: { lang: string }) {
       </main>
 
       {/* FOOTER */}
-      <footer className="bg-gray-900 text-gray-400 mt-10">
+      <footer className="bg-gray-900 text-gray-400 dark:text-neutral-500 mt-10">
         <div className="max-w-6xl mx-auto px-4 py-8 grid grid-cols-2 sm:grid-cols-4 gap-6">
           <div>
             <div className="flex items-center gap-1 mb-3">
@@ -691,7 +691,7 @@ export function QuickBiteDemo({ lang }: { lang: string }) {
       {cartOpen && (
         <div className="fixed inset-0 z-50 flex">
           <div className="flex-1 bg-black/50" onClick={() => setCartOpen(false)} />
-          <div className="w-full max-w-sm bg-white shadow-2xl flex flex-col h-full overflow-hidden">
+          <div className="w-full max-w-sm bg-white dark:bg-neutral-800 shadow-2xl flex flex-col h-full overflow-hidden">
             {/* Cart header */}
             <div className="bg-red-600 text-white p-4 flex items-center justify-between shrink-0">
               <h2 className="font-extrabold text-lg">🛒 {t("Your Cart", "Ваш кошик")}</h2>
@@ -708,10 +708,10 @@ export function QuickBiteDemo({ lang }: { lang: string }) {
                 </div>
               ) : (
                 cart.map((item) => (
-                  <div key={item.id} className="flex items-center gap-3 p-3 bg-gray-50 rounded-xl">
+                  <div key={item.id} className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-neutral-900 rounded-xl">
                     <span className="text-2xl shrink-0">{item.emoji}</span>
                     <div className="flex-1 min-w-0">
-                      <div className="font-semibold text-sm text-gray-800 truncate">{item.name}</div>
+                      <div className="font-semibold text-sm text-gray-800 dark:text-neutral-200 truncate">{item.name}</div>
                       <div className="text-red-600 text-sm font-bold">₴{item.price}</div>
                     </div>
                     <div className="flex items-center gap-1 shrink-0">
@@ -726,7 +726,7 @@ export function QuickBiteDemo({ lang }: { lang: string }) {
 
             {/* Cart footer */}
             {cart.length > 0 && (
-              <div className="border-t border-gray-100 p-4 space-y-3 shrink-0">
+              <div className="border-t border-gray-100 dark:border-neutral-700 p-4 space-y-3 shrink-0">
                 {/* Promo code */}
                 <div className="flex gap-2">
                   <input
@@ -734,13 +734,13 @@ export function QuickBiteDemo({ lang }: { lang: string }) {
                     value={promoCode}
                     onChange={(e) => setPromoCode(e.target.value)}
                     placeholder={t("Promo code", "Промокод")}
-                    className="flex-1 px-3 py-2 bg-gray-100 rounded-lg text-sm outline-none focus:ring-2 focus:ring-red-400"
+                    className="flex-1 px-3 py-2 bg-gray-100 dark:bg-neutral-800 rounded-lg text-sm outline-none focus:ring-2 focus:ring-red-400"
                     disabled={promoApplied}
                   />
                   <button
                     onClick={applyPromo}
                     disabled={promoApplied}
-                    className="px-3 py-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold text-sm rounded-lg transition disabled:opacity-50"
+                    className="px-3 py-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 dark:text-white font-bold text-sm rounded-lg transition disabled:opacity-50"
                   >
                     {promoApplied ? "✓" : t("Apply", "Застосувати")}
                   </button>
@@ -765,7 +765,7 @@ export function QuickBiteDemo({ lang }: { lang: string }) {
                       <span>−₴{discount}</span>
                     </div>
                   )}
-                  <div className="flex justify-between font-extrabold text-base text-gray-900 border-t border-gray-100 pt-2 mt-1">
+                  <div className="flex justify-between font-extrabold text-base text-gray-900 dark:text-white border-t border-gray-100 dark:border-neutral-700 pt-2 mt-1">
                     <span>{t("Total", "Разом")}</span>
                     <span className="text-red-600">₴{cartTotal}</span>
                   </div>

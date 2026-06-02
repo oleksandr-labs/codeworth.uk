@@ -80,10 +80,10 @@ export default async function PortfolioPage({ params }: { params: Promise<{ lang
               <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-4">
                 {isUk ? "Готові рішення та кейси" : "Ready Solutions & Case Studies"}
               </p>
-              <h1 className="text-5xl lg:text-6xl font-heading font-extrabold text-neutral-900 mb-4">
+              <h1 className="text-5xl lg:text-6xl font-heading font-extrabold text-neutral-900 dark:text-white mb-4">
                 {isUk ? "Що ми можемо зробити для вас" : "What We Can Build for You"}
               </h1>
-              <p className="text-lg text-neutral-500 max-w-xl mx-auto mb-6">
+              <p className="text-lg text-neutral-500 dark:text-neutral-400 max-w-xl mx-auto mb-6">
                 {isUk
                   ? "Кожен проєкт нижче — це готове рішення, яке ви можете замовити. Натисніть щоб побачити деталі та ціну."
                   : "Every project below is a ready-made solution you can order. Click to see details and pricing."}
@@ -104,7 +104,7 @@ export default async function PortfolioPage({ params }: { params: Promise<{ lang
         </section>
 
         {/* Stats row */}
-        <section className="py-10 bg-white border-y border-neutral-100">
+        <section className="py-10 bg-white dark:bg-neutral-800 border-y border-neutral-100">
           <Container>
             <div className="flex flex-wrap items-center justify-center gap-10 text-center">
               {[
@@ -116,7 +116,7 @@ export default async function PortfolioPage({ params }: { params: Promise<{ lang
                   <div className="text-3xl font-heading font-extrabold gradient-text-primary">
                     <CountUp end={s.end} suffix={s.suffix} />
                   </div>
-                  <div className="text-sm text-neutral-500 mt-0.5">{s.label}</div>
+                  <div className="text-sm text-neutral-500 dark:text-neutral-400 mt-0.5">{s.label}</div>
                 </div>
               ))}
             </div>
@@ -124,7 +124,7 @@ export default async function PortfolioPage({ params }: { params: Promise<{ lang
         </section>
 
         {/* How it works */}
-        <section className="py-16 bg-white border-b border-neutral-100">
+        <section className="py-16 bg-white dark:bg-neutral-800 border-b border-neutral-100">
           <Container>
             <div className="max-w-xl mx-auto text-center mb-10">
               <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
@@ -164,15 +164,15 @@ export default async function PortfolioPage({ params }: { params: Promise<{ lang
                   color: "bg-emerald-50 text-emerald-600",
                 },
               ].map((item, i) => (
-                <div key={i} className="relative p-6 rounded-2xl bg-neutral-50 border border-neutral-100 hover:border-indigo-200 hover:shadow-sm transition-all">
+                <div key={i} className="relative p-6 rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-100 dark:border-neutral-700 hover:border-indigo-200 hover:shadow-sm transition-all">
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-2xl">{item.icon}</span>
                     <span className={`text-xs font-bold px-2 py-1 rounded-full ${item.color}`}>
                       {item.step}
                     </span>
                   </div>
-                  <h3 className="font-heading font-bold text-neutral-900 text-lg mb-2">{item.title}</h3>
-                  <p className="text-sm text-neutral-500 leading-relaxed">{item.desc}</p>
+                  <h3 className="font-heading font-bold text-neutral-900 dark:text-white text-lg mb-2">{item.title}</h3>
+                  <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -180,7 +180,7 @@ export default async function PortfolioPage({ params }: { params: Promise<{ lang
         </section>
 
         {/* Client success metrics */}
-        <section className="py-16 bg-neutral-50 border-b border-neutral-100">
+        <section className="py-16 bg-neutral-50 dark:bg-neutral-900 border-b border-neutral-100">
           <Container>
             <div className="max-w-2xl mx-auto text-center mb-10">
               <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
@@ -217,11 +217,11 @@ export default async function PortfolioPage({ params }: { params: Promise<{ lang
                   color: "from-pink-500 to-rose-600",
                 },
               ].map((item) => (
-                <div key={item.metric} className="p-6 rounded-2xl bg-white border border-neutral-100 text-center hover:shadow-md transition-shadow">
+                <div key={item.metric} className="p-6 rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 text-center hover:shadow-md transition-shadow">
                   <div className={`text-3xl font-heading font-extrabold bg-linear-to-r ${item.color} bg-clip-text text-transparent mb-2`}>
                     {item.metric}
                   </div>
-                  <p className="text-sm text-neutral-700 font-medium leading-snug mb-3">{item.label}</p>
+                  <p className="text-sm text-neutral-700 dark:text-neutral-300 font-medium leading-snug mb-3">{item.label}</p>
                   <p className="text-xs text-neutral-400">{item.example}</p>
                 </div>
               ))}
@@ -233,16 +233,16 @@ export default async function PortfolioPage({ params }: { params: Promise<{ lang
         <PortfolioContent />
 
         {/* Niche demo projects */}
-        <section className="py-24 bg-neutral-50">
+        <section className="py-24 bg-neutral-50 dark:bg-neutral-900 ">
           <Container>
             <div className="max-w-2xl mx-auto text-center mb-12">
               <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
                 {isUk ? "Готові рішення по нішах" : "Ready Solutions by Niche"}
               </p>
-              <h2 className="text-4xl font-heading font-extrabold text-neutral-900 mb-4">
+              <h2 className="text-4xl font-heading font-extrabold text-neutral-900 dark:text-white mb-4">
                 {isUk ? `${NICHES_DATA.length}+ рішень — оберіть своє` : `${NICHES_DATA.length}+ Solutions — Choose Yours`}
               </h2>
-              <p className="text-neutral-500 leading-relaxed">
+              <p className="text-neutral-500 dark:text-neutral-400 leading-relaxed">
                 {isUk
                   ? "Живі демо-сайти для різних типів бізнесу. Саме так виглядатиме ваш сайт. Можна замовити вже сьогодні."
                   : "Live demo sites for different business types. This is exactly what your site will look like. Order today."}
@@ -255,11 +255,11 @@ export default async function PortfolioPage({ params }: { params: Promise<{ lang
                 return (<Link
                   key={niche.slug}
                   href={`/${lang}/niches/${niche.slug}`}
-                  className="group relative p-4 rounded-2xl bg-white border border-neutral-100 hover:border-indigo-100 hover:shadow-md transition-all text-center overflow-hidden"
+                  className="group relative p-4 rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 hover:border-indigo-100 hover:shadow-md transition-all text-center overflow-hidden"
                 >
                   <div className={`absolute inset-x-0 top-0 h-1 bg-linear-to-r ${niche.gradient}`} />
                   <div className="text-3xl mb-2">{niche.emoji}</div>
-                  <div className="font-semibold text-neutral-900 text-xs leading-tight mb-1.5 group-hover:text-indigo-700 transition-colors">
+                  <div className="font-semibold text-neutral-900 dark:text-white text-xs leading-tight mb-1.5 group-hover:text-indigo-700 transition-colors">
                     {niche.title}
                   </div>
                   <div className="flex items-center justify-center gap-1">

@@ -92,7 +92,7 @@ export function EcomFlashSaleDemo({ isUk }: Props) {
           const stockPct = (item.sold / item.stock) * 100;
           const inCart = cart.has(item.id);
           return (
-            <div key={item.id} className="rounded-xl border border-neutral-200 bg-white overflow-hidden hover:shadow-md transition-shadow">
+            <div key={item.id} className="rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white overflow-hidden hover:shadow-md transition-shadow">
               <div className={`relative aspect-video bg-linear-to-br ${item.color} flex items-center justify-center text-6xl`}>
                 {item.emoji}
                 <div className="absolute top-2 left-2 px-2 py-1 rounded-full bg-rose-500 text-white text-xs font-bold flex items-center gap-1">
@@ -117,7 +117,7 @@ export function EcomFlashSaleDemo({ isUk }: Props) {
                       {stockPct > 70 ? (isUk ? "Майже зник!" : "Almost gone!") : `${Math.round(stockPct)}%`}
                     </span>
                   </div>
-                  <div className="h-1.5 rounded-full bg-neutral-100 overflow-hidden">
+                  <div className="h-1.5 rounded-full bg-neutral-100 dark:bg-neutral-800 overflow-hidden">
                     <div
                       className={`h-full rounded-full transition-all ${stockPct > 70 ? "bg-rose-500" : "bg-amber-500"}`}
                       style={{ width: `${stockPct}%` }}

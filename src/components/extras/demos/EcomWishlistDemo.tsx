@@ -39,13 +39,13 @@ export function EcomWishlistDemo({ isUk }: Props) {
         <h3 className="text-lg font-bold text-neutral-900">
           {isUk ? "Wishlist / Збережені товари" : "Wishlist / Saved items"}
         </h3>
-        <div className="flex gap-1 rounded-lg bg-neutral-100 p-1">
+        <div className="flex gap-1 rounded-lg bg-neutral-100 dark:bg-neutral-800 p-1">
           {(["shop", "wishlist"] as const).map((v) => (
             <button
               key={v}
               onClick={() => setView(v)}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-all ${
-                view === v ? "bg-white text-neutral-900 shadow-sm" : "text-neutral-500"
+                view === v ? "bg-white text-neutral-900 dark:text-white shadow-sm" : "text-neutral-500"
               }`}
             >
               {v === "shop" ? (isUk ? "Магазин" : "Shop") : (
@@ -66,7 +66,7 @@ export function EcomWishlistDemo({ isUk }: Props) {
           {PRODUCTS.map((p) => {
             const isFav = wishlist.has(p.id);
             return (
-              <div key={p.id} className="rounded-xl border border-neutral-200 bg-white overflow-hidden hover:shadow-md transition-shadow">
+              <div key={p.id} className="rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white overflow-hidden hover:shadow-md transition-shadow">
                 <div className={`relative h-28 bg-linear-to-br ${p.color} flex items-center justify-center text-5xl`}>
                   {p.emoji}
                   <button
@@ -83,7 +83,7 @@ export function EcomWishlistDemo({ isUk }: Props) {
                   </button>
                 </div>
                 <div className="p-3">
-                  <h4 className="font-semibold text-neutral-900 text-sm leading-tight mb-1 line-clamp-1">
+                  <h4 className="font-semibold text-neutral-900 dark:text-white text-sm leading-tight mb-1 line-clamp-1">
                     {isUk ? p.nameUk : p.nameEn}
                   </h4>
                   <p className="text-indigo-700 font-bold">{fmt(p.price)}</p>
@@ -95,11 +95,11 @@ export function EcomWishlistDemo({ isUk }: Props) {
       )}
 
       {view === "wishlist" && (
-        <div className="rounded-2xl border border-neutral-200 bg-white p-5">
+        <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white p-5">
           {wishlistedProducts.length === 0 ? (
             <div className="text-center py-12">
               <Heart className="w-12 h-12 text-neutral-200 mx-auto mb-3" />
-              <p className="text-neutral-500 mb-2">{isUk ? "Wishlist порожній" : "Wishlist is empty"}</p>
+              <p className="text-neutral-500 dark:text-neutral-400 mb-2">{isUk ? "Wishlist порожній" : "Wishlist is empty"}</p>
               <button onClick={() => setView("shop")} className="text-indigo-600 hover:underline text-sm">
                 {isUk ? "Перейти до магазину →" : "Browse shop →"}
               </button>
@@ -110,7 +110,7 @@ export function EcomWishlistDemo({ isUk }: Props) {
                 <span className="text-sm text-neutral-500">
                   {wishlistedProducts.length} {isUk ? "товар(ів)" : "item(s)"}
                 </span>
-                <button className="flex items-center gap-1.5 text-sm text-neutral-500 hover:text-neutral-900 transition-colors">
+                <button className="flex items-center gap-1.5 text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:text-white transition-colors">
                   <Share2 className="w-4 h-4" />
                   {isUk ? "Поділитись" : "Share"}
                 </button>
@@ -122,7 +122,7 @@ export function EcomWishlistDemo({ isUk }: Props) {
                       {p.emoji}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h4 className="font-semibold text-neutral-900 text-sm truncate">{isUk ? p.nameUk : p.nameEn}</h4>
+                      <h4 className="font-semibold text-neutral-900 dark:text-white text-sm truncate">{isUk ? p.nameUk : p.nameEn}</h4>
                       <p className="text-indigo-700 font-bold text-sm">{fmt(p.price)}</p>
                     </div>
                     <button className="flex items-center gap-1 px-3 py-2 rounded-md bg-indigo-600 text-white text-xs font-semibold hover:bg-indigo-700 transition-colors">

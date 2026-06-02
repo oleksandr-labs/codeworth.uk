@@ -121,12 +121,12 @@ export default async function AISolutionsCatalogPage({ params }: Props) {
 
         {/* Popular */}
         {popularProducts.length > 0 && (
-          <section className="py-16 bg-white">
+          <section className="py-16 bg-white dark:bg-neutral-950">
             <Container>
-              <h2 className="text-3xl font-bold text-neutral-900 mb-3">
+              <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-3">
                 {isUk ? "Популярні рішення" : "Popular solutions"}
               </h2>
-              <p className="text-neutral-500 mb-10">
+              <p className="text-neutral-500 dark:text-neutral-400 mb-10">
                 {isUk ? "Найчастіше замовляють наші клієнти" : "Most ordered by our clients"}
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -139,12 +139,12 @@ export default async function AISolutionsCatalogPage({ params }: Props) {
         )}
 
         {/* All other */}
-        <section className="py-16 bg-neutral-50">
+        <section className="py-16 bg-neutral-50 dark:bg-neutral-900 ">
           <Container>
-            <h2 className="text-3xl font-bold text-neutral-900 mb-3">
+            <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-3">
               {isUk ? "Всі AI-рішення" : "All AI solutions"}
             </h2>
-            <p className="text-neutral-500 mb-10">
+            <p className="text-neutral-500 dark:text-neutral-400 mb-10">
               {isUk
                 ? `${AI_PRODUCTS.length} продуктів у каталозі — від базової автоматизації до enterprise RAG.`
                 : `${AI_PRODUCTS.length} products in catalog — from basic automation to enterprise RAG.`}
@@ -201,7 +201,7 @@ function ProductCard({
   return (
     <Link
       href={`/${lang}/extras/${product.id}`}
-      className={`group rounded-2xl border bg-white p-6 hover:shadow-xl transition-all hover:-translate-y-1 ${
+      className={`group rounded-2xl border bg-white dark:bg-neutral-800 p-6 hover:shadow-xl transition-all hover:-translate-y-1 ${
         highlight ? "border-violet-200 ring-1 ring-violet-100" : "border-neutral-100"
       }`}
     >
@@ -214,10 +214,10 @@ function ProductCard({
           </span>
         )}
       </div>
-      <h3 className="font-semibold text-neutral-900 group-hover:text-indigo-700 transition-colors mb-2">
+      <h3 className="font-semibold text-neutral-900 dark:text-white group-hover:text-indigo-700 transition-colors mb-2">
         {product.title}
       </h3>
-      <p className="text-sm text-neutral-500 leading-relaxed mb-4 line-clamp-3">{product.description}</p>
+      <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-4 line-clamp-3">{product.description}</p>
       <div className="flex flex-wrap gap-1.5 mb-4">
         {product.tags.slice(0, 3).map((tag) => (
           <span key={tag} className="px-2 py-0.5 rounded-md bg-indigo-50 text-indigo-600 text-xs font-medium">

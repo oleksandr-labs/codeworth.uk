@@ -1,10 +1,10 @@
 export function MarketplaceTwoSidedPreview() {
   return (
     <div className="font-sans">
-      <nav className="flex items-center justify-between px-8 py-4 bg-white border-b border-gray-100">
+      <nav className="flex items-center justify-between px-8 py-4 bg-white dark:bg-neutral-800 border-b border-gray-100">
         <div className="flex items-center gap-2">
           <div className="w-7 h-7 rounded-full bg-indigo-600 flex items-center justify-center text-white text-xs font-bold">M</div>
-          <span className="font-bold text-gray-900 text-sm">MarketLink</span>
+          <span className="font-bold text-gray-900 dark:text-white text-sm">MarketLink</span>
         </div>
         <div className="flex items-center gap-4 text-xs text-gray-500">
           <span>For Buyers</span><span>For Sellers</span>
@@ -32,7 +32,7 @@ export function MarketplaceTwoSidedPreview() {
         <div className="grid grid-cols-2 gap-6 max-w-3xl mx-auto">
           <div className="rounded-2xl p-6 bg-indigo-50 border border-indigo-100">
             <div className="text-2xl mb-3">🛍️</div>
-            <h3 className="font-bold text-gray-900 mb-3">For Buyers</h3>
+            <h3 className="font-bold text-gray-900 dark:text-white mb-3">For Buyers</h3>
             <ul className="space-y-2 text-sm text-gray-600">
               {["Verified sellers only", "Secure escrow payments", "Buyer protection guarantee", "Price match promise", "24h response SLA"].map((b) => (
                 <li key={b} className="flex items-center gap-2"><span className="text-indigo-500">✓</span>{b}</li>
@@ -41,7 +41,7 @@ export function MarketplaceTwoSidedPreview() {
           </div>
           <div className="rounded-2xl p-6 bg-violet-50 border border-violet-100">
             <div className="text-2xl mb-3">🏪</div>
-            <h3 className="font-bold text-gray-900 mb-3">For Sellers</h3>
+            <h3 className="font-bold text-gray-900 dark:text-white mb-3">For Sellers</h3>
             <ul className="space-y-2 text-sm text-gray-600">
               {["0% commission (founding)", "Instant payouts", "Built-in storefront", "Analytics dashboard", "Marketing tools"].map((b) => (
                 <li key={b} className="flex items-center gap-2"><span className="text-violet-500">✓</span>{b}</li>
@@ -51,7 +51,7 @@ export function MarketplaceTwoSidedPreview() {
         </div>
       </section>
 
-      <section className="px-8 py-8 bg-gray-50 border-t border-gray-100 text-center">
+      <section className="px-8 py-8 bg-gray-50 dark:bg-neutral-900 border-t border-gray-100 dark:border-neutral-700 text-center">
         <div className="flex items-center justify-center gap-6 text-sm">
           {[["1,240", "Buyers waiting"], ["380", "Verified sellers"], ["0%", "Commission fee"]].map(([n, l]) => (
             <div key={l}>

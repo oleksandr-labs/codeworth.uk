@@ -158,7 +158,7 @@ export function BloomShopDemo({ lang }: { lang: string }) {
             {NAV.map((n) => (
               <span
                 key={n.en}
-                className="cursor-pointer text-sm font-medium text-gray-600 transition-colors hover:text-violet-600"
+                className="cursor-pointer text-sm font-medium text-gray-600 dark:text-neutral-300 transition-colors hover:text-violet-600"
               >
                 {isUk ? n.uk : n.en}
               </span>
@@ -229,7 +229,7 @@ export function BloomShopDemo({ lang }: { lang: string }) {
                 className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
                   activeType === t.key
                     ? "bg-violet-600 text-white"
-                    : "bg-white text-gray-600 hover:bg-violet-100"
+                    : "bg-white text-gray-600 dark:text-neutral-300 hover:bg-violet-100"
                 }`}
               >
                 {isUk ? t.uk : t.en}
@@ -240,7 +240,7 @@ export function BloomShopDemo({ lang }: { lang: string }) {
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
-            className="rounded-lg border border-violet-200 bg-white px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-violet-400"
+            className="rounded-lg border border-violet-200 bg-white px-3 py-2 text-sm text-gray-700 dark:text-neutral-300 focus:outline-none focus:ring-2 focus:ring-violet-400"
             aria-label={isUk ? "Сортування" : "Sort"}
           >
             {SORT_OPTIONS.map((s) => (
@@ -308,7 +308,7 @@ export function BloomShopDemo({ lang }: { lang: string }) {
                 >
                   {i + 1}
                 </div>
-                <span className="ml-1 mr-2 hidden text-xs text-gray-500 sm:inline">
+                <span className="ml-1 mr-2 hidden text-xs text-gray-500 dark:text-neutral-400 sm:inline">
                   {isUk ? s.uk : s.en}
                 </span>
                 {i < STEPS.length - 1 && (
@@ -323,7 +323,7 @@ export function BloomShopDemo({ lang }: { lang: string }) {
           </div>
 
           {/* step content */}
-          <div className="rounded-2xl border border-violet-200 bg-white p-6 shadow-md">
+          <div className="rounded-2xl border border-violet-200 bg-white dark:bg-neutral-800 p-6 shadow-md">
             {/* Step 1 — selected bouquet confirmation */}
             {orderStep === 1 && (() => {
               const b = BOUQUETS.find((x) => x.id === selectedBouquet)!;
@@ -362,7 +362,7 @@ export function BloomShopDemo({ lang }: { lang: string }) {
                         className={`rounded-xl border-2 px-8 py-4 text-center transition-colors ${
                           selectedSize === sz
                             ? "border-violet-600 bg-violet-50"
-                            : "border-gray-200 bg-white hover:border-violet-300"
+                            : "border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-violet-300"
                         }`}
                       >
                         <span className="block text-2xl font-bold">{sz}</span>
@@ -404,7 +404,7 @@ export function BloomShopDemo({ lang }: { lang: string }) {
                       className={`flex items-center gap-3 rounded-xl border-2 p-4 text-left transition-colors ${
                         selectedExtras.includes(e.key)
                           ? "border-lime-500 bg-lime-50"
-                          : "border-gray-200 bg-white hover:border-violet-300"
+                          : "border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-violet-300"
                       }`}
                     >
                       <span className="text-2xl">{e.emoji}</span>
@@ -450,7 +450,7 @@ export function BloomShopDemo({ lang }: { lang: string }) {
                       className={`rounded-xl border-2 px-5 py-3 text-left transition-colors ${
                         deliveryType === d.key
                           ? "border-violet-600 bg-violet-50"
-                          : "border-gray-200 bg-white hover:border-violet-300"
+                          : "border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-violet-300"
                       }`}
                     >
                       <span className="font-medium">
@@ -663,7 +663,7 @@ export function BloomShopDemo({ lang }: { lang: string }) {
           {SUBSCRIPTIONS.map((sub) => (
             <div
               key={sub.en}
-              className="rounded-2xl border border-violet-200 bg-white p-6 text-center shadow-sm transition-shadow hover:shadow-lg"
+              className="rounded-2xl border border-violet-200 bg-white dark:bg-neutral-800 p-6 text-center shadow-sm transition-shadow hover:shadow-lg"
             >
               <div className="mb-3 text-4xl">{sub.emoji}</div>
               <h3 className="mb-1 text-xl font-bold text-gray-800">
@@ -754,7 +754,7 @@ export function BloomShopDemo({ lang }: { lang: string }) {
             {REVIEWS.map((r, i) => (
               <div
                 key={i}
-                className="rounded-2xl border border-violet-200 bg-white p-6 shadow-sm"
+                className="rounded-2xl border border-violet-200 bg-white dark:bg-neutral-800 p-6 shadow-sm"
               >
                 <div className="mb-2 text-lg">
                   {"⭐".repeat(r.stars)}

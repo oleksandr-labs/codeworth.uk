@@ -19,7 +19,7 @@ export function ExtraCard({ extra }: ExtraCardProps) {
   const href = `/${lang}/contact?subject=${subject}&extra=${extra.id}`;
 
   return (
-    <div className="group relative flex flex-col rounded-2xl border border-neutral-100 bg-white p-6 hover:shadow-xl hover:shadow-neutral-200/60 hover:-translate-y-1 transition-all duration-300">
+    <div className="group relative flex flex-col rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white dark:bg-neutral-800 p-6 hover:shadow-xl hover:shadow-neutral-200/60 hover:-translate-y-1 transition-all duration-300">
       {/* Badges */}
       <div className="absolute top-4 right-4 flex gap-1.5">
         {extra.isNew && (
@@ -34,10 +34,10 @@ export function ExtraCard({ extra }: ExtraCardProps) {
       <div className="text-4xl mb-4">{extra.emoji}</div>
 
       {/* Title & description */}
-      <h3 className="font-heading font-bold text-neutral-900 group-hover:text-indigo-700 transition-colors mb-2 pr-16">
+      <h3 className="font-heading font-bold text-neutral-900 dark:text-white group-hover:text-indigo-700 transition-colors mb-2 pr-16">
         {title}
       </h3>
-      <p className="text-sm text-neutral-500 leading-relaxed flex-1 mb-4">{description}</p>
+      <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed flex-1 mb-4">{description}</p>
 
       {/* Tags */}
       <div className="flex flex-wrap gap-1.5 mb-4">

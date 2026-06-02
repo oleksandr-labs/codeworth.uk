@@ -272,7 +272,7 @@ export default async function ProductPage({
         </section>
 
         {/* Live Demo Preview */}
-        <section className="py-12 bg-neutral-100 border-b border-neutral-200">
+        <section className="py-12 bg-neutral-100 dark:bg-neutral-800 border-b border-neutral-200">
           <Container>
             <div className="flex items-center justify-between mb-5">
               <div>
@@ -286,7 +286,7 @@ export default async function ProductPage({
               <Link
                 href={`/${lang}/niches/${niche.slug}`}
                 target="_blank"
-                className="flex items-center gap-2 bg-white border border-neutral-200 text-neutral-700 px-4 py-2 rounded-xl text-sm font-medium hover:border-indigo-400 hover:text-indigo-600 transition-colors shadow-sm shrink-0"
+                className="flex items-center gap-2 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-xl text-sm font-medium hover:border-indigo-400 hover:text-indigo-600 transition-colors shadow-sm shrink-0"
               >
                 <ExternalLink className="w-4 h-4" />
                 {isUk ? "Відкрити повністю" : "Open Full Demo"}
@@ -299,13 +299,13 @@ export default async function ProductPage({
                   <div className="w-3 h-3 rounded-full bg-amber-400" />
                   <div className="w-3 h-3 rounded-full bg-green-400" />
                 </div>
-                <div className="flex-1 bg-white rounded-lg px-3 py-1 text-xs text-neutral-400 text-center">
+                <div className="flex-1 bg-white dark:bg-neutral-800 rounded-lg px-3 py-1 text-xs text-neutral-400 text-center">
                   codeworth.uk/{lang}/niches/{niche.slug}
                 </div>
                 <Link
                   href={`/${lang}/niches/${niche.slug}`}
                   target="_blank"
-                  className="text-neutral-400 hover:text-neutral-700 transition-colors"
+                  className="text-neutral-400 hover:text-neutral-700 dark:text-neutral-300 transition-colors"
                 >
                   <ExternalLink className="w-4 h-4" />
                 </Link>
@@ -327,7 +327,7 @@ export default async function ProductPage({
             <div className="grid md:grid-cols-2 gap-12">
               {/* Features */}
               <div>
-                <h2 className="text-2xl font-bold font-syne text-gray-900 mb-6">
+                <h2 className="text-2xl font-bold font-syne text-gray-900 dark:text-white mb-6">
                   {isUk ? "Що включено" : "What's Included"}
                 </h2>
                 <ul className="space-y-3">
@@ -345,7 +345,7 @@ export default async function ProductPage({
               {/* Pages + Tech */}
               <div className="space-y-6">
                 <div className="bg-white rounded-2xl p-6 border border-gray-100">
-                  <h3 className="font-bold text-gray-900 mb-3">{isUk ? "Сторінки сайту" : "Website Pages"}</h3>
+                  <h3 className="font-bold text-gray-900 dark:text-white mb-3">{isUk ? "Сторінки сайту" : "Website Pages"}</h3>
                   <div className="flex flex-wrap gap-2">
                     {niche.pages.map((p) => (
                       <span key={p} className="text-xs px-3 py-1.5 rounded-lg bg-indigo-600 text-white font-medium">
@@ -355,17 +355,17 @@ export default async function ProductPage({
                   </div>
                 </div>
                 <div className="bg-white rounded-2xl p-6 border border-gray-100">
-                  <h3 className="font-bold text-gray-900 mb-3">{isUk ? "Технічний стек" : "Tech Stack"}</h3>
+                  <h3 className="font-bold text-gray-900 dark:text-white mb-3">{isUk ? "Технічний стек" : "Tech Stack"}</h3>
                   <div className="flex flex-wrap gap-2">
                     {niche.tech.map((t) => (
-                      <span key={t} className="text-xs px-3 py-1.5 rounded-lg bg-gray-100 text-gray-700 border border-gray-200">
+                      <span key={t} className="text-xs px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-neutral-800 text-gray-700 border border-gray-200">
                         {t}
                       </span>
                     ))}
                   </div>
                 </div>
                 <div className="bg-white rounded-2xl p-6 border border-gray-100">
-                  <h3 className="font-bold text-gray-900 mb-3">{isUk ? "Процес роботи" : "Work Process"}</h3>
+                  <h3 className="font-bold text-gray-900 dark:text-white mb-3">{isUk ? "Процес роботи" : "Work Process"}</h3>
                   {(isUk
                     ? [
                         ["1", "Обговорення та бриф", "1-2 дні"],
@@ -395,12 +395,12 @@ export default async function ProductPage({
         </section>
 
         {/* Packages */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-white dark:bg-neutral-950">
           <Container>
-            <h2 className="text-3xl font-bold font-syne text-gray-900 text-center mb-3">
+            <h2 className="text-3xl font-bold font-syne text-gray-900 dark:text-white text-center mb-3">
               {isUk ? "Тарифні пакети" : "Pricing Packages"}
             </h2>
-            <p className="text-gray-500 text-center mb-10">
+            <p className="text-gray-500 dark:text-neutral-400 text-center mb-10">
               {isUk ? "Оберіть рівень, що відповідає вашим потребам та бюджету" : "Choose the tier that fits your needs and budget"}
             </p>
             <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -412,11 +412,11 @@ export default async function ProductPage({
                     className={`rounded-2xl p-6 border-2 relative ${
                       pkg.highlight
                         ? "border-indigo-600 bg-indigo-600 text-white shadow-xl shadow-indigo-100"
-                        : "border-gray-100 bg-white"
+                        : "border-gray-100 dark:border-neutral-700 bg-white"
                     }`}
                   >
                     {pkg.highlight && (
-                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-amber-400 text-gray-900 text-xs font-bold rounded-full">
+                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-amber-400 text-gray-900 dark:text-white text-xs font-bold rounded-full">
                         {isUk ? "Рекомендовано" : "Recommended"}
                       </div>
                     )}
@@ -454,19 +454,19 @@ export default async function ProductPage({
         {/* Reviews */}
         <section className="py-16 bg-warm-50">
           <Container>
-            <h2 className="text-2xl font-bold font-syne text-gray-900 mb-8">
+            <h2 className="text-2xl font-bold font-syne text-gray-900 dark:text-white mb-8">
               {isUk ? "Відгуки клієнтів" : "Client Reviews"}
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               {FAKE_REVIEWS.map((r) => (
-                <div key={r.name} className="bg-white dark:bg-neutral-900 rounded-2xl p-6 border border-gray-100 dark:border-neutral-800">
+                <div key={r.name} className="bg-white dark:bg-neutral-900 rounded-2xl p-6 border border-gray-100 dark:border-neutral-700 dark:border-neutral-800">
                   <StarRating value={r.stars} readonly size="sm" className="mb-4" />
                   <p className="text-gray-700 dark:text-neutral-300 text-sm mb-5 italic leading-relaxed">"{r.text}"</p>
                   <div className="flex items-center gap-3">
                     <Avatar name={r.name} size="sm" />
                     <div>
-                      <div className="text-sm font-semibold text-gray-900 dark:text-white">{r.name}</div>
-                      <div className="text-xs text-gray-400 dark:text-neutral-500">{r.city}</div>
+                      <div className="text-sm font-semibold text-gray-900 dark:text-white ">{r.name}</div>
+                      <div className="text-xs text-gray-400 dark:text-neutral-500 dark:text-neutral-500">{r.city}</div>
                     </div>
                   </div>
                 </div>
@@ -476,9 +476,9 @@ export default async function ProductPage({
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-white dark:bg-neutral-950">
           <Container className="max-w-3xl">
-            <h2 className="text-2xl font-bold font-syne text-gray-900 mb-8">
+            <h2 className="text-2xl font-bold font-syne text-gray-900 dark:text-white mb-8">
               {isUk ? "Питання та відповіді" : "FAQ"}
             </h2>
             <div className="space-y-3">
@@ -496,12 +496,12 @@ export default async function ProductPage({
                     { q: "Can I manage the content myself?", a: "Yes. We connect an easy CMS (Sanity or Strapi) and provide a brief training session." },
                   ]
               ).map((item) => (
-                <details key={item.q} className="group border border-gray-100 rounded-xl overflow-hidden">
-                  <summary className="flex items-center justify-between px-5 py-4 cursor-pointer list-none font-medium text-gray-900 hover:bg-gray-50 transition-colors">
+                <details key={item.q} className="group border border-gray-100 dark:border-neutral-700 rounded-xl overflow-hidden">
+                  <summary className="flex items-center justify-between px-5 py-4 cursor-pointer list-none font-medium text-gray-900 dark:text-white hover:bg-gray-50 dark:bg-neutral-900 transition-colors">
                     {item.q}
-                    <ChevronDown className="w-4 h-4 text-gray-400 group-open:rotate-180 transition-transform shrink-0" />
+                    <ChevronDown className="w-4 h-4 text-gray-400 dark:text-neutral-500 group-open:rotate-180 transition-transform shrink-0" />
                   </summary>
-                  <div className="px-5 pb-4 text-sm text-gray-600 leading-relaxed">
+                  <div className="px-5 pb-4 text-sm text-gray-600 dark:text-neutral-300 leading-relaxed">
                     {item.a}
                   </div>
                 </details>
@@ -514,7 +514,7 @@ export default async function ProductPage({
         {related.length > 0 && (
           <section className="py-16 bg-warm-50">
             <Container>
-              <h2 className="text-2xl font-bold font-syne text-gray-900 mb-8">
+              <h2 className="text-2xl font-bold font-syne text-gray-900 dark:text-white mb-8">
                 {isUk ? "Схожі рішення" : "Similar Solutions"}
               </h2>
               <div className="grid md:grid-cols-3 gap-6">
@@ -522,18 +522,18 @@ export default async function ProductPage({
                   <Link
                     key={n.slug}
                     href={`/${lang}/marketplace/product/${n.slug}`}
-                    className="group bg-white rounded-2xl p-6 border border-gray-100 hover:border-indigo-100 hover:shadow-md transition-all"
+                    className="group bg-white dark:bg-neutral-800 rounded-2xl p-6 border border-gray-100 dark:border-neutral-700 hover:border-indigo-100 hover:shadow-md transition-all"
                   >
                     <div className={`w-12 h-12 rounded-xl bg-linear-to-br ${n.gradient} flex items-center justify-center text-2xl mb-4`}>
                       {n.emoji}
                     </div>
-                    <h3 className="font-bold text-gray-900 group-hover:text-indigo-600 transition-colors mb-1">
+                    <h3 className="font-bold text-gray-900 dark:text-white group-hover:text-indigo-600 transition-colors mb-1">
                       {n.title}
                     </h3>
-                    <p className="text-xs text-gray-500 mb-3">{n.subtitle}</p>
+                    <p className="text-xs text-gray-500 dark:text-neutral-400 mb-3">{n.subtitle}</p>
                     <div className="flex items-center justify-between text-sm">
                       <span className="text-gray-700">{isUk ? `від ${n.priceFrom.toLocaleString("uk-UA")} ₴` : `from ${n.priceFrom.toLocaleString("en-US")} ₴`}</span>
-                      <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-indigo-600 group-hover:translate-x-0.5 transition-all" />
+                      <ArrowRight className="w-4 h-4 text-gray-400 dark:text-neutral-500 group-hover:text-indigo-600 group-hover:translate-x-0.5 transition-all" />
                     </div>
                   </Link>
                 ))}

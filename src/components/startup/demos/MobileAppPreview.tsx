@@ -2,7 +2,7 @@ export function MobileAppPreview() {
   return (
     <div className="font-sans">
       {/* Nav */}
-      <nav className="flex items-center justify-between px-8 py-4 bg-white border-b border-gray-100">
+      <nav className="flex items-center justify-between px-8 py-4 bg-white dark:bg-neutral-800 border-b border-gray-100">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-2xl bg-blue-600 flex items-center justify-center text-white text-xs font-bold">F</div>
           <span className="font-bold text-gray-900">FitTrack</span>
@@ -31,7 +31,7 @@ export function MobileAppPreview() {
               AI-powered workouts, real-time tracking, nutrition guidance — everything you need to reach your goals faster.
             </p>
             <div className="flex gap-3 flex-wrap">
-              <button className="bg-white text-gray-900 font-bold px-5 py-2.5 rounded-xl text-sm flex items-center gap-2">
+              <button className="bg-white text-gray-900 dark:text-white font-bold px-5 py-2.5 rounded-xl text-sm flex items-center gap-2">
                 🍎 <span>Download on App Store</span>
               </button>
               <button className="bg-white/20 text-white border border-white/30 px-5 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2">
@@ -64,7 +64,7 @@ export function MobileAppPreview() {
 
       {/* Features */}
       <section className="px-8 py-10 bg-white">
-        <h2 className="text-2xl font-extrabold text-gray-900 text-center mb-8">Everything in one app</h2>
+        <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white text-center mb-8">Everything in one app</h2>
         <div className="grid grid-cols-3 gap-5 max-w-3xl mx-auto">
           {[
             { icon: "🤖", title: "AI Coach", desc: "Personalized workouts that adapt to your progress" },
@@ -77,8 +77,8 @@ export function MobileAppPreview() {
             <div key={f.title} className="flex gap-3 items-start">
               <div className="text-2xl shrink-0">{f.icon}</div>
               <div>
-                <div className="font-bold text-gray-900 text-sm">{f.title}</div>
-                <div className="text-xs text-gray-500 mt-0.5">{f.desc}</div>
+                <div className="font-bold text-gray-900 dark:text-white text-sm">{f.title}</div>
+                <div className="text-xs text-gray-500 dark:text-neutral-400 mt-0.5">{f.desc}</div>
               </div>
             </div>
           ))}
@@ -86,7 +86,7 @@ export function MobileAppPreview() {
       </section>
 
       {/* Reviews */}
-      <section className="px-8 py-10 bg-gray-50 border-t border-gray-100">
+      <section className="px-8 py-10 bg-gray-50 dark:bg-neutral-900 border-t border-gray-100">
         <div className="text-center mb-6">
           <div className="text-3xl font-extrabold text-gray-900">4.9 ★</div>
           <div className="text-sm text-gray-500">from 48,234 ratings</div>
@@ -99,8 +99,8 @@ export function MobileAppPreview() {
           ].map((r) => (
             <div key={r.name} className="bg-white rounded-xl p-4 border border-gray-100">
               <div className="text-yellow-400 text-xs mb-2">★★★★★</div>
-              <div className="text-xs text-gray-700 mb-2">{r.text}</div>
-              <div className="text-xs text-gray-400 font-semibold">{r.name}</div>
+              <div className="text-xs text-gray-700 dark:text-neutral-300 mb-2">{r.text}</div>
+              <div className="text-xs text-gray-400 dark:text-neutral-500 font-semibold">{r.name}</div>
             </div>
           ))}
         </div>
@@ -110,8 +110,8 @@ export function MobileAppPreview() {
       <div className="px-8 py-5 bg-blue-600 text-white flex items-center justify-between">
         <div className="text-sm font-bold">Ready to transform your fitness?</div>
         <div className="flex gap-2">
-          <button className="bg-white text-gray-900 text-xs font-bold px-4 py-2 rounded-lg">🍎 App Store</button>
-          <button className="bg-white text-gray-900 text-xs font-bold px-4 py-2 rounded-lg">▶ Google Play</button>
+          <button className="bg-white text-gray-900 dark:text-white text-xs font-bold px-4 py-2 rounded-lg">🍎 App Store</button>
+          <button className="bg-white text-gray-900 dark:text-white text-xs font-bold px-4 py-2 rounded-lg">▶ Google Play</button>
         </div>
       </div>
     </div>

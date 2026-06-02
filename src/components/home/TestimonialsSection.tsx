@@ -196,13 +196,13 @@ export function TestimonialsSection() {
   };
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-white dark:bg-neutral-950">
       <Container>
         <div className="max-w-2xl mx-auto text-center mb-16">
           <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
             {isUk ? "Відгуки клієнтів" : "Client reviews"}
           </p>
-          <h2 className="text-4xl lg:text-5xl font-heading font-extrabold text-neutral-900 mb-4">
+          <h2 className="text-4xl lg:text-5xl font-heading font-extrabold text-neutral-900 dark:text-white mb-4">
             {isUk ? (
               <>Нам довіряють{" "}<span className="gradient-text">85+ компаній</span></>
             ) : (
@@ -221,7 +221,7 @@ export function TestimonialsSection() {
           {visibleTestimonials.map((t) => (
             <li
               key={t.name}
-              className="p-7 rounded-2xl border border-neutral-100 bg-white shadow-sm hover:shadow-md transition-shadow duration-200"
+              className="p-7 rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white dark:bg-neutral-800 shadow-sm hover:shadow-md transition-shadow duration-200"
             >
               {/* Stars */}
               <div className="flex items-center gap-0.5 mb-4">
@@ -232,7 +232,7 @@ export function TestimonialsSection() {
               </div>
 
               {/* Text */}
-              <p className="text-neutral-600 text-sm leading-relaxed mb-6 italic">
+              <p className="text-neutral-600 dark:text-neutral-300 text-sm leading-relaxed mb-6 italic">
                 &ldquo;{t.text}&rdquo;
               </p>
 
@@ -242,7 +242,7 @@ export function TestimonialsSection() {
                   {t.avatar}
                 </div>
                 <div>
-                  <div className="font-semibold text-neutral-900 text-sm">{t.name}</div>
+                  <div className="font-semibold text-neutral-900 dark:text-white text-sm">{t.name}</div>
                   <div className="text-xs text-neutral-500">
                     {t.role}, {t.company}
                   </div>
@@ -257,7 +257,7 @@ export function TestimonialsSection() {
           <button
             onClick={goPrev}
             aria-label={isUk ? "Попередні відгуки" : "Previous reviews"}
-            className="w-10 h-10 rounded-full border border-neutral-200 flex items-center justify-center hover:bg-neutral-50 transition-colors"
+            className="w-10 h-10 rounded-full border border-neutral-200 dark:border-neutral-700 flex items-center justify-center hover:bg-neutral-50 dark:hover:bg-neutral-800 dark:bg-neutral-900 transition-colors"
           >
             <ChevronLeft className="w-5 h-5 text-neutral-600" />
           </button>
@@ -281,7 +281,7 @@ export function TestimonialsSection() {
           <button
             onClick={goNext}
             aria-label={isUk ? "Наступні відгуки" : "Next reviews"}
-            className="w-10 h-10 rounded-full border border-neutral-200 flex items-center justify-center hover:bg-neutral-50 transition-colors"
+            className="w-10 h-10 rounded-full border border-neutral-200 dark:border-neutral-700 flex items-center justify-center hover:bg-neutral-50 dark:hover:bg-neutral-800 dark:bg-neutral-900 transition-colors"
           >
             <ChevronRight className="w-5 h-5 text-neutral-600" />
           </button>

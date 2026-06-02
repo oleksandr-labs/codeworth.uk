@@ -156,7 +156,7 @@ const LOYALTY_TIERS = [
     pointsUk: "0 – 4 999 балів",
     benefitsEn: ["3% cashback on all services", "Birthday gift certificate"],
     benefitsUk: ["3% кешбек на всі послуги", "Подарунковий сертифікат на день народження"],
-    color: "bg-gray-100 border-gray-300",
+    color: "bg-gray-100 dark:bg-neutral-800 border-gray-300",
   },
   {
     emoji: "🥇",
@@ -303,7 +303,7 @@ export function BeautyRoomDemo({ lang }: { lang: string }) {
             {NAV_ITEMS.map((item) => (
               <span
                 key={item.en}
-                className="cursor-pointer text-sm font-medium text-gray-600 transition-colors hover:text-purple-600"
+                className="cursor-pointer text-sm font-medium text-gray-600 dark:text-neutral-300 transition-colors hover:text-purple-600"
               >
                 {isUk ? item.uk : item.en}
               </span>
@@ -404,7 +404,7 @@ export function BeautyRoomDemo({ lang }: { lang: string }) {
             {MASTERS.map((m) => (
               <div
                 key={m.nameEn}
-                className="rounded-2xl border border-purple-100 bg-white p-6 text-center shadow-sm transition-shadow hover:shadow-md"
+                className="rounded-2xl border border-purple-100 bg-white dark:bg-neutral-800 p-6 text-center shadow-sm transition-shadow hover:shadow-md"
               >
                 <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-purple-100 text-3xl">
                   {m.emoji}
@@ -460,7 +460,7 @@ export function BeautyRoomDemo({ lang }: { lang: string }) {
           ))}
         </div>
 
-        <div className="rounded-2xl border border-purple-100 bg-white p-6 shadow-sm">
+        <div className="rounded-2xl border border-purple-100 bg-white dark:bg-neutral-800 p-6 shadow-sm">
           {/* Step 0: Start */}
           {bookStep === 0 && !bookingDone && (
             <div className="text-center">
@@ -590,7 +590,7 @@ export function BeautyRoomDemo({ lang }: { lang: string }) {
                     className={`rounded-lg border px-3 py-2 text-sm font-medium transition-all ${
                       bookDate === d
                         ? "border-purple-500 bg-purple-100 text-purple-700"
-                        : "border-purple-100 text-gray-600 hover:border-purple-300"
+                        : "border-purple-100 text-gray-600 dark:text-neutral-300 hover:border-purple-300"
                     }`}
                   >
                     {d}
@@ -609,7 +609,7 @@ export function BeautyRoomDemo({ lang }: { lang: string }) {
                         className={`rounded-lg border px-3 py-2 text-sm font-medium transition-all ${
                           bookTime === t
                             ? "border-purple-500 bg-purple-100 text-purple-700"
-                            : "border-purple-100 text-gray-600 hover:border-purple-300"
+                            : "border-purple-100 text-gray-600 dark:text-neutral-300 hover:border-purple-300"
                         }`}
                       >
                         {t}
@@ -708,7 +708,7 @@ export function BeautyRoomDemo({ lang }: { lang: string }) {
             {BEFORE_AFTER.map((item) => (
               <div
                 key={item.labelEn}
-                className="overflow-hidden rounded-2xl border border-purple-100 bg-white shadow-sm"
+                className="overflow-hidden rounded-2xl border border-purple-100 bg-white dark:bg-neutral-800 shadow-sm"
               >
                 <div className="flex">
                   <div className="flex flex-1 flex-col items-center justify-center py-8">
@@ -813,7 +813,7 @@ export function BeautyRoomDemo({ lang }: { lang: string }) {
           {REVIEWS.map((r) => (
             <div
               key={r.nameEn}
-              className="rounded-2xl border border-purple-100 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+              className="rounded-2xl border border-purple-100 bg-white dark:bg-neutral-800 p-6 shadow-sm transition-shadow hover:shadow-md"
             >
               <div className="mb-3 text-[#d4af37]">
                 {"★".repeat(r.rating)}

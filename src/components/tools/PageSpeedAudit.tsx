@@ -158,7 +158,7 @@ export function PageSpeedAudit({ isUk }: Props) {
           <Gauge className="w-6 h-6 text-indigo-600" />
           <h2 className="text-2xl font-heading font-extrabold text-neutral-900">{t.heading}</h2>
         </div>
-        <p className="text-neutral-500 text-sm leading-relaxed">{t.sub}</p>
+        <p className="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed">{t.sub}</p>
       </div>
 
       {/* Input */}
@@ -171,7 +171,7 @@ export function PageSpeedAudit({ isUk }: Props) {
               onChange={(e) => setUrl(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && !loading && handleCheck()}
               placeholder={t.placeholder}
-              className="flex-1 px-4 py-3 rounded-xl border border-neutral-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 bg-neutral-50"
+              className="flex-1 px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 bg-neutral-50"
               disabled={loading}
             />
             <button
@@ -209,10 +209,10 @@ export function PageSpeedAudit({ isUk }: Props) {
       {result && !loading && (
         <div className="space-y-6">
           {/* Score */}
-          <div className="flex flex-col sm:flex-row items-center gap-6 p-6 rounded-2xl bg-neutral-50 border border-neutral-200">
+          <div className="flex flex-col sm:flex-row items-center gap-6 p-6 rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200">
             <ScoreRing score={result.score} />
             <div className="flex-1 text-center sm:text-left">
-              <p className="text-sm font-semibold text-neutral-500 mb-1">{t.scoreLabel}</p>
+              <p className="text-sm font-semibold text-neutral-500 dark:text-neutral-400 mb-1">{t.scoreLabel}</p>
               <p className="text-xs text-neutral-400 leading-relaxed">{t.mobileNote}</p>
               <p className="text-xs text-neutral-400 mt-1 break-all">{url}</p>
             </div>
@@ -220,12 +220,12 @@ export function PageSpeedAudit({ isUk }: Props) {
 
           {/* Metrics grid */}
           <div>
-            <h3 className="text-sm font-semibold text-neutral-700 mb-3">{t.metrics}</h3>
+            <h3 className="text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-3">{t.metrics}</h3>
             <div className="grid grid-cols-2 gap-3">
               {metrics.map(({ icon, label, value }) => (
-                <div key={label} className="p-4 rounded-xl border border-neutral-200 bg-white">
+                <div key={label} className="p-4 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white">
                   <div className="flex items-center gap-2 text-indigo-500 mb-1">{icon}</div>
-                  <p className="text-xs text-neutral-500 mb-0.5 leading-snug">{label}</p>
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400 mb-0.5 leading-snug">{label}</p>
                   <p className="text-lg font-bold text-neutral-900">{value ?? "—"}</p>
                 </div>
               ))}
@@ -234,7 +234,7 @@ export function PageSpeedAudit({ isUk }: Props) {
 
           {/* Opportunities */}
           <div>
-            <h3 className="text-sm font-semibold text-neutral-700 mb-3">{t.oppLabel}</h3>
+            <h3 className="text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-3">{t.oppLabel}</h3>
             {result.opportunities.length === 0 ? (
               <div className="flex items-center gap-2 text-green-700 bg-green-50 border border-green-200 rounded-xl px-4 py-3 text-sm">
                 ✅ {t.noOpp}
@@ -261,7 +261,7 @@ export function PageSpeedAudit({ isUk }: Props) {
             </a>
             <button
               onClick={() => { setResult(null); setUrl(""); setError(null); }}
-              className="flex-1 px-5 py-3 rounded-xl border border-neutral-200 text-sm font-semibold text-neutral-700 hover:border-indigo-400 hover:text-indigo-600 transition-colors"
+              className="flex-1 px-5 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 text-sm font-semibold text-neutral-700 dark:text-neutral-300 hover:border-indigo-400 hover:text-indigo-600 transition-colors"
             >
               {t.retry}
             </button>

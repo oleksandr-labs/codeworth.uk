@@ -145,7 +145,7 @@ export function VisualSitemapDemo({ isUk }: Props) {
         </button>
         <button
           onClick={collapseAll}
-          className="px-3 py-1.5 rounded-md bg-neutral-100 text-neutral-700 text-sm font-medium hover:bg-neutral-200 transition-colors"
+          className="px-3 py-1.5 rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 text-sm font-medium hover:bg-neutral-200 transition-colors"
         >
           {isUk ? "Згорнути все" : "Collapse all"}
         </button>
@@ -154,7 +154,7 @@ export function VisualSitemapDemo({ isUk }: Props) {
       <div
         role="tree"
         aria-label={isUk ? "Структура сайту" : "Site structure"}
-        className="rounded-2xl border border-neutral-200 bg-white p-3"
+        className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white p-3"
       >
         <NodeView node={TREE} depth={0} isUk={isUk} expanded={expanded} onToggle={toggle} />
       </div>

@@ -19,7 +19,7 @@ export default function CartPage() {
     <>
       <Header />
       <main className="flex-1 bg-warm-50">
-        <div className="bg-white border-b border-gray-100 py-6">
+        <div className="bg-white border-b border-gray-100 dark:border-neutral-700 py-6">
           <Container>
             <Breadcrumb
               items={[
@@ -27,7 +27,7 @@ export default function CartPage() {
                 { label: "Кошик" },
               ]}
             />
-            <h1 className="text-3xl font-bold font-syne text-gray-900 mt-4 flex items-center gap-3">
+            <h1 className="text-3xl font-bold font-syne text-gray-900 dark:text-white mt-4 flex items-center gap-3">
               <ShoppingCart className="w-7 h-7 text-indigo-600" />
               Кошик
             </h1>

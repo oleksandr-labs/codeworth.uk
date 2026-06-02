@@ -256,7 +256,7 @@ export function GreenLeafDemo({ lang }: Props) {
               <div key={farm.id}>
                 <button
                   onClick={() => setActiveFarm(activeFarm === farm.id ? null : farm.id)}
-                  className={`w-full text-left bg-white rounded-2xl p-5 border transition-all ${
+                  className={`w-full text-left bg-white dark:bg-neutral-800 rounded-2xl p-5 border transition-all ${
                     activeFarm === farm.id
                       ? "border-[#2D7A3A] shadow-lg"
                       : "border-[#A8D5B5]/40 hover:shadow-md"

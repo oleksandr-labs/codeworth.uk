@@ -380,7 +380,7 @@ export default async function MarketplacePage({ params }: { params: Promise<{ la
         </section>
 
         {/* Benefits */}
-        <section className="py-16 bg-white border-b border-neutral-100">
+        <section className="py-16 bg-white dark:bg-neutral-800 border-b border-neutral-100">
           <Container>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">
               {BENEFITS.map((b) => {
@@ -390,7 +390,7 @@ export default async function MarketplacePage({ params }: { params: Promise<{ la
                     <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center mx-auto mb-3">
                       <Icon className="w-5 h-5 text-indigo-600" />
                     </div>
-                    <div className="font-heading font-bold text-neutral-900 text-sm mb-1">{b.title}</div>
+                    <div className="font-heading font-bold text-neutral-900 dark:text-white text-sm mb-1">{b.title}</div>
                     <div className="text-xs text-neutral-400">{b.desc}</div>
                   </div>
                 );
@@ -400,13 +400,13 @@ export default async function MarketplacePage({ params }: { params: Promise<{ la
         </section>
 
         {/* Catalog */}
-        <section id="catalog" className="py-24 bg-white">
+        <section id="catalog" className="py-24 bg-white dark:bg-neutral-950">
           <Container>
             <div className="max-w-2xl mx-auto text-center mb-16">
               <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
                 {isUk ? "Каталог" : "Catalog"}
               </p>
-              <h2 className="text-4xl font-heading font-extrabold text-neutral-900 mb-4">
+              <h2 className="text-4xl font-heading font-extrabold text-neutral-900 dark:text-white mb-4">
                 {isUk ? `${totalItems} рішень для ${NICHES.length} галузей` : `${totalItems} solutions for ${NICHES.length} industries`}
               </h2>
             </div>
@@ -454,7 +454,7 @@ export default async function MarketplacePage({ params }: { params: Promise<{ la
         </section>
 
         {/* How it works */}
-        <section className="py-24 bg-neutral-50">
+        <section className="py-24 bg-neutral-50 dark:bg-neutral-900 ">
           <Container>
             <div className="max-w-2xl mx-auto text-center mb-16">
               <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
@@ -466,11 +466,11 @@ export default async function MarketplacePage({ params }: { params: Promise<{ la
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {HOW_IT_WORKS.map((step, i) => (
-                <div key={step.num} className="relative p-6 rounded-2xl bg-white border border-neutral-100 text-center">
+                <div key={step.num} className="relative p-6 rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 text-center">
                   <div className="w-12 h-12 rounded-xl bg-linear-to-br from-indigo-600 to-indigo-800 text-white font-heading font-bold flex items-center justify-center mx-auto mb-4 shadow-md shadow-indigo-500/25">
                     {step.num}
                   </div>
-                  <h3 className="font-heading font-bold text-neutral-900 mb-2">{step.title}</h3>
+                  <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-2">{step.title}</h3>
                   <p className="text-sm text-neutral-500">{step.desc}</p>
                 </div>
               ))}
@@ -479,7 +479,7 @@ export default async function MarketplacePage({ params }: { params: Promise<{ la
         </section>
 
         {/* FAQ */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-white dark:bg-neutral-950">
           <Container>
             <div className="max-w-2xl mx-auto text-center mb-12">
               <h2 className="text-4xl font-heading font-extrabold text-neutral-900">FAQ</h2>
@@ -487,8 +487,8 @@ export default async function MarketplacePage({ params }: { params: Promise<{ la
             <div className="max-w-3xl mx-auto space-y-4">
               {FAQ.map((item) => (
                 <div key={item.q} className="p-6 rounded-2xl border border-neutral-100">
-                  <h3 className="font-heading font-bold text-neutral-900 mb-2">{item.q}</h3>
-                  <p className="text-sm text-neutral-500 leading-relaxed">{item.a}</p>
+                  <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-2">{item.q}</h3>
+                  <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">{item.a}</p>
                 </div>
               ))}
             </div>
@@ -499,10 +499,10 @@ export default async function MarketplacePage({ params }: { params: Promise<{ la
         <section className="py-16 bg-indigo-50 border-y border-indigo-100">
           <Container>
             <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-3xl font-heading font-bold text-neutral-900 mb-3">
+              <h2 className="text-3xl font-heading font-bold text-neutral-900 dark:text-white mb-3">
                 {isUk ? "Не знайшли підходящий варіант?" : "Didn't find the right fit?"}
               </h2>
-              <p className="text-neutral-600 mb-6">
+              <p className="text-neutral-600 dark:text-neutral-300 mb-6">
                 {isUk ? "Розробимо унікальний сайт під ваш бізнес з нуля." : "We'll build a unique website for your business from scratch."}
               </p>
               <Link

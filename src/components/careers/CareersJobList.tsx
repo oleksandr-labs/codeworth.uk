@@ -43,7 +43,7 @@ export function CareersJobList({ jobs, lang, isUk }: CareersJobListProps) {
   const btnBase =
     "px-3 py-1.5 rounded-lg text-sm font-medium transition-colors border";
   const btnActive = "bg-indigo-600 text-white border-indigo-600";
-  const btnInactive = "bg-white text-gray-600 border-gray-200 hover:border-indigo-300 hover:text-indigo-600";
+  const btnInactive = "bg-white text-gray-600 dark:text-neutral-300 border-gray-200 dark:border-neutral-700 hover:border-indigo-300 hover:text-indigo-600";
 
   return (
     <div>
@@ -51,7 +51,7 @@ export function CareersJobList({ jobs, lang, isUk }: CareersJobListProps) {
       <div className="flex flex-wrap gap-4 mb-6">
         {/* Department filter */}
         <div className="flex flex-wrap gap-2 items-center">
-          <span className="text-sm text-gray-500 shrink-0">
+          <span className="text-sm text-gray-500 dark:text-neutral-400 shrink-0">
             {isUk ? "Відділ:" : "Dept:"}
           </span>
           <button
@@ -73,7 +73,7 @@ export function CareersJobList({ jobs, lang, isUk }: CareersJobListProps) {
 
         {/* Format filter */}
         <div className="flex flex-wrap gap-2 items-center">
-          <span className="text-sm text-gray-500 shrink-0">
+          <span className="text-sm text-gray-500 dark:text-neutral-400 shrink-0">
             {isUk ? "Формат:" : "Format:"}
           </span>
           {(
@@ -95,7 +95,7 @@ export function CareersJobList({ jobs, lang, isUk }: CareersJobListProps) {
       </div>
 
       {/* Heading with live count */}
-      <h2 className="text-2xl font-bold text-gray-900 mb-6">
+      <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
         {isUk ? "Відкриті вакансії" : "Open Positions"} ({filtered.length})
       </h2>
 
@@ -121,12 +121,12 @@ export function CareersJobList({ jobs, lang, isUk }: CareersJobListProps) {
             <Link
               key={job.slug}
               href={`/${lang}/careers/${job.slug}`}
-              className="block bg-white rounded-2xl p-6 border border-gray-200 hover:border-indigo-300 hover:shadow-md transition-all group"
+              className="block bg-white dark:bg-neutral-800 rounded-2xl p-6 border border-gray-200 dark:border-neutral-700 hover:border-indigo-300 hover:shadow-md transition-all group"
             >
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <div>
                   <div className="flex items-center gap-2 mb-2">
-                    <h3 className="text-lg font-semibold text-gray-900 group-hover:text-indigo-700 transition-colors">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-indigo-700 transition-colors">
                       {isUk ? job.titleUk : job.titleEn}
                     </h3>
                     {job.isUrgent && (

@@ -101,7 +101,7 @@ export function VirtualTourDemo({ isUk }: Props) {
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
               i === sceneIdx
                 ? "bg-indigo-600 text-white shadow-sm"
-                : "bg-neutral-100 text-neutral-600 hover:bg-indigo-50"
+                : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-indigo-50"
             }`}
           >
             <MapPin className="w-3.5 h-3.5" />
@@ -110,7 +110,7 @@ export function VirtualTourDemo({ isUk }: Props) {
         ))}
         <button
           onClick={() => { setOffset(0); setActiveHotspot(null); }}
-          className="ml-auto flex items-center gap-1.5 px-3 py-1.5 text-sm text-neutral-500 hover:text-neutral-900 transition-colors"
+          className="ml-auto flex items-center gap-1.5 px-3 py-1.5 text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:text-white transition-colors"
         >
           <RotateCcw className="w-3.5 h-3.5" />
           {isUk ? "Скинути" : "Reset view"}
@@ -118,7 +118,7 @@ export function VirtualTourDemo({ isUk }: Props) {
       </div>
 
       <div
-        className="relative aspect-video rounded-2xl overflow-hidden border border-neutral-200 cursor-grab active:cursor-grabbing select-none"
+        className="relative aspect-video rounded-2xl overflow-hidden border border-neutral-200 dark:border-neutral-700 cursor-grab active:cursor-grabbing select-none"
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
@@ -188,12 +188,12 @@ export function VirtualTourDemo({ isUk }: Props) {
             <Info className="w-4 h-4" />
           </div>
           <div className="flex-1 min-w-0">
-            <h3 className="font-bold text-neutral-900 text-sm">{isUk ? activeHotspot.labelUk : activeHotspot.labelEn}</h3>
-            <p className="text-sm text-neutral-600 mt-0.5">{isUk ? activeHotspot.descUk : activeHotspot.descEn}</p>
+            <h3 className="font-bold text-neutral-900 dark:text-white text-sm">{isUk ? activeHotspot.labelUk : activeHotspot.labelEn}</h3>
+            <p className="text-sm text-neutral-600 dark:text-neutral-300 mt-0.5">{isUk ? activeHotspot.descUk : activeHotspot.descEn}</p>
           </div>
           <button
             onClick={() => setActiveHotspot(null)}
-            className="text-neutral-400 hover:text-neutral-700 text-sm"
+            className="text-neutral-400 hover:text-neutral-700 dark:text-neutral-300 text-sm"
             aria-label={isUk ? "Закрити" : "Close"}
           >
             ✕

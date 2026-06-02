@@ -461,7 +461,7 @@ export function LapkaVetDemo({ lang }: { lang: string }) {
   const schedule = VACCINATION_SCHEDULE[vaccPet];
 
   return (
-    <div className="min-h-screen bg-white text-gray-800 font-sans">
+    <div className="min-h-screen bg-white text-gray-800 dark:text-neutral-200 font-sans">
       {/* ── Header ──────────────────────────────────────────────────────── */}
       <header className="bg-white border-b border-green-100 sticky top-0 z-30">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4 flex-wrap">
@@ -505,7 +505,7 @@ export function LapkaVetDemo({ lang }: { lang: string }) {
               ? "Ваш Улюбленець Заслуговує Найкращого"
               : "Your Pet Deserves the Best"}
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10">
+          <p className="text-lg md:text-xl text-gray-600 dark:text-neutral-300 max-w-2xl mx-auto mb-10">
             {isUk
               ? "Сучасна ветеринарна клініка з повним спектром послуг, турботливими лікарями та цілодобовою підтримкою"
               : "Modern full-service veterinary clinic with caring doctors and round-the-clock support"}
@@ -550,12 +550,12 @@ export function LapkaVetDemo({ lang }: { lang: string }) {
       </section>
 
       {/* ── Services ────────────────────────────────────────────────────── */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-neutral-950">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-center text-green-800 mb-2">
             {isUk ? "Наші послуги" : "Our Services"}
           </h2>
-          <p className="text-center text-gray-500 mb-10">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-10">
             {isUk
               ? "Повний спектр ветеринарної допомоги під одним дахом"
               : "Full range of veterinary care under one roof"}
@@ -568,10 +568,10 @@ export function LapkaVetDemo({ lang }: { lang: string }) {
                 className={`rounded-xl border p-5 ${s.color} hover:shadow-md transition-shadow`}
               >
                 <span className="text-3xl">{s.emoji}</span>
-                <h3 className="font-bold text-gray-800 mt-3 mb-1">
+                <h3 className="font-bold text-gray-800 dark:text-neutral-200 mt-3 mb-1">
                   {isUk ? s.nameUk : s.nameEn}
                 </h3>
-                <p className="text-sm text-gray-600 mb-3">
+                <p className="text-sm text-gray-600 dark:text-neutral-300 mb-3">
                   {isUk ? s.descUk : s.descEn}
                 </p>
                 <p className="text-sm font-semibold text-green-700">
@@ -589,7 +589,7 @@ export function LapkaVetDemo({ lang }: { lang: string }) {
           <h2 className="text-2xl md:text-3xl font-bold text-center text-green-800 mb-2">
             💉 {isUk ? "Календар вакцинації" : "Vaccination Calendar"}
           </h2>
-          <p className="text-center text-gray-500 mb-8">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-8">
             {isUk
               ? "Оберіть тип тварини та дізнайтесь рекомендований графік щеплень"
               : "Select your pet type and see the recommended vaccination schedule"}
@@ -607,7 +607,7 @@ export function LapkaVetDemo({ lang }: { lang: string }) {
                 className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-colors ${
                   vaccPet === pet
                     ? "bg-green-600 text-white shadow-md"
-                    : "bg-white text-gray-600 border border-green-200 hover:border-green-400"
+                    : "bg-white text-gray-600 dark:text-neutral-300 border border-green-200 hover:border-green-400"
                 }`}
               >
                 {isUk ? schedule.labelUk : VACCINATION_SCHEDULE[pet].labelEn}
@@ -640,7 +640,7 @@ export function LapkaVetDemo({ lang }: { lang: string }) {
                   </p>
 
                   {vaccMilestone === i && (
-                    <div className="mt-3 bg-white rounded-xl border border-green-200 shadow-lg p-4 text-left w-full max-w-xs">
+                    <div className="mt-3 bg-white dark:bg-neutral-800 rounded-xl border border-green-200 shadow-lg p-4 text-left w-full max-w-xs">
                       <p className="font-bold text-green-800 text-sm mb-1">
                         {isUk ? m.vaccineUk : m.vaccineEn}
                       </p>
@@ -654,7 +654,7 @@ export function LapkaVetDemo({ lang }: { lang: string }) {
             </div>
           </div>
 
-          <p className="text-center text-xs text-gray-400 mt-8">
+          <p className="text-center text-xs text-gray-400 dark:text-neutral-500 mt-8">
             {isUk
               ? "⚕️ Графік може змінюватись — проконсультуйтесь з лікарем"
               : "⚕️ Schedule may vary — consult your veterinarian"}
@@ -663,12 +663,12 @@ export function LapkaVetDemo({ lang }: { lang: string }) {
       </section>
 
       {/* ── Doctors ─────────────────────────────────────────────────────── */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-neutral-950">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-center text-green-800 mb-2">
             {isUk ? "Наші лікарі" : "Our Doctors"}
           </h2>
-          <p className="text-center text-gray-500 mb-10">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-10">
             {isUk
               ? "Досвідчені спеціалісти, які люблять тварин"
               : "Experienced specialists who truly love animals"}
@@ -681,13 +681,13 @@ export function LapkaVetDemo({ lang }: { lang: string }) {
                 className="bg-green-50 rounded-xl border border-green-100 p-5 text-center hover:shadow-md transition-shadow"
               >
                 <span className="text-4xl">{d.emoji}</span>
-                <h3 className="font-bold text-gray-800 mt-3 mb-1">
+                <h3 className="font-bold text-gray-800 dark:text-neutral-200 mt-3 mb-1">
                   {isUk ? d.nameUk : d.nameEn}
                 </h3>
                 <p className="text-sm font-semibold text-green-600 mb-2">
                   {isUk ? d.specUk : d.specEn}
                 </p>
-                <p className="text-xs text-gray-500 mb-2">
+                <p className="text-xs text-gray-500 dark:text-neutral-400 mb-2">
                   🎓 {isUk ? d.eduUk : d.eduEn}
                 </p>
                 <p className="text-xs text-gray-400">
@@ -705,7 +705,7 @@ export function LapkaVetDemo({ lang }: { lang: string }) {
           <h2 className="text-2xl md:text-3xl font-bold text-center text-green-800 mb-2">
             💊 {isUk ? "Зооаптека" : "Pet Pharmacy"}
           </h2>
-          <p className="text-center text-gray-500 mb-10">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-10">
             {isUk
               ? "Все необхідне для здоров'я та комфорту вашого улюбленця"
               : "Everything your pet needs for health and comfort"}
@@ -720,10 +720,10 @@ export function LapkaVetDemo({ lang }: { lang: string }) {
                 <div className="flex items-start gap-3">
                   <span className="text-3xl shrink-0">{p.emoji}</span>
                   <div>
-                    <h3 className="font-bold text-gray-800 mb-1">
+                    <h3 className="font-bold text-gray-800 dark:text-neutral-200 mb-1">
                       {isUk ? p.nameUk : p.nameEn}
                     </h3>
-                    <p className="text-sm text-gray-600 mb-2">
+                    <p className="text-sm text-gray-600 dark:text-neutral-300 mb-2">
                       {isUk ? p.descUk : p.descEn}
                     </p>
                     <p className="text-sm font-semibold text-green-700">
@@ -738,12 +738,12 @@ export function LapkaVetDemo({ lang }: { lang: string }) {
       </section>
 
       {/* ── Pet Health Tips ─────────────────────────────────────────────── */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-neutral-950">
         <div className="max-w-5xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-center text-green-800 mb-2">
             📚 {isUk ? "Поради для здоров'я" : "Pet Health Tips"}
           </h2>
-          <p className="text-center text-gray-500 mb-10">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-10">
             {isUk
               ? "Корисні статті від наших лікарів"
               : "Helpful articles from our veterinarians"}
@@ -759,10 +759,10 @@ export function LapkaVetDemo({ lang }: { lang: string }) {
                 <span className="inline-block ml-2 text-xs font-semibold bg-yellow-200 text-yellow-800 px-2 py-0.5 rounded-full">
                   {isUk ? tip.tagUk : tip.tagEn}
                 </span>
-                <h3 className="font-bold text-gray-800 mt-3 mb-2">
+                <h3 className="font-bold text-gray-800 dark:text-neutral-200 mt-3 mb-2">
                   {isUk ? tip.titleUk : tip.titleEn}
                 </h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <p className="text-sm text-gray-600 dark:text-neutral-300 leading-relaxed">
                   {isUk ? tip.descUk : tip.descEn}
                 </p>
                 <button className="mt-4 text-sm font-semibold text-green-600 hover:text-green-800 transition-colors">
@@ -794,11 +794,11 @@ export function LapkaVetDemo({ lang }: { lang: string }) {
                     </span>
                   ))}
                 </div>
-                <p className="text-sm text-gray-600 leading-relaxed mb-4 italic">
+                <p className="text-sm text-gray-600 dark:text-neutral-300 leading-relaxed mb-4 italic">
                   &ldquo;{isUk ? r.textUk : r.textEn}&rdquo;
                 </p>
                 <div>
-                  <p className="font-semibold text-gray-800 text-sm">
+                  <p className="font-semibold text-gray-800 dark:text-neutral-200 text-sm">
                     {isUk ? r.nameUk : r.nameEn}
                   </p>
                   <p className="text-xs text-green-600">
@@ -812,12 +812,12 @@ export function LapkaVetDemo({ lang }: { lang: string }) {
       </section>
 
       {/* ── Booking Form ────────────────────────────────────────────────── */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-neutral-950">
         <div className="max-w-2xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-center text-green-800 mb-2">
             📋 {isUk ? "Запис на прийом" : "Book a Visit"}
           </h2>
-          <p className="text-center text-gray-500 mb-8">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-8">
             {isUk
               ? "Заповніть форму — ми зв'яжемось протягом 30 хвилин"
               : "Fill in the form — we will contact you within 30 minutes"}
@@ -859,7 +859,7 @@ export function LapkaVetDemo({ lang }: { lang: string }) {
             >
               {/* Pet type */}
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                <label className="block text-sm font-semibold text-gray-700 dark:text-neutral-300 mb-2">
                   {isUk ? "Тип тварини" : "Pet Type"}
                 </label>
                 <div className="flex flex-wrap gap-2">
@@ -873,7 +873,7 @@ export function LapkaVetDemo({ lang }: { lang: string }) {
                       className={`px-3 py-1.5 rounded-full text-sm border transition-colors ${
                         formPetType === (isUk ? pt.valueUk : pt.valueEn)
                           ? "bg-green-600 text-white border-green-600"
-                          : "bg-white text-gray-600 border-green-200 hover:border-green-400"
+                          : "bg-white text-gray-600 dark:text-neutral-300 border-green-200 hover:border-green-400"
                       }`}
                     >
                       {pt.emoji} {isUk ? pt.valueUk : pt.valueEn}
@@ -884,7 +884,7 @@ export function LapkaVetDemo({ lang }: { lang: string }) {
 
               {/* Pet name */}
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1">
+                <label className="block text-sm font-semibold text-gray-700 dark:text-neutral-300 mb-1">
                   {isUk ? "Ім'я улюбленця" : "Pet Name"}
                 </label>
                 <input
@@ -898,7 +898,7 @@ export function LapkaVetDemo({ lang }: { lang: string }) {
 
               {/* Service */}
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1">
+                <label className="block text-sm font-semibold text-gray-700 dark:text-neutral-300 mb-1">
                   {isUk ? "Послуга" : "Service"}
                 </label>
                 <select
@@ -919,7 +919,7 @@ export function LapkaVetDemo({ lang }: { lang: string }) {
 
               {/* Preferred date */}
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1">
+                <label className="block text-sm font-semibold text-gray-700 dark:text-neutral-300 mb-1">
                   {isUk ? "Бажана дата" : "Preferred Date"}
                 </label>
                 <input
@@ -932,7 +932,7 @@ export function LapkaVetDemo({ lang }: { lang: string }) {
 
               {/* Owner name */}
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1">
+                <label className="block text-sm font-semibold text-gray-700 dark:text-neutral-300 mb-1">
                   {isUk ? "Ваше ім'я" : "Your Name"}
                 </label>
                 <input
@@ -946,7 +946,7 @@ export function LapkaVetDemo({ lang }: { lang: string }) {
 
               {/* Phone */}
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1">
+                <label className="block text-sm font-semibold text-gray-700 dark:text-neutral-300 mb-1">
                   {isUk ? "Телефон" : "Phone"}
                 </label>
                 <input

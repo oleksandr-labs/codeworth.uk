@@ -53,7 +53,7 @@ export function InteractiveMapDemo({ isUk }: Props) {
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
               filter === k
                 ? `${CATEGORIES[k].color} text-white shadow-sm`
-                : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
+                : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200"
             }`}
             aria-pressed={filter === k}
           >
@@ -65,7 +65,7 @@ export function InteractiveMapDemo({ isUk }: Props) {
         ))}
       </div>
 
-      <div className="relative rounded-2xl border border-neutral-200 bg-linear-to-br from-emerald-50 to-blue-50 overflow-hidden aspect-[2/1]">
+      <div className="relative rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-linear-to-br from-emerald-50 to-blue-50 overflow-hidden aspect-[2/1]">
         {/* Stylized map background — simplified Ukraine outline as SVG */}
         <svg
           viewBox="0 0 100 60"
@@ -97,7 +97,7 @@ export function InteractiveMapDemo({ isUk }: Props) {
         {/* Popup */}
         {selected && (
           <div
-            className="absolute bottom-4 left-1/2 -translate-x-1/2 w-72 max-w-[90%] bg-white rounded-xl shadow-xl border border-neutral-200 p-4"
+            className="absolute bottom-4 left-1/2 -translate-x-1/2 w-72 max-w-[90%] bg-white dark:bg-neutral-800 rounded-xl shadow-xl border border-neutral-200 dark:border-neutral-700 p-4"
             role="dialog"
             aria-label={selected.name}
           >
@@ -108,7 +108,7 @@ export function InteractiveMapDemo({ isUk }: Props) {
               </div>
               <button
                 onClick={() => setSelected(null)}
-                className="text-neutral-400 hover:text-neutral-700 -mt-1 -mr-1 p-1"
+                className="text-neutral-400 hover:text-neutral-700 dark:text-neutral-300 -mt-1 -mr-1 p-1"
                 aria-label={isUk ? "Закрити" : "Close"}
               >
                 <X className="w-4 h-4" />

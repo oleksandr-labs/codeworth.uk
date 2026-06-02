@@ -104,7 +104,7 @@ export default async function ToolPage({
     generator: { uk: "Генератор", en: "Generator" },
   };
 
-  const catColor = CATEGORY_COLORS[tool.category] ?? "bg-neutral-100 text-neutral-600";
+  const catColor = CATEGORY_COLORS[tool.category] ?? "bg-neutral-100 dark:bg-neutral-800 text-neutral-600";
   const catLabel = CATEGORY_LABELS[tool.category];
 
   const otherTools = TOOLS.filter((t) => t.isBuilt && t.slug !== slug).slice(0, 3);
@@ -163,7 +163,7 @@ export default async function ToolPage({
         {/* Tool */}
         <section className="py-16">
           <Container>
-            <div className="bg-white rounded-3xl border border-neutral-200 shadow-sm p-8 lg:p-12">
+            <div className="bg-white rounded-3xl border border-neutral-200 dark:border-neutral-700 shadow-sm p-8 lg:p-12">
               <ToolComponent slug={slug} isUk={isUk} />
             </div>
           </Container>
@@ -171,9 +171,9 @@ export default async function ToolPage({
 
         {/* Other tools */}
         {otherTools.length > 0 && (
-          <section className="py-16 bg-neutral-50">
+          <section className="py-16 bg-neutral-50 dark:bg-neutral-900 ">
             <Container>
-              <h2 className="text-2xl font-heading font-extrabold text-neutral-900 mb-8">
+              <h2 className="text-2xl font-heading font-extrabold text-neutral-900 dark:text-white mb-8">
                 {isUk ? "Інші безкоштовні інструменти" : "Other free tools"}
               </h2>
               <div className="grid sm:grid-cols-3 gap-5">
@@ -181,14 +181,14 @@ export default async function ToolPage({
                   <Link
                     key={t.id}
                     href={`/${lang}/${t.href}`}
-                    className="flex items-start gap-4 p-5 rounded-2xl bg-white border border-neutral-200 hover:shadow-md transition-shadow group"
+                    className="flex items-start gap-4 p-5 rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 hover:shadow-md transition-shadow group"
                   >
                     <span className="text-3xl">{t.icon}</span>
                     <div>
-                      <p className="font-semibold text-neutral-900 group-hover:text-indigo-600 transition-colors text-sm">
+                      <p className="font-semibold text-neutral-900 dark:text-white group-hover:text-indigo-600 transition-colors text-sm">
                         {isUk ? t.title : t.titleEn}
                       </p>
-                      <p className="text-xs text-neutral-500 mt-1 leading-relaxed line-clamp-2">
+                      <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1 leading-relaxed line-clamp-2">
                         {isUk ? t.description : t.descriptionEn}
                       </p>
                     </div>
@@ -198,7 +198,7 @@ export default async function ToolPage({
               <div className="mt-8 text-center">
                 <Link
                   href={`/${lang}/tools`}
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl border border-neutral-200 bg-white text-sm font-semibold text-neutral-700 hover:border-indigo-400 hover:text-indigo-600 transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm font-semibold text-neutral-700 dark:text-neutral-300 hover:border-indigo-400 hover:text-indigo-600 transition-colors"
                 >
                   {isUk ? "Переглянути всі інструменти →" : "View all tools →"}
                 </Link>
@@ -212,10 +212,10 @@ export default async function ToolPage({
           <Container>
             <div className="max-w-2xl mx-auto text-center p-10 rounded-3xl bg-linear-to-br from-indigo-50 to-violet-50 border border-indigo-100">
               <span className="text-4xl mb-4 block">🚀</span>
-              <h2 className="text-2xl font-heading font-extrabold text-neutral-900 mb-3">
+              <h2 className="text-2xl font-heading font-extrabold text-neutral-900 dark:text-white mb-3">
                 {isUk ? "Потрібен повноцінний сайт?" : "Ready for a proper website?"}
               </h2>
-              <p className="text-neutral-600 mb-6 text-sm leading-relaxed">
+              <p className="text-neutral-600 dark:text-neutral-300 mb-6 text-sm leading-relaxed">
                 {isUk
                   ? "Ми розробляємо швидкі, SEO-оптимізовані сайти з інтерактивними функціями для бізнесу будь-якого розміру."
                   : "We build fast, SEO-optimised websites with interactive features for businesses of any size."}

@@ -151,7 +151,7 @@ export default async function BlogCategoryPage({ params }: Props) {
           </Container>
         </section>
 
-        <section className="py-16 bg-neutral-50">
+        <section className="py-16 bg-neutral-50 dark:bg-neutral-900 ">
           <Container>
             <div className="grid lg:grid-cols-4 gap-10">
               {/* Posts grid */}
@@ -161,7 +161,7 @@ export default async function BlogCategoryPage({ params }: Props) {
                     <Link
                       key={post.slug}
                       href={`/${lang}/blog/${post.slug}`}
-                      className="group bg-white rounded-2xl border border-neutral-100 overflow-hidden hover:shadow-lg hover:border-indigo-100 transition-all duration-300"
+                      className="group bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-100 dark:border-neutral-700 overflow-hidden hover:shadow-lg hover:border-indigo-100 transition-all duration-300"
                     >
                       <div className={`h-36 bg-linear-to-br ${post.color} flex items-center justify-center`}>
                         <span className="text-5xl">{post.emoji}</span>
@@ -173,10 +173,10 @@ export default async function BlogCategoryPage({ params }: Props) {
                             {label}
                           </span>
                         </div>
-                        <h2 className="font-heading font-bold text-neutral-900 group-hover:text-indigo-700 transition-colors leading-snug mb-2 line-clamp-2">
+                        <h2 className="font-heading font-bold text-neutral-900 dark:text-white group-hover:text-indigo-700 transition-colors leading-snug mb-2 line-clamp-2">
                           {post.title}
                         </h2>
-                        <p className="text-sm text-neutral-500 leading-relaxed line-clamp-2 mb-4">
+                        <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed line-clamp-2 mb-4">
                           {post.excerpt}
                         </p>
                         <div className="flex items-center gap-4 text-xs text-neutral-400 pt-3 border-t border-neutral-100">
@@ -207,8 +207,8 @@ export default async function BlogCategoryPage({ params }: Props) {
 
               {/* Sidebar — all categories */}
               <aside className="lg:col-span-1">
-                <div className="bg-white rounded-2xl border border-neutral-100 p-5 sticky top-24">
-                  <h3 className="font-heading font-bold text-neutral-900 mb-4 text-sm uppercase tracking-wider">
+                <div className="bg-white rounded-2xl border border-neutral-100 dark:border-neutral-700 p-5 sticky top-24">
+                  <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-4 text-sm uppercase tracking-wider">
                     {isUk ? "Категорії" : "Categories"}
                   </h3>
                   <div className="flex flex-col gap-1.5">
@@ -221,14 +221,14 @@ export default async function BlogCategoryPage({ params }: Props) {
                           className={`flex items-center justify-between px-3 py-2 rounded-xl text-sm transition-colors ${
                             c.id === category
                               ? "bg-indigo-600 text-white font-semibold"
-                              : "text-neutral-600 hover:bg-indigo-50 hover:text-indigo-700"
+                              : "text-neutral-600 dark:text-neutral-300 hover:bg-indigo-50 hover:text-indigo-700"
                           }`}
                         >
                           <span className="flex items-center gap-2">
                             {c.icon && <span aria-hidden="true">{c.icon}</span>}
                             {isUk ? c.label.uk : c.label.en}
                           </span>
-                          <span className={`text-xs px-1.5 py-0.5 rounded-full ${c.id === category ? "bg-white/20 text-white" : "bg-neutral-100 text-neutral-500"}`}>
+                          <span className={`text-xs px-1.5 py-0.5 rounded-full ${c.id === category ? "bg-white/20 text-white" : "bg-neutral-100 dark:bg-neutral-800 text-neutral-500"}`}>
                             {catPostCount}
                           </span>
                         </Link>

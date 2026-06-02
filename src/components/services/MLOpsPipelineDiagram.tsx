@@ -76,10 +76,10 @@ export function MLOpsPipelineDiagram({ isUk }: Props) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "MLOps Pipeline — як це працює" : "MLOps Pipeline — How It Works"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk
           ? "Натисніть на будь-який етап щоб дізнатись більше. Цикл від даних до авто-перенавчання в продакшені."
           : "Click any stage to learn more. Full cycle from raw data to auto-retraining in production."}
@@ -145,12 +145,12 @@ export function MLOpsPipelineDiagram({ isUk }: Props) {
                 {isUk ? activeStage.uk : activeStage.en}
               </h3>
             </div>
-            <p className="text-sm text-neutral-600 leading-relaxed">
+            <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
               {isUk ? activeStage.desc_uk : activeStage.desc_en}
             </p>
           </div>
         ) : (
-          <div className="p-5 rounded-2xl bg-neutral-50 border border-neutral-100 text-center text-sm text-neutral-400">
+          <div className="p-5 rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-100 dark:border-neutral-700 text-center text-sm text-neutral-400">
             {isUk ? "👆 Натисніть на етап для деталей" : "👆 Click a stage for details"}
           </div>
         )}

@@ -102,7 +102,7 @@ export function CompareDemo({ isUk }: Props) {
         <h3 className="text-lg font-bold text-neutral-900">
           {isUk ? "Порівняння тарифів" : "Plans comparison"}
         </h3>
-        <label className="flex items-center gap-2 text-sm text-neutral-600 cursor-pointer">
+        <label className="flex items-center gap-2 text-sm text-neutral-600 dark:text-neutral-300 cursor-pointer">
           <input
             type="checkbox"
             checked={highlightOnly}
@@ -116,8 +116,8 @@ export function CompareDemo({ isUk }: Props) {
       <div className="overflow-x-auto rounded-2xl border border-neutral-200">
         <table className="w-full text-sm">
           <thead>
-            <tr className="bg-neutral-50 border-b border-neutral-200">
-              <th className="text-left p-4 font-semibold text-neutral-500 uppercase text-xs tracking-wider">
+            <tr className="bg-neutral-50 dark:bg-neutral-900 border-b border-neutral-200">
+              <th className="text-left p-4 font-semibold text-neutral-500 dark:text-neutral-400 uppercase text-xs tracking-wider">
                 {isUk ? "Функція" : "Feature"}
               </th>
               {PLANS.map((plan) => (
@@ -143,7 +143,7 @@ export function CompareDemo({ isUk }: Props) {
               if (highlightOnly && allSame) return null;
 
               return (
-                <tr key={key} className={`border-b border-neutral-100 ${!allSame ? "bg-amber-50/30" : ""}`}>
+                <tr key={key} className={`border-b border-neutral-100 dark:border-neutral-700 ${!allSame ? "bg-amber-50/30" : ""}`}>
                   <td className="p-4 font-medium text-neutral-700">{key}</td>
                   {values.map((v, i) => (
                     <td key={i} className="p-4 text-center">

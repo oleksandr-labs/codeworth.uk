@@ -512,7 +512,7 @@ export function LingoSphereDemo({ lang }: { lang: string }) {
       </section>
 
       {/* ── Course catalog ────────────────────────────────────────────────── */}
-      <section id="courses" className="py-20 bg-white">
+      <section id="courses" className="py-20 bg-white dark:bg-neutral-950">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-extrabold mb-2" style={{ color: "#0F1B3D" }}>
@@ -626,7 +626,7 @@ export function LingoSphereDemo({ lang }: { lang: string }) {
       </section>
 
       {/* ── Teachers ──────────────────────────────────────────────────────── */}
-      <section id="teachers" className="py-20 bg-white">
+      <section id="teachers" className="py-20 bg-white dark:bg-neutral-950">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-extrabold mb-2" style={{ color: "#0F1B3D" }}>

@@ -125,7 +125,7 @@ export function PropertyFilter({ listings, lang, color }: PropertyFilterProps) {
           {filtered.map((prop) => (
             <div
               key={prop.id}
-              className="group flex flex-col bg-white dark:bg-neutral-800/60 rounded-2xl border border-neutral-100 dark:border-neutral-700/50 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all"
+              className="group flex flex-col bg-white dark:bg-neutral-800/60 rounded-2xl border border-neutral-100 dark:border-neutral-700 /50 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all"
             >
               {/* Gradient header */}
               <div className={`relative h-40 bg-linear-to-br ${prop.gradient} flex items-center justify-center`}>
@@ -166,7 +166,7 @@ export function PropertyFilter({ listings, lang, color }: PropertyFilterProps) {
                     {prop.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-xs px-2 py-0.5 rounded-md bg-neutral-100 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-300"
+                        className="text-xs px-2 py-0.5 rounded-md bg-neutral-100 dark:bg-neutral-800 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-300 "
                       >
                         {tag}
                       </span>

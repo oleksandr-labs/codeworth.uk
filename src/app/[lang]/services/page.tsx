@@ -121,12 +121,12 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
               <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-4">
                 {isUk ? "Послуги" : "Services"}
               </p>
-              <h1 className="text-5xl lg:text-6xl font-heading font-extrabold text-neutral-900 mb-6 leading-tight">
+              <h1 className="text-5xl lg:text-6xl font-heading font-extrabold text-neutral-900 dark:text-white mb-6 leading-tight">
                 {isUk
                   ? <>{`Повний цикл`}<br /><span className="gradient-text">{`цифрового розвитку`}</span></>
                   : <>{"Full-cycle"}<br /><span className="gradient-text">{"digital growth"}</span></>}
               </h1>
-              <p className="text-xl text-neutral-500 leading-relaxed max-w-2xl mb-8">
+              <p className="text-xl text-neutral-500 dark:text-neutral-400 leading-relaxed max-w-2xl mb-8">
                 {isUk
                   ? "Від ідеї та дизайну до запуску та підтримки. Всі послуги — в одному місці, без передоручень підрядникам."
                   : "From idea and design to launch and support. All services in one place, no outsourcing to third parties."}
@@ -136,7 +136,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
                   {isUk ? "Обговорити проєкт" : "Discuss a Project"}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
-                <Link href={`/${lang}/portfolio`} className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-neutral-200 text-neutral-700 font-semibold hover:border-indigo-200 hover:text-indigo-700 hover:bg-indigo-50 transition-all">
+                <Link href={`/${lang}/portfolio`} className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 font-semibold hover:border-indigo-200 hover:text-indigo-700 hover:bg-indigo-50 transition-all">
                   {isUk ? "Приклади робіт" : "Portfolio"}
                 </Link>
               </div>
@@ -145,7 +145,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
         </section>
 
         {/* Stats */}
-        <section className="py-10 bg-white border-y border-neutral-100">
+        <section className="py-10 bg-white dark:bg-neutral-800 border-y border-neutral-100">
           <Container>
             <div className="flex flex-wrap items-center justify-center gap-12">
               {[
@@ -171,10 +171,10 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
         </section>
 
         {/* Services Grid */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-white dark:bg-neutral-950">
           <Container>
             <div className="max-w-2xl mx-auto text-center mb-16">
-              <h2 className="text-4xl font-heading font-extrabold text-neutral-900 mb-4">
+              <h2 className="text-4xl font-heading font-extrabold text-neutral-900 dark:text-white mb-4">
                 {isUk ? "Що ми робимо" : "What We Do"}
               </h2>
               <p className="text-neutral-500">{isUk ? "Натисніть на послугу, щоб дізнатися більше." : "Click on a service to learn more."}</p>
@@ -187,15 +187,15 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
                   <Link
                     key={service.slug}
                     href={`/${lang}/services/${service.slug}`}
-                    className="group p-7 rounded-2xl border border-neutral-100 bg-white hover:border-indigo-100 hover:shadow-xl hover:shadow-indigo-500/10 transition-all duration-300 hover:-translate-y-1"
+                    className="group p-7 rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-indigo-100 hover:shadow-xl hover:shadow-indigo-500/10 transition-all duration-300 hover:-translate-y-1"
                   >
                     <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${service.bg}`}>
                       <Icon className={`w-6 h-6 ${service.iconColor}`} />
                     </div>
-                    <h3 className="font-heading font-bold text-neutral-900 mb-2 group-hover:text-indigo-700 transition-colors">
+                    <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-2 group-hover:text-indigo-700 transition-colors">
                       {service.shortTitle}
                     </h3>
-                    <p className="text-sm text-neutral-500 leading-relaxed mb-4">{service.description}</p>
+                    <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-4">{service.description}</p>
                     <div className="flex items-center justify-between text-xs text-neutral-400">
                       <span className="text-indigo-600 font-semibold">{isUk ? `від ${service.priceFrom}` : `from ${service.priceFrom}`}</span>
                       <span className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity text-indigo-600 font-medium">
@@ -214,7 +214,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
           <Container>
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
               <div>
-                <p className="font-heading font-bold text-neutral-900 mb-1">
+                <p className="font-heading font-bold text-neutral-900 dark:text-white mb-1">
                   {isUk ? "⚡ Вже є сайт, але потрібна одна функція?" : "⚡ Already have a site but need one feature?"}
                 </p>
                 <p className="text-sm text-neutral-500">
@@ -233,7 +233,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
         </section>
 
         {/* Process */}
-        <section className="py-24 bg-neutral-50">
+        <section className="py-24 bg-neutral-50 dark:bg-neutral-900 ">
           <Container>
             <div className="max-w-2xl mx-auto text-center mb-16">
               <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
@@ -246,12 +246,12 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
             <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
               {PROCESS_STEPS.map((step, i) => (
                 <div key={step.num} className="relative">
-                  <div className="p-5 rounded-2xl bg-white border border-neutral-100 text-center h-full">
+                  <div className="p-5 rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 text-center h-full">
                     <div className="w-12 h-12 rounded-xl bg-linear-to-br from-indigo-600 to-indigo-800 text-white font-heading font-bold flex items-center justify-center mx-auto mb-3 shadow-md shadow-indigo-500/25 text-sm">
                       {step.num}
                     </div>
-                    <h3 className="font-heading font-bold text-neutral-900 mb-1 text-sm">{step.title}</h3>
-                    <p className="text-xs text-neutral-500 leading-relaxed">{step.desc}</p>
+                    <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-1 text-sm">{step.title}</h3>
+                    <p className="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed">{step.desc}</p>
                   </div>
                   {i < PROCESS_STEPS.length - 1 && (
                     <div className="hidden md:block absolute top-10 -right-2 z-10 text-neutral-300 text-lg">›</div>
@@ -263,7 +263,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
         </section>
 
         {/* FAQ */}
-        <section className="py-24 bg-white border-t border-neutral-100">
+        <section className="py-24 bg-white dark:bg-neutral-800 border-t border-neutral-100">
           <Container>
             <div className="max-w-2xl mx-auto text-center mb-12">
               <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">FAQ</p>
@@ -278,9 +278,9 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
             </div>
             <div className="max-w-3xl mx-auto space-y-4">
               {faqItems.map((item) => (
-                <div key={item.q} className="p-6 rounded-2xl border border-neutral-100 bg-neutral-50">
-                  <h3 className="font-heading font-bold text-neutral-900 mb-2">{item.q}</h3>
-                  <p className="text-neutral-500 text-sm leading-relaxed">{item.a}</p>
+                <div key={item.q} className="p-6 rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-neutral-50">
+                  <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-2">{item.q}</h3>
+                  <p className="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed">{item.a}</p>
                 </div>
               ))}
             </div>

@@ -112,25 +112,25 @@ export function UtmBuilder({ isUk }: Props) {
     <div className="space-y-8">
       {/* Base URL */}
       <div>
-        <label className="block text-sm font-semibold text-neutral-700 mb-1.5">{t.baseUrl}</label>
+        <label className="block text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-1.5">{t.baseUrl}</label>
         <input
           type="url"
           value={baseUrl}
           onChange={(e) => setBaseUrl(e.target.value)}
           placeholder={t.baseUrlPh}
-          className="w-full px-4 py-3 rounded-xl border border-neutral-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
+          className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
         />
       </div>
 
       {/* Presets */}
       <div>
-        <p className="text-xs text-neutral-500 font-semibold mb-2">{t.presets}</p>
+        <p className="text-xs text-neutral-500 dark:text-neutral-400 font-semibold mb-2">{t.presets}</p>
         <div className="flex flex-wrap gap-2">
           {PRESETS.map((p) => (
             <button
               key={p.label}
               onClick={() => { setSource(p.source); setMedium(p.medium); }}
-              className="px-3 py-1.5 rounded-lg border border-neutral-200 bg-white text-xs font-semibold text-neutral-600 hover:border-indigo-400 hover:text-indigo-600 transition-colors"
+              className="px-3 py-1.5 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white text-xs font-semibold text-neutral-600 dark:text-neutral-300 hover:border-indigo-400 hover:text-indigo-600 transition-colors"
             >
               {p.label}
             </button>
@@ -142,7 +142,7 @@ export function UtmBuilder({ isUk }: Props) {
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {fields.map((f) => (
           <div key={f.label}>
-            <label className="block text-xs font-semibold text-neutral-600 mb-1">
+            <label className="block text-xs font-semibold text-neutral-600 dark:text-neutral-300 mb-1">
               {f.label}
               {f.required && <span className="text-red-500 ml-0.5">*</span>}
             </label>
@@ -151,7 +151,7 @@ export function UtmBuilder({ isUk }: Props) {
               value={f.value}
               onChange={(e) => f.setter(e.target.value)}
               placeholder={f.ph}
-              className="w-full px-3 py-2.5 rounded-xl border border-neutral-200 bg-white text-xs focus:outline-none focus:ring-2 focus:ring-indigo-400"
+              className="w-full px-3 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-xs focus:outline-none focus:ring-2 focus:ring-indigo-400"
             />
           </div>
         ))}
@@ -182,7 +182,7 @@ export function UtmBuilder({ isUk }: Props) {
         {result ? (
           <p className="text-green-400 text-xs font-mono break-all leading-relaxed">{result}</p>
         ) : (
-          <p className="text-neutral-600 text-xs italic">{t.empty}</p>
+          <p className="text-neutral-600 dark:text-neutral-300 text-xs italic">{t.empty}</p>
         )}
       </div>
     </div>

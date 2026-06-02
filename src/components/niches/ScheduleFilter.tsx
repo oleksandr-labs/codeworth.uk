@@ -125,7 +125,7 @@ export function ScheduleFilter({ items, lang, color }: ScheduleFilterProps) {
             return (
               <div
                 key={item.id}
-                className="group flex bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-100 dark:border-neutral-700/50 overflow-hidden hover:shadow-md hover:-translate-y-0.5 transition-all"
+                className="group flex bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-100 dark:border-neutral-700 /50 overflow-hidden hover:shadow-md hover:-translate-y-0.5 transition-all"
               >
                 {/* Colored left stripe */}
                 <div className={`w-2 shrink-0 bg-linear-to-b ${item.gradient}`} />

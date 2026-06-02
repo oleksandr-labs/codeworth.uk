@@ -24,10 +24,10 @@ function SaasLanding({ isUk }: { isUk: boolean }) {
   ];
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Лендінг SaaS-продукту" : "SaaS Product Landing"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk ? "Темна тема, градієнтний hero, анімовані лічильники, перемикач тарифів." : "Dark hero, gradient mesh, animated counters, billing toggle pricing."}
       </p>
 
@@ -66,7 +66,7 @@ function SaasLanding({ isUk }: { isUk: boolean }) {
 
       {/* Pricing */}
       <div className="flex justify-center mb-6">
-        <div className="inline-flex bg-neutral-100 rounded-xl p-1">
+        <div className="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-xl p-1">
           {(["monthly", "yearly"] as const).map((b) => (
             <button key={b} onClick={() => setBilling(b)}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${billing === b ? "bg-white shadow text-neutral-900" : "text-neutral-500"}`}>
@@ -77,7 +77,7 @@ function SaasLanding({ isUk }: { isUk: boolean }) {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {plans.map((p) => (
-          <div key={p.name} className={`rounded-2xl p-6 border ${p.highlight ? "border-indigo-500 bg-indigo-600 text-white shadow-xl" : "border-neutral-200 bg-white"}`}>
+          <div key={p.name} className={`rounded-2xl p-6 border ${p.highlight ? "border-indigo-500 bg-indigo-600 text-white shadow-xl" : "border-neutral-200 dark:border-neutral-700 bg-white"}`}>
             <p className={`text-sm font-semibold mb-2 ${p.highlight ? "text-indigo-200" : "text-neutral-500"}`}>{p.name}</p>
             <p className={`text-3xl font-bold mb-4 ${p.highlight ? "text-white" : "text-neutral-900"}`}>
               ${p.price}<span className={`text-sm font-normal ${p.highlight ? "text-indigo-200" : "text-neutral-400"}`}>/mo</span>
@@ -89,7 +89,7 @@ function SaasLanding({ isUk }: { isUk: boolean }) {
                 </li>
               ))}
             </ul>
-            <button className={`w-full py-2.5 rounded-xl text-sm font-semibold transition-colors ${p.highlight ? "bg-white text-indigo-700 hover:bg-indigo-50" : "bg-neutral-100 text-neutral-800 hover:bg-neutral-200"}`}>
+            <button className={`w-full py-2.5 rounded-xl text-sm font-semibold transition-colors ${p.highlight ? "bg-white text-indigo-700 hover:bg-indigo-50" : "bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 hover:bg-neutral-200"}`}>
               {isUk ? "Обрати план" : "Choose plan"}
             </button>
           </div>
@@ -106,10 +106,10 @@ function FitnessLanding({ isUk }: { isUk: boolean }) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Лендінг фітнес-студії" : "Fitness Studio Landing"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk ? "Темний дизайн, неоновий акцент, трансформації клієнтів, ІМТ-калькулятор, таймер тріалу." : "Dark bold design, neon green, transformation stories, BMI calculator, trial countdown."}
       </p>
 
@@ -233,34 +233,34 @@ function EcommerceFaq({ isUk }: { isUk: boolean }) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "FAQ для інтернет-магазину" : "E-commerce FAQ Page"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk ? "Вкладки категорій, пошук з підсвіткою, акордеон, Schema.org FAQPage." : "Category tabs, search highlight, accordion, Schema.org FAQPage markup."}
       </p>
       <div className="max-w-2xl mx-auto">
         <input value={search} onChange={(e) => setSearch(e.target.value)} type="search"
           placeholder={isUk ? "Пошук по питаннях..." : "Search questions..."}
-          className="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-sky-400 focus:outline-none text-sm mb-4" />
+          className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 focus:border-sky-400 focus:outline-none text-sm mb-4" />
         <div className="flex gap-2 flex-wrap mb-6">
           {data.categories.map((c) => (
             <button key={c} onClick={() => { setActiveCat(c); setOpen(null); setSearch(""); }}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${activeCat === c ? "bg-sky-600 text-white" : "bg-neutral-100 text-neutral-600 hover:bg-sky-50"}`}>
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${activeCat === c ? "bg-sky-600 text-white" : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-sky-50"}`}>
               {c}
             </button>
           ))}
         </div>
         <div className="space-y-2">
           {filtered.map((item, i) => (
-            <div key={i} className="border border-neutral-200 rounded-xl overflow-hidden">
+            <div key={i} className="border border-neutral-200 dark:border-neutral-700 rounded-xl overflow-hidden">
               <button onClick={() => setOpen(open === i ? null : i)}
-                className="w-full flex items-center justify-between px-5 py-4 text-left text-sm font-medium text-neutral-900 hover:bg-neutral-50 transition-colors">
+                className="w-full flex items-center justify-between px-5 py-4 text-left text-sm font-medium text-neutral-900 dark:text-white hover:bg-neutral-50 dark:hover:bg-neutral-800 dark:bg-neutral-900 transition-colors">
                 <span>{item.q}</span>
                 <span className="text-neutral-400 ml-4 shrink-0">{open === i ? "−" : "+"}</span>
               </button>
               {open === i && (
-                <div className="px-5 pb-4 text-sm text-neutral-600 bg-sky-50">{item.a}</div>
+                <div className="px-5 pb-4 text-sm text-neutral-600 dark:text-neutral-300 bg-sky-50">{item.a}</div>
               )}
             </div>
           ))}
@@ -277,23 +277,23 @@ function EcommerceFaq({ isUk }: { isUk: boolean }) {
 function SaasPricing({ isUk }: { isUk: boolean }) {
   const [yearly, setYearly] = useState(false);
   const plans = [
-    { name: "Free", price: 0, color: "border-neutral-200", btn: "bg-neutral-100 text-neutral-800", features: isUk ? ["1 проєкт", "2 ГБ", "Community підтримка"] : ["1 project", "2 GB storage", "Community support"] },
+    { name: "Free", price: 0, color: "border-neutral-200", btn: "bg-neutral-100 dark:bg-neutral-800 text-neutral-800", features: isUk ? ["1 проєкт", "2 ГБ", "Community підтримка"] : ["1 project", "2 GB storage", "Community support"] },
     { name: "Pro", price: yearly ? 20 : 25, color: "border-indigo-500", btn: "bg-indigo-600 text-white", badge: isUk ? "Популярний" : "Popular", features: isUk ? ["10 проєктів", "50 ГБ", "Email підтримка", "API ключі"] : ["10 projects", "50 GB", "Email support", "API keys"] },
     { name: "Business", price: yearly ? 56 : 70, color: "border-neutral-200", btn: "bg-neutral-800 text-white", features: isUk ? ["Необмежено", "500 ГБ", "Пріоритет 24/7", "SLA 99.9%", "SSO"] : ["Unlimited", "500 GB", "24/7 priority", "SLA 99.9%", "SSO"] },
   ];
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Сторінка тарифів SaaS" : "SaaS Pricing Page"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk ? "Перемикач місяць/рік, порівняння планів, badge «Популярний»." : "Monthly/yearly toggle, plan comparison, 'Popular' badge."}
       </p>
       <div className="flex justify-center mb-8">
         <label className="flex items-center gap-3 cursor-pointer">
           <span className={`text-sm font-medium ${!yearly ? "text-neutral-900" : "text-neutral-400"}`}>{isUk ? "Щомісяця" : "Monthly"}</span>
           <div onClick={() => setYearly(!yearly)} className={`w-12 h-6 rounded-full transition-colors ${yearly ? "bg-indigo-600" : "bg-neutral-300"} relative`}>
-            <div className={`absolute top-1 w-4 h-4 rounded-full bg-white shadow transition-transform ${yearly ? "translate-x-7" : "translate-x-1"}`} />
+            <div className={`absolute top-1 w-4 h-4 rounded-full bg-white dark:bg-neutral-800 shadow transition-transform ${yearly ? "translate-x-7" : "translate-x-1"}`} />
           </div>
           <span className={`text-sm font-medium ${yearly ? "text-neutral-900" : "text-neutral-400"}`}>{isUk ? "Щорічно" : "Yearly"} <span className="text-green-600 text-xs">−20%</span></span>
         </label>
@@ -304,14 +304,14 @@ function SaasPricing({ isUk }: { isUk: boolean }) {
             {p.badge && (
               <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-xs bg-indigo-600 text-white px-3 py-1 rounded-full font-semibold">{p.badge}</span>
             )}
-            <p className="text-sm font-semibold text-neutral-500 mb-2">{p.name}</p>
-            <p className="text-3xl font-bold text-neutral-900 mb-1">
+            <p className="text-sm font-semibold text-neutral-500 dark:text-neutral-400 mb-2">{p.name}</p>
+            <p className="text-3xl font-bold text-neutral-900 dark:text-white mb-1">
               {p.price === 0 ? (isUk ? "Безкоштовно" : "Free") : `$${p.price}`}
               {p.price > 0 && <span className="text-sm font-normal text-neutral-400">/mo</span>}
             </p>
             <ul className="space-y-2 my-5">
               {p.features.map((f) => (
-                <li key={f} className="text-sm text-neutral-600 flex items-center gap-2"><span className="text-green-500">✓</span>{f}</li>
+                <li key={f} className="text-sm text-neutral-600 dark:text-neutral-300 flex items-center gap-2"><span className="text-green-500">✓</span>{f}</li>
               ))}
             </ul>
             <button className={`w-full py-2.5 rounded-xl text-sm font-semibold transition-colors hover:opacity-90 ${p.btn}`}>
@@ -329,10 +329,10 @@ function Tech404({ isUk }: { isUk: boolean }) {
   const [q, setQ] = useState("");
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Сторінка 404 tech-бренду" : "Tech Brand 404 Page"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk ? "Анімована ілюстрація, пошук, швидкі посилання." : "Animated illustration, site search, quick links."}
       </p>
       <div className="max-w-lg mx-auto text-center bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 rounded-3xl p-12 text-white">
@@ -362,14 +362,14 @@ function EcommercePopup({ isUk }: { isUk: boolean }) {
   const [done, setDone] = useState(false);
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Exit Popup для магазину" : "E-commerce Exit Popup"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk ? "Exit-intent тригер, промокод, таймер, захоплення email." : "Exit-intent trigger, promo code offer, countdown, email capture."}
       </p>
-      <div className="max-w-lg mx-auto bg-neutral-100 rounded-3xl p-10 text-center">
-        <p className="text-neutral-500 text-sm mb-6">{isUk ? "Симулюй рух курсора до панелі браузера…" : "Simulate moving cursor to browser bar…"}</p>
+      <div className="max-w-lg mx-auto bg-neutral-100 dark:bg-neutral-800 rounded-3xl p-10 text-center">
+        <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-6">{isUk ? "Симулюй рух курсора до панелі браузера…" : "Simulate moving cursor to browser bar…"}</p>
         <button onClick={() => { setShow(true); setDone(false); setEmail(""); }}
           className="px-6 py-3 bg-violet-600 text-white font-semibold rounded-xl hover:bg-violet-700 transition-colors">
           {isUk ? "Показати Exit Popup" : "Trigger Exit Popup"}
@@ -379,18 +379,18 @@ function EcommercePopup({ isUk }: { isUk: boolean }) {
       {show && (
         <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-3xl p-8 max-w-sm w-full shadow-2xl relative">
-            <button onClick={() => setShow(false)} className="absolute top-4 right-4 text-neutral-400 hover:text-neutral-600 text-lg">✕</button>
+            <button onClick={() => setShow(false)} className="absolute top-4 right-4 text-neutral-400 hover:text-neutral-600 dark:text-neutral-300 text-lg">✕</button>
             {done ? (
               <div className="text-center py-4">
                 <div className="text-5xl mb-3">🎉</div>
-                <h3 className="font-heading text-xl font-bold text-neutral-900 mb-2">{isUk ? "Промокод надіслано!" : "Promo code sent!"}</h3>
+                <h3 className="font-heading text-xl font-bold text-neutral-900 dark:text-white mb-2">{isUk ? "Промокод надіслано!" : "Promo code sent!"}</h3>
                 <p className="text-sm text-neutral-500">{isUk ? "Перевірте вашу пошту" : "Check your inbox"}</p>
               </div>
             ) : (
               <>
                 <div className="text-center mb-6">
                   <div className="text-5xl mb-3">🛍️</div>
-                  <h3 className="font-heading text-xl font-bold text-neutral-900 mb-2">
+                  <h3 className="font-heading text-xl font-bold text-neutral-900 dark:text-white mb-2">
                     {isUk ? "Зачекайте! −15% на перше замовлення" : "Wait! −15% on your first order"}
                   </h3>
                   <div className="inline-block bg-violet-100 text-violet-700 font-mono font-bold text-xl px-4 py-2 rounded-xl mb-3">WELCOME15</div>
@@ -398,12 +398,12 @@ function EcommercePopup({ isUk }: { isUk: boolean }) {
                 </div>
                 <input value={email} onChange={(e) => setEmail(e.target.value)} type="email"
                   placeholder={isUk ? "Ваш email" : "Your email"}
-                  className="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-violet-400 focus:outline-none text-sm mb-3" />
+                  className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 focus:border-violet-400 focus:outline-none text-sm mb-3" />
                 <button onClick={() => setDone(true)}
                   className="w-full py-3 rounded-xl bg-violet-600 text-white font-semibold hover:bg-violet-700 transition-colors text-sm">
                   {isUk ? "Отримати знижку" : "Get my discount"}
                 </button>
-                <button onClick={() => setShow(false)} className="w-full text-center text-xs text-neutral-400 hover:text-neutral-600 mt-3 transition-colors">
+                <button onClick={() => setShow(false)} className="w-full text-center text-xs text-neutral-400 hover:text-neutral-600 dark:text-neutral-300 mt-3 transition-colors">
                   {isUk ? "Ні, дякую, мені не потрібна знижка" : "No thanks, I'll pay full price"}
                 </button>
               </>
@@ -420,13 +420,13 @@ function ServicePopup({ isUk }: { isUk: boolean }) {
   const [sent, setSent] = useState(false);
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Lead Popup для сервісу" : "Service Lead Popup"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk ? "Тригер при скролі 60%, безкоштовна консультація, Telegram webhook." : "Scroll 60% trigger, free consultation offer, Telegram webhook."}
       </p>
-      <div className="max-w-lg mx-auto bg-neutral-100 rounded-3xl p-10 text-center">
+      <div className="max-w-lg mx-auto bg-neutral-100 dark:bg-neutral-800 rounded-3xl p-10 text-center">
         <button onClick={() => { setShow(true); setSent(false); }}
           className="px-6 py-3 bg-emerald-600 text-white font-semibold rounded-xl hover:bg-emerald-700 transition-colors">
           {isUk ? "Показати Lead Popup" : "Show Lead Popup"}
@@ -440,22 +440,22 @@ function ServicePopup({ isUk }: { isUk: boolean }) {
               <div className="text-center py-4">
                 <div className="text-5xl mb-3">✅</div>
                 <h3 className="font-heading text-xl font-bold text-neutral-900">{isUk ? "Заявку отримано!" : "Request received!"}</h3>
-                <p className="text-sm text-neutral-500 mt-2">{isUk ? "Передзвонимо протягом 15 хвилин" : "We'll call back within 15 minutes"}</p>
+                <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-2">{isUk ? "Передзвонимо протягом 15 хвилин" : "We'll call back within 15 minutes"}</p>
               </div>
             ) : (
               <>
                 <div className="text-center mb-6">
                   <div className="text-4xl mb-3">💬</div>
-                  <h3 className="font-heading text-xl font-bold text-neutral-900 mb-1">
+                  <h3 className="font-heading text-xl font-bold text-neutral-900 dark:text-white mb-1">
                     {isUk ? "Безкоштовна консультація" : "Free Consultation"}
                   </h3>
                   <p className="text-sm text-neutral-500">{isUk ? "Залиште номер — передзвонимо за 15 хв" : "Leave your number — callback in 15 min"}</p>
                 </div>
                 <div className="space-y-3 mb-4">
                   <input type="text" placeholder={isUk ? "Ваше ім'я" : "Your name"}
-                    className="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-emerald-400 focus:outline-none text-sm" />
+                    className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 focus:border-emerald-400 focus:outline-none text-sm" />
                   <input type="tel" placeholder="+38 (0__) ___-__-__"
-                    className="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-emerald-400 focus:outline-none text-sm" />
+                    className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 focus:border-emerald-400 focus:outline-none text-sm" />
                 </div>
                 <button onClick={() => setSent(true)} className="w-full py-3 rounded-xl bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition-colors text-sm">
                   {isUk ? "Передзвоніть мені" : "Call me back"}
@@ -491,10 +491,10 @@ function BlogSearch({ isUk }: { isUk: boolean }) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Пошук по блогу / базі знань" : "Blog / Knowledge Base Search"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk ? "Миттєвий клієнтський пошук, підсвічування ключових слів, фільтр + пошук." : "Instant client-side search, keyword highlight in results, filter + search combined."}
       </p>
       <div className="max-w-xl mx-auto">
@@ -502,19 +502,19 @@ function BlogSearch({ isUk }: { isUk: boolean }) {
           <span className="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-400">🔍</span>
           <input value={q} onChange={(e) => setQ(e.target.value)} type="search"
             placeholder={isUk ? "Шукати статті..." : "Search articles..."}
-            className="w-full pl-10 pr-4 py-4 rounded-2xl border-2 border-neutral-200 focus:border-indigo-400 focus:outline-none text-sm shadow-sm" />
+            className="w-full pl-10 pr-4 py-4 rounded-2xl border-2 border-neutral-200 dark:border-neutral-700 focus:border-indigo-400 focus:outline-none text-sm shadow-sm" />
         </div>
         {q.length > 1 && (
-          <div className="bg-white rounded-2xl border border-neutral-200 shadow-lg overflow-hidden">
+          <div className="bg-white rounded-2xl border border-neutral-200 dark:border-neutral-700 shadow-lg overflow-hidden">
             {results.length === 0 ? (
               <p className="px-5 py-4 text-sm text-neutral-400">{isUk ? "Нічого не знайдено" : "No results"}</p>
             ) : results.map((r, i) => (
-              <div key={i} className="px-5 py-3 flex items-center gap-3 hover:bg-indigo-50 transition-colors cursor-pointer border-b border-neutral-100 last:border-0">
+              <div key={i} className="px-5 py-3 flex items-center gap-3 hover:bg-indigo-50 transition-colors cursor-pointer border-b border-neutral-100 dark:border-neutral-700 last:border-0">
                 <span className="text-xs bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-full shrink-0">{r.category}</span>
                 <span className="text-sm text-neutral-900">{highlight(r.title)}</span>
               </div>
             ))}
-            <div className="px-5 py-2 bg-neutral-50 border-t border-neutral-100">
+            <div className="px-5 py-2 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100">
               <p className="text-xs text-neutral-400">{isUk ? `Знайдено: ${results.length}` : `${results.length} result${results.length !== 1 ? "s" : ""}`}</p>
             </div>
           </div>
@@ -524,7 +524,7 @@ function BlogSearch({ isUk }: { isUk: boolean }) {
             <p className="text-xs text-neutral-400 mb-2">{isUk ? "Нещодавні пошуки:" : "Recent searches:"}</p>
             <div className="flex flex-wrap gap-2">
               {["Next.js", "TypeScript", "Tailwind CSS", "React hooks"].map((t) => (
-                <button key={t} onClick={() => setQ(t)} className="text-xs px-3 py-1.5 bg-neutral-100 hover:bg-indigo-50 text-neutral-600 rounded-full transition-colors">
+                <button key={t} onClick={() => setQ(t)} className="text-xs px-3 py-1.5 bg-neutral-100 dark:bg-neutral-800 hover:bg-indigo-50 text-neutral-600 dark:text-neutral-300 rounded-full transition-colors">
                   🕐 {t}
                 </button>
               ))}
@@ -549,10 +549,10 @@ function NovaPoshtaCheckout({ isUk }: { isUk: boolean }) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Крок доставки: Нова Пошта" : "Checkout Delivery Step: Nova Poshta"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk ? "Автодоповнення міста, вибір відділення/поштомату, розрахунок вартості." : "City autocomplete, branch/locker selector, live cost calculation."}
       </p>
       <div className="max-w-lg mx-auto bg-amber-50 rounded-3xl p-8">
@@ -564,16 +564,16 @@ function NovaPoshtaCheckout({ isUk }: { isUk: boolean }) {
 
         {/* City */}
         <div className="mb-4">
-          <label className="block text-xs font-semibold text-neutral-600 mb-1.5">{isUk ? "Місто" : "City"}</label>
+          <label className="block text-xs font-semibold text-neutral-600 dark:text-neutral-300 mb-1.5">{isUk ? "Місто" : "City"}</label>
           <div className="relative">
             <input value={city} onChange={(e) => setCity(e.target.value)} type="text"
               placeholder={isUk ? "Введіть місто..." : "Enter city..."}
-              className="w-full px-4 py-3 rounded-xl border border-neutral-200 bg-white focus:border-amber-400 focus:outline-none text-sm" />
+              className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white focus:border-amber-400 focus:outline-none text-sm" />
             {city && city.length > 0 && (
-              <div className="absolute top-full left-0 right-0 bg-white border border-neutral-200 rounded-xl mt-1 shadow-lg z-10 overflow-hidden">
+              <div className="absolute top-full left-0 right-0 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-xl mt-1 shadow-lg z-10 overflow-hidden">
                 {cities.filter((c) => c.toLowerCase().includes(city.toLowerCase())).map((c) => (
                   <button key={c} onClick={() => setCity(c.split(" / ")[isUk ? 0 : 1] || c)}
-                    className="w-full text-left px-4 py-2.5 text-sm hover:bg-amber-50 transition-colors border-b border-neutral-100 last:border-0">
+                    className="w-full text-left px-4 py-2.5 text-sm hover:bg-amber-50 transition-colors border-b border-neutral-100 dark:border-neutral-700 last:border-0">
                     📍 {c}
                   </button>
                 ))}
@@ -584,7 +584,7 @@ function NovaPoshtaCheckout({ isUk }: { isUk: boolean }) {
 
         {/* Method */}
         <div className="mb-4">
-          <label className="block text-xs font-semibold text-neutral-600 mb-2">{isUk ? "Спосіб отримання" : "Pickup method"}</label>
+          <label className="block text-xs font-semibold text-neutral-600 dark:text-neutral-300 mb-2">{isUk ? "Спосіб отримання" : "Pickup method"}</label>
           <div className="grid grid-cols-3 gap-2">
             {[
               { id: "branch" as const, label: isUk ? "🏢 Відділення" : "🏢 Branch" },
@@ -592,7 +592,7 @@ function NovaPoshtaCheckout({ isUk }: { isUk: boolean }) {
               { id: "courier" as const, label: isUk ? "🚚 Кур'єр" : "🚚 Courier" },
             ].map((m) => (
               <button key={m.id} onClick={() => { setMethod(m.id); setBranch(""); }}
-                className={`py-2 rounded-xl border text-xs font-medium transition-all ${method === m.id ? "border-amber-500 bg-amber-500 text-white" : "border-neutral-200 bg-white text-neutral-700 hover:border-amber-300"}`}>
+                className={`py-2 rounded-xl border text-xs font-medium transition-all ${method === m.id ? "border-amber-500 bg-amber-500 text-white" : "border-neutral-200 dark:border-neutral-700 bg-white text-neutral-700 dark:text-neutral-300 hover:border-amber-300"}`}>
                 {m.label}
               </button>
             ))}
@@ -602,11 +602,11 @@ function NovaPoshtaCheckout({ isUk }: { isUk: boolean }) {
         {/* Branch/Locker selector */}
         {method !== "courier" && (
           <div className="mb-6">
-            <label className="block text-xs font-semibold text-neutral-600 mb-1.5">
+            <label className="block text-xs font-semibold text-neutral-600 dark:text-neutral-300 mb-1.5">
               {method === "branch" ? (isUk ? "Відділення" : "Branch") : (isUk ? "Поштомат" : "Locker")}
             </label>
             <select value={branch} onChange={(e) => setBranch(e.target.value)}
-              className="w-full px-4 py-3 rounded-xl border border-neutral-200 bg-white focus:border-amber-400 focus:outline-none text-sm">
+              className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white focus:border-amber-400 focus:outline-none text-sm">
               <option value="">{isUk ? "Оберіть..." : "Select..."}</option>
               {(method === "branch" ? branches : lockers).map((b) => (
                 <option key={b}>{b}</option>
@@ -616,9 +616,9 @@ function NovaPoshtaCheckout({ isUk }: { isUk: boolean }) {
         )}
         {method === "courier" && (
           <div className="mb-6">
-            <label className="block text-xs font-semibold text-neutral-600 mb-1.5">{isUk ? "Адреса доставки" : "Delivery address"}</label>
+            <label className="block text-xs font-semibold text-neutral-600 dark:text-neutral-300 mb-1.5">{isUk ? "Адреса доставки" : "Delivery address"}</label>
             <input type="text" placeholder={isUk ? "Вулиця, будинок, квартира" : "Street, building, apartment"}
-              className="w-full px-4 py-3 rounded-xl border border-neutral-200 bg-white focus:border-amber-400 focus:outline-none text-sm" />
+              className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white focus:border-amber-400 focus:outline-none text-sm" />
           </div>
         )}
 
@@ -642,10 +642,10 @@ function LiqPayDemo({ isUk }: { isUk: boolean }) {
   const [step, setStep] = useState<"cart" | "pay" | "done">("cart");
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Оплата через LiqPay / Monobank" : "LiqPay / Monobank Payment Flow"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk ? "Кошик → форма оплати → webhook підтвердження → сторінка статусу." : "Cart total → payment form → webhook confirmation → order status."}
       </p>
       <div className="max-w-md mx-auto">
@@ -663,10 +663,10 @@ function LiqPayDemo({ isUk }: { isUk: boolean }) {
         </div>
 
         {step === "cart" && (
-          <div className="bg-white rounded-2xl border border-neutral-200 p-6">
-            <h3 className="font-semibold text-neutral-900 mb-4">{isUk ? "Ваше замовлення" : "Your order"}</h3>
+          <div className="bg-white rounded-2xl border border-neutral-200 dark:border-neutral-700 p-6">
+            <h3 className="font-semibold text-neutral-900 dark:text-white mb-4">{isUk ? "Ваше замовлення" : "Your order"}</h3>
             {[{ name: isUk ? "Навушники Sony WH-1000XM5" : "Sony WH-1000XM5 Headphones", price: 8999 }, { name: isUk ? "Чохол захисний" : "Protective case", price: 299 }].map((item) => (
-              <div key={item.name} className="flex justify-between py-2 border-b border-neutral-100 text-sm">
+              <div key={item.name} className="flex justify-between py-2 border-b border-neutral-100 dark:border-neutral-700 text-sm">
                 <span className="text-neutral-700">{item.name}</span>
                 <span className="font-medium">{item.price.toLocaleString("uk-UA")} ₴</span>
               </div>
@@ -682,20 +682,20 @@ function LiqPayDemo({ isUk }: { isUk: boolean }) {
         )}
 
         {step === "pay" && (
-          <div className="bg-white rounded-2xl border border-neutral-200 p-6">
-            <h3 className="font-semibold text-neutral-900 mb-4">{isUk ? "Спосіб оплати" : "Payment method"}</h3>
+          <div className="bg-white rounded-2xl border border-neutral-200 dark:border-neutral-700 p-6">
+            <h3 className="font-semibold text-neutral-900 dark:text-white mb-4">{isUk ? "Спосіб оплати" : "Payment method"}</h3>
             <div className="grid grid-cols-3 gap-2 mb-4">
               {["LiqPay", "Monobank", "Apple Pay"].map((m, i) => (
-                <div key={m} className={`rounded-xl border-2 p-3 text-center cursor-pointer text-xs font-semibold ${i === 0 ? "border-green-500 bg-green-50 text-green-700" : "border-neutral-200 text-neutral-500 hover:border-neutral-300"}`}>
+                <div key={m} className={`rounded-xl border-2 p-3 text-center cursor-pointer text-xs font-semibold ${i === 0 ? "border-green-500 bg-green-50 text-green-700" : "border-neutral-200 dark:border-neutral-700 text-neutral-500 dark:text-neutral-400 hover:border-neutral-300"}`}>
                   {m}
                 </div>
               ))}
             </div>
             <div className="space-y-3 mb-4">
-              <input type="text" placeholder="0000 0000 0000 0000" className="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-green-400 focus:outline-none text-sm font-mono" />
+              <input type="text" placeholder="0000 0000 0000 0000" className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 focus:border-green-400 focus:outline-none text-sm font-mono" />
               <div className="grid grid-cols-2 gap-3">
-                <input type="text" placeholder="MM/YY" className="px-4 py-3 rounded-xl border border-neutral-200 focus:border-green-400 focus:outline-none text-sm" />
-                <input type="text" placeholder="CVV" className="px-4 py-3 rounded-xl border border-neutral-200 focus:border-green-400 focus:outline-none text-sm" />
+                <input type="text" placeholder="MM/YY" className="px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 focus:border-green-400 focus:outline-none text-sm" />
+                <input type="text" placeholder="CVV" className="px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 focus:border-green-400 focus:outline-none text-sm" />
               </div>
             </div>
             <div className="bg-green-50 rounded-xl p-3 flex justify-between text-sm mb-4">
@@ -709,12 +709,12 @@ function LiqPayDemo({ isUk }: { isUk: boolean }) {
         )}
 
         {step === "done" && (
-          <div className="bg-white rounded-2xl border border-neutral-200 p-8 text-center">
+          <div className="bg-white rounded-2xl border border-neutral-200 dark:border-neutral-700 p-8 text-center">
             <div className="text-5xl mb-4">✅</div>
-            <h3 className="font-heading text-xl font-bold text-neutral-900 mb-1">{isUk ? "Оплату прийнято!" : "Payment successful!"}</h3>
-            <p className="text-sm text-neutral-500 mb-2">{isUk ? "Замовлення #UA-20264812" : "Order #UA-20264812"}</p>
+            <h3 className="font-heading text-xl font-bold text-neutral-900 dark:text-white mb-1">{isUk ? "Оплату прийнято!" : "Payment successful!"}</h3>
+            <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-2">{isUk ? "Замовлення #UA-20264812" : "Order #UA-20264812"}</p>
             <p className="text-xs text-neutral-400 mb-6">{isUk ? "Квитанцію надіслано на email" : "Receipt sent to your email"}</p>
-            <button onClick={() => setStep("cart")} className="px-6 py-2.5 rounded-xl border border-neutral-200 text-sm text-neutral-600 hover:bg-neutral-50">
+            <button onClick={() => setStep("cart")} className="px-6 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 text-sm text-neutral-600 dark:text-neutral-300 hover:bg-neutral-50">
               {isUk ? "Почати знову" : "Start over"}
             </button>
           </div>
@@ -731,22 +731,22 @@ function TelegramBotDemo({ isUk }: { isUk: boolean }) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Бот Telegram для сповіщень" : "Telegram Notification Bot"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk ? "Деталі замовлення → повідомлення в Telegram, inline кнопки: Прийняти / Відхилити / Зателефонувати." : "Order details → Telegram message, inline buttons: Accept / Reject / Call client."}
       </p>
 
       <div className="max-w-lg mx-auto">
         {/* Form that triggers the bot */}
         {!sent ? (
-          <div className="bg-white rounded-2xl border border-neutral-200 p-6 mb-6">
-            <h3 className="font-semibold text-neutral-900 mb-4">{isUk ? "Нове замовлення (симуляція)" : "New order (simulation)"}</h3>
+          <div className="bg-white rounded-2xl border border-neutral-200 dark:border-neutral-700 p-6 mb-6">
+            <h3 className="font-semibold text-neutral-900 dark:text-white mb-4">{isUk ? "Нове замовлення (симуляція)" : "New order (simulation)"}</h3>
             <div className="space-y-3 mb-4">
-              <input type="text" defaultValue={isUk ? "Олена Мельник" : "Elena Melnyk"} className="w-full px-4 py-3 rounded-xl border border-neutral-200 text-sm" readOnly />
-              <input type="tel" defaultValue="+38 (067) 123-45-67" className="w-full px-4 py-3 rounded-xl border border-neutral-200 text-sm" readOnly />
-              <select className="w-full px-4 py-3 rounded-xl border border-neutral-200 text-sm">
+              <input type="text" defaultValue={isUk ? "Олена Мельник" : "Elena Melnyk"} className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 text-sm" readOnly />
+              <input type="tel" defaultValue="+38 (067) 123-45-67" className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 text-sm" readOnly />
+              <select className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 text-sm">
                 <option>{isUk ? "Розробка сайту" : "Website Development"}</option>
               </select>
             </div>
@@ -772,7 +772,7 @@ function TelegramBotDemo({ isUk }: { isUk: boolean }) {
               <p><span className="text-neutral-400">📞 {isUk ? "Телефон:" : "Phone:"}</span> +38 (067) 123-45-67</p>
               <p><span className="text-neutral-400">🛠 {isUk ? "Послуга:" : "Service:"}</span> {isUk ? "Розробка сайту" : "Website Development"}</p>
               <p><span className="text-neutral-400">🌐 {isUk ? "Джерело:" : "Source:"}</span> codeworth.uk</p>
-              <p className="text-xs text-neutral-500 mt-2">26.03.2026 · 14:37</p>
+              <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-2">26.03.2026 · 14:37</p>
             </div>
             {!action ? (
               <div className="grid grid-cols-3 gap-2">
@@ -819,19 +819,19 @@ function GoogleMapsDemo({ isUk }: { isUk: boolean }) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Карта кількох філій бізнесу" : "Multi-Location Business Map"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk ? "Кастомні маркери, бічна панель зі списком, клік → highlight + popup." : "Custom markers, sidebar branch list, click → highlight + info popup."}
       </p>
-      <div className="max-w-2xl mx-auto flex flex-col sm:flex-row gap-4 bg-neutral-100 rounded-3xl overflow-hidden">
+      <div className="max-w-2xl mx-auto flex flex-col sm:flex-row gap-4 bg-neutral-100 dark:bg-neutral-800 rounded-3xl overflow-hidden">
         {/* Sidebar */}
         <div className="sm:w-52 p-4 bg-white space-y-2 shrink-0">
           <p className="text-xs font-bold text-neutral-400 uppercase tracking-wider mb-3">{isUk ? "Наші філії" : "Our locations"}</p>
           {LOCATIONS.map((loc) => (
             <button key={loc.id} onClick={() => setActive(loc.id)}
-              className={`w-full text-left rounded-xl p-3 text-sm transition-all ${active === loc.id ? "bg-green-100 border border-green-300" : "hover:bg-neutral-50 border border-transparent"}`}>
+              className={`w-full text-left rounded-xl p-3 text-sm transition-all ${active === loc.id ? "bg-green-100 border border-green-300" : "hover:bg-neutral-50 dark:hover:bg-neutral-800 dark:bg-neutral-900 border border-transparent"}`}>
               <p className={`font-semibold ${active === loc.id ? "text-green-800" : "text-neutral-900"}`}>
                 📍 {isUk ? loc.name : loc.nameEn}
               </p>
@@ -868,8 +868,8 @@ function GoogleMapsDemo({ isUk }: { isUk: boolean }) {
             const positions = [{ top: "15%", left: "40%" }, { top: "5%", left: "55%" }, { top: "45%", left: "20%" }, { top: "55%", left: "60%" }];
             const pos = positions[active - 1];
             return (
-              <div style={pos} className="absolute -translate-x-1/2 bg-white rounded-2xl p-3 shadow-xl z-20 min-w-40">
-                <p className="font-semibold text-neutral-900 text-xs">{isUk ? loc.name : loc.nameEn}</p>
+              <div style={pos} className="absolute -translate-x-1/2 bg-white dark:bg-neutral-800 rounded-2xl p-3 shadow-xl z-20 min-w-40">
+                <p className="font-semibold text-neutral-900 dark:text-white text-xs">{isUk ? loc.name : loc.nameEn}</p>
                 <p className="text-xs text-neutral-500">{loc.hours}</p>
                 <p className="text-xs text-green-700 font-medium mt-1">{loc.phone}</p>
                 <button className="mt-2 text-xs text-blue-600 hover:underline block">{isUk ? "Маршрут →" : "Directions →"}</button>
@@ -915,10 +915,10 @@ function AiChatbotDemo({ isUk }: { isUk: boolean }) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "AI чат-бот з базою знань (RAG)" : "AI Knowledge Base Chatbot (RAG)"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk ? "GPT-4o навчений на документах клієнта. Відповідає на FAQ 24/7, fallback на живого оператора." : "GPT-4o trained on client's documents. Answers FAQ 24/7, falls back to a live agent."}
       </p>
       <div className="max-w-md mx-auto rounded-3xl overflow-hidden shadow-xl border border-neutral-200">
@@ -944,7 +944,7 @@ function AiChatbotDemo({ isUk }: { isUk: boolean }) {
               {m.role === "bot" && (
                 <div className="w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center text-xs shrink-0">🧠</div>
               )}
-              <div className={`max-w-[78%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${m.role === "user" ? "bg-indigo-600 text-white rounded-br-none" : "bg-neutral-100 text-neutral-900 rounded-bl-none"}`}>
+              <div className={`max-w-[78%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${m.role === "user" ? "bg-indigo-600 text-white rounded-br-none" : "bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white rounded-bl-none"}`}>
                 {m.text}
               </div>
             </div>
@@ -952,7 +952,7 @@ function AiChatbotDemo({ isUk }: { isUk: boolean }) {
         </div>
 
         {/* Quick questions */}
-        <div className="bg-white border-t border-neutral-100 px-4 py-2 flex gap-1.5 flex-wrap">
+        <div className="bg-white border-t border-neutral-100 dark:border-neutral-700 px-4 py-2 flex gap-1.5 flex-wrap">
           {QUICK.map((q) => (
             <button key={q} onClick={() => send(q.slice(2).trim())}
               className="text-xs px-3 py-1.5 bg-indigo-50 text-indigo-700 rounded-full hover:bg-indigo-100 transition-colors whitespace-nowrap">
@@ -962,11 +962,11 @@ function AiChatbotDemo({ isUk }: { isUk: boolean }) {
         </div>
 
         {/* Input */}
-        <div className="bg-neutral-50 border-t border-neutral-200 px-4 py-3 flex gap-2">
+        <div className="bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-700 px-4 py-3 flex gap-2">
           <input value={input} onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && send()}
             placeholder={isUk ? "Задайте питання..." : "Ask a question..."}
-            className="flex-1 bg-white border border-neutral-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-indigo-400" />
+            className="flex-1 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-indigo-400" />
           <button onClick={() => send()}
             className="w-10 h-10 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl flex items-center justify-center transition-colors text-base font-bold">
             ↑
@@ -1008,10 +1008,10 @@ function AdminBlogDemo({ isUk }: { isUk: boolean }) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Адмін-панель блогу (CRUD)" : "Blog Admin Panel (CRUD)"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk ? "Управління статтями: публікація, чернетки, видалення. Rich-text редактор + preview." : "Manage articles: publish, drafts, delete. Rich-text editor + preview."}
       </p>
       <div className="max-w-3xl mx-auto">
@@ -1037,33 +1037,33 @@ function AdminBlogDemo({ isUk }: { isUk: boolean }) {
             <button onClick={addPost} className="px-4 py-2 bg-indigo-600 text-white rounded-xl text-sm font-semibold hover:bg-indigo-700 transition-colors">
               {isUk ? "Додати" : "Add"}
             </button>
-            <button onClick={() => setShowNew(false)} className="px-4 py-2 bg-white border border-neutral-200 text-neutral-500 rounded-xl text-sm hover:bg-neutral-50 transition-colors">
+            <button onClick={() => setShowNew(false)} className="px-4 py-2 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-neutral-500 dark:text-neutral-400 rounded-xl text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800 dark:bg-neutral-900 transition-colors">
               {isUk ? "Скасувати" : "Cancel"}
             </button>
           </div>
         )}
 
         {/* Table */}
-        <div className="bg-white border border-neutral-200 rounded-2xl overflow-hidden">
+        <div className="bg-white border border-neutral-200 dark:border-neutral-700 rounded-2xl overflow-hidden">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-neutral-100 bg-neutral-50">
-                <th className="text-left px-4 py-3 font-semibold text-neutral-500 text-xs uppercase tracking-wide">{isUk ? "Заголовок" : "Title"}</th>
-                <th className="text-left px-4 py-3 font-semibold text-neutral-500 text-xs uppercase tracking-wide hidden sm:table-cell">{isUk ? "Категорія" : "Category"}</th>
-                <th className="text-left px-4 py-3 font-semibold text-neutral-500 text-xs uppercase tracking-wide">{isUk ? "Статус" : "Status"}</th>
-                <th className="text-right px-4 py-3 font-semibold text-neutral-500 text-xs uppercase tracking-wide hidden md:table-cell">{isUk ? "Перегляди" : "Views"}</th>
+              <tr className="border-b border-neutral-100 dark:border-neutral-700 bg-neutral-50">
+                <th className="text-left px-4 py-3 font-semibold text-neutral-500 dark:text-neutral-400 text-xs uppercase tracking-wide">{isUk ? "Заголовок" : "Title"}</th>
+                <th className="text-left px-4 py-3 font-semibold text-neutral-500 dark:text-neutral-400 text-xs uppercase tracking-wide hidden sm:table-cell">{isUk ? "Категорія" : "Category"}</th>
+                <th className="text-left px-4 py-3 font-semibold text-neutral-500 dark:text-neutral-400 text-xs uppercase tracking-wide">{isUk ? "Статус" : "Status"}</th>
+                <th className="text-right px-4 py-3 font-semibold text-neutral-500 dark:text-neutral-400 text-xs uppercase tracking-wide hidden md:table-cell">{isUk ? "Перегляди" : "Views"}</th>
                 <th className="px-4 py-3" />
               </tr>
             </thead>
             <tbody>
               {posts.map((post) => (
-                <tr key={post.id} className="border-b border-neutral-100 last:border-0 hover:bg-neutral-50 transition-colors">
+                <tr key={post.id} className="border-b border-neutral-100 dark:border-neutral-700 last:border-0 hover:bg-neutral-50 dark:hover:bg-neutral-800 dark:bg-neutral-900 transition-colors">
                   <td className="px-4 py-3">
-                    <p className="font-medium text-neutral-900 leading-tight">{isUk ? post.titleUk : post.title}</p>
+                    <p className="font-medium text-neutral-900 dark:text-white leading-tight">{isUk ? post.titleUk : post.title}</p>
                     <p className="text-xs text-neutral-400 mt-0.5">{post.date}</p>
                   </td>
                   <td className="px-4 py-3 hidden sm:table-cell">
-                    <span className="text-xs bg-neutral-100 text-neutral-600 px-2 py-1 rounded-full">{isUk ? post.catUk : post.cat}</span>
+                    <span className="text-xs bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 px-2 py-1 rounded-full">{isUk ? post.catUk : post.cat}</span>
                   </td>
                   <td className="px-4 py-3">
                     <button onClick={() => toggleStatus(post.id)}
@@ -1071,7 +1071,7 @@ function AdminBlogDemo({ isUk }: { isUk: boolean }) {
                       {post.status === "published" ? (isUk ? "✓ Опубліковано" : "✓ Published") : (isUk ? "✎ Чернетка" : "✎ Draft")}
                     </button>
                   </td>
-                  <td className="px-4 py-3 text-right text-neutral-500 hidden md:table-cell">
+                  <td className="px-4 py-3 text-right text-neutral-500 dark:text-neutral-400 hidden md:table-cell">
                     {post.views > 0 ? post.views.toLocaleString("uk-UA") : "—"}
                   </td>
                   <td className="px-4 py-3">
@@ -1091,11 +1091,11 @@ function AdminBlogDemo({ isUk }: { isUk: boolean }) {
       {delId !== null && (
         <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-2xl p-6 max-w-sm w-full shadow-2xl">
-            <h3 className="font-bold text-neutral-900 mb-2">{isUk ? "Видалити статтю?" : "Delete article?"}</h3>
-            <p className="text-sm text-neutral-500 mb-5">{isUk ? "Цю дію неможливо скасувати." : "This action cannot be undone."}</p>
+            <h3 className="font-bold text-neutral-900 dark:text-white mb-2">{isUk ? "Видалити статтю?" : "Delete article?"}</h3>
+            <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-5">{isUk ? "Цю дію неможливо скасувати." : "This action cannot be undone."}</p>
             <div className="flex gap-3">
               <button onClick={() => deletePost(delId)} className="flex-1 py-2.5 bg-red-600 text-white rounded-xl text-sm font-semibold hover:bg-red-700 transition-colors">{isUk ? "Видалити" : "Delete"}</button>
-              <button onClick={() => setDelId(null)} className="flex-1 py-2.5 border border-neutral-200 text-neutral-600 rounded-xl text-sm font-semibold hover:bg-neutral-50 transition-colors">{isUk ? "Скасувати" : "Cancel"}</button>
+              <button onClick={() => setDelId(null)} className="flex-1 py-2.5 border border-neutral-200 dark:border-neutral-700 text-neutral-600 dark:text-neutral-300 rounded-xl text-sm font-semibold hover:bg-neutral-50 dark:hover:bg-neutral-800 dark:bg-neutral-900 transition-colors">{isUk ? "Скасувати" : "Cancel"}</button>
             </div>
           </div>
         </div>
@@ -1128,22 +1128,22 @@ function BundleBuilderDemo({ isUk }: { isUk: boolean }) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Bundle Builder — Конструктор комплектів" : "Bundle Builder"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk ? "Клієнт збирає набір — отримує знижку. 2 товари = −7%, 3+ = −12%. Збільшує AOV на 20–30%." : "Customer builds a bundle and gets a discount. 2 items = −7%, 3+ = −12%. Increases AOV by 20–30%."}
       </p>
       <div className="max-w-2xl mx-auto flex flex-col sm:flex-row gap-6">
         {/* Product grid */}
         <div className="flex-1">
-          <p className="text-xs font-semibold text-neutral-500 uppercase tracking-wide mb-3">{isUk ? "Оберіть товари:" : "Choose items:"}</p>
+          <p className="text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3">{isUk ? "Оберіть товари:" : "Choose items:"}</p>
           <div className="grid grid-cols-2 gap-3">
             {items.map((item) => (
               <button key={item.id} onClick={() => toggle(item.id)}
-                className={`rounded-2xl p-4 text-left border-2 transition-all ${item.selected ? "border-amber-500 bg-amber-50 shadow-sm" : "border-neutral-200 bg-white hover:border-amber-300"}`}>
+                className={`rounded-2xl p-4 text-left border-2 transition-all ${item.selected ? "border-amber-500 bg-amber-50 shadow-sm" : "border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-amber-300"}`}>
                 <div className="text-2xl mb-2">{item.emoji}</div>
-                <p className="text-sm font-semibold text-neutral-900 leading-tight">{isUk ? item.nameUk : item.name}</p>
+                <p className="text-sm font-semibold text-neutral-900 dark:text-white leading-tight">{isUk ? item.nameUk : item.name}</p>
                 <p className="text-sm font-bold text-amber-700 mt-1">{fmtUah(item.price, isUk)}</p>
                 {item.selected && <p className="text-xs text-amber-600 mt-1 font-medium">✓ {isUk ? "Додано" : "Added"}</p>}
               </button>
@@ -1153,8 +1153,8 @@ function BundleBuilderDemo({ isUk }: { isUk: boolean }) {
 
         {/* Summary sidebar */}
         <div className="sm:w-52 shrink-0">
-          <p className="text-xs font-semibold text-neutral-500 uppercase tracking-wide mb-3">{isUk ? "Ваш набір:" : "Your bundle:"}</p>
-          <div className="bg-white border border-neutral-200 rounded-2xl p-4 sticky top-4">
+          <p className="text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3">{isUk ? "Ваш набір:" : "Your bundle:"}</p>
+          <div className="bg-white border border-neutral-200 dark:border-neutral-700 rounded-2xl p-4 sticky top-4">
             {selected.length === 0 ? (
               <p className="text-sm text-neutral-400 text-center py-4">{isUk ? "Нічого не обрано" : "Nothing selected"}</p>
             ) : (
@@ -1162,7 +1162,7 @@ function BundleBuilderDemo({ isUk }: { isUk: boolean }) {
                 <div className="space-y-2 mb-4">
                   {selected.map((i) => (
                     <div key={i.id} className="flex justify-between text-sm gap-2">
-                      <span className="text-neutral-700 truncate">{i.emoji} {isUk ? i.nameUk.split(" ")[0] : i.name.split(" ")[0]}</span>
+                      <span className="text-neutral-700 dark:text-neutral-300 truncate">{i.emoji} {isUk ? i.nameUk.split(" ")[0] : i.name.split(" ")[0]}</span>
                       <span className="font-medium shrink-0">{fmtUah(i.price, isUk)}</span>
                     </div>
                   ))}
@@ -1178,9 +1178,9 @@ function BundleBuilderDemo({ isUk }: { isUk: boolean }) {
                     {isUk ? `+${3 - selected.length} для знижки −12%` : `+${3 - selected.length} more for −12%`}
                   </p>
                 )}
-                <div className="border-t border-neutral-100 pt-3 mb-4">
+                <div className="border-t border-neutral-100 dark:border-neutral-700 pt-3 mb-4">
                   {discount > 0 && <p className="text-xs text-neutral-400 line-through text-right">{fmtUah(subtotal, isUk)}</p>}
-                  <p className="text-right font-bold text-neutral-900 text-lg">{fmtUah(total, isUk)}</p>
+                  <p className="text-right font-bold text-neutral-900 dark:text-white text-lg">{fmtUah(total, isUk)}</p>
                 </div>
                 {!added ? (
                   <button onClick={() => setAdded(true)} className="w-full py-2.5 bg-amber-500 hover:bg-amber-600 text-white rounded-xl text-sm font-semibold transition-colors">
@@ -1257,10 +1257,10 @@ function AiSmartSearchDemo({ isUk }: { isUk: boolean }) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Семантичний AI-пошук" : "AI Semantic Search"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk
           ? `Спробуйте: "слухати музику", "для спорту", "для навчання" — AI розуміє намір, не лише слова.`
           : `Try: "listen to music", "for sport", "for studying" — AI understands intent, not just keywords.`}
@@ -1270,7 +1270,7 @@ function AiSmartSearchDemo({ isUk }: { isUk: boolean }) {
           <span className="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-400 text-lg">🔍</span>
           <input value={q} onChange={(e) => setQ(e.target.value)} type="search"
             placeholder={isUk ? `Спробуйте "слухати музику" або "смартфон"` : `Try "listen to music" or "smartphone"`}
-            className="w-full pl-12 pr-4 py-4 rounded-2xl border-2 border-neutral-200 focus:border-indigo-400 focus:outline-none text-sm shadow-sm" />
+            className="w-full pl-12 pr-4 py-4 rounded-2xl border-2 border-neutral-200 dark:border-neutral-700 focus:border-indigo-400 focus:outline-none text-sm shadow-sm" />
           {isSemantic && (
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-xs bg-indigo-100 text-indigo-700 px-2.5 py-1 rounded-full font-semibold">
               🧠 AI Semantic
@@ -1283,7 +1283,7 @@ function AiSmartSearchDemo({ isUk }: { isUk: boolean }) {
           <div className="flex gap-2 flex-wrap mb-4">
             {SUGGESTIONS.map((s) => (
               <button key={s} onClick={() => setQ(s)}
-                className="text-xs px-3 py-1.5 bg-neutral-100 hover:bg-indigo-50 text-neutral-600 hover:text-indigo-700 rounded-full transition-colors">
+                className="text-xs px-3 py-1.5 bg-neutral-100 dark:bg-neutral-800 hover:bg-indigo-50 text-neutral-600 dark:text-neutral-300 hover:text-indigo-700 rounded-full transition-colors">
                 {s}
               </button>
             ))}
@@ -1291,7 +1291,7 @@ function AiSmartSearchDemo({ isUk }: { isUk: boolean }) {
         )}
 
         {q.trim().length > 1 && (
-          <div className="bg-white rounded-2xl border border-neutral-200 shadow-sm overflow-hidden">
+          <div className="bg-white rounded-2xl border border-neutral-200 dark:border-neutral-700 shadow-sm overflow-hidden">
             {results.length === 0 ? (
               <p className="px-5 py-6 text-sm text-neutral-400 text-center">{isUk ? "Нічого не знайдено" : "Nothing found"}</p>
             ) : (
@@ -1305,16 +1305,16 @@ function AiSmartSearchDemo({ isUk }: { isUk: boolean }) {
                   </div>
                 )}
                 {results.map((r, i) => (
-                  <div key={i} className="px-5 py-3 flex items-center gap-4 hover:bg-neutral-50 transition-colors border-b border-neutral-100 last:border-0 cursor-pointer">
-                    <div className="w-10 h-10 bg-neutral-100 rounded-xl flex items-center justify-center text-xl shrink-0">{r.icon}</div>
+                  <div key={i} className="px-5 py-3 flex items-center gap-4 hover:bg-neutral-50 dark:hover:bg-neutral-800 dark:bg-neutral-900 transition-colors border-b border-neutral-100 dark:border-neutral-700 last:border-0 cursor-pointer">
+                    <div className="w-10 h-10 bg-neutral-100 dark:bg-neutral-800 rounded-xl flex items-center justify-center text-xl shrink-0">{r.icon}</div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium text-neutral-900 truncate">{isUk ? r.nameUk : r.name}</p>
+                      <p className="text-sm font-medium text-neutral-900 dark:text-white truncate">{isUk ? r.nameUk : r.name}</p>
                       <p className="text-xs text-neutral-400">{isUk ? r.catUk : r.cat}</p>
                     </div>
-                    <p className="text-sm font-bold text-neutral-900 shrink-0">{r.price.toLocaleString("uk-UA")} ₴</p>
+                    <p className="text-sm font-bold text-neutral-900 dark:text-white shrink-0">{r.price.toLocaleString("uk-UA")} ₴</p>
                   </div>
                 ))}
-                <div className="px-5 py-2 bg-neutral-50 flex justify-between text-xs text-neutral-400">
+                <div className="px-5 py-2 bg-neutral-50 dark:bg-neutral-900 flex justify-between text-xs text-neutral-400">
                   <span>{isUk ? `${results.length} результатів` : `${results.length} result${results.length !== 1 ? "s" : ""}`}</span>
                   {isSemantic && <span className="text-indigo-500 font-medium">Vector Embeddings · Pinecone</span>}
                 </div>
@@ -1363,10 +1363,10 @@ function AdminAppointmentsDemo({ isUk }: { isUk: boolean }) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Адмін-панель записів (Календар)" : "Appointments Admin Panel (Calendar)"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk ? "Управління записами: підтвердження, скасування, нотифікація клієнту. Drag & drop перенесення." : "Manage bookings: confirm, cancel, notify client. Drag & drop reschedule."}
       </p>
       <div className="max-w-2xl mx-auto">
@@ -1388,7 +1388,7 @@ function AdminAppointmentsDemo({ isUk }: { isUk: boolean }) {
         <div className="flex gap-2 mb-5 overflow-x-auto pb-1">
           {DAYS.map((d, i) => (
             <button key={d} onClick={() => setActiveDay(i)}
-              className={`px-3 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${activeDay === i ? "bg-indigo-600 text-white" : "bg-neutral-100 text-neutral-600 hover:bg-indigo-50"}`}>
+              className={`px-3 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${activeDay === i ? "bg-indigo-600 text-white" : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-indigo-50"}`}>
               {d}
             </button>
           ))}
@@ -1397,13 +1397,13 @@ function AdminAppointmentsDemo({ isUk }: { isUk: boolean }) {
         {/* Appointments list */}
         <div className="space-y-2">
           {appts.map((appt) => (
-            <div key={appt.id} className={`bg-white border border-neutral-200 rounded-2xl px-4 py-3 flex items-center gap-4 transition-opacity ${appt.status === "cancelled" ? "opacity-50" : ""}`}>
+            <div key={appt.id} className={`bg-white border border-neutral-200 dark:border-neutral-700 rounded-2xl px-4 py-3 flex items-center gap-4 transition-opacity ${appt.status === "cancelled" ? "opacity-50" : ""}`}>
               <div className="w-14 text-center shrink-0">
-                <p className="font-bold text-neutral-900 text-sm">{appt.time}</p>
+                <p className="font-bold text-neutral-900 dark:text-white text-sm">{appt.time}</p>
               </div>
               <div className="flex-1 min-w-0">
-                <p className="font-semibold text-neutral-900 text-sm leading-tight">{isUk ? appt.nameUk : appt.name}</p>
-                <p className="text-xs text-neutral-500 mt-0.5">{isUk ? appt.serviceUk : appt.service} · {isUk ? appt.masterUk : appt.master}</p>
+                <p className="font-semibold text-neutral-900 dark:text-white text-sm leading-tight">{isUk ? appt.nameUk : appt.name}</p>
+                <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">{isUk ? appt.serviceUk : appt.service} · {isUk ? appt.masterUk : appt.master}</p>
               </div>
               <div className="flex items-center gap-2 shrink-0 flex-wrap justify-end">
                 <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${APPT_STATUS_STYLES[appt.status]}`}>
@@ -1424,7 +1424,7 @@ function AdminAppointmentsDemo({ isUk }: { isUk: boolean }) {
                 {appt.status === "cancelled" && (
                   <button onClick={() => setStatus(appt.id, "pending")}
                     title={isUk ? "Відновити" : "Restore"}
-                    className="w-7 h-7 rounded-lg bg-neutral-100 hover:bg-neutral-200 text-neutral-600 flex items-center justify-center text-xs transition-colors">↺</button>
+                    className="w-7 h-7 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 text-neutral-600 dark:text-neutral-300 flex items-center justify-center text-xs transition-colors">↺</button>
                 )}
               </div>
             </div>
@@ -1461,12 +1461,12 @@ function BeforeAfterDemo({ isUk }: { isUk: boolean }) {
   ];
 
   const BeforeContent = () => scene === "web" ? (
-    <div className="w-full h-full bg-gray-100 p-4" style={{ fontFamily: "Georgia, serif" }}>
+    <div className="w-full h-full bg-gray-100 dark:bg-neutral-800 p-4" style={{ fontFamily: "Georgia, serif" }}>
       <div className="bg-gray-600 text-white px-3 py-2 text-xs">Welcome to our company website</div>
       <div className="mt-2 flex gap-3 text-xs text-blue-700 underline"><span>Home</span><span>Services</span><span>About</span><span>Contact</span></div>
       <div className="mt-3">
         <p className="text-base font-bold text-gray-800">We Offer Quality Services</p>
-        <p className="text-xs text-gray-600 mt-1 leading-relaxed">Click here for more information about our company and the services we provide to our valued customers since 1998.</p>
+        <p className="text-xs text-gray-600 dark:text-neutral-300 mt-1 leading-relaxed">Click here for more information about our company and the services we provide to our valued customers since 1998.</p>
       </div>
       <div className="mt-3 grid grid-cols-2 gap-1.5 text-xs">
         <div className="bg-gray-200 border border-gray-400 p-2">▶ Service 1</div>
@@ -1512,17 +1512,17 @@ function BeforeAfterDemo({ isUk }: { isUk: boolean }) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Before / After слайдер" : "Before / After Slider"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-6">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-6">
         {isUk ? "Перетягніть повзунок щоб порівняти. Ідеально для ремонту, стоматології, косметології та редизайну." : "Drag the handle to compare. Perfect for renovation, dentistry, beauty, and website redesigns."}
       </p>
 
       <div className="flex gap-2 mb-5">
         {scenes.map(s => (
           <button key={s.key} onClick={() => { setScene(s.key); setPos(50); }}
-            className={`px-4 py-2 rounded-xl text-sm font-medium transition-colors ${scene === s.key ? "bg-indigo-600 text-white" : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"}`}>
+            className={`px-4 py-2 rounded-xl text-sm font-medium transition-colors ${scene === s.key ? "bg-indigo-600 text-white" : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200"}`}>
             {s.label}
           </button>
         ))}
@@ -1543,7 +1543,7 @@ function BeforeAfterDemo({ isUk }: { isUk: boolean }) {
           </div>
 
           {/* Divider line */}
-          <div className="absolute top-0 bottom-0 w-0.5 bg-white shadow-lg pointer-events-none" style={{ left: `calc(${pos}% - 1px)` }} />
+          <div className="absolute top-0 bottom-0 w-0.5 bg-white dark:bg-neutral-800 shadow-lg pointer-events-none" style={{ left: `calc(${pos}% - 1px)` }} />
 
           {/* Handle */}
           <div
@@ -1623,29 +1623,29 @@ function LeadQuizDemo({ isUk }: { isUk: boolean }) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Інтерактивний квіз — лідогенератор" : "Interactive Lead Quiz"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk ? "Клієнт відповідає на 3 запитання → форма заявки → персоналізована рекомендація. Знижує вартість ліда на 30–50%." : "Client answers 3 questions → contact form → personalised recommendation. Reduces lead cost by 30–50%."}
       </p>
 
       <div className="max-w-md mx-auto">
-        <div className="bg-white border border-neutral-200 rounded-2xl p-6 shadow-lg">
+        <div className="bg-white border border-neutral-200 dark:border-neutral-700 rounded-2xl p-6 shadow-lg">
           {done ? (
             <div className="text-center py-4">
               <div className="text-5xl mb-4">🎉</div>
-              <p className="font-bold text-neutral-900 text-lg mb-1">
+              <p className="font-bold text-neutral-900 dark:text-white text-lg mb-1">
                 {isUk ? `Дякуємо, ${form.name || ""}!` : `Thank you, ${form.name || ""}!`}
               </p>
-              <p className="text-sm text-neutral-500 mb-4">
+              <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-4">
                 {isUk ? "Менеджер зв'яжеться з вами протягом 2 годин." : "Our manager will contact you within 2 hours."}
               </p>
               <div className="bg-indigo-50 border border-indigo-100 rounded-xl p-3 text-sm text-indigo-700 mb-5">
                 {RESULT_MAP[answers[0]] ?? (isUk ? "💡 Ми підберемо оптимальне рішення" : "💡 We'll find the best solution for you")}
               </div>
               <div className="text-xs text-neutral-400 mb-4">
-                {answers.map((a, i) => <span key={i} className="inline-block bg-neutral-100 rounded-full px-2 py-0.5 mr-1 mb-1">{a}</span>)}
+                {answers.map((a, i) => <span key={i} className="inline-block bg-neutral-100 dark:bg-neutral-800 rounded-full px-2 py-0.5 mr-1 mb-1">{a}</span>)}
               </div>
               <button onClick={reset} className="text-sm text-indigo-600 hover:underline">{isUk ? "↩ Пройти знову" : "↩ Start over"}</button>
             </div>
@@ -1657,18 +1657,18 @@ function LeadQuizDemo({ isUk }: { isUk: boolean }) {
                   <span>{isUk ? `Крок ${step + 1} з ${total}` : `Step ${step + 1} of ${total}`}</span>
                   <span>{progressPct}%</span>
                 </div>
-                <div className="h-1.5 bg-neutral-100 rounded-full overflow-hidden">
+                <div className="h-1.5 bg-neutral-100 dark:bg-neutral-800 rounded-full overflow-hidden">
                   <div className="h-full bg-indigo-600 rounded-full transition-all duration-500" style={{ width: `${progressPct}%` }} />
                 </div>
               </div>
 
               {step < STEPS.length ? (
                 <>
-                  <p className="font-bold text-neutral-900 text-lg mb-5">{STEPS[step].q}</p>
+                  <p className="font-bold text-neutral-900 dark:text-white text-lg mb-5">{STEPS[step].q}</p>
                   <div className="space-y-2">
                     {STEPS[step].opts.map(opt => (
                       <button key={opt} onClick={() => pick(opt)}
-                        className="w-full text-left px-4 py-3 rounded-xl border-2 border-neutral-200 hover:border-indigo-400 hover:bg-indigo-50 transition-all text-sm font-medium text-neutral-800">
+                        className="w-full text-left px-4 py-3 rounded-xl border-2 border-neutral-200 dark:border-neutral-700 hover:border-indigo-400 hover:bg-indigo-50 transition-all text-sm font-medium text-neutral-800">
                         {opt}
                       </button>
                     ))}
@@ -1676,18 +1676,18 @@ function LeadQuizDemo({ isUk }: { isUk: boolean }) {
                 </>
               ) : (
                 <>
-                  <p className="font-bold text-neutral-900 text-lg mb-5">
+                  <p className="font-bold text-neutral-900 dark:text-white text-lg mb-5">
                     {isUk ? "Майже готово — залиште контакти:" : "Almost there — leave your details:"}
                   </p>
                   <form onSubmit={submit} className="space-y-3">
                     <input required value={form.name}
                       onChange={e => setForm(p => ({ ...p, name: e.target.value }))}
                       placeholder={isUk ? "Ваше ім'я" : "Your name"}
-                      className="w-full border border-neutral-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-indigo-400" />
+                      className="w-full border border-neutral-200 dark:border-neutral-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-indigo-400" />
                     <input required type="email" value={form.email}
                       onChange={e => setForm(p => ({ ...p, email: e.target.value }))}
                       placeholder={isUk ? "Email або телефон" : "Email or phone"}
-                      className="w-full border border-neutral-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-indigo-400" />
+                      className="w-full border border-neutral-200 dark:border-neutral-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-indigo-400" />
                     <button type="submit"
                       className="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-sm font-bold transition-colors">
                       {isUk ? "Отримати рекомендацію →" : "Get your recommendation →"}
@@ -1698,7 +1698,7 @@ function LeadQuizDemo({ isUk }: { isUk: boolean }) {
 
               {step > 0 && !done && (
                 <button onClick={() => { setStep(p => p - 1); setAnswers(p => p.slice(0, -1)); }}
-                  className="mt-4 text-xs text-neutral-400 hover:text-neutral-600 w-full text-center">
+                  className="mt-4 text-xs text-neutral-400 hover:text-neutral-600 dark:text-neutral-300 w-full text-center">
                   {isUk ? "← Назад" : "← Back"}
                 </button>
               )}
@@ -1745,19 +1745,19 @@ function FomoDemo({ isUk }: { isUk: boolean }) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "FOMO-виджет — соціальний доказ" : "FOMO Widget — Social Proof"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk ? "Спливаючі сповіщення про покупки, перегляди та відгуки. Підвищують конверсію на 10–20% завдяки ефекту натовпу." : "Pop-up notifications about purchases, views and reviews. Increase conversion by 10–20% through social proof."}
       </p>
 
       <div className="max-w-lg mx-auto">
         {/* Mock page */}
-        <div className="relative bg-gradient-to-br from-slate-50 to-indigo-50 border border-neutral-200 rounded-2xl overflow-hidden shadow-xl" style={{ minHeight: 280 }}>
+        <div className="relative bg-gradient-to-br from-slate-50 to-indigo-50 border border-neutral-200 dark:border-neutral-700 rounded-2xl overflow-hidden shadow-xl" style={{ minHeight: 280 }}>
           <div className="p-6 text-center">
-            <p className="text-xl font-extrabold text-neutral-900 mb-1">{isUk ? "Онлайн-запис" : "Online Booking"}</p>
-            <p className="text-sm text-neutral-500 mb-4">{isUk ? "Запишіться онлайн за 30 секунд" : "Book online in 30 seconds"}</p>
+            <p className="text-xl font-extrabold text-neutral-900 dark:text-white mb-1">{isUk ? "Онлайн-запис" : "Online Booking"}</p>
+            <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-4">{isUk ? "Запишіться онлайн за 30 секунд" : "Book online in 30 seconds"}</p>
             <button className="px-6 py-2.5 bg-indigo-600 text-white rounded-xl text-sm font-bold shadow-lg shadow-indigo-200">
               {isUk ? "Записатися →" : "Book Now →"}
             </button>
@@ -1768,11 +1768,11 @@ function FomoDemo({ isUk }: { isUk: boolean }) {
           </div>
 
           {/* FOMO toast */}
-          <div className={`absolute bottom-4 left-4 max-w-[240px] bg-white border border-neutral-100 rounded-xl shadow-xl p-3 flex gap-2.5 items-start transition-all duration-300 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}>
+          <div className={`absolute bottom-4 left-4 max-w-[240px] bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-xl shadow-xl p-3 flex gap-2.5 items-start transition-all duration-300 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}>
             <div className="text-xl shrink-0">{msg.emoji}</div>
             <div className="flex-1 min-w-0">
-              <p className="text-xs font-bold text-neutral-900 truncate">{isUk ? msg.nameUk : msg.name}</p>
-              <p className="text-xs text-neutral-500 leading-tight">{isUk ? msg.actionUk : msg.action}</p>
+              <p className="text-xs font-bold text-neutral-900 dark:text-white truncate">{isUk ? msg.nameUk : msg.name}</p>
+              <p className="text-xs text-neutral-500 dark:text-neutral-400 leading-tight">{isUk ? msg.actionUk : msg.action}</p>
               {(isUk ? msg.timeUk : msg.time) && (
                 <p className="text-xs text-neutral-300 mt-0.5">{isUk ? msg.timeUk : msg.time}</p>
               )}
@@ -1790,7 +1790,7 @@ function FomoDemo({ isUk }: { isUk: boolean }) {
             ))}
           </div>
           <button onClick={() => setPaused(p => !p)}
-            className="text-xs px-3 py-1.5 border border-neutral-200 rounded-full text-neutral-600 hover:bg-neutral-50 transition-colors">
+            className="text-xs px-3 py-1.5 border border-neutral-200 dark:border-neutral-700 rounded-full text-neutral-600 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-800 dark:bg-neutral-900 transition-colors">
             {paused ? (isUk ? "▶ Запустити" : "▶ Resume") : (isUk ? "⏸ Пауза" : "⏸ Pause")}
           </button>
         </div>
@@ -1810,10 +1810,10 @@ function FallbackDemo({ extraId, exampleId, isUk }: { extraId: string; exampleId
   return (
     <div className="max-w-lg mx-auto text-center py-20">
       <div className="text-6xl mb-4">🔧</div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Демо в розробці" : "Demo in development"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-4">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-4">
         {isUk ? "Цей приклад буде доступний найближчим часом." : "This example will be available soon."}
       </p>
       <p className="text-xs text-neutral-300">{extraId} / {exampleId}</p>
@@ -1910,8 +1910,8 @@ function WaitlistDemo({ isUk }: { isUk: boolean }) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">{isUk ? "Waitlist / Early Access форма" : "Waitlist / Early Access Form"}</h2>
-      <p className="text-neutral-500 text-sm mb-8">{isUk ? "Форма підписки на очікування зі лічильником позиції в черзі." : "Signup form with position counter and launch date."}</p>
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">{isUk ? "Waitlist / Early Access форма" : "Waitlist / Early Access Form"}</h2>
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">{isUk ? "Форма підписки на очікування зі лічильником позиції в черзі." : "Signup form with position counter and launch date."}</p>
 
       <div className="max-w-md mx-auto">
         <div className="bg-linear-to-br from-indigo-600 to-violet-700 rounded-3xl p-8 text-white text-center">
@@ -1965,8 +1965,8 @@ function NewsletterInlineDemo({ isUk }: { isUk: boolean }) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">{isUk ? "Newsletter Inline форма" : "Inline Newsletter Form"}</h2>
-      <p className="text-neutral-500 text-sm mb-8">{isUk ? "Форма підписки, вбудована в контент — не нав'язлива, вписана в дизайн." : "Subscription form embedded in content — non-intrusive, fits the design."}</p>
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">{isUk ? "Newsletter Inline форма" : "Inline Newsletter Form"}</h2>
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">{isUk ? "Форма підписки, вбудована в контент — не нав'язлива, вписана в дизайн." : "Subscription form embedded in content — non-intrusive, fits the design."}</p>
 
       <div className="max-w-2xl mx-auto">
         {/* Article context */}
@@ -1976,8 +1976,8 @@ function NewsletterInlineDemo({ isUk }: { isUk: boolean }) {
           <span className="text-xs font-bold text-indigo-500 uppercase tracking-widest mb-3 block">{t.tag}</span>
           <div className="flex flex-col sm:flex-row gap-6 items-center">
             <div className="flex-1">
-              <h3 className="font-heading text-xl font-extrabold text-neutral-900 mb-1">{t.title}</h3>
-              <p className="text-neutral-500 text-sm">{t.sub}</p>
+              <h3 className="font-heading text-xl font-extrabold text-neutral-900 dark:text-white mb-1">{t.title}</h3>
+              <p className="text-neutral-500 dark:text-neutral-400 text-sm">{t.sub}</p>
             </div>
             {!submitted ? (
               <div className="flex gap-2 w-full sm:w-auto">
@@ -2039,17 +2039,17 @@ function SocialProofCounterDemo({ isUk }: { isUk: boolean }) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">{isUk ? "Social Proof Counter" : "Social Proof Counters"}</h2>
-      <p className="text-neutral-500 text-sm mb-6">{isUk ? "Анімовані лічильники активуються при скролі до секції. Підвищують довіру та FOMO." : "Animated counters trigger on scroll. Builds trust and creates FOMO."}</p>
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">{isUk ? "Social Proof Counter" : "Social Proof Counters"}</h2>
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-6">{isUk ? "Анімовані лічильники активуються при скролі до секції. Підвищують довіру та FOMO." : "Animated counters trigger on scroll. Builds trust and creates FOMO."}</p>
 
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
         {targets.map((_, i) => (
-          <div key={i} className="text-center p-5 rounded-2xl bg-white border border-neutral-200 shadow-sm">
+          <div key={i} className="text-center p-5 rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 shadow-sm">
             <span className="text-3xl block mb-2">{icons[i]}</span>
             <p className="text-3xl font-heading font-extrabold text-indigo-600">
               {animate ? `${counts[i]}${suffixes[i]}` : `${targets[i]}${suffixes[i]}`}
             </p>
-            <p className="text-xs text-neutral-500 mt-1 leading-tight">{labels[i]}</p>
+            <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1 leading-tight">{labels[i]}</p>
           </div>
         ))}
       </div>
@@ -2079,16 +2079,16 @@ function BackToTopDemo({ isUk }: { isUk: boolean }) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Кнопка «Вгору» + прогрес читання" : "Back to Top + Reading Progress"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-6">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-6">
         {isUk
           ? "Кнопка з'являється після 400px скролу. Прогрес-бар зверху показує % прочитаного тексту."
           : "Button appears after 400px scroll. Top progress bar shows reading percentage."}
       </p>
 
-      <div className="relative border border-neutral-200 rounded-3xl overflow-hidden bg-neutral-50 min-h-64 p-6">
+      <div className="relative border border-neutral-200 dark:border-neutral-700 rounded-3xl overflow-hidden bg-neutral-50 dark:bg-neutral-900 min-h-64 p-6">
         {/* Progress bar */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-neutral-200 rounded-t-3xl">
           <div className="h-full bg-linear-to-r from-indigo-500 to-violet-500 rounded-t-3xl transition-all duration-300" style={{ width: shown ? "68%" : "0%" }} />
@@ -2118,7 +2118,7 @@ function BackToTopDemo({ isUk }: { isUk: boolean }) {
       <div className="mt-4 flex gap-3">
         <button
           onClick={() => setShown(!shown)}
-          className="px-4 py-2 rounded-xl border border-neutral-200 bg-white text-xs font-semibold text-neutral-700 hover:border-neutral-300 transition-colors"
+          className="px-4 py-2 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-xs font-semibold text-neutral-700 dark:text-neutral-300 hover:border-neutral-300 transition-colors"
         >
           {shown
             ? (isUk ? "Приховати кнопку" : "Hide button")
@@ -2139,10 +2139,10 @@ function DarkModeDemo({ isUk }: { isUk: boolean }) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Тема Dark Mode" : "Dark Mode Theme"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-6">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-6">
         {isUk
           ? "Перемикач теми зі збереженням у localStorage. Підтримує prefers-color-scheme."
           : "Theme toggle saved to localStorage. Respects prefers-color-scheme system preference."}
@@ -2177,7 +2177,7 @@ function DarkModeDemo({ isUk }: { isUk: boolean }) {
             <div className="px-5 py-2.5 rounded-xl bg-indigo-600 text-white text-xs font-semibold">
               {isUk ? "Кнопка CTA" : "CTA Button"}
             </div>
-            <div className={`px-5 py-2.5 rounded-xl border text-xs font-semibold ${dark ? "border-neutral-600 text-neutral-300" : "border-neutral-200 text-neutral-600"}`}>
+            <div className={`px-5 py-2.5 rounded-xl border text-xs font-semibold ${dark ? "border-neutral-600 text-neutral-300" : "border-neutral-200 dark:border-neutral-700 text-neutral-600"}`}>
               {isUk ? "Дізнатись більше" : "Learn more"}
             </div>
           </div>
@@ -2201,7 +2201,7 @@ function CookieBannerDemo({ isUk }: { isUk: boolean }) {
   if (accepted) {
     return (
       <div>
-        <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+        <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
           {isUk ? "Cookie Banner (GDPR)" : "Cookie Banner (GDPR)"}
         </h2>
         <div className="border border-green-200 rounded-3xl bg-green-50 p-8 text-center">
@@ -2220,15 +2220,15 @@ function CookieBannerDemo({ isUk }: { isUk: boolean }) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Cookie Banner (GDPR)" : "Cookie Banner (GDPR)"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-6">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-6">
         {isUk ? "Банер погодження з cookies відповідно до GDPR. Налаштування категорій, збереження у localStorage." : "GDPR-compliant cookie consent banner. Category preferences, localStorage persistence."}
       </p>
 
       {/* Fake page content */}
-      <div className="relative border border-neutral-200 rounded-3xl overflow-hidden bg-neutral-50 min-h-48 p-6">
+      <div className="relative border border-neutral-200 dark:border-neutral-700 rounded-3xl overflow-hidden bg-neutral-50 dark:bg-neutral-900 min-h-48 p-6">
         <div className="space-y-3 opacity-40">
           {[100, 80, 90].map((w, i) => (
             <div key={i} className="h-3 bg-neutral-300 rounded-full" style={{ width: `${w}%` }} />
@@ -2236,15 +2236,15 @@ function CookieBannerDemo({ isUk }: { isUk: boolean }) {
         </div>
 
         {/* Cookie banner */}
-        <div className="absolute bottom-0 left-0 right-0 bg-white border-t border-neutral-200 p-4 shadow-xl">
+        <div className="absolute bottom-0 left-0 right-0 bg-white dark:bg-neutral-800 border-t border-neutral-200 dark:border-neutral-700 p-4 shadow-xl">
           {!customizing ? (
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
               <div className="flex-1">
-                <p className="text-xs font-semibold text-neutral-900 mb-0.5">🍪 {isUk ? "Ми використовуємо cookies" : "We use cookies"}</p>
+                <p className="text-xs font-semibold text-neutral-900 dark:text-white mb-0.5">🍪 {isUk ? "Ми використовуємо cookies" : "We use cookies"}</p>
                 <p className="text-xs text-neutral-500">{isUk ? "Для покращення досвіду та аналітики." : "To improve your experience and analytics."}</p>
               </div>
               <div className="flex gap-2 shrink-0">
-                <button onClick={() => setCustomizing(true)} className="px-3 py-1.5 rounded-lg border border-neutral-200 text-xs font-semibold text-neutral-600 hover:bg-neutral-50">
+                <button onClick={() => setCustomizing(true)} className="px-3 py-1.5 rounded-lg border border-neutral-200 dark:border-neutral-700 text-xs font-semibold text-neutral-600 dark:text-neutral-300 hover:bg-neutral-50">
                   {isUk ? "Налаштувати" : "Customize"}
                 </button>
                 <button onClick={() => setAccepted(true)} className="px-3 py-1.5 rounded-lg bg-indigo-600 text-white text-xs font-semibold hover:bg-indigo-700">
@@ -2254,7 +2254,7 @@ function CookieBannerDemo({ isUk }: { isUk: boolean }) {
             </div>
           ) : (
             <div>
-              <p className="text-xs font-semibold text-neutral-900 mb-3">🍪 {isUk ? "Налаштування cookies" : "Cookie preferences"}</p>
+              <p className="text-xs font-semibold text-neutral-900 dark:text-white mb-3">🍪 {isUk ? "Налаштування cookies" : "Cookie preferences"}</p>
               <div className="space-y-2 mb-3">
                 {[
                   { key: "analytics" as const, label: isUk ? "Аналітика (GA4)" : "Analytics (GA4)" },
@@ -2300,21 +2300,21 @@ function SocialShareDemo({ isUk }: { isUk: boolean }) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Кнопки соцмереж (Share)" : "Social Share Buttons"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-6">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-6">
         {isUk
           ? "Блок поширення з лічильником, лайком і копіюванням посилання. Підходить для блогу та статей."
           : "Share block with view count, like, and copy-link. Ideal for blog posts and articles."}
       </p>
 
       {/* Demo article card */}
-      <div className="border border-neutral-200 rounded-3xl bg-white overflow-hidden">
+      <div className="border border-neutral-200 dark:border-neutral-700 rounded-3xl bg-white overflow-hidden">
         <div className="bg-linear-to-r from-indigo-600 to-violet-600 h-24 flex items-center justify-center text-white text-3xl">📝</div>
         <div className="p-5">
           <p className="text-xs text-indigo-600 font-semibold uppercase tracking-wide mb-1">{isUk ? "Веб-розробка" : "Web Development"}</p>
-          <h3 className={`font-heading font-bold text-neutral-900 mb-4 text-sm leading-snug`}>
+          <h3 className={`font-heading font-bold text-neutral-900 dark:text-white mb-4 text-sm leading-snug`}>
             {isUk ? "Як вибрати CMS для інтернет-магазину у 2026 році" : "How to Choose a CMS for Your Online Store in 2026"}
           </h3>
 
@@ -2364,10 +2364,10 @@ function StickyCTADemo({ isUk }: { isUk: boolean }) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">{t.title}</h2>
-      <p className="text-neutral-500 text-sm mb-6">{isUk ? "Фіксований рядок з CTA, що не заважає навігації. Закривається кнопкою X або автоматично при скролі." : "Fixed CTA strip that doesn't interfere with navigation. Closes via X button or auto-hides on scroll."}</p>
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">{t.title}</h2>
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-6">{isUk ? "Фіксований рядок з CTA, що не заважає навігації. Закривається кнопкою X або автоматично при скролі." : "Fixed CTA strip that doesn't interfere with navigation. Closes via X button or auto-hides on scroll."}</p>
 
-      <div className="relative border border-neutral-200 rounded-3xl overflow-hidden bg-neutral-50 min-h-64">
+      <div className="relative border border-neutral-200 dark:border-neutral-700 rounded-3xl overflow-hidden bg-neutral-50 dark:bg-neutral-900 min-h-64">
         {/* Fake page content */}
         <div className={`p-8 pt-16 ${variant === "top" ? "pt-20" : ""}`}>
           <div className="h-4 bg-neutral-200 rounded-full mb-3 w-3/4" />
@@ -2402,7 +2402,7 @@ function StickyCTADemo({ isUk }: { isUk: boolean }) {
         <div className="flex gap-2">
           <button
             onClick={() => setVariant(variant === "top" ? "bottom" : "top")}
-            className="px-4 py-2 rounded-xl border border-neutral-200 bg-white text-xs font-semibold text-neutral-700 hover:border-neutral-300 transition-colors"
+            className="px-4 py-2 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-xs font-semibold text-neutral-700 dark:text-neutral-300 hover:border-neutral-300 transition-colors"
           >
             {t.togglePos}
           </button>

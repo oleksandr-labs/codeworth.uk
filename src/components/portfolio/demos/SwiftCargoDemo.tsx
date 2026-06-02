@@ -136,7 +136,7 @@ export function SwiftCargoDemo({ lang }: { lang: string }) {
   const estimate = getCalcEstimate();
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900">
+    <div className="min-h-screen bg-gray-50 dark:bg-neutral-900 text-gray-900">
       {/* ══════════ HEADER ══════════ */}
       <header className="bg-[#1e3a5f] text-white sticky top-0 z-50 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
@@ -219,7 +219,7 @@ export function SwiftCargoDemo({ lang }: { lang: string }) {
           <h2 className="text-3xl font-bold text-center text-[#1e3a5f] mb-3">
             {isUk ? "Наші Послуги" : "Our Services"}
           </h2>
-          <p className="text-center text-gray-500 mb-10 max-w-2xl mx-auto">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-10 max-w-2xl mx-auto">
             {isUk
               ? "Повний спектр логістичних рішень для бізнесу будь-якого масштабу"
               : "Full range of logistics solutions for businesses of any scale"}
@@ -227,12 +227,12 @@ export function SwiftCargoDemo({ lang }: { lang: string }) {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {SERVICES.map(s => (
-              <div key={s.nameEn} className="border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-orange-300 transition-all group">
+              <div key={s.nameEn} className="border border-gray-200 dark:border-neutral-700 rounded-xl p-6 hover:shadow-lg hover:border-orange-300 transition-all group">
                 <div className="text-4xl mb-3">{s.emoji}</div>
                 <h3 className="text-lg font-bold text-[#1e3a5f] mb-2 group-hover:text-orange-600 transition-colors">
                   {isUk ? s.nameUk : s.nameEn}
                 </h3>
-                <p className="text-sm text-gray-600 mb-3">{isUk ? s.descUk : s.descEn}</p>
+                <p className="text-sm text-gray-600 dark:text-neutral-300 mb-3">{isUk ? s.descUk : s.descEn}</p>
                 <div className="inline-block bg-orange-100 text-orange-700 text-xs font-semibold px-3 py-1 rounded-full">
                   ⏱ {isUk ? s.timeUk : s.timeEn}
                 </div>
@@ -248,7 +248,7 @@ export function SwiftCargoDemo({ lang }: { lang: string }) {
           <h2 className="text-3xl font-bold text-center text-[#1e3a5f] mb-3">
             {isUk ? "Відстеження Вантажу" : "Shipment Tracker"}
           </h2>
-          <p className="text-center text-gray-600 mb-8">
+          <p className="text-center text-gray-600 dark:text-neutral-300 mb-8">
             {isUk
               ? "Введіть номер відстеження для перевірки статусу вашого вантажу"
               : "Enter your tracking number to check your shipment status"}
@@ -274,7 +274,7 @@ export function SwiftCargoDemo({ lang }: { lang: string }) {
             <div className="bg-white rounded-xl p-6 shadow-md">
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <div className="text-xs text-gray-400 uppercase tracking-wide">{isUk ? "Номер" : "Tracking #"}</div>
+                  <div className="text-xs text-gray-400 dark:text-neutral-500 uppercase tracking-wide">{isUk ? "Номер" : "Tracking #"}</div>
                   <div className="font-bold text-[#1e3a5f]">{trackingInput || "SC-2026-78452"}</div>
                 </div>
                 <span className="bg-orange-100 text-orange-700 text-xs font-bold px-3 py-1 rounded-full">
@@ -316,17 +316,17 @@ export function SwiftCargoDemo({ lang }: { lang: string }) {
           <h2 className="text-3xl font-bold text-center text-[#1e3a5f] mb-3">
             {isUk ? "Калькулятор Вартості" : "Shipping Calculator"}
           </h2>
-          <p className="text-center text-gray-500 mb-10">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-10">
             {isUk
               ? "Отримайте попередню оцінку вартості перевезення за кілька кліків"
               : "Get a preliminary shipping estimate in just a few clicks"}
           </p>
 
-          <div className="bg-gray-50 border border-gray-200 rounded-xl p-6">
+          <div className="bg-gray-50 dark:bg-neutral-900 border border-gray-200 dark:border-neutral-700 rounded-xl p-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
               {/* Origin */}
               <div>
-                <label className="block text-xs font-semibold text-gray-500 mb-1 uppercase">
+                <label className="block text-xs font-semibold text-gray-500 dark:text-neutral-400 mb-1 uppercase">
                   {isUk ? "Місто Відправлення" : "Origin City"}
                 </label>
                 <select value={calcOrigin} onChange={e => setCalcOrigin(e.target.value)}
@@ -336,7 +336,7 @@ export function SwiftCargoDemo({ lang }: { lang: string }) {
               </div>
               {/* Destination */}
               <div>
-                <label className="block text-xs font-semibold text-gray-500 mb-1 uppercase">
+                <label className="block text-xs font-semibold text-gray-500 dark:text-neutral-400 mb-1 uppercase">
                   {isUk ? "Місто Призначення" : "Destination City"}
                 </label>
                 <select value={calcDest} onChange={e => setCalcDest(e.target.value)}
@@ -349,28 +349,28 @@ export function SwiftCargoDemo({ lang }: { lang: string }) {
             {/* Weight + Dimensions */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4">
               <div>
-                <label className="block text-xs font-semibold text-gray-500 mb-1 uppercase">
+                <label className="block text-xs font-semibold text-gray-500 dark:text-neutral-400 mb-1 uppercase">
                   {isUk ? "Вага (кг)" : "Weight (kg)"}
                 </label>
                 <input type="number" value={calcWeight} onChange={e => setCalcWeight(e.target.value)}
                   className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-orange-400 focus:outline-none" />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-gray-500 mb-1 uppercase">
+                <label className="block text-xs font-semibold text-gray-500 dark:text-neutral-400 mb-1 uppercase">
                   {isUk ? "Довж. (см)" : "L (cm)"}
                 </label>
                 <input type="number" value={calcLength} onChange={e => setCalcLength(e.target.value)}
                   className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-orange-400 focus:outline-none" />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-gray-500 mb-1 uppercase">
+                <label className="block text-xs font-semibold text-gray-500 dark:text-neutral-400 mb-1 uppercase">
                   {isUk ? "Шир. (см)" : "W (cm)"}
                 </label>
                 <input type="number" value={calcWidth} onChange={e => setCalcWidth(e.target.value)}
                   className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-orange-400 focus:outline-none" />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-gray-500 mb-1 uppercase">
+                <label className="block text-xs font-semibold text-gray-500 dark:text-neutral-400 mb-1 uppercase">
                   {isUk ? "Вис. (см)" : "H (cm)"}
                 </label>
                 <input type="number" value={calcHeight} onChange={e => setCalcHeight(e.target.value)}
@@ -381,7 +381,7 @@ export function SwiftCargoDemo({ lang }: { lang: string }) {
             {/* Cargo type + Urgency */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
               <div>
-                <label className="block text-xs font-semibold text-gray-500 mb-1 uppercase">
+                <label className="block text-xs font-semibold text-gray-500 dark:text-neutral-400 mb-1 uppercase">
                   {isUk ? "Тип Вантажу" : "Cargo Type"}
                 </label>
                 <select value={calcCargoType} onChange={e => setCalcCargoType(e.target.value)}
@@ -390,7 +390,7 @@ export function SwiftCargoDemo({ lang }: { lang: string }) {
                 </select>
               </div>
               <div>
-                <label className="block text-xs font-semibold text-gray-500 mb-1 uppercase">
+                <label className="block text-xs font-semibold text-gray-500 dark:text-neutral-400 mb-1 uppercase">
                   {isUk ? "Терміновість" : "Urgency"}
                 </label>
                 <select value={calcUrgency} onChange={e => setCalcUrgency(e.target.value)}
@@ -456,8 +456,8 @@ export function SwiftCargoDemo({ lang }: { lang: string }) {
                     <span className="font-semibold text-xs">{isUk ? v.dimUk : v.dimEn}</span>
                   </div>
                   <div className="pt-2 border-t border-gray-100">
-                    <span className="text-gray-500 text-xs">{isUk ? "Підходить для:" : "Suitable for:"}</span>
-                    <p className="text-xs text-gray-700 mt-1">{isUk ? v.cargoUk : v.cargoEn}</p>
+                    <span className="text-gray-500 dark:text-neutral-400 text-xs">{isUk ? "Підходить для:" : "Suitable for:"}</span>
+                    <p className="text-xs text-gray-700 dark:text-neutral-300 mt-1">{isUk ? v.cargoUk : v.cargoEn}</p>
                   </div>
                 </div>
               </div>
@@ -472,7 +472,7 @@ export function SwiftCargoDemo({ lang }: { lang: string }) {
           <h2 className="text-3xl font-bold text-center text-[#1e3a5f] mb-3">
             {isUk ? "Географія Покриття" : "Coverage Map"}
           </h2>
-          <p className="text-center text-gray-500 mb-10">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-10">
             {isUk
               ? "Регулярні маршрути між ключовими містами України та Європи"
               : "Regular routes between key cities in Ukraine and Europe"}
@@ -556,7 +556,7 @@ export function SwiftCargoDemo({ lang }: { lang: string }) {
           <h2 className="text-2xl font-bold text-center text-[#1e3a5f] mb-2">
             {isUk ? "Нам Довіряють" : "Trusted By"}
           </h2>
-          <p className="text-center text-gray-500 text-sm mb-8">
+          <p className="text-center text-gray-500 dark:text-neutral-400 text-sm mb-8">
             {isUk
               ? "Логістичний партнер для провідних B2B компаній"
               : "Logistics partner for leading B2B companies"}
@@ -564,7 +564,7 @@ export function SwiftCargoDemo({ lang }: { lang: string }) {
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {CLIENT_LOGOS.map(cl => (
-              <div key={cl.nameEn} className="border border-gray-200 rounded-lg p-4 flex items-center justify-center h-20 bg-gray-50 hover:border-orange-300 transition-colors">
+              <div key={cl.nameEn} className="border border-gray-200 dark:border-neutral-700 rounded-lg p-4 flex items-center justify-center h-20 bg-gray-50 dark:bg-neutral-900 hover:border-orange-300 transition-colors">
                 <span className="text-sm font-bold text-gray-400">{isUk ? cl.nameUk : cl.nameEn}</span>
               </div>
             ))}
@@ -578,7 +578,7 @@ export function SwiftCargoDemo({ lang }: { lang: string }) {
           <h2 className="text-3xl font-bold text-center text-[#1e3a5f] mb-3">
             {isUk ? "Запит Комерційної Пропозиції" : "Request a Quote"}
           </h2>
-          <p className="text-center text-gray-600 mb-10">
+          <p className="text-center text-gray-600 dark:text-neutral-300 mb-10">
             {isUk
               ? "Заповніть форму і наш менеджер зв'яжеться з вами протягом 1 години"
               : "Fill in the form and our manager will contact you within 1 hour"}
@@ -600,7 +600,7 @@ export function SwiftCargoDemo({ lang }: { lang: string }) {
             <div className="bg-white rounded-xl p-6 shadow-md">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                 <div>
-                  <label className="block text-xs font-semibold text-gray-500 mb-1 uppercase">
+                  <label className="block text-xs font-semibold text-gray-500 dark:text-neutral-400 mb-1 uppercase">
                     {isUk ? "Назва Компанії" : "Company Name"}
                   </label>
                   <input type="text" value={quoteCompany} onChange={e => setQuoteCompany(e.target.value)}
@@ -608,7 +608,7 @@ export function SwiftCargoDemo({ lang }: { lang: string }) {
                     className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-orange-400 focus:outline-none" />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-gray-500 mb-1 uppercase">
+                  <label className="block text-xs font-semibold text-gray-500 dark:text-neutral-400 mb-1 uppercase">
                     {isUk ? "Контактна Особа" : "Contact Person"}
                   </label>
                   <input type="text" value={quoteContact} onChange={e => setQuoteContact(e.target.value)}
@@ -618,7 +618,7 @@ export function SwiftCargoDemo({ lang }: { lang: string }) {
               </div>
 
               <div className="mb-4">
-                <label className="block text-xs font-semibold text-gray-500 mb-1 uppercase">
+                <label className="block text-xs font-semibold text-gray-500 dark:text-neutral-400 mb-1 uppercase">
                   {isUk ? "Опис Вантажу" : "Cargo Description"}
                 </label>
                 <textarea value={quoteCargo} onChange={e => setQuoteCargo(e.target.value)}
@@ -629,7 +629,7 @@ export function SwiftCargoDemo({ lang }: { lang: string }) {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                 <div>
-                  <label className="block text-xs font-semibold text-gray-500 mb-1 uppercase">
+                  <label className="block text-xs font-semibold text-gray-500 dark:text-neutral-400 mb-1 uppercase">
                     {isUk ? "Місто Відправлення" : "Origin City"}
                   </label>
                   <input type="text" value={quoteOrigin} onChange={e => setQuoteOrigin(e.target.value)}
@@ -637,7 +637,7 @@ export function SwiftCargoDemo({ lang }: { lang: string }) {
                     className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-orange-400 focus:outline-none" />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-gray-500 mb-1 uppercase">
+                  <label className="block text-xs font-semibold text-gray-500 dark:text-neutral-400 mb-1 uppercase">
                     {isUk ? "Місто Призначення" : "Destination City"}
                   </label>
                   <input type="text" value={quoteDest} onChange={e => setQuoteDest(e.target.value)}
@@ -648,7 +648,7 @@ export function SwiftCargoDemo({ lang }: { lang: string }) {
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
                 <div>
-                  <label className="block text-xs font-semibold text-gray-500 mb-1 uppercase">
+                  <label className="block text-xs font-semibold text-gray-500 dark:text-neutral-400 mb-1 uppercase">
                     {isUk ? "Вага (кг)" : "Weight (kg)"}
                   </label>
                   <input type="text" value={quoteWeight} onChange={e => setQuoteWeight(e.target.value)}
@@ -656,14 +656,14 @@ export function SwiftCargoDemo({ lang }: { lang: string }) {
                     className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-orange-400 focus:outline-none" />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-gray-500 mb-1 uppercase">
+                  <label className="block text-xs font-semibold text-gray-500 dark:text-neutral-400 mb-1 uppercase">
                     {isUk ? "Бажана Дата" : "Preferred Date"}
                   </label>
                   <input type="date" value={quoteDate} onChange={e => setQuoteDate(e.target.value)}
                     className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-orange-400 focus:outline-none" />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-gray-500 mb-1 uppercase">
+                  <label className="block text-xs font-semibold text-gray-500 dark:text-neutral-400 mb-1 uppercase">
                     {isUk ? "Телефон" : "Phone"}
                   </label>
                   <input type="tel" value={quotePhone} onChange={e => setQuotePhone(e.target.value)}

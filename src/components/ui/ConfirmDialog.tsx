@@ -114,17 +114,17 @@ export function ConfirmDialog({
       {/* Dialog */}
       <div
         ref={dialogRef}
-        className="relative bg-white rounded-2xl shadow-2xl max-w-sm w-full p-6 animate-in zoom-in-95 duration-200"
+        className="relative bg-white dark:bg-neutral-800 rounded-2xl shadow-2xl max-w-sm w-full p-6 animate-in zoom-in-95 duration-200"
       >
         <div className="flex items-start gap-4 mb-5">
           <div className={cn("shrink-0 mt-0.5", styles.icon)} aria-hidden="true">
             <AlertTriangle className="w-6 h-6" />
           </div>
           <div>
-            <h3 id="confirm-dialog-title" className="font-heading font-bold text-neutral-900 text-lg mb-1">
+            <h3 id="confirm-dialog-title" className="font-heading font-bold text-neutral-900 dark:text-white text-lg mb-1">
               {title}
             </h3>
-            <p className="text-sm text-neutral-500 leading-relaxed">{message}</p>
+            <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">{message}</p>
           </div>
         </div>
 
@@ -132,7 +132,7 @@ export function ConfirmDialog({
           <button
             ref={cancelRef}
             onClick={onCancel}
-            className="px-5 py-2.5 rounded-xl border border-neutral-200 text-sm font-medium text-neutral-700 hover:bg-neutral-50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+            className="px-5 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-800 dark:bg-neutral-900 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
           >
             {resolvedCancelLabel}
           </button>

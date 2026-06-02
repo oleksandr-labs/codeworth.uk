@@ -222,10 +222,10 @@ export function AiCopywriterDemo({ isUk }: Props) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "AI-Копірайтер для Лендінгів" : "AI Copywriter for Landing Pages"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk
           ? "Оберіть нішу, введіть назву бренду та отримайте готові тексти через AI. Спробуйте різні варіанти."
           : "Choose your niche, enter your brand name and get ready-to-use copy from AI. Try different variants."}
@@ -235,7 +235,7 @@ export function AiCopywriterDemo({ isUk }: Props) {
         {/* Left: controls */}
         <div className="space-y-6">
           <div>
-            <label className="block text-xs font-semibold text-neutral-700 mb-3 uppercase tracking-wide">
+            <label className="block text-xs font-semibold text-neutral-700 dark:text-neutral-300 mb-3 uppercase tracking-wide">
               {isUk ? "1. Ніша бізнесу" : "1. Business niche"}
             </label>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -246,7 +246,7 @@ export function AiCopywriterDemo({ isUk }: Props) {
                   className={`px-3 py-2.5 rounded-xl text-sm font-medium transition-all flex items-center gap-2 ${
                     niche === n.id
                       ? "bg-violet-600 text-white shadow-lg shadow-violet-200"
-                      : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200"
+                      : "bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200"
                   }`}
                 >
                   <span>{n.emoji}</span>
@@ -257,7 +257,7 @@ export function AiCopywriterDemo({ isUk }: Props) {
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-neutral-700 mb-2 uppercase tracking-wide">
+            <label className="block text-xs font-semibold text-neutral-700 dark:text-neutral-300 mb-2 uppercase tracking-wide">
               {isUk ? "2. Назва бренду (опційно)" : "2. Brand name (optional)"}
             </label>
             <input
@@ -265,12 +265,12 @@ export function AiCopywriterDemo({ isUk }: Props) {
               onChange={(e) => setBrandName(e.target.value)}
               type="text"
               placeholder={isUk ? "Наприклад: La Maison, FitLife, MedCare..." : "e.g. La Maison, FitLife, MedCare..."}
-              className="w-full px-4 py-3 rounded-xl border border-neutral-200 bg-white focus:border-violet-400 focus:outline-none text-sm"
+              className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white focus:border-violet-400 focus:outline-none text-sm"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-neutral-700 mb-3 uppercase tracking-wide">
+            <label className="block text-xs font-semibold text-neutral-700 dark:text-neutral-300 mb-3 uppercase tracking-wide">
               {isUk ? "3. Тон комунікації" : "3. Communication tone"}
             </label>
             <div className="flex gap-2">
@@ -281,7 +281,7 @@ export function AiCopywriterDemo({ isUk }: Props) {
                   className={`flex-1 py-2.5 rounded-xl text-sm font-medium transition-all ${
                     tone === t.id
                       ? "bg-violet-600 text-white"
-                      : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
+                      : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200"
                   }`}
                 >
                   {isUk ? t.label : t.labelEn}
@@ -374,24 +374,24 @@ export function AiCopywriterDemo({ isUk }: Props) {
                 </span>
               </div>
 
-              <div className="p-4 bg-white rounded-2xl border border-violet-100 shadow-sm">
+              <div className="p-4 bg-white dark:bg-neutral-800 rounded-2xl border border-violet-100 shadow-sm">
                 <span className="text-xs font-bold text-violet-400 uppercase tracking-wider">
                   {isUk ? "Заголовок" : "Headline"}
                 </span>
-                <p className="font-heading text-xl font-bold text-neutral-900 mt-1.5 leading-tight">
+                <p className="font-heading text-xl font-bold text-neutral-900 dark:text-white mt-1.5 leading-tight">
                   {result.headline}
                 </p>
               </div>
 
-              <div className="p-4 bg-white rounded-2xl border border-violet-100 shadow-sm">
+              <div className="p-4 bg-white dark:bg-neutral-800 rounded-2xl border border-violet-100 shadow-sm">
                 <span className="text-xs font-bold text-violet-400 uppercase tracking-wider">
                   {isUk ? "Підзаголовок" : "Subheadline"}
                 </span>
-                <p className="text-neutral-600 text-sm mt-1.5 leading-relaxed">{result.subheadline}</p>
+                <p className="text-neutral-600 dark:text-neutral-300 text-sm mt-1.5 leading-relaxed">{result.subheadline}</p>
               </div>
 
               <div className="flex gap-3">
-                <div className="flex-1 p-4 bg-white rounded-2xl border border-violet-100 shadow-sm">
+                <div className="flex-1 p-4 bg-white dark:bg-neutral-800 rounded-2xl border border-violet-100 shadow-sm">
                   <span className="text-xs font-bold text-violet-400 uppercase tracking-wider">CTA</span>
                   <div className="mt-2">
                     <span className="inline-block px-4 py-2 bg-violet-600 text-white text-sm font-semibold rounded-xl">
@@ -401,11 +401,11 @@ export function AiCopywriterDemo({ isUk }: Props) {
                 </div>
               </div>
 
-              <div className="p-4 bg-white rounded-2xl border border-violet-100 shadow-sm">
+              <div className="p-4 bg-white dark:bg-neutral-800 rounded-2xl border border-violet-100 shadow-sm">
                 <span className="text-xs font-bold text-violet-400 uppercase tracking-wider">
                   {isUk ? "Trust bar / Tagline" : "Trust bar / Tagline"}
                 </span>
-                <p className="text-xs text-neutral-500 mt-1.5 italic">{result.tagline}</p>
+                <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1.5 italic">{result.tagline}</p>
               </div>
 
               <div className="flex gap-2 mt-auto">

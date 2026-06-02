@@ -42,7 +42,7 @@ export function Tabs({ tabs, defaultTab, children, className }: TabsProps) {
 
   return (
     <div className={className}>
-      <div role="tablist" className="flex gap-1 p-1 rounded-xl bg-neutral-100 w-fit">
+      <div role="tablist" className="flex gap-1 p-1 rounded-xl bg-neutral-100 dark:bg-neutral-800 w-fit">
         {tabs.map((tab, index) => (
           <button
             key={tab.id}
@@ -56,8 +56,8 @@ export function Tabs({ tabs, defaultTab, children, className }: TabsProps) {
             className={cn(
               "px-5 py-2 rounded-lg text-sm font-medium transition-all duration-200",
               active === tab.id
-                ? "bg-white text-neutral-900 shadow-sm"
-                : "text-neutral-500 hover:text-neutral-700"
+                ? "bg-white text-neutral-900 dark:text-white shadow-sm"
+                : "text-neutral-500 dark:text-neutral-400 hover:text-neutral-700"
             )}
           >
             {tab.label}

@@ -72,21 +72,21 @@ const CATEGORY_GRADIENT: Record<UseCaseCategory, string> = {
 
 function UseCaseCard({ uc, isUk, lang }: { uc: UseCase; isUk: boolean; lang: string }) {
   const catLabel = USE_CASE_CATEGORY_LABELS[uc.category];
-  const colorPill = CATEGORY_COLORS[catLabel.color] ?? "bg-neutral-100 text-neutral-600";
+  const colorPill = CATEGORY_COLORS[catLabel.color] ?? "bg-neutral-100 dark:bg-neutral-800 text-neutral-600";
   const gradient = CATEGORY_GRADIENT[uc.category];
 
   return (
     <Link
       href={`/${lang}/use-cases/${uc.slug}`}
-      className="group flex flex-col p-6 rounded-2xl border border-neutral-200 bg-white hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+      className="group flex flex-col p-6 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
     >
       <div className={`w-12 h-12 rounded-xl bg-linear-to-br ${gradient} flex items-center justify-center text-2xl mb-4 shrink-0`}>
         {uc.icon}
       </div>
-      <h3 className="font-heading font-bold text-neutral-900 text-lg mb-2 leading-snug group-hover:text-indigo-600 transition-colors">
+      <h3 className="font-heading font-bold text-neutral-900 dark:text-white text-lg mb-2 leading-snug group-hover:text-indigo-600 transition-colors">
         {isUk ? uc.titleUk : uc.titleEn}
       </h3>
-      <p className="text-sm text-neutral-500 leading-relaxed mb-4 flex-1 line-clamp-3">
+      <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-4 flex-1 line-clamp-3">
         {isUk ? uc.problemUk : uc.problemEn}
       </p>
       <div className="flex items-center justify-between mt-auto pt-4 border-t border-neutral-100">
@@ -148,14 +148,14 @@ export default async function UseCasesPage({
         </section>
 
         {/* Quick nav pills */}
-        <section className="py-6 bg-white border-b border-neutral-200 sticky top-0 z-20 shadow-sm">
+        <section className="py-6 bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700 sticky top-0 z-20 shadow-sm">
           <Container>
             <div className="flex flex-wrap gap-2">
               {byCategory.map((cat) => (
                 <a
                   key={cat.id}
                   href={`#${cat.id}`}
-                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-neutral-100 hover:bg-indigo-50 hover:text-indigo-700 text-neutral-600 text-xs font-semibold transition-colors"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-neutral-100 dark:bg-neutral-800 hover:bg-indigo-50 hover:text-indigo-700 text-neutral-600 dark:text-neutral-300 text-xs font-semibold transition-colors"
                 >
                   <span>{CATEGORY_ICONS[cat.id]}</span>
                   <span>{isUk ? cat.uk : cat.en}</span>
@@ -167,14 +167,14 @@ export default async function UseCasesPage({
 
         {/* Cases by category */}
         {byCategory.map((cat) => (
-          <section key={cat.id} id={cat.id} className="py-16 border-b border-neutral-100 last:border-0 scroll-mt-20">
+          <section key={cat.id} id={cat.id} className="py-16 border-b border-neutral-100 dark:border-neutral-700 last:border-0 scroll-mt-20">
             <Container>
               <div className="flex items-center gap-3 mb-8">
                 <span className="text-2xl">{CATEGORY_ICONS[cat.id]}</span>
                 <h2 className="text-2xl font-heading font-extrabold text-neutral-900">
                   {isUk ? cat.uk : cat.en}
                 </h2>
-                <span className="px-2.5 py-1 rounded-lg bg-neutral-100 text-neutral-500 text-xs font-semibold">
+                <span className="px-2.5 py-1 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400 text-xs font-semibold">
                   {cat.cases.length}
                 </span>
               </div>
@@ -188,14 +188,14 @@ export default async function UseCasesPage({
         ))}
 
         {/* CTA */}
-        <section className="py-24 bg-neutral-50">
+        <section className="py-24 bg-neutral-50 dark:bg-neutral-900 ">
           <Container>
             <div className="max-w-2xl mx-auto text-center p-10 rounded-3xl bg-linear-to-br from-indigo-50 to-violet-50 border border-indigo-100">
               <span className="text-5xl mb-5 block">🎯</span>
-              <h2 className="text-3xl font-heading font-extrabold text-neutral-900 mb-3">
+              <h2 className="text-3xl font-heading font-extrabold text-neutral-900 dark:text-white mb-3">
                 {isUk ? "Не знайшли свій кейс?" : "Didn't find your use case?"}
               </h2>
-              <p className="text-neutral-600 mb-6 leading-relaxed">
+              <p className="text-neutral-600 dark:text-neutral-300 mb-6 leading-relaxed">
                 {isUk
                   ? "Розкажіть нам про свою задачу — ми підберемо або розробимо рішення під ваш бізнес. Безкоштовна консультація."
                   : "Tell us about your challenge — we'll find or build a solution for your business. Free consultation."}

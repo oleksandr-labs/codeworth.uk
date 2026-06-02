@@ -76,7 +76,7 @@ export default async function NotFound() {
           </div>
 
           {/* Popular links */}
-          <div className="text-sm text-gray-400 dark:text-neutral-500 mb-4">
+          <div className="text-sm text-gray-400 dark:text-neutral-500 dark:text-neutral-400 mb-4">
             {isUk ? "Популярні сторінки:" : "Popular pages:"}
           </div>
           <div className="flex flex-wrap justify-center gap-3">

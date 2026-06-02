@@ -53,7 +53,7 @@ export function CustomizerPanel({ nicheSlug }: Props) {
         {!open && (
           <button
             onClick={() => setOpen(true)}
-            className="flex items-center gap-2.5 px-4 py-3 w-full text-left hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors rounded-2xl"
+            className="flex items-center gap-2.5 px-4 py-3 w-full text-left hover:bg-neutral-50 dark:hover:bg-neutral-800 dark:bg-neutral-900 dark:hover:bg-neutral-800 transition-colors rounded-2xl"
             aria-expanded={false}
           >
             <Palette className="w-5 h-5 text-indigo-600 shrink-0" />
@@ -77,14 +77,14 @@ export function CustomizerPanel({ nicheSlug }: Props) {
               <div className="flex gap-1">
                 <button
                   onClick={() => setOpen(false)}
-                  className="p-1.5 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+                  className="p-1.5 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700 dark:bg-neutral-800 dark:hover:bg-neutral-800 transition-colors"
                   aria-label={isUk ? "Згорнути" : "Collapse"}
                 >
                   <ChevronUp className="w-4 h-4 text-neutral-500" />
                 </button>
                 <button
                   onClick={() => { setOpen(false); setDismissed(true); }}
-                  className="p-1.5 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+                  className="p-1.5 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700 dark:bg-neutral-800 dark:hover:bg-neutral-800 transition-colors"
                   aria-label={isUk ? "Закрити" : "Close"}
                 >
                   <X className="w-4 h-4 text-neutral-500" />
@@ -108,7 +108,7 @@ export function CustomizerPanel({ nicheSlug }: Props) {
                         relative flex flex-col items-center gap-1.5 p-2 rounded-xl border-2 transition-all duration-150
                         ${isActive
                           ? "border-indigo-500 bg-indigo-50 dark:bg-indigo-950/40"
-                          : "border-transparent hover:border-neutral-200 dark:hover:border-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-800"
+                          : "border-transparent hover:border-neutral-200 dark:hover:border-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-800 dark:bg-neutral-900 dark:hover:bg-neutral-800"
                         }
                       `}
                       aria-pressed={isActive}
@@ -120,7 +120,7 @@ export function CustomizerPanel({ nicheSlug }: Props) {
                       >
                         {isActive && <Check className="w-3.5 h-3.5 text-white" />}
                       </div>
-                      <span className="text-[10px] font-medium text-neutral-600 dark:text-neutral-400 text-center leading-tight">
+                      <span className="text-[10px] font-medium text-neutral-600 dark:text-neutral-300 dark:text-neutral-400 text-center leading-tight">
                         {isUk ? palette.labelUk : palette.label}
                       </span>
                     </button>
@@ -146,7 +146,7 @@ export function CustomizerPanel({ nicheSlug }: Props) {
                         flex flex-col items-start px-2.5 py-2 rounded-xl border-2 transition-all duration-150 text-left
                         ${isActive
                           ? "border-indigo-500 bg-indigo-50 dark:bg-indigo-950/40"
-                          : "border-transparent hover:border-neutral-200 dark:hover:border-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-800"
+                          : "border-transparent hover:border-neutral-200 dark:hover:border-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-800 dark:bg-neutral-900 dark:hover:bg-neutral-800"
                         }
                       `}
                       aria-pressed={isActive}
@@ -204,7 +204,7 @@ export function CustomizerPanel({ nicheSlug }: Props) {
             </div>
 
             {/* Selected summary */}
-            <div className="p-3 rounded-xl bg-neutral-50 dark:bg-neutral-800 mb-3 text-xs text-neutral-600 dark:text-neutral-400 space-y-1">
+            <div className="p-3 rounded-xl bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-800 mb-3 text-xs text-neutral-600 dark:text-neutral-300 dark:text-neutral-400 space-y-1">
               <div className="flex justify-between">
                 <span>{isUk ? "Схема:" : "Theme:"}</span>
                 <span className="font-medium text-neutral-800 dark:text-neutral-200">

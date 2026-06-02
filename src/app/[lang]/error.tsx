@@ -51,7 +51,7 @@ export default function GlobalError({
             </button>
             <Link
               href={`/${lang}`}
-              className="px-6 py-3 border border-gray-200 dark:border-neutral-700 text-gray-700 dark:text-neutral-300 rounded-xl font-semibold hover:bg-gray-50 dark:hover:bg-neutral-800 transition-colors"
+              className="px-6 py-3 border border-gray-200 dark:border-neutral-700 text-gray-700 dark:text-neutral-300 rounded-xl font-semibold hover:bg-gray-50 dark:bg-neutral-900 dark:hover:bg-neutral-800 transition-colors"
             >
               {isUk ? "На головну" : "Go Home"}
             </Link>

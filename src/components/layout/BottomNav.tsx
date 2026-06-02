@@ -23,7 +23,7 @@ export function BottomNav() {
 
   return (
     <nav
-      className="fixed bottom-0 inset-x-0 z-(--z-sticky) md:hidden bg-white dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-800 safe-area-inset-bottom"
+      className="fixed bottom-0 inset-x-0 z-(--z-sticky) md:hidden bg-white dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-700 dark:border-neutral-800 safe-area-inset-bottom"
       aria-label={isUk ? "Мобільна навігація" : "Mobile navigation"}
     >
       <div className="flex items-center justify-around h-16 px-2">
@@ -40,7 +40,7 @@ export function BottomNav() {
               className={`relative flex flex-col items-center justify-center gap-0.5 flex-1 h-full touch-target transition-colors ${
                 isActive
                   ? "text-indigo-600 dark:text-indigo-400"
-                  : "text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-300"
+                  : "text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:text-neutral-300 dark:hover:text-neutral-300"
               }`}
               aria-current={isActive ? "page" : undefined}
             >

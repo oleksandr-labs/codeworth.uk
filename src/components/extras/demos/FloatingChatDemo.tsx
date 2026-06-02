@@ -58,14 +58,14 @@ export function FloatingChatDemo({ isUk }: Props) {
   }
 
   return (
-    <div className="relative w-full min-h-[480px] bg-neutral-50 rounded-3xl border border-neutral-200 overflow-hidden flex flex-col items-center justify-center">
+    <div className="relative w-full min-h-[480px] bg-neutral-50 dark:bg-neutral-900 rounded-3xl border border-neutral-200 dark:border-neutral-700 overflow-hidden flex flex-col items-center justify-center">
       {/* Background hint text */}
       <div className="text-center px-8">
         <span className="text-5xl block mb-4">💬</span>
-        <h3 className="font-heading text-xl font-bold text-neutral-800 mb-2">
+        <h3 className="font-heading text-xl font-bold text-neutral-800 dark:text-neutral-200 mb-2">
           {isUk ? "Floating Chat / FAQ-виджет" : "Floating Chat / FAQ Widget"}
         </h3>
-        <p className="text-neutral-500 text-sm max-w-sm">
+        <p className="text-neutral-500 dark:text-neutral-400 text-sm max-w-sm">
           {isUk
             ? "Плаваюча кнопка у правому куті. Натисніть → відкриється FAQ-чат."
             : "Floating button in the bottom-right corner. Click it to open the FAQ chat."}
@@ -85,7 +85,7 @@ export function FloatingChatDemo({ isUk }: Props) {
 
       {/* Chat panel */}
       <div
-        className={`absolute bottom-6 right-6 w-80 bg-white rounded-3xl shadow-2xl border border-neutral-100 transition-all duration-300 origin-bottom-right ${
+        className={`absolute bottom-6 right-6 w-80 bg-white rounded-3xl shadow-2xl border border-neutral-100 dark:border-neutral-700 transition-all duration-300 origin-bottom-right ${
           isOpen ? "scale-100 opacity-100" : "scale-75 opacity-0 pointer-events-none"
         }`}
       >
@@ -116,7 +116,7 @@ export function FloatingChatDemo({ isUk }: Props) {
                 <button
                   key={faq.id}
                   onClick={() => setActiveFaq(faq.id)}
-                  className="w-full text-left px-3.5 py-2.5 rounded-xl border border-neutral-200 bg-neutral-50 hover:bg-indigo-50 hover:border-indigo-200 text-xs font-semibold text-neutral-700 transition-all"
+                  className="w-full text-left px-3.5 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900 hover:bg-indigo-50 hover:border-indigo-200 text-xs font-semibold text-neutral-700 dark:text-neutral-300 transition-all"
                 >
                   {faq.q}
                 </button>
@@ -128,8 +128,8 @@ export function FloatingChatDemo({ isUk }: Props) {
           {/* FAQ answer */}
           {activeFaq && !sentMsg && (
             <div>
-              <div className="p-3 rounded-2xl bg-neutral-100 text-xs text-neutral-700 mb-3 leading-relaxed">
-                <p className="font-semibold text-neutral-900 mb-1">{t.faqs.find((f) => f.id === activeFaq)?.q}</p>
+              <div className="p-3 rounded-2xl bg-neutral-100 dark:bg-neutral-800 text-xs text-neutral-700 dark:text-neutral-300 mb-3 leading-relaxed">
+                <p className="font-semibold text-neutral-900 dark:text-white mb-1">{t.faqs.find((f) => f.id === activeFaq)?.q}</p>
                 <p>{t.faqs.find((f) => f.id === activeFaq)?.a}</p>
               </div>
               <button
@@ -157,7 +157,7 @@ export function FloatingChatDemo({ isUk }: Props) {
             <div>
               <button
                 onClick={() => setShowChannels((v) => !v)}
-                className="w-full text-xs text-neutral-400 hover:text-neutral-600 transition-colors"
+                className="w-full text-xs text-neutral-400 hover:text-neutral-600 dark:text-neutral-300 transition-colors"
               >
                 {t.channels} {showChannels ? "▲" : "▼"}
               </button>
@@ -188,7 +188,7 @@ export function FloatingChatDemo({ isUk }: Props) {
                 onChange={(e) => setCustomMsg(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleSend()}
                 placeholder={t.placeholder}
-                className="flex-1 px-3 py-2.5 rounded-xl border border-neutral-200 text-xs focus:outline-none focus:ring-2 focus:ring-indigo-300"
+                className="flex-1 px-3 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 text-xs focus:outline-none focus:ring-2 focus:ring-indigo-300"
               />
               <button
                 onClick={handleSend}

@@ -80,7 +80,7 @@ export default async function StartupPage({ params }: { params: Promise<{ lang: 
               </div>
               <Link
                 href={lp("/contact")}
-                className="inline-flex items-center gap-2 bg-white text-gray-900 font-bold px-8 py-4 rounded-2xl hover:bg-white/90 transition-colors text-lg shadow-lg"
+                className="inline-flex items-center gap-2 bg-white text-gray-900 dark:text-white font-bold px-8 py-4 rounded-2xl hover:bg-white/90 transition-colors text-lg shadow-lg"
               >
                 {isUk ? "Замовити консультацію" : "Book a Free Consultation"}
                 <ArrowRight className="w-5 h-5" />
@@ -90,10 +90,10 @@ export default async function StartupPage({ params }: { params: Promise<{ lang: 
         </section>
 
         {/* What makes startups different */}
-        <section className="py-16 bg-white border-b border-neutral-100">
+        <section className="py-16 bg-white dark:bg-neutral-800 border-b border-neutral-100">
           <Container>
             <div className="max-w-3xl mx-auto text-center mb-12">
-              <h2 className="text-3xl font-heading font-extrabold text-neutral-900 mb-3">
+              <h2 className="text-3xl font-heading font-extrabold text-neutral-900 dark:text-white mb-3">
                 {isUk ? "Чому стартапам потрібен окремий підхід?" : "Why Do Startups Need a Different Approach?"}
               </h2>
               <p className="text-neutral-500">
@@ -126,10 +126,10 @@ export default async function StartupPage({ params }: { params: Promise<{ lang: 
                     : "GA4 events, conversion tracking, heatmaps — all configured. See immediately what works.",
                 },
               ].map((item, i) => (
-                <div key={i} className="p-6 rounded-2xl bg-neutral-50 border border-neutral-100 hover:border-indigo-200 hover:shadow-sm transition-all">
+                <div key={i} className="p-6 rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-100 dark:border-neutral-700 hover:border-indigo-200 hover:shadow-sm transition-all">
                   <div className="text-3xl mb-4">{item.icon}</div>
-                  <h3 className="font-bold text-neutral-900 text-lg mb-2">{item.title}</h3>
-                  <p className="text-sm text-neutral-500 leading-relaxed">{item.desc}</p>
+                  <h3 className="font-bold text-neutral-900 dark:text-white text-lg mb-2">{item.title}</h3>
+                  <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -137,7 +137,7 @@ export default async function StartupPage({ params }: { params: Promise<{ lang: 
         </section>
 
         {/* Solutions grid */}
-        <section className="py-20 bg-neutral-50">
+        <section className="py-20 bg-neutral-50 dark:bg-neutral-900 ">
           <Container>
             <div className="max-w-2xl mx-auto text-center mb-12">
               <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
@@ -153,7 +153,7 @@ export default async function StartupPage({ params }: { params: Promise<{ lang: 
               {CATEGORIES.map((cat) => (
                 <span
                   key={cat}
-                  className="px-3 py-1.5 rounded-full text-sm font-medium bg-white border border-neutral-200 text-neutral-600"
+                  className="px-3 py-1.5 rounded-full text-sm font-medium bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-neutral-600"
                 >
                   {CATEGORY_LABELS[cat]}
                 </span>
@@ -165,7 +165,7 @@ export default async function StartupPage({ params }: { params: Promise<{ lang: 
                 <Link
                   key={solution.slug}
                   href={lp(`/startup/${solution.slug}`)}
-                  className="group bg-white rounded-2xl border border-neutral-200 hover:border-indigo-300 hover:shadow-md transition-all overflow-hidden flex flex-col"
+                  className="group bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-200 dark:border-neutral-700 hover:border-indigo-300 hover:shadow-md transition-all overflow-hidden flex flex-col"
                 >
                   {/* Top accent */}
                   <div className={`h-2 ${solution.color}`} />
@@ -173,18 +173,18 @@ export default async function StartupPage({ params }: { params: Promise<{ lang: 
                   <div className="p-6 flex flex-col flex-1">
                     <div className="flex items-start justify-between gap-3 mb-4">
                       <span className="text-3xl">{solution.icon}</span>
-                      <span className="text-xs bg-neutral-100 text-neutral-600 px-2.5 py-1 rounded-full font-medium shrink-0">
+                      <span className="text-xs bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 px-2.5 py-1 rounded-full font-medium shrink-0">
                         {CATEGORY_LABELS[solution.category]}
                       </span>
                     </div>
 
-                    <h3 className="font-heading font-bold text-neutral-900 text-lg mb-1 group-hover:text-indigo-700 transition-colors">
+                    <h3 className="font-heading font-bold text-neutral-900 dark:text-white text-lg mb-1 group-hover:text-indigo-700 transition-colors">
                       {solution.titleEn}
                     </h3>
                     <p className={`text-sm font-semibold mb-3 ${solution.textColor}`}>
                       {isUk ? solution.tagline : solution.taglineEn}
                     </p>
-                    <p className="text-sm text-neutral-500 leading-relaxed flex-1 mb-4">
+                    <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed flex-1 mb-4">
                       {isUk ? solution.description : solution.descriptionEn}
                     </p>
 

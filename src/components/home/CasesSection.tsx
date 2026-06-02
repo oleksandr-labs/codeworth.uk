@@ -9,16 +9,16 @@ export function CasesSection({ lang }: { lang: string }) {
   const isUk = lang === "uk";
 
   return (
-    <section className="py-24 bg-neutral-50">
+    <section className="py-24 bg-neutral-50 dark:bg-neutral-900 ">
       <Container>
         <div className="max-w-2xl mb-12">
           <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
             {isUk ? "Кейси" : "Case Studies"}
           </p>
-          <h2 className="text-4xl font-heading font-extrabold text-neutral-900 mb-4">
+          <h2 className="text-4xl font-heading font-extrabold text-neutral-900 dark:text-white mb-4">
             {isUk ? "Реальні результати клієнтів" : "Real client results"}
           </h2>
-          <p className="text-lg text-neutral-500 leading-relaxed">
+          <p className="text-lg text-neutral-500 dark:text-neutral-400 leading-relaxed">
             {isUk
               ? "Цифри, а не обіцянки — ось що ми робимо для бізнесу."
               : "Numbers, not promises — this is what we do for business."}
@@ -30,7 +30,7 @@ export function CasesSection({ lang }: { lang: string }) {
             <Link
               key={project.slug}
               href={`/${lang}/portfolio/${project.slug}`}
-              className="group flex flex-col rounded-2xl border border-neutral-100 bg-white overflow-hidden hover:shadow-lg hover:shadow-neutral-200/60 transition-all duration-300 hover:-translate-y-1"
+              className="group flex flex-col rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white overflow-hidden hover:shadow-lg hover:shadow-neutral-200/60 transition-all duration-300 hover:-translate-y-1"
             >
               {/* Color header */}
               <div className={`h-28 bg-linear-to-br ${project.color} flex items-center justify-center text-5xl`}>
@@ -46,11 +46,11 @@ export function CasesSection({ lang }: { lang: string }) {
                   <span className="text-neutral-400 text-xs">{project.year}</span>
                 </div>
 
-                <h3 className="font-heading font-bold text-neutral-900 text-base mb-2 group-hover:text-indigo-700 transition-colors">
+                <h3 className="font-heading font-bold text-neutral-900 dark:text-white text-base mb-2 group-hover:text-indigo-700 transition-colors">
                   {project.title}
                 </h3>
 
-                <p className="text-sm text-neutral-500 leading-relaxed mb-5 flex-1">
+                <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-5 flex-1">
                   {project.description}
                 </p>
 

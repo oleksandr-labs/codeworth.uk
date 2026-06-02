@@ -3,7 +3,7 @@ import { Skeleton } from "@/components/ui/Skeleton";
 
 function PortfolioCardSkeleton() {
   return (
-    <div className="rounded-2xl border border-neutral-100 bg-white overflow-hidden">
+    <div className="rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white overflow-hidden">
       <Skeleton className="h-52 w-full rounded-none" />
       <div className="p-6 space-y-3">
         <div className="flex gap-2">
@@ -26,7 +26,7 @@ export default function PortfolioLoading() {
   return (
     <main className="flex-1">
       {/* Hero skeleton */}
-      <section className="py-16 bg-neutral-50 border-b border-neutral-100">
+      <section className="py-16 bg-neutral-50 dark:bg-neutral-900 border-b border-neutral-100">
         <Container>
           <Skeleton className="h-4 w-28 mb-4" />
           <Skeleton className="h-10 w-64 mb-3" />
@@ -36,7 +36,7 @@ export default function PortfolioLoading() {
       </section>
 
       {/* Stats skeleton */}
-      <section className="py-6 border-b border-neutral-100 bg-white">
+      <section className="py-6 border-b border-neutral-100 dark:border-neutral-700 bg-white">
         <Container>
           <div className="flex gap-8">
             {Array.from({ length: 4 }).map((_, i) => (
@@ -50,7 +50,7 @@ export default function PortfolioLoading() {
       </section>
 
       {/* Filter tabs skeleton */}
-      <section className="py-5 border-b border-neutral-100 bg-white sticky top-16 z-10">
+      <section className="py-5 border-b border-neutral-100 dark:border-neutral-700 bg-white sticky top-16 z-10">
         <Container>
           <div className="flex gap-2 overflow-hidden">
             {Array.from({ length: 6 }).map((_, i) => (

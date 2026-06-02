@@ -159,7 +159,7 @@ export function SmartKidsDemo({ lang }: { lang: string }) {
         <h2 className="text-3xl font-extrabold text-center mb-2 text-gray-900">
           {isUk ? "Наші програми" : "Our Programs"}
         </h2>
-        <p className="text-center text-gray-500 mb-8">
+        <p className="text-center text-gray-500 dark:text-neutral-400 mb-8">
           {isUk
             ? "6 напрямків для гармонійного розвитку вашої дитини"
             : "6 directions for your child's harmonious development"}
@@ -179,7 +179,7 @@ export function SmartKidsDemo({ lang }: { lang: string }) {
                   {prog.emoji}
                 </div>
                 <div>
-                  <h3 className="font-extrabold text-lg text-gray-900 m-0">
+                  <h3 className="font-extrabold text-lg text-gray-900 dark:text-white m-0">
                     {isUk ? prog.nameUk : prog.nameEn}
                   </h3>
                   <span className="text-xs font-semibold" style={{ color: prog.color }}>
@@ -187,7 +187,7 @@ export function SmartKidsDemo({ lang }: { lang: string }) {
                   </span>
                 </div>
               </div>
-              <p className="text-gray-600 text-sm leading-relaxed m-0">
+              <p className="text-gray-600 dark:text-neutral-300 text-sm leading-relaxed m-0">
                 {isUk ? prog.descUk : prog.descEn}
               </p>
               <div className="mt-4 flex items-center gap-1 text-sm font-bold cursor-pointer" style={{ color: prog.color }}>
@@ -201,11 +201,11 @@ export function SmartKidsDemo({ lang }: { lang: string }) {
       {/* Schedule */}
       <div className="bg-white py-12 px-6">
         <div className="max-w-[1000px] mx-auto">
-          <h2 className="text-2xl font-extrabold text-center mb-2 text-gray-900 flex items-center justify-center gap-2">
+          <h2 className="text-2xl font-extrabold text-center mb-2 text-gray-900 dark:text-white flex items-center justify-center gap-2">
             <Calendar className="w-6 h-6 text-amber-500" />
             {isUk ? "Розклад занять" : "Weekly Schedule"}
           </h2>
-          <p className="text-center text-gray-500 mb-6">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-6">
             {isUk ? "Оберіть зручний день" : "Choose a convenient day"}
           </p>
           <div className="flex gap-2 justify-center mb-6 flex-wrap">
@@ -260,7 +260,7 @@ export function SmartKidsDemo({ lang }: { lang: string }) {
         <h2 className="text-2xl font-extrabold text-center mb-2 text-gray-900">
           {isUk ? "Абонементи" : "Pricing Plans"}
         </h2>
-        <p className="text-center text-gray-500 mb-8">
+        <p className="text-center text-gray-500 dark:text-neutral-400 mb-8">
           {isUk ? "Обирайте зручний формат відвідування" : "Choose a convenient attendance format"}
         </p>
         <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-6">
@@ -318,11 +318,11 @@ export function SmartKidsDemo({ lang }: { lang: string }) {
       {/* Teachers */}
       <div className="bg-white py-12 px-6">
         <div className="max-w-[1000px] mx-auto">
-          <h2 className="text-2xl font-extrabold text-center mb-2 text-gray-900 flex items-center justify-center gap-2">
+          <h2 className="text-2xl font-extrabold text-center mb-2 text-gray-900 dark:text-white flex items-center justify-center gap-2">
             <Users className="w-6 h-6 text-purple-500" />
             {isUk ? "Наші педагоги" : "Our Teachers"}
           </h2>
-          <p className="text-center text-gray-500 mb-8">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-8">
             {isUk
               ? "Досвідчені спеціалісти, які люблять свою справу"
               : "Experienced specialists who love what they do"}
@@ -331,13 +331,13 @@ export function SmartKidsDemo({ lang }: { lang: string }) {
             {teachers.map((t, i) => (
               <div key={i} className="bg-amber-50 rounded-2xl p-6 text-center">
                 <div className="text-5xl mb-3">{t.emoji}</div>
-                <h3 className="font-extrabold text-base text-gray-900 mb-1">
+                <h3 className="font-extrabold text-base text-gray-900 dark:text-white mb-1">
                   {isUk ? t.nameUk : t.nameEn}
                 </h3>
                 <div className="text-amber-600 font-bold text-sm mb-2">
                   {isUk ? t.roleUk : t.roleEn}
                 </div>
-                <p className="text-gray-500 text-xs leading-relaxed m-0">
+                <p className="text-gray-500 dark:text-neutral-400 text-xs leading-relaxed m-0">
                   {isUk ? t.specUk : t.specEn}
                 </p>
               </div>
@@ -348,11 +348,11 @@ export function SmartKidsDemo({ lang }: { lang: string }) {
 
       {/* Reviews */}
       <div className="max-w-[1000px] mx-auto px-6 py-12">
-        <h2 className="text-2xl font-extrabold text-center mb-2 text-gray-900 flex items-center justify-center gap-2">
+        <h2 className="text-2xl font-extrabold text-center mb-2 text-gray-900 dark:text-white flex items-center justify-center gap-2">
           <MessageCircle className="w-6 h-6 text-amber-500" />
           {isUk ? "Відгуки батьків" : "Parent Reviews"}
         </h2>
-        <p className="text-center text-gray-500 mb-8">
+        <p className="text-center text-gray-500 dark:text-neutral-400 mb-8">
           {isUk ? "Що кажуть про нас" : "What parents say about us"}
         </p>
         <div className="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] gap-5">
@@ -363,10 +363,10 @@ export function SmartKidsDemo({ lang }: { lang: string }) {
                   <Star key={j} className="w-4 h-4 fill-current" />
                 ))}
               </div>
-              <p className="text-gray-600 text-sm leading-relaxed m-0 mb-4">
+              <p className="text-gray-600 dark:text-neutral-300 text-sm leading-relaxed m-0 mb-4">
                 &ldquo;{isUk ? r.textUk : r.textEn}&rdquo;
               </p>
-              <div className="font-bold text-gray-900 text-sm">{isUk ? r.parentUk : r.parentEn}</div>
+              <div className="font-bold text-gray-900 dark:text-white text-sm">{isUk ? r.parentUk : r.parentEn}</div>
               <div className="text-xs text-gray-400">{isUk ? r.childUk : r.childEn}</div>
             </div>
           ))}
@@ -425,7 +425,7 @@ export function SmartKidsDemo({ lang }: { lang: string }) {
               {/* Step 1: Child's age */}
               {bookingStep === 1 && (
                 <div>
-                  <h3 className="font-bold text-base text-gray-700 mb-4 text-center">
+                  <h3 className="font-bold text-base text-gray-700 dark:text-neutral-300 mb-4 text-center">
                     <Baby className="w-5 h-5 inline mr-1 text-amber-500" />
                     {isUk ? "Скільки років дитині?" : "How old is your child?"}
                   </h3>
@@ -454,7 +454,7 @@ export function SmartKidsDemo({ lang }: { lang: string }) {
               {/* Step 2: Select program */}
               {bookingStep === 2 && (
                 <div>
-                  <h3 className="font-bold text-base text-gray-700 mb-4 text-center">
+                  <h3 className="font-bold text-base text-gray-700 dark:text-neutral-300 mb-4 text-center">
                     <BookOpen className="w-5 h-5 inline mr-1 text-amber-500" />
                     {isUk ? "Оберіть програму" : "Choose a program"}
                   </h3>
@@ -484,7 +484,7 @@ export function SmartKidsDemo({ lang }: { lang: string }) {
                   </div>
                   <button
                     onClick={() => setBookingStep(1)}
-                    className="mt-4 text-sm text-gray-400 font-semibold cursor-pointer bg-transparent border-none hover:text-gray-600"
+                    className="mt-4 text-sm text-gray-400 dark:text-neutral-500 font-semibold cursor-pointer bg-transparent border-none hover:text-gray-600"
                   >
                     ← {isUk ? "Назад" : "Back"}
                   </button>
@@ -494,7 +494,7 @@ export function SmartKidsDemo({ lang }: { lang: string }) {
               {/* Step 3: Select date */}
               {bookingStep === 3 && (
                 <div>
-                  <h3 className="font-bold text-base text-gray-700 mb-4 text-center">
+                  <h3 className="font-bold text-base text-gray-700 dark:text-neutral-300 mb-4 text-center">
                     <Calendar className="w-5 h-5 inline mr-1 text-amber-500" />
                     {isUk ? "Оберіть дату" : "Choose a date"}
                   </h3>
@@ -523,7 +523,7 @@ export function SmartKidsDemo({ lang }: { lang: string }) {
                   </div>
                   <button
                     onClick={() => setBookingStep(2)}
-                    className="mt-4 text-sm text-gray-400 font-semibold cursor-pointer bg-transparent border-none hover:text-gray-600"
+                    className="mt-4 text-sm text-gray-400 dark:text-neutral-500 font-semibold cursor-pointer bg-transparent border-none hover:text-gray-600"
                   >
                     ← {isUk ? "Назад" : "Back"}
                   </button>
@@ -533,7 +533,7 @@ export function SmartKidsDemo({ lang }: { lang: string }) {
               {/* Step 4: Contact info */}
               {bookingStep === 4 && (
                 <div>
-                  <h3 className="font-bold text-base text-gray-700 mb-4 text-center">
+                  <h3 className="font-bold text-base text-gray-700 dark:text-neutral-300 mb-4 text-center">
                     <Phone className="w-5 h-5 inline mr-1 text-amber-500" />
                     {isUk ? "Ваші контакти" : "Your contact info"}
                   </h3>
@@ -544,14 +544,14 @@ export function SmartKidsDemo({ lang }: { lang: string }) {
                       { key: "email", label: "Email", type: "email" },
                     ].map((f) => (
                       <div key={f.key}>
-                        <label className="block font-semibold text-sm text-gray-700 mb-1">{f.label}</label>
+                        <label className="block font-semibold text-sm text-gray-700 dark:text-neutral-300 mb-1">{f.label}</label>
                         <input
                           type={f.type}
                           value={contactData[f.key as keyof typeof contactData]}
                           onChange={(e) =>
                             setContactData((d) => ({ ...d, [f.key]: e.target.value }))
                           }
-                          className="w-full px-3 py-2.5 border-2 border-gray-200 rounded-xl text-sm outline-none focus:border-amber-400"
+                          className="w-full px-3 py-2.5 border-2 border-gray-200 dark:border-neutral-700 rounded-xl text-sm outline-none focus:border-amber-400"
                           style={{ boxSizing: "border-box" }}
                         />
                       </div>
@@ -560,7 +560,7 @@ export function SmartKidsDemo({ lang }: { lang: string }) {
 
                   {/* Summary */}
                   <div className="mt-5 bg-amber-50 rounded-xl p-4 text-sm">
-                    <div className="font-bold text-gray-700 mb-2">{isUk ? "Підсумок:" : "Summary:"}</div>
+                    <div className="font-bold text-gray-700 dark:text-neutral-300 mb-2">{isUk ? "Підсумок:" : "Summary:"}</div>
                     <div className="text-gray-600">
                       👶 {isUk ? "Вік" : "Age"}: {selectedAge} {isUk ? "р." : "y.o."} &nbsp;·&nbsp;{" "}
                       {programById(selectedProgram)?.emoji}{" "}
@@ -580,7 +580,7 @@ export function SmartKidsDemo({ lang }: { lang: string }) {
                   </button>
                   <button
                     onClick={() => setBookingStep(3)}
-                    className="mt-3 text-sm text-gray-400 font-semibold cursor-pointer bg-transparent border-none hover:text-gray-600"
+                    className="mt-3 text-sm text-gray-400 dark:text-neutral-500 font-semibold cursor-pointer bg-transparent border-none hover:text-gray-600"
                   >
                     ← {isUk ? "Назад" : "Back"}
                   </button>

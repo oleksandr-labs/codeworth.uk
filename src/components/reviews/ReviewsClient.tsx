@@ -30,7 +30,7 @@ const PLATFORM_COLORS: Record<string, string> = {
   google: "bg-blue-50 text-blue-700 border-blue-200",
   clutch: "bg-orange-50 text-orange-700 border-orange-200",
   dou: "bg-green-50 text-green-700 border-green-200",
-  direct: "bg-gray-50 text-gray-600 border-gray-200",
+  direct: "bg-gray-50 dark:bg-neutral-900 text-gray-600 dark:text-neutral-300 border-gray-200",
 };
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
@@ -63,7 +63,7 @@ function FilterChip({
       className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all border ${
         active
           ? "bg-indigo-600 text-white border-indigo-600 shadow-sm"
-          : "bg-white text-gray-600 border-gray-200 hover:border-indigo-300 hover:text-indigo-600"
+          : "bg-white text-gray-600 dark:text-neutral-300 border-gray-200 dark:border-neutral-700 hover:border-indigo-300 hover:text-indigo-600"
       }`}
     >
       {children}
@@ -74,13 +74,13 @@ function FilterChip({
 function EmptyState({ isUk }: { isUk: boolean }) {
   return (
     <div className="col-span-full flex flex-col items-center justify-center py-16 text-center">
-      <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-4">
+      <div className="w-16 h-16 bg-gray-100 dark:bg-neutral-800 rounded-full flex items-center justify-center mb-4">
         <Star className="w-8 h-8 text-gray-300" />
       </div>
-      <p className="text-gray-500 font-medium">
+      <p className="text-gray-500 dark:text-neutral-400 font-medium">
         {isUk ? "Немає відгуків за обраними фільтрами" : "No reviews match the selected filters"}
       </p>
-      <p className="text-gray-400 text-sm mt-1">
+      <p className="text-gray-400 dark:text-neutral-500 text-sm mt-1">
         {isUk ? "Спробуйте скинути фільтри" : "Try clearing the filters"}
       </p>
     </div>
@@ -132,7 +132,7 @@ export function ReviewsClient({ reviews, lang, isUk }: Props) {
     <section className="py-16 bg-gray-50" id="reviews-list">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Filter bar */}
-        <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-4 mb-8">
+        <div className="bg-white rounded-2xl border border-gray-200 dark:border-neutral-700 shadow-sm p-4 mb-8">
           <div className="flex items-center gap-2 mb-4">
             <Filter className="w-4 h-4 text-gray-500" />
             <span className="text-sm font-semibold text-gray-700">
@@ -157,7 +157,7 @@ export function ReviewsClient({ reviews, lang, isUk }: Props) {
           <div className="space-y-3">
             {/* Platform filter */}
             <div className="flex flex-wrap gap-2 items-center">
-              <span className="text-xs text-gray-500 w-16 shrink-0">
+              <span className="text-xs text-gray-500 dark:text-neutral-400 w-16 shrink-0">
                 {isUk ? "Джерело:" : "Platform:"}
               </span>
               {(["all", "google", "clutch", "dou", "direct"] as Platform[]).map((p) => (
@@ -169,7 +169,7 @@ export function ReviewsClient({ reviews, lang, isUk }: Props) {
 
             {/* Rating filter */}
             <div className="flex flex-wrap gap-2 items-center">
-              <span className="text-xs text-gray-500 w-16 shrink-0">
+              <span className="text-xs text-gray-500 dark:text-neutral-400 w-16 shrink-0">
                 {isUk ? "Оцінка:" : "Rating:"}
               </span>
               {(["all", "5", "4plus"] as RatingFilter[]).map((r) => (
@@ -181,7 +181,7 @@ export function ReviewsClient({ reviews, lang, isUk }: Props) {
 
             {/* Service filter */}
             <div className="flex flex-wrap gap-2 items-center">
-              <span className="text-xs text-gray-500 w-16 shrink-0">
+              <span className="text-xs text-gray-500 dark:text-neutral-400 w-16 shrink-0">
                 {isUk ? "Послуга:" : "Service:"}
               </span>
               {(["all", "website-dev", "ecommerce", "seo-service", "landing"] as ServiceFilter[]).map(
@@ -200,7 +200,7 @@ export function ReviewsClient({ reviews, lang, isUk }: Props) {
             {/* Niche filter */}
             {niches.length > 0 && (
               <div className="flex flex-wrap gap-2 items-center">
-                <span className="text-xs text-gray-500 w-16 shrink-0">
+                <span className="text-xs text-gray-500 dark:text-neutral-400 w-16 shrink-0">
                   {isUk ? "Ніша:" : "Niche:"}
                 </span>
                 <FilterChip active={nicheFilter === "all"} onClick={() => setNicheFilter("all")}>
@@ -238,7 +238,7 @@ export function ReviewsClient({ reviews, lang, isUk }: Props) {
             filtered.map((review) => (
               <article
                 key={review.id}
-                className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm flex flex-col"
+                className="bg-white rounded-2xl p-6 border border-gray-200 dark:border-neutral-700 shadow-sm flex flex-col"
               >
                 <div className="flex items-start justify-between mb-3">
                   <StarRating rating={review.rating} />
@@ -249,7 +249,7 @@ export function ReviewsClient({ reviews, lang, isUk }: Props) {
                   </span>
                 </div>
 
-                <blockquote className="text-gray-700 text-sm leading-relaxed flex-1 mb-4">
+                <blockquote className="text-gray-700 dark:text-neutral-300 text-sm leading-relaxed flex-1 mb-4">
                   &ldquo;{isUk ? review.text : review.textEn}&rdquo;
                 </blockquote>
 
@@ -265,7 +265,7 @@ export function ReviewsClient({ reviews, lang, isUk }: Props) {
                 <div className="flex items-center justify-between pt-3 border-t border-gray-100">
                   <div>
                     <div className="flex items-center gap-1.5">
-                      <span className="font-semibold text-gray-900 text-sm">
+                      <span className="font-semibold text-gray-900 dark:text-white text-sm">
                         {review.authorName}
                       </span>
                       {review.verified && (

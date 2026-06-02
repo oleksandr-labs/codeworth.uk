@@ -105,9 +105,9 @@ const MOCK_REVIEWS = [
 
 function KPI({ label, value, delta, positive, isUk }: { label: string; value: string; delta: string; positive: boolean; isUk: boolean }) {
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 p-5">
-      <div className="text-sm text-gray-500 mb-2">{label}</div>
-      <div className="text-2xl font-bold text-gray-900 mb-2">{value}</div>
+    <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-5">
+      <div className="text-sm text-gray-500 dark:text-neutral-400 mb-2">{label}</div>
+      <div className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{value}</div>
       <div className={`flex items-center gap-1 text-xs font-medium ${positive ? "text-green-600" : "text-red-500"}`}>
         {positive ? <TrendingUp className="w-3.5 h-3.5" /> : <TrendingDown className="w-3.5 h-3.5" />}
         {delta} {isUk ? "за місяць" : "this month"}
@@ -198,11 +198,11 @@ export default function AdminClient() {
           <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center font-bold text-sm">C</div>
           <div>
             <div className="font-bold text-sm">Codeworth</div>
-            <div className="text-gray-400 text-xs">Admin Panel</div>
+            <div className="text-gray-400 dark:text-neutral-500 text-xs">Admin Panel</div>
           </div>
         </Link>
         {onClose && (
-          <button onClick={onClose} className="md:hidden text-gray-400 hover:text-white p-1">
+          <button onClick={onClose} className="md:hidden text-gray-400 dark:text-neutral-500 hover:text-white p-1">
             <X className="w-5 h-5" />
           </button>
         )}
@@ -218,7 +218,7 @@ export default function AdminClient() {
               key={item.id}
               onClick={() => { setTab(item.id); onClose?.(); }}
               className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-sm transition-colors ${
-                active ? "bg-indigo-600 text-white" : "text-gray-400 hover:bg-white/10 hover:text-white"
+                active ? "bg-indigo-600 text-white" : "text-gray-400 dark:text-neutral-500 hover:bg-white/10 hover:text-white"
               }`}
             >
               <div className="flex items-center gap-3">
@@ -226,7 +226,7 @@ export default function AdminClient() {
                 {item.label}
               </div>
               {item.badge && (
-                <span className="w-5 h-5 bg-amber-400 text-gray-900 rounded-full text-xs font-bold flex items-center justify-center">
+                <span className="w-5 h-5 bg-amber-400 text-gray-900 dark:text-white rounded-full text-xs font-bold flex items-center justify-center">
                   {item.badge}
                 </span>
               )}
@@ -246,7 +246,7 @@ export default function AdminClient() {
         </div>
         <Link
           href="/"
-          className="flex items-center gap-2 px-3 py-2 text-sm text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-white/10"
+          className="flex items-center gap-2 px-3 py-2 text-sm text-gray-400 dark:text-neutral-500 hover:text-white transition-colors rounded-lg hover:bg-white/10"
         >
           <LogOut className="w-4 h-4" /> {isUk ? "Вийти" : "Log Out"}
         </Link>
@@ -281,10 +281,10 @@ export default function AdminClient() {
       {/* Main */}
       <div className="flex-1 overflow-auto">
         {/* Top bar */}
-        <div className="bg-white border-b border-gray-100 px-4 md:px-6 py-4 flex items-center justify-between sticky top-0 z-10">
+        <div className="bg-white border-b border-gray-100 dark:border-neutral-700 px-4 md:px-6 py-4 flex items-center justify-between sticky top-0 z-10">
           <div className="flex items-center gap-3">
             <button
-              className="md:hidden text-gray-500 hover:text-gray-900 p-1"
+              className="md:hidden text-gray-500 dark:text-neutral-400 hover:text-gray-900 dark:text-white p-1"
               onClick={() => setSidebarOpen(true)}
               aria-label="Open menu"
             >
@@ -298,7 +298,7 @@ export default function AdminClient() {
             <Link
               href={`/${lang}/marketplace/catalog`}
               target="_blank"
-              className="flex items-center gap-1.5 text-sm text-gray-500 hover:text-indigo-600 transition-colors"
+              className="flex items-center gap-1.5 text-sm text-gray-500 dark:text-neutral-400 hover:text-indigo-600 transition-colors"
             >
               <ExternalLink className="w-4 h-4" /> {isUk ? "Відкрити сайт" : "View Site"}
             </Link>
@@ -306,7 +306,7 @@ export default function AdminClient() {
         </div>
 
         {/* Breadcrumb */}
-        <div className="bg-white border-b border-gray-100 px-4 md:px-6 py-2.5">
+        <div className="bg-white border-b border-gray-100 dark:border-neutral-700 px-4 md:px-6 py-2.5">
           <Breadcrumb
             items={[
               { label: isUk ? "Адмін" : "Admin", href: `/${lang}/admin/marketplace` },
@@ -343,13 +343,13 @@ export default function AdminClient() {
                     const Icon = cfg.icon;
                     return (
                       <div key={o.id} className="flex items-center gap-4 px-6 py-4">
-                        <span className="font-mono text-xs text-gray-400 w-16 shrink-0">{o.id}</span>
-                        <span className="flex-1 text-sm font-medium text-gray-900 truncate">{o.client}</span>
-                        <span className="text-sm text-gray-500 hidden sm:block truncate max-w-[140px]">{o.product}</span>
+                        <span className="font-mono text-xs text-gray-400 dark:text-neutral-500 w-16 shrink-0">{o.id}</span>
+                        <span className="flex-1 text-sm font-medium text-gray-900 dark:text-white truncate">{o.client}</span>
+                        <span className="text-sm text-gray-500 dark:text-neutral-400 hidden sm:block truncate max-w-[140px]">{o.product}</span>
                         <span className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium ${cfg.color}`}>
                           <Icon className="w-3 h-3" />{getOrderStatusLabel(o.status, isUk)}
                         </span>
-                        <span className="text-sm font-semibold text-gray-900 w-24 text-right shrink-0">
+                        <span className="text-sm font-semibold text-gray-900 dark:text-white w-24 text-right shrink-0">
                           {o.amount.toLocaleString("uk-UA")} ₴
                         </span>
                       </div>
@@ -365,11 +365,11 @@ export default function AdminClient() {
                   { label: isUk ? "Середній чек" : "Avg. Order Value", value: "14 200 ₴", sub: isUk ? "+800 ₴ до попереднього місяця" : "+800 ₴ vs last month", emoji: "💰" },
                   { label: isUk ? "Відгуків на модерації" : "Reviews Pending", value: "2", sub: isUk ? "Очікують вашого рішення" : "Awaiting your decision", emoji: "⭐" },
                 ].map((s) => (
-                  <div key={s.label} className="bg-white rounded-2xl border border-gray-100 p-5">
+                  <div key={s.label} className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-5">
                     <div className="text-3xl mb-3">{s.emoji}</div>
-                    <div className="text-xs text-gray-500 mb-1">{s.label}</div>
+                    <div className="text-xs text-gray-500 dark:text-neutral-400 mb-1">{s.label}</div>
                     <div className="font-bold text-gray-900">{s.value}</div>
-                    <div className="text-xs text-gray-400 mt-0.5">{s.sub}</div>
+                    <div className="text-xs text-gray-400 dark:text-neutral-500 mt-0.5">{s.sub}</div>
                   </div>
                 ))}
               </div>
@@ -385,7 +385,7 @@ export default function AdminClient() {
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                     <input
                       placeholder={isUk ? "Пошук продуктів..." : "Search products..."}
-                      className="pl-9 pr-4 py-2 text-sm border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-300 w-56"
+                      className="pl-9 pr-4 py-2 text-sm border border-gray-200 dark:border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-300 w-56"
                     />
                   </div>
                 </div>
@@ -394,8 +394,8 @@ export default function AdminClient() {
                 </button>
               </div>
 
-              <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden">
-                <div className="grid grid-cols-6 text-xs font-semibold text-gray-500 uppercase tracking-wide px-5 py-3 bg-gray-50 border-b border-gray-100">
+              <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 overflow-hidden">
+                <div className="grid grid-cols-6 text-xs font-semibold text-gray-500 dark:text-neutral-400 uppercase tracking-wide px-5 py-3 bg-gray-50 dark:bg-neutral-900 border-b border-gray-100">
                   <span className="col-span-2">{isUk ? "Продукт" : "Product"}</span>
                   <span>{isUk ? "Категорія" : "Category"}</span>
                   <span>{isUk ? "Ціна від" : "Price from"}</span>
@@ -404,7 +404,7 @@ export default function AdminClient() {
                 </div>
                 <div className="divide-y divide-gray-50 max-h-[480px] overflow-auto">
                   {NICHES_DATA.map((n) => (
-                    <div key={n.slug} className="grid grid-cols-6 items-center px-5 py-3 hover:bg-gray-50 transition-colors">
+                    <div key={n.slug} className="grid grid-cols-6 items-center px-5 py-3 hover:bg-gray-50 dark:bg-neutral-900 transition-colors">
                       <div className="col-span-2 flex items-center gap-3">
                         <span className="text-xl">{n.emoji}</span>
                         <div>
@@ -412,7 +412,7 @@ export default function AdminClient() {
                           <div className="text-xs text-gray-400">/niches/{n.slug}</div>
                         </div>
                       </div>
-                      <span className="text-xs text-gray-500 truncate">{n.category}</span>
+                      <span className="text-xs text-gray-500 dark:text-neutral-400 truncate">{n.category}</span>
                       <span className="text-sm font-semibold text-gray-900">
                         {n.priceFrom.toLocaleString("uk-UA")} ₴
                       </span>
@@ -427,14 +427,14 @@ export default function AdminClient() {
                         <Link
                           href={`/${lang}/marketplace/product/${n.slug}`}
                           target="_blank"
-                          className="p-1.5 text-gray-400 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg transition-colors"
+                          className="p-1.5 text-gray-400 dark:text-neutral-500 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg transition-colors"
                         >
                           <Eye className="w-3.5 h-3.5" />
                         </Link>
-                        <button className="p-1.5 text-gray-400 hover:text-amber-600 hover:bg-amber-50 rounded-lg transition-colors">
+                        <button className="p-1.5 text-gray-400 dark:text-neutral-500 hover:text-amber-600 hover:bg-amber-50 rounded-lg transition-colors">
                           <Pencil className="w-3.5 h-3.5" />
                         </button>
-                        <button className="p-1.5 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">
+                        <button className="p-1.5 text-gray-400 dark:text-neutral-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">
                           <Trash2 className="w-3.5 h-3.5" />
                         </button>
                       </div>
@@ -455,10 +455,10 @@ export default function AdminClient() {
                     value={orderFilter}
                     onChange={(e) => setOrderFilter(e.target.value)}
                     placeholder={isUk ? "Пошук за клієнтом або №..." : "Search by client or order #..."}
-                    className="pl-9 pr-4 py-2 text-sm border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-300 w-64"
+                    className="pl-9 pr-4 py-2 text-sm border border-gray-200 dark:border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-300 w-64"
                   />
                 </div>
-                <select className="py-2 px-3 text-sm border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-300 text-gray-700">
+                <select className="py-2 px-3 text-sm border border-gray-200 dark:border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-300 text-gray-700">
                   <option>{isUk ? "Всі статуси" : "All Statuses"}</option>
                   <option>{isUk ? "Очікує" : "Pending"}</option>
                   <option>{isUk ? "В роботі" : "In Progress"}</option>
@@ -469,14 +469,14 @@ export default function AdminClient() {
                     exportOrdersCSV(orderFilter, isUk);
                     toast("success", isUk ? "CSV файл згенеровано" : "CSV file generated");
                   }}
-                  className="flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-xl text-sm text-gray-600 hover:bg-gray-50 ml-auto"
+                  className="flex items-center gap-2 px-4 py-2 border border-gray-200 dark:border-neutral-700 rounded-xl text-sm text-gray-600 dark:text-neutral-300 hover:bg-gray-50 dark:bg-neutral-900 ml-auto"
                 >
                   <Download className="w-4 h-4" /> {isUk ? "Експорт CSV" : "Export CSV"}
                 </button>
               </div>
 
-              <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden">
-                <div className="grid grid-cols-6 text-xs font-semibold text-gray-500 uppercase tracking-wide px-5 py-3 bg-gray-50 border-b border-gray-100">
+              <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 overflow-hidden">
+                <div className="grid grid-cols-6 text-xs font-semibold text-gray-500 dark:text-neutral-400 uppercase tracking-wide px-5 py-3 bg-gray-50 dark:bg-neutral-900 border-b border-gray-100">
                   <span>#</span>
                   <span>{isUk ? "Клієнт" : "Client"}</span>
                   <span className="col-span-2">{isUk ? "Продукт" : "Product"}</span>
@@ -494,10 +494,10 @@ export default function AdminClient() {
                       const cfg = ORDER_STATUSES[o.status];
                       const Icon = cfg.icon;
                       return (
-                        <div key={o.id} className="grid grid-cols-6 items-center px-5 py-4 hover:bg-gray-50 transition-colors">
+                        <div key={o.id} className="grid grid-cols-6 items-center px-5 py-4 hover:bg-gray-50 dark:bg-neutral-900 transition-colors">
                           <span className="font-mono text-xs text-gray-500">{o.id}</span>
-                          <span className="text-sm font-medium text-gray-900 truncate">{o.client}</span>
-                          <span className="col-span-2 text-sm text-gray-600 truncate">{o.product}</span>
+                          <span className="text-sm font-medium text-gray-900 dark:text-white truncate">{o.client}</span>
+                          <span className="col-span-2 text-sm text-gray-600 dark:text-neutral-300 truncate">{o.product}</span>
                           <span className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium w-fit ${cfg.color}`}>
                             <Icon className="w-3 h-3" />{getOrderStatusLabel(o.status, isUk)}
                           </span>
@@ -506,7 +506,7 @@ export default function AdminClient() {
                               {o.amount.toLocaleString("uk-UA")} ₴
                             </span>
                             <select
-                              className="text-xs border border-gray-200 rounded-lg px-2 py-1 text-gray-600 focus:outline-none"
+                              className="text-xs border border-gray-200 dark:border-neutral-700 rounded-lg px-2 py-1 text-gray-600 dark:text-neutral-300 focus:outline-none"
                               defaultValue={o.status}
                             >
                               <option value="pending">{isUk ? "Очікує" : "Pending"}</option>
@@ -525,8 +525,8 @@ export default function AdminClient() {
 
           {/* CLIENTS */}
           {tab === "clients" && (
-            <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden">
-              <div className="grid grid-cols-5 text-xs font-semibold text-gray-500 uppercase tracking-wide px-5 py-3 bg-gray-50 border-b border-gray-100">
+            <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 overflow-hidden">
+              <div className="grid grid-cols-5 text-xs font-semibold text-gray-500 dark:text-neutral-400 uppercase tracking-wide px-5 py-3 bg-gray-50 dark:bg-neutral-900 border-b border-gray-100">
                 <span className="col-span-2">{isUk ? "Клієнт" : "Client"}</span>
                 <span>{isUk ? "Замовлень" : "Orders"}</span>
                 <span>{isUk ? "Витрати" : "Total Spent"}</span>
@@ -534,7 +534,7 @@ export default function AdminClient() {
               </div>
               <div className="divide-y divide-gray-50">
                 {MOCK_CLIENTS.map((c) => (
-                  <div key={c.id} className="grid grid-cols-5 items-center px-5 py-4 hover:bg-gray-50 transition-colors">
+                  <div key={c.id} className="grid grid-cols-5 items-center px-5 py-4 hover:bg-gray-50 dark:bg-neutral-900 transition-colors">
                     <div className="col-span-2 flex items-center gap-3">
                       <div className="w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 text-sm font-bold flex items-center justify-center shrink-0">
                         {c.name[0]}
@@ -544,7 +544,7 @@ export default function AdminClient() {
                         <div className="text-xs text-gray-400">{c.email}</div>
                       </div>
                     </div>
-                    <span className="text-sm text-gray-700 font-semibold">{c.orders}</span>
+                    <span className="text-sm text-gray-700 dark:text-neutral-300 font-semibold">{c.orders}</span>
                     <span className="text-sm font-bold text-gray-900">
                       {c.total.toLocaleString("uk-UA")} ₴
                     </span>
@@ -561,11 +561,11 @@ export default function AdminClient() {
               {MOCK_REVIEWS.map((r) => {
                 const currentStatus = reviewStatuses[r.id] ?? r.status;
                 return (
-                  <div key={r.id} className="bg-white rounded-2xl border border-gray-100 p-5">
+                  <div key={r.id} className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-5">
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-2">
-                          <span className="font-semibold text-gray-900 text-sm">{r.client}</span>
+                          <span className="font-semibold text-gray-900 dark:text-white text-sm">{r.client}</span>
                           <span className="text-xs text-gray-400">{r.product}</span>
                           <div className="flex gap-0.5">
                             {Array.from({ length: 5 }).map((_, i) => (
@@ -573,8 +573,8 @@ export default function AdminClient() {
                             ))}
                           </div>
                         </div>
-                        <p className="text-sm text-gray-600 italic">"{r.text}"</p>
-                        <div className="text-xs text-gray-400 mt-2">{r.date}</div>
+                        <p className="text-sm text-gray-600 dark:text-neutral-300 italic">"{r.text}"</p>
+                        <div className="text-xs text-gray-400 dark:text-neutral-500 mt-2">{r.date}</div>
                       </div>
                       <div className="flex flex-col items-end gap-2 shrink-0">
                         <span className={`text-xs px-2.5 py-1 rounded-full font-medium ${
@@ -621,8 +621,8 @@ export default function AdminClient() {
 
               <div className="grid sm:grid-cols-2 gap-6">
                 {/* Top products */}
-                <div className="bg-white rounded-2xl border border-gray-100 p-6">
-                  <h2 className="font-bold text-gray-900 mb-5">{isUk ? "Топ продукти" : "Top Products"}</h2>
+                <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-6">
+                  <h2 className="font-bold text-gray-900 dark:text-white mb-5">{isUk ? "Топ продукти" : "Top Products"}</h2>
                   <div className="space-y-3">
                     {[
                       { name: "Ресторан / Кафе", emoji: "🍽", sales: 8, pct: 100 },
@@ -639,7 +639,7 @@ export default function AdminClient() {
                           </div>
                           <span className="font-semibold text-gray-900">{p.sales}</span>
                         </div>
-                        <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                        <div className="h-2 bg-gray-100 dark:bg-neutral-800 rounded-full overflow-hidden">
                           <div className="h-full bg-indigo-600 rounded-full" style={{ width: `${p.pct}%` }} />
                         </div>
                       </div>
@@ -648,8 +648,8 @@ export default function AdminClient() {
                 </div>
 
                 {/* Revenue by month */}
-                <div className="bg-white rounded-2xl border border-gray-100 p-6">
-                  <h2 className="font-bold text-gray-900 mb-5">{isUk ? "Дохід по місяцях" : "Revenue by Month"}</h2>
+                <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-6">
+                  <h2 className="font-bold text-gray-900 dark:text-white mb-5">{isUk ? "Дохід по місяцях" : "Revenue by Month"}</h2>
                   <div className="space-y-3">
                     {[
                       { month: "Листопад 2025", revenue: 52000 },
@@ -665,7 +665,7 @@ export default function AdminClient() {
                             {m.revenue.toLocaleString("uk-UA")} ₴
                           </span>
                         </div>
-                        <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                        <div className="h-2 bg-gray-100 dark:bg-neutral-800 rounded-full overflow-hidden">
                           <div
                             className="h-full bg-indigo-600 rounded-full"
                             style={{ width: `${Math.round((m.revenue / 89500) * 100)}%` }}
@@ -691,12 +691,12 @@ export default function AdminClient() {
               </div>
 
               {/* Revenue by period */}
-              <div className="bg-white rounded-2xl border border-gray-100 p-6">
+              <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-6">
                 <div className="flex items-center justify-between mb-5">
-                  <h2 className="font-bold text-gray-900 flex items-center gap-2">
+                  <h2 className="font-bold text-gray-900 dark:text-white flex items-center gap-2">
                     <TrendingUp className="w-4 h-4 text-indigo-600" /> {isUk ? "Звіт про дохід по місяцях" : "Monthly Revenue Report"}
                   </h2>
-                  <button className="flex items-center gap-1.5 text-sm text-gray-500 border border-gray-200 rounded-xl px-3 py-1.5 hover:bg-gray-50">
+                  <button className="flex items-center gap-1.5 text-sm text-gray-500 dark:text-neutral-400 border border-gray-200 dark:border-neutral-700 rounded-xl px-3 py-1.5 hover:bg-gray-50">
                     <Download className="w-3.5 h-3.5" /> {isUk ? "Завантажити" : "Download"}
                   </button>
                 </div>
@@ -713,21 +713,21 @@ export default function AdminClient() {
                         <div className="flex items-center justify-between text-sm mb-1">
                           <span className="text-gray-600">{m.month}</span>
                         </div>
-                        <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                        <div className="h-2 bg-gray-100 dark:bg-neutral-800 rounded-full overflow-hidden">
                           <div className="h-full bg-indigo-600 rounded-full" style={{ width: `${Math.round((m.revenue / 89500) * 100)}%` }} />
                         </div>
                       </div>
-                      <span className="text-sm text-gray-400 whitespace-nowrap">{m.txn} {isUk ? "транз." : "txn."}</span>
-                      <span className="text-sm font-semibold text-gray-900 text-right w-24">{m.revenue.toLocaleString("uk-UA")} ₴</span>
+                      <span className="text-sm text-gray-400 dark:text-neutral-500 whitespace-nowrap">{m.txn} {isUk ? "транз." : "txn."}</span>
+                      <span className="text-sm font-semibold text-gray-900 dark:text-white text-right w-24">{m.revenue.toLocaleString("uk-UA")} ₴</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Transaction history */}
-              <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden">
+              <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 overflow-hidden">
                 <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
-                  <h2 className="font-bold text-gray-900 flex items-center gap-2">
+                  <h2 className="font-bold text-gray-900 dark:text-white flex items-center gap-2">
                     <FileText className="w-4 h-4 text-indigo-600" /> {isUk ? "Історія транзакцій" : "Transaction History"}
                   </h2>
                   <button
@@ -739,20 +739,20 @@ export default function AdminClient() {
                       const u = URL.createObjectURL(b);
                       const a = document.createElement("a"); a.href = u; a.download = "transactions.csv"; a.click(); URL.revokeObjectURL(u);
                     }}
-                    className="flex items-center gap-1.5 text-sm text-gray-500 border border-gray-200 rounded-xl px-3 py-1.5 hover:bg-gray-50"
+                    className="flex items-center gap-1.5 text-sm text-gray-500 dark:text-neutral-400 border border-gray-200 dark:border-neutral-700 rounded-xl px-3 py-1.5 hover:bg-gray-50"
                   >
                     <Download className="w-3.5 h-3.5" /> CSV
                   </button>
                 </div>
-                <div className="grid grid-cols-6 text-xs font-semibold text-gray-500 uppercase tracking-wide px-5 py-3 bg-gray-50 border-b border-gray-100">
+                <div className="grid grid-cols-6 text-xs font-semibold text-gray-500 dark:text-neutral-400 uppercase tracking-wide px-5 py-3 bg-gray-50 dark:bg-neutral-900 border-b border-gray-100">
                   <span>ID</span><span>{isUk ? "Дата" : "Date"}</span><span>{isUk ? "Клієнт" : "Client"}</span><span>{isUk ? "Метод" : "Method"}</span><span className="col-span-1">{isUk ? "Статус" : "Status"}</span><span className="text-right">{isUk ? "Сума" : "Amount"}</span>
                 </div>
                 <div className="divide-y divide-gray-50">
                   {MOCK_TRANSACTIONS.map((t) => (
-                    <div key={t.id} className="grid grid-cols-6 items-center px-5 py-3 hover:bg-gray-50 text-sm">
+                    <div key={t.id} className="grid grid-cols-6 items-center px-5 py-3 hover:bg-gray-50 dark:bg-neutral-900 text-sm">
                       <span className="font-mono text-xs text-gray-400">{t.id}</span>
-                      <span className="text-gray-500 text-xs">{t.date}</span>
-                      <span className="text-gray-700 truncate">{t.client}</span>
+                      <span className="text-gray-500 dark:text-neutral-400 text-xs">{t.date}</span>
+                      <span className="text-gray-700 dark:text-neutral-300 truncate">{t.client}</span>
                       <span className="text-xs text-gray-500">{t.method}</span>
                       <span className={`text-xs px-2.5 py-1 rounded-full font-medium w-fit ${
                         t.status === "success" ? "bg-green-100 text-green-700" :
@@ -761,27 +761,27 @@ export default function AdminClient() {
                       }`}>
                         {t.status === "success" ? (isUk ? "Успішно" : "Success") : t.status === "pending" ? (isUk ? "Очікує" : "Pending") : (isUk ? "Повернення" : "Refunded")}
                       </span>
-                      <span className="text-sm font-semibold text-gray-900 text-right">{t.amount.toLocaleString("uk-UA")} ₴</span>
+                      <span className="text-sm font-semibold text-gray-900 dark:text-white text-right">{t.amount.toLocaleString("uk-UA")} ₴</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Invoices */}
-              <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden">
+              <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 overflow-hidden">
                 <div className="px-5 py-4 border-b border-gray-100">
-                  <h2 className="font-bold text-gray-900 flex items-center gap-2">
+                  <h2 className="font-bold text-gray-900 dark:text-white flex items-center gap-2">
                     <FileText className="w-4 h-4 text-indigo-600" /> {isUk ? "Інвойси та квитанції" : "Invoices & Receipts"}
                   </h2>
                 </div>
-                <div className="grid grid-cols-6 text-xs font-semibold text-gray-500 uppercase tracking-wide px-5 py-3 bg-gray-50 border-b border-gray-100">
+                <div className="grid grid-cols-6 text-xs font-semibold text-gray-500 dark:text-neutral-400 uppercase tracking-wide px-5 py-3 bg-gray-50 dark:bg-neutral-900 border-b border-gray-100">
                   <span>#</span><span>{isUk ? "Клієнт" : "Client"}</span><span>{isUk ? "Замовлення" : "Order"}</span><span>{isUk ? "Термін" : "Due"}</span><span>{isUk ? "Статус" : "Status"}</span><span className="text-right">{isUk ? "Сума" : "Amount"}</span>
                 </div>
                 <div className="divide-y divide-gray-50">
                   {MOCK_ADMIN_INVOICES.map((inv) => (
-                    <div key={inv.id} className="grid grid-cols-6 items-center px-5 py-3 hover:bg-gray-50 text-sm">
+                    <div key={inv.id} className="grid grid-cols-6 items-center px-5 py-3 hover:bg-gray-50 dark:bg-neutral-900 text-sm">
                       <span className="font-mono text-xs text-gray-500">{inv.id}</span>
-                      <span className="text-gray-700 text-xs truncate">{inv.client}</span>
+                      <span className="text-gray-700 dark:text-neutral-300 text-xs truncate">{inv.client}</span>
                       <span className="text-xs text-gray-500">#{inv.order}</span>
                       <span className="text-xs text-gray-500">{inv.due}</span>
                       <span className={`text-xs px-2.5 py-1 rounded-full font-medium w-fit ${
@@ -793,7 +793,7 @@ export default function AdminClient() {
                       </span>
                       <div className="flex items-center justify-end gap-2">
                         <span className="font-semibold text-gray-900">{inv.amount.toLocaleString("uk-UA")} ₴</span>
-                        <button className="p-1 text-gray-400 hover:text-indigo-600 transition-colors">
+                        <button className="p-1 text-gray-400 dark:text-neutral-500 hover:text-indigo-600 transition-colors">
                           <Download className="w-3.5 h-3.5" />
                         </button>
                       </div>
@@ -803,9 +803,9 @@ export default function AdminClient() {
               </div>
 
               {/* Promo codes */}
-              <div className="bg-white rounded-2xl border border-gray-100 p-6">
+              <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-6">
                 <div className="flex items-center justify-between mb-5">
-                  <h2 className="font-bold text-gray-900 flex items-center gap-2">
+                  <h2 className="font-bold text-gray-900 dark:text-white flex items-center gap-2">
                     <Tag className="w-4 h-4 text-indigo-600" /> {isUk ? "Промокоди та знижки" : "Promo Codes & Discounts"}
                   </h2>
                   <button className="flex items-center gap-1.5 px-4 py-2 bg-indigo-600 text-white rounded-xl text-sm font-medium hover:bg-indigo-700 transition-colors">
@@ -814,10 +814,10 @@ export default function AdminClient() {
                 </div>
                 <div className="space-y-3">
                   {MOCK_PROMO_CODES.map((promo) => (
-                    <div key={promo.code} className="flex items-center justify-between p-4 rounded-xl border border-gray-100 hover:bg-gray-50">
+                    <div key={promo.code} className="flex items-center justify-between p-4 rounded-xl border border-gray-100 dark:border-neutral-700 hover:bg-gray-50">
                       <div className="flex items-center gap-4">
                         <span className={`px-3 py-1.5 rounded-lg font-mono text-sm font-bold ${
-                          promo.active ? "bg-indigo-50 text-indigo-700" : "bg-gray-100 text-gray-400"
+                          promo.active ? "bg-indigo-50 text-indigo-700" : "bg-gray-100 dark:bg-neutral-800 text-gray-400"
                         }`}>
                           {promo.code}
                         </span>
@@ -828,14 +828,14 @@ export default function AdminClient() {
                       </div>
                       <div className="flex items-center gap-3">
                         <span className={`text-xs px-2.5 py-1 rounded-full font-medium ${
-                          promo.active ? "bg-green-100 text-green-700" : "bg-gray-100 text-gray-500"
+                          promo.active ? "bg-green-100 text-green-700" : "bg-gray-100 dark:bg-neutral-800 text-gray-500"
                         }`}>
                           {promo.active ? (isUk ? "Активний" : "Active") : (isUk ? "Вимкнено" : "Inactive")}
                         </span>
-                        <button className="p-1.5 text-gray-400 hover:text-amber-600 hover:bg-amber-50 rounded-lg transition-colors">
+                        <button className="p-1.5 text-gray-400 dark:text-neutral-500 hover:text-amber-600 hover:bg-amber-50 rounded-lg transition-colors">
                           <Pencil className="w-3.5 h-3.5" />
                         </button>
-                        <button className="p-1.5 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">
+                        <button className="p-1.5 text-gray-400 dark:text-neutral-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">
                           <Trash2 className="w-3.5 h-3.5" />
                         </button>
                       </div>
@@ -869,14 +869,14 @@ export default function AdminClient() {
                     : ["CODENEST10 — 10% discount (active)", "+ Add promo code"],
                 },
               ].map((s) => (
-                <div key={s.title} className="bg-white rounded-2xl border border-gray-100 p-6">
+                <div key={s.title} className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-6">
                   <div className="flex items-center justify-between mb-4">
                     <h2 className="font-bold text-gray-900">{s.title}</h2>
                     <button className="text-sm text-indigo-600 hover:underline">{isUk ? "Редагувати" : "Edit"}</button>
                   </div>
                   <ul className="space-y-2">
                     {s.items.map((item) => (
-                      <li key={item} className="text-sm text-gray-600 flex items-center gap-2">
+                      <li key={item} className="text-sm text-gray-600 dark:text-neutral-300 flex items-center gap-2">
                         <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 shrink-0" />
                         {item}
                       </li>

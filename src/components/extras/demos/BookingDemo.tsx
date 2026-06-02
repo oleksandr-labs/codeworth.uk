@@ -69,10 +69,10 @@ function BeautyBooking({ isUk }: { isUk: boolean }) {
     return (
       <div className="text-center py-20">
         <div className="text-6xl mb-4">🎉</div>
-        <h3 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+        <h3 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
           {isUk ? "Запис підтверджено!" : "Booking confirmed!"}
         </h3>
-        <p className="text-neutral-500 mb-6">
+        <p className="text-neutral-500 dark:text-neutral-400 mb-6">
           {isUk
             ? `${name}, чекаємо вас ${date} о ${time} у майстра ${MASTERS.find((m) => m.id === master)?.[isUk ? "nameUk" : "name"]}`
             : `${name}, we'll see you on ${date} at ${time} with ${MASTERS.find((m) => m.id === master)?.name}`}
@@ -87,10 +87,10 @@ function BeautyBooking({ isUk }: { isUk: boolean }) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Онлайн-запис — Салон краси" : "Online Booking — Beauty Salon"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk ? "4 кроки: послуга → майстер → дата/час → підтвердження." : "4 steps: service → master → date/time → confirmation."}
       </p>
 
@@ -100,7 +100,7 @@ function BeautyBooking({ isUk }: { isUk: boolean }) {
           {[1, 2, 3, 4].map((s) => (
             <div key={s} className="flex items-center gap-2 flex-1 last:flex-none">
               <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shrink-0 transition-all ${
-                step === s ? "bg-rose-500 text-white" : step > s ? "bg-rose-100 text-rose-600" : "bg-neutral-100 text-neutral-400"
+                step === s ? "bg-rose-500 text-white" : step > s ? "bg-rose-100 text-rose-600" : "bg-neutral-100 dark:bg-neutral-800 text-neutral-400"
               }`}>
                 {step > s ? "✓" : s}
               </div>
@@ -112,13 +112,13 @@ function BeautyBooking({ isUk }: { isUk: boolean }) {
           ))}
         </div>
 
-        <div className="bg-white rounded-3xl border border-neutral-100 p-6 shadow-lg shadow-neutral-100">
+        <div className="bg-white rounded-3xl border border-neutral-100 dark:border-neutral-700 p-6 shadow-lg shadow-neutral-100">
           {step === 1 && (
             <div className="space-y-3">
-              <p className="font-semibold text-neutral-900 mb-4">{isUk ? "Оберіть послугу" : "Choose a service"}</p>
+              <p className="font-semibold text-neutral-900 dark:text-white mb-4">{isUk ? "Оберіть послугу" : "Choose a service"}</p>
               {BEAUTY_SERVICES.map((s) => (
                 <button key={s.id} onClick={() => { setService(s.id); setStep(2); }}
-                  className="w-full flex items-center justify-between p-4 rounded-xl border border-neutral-100 hover:border-rose-300 hover:bg-rose-50 transition-all text-left">
+                  className="w-full flex items-center justify-between p-4 rounded-xl border border-neutral-100 dark:border-neutral-700 hover:border-rose-300 hover:bg-rose-50 transition-all text-left">
                   <div>
                     <p className="font-medium text-neutral-900">{isUk ? s.labelUk : s.label}</p>
                     <p className="text-xs text-neutral-400">{s.duration} {isUk ? "хв" : "min"}</p>
@@ -131,11 +131,11 @@ function BeautyBooking({ isUk }: { isUk: boolean }) {
 
           {step === 2 && (
             <div>
-              <p className="font-semibold text-neutral-900 mb-4">{isUk ? "Оберіть майстра" : "Choose a master"}</p>
+              <p className="font-semibold text-neutral-900 dark:text-white mb-4">{isUk ? "Оберіть майстра" : "Choose a master"}</p>
               <div className="space-y-3">
                 {MASTERS.map((m) => (
                   <button key={m.id} onClick={() => { setMaster(m.id); setStep(3); }}
-                    className="w-full flex items-center gap-4 p-4 rounded-xl border border-neutral-100 hover:border-rose-300 hover:bg-rose-50 transition-all text-left">
+                    className="w-full flex items-center gap-4 p-4 rounded-xl border border-neutral-100 dark:border-neutral-700 hover:border-rose-300 hover:bg-rose-50 transition-all text-left">
                     <div className="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center text-rose-600 font-bold shrink-0">
                       {m.name[0]}
                     </div>
@@ -151,14 +151,14 @@ function BeautyBooking({ isUk }: { isUk: boolean }) {
 
           {step === 3 && (
             <div>
-              <p className="font-semibold text-neutral-900 mb-4">{isUk ? "Оберіть дату" : "Choose date"}</p>
+              <p className="font-semibold text-neutral-900 dark:text-white mb-4">{isUk ? "Оберіть дату" : "Choose date"}</p>
               <div className="flex gap-2 overflow-x-auto pb-2 mb-6">
                 {days.slice(0, 7).map((d) => {
                   const dayObj = new Date(d);
                   return (
                     <button key={d} onClick={() => setDate(d)}
                       className={`shrink-0 w-14 rounded-xl border py-2 text-center transition-all ${
-                        date === d ? "border-rose-500 bg-rose-500 text-white" : "border-neutral-200 text-neutral-700 hover:border-rose-300"
+                        date === d ? "border-rose-500 bg-rose-500 text-white" : "border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 hover:border-rose-300"
                       }`}>
                       <p className="text-xs">{dayObj.toLocaleDateString(isUk ? "uk-UA" : "en-US", { weekday: "short" })}</p>
                       <p className="text-lg font-bold">{dayObj.getDate()}</p>
@@ -168,16 +168,16 @@ function BeautyBooking({ isUk }: { isUk: boolean }) {
               </div>
               {date && (
                 <>
-                  <p className="font-semibold text-neutral-900 mb-3">{isUk ? "Доступний час" : "Available slots"}</p>
+                  <p className="font-semibold text-neutral-900 dark:text-white mb-3">{isUk ? "Доступний час" : "Available slots"}</p>
                   <div className="grid grid-cols-4 gap-2">
                     {TIME_SLOTS.map((t) => {
                       const booked = BOOKED_SLOTS.includes(t);
                       return (
                         <button key={t} disabled={booked} onClick={() => { setTime(t); setStep(4); }}
                           className={`py-2 rounded-xl border text-sm font-medium transition-all ${
-                            booked ? "border-neutral-100 bg-neutral-50 text-neutral-300 cursor-not-allowed" :
+                            booked ? "border-neutral-100 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900 text-neutral-300 cursor-not-allowed" :
                             time === t ? "border-rose-500 bg-rose-500 text-white" :
-                            "border-neutral-200 text-neutral-700 hover:border-rose-300"
+                            "border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 hover:border-rose-300"
                           }`}>
                           {t}
                         </button>
@@ -191,7 +191,7 @@ function BeautyBooking({ isUk }: { isUk: boolean }) {
 
           {step === 4 && (
             <div className="space-y-4">
-              <p className="font-semibold text-neutral-900 mb-4">{isUk ? "Ваші контакти" : "Your contacts"}</p>
+              <p className="font-semibold text-neutral-900 dark:text-white mb-4">{isUk ? "Ваші контакти" : "Your contacts"}</p>
               <div className="p-3 bg-rose-50 rounded-xl text-sm text-rose-700 mb-4">
                 {selectedService?.[isUk ? "labelUk" : "label"]} • {date} {time} • {MASTERS.find((m) => m.id === master)?.[isUk ? "nameUk" : "name"]}
               </div>
@@ -200,14 +200,14 @@ function BeautyBooking({ isUk }: { isUk: boolean }) {
                 placeholder={isUk ? "Ваше ім'я" : "Your name"}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-rose-400 focus:outline-none text-sm"
+                className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 focus:border-rose-400 focus:outline-none text-sm"
               />
               <input
                 type="tel"
                 placeholder={isUk ? "Телефон" : "Phone"}
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-rose-400 focus:outline-none text-sm"
+                className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 focus:border-rose-400 focus:outline-none text-sm"
               />
               <button
                 disabled={!name || !phone}
@@ -221,7 +221,7 @@ function BeautyBooking({ isUk }: { isUk: boolean }) {
         </div>
 
         {step > 1 && (
-          <button onClick={() => setStep((s) => s - 1)} className="mt-4 text-sm text-neutral-400 hover:text-neutral-600 transition-colors">
+          <button onClick={() => setStep((s) => s - 1)} className="mt-4 text-sm text-neutral-400 hover:text-neutral-600 dark:text-neutral-300 transition-colors">
             ← {isUk ? "Назад" : "Back"}
           </button>
         )}
@@ -244,7 +244,7 @@ function MedicalBooking({ isUk }: { isUk: boolean }) {
     return (
       <div className="text-center py-20">
         <div className="text-6xl mb-4">✅</div>
-        <h3 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+        <h3 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
           {isUk ? "Запис підтверджено!" : "Appointment confirmed!"}
         </h3>
         <p className="text-neutral-500">
@@ -258,10 +258,10 @@ function MedicalBooking({ isUk }: { isUk: boolean }) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Онлайн-запис — Медична клініка" : "Online Appointment — Medical Clinic"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk ? "Спеціалізація → лікар → вільні слоти → підтвердження." : "Specialty → doctor → slots → confirmation."}
       </p>
 
@@ -273,7 +273,7 @@ function MedicalBooking({ isUk }: { isUk: boolean }) {
               <div className="grid grid-cols-2 gap-3">
                 {MEDICAL_SPECIALTIES.map((s) => (
                   <button key={s.id} onClick={() => { setSpecialty(s.id); setStep(2); }}
-                    className="p-4 rounded-xl bg-white border border-teal-100 hover:border-teal-400 hover:bg-teal-50 transition-all text-left">
+                    className="p-4 rounded-xl bg-white dark:bg-neutral-800 border border-teal-100 hover:border-teal-400 hover:bg-teal-50 transition-all text-left">
                     <p className="font-medium text-teal-900 text-sm">{isUk ? s.labelUk : s.label}</p>
                   </button>
                 ))}
@@ -286,7 +286,7 @@ function MedicalBooking({ isUk }: { isUk: boolean }) {
               <p className="font-semibold text-teal-900 mb-4">{isUk ? "Оберіть лікаря" : "Choose a doctor"}</p>
               {doctorList.map((d) => (
                 <button key={d.id} onClick={() => { setDoctor(d.id); setStep(3); }}
-                  className="w-full p-4 rounded-xl bg-white border border-teal-100 hover:border-teal-400 text-left mb-3 flex items-center gap-3">
+                  className="w-full p-4 rounded-xl bg-white dark:bg-neutral-800 border border-teal-100 hover:border-teal-400 text-left mb-3 flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 font-bold">
                     {(isUk ? d.nameUk : d.name)[3]}
                   </div>
@@ -305,7 +305,7 @@ function MedicalBooking({ isUk }: { isUk: boolean }) {
                   return (
                     <button key={d} onClick={() => setDate(d)}
                       className={`shrink-0 w-14 rounded-xl border py-2 text-center ${
-                        date === d ? "border-teal-600 bg-teal-600 text-white" : "border-neutral-200 bg-white text-neutral-700 hover:border-teal-400"
+                        date === d ? "border-teal-600 bg-teal-600 text-white" : "border-neutral-200 dark:border-neutral-700 bg-white text-neutral-700 dark:text-neutral-300 hover:border-teal-400"
                       }`}>
                       <p className="text-xs">{dayObj.toLocaleDateString(isUk ? "uk-UA" : "en-US", { weekday: "short" })}</p>
                       <p className="text-lg font-bold">{dayObj.getDate()}</p>
@@ -322,7 +322,7 @@ function MedicalBooking({ isUk }: { isUk: boolean }) {
                       return (
                         <button key={t} disabled={booked} onClick={() => { setTime(t); setDone(true); }}
                           className={`py-2 rounded-xl border text-sm font-medium ${
-                            booked ? "bg-neutral-100 text-neutral-300 border-neutral-100 cursor-not-allowed" :
+                            booked ? "bg-neutral-100 dark:bg-neutral-800 text-neutral-300 border-neutral-100 dark:border-neutral-700 cursor-not-allowed" :
                             "bg-white border-teal-200 text-teal-800 hover:border-teal-500 hover:bg-teal-50"
                           }`}>
                           {t}

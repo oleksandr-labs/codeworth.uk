@@ -19,7 +19,7 @@ export function AiToolPreview() {
         <h1 className="text-4xl font-extrabold mb-4 leading-tight max-w-2xl mx-auto">
           Write better content<br />in a fraction of the time
         </h1>
-        <p className="text-gray-400 text-lg mb-8 max-w-lg mx-auto">
+        <p className="text-gray-400 dark:text-neutral-500 text-lg mb-8 max-w-lg mx-auto">
           NeuralFlow analyzes your brand voice, learns your style, and generates on-brand content that sounds like you.
         </p>
         <div className="flex items-center justify-center gap-3">
@@ -36,14 +36,14 @@ export function AiToolPreview() {
           <div className="grid grid-cols-2 gap-4">
             <div className="rounded-xl p-4 bg-red-50 border border-red-100">
               <div className="text-xs font-bold text-red-500 mb-2">❌ Without AI</div>
-              <div className="text-xs text-gray-600 leading-relaxed italic">
+              <div className="text-xs text-gray-600 dark:text-neutral-300 leading-relaxed italic">
                 "We are pleased to offer our customers a wide range of solutions that meet their needs in today&apos;s competitive market environment..."
               </div>
               <div className="mt-3 text-xs text-red-400">3 hours · generic · low engagement</div>
             </div>
             <div className="rounded-xl p-4 bg-violet-50 border border-violet-200">
               <div className="text-xs font-bold text-violet-600 mb-2">✅ With NeuralFlow</div>
-              <div className="text-xs text-gray-800 leading-relaxed font-medium">
+              <div className="text-xs text-gray-800 dark:text-neutral-200 leading-relaxed font-medium">
                 "Stop wasting 3 hours writing copy that nobody reads. NeuralFlow writes it in 90 seconds — and your customers actually click."
               </div>
               <div className="mt-3 text-xs text-violet-500">90 seconds · on-brand · 3× CTR</div>
@@ -52,7 +52,7 @@ export function AiToolPreview() {
         </div>
       </section>
 
-      <section className="px-8 py-10 bg-gray-50 border-t border-gray-100">
+      <section className="px-8 py-10 bg-gray-50 dark:bg-neutral-900 border-t border-gray-100">
         <div className="grid grid-cols-4 gap-4 max-w-3xl mx-auto text-center">
           {[
             { icon: "📝", label: "Blog posts" },
@@ -60,7 +60,7 @@ export function AiToolPreview() {
             { icon: "📱", label: "Social captions" },
             { icon: "🎯", label: "Ad copy" },
           ].map((u) => (
-            <div key={u.label} className="rounded-xl p-4 bg-white border border-gray-100">
+            <div key={u.label} className="rounded-xl p-4 bg-white dark:bg-neutral-800 border border-gray-100">
               <div className="text-2xl mb-2">{u.icon}</div>
               <div className="text-xs font-semibold text-gray-700">{u.label}</div>
             </div>
@@ -68,7 +68,7 @@ export function AiToolPreview() {
         </div>
         <div className="text-center mt-6">
           <button className="bg-violet-600 text-white font-bold px-8 py-3 rounded-xl text-sm">Get 50 free generations →</button>
-          <p className="text-xs text-gray-400 mt-2">No credit card · Cancel anytime</p>
+          <p className="text-xs text-gray-400 dark:text-neutral-500 mt-2">No credit card · Cancel anytime</p>
         </div>
       </section>
     </div>

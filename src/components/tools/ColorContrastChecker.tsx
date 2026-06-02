@@ -109,11 +109,11 @@ export function ColorContrastChecker({ isUk }: Props) {
           { label: t.bg, value: bg, setter: setBg },
         ].map((c) => (
           <div key={c.label}>
-            <label className="block text-sm font-semibold text-neutral-700 mb-2">{c.label}</label>
+            <label className="block text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-2">{c.label}</label>
             <div className="flex items-center gap-3">
               <div className="relative">
                 <div
-                  className="w-12 h-12 rounded-xl border-2 border-neutral-200 shadow-sm cursor-pointer overflow-hidden"
+                  className="w-12 h-12 rounded-xl border-2 border-neutral-200 dark:border-neutral-700 shadow-sm cursor-pointer overflow-hidden"
                   style={{ backgroundColor: c.value }}
                 >
                   <input
@@ -129,7 +129,7 @@ export function ColorContrastChecker({ isUk }: Props) {
                 value={c.value}
                 onChange={(e) => c.setter(e.target.value)}
                 maxLength={7}
-                className="flex-1 px-3 py-2 rounded-xl border border-neutral-200 bg-white text-sm font-mono focus:outline-none focus:ring-2 focus:ring-indigo-400 uppercase"
+                className="flex-1 px-3 py-2 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm font-mono focus:outline-none focus:ring-2 focus:ring-indigo-400 uppercase"
               />
             </div>
           </div>
@@ -168,7 +168,7 @@ export function ColorContrastChecker({ isUk }: Props) {
 
           {/* Preview */}
           <div>
-            <p className="text-sm font-semibold text-neutral-700 mb-3">{t.preview}</p>
+            <p className="text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-3">{t.preview}</p>
             <div
               className="w-full h-full min-h-40 rounded-2xl p-6 border border-neutral-200"
               style={{ backgroundColor: bg, color: fg }}

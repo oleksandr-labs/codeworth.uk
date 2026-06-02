@@ -149,19 +149,19 @@ export default function CheckoutForm() {
         <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
           <CheckCircle className="w-10 h-10 text-green-600" />
         </div>
-        <h2 className="text-2xl font-bold font-syne text-gray-900 mb-3">
+        <h2 className="text-2xl font-bold font-syne text-gray-900 dark:text-white mb-3">
           {isUk ? "Дякуємо за замовлення!" : "Thank you for your order!"}
         </h2>
-        <p className="text-gray-600 mb-2">
+        <p className="text-gray-600 dark:text-neutral-300 mb-2">
           {isUk ? `Ваше замовлення ${orderId ? `#${orderId}` : ""} прийнято.` : `Your order ${orderId ? `#${orderId}` : ""} has been received.`}
         </p>
-        <p className="text-gray-500 text-sm mb-8">
+        <p className="text-gray-500 dark:text-neutral-400 text-sm mb-8">
           {isUk
             ? <>Ми надіслали підтвердження на <strong>{form.email || "вашу пошту"}</strong>. Наш менеджер зв'яжеться з вами протягом 30 хвилин.</>
             : <>We sent a confirmation to <strong>{form.email || "your email"}</strong>. Our manager will contact you within 30 minutes.</>}
         </p>
         <div className="bg-indigo-50 rounded-2xl p-6 text-left mb-8 text-sm space-y-2">
-          <div className="font-semibold text-gray-900 mb-3">{isUk ? "Що далі?" : "What's next?"}</div>
+          <div className="font-semibold text-gray-900 dark:text-white mb-3">{isUk ? "Що далі?" : "What's next?"}</div>
           {(isUk
             ? [
                 "Очікуйте дзвінка або повідомлення від менеджера",
@@ -193,7 +193,7 @@ export default function CheckoutForm() {
           </Link>
           <Link
             href={`/${lang}`}
-            className="px-6 py-3 border border-gray-200 text-gray-700 rounded-xl font-medium text-sm hover:bg-gray-50 transition-colors"
+            className="px-6 py-3 border border-gray-200 dark:border-neutral-700 text-gray-700 dark:text-neutral-300 rounded-xl font-medium text-sm hover:bg-gray-50 dark:bg-neutral-900 transition-colors"
           >
             {isUk ? "На головну" : "Home"}
           </Link>
@@ -219,7 +219,7 @@ export default function CheckoutForm() {
                       ? "bg-indigo-600 text-white"
                       : step > s.id
                       ? "bg-green-500 text-white"
-                      : "bg-gray-100 text-gray-400"
+                      : "bg-gray-100 dark:bg-neutral-800 text-gray-400"
                   }`}
                 >
                   {step > s.id ? <CheckCircle className="w-4 h-4" /> : <s.icon className="w-4 h-4" />}
@@ -239,7 +239,7 @@ export default function CheckoutForm() {
           ))}
         </div>
 
-        <form onSubmit={submit} className="bg-white rounded-2xl border border-gray-100 p-6 space-y-5">
+        <form onSubmit={submit} className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-6 space-y-5">
           {/* Step 1: Personal data */}
           {step === 1 && (
             <>
@@ -261,7 +261,7 @@ export default function CheckoutForm() {
               <Field label={isUk ? "Назва вашого бізнесу *" : "Your Business Name *"} value={form.businessName} onChange={(v) => set("businessName", v)} placeholder={isUk ? "Кафе «Сонечко»" : "My Business"} required />
               <Field label={isUk ? "Домен (якщо є)" : "Domain (if any)"} value={form.domain} onChange={(v) => set("domain", v)} placeholder="example.com.ua" />
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                <label className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-1.5">
                   {isUk ? "Короткий опис бізнесу *" : "Brief Business Description *"}
                 </label>
                 <textarea
@@ -270,11 +270,11 @@ export default function CheckoutForm() {
                   placeholder={isUk ? "Розкажіть про ваш бізнес, цільову аудиторію, особливості..." : "Tell us about your business, target audience, features..."}
                   rows={3}
                   required
-                  className="w-full px-4 py-3 text-sm border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-300 resize-none"
+                  className="w-full px-4 py-3 text-sm border border-gray-200 dark:border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-300 resize-none"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                <label className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-1.5">
                   {isUk ? "Додаткові побажання" : "Additional Wishes"}
                 </label>
                 <textarea
@@ -282,7 +282,7 @@ export default function CheckoutForm() {
                   onChange={(e) => set("wishes", e.target.value)}
                   placeholder={isUk ? "Особливі вимоги, стиль, кольори, референси..." : "Special requirements, style, colors, references..."}
                   rows={3}
-                  className="w-full px-4 py-3 text-sm border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-300 resize-none"
+                  className="w-full px-4 py-3 text-sm border border-gray-200 dark:border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-300 resize-none"
                 />
               </div>
             </>
@@ -297,7 +297,7 @@ export default function CheckoutForm() {
                   <label
                     key={m.id}
                     className={`flex items-start gap-4 p-4 rounded-xl border-2 cursor-pointer transition-colors ${
-                      payment === m.id ? "border-indigo-400 bg-indigo-50" : "border-gray-100 hover:border-gray-200"
+                      payment === m.id ? "border-indigo-400 bg-indigo-50" : "border-gray-100 dark:border-neutral-700 hover:border-gray-200"
                     }`}
                   >
                     <input
@@ -309,7 +309,7 @@ export default function CheckoutForm() {
                       className="mt-0.5 accent-indigo-600"
                     />
                     <div>
-                      <div className="font-medium text-gray-900 text-sm">{m.label}</div>
+                      <div className="font-medium text-gray-900 dark:text-white text-sm">{m.label}</div>
                       <div className="text-xs text-gray-500">{m.sub}</div>
                     </div>
                   </label>
@@ -350,7 +350,7 @@ export default function CheckoutForm() {
               <button
                 type="button"
                 onClick={() => setStep((s) => s - 1)}
-                className="px-5 py-2.5 border border-gray-200 text-gray-700 rounded-xl text-sm font-medium hover:bg-gray-50 transition-colors"
+                className="px-5 py-2.5 border border-gray-200 dark:border-neutral-700 text-gray-700 dark:text-neutral-300 rounded-xl text-sm font-medium hover:bg-gray-50 dark:bg-neutral-900 transition-colors"
               >
                 {isUk ? "← Назад" : "← Back"}
               </button>
@@ -377,11 +377,11 @@ export default function CheckoutForm() {
 
       {/* Order summary sidebar */}
       <div className="space-y-5">
-        <div className="bg-white rounded-2xl border border-gray-100 p-5">
-          <h3 className="font-bold text-gray-900 mb-4 text-sm">{isUk ? "Ваше замовлення" : "Your Order"}</h3>
+        <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-5">
+          <h3 className="font-bold text-gray-900 dark:text-white mb-4 text-sm">{isUk ? "Ваше замовлення" : "Your Order"}</h3>
 
           {items.length === 0 ? (
-            <p className="text-sm text-gray-400 text-center py-4">
+            <p className="text-sm text-gray-400 dark:text-neutral-500 text-center py-4">
               {isUk ? "Кошик порожній" : "Your cart is empty"}
             </p>
           ) : (
@@ -392,12 +392,12 @@ export default function CheckoutForm() {
                     {item.emoji}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="text-sm font-semibold text-gray-900 truncate">{item.title}</div>
+                    <div className="text-sm font-semibold text-gray-900 dark:text-white truncate">{item.title}</div>
                     <div className="text-xs text-gray-500">
                       {isUk ? "Пакет:" : "Package:"} {item.package}
                     </div>
                   </div>
-                  <div className="text-sm font-bold text-gray-900 shrink-0">
+                  <div className="text-sm font-bold text-gray-900 dark:text-white shrink-0">
                     {item.price.toLocaleString(isUk ? "uk-UA" : "en-GB")} {isUk ? "₴" : "£"}
                   </div>
                 </div>
@@ -410,14 +410,14 @@ export default function CheckoutForm() {
               <span>{isUk ? "Підсумок" : "Subtotal"}</span>
               <span>{subtotal.toLocaleString(isUk ? "uk-UA" : "en-GB")} {isUk ? "₴" : "£"}</span>
             </div>
-            <div className="flex justify-between font-bold text-gray-900 text-base pt-2 border-t border-gray-100">
+            <div className="flex justify-between font-bold text-gray-900 dark:text-white text-base pt-2 border-t border-gray-100">
               <span>{isUk ? "Разом" : "Total"}</span>
               <span>{subtotal.toLocaleString(isUk ? "uk-UA" : "en-GB")} {isUk ? "₴" : "£"}</span>
             </div>
           </div>
         </div>
 
-        <div className="bg-white rounded-2xl border border-gray-100 p-4 space-y-2">
+        <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-4 space-y-2">
           {[
             { icon: Shield, text: isUk ? "Безпечна оплата" : "Secure Payment" },
             { icon: CheckCircle, text: isUk ? "Гарантія якості" : "Quality Guarantee" },
@@ -452,7 +452,7 @@ function Field({
 }) {
   return (
     <div>
-      <label className="block text-sm font-medium text-gray-700 mb-1.5">{label}</label>
+      <label className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-1.5">{label}</label>
       <input
         type={type}
         value={value}
@@ -460,7 +460,7 @@ function Field({
         placeholder={placeholder}
         required={required}
         autoComplete={autoComplete}
-        className="w-full px-4 py-2.5 text-sm border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-300"
+        className="w-full px-4 py-2.5 text-sm border border-gray-200 dark:border-neutral-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-300"
       />
     </div>
   );

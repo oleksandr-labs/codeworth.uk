@@ -135,28 +135,28 @@ export function SweetLabDemo({ lang }: { lang: string }) {
   return (
     <div className="min-h-screen bg-white font-sans text-gray-900">
       {/* NAV */}
-      <nav className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+      <nav className="sticky top-0 z-50 bg-white dark:bg-neutral-800 border-b border-gray-100 dark:border-neutral-700 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <a href="#" className="flex items-center gap-2">
             <span className="text-2xl">⚗️</span>
             <span className="text-xl font-bold tracking-tight text-gray-900">SweetLab</span>
           </a>
           <div className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
-            <a href="#collection" className="hover:text-gray-900 transition-colors">
+            <a href="#collection" className="hover:text-gray-900 dark:text-white transition-colors">
               {isUk ? "Колекція" : "Collection"}
             </a>
-            <a href="#catalog" className="hover:text-gray-900 transition-colors">
+            <a href="#catalog" className="hover:text-gray-900 dark:text-white transition-colors">
               {isUk ? "Каталог" : "Catalog"}
             </a>
-            <a href="#cake-order" className="hover:text-gray-900 transition-colors">
+            <a href="#cake-order" className="hover:text-gray-900 dark:text-white transition-colors">
               {isUk ? "Замовлення торта" : "Cake Order"}
             </a>
-            <a href="#about" className="hover:text-gray-900 transition-colors">
+            <a href="#about" className="hover:text-gray-900 dark:text-white transition-colors">
               {isUk ? "Про нас" : "About"}
             </a>
           </div>
           <button
-            className="relative flex items-center gap-1 bg-gray-100 hover:bg-gray-200 transition-colors rounded-full px-3 py-1.5 text-sm font-medium"
+            className="relative flex items-center gap-1 bg-gray-100 dark:bg-neutral-800 hover:bg-gray-200 transition-colors rounded-full px-3 py-1.5 text-sm font-medium"
             onClick={() => setCartCount((c) => Math.max(0, c))}
           >
             🛒
@@ -173,16 +173,16 @@ export function SweetLabDemo({ lang }: { lang: string }) {
       {/* HERO */}
       <section className="bg-white py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-gray-400 mb-6 border border-gray-200 rounded-full px-4 py-1.5">
+          <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-gray-400 dark:text-neutral-500 mb-6 border border-gray-200 dark:border-neutral-700 rounded-full px-4 py-1.5">
             <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: "#C6E03A" }}></span>
             {isUk ? "Колекція завершується за..." : "Collection expires in..."}
             <span className="font-bold text-gray-700">{timerStr}</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-black tracking-tight text-gray-900 leading-none mb-6">
+          <h1 className="text-5xl md:text-7xl font-black tracking-tight text-gray-900 dark:text-white leading-none mb-6">
             {isUk ? "Смак — це наша формула" : "Taste is our formula"}
           </h1>
-          <p className="text-lg text-gray-500 mb-10 max-w-xl mx-auto">
+          <p className="text-lg text-gray-500 dark:text-neutral-400 mb-10 max-w-xl mx-auto">
             {isUk
               ? "Авторські десерти. Тижнева колекція. Київ."
               : "Signature desserts. Weekly collection. Kyiv."}
@@ -191,20 +191,20 @@ export function SweetLabDemo({ lang }: { lang: string }) {
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-12">
             <a
               href="#collection"
-              className="px-8 py-3.5 rounded-full font-semibold text-gray-900 transition-all hover:opacity-90"
+              className="px-8 py-3.5 rounded-full font-semibold text-gray-900 dark:text-white transition-all hover:opacity-90"
               style={{ backgroundColor: "#C6E03A" }}
             >
               {isUk ? "Поточна колекція" : "Current Collection"}
             </a>
             <a
               href="#cake-order"
-              className="px-8 py-3.5 rounded-full font-semibold border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white transition-all"
+              className="px-8 py-3.5 rounded-full font-semibold border-2 border-gray-900 text-gray-900 dark:text-white hover:bg-gray-900 hover:text-white transition-all"
             >
               {isUk ? "Замовити торт" : "Order a Cake"}
             </a>
           </div>
 
-          <div className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 rounded-2xl px-5 py-2.5 border border-gray-200"
+          <div className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 dark:text-neutral-300 rounded-2xl px-5 py-2.5 border border-gray-200"
             style={{ backgroundColor: "#E8E4F0" }}>
             ⚗️ Science + Art = SweetLab
           </div>
@@ -215,7 +215,7 @@ export function SweetLabDemo({ lang }: { lang: string }) {
       <section id="collection" className="py-20 px-4" style={{ backgroundColor: "#E8E4F0" }}>
         <div className="max-w-6xl mx-auto">
           <div className="mb-10">
-            <p className="text-xs font-mono uppercase tracking-widest text-gray-400 mb-2">
+            <p className="text-xs font-mono uppercase tracking-widest text-gray-400 dark:text-neutral-500 mb-2">
               {isUk ? "Обмежена серія" : "Limited Series"}
             </p>
             <h2 className="text-4xl font-black text-gray-900">
@@ -227,11 +227,11 @@ export function SweetLabDemo({ lang }: { lang: string }) {
             {COLLECTION.map((item) => (
               <div
                 key={item.id}
-                className={`bg-white rounded-2xl p-6 border border-gray-100 transition-all ${item.soldOut ? "opacity-50 grayscale" : "hover:-translate-y-1 hover:shadow-lg"}`}
+                className={`bg-white rounded-2xl p-6 border border-gray-100 dark:border-neutral-700 transition-all ${item.soldOut ? "opacity-50 grayscale" : "hover:-translate-y-1 hover:shadow-lg"}`}
               >
                 <div className="text-4xl mb-3">{item.emoji}</div>
                 <div className="flex items-center gap-2 mb-2">
-                  <h3 className="font-bold text-gray-900 text-sm leading-tight">
+                  <h3 className="font-bold text-gray-900 dark:text-white text-sm leading-tight">
                     {isUk ? item.nameUk : item.nameEn}
                   </h3>
                   {(item as any).hot && !item.soldOut && (
@@ -243,7 +243,7 @@ export function SweetLabDemo({ lang }: { lang: string }) {
 
                 <div className="flex items-center gap-2 mb-4">
                   {item.soldOut ? (
-                    <span className="text-xs font-mono bg-gray-100 text-gray-400 px-2 py-0.5 rounded-full">
+                    <span className="text-xs font-mono bg-gray-100 dark:bg-neutral-800 text-gray-400 dark:text-neutral-500 px-2 py-0.5 rounded-full">
                       {isUk ? "Розпродано" : "Sold Out"}
                     </span>
                   ) : (
@@ -258,12 +258,12 @@ export function SweetLabDemo({ lang }: { lang: string }) {
                     {item.price}₴
                   </span>
                   {item.soldOut ? (
-                    <button className="text-xs border border-gray-300 text-gray-500 rounded-full px-3 py-1.5 hover:border-gray-500 transition-colors">
+                    <button className="text-xs border border-gray-300 text-gray-500 dark:text-neutral-400 rounded-full px-3 py-1.5 hover:border-gray-500 transition-colors">
                       🔔 {isUk ? "Сповістити" : "Notify me"}
                     </button>
                   ) : (
                     <button
-                      className="text-xs font-semibold rounded-full px-3 py-1.5 text-gray-900 transition-all hover:opacity-80"
+                      className="text-xs font-semibold rounded-full px-3 py-1.5 text-gray-900 dark:text-white transition-all hover:opacity-80"
                       style={{ backgroundColor: "#C6E03A" }}
                       onClick={() => setCartCount((c) => c + 1)}
                     >
@@ -281,7 +281,7 @@ export function SweetLabDemo({ lang }: { lang: string }) {
       <section id="catalog" className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="mb-10">
-            <p className="text-xs font-mono uppercase tracking-widest text-gray-400 mb-2">
+            <p className="text-xs font-mono uppercase tracking-widest text-gray-400 dark:text-neutral-500 mb-2">
               {isUk ? "Повний асортимент" : "Full Range"}
             </p>
             <h2 className="text-4xl font-black text-gray-900">
@@ -296,8 +296,8 @@ export function SweetLabDemo({ lang }: { lang: string }) {
                 key={cat.key}
                 onClick={() => setActiveCategory(cat.key)}
                 className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${activeCategory === cat.key
-                  ? "text-gray-900 shadow-sm"
-                  : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+                  ? "text-gray-900 dark:text-white shadow-sm"
+                  : "bg-gray-100 dark:bg-neutral-800 text-gray-500 dark:text-neutral-400 hover:bg-gray-200"
                   }`}
                 style={activeCategory === cat.key ? { backgroundColor: "#C6E03A" } : {}}
               >
@@ -314,7 +314,7 @@ export function SweetLabDemo({ lang }: { lang: string }) {
                 onClick={() => toggleFilter(f.key)}
                 className={`px-3 py-1 rounded-full text-xs font-medium border transition-all ${activeFilters.has(f.key)
                   ? "border-transparent text-gray-900"
-                  : "border-gray-200 text-gray-500 hover:border-gray-400"
+                  : "border-gray-200 dark:border-neutral-700 text-gray-500 dark:text-neutral-400 hover:border-gray-400"
                   }`}
                 style={activeFilters.has(f.key) ? { backgroundColor: "#C6E03A", borderColor: "#C6E03A" } : {}}
               >
@@ -328,13 +328,13 @@ export function SweetLabDemo({ lang }: { lang: string }) {
             {filteredProducts.map((p) => (
               <div
                 key={p.id}
-                className={`bg-white border border-gray-100 rounded-2xl p-5 hover:-translate-y-1 hover:shadow-lg transition-all ${p.cat === "cakes" ? "rotate-1 hover:rotate-0" : ""}`}
+                className={`bg-white border border-gray-100 dark:border-neutral-700 rounded-2xl p-5 hover:-translate-y-1 hover:shadow-lg transition-all ${p.cat === "cakes" ? "rotate-1 hover:rotate-0" : ""}`}
               >
                 <div className="text-3xl mb-3">{p.emoji}</div>
-                <p className="font-bold text-sm text-gray-900 leading-tight mb-1">
+                <p className="font-bold text-sm text-gray-900 dark:text-white leading-tight mb-1">
                   {isUk ? p.nameUk : p.nameEn}
                 </p>
-                <p className="font-mono text-base font-bold text-gray-900 mb-3">{p.price}₴</p>
+                <p className="font-mono text-base font-bold text-gray-900 dark:text-white mb-3">{p.price}₴</p>
                 <div className="flex flex-wrap gap-1">
                   {p.glutenFree && (
                     <span className="text-xs bg-green-50 text-green-700 px-2 py-0.5 rounded-full">GF</span>
@@ -361,7 +361,7 @@ export function SweetLabDemo({ lang }: { lang: string }) {
       <section id="cake-order" className="py-20 px-4" style={{ backgroundColor: "#E8E4F0" }}>
         <div className="max-w-6xl mx-auto">
           <div className="mb-10">
-            <p className="text-xs font-mono uppercase tracking-widest text-gray-400 mb-2">
+            <p className="text-xs font-mono uppercase tracking-widest text-gray-400 dark:text-neutral-500 mb-2">
               {isUk ? "Конструктор" : "Builder"}
             </p>
             <h2 className="text-4xl font-black text-gray-900">
@@ -382,7 +382,7 @@ export function SweetLabDemo({ lang }: { lang: string }) {
                   />
                 ))}
               </div>
-              <p className="text-xs font-mono text-gray-400 mb-6">
+              <p className="text-xs font-mono text-gray-400 dark:text-neutral-500 mb-6">
                 {isUk ? `Крок ${step} з 5` : `Step ${step} of 5`}
               </p>
 
@@ -397,10 +397,10 @@ export function SweetLabDemo({ lang }: { lang: string }) {
                       <button
                         key={s.portions}
                         onClick={() => setCakeSize(s.portions)}
-                        className={`p-4 rounded-xl border-2 text-left transition-all ${cakeSize === s.portions ? "border-gray-900 bg-white" : "border-gray-200 bg-white hover:border-gray-400"}`}
+                        className={`p-4 rounded-xl border-2 text-left transition-all ${cakeSize === s.portions ? "border-gray-900 bg-white" : "border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-gray-400"}`}
                       >
                         <span className="block font-mono font-bold text-lg">{s.portions}</span>
-                        <span className="block text-xs text-gray-500 mb-2">
+                        <span className="block text-xs text-gray-500 dark:text-neutral-400 mb-2">
                           {isUk ? "порцій" : "portions"}
                         </span>
                         <span className="block font-mono font-bold text-gray-900">{s.price}₴</span>
@@ -410,7 +410,7 @@ export function SweetLabDemo({ lang }: { lang: string }) {
                   <button
                     disabled={!cakeSize}
                     onClick={() => setStep(2)}
-                    className="mt-6 w-full py-3 rounded-full font-semibold text-gray-900 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+                    className="mt-6 w-full py-3 rounded-full font-semibold text-gray-900 dark:text-white disabled:opacity-40 disabled:cursor-not-allowed transition-all"
                     style={{ backgroundColor: "#C6E03A" }}
                   >
                     {isUk ? "Далі →" : "Next →"}
@@ -429,7 +429,7 @@ export function SweetLabDemo({ lang }: { lang: string }) {
                       <button
                         key={f.key}
                         onClick={() => setCakeFilling(f.key)}
-                        className={`p-3 rounded-xl border-2 flex justify-between items-center transition-all ${cakeFilling === f.key ? "border-gray-900 bg-white" : "border-gray-200 bg-white hover:border-gray-400"}`}
+                        className={`p-3 rounded-xl border-2 flex justify-between items-center transition-all ${cakeFilling === f.key ? "border-gray-900 bg-white" : "border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-gray-400"}`}
                       >
                         <span className="font-medium text-sm">{isUk ? f.uk : f.en}</span>
                         <span className="font-mono text-sm text-gray-500">
@@ -439,13 +439,13 @@ export function SweetLabDemo({ lang }: { lang: string }) {
                     ))}
                   </div>
                   <div className="flex gap-3 mt-6">
-                    <button onClick={() => setStep(1)} className="flex-1 py-3 rounded-full border-2 border-gray-300 font-semibold text-gray-600 hover:border-gray-500 transition-all">
+                    <button onClick={() => setStep(1)} className="flex-1 py-3 rounded-full border-2 border-gray-300 font-semibold text-gray-600 dark:text-neutral-300 hover:border-gray-500 transition-all">
                       ← {isUk ? "Назад" : "Back"}
                     </button>
                     <button
                       disabled={!cakeFilling}
                       onClick={() => setStep(3)}
-                      className="flex-1 py-3 rounded-full font-semibold text-gray-900 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+                      className="flex-1 py-3 rounded-full font-semibold text-gray-900 dark:text-white disabled:opacity-40 disabled:cursor-not-allowed transition-all"
                       style={{ backgroundColor: "#C6E03A" }}
                     >
                       {isUk ? "Далі →" : "Next →"}
@@ -465,7 +465,7 @@ export function SweetLabDemo({ lang }: { lang: string }) {
                       <button
                         key={c.key}
                         onClick={() => setCakeCoating(c.key)}
-                        className={`p-4 rounded-xl border-2 text-left transition-all ${cakeCoating === c.key ? "border-gray-900 bg-white" : "border-gray-200 bg-white hover:border-gray-400"}`}
+                        className={`p-4 rounded-xl border-2 text-left transition-all ${cakeCoating === c.key ? "border-gray-900 bg-white" : "border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-gray-400"}`}
                       >
                         <span className="block font-medium text-sm mb-1">{isUk ? c.uk : c.en}</span>
                         <span className="block font-mono text-sm text-gray-500">+{c.extra}₴</span>
@@ -473,13 +473,13 @@ export function SweetLabDemo({ lang }: { lang: string }) {
                     ))}
                   </div>
                   <div className="flex gap-3 mt-6">
-                    <button onClick={() => setStep(2)} className="flex-1 py-3 rounded-full border-2 border-gray-300 font-semibold text-gray-600 hover:border-gray-500 transition-all">
+                    <button onClick={() => setStep(2)} className="flex-1 py-3 rounded-full border-2 border-gray-300 font-semibold text-gray-600 dark:text-neutral-300 hover:border-gray-500 transition-all">
                       ← {isUk ? "Назад" : "Back"}
                     </button>
                     <button
                       disabled={!cakeCoating}
                       onClick={() => setStep(4)}
-                      className="flex-1 py-3 rounded-full font-semibold text-gray-900 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+                      className="flex-1 py-3 rounded-full font-semibold text-gray-900 dark:text-white disabled:opacity-40 disabled:cursor-not-allowed transition-all"
                       style={{ backgroundColor: "#C6E03A" }}
                     >
                       {isUk ? "Далі →" : "Next →"}
@@ -494,7 +494,7 @@ export function SweetLabDemo({ lang }: { lang: string }) {
                   <h3 className="text-xl font-bold mb-4">
                     {isUk ? "Напис та декор" : "Inscription & Decor"}
                   </h3>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-2">
                     {isUk ? "Ваш напис (до 40 символів)" : "Your message (up to 40 chars)"}
                   </label>
                   <input
@@ -503,9 +503,9 @@ export function SweetLabDemo({ lang }: { lang: string }) {
                     maxLength={40}
                     onChange={(e) => setCakeText(e.target.value)}
                     placeholder={isUk ? "Напр.: З днем народження!" : "e.g. Happy Birthday!"}
-                    className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 text-sm mb-6 focus:border-gray-900 outline-none transition-colors"
+                    className="w-full border-2 border-gray-200 dark:border-neutral-700 rounded-xl px-4 py-3 text-sm mb-6 focus:border-gray-900 outline-none transition-colors"
                   />
-                  <p className="text-sm font-medium text-gray-700 mb-3">
+                  <p className="text-sm font-medium text-gray-700 dark:text-neutral-300 mb-3">
                     {isUk ? "Декорування" : "Decoration"}
                   </p>
                   <div className="flex gap-3 flex-wrap mb-6">
@@ -513,19 +513,19 @@ export function SweetLabDemo({ lang }: { lang: string }) {
                       <button
                         key={d.key}
                         onClick={() => setCakeDecor(d.key)}
-                        className={`px-4 py-2 rounded-full border-2 text-sm font-medium transition-all ${cakeDecor === d.key ? "border-gray-900 bg-white" : "border-gray-200 bg-white hover:border-gray-400"}`}
+                        className={`px-4 py-2 rounded-full border-2 text-sm font-medium transition-all ${cakeDecor === d.key ? "border-gray-900 bg-white" : "border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-gray-400"}`}
                       >
                         {isUk ? d.uk : d.en}
                       </button>
                     ))}
                   </div>
                   <div className="flex gap-3">
-                    <button onClick={() => setStep(3)} className="flex-1 py-3 rounded-full border-2 border-gray-300 font-semibold text-gray-600 hover:border-gray-500 transition-all">
+                    <button onClick={() => setStep(3)} className="flex-1 py-3 rounded-full border-2 border-gray-300 font-semibold text-gray-600 dark:text-neutral-300 hover:border-gray-500 transition-all">
                       ← {isUk ? "Назад" : "Back"}
                     </button>
                     <button
                       onClick={() => setStep(5)}
-                      className="flex-1 py-3 rounded-full font-semibold text-gray-900 transition-all"
+                      className="flex-1 py-3 rounded-full font-semibold text-gray-900 dark:text-white transition-all"
                       style={{ backgroundColor: "#C6E03A" }}
                     >
                       {isUk ? "Далі →" : "Next →"}
@@ -540,7 +540,7 @@ export function SweetLabDemo({ lang }: { lang: string }) {
                   <h3 className="text-xl font-bold mb-4">
                     {isUk ? "Дата отримання" : "Pickup Date"}
                   </h3>
-                  <p className="text-sm text-gray-500 mb-4">
+                  <p className="text-sm text-gray-500 dark:text-neutral-400 mb-4">
                     {isUk ? "Мінімум 5 днів на виготовлення" : "Minimum 5 days preparation"}
                   </p>
                   <div className="flex gap-3 flex-col">
@@ -548,7 +548,7 @@ export function SweetLabDemo({ lang }: { lang: string }) {
                       <button
                         key={i}
                         onClick={() => setCakeDate(d)}
-                        className={`p-4 rounded-xl border-2 text-left transition-all ${cakeDate === d ? "border-gray-900 bg-white" : "border-gray-200 bg-white hover:border-gray-400"}`}
+                        className={`p-4 rounded-xl border-2 text-left transition-all ${cakeDate === d ? "border-gray-900 bg-white" : "border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-gray-400"}`}
                       >
                         <span className="font-mono font-bold">{d}</span>
                         {i === 0 && <span className="ml-3 text-xs text-gray-400">{isUk ? "Найближча дата" : "Earliest"}</span>}
@@ -556,13 +556,13 @@ export function SweetLabDemo({ lang }: { lang: string }) {
                     ))}
                   </div>
                   <div className="flex gap-3 mt-6">
-                    <button onClick={() => setStep(4)} className="flex-1 py-3 rounded-full border-2 border-gray-300 font-semibold text-gray-600 hover:border-gray-500 transition-all">
+                    <button onClick={() => setStep(4)} className="flex-1 py-3 rounded-full border-2 border-gray-300 font-semibold text-gray-600 dark:text-neutral-300 hover:border-gray-500 transition-all">
                       ← {isUk ? "Назад" : "Back"}
                     </button>
                     <button
                       disabled={!cakeDate}
                       onClick={() => { setCartCount((c) => c + 1); setStep(1); setCakeSize(null); setCakeFilling(null); setCakeCoating(null); setCakeText(""); setCakeDate(null); }}
-                      className="flex-1 py-3 rounded-full font-semibold text-gray-900 disabled:opacity-40 disabled:cursor-not-allowed transition-all text-sm"
+                      className="flex-1 py-3 rounded-full font-semibold text-gray-900 dark:text-white disabled:opacity-40 disabled:cursor-not-allowed transition-all text-sm"
                       style={{ backgroundColor: "#C6E03A" }}
                     >
                       {isUk ? "Підтвердити (50% передоплата)" : "Confirm Order (50% prepay)"}
@@ -574,8 +574,8 @@ export function SweetLabDemo({ lang }: { lang: string }) {
 
             {/* Sidebar summary */}
             <div className="lg:w-72 shrink-0">
-              <div className="bg-white rounded-2xl p-6 border border-gray-100 sticky top-20">
-                <h4 className="font-bold text-gray-900 mb-4">
+              <div className="bg-white rounded-2xl p-6 border border-gray-100 dark:border-neutral-700 sticky top-20">
+                <h4 className="font-bold text-gray-900 dark:text-white mb-4">
                   {isUk ? "Ваш торт" : "Your Cake"}
                 </h4>
                 <div className="space-y-2 text-sm mb-6">
@@ -608,13 +608,13 @@ export function SweetLabDemo({ lang }: { lang: string }) {
                     </div>
                   )}
                 </div>
-                <div className="border-t border-gray-100 pt-4">
+                <div className="border-t border-gray-100 dark:border-neutral-700 pt-4">
                   <div className="flex justify-between items-baseline">
                     <span className="text-sm text-gray-500">{isUk ? "Разом" : "Total"}</span>
                     <span className="font-mono text-2xl font-black text-gray-900">{cakeTotal > 0 ? `${cakeTotal}₴` : "—"}</span>
                   </div>
                   {cakeTotal > 0 && (
-                    <p className="text-xs text-gray-400 mt-1">
+                    <p className="text-xs text-gray-400 dark:text-neutral-500 mt-1">
                       {isUk ? `Передоплата: ${Math.round(cakeTotal * 0.5)}₴` : `Prepay: ${Math.round(cakeTotal * 0.5)}₴`}
                     </p>
                   )}
@@ -629,7 +629,7 @@ export function SweetLabDemo({ lang }: { lang: string }) {
       <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="mb-10">
-            <p className="text-xs font-mono uppercase tracking-widest text-gray-400 mb-2">
+            <p className="text-xs font-mono uppercase tracking-widest text-gray-400 dark:text-neutral-500 mb-2">
               {isUk ? "Наука та смак" : "Science & Taste"}
             </p>
             <h2 className="text-4xl font-black text-gray-900">
@@ -661,17 +661,17 @@ export function SweetLabDemo({ lang }: { lang: string }) {
                 textUk: "Контроль активності води нижче 0.85 пригнічує мікробний ріст, зберігаючи повітряність наших мусів.",
               },
             ].map((note, i) => (
-              <div key={i} className="bg-white border border-gray-100 rounded-2xl p-6 hover:-translate-y-1 hover:shadow-lg transition-all">
+              <div key={i} className="bg-white border border-gray-100 dark:border-neutral-700 rounded-2xl p-6 hover:-translate-y-1 hover:shadow-lg transition-all">
                 <div className="inline-block font-mono font-bold text-sm px-3 py-1.5 rounded-lg mb-4 text-gray-900" style={{ backgroundColor: "#C6E03A" }}>
                   {note.formula}
                 </div>
-                <h3 className="font-bold text-gray-900 text-sm leading-tight mb-3">
+                <h3 className="font-bold text-gray-900 dark:text-white text-sm leading-tight mb-3">
                   {isUk ? note.titleUk : note.titleEn}
                 </h3>
-                <p className="text-sm text-gray-500 leading-relaxed mb-4">
+                <p className="text-sm text-gray-500 dark:text-neutral-400 leading-relaxed mb-4">
                   {isUk ? note.textUk : note.textEn}
                 </p>
-                <a href="#" className="text-xs font-semibold text-gray-900 hover:underline">
+                <a href="#" className="text-xs font-semibold text-gray-900 dark:text-white hover:underline">
                   {isUk ? "Читати далі →" : "Read full note →"}
                 </a>
               </div>
@@ -685,17 +685,17 @@ export function SweetLabDemo({ lang }: { lang: string }) {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-xs font-mono uppercase tracking-widest text-gray-400 mb-2">
+              <p className="text-xs font-mono uppercase tracking-widest text-gray-400 dark:text-neutral-500 mb-2">
                 {isUk ? "Наша команда" : "Our Team"}
               </p>
-              <h2 className="text-4xl font-black text-gray-900 mb-6">
+              <h2 className="text-4xl font-black text-gray-900 dark:text-white mb-6">
                 {isUk ? "Про нас" : "About"}
               </h2>
 
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
                 {isUk ? "Наш шеф" : "Our Chef"}
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              <p className="text-gray-600 dark:text-neutral-300 text-sm leading-relaxed mb-4">
                 {isUk
                   ? "8 років досвіду у світі французької кондитерської. Навчався в Le Cordon Bleu Paris, сертифікований Valrhona. Кожен десерт — це формула точності та натхнення."
                   : "8 years of experience in the world of French patisserie. Trained at Le Cordon Bleu Paris, Valrhona certified. Every dessert is a formula of precision and inspiration."}
@@ -703,16 +703,16 @@ export function SweetLabDemo({ lang }: { lang: string }) {
 
               <div className="flex flex-wrap gap-2 mb-8">
                 {["Le Cordon Bleu Paris", "Valrhona Certified", "8 Years Experience", "HACCP"].map((cert) => (
-                  <span key={cert} className="text-xs font-medium px-3 py-1.5 rounded-full bg-white border border-gray-200 text-gray-700">
+                  <span key={cert} className="text-xs font-medium px-3 py-1.5 rounded-full bg-white dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700 text-gray-700">
                     {cert}
                   </span>
                 ))}
               </div>
 
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
                 {isUk ? "Наша лабораторія" : "Our Lab"}
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">
                 {isUk
                   ? "Сучасна кондитерська лабораторія площею 120 м² у серці Києва. Обладнання Unox, Pacojet, Thermomix. Тільки перевірені інгредієнти від постачальників Франції та України."
                   : "A modern 120 m² patisserie lab in the heart of Kyiv. Unox, Pacojet, Thermomix equipment. Only verified ingredients from French and Ukrainian suppliers."}
@@ -724,14 +724,14 @@ export function SweetLabDemo({ lang }: { lang: string }) {
                 {["🍰", "⚗️", "🎂", "🧁"].map((em, i) => (
                   <div
                     key={i}
-                    className="aspect-square rounded-2xl flex items-center justify-center text-5xl bg-white border border-gray-100 shadow-sm"
+                    className="aspect-square rounded-2xl flex items-center justify-center text-5xl bg-white dark:bg-neutral-800 border border-gray-100 dark:border-neutral-700 shadow-sm"
                     style={{ transform: i % 2 === 0 ? "rotate(-2deg)" : "rotate(2deg)" }}
                   >
                     {em}
                   </div>
                 ))}
               </div>
-              <p className="font-mono text-xs text-gray-400 text-center">
+              <p className="font-mono text-xs text-gray-400 dark:text-neutral-500 text-center">
                 {isUk ? "Смак + Наука = SweetLab" : "Taste + Science = SweetLab"}
               </p>
             </div>
@@ -740,7 +740,7 @@ export function SweetLabDemo({ lang }: { lang: string }) {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-white border-t border-gray-100 py-12 px-4">
+      <footer className="bg-white border-t border-gray-100 dark:border-neutral-700 py-12 px-4">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8">
           <div>
             <div className="flex items-center gap-2 mb-3">
@@ -750,19 +750,19 @@ export function SweetLabDemo({ lang }: { lang: string }) {
             <p className="text-sm text-gray-500">
               {isUk ? "Київ, Хрещатик 15" : "Kyiv, Khreshchatyk 15"}
             </p>
-            <p className="text-sm text-gray-500 mt-1">
+            <p className="text-sm text-gray-500 dark:text-neutral-400 mt-1">
               {isUk ? "Пн–Сб: 09:00–20:00" : "Mon–Sat: 09:00–20:00"}
             </p>
-            <p className="text-sm text-gray-500 mt-1">
+            <p className="text-sm text-gray-500 dark:text-neutral-400 mt-1">
               {isUk ? "Нд: 10:00–17:00" : "Sun: 10:00–17:00"}
             </p>
           </div>
 
           <div>
-            <p className="text-xs font-mono uppercase tracking-widest text-gray-400 mb-3">
+            <p className="text-xs font-mono uppercase tracking-widest text-gray-400 dark:text-neutral-500 mb-3">
               {isUk ? "Слідкуйте" : "Follow"}
             </p>
-            <a href="#" className="flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">
+            <a href="#" className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-neutral-300 hover:text-gray-900 dark:text-white transition-colors">
               <span>📸</span> @sweetlab.kyiv
             </a>
           </div>

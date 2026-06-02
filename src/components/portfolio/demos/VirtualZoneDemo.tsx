@@ -145,7 +145,7 @@ export function VirtualZoneDemo({ lang }: { lang: string }) {
               {isUk ? "реального" : "of reality"}
             </span>
           </h1>
-          <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-400 dark:text-neutral-500 mb-8 max-w-2xl mx-auto">
             {isUk ? "30+ VR-досвідів. Одиночні та мультиплеєр. Київ." : "30+ VR experiences. Solo & multiplayer. Kyiv."}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-14">
@@ -180,7 +180,7 @@ export function VirtualZoneDemo({ lang }: { lang: string }) {
         <h2 className="text-3xl md:text-4xl font-black mb-2 text-center">
           {isUk ? "Каталог VR Досвідів" : "VR Experience Catalog"}
         </h2>
-        <p className="text-gray-400 text-center mb-10">
+        <p className="text-gray-400 dark:text-neutral-500 text-center mb-10">
           {isUk ? "Оберіть пригоду, що вас захоплює" : "Find the adventure that captures you"}
         </p>
 
@@ -189,23 +189,23 @@ export function VirtualZoneDemo({ lang }: { lang: string }) {
           <div className="flex flex-wrap gap-2 justify-center">
             {genres.map((g) => (
               <button key={g.key} onClick={() => setActiveGenre(g.key)}
-                className={`px-3 py-1.5 rounded-full text-sm font-medium border transition-all ${activeGenre === g.key ? "bg-[#7C3AED] border-[#7C3AED] text-white shadow-[0_0_12px_rgba(124,58,237,0.5)]" : "border-violet-800/50 text-gray-400 hover:border-violet-600"}`}>
+                className={`px-3 py-1.5 rounded-full text-sm font-medium border transition-all ${activeGenre === g.key ? "bg-[#7C3AED] border-[#7C3AED] text-white shadow-[0_0_12px_rgba(124,58,237,0.5)]" : "border-violet-800/50 text-gray-400 dark:text-neutral-500 hover:border-violet-600"}`}>
                 {isUk ? g.uk : g.en}
               </button>
             ))}
           </div>
           <div className="flex flex-wrap gap-2 justify-center">
-            <span className="text-xs text-gray-500 self-center mr-1">{isUk ? "Вік:" : "Age:"}</span>
+            <span className="text-xs text-gray-500 dark:text-neutral-400 self-center mr-1">{isUk ? "Вік:" : "Age:"}</span>
             {ages.map((a) => (
               <button key={a.key} onClick={() => setAgeFilter(a.key)}
-                className={`px-3 py-1 rounded-full text-xs font-medium border transition-all ${ageFilter === a.key ? "bg-[#06B6D4] border-[#06B6D4] text-[#050510]" : "border-cyan-900/50 text-gray-400 hover:border-cyan-600"}`}>
+                className={`px-3 py-1 rounded-full text-xs font-medium border transition-all ${ageFilter === a.key ? "bg-[#06B6D4] border-[#06B6D4] text-[#050510]" : "border-cyan-900/50 text-gray-400 dark:text-neutral-500 hover:border-cyan-600"}`}>
                 {isUk ? a.uk : a.en}
               </button>
             ))}
-            <span className="text-xs text-gray-500 self-center ml-3 mr-1">{isUk ? "Режим:" : "Mode:"}</span>
+            <span className="text-xs text-gray-500 dark:text-neutral-400 self-center ml-3 mr-1">{isUk ? "Режим:" : "Mode:"}</span>
             {modes.map((m) => (
               <button key={m.key} onClick={() => setModeFilter(m.key)}
-                className={`px-3 py-1 rounded-full text-xs font-medium border transition-all ${modeFilter === m.key ? "bg-[#06B6D4] border-[#06B6D4] text-[#050510]" : "border-cyan-900/50 text-gray-400 hover:border-cyan-600"}`}>
+                className={`px-3 py-1 rounded-full text-xs font-medium border transition-all ${modeFilter === m.key ? "bg-[#06B6D4] border-[#06B6D4] text-[#050510]" : "border-cyan-900/50 text-gray-400 dark:text-neutral-500 hover:border-cyan-600"}`}>
                 {isUk ? m.uk : m.en}
               </button>
             ))}
@@ -277,7 +277,7 @@ export function VirtualZoneDemo({ lang }: { lang: string }) {
                   <div className="text-yellow-400 text-sm">★ {selectedExperience.rating} ({selectedExperience.reviews} {isUk ? "відгуків" : "reviews"})</div>
                 </div>
               </div>
-              <button onClick={() => setSelectedExperience(null)} className="text-gray-500 hover:text-white text-2xl leading-none">×</button>
+              <button onClick={() => setSelectedExperience(null)} className="text-gray-500 dark:text-neutral-400 hover:text-white text-2xl leading-none">×</button>
             </div>
 
             <div className="grid grid-cols-2 gap-3 mb-5">
@@ -288,7 +288,7 @@ export function VirtualZoneDemo({ lang }: { lang: string }) {
                 { label: isUk ? "Складність" : "Difficulty", value: isUk ? selectedExperience.difficultyUk : selectedExperience.difficultyEn },
               ].map((item) => (
                 <div key={item.label} className="bg-white/5 rounded-xl p-3">
-                  <div className="text-xs text-gray-500 mb-0.5">{item.label}</div>
+                  <div className="text-xs text-gray-500 dark:text-neutral-400 mb-0.5">{item.label}</div>
                   <div className="text-sm font-semibold text-white">{item.value}</div>
                 </div>
               ))}
@@ -314,11 +314,11 @@ export function VirtualZoneDemo({ lang }: { lang: string }) {
               <h4 className="text-sm font-bold text-white mb-3">{isUk ? "Швидке бронювання" : "Quick booking"}</h4>
               <div className="grid grid-cols-2 gap-3 mb-3">
                 <div>
-                  <label className="text-xs text-gray-400 mb-1 block">{isUk ? "Дата" : "Date"}</label>
+                  <label className="text-xs text-gray-400 dark:text-neutral-500 mb-1 block">{isUk ? "Дата" : "Date"}</label>
                   <input type="date" className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:border-violet-500 outline-none" />
                 </div>
                 <div>
-                  <label className="text-xs text-gray-400 mb-1 block">{isUk ? "Кількість гравців" : "Players"}</label>
+                  <label className="text-xs text-gray-400 dark:text-neutral-500 mb-1 block">{isUk ? "Кількість гравців" : "Players"}</label>
                   <select className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:border-violet-500 outline-none">
                     {[1, 2, 3, 4, 5, 6].map((n) => <option key={n} value={n} className="bg-[#0A0A1A]">{n}</option>)}
                   </select>
@@ -347,7 +347,7 @@ export function VirtualZoneDemo({ lang }: { lang: string }) {
           <h2 className="text-3xl md:text-4xl font-black text-center mb-2">
             {isUk ? "Збери команду" : "Bring your squad"}
           </h2>
-          <p className="text-gray-400 text-center mb-12">
+          <p className="text-gray-400 dark:text-neutral-500 text-center mb-12">
             {isUk ? "Ідеально для: Тімбілдинг, День народження, Вечір з друзями" : "Perfect for: Team building, Birthday, Friends night"}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
@@ -390,7 +390,7 @@ export function VirtualZoneDemo({ lang }: { lang: string }) {
           <h2 className="text-3xl md:text-4xl font-black text-center mb-2">
             {isUk ? "Ваш VR-паспорт" : "Your VR Passport"}
           </h2>
-          <p className="text-gray-400 text-center mb-4">
+          <p className="text-gray-400 dark:text-neutral-500 text-center mb-4">
             {isUk ? "Зібери всі 30 → статус VR Master" : "Collect all 30 → VR Master status"}
           </p>
           <div className="flex items-center justify-center gap-3 mb-8">
@@ -419,7 +419,7 @@ export function VirtualZoneDemo({ lang }: { lang: string }) {
               <div className="text-lg font-black text-white">{isUk ? "Ви — VR Master!" : "You are a VR Master!"}</div>
             </div>
           )}
-          <p className="text-center text-xs text-gray-500 mt-3">{isUk ? "Натисніть на значок, щоб відмітити досвід" : "Click a badge to mark an experience as completed"}</p>
+          <p className="text-center text-xs text-gray-500 dark:text-neutral-400 mt-3">{isUk ? "Натисніть на значок, щоб відмітити досвід" : "Click a badge to mark an experience as completed"}</p>
         </div>
       </section>
 
@@ -429,7 +429,7 @@ export function VirtualZoneDemo({ lang }: { lang: string }) {
           <h2 className="text-3xl md:text-4xl font-black text-center mb-2">
             {isUk ? "Забронювати сесію" : "Book a Session"}
           </h2>
-          <p className="text-gray-400 text-center mb-8">
+          <p className="text-gray-400 dark:text-neutral-500 text-center mb-8">
             {isUk ? "4 кроки до нової реальності" : "4 steps to a new reality"}
           </p>
 
@@ -477,29 +477,29 @@ export function VirtualZoneDemo({ lang }: { lang: string }) {
                     <h3 className="text-lg font-bold text-white mb-4">{isUk ? "Крок 2: Дата та час" : "Step 2: Date & Time"}</h3>
                     <input type="date" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white mb-4 focus:border-violet-500 outline-none" />
                     <div className="mb-4">
-                      <div className="text-sm text-gray-400 mb-2">{isUk ? "Тривалість" : "Duration"}</div>
+                      <div className="text-sm text-gray-400 dark:text-neutral-500 mb-2">{isUk ? "Тривалість" : "Duration"}</div>
                       <div className="flex gap-2">
                         {durations.map((d) => (
                           <button key={d} onClick={() => setSelectedDuration(d)}
-                            className={`flex-1 py-2 rounded-lg border text-sm font-medium transition-all ${selectedDuration === d ? "bg-violet-700 border-violet-500 text-white" : "border-white/10 text-gray-400 hover:border-violet-700"}`}>
+                            className={`flex-1 py-2 rounded-lg border text-sm font-medium transition-all ${selectedDuration === d ? "bg-violet-700 border-violet-500 text-white" : "border-white/10 text-gray-400 dark:text-neutral-500 hover:border-violet-700"}`}>
                             {d} min
                           </button>
                         ))}
                       </div>
                     </div>
                     <div className="mb-5">
-                      <div className="text-sm text-gray-400 mb-2">{isUk ? "Доступний час" : "Available times"}</div>
+                      <div className="text-sm text-gray-400 dark:text-neutral-500 mb-2">{isUk ? "Доступний час" : "Available times"}</div>
                       <div className="grid grid-cols-3 gap-2">
                         {timeSlots.map((t) => (
                           <button key={t} onClick={() => setSelectedTime(t)}
-                            className={`py-2 rounded-lg border text-sm transition-all ${selectedTime === t ? "bg-[#06B6D4] border-[#06B6D4] text-[#050510] font-bold" : "border-white/10 text-gray-400 hover:border-cyan-700"}`}>
+                            className={`py-2 rounded-lg border text-sm transition-all ${selectedTime === t ? "bg-[#06B6D4] border-[#06B6D4] text-[#050510] font-bold" : "border-white/10 text-gray-400 dark:text-neutral-500 hover:border-cyan-700"}`}>
                             {t}
                           </button>
                         ))}
                       </div>
                     </div>
                     <div className="flex gap-3">
-                      <button onClick={() => setBookingStep(1)} className="flex-1 py-3 rounded-xl border border-white/10 text-gray-400 hover:border-white/30 transition-all">{isUk ? "← Назад" : "← Back"}</button>
+                      <button onClick={() => setBookingStep(1)} className="flex-1 py-3 rounded-xl border border-white/10 text-gray-400 dark:text-neutral-500 hover:border-white/30 transition-all">{isUk ? "← Назад" : "← Back"}</button>
                       <button onClick={() => setBookingStep(3)} className="flex-1 py-3 rounded-xl bg-[#7C3AED] font-bold shadow-[0_0_15px_rgba(124,58,237,0.4)] transition-all">{isUk ? "Далі →" : "Next →"}</button>
                     </div>
                   </div>
@@ -514,13 +514,13 @@ export function VirtualZoneDemo({ lang }: { lang: string }) {
                       <button onClick={() => setPlayerCount(Math.min(6, playerCount + 1))}
                         className="w-10 h-10 rounded-full border border-violet-700 text-white hover:bg-violet-900/30 text-xl font-bold transition-all">+</button>
                     </div>
-                    <div className="text-center text-sm text-gray-400 mb-6">{isUk ? `${playerCount} гравець${playerCount > 1 ? "ів" : ""}` : `${playerCount} player${playerCount > 1 ? "s" : ""}`}</div>
+                    <div className="text-center text-sm text-gray-400 dark:text-neutral-500 mb-6">{isUk ? `${playerCount} гравець${playerCount > 1 ? "ів" : ""}` : `${playerCount} player${playerCount > 1 ? "s" : ""}`}</div>
                     {Array.from({ length: playerCount }, (_, i) => (
                       <input key={i} type="text" placeholder={`${isUk ? "Ім'я гравця" : "Player name"} ${i + 1} (${isUk ? "необов'язково" : "optional"})`}
                         className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-gray-600 focus:border-violet-500 outline-none mb-2" />
                     ))}
                     <div className="flex gap-3 mt-4">
-                      <button onClick={() => setBookingStep(2)} className="flex-1 py-3 rounded-xl border border-white/10 text-gray-400 hover:border-white/30 transition-all">{isUk ? "← Назад" : "← Back"}</button>
+                      <button onClick={() => setBookingStep(2)} className="flex-1 py-3 rounded-xl border border-white/10 text-gray-400 dark:text-neutral-500 hover:border-white/30 transition-all">{isUk ? "← Назад" : "← Back"}</button>
                       <button onClick={() => setBookingStep(4)} className="flex-1 py-3 rounded-xl bg-[#7C3AED] font-bold shadow-[0_0_15px_rgba(124,58,237,0.4)] transition-all">{isUk ? "Далі →" : "Next →"}</button>
                     </div>
                   </div>
@@ -531,7 +531,7 @@ export function VirtualZoneDemo({ lang }: { lang: string }) {
                     <input type="text" placeholder={isUk ? "Ваше ім'я" : "Your name"} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:border-violet-500 outline-none mb-3" />
                     <input type="tel" placeholder={isUk ? "Телефон" : "Phone"} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:border-violet-500 outline-none mb-6" />
                     <div className="flex gap-3">
-                      <button onClick={() => setBookingStep(3)} className="flex-1 py-3 rounded-xl border border-white/10 text-gray-400 hover:border-white/30 transition-all">{isUk ? "← Назад" : "← Back"}</button>
+                      <button onClick={() => setBookingStep(3)} className="flex-1 py-3 rounded-xl border border-white/10 text-gray-400 dark:text-neutral-500 hover:border-white/30 transition-all">{isUk ? "← Назад" : "← Back"}</button>
                       <button onClick={handleBook} className="flex-1 py-3 rounded-xl bg-[#7C3AED] font-bold shadow-[0_0_20px_rgba(124,58,237,0.5)] hover:shadow-[0_0_30px_rgba(124,58,237,0.8)] transition-all">
                         {isUk ? "Підтвердити 🥽" : "Confirm 🥽"}
                       </button>
@@ -557,7 +557,7 @@ export function VirtualZoneDemo({ lang }: { lang: string }) {
                 <span className={`text-[#7C3AED] text-xl font-bold transition-transform ${openFaq === i ? "rotate-45" : ""}`}>+</span>
               </button>
               {openFaq === i && (
-                <div className="px-5 pb-4 text-sm text-gray-400 border-t border-white/5 pt-3">
+                <div className="px-5 pb-4 text-sm text-gray-400 dark:text-neutral-500 border-t border-white/5 pt-3">
                   {isUk ? item.answerUk : item.answerEn}
                 </div>
               )}
@@ -580,15 +580,15 @@ export function VirtualZoneDemo({ lang }: { lang: string }) {
             </div>
             <div>
               <h4 className="text-sm font-bold text-[#06B6D4] mb-3">{isUk ? "Контакти" : "Contact"}</h4>
-              <p className="text-sm text-gray-400 mb-1">📍 {isUk ? "Київ, Хрещатик 10" : "Kyiv, Khreshchatyk 10"}</p>
-              <p className="text-sm text-gray-400 mb-1">🕙 10:00–23:00</p>
+              <p className="text-sm text-gray-400 dark:text-neutral-500 mb-1">📍 {isUk ? "Київ, Хрещатик 10" : "Kyiv, Khreshchatyk 10"}</p>
+              <p className="text-sm text-gray-400 dark:text-neutral-500 mb-1">🕙 10:00–23:00</p>
               <p className="text-sm text-[#06B6D4]">📞 +380 44 123 4567</p>
             </div>
             <div>
               <h4 className="text-sm font-bold text-[#7C3AED] mb-3">{isUk ? "Навігація" : "Navigation"}</h4>
               <div className="space-y-1.5">
                 {navLinks.map((l) => (
-                  <a key={l.href} href={l.href} className="block text-sm text-gray-400 hover:text-violet-400 transition-colors">
+                  <a key={l.href} href={l.href} className="block text-sm text-gray-400 dark:text-neutral-500 hover:text-violet-400 transition-colors">
                     {isUk ? l.uk : l.en}
                   </a>
                 ))}

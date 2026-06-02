@@ -93,7 +93,7 @@ export function HowWeWorkSection({ lang }: { lang: string }) {
   const STEPS = isUk ? STEPS_UK : STEPS_EN;
 
   return (
-    <section className="py-24 bg-neutral-50">
+    <section className="py-24 bg-neutral-50 dark:bg-neutral-900 ">
       <Container>
         <div className="max-w-2xl mx-auto text-center mb-16">
           <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
@@ -131,9 +131,9 @@ export function HowWeWorkSection({ lang }: { lang: string }) {
                       </div>
                       <div>
                         <div className="text-xs font-bold text-neutral-400 uppercase tracking-widest mb-1">{step.number}</div>
-                        <h3 className="text-xl font-heading font-bold text-neutral-900 mb-2">{step.title}</h3>
-                        <p className="text-neutral-500 text-sm leading-relaxed max-w-xs">{step.description}</p>
-                        <span className="inline-block mt-2 px-3 py-1 rounded-full bg-white border border-neutral-200 text-xs font-medium text-neutral-500">
+                        <h3 className="text-xl font-heading font-bold text-neutral-900 dark:text-white mb-2">{step.title}</h3>
+                        <p className="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed max-w-xs">{step.description}</p>
+                        <span className="inline-block mt-2 px-3 py-1 rounded-full bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-xs font-medium text-neutral-500">
                           ⏱ {step.duration}
                         </span>
                       </div>
@@ -141,7 +141,7 @@ export function HowWeWorkSection({ lang }: { lang: string }) {
                   </div>
 
                   {/* Center circle */}
-                  <div className="hidden lg:flex w-10 h-10 rounded-full bg-white border-2 border-indigo-200 items-center justify-center shrink-0 z-10 shadow-sm">
+                  <div className="hidden lg:flex w-10 h-10 rounded-full bg-white dark:bg-neutral-800 border-2 border-indigo-200 items-center justify-center shrink-0 z-10 shadow-sm">
                     <span className="text-indigo-600 font-bold text-xs">{step.number}</span>
                   </div>
 

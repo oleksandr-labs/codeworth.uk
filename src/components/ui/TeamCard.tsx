@@ -63,7 +63,7 @@ export function TeamCard({ member, variant = "default", className }: TeamCardPro
     return (
       <div
         className={cn(
-          "flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-neutral-800/60 border border-neutral-100 dark:border-neutral-700/50 hover:border-neutral-200 dark:hover:border-neutral-600 transition-colors",
+          "flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-neutral-800/60 border border-neutral-100 dark:border-neutral-700 /50 hover:border-neutral-200 dark:border-neutral-700 dark:hover:border-neutral-600 transition-colors",
           className
         )}
       >
@@ -99,7 +99,7 @@ export function TeamCard({ member, variant = "default", className }: TeamCardPro
   return (
     <div
       className={cn(
-        "group flex flex-col bg-white dark:bg-neutral-800/60 rounded-2xl border border-neutral-100 dark:border-neutral-700/50 hover:border-neutral-200 dark:hover:border-neutral-600 hover:shadow-lg hover:shadow-neutral-200/40 dark:hover:shadow-neutral-900/40 transition-all duration-300 overflow-hidden",
+        "group flex flex-col bg-white dark:bg-neutral-800/60 rounded-2xl border border-neutral-100 dark:border-neutral-700 /50 hover:border-neutral-200 dark:border-neutral-700 dark:hover:border-neutral-600 hover:shadow-lg hover:shadow-neutral-200/40 dark:hover:shadow-neutral-900/40 transition-all duration-300 overflow-hidden",
         className
       )}
     >
@@ -148,7 +148,7 @@ export function TeamCard({ member, variant = "default", className }: TeamCardPro
         )}
 
         {member.socials && member.socials.length > 0 && (
-          <div className="flex gap-2 mt-5 pt-4 border-t border-neutral-100 dark:border-neutral-700/50">
+          <div className="flex gap-2 mt-5 pt-4 border-t border-neutral-100 dark:border-neutral-700 /50">
             {member.socials.map((s) => (
               <a
                 key={s.icon}

@@ -33,17 +33,17 @@ export function EcomRecentlyViewedDemo({ isUk }: Props) {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h3 className="font-bold text-neutral-900 flex items-center gap-2">
+        <h3 className="font-bold text-neutral-900 dark:text-white flex items-center gap-2">
           <Eye className="w-5 h-5 text-neutral-500" />
           {isUk ? "Нещодавно переглянуті" : "Recently viewed"}
-          <span className="px-2 py-0.5 rounded-full bg-neutral-100 text-neutral-600 text-xs font-semibold tabular-nums">
+          <span className="px-2 py-0.5 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 text-xs font-semibold tabular-nums">
             {items.length}
           </span>
         </h3>
         {items.length > 0 && (
           <button
             onClick={clearAll}
-            className="text-sm text-neutral-500 hover:text-rose-600 transition-colors"
+            className="text-sm text-neutral-500 dark:text-neutral-400 hover:text-rose-600 transition-colors"
           >
             {isUk ? "Очистити все" : "Clear all"}
           </button>
@@ -51,9 +51,9 @@ export function EcomRecentlyViewedDemo({ isUk }: Props) {
       </div>
 
       {items.length === 0 ? (
-        <div className="rounded-2xl border-2 border-dashed border-neutral-200 p-12 text-center">
+        <div className="rounded-2xl border-2 border-dashed border-neutral-200 dark:border-neutral-700 p-12 text-center">
           <Eye className="w-10 h-10 text-neutral-300 mx-auto mb-3" />
-          <p className="text-neutral-500 text-sm">{isUk ? "Історія переглядів порожня" : "View history is empty"}</p>
+          <p className="text-neutral-500 dark:text-neutral-400 text-sm">{isUk ? "Історія переглядів порожня" : "View history is empty"}</p>
           <button
             onClick={() => setItems(ALL_PRODUCTS)}
             className="mt-3 text-sm text-indigo-600 hover:underline"
@@ -67,7 +67,7 @@ export function EcomRecentlyViewedDemo({ isUk }: Props) {
           <div className="overflow-x-auto pb-3">
             <div className="flex gap-3">
               {items.map((item) => (
-                <div key={item.id} className="flex-shrink-0 w-44 rounded-xl border border-neutral-200 bg-white overflow-hidden group">
+                <div key={item.id} className="flex-shrink-0 w-44 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white overflow-hidden group">
                   <div className={`relative aspect-square bg-linear-to-br ${item.color} flex items-center justify-center text-5xl`}>
                     {item.emoji}
                     <button
@@ -82,9 +82,9 @@ export function EcomRecentlyViewedDemo({ isUk }: Props) {
                     </div>
                   </div>
                   <div className="p-2.5">
-                    <h4 className="font-medium text-neutral-900 text-xs line-clamp-1 mb-1">{isUk ? item.nameUk : item.nameEn}</h4>
+                    <h4 className="font-medium text-neutral-900 dark:text-white text-xs line-clamp-1 mb-1">{isUk ? item.nameUk : item.nameEn}</h4>
                     <p className="text-sm font-bold text-indigo-700">{fmt(item.price)}</p>
-                    <button className="mt-1.5 w-full flex items-center justify-center gap-1 py-1 rounded-md bg-neutral-100 text-neutral-700 text-[10px] font-semibold hover:bg-indigo-50 hover:text-indigo-700 transition-colors">
+                    <button className="mt-1.5 w-full flex items-center justify-center gap-1 py-1 rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 text-[10px] font-semibold hover:bg-indigo-50 hover:text-indigo-700 transition-colors">
                       <ShoppingCart className="w-2.5 h-2.5" />
                       {isUk ? "В кошик" : "Add"}
                     </button>

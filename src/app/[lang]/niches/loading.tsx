@@ -3,7 +3,7 @@ import { Skeleton } from "@/components/ui/Skeleton";
 
 function NicheCardSkeleton() {
   return (
-    <div className="rounded-2xl border border-neutral-100 bg-white overflow-hidden">
+    <div className="rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white overflow-hidden">
       <Skeleton className="h-40 w-full rounded-none" />
       <div className="p-5 space-y-2">
         <Skeleton className="h-5 w-3/4" />
@@ -21,7 +21,7 @@ export default function NichesLoading() {
   return (
     <main className="flex-1">
       {/* Hero skeleton */}
-      <section className="py-16 bg-neutral-50 border-b border-neutral-100">
+      <section className="py-16 bg-neutral-50 dark:bg-neutral-900 border-b border-neutral-100">
         <Container>
           <Skeleton className="h-4 w-28 mb-4" />
           <Skeleton className="h-10 w-80 mb-3 max-w-full" />
@@ -30,7 +30,7 @@ export default function NichesLoading() {
       </section>
 
       {/* Category filter skeleton */}
-      <section className="py-5 border-b border-neutral-100 bg-white sticky top-16 z-10">
+      <section className="py-5 border-b border-neutral-100 dark:border-neutral-700 bg-white sticky top-16 z-10">
         <Container>
           <div className="flex gap-2 overflow-hidden">
             {Array.from({ length: 6 }).map((_, i) => (

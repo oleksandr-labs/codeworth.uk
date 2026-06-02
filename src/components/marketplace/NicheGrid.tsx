@@ -108,7 +108,7 @@ export function NicheGrid({ niches }: NicheGridProps) {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder={isUk ? "Пошук ніші..." : "Search niche..."}
-            className="w-full pl-11 pr-4 py-3 rounded-xl border border-neutral-200 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all placeholder:text-neutral-400 text-neutral-900 text-sm"
+            className="w-full pl-11 pr-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all placeholder:text-neutral-400 text-neutral-900 dark:text-white text-sm"
           />
         </div>
 
@@ -122,7 +122,7 @@ export function NicheGrid({ niches }: NicheGridProps) {
                 "px-4 py-2.5 rounded-xl text-sm font-medium transition-all border",
                 complexity === f.value
                   ? "bg-indigo-600 text-white border-indigo-600 shadow-sm"
-                  : "bg-white text-neutral-600 border-neutral-200 hover:border-indigo-200 hover:text-indigo-600"
+                  : "bg-white text-neutral-600 dark:text-neutral-300 border-neutral-200 dark:border-neutral-700 hover:border-indigo-200 hover:text-indigo-600"
               )}
             >
               {f.label}
@@ -151,10 +151,10 @@ export function NicheGrid({ niches }: NicheGridProps) {
       {isFiltered && totalFiltered === 0 && (
         <div className="py-20 text-center">
           <EmptyState variant="search" size={130} className="mb-4" />
-          <h3 className="text-xl font-heading font-bold text-neutral-900 mb-2">
+          <h3 className="text-xl font-heading font-bold text-neutral-900 dark:text-white mb-2">
             {isUk ? "Нічого не знайдено" : "Nothing found"}
           </h3>
-          <p className="text-neutral-500 mb-6">
+          <p className="text-neutral-500 dark:text-neutral-400 mb-6">
             {isUk ? "Спробуйте інший запит або змініть фільтр складності." : "Try a different query or change the complexity filter."}
           </p>
           <button
@@ -170,14 +170,14 @@ export function NicheGrid({ niches }: NicheGridProps) {
       <div className="space-y-16">
         {filteredGroups.map((group) => (
           <div key={group.group}>
-            <h3 className="text-xl font-heading font-bold text-neutral-900 mb-6">
+            <h3 className="text-xl font-heading font-bold text-neutral-900 dark:text-white mb-6">
               {group.group}
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {group.items.map((item) => (
                 <div
                   key={item.slug}
-                  className="group p-5 rounded-2xl border border-neutral-100 bg-white hover:shadow-lg hover:shadow-neutral-200/60 hover:border-indigo-100 transition-all duration-300 hover:-translate-y-1"
+                  className="group p-5 rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:shadow-lg hover:shadow-neutral-200/60 hover:border-indigo-100 transition-all duration-300 hover:-translate-y-1"
                 >
                   <div
                     className={cn(
@@ -187,7 +187,7 @@ export function NicheGrid({ niches }: NicheGridProps) {
                   >
                     {item.emoji}
                   </div>
-                  <h4 className="font-heading font-bold text-neutral-900 mb-1 text-sm leading-tight">
+                  <h4 className="font-heading font-bold text-neutral-900 dark:text-white mb-1 text-sm leading-tight">
                     {item.name}
                   </h4>
                   <div className="flex items-center justify-between mt-3">
@@ -203,7 +203,7 @@ export function NicheGrid({ niches }: NicheGridProps) {
                       {COMPLEXITY_LABELS[item.complexity]}
                     </span>
                   </div>
-                  <div className="mt-3 pt-3 border-t border-neutral-100 flex gap-2">
+                  <div className="mt-3 pt-3 border-t border-neutral-100 dark:border-neutral-700 flex gap-2">
                     <Link
                       href={lp(`/marketplace/product/${item.slug}`)}
                       className="flex-1 text-center py-2 rounded-lg bg-indigo-600 text-white text-xs font-semibold hover:bg-indigo-700 transition-colors"
@@ -212,7 +212,7 @@ export function NicheGrid({ niches }: NicheGridProps) {
                     </Link>
                     <Link
                       href={lp(`/niches/${item.slug}`)}
-                      className="px-3 py-2 rounded-lg border border-neutral-200 text-neutral-500 text-xs hover:border-indigo-200 hover:text-indigo-600 transition-colors"
+                      className="px-3 py-2 rounded-lg border border-neutral-200 dark:border-neutral-700 text-neutral-500 dark:text-neutral-400 text-xs hover:border-indigo-200 hover:text-indigo-600 transition-colors"
                     >
                       Demo
                     </Link>

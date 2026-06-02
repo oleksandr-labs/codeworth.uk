@@ -94,7 +94,7 @@ export function SpeedTestTool({ lang }: { lang: string }) {
           onChange={(e) => setUrl(e.target.value)}
           placeholder="https://your-website.com"
           required
-          className="flex-1 px-4 py-3 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+          className="flex-1 px-4 py-3 border border-gray-300 rounded-xl text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
         />
         <button
           type="submit"
@@ -116,7 +116,7 @@ export function SpeedTestTool({ lang }: { lang: string }) {
       </form>
 
       {/* Note */}
-      <p className="text-xs text-gray-500 mb-6">
+      <p className="text-xs text-gray-500 dark:text-neutral-400 mb-6">
         {isUk
           ? "Аналіз виконується через Google PageSpeed Insights API (мобільна версія). Займає до 30 секунд."
           : "Analysis is performed via Google PageSpeed Insights API (mobile). Takes up to 30 seconds."}
@@ -133,10 +133,10 @@ export function SpeedTestTool({ lang }: { lang: string }) {
       {/* Loading skeleton */}
       {loading && (
         <div className="space-y-4">
-          <div className="h-24 bg-gray-100 rounded-xl animate-pulse" />
+          <div className="h-24 bg-gray-100 dark:bg-neutral-800 rounded-xl animate-pulse" />
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="h-20 bg-gray-100 rounded-xl animate-pulse" />
+              <div key={i} className="h-20 bg-gray-100 dark:bg-neutral-800 rounded-xl animate-pulse" />
             ))}
           </div>
         </div>
@@ -184,7 +184,7 @@ export function SpeedTestTool({ lang }: { lang: string }) {
           {/* Opportunities */}
           {result.opportunities.length > 0 && (
             <div>
-              <h3 className="font-semibold text-gray-900 mb-3">
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-3">
                 {isUk ? "Основні рекомендації" : "Top Opportunities"}
               </h3>
               <ul className="space-y-2">
@@ -196,7 +196,7 @@ export function SpeedTestTool({ lang }: { lang: string }) {
                     <AlertCircle className="w-4 h-4 text-yellow-600 shrink-0 mt-0.5" />
                     <div>
                       <div className="text-sm font-medium text-gray-900">{op.title}</div>
-                      <div className="text-xs text-gray-600 mt-0.5">{op.description}</div>
+                      <div className="text-xs text-gray-600 dark:text-neutral-300 mt-0.5">{op.description}</div>
                     </div>
                   </li>
                 ))}

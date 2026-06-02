@@ -52,7 +52,7 @@ export function AnnouncementBarDemo({ variant, isUk }: Props) {
     : position === "top" ? "Top" : "Bottom";
 
   return (
-    <div className="relative w-full min-h-[480px] bg-neutral-100 rounded-3xl overflow-hidden border border-neutral-200 flex flex-col">
+    <div className="relative w-full min-h-[480px] bg-neutral-100 dark:bg-neutral-800 rounded-3xl overflow-hidden border border-neutral-200 dark:border-neutral-700 flex flex-col">
       {/* Simulated browser chrome */}
       <div className="bg-neutral-200 px-4 py-2 flex items-center gap-2 shrink-0">
         <div className="w-3 h-3 rounded-full bg-red-400" />
@@ -95,14 +95,14 @@ export function AnnouncementBarDemo({ variant, isUk }: Props) {
 
       {/* Page content */}
       <div className="flex-1 p-6 flex flex-col items-center justify-center gap-4">
-        <div className="w-full max-w-sm bg-white rounded-2xl shadow-sm border border-neutral-200 overflow-hidden">
+        <div className="w-full max-w-sm bg-white dark:bg-neutral-800 rounded-2xl shadow-sm border border-neutral-200 dark:border-neutral-700 overflow-hidden">
           <div className="h-24 bg-linear-to-br from-indigo-500 to-violet-600 flex items-center justify-center">
             <span className="text-4xl font-bold text-white/30">📢</span>
           </div>
           <div className="p-4 space-y-2">
             <div className="h-4 bg-neutral-200 rounded-full w-3/4" />
-            <div className="h-3 bg-neutral-100 rounded-full w-full" />
-            <div className="h-3 bg-neutral-100 rounded-full w-5/6" />
+            <div className="h-3 bg-neutral-100 dark:bg-neutral-800 rounded-full w-full" />
+            <div className="h-3 bg-neutral-100 dark:bg-neutral-800 rounded-full w-5/6" />
           </div>
         </div>
 
@@ -116,7 +116,7 @@ export function AnnouncementBarDemo({ variant, isUk }: Props) {
               className={`px-3 py-1 rounded-full text-xs font-semibold border transition-all ${
                 currentBar?.id === b.id
                   ? "bg-indigo-600 text-white border-indigo-600"
-                  : "bg-white text-neutral-600 border-neutral-200 hover:border-indigo-300"
+                  : "bg-white text-neutral-600 dark:text-neutral-300 border-neutral-200 dark:border-neutral-700 hover:border-indigo-300"
               }`}
             >
               {b.id === "promo" ? (isUk ? "Промо" : "Promo") : b.id === "shipping" ? (isUk ? "Доставка" : "Shipping") : (isUk ? "Таймер" : "Timer")}

@@ -66,7 +66,7 @@ const CATEGORIES = [
 const PRIORITY_COLORS = {
   critical: "bg-red-100 text-red-700 border-red-200",
   important: "bg-amber-100 text-amber-700 border-amber-200",
-  nice: "bg-neutral-100 text-neutral-500 border-neutral-200",
+  nice: "bg-neutral-100 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400 border-neutral-200",
 };
 
 export function SeoChecklist({ isUk }: Props) {
@@ -106,7 +106,7 @@ export function SeoChecklist({ isUk }: Props) {
       <div className="flex items-center justify-between mb-6">
         <div>
           <p className="text-3xl font-heading font-extrabold text-neutral-900">{pct}%</p>
-          <p className="text-sm text-neutral-500 mt-0.5">{statusLabel()}</p>
+          <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-0.5">{statusLabel()}</p>
         </div>
         <div className="text-right">
           <p className="text-sm font-semibold text-neutral-700">
@@ -119,7 +119,7 @@ export function SeoChecklist({ isUk }: Props) {
       </div>
 
       {/* Progress bar */}
-      <div className="h-3 bg-neutral-100 rounded-full overflow-hidden mb-8">
+      <div className="h-3 bg-neutral-100 dark:bg-neutral-800 rounded-full overflow-hidden mb-8">
         <div
           className={`h-full bg-linear-to-r ${barColor} rounded-full transition-all duration-500`}
           style={{ width: `${pct}%` }}
@@ -134,7 +134,7 @@ export function SeoChecklist({ isUk }: Props) {
           return (
             <div key={cat.id}>
               <div className="flex items-center justify-between mb-3">
-                <h3 className="font-heading font-bold text-neutral-900 flex items-center gap-2">
+                <h3 className="font-heading font-bold text-neutral-900 dark:text-white flex items-center gap-2">
                   <span>{cat.icon}</span>
                   {isUk ? cat.label : cat.labelEn}
                 </h3>
@@ -148,7 +148,7 @@ export function SeoChecklist({ isUk }: Props) {
                     className={`flex items-start gap-3 w-full p-3.5 rounded-xl border text-left transition-all ${
                       checked.has(item.id)
                         ? "border-green-200 bg-green-50"
-                        : "border-neutral-200 bg-white hover:border-neutral-300"
+                        : "border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-neutral-300"
                     }`}
                   >
                     <div
@@ -178,11 +178,11 @@ export function SeoChecklist({ isUk }: Props) {
         <div className="flex gap-3 text-xs">
           <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg border bg-red-50 text-red-700 border-red-200 font-semibold">{isUk ? "Критичний" : "Critical"}</span>
           <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg border bg-amber-50 text-amber-700 border-amber-200 font-semibold">{isUk ? "Важливий" : "Important"}</span>
-          <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg border bg-neutral-50 text-neutral-500 border-neutral-200 font-semibold">{isUk ? "Бажаний" : "Nice-to-have"}</span>
+          <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg border bg-neutral-50 dark:bg-neutral-900 text-neutral-500 dark:text-neutral-400 border-neutral-200 dark:border-neutral-700 font-semibold">{isUk ? "Бажаний" : "Nice-to-have"}</span>
         </div>
         <button
           onClick={resetAll}
-          className="text-xs text-neutral-500 hover:text-neutral-700 underline underline-offset-2 transition-colors"
+          className="text-xs text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:text-neutral-300 underline underline-offset-2 transition-colors"
         >
           {isUk ? "Скинути все" : "Reset all"}
         </button>

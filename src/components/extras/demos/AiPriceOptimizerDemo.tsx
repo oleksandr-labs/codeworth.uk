@@ -126,39 +126,39 @@ export function AiPriceOptimizerDemo({ variant, isUk }: { variant: string; isUk:
     if (product.recommendedUah < product.currentUah) {
       return { arrow: "↓", label: isUk ? "знизити" : "decrease", color: "text-red-600 bg-red-50 border-red-200" };
     }
-    return { arrow: "✓", label: isUk ? "оптимально" : "optimal", color: "text-neutral-500 bg-neutral-50 border-neutral-200" };
+    return { arrow: "✓", label: isUk ? "оптимально" : "optimal", color: "text-neutral-500 dark:text-neutral-400 bg-neutral-50 dark:bg-neutral-900 border-neutral-200" };
   }
 
   return (
     <div>
       {/* Header */}
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "AI Оптимізатор Цін" : "AI Price Optimizer"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk
           ? "AI аналізує попит, сезонність та конкурентів і рекомендує оптимальну ціну"
           : "AI analyses demand, seasonality and competitors to recommend the optimal price"}
       </p>
 
       {/* Products table */}
-      <div className="overflow-x-auto rounded-2xl border border-neutral-200 shadow-sm mb-6">
+      <div className="overflow-x-auto rounded-2xl border border-neutral-200 dark:border-neutral-700 shadow-sm mb-6">
         <table className="w-full text-sm">
           <thead>
-            <tr className="bg-neutral-50 border-b border-neutral-200">
-              <th className="text-left px-4 py-3 font-semibold text-neutral-700 text-xs uppercase tracking-wide">
+            <tr className="bg-neutral-50 dark:bg-neutral-900 border-b border-neutral-200">
+              <th className="text-left px-4 py-3 font-semibold text-neutral-700 dark:text-neutral-300 text-xs uppercase tracking-wide">
                 {isUk ? "Товар" : "Product"}
               </th>
-              <th className="text-right px-4 py-3 font-semibold text-neutral-700 text-xs uppercase tracking-wide">
+              <th className="text-right px-4 py-3 font-semibold text-neutral-700 dark:text-neutral-300 text-xs uppercase tracking-wide">
                 {isUk ? "Поточна ціна" : "Current Price"}
               </th>
-              <th className="text-right px-4 py-3 font-semibold text-neutral-700 text-xs uppercase tracking-wide">
+              <th className="text-right px-4 py-3 font-semibold text-neutral-700 dark:text-neutral-300 text-xs uppercase tracking-wide">
                 {isUk ? "AI Рекомендація" : "AI Recommended"}
               </th>
-              <th className="text-left px-4 py-3 font-semibold text-neutral-700 text-xs uppercase tracking-wide hidden lg:table-cell">
+              <th className="text-left px-4 py-3 font-semibold text-neutral-700 dark:text-neutral-300 text-xs uppercase tracking-wide hidden lg:table-cell">
                 {isUk ? "Причина" : "Reason"}
               </th>
-              <th className="text-center px-4 py-3 font-semibold text-neutral-700 text-xs uppercase tracking-wide">
+              <th className="text-center px-4 py-3 font-semibold text-neutral-700 dark:text-neutral-300 text-xs uppercase tracking-wide">
                 {isUk ? "Дія" : "Action"}
               </th>
             </tr>
@@ -170,7 +170,7 @@ export function AiPriceOptimizerDemo({ variant, isUk }: { variant: string; isUk:
               return (
                 <tr
                   key={product.id}
-                  className={`border-b border-neutral-100 last:border-0 transition-colors ${
+                  className={`border-b border-neutral-100 dark:border-neutral-700 last:border-0 transition-colors ${
                     isApplied ? "bg-green-50" : i % 2 === 0 ? "bg-white" : "bg-neutral-50/50"
                   }`}
                 >
@@ -191,7 +191,7 @@ export function AiPriceOptimizerDemo({ variant, isUk }: { variant: string; isUk:
                     </span>
                   </td>
                   <td className="px-4 py-3.5 hidden lg:table-cell">
-                    <span className="text-neutral-500 text-xs">
+                    <span className="text-neutral-500 dark:text-neutral-400 text-xs">
                       {isUk ? product.reasonUk : product.reasonEn}
                     </span>
                   </td>
@@ -240,8 +240,8 @@ export function AiPriceOptimizerDemo({ variant, isUk }: { variant: string; isUk:
         </div>
 
         {/* Mode selector */}
-        <div className="p-5 rounded-2xl bg-white border border-neutral-200 shadow-sm">
-          <p className="text-xs font-semibold text-neutral-700 uppercase tracking-wide mb-3">
+        <div className="p-5 rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 shadow-sm">
+          <p className="text-xs font-semibold text-neutral-700 dark:text-neutral-300 uppercase tracking-wide mb-3">
             {isUk ? "Режим оптимізації" : "Optimisation Mode"}
           </p>
           <div className="flex gap-2 mb-3">
@@ -252,14 +252,14 @@ export function AiPriceOptimizerDemo({ variant, isUk }: { variant: string; isUk:
                 className={`flex-1 py-2 px-2 rounded-xl text-xs font-semibold transition-all ${
                   mode === m
                     ? "bg-indigo-600 text-white shadow-sm"
-                    : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
+                    : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200"
                 }`}
               >
                 {isUk ? MODE_LABELS[m].uk : MODE_LABELS[m].en}
               </button>
             ))}
           </div>
-          <p className="text-xs text-neutral-500 leading-relaxed">
+          <p className="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed">
             {isUk ? MODE_DESCRIPTIONS[mode].uk : MODE_DESCRIPTIONS[mode].en}
           </p>
         </div>

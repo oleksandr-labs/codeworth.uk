@@ -35,17 +35,17 @@ export function ClientLogosSection({ lang }: { lang: string }) {
   const TRUST_BADGES = isUk ? TRUST_BADGES_UK : TRUST_BADGES_EN;
 
   return (
-    <section className="py-16 bg-neutral-50 border-y border-neutral-100">
+    <section className="py-16 bg-neutral-50 dark:bg-neutral-900 border-y border-neutral-100">
       <Container>
         {/* Trust badges */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
           {TRUST_BADGES.map((badge) => (
-            <div key={badge.label} className="flex items-center gap-3 p-4 rounded-xl bg-white border border-neutral-100">
+            <div key={badge.label} className="flex items-center gap-3 p-4 rounded-xl bg-white dark:bg-neutral-800 border border-neutral-100">
               <div className="w-10 h-10 rounded-lg bg-indigo-50 flex items-center justify-center shrink-0">
                 <badge.icon className="w-5 h-5 text-indigo-600" />
               </div>
               <div>
-                <div className="font-semibold text-neutral-900 text-sm">{badge.label}</div>
+                <div className="font-semibold text-neutral-900 dark:text-white text-sm">{badge.label}</div>
                 <div className="text-xs text-neutral-500">{badge.desc}</div>
               </div>
             </div>
@@ -54,7 +54,7 @@ export function ClientLogosSection({ lang }: { lang: string }) {
 
         {/* Client logos */}
         <div className="text-center mb-8">
-          <p className="text-sm text-neutral-500 font-medium">
+          <p className="text-sm text-neutral-500 dark:text-neutral-400 font-medium">
             {isUk ? "Нам довіряють компанії по всій Україні" : "Trusted by companies across Ukraine"}
           </p>
         </div>
@@ -63,7 +63,7 @@ export function ClientLogosSection({ lang }: { lang: string }) {
           {CLIENT_LOGOS.map((client) => (
             <div
               key={client.name}
-              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-neutral-100 hover:border-indigo-200 hover:shadow-sm transition-all"
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 hover:border-indigo-200 hover:shadow-sm transition-all"
             >
               <span className="text-lg" aria-hidden="true">{client.emoji}</span>
               <span className="text-sm font-medium text-neutral-700">{client.name}</span>

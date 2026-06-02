@@ -167,7 +167,7 @@ export function DobroUADemo({ lang }: Props) {
   const finalAmount = customAmount ? Number(customAmount) : donationAmount;
 
   return (
-    <div className="min-h-screen bg-white text-gray-800 font-sans">
+    <div className="min-h-screen bg-white text-gray-800 dark:text-neutral-200 font-sans">
       {/* ════════════════ HEADER ════════════════ */}
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-yellow-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
@@ -184,7 +184,7 @@ export function DobroUADemo({ lang }: Props) {
             {navItems.slice(0, -1).map((item) => (
               <button
                 key={item}
-                className="text-sm text-gray-600 hover:text-[#1e3a5f] transition-colors font-medium"
+                className="text-sm text-gray-600 dark:text-neutral-300 hover:text-[#1e3a5f] transition-colors font-medium"
               >
                 {item}
               </button>
@@ -205,11 +205,11 @@ export function DobroUADemo({ lang }: Props) {
 
         {/* Mobile nav dropdown */}
         {mobileNav && (
-          <div className="md:hidden bg-white border-t border-yellow-100 px-4 pb-4 space-y-2">
+          <div className="md:hidden bg-white dark:bg-neutral-800 border-t border-yellow-100 px-4 pb-4 space-y-2">
             {navItems.map((item) => (
               <button
                 key={item}
-                className="block w-full text-left py-2 text-gray-700 hover:text-[#1e3a5f] font-medium"
+                className="block w-full text-left py-2 text-gray-700 dark:text-neutral-300 hover:text-[#1e3a5f] font-medium"
                 onClick={() => setMobileNav(false)}
               >
                 {item}
@@ -266,7 +266,7 @@ export function DobroUADemo({ lang }: Props) {
           <h2 className="text-3xl sm:text-4xl font-bold text-[#1e3a5f] mb-4">
             {isUk ? "Наша місія" : "Our Mission"}
           </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto mb-14 text-lg leading-relaxed">
+          <p className="text-gray-600 dark:text-neutral-300 max-w-3xl mx-auto mb-14 text-lg leading-relaxed">
             {isUk
               ? "DobroUA Foundation — це всеукраїнська благодійна організація, що з 2019 року працює над покращенням життя вразливих громад. Ми віримо, що разом ми здатні подолати будь-які виклики."
               : "DobroUA Foundation is a nationwide Ukrainian charity that has been working since 2019 to improve the lives of vulnerable communities. We believe that together, we can overcome any challenge."}
@@ -304,7 +304,7 @@ export function DobroUADemo({ lang }: Props) {
                 <h3 className="text-xl font-bold text-[#1e3a5f] mb-3">
                   {isUk ? v.titleUk : v.titleEn}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">
                   {isUk ? v.descUk : v.descEn}
                 </p>
               </div>
@@ -320,7 +320,7 @@ export function DobroUADemo({ lang }: Props) {
             <h2 className="text-3xl sm:text-4xl font-bold text-[#1e3a5f] mb-3">
               {isUk ? "Наші програми" : "Our Programs"}
             </h2>
-            <p className="text-gray-500 max-w-xl mx-auto">
+            <p className="text-gray-500 dark:text-neutral-400 max-w-xl mx-auto">
               {isUk
                 ? "Четири напрямки діяльності, що змінюють життя тисяч людей"
                 : "Four active programs changing the lives of thousands"}
@@ -331,7 +331,7 @@ export function DobroUADemo({ lang }: Props) {
             {PROGRAMS.map((p) => (
               <div
                 key={p.id}
-                className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 hover:shadow-xl transition-shadow"
+                className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 dark:border-neutral-700 hover:shadow-xl transition-shadow"
               >
                 <div className="flex items-start gap-4 mb-4">
                   <span className="text-4xl shrink-0">{p.emoji}</span>
@@ -344,7 +344,7 @@ export function DobroUADemo({ lang }: Props) {
                     </p>
                   </div>
                 </div>
-                <p className="text-gray-600 text-sm mb-5 leading-relaxed">
+                <p className="text-gray-600 dark:text-neutral-300 text-sm mb-5 leading-relaxed">
                   {isUk ? p.descUk : p.descEn}
                 </p>
 
@@ -356,7 +356,7 @@ export function DobroUADemo({ lang }: Props) {
                     </span>
                     <span className="font-bold text-[#1e3a5f]">{p.funded}%</span>
                   </div>
-                  <div className="w-full h-3 bg-gray-100 rounded-full overflow-hidden">
+                  <div className="w-full h-3 bg-gray-100 dark:bg-neutral-800 rounded-full overflow-hidden">
                     <div
                       className="h-full bg-linear-to-br from-[#fbbf24] to-[#f59e0b] rounded-full transition-all"
                       style={{ width: `${p.funded}%` }}
@@ -395,7 +395,7 @@ export function DobroUADemo({ lang }: Props) {
                 <h3 className="text-2xl font-bold text-[#1e3a5f] mb-2">
                   {isUk ? "Дякуємо за ваш внесок!" : "Thank You for Your Donation!"}
                 </h3>
-                <p className="text-gray-600 mb-2">
+                <p className="text-gray-600 dark:text-neutral-300 mb-2">
                   {donorName && (
                     <span className="font-semibold text-[#1e3a5f]">{donorName}, </span>
                   )}
@@ -404,7 +404,7 @@ export function DobroUADemo({ lang }: Props) {
                     : `your ₴${finalAmount} ${isMonthly ? "(monthly)" : "(one-time)"} donation has been received.`}
                 </p>
                 {wantReceipt && (
-                  <p className="text-sm text-gray-500 mb-4">
+                  <p className="text-sm text-gray-500 dark:text-neutral-400 mb-4">
                     {isUk
                       ? "Квитанцію буде надіслано на вашу електронну пошту."
                       : "A receipt will be sent to your email."}
@@ -425,13 +425,13 @@ export function DobroUADemo({ lang }: Props) {
             ) : (
               <>
                 {/* One-time / Monthly toggle */}
-                <div className="flex bg-gray-100 rounded-xl p-1 mb-6">
+                <div className="flex bg-gray-100 dark:bg-neutral-800 rounded-xl p-1 mb-6">
                   <button
                     onClick={() => setIsMonthly(false)}
                     className={`flex-1 py-2.5 text-sm font-semibold rounded-lg transition-colors ${
                       !isMonthly
                         ? "bg-[#1e3a5f] text-white shadow"
-                        : "text-gray-500 hover:text-gray-700"
+                        : "text-gray-500 dark:text-neutral-400 hover:text-gray-700"
                     }`}
                   >
                     {isUk ? "Одноразово" : "One-time"}
@@ -441,7 +441,7 @@ export function DobroUADemo({ lang }: Props) {
                     className={`flex-1 py-2.5 text-sm font-semibold rounded-lg transition-colors ${
                       isMonthly
                         ? "bg-[#1e3a5f] text-white shadow"
-                        : "text-gray-500 hover:text-gray-700"
+                        : "text-gray-500 dark:text-neutral-400 hover:text-gray-700"
                     }`}
                   >
                     {isUk ? "Щомісячно" : "Monthly"} ♻️
@@ -460,7 +460,7 @@ export function DobroUADemo({ lang }: Props) {
                       className={`py-3 rounded-xl text-sm font-bold transition-colors border-2 ${
                         donationAmount === amt && !customAmount
                           ? "border-[#fbbf24] bg-amber-50 text-[#1e3a5f]"
-                          : "border-gray-200 text-gray-600 hover:border-amber-300"
+                          : "border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-300 hover:border-amber-300"
                       }`}
                     >
                       ₴{amt}
@@ -470,7 +470,7 @@ export function DobroUADemo({ lang }: Props) {
 
                 {/* Custom amount */}
                 <div className="mb-5">
-                  <label className="text-xs text-gray-500 font-medium mb-1 block">
+                  <label className="text-xs text-gray-500 dark:text-neutral-400 font-medium mb-1 block">
                     {isUk ? "Або введіть свою суму (₴)" : "Or enter custom amount (₴)"}
                   </label>
                   <input
@@ -482,13 +482,13 @@ export function DobroUADemo({ lang }: Props) {
                       setCustomAmount(e.target.value);
                       setDonationAmount("");
                     }}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-lg focus:border-[#fbbf24] focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 border-2 border-gray-200 dark:border-neutral-700 rounded-xl text-lg focus:border-[#fbbf24] focus:outline-none transition-colors"
                   />
                 </div>
 
                 {/* Donor name */}
                 <div className="mb-4">
-                  <label className="text-xs text-gray-500 font-medium mb-1 block">
+                  <label className="text-xs text-gray-500 dark:text-neutral-400 font-medium mb-1 block">
                     {isUk ? "Ваше ім'я (необов'язково)" : "Your name (optional)"}
                   </label>
                   <input
@@ -496,7 +496,7 @@ export function DobroUADemo({ lang }: Props) {
                     placeholder={isUk ? "Анонімний донор" : "Anonymous donor"}
                     value={donorName}
                     onChange={(e) => setDonorName(e.target.value)}
-                    className="w-full px-4 py-2.5 border-2 border-gray-200 rounded-xl focus:border-[#fbbf24] focus:outline-none transition-colors"
+                    className="w-full px-4 py-2.5 border-2 border-gray-200 dark:border-neutral-700 rounded-xl focus:border-[#fbbf24] focus:outline-none transition-colors"
                   />
                 </div>
 
@@ -515,7 +515,7 @@ export function DobroUADemo({ lang }: Props) {
 
                 {/* Payment method */}
                 <div className="mb-6">
-                  <p className="text-xs text-gray-500 font-medium mb-2">
+                  <p className="text-xs text-gray-500 dark:text-neutral-400 font-medium mb-2">
                     {isUk ? "Спосіб оплати" : "Payment method"}
                   </p>
                   <div className="flex gap-3">
@@ -530,7 +530,7 @@ export function DobroUADemo({ lang }: Props) {
                         className={`flex-1 py-2.5 rounded-xl text-sm font-medium border-2 transition-colors ${
                           paymentMethod === pm.id
                             ? "border-[#fbbf24] bg-amber-50 text-[#1e3a5f]"
-                            : "border-gray-200 text-gray-500 hover:border-amber-300"
+                            : "border-gray-200 dark:border-neutral-700 text-gray-500 dark:text-neutral-400 hover:border-amber-300"
                         }`}
                       >
                         {pm.label}
@@ -550,7 +550,7 @@ export function DobroUADemo({ lang }: Props) {
                   {isMonthly ? (isUk ? "/міс" : "/mo") : ""} 💛
                 </button>
 
-                <p className="text-xs text-gray-400 text-center mt-3">
+                <p className="text-xs text-gray-400 dark:text-neutral-500 text-center mt-3">
                   {isUk
                     ? "🔒 Безпечна оплата. Ваші дані захищені."
                     : "🔒 Secure payment. Your data is protected."}
@@ -603,7 +603,7 @@ export function DobroUADemo({ lang }: Props) {
                 <p className="text-3xl sm:text-4xl font-extrabold text-[#1e3a5f] mb-1">
                   {s.num}
                 </p>
-                <p className="text-sm text-gray-500 font-medium">
+                <p className="text-sm text-gray-500 dark:text-neutral-400 font-medium">
                   {isUk ? s.labelUk : s.labelEn}
                 </p>
               </div>
@@ -619,7 +619,7 @@ export function DobroUADemo({ lang }: Props) {
             <h2 className="text-3xl sm:text-4xl font-bold text-[#1e3a5f] mb-3">
               {isUk ? "Стати волонтером" : "Become a Volunteer"} 🤝
             </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto">
+            <p className="text-gray-500 dark:text-neutral-400 max-w-2xl mx-auto">
               {isUk
                 ? "Волонтерство — це можливість змінити чиєсь життя та знайти однодумців. Оберіть роль, яка підходить саме вам."
                 : "Volunteering is an opportunity to change someone's life and find like-minded people. Choose a role that suits you best."}
@@ -630,13 +630,13 @@ export function DobroUADemo({ lang }: Props) {
             {VOLUNTEER_ROLES.map((r) => (
               <div
                 key={r.titleEn}
-                className="bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-lg transition-shadow flex flex-col"
+                className="bg-white rounded-2xl p-6 border border-gray-100 dark:border-neutral-700 hover:shadow-lg transition-shadow flex flex-col"
               >
                 <span className="text-4xl mb-4">{r.emoji}</span>
                 <h3 className="text-lg font-bold text-[#1e3a5f] mb-2">
                   {isUk ? r.titleUk : r.titleEn}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-1">
+                <p className="text-gray-600 dark:text-neutral-300 text-sm leading-relaxed mb-4 flex-1">
                   {isUk ? r.descUk : r.descEn}
                 </p>
 
@@ -667,7 +667,7 @@ export function DobroUADemo({ lang }: Props) {
             <h2 className="text-3xl sm:text-4xl font-bold text-[#1e3a5f] mb-3">
               {isUk ? "Фінансова прозорість" : "Financial Transparency"} 🔍
             </h2>
-            <p className="text-gray-500 max-w-xl mx-auto">
+            <p className="text-gray-500 dark:text-neutral-400 max-w-xl mx-auto">
               {isUk
                 ? "Ми відкрито публікуємо розподіл коштів, щоб кожен донор знав, куди йдуть його гроші."
                 : "We openly publish fund allocation so every donor knows where their money goes."}
@@ -708,7 +708,7 @@ export function DobroUADemo({ lang }: Props) {
                     </span>
                     <span className="text-sm font-bold text-gray-600">{a.pct}%</span>
                   </div>
-                  <div className="w-full h-4 bg-gray-100 rounded-full overflow-hidden">
+                  <div className="w-full h-4 bg-gray-100 dark:bg-neutral-800 rounded-full overflow-hidden">
                     <div
                       className={`h-full ${a.color} rounded-full`}
                       style={{ width: `${a.pct}%` }}
@@ -717,7 +717,7 @@ export function DobroUADemo({ lang }: Props) {
                 </div>
               ))}
 
-              <p className="text-xs text-gray-400 pt-2">
+              <p className="text-xs text-gray-400 dark:text-neutral-500 pt-2">
                 {isUk
                   ? "* Дані за Q1 2026. Повний звіт доступний для завантаження."
                   : "* Data for Q1 2026. Full report available for download."}
@@ -741,7 +741,7 @@ export function DobroUADemo({ lang }: Props) {
             {NEWS.map((n, i) => (
               <article
                 key={i}
-                className="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow"
+                className="bg-white rounded-2xl overflow-hidden border border-gray-100 dark:border-neutral-700 hover:shadow-lg transition-shadow"
               >
                 {/* Colored header bar */}
                 <div className="h-2 bg-linear-to-br from-[#fbbf24] to-[#f59e0b]" />
@@ -750,7 +750,7 @@ export function DobroUADemo({ lang }: Props) {
                   <h3 className="text-base font-bold text-[#1e3a5f] mb-3 leading-snug">
                     {isUk ? n.titleUk : n.titleEn}
                   </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                  <p className="text-sm text-gray-600 dark:text-neutral-300 leading-relaxed mb-4">
                     {isUk ? n.excerptUk : n.excerptEn}
                   </p>
                   <button className="text-sm text-[#1e40af] hover:underline font-medium">
@@ -764,19 +764,19 @@ export function DobroUADemo({ lang }: Props) {
       </section>
 
       {/* ════════════════ PARTNERS / SPONSORS ════════════════ */}
-      <section className="py-14 bg-white border-t border-gray-100">
+      <section className="py-14 bg-white dark:bg-neutral-800 border-t border-gray-100">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <h3 className="text-center text-sm text-gray-400 font-semibold uppercase tracking-wider mb-8">
+          <h3 className="text-center text-sm text-gray-400 dark:text-neutral-500 font-semibold uppercase tracking-wider mb-8">
             {isUk ? "Наші партнери" : "Our Partners"}
           </h3>
           <div className="grid grid-cols-3 sm:grid-cols-6 gap-4">
             {PARTNERS.map((p) => (
               <div
                 key={p.name}
-                className="flex flex-col items-center justify-center py-4 px-2 bg-gray-50 rounded-xl border border-gray-100 hover:border-amber-200 transition-colors"
+                className="flex flex-col items-center justify-center py-4 px-2 bg-gray-50 dark:bg-neutral-900 rounded-xl border border-gray-100 dark:border-neutral-700 hover:border-amber-200 transition-colors"
               >
                 <span className="text-3xl mb-1">{p.emoji}</span>
-                <span className="text-[10px] text-gray-400 font-medium text-center leading-tight">
+                <span className="text-[10px] text-gray-400 dark:text-neutral-500 font-medium text-center leading-tight">
                   {p.name}
                 </span>
               </div>

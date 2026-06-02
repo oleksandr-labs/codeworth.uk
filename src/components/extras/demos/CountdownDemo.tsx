@@ -62,7 +62,7 @@ export function CountdownDemo({ isUk }: Props) {
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
               i === presetIdx
                 ? "bg-indigo-600 text-white shadow-sm"
-                : "bg-neutral-100 text-neutral-600 hover:bg-indigo-50"
+                : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-indigo-50"
             }`}
           >
             {isUk ? p.labelUk : p.labelEn}
@@ -70,7 +70,7 @@ export function CountdownDemo({ isUk }: Props) {
         ))}
         <button
           onClick={reset}
-          className="ml-auto flex items-center gap-1.5 px-3 py-2 text-sm text-neutral-500 hover:text-neutral-900 transition-colors"
+          className="ml-auto flex items-center gap-1.5 px-3 py-2 text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:text-white transition-colors"
           aria-label={isUk ? "Скинути таймер" : "Reset timer"}
         >
           <RotateCcw className="w-4 h-4" />

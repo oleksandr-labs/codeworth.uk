@@ -151,7 +151,7 @@ export function LumiereDemo({ lang }: { lang: string }) {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Text */}
             <div>
-              <div className="inline-flex items-center gap-2 bg-white border border-rose-100 text-stone-600 text-xs px-4 py-2 rounded-full mb-8 shadow-sm">
+              <div className="inline-flex items-center gap-2 bg-white dark:bg-neutral-800 border border-rose-100 text-stone-600 text-xs px-4 py-2 rounded-full mb-8 shadow-sm">
                 <span>⭐</span>
                 <span>4.9 · {isUk ? "840 відгуків на Google" : "840 Google reviews"}</span>
               </div>
@@ -196,7 +196,7 @@ export function LumiereDemo({ lang }: { lang: string }) {
           </div>
 
           {/* Stats band */}
-          <div className="mt-16 bg-white rounded-2xl border border-rose-100 shadow-sm px-6 py-4 flex flex-wrap justify-around gap-4 text-center">
+          <div className="mt-16 bg-white dark:bg-neutral-800 rounded-2xl border border-rose-100 shadow-sm px-6 py-4 flex flex-wrap justify-around gap-4 text-center">
             {[
               { val: "6", label: isUk ? "категорій послуг" : "service categories" },
               { val: "4", label: isUk ? "майстрині" : "masters" },
@@ -276,7 +276,7 @@ export function LumiereDemo({ lang }: { lang: string }) {
               <button
                 key={f.key}
                 onClick={() => setBeforeAfterFilter(f.key)}
-                className={`text-sm px-5 py-2 rounded-full border transition-colors ${beforeAfterFilter === f.key ? "bg-rose-400 text-white border-rose-400" : "border-stone-200 text-stone-500 bg-white hover:border-rose-300"}`}
+                className={`text-sm px-5 py-2 rounded-full border transition-colors ${beforeAfterFilter === f.key ? "bg-rose-400 text-white border-rose-400" : "border-stone-200 text-stone-500 bg-white dark:bg-neutral-800 hover:border-rose-300"}`}
               >
                 {isUk ? f.uk : f.en}
               </button>
@@ -393,7 +393,7 @@ export function LumiereDemo({ lang }: { lang: string }) {
               <button
                 key={level}
                 onClick={() => setLoyaltyLevel(level)}
-                className={`text-sm px-5 py-2 rounded-full border capitalize transition-colors ${loyaltyLevel === level ? "bg-rose-400 text-white border-rose-400" : "border-stone-200 text-stone-500 bg-white hover:border-rose-300"}`}
+                className={`text-sm px-5 py-2 rounded-full border capitalize transition-colors ${loyaltyLevel === level ? "bg-rose-400 text-white border-rose-400" : "border-stone-200 text-stone-500 bg-white dark:bg-neutral-800 hover:border-rose-300"}`}
               >
                 {loyaltyConfig[level].label}
               </button>

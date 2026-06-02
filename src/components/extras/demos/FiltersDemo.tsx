@@ -61,10 +61,10 @@ function FashionFilters({ isUk }: { isUk: boolean }) {
 
   return (
     <div className="bg-white">
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Фільтрація каталогу — Fashion Store" : "Catalog Filters — Fashion Store"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk ? "Мультифільтри: розміри, кольори, бренд, ціна, сортування." : "Multi-filters: sizes, colors, brand, price, sorting."}
       </p>
       <div className="flex flex-col lg:flex-row gap-8">
@@ -90,7 +90,7 @@ function FashionFilters({ isUk }: { isUk: boolean }) {
               ))}
               <button
                 onClick={() => { setSizes([]); setColors([]); setBrands([]); setMaxPrice(5000); }}
-                className="px-3 py-1 rounded-full bg-neutral-100 text-neutral-500 text-xs"
+                className="px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400 text-xs"
               >
                 {isUk ? "Очистити все" : "Clear all"}
               </button>
@@ -99,7 +99,7 @@ function FashionFilters({ isUk }: { isUk: boolean }) {
 
           {/* Size */}
           <div>
-            <p className="text-sm font-semibold text-neutral-900 mb-3">{isUk ? "Розмір" : "Size"}</p>
+            <p className="text-sm font-semibold text-neutral-900 dark:text-white mb-3">{isUk ? "Розмір" : "Size"}</p>
             <div className="flex flex-wrap gap-2">
               {["S", "M", "L", "XL"].map((s) => (
                 <button
@@ -108,7 +108,7 @@ function FashionFilters({ isUk }: { isUk: boolean }) {
                   className={`w-12 h-10 rounded-lg border text-sm font-medium transition-all ${
                     sizes.includes(s)
                       ? "border-indigo-600 bg-indigo-600 text-white"
-                      : "border-neutral-200 text-neutral-700 hover:border-indigo-300"
+                      : "border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 hover:border-indigo-300"
                   }`}
                 >
                   {s}
@@ -119,7 +119,7 @@ function FashionFilters({ isUk }: { isUk: boolean }) {
 
           {/* Color */}
           <div>
-            <p className="text-sm font-semibold text-neutral-900 mb-3">{isUk ? "Колір" : "Color"}</p>
+            <p className="text-sm font-semibold text-neutral-900 dark:text-white mb-3">{isUk ? "Колір" : "Color"}</p>
             <div className="flex flex-wrap gap-3">
               {COLORS.map((c) => (
                 <button
@@ -157,7 +157,7 @@ function FashionFilters({ isUk }: { isUk: boolean }) {
 
           {/* Brand */}
           <div>
-            <p className="text-sm font-semibold text-neutral-900 mb-3">{isUk ? "Бренд" : "Brand"}</p>
+            <p className="text-sm font-semibold text-neutral-900 dark:text-white mb-3">{isUk ? "Бренд" : "Brand"}</p>
             {["Urban", "Moda", "Lumé"].map((b) => (
               <label key={b} className="flex items-center gap-2 cursor-pointer mb-2">
                 <input
@@ -181,7 +181,7 @@ function FashionFilters({ isUk }: { isUk: boolean }) {
             <select
               value={sort}
               onChange={(e) => setSort(e.target.value)}
-              className="text-sm border border-neutral-200 rounded-lg px-3 py-1.5 text-neutral-700"
+              className="text-sm border border-neutral-200 dark:border-neutral-700 rounded-lg px-3 py-1.5 text-neutral-700"
             >
               <option value="new">{isUk ? "Новинки" : "Newest"}</option>
               <option value="asc">{isUk ? "Ціна ↑" : "Price ↑"}</option>
@@ -195,16 +195,16 @@ function FashionFilters({ isUk }: { isUk: boolean }) {
               </p>
             ) : (
               filtered.map((p) => (
-                <div key={p.id} className="rounded-xl border border-neutral-100 overflow-hidden hover:shadow-md transition-shadow">
+                <div key={p.id} className="rounded-xl border border-neutral-100 dark:border-neutral-700 overflow-hidden hover:shadow-md transition-shadow">
                   <div className="h-40 bg-gradient-to-br from-neutral-100 to-neutral-200 flex items-center justify-center">
                     <span className="text-4xl">👕</span>
                   </div>
                   <div className="p-4">
                     <p className="text-xs text-neutral-400 mb-1">{p.brand}</p>
-                    <p className="font-semibold text-neutral-900 text-sm mb-1">{isUk ? p.nameUk : p.name}</p>
+                    <p className="font-semibold text-neutral-900 dark:text-white text-sm mb-1">{isUk ? p.nameUk : p.name}</p>
                     <div className="flex flex-wrap gap-1 mb-3">
                       {p.size.map((s) => (
-                        <span key={s} className="text-xs px-1.5 py-0.5 bg-neutral-100 rounded text-neutral-600">{s}</span>
+                        <span key={s} className="text-xs px-1.5 py-0.5 bg-neutral-100 dark:bg-neutral-800 rounded text-neutral-600">{s}</span>
                       ))}
                     </div>
                     <p className="font-bold text-neutral-900">{p.price.toLocaleString("uk-UA")} ₴</p>
@@ -238,16 +238,16 @@ function ElectronicsFilters({ isUk }: { isUk: boolean }) {
 
   return (
     <div className="bg-white">
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Фільтрація каталогу — Магазин електроніки" : "Catalog Filters — Electronics Store"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk ? "Технічні характеристики: RAM, бренд, ціна. Динамічно по категорії." : "Tech specs: RAM, brand, price. Dynamic per category."}
       </p>
       <div className="flex flex-col lg:flex-row gap-8">
         <aside className="w-full lg:w-64 shrink-0 space-y-6">
           <div>
-            <p className="text-sm font-semibold text-neutral-900 mb-3">RAM</p>
+            <p className="text-sm font-semibold text-neutral-900 dark:text-white mb-3">RAM</p>
             {["16GB", "32GB"].map((r) => (
               <label key={r} className="flex items-center gap-2 cursor-pointer mb-2">
                 <input type="checkbox" checked={rams.includes(r)} onChange={() => toggleRam(r)} className="accent-cyan-500 w-4 h-4" />
@@ -278,7 +278,7 @@ function ElectronicsFilters({ isUk }: { isUk: boolean }) {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
             {filtered.length === 0 ? (
-              <p className="col-span-3 text-center text-neutral-500 py-12">
+              <p className="col-span-3 text-center text-neutral-500 dark:text-neutral-400 py-12">
                 {isUk ? "Не знайдено. Змініть фільтри." : "Not found. Change filters."}
               </p>
             ) : (

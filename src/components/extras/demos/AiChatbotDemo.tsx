@@ -102,20 +102,20 @@ export function AiChatbotDemo({ isUk }: Props) {
             <Sparkles className="w-5 h-5" />
           </div>
           <div>
-            <p className="font-semibold text-neutral-900 text-sm">Codeworth AI</p>
+            <p className="font-semibold text-neutral-900 dark:text-white text-sm">Codeworth AI</p>
             <p className="text-xs text-emerald-600">● {isUk ? "Онлайн · GPT-4" : "Online · GPT-4"}</p>
           </div>
         </div>
         <button
           onClick={reset}
-          className="flex items-center gap-1.5 px-3 py-1.5 text-sm text-neutral-500 hover:text-neutral-900 transition-colors"
+          className="flex items-center gap-1.5 px-3 py-1.5 text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:text-white transition-colors"
         >
           <RotateCcw className="w-3.5 h-3.5" />
           {isUk ? "Скинути" : "Reset"}
         </button>
       </div>
 
-      <div className="rounded-2xl border border-neutral-200 bg-white overflow-hidden">
+      <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white overflow-hidden">
         <div ref={scrollRef} className="p-4 space-y-3 h-80 overflow-y-auto bg-linear-to-b from-violet-50/30 to-white">
           {messages.map((m) => (
             <div key={m.id} className={`flex gap-2 ${m.from === "user" ? "justify-end" : "justify-start"}`}>
@@ -127,12 +127,12 @@ export function AiChatbotDemo({ isUk }: Props) {
               <div className={`max-w-[80%] rounded-2xl px-3 py-2 text-sm leading-relaxed ${
                 m.from === "user"
                   ? "bg-indigo-600 text-white rounded-br-sm"
-                  : "bg-white border border-neutral-200 text-neutral-800 rounded-bl-sm"
+                  : "bg-white border border-neutral-200 dark:border-neutral-700 text-neutral-800 dark:text-neutral-200 rounded-bl-sm"
               }`}>
                 {m.text}
               </div>
               {m.from === "user" && (
-                <div className="w-7 h-7 rounded-full bg-neutral-200 text-neutral-600 flex items-center justify-center shrink-0">
+                <div className="w-7 h-7 rounded-full bg-neutral-200 text-neutral-600 dark:text-neutral-300 flex items-center justify-center shrink-0">
                   <User className="w-3.5 h-3.5" />
                 </div>
               )}
@@ -143,7 +143,7 @@ export function AiChatbotDemo({ isUk }: Props) {
               <div className="w-7 h-7 rounded-full bg-linear-to-br from-violet-500 to-indigo-600 text-white flex items-center justify-center shrink-0">
                 <Bot className="w-3.5 h-3.5" />
               </div>
-              <div className="bg-white border border-neutral-200 rounded-2xl rounded-bl-sm px-3 py-2.5 flex items-center gap-2">
+              <div className="bg-white border border-neutral-200 dark:border-neutral-700 rounded-2xl rounded-bl-sm px-3 py-2.5 flex items-center gap-2">
                 <Sparkles className="w-3.5 h-3.5 text-violet-500 animate-pulse" />
                 <span className="text-xs text-neutral-500">{isUk ? "AI генерує відповідь..." : "AI is thinking..."}</span>
               </div>
@@ -152,13 +152,13 @@ export function AiChatbotDemo({ isUk }: Props) {
         </div>
 
         {showSuggestions && (
-          <div className="px-4 py-2 border-t border-neutral-100 flex flex-wrap gap-1.5 bg-neutral-50">
-            <span className="text-xs text-neutral-500 self-center mr-1">{isUk ? "Спробуйте:" : "Try:"}</span>
+          <div className="px-4 py-2 border-t border-neutral-100 dark:border-neutral-700 flex flex-wrap gap-1.5 bg-neutral-50">
+            <span className="text-xs text-neutral-500 dark:text-neutral-400 self-center mr-1">{isUk ? "Спробуйте:" : "Try:"}</span>
             {SUGGESTED.map((s, i) => (
               <button
                 key={i}
                 onClick={() => send(isUk ? s.uk : s.en)}
-                className="px-2.5 py-1 rounded-full bg-white border border-violet-200 text-violet-700 text-xs hover:bg-violet-50 transition-colors"
+                className="px-2.5 py-1 rounded-full bg-white dark:bg-neutral-800 border border-violet-200 text-violet-700 text-xs hover:bg-violet-50 transition-colors"
               >
                 {isUk ? s.uk : s.en}
               </button>
@@ -168,7 +168,7 @@ export function AiChatbotDemo({ isUk }: Props) {
 
         <form
           onSubmit={(e) => { e.preventDefault(); send(input); }}
-          className="border-t border-neutral-200 p-2 flex items-center gap-2 bg-white"
+          className="border-t border-neutral-200 dark:border-neutral-700 p-2 flex items-center gap-2 bg-white"
         >
           <input
             type="text"

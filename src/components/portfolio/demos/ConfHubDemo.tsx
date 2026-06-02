@@ -158,7 +158,7 @@ export function ConfHubDemo({ lang }: { lang: string }) {
     if (type === "Keynote") return "bg-blue-100 text-blue-800 border border-blue-200";
     if (type === "Panel") return "bg-teal-100 text-teal-800 border border-teal-200";
     if (type === "Workshop") return "bg-green-100 text-green-800 border border-green-200";
-    return "bg-gray-100 text-gray-500 border border-gray-200";
+    return "bg-gray-100 dark:bg-neutral-800 text-gray-500 dark:text-neutral-400 border border-gray-200";
   };
 
   const badgeLabel = (type: BadgeType) => {
@@ -216,7 +216,7 @@ export function ConfHubDemo({ lang }: { lang: string }) {
   const countdown = { days: 0, hours: 0, mins: 0, secs: 0 };
 
   return (
-    <div className="font-sans text-gray-900 bg-[#F1F5F9] min-h-screen">
+    <div className="font-sans text-gray-900 dark:text-white bg-[#F1F5F9] min-h-screen">
 
       {/* ── HEADER ─────────────────────────────────────────────── */}
       <header className="bg-[#1D4ED8] text-white px-6 py-3 flex items-center justify-between sticky top-0 z-40 shadow-md">
@@ -299,8 +299,8 @@ export function ConfHubDemo({ lang }: { lang: string }) {
 
         {/* Right — info panel */}
         <div className="bg-white flex flex-col justify-center px-10 py-16">
-          <h2 className="text-xl font-bold text-gray-900 mb-2">ConfHub Digital Forum 2025</h2>
-          <p className="text-gray-500 text-sm mb-6">
+          <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">ConfHub Digital Forum 2025</h2>
+          <p className="text-gray-500 dark:text-neutral-400 text-sm mb-6">
             {isUk
               ? "Найбільша бізнес-конференція для лідерів ринку, засновників і топ-менеджерів України."
               : "The leading business conference for market leaders, founders, and senior executives in Ukraine."}
@@ -315,20 +315,20 @@ export function ConfHubDemo({ lang }: { lang: string }) {
               <div key={item.label} className="flex items-start gap-3">
                 <span className="text-base shrink-0 mt-0.5">{item.icon}</span>
                 <div>
-                  <span className="text-xs font-medium text-gray-400 uppercase tracking-wide">{item.label}</span>
-                  <p className="text-sm text-gray-800 font-medium">{item.val}</p>
+                  <span className="text-xs font-medium text-gray-400 dark:text-neutral-500 uppercase tracking-wide">{item.label}</span>
+                  <p className="text-sm text-gray-800 dark:text-neutral-200 font-medium">{item.val}</p>
                 </div>
               </div>
             ))}
           </div>
           {/* Sponsors */}
           <div>
-            <p className="text-xs font-medium text-gray-400 uppercase tracking-widest mb-3">
+            <p className="text-xs font-medium text-gray-400 dark:text-neutral-500 uppercase tracking-widest mb-3">
               {isUk ? "Спонсори" : "Sponsors"}
             </p>
             <div className="flex flex-wrap gap-2">
               {["TechScale UA", "GrowthOS", "Horizon Ventures", "MediaBurst", "CloudNative UA"].map((s) => (
-                <span key={s} className="bg-[#F1F5F9] text-gray-600 text-xs font-medium px-3 py-1.5 rounded-full border border-gray-200">
+                <span key={s} className="bg-[#F1F5F9] text-gray-600 dark:text-neutral-300 text-xs font-medium px-3 py-1.5 rounded-full border border-gray-200">
                   {s}
                 </span>
               ))}
@@ -342,11 +342,11 @@ export function ConfHubDemo({ lang }: { lang: string }) {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
           <div>
             <h2 className="text-2xl font-bold text-gray-900">{isUk ? "Програма" : "Program"}</h2>
-            <p className="text-gray-500 text-sm mt-1">ConfHub Digital Forum 2025</p>
+            <p className="text-gray-500 dark:text-neutral-400 text-sm mt-1">ConfHub Digital Forum 2025</p>
           </div>
           <button
             onClick={() => { setPdfFeedback(true); setTimeout(() => setPdfFeedback(false), 2000); }}
-            className="flex items-center gap-2 bg-white border border-gray-200 text-gray-700 text-sm px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors shadow-sm"
+            className="flex items-center gap-2 bg-white dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700 text-gray-700 dark:text-neutral-300 text-sm px-4 py-2 rounded-lg hover:bg-gray-50 dark:bg-neutral-900 transition-colors shadow-sm"
           >
             <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
             {pdfFeedback ? (isUk ? "Завантажується..." : "Downloading...") : (isUk ? "Завантажити PDF" : "Download PDF")}
@@ -359,7 +359,7 @@ export function ConfHubDemo({ lang }: { lang: string }) {
             <button
               key={d}
               onClick={() => setActiveDay(d)}
-              className={`px-5 py-2 rounded-lg text-sm font-medium transition-colors ${activeDay === d ? "bg-[#1D4ED8] text-white shadow" : "bg-white text-gray-600 border border-gray-200 hover:bg-gray-50"}`}
+              className={`px-5 py-2 rounded-lg text-sm font-medium transition-colors ${activeDay === d ? "bg-[#1D4ED8] text-white shadow" : "bg-white text-gray-600 dark:text-neutral-300 border border-gray-200 dark:border-neutral-700 hover:bg-gray-50"}`}
             >
               {isUk ? `День ${d} · ${d === 1 ? "15 вер" : "16 вер"}` : `Day ${d} · Sep ${d === 1 ? "15" : "16"}`}
             </button>
@@ -372,7 +372,7 @@ export function ConfHubDemo({ lang }: { lang: string }) {
           <div className="flex gap-1.5 flex-wrap">
             <button
               onClick={() => setActiveTrack("all")}
-              className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${activeTrack === "all" ? "bg-[#0F766E] text-white" : "bg-white border border-gray-200 text-gray-600 hover:bg-gray-50"}`}
+              className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${activeTrack === "all" ? "bg-[#0F766E] text-white" : "bg-white border border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-300 hover:bg-gray-50"}`}
             >
               {isUk ? "Всі зали" : "All Halls"}
             </button>
@@ -380,7 +380,7 @@ export function ConfHubDemo({ lang }: { lang: string }) {
               <button
                 key={t.id}
                 onClick={() => setActiveTrack(t.id)}
-                className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${activeTrack === t.id ? "bg-[#0F766E] text-white" : "bg-white border border-gray-200 text-gray-600 hover:bg-gray-50"}`}
+                className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${activeTrack === t.id ? "bg-[#0F766E] text-white" : "bg-white border border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-300 hover:bg-gray-50"}`}
               >
                 {t.label}
               </button>
@@ -392,7 +392,7 @@ export function ConfHubDemo({ lang }: { lang: string }) {
               <button
                 key={t.id}
                 onClick={() => setTopicFilter(t.id)}
-                className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${topicFilter === t.id ? "bg-[#1D4ED8] text-white" : "bg-white border border-gray-200 text-gray-600 hover:bg-gray-50"}`}
+                className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${topicFilter === t.id ? "bg-[#1D4ED8] text-white" : "bg-white border border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-300 hover:bg-gray-50"}`}
               >
                 {t.label}
               </button>
@@ -403,14 +403,14 @@ export function ConfHubDemo({ lang }: { lang: string }) {
         {/* Schedule grid */}
         <div className="space-y-2">
           {filteredSlots.length === 0 && (
-            <p className="text-gray-400 text-sm py-8 text-center">
+            <p className="text-gray-400 dark:text-neutral-500 text-sm py-8 text-center">
               {isUk ? "Немає сесій за вибраними фільтрами" : "No sessions match the selected filters"}
             </p>
           )}
           {filteredSlots.map((slot) => (
             <div
               key={slot.id}
-              className={`bg-white rounded-xl border border-gray-100 shadow-sm p-4 flex flex-col sm:flex-row sm:items-center gap-3 ${slot.type === "Break" ? "opacity-60" : ""}`}
+              className={`bg-white rounded-xl border border-gray-100 dark:border-neutral-700 shadow-sm p-4 flex flex-col sm:flex-row sm:items-center gap-3 ${slot.type === "Break" ? "opacity-60" : ""}`}
             >
               <div className="shrink-0 w-14 text-center">
                 <span className="text-sm font-mono font-bold text-[#1D4ED8]">{slot.time}</span>
@@ -421,11 +421,11 @@ export function ConfHubDemo({ lang }: { lang: string }) {
                 </span>
               </div>
               <div className="flex-1 min-w-0">
-                <p className="font-semibold text-gray-900 text-sm truncate">
+                <p className="font-semibold text-gray-900 dark:text-white text-sm truncate">
                   {isUk ? slot.topicUk : slot.topic}
                 </p>
                 {slot.speaker && (
-                  <p className="text-gray-400 text-xs mt-0.5">{slot.speaker}</p>
+                  <p className="text-gray-400 dark:text-neutral-500 text-xs mt-0.5">{slot.speaker}</p>
                 )}
                 <p className="text-gray-300 text-[10px] mt-0.5">
                   {tracks.find((t) => t.id === slot.track)?.label}
@@ -437,7 +437,7 @@ export function ConfHubDemo({ lang }: { lang: string }) {
                   className={`shrink-0 text-xs px-3 py-1.5 rounded-lg font-medium transition-colors ${
                     mySchedule.includes(slot.id)
                       ? "bg-[#0F766E] text-white"
-                      : "bg-[#F1F5F9] text-gray-600 hover:bg-blue-50 hover:text-[#1D4ED8]"
+                      : "bg-[#F1F5F9] text-gray-600 dark:text-neutral-300 hover:bg-blue-50 hover:text-[#1D4ED8]"
                   }`}
                 >
                   {mySchedule.includes(slot.id)
@@ -463,12 +463,12 @@ export function ConfHubDemo({ lang }: { lang: string }) {
           <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
             <div>
               <h2 className="text-2xl font-bold text-gray-900">{isUk ? "Спікери" : "Speakers"}</h2>
-              <p className="text-gray-500 text-sm mt-1">{isUk ? "30 лідерів ринку" : "30 market leaders"}</p>
+              <p className="text-gray-500 dark:text-neutral-400 text-sm mt-1">{isUk ? "30 лідерів ринку" : "30 market leaders"}</p>
             </div>
             <div className="md:ml-auto flex gap-1.5 flex-wrap">
               <button
                 onClick={() => setSpeakerTrackFilter("all")}
-                className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${speakerTrackFilter === "all" ? "bg-[#1D4ED8] text-white" : "bg-[#F1F5F9] border border-gray-200 text-gray-600 hover:bg-gray-50"}`}
+                className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${speakerTrackFilter === "all" ? "bg-[#1D4ED8] text-white" : "bg-[#F1F5F9] border border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-300 hover:bg-gray-50"}`}
               >
                 {isUk ? "Всі" : "All"}
               </button>
@@ -476,7 +476,7 @@ export function ConfHubDemo({ lang }: { lang: string }) {
                 <button
                   key={t.id}
                   onClick={() => setSpeakerTrackFilter(t.id)}
-                  className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${speakerTrackFilter === t.id ? "bg-[#1D4ED8] text-white" : "bg-[#F1F5F9] border border-gray-200 text-gray-600 hover:bg-gray-50"}`}
+                  className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${speakerTrackFilter === t.id ? "bg-[#1D4ED8] text-white" : "bg-[#F1F5F9] border border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-300 hover:bg-gray-50"}`}
                 >
                   {t.label}
                 </button>
@@ -489,7 +489,7 @@ export function ConfHubDemo({ lang }: { lang: string }) {
               <button
                 key={sp.id}
                 onClick={() => setSelectedSpeaker(selectedSpeaker === sp.id ? null : sp.id)}
-                className={`text-left rounded-xl border p-4 transition-all hover:shadow-md ${selectedSpeaker === sp.id ? "border-[#1D4ED8] shadow-md bg-blue-50" : "border-gray-100 bg-white hover:border-gray-200"}`}
+                className={`text-left rounded-xl border p-4 transition-all hover:shadow-md ${selectedSpeaker === sp.id ? "border-[#1D4ED8] shadow-md bg-blue-50" : "border-gray-100 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-gray-200"}`}
               >
                 <div
                   className="w-12 h-12 rounded-full flex items-center justify-center text-white text-sm font-bold mb-3 mx-auto"
@@ -497,8 +497,8 @@ export function ConfHubDemo({ lang }: { lang: string }) {
                 >
                   {sp.initials}
                 </div>
-                <p className="font-semibold text-gray-900 text-xs text-center leading-tight">{sp.name}</p>
-                <p className="text-gray-400 text-[11px] text-center mt-0.5">{isUk ? sp.titleUk : sp.title}</p>
+                <p className="font-semibold text-gray-900 dark:text-white text-xs text-center leading-tight">{sp.name}</p>
+                <p className="text-gray-400 dark:text-neutral-500 text-[11px] text-center mt-0.5">{isUk ? sp.titleUk : sp.title}</p>
                 <p className="text-[#1D4ED8] text-[11px] text-center font-medium">{sp.company}</p>
               </button>
             ))}
@@ -509,7 +509,7 @@ export function ConfHubDemo({ lang }: { lang: string }) {
             const sp = speakers.find((s) => s.id === selectedSpeaker);
             if (!sp) return null;
             return (
-              <div className="mt-6 bg-[#F1F5F9] rounded-2xl p-6 border border-gray-100 flex flex-col md:flex-row gap-6">
+              <div className="mt-6 bg-[#F1F5F9] rounded-2xl p-6 border border-gray-100 dark:border-neutral-700 flex flex-col md:flex-row gap-6">
                 <div className="flex flex-col items-center md:items-start gap-3 shrink-0">
                   <div
                     className="w-20 h-20 rounded-full flex items-center justify-center text-white text-2xl font-bold"
@@ -519,20 +519,20 @@ export function ConfHubDemo({ lang }: { lang: string }) {
                   </div>
                   <div>
                     <p className="font-bold text-gray-900">{sp.name}</p>
-                    <p className="text-gray-500 text-sm">{isUk ? sp.titleUk : sp.title} · {sp.company}</p>
+                    <p className="text-gray-500 dark:text-neutral-400 text-sm">{isUk ? sp.titleUk : sp.title} · {sp.company}</p>
                   </div>
                   <div className="flex gap-2">
                     {["LinkedIn", "Twitter"].map((soc) => (
-                      <span key={soc} className="bg-white border border-gray-200 text-gray-500 text-xs px-3 py-1.5 rounded-lg cursor-pointer hover:text-[#1D4ED8] hover:border-[#1D4ED8] transition-colors">
+                      <span key={soc} className="bg-white border border-gray-200 dark:border-neutral-700 text-gray-500 dark:text-neutral-400 text-xs px-3 py-1.5 rounded-lg cursor-pointer hover:text-[#1D4ED8] hover:border-[#1D4ED8] transition-colors">
                         {soc}
                       </span>
                     ))}
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-semibold text-gray-900 mb-2">{isUk ? sp.topicUk : sp.topic}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">{isUk ? sp.bioUk : sp.bio}</p>
-                  <div className="bg-white rounded-lg px-4 py-3 inline-flex items-center gap-2 border border-gray-100 text-sm">
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">{isUk ? sp.topicUk : sp.topic}</h3>
+                  <p className="text-gray-600 dark:text-neutral-300 text-sm leading-relaxed mb-4">{isUk ? sp.bioUk : sp.bio}</p>
+                  <div className="bg-white rounded-lg px-4 py-3 inline-flex items-center gap-2 border border-gray-100 dark:border-neutral-700 text-sm">
                     <svg className="w-4 h-4 text-[#0F766E]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
                     <span className="text-gray-600">
                       {isUk ? "У розкладі о" : "In schedule at"} <strong>{sp.scheduleTime}</strong>, {sp.scheduleHall}
@@ -547,8 +547,8 @@ export function ConfHubDemo({ lang }: { lang: string }) {
 
       {/* ── REGISTRATION ───────────────────────────────────────── */}
       <section id="register" className="max-w-4xl mx-auto px-4 py-14">
-        <h2 className="text-2xl font-bold text-gray-900 mb-2 text-center">{isUk ? "Реєстрація" : "Registration"}</h2>
-        <p className="text-gray-500 text-sm text-center mb-8">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 text-center">{isUk ? "Реєстрація" : "Registration"}</h2>
+        <p className="text-gray-500 dark:text-neutral-400 text-sm text-center mb-8">
           {isUk ? "Зареєструйтесь на ConfHub Digital Forum 2025" : "Register for ConfHub Digital Forum 2025"}
         </p>
 
@@ -568,20 +568,20 @@ export function ConfHubDemo({ lang }: { lang: string }) {
           </div>
         )}
 
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8">
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 dark:border-neutral-700 p-6 md:p-8">
 
           {/* Step 1 — Ticket type */}
           {regStep === 1 && (
             <div>
-              <h3 className="font-bold text-gray-900 mb-1">{isUk ? "Крок 1: Тип квитка" : "Step 1: Ticket Type"}</h3>
-              <p className="text-gray-400 text-sm mb-5">{isUk ? "Оберіть категорію учасника" : "Choose your participant category"}</p>
+              <h3 className="font-bold text-gray-900 dark:text-white mb-1">{isUk ? "Крок 1: Тип квитка" : "Step 1: Ticket Type"}</h3>
+              <p className="text-gray-400 dark:text-neutral-500 text-sm mb-5">{isUk ? "Оберіть категорію учасника" : "Choose your participant category"}</p>
               <div className="grid md:grid-cols-3 gap-4">
                 {ticketTypes.map((tt) => (
                   <button
                     key={tt.id}
                     onClick={() => setRegData((prev) => ({ ...prev, ticketType: tt.id }))}
                     className={`text-left rounded-xl border-2 p-5 transition-all ${
-                      regData.ticketType === tt.id ? "border-[#1D4ED8] bg-blue-50" : "border-gray-100 hover:border-gray-200"
+                      regData.ticketType === tt.id ? "border-[#1D4ED8] bg-blue-50" : "border-gray-100 dark:border-neutral-700 hover:border-gray-200"
                     }`}
                   >
                     <div className="flex items-start justify-between mb-3">
@@ -614,8 +614,8 @@ export function ConfHubDemo({ lang }: { lang: string }) {
           {/* Step 2 — Participant details */}
           {regStep === 2 && (
             <div>
-              <h3 className="font-bold text-gray-900 mb-1">{isUk ? "Крок 2: Дані учасника" : "Step 2: Participant Details"}</h3>
-              <p className="text-gray-400 text-sm mb-5">{isUk ? "Заповніть контактну інформацію" : "Fill in your contact information"}</p>
+              <h3 className="font-bold text-gray-900 dark:text-white mb-1">{isUk ? "Крок 2: Дані учасника" : "Step 2: Participant Details"}</h3>
+              <p className="text-gray-400 dark:text-neutral-500 text-sm mb-5">{isUk ? "Заповніть контактну інформацію" : "Fill in your contact information"}</p>
               <div className="grid md:grid-cols-2 gap-4">
                 {[
                   { key: "name", label: isUk ? "Ім'я та прізвище" : "Full Name", type: "text", placeholder: isUk ? "Ім'я Прізвище" : "First Last" },
@@ -625,19 +625,19 @@ export function ConfHubDemo({ lang }: { lang: string }) {
                   { key: "phone", label: isUk ? "Телефон" : "Phone", type: "tel", placeholder: "+380 XX XXX XX XX" },
                 ].map((field) => (
                   <div key={field.key} className={field.key === "phone" ? "md:col-span-2" : ""}>
-                    <label className="block text-xs font-medium text-gray-600 mb-1.5">{field.label}</label>
+                    <label className="block text-xs font-medium text-gray-600 dark:text-neutral-300 mb-1.5">{field.label}</label>
                     <input
                       type={field.type}
                       placeholder={field.placeholder}
                       value={regData[field.key as keyof typeof regData]}
                       onChange={(e) => setRegData((prev) => ({ ...prev, [field.key]: e.target.value }))}
-                      className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-[#1D4ED8] focus:ring-1 focus:ring-[#1D4ED8] transition-colors"
+                      className="w-full border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-[#1D4ED8] focus:ring-1 focus:ring-[#1D4ED8] transition-colors"
                     />
                   </div>
                 ))}
               </div>
               <div className="flex justify-between mt-6">
-                <button onClick={handleRegBack} className="text-gray-500 hover:text-gray-700 text-sm px-4 py-2.5 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors">
+                <button onClick={handleRegBack} className="text-gray-500 dark:text-neutral-400 hover:text-gray-700 dark:text-neutral-300 text-sm px-4 py-2.5 rounded-lg border border-gray-200 dark:border-neutral-700 hover:bg-gray-50 dark:bg-neutral-900 transition-colors">
                   ← {isUk ? "Назад" : "Back"}
                 </button>
                 <button
@@ -654,8 +654,8 @@ export function ConfHubDemo({ lang }: { lang: string }) {
           {/* Step 3 — Workshop selection */}
           {regStep === 3 && (
             <div>
-              <h3 className="font-bold text-gray-900 mb-1">{isUk ? "Крок 3: Вибір воркшопів" : "Step 3: Workshop Selection"}</h3>
-              <p className="text-gray-400 text-sm mb-5">
+              <h3 className="font-bold text-gray-900 dark:text-white mb-1">{isUk ? "Крок 3: Вибір воркшопів" : "Step 3: Workshop Selection"}</h3>
+              <p className="text-gray-400 dark:text-neutral-500 text-sm mb-5">
                 {isUk ? "Оберіть воркшопи, які вас цікавлять" : "Choose the workshops you would like to attend"}
               </p>
               <div className="space-y-3">
@@ -667,13 +667,13 @@ export function ConfHubDemo({ lang }: { lang: string }) {
                       key={ws.id}
                       onClick={() => toggleWorkshop(ws.id)}
                       className={`w-full text-left rounded-xl border-2 p-4 transition-all ${
-                        workshopSelections.includes(ws.id) ? "border-[#0F766E] bg-teal-50" : "border-gray-100 hover:border-gray-200"
+                        workshopSelections.includes(ws.id) ? "border-[#0F766E] bg-teal-50" : "border-gray-100 dark:border-neutral-700 hover:border-gray-200"
                       }`}
                     >
                       <div className="flex items-start justify-between gap-2 mb-2">
                         <div>
-                          <p className="font-semibold text-gray-900 text-sm">{ws.title}</p>
-                          <p className="text-gray-400 text-xs mt-0.5">{ws.host}</p>
+                          <p className="font-semibold text-gray-900 dark:text-white text-sm">{ws.title}</p>
+                          <p className="text-gray-400 dark:text-neutral-500 text-xs mt-0.5">{ws.host}</p>
                         </div>
                         <div className={`shrink-0 w-5 h-5 rounded-full border-2 flex items-center justify-center text-xs ${
                           workshopSelections.includes(ws.id) ? "bg-[#0F766E] border-[#0F766E] text-white" : "border-gray-300"
@@ -682,10 +682,10 @@ export function ConfHubDemo({ lang }: { lang: string }) {
                         </div>
                       </div>
                       <div className="flex items-center gap-3">
-                        <div className="flex-1 bg-gray-100 rounded-full h-1.5 overflow-hidden">
+                        <div className="flex-1 bg-gray-100 dark:bg-neutral-800 rounded-full h-1.5 overflow-hidden">
                           <div className="bg-[#0F766E] h-full rounded-full" style={{ width: `${pct}%` }} />
                         </div>
-                        <span className="text-xs text-gray-500 shrink-0">
+                        <span className="text-xs text-gray-500 dark:text-neutral-400 shrink-0">
                           {left} {isUk ? "місць залишилось" : "seats left"}
                         </span>
                       </div>
@@ -694,7 +694,7 @@ export function ConfHubDemo({ lang }: { lang: string }) {
                 })}
               </div>
               <div className="flex justify-between mt-6">
-                <button onClick={handleRegBack} className="text-gray-500 hover:text-gray-700 text-sm px-4 py-2.5 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors">
+                <button onClick={handleRegBack} className="text-gray-500 dark:text-neutral-400 hover:text-gray-700 dark:text-neutral-300 text-sm px-4 py-2.5 rounded-lg border border-gray-200 dark:border-neutral-700 hover:bg-gray-50 dark:bg-neutral-900 transition-colors">
                   ← {isUk ? "Назад" : "Back"}
                 </button>
                 <button onClick={handleRegNext} className="bg-[#1D4ED8] text-white px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors">
@@ -707,8 +707,8 @@ export function ConfHubDemo({ lang }: { lang: string }) {
           {/* Step 4 — Payment summary */}
           {regStep === 4 && !paySuccess && (
             <div>
-              <h3 className="font-bold text-gray-900 mb-1">{isUk ? "Крок 4: Оплата" : "Step 4: Payment"}</h3>
-              <p className="text-gray-400 text-sm mb-5">{isUk ? "Перевірте та оплатіть" : "Review and pay"}</p>
+              <h3 className="font-bold text-gray-900 dark:text-white mb-1">{isUk ? "Крок 4: Оплата" : "Step 4: Payment"}</h3>
+              <p className="text-gray-400 dark:text-neutral-500 text-sm mb-5">{isUk ? "Перевірте та оплатіть" : "Review and pay"}</p>
               <div className="bg-[#F1F5F9] rounded-xl p-5 mb-6 space-y-3">
                 <div className="flex justify-between text-sm">
                   <span className="text-gray-600">{isUk ? "Тип квитка" : "Ticket type"}</span>
@@ -730,7 +730,7 @@ export function ConfHubDemo({ lang }: { lang: string }) {
                     <span className="font-semibold text-gray-900">{workshopSelections.length}</span>
                   </div>
                 )}
-                <div className="border-t border-gray-200 pt-3 flex justify-between">
+                <div className="border-t border-gray-200 dark:border-neutral-700 pt-3 flex justify-between">
                   <span className="font-bold text-gray-900">{isUk ? "Всього" : "Total"}</span>
                   <span className="font-bold text-[#1D4ED8] text-lg">
                     {ticketTypes.find((t) => t.id === regData.ticketType)?.price}
@@ -740,23 +740,23 @@ export function ConfHubDemo({ lang }: { lang: string }) {
               {/* Mock card input */}
               <div className="space-y-3 mb-6">
                 <div>
-                  <label className="block text-xs font-medium text-gray-600 mb-1.5">{isUk ? "Номер картки" : "Card Number"}</label>
-                  <input readOnly value="•••• •••• •••• ••••" className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-400 bg-gray-50 cursor-not-allowed" />
+                  <label className="block text-xs font-medium text-gray-600 dark:text-neutral-300 mb-1.5">{isUk ? "Номер картки" : "Card Number"}</label>
+                  <input readOnly value="•••• •••• •••• ••••" className="w-full border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2.5 text-sm text-gray-400 dark:text-neutral-500 bg-gray-50 dark:bg-neutral-900 cursor-not-allowed" />
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-xs font-medium text-gray-600 mb-1.5">{isUk ? "Термін дії" : "Expiry"}</label>
-                    <input readOnly value="MM / YY" className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-400 bg-gray-50 cursor-not-allowed" />
+                    <label className="block text-xs font-medium text-gray-600 dark:text-neutral-300 mb-1.5">{isUk ? "Термін дії" : "Expiry"}</label>
+                    <input readOnly value="MM / YY" className="w-full border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2.5 text-sm text-gray-400 dark:text-neutral-500 bg-gray-50 dark:bg-neutral-900 cursor-not-allowed" />
                   </div>
                   <div>
-                    <label className="block text-xs font-medium text-gray-600 mb-1.5">CVV</label>
-                    <input readOnly value="•••" className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-400 bg-gray-50 cursor-not-allowed" />
+                    <label className="block text-xs font-medium text-gray-600 dark:text-neutral-300 mb-1.5">CVV</label>
+                    <input readOnly value="•••" className="w-full border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2.5 text-sm text-gray-400 dark:text-neutral-500 bg-gray-50 dark:bg-neutral-900 cursor-not-allowed" />
                   </div>
                 </div>
                 <p className="text-[11px] text-gray-400">{isUk ? "* Демо: платіж симульований" : "* Demo: payment is simulated"}</p>
               </div>
               <div className="flex justify-between">
-                <button onClick={handleRegBack} className="text-gray-500 hover:text-gray-700 text-sm px-4 py-2.5 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors">
+                <button onClick={handleRegBack} className="text-gray-500 dark:text-neutral-400 hover:text-gray-700 dark:text-neutral-300 text-sm px-4 py-2.5 rounded-lg border border-gray-200 dark:border-neutral-700 hover:bg-gray-50 dark:bg-neutral-900 transition-colors">
                   ← {isUk ? "Назад" : "Back"}
                 </button>
                 <button onClick={handlePay} className="bg-[#0F766E] text-white px-8 py-2.5 rounded-lg text-sm font-bold hover:bg-teal-700 transition-colors shadow-sm">
@@ -772,17 +772,17 @@ export function ConfHubDemo({ lang }: { lang: string }) {
               <div className="w-16 h-16 rounded-full bg-teal-100 flex items-center justify-center mx-auto mb-5">
                 <svg className="w-8 h-8 text-[#0F766E]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                 {isUk ? "Реєстрацію підтверджено!" : "Registration Confirmed!"}
               </h3>
-              <p className="text-gray-500 text-sm mb-6">
+              <p className="text-gray-500 dark:text-neutral-400 text-sm mb-6">
                 {isUk
                   ? `Дякуємо, ${regData.name || "учаснику"}! Підтвердження надіслано на ${regData.email || "вашу пошту"}.`
                   : `Thank you, ${regData.name || "participant"}! Confirmation sent to ${regData.email || "your email"}.`}
               </p>
               {/* QR placeholder */}
-              <div className="inline-flex flex-col items-center bg-[#F1F5F9] rounded-2xl p-6 border border-gray-200 mb-6">
-                <div className="w-28 h-28 bg-white border-2 border-gray-200 rounded-xl flex flex-col items-center justify-center gap-2 mb-3">
+              <div className="inline-flex flex-col items-center bg-[#F1F5F9] rounded-2xl p-6 border border-gray-200 dark:border-neutral-700 mb-6">
+                <div className="w-28 h-28 bg-white dark:bg-neutral-800 border-2 border-gray-200 dark:border-neutral-700 rounded-xl flex flex-col items-center justify-center gap-2 mb-3">
                   <div className="grid grid-cols-3 gap-0.5">
                     {Array.from({ length: 9 }).map((_, i) => (
                       <div key={i} className={`w-3 h-3 rounded-[2px] ${[0,1,3,4,5,7,8].includes(i) ? "bg-gray-800" : "bg-white"}`} />
@@ -790,8 +790,8 @@ export function ConfHubDemo({ lang }: { lang: string }) {
                   </div>
                   <span className="text-[9px] text-gray-400">QR</span>
                 </div>
-                <p className="text-xs text-gray-500 font-mono">CHF2025-{Math.random().toString(36).slice(2, 8).toUpperCase()}</p>
-                <p className="text-[11px] text-gray-400 mt-1">{isUk ? "Ваш квиток" : "Your ticket"}</p>
+                <p className="text-xs text-gray-500 dark:text-neutral-400 font-mono">CHF2025-{Math.random().toString(36).slice(2, 8).toUpperCase()}</p>
+                <p className="text-[11px] text-gray-400 dark:text-neutral-500 mt-1">{isUk ? "Ваш квиток" : "Your ticket"}</p>
               </div>
               <div>
                 <button
@@ -809,8 +809,8 @@ export function ConfHubDemo({ lang }: { lang: string }) {
       {/* ── VENUE ──────────────────────────────────────────────── */}
       <section id="venue" className="bg-white py-14">
         <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">{isUk ? "Місце проведення та логістика" : "Venue & Logistics"}</h2>
-          <p className="text-gray-500 text-sm mb-8">{isUk ? "Все, що потрібно знати для підготовки до приїзду" : "Everything you need to plan your visit"}</p>
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{isUk ? "Місце проведення та логістика" : "Venue & Logistics"}</h2>
+          <p className="text-gray-500 dark:text-neutral-400 text-sm mb-8">{isUk ? "Все, що потрібно знати для підготовки до приїзду" : "Everything you need to plan your visit"}</p>
 
           <div className="grid md:grid-cols-2 gap-6">
             {/* Venue card */}
@@ -819,7 +819,7 @@ export function ConfHubDemo({ lang }: { lang: string }) {
                 <div className="w-10 h-10 bg-[#1D4ED8] rounded-xl flex items-center justify-center text-white text-lg shrink-0">🏛</div>
                 <div>
                   <h3 className="font-bold text-gray-900">UNIT.City Innovation Campus</h3>
-                  <p className="text-gray-400 text-xs">{isUk ? "вул. Дорогожицька 3, Київ" : "3 Dorohozhytska St, Kyiv"}</p>
+                  <p className="text-gray-400 dark:text-neutral-500 text-xs">{isUk ? "вул. Дорогожицька 3, Київ" : "3 Dorohozhytska St, Kyiv"}</p>
                 </div>
               </div>
               <div className="space-y-2.5">
@@ -832,7 +832,7 @@ export function ConfHubDemo({ lang }: { lang: string }) {
                   <div key={item.label} className="flex items-center gap-3 text-sm">
                     <span className="text-base shrink-0">{item.icon}</span>
                     <span className="text-gray-500">{item.label}:</span>
-                    <span className="text-gray-800 font-medium">{item.val}</span>
+                    <span className="text-gray-800 dark:text-neutral-200 font-medium">{item.val}</span>
                   </div>
                 ))}
               </div>
@@ -840,7 +840,7 @@ export function ConfHubDemo({ lang }: { lang: string }) {
 
             {/* How to get there */}
             <div className="bg-[#F1F5F9] rounded-2xl p-6">
-              <h3 className="font-bold text-gray-900 mb-4">{isUk ? "Як дістатись" : "How to Get There"}</h3>
+              <h3 className="font-bold text-gray-900 dark:text-white mb-4">{isUk ? "Як дістатись" : "How to Get There"}</h3>
               <div className="space-y-3">
                 {[
                   { icon: "🚇", how: isUk ? "Метро: ст. Дорогожичі (3 хв пішки)" : "Metro: Dorohozhychi station (3 min walk)" },
@@ -858,17 +858,17 @@ export function ConfHubDemo({ lang }: { lang: string }) {
 
             {/* Hotels */}
             <div className="bg-[#F1F5F9] rounded-2xl p-6 md:col-span-2">
-              <h3 className="font-bold text-gray-900 mb-4">{isUk ? "Рекомендовані готелі" : "Suggested Hotels"}</h3>
+              <h3 className="font-bold text-gray-900 dark:text-white mb-4">{isUk ? "Рекомендовані готелі" : "Suggested Hotels"}</h3>
               <div className="grid sm:grid-cols-3 gap-3">
                 {[
                   { name: "Intercontinental Kyiv", dist: isUk ? "2.1 км від місця" : "2.1 km from venue", stars: "★★★★★" },
                   { name: "Premier Palace Hotel", dist: isUk ? "3.0 км від місця" : "3.0 km from venue", stars: "★★★★★" },
                   { name: "ibis Kyiv City Centre", dist: isUk ? "1.8 км від місця" : "1.8 km from venue", stars: "★★★" },
                 ].map((h) => (
-                  <div key={h.name} className="bg-white rounded-xl border border-gray-100 p-4">
-                    <p className="font-semibold text-gray-900 text-sm">{h.name}</p>
+                  <div key={h.name} className="bg-white rounded-xl border border-gray-100 dark:border-neutral-700 p-4">
+                    <p className="font-semibold text-gray-900 dark:text-white text-sm">{h.name}</p>
                     <p className="text-yellow-500 text-xs mt-0.5">{h.stars}</p>
-                    <p className="text-gray-400 text-xs mt-1">{h.dist}</p>
+                    <p className="text-gray-400 dark:text-neutral-500 text-xs mt-1">{h.dist}</p>
                     <p className="text-[#1D4ED8] text-xs mt-1 font-medium cursor-pointer hover:underline">
                       {isUk ? "Забронювати →" : "Book →"}
                     </p>
@@ -936,7 +936,7 @@ export function ConfHubDemo({ lang }: { lang: string }) {
         <div className="fixed inset-0 z-50 flex">
           <div className="flex-1 bg-black/30" onClick={() => setShowScheduleSidebar(false)} />
           <div className="w-full max-w-sm bg-white h-full overflow-y-auto shadow-2xl flex flex-col">
-            <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100 bg-[#1D4ED8] text-white">
+            <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100 dark:border-neutral-700 bg-[#1D4ED8] text-white">
               <h3 className="font-bold text-sm">{isUk ? "Мій розклад" : "My Schedule"}</h3>
               <button onClick={() => setShowScheduleSidebar(false)} className="text-white/70 hover:text-white text-lg leading-none">✕</button>
             </div>
@@ -952,10 +952,10 @@ export function ConfHubDemo({ lang }: { lang: string }) {
                   {mySlots.map((slot) => (
                     <div key={slot.id} className="bg-[#F1F5F9] rounded-xl p-4 flex items-start justify-between gap-3">
                       <div className="flex-1 min-w-0">
-                        <p className="font-semibold text-gray-900 text-xs leading-tight">
+                        <p className="font-semibold text-gray-900 dark:text-white text-xs leading-tight">
                           {isUk ? slot.topicUk : slot.topic}
                         </p>
-                        {slot.speaker && <p className="text-gray-400 text-[11px] mt-0.5">{slot.speaker}</p>}
+                        {slot.speaker && <p className="text-gray-400 dark:text-neutral-500 text-[11px] mt-0.5">{slot.speaker}</p>}
                         <p className="text-[#1D4ED8] text-[11px] font-mono mt-0.5">
                           {slot.time} · {tracks.find((t) => t.id === slot.track)?.label}
                         </p>
@@ -982,7 +982,7 @@ export function ConfHubDemo({ lang }: { lang: string }) {
                     ? (isUk ? "Експортується..." : "Exporting...")
                     : (isUk ? "Експортувати в календар" : "Export to Calendar")}
                 </button>
-                <p className="text-[11px] text-gray-400 text-center mt-2">{isUk ? "* Демо: мок-дія" : "* Demo: mock action"}</p>
+                <p className="text-[11px] text-gray-400 dark:text-neutral-500 text-center mt-2">{isUk ? "* Демо: мок-дія" : "* Demo: mock action"}</p>
               </div>
             )}
           </div>

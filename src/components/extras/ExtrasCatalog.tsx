@@ -32,7 +32,7 @@ export function ExtrasCatalog() {
   }, [activeCategory, query]);
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white dark:bg-neutral-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Search */}
         <div role="search" aria-label={isUk ? "Пошук доробок" : "Search add-ons"} className="relative mb-8">
@@ -44,7 +44,7 @@ export function ExtrasCatalog() {
             placeholder={isUk ? "Пошук доробок..." : "Search add-ons..."}
             aria-label={isUk ? "Пошук доробок" : "Search add-ons"}
             aria-controls="extras-results"
-            className="w-full pl-11 pr-10 py-3 rounded-xl border border-neutral-200 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all placeholder:text-neutral-400 text-sm"
+            className="w-full pl-11 pr-10 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all placeholder:text-neutral-400 text-sm"
           />
           {query && (
             <button
@@ -65,7 +65,7 @@ export function ExtrasCatalog() {
               "px-4 py-2 rounded-xl text-sm font-medium transition-all",
               activeCategory === "all"
                 ? "bg-indigo-600 text-white shadow-sm"
-                : "bg-neutral-100 text-neutral-600 hover:bg-indigo-50 hover:text-indigo-700"
+                : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-indigo-50 hover:text-indigo-700"
             )}
           >
             {isUk ? `Всі (${EXTRAS.length})` : `All (${EXTRAS.length})`}
@@ -80,7 +80,7 @@ export function ExtrasCatalog() {
                   "px-4 py-2 rounded-xl text-sm font-medium transition-all",
                   activeCategory === cat.value
                     ? "bg-indigo-600 text-white shadow-sm"
-                    : "bg-neutral-100 text-neutral-600 hover:bg-indigo-50 hover:text-indigo-700"
+                    : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-indigo-50 hover:text-indigo-700"
                 )}
               >
                 {cat.emoji} {isUk ? cat.label : cat.labelEn} ({count})

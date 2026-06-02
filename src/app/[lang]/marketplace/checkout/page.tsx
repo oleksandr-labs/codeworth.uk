@@ -16,7 +16,7 @@ export default function CheckoutPage() {
     <>
       <Header />
       <main className="flex-1 bg-warm-50">
-        <div className="bg-white border-b border-gray-100 py-6">
+        <div className="bg-white border-b border-gray-100 dark:border-neutral-700 py-6">
           <Container>
             <Breadcrumb
               items={[
@@ -25,7 +25,7 @@ export default function CheckoutPage() {
                 { label: "Оформлення" },
               ]}
             />
-            <h1 className="text-3xl font-bold font-syne text-gray-900 mt-4">
+            <h1 className="text-3xl font-bold font-syne text-gray-900 dark:text-white mt-4">
               Оформлення замовлення
             </h1>
           </Container>

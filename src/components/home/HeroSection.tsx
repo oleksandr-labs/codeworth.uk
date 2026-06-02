@@ -93,7 +93,7 @@ export function HeroSection() {
           </div>
 
           {/* Heading */}
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-heading font-extrabold text-neutral-900 mb-6 leading-tight tracking-tight">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-heading font-extrabold text-neutral-900 dark:text-white mb-6 leading-tight tracking-tight">
             {isUk ? "Розробка" : "Development of"}{" "}
             <span
               className={`gradient-text inline-block transition-all duration-300 ${
@@ -109,14 +109,14 @@ export function HeroSection() {
           </h1>
 
           {/* Subheading */}
-          <p className="text-lg sm:text-xl text-neutral-500 mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-neutral-500 dark:text-neutral-400 mb-10 max-w-2xl mx-auto leading-relaxed">
             {isUk ? (
               <>Codeworth — веб-студія повного циклу. Створюємо сайти, що{" "}
-              <span className="text-neutral-700 font-medium">конвертують відвідувачів у клієнтів</span>.
+              <span className="text-neutral-700 dark:text-neutral-300 font-medium">конвертують відвідувачів у клієнтів</span>.
               Від дизайну до запуску — під ключ.</>
             ) : (
               <>Codeworth — a full-cycle web studio. We build websites that{" "}
-              <span className="text-neutral-700 font-medium">convert visitors into clients</span>.
+              <span className="text-neutral-700 dark:text-neutral-300 font-medium">convert visitors into clients</span>.
               From design to launch — turnkey.</>
             )}
           </p>
@@ -136,7 +136,7 @@ export function HeroSection() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-2xl mx-auto mb-16">
             {STATS.map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className="text-4xl font-sans font-bold tabular-nums tracking-tight text-neutral-900 mb-1">
+                <div className="text-4xl font-sans font-bold tabular-nums tracking-tight text-neutral-900 dark:text-white mb-1">
                   <CountUp end={stat.end} suffix={stat.suffix} />
                 </div>
                 <div className="text-sm text-neutral-500">{stat.label}</div>
@@ -153,7 +153,7 @@ export function HeroSection() {
               {TECH_LOGOS.map((tech) => (
                 <span
                   key={tech}
-                  className="px-4 py-1.5 rounded-full bg-white border border-neutral-200 text-sm font-medium text-neutral-600 shadow-sm"
+                  className="px-4 py-1.5 rounded-full bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-sm font-medium text-neutral-600 dark:text-neutral-300 shadow-sm"
                 >
                   {tech}
                 </span>

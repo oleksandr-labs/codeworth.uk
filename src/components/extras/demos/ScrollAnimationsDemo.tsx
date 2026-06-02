@@ -39,9 +39,9 @@ export function ScrollAnimationsDemo({ isUk }: Props) {
   }, [key]);
 
   return (
-    <div className="w-full min-h-[520px] bg-white rounded-3xl border border-neutral-200 overflow-hidden flex flex-col">
+    <div className="w-full min-h-[520px] bg-white rounded-3xl border border-neutral-200 dark:border-neutral-700 overflow-hidden flex flex-col">
       {/* Controls */}
-      <div className="border-b border-neutral-100 px-6 py-4 bg-neutral-50 flex items-center gap-4 flex-wrap">
+      <div className="border-b border-neutral-100 dark:border-neutral-700 px-6 py-4 bg-neutral-50 dark:bg-neutral-900 flex items-center gap-4 flex-wrap">
         <span className="text-sm font-semibold text-neutral-700">
           {isUk ? "Тип анімації:" : "Animation type:"}
         </span>
@@ -53,7 +53,7 @@ export function ScrollAnimationsDemo({ isUk }: Props) {
               className={`px-3 py-1.5 rounded-xl text-sm font-semibold border transition-all ${
                 animType === a.id
                   ? "bg-indigo-600 text-white border-indigo-600"
-                  : "bg-white text-neutral-600 border-neutral-200 hover:border-indigo-300"
+                  : "bg-white text-neutral-600 dark:text-neutral-300 border-neutral-200 dark:border-neutral-700 hover:border-indigo-300"
               }`}
             >
               {isUk ? a.label.uk : a.label.en}
@@ -62,7 +62,7 @@ export function ScrollAnimationsDemo({ isUk }: Props) {
         </div>
         <button
           onClick={replay}
-          className="ml-auto px-3 py-1.5 rounded-xl text-sm font-semibold bg-white border border-neutral-200 text-neutral-600 hover:border-indigo-300 hover:text-indigo-600 transition-all"
+          className="ml-auto px-3 py-1.5 rounded-xl text-sm font-semibold bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-neutral-600 dark:text-neutral-300 hover:border-indigo-300 hover:text-indigo-600 transition-all"
         >
           ↺ {isUk ? "Повторити" : "Replay"}
         </button>
@@ -82,7 +82,7 @@ export function ScrollAnimationsDemo({ isUk }: Props) {
           <h2 className="text-2xl font-heading font-bold text-neutral-900">
             {isUk ? "Елементи з'являються при скролі" : "Elements animate into view"}
           </h2>
-          <p className="text-neutral-500 text-sm mt-1">
+          <p className="text-neutral-500 dark:text-neutral-400 text-sm mt-1">
             {isUk ? "Intersection Observer + CSS transitions" : "Intersection Observer + CSS transitions"}
           </p>
         </div>
@@ -92,14 +92,14 @@ export function ScrollAnimationsDemo({ isUk }: Props) {
           {CARDS.map((card, i) => (
             <div
               key={`card-${i}-${key}`}
-              className={`rounded-2xl overflow-hidden shadow-sm border border-neutral-100 ${anim.class} ${visible ? anim.visible : anim.hidden}`}
+              className={`rounded-2xl overflow-hidden shadow-sm border border-neutral-100 dark:border-neutral-700 ${anim.class} ${visible ? anim.visible : anim.hidden}`}
               style={{ transitionDelay: visible ? `${200 + i * 100}ms` : "0ms" }}
             >
               <div className={`h-20 bg-linear-to-br ${card.color} flex items-center justify-center text-3xl`}>
                 {card.emoji}
               </div>
               <div className="p-3 bg-white">
-                <p className="text-xs font-semibold text-neutral-800 text-center">
+                <p className="text-xs font-semibold text-neutral-800 dark:text-neutral-200 text-center">
                   {isUk ? card.title.uk : card.title.en}
                 </p>
               </div>

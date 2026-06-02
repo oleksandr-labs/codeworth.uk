@@ -39,7 +39,7 @@ export function EcomAbandonedCartDemo({ isUk }: Props) {
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
               i === emailIdx
                 ? "bg-indigo-600 text-white shadow-sm"
-                : "bg-neutral-100 text-neutral-600 hover:bg-indigo-50"
+                : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-indigo-50"
             }`}
           >
             <Clock className="w-3.5 h-3.5" />
@@ -53,9 +53,9 @@ export function EcomAbandonedCartDemo({ isUk }: Props) {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Email preview */}
-        <div className="rounded-2xl border border-neutral-200 bg-white overflow-hidden shadow-sm">
+        <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white overflow-hidden shadow-sm">
           {/* Email header */}
-          <div className="border-b border-neutral-100 p-4 bg-neutral-50">
+          <div className="border-b border-neutral-100 dark:border-neutral-700 p-4 bg-neutral-50">
             <div className="flex items-center gap-2 mb-2 text-xs text-neutral-500">
               <Mail className="w-3 h-3" />
               <span>noreply@codeworth.uk</span>
@@ -66,7 +66,7 @@ export function EcomAbandonedCartDemo({ isUk }: Props) {
 
           {/* Email body */}
           <div className="p-5 space-y-4">
-            <p className="text-sm text-neutral-700 leading-relaxed">{isUk ? email.body_uk : email.body_en}</p>
+            <p className="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">{isUk ? email.body_uk : email.body_en}</p>
 
             {email.discount > 0 && (
               <div className="rounded-xl bg-linear-to-r from-amber-400 to-orange-500 text-white p-4 text-center">
@@ -79,8 +79,8 @@ export function EcomAbandonedCartDemo({ isUk }: Props) {
             )}
 
             {/* Cart preview */}
-            <div className="rounded-lg border border-neutral-200 overflow-hidden">
-              <div className="px-3 py-2 bg-neutral-50 text-xs font-semibold text-neutral-700 uppercase tracking-wider">
+            <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 overflow-hidden">
+              <div className="px-3 py-2 bg-neutral-50 dark:bg-neutral-900 text-xs font-semibold text-neutral-700 dark:text-neutral-300 uppercase tracking-wider">
                 {isUk ? "Ваш кошик" : "Your cart"} ({CART_ITEMS.length})
               </div>
               <div className="divide-y divide-neutral-100">
@@ -90,7 +90,7 @@ export function EcomAbandonedCartDemo({ isUk }: Props) {
                       {item.emoji}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="font-medium text-neutral-900 text-sm truncate">{isUk ? item.nameUk : item.nameEn}</p>
+                      <p className="font-medium text-neutral-900 dark:text-white text-sm truncate">{isUk ? item.nameUk : item.nameEn}</p>
                     </div>
                     <span className="text-sm font-semibold tabular-nums">{fmt(item.price)}</span>
                   </div>
@@ -98,7 +98,7 @@ export function EcomAbandonedCartDemo({ isUk }: Props) {
                 <div className="p-3 bg-neutral-50">
                   {email.discount > 0 && (
                     <>
-                      <div className="flex justify-between text-xs text-neutral-500 mb-1">
+                      <div className="flex justify-between text-xs text-neutral-500 dark:text-neutral-400 mb-1">
                         <span>{isUk ? "Сума" : "Subtotal"}</span>
                         <span className="tabular-nums">{fmt(cartTotal)}</span>
                       </div>
@@ -129,45 +129,45 @@ export function EcomAbandonedCartDemo({ isUk }: Props) {
 
         {/* Metrics */}
         <div className="space-y-4">
-          <div className="rounded-2xl border border-neutral-200 bg-white p-5">
-            <h4 className="font-bold text-neutral-900 mb-3 flex items-center gap-2">
+          <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white p-5">
+            <h4 className="font-bold text-neutral-900 dark:text-white mb-3 flex items-center gap-2">
               <Send className="w-4 h-4 text-indigo-500" />
               {isUk ? "Sequence stats" : "Sequence stats"}
             </h4>
             <div className="space-y-3">
               <div>
                 <div className="flex justify-between text-sm mb-1">
-                  <span className="text-neutral-600 flex items-center gap-1.5">
+                  <span className="text-neutral-600 dark:text-neutral-300 flex items-center gap-1.5">
                     <Mail className="w-3.5 h-3.5" />
                     {isUk ? "Open rate" : "Open rate"}
                   </span>
                   <span className="font-bold tabular-nums">{email.openRate}%</span>
                 </div>
-                <div className="h-2 rounded-full bg-neutral-100 overflow-hidden">
+                <div className="h-2 rounded-full bg-neutral-100 dark:bg-neutral-800 overflow-hidden">
                   <div className="h-full bg-indigo-500 rounded-full" style={{ width: `${email.openRate}%` }} role="progressbar" aria-valuenow={email.openRate} aria-valuemin={0} aria-valuemax={100} aria-label="Open rate" />
                 </div>
               </div>
               <div>
                 <div className="flex justify-between text-sm mb-1">
-                  <span className="text-neutral-600 flex items-center gap-1.5">
+                  <span className="text-neutral-600 dark:text-neutral-300 flex items-center gap-1.5">
                     <MousePointerClick className="w-3.5 h-3.5" />
                     {isUk ? "Click rate" : "Click rate"}
                   </span>
                   <span className="font-bold tabular-nums">{email.clickRate}%</span>
                 </div>
-                <div className="h-2 rounded-full bg-neutral-100 overflow-hidden">
+                <div className="h-2 rounded-full bg-neutral-100 dark:bg-neutral-800 overflow-hidden">
                   <div className="h-full bg-violet-500 rounded-full" style={{ width: `${email.clickRate}%` }} role="progressbar" aria-valuenow={email.clickRate} aria-valuemin={0} aria-valuemax={100} aria-label="Click rate" />
                 </div>
               </div>
               <div>
                 <div className="flex justify-between text-sm mb-1">
-                  <span className="text-neutral-600 flex items-center gap-1.5">
+                  <span className="text-neutral-600 dark:text-neutral-300 flex items-center gap-1.5">
                     <TrendingUp className="w-3.5 h-3.5" />
                     {isUk ? "Conversion" : "Conversion"}
                   </span>
                   <span className="font-bold tabular-nums text-emerald-600">{email.conversionRate}%</span>
                 </div>
-                <div className="h-2 rounded-full bg-neutral-100 overflow-hidden">
+                <div className="h-2 rounded-full bg-neutral-100 dark:bg-neutral-800 overflow-hidden">
                   <div className="h-full bg-emerald-500 rounded-full" style={{ width: `${email.conversionRate * 5}%` }} role="progressbar" aria-valuenow={email.conversionRate} aria-valuemin={0} aria-valuemax={20} aria-label="Conversion rate" />
                 </div>
               </div>

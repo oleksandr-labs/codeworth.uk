@@ -74,7 +74,7 @@ export function SliderDemo({ isUk }: Props) {
         </h3>
         <button
           onClick={() => setPlaying((p) => !p)}
-          className="flex items-center gap-1.5 px-3 py-2 text-sm text-neutral-500 hover:text-neutral-900 transition-colors"
+          className="flex items-center gap-1.5 px-3 py-2 text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:text-white transition-colors"
           aria-label={playing ? (isUk ? "Пауза" : "Pause") : (isUk ? "Грати" : "Play")}
         >
           {playing ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
@@ -83,7 +83,7 @@ export function SliderDemo({ isUk }: Props) {
       </div>
 
       <div
-        className="relative rounded-2xl border border-neutral-200 bg-white overflow-hidden"
+        className="relative rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white overflow-hidden"
         role="region"
         aria-roledescription="carousel"
         aria-label={isUk ? "Слайдер з відгуками клієнтів" : "Client testimonials carousel"}
@@ -102,7 +102,7 @@ export function SliderDemo({ isUk }: Props) {
                   {t.avatar}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-neutral-700 italic text-base leading-relaxed mb-3">
+                  <p className="text-neutral-700 dark:text-neutral-300 italic text-base leading-relaxed mb-3">
                     "{isUk ? t.quoteUk : t.quoteEn}"
                   </p>
                   <div className="font-bold text-neutral-900">{isUk ? t.nameUk : t.nameEn}</div>
@@ -116,14 +116,14 @@ export function SliderDemo({ isUk }: Props) {
         {/* Arrows */}
         <button
           onClick={prev}
-          className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-md border border-neutral-200 flex items-center justify-center hover:bg-neutral-50 transition-colors"
+          className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white dark:bg-neutral-800 shadow-md border border-neutral-200 dark:border-neutral-700 flex items-center justify-center hover:bg-neutral-50 dark:hover:bg-neutral-800 dark:bg-neutral-900 transition-colors"
           aria-label={isUk ? "Попередній" : "Previous"}
         >
           <ChevronLeft className="w-5 h-5 text-neutral-600" />
         </button>
         <button
           onClick={next}
-          className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-md border border-neutral-200 flex items-center justify-center hover:bg-neutral-50 transition-colors"
+          className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white dark:bg-neutral-800 shadow-md border border-neutral-200 dark:border-neutral-700 flex items-center justify-center hover:bg-neutral-50 dark:hover:bg-neutral-800 dark:bg-neutral-900 transition-colors"
           aria-label={isUk ? "Наступний" : "Next"}
         >
           <ChevronRight className="w-5 h-5 text-neutral-600" />

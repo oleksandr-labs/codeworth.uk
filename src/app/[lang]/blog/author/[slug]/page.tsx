@@ -109,7 +109,7 @@ export default async function BlogAuthorPage({ params }: Props) {
           </section>
 
           {/* Articles */}
-          <section className="py-16 bg-white">
+          <section className="py-16 bg-white dark:bg-neutral-950">
             <Container>
               <div className="flex items-center justify-between mb-8">
                 <h2 className="text-xl font-heading font-bold text-neutral-900">
@@ -122,7 +122,7 @@ export default async function BlogAuthorPage({ params }: Props) {
               </div>
 
               {posts.length === 0 ? (
-                <p className="text-neutral-500 text-center py-12">
+                <p className="text-neutral-500 dark:text-neutral-400 text-center py-12">
                   {isUk ? "Статті ще не опубліковані" : "No articles published yet"}
                 </p>
               ) : (
@@ -131,7 +131,7 @@ export default async function BlogAuthorPage({ params }: Props) {
                     <Link
                       key={post.slug}
                       href={`/${lang}/blog/${post.slug}`}
-                      className="group rounded-2xl border border-neutral-100 overflow-hidden hover:shadow-lg hover:shadow-neutral-200/60 transition-all duration-300 hover:-translate-y-1 bg-white"
+                      className="group rounded-2xl border border-neutral-100 dark:border-neutral-700 overflow-hidden hover:shadow-lg hover:shadow-neutral-200/60 transition-all duration-300 hover:-translate-y-1 bg-white"
                     >
                       <div className={cn("h-36 bg-linear-to-br flex items-center justify-center text-4xl", post.color)}>
                         {post.emoji}
@@ -140,10 +140,10 @@ export default async function BlogAuthorPage({ params }: Props) {
                         <span className="inline-block px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold mb-2">
                           {post.category}
                         </span>
-                        <h3 className="font-heading font-bold text-neutral-900 mb-2 leading-tight group-hover:text-indigo-700 transition-colors line-clamp-2">
+                        <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-2 leading-tight group-hover:text-indigo-700 transition-colors line-clamp-2">
                           {post.title}
                         </h3>
-                        <p className="text-sm text-neutral-500 leading-relaxed mb-3 line-clamp-2">
+                        <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-3 line-clamp-2">
                           {post.excerpt}
                         </p>
                         <div className="flex items-center justify-between text-xs text-neutral-400 pt-3 border-t border-neutral-100">
@@ -162,9 +162,9 @@ export default async function BlogAuthorPage({ params }: Props) {
           </section>
 
           {/* Other authors */}
-          <section className="py-12 bg-neutral-50 border-t border-neutral-100">
+          <section className="py-12 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100">
             <Container>
-              <h2 className="text-lg font-heading font-bold text-neutral-900 mb-6">
+              <h2 className="text-lg font-heading font-bold text-neutral-900 dark:text-white mb-6">
                 {isUk ? "Інші автори" : "Other Authors"}
               </h2>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -172,13 +172,13 @@ export default async function BlogAuthorPage({ params }: Props) {
                   <Link
                     key={a.slug}
                     href={`/${lang}/blog/author/${a.slug}`}
-                    className="flex items-center gap-3 p-4 rounded-2xl bg-white border border-neutral-100 hover:border-indigo-200 hover:shadow-sm transition-all group"
+                    className="flex items-center gap-3 p-4 rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 hover:border-indigo-200 hover:shadow-sm transition-all group"
                   >
                     <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center text-xl shrink-0">
                       {a.emoji}
                     </div>
                     <div className="min-w-0">
-                      <div className="font-semibold text-neutral-900 text-sm truncate group-hover:text-indigo-700 transition-colors">
+                      <div className="font-semibold text-neutral-900 dark:text-white text-sm truncate group-hover:text-indigo-700 transition-colors">
                         {isUk ? a.name.split(" ")[0] : a.nameEn.split(" ")[0]}
                       </div>
                       <div className="text-xs text-neutral-400 truncate">

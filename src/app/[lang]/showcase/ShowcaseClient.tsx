@@ -29,7 +29,7 @@ const NAV_SECTIONS = [
 function SectionTitle({ id, children }: { id: string; children: React.ReactNode }) {
   return (
     <div id={id} className="scroll-mt-24 mb-6">
-      <h2 className="text-xl font-heading font-bold text-neutral-900 flex items-center gap-2">
+      <h2 className="text-xl font-heading font-bold text-neutral-900 dark:text-white flex items-center gap-2">
         <span className="w-1 h-5 rounded-full bg-indigo-500 inline-block" />
         {children}
       </h2>
@@ -43,7 +43,7 @@ function DemoBlock({ label, children, dark = false }: { label: string; children:
       <p className="text-xs font-semibold text-neutral-400 uppercase tracking-widest mb-3">{label}</p>
       <div className={cn(
         "rounded-2xl p-6 border",
-        dark ? "bg-neutral-900 border-neutral-700" : "bg-neutral-50 border-neutral-200"
+        dark ? "bg-neutral-900 border-neutral-700" : "bg-neutral-50 dark:bg-neutral-900 border-neutral-200"
       )}>
         {children}
       </div>
@@ -60,7 +60,7 @@ function CopySnippet({ code }: { code: string }) {
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
       }}
-      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-neutral-100 hover:bg-indigo-50 hover:text-indigo-700 text-neutral-500 text-xs font-mono transition-colors"
+      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-indigo-50 hover:text-indigo-700 text-neutral-500 dark:text-neutral-400 text-xs font-mono transition-colors"
     >
       {copied ? <Check className="w-3 h-3 text-emerald-500" /> : <Copy className="w-3 h-3" />}
       {copied ? "Copied!" : code}
@@ -109,7 +109,7 @@ export function ShowcaseClient() {
               <li key={s.id}>
                 <a
                   href={`#${s.id}`}
-                  className="block px-3 py-2 rounded-lg text-sm text-neutral-500 hover:text-indigo-600 hover:bg-indigo-50 transition-colors"
+                  className="block px-3 py-2 rounded-lg text-sm text-neutral-500 dark:text-neutral-400 hover:text-indigo-600 hover:bg-indigo-50 transition-colors"
                 >
                   {s.label}
                 </a>
@@ -238,37 +238,37 @@ export function ShowcaseClient() {
         <DemoBlock label="Text inputs">
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-neutral-700 mb-1">{isUk ? "Ім'я" : "Name"}</label>
+              <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1">{isUk ? "Ім'я" : "Name"}</label>
               <input
                 type="text"
                 placeholder={isUk ? "Введіть ім'я" : "Enter your name"}
-                className="w-full px-4 py-2.5 rounded-xl border border-neutral-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent placeholder-neutral-400"
+                className="w-full px-4 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent placeholder-neutral-400"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-neutral-700 mb-1">Email</label>
+              <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1">Email</label>
               <input
                 type="email"
                 placeholder="hello@example.com"
-                className="w-full px-4 py-2.5 rounded-xl border border-neutral-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent placeholder-neutral-400"
+                className="w-full px-4 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent placeholder-neutral-400"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-neutral-700 mb-1">{isUk ? "Пошук" : "Search"}</label>
+              <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1">{isUk ? "Пошук" : "Search"}</label>
               <div className="relative">
                 <input
                   type="search"
                   placeholder={isUk ? "Пошук…" : "Search…"}
-                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-neutral-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent placeholder-neutral-400"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent placeholder-neutral-400"
                 />
                 <span className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400">🔍</span>
               </div>
             </div>
             <div>
-              <label className="block text-sm font-medium text-neutral-700 mb-1">
+              <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1">
                 {isUk ? "Вибір" : "Select"}
               </label>
-              <select className="w-full px-4 py-2.5 rounded-xl border border-neutral-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 text-neutral-700">
+              <select className="w-full px-4 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 text-neutral-700">
                 <option>{isUk ? "Оберіть послугу" : "Choose a service"}</option>
                 <option>{isUk ? "Веб-сайт" : "Website"}</option>
                 <option>{isUk ? "Магазин" : "Online Store"}</option>
@@ -302,7 +302,7 @@ export function ShowcaseClient() {
           <textarea
             rows={4}
             placeholder={isUk ? "Розкажіть про вашу задачу…" : "Tell us about your challenge…"}
-            className="w-full px-4 py-3 rounded-xl border border-neutral-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent placeholder-neutral-400 resize-none"
+            className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent placeholder-neutral-400 resize-none"
           />
         </DemoBlock>
 
@@ -345,10 +345,10 @@ export function ShowcaseClient() {
 
         <DemoBlock label="Empty state">
           <div className="flex flex-col items-center py-6 text-center">
-            <div className="w-14 h-14 rounded-2xl bg-neutral-100 flex items-center justify-center mb-3">
+            <div className="w-14 h-14 rounded-2xl bg-neutral-100 dark:bg-neutral-800 flex items-center justify-center mb-3">
               <Bell className="w-7 h-7 text-neutral-400" />
             </div>
-            <p className="font-semibold text-neutral-700 text-sm">{isUk ? "Нема сповіщень" : "No notifications"}</p>
+            <p className="font-semibold text-neutral-700 dark:text-neutral-300 text-sm">{isUk ? "Нема сповіщень" : "No notifications"}</p>
             <p className="text-xs text-neutral-400 mt-1 max-w-xs">{isUk ? "Коли з'являться нові події — вони відобразяться тут." : "When new events occur, they'll appear here."}</p>
           </div>
         </DemoBlock>
@@ -366,7 +366,7 @@ export function ShowcaseClient() {
               { label: isUk ? "Заплановано" : "Planned", value: 15, color: "bg-amber-400" },
             ].map((b) => (
               <div key={b.label}>
-                <div className="flex justify-between text-xs text-neutral-500 mb-1.5">
+                <div className="flex justify-between text-xs text-neutral-500 dark:text-neutral-400 mb-1.5">
                   <span>{b.label}</span>
                   <span className="font-semibold">{b.value}%</span>
                 </div>
@@ -418,9 +418,9 @@ export function ShowcaseClient() {
         </DemoBlock>
 
         <DemoBlock label="Testimonial card">
-          <div className="max-w-sm rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
+          <div className="max-w-sm rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 p-6 shadow-sm">
             <StarRating value={5} readonly />
-            <p className="mt-3 text-sm text-neutral-700 leading-relaxed italic">
+            <p className="mt-3 text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed italic">
               "{isUk ? "Codeworth перетворили наш сайт за 3 тижні. Записи виросли на 60%." : "Codeworth transformed our site in 3 weeks. Bookings grew by 60%."}"
             </p>
             <div className="mt-4 flex items-center gap-3">
@@ -434,7 +434,7 @@ export function ShowcaseClient() {
         </DemoBlock>
 
         <DemoBlock label="Portfolio card (hover)">
-          <div className="max-w-sm group rounded-2xl overflow-hidden border border-neutral-200 bg-white hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+          <div className="max-w-sm group rounded-2xl overflow-hidden border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:shadow-xl transition-shadow duration-300 cursor-pointer">
             <div className="h-40 bg-linear-to-br from-indigo-500 to-violet-600 relative flex items-center justify-center">
               <span className="text-5xl">🛒</span>
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
@@ -445,8 +445,8 @@ export function ShowcaseClient() {
             </div>
             <div className="p-5">
               <Badge variant="indigo">E-commerce</Badge>
-              <h3 className="mt-2 font-bold text-neutral-900 group-hover:text-indigo-600 transition-colors">FashionStore</h3>
-              <p className="text-sm text-neutral-500 mt-1">{isUk ? "+45K грн/міс збережено на комісії" : "+£3,200/mo saved on marketplace fees"}</p>
+              <h3 className="mt-2 font-bold text-neutral-900 dark:text-white group-hover:text-indigo-600 transition-colors">FashionStore</h3>
+              <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{isUk ? "+45K грн/міс збережено на комісії" : "+£3,200/mo saved on marketplace fees"}</p>
             </div>
           </div>
         </DemoBlock>
@@ -483,7 +483,7 @@ export function ShowcaseClient() {
         {/* ── Interactive Features ── */}
         <SectionTitle id="features">{isUk ? "Інтерактивні модулі" : "Interactive Features"}</SectionTitle>
 
-        <p className="text-sm text-neutral-500 mb-6 leading-relaxed">
+        <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-6 leading-relaxed">
           {isUk
             ? "Живі демо кожного модуля — доступні у каталозі Extras. Натисніть картку, щоб відкрити демо."
             : "Live demos of each module are available in the Extras catalogue. Click a card to open the demo."}
@@ -494,10 +494,10 @@ export function ShowcaseClient() {
             <Link
               key={demo.id}
               href={`/${lang}${demo.href}`}
-              className="group flex flex-col p-5 rounded-2xl border border-neutral-200 bg-white hover:shadow-md hover:border-indigo-200 transition-all"
+              className="group flex flex-col p-5 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:shadow-md hover:border-indigo-200 transition-all"
             >
               <span className="text-3xl mb-3">{demo.icon}</span>
-              <h3 className="font-bold text-neutral-900 text-sm group-hover:text-indigo-600 transition-colors mb-1">
+              <h3 className="font-bold text-neutral-900 dark:text-white text-sm group-hover:text-indigo-600 transition-colors mb-1">
                 {demo.title}
               </h3>
               <p className="text-xs text-neutral-400 leading-relaxed flex-1">{demo.desc}</p>

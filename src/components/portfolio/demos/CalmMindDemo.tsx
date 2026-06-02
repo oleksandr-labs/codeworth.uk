@@ -342,7 +342,7 @@ export function CalmMindDemo({ lang }: { lang: string }) {
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-white border-t border-sky-100 px-4 py-3 flex flex-col gap-3">
+          <div className="md:hidden bg-white dark:bg-neutral-800 border-t border-sky-100 px-4 py-3 flex flex-col gap-3">
             {navLinks.map((link) => (
               <a key={link} href="#" className="text-sm text-slate-600 hover:text-sky-700">
                 {link}

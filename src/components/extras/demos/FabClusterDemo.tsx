@@ -25,14 +25,14 @@ export function FabClusterDemo({ isUk }: Props) {
   }
 
   return (
-    <div className="relative w-full min-h-[480px] bg-neutral-50 rounded-3xl border border-neutral-200 overflow-hidden flex flex-col items-center justify-center">
+    <div className="relative w-full min-h-[480px] bg-neutral-50 dark:bg-neutral-900 rounded-3xl border border-neutral-200 dark:border-neutral-700 overflow-hidden flex flex-col items-center justify-center">
       {/* Background hint */}
       <div className="text-center px-8 max-w-sm">
         <span className="text-5xl block mb-4">📲</span>
-        <h3 className="font-heading text-xl font-bold text-neutral-800 mb-2">
+        <h3 className="font-heading text-xl font-bold text-neutral-800 dark:text-neutral-200 mb-2">
           {isUk ? "FAB Cluster — кнопки зв'язку" : "FAB Cluster — Contact Buttons"}
         </h3>
-        <p className="text-neutral-500 text-sm">
+        <p className="text-neutral-500 dark:text-neutral-400 text-sm">
           {isUk
             ? "Натисніть зелену кнопку в куті → розгортається кластер каналів зв'язку."
             : "Click the green button in the corner → contact channel cluster expands."}

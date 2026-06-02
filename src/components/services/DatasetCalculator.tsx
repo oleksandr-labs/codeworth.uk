@@ -108,10 +108,10 @@ export function DatasetCalculator({ isUk }: Props) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Чи вистачає у вас даних для ML?" : "Do You Have Enough Data for ML?"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk
           ? "Введіть параметри вашого датасету — отримайте миттєву оцінку готовності до машинного навчання."
           : "Enter your dataset parameters and get an instant ML readiness assessment."}
@@ -121,7 +121,7 @@ export function DatasetCalculator({ isUk }: Props) {
         {/* Controls */}
         <div className="space-y-6">
           <div>
-            <label className="block text-xs font-semibold text-neutral-700 mb-3 uppercase tracking-wide">
+            <label className="block text-xs font-semibold text-neutral-700 dark:text-neutral-300 mb-3 uppercase tracking-wide">
               {isUk ? "1. Тип даних" : "1. Data type"}
             </label>
             <div className="grid grid-cols-2 gap-2">
@@ -132,7 +132,7 @@ export function DatasetCalculator({ isUk }: Props) {
                   className={`flex items-center gap-2.5 px-3 py-3 rounded-xl text-sm font-medium transition-all border-2 ${
                     dataType === dt.id
                       ? "border-indigo-500 bg-indigo-50 text-indigo-700"
-                      : "border-transparent bg-neutral-100 text-neutral-700 hover:bg-neutral-200"
+                      : "border-transparent bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200"
                   }`}
                 >
                   <span>{dt.emoji}</span>
@@ -143,7 +143,7 @@ export function DatasetCalculator({ isUk }: Props) {
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-neutral-700 mb-3 uppercase tracking-wide">
+            <label className="block text-xs font-semibold text-neutral-700 dark:text-neutral-300 mb-3 uppercase tracking-wide">
               {isUk ? "2. Задача ML" : "2. ML task"}
             </label>
             <div className="grid grid-cols-2 gap-2">
@@ -154,7 +154,7 @@ export function DatasetCalculator({ isUk }: Props) {
                   className={`px-3 py-2.5 rounded-xl text-sm font-medium transition-all border-2 ${
                     taskType === tt.id
                       ? "border-blue-500 bg-blue-50 text-blue-700"
-                      : "border-transparent bg-neutral-100 text-neutral-700 hover:bg-neutral-200"
+                      : "border-transparent bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200"
                   }`}
                 >
                   {isUk ? tt.uk : tt.en}
@@ -164,7 +164,7 @@ export function DatasetCalculator({ isUk }: Props) {
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-neutral-700 mb-2 uppercase tracking-wide">
+            <label className="block text-xs font-semibold text-neutral-700 dark:text-neutral-300 mb-2 uppercase tracking-wide">
               {isUk ? `3. Рядків у датасеті: ${rows.toLocaleString()}` : `3. Dataset rows: ${rows.toLocaleString()}`}
             </label>
             <input
@@ -183,7 +183,7 @@ export function DatasetCalculator({ isUk }: Props) {
 
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-neutral-700 mb-2 uppercase tracking-wide">
+              <label className="block text-xs font-semibold text-neutral-700 dark:text-neutral-300 mb-2 uppercase tracking-wide">
                 {isUk ? `Ознак: ${features}` : `Features: ${features}`}
               </label>
               <input
@@ -197,7 +197,7 @@ export function DatasetCalculator({ isUk }: Props) {
               />
             </div>
             <div>
-              <label className="block text-xs font-semibold text-neutral-700 mb-2 uppercase tracking-wide">
+              <label className="block text-xs font-semibold text-neutral-700 dark:text-neutral-300 mb-2 uppercase tracking-wide">
                 {isUk ? `Розмічено: ${labeledPct}%` : `Labelled: ${labeledPct}%`}
               </label>
               <input
@@ -223,7 +223,7 @@ export function DatasetCalculator({ isUk }: Props) {
         {/* Result */}
         <div className="flex flex-col">
           {!verdict ? (
-            <div className="flex-1 flex flex-col items-center justify-center text-center bg-neutral-50 rounded-3xl p-8 text-neutral-400 border border-neutral-100 min-h-[320px]">
+            <div className="flex-1 flex flex-col items-center justify-center text-center bg-neutral-50 dark:bg-neutral-900 rounded-3xl p-8 text-neutral-400 border border-neutral-100 dark:border-neutral-700 min-h-[320px]">
               <span className="text-5xl mb-4">📊</span>
               <p className="text-sm font-medium text-neutral-500">
                 {isUk ? "Результат з'явиться тут" : "Your result will appear here"}
@@ -240,14 +240,14 @@ export function DatasetCalculator({ isUk }: Props) {
                   {isUk ? verdict.title_uk : verdict.title_en}
                 </h3>
               </div>
-              <p className="text-sm text-neutral-700 leading-relaxed mb-4">
+              <p className="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">
                 {isUk ? verdict.message_uk : verdict.message_en}
               </p>
               <div className="p-4 bg-white/70 rounded-xl border border-white">
-                <p className="text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-1">
+                <p className="text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mb-1">
                   {isUk ? "💡 Рекомендація" : "💡 Recommendation"}
                 </p>
-                <p className="text-sm text-neutral-600 leading-relaxed">
+                <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
                   {isUk ? verdict.tip_uk : verdict.tip_en}
                 </p>
               </div>
@@ -274,7 +274,7 @@ export function DatasetCalculator({ isUk }: Props) {
                 ].map(({ label, value }) => (
                   <div key={label} className="bg-white/60 rounded-xl p-3 text-center">
                     <div className="text-lg font-heading font-bold text-neutral-800">{value}</div>
-                    <div className="text-xs text-neutral-500 mt-0.5">{label}</div>
+                    <div className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">{label}</div>
                   </div>
                 ))}
               </div>

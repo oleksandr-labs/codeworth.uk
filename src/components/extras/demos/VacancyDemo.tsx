@@ -41,10 +41,10 @@ function ITVacancyPage({ isUk }: { isUk: boolean }) {
     return (
       <div className="text-center py-20">
         <div className="text-6xl mb-4">🎉</div>
-        <h3 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+        <h3 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
           {isUk ? "Резюме надіслано!" : "Application sent!"}
         </h3>
-        <p className="text-neutral-500 mb-2">
+        <p className="text-neutral-500 dark:text-neutral-400 mb-2">
           {isUk ? `Вакансія: ${selectedVacancy.titleUk}` : `Position: ${selectedVacancy.title}`}
         </p>
         <p className="text-neutral-400 text-sm mb-8">
@@ -60,10 +60,10 @@ function ITVacancyPage({ isUk }: { isUk: boolean }) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Вакансії — IT компанія" : "Job Board — IT Company"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk ? "Фільтр за відділом та форматом, картки вакансій, модальна форма відгуку." : "Filter by department & type, vacancy cards, modal application form."}
       </p>
 
@@ -72,7 +72,7 @@ function ITVacancyPage({ isUk }: { isUk: boolean }) {
         <div className="flex flex-wrap gap-2">
           {depts.map((d) => (
             <button key={d} onClick={() => setDept(d)}
-              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${dept === d ? "bg-violet-600 text-white" : "bg-neutral-100 text-neutral-600 hover:bg-violet-50"}`}>
+              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${dept === d ? "bg-violet-600 text-white" : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-violet-50"}`}>
               {d}
             </button>
           ))}
@@ -80,7 +80,7 @@ function ITVacancyPage({ isUk }: { isUk: boolean }) {
         <div className="flex flex-wrap gap-2">
           {types.map((t) => (
             <button key={t} onClick={() => setType(t)}
-              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${type === t ? "bg-violet-600 text-white" : "bg-neutral-100 text-neutral-600 hover:bg-violet-50"}`}>
+              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${type === t ? "bg-violet-600 text-white" : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-violet-50"}`}>
               {t}
             </button>
           ))}
@@ -95,7 +95,7 @@ function ITVacancyPage({ isUk }: { isUk: boolean }) {
       <div className="space-y-3">
         {filtered.map((v) => (
           <div key={v.id}
-            className="bg-white rounded-2xl border border-neutral-200 p-5 hover:border-violet-300 hover:shadow-md transition-all cursor-pointer"
+            className="bg-white rounded-2xl border border-neutral-200 dark:border-neutral-700 p-5 hover:border-violet-300 hover:shadow-md transition-all cursor-pointer"
             onClick={() => setSelected(v.id)}>
             <div className="flex items-start justify-between gap-4">
               <div className="flex-1 min-w-0">
@@ -109,7 +109,7 @@ function ITVacancyPage({ isUk }: { isUk: boolean }) {
                     {isUk ? v.typeUk : v.type}
                   </span>
                 </div>
-                <p className="text-sm text-neutral-500 mb-2">{isUk ? v.deptUk : v.dept} · {isUk ? v.expUk : v.exp}</p>
+                <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-2">{isUk ? v.deptUk : v.dept} · {isUk ? v.expUk : v.exp}</p>
                 <div className="flex flex-wrap gap-1.5">
                   {v.tags.map((tag) => (
                     <span key={tag} className="text-xs px-2 py-0.5 bg-violet-50 text-violet-700 rounded-full">{tag}</span>
@@ -129,23 +129,23 @@ function ITVacancyPage({ isUk }: { isUk: boolean }) {
       {selected && selectedVacancy && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" onClick={() => setSelected(null)}>
           <div className="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl" onClick={(e) => e.stopPropagation()}>
-            <h3 className="font-heading text-xl font-bold text-neutral-900 mb-1">
+            <h3 className="font-heading text-xl font-bold text-neutral-900 dark:text-white mb-1">
               {isUk ? selectedVacancy.titleUk : selectedVacancy.title}
             </h3>
-            <p className="text-sm text-neutral-500 mb-4">{selectedVacancy.salary} · {isUk ? selectedVacancy.expUk : selectedVacancy.exp}</p>
+            <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-4">{selectedVacancy.salary} · {isUk ? selectedVacancy.expUk : selectedVacancy.exp}</p>
             <div className="space-y-3 mb-6">
               <input type="text" placeholder={isUk ? "Ваше ім'я *" : "Your name *"}
-                className="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-violet-400 focus:outline-none text-sm" />
+                className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 focus:border-violet-400 focus:outline-none text-sm" />
               <input type="email" placeholder={isUk ? "Email *" : "Email *"}
-                className="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-violet-400 focus:outline-none text-sm" />
+                className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 focus:border-violet-400 focus:outline-none text-sm" />
               <input type="url" placeholder={isUk ? "Посилання на резюме / LinkedIn" : "CV link / LinkedIn"}
-                className="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-violet-400 focus:outline-none text-sm" />
+                className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 focus:border-violet-400 focus:outline-none text-sm" />
               <textarea rows={2} placeholder={isUk ? "Коротко про себе..." : "Brief about yourself..."}
-                className="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-violet-400 focus:outline-none text-sm resize-none" />
+                className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 focus:border-violet-400 focus:outline-none text-sm resize-none" />
             </div>
             <div className="flex gap-3">
               <button onClick={() => setSelected(null)}
-                className="flex-1 py-3 rounded-xl border border-neutral-200 text-neutral-600 text-sm font-semibold hover:bg-neutral-50 transition-colors">
+                className="flex-1 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 text-neutral-600 dark:text-neutral-300 text-sm font-semibold hover:bg-neutral-50 dark:hover:bg-neutral-800 dark:bg-neutral-900 transition-colors">
                 {isUk ? "Скасувати" : "Cancel"}
               </button>
               <button onClick={() => setApplied(true)}
@@ -183,10 +183,10 @@ function RetailVacancyPage({ isUk }: { isUk: boolean }) {
     return (
       <div className="text-center py-20">
         <div className="text-6xl mb-4">✅</div>
-        <h3 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+        <h3 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
           {isUk ? "Заявку надіслано!" : "Application sent!"}
         </h3>
-        <p className="text-neutral-500 mb-8">
+        <p className="text-neutral-500 dark:text-neutral-400 mb-8">
           {isUk ? `Вакансія: ${v?.title} (${v?.city})` : `Position: ${v?.titleEn} (${v?.cityEn})`}
         </p>
         <button onClick={() => setApplied(null)}
@@ -199,10 +199,10 @@ function RetailVacancyPage({ isUk }: { isUk: boolean }) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Вакансії — Роздрібна мережа" : "Job Board — Retail Chain"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk ? "Фільтр за містом, компактні картки, швидкий відгук в один клік." : "City filter, compact cards, quick one-click application."}
       </p>
 
@@ -210,7 +210,7 @@ function RetailVacancyPage({ isUk }: { isUk: boolean }) {
       <div className="flex flex-wrap gap-2 mb-6">
         {cities.map((c) => (
           <button key={c} onClick={() => setCity(c)}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${city === c ? "bg-emerald-600 text-white" : "bg-neutral-100 text-neutral-600 hover:bg-emerald-50"}`}>
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${city === c ? "bg-emerald-600 text-white" : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-emerald-50"}`}>
             {c}
           </button>
         ))}
@@ -218,7 +218,7 @@ function RetailVacancyPage({ isUk }: { isUk: boolean }) {
 
       <div className="space-y-3">
         {filtered.map((v) => (
-          <div key={v.id} className="bg-white rounded-2xl border border-neutral-200 p-5 flex items-center justify-between gap-4 hover:border-emerald-300 transition-all">
+          <div key={v.id} className="bg-white rounded-2xl border border-neutral-200 dark:border-neutral-700 p-5 flex items-center justify-between gap-4 hover:border-emerald-300 transition-all">
             <div>
               <div className="flex items-center gap-2 mb-0.5">
                 <span className="text-xs text-neutral-400">📍 {isUk ? v.city : v.cityEn}</span>

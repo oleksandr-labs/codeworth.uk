@@ -60,7 +60,7 @@ export function SeoArticleDemo({ isUk }: Props) {
 
   return (
     <div className="space-y-6">
-      <div className="flex gap-1 rounded-lg bg-neutral-100 p-1 w-fit">
+      <div className="flex gap-1 rounded-lg bg-neutral-100 dark:bg-neutral-800 p-1 w-fit">
         {([
           { id: "preview", labelEn: "Preview", labelUk: "Прев'ю", icon: Eye },
           { id: "html", labelEn: "HTML / Schema", labelUk: "HTML / Schema", icon: Code2 },
@@ -72,7 +72,7 @@ export function SeoArticleDemo({ isUk }: Props) {
               key={v.id}
               onClick={() => setView(v.id)}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-all ${
-                view === v.id ? "bg-white text-neutral-900 shadow-sm" : "text-neutral-500"
+                view === v.id ? "bg-white text-neutral-900 dark:text-white shadow-sm" : "text-neutral-500"
               }`}
             >
               <Icon className="w-3.5 h-3.5" />
@@ -83,15 +83,15 @@ export function SeoArticleDemo({ isUk }: Props) {
       </div>
 
       {view === "preview" && (
-        <div className="rounded-2xl border border-neutral-200 bg-white p-6 space-y-4">
+        <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 p-6 space-y-4">
           <div className="text-xs text-neutral-400 uppercase tracking-wider">
             <FileText className="w-3.5 h-3.5 inline mr-1" />
             {article.wordCount.toLocaleString()} {isUk ? "слів · " : "words · "}
             {article.readTime} {isUk ? "хв читання" : "min read"}
           </div>
           <h1 className="text-2xl font-bold text-neutral-900">{article.h1}</h1>
-          <p className="text-neutral-600 leading-relaxed">{article.intro}</p>
-          <div className="border-t border-neutral-100 pt-4">
+          <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed">{article.intro}</p>
+          <div className="border-t border-neutral-100 dark:border-neutral-700 pt-4">
             <p className="text-xs text-neutral-400 uppercase tracking-wider mb-2">{isUk ? "Структура статті:" : "Article structure:"}</p>
             <ul className="space-y-1 text-sm text-neutral-600">
               {article.headings.map((h, i) => (
@@ -105,7 +105,7 @@ export function SeoArticleDemo({ isUk }: Props) {
       )}
 
       {view === "html" && (
-        <div className="rounded-2xl border border-neutral-200 bg-neutral-900 p-5 overflow-x-auto">
+        <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-neutral-900 p-5 overflow-x-auto">
           <pre className="text-xs text-emerald-300 font-mono leading-relaxed">
             <span className="text-neutral-500">{`<!-- Meta tags -->`}</span>{`\n`}
             <span className="text-violet-400">{`<title>`}</span>{`${article.metaTitle}`}<span className="text-violet-400">{`</title>`}</span>{`\n`}
@@ -127,24 +127,24 @@ export function SeoArticleDemo({ isUk }: Props) {
       )}
 
       {view === "seo" && (
-        <div className="rounded-2xl border border-neutral-200 bg-white p-5 space-y-4">
+        <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white p-5 space-y-4">
           <div className="space-y-2">
             {SEO_CHECKS.map((c) => (
-              <div key={c.key} className="flex items-center gap-3 py-2 border-b border-neutral-100 last:border-0">
+              <div key={c.key} className="flex items-center gap-3 py-2 border-b border-neutral-100 dark:border-neutral-700 last:border-0">
                 <CheckCircle2 className={`w-5 h-5 shrink-0 ${c.pass ? "text-emerald-500" : "text-neutral-300"}`} />
-                <span className="text-sm text-neutral-700 flex-1">{isUk ? c.labelUk : c.labelEn}</span>
+                <span className="text-sm text-neutral-700 dark:text-neutral-300 flex-1">{isUk ? c.labelUk : c.labelEn}</span>
                 <span className={`text-xs font-semibold uppercase ${c.pass ? "text-emerald-600" : "text-neutral-400"}`}>
                   {c.pass ? (isUk ? "Пройдено" : "Pass") : (isUk ? "Помилка" : "Fail")}
                 </span>
               </div>
             ))}
           </div>
-          <div className="pt-3 border-t border-neutral-100 flex items-center justify-between text-sm">
+          <div className="pt-3 border-t border-neutral-100 dark:border-neutral-700 flex items-center justify-between text-sm">
             <span className="text-neutral-500">{isUk ? "SEO оцінка:" : "SEO score:"}</span>
             <span className="text-2xl font-bold text-emerald-600 tabular-nums">98/100</span>
           </div>
           <div>
-            <p className="text-xs text-neutral-500 uppercase tracking-wider mb-2">{isUk ? "Ключові слова:" : "Target keywords:"}</p>
+            <p className="text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mb-2">{isUk ? "Ключові слова:" : "Target keywords:"}</p>
             <div className="flex flex-wrap gap-1.5">
               {article.keywords.map((k, i) => (
                 <span key={i} className="px-2 py-0.5 rounded-md bg-indigo-50 text-indigo-700 text-xs font-medium">

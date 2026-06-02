@@ -182,7 +182,7 @@ export default async function ServicePage({ params }: Props) {
         </section>
 
         {/* Features */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-white dark:bg-neutral-950">
           <Container>
             <div className="max-w-2xl mx-auto text-center mb-16">
               <h2 className="text-4xl font-heading font-extrabold text-neutral-900">
@@ -191,12 +191,12 @@ export default async function ServicePage({ params }: Props) {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {service.features.map((f) => (
-                <div key={f.title} className="p-6 rounded-2xl border border-neutral-100 bg-white hover:shadow-md transition-shadow">
+                <div key={f.title} className="p-6 rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:shadow-md transition-shadow">
                   <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-4 ${service.bg}`}>
                     <Check className={`w-5 h-5 ${service.iconColor}`} />
                   </div>
-                  <h3 className="font-heading font-bold text-neutral-900 mb-2">{f.title}</h3>
-                  <p className="text-sm text-neutral-500 leading-relaxed">{f.description}</p>
+                  <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-2">{f.title}</h3>
+                  <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">{f.description}</p>
                 </div>
               ))}
             </div>
@@ -205,7 +205,7 @@ export default async function ServicePage({ params }: Props) {
 
         {/* Tech Stack */}
         {service.techStack && service.techStack.length > 0 && (
-          <section className="py-12 bg-neutral-50 border-t border-neutral-100">
+          <section className="py-12 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100">
             <Container>
               <p className="text-center text-xs font-semibold text-neutral-400 uppercase tracking-widest mb-6">
                 {isUk ? "Технологічний стек" : "Technology Stack"}
@@ -226,7 +226,7 @@ export default async function ServicePage({ params }: Props) {
 
         {/* Live Demo — AI Copywriter (artificial-intelligence only) */}
         {service.demoComponent === "ai-copywriter" && (
-          <section className="py-24 bg-white border-t border-neutral-100">
+          <section className="py-24 bg-white dark:bg-neutral-800 border-t border-neutral-100">
             <Container>
               <div className="max-w-2xl mx-auto text-center mb-12">
                 <p className="text-sm font-semibold text-violet-600 uppercase tracking-widest mb-3">
@@ -235,7 +235,7 @@ export default async function ServicePage({ params }: Props) {
                 <h2 className="text-4xl font-heading font-extrabold text-neutral-900">
                   {isUk ? "AI-копірайтер — live демо" : "AI Copywriter — Live Demo"}
                 </h2>
-                <p className="mt-4 text-neutral-500 text-base">
+                <p className="mt-4 text-neutral-500 dark:text-neutral-400 text-base">
                   {isUk
                     ? "Оберіть нішу та тон — AI згенерує заголовок, підзаголовок та CTA для вашого лендінгу."
                     : "Pick a niche and tone — AI generates a headline, subheadline, and CTA for your landing page."}
@@ -248,7 +248,7 @@ export default async function ServicePage({ params }: Props) {
 
         {/* Live Demo — AI EdTech (artificial-intelligence only) */}
         {slug === "artificial-intelligence" && (
-          <section className="py-24 bg-neutral-50 border-t border-neutral-100">
+          <section className="py-24 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100">
             <Container>
               <div className="max-w-2xl mx-auto text-center mb-12">
                 <p className="text-sm font-semibold text-violet-600 uppercase tracking-widest mb-3">
@@ -257,7 +257,7 @@ export default async function ServicePage({ params }: Props) {
                 <h2 className="text-4xl font-heading font-extrabold text-neutral-900">
                   {isUk ? "AI-Навчання — live демо" : "AI Learning — Live Demo"}
                 </h2>
-                <p className="mt-4 text-neutral-500 text-base">
+                <p className="mt-4 text-neutral-500 dark:text-neutral-400 text-base">
                   {isUk
                     ? "Адаптивна система навчання, що підлаштовує складність під рівень учня в реальному часі."
                     : "Adaptive learning system that adjusts difficulty to the learner's level in real time."}
@@ -270,7 +270,7 @@ export default async function ServicePage({ params }: Props) {
 
         {/* Live Demo — AI Hospitality (artificial-intelligence only) */}
         {slug === "artificial-intelligence" && (
-          <section className="py-24 bg-white border-t border-neutral-100">
+          <section className="py-24 bg-white dark:bg-neutral-800 border-t border-neutral-100">
             <Container>
               <div className="max-w-2xl mx-auto text-center mb-12">
                 <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
@@ -279,7 +279,7 @@ export default async function ServicePage({ params }: Props) {
                 <h2 className="text-4xl font-heading font-extrabold text-neutral-900">
                   {isUk ? "AI-Консьєрж Готелю — live демо" : "Hotel AI Concierge — Live Demo"}
                 </h2>
-                <p className="mt-4 text-neutral-500 text-base">
+                <p className="mt-4 text-neutral-500 dark:text-neutral-400 text-base">
                   {isUk
                     ? "Мультимовний голосовий AI для готелів. 5 мов, 4 сценарії, інтеграція з PMS."
                     : "Multilingual voice AI for hotels. 5 languages, 4 scenarios, PMS integration."}
@@ -292,7 +292,7 @@ export default async function ServicePage({ params }: Props) {
 
         {/* MLOps Pipeline Diagram — machine-learning only */}
         {slug === "machine-learning" && (
-          <section className="py-24 bg-white border-t border-neutral-100">
+          <section className="py-24 bg-white dark:bg-neutral-800 border-t border-neutral-100">
             <Container>
               <div className="max-w-2xl mx-auto text-center mb-12">
                 <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-3">
@@ -301,7 +301,7 @@ export default async function ServicePage({ params }: Props) {
                 <h2 className="text-4xl font-heading font-extrabold text-neutral-900">
                   {isUk ? "MLOps в продакшені" : "MLOps in Production"}
                 </h2>
-                <p className="mt-4 text-neutral-500 text-base">
+                <p className="mt-4 text-neutral-500 dark:text-neutral-400 text-base">
                   {isUk
                     ? "Від збору даних до авто-перенавчання в продакшені — повний цикл."
                     : "From data ingestion to auto-retraining in production — the full cycle."}
@@ -314,7 +314,7 @@ export default async function ServicePage({ params }: Props) {
 
         {/* Dataset Readiness Calculator — machine-learning only */}
         {slug === "machine-learning" && (
-          <section className="py-24 bg-neutral-50 border-t border-neutral-100">
+          <section className="py-24 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100">
             <Container>
               <div className="max-w-2xl mx-auto text-center mb-12">
                 <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-3">
@@ -323,7 +323,7 @@ export default async function ServicePage({ params }: Props) {
                 <h2 className="text-4xl font-heading font-extrabold text-neutral-900">
                   {isUk ? "Чи вистачає у вас даних для ML?" : "Do You Have Enough Data for ML?"}
                 </h2>
-                <p className="mt-4 text-neutral-500 text-base">
+                <p className="mt-4 text-neutral-500 dark:text-neutral-400 text-base">
                   {isUk
                     ? "Введіть параметри датасету — отримайте миттєву оцінку готовності."
                     : "Enter your dataset parameters and get an instant ML readiness assessment."}
@@ -336,7 +336,7 @@ export default async function ServicePage({ params }: Props) {
 
         {/* ML APIs catalog — machine-learning only */}
         {slug === "machine-learning" && (
-          <section className="py-24 bg-white border-t border-neutral-100">
+          <section className="py-24 bg-white dark:bg-neutral-800 border-t border-neutral-100">
             <Container>
               <div className="max-w-2xl mx-auto text-center mb-12">
                 <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-3">
@@ -345,7 +345,7 @@ export default async function ServicePage({ params }: Props) {
                 <h2 className="text-4xl font-heading font-extrabold text-neutral-900">
                   {isUk ? "Готові ML-API для бізнес-задач" : "Ready ML APIs for Business Use Cases"}
                 </h2>
-                <p className="mt-4 text-neutral-500 text-base">
+                <p className="mt-4 text-neutral-500 dark:text-neutral-400 text-base">
                   {isUk
                     ? "Замість 6-місячного research — підключайте готові ML-сервіси за тижні."
                     : "Skip the 6-month research cycle — integrate ready ML services in weeks."}
@@ -363,16 +363,16 @@ export default async function ServicePage({ params }: Props) {
                   <Link
                     key={api.name}
                     href={`/${lang}${api.niche}`}
-                    className="group p-5 rounded-2xl border border-neutral-100 bg-neutral-50 hover:bg-white hover:border-blue-200 hover:shadow-md transition-all"
+                    className="group p-5 rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900 hover:bg-white hover:border-blue-200 hover:shadow-md transition-all"
                   >
                     <div className="flex items-start justify-between mb-3">
                       <div className="text-3xl">{api.emoji}</div>
                       <span className="text-xs font-semibold text-blue-600">{api.price}</span>
                     </div>
-                    <h3 className="font-bold text-neutral-900 mb-1.5 group-hover:text-blue-700 transition-colors">
+                    <h3 className="font-bold text-neutral-900 dark:text-white mb-1.5 group-hover:text-blue-700 transition-colors">
                       {api.name}
                     </h3>
-                    <p className="text-sm text-neutral-500 leading-relaxed">{api.desc}</p>
+                    <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">{api.desc}</p>
                   </Link>
                 ))}
               </div>
@@ -381,14 +381,14 @@ export default async function ServicePage({ params }: Props) {
         )}
 
         {/* What's included */}
-        <section className="py-24 bg-neutral-50">
+        <section className="py-24 bg-neutral-50 dark:bg-neutral-900 ">
           <Container>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
                 <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
                   {isUk ? "Що входить" : "What's Included"}
                 </p>
-                <h2 className="text-4xl font-heading font-extrabold text-neutral-900 mb-6">
+                <h2 className="text-4xl font-heading font-extrabold text-neutral-900 dark:text-white mb-6">
                   {isUk ? "Що ми зробимо для вас" : "What We'll Do for You"}
                 </h2>
                 <ul className="space-y-3">
@@ -433,7 +433,7 @@ export default async function ServicePage({ params }: Props) {
 
         {/* Comparison Table — AI approaches */}
         {service.comparisonTable && service.comparisonTable.length > 0 && (
-          <section className="py-24 bg-white border-t border-neutral-100">
+          <section className="py-24 bg-white dark:bg-neutral-800 border-t border-neutral-100">
             <Container>
               <div className="max-w-2xl mx-auto text-center mb-12">
                 <p className="text-sm font-semibold text-violet-600 uppercase tracking-widest mb-3">
@@ -455,7 +455,7 @@ export default async function ServicePage({ params }: Props) {
                   <tbody>
                     {service.comparisonTable.map((row, i) => (
                       <tr key={row.approach} className={i % 2 === 0 ? "bg-white" : "bg-neutral-50"}>
-                        <td className="px-5 py-4 font-heading font-bold text-neutral-900 whitespace-nowrap">{row.approach}</td>
+                        <td className="px-5 py-4 font-heading font-bold text-neutral-900 dark:text-white whitespace-nowrap">{row.approach}</td>
                         <td className="px-5 py-4 text-neutral-600">{isUk ? row.ukDesc : row.enDesc}</td>
                         <td className="px-5 py-4 text-neutral-600">{isUk ? row.ukWhen : row.enWhen}</td>
                       </tr>
@@ -469,7 +469,7 @@ export default async function ServicePage({ params }: Props) {
 
         {/* Packages */}
         {service.packages && service.packages.length > 0 && (
-          <section className="py-24 bg-white">
+          <section className="py-24 bg-white dark:bg-neutral-950">
             <Container>
               <div className="max-w-2xl mx-auto text-center mb-12">
                 <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">{isUk ? "Тарифи" : "Packages"}</p>
@@ -484,11 +484,11 @@ export default async function ServicePage({ params }: Props) {
                     className={`relative rounded-2xl p-7 border-2 flex flex-col ${
                       pkg.highlight
                         ? `border-indigo-600 bg-linear-to-br ${service.gradient} text-white shadow-xl`
-                        : "border-neutral-100 bg-white"
+                        : "border-neutral-100 dark:border-neutral-700 bg-white"
                     }`}
                   >
                     {pkg.highlight && (
-                      <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 bg-amber-400 text-gray-900 text-xs font-bold rounded-full whitespace-nowrap">
+                      <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 bg-amber-400 text-gray-900 dark:text-white text-xs font-bold rounded-full whitespace-nowrap">
                         {isUk ? "Рекомендовано" : "Recommended"}
                       </div>
                     )}
@@ -528,7 +528,7 @@ export default async function ServicePage({ params }: Props) {
 
         {/* Before / After — ROI metrics */}
         {service.beforeAfter && service.beforeAfter.length > 0 && (
-          <section className="py-24 bg-white border-t border-neutral-100">
+          <section className="py-24 bg-white dark:bg-neutral-800 border-t border-neutral-100">
             <Container>
               <div className="max-w-2xl mx-auto text-center mb-12">
                 <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
@@ -553,7 +553,7 @@ export default async function ServicePage({ params }: Props) {
                       <tr key={row.metric} className={i % 2 === 0 ? "bg-white" : "bg-neutral-50"}>
                         <td className="px-5 py-4 font-semibold text-neutral-900">{row.metric}</td>
                         <td className="px-5 py-4 text-neutral-500">{row.before}</td>
-                        <td className="px-5 py-4 text-neutral-700 font-medium">{row.after}</td>
+                        <td className="px-5 py-4 text-neutral-700 dark:text-neutral-300 font-medium">{row.after}</td>
                         <td className="px-5 py-4">
                           <span className={cn(
                             "inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold",
@@ -574,7 +574,7 @@ export default async function ServicePage({ params }: Props) {
 
         {/* Use Cases */}
         {service.useCases && service.useCases.length > 0 && (
-          <section className="py-24 bg-neutral-50">
+          <section className="py-24 bg-neutral-50 dark:bg-neutral-900 ">
             <Container>
               <div className="max-w-2xl mx-auto text-center mb-16">
                 <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">{isUk ? "Для кого" : "Who It's For"}</p>
@@ -584,11 +584,11 @@ export default async function ServicePage({ params }: Props) {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
                 {service.useCases.map((uc) => (
-                  <div key={uc.niche} className="flex items-start gap-4 p-5 rounded-2xl border border-neutral-100 bg-white hover:shadow-md transition-shadow">
+                  <div key={uc.niche} className="flex items-start gap-4 p-5 rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:shadow-md transition-shadow">
                     <span className="text-2xl shrink-0" aria-hidden="true">{uc.emoji}</span>
                     <div>
-                      <h3 className="font-heading font-bold text-neutral-900 text-sm mb-1">{uc.niche}</h3>
-                      <p className="text-xs text-neutral-500 leading-relaxed">{uc.description}</p>
+                      <h3 className="font-heading font-bold text-neutral-900 dark:text-white text-sm mb-1">{uc.niche}</h3>
+                      <p className="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed">{uc.description}</p>
                     </div>
                   </div>
                 ))}
@@ -599,7 +599,7 @@ export default async function ServicePage({ params }: Props) {
 
         {/* Process Steps */}
         {service.processSteps && service.processSteps.length > 0 && (
-          <section className="py-24 bg-neutral-50">
+          <section className="py-24 bg-neutral-50 dark:bg-neutral-900 ">
             <Container>
               <div className="max-w-2xl mx-auto text-center mb-16">
                 <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">{isUk ? "Процес" : "Process"}</p>
@@ -613,8 +613,8 @@ export default async function ServicePage({ params }: Props) {
                     <div className={`w-14 h-14 rounded-2xl bg-linear-to-br ${service.gradient} flex items-center justify-center mx-auto mb-4 text-white font-heading font-extrabold text-lg shadow-lg`}>
                       {step.step}
                     </div>
-                    <h3 className="font-heading font-bold text-neutral-900 mb-2">{step.title}</h3>
-                    <p className="text-sm text-neutral-500 leading-relaxed">{step.description}</p>
+                    <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-2">{step.title}</h3>
+                    <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">{step.description}</p>
                   </div>
                 ))}
               </div>
@@ -624,7 +624,7 @@ export default async function ServicePage({ params }: Props) {
 
         {/* Case Studies */}
         {service.caseStudies && service.caseStudies.length > 0 && (
-          <section className="py-24 bg-white border-t border-neutral-100">
+          <section className="py-24 bg-white dark:bg-neutral-800 border-t border-neutral-100">
             <Container>
               <div className="max-w-2xl mx-auto text-center mb-16">
                 <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">{isUk ? "Результати" : "Results"}</p>
@@ -634,13 +634,13 @@ export default async function ServicePage({ params }: Props) {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
                 {service.caseStudies.map((cs) => (
-                  <div key={cs.client} className="p-6 rounded-2xl border border-neutral-100 bg-white hover:shadow-md transition-shadow">
+                  <div key={cs.client} className="p-6 rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:shadow-md transition-shadow">
                     <div className={`inline-flex items-center justify-center px-4 py-2 rounded-xl bg-linear-to-r ${service.gradient} text-white font-heading font-extrabold text-2xl mb-4`}>
                       {cs.metric}
                     </div>
-                    <h3 className="font-heading font-bold text-neutral-900 mb-1">{cs.client}</h3>
+                    <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-1">{cs.client}</h3>
                     <p className="text-xs text-indigo-600 font-semibold uppercase tracking-wider mb-2">{cs.niche}</p>
-                    <p className="text-sm text-neutral-500 leading-relaxed">{cs.result}</p>
+                    <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">{cs.result}</p>
                   </div>
                 ))}
               </div>
@@ -649,7 +649,7 @@ export default async function ServicePage({ params }: Props) {
         )}
 
         {/* FAQ */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-white dark:bg-neutral-950">
           <Container>
             <div className="max-w-2xl mx-auto text-center mb-12">
               <h2 className="text-4xl font-heading font-extrabold text-neutral-900">
@@ -659,15 +659,15 @@ export default async function ServicePage({ params }: Props) {
             <div className="max-w-3xl mx-auto space-y-4">
               {service.faq.map((item) => (
                 <div key={item.q} className="p-6 rounded-2xl border border-neutral-100">
-                  <h3 className="font-heading font-bold text-neutral-900 mb-2">{item.q}</h3>
-                  <p className="text-neutral-500 text-sm leading-relaxed">{item.a}</p>
+                  <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-2">{item.q}</h3>
+                  <p className="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed">{item.a}</p>
                 </div>
               ))}
             </div>
 
             {/* More questions CTA */}
             <div className="max-w-3xl mx-auto mt-8 text-center">
-              <p className="text-neutral-500 text-sm">
+              <p className="text-neutral-500 dark:text-neutral-400 text-sm">
                 {isUk ? "Не знайшли відповідь?" : "Didn't find an answer?"}{" "}
                 <Link href={`/${lang}/contact`} className="text-indigo-600 font-medium hover:underline">
                   {isUk ? "Напишіть нам" : "Contact us"}
@@ -683,7 +683,7 @@ export default async function ServicePage({ params }: Props) {
 
         {/* Related blog posts */}
         {blogPosts.length > 0 && (
-          <section className="py-16 bg-white border-t border-neutral-100">
+          <section className="py-16 bg-white dark:bg-neutral-800 border-t border-neutral-100">
             <Container>
               <div className="flex items-center justify-between mb-8">
                 <h3 className="text-2xl font-heading font-bold text-neutral-900">{isUk ? "Читайте також" : "Read Also"}</h3>
@@ -696,7 +696,7 @@ export default async function ServicePage({ params }: Props) {
                   <Link
                     key={post.slug}
                     href={`/${lang}/blog/${post.slug}`}
-                    className="group rounded-2xl border border-neutral-100 overflow-hidden hover:shadow-lg hover:shadow-neutral-200/60 transition-all duration-300 hover:-translate-y-1 bg-white"
+                    className="group rounded-2xl border border-neutral-100 dark:border-neutral-700 overflow-hidden hover:shadow-lg hover:shadow-neutral-200/60 transition-all duration-300 hover:-translate-y-1 bg-white"
                   >
                     <div className={cn(`h-28 bg-linear-to-br flex items-center justify-center text-4xl`, post.color)}>
                       {post.emoji}
@@ -705,7 +705,7 @@ export default async function ServicePage({ params }: Props) {
                       <span className="inline-block px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold mb-2">
                         {post.category}
                       </span>
-                      <h4 className="font-heading font-bold text-neutral-900 text-sm leading-tight group-hover:text-indigo-700 transition-colors line-clamp-2">
+                      <h4 className="font-heading font-bold text-neutral-900 dark:text-white text-sm leading-tight group-hover:text-indigo-700 transition-colors line-clamp-2">
                         {post.title}
                       </h4>
                     </div>
@@ -717,7 +717,7 @@ export default async function ServicePage({ params }: Props) {
         )}
 
         {/* Related niches */}
-        <section className="py-16 bg-neutral-50 border-t border-neutral-100">
+        <section className="py-16 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100">
           <Container>
             <div className="flex items-center justify-between mb-8">
               <div>
@@ -733,7 +733,7 @@ export default async function ServicePage({ params }: Props) {
                 <Link
                   key={niche.slug}
                   href={`/${lang}/niches/${niche.slug}`}
-                  className="group flex items-start gap-4 p-5 rounded-2xl border border-neutral-200 bg-white hover:border-indigo-200 hover:shadow-md transition-all"
+                  className="group flex items-start gap-4 p-5 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-indigo-200 hover:shadow-md transition-all"
                 >
                   <div
                     className="w-10 h-10 rounded-xl flex items-center justify-center text-xl shrink-0"
@@ -742,8 +742,8 @@ export default async function ServicePage({ params }: Props) {
                     {niche.emoji}
                   </div>
                   <div>
-                    <p className="font-heading font-bold text-neutral-900 group-hover:text-indigo-700 transition-colors text-sm">{niche.title}</p>
-                    <p className="text-xs text-neutral-500 mt-0.5 line-clamp-2">{niche.subtitle}</p>
+                    <p className="font-heading font-bold text-neutral-900 dark:text-white group-hover:text-indigo-700 transition-colors text-sm">{niche.title}</p>
+                    <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5 line-clamp-2">{niche.subtitle}</p>
                   </div>
                 </Link>
               ))}
@@ -753,16 +753,16 @@ export default async function ServicePage({ params }: Props) {
 
         {/* AI/ML niche hub cross-link */}
         {(slug === "artificial-intelligence" || slug === "machine-learning") && (
-          <section className="py-12 bg-neutral-50 border-t border-neutral-100">
+          <section className="py-12 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100">
             <Container>
-              <div className="rounded-2xl border border-neutral-200 bg-white p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div>
                   <p className="text-xs font-semibold text-indigo-600 uppercase tracking-widest mb-1">
                     {slug === "artificial-intelligence"
                       ? (isUk ? "AI по галузях" : "AI by Industry")
                       : (isUk ? "ML по галузях" : "ML by Industry")}
                   </p>
-                  <h3 className="text-lg font-heading font-bold text-neutral-900 mb-1">
+                  <h3 className="text-lg font-heading font-bold text-neutral-900 dark:text-white mb-1">
                     {slug === "artificial-intelligence"
                       ? (isUk ? "AI-рішення для вашої галузі" : "AI solutions for your industry")
                       : (isUk ? "ML-рішення для вашої галузі" : "ML solutions for your industry")}
@@ -787,7 +787,7 @@ export default async function ServicePage({ params }: Props) {
 
         {/* Cross-link to related service */}
         {service.crossLink && (
-          <section className="py-16 bg-neutral-50 border-t border-neutral-100">
+          <section className="py-16 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100">
             <Container>
               <div className={`rounded-2xl p-8 bg-linear-to-br ${service.gradient} text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6`}>
                 <div>
@@ -803,7 +803,7 @@ export default async function ServicePage({ params }: Props) {
                 </div>
                 <Link
                   href={`/${lang}/services/${service.crossLink.slug}`}
-                  className="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-neutral-900 font-bold text-sm hover:bg-white/90 transition-colors"
+                  className="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-neutral-900 dark:text-white font-bold text-sm hover:bg-white/90 transition-colors"
                 >
                   {isUk ? "Дізнатись більше" : "Learn More"}
                   <ArrowRight className="w-4 h-4" />
@@ -814,9 +814,9 @@ export default async function ServicePage({ params }: Props) {
         )}
 
         {/* Other services */}
-        <section className="py-16 bg-neutral-50 border-t border-neutral-100">
+        <section className="py-16 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100">
           <Container>
-            <h3 className="text-lg font-heading font-bold text-neutral-700 mb-6">{isUk ? "Інші послуги" : "Other Services"}</h3>
+            <h3 className="text-lg font-heading font-bold text-neutral-700 dark:text-neutral-300 mb-6">{isUk ? "Інші послуги" : "Other Services"}</h3>
             <div className="flex flex-wrap gap-3">
               {SERVICES_DATA.filter((s) => s.slug !== service.slug).map((rawS) => {
                 const s = getServiceLocalized(rawS.slug, lang) ?? rawS;
@@ -825,7 +825,7 @@ export default async function ServicePage({ params }: Props) {
                   <Link
                     key={s.slug}
                     href={`/${lang}/services/${s.slug}`}
-                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-neutral-200 bg-white hover:border-indigo-200 hover:bg-indigo-50 transition-all text-sm font-medium text-neutral-700 hover:text-indigo-700"
+                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-indigo-200 hover:bg-indigo-50 transition-all text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:text-indigo-700"
                   >
                     <SIcon className={`w-4 h-4 ${s.iconColor}`} />
                     {s.shortTitle}

@@ -186,9 +186,9 @@ export default async function CareersPage({
         </section>
 
         {/* Why Codeworth */}
-        <section className="py-16 bg-white border-b">
+        <section className="py-16 bg-white dark:bg-neutral-800 border-b">
           <Container>
-            <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
               {isUk ? "Чому Codeworth?" : "Why Codeworth?"}
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -196,8 +196,8 @@ export default async function CareersPage({
                 <div key={v.title} className="flex gap-4">
                   <span className="text-3xl">{v.emoji}</span>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">{v.title}</h3>
-                    <p className="text-gray-600 text-sm">{v.desc}</p>
+                    <h3 className="font-semibold text-gray-900 dark:text-white mb-1">{v.title}</h3>
+                    <p className="text-gray-600 dark:text-neutral-300 text-sm">{v.desc}</p>
                   </div>
                 </div>
               ))}
@@ -206,12 +206,12 @@ export default async function CareersPage({
         </section>
 
         {/* Selection process */}
-        <section className="py-16 bg-white border-b">
+        <section className="py-16 bg-white dark:bg-neutral-800 border-b">
           <Container>
-            <h2 className="text-2xl font-bold text-gray-900 mb-3 text-center">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 text-center">
               {isUk ? "Процес відбору" : "Hiring Process"}
             </h2>
-            <p className="text-gray-600 text-center mb-10 max-w-lg mx-auto text-sm">
+            <p className="text-gray-600 dark:text-neutral-300 text-center mb-10 max-w-lg mx-auto text-sm">
               {isUk
                 ? "Ми цінуємо ваш час — увесь процес займає 7–10 робочих днів."
                 : "We value your time — the entire process takes 7–10 business days."}
@@ -242,8 +242,8 @@ export default async function CareersPage({
                     </div>
                     <div>
                       <span className="text-xs text-indigo-600 font-medium">{s.time}</span>
-                      <h3 className="font-semibold text-gray-900 mb-1">{s.title}</h3>
-                      <p className="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
+                      <h3 className="font-semibold text-gray-900 dark:text-white mb-1">{s.title}</h3>
+                      <p className="text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">{s.desc}</p>
                     </div>
                   </div>
                   {i < 3 && (
@@ -256,19 +256,19 @@ export default async function CareersPage({
         </section>
 
         {/* Team testimonials */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-white dark:bg-neutral-950">
           <Container>
-            <h2 className="text-2xl font-bold text-gray-900 mb-3 text-center">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 text-center">
               {isUk ? "Команда про роботу в Codeworth" : "Team About Working at Codeworth"}
             </h2>
-            <p className="text-gray-500 text-center mb-10">
+            <p className="text-gray-500 dark:text-neutral-400 text-center mb-10">
               {isUk ? "Реальні враження наших колег" : "Real impressions from our colleagues"}
             </p>
             <div className="grid md:grid-cols-3 gap-6">
               {TEAM_TESTIMONIALS.map((t) => (
-                <div key={t.nameEn} className="bg-gray-50 rounded-2xl p-6 flex flex-col gap-4 border border-gray-100">
+                <div key={t.nameEn} className="bg-gray-50 dark:bg-neutral-900 rounded-2xl p-6 flex flex-col gap-4 border border-gray-100">
                   <Quote className="w-7 h-7 text-indigo-300 shrink-0" />
-                  <p className="text-gray-700 leading-relaxed flex-1">
+                  <p className="text-gray-700 dark:text-neutral-300 leading-relaxed flex-1">
                     &ldquo;{isUk ? t.quoteUk : t.quoteEn}&rdquo;
                   </p>
                   <div className="flex items-center gap-3 pt-2 border-t border-gray-200">
@@ -276,7 +276,7 @@ export default async function CareersPage({
                       {t.emoji}
                     </div>
                     <div>
-                      <p className="font-semibold text-gray-900 text-sm">{isUk ? t.nameUk : t.nameEn}</p>
+                      <p className="font-semibold text-gray-900 dark:text-white text-sm">{isUk ? t.nameUk : t.nameEn}</p>
                       <p className="text-xs text-gray-500">
                         {isUk ? t.roleUk : t.roleEn} · {t.yearsInTeam}{" "}
                         {isUk ? "р. в команді" : "yr in team"}

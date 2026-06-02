@@ -179,12 +179,12 @@ export function ProCourseDemo({ lang }: { lang: string }) {
   return (
     <div className="min-h-screen bg-white text-gray-900" style={{ fontFamily: "'Inter', sans-serif" }}>
       {/* ── Header ── */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-30">
+      <header className="bg-white border-b border-gray-200 dark:border-neutral-700 sticky top-0 z-30">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <span className="text-xl font-bold text-teal-800">📚 ProCourse</span>
           <nav className="hidden md:flex items-center gap-6">
             {nav.map((item) => (
-              <button key={item} className="text-sm text-gray-600 hover:text-teal-700 transition-colors">
+              <button key={item} className="text-sm text-gray-600 dark:text-neutral-300 hover:text-teal-700 transition-colors">
                 {item}
               </button>
             ))}
@@ -230,7 +230,7 @@ export function ProCourseDemo({ lang }: { lang: string }) {
           <h2 className="text-3xl font-bold text-center text-teal-900 mb-2">
             {isUk ? "Напрямки навчання" : "Course Categories"}
           </h2>
-          <p className="text-gray-500 text-center mb-10">
+          <p className="text-gray-500 dark:text-neutral-400 text-center mb-10">
             {isUk ? "Оберіть напрямок, що відповідає вашим кар'єрним цілям" : "Choose a direction that matches your career goals"}
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -259,7 +259,7 @@ export function ProCourseDemo({ lang }: { lang: string }) {
           <h2 className="text-3xl font-bold text-center text-teal-900 mb-2">
             {isUk ? "Обрані курси" : "Featured Courses"}
           </h2>
-          <p className="text-gray-500 text-center mb-8">
+          <p className="text-gray-500 dark:text-neutral-400 text-center mb-8">
             {isUk ? "Найкращі програми для професійного зростання" : "Top programs for professional growth"}
           </p>
 
@@ -278,7 +278,7 @@ export function ProCourseDemo({ lang }: { lang: string }) {
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     sortBy === key
                       ? "bg-teal-700 text-white"
-                      : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                      : "bg-gray-100 dark:bg-neutral-800 text-gray-600 dark:text-neutral-300 hover:bg-gray-200"
                   }`}
                 >
                   {labels[key]}
@@ -291,7 +291,7 @@ export function ProCourseDemo({ lang }: { lang: string }) {
             {sortedCourses.map((course) => (
               <div
                 key={course.id}
-                className="border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow bg-white"
+                className="border border-gray-200 dark:border-neutral-700 rounded-xl overflow-hidden hover:shadow-lg transition-shadow bg-white"
               >
                 <div className="bg-linear-to-br from-teal-700 to-teal-900 p-4">
                   <span className="inline-block bg-white/20 text-white text-xs font-medium px-2 py-1 rounded">
@@ -301,7 +301,7 @@ export function ProCourseDemo({ lang }: { lang: string }) {
                 </div>
                 <div className="p-5">
                   <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">
+                    <span className="text-xs bg-gray-100 dark:bg-neutral-800 text-gray-700 dark:text-neutral-300 px-2 py-1 rounded-full">
                       ⏱️ {course.weeks} {isUk ? "тижнів" : "weeks"}
                     </span>
                     <span className="text-xs bg-teal-50 text-teal-700 px-2 py-1 rounded-full">
@@ -334,7 +334,7 @@ export function ProCourseDemo({ lang }: { lang: string }) {
           <h2 className="text-3xl font-bold text-center text-teal-900 mb-2">
             {isUk ? "Шляхи сертифікації" : "Certification Paths"}
           </h2>
-          <p className="text-gray-500 text-center mb-10">
+          <p className="text-gray-500 dark:text-neutral-400 text-center mb-10">
             {isUk
               ? "Послідовні програми для отримання міжнародних сертифікацій"
               : "Structured programs to earn internationally recognized certifications"}
@@ -354,7 +354,7 @@ export function ProCourseDemo({ lang }: { lang: string }) {
                     </div>
                   ))}
                 </div>
-                <div className="border-t border-gray-100 pt-4 space-y-2 text-sm">
+                <div className="border-t border-gray-100 dark:border-neutral-700 pt-4 space-y-2 text-sm">
                   <div className="flex justify-between text-gray-600">
                     <span>⏱️ {isUk ? "Годин" : "Hours"}</span>
                     <span className="font-semibold text-gray-900">{path.hours}</span>
@@ -365,7 +365,7 @@ export function ProCourseDemo({ lang }: { lang: string }) {
                   </div>
                   <div className="flex justify-between text-gray-600">
                     <span>🎯 {isUk ? "Результат" : "Outcome"}</span>
-                    <span className="font-semibold text-gray-900 text-right max-w-[60%]">{path.outcome}</span>
+                    <span className="font-semibold text-gray-900 dark:text-white text-right max-w-[60%]">{path.outcome}</span>
                   </div>
                 </div>
               </div>
@@ -380,7 +380,7 @@ export function ProCourseDemo({ lang }: { lang: string }) {
           <h2 className="text-3xl font-bold text-center text-teal-900 mb-2">
             {isUk ? "Навчання для компаній" : "Train Your Team"}
           </h2>
-          <p className="text-gray-500 text-center mb-10">
+          <p className="text-gray-500 dark:text-neutral-400 text-center mb-10">
             {isUk
               ? "Корпоративні програми з гнучкими умовами та знижками"
               : "Corporate programs with flexible terms and volume discounts"}
@@ -389,9 +389,9 @@ export function ProCourseDemo({ lang }: { lang: string }) {
           {/* Benefits */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
             {corpBenefits.map((b) => (
-              <div key={b.title} className="bg-white border border-gray-200 rounded-xl p-5 text-center">
+              <div key={b.title} className="bg-white border border-gray-200 dark:border-neutral-700 rounded-xl p-5 text-center">
                 <div className="text-3xl mb-2">{b.icon}</div>
-                <h4 className="font-bold text-gray-900 mb-1">{b.title}</h4>
+                <h4 className="font-bold text-gray-900 dark:text-white mb-1">{b.title}</h4>
                 <p className="text-sm text-gray-500">{b.desc}</p>
               </div>
             ))}
@@ -475,18 +475,18 @@ export function ProCourseDemo({ lang }: { lang: string }) {
           <h2 className="text-3xl font-bold text-center text-teal-900 mb-2">
             {isUk ? "Історії успіху" : "Success Stories"}
           </h2>
-          <p className="text-gray-500 text-center mb-10">
+          <p className="text-gray-500 dark:text-neutral-400 text-center mb-10">
             {isUk ? "Наші випускники досягають результатів" : "Our graduates achieve real results"}
           </p>
           <div className="grid md:grid-cols-3 gap-6">
             {stories.map((s) => (
-              <div key={s.name} className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm text-center">
+              <div key={s.name} className="bg-white rounded-xl p-6 border border-gray-200 dark:border-neutral-700 shadow-sm text-center">
                 <div className="w-20 h-20 bg-teal-100 rounded-full flex items-center justify-center text-4xl mx-auto mb-4">
                   {s.avatar}
                 </div>
-                <h4 className="font-bold text-gray-900 text-lg">{s.name}</h4>
+                <h4 className="font-bold text-gray-900 dark:text-white text-lg">{s.name}</h4>
                 <p className="text-sm text-teal-700 font-medium mt-1 mb-3">{s.course}</p>
-                <p className="text-gray-600 text-sm italic">&ldquo;{s.outcome}&rdquo;</p>
+                <p className="text-gray-600 dark:text-neutral-300 text-sm italic">&ldquo;{s.outcome}&rdquo;</p>
               </div>
             ))}
           </div>
@@ -499,18 +499,18 @@ export function ProCourseDemo({ lang }: { lang: string }) {
           <h2 className="text-3xl font-bold text-center text-teal-900 mb-2">
             {isUk ? "Наші інструктори" : "Our Instructors"}
           </h2>
-          <p className="text-gray-500 text-center mb-10">
+          <p className="text-gray-500 dark:text-neutral-400 text-center mb-10">
             {isUk ? "Практики з реальним досвідом у галузі" : "Practitioners with real industry experience"}
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {instructors.map((inst) => (
-              <div key={inst.name} className="bg-white border border-gray-200 rounded-xl p-5 text-center hover:shadow-md transition-shadow">
+              <div key={inst.name} className="bg-white border border-gray-200 dark:border-neutral-700 rounded-xl p-5 text-center hover:shadow-md transition-shadow">
                 <div className="w-16 h-16 bg-teal-50 rounded-full flex items-center justify-center text-3xl mx-auto mb-3">
                   {inst.avatar}
                 </div>
                 <h4 className="font-bold text-gray-900">{inst.name}</h4>
                 <p className="text-sm text-amber-600 font-medium mt-1">{inst.role}</p>
-                <p className="text-xs text-gray-500 mt-2 mb-3">{inst.exp}</p>
+                <p className="text-xs text-gray-500 dark:text-neutral-400 mt-2 mb-3">{inst.exp}</p>
                 <span className="inline-block bg-teal-50 text-teal-700 text-xs font-medium px-3 py-1 rounded-full">
                   {inst.courses} {isUk ? "курсів" : "courses"}
                 </span>
@@ -526,7 +526,7 @@ export function ProCourseDemo({ lang }: { lang: string }) {
           <h2 className="text-3xl font-bold text-center text-teal-900 mb-2">
             {isUk ? "Найближчі старти" : "Upcoming Schedule"}
           </h2>
-          <p className="text-gray-500 text-center mb-10">
+          <p className="text-gray-500 dark:text-neutral-400 text-center mb-10">
             {isUk ? "Встигніть зареєструватися — місця обмежені" : "Register before spots run out"}
           </p>
           <div className="bg-white rounded-xl border border-teal-100 overflow-hidden shadow-sm">
@@ -545,7 +545,7 @@ export function ProCourseDemo({ lang }: { lang: string }) {
                   {schedule.map((row, i) => (
                     <tr key={row.name} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
                       <td className="px-5 py-3 font-medium text-gray-700">{row.date}</td>
-                      <td className="px-5 py-3 text-gray-900 font-semibold">{row.name}</td>
+                      <td className="px-5 py-3 text-gray-900 dark:text-white font-semibold">{row.name}</td>
                       <td className="px-5 py-3 text-gray-600">{row.format}</td>
                       <td className="px-5 py-3">
                         <span
@@ -576,7 +576,7 @@ export function ProCourseDemo({ lang }: { lang: string }) {
           <h2 className="text-3xl font-bold text-center text-teal-900 mb-2">
             {isUk ? "Зв'яжіться з нами" : "Get in Touch"}
           </h2>
-          <p className="text-gray-500 text-center mb-8">
+          <p className="text-gray-500 dark:text-neutral-400 text-center mb-8">
             {isUk ? "Залиште заявку — ми зв'яжемося протягом 24 годин" : "Submit a request — we'll contact you within 24 hours"}
           </p>
 
@@ -591,9 +591,9 @@ export function ProCourseDemo({ lang }: { lang: string }) {
               </p>
             </div>
           ) : (
-            <form onSubmit={handleContactSubmit} className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+            <form onSubmit={handleContactSubmit} className="bg-white border border-gray-200 dark:border-neutral-700 rounded-xl p-6 shadow-sm">
               {/* Toggle */}
-              <div className="flex rounded-lg overflow-hidden border border-gray-200 mb-6">
+              <div className="flex rounded-lg overflow-hidden border border-gray-200 dark:border-neutral-700 mb-6">
                 {(["individual", "corporate"] as const).map((type) => (
                   <button
                     key={type}
@@ -602,7 +602,7 @@ export function ProCourseDemo({ lang }: { lang: string }) {
                     className={`flex-1 py-2.5 text-sm font-medium transition-colors ${
                       contactType === type
                         ? "bg-teal-700 text-white"
-                        : "bg-white text-gray-600 hover:bg-gray-50"
+                        : "bg-white text-gray-600 dark:text-neutral-300 hover:bg-gray-50"
                     }`}
                   >
                     {type === "individual"
@@ -614,7 +614,7 @@ export function ProCourseDemo({ lang }: { lang: string }) {
 
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-1">
                     {contactType === "corporate"
                       ? isUk ? "Контактна особа" : "Contact Person"
                       : isUk ? "Ім'я" : "Name"}
@@ -628,7 +628,7 @@ export function ProCourseDemo({ lang }: { lang: string }) {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-1">Email</label>
                   <input
                     type="email"
                     value={contactForm.email}
@@ -638,7 +638,7 @@ export function ProCourseDemo({ lang }: { lang: string }) {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-1">
                     {isUk ? "Телефон" : "Phone"}
                   </label>
                   <input
@@ -650,7 +650,7 @@ export function ProCourseDemo({ lang }: { lang: string }) {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-1">
                     {isUk ? "Напрямок" : "Interest Area"}
                   </label>
                   <select

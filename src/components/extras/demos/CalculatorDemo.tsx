@@ -27,16 +27,16 @@ function CleaningCalculator({ isUk }: { isUk: boolean }) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Калькулятор вартості прибирання" : "Cleaning Service Calculator"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk ? "Тип → кімнати → додатки → миттєва ціна + CTA." : "Type → rooms → add-ons → instant price + CTA."}
       </p>
       <div className="max-w-xl mx-auto bg-sky-50 rounded-3xl p-8 shadow-xl shadow-sky-100">
         {/* Type */}
         <div className="mb-6">
-          <p className="text-sm font-semibold text-neutral-700 mb-3">{isUk ? "Тип приміщення" : "Property type"}</p>
+          <p className="text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-3">{isUk ? "Тип приміщення" : "Property type"}</p>
           <div className="grid grid-cols-2 gap-3">
             {(["apartment", "office"] as const).map((t) => (
               <button
@@ -45,7 +45,7 @@ function CleaningCalculator({ isUk }: { isUk: boolean }) {
                 className={`py-3 rounded-xl border text-sm font-medium transition-all ${
                   type === t
                     ? "border-sky-500 bg-sky-500 text-white"
-                    : "border-neutral-200 bg-white text-neutral-700 hover:border-sky-300"
+                    : "border-neutral-200 dark:border-neutral-700 bg-white text-neutral-700 dark:text-neutral-300 hover:border-sky-300"
                 }`}
               >
                 {t === "apartment" ? (isUk ? "🏠 Квартира" : "🏠 Apartment") : (isUk ? "🏢 Офіс" : "🏢 Office")}
@@ -75,7 +75,7 @@ function CleaningCalculator({ isUk }: { isUk: boolean }) {
 
         {/* Clean type */}
         <div className="mb-6">
-          <p className="text-sm font-semibold text-neutral-700 mb-3">{isUk ? "Тип прибирання" : "Cleaning type"}</p>
+          <p className="text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-3">{isUk ? "Тип прибирання" : "Cleaning type"}</p>
           <div className="space-y-2">
             {[
               { id: "standard", label: isUk ? "Стандартне" : "Standard", desc: isUk ? "Пил, пилосос, підлога" : "Dust, vacuum, floors" },
@@ -103,7 +103,7 @@ function CleaningCalculator({ isUk }: { isUk: boolean }) {
 
         {/* Extras */}
         <div className="mb-8">
-          <p className="text-sm font-semibold text-neutral-700 mb-3">{isUk ? "Додаткові послуги" : "Add-ons"}</p>
+          <p className="text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-3">{isUk ? "Додаткові послуги" : "Add-ons"}</p>
           <div className="grid grid-cols-2 gap-2">
             {[
               { key: "windows", label: isUk ? "🪟 Вікна +200₴" : "🪟 Windows +₴200" },
@@ -111,7 +111,7 @@ function CleaningCalculator({ isUk }: { isUk: boolean }) {
               { key: "oven", label: isUk ? "🍳 Духовка +120₴" : "🍳 Oven +₴120" },
               { key: "balcony", label: isUk ? "🌿 Балкон +180₴" : "🌿 Balcony +₴180" },
             ].map(({ key, label }) => (
-              <label key={key} className="flex items-center gap-2 cursor-pointer bg-white rounded-xl p-3 border border-neutral-100">
+              <label key={key} className="flex items-center gap-2 cursor-pointer bg-white dark:bg-neutral-800 rounded-xl p-3 border border-neutral-100">
                 <input
                   type="checkbox"
                   checked={extras[key as keyof typeof extras]}
@@ -126,7 +126,7 @@ function CleaningCalculator({ isUk }: { isUk: boolean }) {
 
         {/* Result */}
         <div className="bg-white rounded-2xl p-6 text-center shadow-sm">
-          <p className="text-sm text-neutral-500 mb-1">{isUk ? "Вартість прибирання" : "Cleaning cost"}</p>
+          <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-1">{isUk ? "Вартість прибирання" : "Cleaning cost"}</p>
           <p className="text-4xl font-bold text-sky-600 mb-1">{total.toLocaleString("uk-UA")} ₴</p>
           <p className="text-xs text-neutral-400 mb-6">{isUk ? "Фінальна ціна після замірів може відрізнятись" : "Final price may vary after assessment"}</p>
           <button className="w-full py-3 rounded-xl bg-sky-500 text-white font-semibold hover:bg-sky-600 transition-colors">
@@ -163,16 +163,16 @@ function ConstructionCalculator({ isUk }: { isUk: boolean }) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Калькулятор вартості ремонту" : "Construction Cost Estimator"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk ? "Вид робіт → площа → рівень якості → матеріали → діапазон ціни." : "Work type → area → quality → materials → price range."}
       </p>
       <div className="max-w-xl mx-auto bg-orange-50 rounded-3xl p-8 shadow-xl shadow-orange-100">
         {/* Work type */}
         <div className="mb-6">
-          <p className="text-sm font-semibold text-neutral-700 mb-3">{isUk ? "Вид робіт" : "Work type"}</p>
+          <p className="text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-3">{isUk ? "Вид робіт" : "Work type"}</p>
           <div className="grid grid-cols-2 gap-2">
             {[
               { id: "cosmetic", label: isUk ? "Косметичний" : "Cosmetic" },
@@ -186,7 +186,7 @@ function ConstructionCalculator({ isUk }: { isUk: boolean }) {
                 className={`py-2.5 rounded-xl border text-sm font-medium transition-all ${
                   workType === w.id
                     ? "border-orange-500 bg-orange-500 text-white"
-                    : "border-neutral-200 bg-white text-neutral-700 hover:border-orange-300"
+                    : "border-neutral-200 dark:border-neutral-700 bg-white text-neutral-700 dark:text-neutral-300 hover:border-orange-300"
                 }`}
               >
                 {w.label}
@@ -217,7 +217,7 @@ function ConstructionCalculator({ isUk }: { isUk: boolean }) {
 
         {/* Quality */}
         <div className="mb-6">
-          <p className="text-sm font-semibold text-neutral-700 mb-3">{isUk ? "Рівень якості" : "Quality level"}</p>
+          <p className="text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-3">{isUk ? "Рівень якості" : "Quality level"}</p>
           <div className="grid grid-cols-3 gap-2">
             {[
               { id: "economy", label: isUk ? "Економ" : "Economy" },
@@ -230,7 +230,7 @@ function ConstructionCalculator({ isUk }: { isUk: boolean }) {
                 className={`py-2.5 rounded-xl border text-sm font-medium transition-all ${
                   quality === q.id
                     ? "border-orange-500 bg-orange-500 text-white"
-                    : "border-neutral-200 bg-white text-neutral-700 hover:border-orange-300"
+                    : "border-neutral-200 dark:border-neutral-700 bg-white text-neutral-700 dark:text-neutral-300 hover:border-orange-300"
                 }`}
               >
                 {q.label}
@@ -240,7 +240,7 @@ function ConstructionCalculator({ isUk }: { isUk: boolean }) {
         </div>
 
         {/* Materials */}
-        <label className="flex items-center gap-3 mb-8 p-4 bg-white rounded-xl border border-neutral-100 cursor-pointer">
+        <label className="flex items-center gap-3 mb-8 p-4 bg-white dark:bg-neutral-800 rounded-xl border border-neutral-100 dark:border-neutral-700 cursor-pointer">
           <input
             type="checkbox"
             checked={withMaterials}
@@ -255,7 +255,7 @@ function ConstructionCalculator({ isUk }: { isUk: boolean }) {
 
         {/* Result */}
         <div className="bg-white rounded-2xl p-6 shadow-sm">
-          <p className="text-sm text-neutral-500 mb-1 text-center">{isUk ? "Орієнтовна вартість" : "Estimated cost"}</p>
+          <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-1 text-center">{isUk ? "Орієнтовна вартість" : "Estimated cost"}</p>
           <p className="text-3xl font-bold text-orange-600 text-center mb-1">
             {total.toLocaleString("uk-UA")} – {totalMax.toLocaleString("uk-UA")} ₴
           </p>

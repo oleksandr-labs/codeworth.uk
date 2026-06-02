@@ -149,10 +149,10 @@ export function AiVoiceSearchDemo({ isUk }: Props) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "AI Голосовий Пошук" : "AI Voice Search"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk
           ? "Натисніть мікрофон і скажіть що шукаєте, або оберіть готовий запит. AI розуміє природну мову."
           : "Press the mic and say what you're looking for, or pick a preset query. AI understands natural language."}
@@ -169,13 +169,13 @@ export function AiVoiceSearchDemo({ isUk }: Props) {
             }}
             type="text"
             placeholder={isUk ? "Або введіть текстом і натисніть Enter..." : "Or type and press Enter..."}
-            className="w-full pl-4 pr-10 py-3.5 rounded-2xl border border-neutral-200 bg-white focus:border-blue-400 focus:outline-none text-sm shadow-sm"
+            className="w-full pl-4 pr-10 py-3.5 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white focus:border-blue-400 focus:outline-none text-sm shadow-sm"
           />
           {query && (
             <button
               type="button"
               onClick={handleClear}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-700 text-lg leading-none"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-700 dark:text-neutral-300 text-lg leading-none"
             >
               ×
             </button>
@@ -267,7 +267,7 @@ export function AiVoiceSearchDemo({ isUk }: Props) {
               {isUk ? "— нічого не знайдено" : "— nothing found"}
             </span>
           )}
-          <button onClick={handleClear} className="ml-auto text-xs text-neutral-400 hover:text-neutral-700 underline">
+          <button onClick={handleClear} className="ml-auto text-xs text-neutral-400 hover:text-neutral-700 dark:text-neutral-300 underline">
             {isUk ? "Скинути" : "Reset"}
           </button>
         </div>
@@ -290,7 +290,7 @@ export function AiVoiceSearchDemo({ isUk }: Props) {
               className={`rounded-2xl border p-4 transition-all cursor-pointer hover:shadow-md ${
                 searched
                   ? "border-blue-200 bg-blue-50/50 shadow-sm"
-                  : "border-neutral-200 bg-white hover:border-blue-300"
+                  : "border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-blue-300"
               }`}
               onClick={() => {
                 const name = isUk ? p.nameUk : p.name;
@@ -300,7 +300,7 @@ export function AiVoiceSearchDemo({ isUk }: Props) {
               }}
             >
               <div className="text-3xl mb-2.5">{p.emoji}</div>
-              <p className="text-xs font-bold text-neutral-800 leading-tight">
+              <p className="text-xs font-bold text-neutral-800 dark:text-neutral-200 leading-tight">
                 {isUk ? p.nameUk : p.name}
               </p>
               <p className="text-xs text-neutral-400 mt-0.5">
@@ -314,7 +314,7 @@ export function AiVoiceSearchDemo({ isUk }: Props) {
         </div>
       )}
 
-      <div className="mt-8 p-4 bg-neutral-50 rounded-2xl border border-neutral-200">
+      <div className="mt-8 p-4 bg-neutral-50 dark:bg-neutral-900 rounded-2xl border border-neutral-200">
         <p className="text-xs text-neutral-500">
           <span className="font-semibold text-neutral-700">
             {isUk ? "🔊 Мікрофон:" : "🔊 Microphone:"}

@@ -99,7 +99,7 @@ export function PriceCalculator() {
             <Calculator className="w-4 h-4" />
             {isUk ? "Калькулятор" : "Calculator"}
           </div>
-          <h2 className="text-4xl font-heading font-extrabold text-neutral-900 mb-4">
+          <h2 className="text-4xl font-heading font-extrabold text-neutral-900 dark:text-white mb-4">
             {isUk ? "Розрахуйте вартість проєкту" : "Calculate your project cost"}
           </h2>
           <p className="text-neutral-500">
@@ -112,7 +112,7 @@ export function PriceCalculator() {
           <div className="lg:col-span-2 space-y-8">
             {/* Step 1: Project type */}
             <div>
-              <p className="text-sm font-semibold text-neutral-500 uppercase tracking-widest mb-4">{isUk ? "1. Тип проєкту" : "1. Project type"}</p>
+              <p className="text-sm font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-widest mb-4">{isUk ? "1. Тип проєкту" : "1. Project type"}</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {PROJECT_TYPES.map((pt) => (
                   <button
@@ -121,7 +121,7 @@ export function PriceCalculator() {
                     className={`flex items-center justify-between px-4 py-3 rounded-xl border text-left text-sm transition-all ${
                       projectType === pt.id
                         ? "border-indigo-500 bg-indigo-50 text-indigo-700 font-semibold"
-                        : "border-neutral-200 bg-white text-neutral-700 hover:border-indigo-200 hover:bg-white"
+                        : "border-neutral-200 dark:border-neutral-700 bg-white text-neutral-700 dark:text-neutral-300 hover:border-indigo-200 hover:bg-white"
                     }`}
                   >
                     <span>{pt.label}</span>
@@ -133,7 +133,7 @@ export function PriceCalculator() {
 
             {/* Step 2: Features */}
             <div>
-              <p className="text-sm font-semibold text-neutral-500 uppercase tracking-widest mb-4">{isUk ? "2. Додаткові функції" : "2. Additional features"}</p>
+              <p className="text-sm font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-widest mb-4">{isUk ? "2. Додаткові функції" : "2. Additional features"}</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {FEATURES.map((f) => {
                   const selected = features.has(f.id);
@@ -144,7 +144,7 @@ export function PriceCalculator() {
                       className={`flex items-center justify-between px-4 py-3 rounded-xl border text-left text-sm transition-all ${
                         selected
                           ? "border-indigo-500 bg-indigo-50 text-indigo-700 font-medium"
-                          : "border-neutral-200 bg-white text-neutral-700 hover:border-indigo-200"
+                          : "border-neutral-200 dark:border-neutral-700 bg-white text-neutral-700 dark:text-neutral-300 hover:border-indigo-200"
                       }`}
                     >
                       <div className="flex items-center gap-2">
@@ -162,7 +162,7 @@ export function PriceCalculator() {
 
             {/* Step 3: Support */}
             <div>
-              <p className="text-sm font-semibold text-neutral-500 uppercase tracking-widest mb-4">{isUk ? "3. Підтримка після запуску" : "3. Post-launch support"}</p>
+              <p className="text-sm font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-widest mb-4">{isUk ? "3. Підтримка після запуску" : "3. Post-launch support"}</p>
               <div className="grid grid-cols-2 gap-3">
                 {SUPPORT_PLANS.map((sp) => (
                   <button
@@ -171,7 +171,7 @@ export function PriceCalculator() {
                     className={`px-4 py-3 rounded-xl border text-left text-sm transition-all ${
                       support === sp.id
                         ? "border-indigo-500 bg-indigo-50 text-indigo-700 font-semibold"
-                        : "border-neutral-200 bg-white text-neutral-700 hover:border-indigo-200"
+                        : "border-neutral-200 dark:border-neutral-700 bg-white text-neutral-700 dark:text-neutral-300 hover:border-indigo-200"
                     }`}
                   >
                     {sp.label}
@@ -183,7 +183,7 @@ export function PriceCalculator() {
 
           {/* Right: Result */}
           <div className="lg:col-span-1">
-            <div className="sticky top-24 rounded-2xl bg-white border border-neutral-200 shadow-lg shadow-neutral-200/40 overflow-hidden">
+            <div className="sticky top-24 rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 shadow-lg shadow-neutral-200/40 overflow-hidden">
               <div className="p-6 bg-indigo-600 text-white">
                 <p className="text-sm font-medium opacity-80 mb-1">{isUk ? "Орієнтовна вартість" : "Estimated price"}</p>
                 <div className="text-4xl font-heading font-extrabold">{formatPrice(projectTotal)}</div>
@@ -204,7 +204,7 @@ export function PriceCalculator() {
                   </div>
                 ))}
                 {features.size > 0 && (
-                  <div className="flex justify-between font-semibold text-neutral-800 pt-3 border-t border-neutral-100">
+                  <div className="flex justify-between font-semibold text-neutral-800 dark:text-neutral-200 pt-3 border-t border-neutral-100">
                     <span>{isUk ? "Разом" : "Total"}</span>
                     <span>{formatPrice(projectTotal)}</span>
                   </div>

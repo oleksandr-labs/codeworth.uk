@@ -307,7 +307,7 @@ export function GoodFoodDemo({ lang }: { lang: string }) {
   const suggestedPlan = recommended <= 1700 ? "fit" : recommended <= 2400 ? "balance" : "muscle";
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 font-sans">
+    <div className="min-h-screen bg-white text-gray-900 dark:text-white font-sans">
       {/* ── header ─────────────────────────────────────────────────── */}
       <header className="sticky top-0 z-30 bg-white/90 backdrop-blur border-b border-green-100">
         <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
@@ -347,7 +347,7 @@ export function GoodFoodDemo({ lang }: { lang: string }) {
             <h1 className="text-4xl md:text-5xl font-extrabold leading-tight text-gray-900">
               {t(isUk, "Healthy Food Delivered", "Здорова Їжа з Доставкою")}
             </h1>
-            <p className="mt-4 text-lg text-gray-600 max-w-lg">
+            <p className="mt-4 text-lg text-gray-600 dark:text-neutral-300 max-w-lg">
               {t(
                 isUk,
                 "Balanced meals, fresh ingredients, and perfect macros — delivered to your door every day.",
@@ -358,7 +358,7 @@ export function GoodFoodDemo({ lang }: { lang: string }) {
               <input
                 type="text"
                 placeholder={t(isUk, "Your delivery address…", "Ваша адреса доставки…")}
-                className="flex-1 px-4 py-3 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-400 text-sm"
+                className="flex-1 px-4 py-3 rounded-full border border-gray-200 dark:border-neutral-700 focus:outline-none focus:ring-2 focus:ring-green-400 text-sm"
               />
               <button className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-full transition-colors shrink-0 cursor-pointer">
                 {t(isUk, "See Menu", "Дивитися меню")}
@@ -374,20 +374,20 @@ export function GoodFoodDemo({ lang }: { lang: string }) {
       </section>
 
       {/* ── weekly meal plans ────────────────────────────────────── */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-neutral-950">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-2">{t(isUk, "Weekly Meal Plans", "Тижневі плани харчування")}</h2>
-          <p className="text-center text-gray-500 mb-10">{t(isUk, "Choose a plan that fits your goals", "Оберіть план під ваші цілі")}</p>
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-10">{t(isUk, "Choose a plan that fits your goals", "Оберіть план під ваші цілі")}</p>
 
           <div className="grid md:grid-cols-3 gap-6">
             {PLANS.map((plan) => (
               <div
                 key={plan.id}
-                className="border border-gray-100 rounded-2xl p-6 hover:shadow-lg transition-shadow bg-linear-to-br from-white to-green-50"
+                className="border border-gray-100 dark:border-neutral-700 rounded-2xl p-6 hover:shadow-lg transition-shadow bg-linear-to-br from-white to-green-50"
               >
                 <div className="text-4xl mb-3">{plan.emoji}</div>
                 <h3 className="text-xl font-bold text-green-700">{t(isUk, plan.name.en, plan.name.uk)}</h3>
-                <p className="text-sm text-gray-500 mt-1">{plan.cal} {t(isUk, "cal / day", "ккал / день")}</p>
+                <p className="text-sm text-gray-500 dark:text-neutral-400 mt-1">{plan.cal} {t(isUk, "cal / day", "ккал / день")}</p>
 
                 <div className="mt-4 flex gap-3 text-center text-xs">
                   <div className="flex-1 bg-green-100 rounded-lg py-2">
@@ -404,12 +404,12 @@ export function GoodFoodDemo({ lang }: { lang: string }) {
                   </div>
                 </div>
 
-                <p className="mt-4 text-sm text-gray-600 italic">{t(isUk, plan.sample.en, plan.sample.uk)}</p>
+                <p className="mt-4 text-sm text-gray-600 dark:text-neutral-300 italic">{t(isUk, plan.sample.en, plan.sample.uk)}</p>
 
                 <div className="mt-5 flex items-end justify-between">
                   <div>
                     <span className="text-2xl font-bold text-gray-900">{plan.price}</span>
-                    <span className="text-sm text-gray-500 ml-1">{t(isUk, "₴/day", "₴/день")}</span>
+                    <span className="text-sm text-gray-500 dark:text-neutral-400 ml-1">{t(isUk, "₴/day", "₴/день")}</span>
                   </div>
                   <button className="bg-green-600 hover:bg-green-700 text-white text-sm font-semibold px-5 py-2 rounded-full transition-colors cursor-pointer">
                     {t(isUk, "Start Plan", "Обрати план")}
@@ -425,7 +425,7 @@ export function GoodFoodDemo({ lang }: { lang: string }) {
       <section className="py-16 bg-green-50/50">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-2">{t(isUk, "Daily Menu", "Щоденне меню")}</h2>
-          <p className="text-center text-gray-500 mb-8">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-8">
             {t(isUk, "Pick your meals for each day", "Обирайте страви на кожен день")}
           </p>
 
@@ -438,7 +438,7 @@ export function GoodFoodDemo({ lang }: { lang: string }) {
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer ${
                   activeDay === day.key
                     ? "bg-green-600 text-white"
-                    : "bg-white text-gray-600 hover:bg-green-100 border border-gray-200"
+                    : "bg-white text-gray-600 dark:text-neutral-300 hover:bg-green-100 border border-gray-200"
                 }`}
               >
                 {t(isUk, day.en, day.uk)}
@@ -456,7 +456,7 @@ export function GoodFoodDemo({ lang }: { lang: string }) {
                 className={`flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium transition-colors cursor-pointer border ${
                   excludedAllergens.includes(key)
                     ? "bg-red-100 text-red-700 border-red-300"
-                    : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50"
+                    : "bg-white text-gray-600 dark:text-neutral-300 border-gray-200 dark:border-neutral-700 hover:bg-gray-50"
                 }`}
               >
                 {info.emoji} {t(isUk, info.en, info.uk)}
@@ -479,7 +479,7 @@ export function GoodFoodDemo({ lang }: { lang: string }) {
                   {t(isUk, labels[mealType].en, labels[mealType].uk)}
                 </h3>
                 {meals.length === 0 ? (
-                  <p className="text-sm text-gray-400 italic">
+                  <p className="text-sm text-gray-400 dark:text-neutral-500 italic">
                     {t(isUk, "No options match your filters", "Немає варіантів за вашими фільтрами")}
                   </p>
                 ) : (
@@ -487,7 +487,7 @@ export function GoodFoodDemo({ lang }: { lang: string }) {
                     {meals.map((meal, idx) => (
                       <div
                         key={idx}
-                        className="bg-white rounded-xl p-4 flex items-start gap-3 border border-gray-100 hover:shadow-md transition-shadow"
+                        className="bg-white rounded-xl p-4 flex items-start gap-3 border border-gray-100 dark:border-neutral-700 hover:shadow-md transition-shadow"
                       >
                         <span className="text-3xl shrink-0">{meal.emoji}</span>
                         <div className="flex-1 min-w-0">
@@ -527,16 +527,16 @@ export function GoodFoodDemo({ lang }: { lang: string }) {
           <div className="relative w-full max-w-md bg-white h-full overflow-y-auto shadow-2xl p-6">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-xl font-bold">🛒 {t(isUk, "Your Cart", "Ваш кошик")}</h2>
-              <button onClick={() => setShowCart(false)} className="text-2xl text-gray-400 hover:text-gray-600 cursor-pointer">✕</button>
+              <button onClick={() => setShowCart(false)} className="text-2xl text-gray-400 dark:text-neutral-500 hover:text-gray-600 dark:text-neutral-300 cursor-pointer">✕</button>
             </div>
 
             {cartItems.length === 0 ? (
-              <p className="text-gray-400 text-center py-12">{t(isUk, "Cart is empty", "Кошик порожній")}</p>
+              <p className="text-gray-400 dark:text-neutral-500 text-center py-12">{t(isUk, "Cart is empty", "Кошик порожній")}</p>
             ) : (
               <>
                 <div className="space-y-4 mb-6">
                   {cartItems.map((item) => (
-                    <div key={item.id} className="flex items-center gap-3 bg-gray-50 rounded-xl p-3">
+                    <div key={item.id} className="flex items-center gap-3 bg-gray-50 dark:bg-neutral-900 rounded-xl p-3">
                       <span className="text-2xl shrink-0">{item.emoji}</span>
                       <div className="flex-1 min-w-0">
                         <h4 className="font-medium text-sm truncate">{item.name}</h4>
@@ -579,7 +579,7 @@ export function GoodFoodDemo({ lang }: { lang: string }) {
                     value={promo}
                     onChange={(e) => { setPromo(e.target.value); setPromoApplied(false); }}
                     placeholder={t(isUk, "Promo code", "Промокод")}
-                    className="flex-1 px-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
+                    className="flex-1 px-3 py-2 text-sm border border-gray-200 dark:border-neutral-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
                   />
                   <button
                     onClick={() => { if (promo.trim().length > 0) setPromoApplied(true); }}
@@ -593,7 +593,7 @@ export function GoodFoodDemo({ lang }: { lang: string }) {
                 )}
 
                 {/* totals */}
-                <div className="border-t border-gray-100 pt-4 space-y-2 text-sm">
+                <div className="border-t border-gray-100 dark:border-neutral-700 pt-4 space-y-2 text-sm">
                   <div className="flex justify-between">
                     <span className="text-gray-500">{t(isUk, "Subtotal", "Підсумок")}</span>
                     <span className="font-medium">{cartSubtotal} ₴</span>
@@ -624,10 +624,10 @@ export function GoodFoodDemo({ lang }: { lang: string }) {
       )}
 
       {/* ── nutrition calculator ──────────────────────────────────── */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-neutral-950">
         <div className="max-w-3xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-2">{t(isUk, "Nutrition Calculator", "Калькулятор харчування")}</h2>
-          <p className="text-center text-gray-500 mb-10">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-10">
             {t(isUk, "Find your ideal daily calories and plan", "Визначте ідеальну добову калорійність та план")}
           </p>
 
@@ -635,7 +635,7 @@ export function GoodFoodDemo({ lang }: { lang: string }) {
             <div className="grid sm:grid-cols-2 gap-6">
               {/* height */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">{t(isUk, "Height (cm)", "Зріст (см)")}</label>
+                <label className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-1">{t(isUk, "Height (cm)", "Зріст (см)")}</label>
                 <input
                   type="range"
                   min={140}
@@ -649,7 +649,7 @@ export function GoodFoodDemo({ lang }: { lang: string }) {
 
               {/* weight */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">{t(isUk, "Weight (kg)", "Вага (кг)")}</label>
+                <label className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-1">{t(isUk, "Weight (kg)", "Вага (кг)")}</label>
                 <input
                   type="range"
                   min={40}
@@ -663,7 +663,7 @@ export function GoodFoodDemo({ lang }: { lang: string }) {
 
               {/* goal */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">{t(isUk, "Goal", "Ціль")}</label>
+                <label className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-2">{t(isUk, "Goal", "Ціль")}</label>
                 <div className="flex gap-2">
                   {(["lose", "maintain", "gain"] as const).map((g) => {
                     const labels: Record<string, { en: string; uk: string }> = {
@@ -676,7 +676,7 @@ export function GoodFoodDemo({ lang }: { lang: string }) {
                         key={g}
                         onClick={() => setCalcGoal(g)}
                         className={`flex-1 py-2 rounded-lg text-xs font-semibold transition-colors cursor-pointer ${
-                          calcGoal === g ? "bg-green-600 text-white" : "bg-white text-gray-600 border border-gray-200"
+                          calcGoal === g ? "bg-green-600 text-white" : "bg-white text-gray-600 dark:text-neutral-300 border border-gray-200"
                         }`}
                       >
                         {t(isUk, labels[g].en, labels[g].uk)}
@@ -688,7 +688,7 @@ export function GoodFoodDemo({ lang }: { lang: string }) {
 
               {/* activity */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">{t(isUk, "Activity Level", "Рівень активності")}</label>
+                <label className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-2">{t(isUk, "Activity Level", "Рівень активності")}</label>
                 <div className="flex gap-2">
                   {(["low", "moderate", "high"] as const).map((a) => {
                     const labels: Record<string, { en: string; uk: string }> = {
@@ -701,7 +701,7 @@ export function GoodFoodDemo({ lang }: { lang: string }) {
                         key={a}
                         onClick={() => setCalcActivity(a)}
                         className={`flex-1 py-2 rounded-lg text-xs font-semibold transition-colors cursor-pointer ${
-                          calcActivity === a ? "bg-orange-500 text-white" : "bg-white text-gray-600 border border-gray-200"
+                          calcActivity === a ? "bg-orange-500 text-white" : "bg-white text-gray-600 dark:text-neutral-300 border border-gray-200"
                         }`}
                       >
                         {t(isUk, labels[a].en, labels[a].uk)}
@@ -713,8 +713,8 @@ export function GoodFoodDemo({ lang }: { lang: string }) {
             </div>
 
             {/* result */}
-            <div className="mt-8 text-center bg-white rounded-xl p-6 border border-green-200">
-              <p className="text-sm text-gray-500 mb-1">{t(isUk, "Recommended Daily Intake", "Рекомендована добова норма")}</p>
+            <div className="mt-8 text-center bg-white dark:bg-neutral-800 rounded-xl p-6 border border-green-200">
+              <p className="text-sm text-gray-500 dark:text-neutral-400 mb-1">{t(isUk, "Recommended Daily Intake", "Рекомендована добова норма")}</p>
               <p className="text-4xl font-extrabold text-green-700">{recommended} <span className="text-lg font-medium text-gray-500">{t(isUk, "cal", "ккал")}</span></p>
               <p className="mt-3 text-sm text-gray-600">
                 {t(isUk, "We recommend the", "Ми рекомендуємо план")}{" "}
@@ -737,12 +737,12 @@ export function GoodFoodDemo({ lang }: { lang: string }) {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {STEPS.map((step, idx) => (
-              <div key={idx} className="text-center bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-md transition-shadow">
+              <div key={idx} className="text-center bg-white dark:bg-neutral-800 rounded-2xl p-6 border border-gray-100 dark:border-neutral-700 hover:shadow-md transition-shadow">
                 <div className="text-4xl mb-3">{step.emoji}</div>
                 <div className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-green-600 text-white text-xs font-bold mb-3">
                   {idx + 1}
                 </div>
-                <h3 className="font-bold text-gray-900 mb-1">{t(isUk, step.title.en, step.title.uk)}</h3>
+                <h3 className="font-bold text-gray-900 dark:text-white mb-1">{t(isUk, step.title.en, step.title.uk)}</h3>
                 <p className="text-sm text-gray-500">{t(isUk, step.desc.en, step.desc.uk)}</p>
               </div>
             ))}
@@ -751,17 +751,17 @@ export function GoodFoodDemo({ lang }: { lang: string }) {
       </section>
 
       {/* ── ingredients sourcing ─────────────────────────────────── */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-neutral-950">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-2">{t(isUk, "100% Fresh, Local Ingredients", "100% свіжі, місцеві інгредієнти")}</h2>
-          <p className="text-gray-500 mb-10">{t(isUk, "We partner with trusted local farms", "Ми співпрацюємо з перевіреними місцевими фермами")}</p>
+          <p className="text-gray-500 dark:text-neutral-400 mb-10">{t(isUk, "We partner with trusted local farms", "Ми співпрацюємо з перевіреними місцевими фермами")}</p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {FARMS.map((farm, idx) => (
               <div key={idx} className="bg-linear-to-br from-green-50 to-white rounded-2xl p-6 border border-green-100 hover:shadow-md transition-shadow">
                 <div className="text-4xl mb-3">{farm.emoji}</div>
                 <h3 className="font-bold text-gray-900">{t(isUk, farm.name.en, farm.name.uk)}</h3>
-                <p className="text-sm text-gray-500 mt-1">{t(isUk, farm.desc.en, farm.desc.uk)}</p>
+                <p className="text-sm text-gray-500 dark:text-neutral-400 mt-1">{t(isUk, farm.desc.en, farm.desc.uk)}</p>
               </div>
             ))}
           </div>
@@ -775,7 +775,7 @@ export function GoodFoodDemo({ lang }: { lang: string }) {
 
           <div className="grid md:grid-cols-3 gap-6">
             {REVIEWS.map((review, idx) => (
-              <div key={idx} className="bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-md transition-shadow">
+              <div key={idx} className="bg-white rounded-2xl p-6 border border-gray-100 dark:border-neutral-700 hover:shadow-md transition-shadow">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-3xl">{review.emoji}</span>
                   <div>
@@ -786,7 +786,7 @@ export function GoodFoodDemo({ lang }: { lang: string }) {
                 <div className="text-yellow-400 text-sm mb-2">
                   {"★".repeat(review.rating)}{"☆".repeat(5 - review.rating)}
                 </div>
-                <p className="text-sm text-gray-600 leading-relaxed">{t(isUk, review.text.en, review.text.uk)}</p>
+                <p className="text-sm text-gray-600 dark:text-neutral-300 leading-relaxed">{t(isUk, review.text.en, review.text.uk)}</p>
               </div>
             ))}
           </div>

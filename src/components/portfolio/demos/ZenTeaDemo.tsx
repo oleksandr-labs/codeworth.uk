@@ -376,7 +376,7 @@ export function ZenTeaDemo({ lang }: { lang: string }) {
               value={activeLibrarySearch}
               onChange={(e) => setActiveLibrarySearch(e.target.value)}
               placeholder={isUk ? "Пошук чаю..." : "Search teas..."}
-              className="w-full bg-white border border-[#E5E7EB] rounded-full px-5 py-3 pr-10 text-sm text-[#1A3C2C] placeholder-[#1A3C2C]/30 outline-none focus:border-[#1A3C2C]/40"
+              className="w-full bg-white dark:bg-neutral-800 border border-[#E5E7EB] rounded-full px-5 py-3 pr-10 text-sm text-[#1A3C2C] placeholder-[#1A3C2C]/30 outline-none focus:border-[#1A3C2C]/40"
             />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[#1A3C2C]/30 text-base">⌕</span>
           </div>

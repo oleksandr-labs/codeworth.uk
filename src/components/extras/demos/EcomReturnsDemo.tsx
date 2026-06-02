@@ -76,11 +76,11 @@ export function EcomReturnsDemo({ isUk }: Props) {
             <button
               key={o.id}
               onClick={() => { setOrderId(o.id); setStage("select-items"); }}
-              className="w-full text-left p-4 rounded-xl border border-neutral-200 hover:border-indigo-300 hover:bg-indigo-50/30 transition-all flex items-center gap-3"
+              className="w-full text-left p-4 rounded-xl border border-neutral-200 dark:border-neutral-700 hover:border-indigo-300 hover:bg-indigo-50/30 transition-all flex items-center gap-3"
             >
               <Package className="w-5 h-5 text-neutral-400 shrink-0" />
               <div className="flex-1 min-w-0">
-                <p className="font-mono font-semibold text-neutral-900 text-sm">{o.id}</p>
+                <p className="font-mono font-semibold text-neutral-900 dark:text-white text-sm">{o.id}</p>
                 <p className="text-xs text-neutral-500">{o.date} · {o.items.length} {isUk ? "товар(ів)" : "item(s)"} · {fmt(o.total)}</p>
               </div>
               <ChevronRight className="w-5 h-5 text-neutral-400" />
@@ -99,8 +99,8 @@ export function EcomReturnsDemo({ isUk }: Props) {
                 <label
                   key={item.id}
                   className={`flex items-center gap-3 p-3 rounded-xl border cursor-pointer transition-all ${
-                    !item.eligible ? "border-neutral-100 bg-neutral-50 cursor-not-allowed opacity-60" :
-                    checked ? "border-indigo-300 bg-indigo-50/50" : "border-neutral-200 hover:bg-neutral-50"
+                    !item.eligible ? "border-neutral-100 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900 cursor-not-allowed opacity-60" :
+                    checked ? "border-indigo-300 bg-indigo-50/50" : "border-neutral-200 dark:border-neutral-700 hover:bg-neutral-50"
                   }`}
                 >
                   <input
@@ -117,7 +117,7 @@ export function EcomReturnsDemo({ isUk }: Props) {
                   />
                   <div className="text-2xl">{item.emoji}</div>
                   <div className="flex-1 min-w-0">
-                    <p className="font-medium text-neutral-900 text-sm">{isUk ? item.nameUk : item.nameEn}</p>
+                    <p className="font-medium text-neutral-900 dark:text-white text-sm">{isUk ? item.nameUk : item.nameEn}</p>
                     {!item.eligible && (
                       <p className="text-xs text-rose-500 flex items-center gap-1 mt-0.5">
                         <AlertCircle className="w-3 h-3" />
@@ -131,7 +131,7 @@ export function EcomReturnsDemo({ isUk }: Props) {
             })}
           </div>
           <div className="flex justify-between items-center pt-3 border-t border-neutral-100">
-            <button onClick={() => setStage("select-order")} className="text-sm text-neutral-500 hover:text-neutral-900">
+            <button onClick={() => setStage("select-order")} className="text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-900">
               ← {isUk ? "Назад" : "Back"}
             </button>
             <button
@@ -153,7 +153,7 @@ export function EcomReturnsDemo({ isUk }: Props) {
               <label
                 key={r.id}
                 className={`flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-all ${
-                  reason === r.id ? "border-indigo-500 bg-indigo-50" : "border-neutral-200 hover:bg-neutral-50"
+                  reason === r.id ? "border-indigo-500 bg-indigo-50" : "border-neutral-200 dark:border-neutral-700 hover:bg-neutral-50"
                 }`}
               >
                 <input
@@ -173,11 +173,11 @@ export function EcomReturnsDemo({ isUk }: Props) {
             onChange={(e) => setComment(e.target.value)}
             placeholder={isUk ? "Додатковий коментар (опціонально)" : "Additional comment (optional)"}
             rows={3}
-            className="w-full px-3 py-2.5 rounded-lg border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 text-sm resize-none"
+            className="w-full px-3 py-2.5 rounded-lg border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 text-sm resize-none"
             aria-label={isUk ? "Коментар" : "Comment"}
           />
           <div className="flex justify-between items-center pt-3 border-t border-neutral-100">
-            <button onClick={() => setStage("select-items")} className="text-sm text-neutral-500 hover:text-neutral-900">
+            <button onClick={() => setStage("select-items")} className="text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-900">
               ← {isUk ? "Назад" : "Back"}
             </button>
             <button
@@ -199,7 +199,7 @@ export function EcomReturnsDemo({ isUk }: Props) {
           <h3 className="text-xl font-bold text-neutral-900">
             {isUk ? "Заявку на повернення прийнято" : "Return request received"}
           </h3>
-          <p className="text-sm text-neutral-600 max-w-md mx-auto">
+          <p className="text-sm text-neutral-600 dark:text-neutral-300 max-w-md mx-auto">
             {isUk
               ? `RMA #RMA-2026-${Math.floor(Math.random() * 9000) + 1000}. Ми надішлемо інструкції на email протягом 24 годин.`
               : `RMA #RMA-2026-${Math.floor(Math.random() * 9000) + 1000}. We'll send shipping instructions to your email within 24 hours.`}

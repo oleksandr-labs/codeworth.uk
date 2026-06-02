@@ -55,12 +55,12 @@ export function StickySidebarDemo({ isUk }: Props) {
           : "Scroll content on the right — left TOC highlights the active section."}
       </p>
 
-      <div className="rounded-2xl border border-neutral-200 bg-white overflow-hidden">
+      <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-0">
           {/* Sticky TOC */}
-          <aside className="md:col-span-4 lg:col-span-3 bg-neutral-50 p-5 border-b md:border-b-0 md:border-r border-neutral-200">
+          <aside className="md:col-span-4 lg:col-span-3 bg-neutral-50 dark:bg-neutral-900 p-5 border-b md:border-b-0 md:border-r border-neutral-200">
             <div className="md:sticky md:top-4">
-              <div className="flex items-center gap-2 mb-3 text-xs uppercase tracking-wider text-neutral-500 font-semibold">
+              <div className="flex items-center gap-2 mb-3 text-xs uppercase tracking-wider text-neutral-500 dark:text-neutral-400 font-semibold">
                 <List className="w-3.5 h-3.5" />
                 {isUk ? "Зміст" : "Contents"}
               </div>
@@ -72,7 +72,7 @@ export function StickySidebarDemo({ isUk }: Props) {
                     className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-sm transition-all ${
                       active === s.id
                         ? "bg-indigo-600 text-white font-semibold"
-                        : "text-neutral-600 hover:bg-indigo-50"
+                        : "text-neutral-600 dark:text-neutral-300 hover:bg-indigo-50"
                     }`}
                   >
                     {active === s.id && <ChevronRight className="w-3.5 h-3.5 shrink-0" />}
@@ -87,13 +87,13 @@ export function StickySidebarDemo({ isUk }: Props) {
           <main className="md:col-span-8 lg:col-span-9 max-h-[500px] overflow-y-auto p-6">
             {SECTIONS.map((s) => (
               <section key={s.id} id={`section-${s.id}`} className="mb-12 scroll-mt-4">
-                <h3 className="text-xl font-bold text-neutral-900 mb-3">
+                <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-3">
                   {isUk ? s.titleUk : s.titleEn}
                 </h3>
-                <p className="text-neutral-600 leading-relaxed mb-3">
+                <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed mb-3">
                   {isUk ? LOREM[s.id as keyof typeof LOREM].uk : LOREM[s.id as keyof typeof LOREM].en}
                 </p>
-                <p className="text-neutral-500 leading-relaxed text-sm">
+                <p className="text-neutral-500 dark:text-neutral-400 leading-relaxed text-sm">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
                   labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                   laboris nisi ut aliquip ex ea commodo consequat.

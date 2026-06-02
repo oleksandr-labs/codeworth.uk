@@ -135,7 +135,7 @@ export default async function PricingPage({ params }: { params: Promise<{ lang: 
               <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-4">
                 {isUk ? "Ціни" : "Pricing"}
               </p>
-              <h1 className="text-5xl lg:text-6xl font-heading font-extrabold text-neutral-900 mb-4">
+              <h1 className="text-5xl lg:text-6xl font-heading font-extrabold text-neutral-900 dark:text-white mb-4">
                 {isUk
                   ? <>{`Прозорі ціни —`}<br /><span className="gradient-text">{`без сюрпризів`}</span></>
                   : <>{"Transparent pricing —"}<br /><span className="gradient-text">{"no surprises"}</span></>}
@@ -150,7 +150,7 @@ export default async function PricingPage({ params }: { params: Promise<{ lang: 
         </section>
 
         {/* Trust badges */}
-        <section className="py-8 bg-white border-y border-neutral-100">
+        <section className="py-8 bg-white dark:bg-neutral-800 border-y border-neutral-100">
           <Container>
             <div className="flex flex-wrap items-center justify-center gap-8 text-sm font-medium text-neutral-600">
               <span className="flex items-center gap-2"><Shield className="w-4 h-4 text-emerald-500" /> {isUk ? "Без прихованих платежів" : "No hidden fees"}</span>
@@ -165,7 +165,7 @@ export default async function PricingPage({ params }: { params: Promise<{ lang: 
         <PriceCalculator />
 
         {/* FAQ */}
-        <section className="py-24 bg-neutral-50">
+        <section className="py-24 bg-neutral-50 dark:bg-neutral-900 ">
           <Container>
             <div className="max-w-2xl mx-auto text-center mb-12">
               <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
@@ -177,9 +177,9 @@ export default async function PricingPage({ params }: { params: Promise<{ lang: 
             </div>
             <div className="max-w-3xl mx-auto space-y-4">
               {FAQ.map((item) => (
-                <div key={item.q} className="p-6 rounded-2xl bg-white border border-neutral-100">
-                  <h3 className="font-heading font-bold text-neutral-900 mb-2">{item.q}</h3>
-                  <p className="text-sm text-neutral-600 leading-relaxed">{item.a}</p>
+                <div key={item.q} className="p-6 rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-100">
+                  <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-2">{item.q}</h3>
+                  <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">{item.a}</p>
                 </div>
               ))}
             </div>

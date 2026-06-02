@@ -284,14 +284,14 @@ export function PricingContent() {
     <div>
       {/* Toggle */}
       <div className="flex justify-center py-12">
-        <div className="inline-flex items-center bg-neutral-100 p-1 rounded-2xl gap-1">
+        <div className="inline-flex items-center bg-neutral-100 dark:bg-neutral-800 p-1 rounded-2xl gap-1">
           <button
             onClick={() => setTab("one-time")}
             className={cn(
               "px-6 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200",
               tab === "one-time"
                 ? "bg-white text-indigo-700 shadow-sm"
-                : "text-neutral-500 hover:text-neutral-700"
+                : "text-neutral-500 dark:text-neutral-400 hover:text-neutral-700"
             )}
           >
             {isUk ? "Разові послуги" : "One-time services"}
@@ -302,7 +302,7 @@ export function PricingContent() {
               "px-6 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200",
               tab === "subscription"
                 ? "bg-white text-indigo-700 shadow-sm"
-                : "text-neutral-500 hover:text-neutral-700"
+                : "text-neutral-500 dark:text-neutral-400 hover:text-neutral-700"
             )}
           >
             {isUk ? "Щомісячна підписка" : "Monthly subscription"}
@@ -326,7 +326,7 @@ export function PricingContent() {
                     "relative p-8 rounded-2xl border transition-all duration-200 snap-start shrink-0 w-[85vw] md:w-auto",
                     plan.highlight
                       ? "border-indigo-300 bg-linear-to-b from-indigo-50 to-white shadow-xl shadow-indigo-500/15 scale-[1.02]"
-                      : "border-neutral-200 bg-white hover:shadow-md"
+                      : "border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:shadow-md"
                   )}
                 >
                   {"badge" in plan && plan.badge && (
@@ -334,8 +334,8 @@ export function PricingContent() {
                       {plan.badge}
                     </div>
                   )}
-                  <h3 className="font-heading font-bold text-xl text-neutral-900 mb-1">{plan.name}</h3>
-                  <p className="text-sm text-neutral-500 mb-4">{plan.description}</p>
+                  <h3 className="font-heading font-bold text-xl text-neutral-900 dark:text-white mb-1">{plan.name}</h3>
+                  <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-4">{plan.description}</p>
                   <div className="mb-6">
                     <span className="text-4xl font-sans font-bold tabular-nums tracking-tight text-neutral-900">
                       {(plan.price === "Індивідуально" || plan.price === "Custom") ? "" : "₴"}
@@ -371,7 +371,7 @@ export function PricingContent() {
           </section>
 
           {/* Marketplace Plans */}
-          <section className="py-16 bg-neutral-50">
+          <section className="py-16 bg-neutral-50 dark:bg-neutral-900 ">
             <div className="max-w-2xl mx-auto text-center mb-12 px-4">
               <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">{isUk ? "Маркетплейс" : "Marketplace"}</p>
               <h2 className="text-4xl font-heading font-extrabold text-neutral-900">{isUk ? "Готові нішеві рішення" : "Ready-made niche solutions"}</h2>
@@ -384,8 +384,8 @@ export function PricingContent() {
                   className={cn(
                     "p-7 rounded-2xl border snap-start shrink-0 w-[85vw] md:w-auto",
                     "highlight" in plan && plan.highlight
-                      ? "border-indigo-300 bg-white shadow-lg shadow-indigo-500/10"
-                      : "border-neutral-200 bg-white"
+                      ? "border-indigo-300 bg-white dark:bg-neutral-800 shadow-lg shadow-indigo-500/10"
+                      : "border-neutral-200 dark:border-neutral-700 bg-white"
                   )}
                 >
                   {"badge" in plan && plan.badge && (
@@ -393,9 +393,9 @@ export function PricingContent() {
                       {plan.badge}
                     </span>
                   )}
-                  <h3 className="font-heading font-bold text-lg text-neutral-900 mb-1">{plan.name}</h3>
-                  <p className="text-sm text-neutral-500 mb-4">{plan.description}</p>
-                  <div className="text-3xl font-sans font-bold tabular-nums tracking-tight text-neutral-900 mb-6">₴{plan.price}</div>
+                  <h3 className="font-heading font-bold text-lg text-neutral-900 dark:text-white mb-1">{plan.name}</h3>
+                  <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-4">{plan.description}</p>
+                  <div className="text-3xl font-sans font-bold tabular-nums tracking-tight text-neutral-900 dark:text-white mb-6">₴{plan.price}</div>
                   <ul className="space-y-2 mb-6">
                     {plan.features.map((f) => (
                       <li key={f} className="flex items-center gap-2 text-sm text-neutral-600">
@@ -428,7 +428,7 @@ export function PricingContent() {
                   "relative p-7 rounded-2xl border transition-all duration-200 snap-start shrink-0 w-[85vw] md:w-auto",
                   plan.highlight
                     ? "border-indigo-300 bg-indigo-50 shadow-lg shadow-indigo-500/10 scale-[1.02]"
-                    : "border-neutral-200 bg-white hover:shadow-md"
+                    : "border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:shadow-md"
                 )}
               >
                 {"badge" in plan && plan.badge && (
@@ -436,8 +436,8 @@ export function PricingContent() {
                     {plan.badge}
                   </div>
                 )}
-                <h3 className="font-heading font-bold text-lg text-neutral-900 mb-1">{plan.name}</h3>
-                <p className="text-sm text-neutral-500 mb-4">{plan.description}</p>
+                <h3 className="font-heading font-bold text-lg text-neutral-900 dark:text-white mb-1">{plan.name}</h3>
+                <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-4">{plan.description}</p>
                 <div className="mb-6">
                   <span className="text-3xl font-sans font-bold tabular-nums tracking-tight text-neutral-900">₴{plan.price}</span>
                   <span className="text-neutral-400 text-sm">{plan.period}</span>

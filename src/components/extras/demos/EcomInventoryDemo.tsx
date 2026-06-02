@@ -66,18 +66,18 @@ export function EcomInventoryDemo({ isUk }: Props) {
       <div className="grid grid-cols-3 gap-3">
         <button
           onClick={() => setFilter("all")}
-          className={`text-left rounded-xl border p-4 transition-all ${filter === "all" ? "border-indigo-500 bg-indigo-50/30" : "border-neutral-200 bg-white hover:border-neutral-300"}`}
+          className={`text-left rounded-xl border p-4 transition-all ${filter === "all" ? "border-indigo-500 bg-indigo-50/30" : "border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-neutral-300"}`}
           aria-pressed={filter === "all"}
         >
-          <div className="flex items-center gap-2 mb-2 text-xs text-neutral-500 uppercase tracking-wider">
+          <div className="flex items-center gap-2 mb-2 text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">
             <Package className="w-3.5 h-3.5" />
             {isUk ? "Всього SKU" : "Total SKUs"}
           </div>
-          <div className="text-2xl font-bold text-neutral-900 tabular-nums">{INVENTORY.length}</div>
+          <div className="text-2xl font-bold text-neutral-900 dark:text-white tabular-nums">{INVENTORY.length}</div>
         </button>
         <button
           onClick={() => setFilter("low")}
-          className={`text-left rounded-xl border p-4 transition-all ${filter === "low" ? "border-amber-500 bg-amber-50" : "border-neutral-200 bg-white hover:border-amber-300"}`}
+          className={`text-left rounded-xl border p-4 transition-all ${filter === "low" ? "border-amber-500 bg-amber-50" : "border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-amber-300"}`}
           aria-pressed={filter === "low"}
         >
           <div className="flex items-center gap-2 mb-2 text-xs text-amber-600 uppercase tracking-wider">
@@ -88,7 +88,7 @@ export function EcomInventoryDemo({ isUk }: Props) {
         </button>
         <button
           onClick={() => setFilter("out")}
-          className={`text-left rounded-xl border p-4 transition-all ${filter === "out" ? "border-rose-500 bg-rose-50" : "border-neutral-200 bg-white hover:border-rose-300"}`}
+          className={`text-left rounded-xl border p-4 transition-all ${filter === "out" ? "border-rose-500 bg-rose-50" : "border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-rose-300"}`}
           aria-pressed={filter === "out"}
         >
           <div className="flex items-center gap-2 mb-2 text-xs text-rose-600 uppercase tracking-wider">
@@ -108,13 +108,13 @@ export function EcomInventoryDemo({ isUk }: Props) {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder={isUk ? "Пошук SKU або назви..." : "Search SKU or name..."}
-            className="w-full pl-9 pr-3 py-2 rounded-lg border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 text-sm"
+            className="w-full pl-9 pr-3 py-2 rounded-lg border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 text-sm"
             aria-label={isUk ? "Пошук" : "Search"}
           />
         </div>
         <button
           onClick={() => setSortKey((k) => k === "reorder" ? "velocity" : k === "velocity" ? "stock" : "reorder")}
-          className="flex items-center gap-1.5 px-3 py-2 rounded-lg border border-neutral-200 text-sm text-neutral-700 hover:bg-neutral-50"
+          className="flex items-center gap-1.5 px-3 py-2 rounded-lg border border-neutral-200 dark:border-neutral-700 text-sm text-neutral-700 dark:text-neutral-300 hover:bg-neutral-50"
           aria-label={isUk ? "Сортування" : "Sort"}
         >
           <ArrowUpDown className="w-3.5 h-3.5" />
@@ -125,7 +125,7 @@ export function EcomInventoryDemo({ isUk }: Props) {
       </div>
 
       {/* Table */}
-      <div className="rounded-2xl border border-neutral-200 bg-white overflow-hidden">
+      <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white overflow-hidden">
         {filtered.length === 0 ? (
           <div className="p-8 text-center text-sm text-neutral-500">
             {isUk ? "Нічого не знайдено" : "No items match the filter"}
@@ -134,7 +134,7 @@ export function EcomInventoryDemo({ isUk }: Props) {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="bg-neutral-50 border-b border-neutral-200 text-xs uppercase tracking-wider text-neutral-500">
+                <tr className="bg-neutral-50 dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-700 text-xs uppercase tracking-wider text-neutral-500">
                   <th className="text-left px-3 py-2 font-semibold">{isUk ? "Товар" : "Product"}</th>
                   <th className="text-left px-3 py-2 font-semibold hidden sm:table-cell">SKU</th>
                   <th className="text-right px-3 py-2 font-semibold">{isUk ? "Склад" : "Stock"}</th>
@@ -166,7 +166,7 @@ export function EcomInventoryDemo({ isUk }: Props) {
                         <div className="text-xs text-neutral-400">{isUk ? "поріг" : "min"} {item.threshold}</div>
                       </td>
                       <td className="px-3 py-2.5 text-right hidden md:table-cell">
-                        <span className="text-neutral-600 tabular-nums">{item.reserved}</span>
+                        <span className="text-neutral-600 dark:text-neutral-300 tabular-nums">{item.reserved}</span>
                         <div className="text-xs text-neutral-400">{isUk ? "доступно" : "avail"} {available}</div>
                       </td>
                       <td className="px-3 py-2.5 text-right hidden md:table-cell tabular-nums text-neutral-600">
@@ -176,7 +176,7 @@ export function EcomInventoryDemo({ isUk }: Props) {
                         <button className={`inline-flex items-center gap-1 px-2 py-1 rounded-md text-xs font-semibold transition-colors ${
                           isOut || isLow
                             ? "bg-indigo-600 text-white hover:bg-indigo-700"
-                            : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
+                            : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200"
                         }`}>
                           <Plus className="w-3 h-3" />
                           {isUk ? "Поповнити" : "Reorder"}

@@ -153,7 +153,7 @@ export function NicheReviews({ slug, color, lang = "uk" }: NicheReviewsProps) {
           {reviews.map((review) => (
             <div
               key={review.name}
-              className="bg-neutral-50 dark:bg-neutral-800/60 rounded-2xl p-6 border border-neutral-100 dark:border-neutral-700/50 flex flex-col gap-4"
+              className="bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-800/60 rounded-2xl p-6 border border-neutral-100 dark:border-neutral-700 /50 flex flex-col gap-4"
             >
               <StarRating value={review.rating} readonly size="sm" />
 
@@ -161,7 +161,7 @@ export function NicheReviews({ slug, color, lang = "uk" }: NicheReviewsProps) {
                 &ldquo;{review.text}&rdquo;
               </p>
 
-              <div className="flex items-center gap-3 pt-2 border-t border-neutral-200 dark:border-neutral-700">
+              <div className="flex items-center gap-3 pt-2 border-t border-neutral-200 dark:border-neutral-700 ">
                 <Avatar name={review.name} size="sm" />
                 <div>
                   <div className="font-semibold text-neutral-900 dark:text-white text-sm">

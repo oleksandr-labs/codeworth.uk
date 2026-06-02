@@ -117,17 +117,17 @@ export function ContactForm() {
         <div className="w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center mb-5">
           <CheckCircle className="w-8 h-8 text-emerald-600" />
         </div>
-        <h3 className="text-2xl font-heading font-bold text-neutral-900 mb-2">
+        <h3 className="text-2xl font-heading font-bold text-neutral-900 dark:text-white mb-2">
           {isUk ? "Заявку отримано!" : "Request received!"}
         </h3>
-        <p className="text-neutral-500 max-w-sm">
+        <p className="text-neutral-500 dark:text-neutral-400 max-w-sm">
           {isUk
             ? "Зв'яжемося протягом 2 годин у робочий час (Пн–Пт 9:00–19:00)."
             : "We'll get in touch within 2 hours during business hours (Mon–Fri 9:00–19:00)."}
         </p>
         <button
           onClick={() => setStatus("idle")}
-          className="mt-8 px-5 py-2.5 rounded-xl border border-neutral-200 text-sm font-medium text-neutral-600 hover:bg-neutral-50 transition-colors"
+          className="mt-8 px-5 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 text-sm font-medium text-neutral-600 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-800 dark:bg-neutral-900 transition-colors"
         >
           {isUk ? "Відправити ще одну заявку" : "Send another request"}
         </button>
@@ -141,7 +141,7 @@ export function ContactForm() {
       <input type="text" name="website" tabIndex={-1} aria-hidden="true" className="hidden" />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <label className="block text-sm font-medium text-neutral-700 mb-2">
+          <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
             {isUk ? "Ваше ім'я" : "Your name"} <span className="text-red-500">*</span>
           </label>
           <input
@@ -151,11 +151,11 @@ export function ContactForm() {
             minLength={2}
             placeholder={isUk ? "Іван Петренко" : "John Smith"}
             autoComplete="name"
-            className="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all placeholder:text-neutral-400"
+            className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-neutral-900 dark:text-white focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 dark:focus:ring-indigo-900 transition-all placeholder:text-neutral-400 dark:placeholder:text-neutral-500"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-neutral-700 mb-2">
+          <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
             {isUk ? "Email або телефон" : "Email or phone"} <span className="text-red-500">*</span>
           </label>
           <input
@@ -164,21 +164,21 @@ export function ContactForm() {
             required
             placeholder="hello@company.ua або +380..."
             autoComplete="email"
-            className="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all placeholder:text-neutral-400"
+            className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-neutral-900 dark:text-white focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 dark:focus:ring-indigo-900 transition-all placeholder:text-neutral-400 dark:placeholder:text-neutral-500"
           />
         </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="contact-service" className="block text-sm font-medium text-neutral-700 mb-2">
+          <label htmlFor="contact-service" className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
             {isUk ? "Тип послуги" : "Service type"}
           </label>
           <select
             id="contact-service"
             name="service"
             defaultValue={defaultService}
-            className="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all text-neutral-700 bg-white"
+            className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all text-neutral-700 dark:text-neutral-300 bg-white"
           >
             <option value="">{isUk ? "Оберіть послугу" : "Select a service"}</option>
             {SERVICE_OPTIONS.map((o) => (
@@ -187,13 +187,13 @@ export function ContactForm() {
           </select>
         </div>
         <div>
-          <label htmlFor="contact-budget" className="block text-sm font-medium text-neutral-700 mb-2">
+          <label htmlFor="contact-budget" className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
             {isUk ? "Бюджет проєкту" : "Project budget"}
           </label>
           <select
             id="contact-budget"
             name="budget"
-            className="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all text-neutral-700 bg-white"
+            className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all text-neutral-700 dark:text-neutral-300 bg-white"
           >
             <option value="">{isUk ? "Оберіть діапазон" : "Select a range"}</option>
             {BUDGET_OPTIONS.map((o) => (
@@ -204,7 +204,7 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-neutral-700 mb-2">
+        <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
           {isUk ? "Опис проєкту" : "Project description"}
         </label>
         <textarea
@@ -212,7 +212,7 @@ export function ContactForm() {
           rows={5}
           defaultValue={defaultMessage}
           placeholder={isUk ? "Розкажіть про ваш бізнес, задачу та побажання..." : "Tell us about your business, task, and requirements..."}
-          className="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all placeholder:text-neutral-400 resize-none"
+          className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-neutral-900 dark:text-white focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 dark:focus:ring-indigo-900 transition-all placeholder:text-neutral-400 dark:placeholder:text-neutral-500 resize-none"
         />
       </div>
 
@@ -224,7 +224,7 @@ export function ContactForm() {
           required
           className="mt-1 w-4 h-4 rounded border-neutral-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer"
         />
-        <label htmlFor="privacy" className="text-sm text-neutral-500 cursor-pointer">
+        <label htmlFor="privacy" className="text-sm text-neutral-500 dark:text-neutral-400 cursor-pointer">
           {isUk ? "Я погоджуюсь з" : "I agree to the"}{" "}
           <a href={`/${lang}/privacy`} className="text-indigo-600 hover:underline">
             {isUk ? "Політикою конфіденційності" : "Privacy Policy"}

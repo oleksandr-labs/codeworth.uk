@@ -547,7 +547,7 @@ export function MedCenterDemo({ lang }: { lang: string }) {
                 <button
                   key={area.id}
                   onClick={() => setSelectedArea(selectedArea === area.id ? null : area.id)}
-                  className={`flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all ${selectedArea === area.id ? "border-teal-500 bg-teal-50 shadow-md" : "border-slate-200 bg-white hover:border-teal-300"}`}
+                  className={`flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all ${selectedArea === area.id ? "border-teal-500 bg-teal-50 shadow-md" : "border-slate-200 bg-white dark:bg-neutral-800 hover:border-teal-300"}`}
                 >
                   <span className="text-3xl">{area.emoji}</span>
                   <span className="text-xs font-medium text-slate-700">{isUk ? area.nameUk : area.nameEn}</span>

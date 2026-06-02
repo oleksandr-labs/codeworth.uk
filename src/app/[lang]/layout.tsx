@@ -168,7 +168,7 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
       </head>
-      <body className="min-h-full flex flex-col antialiased bg-(--color-background) text-neutral-900 pb-16 md:pb-0">
+      <body className="min-h-full flex flex-col antialiased bg-(--color-background) text-neutral-900 dark:text-white pb-16 md:pb-0">
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-9999 focus:px-5 focus:py-3 focus:bg-indigo-600 focus:text-white focus:rounded-xl focus:font-semibold focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-white"

@@ -339,7 +339,7 @@ export default async function NichePage({
         </section>
 
         {/* ── Stats ─────────────────────────────────────────────────────────── */}
-        <section className="py-16 bg-neutral-50 dark:bg-neutral-900/80">
+        <section className="py-16 bg-neutral-50 dark:bg-neutral-900 /80">
           <Container>
             <NicheStats color={niche.color} />
           </Container>
@@ -347,7 +347,7 @@ export default async function NichePage({
 
         {/* ── Trust Stats ───────────────────────────────────────────────────── */}
         {niche.trustStats && niche.trustStats.length > 0 && (
-          <section className="py-12 bg-white dark:bg-neutral-900 border-b border-neutral-100 dark:border-neutral-800">
+          <section className="py-12 bg-white dark:bg-neutral-900 border-b border-neutral-100 dark:border-neutral-700 dark:border-neutral-800">
             <Container>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 {niche.trustStats.map((stat) => (
@@ -366,7 +366,7 @@ export default async function NichePage({
 
         {/* ── Process Steps ─────────────────────────────────────────────────── */}
         {niche.processSteps && niche.processSteps.length > 0 && (
-          <section className="py-20 bg-neutral-50 dark:bg-neutral-800/40">
+          <section className="py-20 bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-800/40">
             <Container>
               <div className="text-center mb-14">
                 <h2 className="text-3xl font-bold font-syne text-neutral-900 dark:text-white mb-4">
@@ -426,13 +426,13 @@ export default async function NichePage({
                 {niche.highlights.map((h) => (
                   <div
                     key={h.title}
-                    className="text-center p-6 rounded-2xl bg-neutral-50 dark:bg-neutral-800/60 border border-neutral-100 dark:border-neutral-700/50"
+                    className="text-center p-6 rounded-2xl bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-800/60 border border-neutral-100 dark:border-neutral-700 /50"
                   >
                     <div className="text-4xl mb-4">{h.icon}</div>
                     <h3 className="text-lg font-bold font-syne text-neutral-900 dark:text-white mb-2">
                       {h.title}
                     </h3>
-                    <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300 dark:text-neutral-400">
                       {h.description}
                     </p>
                   </div>
@@ -444,7 +444,7 @@ export default async function NichePage({
 
         {/* ── Property Listings ─────────────────────────────────────────────── */}
         {niche.propertyListings && niche.propertyListings.length > 0 && (
-          <section className="py-20 bg-neutral-50 dark:bg-neutral-800/40">
+          <section className="py-20 bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-800/40">
             <Container>
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold font-syne text-neutral-900 dark:text-white mb-4">
@@ -461,7 +461,7 @@ export default async function NichePage({
 
         {/* ── Menu Items ────────────────────────────────────────────────────── */}
         {niche.menuItems && niche.menuItems.length > 0 && (
-          <section className="py-20 bg-neutral-50 dark:bg-neutral-800/40">
+          <section className="py-20 bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-800/40">
             <Container>
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold font-syne text-neutral-900 dark:text-white mb-4">
@@ -495,7 +495,7 @@ export default async function NichePage({
 
         {/* ── Tech Products ─────────────────────────────────────────────────── */}
         {niche.techProducts && niche.techProducts.length > 0 && (
-          <section className="py-20 bg-neutral-50 dark:bg-neutral-800/40">
+          <section className="py-20 bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-800/40">
             <Container>
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold font-syne text-neutral-900 dark:text-white mb-4">
@@ -509,7 +509,7 @@ export default async function NichePage({
                 {niche.techProducts.map((item) => (
                   <div
                     key={item.id}
-                    className="group flex flex-col bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-100 dark:border-neutral-700/50 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all"
+                    className="group flex flex-col bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-100 dark:border-neutral-700 /50 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all"
                   >
                     {/* Gradient header */}
                     <div className={`relative h-36 bg-linear-to-br ${item.gradient} flex items-center justify-center`}>
@@ -587,7 +587,7 @@ export default async function NichePage({
 
         {/* ── Course Catalog ────────────────────────────────────────────────── */}
         {niche.courseCards && niche.courseCards.length > 0 && (
-          <section className="py-20 bg-neutral-50 dark:bg-neutral-800/40">
+          <section className="py-20 bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-800/40">
             <Container>
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold font-syne text-neutral-900 dark:text-white mb-4">
@@ -621,7 +621,7 @@ export default async function NichePage({
 
         {/* ── Room Cards ────────────────────────────────────────────────────── */}
         {niche.roomCards && niche.roomCards.length > 0 && (
-          <section className="py-20 bg-neutral-50 dark:bg-neutral-800/40">
+          <section className="py-20 bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-800/40">
             <Container>
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold font-syne text-neutral-900 dark:text-white mb-4">
@@ -635,7 +635,7 @@ export default async function NichePage({
                 {niche.roomCards.map((room) => (
                   <div
                     key={room.id}
-                    className="group flex flex-col bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-100 dark:border-neutral-700/50 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all"
+                    className="group flex flex-col bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-100 dark:border-neutral-700 /50 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all"
                   >
                     {/* Gradient header */}
                     <div className={`relative h-36 bg-linear-to-br ${room.gradient} flex items-center justify-center`}>
@@ -697,7 +697,7 @@ export default async function NichePage({
 
         {/* ── Car Catalog ───────────────────────────────────────────────────── */}
         {niche.carCards && niche.carCards.length > 0 && (
-          <section className="py-20 bg-neutral-50 dark:bg-neutral-800/40">
+          <section className="py-20 bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-800/40">
             <Container>
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold font-syne text-neutral-900 dark:text-white mb-4">
@@ -711,7 +711,7 @@ export default async function NichePage({
                 {niche.carCards.map((car) => (
                   <div
                     key={car.id}
-                    className="group flex flex-col bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-100 dark:border-neutral-700/50 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all"
+                    className="group flex flex-col bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-100 dark:border-neutral-700 /50 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all"
                   >
                     {/* Gradient header */}
                     <div className={`relative h-32 bg-linear-to-br ${car.gradient} flex items-center justify-center`}>
@@ -783,7 +783,7 @@ export default async function NichePage({
 
         {/* ── Project Portfolio ─────────────────────────────────────────────── */}
         {niche.projectCards && niche.projectCards.length > 0 && (
-          <section className="py-20 bg-neutral-50 dark:bg-neutral-800/40">
+          <section className="py-20 bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-800/40">
             <Container>
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold font-syne text-neutral-900 dark:text-white mb-4">
@@ -797,7 +797,7 @@ export default async function NichePage({
                 {niche.projectCards.map((project) => (
                   <div
                     key={project.id}
-                    className="group flex flex-col bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-100 dark:border-neutral-700/50 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all"
+                    className="group flex flex-col bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-100 dark:border-neutral-700 /50 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all"
                   >
                     {/* Gradient header */}
                     <div className={`relative h-36 bg-linear-to-br ${project.gradient} flex items-center justify-center`}>
@@ -873,7 +873,7 @@ export default async function NichePage({
                 {niche.jobCards.map((job) => (
                   <div
                     key={job.id}
-                    className="group flex flex-col bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-100 dark:border-neutral-700/50 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all"
+                    className="group flex flex-col bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-100 dark:border-neutral-700 /50 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all"
                   >
                     {/* Gradient header */}
                     <div className={`relative h-24 bg-linear-to-br ${job.gradient} flex items-center justify-center`}>
@@ -954,7 +954,7 @@ export default async function NichePage({
                 {niche.mockServices.map((svc) => (
                   <div
                     key={svc.name}
-                    className="group flex flex-col bg-neutral-50 dark:bg-neutral-800/60 rounded-2xl border border-neutral-100 dark:border-neutral-700/50 p-6 hover:border-neutral-200 dark:hover:border-neutral-600 hover:shadow-md transition-all"
+                    className="group flex flex-col bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-800/60 rounded-2xl border border-neutral-100 dark:border-neutral-700 /50 p-6 hover:border-neutral-200 dark:hover:border-neutral-600 hover:shadow-md transition-all"
                   >
                     <div className="text-3xl mb-4">{svc.icon}</div>
                     <div className="font-semibold text-neutral-900 dark:text-white mb-1 flex-1">
@@ -985,7 +985,7 @@ export default async function NichePage({
 
         {/* ── Contact Info ──────────────────────────────────────────────────── */}
         {(niche.phone || niche.address || niche.openingHours) && (
-          <section className="py-16 bg-neutral-50 dark:bg-neutral-900/80">
+          <section className="py-16 bg-neutral-50 dark:bg-neutral-900 /80">
             <Container>
               <div className="max-w-3xl mx-auto">
                 <h2 className="text-2xl font-bold font-syne text-neutral-900 dark:text-white mb-8 text-center">
@@ -993,7 +993,7 @@ export default async function NichePage({
                 </h2>
                 <div className="grid sm:grid-cols-3 gap-5">
                   {niche.phone && (
-                    <div className="flex flex-col items-center text-center bg-white dark:bg-neutral-800/60 rounded-2xl border border-neutral-100 dark:border-neutral-700/50 p-6">
+                    <div className="flex flex-col items-center text-center bg-white dark:bg-neutral-800/60 rounded-2xl border border-neutral-100 dark:border-neutral-700 /50 p-6">
                       <div className="text-3xl mb-3">📞</div>
                       <div className="text-xs text-neutral-500 dark:text-neutral-400 mb-1 uppercase tracking-wide font-medium">{isUk ? "Телефон" : "Phone"}</div>
                       <a href={`tel:${niche.phone.replace(/\s/g, "")}`} className="font-semibold text-neutral-900 dark:text-white hover:underline text-sm">
@@ -1002,14 +1002,14 @@ export default async function NichePage({
                     </div>
                   )}
                   {niche.address && (
-                    <div className="flex flex-col items-center text-center bg-white dark:bg-neutral-800/60 rounded-2xl border border-neutral-100 dark:border-neutral-700/50 p-6">
+                    <div className="flex flex-col items-center text-center bg-white dark:bg-neutral-800/60 rounded-2xl border border-neutral-100 dark:border-neutral-700 /50 p-6">
                       <div className="text-3xl mb-3">📍</div>
                       <div className="text-xs text-neutral-500 dark:text-neutral-400 mb-1 uppercase tracking-wide font-medium">{isUk ? "Адреса" : "Address"}</div>
                       <span className="font-semibold text-neutral-900 dark:text-white text-sm">{niche.address}</span>
                     </div>
                   )}
                   {niche.openingHours && (
-                    <div className="flex flex-col items-center text-center bg-white dark:bg-neutral-800/60 rounded-2xl border border-neutral-100 dark:border-neutral-700/50 p-6">
+                    <div className="flex flex-col items-center text-center bg-white dark:bg-neutral-800/60 rounded-2xl border border-neutral-100 dark:border-neutral-700 /50 p-6">
                       <div className="text-3xl mb-3">🕐</div>
                       <div className="text-xs text-neutral-500 dark:text-neutral-400 mb-1 uppercase tracking-wide font-medium">{isUk ? "Години роботи" : "Working Hours"}</div>
                       <span className="font-semibold text-neutral-900 dark:text-white text-sm">{niche.openingHours}</span>
@@ -1029,7 +1029,7 @@ export default async function NichePage({
                 <h2 className="text-3xl font-bold font-syne text-neutral-900 dark:text-white mb-6">
                   {isUk ? "Що входить у рішення" : "What's Included"}
                 </h2>
-                <p className="text-neutral-600 dark:text-neutral-400 mb-8 text-lg">
+                <p className="text-neutral-600 dark:text-neutral-300 dark:text-neutral-400 mb-8 text-lg">
                   {isUk
                     ? `Готовий сайт для ${niche.title.toLowerCase()} включає все необхідне для швидкого старту онлайн-присутності вашого бізнесу.`
                     : `A ready-made website for ${niche.title.toLowerCase()} includes everything you need for a quick start of your business online.`}
@@ -1053,7 +1053,7 @@ export default async function NichePage({
 
               <div className="space-y-6">
                 {/* Pages */}
-                <div className="bg-neutral-50 dark:bg-neutral-800/60 rounded-2xl p-6 border border-neutral-100 dark:border-neutral-700/50">
+                <div className="bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-800/60 rounded-2xl p-6 border border-neutral-100 dark:border-neutral-700 /50">
                   <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-4">
                     {isUk ? "Сторінки сайту" : "Website Pages"}
                   </h3>
@@ -1071,7 +1071,7 @@ export default async function NichePage({
                 </div>
 
                 {/* Tech Stack */}
-                <div className="bg-neutral-50 dark:bg-neutral-800/60 rounded-2xl p-6 border border-neutral-100 dark:border-neutral-700/50">
+                <div className="bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-800/60 rounded-2xl p-6 border border-neutral-100 dark:border-neutral-700 /50">
                   <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-4">
                     {isUk ? "Технологічний стек" : "Tech Stack"}
                   </h3>
@@ -1088,7 +1088,7 @@ export default async function NichePage({
                 </div>
 
                 {/* Delivery */}
-                <div className="bg-neutral-50 dark:bg-neutral-800/60 rounded-2xl p-6 border border-neutral-100 dark:border-neutral-700/50">
+                <div className="bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-800/60 rounded-2xl p-6 border border-neutral-100 dark:border-neutral-700 /50">
                   <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-4">
                     {isUk ? "Умови та ціни" : "Terms & Prices"}
                   </h3>
@@ -1120,7 +1120,7 @@ export default async function NichePage({
         </section>
 
         {/* ── Page Sections Preview ─────────────────────────────────────────── */}
-        <section className="py-20 bg-neutral-50 dark:bg-neutral-800/40">
+        <section className="py-20 bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-800/40">
           <Container>
             <h2 className="text-3xl font-bold font-syne text-neutral-900 dark:text-white text-center mb-4">
               {isUk ? "Структура сайту" : "Website Structure"}
@@ -1134,7 +1134,7 @@ export default async function NichePage({
               {niche.sampleSections.map((section, idx) => (
                 <div
                   key={section}
-                  className="relative p-4 rounded-xl border border-neutral-100 dark:border-neutral-700/50 bg-white dark:bg-neutral-800/60 hover:border-neutral-200 dark:hover:border-neutral-600 transition-colors"
+                  className="relative p-4 rounded-xl border border-neutral-100 dark:border-neutral-700 /50 bg-white dark:bg-neutral-800/60 hover:border-neutral-200 dark:hover:border-neutral-600 transition-colors"
                 >
                   <div
                     className="w-7 h-7 rounded-full text-white text-xs font-bold flex items-center justify-center mb-3"
@@ -1142,7 +1142,7 @@ export default async function NichePage({
                   >
                     {idx + 1}
                   </div>
-                  <div className="font-medium text-neutral-800 dark:text-neutral-200">
+                  <div className="font-medium text-neutral-800 dark:text-neutral-200 ">
                     {section}
                   </div>
                 </div>
@@ -1165,13 +1165,13 @@ export default async function NichePage({
                 {niche.variants.map((v) => (
                   <div
                     key={v.title}
-                    className="group p-6 rounded-2xl border border-neutral-100 dark:border-neutral-700/50 bg-neutral-50 dark:bg-neutral-800/60 hover:border-indigo-200 dark:hover:border-indigo-700/50 hover:shadow-md transition-all"
+                    className="group p-6 rounded-2xl border border-neutral-100 dark:border-neutral-700 /50 bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-800/60 hover:border-indigo-200 dark:hover:border-indigo-700/50 hover:shadow-md transition-all"
                   >
                     <div className="text-3xl mb-3">{v.emoji}</div>
                     <h3 className="font-bold text-neutral-900 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                       {v.title}
                     </h3>
-                    <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300 dark:text-neutral-400">
                       {v.description}
                     </p>
                   </div>
@@ -1197,7 +1197,7 @@ export default async function NichePage({
                 {niche.promotions.map((promo) => (
                   <div
                     key={promo.title}
-                    className="relative flex flex-col bg-neutral-50 dark:bg-neutral-800/60 rounded-2xl border border-neutral-100 dark:border-neutral-700/50 p-6 overflow-hidden group hover:shadow-md transition-all"
+                    className="relative flex flex-col bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-800/60 rounded-2xl border border-neutral-100 dark:border-neutral-700 /50 p-6 overflow-hidden group hover:shadow-md transition-all"
                   >
                     {/* Decorative accent */}
                     <div
@@ -1222,7 +1222,7 @@ export default async function NichePage({
                     >
                       {promo.discount}
                     </div>
-                    <p className="text-sm text-neutral-600 dark:text-neutral-400 flex-1 leading-relaxed">
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300 dark:text-neutral-400 flex-1 leading-relaxed">
                       {promo.description}
                     </p>
                     <Link
@@ -1241,7 +1241,7 @@ export default async function NichePage({
 
         {/* ── Team ──────────────────────────────────────────────────────────── */}
         {niche.team && niche.team.length > 0 && (
-          <section className="py-20 bg-neutral-50 dark:bg-neutral-800/40">
+          <section className="py-20 bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-800/40">
             <Container>
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold font-syne text-neutral-900 dark:text-white mb-4">
@@ -1255,7 +1255,7 @@ export default async function NichePage({
                 {niche.team.map((member) => (
                   <div
                     key={member.name}
-                    className="text-center bg-white dark:bg-neutral-800/60 rounded-2xl border border-neutral-100 dark:border-neutral-700/50 p-8 hover:shadow-md transition-all group"
+                    className="text-center bg-white dark:bg-neutral-800/60 rounded-2xl border border-neutral-100 dark:border-neutral-700 /50 p-8 hover:shadow-md transition-all group"
                   >
                     {/* Avatar */}
                     <div
@@ -1295,7 +1295,7 @@ export default async function NichePage({
 
         {/* ── Pricing Plans ─────────────────────────────────────────────────── */}
         {niche.pricingPlans && niche.pricingPlans.length > 0 && (
-          <section className="py-20 bg-neutral-50 dark:bg-neutral-800/40">
+          <section className="py-20 bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-800/40">
             <Container>
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold font-syne text-neutral-900 dark:text-white mb-4">
@@ -1316,7 +1316,7 @@ export default async function NichePage({
                         className={`relative flex flex-col rounded-2xl border p-6 transition-all ${
                           plan.highlighted
                             ? "border-2 shadow-xl shadow-indigo-500/10 bg-white dark:bg-neutral-800"
-                            : "border-neutral-100 dark:border-neutral-700/50 bg-white dark:bg-neutral-800/60 hover:shadow-md"
+                            : "border-neutral-100 dark:border-neutral-700 /50 bg-white dark:bg-neutral-800/60 hover:shadow-md"
                         }`}
                         style={plan.highlighted ? { borderColor: niche.color } : undefined}
                       >
@@ -1461,7 +1461,7 @@ export default async function NichePage({
                     </div>
                     <ul className="space-y-2 flex-1 mb-6">
                       {pkg.items.map((item) => (
-                        <li key={item} className="flex items-start gap-2 text-xs text-neutral-600 dark:text-neutral-400">
+                        <li key={item} className="flex items-start gap-2 text-xs text-neutral-600 dark:text-neutral-300 dark:text-neutral-400">
                           <Check className="w-3 h-3 text-emerald-500 shrink-0 mt-0.5" />
                           {item}
                         </li>
@@ -1501,7 +1501,7 @@ export default async function NichePage({
         <NicheReviews slug={niche.slug} color={niche.color} />
 
         {/* ── FAQ ───────────────────────────────────────────────────────────── */}
-        <section className="py-20 bg-neutral-50 dark:bg-neutral-800/40">
+        <section className="py-20 bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-800/40">
           <Container className="max-w-3xl">
             <h2 className="text-3xl font-bold font-syne text-neutral-900 dark:text-white text-center mb-12">
               {isUk ? "Часті питання" : "Frequently Asked Questions"}
@@ -1510,16 +1510,16 @@ export default async function NichePage({
               {faqItems.map((item) => (
                 <details
                   key={item.q}
-                  className="group border border-neutral-100 dark:border-neutral-700/50 rounded-2xl overflow-hidden bg-white dark:bg-neutral-800/60"
+                  className="group border border-neutral-100 dark:border-neutral-700 /50 rounded-2xl overflow-hidden bg-white dark:bg-neutral-800/60"
                 >
-                  <summary className="flex items-center justify-between px-6 py-4 cursor-pointer list-none font-semibold text-neutral-900 dark:text-white hover:bg-neutral-50 dark:hover:bg-neutral-700/30 transition-colors">
+                  <summary className="flex items-center justify-between px-6 py-4 cursor-pointer list-none font-semibold text-neutral-900 dark:text-white hover:bg-neutral-50 dark:hover:bg-neutral-800 dark:bg-neutral-900 dark:hover:bg-neutral-700/30 transition-colors">
                     {item.q}
                     <Check
                       className="w-4 h-4 shrink-0 ml-4 text-neutral-400 group-open:hidden"
                       style={{ color: niche.color }}
                     />
                   </summary>
-                  <div className="px-6 pb-5 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                  <div className="px-6 pb-5 text-sm text-neutral-600 dark:text-neutral-300 dark:text-neutral-400 leading-relaxed">
                     {item.a}
                   </div>
                 </details>
@@ -1570,7 +1570,7 @@ export default async function NichePage({
                   <Link
                     key={post.slug}
                     href={`/${lang}/blog/${post.slug}`}
-                    className="group bg-neutral-50 dark:bg-neutral-800/60 rounded-2xl overflow-hidden border border-neutral-100 dark:border-neutral-700/50 hover:border-indigo-100 dark:hover:border-indigo-800/50 hover:shadow-md transition-all"
+                    className="group bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-800/60 rounded-2xl overflow-hidden border border-neutral-100 dark:border-neutral-700 /50 hover:border-indigo-100 dark:hover:border-indigo-800/50 hover:shadow-md transition-all"
                   >
                     <div className={`h-2 bg-linear-to-r ${post.color}`} />
                     <div className="p-5">
@@ -1597,9 +1597,9 @@ export default async function NichePage({
 
         {/* ── Portfolio Case ────────────────────────────────────────────────── */}
         {portfolioCase && (
-          <section className="py-16 bg-neutral-50 dark:bg-neutral-800/40">
+          <section className="py-16 bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-800/40">
             <Container>
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 p-8 rounded-2xl border border-neutral-100 dark:border-neutral-700/50 bg-white dark:bg-neutral-800/60">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 p-8 rounded-2xl border border-neutral-100 dark:border-neutral-700 /50 bg-white dark:bg-neutral-800/60">
                 <div className="flex-1">
                   <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: niche.color }}>
                     {isUk ? "Кейс портфоліо" : "Portfolio Case"}
@@ -1612,7 +1612,7 @@ export default async function NichePage({
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {portfolioCase.tags.slice(0, 4).map((tag) => (
-                      <span key={tag} className="text-xs px-2.5 py-1 rounded-full bg-neutral-100 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-300">
+                      <span key={tag} className="text-xs px-2.5 py-1 rounded-full bg-neutral-100 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-300 ">
                         {tag}
                       </span>
                     ))}
@@ -1676,7 +1676,7 @@ export default async function NichePage({
 
         {/* ── Related Niches ────────────────────────────────────────────────── */}
         {otherNiches.length > 0 && (
-          <section className="py-20 bg-neutral-50 dark:bg-neutral-900/80">
+          <section className="py-20 bg-neutral-50 dark:bg-neutral-900 /80">
             <Container>
               <h2 className="text-2xl font-bold font-syne text-neutral-900 dark:text-white mb-8">
                 {isUk ? "Інші готові рішення" : "Other Ready-Made Solutions"}
@@ -1686,7 +1686,7 @@ export default async function NichePage({
                   <Link
                     key={n.slug}
                     href={`/${lang}/niches/${n.slug}`}
-                    className="group bg-white dark:bg-neutral-800/60 rounded-2xl p-6 border border-neutral-100 dark:border-neutral-700/50 hover:border-neutral-200 dark:hover:border-neutral-600 hover:shadow-md transition-all"
+                    className="group bg-white dark:bg-neutral-800/60 rounded-2xl p-6 border border-neutral-100 dark:border-neutral-700 /50 hover:border-neutral-200 dark:hover:border-neutral-600 hover:shadow-md transition-all"
                   >
                     <div
                       className={`w-12 h-12 rounded-xl bg-linear-to-br ${n.gradient} flex items-center justify-center text-2xl mb-4`}
@@ -1700,7 +1700,7 @@ export default async function NichePage({
                       {n.subtitle}
                     </p>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-neutral-600 dark:text-neutral-400">
+                      <span className="text-sm text-neutral-600 dark:text-neutral-300 dark:text-neutral-400">
                         {isUk ? `від ${n.priceFrom.toLocaleString("uk-UA")} грн` : `from $${n.priceFrom}`}
                       </span>
                       <ArrowRight className="w-4 h-4 text-neutral-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 group-hover:translate-x-1 transition-all" />

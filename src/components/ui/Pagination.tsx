@@ -44,7 +44,7 @@ export function Pagination({ currentPage, totalPages, onPageChange, className }:
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
         aria-label={isUk ? "Попередня сторінка" : "Previous page"}
-        className="flex items-center gap-1 px-3 py-2 rounded-xl text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+        className="flex items-center gap-1 px-3 py-2 rounded-xl text-sm font-medium text-neutral-600 dark:text-neutral-300 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-700 dark:bg-neutral-800 dark:hover:bg-neutral-800 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
       >
         <ChevronLeft className="w-4 h-4" />
         <span className="hidden sm:inline">{isUk ? "Назад" : "Prev"}</span>
@@ -70,7 +70,7 @@ export function Pagination({ currentPage, totalPages, onPageChange, className }:
                 "w-9 h-9 rounded-xl text-sm font-medium transition-all",
                 page === currentPage
                   ? "bg-indigo-600 text-white shadow-md shadow-indigo-500/25"
-                  : "text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800"
+                  : "text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-700 dark:bg-neutral-800 dark:hover:bg-neutral-800"
               )}
             >
               {page}
@@ -84,7 +84,7 @@ export function Pagination({ currentPage, totalPages, onPageChange, className }:
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
         aria-label={isUk ? "Наступна сторінка" : "Next page"}
-        className="flex items-center gap-1 px-3 py-2 rounded-xl text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+        className="flex items-center gap-1 px-3 py-2 rounded-xl text-sm font-medium text-neutral-600 dark:text-neutral-300 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-700 dark:bg-neutral-800 dark:hover:bg-neutral-800 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
       >
         <span className="hidden sm:inline">{isUk ? "Далі" : "Next"}</span>
         <ChevronRight className="w-4 h-4" />

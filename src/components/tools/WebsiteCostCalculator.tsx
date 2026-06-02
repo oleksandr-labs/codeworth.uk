@@ -195,7 +195,7 @@ export function WebsiteCostCalculator({ isUk }: Props) {
             </span>
           ))}
         </div>
-        <div className="h-2 bg-neutral-100 rounded-full overflow-hidden">
+        <div className="h-2 bg-neutral-100 dark:bg-neutral-800 rounded-full overflow-hidden">
           <div
             className="h-full bg-linear-to-r from-indigo-500 to-violet-600 rounded-full transition-all duration-500"
             style={{ width: progressWidth }}
@@ -206,7 +206,7 @@ export function WebsiteCostCalculator({ isUk }: Props) {
       {/* Step 0: Site Type */}
       {step === 0 && (
         <div>
-          <h2 className="text-xl font-heading font-extrabold text-neutral-900 mb-6">{t.step1Title}</h2>
+          <h2 className="text-xl font-heading font-extrabold text-neutral-900 dark:text-white mb-6">{t.step1Title}</h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {t.siteTypes.map((s) => (
               <button
@@ -215,13 +215,13 @@ export function WebsiteCostCalculator({ isUk }: Props) {
                 className={`flex items-start gap-3 p-4 rounded-2xl border-2 text-left transition-all ${
                   siteType === s.id
                     ? "border-indigo-500 bg-indigo-50"
-                    : "border-neutral-200 bg-white hover:border-indigo-300"
+                    : "border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-indigo-300"
                 }`}
               >
                 <span className="text-2xl shrink-0">{s.icon}</span>
                 <div>
                   <p className="font-semibold text-sm text-neutral-900">{s.label}</p>
-                  <p className="text-xs text-neutral-500 mt-0.5">{s.desc}</p>
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">{s.desc}</p>
                 </div>
                 {siteType === s.id && <Check className="w-4 h-4 text-indigo-600 ml-auto shrink-0" />}
               </button>
@@ -242,8 +242,8 @@ export function WebsiteCostCalculator({ isUk }: Props) {
       {/* Step 1: Features */}
       {step === 1 && (
         <div>
-          <h2 className="text-xl font-heading font-extrabold text-neutral-900 mb-2">{t.step2Title}</h2>
-          <p className="text-sm text-neutral-500 mb-6">{isUk ? "Оберіть все, що підходить" : "Select all that apply"}</p>
+          <h2 className="text-xl font-heading font-extrabold text-neutral-900 dark:text-white mb-2">{t.step2Title}</h2>
+          <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-6">{isUk ? "Оберіть все, що підходить" : "Select all that apply"}</p>
           <div className="grid sm:grid-cols-2 gap-3">
             {t.featureList.map((f) => (
               <button
@@ -252,17 +252,17 @@ export function WebsiteCostCalculator({ isUk }: Props) {
                 className={`flex items-center gap-3 p-4 rounded-2xl border-2 text-left transition-all ${
                   features.includes(f.id as Feature)
                     ? "border-indigo-500 bg-indigo-50"
-                    : "border-neutral-200 bg-white hover:border-indigo-300"
+                    : "border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-indigo-300"
                 }`}
               >
                 <span className="text-xl shrink-0">{f.icon}</span>
-                <p className="font-semibold text-sm text-neutral-900 flex-1">{f.label}</p>
+                <p className="font-semibold text-sm text-neutral-900 dark:text-white flex-1">{f.label}</p>
                 {features.includes(f.id as Feature) && <Check className="w-4 h-4 text-indigo-600 shrink-0" />}
               </button>
             ))}
           </div>
           <div className="mt-6 flex justify-between">
-            <button onClick={() => setStep(0)} className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-neutral-200 bg-white text-sm font-semibold text-neutral-700 hover:border-neutral-300 transition-colors">
+            <button onClick={() => setStep(0)} className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm font-semibold text-neutral-700 dark:text-neutral-300 hover:border-neutral-300 transition-colors">
               <ArrowLeft className="w-4 h-4" /> {t.back}
             </button>
             <button onClick={() => setStep(2)} className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-600 text-white font-semibold text-sm hover:bg-indigo-700 transition-colors">
@@ -275,7 +275,7 @@ export function WebsiteCostCalculator({ isUk }: Props) {
       {/* Step 2: Design */}
       {step === 2 && (
         <div>
-          <h2 className="text-xl font-heading font-extrabold text-neutral-900 mb-6">{t.step3Title}</h2>
+          <h2 className="text-xl font-heading font-extrabold text-neutral-900 dark:text-white mb-6">{t.step3Title}</h2>
           <div className="space-y-3">
             {t.designTypes.map((d) => (
               <button
@@ -284,20 +284,20 @@ export function WebsiteCostCalculator({ isUk }: Props) {
                 className={`flex items-start gap-4 w-full p-5 rounded-2xl border-2 text-left transition-all ${
                   design === d.id
                     ? "border-indigo-500 bg-indigo-50"
-                    : "border-neutral-200 bg-white hover:border-indigo-300"
+                    : "border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-indigo-300"
                 }`}
               >
                 <span className="text-3xl shrink-0">{d.icon}</span>
                 <div className="flex-1">
                   <p className="font-semibold text-neutral-900">{d.label}</p>
-                  <p className="text-xs text-neutral-500 mt-0.5">{d.desc}</p>
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">{d.desc}</p>
                 </div>
                 {design === d.id && <Check className="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" />}
               </button>
             ))}
           </div>
           <div className="mt-6 flex justify-between">
-            <button onClick={() => setStep(1)} className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-neutral-200 bg-white text-sm font-semibold text-neutral-700 hover:border-neutral-300 transition-colors">
+            <button onClick={() => setStep(1)} className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm font-semibold text-neutral-700 dark:text-neutral-300 hover:border-neutral-300 transition-colors">
               <ArrowLeft className="w-4 h-4" /> {t.back}
             </button>
             <button onClick={() => setStep(3)} disabled={!design} className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-600 text-white font-semibold text-sm hover:bg-indigo-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed">
@@ -310,7 +310,7 @@ export function WebsiteCostCalculator({ isUk }: Props) {
       {/* Step 3: Timeline */}
       {step === 3 && (
         <div>
-          <h2 className="text-xl font-heading font-extrabold text-neutral-900 mb-6">{t.step4Title}</h2>
+          <h2 className="text-xl font-heading font-extrabold text-neutral-900 dark:text-white mb-6">{t.step4Title}</h2>
           <div className="space-y-3">
             {t.timelineTypes.map((tl) => (
               <button
@@ -319,20 +319,20 @@ export function WebsiteCostCalculator({ isUk }: Props) {
                 className={`flex items-start gap-4 w-full p-5 rounded-2xl border-2 text-left transition-all ${
                   timeline === tl.id
                     ? "border-indigo-500 bg-indigo-50"
-                    : "border-neutral-200 bg-white hover:border-indigo-300"
+                    : "border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-indigo-300"
                 }`}
               >
                 <span className="text-3xl shrink-0">{tl.icon}</span>
                 <div className="flex-1">
                   <p className="font-semibold text-neutral-900">{tl.label}</p>
-                  <p className="text-xs text-neutral-500 mt-0.5">{tl.desc}</p>
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">{tl.desc}</p>
                 </div>
                 {timeline === tl.id && <Check className="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" />}
               </button>
             ))}
           </div>
           <div className="mt-6 flex justify-between">
-            <button onClick={() => setStep(2)} className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-neutral-200 bg-white text-sm font-semibold text-neutral-700 hover:border-neutral-300 transition-colors">
+            <button onClick={() => setStep(2)} className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm font-semibold text-neutral-700 dark:text-neutral-300 hover:border-neutral-300 transition-colors">
               <ArrowLeft className="w-4 h-4" /> {t.back}
             </button>
             <button
@@ -351,7 +351,7 @@ export function WebsiteCostCalculator({ isUk }: Props) {
         <div>
           <div className="text-center mb-8">
             <span className="text-5xl block mb-3">💰</span>
-            <h2 className="text-2xl font-heading font-extrabold text-neutral-900 mb-2">{t.resultTitle}</h2>
+            <h2 className="text-2xl font-heading font-extrabold text-neutral-900 dark:text-white mb-2">{t.resultTitle}</h2>
             <p className="text-sm text-neutral-500">{t.resultSub}</p>
           </div>
 
@@ -368,18 +368,18 @@ export function WebsiteCostCalculator({ isUk }: Props) {
 
           {/* Breakdown */}
           <div className="space-y-3 mb-8">
-            <div className="flex justify-between py-3 border-b border-neutral-100 text-sm">
+            <div className="flex justify-between py-3 border-b border-neutral-100 dark:border-neutral-700 text-sm">
               <span className="text-neutral-600">{t.base}</span>
               <span className="font-semibold">{fmt(price.baseMin)} — {fmt(price.baseMax)}</span>
             </div>
             {price.featMin > 0 && (
-              <div className="flex justify-between py-3 border-b border-neutral-100 text-sm">
+              <div className="flex justify-between py-3 border-b border-neutral-100 dark:border-neutral-700 text-sm">
                 <span className="text-neutral-600">{t.features} ({features.length})</span>
                 <span className="font-semibold">+{fmt(price.featMin)} — +{fmt(price.featMax)}</span>
               </div>
             )}
             {price.rushMin > 0 && (
-              <div className="flex justify-between py-3 border-b border-neutral-100 text-sm">
+              <div className="flex justify-between py-3 border-b border-neutral-100 dark:border-neutral-700 text-sm">
                 <span className="text-amber-600">{t.rush}</span>
                 <span className="font-semibold text-amber-600">+{fmt(price.rushMin)} — +{fmt(price.rushMax)}</span>
               </div>
@@ -406,7 +406,7 @@ export function WebsiteCostCalculator({ isUk }: Props) {
                 setDesign(null);
                 setTimeline(null);
               }}
-              className="flex items-center gap-2 mx-auto text-xs text-neutral-500 hover:text-neutral-700 transition-colors"
+              className="flex items-center gap-2 mx-auto text-xs text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:text-neutral-300 transition-colors"
             >
               <RefreshCw className="w-3.5 h-3.5" /> {t.restart}
             </button>

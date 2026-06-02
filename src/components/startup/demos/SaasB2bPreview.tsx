@@ -1,10 +1,10 @@
 export function SaasB2bPreview() {
   return (
     <div className="font-sans">
-      <nav className="flex items-center justify-between px-8 py-4 bg-white border-b border-gray-100">
+      <nav className="flex items-center justify-between px-8 py-4 bg-white dark:bg-neutral-800 border-b border-gray-100">
         <div className="flex items-center gap-2">
           <div className="w-7 h-7 rounded-lg bg-blue-700 flex items-center justify-center text-white text-xs font-bold">A</div>
-          <span className="font-bold text-gray-900 text-sm">AutomateIQ</span>
+          <span className="font-bold text-gray-900 dark:text-white text-sm">AutomateIQ</span>
         </div>
         <div className="flex items-center gap-5 text-xs text-gray-500">
           <span>Features</span><span>Pricing</span><span>Security</span>
@@ -30,8 +30,8 @@ export function SaasB2bPreview() {
         </div>
       </section>
 
-      <section className="px-8 py-8 bg-white border-b border-gray-100">
-        <div className="text-xs text-gray-400 text-center mb-4">Trusted by teams at</div>
+      <section className="px-8 py-8 bg-white dark:bg-neutral-800 border-b border-gray-100">
+        <div className="text-xs text-gray-400 dark:text-neutral-500 text-center mb-4">Trusted by teams at</div>
         <div className="flex items-center justify-center gap-8">
           {["Acme Corp", "BuildCo", "NovaTech", "ScaleFast", "CloudBase"].map((c) => (
             <span key={c} className="text-sm font-bold text-gray-300">{c}</span>
@@ -40,7 +40,7 @@ export function SaasB2bPreview() {
       </section>
 
       <section className="px-8 py-12 bg-gray-50">
-        <h2 className="text-2xl font-extrabold text-gray-900 text-center mb-8">Built for enterprise teams</h2>
+        <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white text-center mb-8">Built for enterprise teams</h2>
         <div className="grid grid-cols-3 gap-4 max-w-3xl mx-auto">
           {[
             { icon: "🔒", title: "SOC 2 Type II", desc: "Enterprise security & compliance out of the box" },
@@ -50,9 +50,9 @@ export function SaasB2bPreview() {
             { icon: "⚡", title: "No-code setup", desc: "Ops teams go live in 2 days, not 2 months" },
             { icon: "🛠️", title: "Dedicated CSM", desc: "Onboarding specialist + quarterly business reviews" },
           ].map((f) => (
-            <div key={f.title} className="p-4 rounded-xl bg-white border border-gray-100">
+            <div key={f.title} className="p-4 rounded-xl bg-white dark:bg-neutral-800 border border-gray-100">
               <div className="text-xl mb-2">{f.icon}</div>
-              <div className="font-bold text-gray-900 text-sm mb-1">{f.title}</div>
+              <div className="font-bold text-gray-900 dark:text-white text-sm mb-1">{f.title}</div>
               <div className="text-xs text-gray-500">{f.desc}</div>
             </div>
           ))}

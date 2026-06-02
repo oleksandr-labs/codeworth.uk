@@ -259,7 +259,7 @@ export function PetCareDemo({ lang }: { lang: string }) {
   ];
 
   return (
-    <div className="font-sans text-gray-800 bg-white min-h-screen">
+    <div className="font-sans text-gray-800 dark:text-neutral-200 bg-white min-h-screen">
 
       {/* ── HEADER ── */}
       <header className="bg-white border-b border-teal-100 shadow-sm sticky top-0 z-50">
@@ -363,7 +363,7 @@ export function PetCareDemo({ lang }: { lang: string }) {
           <h2 className="text-3xl font-bold text-center text-teal-700 mb-2">
             {isUk ? "Наші Послуги" : "Our Services"}
           </h2>
-          <p className="text-center text-gray-500 mb-10">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-10">
             {isUk
               ? "Повний спектр ветеринарної допомоги для вашого улюбленця"
               : "Full range of veterinary care for your pet"}
@@ -376,10 +376,10 @@ export function PetCareDemo({ lang }: { lang: string }) {
                 className={`rounded-2xl border p-6 flex flex-col gap-3 hover:shadow-md transition-shadow ${svc.color}`}
               >
                 <span className="text-4xl">{svc.emoji}</span>
-                <h3 className="font-bold text-gray-800 text-lg">
+                <h3 className="font-bold text-gray-800 dark:text-neutral-200 text-lg">
                   {isUk ? svc.nameUk : svc.nameEn}
                 </h3>
-                <p className="text-gray-600 text-sm flex-1">
+                <p className="text-gray-600 dark:text-neutral-300 text-sm flex-1">
                   {isUk ? svc.descUk : svc.descEn}
                 </p>
                 <div className="flex items-center justify-between mt-2">
@@ -402,7 +402,7 @@ export function PetCareDemo({ lang }: { lang: string }) {
           <h2 className="text-3xl font-bold text-center text-teal-700 mb-2">
             {isUk ? "Запис на Прийом" : "Book an Appointment"}
           </h2>
-          <p className="text-center text-gray-500 mb-8">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-8">
             {isUk
               ? "Заповніть форму і ми підтвердимо ваш запис"
               : "Fill in the form and we will confirm your booking"}
@@ -415,7 +415,7 @@ export function PetCareDemo({ lang }: { lang: string }) {
                 <h3 className="text-2xl font-bold text-teal-700 mb-2">
                   {isUk ? "Запис підтверджено!" : "Booking Confirmed!"}
                 </h3>
-                <p className="text-gray-600 mb-6">
+                <p className="text-gray-600 dark:text-neutral-300 mb-6">
                   {isUk
                     ? `${ownerName}, ми зателефонуємо вам на ${ownerPhone} для підтвердження деталей.`
                     : `${ownerName}, we will call you on ${ownerPhone} to confirm the details.`}
@@ -431,7 +431,7 @@ export function PetCareDemo({ lang }: { lang: string }) {
               <>
                 {/* Progress bar */}
                 <div className="mb-8">
-                  <div className="flex justify-between text-xs text-gray-500 mb-1.5">
+                  <div className="flex justify-between text-xs text-gray-500 dark:text-neutral-400 mb-1.5">
                     <span>
                       {isUk ? `Крок ${step} з ${totalSteps}` : `Step ${step} of ${totalSteps}`}
                     </span>
@@ -467,7 +467,7 @@ export function PetCareDemo({ lang }: { lang: string }) {
                       {isUk ? "🐾 Ваша тварина" : "🐾 Your Pet"}
                     </h3>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-2">
                         {isUk ? "Тип тварини" : "Pet type"}
                       </label>
                       <div className="flex gap-3 flex-wrap">
@@ -482,7 +482,7 @@ export function PetCareDemo({ lang }: { lang: string }) {
                             className={`px-5 py-2.5 rounded-full border-2 font-medium text-sm transition-colors ${
                               petType === pt.value
                                 ? "bg-teal-600 border-teal-600 text-white"
-                                : "bg-white border-teal-200 text-gray-700 hover:border-teal-400"
+                                : "bg-white border-teal-200 text-gray-700 dark:text-neutral-300 hover:border-teal-400"
                             }`}
                           >
                             {isUk ? pt.labelUk : pt.labelEn}
@@ -491,7 +491,7 @@ export function PetCareDemo({ lang }: { lang: string }) {
                       </div>
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-1">
                         {isUk ? "Кличка тварини" : "Pet name"}
                       </label>
                       <input
@@ -564,7 +564,7 @@ export function PetCareDemo({ lang }: { lang: string }) {
                       {isUk ? "📅 Дата та час" : "📅 Date & Time"}
                     </h3>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-2">
                         {isUk ? "Оберіть дату" : "Choose a date"}
                       </label>
                       <div className="flex flex-wrap gap-2">
@@ -575,7 +575,7 @@ export function PetCareDemo({ lang }: { lang: string }) {
                             className={`px-4 py-2 rounded-xl border-2 text-sm font-medium transition-colors ${
                               selectedDate === d.value
                                 ? "bg-teal-600 border-teal-600 text-white"
-                                : "bg-white border-teal-200 text-gray-700 hover:border-teal-400"
+                                : "bg-white border-teal-200 text-gray-700 dark:text-neutral-300 hover:border-teal-400"
                             }`}
                           >
                             {isUk ? d.labelUk : d.labelEn}
@@ -584,7 +584,7 @@ export function PetCareDemo({ lang }: { lang: string }) {
                       </div>
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-2">
                         {isUk ? "Оберіть час" : "Choose a time"}
                       </label>
                       <div className="flex flex-wrap gap-2">
@@ -595,7 +595,7 @@ export function PetCareDemo({ lang }: { lang: string }) {
                             className={`px-4 py-2 rounded-xl border-2 text-sm font-medium transition-colors ${
                               selectedTime === t
                                 ? "bg-orange-500 border-orange-500 text-white"
-                                : "bg-white border-orange-200 text-gray-700 hover:border-orange-400"
+                                : "bg-white border-orange-200 text-gray-700 dark:text-neutral-300 hover:border-orange-400"
                             }`}
                           >
                             {t}
@@ -628,7 +628,7 @@ export function PetCareDemo({ lang }: { lang: string }) {
                       {isUk ? "👤 Ваші контакти" : "👤 Your Contact Info"}
                     </h3>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-1">
                         {isUk ? "Ваше ім'я" : "Your name"}
                       </label>
                       <input
@@ -640,7 +640,7 @@ export function PetCareDemo({ lang }: { lang: string }) {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-1">
                         {isUk ? "Номер телефону" : "Phone number"}
                       </label>
                       <input
@@ -691,7 +691,7 @@ export function PetCareDemo({ lang }: { lang: string }) {
           <h2 className="text-3xl font-bold text-center text-teal-700 mb-2">
             {isUk ? "Наші Лікарі" : "Our Doctors"}
           </h2>
-          <p className="text-center text-gray-500 mb-10">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-10">
             {isUk
               ? "Досвідчені спеціалісти, які щиро люблять тварин"
               : "Experienced specialists who genuinely love animals"}
@@ -707,16 +707,16 @@ export function PetCareDemo({ lang }: { lang: string }) {
                 <div className="w-24 h-24 rounded-full bg-linear-to-br from-teal-100 to-teal-200 flex items-center justify-center mx-auto mb-4 text-4xl border-4 border-white shadow-md">
                   👩‍⚕️
                 </div>
-                <h3 className="font-bold text-gray-800 text-lg mb-0.5">
+                <h3 className="font-bold text-gray-800 dark:text-neutral-200 text-lg mb-0.5">
                   {isUk ? doc.name : doc.nameEn}
                 </h3>
                 <div className="text-teal-600 text-sm font-medium mb-1">
                   {isUk ? doc.specUk : doc.specEn}
                 </div>
-                <div className="text-xs text-gray-400 mb-3">
+                <div className="text-xs text-gray-400 dark:text-neutral-500 mb-3">
                   {isUk ? `${doc.years} років досвіду` : `${doc.years} years of experience`}
                 </div>
-                <p className="text-gray-600 text-sm mb-4">
+                <p className="text-gray-600 dark:text-neutral-300 text-sm mb-4">
                   {isUk ? doc.bioUk : doc.bioEn}
                 </p>
                 <div className="flex justify-center gap-1.5 text-xl flex-wrap">
@@ -781,7 +781,7 @@ export function PetCareDemo({ lang }: { lang: string }) {
           <h2 className="text-3xl font-bold text-center text-teal-700 mb-2">
             {isUk ? "Ціни на Послуги" : "Service Prices"}
           </h2>
-          <p className="text-center text-gray-500 mb-8">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-8">
             {isUk
               ? "Прозоре ціноутворення без прихованих доплат"
               : "Transparent pricing with no hidden fees"}
@@ -835,7 +835,7 @@ export function PetCareDemo({ lang }: { lang: string }) {
             </table>
           </div>
 
-          <p className="text-center text-xs text-gray-400 mt-4">
+          <p className="text-center text-xs text-gray-400 dark:text-neutral-500 mt-4">
             {isUk
               ? "* Ціни орієнтовні. Остаточна вартість визначається після огляду."
               : "* Prices are indicative. Final cost is determined after examination."}
@@ -849,7 +849,7 @@ export function PetCareDemo({ lang }: { lang: string }) {
           <h2 className="text-3xl font-bold text-center text-teal-700 mb-2">
             {isUk ? "Відгуки Власників" : "Owner Reviews"}
           </h2>
-          <p className="text-center text-gray-500 mb-10">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-10">
             {isUk ? "Що кажуть наші клієнти" : "What our clients say"}
           </p>
 
@@ -864,11 +864,11 @@ export function PetCareDemo({ lang }: { lang: string }) {
                   {t.emoji}
                 </div>
                 <StarRating count={t.stars} />
-                <p className="text-gray-600 text-sm mt-3 mb-4 leading-relaxed">
+                <p className="text-gray-600 dark:text-neutral-300 text-sm mt-3 mb-4 leading-relaxed">
                   "{isUk ? t.textUk : t.textEn}"
                 </p>
-                <div className="border-t border-gray-100 pt-3">
-                  <div className="font-semibold text-gray-800 text-sm">
+                <div className="border-t border-gray-100 dark:border-neutral-700 pt-3">
+                  <div className="font-semibold text-gray-800 dark:text-neutral-200 text-sm">
                     {isUk ? t.ownerUk : t.ownerEn}
                   </div>
                   <div className="text-xs text-teal-500 mt-0.5">

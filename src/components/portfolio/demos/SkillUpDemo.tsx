@@ -260,12 +260,12 @@ export function SkillUpDemo({ lang }: { lang: string }) {
   const pathTotalPrice = pathCourses.reduce((sum, c) => sum + c.price, 0);
 
   return (
-    <div className="min-h-screen bg-gray-50 font-sans text-gray-800">
+    <div className="min-h-screen bg-gray-50 dark:bg-neutral-900 font-sans text-gray-800">
       {/* ── Header ── */}
       <header className="sticky top-0 z-30 border-b border-indigo-100 bg-white/95 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
           <span className="text-xl font-bold text-indigo-700">🎓 SkillUp</span>
-          <nav className="hidden gap-6 text-sm font-medium text-gray-600 md:flex">
+          <nav className="hidden gap-6 text-sm font-medium text-gray-600 dark:text-neutral-300 md:flex">
             {[
               [isUk ? "Курси" : "Courses"],
               [isUk ? "Категорії" : "Categories"],
@@ -308,14 +308,14 @@ export function SkillUpDemo({ lang }: { lang: string }) {
         </div>
 
         {/* Search */}
-        <div className="mx-auto mt-10 flex max-w-lg overflow-hidden rounded-xl bg-white shadow-lg">
+        <div className="mx-auto mt-10 flex max-w-lg overflow-hidden rounded-xl bg-white dark:bg-neutral-800 shadow-lg">
           <span className="flex shrink-0 items-center pl-4 text-lg">🔍</span>
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder={isUk ? "Шукати курси..." : "Search courses..."}
-            className="w-full px-3 py-3 text-gray-700 outline-none"
+            className="w-full px-3 py-3 text-gray-700 dark:text-neutral-300 outline-none"
           />
           <button className="shrink-0 bg-indigo-600 px-6 text-sm font-semibold text-white transition hover:bg-indigo-700">
             {isUk ? "Знайти" : "Search"}
@@ -341,7 +341,7 @@ export function SkillUpDemo({ lang }: { lang: string }) {
               className={`rounded-full px-4 py-2 text-sm font-medium transition ${
                 activeCategory === cat.id
                   ? "bg-indigo-600 text-white shadow"
-                  : "bg-white text-gray-600 hover:bg-indigo-50"
+                  : "bg-white text-gray-600 dark:text-neutral-300 hover:bg-indigo-50"
               }`}
             >
               {cat.emoji} {isUk ? cat.uk : cat.en}
@@ -356,11 +356,11 @@ export function SkillUpDemo({ lang }: { lang: string }) {
             return (
               <div
                 key={course.id}
-                className="group cursor-pointer rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition hover:shadow-lg"
+                className="group cursor-pointer rounded-2xl border border-gray-100 dark:border-neutral-700 bg-white dark:bg-neutral-800 p-6 shadow-sm transition hover:shadow-lg"
                 onClick={() => setSelectedCourse(course)}
               >
                 <div className="mb-3 text-4xl">{course.emoji}</div>
-                <h3 className="text-lg font-bold text-gray-900 group-hover:text-indigo-600">
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-indigo-600">
                   {isUk ? course.titleUk : course.titleEn}
                 </h3>
                 <p className="mt-1 text-sm text-gray-500">
@@ -396,7 +396,7 @@ export function SkillUpDemo({ lang }: { lang: string }) {
           onClick={() => setSelectedCourse(null)}
         >
           <div
-            className="max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-2xl bg-white p-8 shadow-2xl"
+            className="max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-2xl bg-white dark:bg-neutral-800 p-8 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-start justify-between">
@@ -411,7 +411,7 @@ export function SkillUpDemo({ lang }: { lang: string }) {
               </div>
               <button
                 onClick={() => setSelectedCourse(null)}
-                className="shrink-0 text-2xl text-gray-400 hover:text-gray-700"
+                className="shrink-0 text-2xl text-gray-400 dark:text-neutral-500 hover:text-gray-700"
               >
                 ✕
               </button>
@@ -510,7 +510,7 @@ export function SkillUpDemo({ lang }: { lang: string }) {
                   className={`rounded-xl px-6 py-3 text-sm font-medium transition ${
                     pathGoal === g.id
                       ? "bg-indigo-600 text-white shadow"
-                      : "bg-white text-gray-700 hover:bg-indigo-100"
+                      : "bg-white text-gray-700 dark:text-neutral-300 hover:bg-indigo-100"
                   }`}
                 >
                   {g.emoji} {isUk ? g.uk : g.en}
@@ -533,7 +533,7 @@ export function SkillUpDemo({ lang }: { lang: string }) {
                     className={`rounded-xl px-6 py-3 text-sm font-medium transition ${
                       pathField === f.id
                         ? "bg-indigo-600 text-white shadow"
-                        : "bg-white text-gray-700 hover:bg-indigo-100"
+                        : "bg-white text-gray-700 dark:text-neutral-300 hover:bg-indigo-100"
                     }`}
                   >
                     {f.emoji} {isUk ? f.uk : f.en}
@@ -593,8 +593,8 @@ export function SkillUpDemo({ lang }: { lang: string }) {
               key={plan.id}
               className={`rounded-2xl border-2 p-8 text-center transition ${
                 plan.highlight
-                  ? "border-indigo-600 bg-white shadow-xl"
-                  : "border-gray-100 bg-white shadow-sm"
+                  ? "border-indigo-600 bg-white dark:bg-neutral-800 shadow-xl"
+                  : "border-gray-100 dark:border-neutral-700 bg-white dark:bg-neutral-800 shadow-sm"
               }`}
             >
               {plan.highlight && (
@@ -644,7 +644,7 @@ export function SkillUpDemo({ lang }: { lang: string }) {
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {INSTRUCTORS.map((inst) => (
-              <div key={inst.nameEn} className="rounded-2xl border border-gray-100 bg-gray-50 p-6 text-center shadow-sm">
+              <div key={inst.nameEn} className="rounded-2xl border border-gray-100 dark:border-neutral-700 bg-gray-50 dark:bg-neutral-900 p-6 text-center shadow-sm">
                 <span className="text-5xl">{inst.emoji}</span>
                 <h3 className="mt-3 text-lg font-bold text-gray-900">
                   {isUk ? inst.nameUk : inst.nameEn}
@@ -700,7 +700,7 @@ export function SkillUpDemo({ lang }: { lang: string }) {
             {isUk ? "Корисні статті, знижки та нові курси — прямо у вашу пошту" : "Useful articles, discounts, and new courses — straight to your inbox"}
           </p>
           {!newsletterSent ? (
-            <div className="mx-auto mt-6 flex max-w-md overflow-hidden rounded-xl border border-gray-200 bg-gray-50 shadow-sm">
+            <div className="mx-auto mt-6 flex max-w-md overflow-hidden rounded-xl border border-gray-200 dark:border-neutral-700 bg-gray-50 dark:bg-neutral-900 shadow-sm">
               <input
                 type="email"
                 value={newsletterEmail}
@@ -724,7 +724,7 @@ export function SkillUpDemo({ lang }: { lang: string }) {
       </section>
 
       {/* ── Footer ── */}
-      <footer className="border-t border-gray-100 bg-gray-900 px-4 py-12 text-gray-400">
+      <footer className="border-t border-gray-100 dark:border-neutral-700 bg-gray-900 px-4 py-12 text-gray-400">
         <div className="mx-auto grid max-w-6xl gap-8 sm:grid-cols-4">
           <div>
             <h4 className="mb-3 text-sm font-bold uppercase text-white">

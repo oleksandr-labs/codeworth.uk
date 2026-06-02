@@ -225,7 +225,7 @@ export function EspressoBarDemo({ lang }: { lang: string }) {
                 {isUk ? "Де ми сьогодні" : "Where We Are Today"}
               </h2>
             </div>
-            <div className="text-sm text-gray-400 max-w-xs text-right">
+            <div className="text-sm text-gray-400 dark:text-neutral-500 max-w-xs text-right">
               {isUk
                 ? "Підпишіться на Telegram або email, щоб отримувати розклад щотижня"
                 : "Subscribe via Telegram or email to get the weekly schedule"}
@@ -244,7 +244,7 @@ export function EspressoBarDemo({ lang }: { lang: string }) {
                     ? "bg-[#FDE047] text-[#111111]"
                     : day.status === "today"
                     ? "bg-[#222] text-[#FDE047] border border-[#FDE047]"
-                    : "bg-[#1A1A1A] text-gray-400 hover:bg-[#222] hover:text-white",
+                    : "bg-[#1A1A1A] text-gray-400 dark:text-neutral-500 hover:bg-[#222] hover:text-white",
                 ].join(" ")}
               >
                 {isUk ? day.dayUk : day.dayEn}
@@ -267,7 +267,7 @@ export function EspressoBarDemo({ lang }: { lang: string }) {
                 <div className="text-xl font-bold">
                   {isUk ? todayEntry.locationUk : todayEntry.locationEn}
                 </div>
-                <div className="text-gray-400 mt-1">{todayEntry.time}</div>
+                <div className="text-gray-400 dark:text-neutral-500 mt-1">{todayEntry.time}</div>
               </div>
               {todayEntry.status === "today" && (
                 <div className="flex items-center gap-2 bg-[#FDE047] text-[#111111] px-4 py-2 font-bold text-sm shrink-0">
@@ -320,7 +320,7 @@ export function EspressoBarDemo({ lang }: { lang: string }) {
                           {isUk ? "Сьогодні" : "Today"}
                         </span>
                       ) : (
-                        <span className="text-gray-500 text-xs uppercase">
+                        <span className="text-gray-500 dark:text-neutral-400 text-xs uppercase">
                           {isUk ? "Заплановано" : "Upcoming"}
                         </span>
                       )}
@@ -370,7 +370,7 @@ export function EspressoBarDemo({ lang }: { lang: string }) {
                   "px-5 py-2 text-sm font-bold uppercase tracking-wide transition-colors",
                   activeTab === tab.key
                     ? "bg-[#FDE047] text-[#111111]"
-                    : "bg-[#1A1A1A] text-gray-400 hover:text-white hover:bg-[#222]",
+                    : "bg-[#1A1A1A] text-gray-400 dark:text-neutral-500 hover:text-white hover:bg-[#222]",
                 ].join(" ")}
               >
                 {isUk ? tab.uk : tab.en}
@@ -389,7 +389,7 @@ export function EspressoBarDemo({ lang }: { lang: string }) {
                   <div className="font-bold text-white text-base">
                     {isUk ? item.nameUk : item.nameEn}
                   </div>
-                  <div className="text-gray-400 text-sm mt-1">
+                  <div className="text-gray-400 dark:text-neutral-500 text-sm mt-1">
                     {isUk ? item.descUk : item.descEn}
                   </div>
                 </div>
@@ -417,7 +417,7 @@ export function EspressoBarDemo({ lang }: { lang: string }) {
           <h2 className="text-3xl sm:text-4xl font-black uppercase mt-1 mb-2">
             {isUk ? "Поп-ап для подій" : "Pop-Up for Events"}
           </h2>
-          <p className="text-gray-400 mb-10 max-w-xl">
+          <p className="text-gray-400 dark:text-neutral-500 mb-10 max-w-xl">
             {isUk
               ? "Ми привозимо все необхідне: баристу, машину, обладнання. Ваші гості отримують кав'ярню преміум-класу будь-де."
               : "We bring everything: barista, machine, equipment. Your guests get a premium coffee experience anywhere."}
@@ -581,7 +581,7 @@ export function EspressoBarDemo({ lang }: { lang: string }) {
                     placeholder={isUk ? "Особливі вимоги, меню, брендинг..." : "Special requirements, menu, branding..."}
                     value={eventFormData.notes}
                     onChange={(e) => handleFormChange("notes", e.target.value)}
-                    className="w-full bg-[#111111] border border-[#333] text-white px-4 py-3 text-sm focus:border-[#FDE047] outline-none placeholder:text-gray-600 resize-none"
+                    className="w-full bg-[#111111] border border-[#333] text-white px-4 py-3 text-sm focus:border-[#FDE047] outline-none placeholder:text-gray-600 dark:text-neutral-300 resize-none"
                   />
                 </div>
 
@@ -655,7 +655,7 @@ export function EspressoBarDemo({ lang }: { lang: string }) {
           <h2 className="text-3xl sm:text-4xl font-black uppercase mt-1 mb-4">
             {isUk ? "Люди та кава" : "People & Coffee"}
           </h2>
-          <p className="text-gray-400 max-w-2xl mb-12 leading-relaxed">
+          <p className="text-gray-400 dark:text-neutral-500 max-w-2xl mb-12 leading-relaxed">
             {isUk
               ? "Ми починали як одна кавова точка на Подолі. Сьогодні наш трак об'їжджає Київ щодня, а наші баристи працювали з чемпіонами бариста з усього світу. Зерна ми купуємо напряму у фермерів Ефіопії, Колумбії та Гватемали."
               : "We started as a single coffee spot in Podil. Today our truck covers Kyiv daily, and our baristas have trained with barista champions from around the world. We source beans directly from farms in Ethiopia, Colombia, and Guatemala."}
@@ -681,7 +681,7 @@ export function EspressoBarDemo({ lang }: { lang: string }) {
                 <div className="text-[#FDE047] text-xs font-bold uppercase tracking-wide mb-3">
                   {isUk ? member.roleUk : member.roleEn}
                 </div>
-                <div className="text-gray-400 text-sm leading-relaxed">
+                <div className="text-gray-400 dark:text-neutral-500 text-sm leading-relaxed">
                   {isUk ? member.bioUk : member.bioEn}
                 </div>
               </div>

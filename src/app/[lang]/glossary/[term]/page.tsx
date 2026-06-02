@@ -153,7 +153,7 @@ export default async function GlossaryTermPage({
               {/* Full description */}
               <div className="prose prose-lg max-w-none mb-10">
                 {term.fullDescription.split("\n\n").map((para, i) => (
-                  <p key={i} className="text-gray-700 leading-relaxed mb-4"
+                  <p key={i} className="text-gray-700 dark:text-neutral-300 leading-relaxed mb-4"
                     dangerouslySetInnerHTML={{
                       __html: para
                         .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
@@ -176,13 +176,13 @@ export default async function GlossaryTermPage({
 
               {/* How Codeworth applies */}
               {term.relatedService && SERVICE_NAMES[term.relatedService] && (
-                <div className="bg-gray-50 border border-gray-200 rounded-xl p-5 mb-10">
-                  <h3 className="font-semibold text-gray-800 mb-2">
+                <div className="bg-gray-50 dark:bg-neutral-900 border border-gray-200 dark:border-neutral-700 rounded-xl p-5 mb-10">
+                  <h3 className="font-semibold text-gray-800 dark:text-neutral-200 mb-2">
                     {isUk
                       ? `Як Codeworth застосовує ${term.termUk}`
                       : `How Codeworth applies ${term.termEn}`}
                   </h3>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-gray-600 dark:text-neutral-300 mb-4">
                     {isUk
                       ? `Codeworth використовує ${term.termUk} у послузі «${SERVICE_NAMES[term.relatedService].uk}». Хочете дізнатись більше або замовити — звертайтесь до нас.`
                       : `Codeworth applies ${term.termEn} in the "${SERVICE_NAMES[term.relatedService].en}" service. Want to learn more or order — contact us.`}
@@ -206,7 +206,7 @@ export default async function GlossaryTermPage({
                       {isUk ? "Читайте детальніше у блозі" : "Read more in our blog"}
                     </span>
                   </div>
-                  <p className="text-gray-700 mb-3 text-sm leading-relaxed">
+                  <p className="text-gray-700 dark:text-neutral-300 mb-3 text-sm leading-relaxed">
                     {relatedBlogPost.excerpt}
                   </p>
                   <Link
@@ -222,7 +222,7 @@ export default async function GlossaryTermPage({
               {/* Related terms */}
               {relatedTerms.length > 0 && (
                 <div className="mb-10">
-                  <h3 className="font-semibold text-gray-800 mb-4">
+                  <h3 className="font-semibold text-gray-800 dark:text-neutral-200 mb-4">
                     {isUk ? "Пов'язані терміни" : "Related Terms"}
                   </h3>
                   <div className="flex flex-wrap gap-2">
@@ -230,7 +230,7 @@ export default async function GlossaryTermPage({
                       <Link
                         key={rt.slug}
                         href={`/${lang}/glossary/${rt.slug}`}
-                        className="inline-flex items-center gap-1 bg-gray-100 hover:bg-indigo-100 text-gray-700 hover:text-indigo-700 px-3 py-2 rounded-lg text-sm font-medium transition-colors"
+                        className="inline-flex items-center gap-1 bg-gray-100 dark:bg-neutral-800 hover:bg-indigo-100 text-gray-700 dark:text-neutral-300 hover:text-indigo-700 px-3 py-2 rounded-lg text-sm font-medium transition-colors"
                       >
                         {rt.termUk}
                         <ArrowRight className="w-3 h-3" />
@@ -244,7 +244,7 @@ export default async function GlossaryTermPage({
         </section>
 
         {/* Back to glossary + CTA */}
-        <section className="py-12 bg-gray-50 border-t">
+        <section className="py-12 bg-gray-50 dark:bg-neutral-900 border-t">
           <Container>
             <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
               <Link

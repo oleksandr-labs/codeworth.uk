@@ -50,10 +50,10 @@ function CompareContent() {
             <Container>
               <div className="max-w-lg mx-auto text-center">
                 <p className="text-6xl mb-6">⚖️</p>
-                <h1 className="text-3xl font-heading font-extrabold text-neutral-900 mb-4">
+                <h1 className="text-3xl font-heading font-extrabold text-neutral-900 dark:text-white mb-4">
                   {isUk ? "Оберіть мінімум 2 рішення" : "Select at least 2 solutions"}
                 </h1>
-                <p className="text-neutral-500 mb-8">
+                <p className="text-neutral-500 dark:text-neutral-400 mb-8">
                   {isUk
                     ? "Для порівняння потрібно обрати 2–3 нішевих рішення з каталогу."
                     : "To compare, select 2–3 niche solutions from the catalog."}
@@ -92,7 +92,7 @@ function CompareContent() {
             >
               <ArrowLeft className="w-4 h-4" /> {isUk ? "Назад до каталогу" : "Back to Catalog"}
             </Link>
-            <h1 className="text-4xl font-heading font-extrabold text-neutral-900 mb-2">
+            <h1 className="text-4xl font-heading font-extrabold text-neutral-900 dark:text-white mb-2">
               {isUk ? "Порівняння рішень" : "Solution Comparison"}
             </h1>
             <p className="text-neutral-500">
@@ -104,22 +104,22 @@ function CompareContent() {
         </section>
 
         {/* Comparison table */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-white dark:bg-neutral-950">
           <Container>
             <div className="overflow-x-auto">
               <table className="w-full min-w-[640px]">
                 <thead>
                   <tr>
-                    <th className="text-left p-4 bg-neutral-50 rounded-tl-xl font-heading font-bold text-neutral-600 text-sm w-48">
+                    <th className="text-left p-4 bg-neutral-50 dark:bg-neutral-900 rounded-tl-xl font-heading font-bold text-neutral-600 dark:text-neutral-300 text-sm w-48">
                       {isUk ? "Параметр" : "Parameter"}
                     </th>
                     {niches.map((n) => (
-                      <th key={n.slug} className="p-4 bg-neutral-50 text-center last:rounded-tr-xl">
+                      <th key={n.slug} className="p-4 bg-neutral-50 dark:bg-neutral-900 text-center last:rounded-tr-xl">
                         <div className={`w-14 h-14 rounded-2xl bg-linear-to-br ${n.gradient} flex items-center justify-center text-2xl mx-auto mb-3`}>
                           {n.emoji}
                         </div>
-                        <div className="font-heading font-bold text-neutral-900 text-sm">{n.title}</div>
-                        <div className="text-xs text-neutral-500 mt-1">{n.subtitle}</div>
+                        <div className="font-heading font-bold text-neutral-900 dark:text-white text-sm">{n.title}</div>
+                        <div className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">{n.subtitle}</div>
                       </th>
                     ))}
                   </tr>
@@ -187,7 +187,7 @@ function CompareContent() {
                       <td key={n.slug} className="p-4 text-center">
                         <div className="flex flex-wrap justify-center gap-1">
                           {n.tech.slice(0, 5).map((t) => (
-                            <span key={t} className="text-xs px-2 py-0.5 rounded-full bg-neutral-100 text-neutral-600">
+                            <span key={t} className="text-xs px-2 py-0.5 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600">
                               {t}
                             </span>
                           ))}

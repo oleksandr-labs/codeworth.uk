@@ -3,7 +3,7 @@ import { Skeleton } from "@/components/ui/Skeleton";
 
 function BlogCardSkeleton() {
   return (
-    <div className="rounded-2xl border border-neutral-100 bg-white overflow-hidden">
+    <div className="rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white overflow-hidden">
       <Skeleton className="h-48 w-full rounded-none" />
       <div className="p-6 space-y-3">
         <div className="flex gap-2 items-center">
@@ -26,7 +26,7 @@ export default function BlogLoading() {
   return (
     <main className="flex-1">
       {/* Hero skeleton */}
-      <section className="py-16 bg-neutral-50 border-b border-neutral-100">
+      <section className="py-16 bg-neutral-50 dark:bg-neutral-900 border-b border-neutral-100">
         <Container>
           <Skeleton className="h-4 w-32 mb-4" />
           <Skeleton className="h-10 w-72 mb-3" />
@@ -35,7 +35,7 @@ export default function BlogLoading() {
       </section>
 
       {/* Filter tabs skeleton */}
-      <section className="py-6 border-b border-neutral-100 bg-white sticky top-16 z-10">
+      <section className="py-6 border-b border-neutral-100 dark:border-neutral-700 bg-white sticky top-16 z-10">
         <Container>
           <div className="flex gap-2 overflow-hidden">
             {Array.from({ length: 7 }).map((_, i) => (
@@ -48,7 +48,7 @@ export default function BlogLoading() {
       {/* Featured post skeleton */}
       <section className="py-10">
         <Container>
-          <div className="rounded-3xl overflow-hidden border border-neutral-100 bg-white mb-12">
+          <div className="rounded-3xl overflow-hidden border border-neutral-100 dark:border-neutral-700 bg-white mb-12">
             <div className="grid md:grid-cols-2 gap-0">
               <Skeleton className="h-72 md:h-full rounded-none" />
               <div className="p-8 space-y-4">

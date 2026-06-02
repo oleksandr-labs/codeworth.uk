@@ -157,7 +157,7 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
           <Container className="relative">
             <div className="max-w-4xl mx-auto">
               {/* Breadcrumb */}
-              <nav className="flex items-center gap-2 text-sm text-neutral-500 mb-8">
+              <nav className="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400 mb-8">
                 <Link href={`/${lang}`} className="hover:text-white transition-colors">{isUk ? "Головна" : "Home"}</Link>
                 <span>/</span>
                 <Link href={`/${lang}/location`} className="hover:text-white transition-colors">{isUk ? "Міста" : "Cities"}</Link>
@@ -213,7 +213,7 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
         </section>
 
         {/* Services in city */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-white dark:bg-neutral-950">
           <Container>
             <div className="max-w-2xl mb-12">
               <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
@@ -225,12 +225,12 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {SERVICES.map((s) => (
-                <div key={s.titleUk} className="rounded-2xl border border-neutral-100 p-6 hover:shadow-lg hover:shadow-neutral-100 transition-shadow">
+                <div key={s.titleUk} className="rounded-2xl border border-neutral-100 dark:border-neutral-700 p-6 hover:shadow-lg hover:shadow-neutral-100 transition-shadow">
                   <span className="text-3xl mb-4 block">{s.icon}</span>
-                  <h3 className="font-heading font-bold text-neutral-900 mb-2">
+                  <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-2">
                     {isUk ? s.titleUk : s.titleEn}
                   </h3>
-                  <p className="text-sm text-neutral-500 leading-relaxed">
+                  <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">
                     {isUk ? s.descUk : s.descEn}
                   </p>
                 </div>
@@ -240,10 +240,10 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
         </section>
 
         {/* Why us */}
-        <section className="py-20 bg-neutral-50">
+        <section className="py-20 bg-neutral-50 dark:bg-neutral-900 ">
           <Container>
             <div className="text-center max-w-2xl mx-auto mb-14">
-              <h2 className="text-3xl lg:text-4xl font-heading font-extrabold text-neutral-900 mb-4">
+              <h2 className="text-3xl lg:text-4xl font-heading font-extrabold text-neutral-900 dark:text-white mb-4">
                 {isUk ? `Чому обирають Codeworth у ${cityName}` : `Why businesses in ${cityName} choose Codeworth`}
               </h2>
               <p className="text-neutral-500">
@@ -254,10 +254,10 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {WHY_US.map((item) => (
-                <div key={item.labelUk} className="flex gap-4 p-5 rounded-2xl bg-white border border-neutral-100">
+                <div key={item.labelUk} className="flex gap-4 p-5 rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-100">
                   <span className="text-2xl shrink-0">{item.icon}</span>
                   <div>
-                    <div className="font-heading font-bold text-neutral-900 mb-1">
+                    <div className="font-heading font-bold text-neutral-900 dark:text-white mb-1">
                       {isUk ? item.labelUk : item.labelEn}
                     </div>
                     <p className="text-sm text-neutral-500">{isUk ? item.descUk : item.descEn}</p>
@@ -269,10 +269,10 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
         </section>
 
         {/* Process */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-white dark:bg-neutral-950">
           <Container>
             <div className="text-center max-w-2xl mx-auto mb-14">
-              <h2 className="text-3xl font-heading font-extrabold text-neutral-900 mb-4">
+              <h2 className="text-3xl font-heading font-extrabold text-neutral-900 dark:text-white mb-4">
                 {isUk ? "Як ми працюємо" : "How we work"}
               </h2>
             </div>
@@ -285,7 +285,7 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
               ].map((step) => (
                 <div key={step.num} className="relative">
                   <div className="text-6xl font-heading font-extrabold text-neutral-100 mb-3">{step.num}</div>
-                  <h3 className="font-heading font-bold text-neutral-900 mb-2">{isUk ? step.uk : step.en}</h3>
+                  <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-2">{isUk ? step.uk : step.en}</h3>
                   <p className="text-sm text-neutral-500">{isUk ? step.dUk : step.dEn}</p>
                 </div>
               ))}
@@ -295,19 +295,19 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
 
         {/* FAQ */}
         {city.faq.length > 0 && (
-          <section className="py-20 bg-neutral-50">
+          <section className="py-20 bg-neutral-50 dark:bg-neutral-900 ">
             <Container>
               <div className="max-w-3xl mx-auto">
-                <h2 className="text-2xl font-heading font-extrabold text-neutral-900 mb-10 text-center">
+                <h2 className="text-2xl font-heading font-extrabold text-neutral-900 dark:text-white mb-10 text-center">
                   {isUk ? `Часті питання — веб-розробка у ${cityName}` : `FAQ — Web development in ${cityName}`}
                 </h2>
                 <div className="space-y-4">
                   {city.faq.map((item) => (
-                    <div key={item.q} className="rounded-2xl bg-white border border-neutral-100 p-6">
-                      <h3 className="font-heading font-bold text-neutral-900 mb-2">
+                    <div key={item.q} className="rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 p-6">
+                      <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-2">
                         {isUk ? item.q : item.qEn}
                       </h3>
-                      <p className="text-neutral-600 text-sm leading-relaxed">{isUk ? item.a : item.aEn}</p>
+                      <p className="text-neutral-600 dark:text-neutral-300 text-sm leading-relaxed">{isUk ? item.a : item.aEn}</p>
                     </div>
                   ))}
                 </div>
@@ -317,9 +317,9 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
         )}
 
         {/* Other cities */}
-        <section className="py-16 bg-white border-t border-neutral-100">
+        <section className="py-16 bg-white dark:bg-neutral-800 border-t border-neutral-100">
           <Container>
-            <h2 className="text-xl font-heading font-bold text-neutral-900 mb-6">
+            <h2 className="text-xl font-heading font-bold text-neutral-900 dark:text-white mb-6">
               {isUk ? "Також працюємо у містах:" : "We also serve cities:"}
             </h2>
             <div className="flex flex-wrap gap-3">
@@ -327,7 +327,7 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
                 <Link
                   key={c.slug}
                   href={`/${lang}/location/${c.slug}`}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-neutral-200 text-sm text-neutral-700 hover:border-indigo-300 hover:bg-indigo-50 hover:text-indigo-700 transition-all"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-neutral-200 dark:border-neutral-700 text-sm text-neutral-700 dark:text-neutral-300 hover:border-indigo-300 hover:bg-indigo-50 hover:text-indigo-700 transition-all"
                 >
                   <MapPin className="w-3 h-3" /> {isUk ? c.nameUk : c.nameEn}
                 </Link>

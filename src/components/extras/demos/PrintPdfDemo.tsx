@@ -40,7 +40,7 @@ export function PrintPdfDemo({ isUk }: Props) {
               className={`flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                 type === t.id
                   ? "bg-indigo-600 text-white shadow-sm"
-                  : "bg-neutral-100 text-neutral-600 hover:bg-indigo-50"
+                  : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-indigo-50"
               }`}
             >
               <Icon className="w-4 h-4" />
@@ -51,7 +51,7 @@ export function PrintPdfDemo({ isUk }: Props) {
         <div className="ml-auto flex gap-2">
           <button
             onClick={handlePrint}
-            className="flex items-center gap-1.5 px-4 py-2 rounded-lg border border-neutral-200 text-sm font-medium text-neutral-700 hover:bg-neutral-50 transition-colors"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-lg border border-neutral-200 dark:border-neutral-700 text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-800 dark:bg-neutral-900 transition-colors"
           >
             <Printer className="w-4 h-4" />
             {isUk ? "Друк" : "Print"}
@@ -76,7 +76,7 @@ export function PrintPdfDemo({ isUk }: Props) {
       )}
 
       {/* Preview */}
-      <div className="rounded-2xl border-2 border-dashed border-neutral-300 bg-white p-8 max-w-2xl mx-auto print:border-0 print:p-0 print:max-w-none">
+      <div className="rounded-2xl border-2 border-dashed border-neutral-300 bg-white dark:bg-neutral-800 p-8 max-w-2xl mx-auto print:border-0 print:p-0 print:max-w-none">
         {type === "invoice" && <InvoicePreview isUk={isUk} />}
         {type === "case" && <CasePreview isUk={isUk} />}
         {type === "cv" && <CVPreview isUk={isUk} />}
@@ -91,7 +91,7 @@ function InvoicePreview({ isUk }: { isUk: boolean }) {
       <div className="flex justify-between border-b pb-4">
         <div>
           <h3 className="text-2xl font-bold text-neutral-900">{isUk ? "Рахунок-фактура №2026-001" : "Invoice #2026-001"}</h3>
-          <p className="text-sm text-neutral-500 mt-1">{isUk ? "Дата:" : "Date:"} 2026-05-04</p>
+          <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{isUk ? "Дата:" : "Date:"} 2026-05-04</p>
         </div>
         <div className="text-right">
           <div className="font-bold text-indigo-600">Codeworth</div>
@@ -99,7 +99,7 @@ function InvoicePreview({ isUk }: { isUk: boolean }) {
         </div>
       </div>
       <table className="w-full text-sm">
-        <thead className="text-neutral-500 text-xs uppercase">
+        <thead className="text-neutral-500 dark:text-neutral-400 text-xs uppercase">
           <tr><th className="text-left pb-2">{isUk ? "Послуга" : "Service"}</th><th className="text-right pb-2">{isUk ? "Сума" : "Amount"}</th></tr>
         </thead>
         <tbody>
@@ -135,11 +135,11 @@ function CVPreview({ isUk }: { isUk: boolean }) {
         <p className="text-sm text-neutral-500">{isUk ? "Lead Developer · Codeworth" : "Lead Developer · Codeworth"}</p>
       </div>
       <div>
-        <h4 className="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-2">{isUk ? "Досвід" : "Experience"}</h4>
+        <h4 className="text-xs uppercase tracking-wider text-neutral-500 dark:text-neutral-400 font-semibold mb-2">{isUk ? "Досвід" : "Experience"}</h4>
         <p className="text-sm leading-relaxed text-neutral-600">10+ years building Next.js / React apps. Specialises in SSG, performance, SEO architecture. 50+ shipped projects.</p>
       </div>
       <div>
-        <h4 className="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-2">{isUk ? "Технології" : "Stack"}</h4>
+        <h4 className="text-xs uppercase tracking-wider text-neutral-500 dark:text-neutral-400 font-semibold mb-2">{isUk ? "Технології" : "Stack"}</h4>
         <p className="text-sm text-neutral-600">Next.js · React · TypeScript · Tailwind · Node.js · PostgreSQL · Prisma</p>
       </div>
     </div>

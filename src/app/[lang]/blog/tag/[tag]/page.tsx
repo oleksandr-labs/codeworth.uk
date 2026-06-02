@@ -117,7 +117,7 @@ export default async function BlogTagPage({ params }: Props) {
           </Container>
         </section>
 
-        <section className="py-16 bg-neutral-50">
+        <section className="py-16 bg-neutral-50 dark:bg-neutral-900 ">
           <Container>
             <div className="grid lg:grid-cols-4 gap-10">
               {/* Posts grid */}
@@ -127,7 +127,7 @@ export default async function BlogTagPage({ params }: Props) {
                     <Link
                       key={post.slug}
                       href={`/${lang}/blog/${post.slug}`}
-                      className="group bg-white rounded-2xl border border-neutral-100 overflow-hidden hover:shadow-lg hover:border-indigo-100 transition-all duration-300"
+                      className="group bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-100 dark:border-neutral-700 overflow-hidden hover:shadow-lg hover:border-indigo-100 transition-all duration-300"
                     >
                       {/* Cover */}
                       <div className={`h-36 bg-linear-to-br ${post.color} flex items-center justify-center`}>
@@ -138,10 +138,10 @@ export default async function BlogTagPage({ params }: Props) {
                         <span className="inline-block text-xs font-semibold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-full mb-3">
                           {post.category}
                         </span>
-                        <h2 className="font-heading font-bold text-neutral-900 group-hover:text-indigo-700 transition-colors leading-snug mb-2 line-clamp-2">
+                        <h2 className="font-heading font-bold text-neutral-900 dark:text-white group-hover:text-indigo-700 transition-colors leading-snug mb-2 line-clamp-2">
                           {post.title}
                         </h2>
-                        <p className="text-sm text-neutral-500 leading-relaxed line-clamp-2 mb-4">
+                        <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed line-clamp-2 mb-4">
                           {post.excerpt}
                         </p>
                         <div className="flex items-center gap-4 text-xs text-neutral-400 pt-3 border-t border-neutral-100">
@@ -172,8 +172,8 @@ export default async function BlogTagPage({ params }: Props) {
 
               {/* Sidebar — all tags */}
               <aside className="lg:col-span-1">
-                <div className="bg-white rounded-2xl border border-neutral-100 p-5 sticky top-24">
-                  <h3 className="font-heading font-bold text-neutral-900 mb-4 text-sm uppercase tracking-wider">
+                <div className="bg-white rounded-2xl border border-neutral-100 dark:border-neutral-700 p-5 sticky top-24">
+                  <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-4 text-sm uppercase tracking-wider">
                     {isUk ? "Всі теги" : "All Tags"}
                   </h3>
                   <div className="flex flex-wrap gap-2">
@@ -184,7 +184,7 @@ export default async function BlogTagPage({ params }: Props) {
                         className={`text-xs px-3 py-1.5 rounded-full border transition-colors ${
                           t === decoded
                             ? "bg-indigo-600 text-white border-indigo-600"
-                            : "bg-white text-neutral-600 border-neutral-200 hover:border-indigo-300 hover:text-indigo-600"
+                            : "bg-white text-neutral-600 dark:text-neutral-300 border-neutral-200 dark:border-neutral-700 hover:border-indigo-300 hover:text-indigo-600"
                         }`}
                       >
                         #{t}

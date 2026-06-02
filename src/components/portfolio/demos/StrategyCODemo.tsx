@@ -456,7 +456,7 @@ export function StrategyCODemo({ lang }: { lang: string }) {
 
             {/* Client Logos Row */}
             <div>
-              <p className="text-gray-500 text-xs uppercase tracking-widest mb-3">
+              <p className="text-gray-500 dark:text-neutral-400 text-xs uppercase tracking-widest mb-3">
                 {isUk ? "Нам довіряють" : "Trusted by"}
               </p>
               <div className="flex flex-wrap gap-3">
@@ -487,17 +487,17 @@ export function StrategyCODemo({ lang }: { lang: string }) {
               <div className="mt-4 flex justify-center gap-4 text-center">
                 <div>
                   <div className="text-white font-bold text-lg">140+</div>
-                  <div className="text-gray-400 text-xs">{isUk ? "Проектів" : "Projects"}</div>
+                  <div className="text-gray-400 dark:text-neutral-500 text-xs">{isUk ? "Проектів" : "Projects"}</div>
                 </div>
                 <div className="w-px bg-white/20" />
                 <div>
                   <div className="text-white font-bold text-lg">18</div>
-                  <div className="text-gray-400 text-xs">{isUk ? "Країн" : "Countries"}</div>
+                  <div className="text-gray-400 dark:text-neutral-500 text-xs">{isUk ? "Країн" : "Countries"}</div>
                 </div>
                 <div className="w-px bg-white/20" />
                 <div>
                   <div className="text-white font-bold text-lg">96%</div>
-                  <div className="text-gray-400 text-xs">{isUk ? "Задоволені" : "Satisfied"}</div>
+                  <div className="text-gray-400 dark:text-neutral-500 text-xs">{isUk ? "Задоволені" : "Satisfied"}</div>
                 </div>
               </div>
             </div>
@@ -520,13 +520,13 @@ export function StrategyCODemo({ lang }: { lang: string }) {
             {practices.map((p, i) => (
               <div
                 key={i}
-                className="bg-white rounded-2xl p-6 border border-gray-200 hover:border-[#C5A028] hover:shadow-lg transition-all group"
+                className="bg-white rounded-2xl p-6 border border-gray-200 dark:border-neutral-700 hover:border-[#C5A028] hover:shadow-lg transition-all group"
               >
                 <div className="text-3xl mb-4">{p.icon}</div>
                 <h3 className="font-serif text-xl font-bold text-[#0f2744] mb-2 group-hover:text-[#C5A028] transition-colors">
                   {p.title}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">{p.desc}</p>
+                <p className="text-gray-600 dark:text-neutral-300 text-sm leading-relaxed mb-4">{p.desc}</p>
                 <ul className="space-y-1 mb-5">
                   {p.deliverables.map((d, j) => (
                     <li key={j} className="flex items-start gap-2 text-xs text-gray-500">
@@ -554,7 +554,7 @@ export function StrategyCODemo({ lang }: { lang: string }) {
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
               {isUk ? "Діагностика Вашого Бізнесу" : "Business Health Diagnostic"}
             </h2>
-            <p className="text-gray-400 mt-3">
+            <p className="text-gray-400 dark:text-neutral-500 mt-3">
               {isUk
                 ? "Дайте відповідь на 8 запитань — отримайте зону ризику та 3 пріоритетних дії."
                 : "Answer 8 questions and receive your risk zone and 3 priority actions."}
@@ -602,7 +602,7 @@ export function StrategyCODemo({ lang }: { lang: string }) {
               >
                 {isUk ? "Отримати Результат" : "Get My Results"}
               </button>
-              <p className="text-gray-500 text-xs text-center mt-3">
+              <p className="text-gray-500 dark:text-neutral-400 text-xs text-center mt-3">
                 {isUk
                   ? `Відповіді надано: ${Object.keys(diagAnswers).length} / ${diagQuestions.length}`
                   : `Answered: ${Object.keys(diagAnswers).length} / ${diagQuestions.length}`}
@@ -664,7 +664,7 @@ export function StrategyCODemo({ lang }: { lang: string }) {
                 className={`px-4 py-1.5 rounded-full text-sm font-semibold border transition-colors ${
                   caseFilter === f
                     ? "bg-[#0f2744] border-[#0f2744] text-white"
-                    : "border-gray-300 text-gray-600 hover:border-[#C5A028]"
+                    : "border-gray-300 text-gray-600 dark:text-neutral-300 hover:border-[#C5A028]"
                 }`}
               >
                 {f}
@@ -674,7 +674,7 @@ export function StrategyCODemo({ lang }: { lang: string }) {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredCases.map((c, i) => (
-              <div key={i} className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow">
+              <div key={i} className="bg-white rounded-2xl overflow-hidden border border-gray-200 dark:border-neutral-700 hover:shadow-lg transition-shadow">
                 <div className="bg-linear-to-br from-[#0f2744] to-[#1E3A5F] px-6 py-5">
                   <span className="text-xs text-[#C5A028] font-semibold uppercase tracking-wider">
                     {c.practice}
@@ -683,16 +683,16 @@ export function StrategyCODemo({ lang }: { lang: string }) {
                 </div>
                 <div className="p-6 space-y-3">
                   <div>
-                    <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                    <span className="text-xs font-semibold text-gray-400 dark:text-neutral-500 uppercase tracking-wider">
                       {isUk ? "Виклик" : "Challenge"}
                     </span>
-                    <p className="text-sm text-gray-700 mt-0.5">{c.challenge}</p>
+                    <p className="text-sm text-gray-700 dark:text-neutral-300 mt-0.5">{c.challenge}</p>
                   </div>
                   <div>
-                    <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                    <span className="text-xs font-semibold text-gray-400 dark:text-neutral-500 uppercase tracking-wider">
                       {isUk ? "Підхід" : "Approach"}
                     </span>
-                    <p className="text-sm text-gray-700 mt-0.5">{c.approach}</p>
+                    <p className="text-sm text-gray-700 dark:text-neutral-300 mt-0.5">{c.approach}</p>
                   </div>
                   <div className="pt-2 border-t border-gray-100">
                     <span className="text-xs font-semibold text-[#C5A028] uppercase tracking-wider">
@@ -708,7 +708,7 @@ export function StrategyCODemo({ lang }: { lang: string }) {
       </section>
 
       {/* ── INSIGHTS ───────────────────────────────────────────────────────── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-neutral-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-end justify-between mb-10">
             <div>
@@ -730,12 +730,12 @@ export function StrategyCODemo({ lang }: { lang: string }) {
                   <span className="bg-[#C5A028]/15 text-[#C5A028] text-xs font-semibold px-3 py-1 rounded-full">
                     {a.category}
                   </span>
-                  <span className="text-gray-400 text-xs">⏱ {a.time}</span>
+                  <span className="text-gray-400 dark:text-neutral-500 text-xs">⏱ {a.time}</span>
                 </div>
                 <h3 className="font-serif text-lg font-bold text-[#0f2744] mb-2 leading-snug">
                   {a.title}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{a.excerpt}</p>
+                <p className="text-gray-600 dark:text-neutral-300 text-sm leading-relaxed">{a.excerpt}</p>
                 <button className="mt-4 text-[#C5A028] text-sm font-semibold hover:text-[#0f2744] transition-colors">
                   {isUk ? "Читати →" : "Read More →"}
                 </button>
@@ -758,7 +758,7 @@ export function StrategyCODemo({ lang }: { lang: string }) {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {team.map((t, i) => (
-              <div key={i} className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-[#C5A028] hover:shadow-lg transition-all">
+              <div key={i} className="bg-white rounded-2xl p-6 text-center border border-gray-100 dark:border-neutral-700 hover:border-[#C5A028] hover:shadow-lg transition-all">
                 <div className="w-16 h-16 bg-linear-to-br from-[#0f2744] to-[#1E3A5F] rounded-full flex items-center justify-center text-white font-serif font-bold text-lg mx-auto mb-4">
                   {t.initials}
                 </div>
@@ -812,7 +812,7 @@ export function StrategyCODemo({ lang }: { lang: string }) {
                   </div>
                   <div className="text-[#C5A028] text-xs font-bold mb-1">{ph.phase}</div>
                   <div className="text-white font-serif font-bold text-sm mb-2">{ph.name}</div>
-                  <p className="text-gray-400 text-xs leading-relaxed">{ph.desc}</p>
+                  <p className="text-gray-400 dark:text-neutral-500 text-xs leading-relaxed">{ph.desc}</p>
                 </div>
               </div>
             ))}
@@ -855,18 +855,18 @@ export function StrategyCODemo({ lang }: { lang: string }) {
               </button>
             </div>
           ) : (
-            <form onSubmit={handleBookSubmit} className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm space-y-5">
+            <form onSubmit={handleBookSubmit} className="bg-white rounded-2xl p-8 border border-gray-200 dark:border-neutral-700 shadow-sm space-y-5">
               <div className="grid sm:grid-cols-3 gap-4">
                 {/* Practice Area */}
                 <div>
-                  <label className="block text-xs font-semibold text-gray-600 mb-1 uppercase tracking-wide">
+                  <label className="block text-xs font-semibold text-gray-600 dark:text-neutral-300 mb-1 uppercase tracking-wide">
                     {isUk ? "Практика" : "Practice Area"}
                   </label>
                   <select
                     value={bookPractice}
                     onChange={(e) => setBookPractice(e.target.value)}
                     required
-                    className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm text-[#0f2744] focus:border-[#C5A028] focus:outline-none"
+                    className="w-full border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 text-sm text-[#0f2744] focus:border-[#C5A028] focus:outline-none"
                   >
                     <option value="">{isUk ? "Оберіть..." : "Select..."}</option>
                     {bookPractices.map((p) => <option key={p} value={p}>{p}</option>)}
@@ -874,14 +874,14 @@ export function StrategyCODemo({ lang }: { lang: string }) {
                 </div>
                 {/* Business Size */}
                 <div>
-                  <label className="block text-xs font-semibold text-gray-600 mb-1 uppercase tracking-wide">
+                  <label className="block text-xs font-semibold text-gray-600 dark:text-neutral-300 mb-1 uppercase tracking-wide">
                     {isUk ? "Розмір бізнесу" : "Business Size"}
                   </label>
                   <select
                     value={bookSize}
                     onChange={(e) => setBookSize(e.target.value)}
                     required
-                    className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm text-[#0f2744] focus:border-[#C5A028] focus:outline-none"
+                    className="w-full border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 text-sm text-[#0f2744] focus:border-[#C5A028] focus:outline-none"
                   >
                     <option value="">{isUk ? "Оберіть..." : "Select..."}</option>
                     {bookSizes.map((s) => <option key={s} value={s}>{s}</option>)}
@@ -889,14 +889,14 @@ export function StrategyCODemo({ lang }: { lang: string }) {
                 </div>
                 {/* Engagement Type */}
                 <div>
-                  <label className="block text-xs font-semibold text-gray-600 mb-1 uppercase tracking-wide">
+                  <label className="block text-xs font-semibold text-gray-600 dark:text-neutral-300 mb-1 uppercase tracking-wide">
                     {isUk ? "Тип залучення" : "Engagement Type"}
                   </label>
                   <select
                     value={bookEngagement}
                     onChange={(e) => setBookEngagement(e.target.value)}
                     required
-                    className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm text-[#0f2744] focus:border-[#C5A028] focus:outline-none"
+                    className="w-full border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 text-sm text-[#0f2744] focus:border-[#C5A028] focus:outline-none"
                   >
                     <option value="">{isUk ? "Оберіть..." : "Select..."}</option>
                     {bookEngagements.map((e) => <option key={e} value={e}>{e}</option>)}
@@ -906,7 +906,7 @@ export function StrategyCODemo({ lang }: { lang: string }) {
 
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-gray-600 mb-1 uppercase tracking-wide">
+                  <label className="block text-xs font-semibold text-gray-600 dark:text-neutral-300 mb-1 uppercase tracking-wide">
                     {isUk ? "Ваше Ім'я" : "Your Name"}
                   </label>
                   <input
@@ -915,11 +915,11 @@ export function StrategyCODemo({ lang }: { lang: string }) {
                     onChange={(e) => setBookName(e.target.value)}
                     required
                     placeholder={isUk ? "Іван Петренко" : "John Smith"}
-                    className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:border-[#C5A028] focus:outline-none"
+                    className="w-full border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 text-sm focus:border-[#C5A028] focus:outline-none"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-gray-600 mb-1 uppercase tracking-wide">
+                  <label className="block text-xs font-semibold text-gray-600 dark:text-neutral-300 mb-1 uppercase tracking-wide">
                     {isUk ? "Компанія" : "Company"}
                   </label>
                   <input
@@ -928,11 +928,11 @@ export function StrategyCODemo({ lang }: { lang: string }) {
                     onChange={(e) => setBookCompany(e.target.value)}
                     required
                     placeholder={isUk ? "ТОВ Альфа" : "Acme Corp"}
-                    className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:border-[#C5A028] focus:outline-none"
+                    className="w-full border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 text-sm focus:border-[#C5A028] focus:outline-none"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-gray-600 mb-1 uppercase tracking-wide">
+                  <label className="block text-xs font-semibold text-gray-600 dark:text-neutral-300 mb-1 uppercase tracking-wide">
                     {isUk ? "Email" : "Email"}
                   </label>
                   <input
@@ -941,11 +941,11 @@ export function StrategyCODemo({ lang }: { lang: string }) {
                     onChange={(e) => setBookEmail(e.target.value)}
                     required
                     placeholder="ceo@company.com"
-                    className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:border-[#C5A028] focus:outline-none"
+                    className="w-full border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 text-sm focus:border-[#C5A028] focus:outline-none"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-gray-600 mb-1 uppercase tracking-wide">
+                  <label className="block text-xs font-semibold text-gray-600 dark:text-neutral-300 mb-1 uppercase tracking-wide">
                     {isUk ? "Телефон" : "Phone"}
                   </label>
                   <input
@@ -953,7 +953,7 @@ export function StrategyCODemo({ lang }: { lang: string }) {
                     value={bookPhone}
                     onChange={(e) => setBookPhone(e.target.value)}
                     placeholder="+380 44 000 0000"
-                    className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:border-[#C5A028] focus:outline-none"
+                    className="w-full border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 text-sm focus:border-[#C5A028] focus:outline-none"
                   />
                 </div>
               </div>
@@ -964,7 +964,7 @@ export function StrategyCODemo({ lang }: { lang: string }) {
               >
                 {isUk ? "Надіслати Запит" : "Submit Request"}
               </button>
-              <p className="text-gray-400 text-xs text-center">
+              <p className="text-gray-400 dark:text-neutral-500 text-xs text-center">
                 {isUk
                   ? "Ми відповідаємо протягом 24 годин. Конфіденційність гарантована."
                   : "We respond within 24 hours. Confidentiality guaranteed."}

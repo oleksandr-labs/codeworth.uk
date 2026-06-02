@@ -97,7 +97,7 @@ export function BeforeAfter({
 
       {/* Drag handle */}
       <button
-        className="absolute top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white shadow-xl flex items-center justify-center ring-2 ring-white/30 focus-visible:outline-none focus-visible:ring-indigo-500 active:scale-95 transition-transform"
+        className="absolute top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white dark:bg-neutral-800 shadow-xl flex items-center justify-center ring-2 ring-white/30 focus-visible:outline-none focus-visible:ring-indigo-500 active:scale-95 transition-transform"
         style={{ left: `${position}%` }}
         onMouseDown={(e) => { e.preventDefault(); dragging.current = true; }}
         onTouchStart={() => {}}

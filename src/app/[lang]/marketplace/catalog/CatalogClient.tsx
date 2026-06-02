@@ -94,7 +94,7 @@ function AddToCartButton({ niche }: { niche: NicheData }) {
       className={`p-1.5 rounded-lg transition-all ${
         inCart
           ? "text-indigo-600 bg-indigo-50"
-          : "text-gray-400 hover:text-indigo-600 hover:bg-indigo-50"
+          : "text-gray-400 dark:text-neutral-500 hover:text-indigo-600 hover:bg-indigo-50"
       }`}
     >
       <ShoppingCart className="w-3.5 h-3.5" />
@@ -167,7 +167,7 @@ function QuickViewModal({ niche, onClose }: { niche: NicheData; onClose: () => v
               { icon: Clock, label: isUk ? "Пакет від" : "Starting at", value: `${niche.priceFrom.toLocaleString("uk-UA")} ₴` },
               { icon: Check, label: isUk ? "Складність" : "Complexity", value: getComplexityLabel(niche.complexity, isUk) },
             ].map(({ icon: Icon, label, value }) => (
-              <div key={label} className="text-center p-3 rounded-xl bg-neutral-50 dark:bg-neutral-800">
+              <div key={label} className="text-center p-3 rounded-xl bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-800">
                 <Icon className="w-4 h-4 text-indigo-500 mx-auto mb-1" />
                 <div className="text-xs text-neutral-400 mb-0.5">{label}</div>
                 <div className="text-sm font-bold text-neutral-900 dark:text-white">{value}</div>
@@ -248,7 +248,7 @@ function ProductCard({
   const lang = useLocale();
   const isUk = lang === "uk";
   return (
-    <div className="group relative bg-white dark:bg-neutral-900 rounded-2xl border border-gray-100 dark:border-neutral-800 overflow-hidden hover:shadow-lg hover:border-indigo-100 dark:hover:border-indigo-900 transition-all duration-300 flex flex-col">
+    <div className="group relative bg-white dark:bg-neutral-900 rounded-2xl border border-gray-100 dark:border-neutral-700 dark:border-neutral-800 overflow-hidden hover:shadow-lg hover:border-indigo-100 dark:hover:border-indigo-900 transition-all duration-300 flex flex-col">
       <Link href={`/${lang}/marketplace/product/${niche.slug}`} className="flex flex-col flex-1">
       {/* Visual header */}
       <div
@@ -299,7 +299,7 @@ function ProductCard({
         </div>
 
         {/* Footer */}
-        <div className="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-neutral-800">
+        <div className="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-neutral-700 dark:border-neutral-800">
           <div>
             <div className="text-xs text-gray-400">{isUk ? "від" : "from"}</div>
             <div className="font-bold text-gray-900 dark:text-white">
@@ -308,7 +308,7 @@ function ProductCard({
           </div>
           <div className="flex items-center gap-1">
             <AddToCartButton niche={niche} />
-            <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-indigo-600 group-hover:translate-x-0.5 transition-all" />
+            <ArrowRight className="w-4 h-4 text-gray-400 dark:text-neutral-500 group-hover:text-indigo-600 group-hover:translate-x-0.5 transition-all" />
           </div>
         </div>
       </div>
@@ -508,7 +508,7 @@ export default function CatalogClient() {
 
   return (
     <>
-    <section className="py-10 bg-neutral-50 dark:bg-neutral-950">
+    <section className="py-10 bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-950">
       <Container>
         {/* Category quick-chips */}
         <div className="flex flex-wrap gap-2 mb-4">
@@ -517,7 +517,7 @@ export default function CatalogClient() {
             className={`text-xs px-3 py-1.5 rounded-full border font-medium transition-colors ${
               !category
                 ? "border-indigo-500 bg-indigo-50 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-400"
-                : "border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-400 hover:border-gray-300 bg-white dark:bg-neutral-900"
+                : "border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-300 dark:text-neutral-400 hover:border-gray-300 bg-white dark:bg-neutral-900"
             }`}
           >
             {isUk ? "Всі" : "All"}
@@ -529,7 +529,7 @@ export default function CatalogClient() {
               className={`text-xs px-3 py-1.5 rounded-full border font-medium transition-colors ${
                 category === cat
                   ? "border-indigo-500 bg-indigo-50 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-400"
-                  : "border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-400 hover:border-gray-300 bg-white dark:bg-neutral-900"
+                  : "border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-300 dark:text-neutral-400 hover:border-gray-300 bg-white dark:bg-neutral-900"
               }`}
             >
               {isUk ? cat : (NICHE_CATEGORY_EN[cat] ?? cat)}
@@ -541,18 +541,18 @@ export default function CatalogClient() {
         <div className="flex flex-wrap items-center gap-3 mb-6">
           {/* Search */}
           <div className="relative flex-1 min-w-56">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 dark:text-neutral-500 pointer-events-none" />
             <input
               type="text"
               value={query}
               onChange={(e) => { setQuery(e.target.value); setAndSync("q", e.target.value); }}
               placeholder={isUk ? "Пошук рішень..." : "Search solutions..."}
-              className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-sm text-neutral-900 dark:text-neutral-100 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:border-indigo-400"
+              className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-sm text-neutral-900 dark:text-neutral-100 placeholder:text-gray-400 dark:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:border-indigo-400"
             />
             {query && (
               <button
                 onClick={() => { setQuery(""); setAndSync("q", ""); }}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-neutral-500 hover:text-gray-600"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -595,7 +595,7 @@ export default function CatalogClient() {
         {showFilters && (
           <>
             {/* Desktop inline panel */}
-            <div className="hidden md:grid md:grid-cols-3 gap-5 bg-white dark:bg-neutral-900 rounded-2xl border border-gray-100 dark:border-neutral-800 p-5 mb-6">
+            <div className="hidden md:grid md:grid-cols-3 gap-5 bg-white dark:bg-neutral-900 rounded-2xl border border-gray-100 dark:border-neutral-700 dark:border-neutral-800 p-5 mb-6">
               {/* Category */}
               <div>
                 <div className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">{isUk ? "Категорія" : "Category"}</div>
@@ -607,7 +607,7 @@ export default function CatalogClient() {
                       className={`text-xs px-3 py-1.5 rounded-full border transition-colors ${
                         category === cat
                           ? "border-indigo-400 bg-indigo-50 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-400"
-                          : "border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-400 hover:border-gray-300"
+                          : "border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-300 dark:text-neutral-400 hover:border-gray-300"
                       }`}
                     >
                       {isUk ? cat : (NICHE_CATEGORY_EN[cat] ?? cat)}
@@ -626,7 +626,7 @@ export default function CatalogClient() {
                       className={`text-xs px-3 py-1.5 rounded-full border transition-colors ${
                         complexity === c.value
                           ? "border-indigo-400 bg-indigo-50 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-400"
-                          : "border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-400 hover:border-gray-300"
+                          : "border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-300 dark:text-neutral-400 hover:border-gray-300"
                       }`}
                     >
                       {c.label}
@@ -645,7 +645,7 @@ export default function CatalogClient() {
                       className={`text-xs px-3 py-1.5 rounded-full border transition-colors ${
                         featureFilter === f.value
                           ? "border-indigo-400 bg-indigo-50 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-400"
-                          : "border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-400 hover:border-gray-300"
+                          : "border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-300 dark:text-neutral-400 hover:border-gray-300"
                       }`}
                     >
                       {isUk ? f.labelUk : f.labelEn}
@@ -664,7 +664,7 @@ export default function CatalogClient() {
                       className={`flex items-center gap-1 text-xs px-3 py-1.5 rounded-full border transition-colors ${
                         minRating === r.value
                           ? "border-amber-400 bg-amber-50 dark:bg-amber-950/50 text-amber-700 dark:text-amber-400"
-                          : "border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-400 hover:border-gray-300"
+                          : "border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-300 dark:text-neutral-400 hover:border-gray-300"
                       }`}
                     >
                       {r.value > 0 && <Star className="w-3 h-3 fill-current" />}
@@ -684,7 +684,7 @@ export default function CatalogClient() {
                   onChange={(e) => { setMaxPrice(Number(e.target.value)); setAndSync("price", e.target.value); }}
                   className="w-full accent-indigo-600"
                 />
-                <div className="flex justify-between text-xs text-gray-400 mt-1">
+                <div className="flex justify-between text-xs text-gray-400 dark:text-neutral-500 mt-1">
                   <span>5 000 ₴</span><span>25 000+ ₴</span>
                 </div>
               </div>
@@ -705,7 +705,7 @@ export default function CatalogClient() {
                   <h3 className="font-bold text-gray-900 dark:text-white text-base">{isUk ? "Фільтри" : "Filters"}</h3>
                   <button
                     onClick={() => setShowFilters(false)}
-                    className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors"
+                    className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:hover:bg-neutral-800 transition-colors"
                     aria-label={isUk ? "Закрити" : "Close"}
                   >
                     <X className="w-4 h-4 text-gray-500" />
@@ -722,7 +722,7 @@ export default function CatalogClient() {
                         className={`text-xs px-3 py-1.5 rounded-full border transition-colors ${
                           category === cat
                             ? "border-indigo-400 bg-indigo-50 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-400"
-                            : "border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-400"
+                            : "border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-300 dark:text-neutral-400"
                         }`}
                       >
                         {isUk ? cat : (NICHE_CATEGORY_EN[cat] ?? cat)}
@@ -741,7 +741,7 @@ export default function CatalogClient() {
                         className={`text-xs px-3 py-1.5 rounded-full border transition-colors ${
                           complexity === c.value
                             ? "border-indigo-400 bg-indigo-50 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-400"
-                            : "border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-400"
+                            : "border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-300 dark:text-neutral-400"
                         }`}
                       >
                         {c.label}
@@ -760,7 +760,7 @@ export default function CatalogClient() {
                         className={`text-xs px-3 py-1.5 rounded-full border transition-colors ${
                           featureFilter === f.value
                             ? "border-indigo-400 bg-indigo-50 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-400"
-                            : "border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-400"
+                            : "border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-300 dark:text-neutral-400"
                         }`}
                       >
                         {isUk ? f.labelUk : f.labelEn}
@@ -779,7 +779,7 @@ export default function CatalogClient() {
                         className={`flex items-center gap-1 text-xs px-3 py-1.5 rounded-full border transition-colors ${
                           minRating === r.value
                             ? "border-amber-400 bg-amber-50 dark:bg-amber-950/50 text-amber-700 dark:text-amber-400"
-                            : "border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-400"
+                            : "border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-300 dark:text-neutral-400"
                         }`}
                       >
                         {r.value > 0 && <Star className="w-3 h-3 fill-current" />}
@@ -799,7 +799,7 @@ export default function CatalogClient() {
                     onChange={(e) => { setMaxPrice(Number(e.target.value)); setAndSync("price", e.target.value); }}
                     className="w-full accent-indigo-600"
                   />
-                  <div className="flex justify-between text-xs text-gray-400 mt-1">
+                  <div className="flex justify-between text-xs text-gray-400 dark:text-neutral-500 mt-1">
                     <span>5 000 ₴</span><span>25 000+ ₴</span>
                   </div>
                 </div>

@@ -238,10 +238,10 @@ export function AiEdtechDemo({ isUk }: Props) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Адаптивне AI-навчання" : "Adaptive AI Learning"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk
           ? "AI визначає ваш рівень і підбирає запитання автоматично. Оберіть предмет та складність."
           : "AI assesses your level and selects questions automatically. Pick a subject and difficulty."}
@@ -251,7 +251,7 @@ export function AiEdtechDemo({ isUk }: Props) {
         {/* Controls */}
         <div className="space-y-6">
           <div>
-            <label className="block text-xs font-semibold text-neutral-700 mb-3 uppercase tracking-wide">
+            <label className="block text-xs font-semibold text-neutral-700 dark:text-neutral-300 mb-3 uppercase tracking-wide">
               {isUk ? "1. Предмет" : "1. Subject"}
             </label>
             <div className="grid grid-cols-2 gap-2">
@@ -262,7 +262,7 @@ export function AiEdtechDemo({ isUk }: Props) {
                   className={`flex items-center gap-2 px-3 py-3 rounded-xl text-sm font-medium transition-all ${
                     subject === s.id
                       ? "bg-violet-600 text-white shadow-lg shadow-violet-200"
-                      : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200"
+                      : "bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200"
                   }`}
                 >
                   <span>{s.emoji}</span>
@@ -273,7 +273,7 @@ export function AiEdtechDemo({ isUk }: Props) {
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-neutral-700 mb-3 uppercase tracking-wide">
+            <label className="block text-xs font-semibold text-neutral-700 dark:text-neutral-300 mb-3 uppercase tracking-wide">
               {isUk ? "2. Рівень складності" : "2. Difficulty level"}
             </label>
             <div className="flex gap-2">
@@ -284,7 +284,7 @@ export function AiEdtechDemo({ isUk }: Props) {
                   className={`flex-1 py-2.5 rounded-xl text-sm font-semibold transition-all border-2 ${
                     level === l.id
                       ? levelColorMap[l.id].btn
-                      : "border-transparent bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
+                      : "border-transparent bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200"
                   }`}
                 >
                   {isUk ? l.uk : l.en}
@@ -375,17 +375,17 @@ export function AiEdtechDemo({ isUk }: Props) {
                 <span className="text-xs font-semibold text-violet-500">+{question.points} {isUk ? "балів" : "pts"}</span>
               </div>
 
-              <p className="font-heading font-bold text-neutral-900 text-base leading-snug">
+              <p className="font-heading font-bold text-neutral-900 dark:text-white text-base leading-snug">
                 {isUk ? question.text_uk : question.text_en}
               </p>
 
               <div className="space-y-2">
                 {(isUk ? question.options_uk : question.options_en).map((opt, i) => {
-                  let cls = "border-neutral-200 bg-white hover:border-violet-300 hover:bg-violet-50";
+                  let cls = "border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-violet-300 hover:bg-violet-50";
                   if (selected !== null) {
                     if (i === question.correctIdx) cls = "border-emerald-400 bg-emerald-50";
                     else if (i === selected && i !== question.correctIdx) cls = "border-red-400 bg-red-50";
-                    else cls = "border-neutral-100 bg-neutral-50 opacity-60";
+                    else cls = "border-neutral-100 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900 opacity-60";
                   }
                   return (
                     <button

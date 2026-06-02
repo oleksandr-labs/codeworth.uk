@@ -181,7 +181,7 @@ export function SchemaGenerator({ isUk }: Props) {
       <div className="space-y-6">
         {/* Type selector */}
         <div>
-          <p className="text-sm font-semibold text-neutral-700 mb-3">{t.title}</p>
+          <p className="text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-3">{t.title}</p>
           <div className="grid grid-cols-2 gap-2">
             {SCHEMA_TYPES.map((s) => (
               <button
@@ -190,7 +190,7 @@ export function SchemaGenerator({ isUk }: Props) {
                 className={`flex items-center gap-2 p-3 rounded-xl border-2 text-left transition-all text-xs ${
                   schemaType === s.id
                     ? "border-indigo-500 bg-indigo-50"
-                    : "border-neutral-200 bg-white hover:border-indigo-300"
+                    : "border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-indigo-300"
                 }`}
               >
                 <span className="text-lg">{s.icon}</span>
@@ -208,13 +208,13 @@ export function SchemaGenerator({ isUk }: Props) {
           <div className="space-y-3">
             {fieldDefs.map((f) => (
               <div key={f.key}>
-                <label className="block text-xs font-semibold text-neutral-600 mb-1">{f.label}</label>
+                <label className="block text-xs font-semibold text-neutral-600 dark:text-neutral-300 mb-1">{f.label}</label>
                 <input
                   type="text"
                   value={fields[f.key] ?? ""}
                   onChange={(e) => setFields((prev) => ({ ...prev, [f.key]: e.target.value }))}
                   placeholder={f.ph}
-                  className="w-full px-3 py-2.5 rounded-xl border border-neutral-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                  className="w-full px-3 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
                 />
               </div>
             ))}
@@ -225,20 +225,20 @@ export function SchemaGenerator({ isUk }: Props) {
         {schemaType === "FAQPage" && (
           <div className="space-y-4">
             {faqItems.map((item, idx) => (
-              <div key={idx} className="p-4 rounded-xl border border-neutral-200 space-y-2">
+              <div key={idx} className="p-4 rounded-xl border border-neutral-200 dark:border-neutral-700 space-y-2">
                 <input
                   type="text"
                   value={item.q}
                   onChange={(e) => setFaqItems((prev) => prev.map((x, i) => i === idx ? { ...x, q: e.target.value } : x))}
                   placeholder={`${t.faqQ} ${idx + 1}`}
-                  className="w-full px-3 py-2 rounded-lg border border-neutral-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                  className="w-full px-3 py-2 rounded-lg border border-neutral-200 dark:border-neutral-700 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
                 />
                 <textarea
                   value={item.a}
                   onChange={(e) => setFaqItems((prev) => prev.map((x, i) => i === idx ? { ...x, a: e.target.value } : x))}
                   placeholder={`${t.faqA} ${idx + 1}`}
                   rows={2}
-                  className="w-full px-3 py-2 rounded-lg border border-neutral-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 resize-none"
+                  className="w-full px-3 py-2 rounded-lg border border-neutral-200 dark:border-neutral-700 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 resize-none"
                 />
               </div>
             ))}
@@ -259,7 +259,7 @@ export function SchemaGenerator({ isUk }: Props) {
           <div className="flex gap-2">
             <button
               onClick={handleReset}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold border border-neutral-200 text-neutral-600 hover:border-neutral-300 transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold border border-neutral-200 dark:border-neutral-700 text-neutral-600 dark:text-neutral-300 hover:border-neutral-300 transition-colors"
             >
               <RefreshCw className="w-3 h-3" /> {t.reset}
             </button>

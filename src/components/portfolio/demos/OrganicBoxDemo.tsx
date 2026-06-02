@@ -166,7 +166,7 @@ export function OrganicBoxDemo({ lang }: Props) {
           </div>
         </div>
         {mobileNav && (
-          <div className="md:hidden bg-white border-t border-stone-100 px-5 py-3 flex flex-col gap-3 text-sm text-stone-600">
+          <div className="md:hidden bg-white dark:bg-neutral-800 border-t border-stone-100 px-5 py-3 flex flex-col gap-3 text-sm text-stone-600">
             {(isUk ? ["Кошик тижня","Підписка","Рецепти","Сезони","FAQ","Кабінет"] : ["This Week","Subscribe","Recipes","Seasons","FAQ","Account"]).map((l, i) => (
               i === 5
                 ? <button key={l} onClick={() => { setShowAccount(true); setMobileNav(false); }} className="text-left hover:text-green-700">{l}</button>
@@ -283,7 +283,7 @@ export function OrganicBoxDemo({ lang }: Props) {
             </div>
 
             {/* Floating badge */}
-            <div className="absolute -top-4 -right-4 bg-white border-2 border-orange-400 rounded-2xl px-3.5 py-2.5 shadow-lg text-center">
+            <div className="absolute -top-4 -right-4 bg-white dark:bg-neutral-800 border-2 border-orange-400 rounded-2xl px-3.5 py-2.5 shadow-lg text-center">
               <p className="text-orange-500 font-black text-[20px] leading-none">350</p>
               <p className="text-stone-500 text-[10px] font-semibold leading-snug">{isUk ? "родин вже\nпідписані" : "families\nsubscribed"}</p>
             </div>
@@ -320,7 +320,7 @@ export function OrganicBoxDemo({ lang }: Props) {
             { n: "04", emoji: "👨‍🍳", ukT: "Готуєш", enT: "You cook", ukD: "Рецепти під вміст кожного кошика — на email та у застосунку", enD: "Recipes for every box — by email and in app" },
           ].map(s => (
             <div key={s.n} className="text-center relative z-10">
-              <div className="w-12 h-12 rounded-full bg-white border-2 border-green-200 shadow-md flex items-center justify-center text-2xl mx-auto mb-3">
+              <div className="w-12 h-12 rounded-full bg-white dark:bg-neutral-800 border-2 border-green-200 shadow-md flex items-center justify-center text-2xl mx-auto mb-3">
                 {s.emoji}
               </div>
               <p className="font-black text-green-900 mb-1.5 text-[15px]">{isUk ? s.ukT : s.enT}</p>
@@ -430,7 +430,7 @@ export function OrganicBoxDemo({ lang }: Props) {
                   <div className="space-y-3">
                     {["S","M","L"].map(sz => (
                       <button key={sz} onClick={() => setSub(d => ({ ...d, size: sz }))}
-                        className={`w-full flex items-center gap-4 p-4 rounded-2xl border-2 transition-all text-left ${sub.size === sz ? "border-green-500 bg-green-50" : "border-stone-200 bg-white hover:border-green-300"}`}>
+                        className={`w-full flex items-center gap-4 p-4 rounded-2xl border-2 transition-all text-left ${sub.size === sz ? "border-green-500 bg-green-50" : "border-stone-200 bg-white dark:bg-neutral-800 hover:border-green-300"}`}>
                         <div className={`w-10 h-10 rounded-xl font-black text-[18px] flex items-center justify-center shrink-0 ${sub.size === sz ? "bg-green-600 text-white" : "bg-stone-100 text-stone-600"}`}>{sz}</div>
                         <div>
                           <p className="font-bold text-stone-900">{sz === "S" ? (isUk ? "Маленький · 2–3 особи · 720 ₴/тиж" : "Small · 2–3 people · 720 ₴/week") : sz === "M" ? (isUk ? "Середній · 4–5 осіб · 980 ₴/тиж ⭐" : "Medium · 4–5 people · 980 ₴/week ⭐") : (isUk ? "Великий · 6+ осіб · 1 340 ₴/тиж" : "Large · 6+ people · 1,340 ₴/week")}</p>
@@ -448,7 +448,7 @@ export function OrganicBoxDemo({ lang }: Props) {
                   <div className="space-y-3 mb-6">
                     {[{ id: "weekly", ukL: "Щотижня 🌿", enL: "Every week 🌿", ukN: "Максимально свіже", enN: "Freshest possible" }, { id: "biweekly", ukL: "Через тиждень", enL: "Every two weeks", ukN: "Більший кошик рідше", enN: "Larger box less often" }].map(opt => (
                       <button key={opt.id} onClick={() => setSub(d => ({ ...d, freq: opt.id }))}
-                        className={`w-full flex items-center gap-3 p-4 rounded-2xl border-2 transition-all ${sub.freq === opt.id ? "border-green-500 bg-green-50" : "border-stone-200 bg-white hover:border-green-300"}`}>
+                        className={`w-full flex items-center gap-3 p-4 rounded-2xl border-2 transition-all ${sub.freq === opt.id ? "border-green-500 bg-green-50" : "border-stone-200 bg-white dark:bg-neutral-800 hover:border-green-300"}`}>
                         <div className={`w-5 h-5 rounded-full border-2 shrink-0 ${sub.freq === opt.id ? "border-green-500 bg-green-500" : "border-stone-300"}`} />
                         <div>
                           <p className="font-bold text-stone-900 text-[14px]">{isUk ? opt.ukL : opt.enL}</p>

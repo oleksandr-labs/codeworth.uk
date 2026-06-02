@@ -57,12 +57,12 @@ export default async function LocationIndexPage({ params }: { params: Promise<{ 
               <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-4">
                 {isUk ? "Локальне SEO та веб-розробка" : "Local SEO & Web Development"}
               </p>
-              <h1 className="text-4xl lg:text-6xl font-heading font-extrabold text-neutral-900 mb-6 leading-tight">
+              <h1 className="text-4xl lg:text-6xl font-heading font-extrabold text-neutral-900 dark:text-white mb-6 leading-tight">
                 {isUk
                   ? <>{`Розробка сайтів `}<span className="gradient-text">{"по всій Україні"}</span></>
                   : <>{`Website Development `}<span className="gradient-text">{"Across Ukraine"}</span></>}
               </h1>
-              <p className="text-lg text-neutral-500 max-w-2xl mx-auto mb-8">
+              <p className="text-lg text-neutral-500 dark:text-neutral-400 max-w-2xl mx-auto mb-8">
                 {isUk
                   ? `Ми обслуговуємо бізнес у ${GEO_CITIES.length} містах України. Дистанційна робота, локальне SEO, повний супровід від консультації до запуску.`
                   : `We serve businesses in ${GEO_CITIES.length} cities across Ukraine. Remote work, local SEO, full support from consultation to launch.`}
@@ -78,9 +78,9 @@ export default async function LocationIndexPage({ params }: { params: Promise<{ 
         </section>
 
         {/* Cities grid */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-white dark:bg-neutral-950">
           <Container>
-            <h2 className="text-2xl font-heading font-extrabold text-neutral-900 mb-10 text-center">
+            <h2 className="text-2xl font-heading font-extrabold text-neutral-900 dark:text-white mb-10 text-center">
               {isUk ? "Оберіть ваше місто" : "Select your city"}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -88,18 +88,18 @@ export default async function LocationIndexPage({ params }: { params: Promise<{ 
                 <Link
                   key={city.slug}
                   href={`/${lang}/location/${city.slug}`}
-                  className="group rounded-2xl border border-neutral-100 p-6 hover:shadow-lg hover:shadow-neutral-100 hover:-translate-y-1 transition-all duration-300 bg-white"
+                  className="group rounded-2xl border border-neutral-100 dark:border-neutral-700 p-6 hover:shadow-lg hover:shadow-neutral-100 hover:-translate-y-1 transition-all duration-300 bg-white"
                 >
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex items-center gap-2">
                       <MapPin className="w-4 h-4 text-indigo-500" />
-                      <span className="font-heading font-extrabold text-lg text-neutral-900 group-hover:text-indigo-700 transition-colors">
+                      <span className="font-heading font-extrabold text-lg text-neutral-900 dark:text-white group-hover:text-indigo-700 transition-colors">
                         {isUk ? city.nameUk : city.nameEn}
                       </span>
                     </div>
                     <ArrowRight className="w-4 h-4 text-neutral-300 group-hover:text-indigo-500 group-hover:translate-x-0.5 transition-all" />
                   </div>
-                  <p className="text-sm text-neutral-500 mb-4 line-clamp-2">
+                  <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-4 line-clamp-2">
                     {isUk ? city.description : city.descriptionEn}
                   </p>
                   <div className="flex items-center justify-between text-xs text-neutral-400">
@@ -113,11 +113,11 @@ export default async function LocationIndexPage({ params }: { params: Promise<{ 
         </section>
 
         {/* Why local SEO matters */}
-        <section className="py-20 bg-neutral-50">
+        <section className="py-20 bg-neutral-50 dark:bg-neutral-900 ">
           <Container>
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-14">
-                <h2 className="text-3xl font-heading font-extrabold text-neutral-900 mb-4">
+                <h2 className="text-3xl font-heading font-extrabold text-neutral-900 dark:text-white mb-4">
                   {isUk ? "Чому важливо локальне SEO?" : "Why does local SEO matter?"}
                 </h2>
                 <p className="text-neutral-500">
@@ -150,9 +150,9 @@ export default async function LocationIndexPage({ params }: { params: Promise<{ 
                     icon: "⭐",
                   },
                 ].map((item) => (
-                  <div key={item.uk} className="rounded-2xl bg-white border border-neutral-100 p-6">
+                  <div key={item.uk} className="rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 p-6">
                     <span className="text-3xl mb-4 block">{item.icon}</span>
-                    <h3 className="font-heading font-bold text-neutral-900 mb-2">{isUk ? item.uk : item.en}</h3>
+                    <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-2">{isUk ? item.uk : item.en}</h3>
                     <p className="text-sm text-neutral-500">{isUk ? item.dUk : item.dEn}</p>
                   </div>
                 ))}

@@ -583,7 +583,7 @@ export function LegalTechDemo({ lang }: { lang: string }) {
       </section>
 
       {/* ── LEGALTECH MATURITY ASSESSMENT ────────────────────────────── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-neutral-950">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-[#064E3B] mb-3">
@@ -652,7 +652,7 @@ export function LegalTechDemo({ lang }: { lang: string }) {
                   {isUk ? "Отримати результат" : "Get My Score"}
                 </button>
                 {answeredCount < totalQuestions && (
-                  <p className="text-sm text-gray-400 mt-2">
+                  <p className="text-sm text-gray-400 dark:text-neutral-500 mt-2">
                     {isUk
                       ? `Залишилось ${totalQuestions - answeredCount} запитань`
                       : `${totalQuestions - answeredCount} questions remaining`}
@@ -849,7 +849,7 @@ export function LegalTechDemo({ lang }: { lang: string }) {
       </section>
 
       {/* ── TRAINING PROGRAMS ────────────────────────────────────────── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-neutral-950">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-[#064E3B] mb-3">
@@ -1015,7 +1015,7 @@ export function LegalTechDemo({ lang }: { lang: string }) {
       </section>
 
       {/* ── TEAM ─────────────────────────────────────────────────────── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-neutral-950">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-[#064E3B] mb-3">

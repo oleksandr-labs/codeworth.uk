@@ -157,7 +157,7 @@ export function AgroUADemo({ lang }: Props) {
           <label className="flex items-center gap-2.5 cursor-pointer shrink-0">
             <div onClick={() => setOrganicOnly(v => !v)}
               className={`w-11 h-6 rounded-full transition-colors ${organicOnly ? "bg-green-600" : "bg-stone-300"} relative`}>
-              <div className={`absolute top-1 w-4 h-4 rounded-full bg-white shadow transition-transform ${organicOnly ? "translate-x-6" : "translate-x-1"}`} />
+              <div className={`absolute top-1 w-4 h-4 rounded-full bg-white dark:bg-neutral-800 shadow transition-transform ${organicOnly ? "translate-x-6" : "translate-x-1"}`} />
             </div>
             <span className="text-sm font-medium text-stone-700">{isUk ? "Тільки BIO" : "Only Organic"}</span>
           </label>

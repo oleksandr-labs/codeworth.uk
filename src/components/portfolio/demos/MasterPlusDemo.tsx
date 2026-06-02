@@ -169,7 +169,7 @@ export function MasterPlusDemo({ lang }: { lang: string }) {
 
   /* ────────────────────── JSX ────────────────────── */
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900 font-sans">
+    <div className="min-h-screen bg-gray-50 dark:bg-neutral-900 text-gray-900 dark:text-white font-sans">
 
       {/* ═══════ HEADER ═══════ */}
       <header className="bg-blue-900 text-white sticky top-0 z-50 shadow-lg">
@@ -276,17 +276,17 @@ export function MasterPlusDemo({ lang }: { lang: string }) {
           <h2 className="text-3xl font-bold text-center mb-2 text-blue-900">
             {isUk ? "Наші Послуги" : "Our Services"}
           </h2>
-          <p className="text-center text-gray-500 mb-10">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-10">
             {isUk ? "Повний перелік робіт для вашого авто" : "Full list of services for your car"}
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {SERVICES.map((s) => (
-              <div key={s.en} className="border border-gray-200 rounded-xl p-5 hover:shadow-lg transition-shadow group bg-gray-50 hover:bg-white">
+              <div key={s.en} className="border border-gray-200 dark:border-neutral-700 rounded-xl p-5 hover:shadow-lg transition-shadow group bg-gray-50 dark:bg-neutral-900 hover:bg-white">
                 <div className="text-3xl mb-3">{s.emoji}</div>
                 <h3 className="font-bold text-lg text-blue-800 mb-1 group-hover:text-blue-600 transition-colors">
                   {isUk ? s.uk : s.en}
                 </h3>
-                <p className="text-sm text-gray-600 mb-3">{isUk ? s.descUk : s.descEn}</p>
+                <p className="text-sm text-gray-600 dark:text-neutral-300 mb-3">{isUk ? s.descUk : s.descEn}</p>
                 <div className="flex items-center justify-between text-xs">
                   <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded font-semibold">{s.price}</span>
                   <span className="text-gray-400">⏱ {s.duration}</span>
@@ -303,7 +303,7 @@ export function MasterPlusDemo({ lang }: { lang: string }) {
           <h2 className="text-3xl font-bold text-center mb-2 text-blue-900">
             {isUk ? "Онлайн-діагностика" : "Online Diagnostics"}
           </h2>
-          <p className="text-center text-gray-500 mb-10">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-10">
             {isUk ? "Оберіть симптоми та зону — отримайте попередній діагноз" : "Select symptoms and area — get a preliminary diagnosis"}
           </p>
 
@@ -320,7 +320,7 @@ export function MasterPlusDemo({ lang }: { lang: string }) {
                   className={`text-left px-4 py-2 rounded-lg border text-sm transition-colors ${
                     symptoms.has(s.id)
                       ? "bg-blue-700 text-white border-blue-700"
-                      : "bg-white text-gray-700 border-gray-300 hover:border-blue-400"
+                      : "bg-white text-gray-700 dark:text-neutral-300 border-gray-300 hover:border-blue-400"
                   }`}
                 >
                   {symptoms.has(s.id) ? "✅ " : "⬜ "}
@@ -341,7 +341,7 @@ export function MasterPlusDemo({ lang }: { lang: string }) {
                   className={`px-5 py-3 rounded-lg border font-medium transition-colors flex items-center gap-2 ${
                     diagLocation === loc.id
                       ? "bg-blue-700 text-white border-blue-700"
-                      : "bg-white text-gray-700 border-gray-300 hover:border-blue-400"
+                      : "bg-white text-gray-700 dark:text-neutral-300 border-gray-300 hover:border-blue-400"
                   }`}
                 >
                   <span>{loc.emoji}</span> {isUk ? loc.uk : loc.en}
@@ -366,16 +366,16 @@ export function MasterPlusDemo({ lang }: { lang: string }) {
                 </h4>
                 <p className="text-gray-700">{isUk ? diag.diagUk : diag.diagEn}</p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <div className="flex-1 bg-white rounded-lg p-4 border border-blue-100">
-                    <div className="text-xs text-gray-500 mb-1">{isUk ? "Рекомендований сервіс" : "Recommended Service"}</div>
+                  <div className="flex-1 bg-white dark:bg-neutral-800 rounded-lg p-4 border border-blue-100">
+                    <div className="text-xs text-gray-500 dark:text-neutral-400 mb-1">{isUk ? "Рекомендований сервіс" : "Recommended Service"}</div>
                     <div className="font-semibold text-blue-800">{isUk ? diag.serviceUk : diag.serviceEn}</div>
                   </div>
-                  <div className="flex-1 bg-white rounded-lg p-4 border border-blue-100">
-                    <div className="text-xs text-gray-500 mb-1">{isUk ? "Орієнтовна вартість" : "Estimated Cost"}</div>
+                  <div className="flex-1 bg-white dark:bg-neutral-800 rounded-lg p-4 border border-blue-100">
+                    <div className="text-xs text-gray-500 dark:text-neutral-400 mb-1">{isUk ? "Орієнтовна вартість" : "Estimated Cost"}</div>
                     <div className="font-semibold text-red-600">{diag.cost}</div>
                   </div>
                 </div>
-                <p className="text-xs text-gray-400 mt-2">
+                <p className="text-xs text-gray-400 dark:text-neutral-500 mt-2">
                   {isUk
                     ? "* Це попередня оцінка. Точний діагноз можливий лише після огляду на СТО."
                     : "* This is a preliminary estimate. Exact diagnosis only after in-shop inspection."}
@@ -392,7 +392,7 @@ export function MasterPlusDemo({ lang }: { lang: string }) {
           <h2 className="text-3xl font-bold text-center mb-2 text-blue-900">
             {isUk ? "Прайс-лист" : "Price List"}
           </h2>
-          <p className="text-center text-gray-500 mb-8">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-8">
             {isUk ? "Ціни залежать від типу авто" : "Prices depend on vehicle type"}
           </p>
 
@@ -405,7 +405,7 @@ export function MasterPlusDemo({ lang }: { lang: string }) {
                 className={`px-5 py-2 rounded-lg font-semibold text-sm transition-colors ${
                   priceTab === tab
                     ? "bg-blue-800 text-white shadow"
-                    : "bg-gray-200 text-gray-600 hover:bg-gray-300"
+                    : "bg-gray-200 text-gray-600 dark:text-neutral-300 hover:bg-gray-300"
                 }`}
               >
                 {tab === "sedan" ? "🚘" : tab === "suv" ? "🚙" : "🚐"}{" "}
@@ -415,7 +415,7 @@ export function MasterPlusDemo({ lang }: { lang: string }) {
           </div>
 
           {/* table */}
-          <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+          <div className="overflow-x-auto rounded-xl border border-gray-200 dark:border-neutral-700 shadow-sm">
             <table className="w-full text-sm">
               <thead className="bg-blue-900 text-white">
                 <tr>
@@ -433,7 +433,7 @@ export function MasterPlusDemo({ lang }: { lang: string }) {
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-gray-400 mt-3 text-center">
+          <p className="text-xs text-gray-400 dark:text-neutral-500 mt-3 text-center">
             {isUk
               ? "* Вказані орієнтовні ціни. Точна вартість — після діагностики."
               : "* Prices are approximate. Exact cost after diagnostics."}
@@ -556,7 +556,7 @@ export function MasterPlusDemo({ lang }: { lang: string }) {
           <h2 className="text-3xl font-bold text-center mb-2 text-blue-900">
             {isUk ? "Чому обирають нас?" : "Why Choose Us?"}
           </h2>
-          <p className="text-center text-gray-500 mb-10">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-10">
             {isUk ? "4 причини довірити нам ваше авто" : "4 reasons to trust us with your car"}
           </p>
 
@@ -578,13 +578,13 @@ export function MasterPlusDemo({ lang }: { lang: string }) {
           <h2 className="text-3xl font-bold text-center mb-2 text-blue-900">
             {isUk ? "Відгуки клієнтів" : "Customer Reviews"}
           </h2>
-          <p className="text-center text-gray-500 mb-10">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-10">
             {isUk ? "Що кажуть власники авто" : "What car owners say"}
           </p>
 
           <div className="grid md:grid-cols-3 gap-6">
             {REVIEWS.map((r, i) => (
-              <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200 flex flex-col">
+              <div key={i} className="bg-gray-50 dark:bg-neutral-900 rounded-xl p-6 border border-gray-200 dark:border-neutral-700 flex flex-col">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-10 h-10 bg-blue-800 text-white rounded-full flex items-center justify-center font-bold text-sm shrink-0">
                     {r.name.charAt(0)}
@@ -603,7 +603,7 @@ export function MasterPlusDemo({ lang }: { lang: string }) {
                     {isUk ? r.serviceUk : r.serviceEn}
                   </span>
                 </div>
-                <p className="text-sm text-gray-600 leading-relaxed flex-1">
+                <p className="text-sm text-gray-600 dark:text-neutral-300 leading-relaxed flex-1">
                   &ldquo;{isUk ? r.textUk : r.textEn}&rdquo;
                 </p>
               </div>

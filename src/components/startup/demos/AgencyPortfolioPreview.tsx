@@ -38,7 +38,7 @@ export function AgencyPortfolioPreview() {
       </section>
 
       <section className="px-8 py-10 bg-white">
-        <h2 className="text-xl font-bold text-gray-900 mb-6">Selected Work</h2>
+        <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6">Selected Work</h2>
         <div className="grid grid-cols-3 gap-4">
           {[
             { name: "Acme Rebrand", tag: "Branding", color: "bg-violet-100", num: "+240% brand recall" },
@@ -46,8 +46,8 @@ export function AgencyPortfolioPreview() {
             { name: "GrowthLab App", tag: "Product Design", color: "bg-emerald-100", num: "4.9⭐ App Store" },
           ].map((c) => (
             <div key={c.name} className={`rounded-xl p-5 ${c.color}`}>
-              <div className="text-xs font-bold text-gray-500 mb-2">{c.tag}</div>
-              <div className="font-bold text-gray-900 mb-3">{c.name}</div>
+              <div className="text-xs font-bold text-gray-500 dark:text-neutral-400 mb-2">{c.tag}</div>
+              <div className="font-bold text-gray-900 dark:text-white mb-3">{c.name}</div>
               <div className="text-sm font-semibold text-gray-700">{c.num}</div>
             </div>
           ))}

@@ -42,7 +42,7 @@ export function HotjarDemo({ isUk }: Props) {
   return (
     <div className="space-y-6">
       <div className="flex flex-wrap items-center gap-2">
-        <div className="flex gap-1 rounded-lg bg-neutral-100 p-1">
+        <div className="flex gap-1 rounded-lg bg-neutral-100 dark:bg-neutral-800 p-1">
           {([
             { id: "click", icon: MousePointer, labelEn: "Click heatmap", labelUk: "Клік-карта" },
             { id: "scroll", icon: ScrollText, labelEn: "Scroll depth", labelUk: "Глибина скролу" },
@@ -54,7 +54,7 @@ export function HotjarDemo({ isUk }: Props) {
                 key={m.id}
                 onClick={() => setMode(m.id)}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-all ${
-                  mode === m.id ? "bg-white text-neutral-900 shadow-sm" : "text-neutral-500"
+                  mode === m.id ? "bg-white text-neutral-900 dark:text-white shadow-sm" : "text-neutral-500"
                 }`}
               >
                 <Icon className="w-3.5 h-3.5" />
@@ -64,7 +64,7 @@ export function HotjarDemo({ isUk }: Props) {
           })}
         </div>
         <button
-          className="ml-auto flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-neutral-200 text-sm text-neutral-700 hover:bg-neutral-50 transition-colors"
+          className="ml-auto flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-neutral-200 dark:border-neutral-700 text-sm text-neutral-700 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-800 dark:bg-neutral-900 transition-colors"
           aria-label={isUk ? "Подивитись запис сесії" : "View session recording"}
         >
           <Play className="w-3.5 h-3.5" />
@@ -72,19 +72,19 @@ export function HotjarDemo({ isUk }: Props) {
         </button>
       </div>
 
-      <div className="relative rounded-2xl border border-neutral-200 bg-white overflow-hidden aspect-[4/3] max-w-3xl mx-auto">
+      <div className="relative rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white overflow-hidden aspect-[4/3] max-w-3xl mx-auto">
         {/* Faux page mockup */}
         <div className="absolute inset-0 p-6">
-          <div className="h-8 bg-neutral-100 rounded mb-4 w-2/3" />
+          <div className="h-8 bg-neutral-100 dark:bg-neutral-800 rounded mb-4 w-2/3" />
           <div className="grid grid-cols-2 gap-3 mb-6">
-            <div className="h-20 bg-neutral-50 border border-neutral-100 rounded" />
-            <div className="h-20 bg-neutral-50 border border-neutral-100 rounded" />
+            <div className="h-20 bg-neutral-50 dark:bg-neutral-900 border border-neutral-100 dark:border-neutral-700 rounded" />
+            <div className="h-20 bg-neutral-50 dark:bg-neutral-900 border border-neutral-100 dark:border-neutral-700 rounded" />
           </div>
           <div className="h-32 bg-linear-to-br from-indigo-50 to-violet-50 rounded mb-4" />
           <div className="space-y-2">
-            <div className="h-3 bg-neutral-100 rounded w-full" />
-            <div className="h-3 bg-neutral-100 rounded w-5/6" />
-            <div className="h-3 bg-neutral-100 rounded w-4/6" />
+            <div className="h-3 bg-neutral-100 dark:bg-neutral-800 rounded w-full" />
+            <div className="h-3 bg-neutral-100 dark:bg-neutral-800 rounded w-5/6" />
+            <div className="h-3 bg-neutral-100 dark:bg-neutral-800 rounded w-4/6" />
           </div>
           <div className="mt-4 h-12 bg-indigo-100 rounded" />
         </div>
@@ -124,7 +124,7 @@ export function HotjarDemo({ isUk }: Props) {
                 <span className="absolute right-2 top-1 px-2 py-0.5 bg-white rounded text-xs font-semibold text-indigo-700 tabular-nums shadow-sm">
                   {s.pct}% {isUk ? "досягли" : "reached"}
                 </span>
-                <span className="absolute left-2 bottom-1 text-xs text-neutral-500 tabular-nums">
+                <span className="absolute left-2 bottom-1 text-xs text-neutral-500 dark:text-neutral-400 tabular-nums">
                   {s.depth}%
                 </span>
               </div>

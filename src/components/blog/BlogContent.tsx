@@ -114,7 +114,7 @@ export function BlogContent() {
           </p>
           <Link
             href={lp(`/blog/${featured.slug}`)}
-            className="group grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden border border-neutral-100 hover:shadow-xl hover:shadow-neutral-200/60 transition-all duration-300"
+            className="group grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden border border-neutral-100 dark:border-neutral-700 hover:shadow-xl hover:shadow-neutral-200/60 transition-all duration-300"
           >
             <div
               className={cn(
@@ -128,10 +128,10 @@ export function BlogContent() {
               <span className="inline-block px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold mb-4">
                 {featured.category}
               </span>
-              <h2 className="text-2xl lg:text-3xl font-heading font-extrabold text-neutral-900 mb-3 group-hover:text-indigo-700 transition-colors leading-tight">
+              <h2 className="text-2xl lg:text-3xl font-heading font-extrabold text-neutral-900 dark:text-white mb-3 group-hover:text-indigo-700 transition-colors leading-tight">
                 {featured.title}
               </h2>
-              <p className="text-neutral-500 leading-relaxed mb-6">{featured.excerpt}</p>
+              <p className="text-neutral-500 dark:text-neutral-400 leading-relaxed mb-6">{featured.excerpt}</p>
               <div className="flex items-center gap-4 text-sm text-neutral-400 mb-6">
                 <span>{featured.author}</span>
                 <span>·</span>
@@ -172,7 +172,7 @@ export function BlogContent() {
           placeholder={isUk ? "Пошук статей..." : "Search articles..."}
           aria-label={isUk ? "Пошук статей" : "Search articles"}
           aria-controls="blog-results"
-          className="w-full pl-11 pr-10 py-3.5 rounded-xl border border-neutral-200 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all placeholder:text-neutral-400 text-sm bg-white"
+          className="w-full pl-11 pr-10 py-3.5 rounded-xl border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all placeholder:text-neutral-400 text-sm bg-white"
         />
         {query && (
           <button
@@ -188,7 +188,7 @@ export function BlogContent() {
         )}
       </div>
       {/* Language filter */}
-      <div className="flex items-center gap-1 shrink-0 rounded-xl border border-neutral-200 bg-white p-1">
+      <div className="flex items-center gap-1 shrink-0 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white p-1">
         <Globe className="w-4 h-4 text-neutral-400 ml-2 shrink-0" aria-hidden="true" />
         {(["all", "en", "uk"] as const).map((lf) => (
           <button
@@ -199,7 +199,7 @@ export function BlogContent() {
               "px-3 py-1.5 rounded-lg text-xs font-semibold transition-all leading-none",
               langFilter === lf
                 ? "bg-indigo-600 text-white shadow-sm"
-                : "text-neutral-500 hover:text-neutral-800 hover:bg-neutral-50"
+                : "text-neutral-500 dark:text-neutral-400 hover:text-neutral-800 dark:text-neutral-200 hover:bg-neutral-50"
             )}
           >
             {lf === "all" ? (isUk ? "Всі" : "All") : lf === "en" ? "🇬🇧 EN" : "🇺🇦 UK"}
@@ -213,7 +213,7 @@ export function BlogContent() {
           value={sortOrder}
           onChange={(e) => { setSortOrder(e.target.value as "newest" | "oldest"); resetPage(); }}
           aria-label={isUk ? "Сортування" : "Sort order"}
-          className="pl-9 pr-3 py-3.5 rounded-xl border border-neutral-200 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all text-sm bg-white text-neutral-700 appearance-none cursor-pointer"
+          className="pl-9 pr-3 py-3.5 rounded-xl border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all text-sm bg-white text-neutral-700 dark:text-neutral-300 appearance-none cursor-pointer"
         >
           <option value="newest">{isUk ? "Новіші" : "Newest"}</option>
           <option value="oldest">{isUk ? "Старіші" : "Oldest"}</option>
@@ -272,7 +272,7 @@ export function BlogContent() {
               )}
               <button
                 onClick={resetFilters}
-                className="text-xs text-neutral-400 hover:text-neutral-700 underline ml-1"
+                className="text-xs text-neutral-400 hover:text-neutral-700 dark:text-neutral-300 underline ml-1"
               >
                 {isUk ? "Скинути" : "Clear all"}
               </button>
@@ -314,7 +314,7 @@ export function BlogContent() {
                 <Link
                   key={post.slug}
                   href={lp(`/blog/${post.slug}`)}
-                  className="group rounded-2xl border border-neutral-100 overflow-hidden hover:shadow-lg hover:shadow-neutral-200/60 transition-all duration-300 hover:-translate-y-1 bg-white"
+                  className="group rounded-2xl border border-neutral-100 dark:border-neutral-700 overflow-hidden hover:shadow-lg hover:shadow-neutral-200/60 transition-all duration-300 hover:-translate-y-1 bg-white"
                 >
                   <div
                     className={cn(
@@ -343,10 +343,10 @@ export function BlogContent() {
                     <span className="inline-block px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold mb-3">
                       {post.category}
                     </span>
-                    <h3 className="font-heading font-bold text-neutral-900 mb-2 leading-tight group-hover:text-indigo-700 transition-colors">
+                    <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-2 leading-tight group-hover:text-indigo-700 transition-colors">
                       {post.title}
                     </h3>
-                    <p className="text-sm text-neutral-500 leading-relaxed mb-4 line-clamp-3">
+                    <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-4 line-clamp-3">
                       {post.excerpt}
                     </p>
                     <div className="flex items-center justify-between text-xs text-neutral-400 pt-3 border-t border-neutral-100">
@@ -366,7 +366,7 @@ export function BlogContent() {
                               className="flex items-center gap-2 min-w-0 hover:text-indigo-600 transition-colors"
                             >
                               {avatar}
-                              <span className="truncate text-neutral-500 hover:text-indigo-600">{authorFirstName}</span>
+                              <span className="truncate text-neutral-500 dark:text-neutral-400 hover:text-indigo-600">{authorFirstName}</span>
                             </Link>
                           ) : (
                             <>
@@ -400,10 +400,10 @@ export function BlogContent() {
         {/* ── Right Sidebar ── */}
         <aside className="lg:sticky lg:top-8 space-y-5">
           {/* Categories */}
-          <div className="rounded-2xl border border-neutral-100 bg-white p-5">
+          <div className="rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white p-5">
             <div className="flex items-center gap-2 mb-4">
               <Layers className="w-4 h-4 text-indigo-500" />
-              <h3 className="font-heading font-bold text-neutral-900 text-sm uppercase tracking-wide">
+              <h3 className="font-heading font-bold text-neutral-900 dark:text-white text-sm uppercase tracking-wide">
                 {isUk ? "Розділи" : "Categories"}
               </h3>
             </div>
@@ -419,7 +419,7 @@ export function BlogContent() {
                     "w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-sm transition-all",
                     activeCategory === ""
                       ? "bg-indigo-600 text-white font-semibold"
-                      : "text-neutral-600 hover:bg-indigo-50 hover:text-indigo-700"
+                      : "text-neutral-600 dark:text-neutral-300 hover:bg-indigo-50 hover:text-indigo-700"
                   )}
                 >
                   <span>{isUk ? "Всі статті" : "All articles"}</span>
@@ -428,7 +428,7 @@ export function BlogContent() {
                       "text-xs px-2 py-0.5 rounded-full font-medium",
                       activeCategory === ""
                         ? "bg-white/20 text-white"
-                        : "bg-neutral-100 text-neutral-500"
+                        : "bg-neutral-100 dark:bg-neutral-800 text-neutral-500"
                     )}
                   >
                     {ALL_OTHERS.length}
@@ -450,7 +450,7 @@ export function BlogContent() {
                         "flex-1 flex items-center justify-between px-3 py-2.5 rounded-xl text-sm transition-all",
                         isActive
                           ? "bg-indigo-600 text-white font-semibold"
-                          : "text-neutral-600 hover:bg-indigo-50 hover:text-indigo-700"
+                          : "text-neutral-600 dark:text-neutral-300 hover:bg-indigo-50 hover:text-indigo-700"
                       )}
                     >
                       <span className="inline-flex items-center gap-1.5 text-left leading-snug">
@@ -470,7 +470,7 @@ export function BlogContent() {
                           "text-xs px-2 py-0.5 rounded-full font-medium shrink-0 ml-2",
                           isActive
                             ? "bg-white/20 text-white"
-                            : "bg-neutral-100 text-neutral-500"
+                            : "bg-neutral-100 dark:bg-neutral-800 text-neutral-500"
                         )}
                       >
                         {CATEGORY_COUNTS[cat.label.uk] || 0}
@@ -491,10 +491,10 @@ export function BlogContent() {
           </div>
 
           {/* Tags */}
-          <div className="rounded-2xl border border-neutral-100 bg-white p-5">
+          <div className="rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white p-5">
             <div className="flex items-center gap-2 mb-4">
               <Tag className="w-4 h-4 text-indigo-500" />
-              <h3 className="font-heading font-bold text-neutral-900 text-sm uppercase tracking-wide">
+              <h3 className="font-heading font-bold text-neutral-900 dark:text-white text-sm uppercase tracking-wide">
                 {isUk ? "Теги" : "Tags"}
               </h3>
             </div>
@@ -536,10 +536,10 @@ export function BlogContent() {
           {/* Newsletter */}
           <div className="rounded-2xl bg-linear-to-br from-indigo-50 to-violet-50 border border-indigo-100 p-5 text-center">
             <BookOpen className="w-8 h-8 text-indigo-500 mx-auto mb-3" />
-            <h3 className="font-heading font-bold text-neutral-900 mb-1 text-base">
+            <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-1 text-base">
               {isUk ? "Розсилка" : "Newsletter"}
             </h3>
-            <p className="text-neutral-600 text-xs mb-4">
+            <p className="text-neutral-600 dark:text-neutral-300 text-xs mb-4">
               {isUk ? "Нові статті раз на тиждень. Без спаму." : "Weekly articles. No spam."}
             </p>
             <NewsletterForm variant="compact" />

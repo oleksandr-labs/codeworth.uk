@@ -195,7 +195,7 @@ export function PasikaDemo({ lang }: Props) {
                 <p className="text-amber-900 font-black text-[18px] leading-none">22+</p>
                 <p className="text-amber-800 text-[10px] font-bold">{isUk ? "роки досвіду" : "yrs exp."}</p>
               </div>
-              <div className="absolute bottom-6 -left-6 bg-white border-2 border-amber-200 rounded-2xl px-3 py-2 shadow-md rotate-[-4deg]">
+              <div className="absolute bottom-6 -left-6 bg-white dark:bg-neutral-800 border-2 border-amber-200 rounded-2xl px-3 py-2 shadow-md rotate-[-4deg]">
                 <p className="text-amber-700 font-black text-[13px]">🐝 180 {isUk ? "вуликів" : "hives"}</p>
               </div>
               <div className="absolute top-1/2 -right-8 bg-amber-800 text-white rounded-full w-14 h-14 flex flex-col items-center justify-center shadow-lg">

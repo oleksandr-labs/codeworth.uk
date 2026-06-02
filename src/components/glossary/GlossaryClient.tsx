@@ -77,7 +77,7 @@ export function GlossaryClient({ lang, isUk }: Props) {
               className={`shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 activeCategory === "all"
                   ? "bg-indigo-600 text-white"
-                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                  : "bg-gray-100 dark:bg-neutral-800 text-gray-600 dark:text-neutral-300 hover:bg-gray-200"
               }`}
             >
               {isUk ? "Всі" : "All"} ({GLOSSARY_TERMS.length})
@@ -91,7 +91,7 @@ export function GlossaryClient({ lang, isUk }: Props) {
                 className={`shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap ${
                   activeCategory === cat.value
                     ? "bg-indigo-600 text-white"
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                    : "bg-gray-100 dark:bg-neutral-800 text-gray-600 dark:text-neutral-300 hover:bg-gray-200"
                 }`}
               >
                 {cat.emoji} {isUk ? cat.label : cat.labelEn}
@@ -102,7 +102,7 @@ export function GlossaryClient({ lang, isUk }: Props) {
       </section>
 
       {/* Terms grid */}
-      <section className="py-12 bg-gray-50 min-h-100">
+      <section className="py-12 bg-gray-50 dark:bg-neutral-900 min-h-100">
         <Container>
           {filtered.length === 0 ? (
             <div className="text-center py-16 text-gray-500" role="status">
@@ -110,7 +110,7 @@ export function GlossaryClient({ lang, isUk }: Props) {
             </div>
           ) : (
             <>
-              <p className="text-sm text-gray-500 mb-6" role="status" aria-live="polite">
+              <p className="text-sm text-gray-500 dark:text-neutral-400 mb-6" role="status" aria-live="polite">
                 {isUk ? `Знайдено ${filtered.length} термінів` : `Found ${filtered.length} terms`}
               </p>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -120,7 +120,7 @@ export function GlossaryClient({ lang, isUk }: Props) {
                     <Link
                       key={term.slug}
                       href={`/${lang}/glossary/${term.slug}`}
-                      className="bg-white rounded-xl p-5 border border-gray-200 hover:border-indigo-300 hover:shadow-md transition-all group"
+                      className="bg-white rounded-xl p-5 border border-gray-200 dark:border-neutral-700 hover:border-indigo-300 hover:shadow-md transition-all group"
                     >
                       <div className="flex items-start justify-between mb-2">
                         <span className="text-xs font-medium text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full">
@@ -128,13 +128,13 @@ export function GlossaryClient({ lang, isUk }: Props) {
                         </span>
                         <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-indigo-500 transition-colors shrink-0" aria-hidden="true" />
                       </div>
-                      <h2 className="font-semibold text-gray-900 mb-1 group-hover:text-indigo-700 transition-colors">
+                      <h2 className="font-semibold text-gray-900 dark:text-white mb-1 group-hover:text-indigo-700 transition-colors">
                         {term.termUk}
                       </h2>
                       {term.termEn !== term.termUk && (
-                        <p className="text-xs text-gray-400 mb-2">{term.termEn}</p>
+                        <p className="text-xs text-gray-400 dark:text-neutral-500 mb-2">{term.termEn}</p>
                       )}
-                      <p className="text-sm text-gray-600 leading-relaxed line-clamp-2">{term.shortDescription}</p>
+                      <p className="text-sm text-gray-600 dark:text-neutral-300 leading-relaxed line-clamp-2">{term.shortDescription}</p>
                     </Link>
                   );
                 })}

@@ -155,7 +155,7 @@ export function SmileProDemo({ lang }: { lang: string }) {
   const simData = simIssue && simResult ? SIM_RESULTS[simIssue]?.[simResult] : null;
 
   return (
-    <div className="min-h-screen bg-white text-gray-800 font-sans">
+    <div className="min-h-screen bg-white text-gray-800 dark:text-neutral-200 font-sans">
 
       {/* ── Header ──────────────────────────────────────────────────────────── */}
       <header className="sticky top-0 z-30 bg-white/90 backdrop-blur border-b border-gray-100">
@@ -181,10 +181,10 @@ export function SmileProDemo({ lang }: { lang: string }) {
           <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-cyan-100 text-cyan-700 text-sm font-medium">
             {isUk ? "🦷 Сучасна стоматологія без болю" : "🦷 Modern Painless Dentistry"}
           </div>
-          <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight mb-6">
             {isUk ? "Посмішка Вашої Мрії" : "The Smile of Your Dreams"}
           </h1>
-          <p className="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto mb-8">
+          <p className="text-lg md:text-xl text-gray-500 dark:text-neutral-400 max-w-2xl mx-auto mb-8">
             {isUk
               ? "Безболісна стоматологія з новітніми технологіями. Лазери, 3D-сканування, седація — все для вашого комфорту."
               : "Painless dentistry with the latest technology. Lasers, 3D scanning, sedation — everything for your comfort."}
@@ -213,10 +213,10 @@ export function SmileProDemo({ lang }: { lang: string }) {
       {/* ── Services ────────────────────────────────────────────────────────── */}
       <section className="bg-slate-50 py-16 md:py-20">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-3">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-3">
             {isUk ? "Наші послуги" : "Our Services"}
           </h2>
-          <p className="text-center text-gray-400 mb-12 max-w-xl mx-auto">
+          <p className="text-center text-gray-400 dark:text-neutral-500 mb-12 max-w-xl mx-auto">
             {isUk
               ? "Повний спектр стоматологічних послуг під одним дахом"
               : "Full range of dental services under one roof"}
@@ -225,11 +225,11 @@ export function SmileProDemo({ lang }: { lang: string }) {
             {SERVICES.map((s) => (
               <div
                 key={s.id}
-                className="bg-white rounded-2xl p-6 border border-gray-100 hover:border-cyan-200 hover:shadow-lg hover:shadow-cyan-50 transition-all"
+                className="bg-white rounded-2xl p-6 border border-gray-100 dark:border-neutral-700 hover:border-cyan-200 hover:shadow-lg hover:shadow-cyan-50 transition-all"
               >
                 <div className="text-3xl mb-3">{s.emoji}</div>
-                <h3 className="font-bold text-gray-900 mb-1">{isUk ? s.nameUk : s.nameEn}</h3>
-                <p className="text-sm text-gray-400 mb-3">{isUk ? s.descUk : s.descEn}</p>
+                <h3 className="font-bold text-gray-900 dark:text-white mb-1">{isUk ? s.nameUk : s.nameEn}</h3>
+                <p className="text-sm text-gray-400 dark:text-neutral-500 mb-3">{isUk ? s.descUk : s.descEn}</p>
                 <div className="text-cyan-600 font-semibold text-sm">{isUk ? s.priceUk : s.priceEn}</div>
               </div>
             ))}
@@ -240,10 +240,10 @@ export function SmileProDemo({ lang }: { lang: string }) {
       {/* ── Smile Simulator ─────────────────────────────────────────────────── */}
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-3">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-3">
             {isUk ? "Симулятор усмішки" : "Smile Simulator"}
           </h2>
-          <p className="text-center text-gray-400 mb-10 max-w-lg mx-auto">
+          <p className="text-center text-gray-400 dark:text-neutral-500 mb-10 max-w-lg mx-auto">
             {isUk
               ? "Оберіть вашу проблему та бажаний результат — ми покажемо план лікування"
               : "Choose your issue and desired result — we'll show your treatment plan"}
@@ -252,7 +252,7 @@ export function SmileProDemo({ lang }: { lang: string }) {
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             {/* Issue select */}
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label className="block text-sm font-semibold text-gray-700 dark:text-neutral-300 mb-2">
                 {isUk ? "Поточна проблема" : "Current Issue"}
               </label>
               <div className="flex flex-col gap-2">
@@ -263,7 +263,7 @@ export function SmileProDemo({ lang }: { lang: string }) {
                     className={`text-left px-4 py-2.5 rounded-xl border text-sm font-medium transition-all ${
                       simIssue === i.id
                         ? "border-cyan-400 bg-cyan-50 text-cyan-700"
-                        : "border-gray-200 bg-white text-gray-600 hover:border-cyan-200"
+                        : "border-gray-200 dark:border-neutral-700 bg-white text-gray-600 dark:text-neutral-300 hover:border-cyan-200"
                     }`}
                   >
                     {isUk ? i.labelUk : i.labelEn}
@@ -274,7 +274,7 @@ export function SmileProDemo({ lang }: { lang: string }) {
 
             {/* Desired result */}
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label className="block text-sm font-semibold text-gray-700 dark:text-neutral-300 mb-2">
                 {isUk ? "Бажаний результат" : "Desired Result"}
               </label>
               <div className="flex flex-col gap-2">
@@ -285,7 +285,7 @@ export function SmileProDemo({ lang }: { lang: string }) {
                     className={`text-left px-4 py-2.5 rounded-xl border text-sm font-medium transition-all ${
                       simResult === r.id
                         ? "border-cyan-400 bg-cyan-50 text-cyan-700"
-                        : "border-gray-200 bg-white text-gray-600 hover:border-cyan-200"
+                        : "border-gray-200 dark:border-neutral-700 bg-white text-gray-600 dark:text-neutral-300 hover:border-cyan-200"
                     }`}
                   >
                     {isUk ? r.labelUk : r.labelEn}
@@ -298,7 +298,7 @@ export function SmileProDemo({ lang }: { lang: string }) {
           {/* Simulation result */}
           {simData && (
             <div className="bg-linear-to-br from-cyan-50 to-white border border-cyan-200 rounded-2xl p-6 md:p-8">
-              <h3 className="font-bold text-lg text-gray-900 mb-4">
+              <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-4">
                 {isUk ? "Рекомендований план лікування" : "Recommended Treatment Plan"}
               </h3>
               <ul className="space-y-2 mb-5">
@@ -313,11 +313,11 @@ export function SmileProDemo({ lang }: { lang: string }) {
               </ul>
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="bg-white rounded-xl p-4 border border-cyan-100">
-                  <div className="text-xs text-gray-400 mb-1">{isUk ? "Орієнтовний термін" : "Estimated Timeline"}</div>
+                  <div className="text-xs text-gray-400 dark:text-neutral-500 mb-1">{isUk ? "Орієнтовний термін" : "Estimated Timeline"}</div>
                   <div className="font-bold text-cyan-700">{isUk ? simData.timelineUk : simData.timelineEn}</div>
                 </div>
                 <div className="bg-white rounded-xl p-4 border border-cyan-100">
-                  <div className="text-xs text-gray-400 mb-1">{isUk ? "Орієнтовна вартість" : "Estimated Cost"}</div>
+                  <div className="text-xs text-gray-400 dark:text-neutral-500 mb-1">{isUk ? "Орієнтовна вартість" : "Estimated Cost"}</div>
                   <div className="font-bold text-cyan-700">{isUk ? simData.costUk : simData.costEn}</div>
                 </div>
               </div>
@@ -325,7 +325,7 @@ export function SmileProDemo({ lang }: { lang: string }) {
           )}
 
           {!simData && simIssue && simResult && (
-            <div className="text-center text-gray-400 py-6">
+            <div className="text-center text-gray-400 dark:text-neutral-500 py-6">
               {isUk ? "Комбінація не знайдена" : "Combination not found"}
             </div>
           )}
@@ -335,21 +335,21 @@ export function SmileProDemo({ lang }: { lang: string }) {
       {/* ── Doctors ──────────────────────────────────────────────────────────── */}
       <section className="bg-slate-50 py-16 md:py-20">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-3">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-3">
             {isUk ? "Наші лікарі" : "Our Doctors"}
           </h2>
-          <p className="text-center text-gray-400 mb-12 max-w-lg mx-auto">
+          <p className="text-center text-gray-400 dark:text-neutral-500 mb-12 max-w-lg mx-auto">
             {isUk
               ? "Досвідчені спеціалісти, які дбають про вашу усмішку"
               : "Experienced specialists who care about your smile"}
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {DOCTORS.map((d) => (
-              <div key={d.id} className="bg-white rounded-2xl p-6 border border-gray-100 text-center">
+              <div key={d.id} className="bg-white rounded-2xl p-6 border border-gray-100 dark:border-neutral-700 text-center">
                 <div className="text-5xl mb-3">{d.emoji}</div>
                 <h3 className="font-bold text-gray-900">{isUk ? d.nameUk : d.nameEn}</h3>
                 <p className="text-sm text-cyan-600 font-medium mt-1">{isUk ? d.specUk : d.specEn}</p>
-                <p className="text-xs text-gray-400 mt-1">
+                <p className="text-xs text-gray-400 dark:text-neutral-500 mt-1">
                   {isUk ? `${d.years} років досвіду` : `${d.years} years experience`}
                 </p>
                 <button className="mt-4 w-full bg-cyan-50 hover:bg-cyan-100 text-cyan-700 text-sm font-semibold py-2 rounded-xl transition-colors">
@@ -364,18 +364,18 @@ export function SmileProDemo({ lang }: { lang: string }) {
       {/* ── Before / After ──────────────────────────────────────────────────── */}
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-3">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-3">
             {isUk ? "До / Після" : "Before / After"}
           </h2>
-          <p className="text-center text-gray-400 mb-12 max-w-lg mx-auto">
+          <p className="text-center text-gray-400 dark:text-neutral-500 mb-12 max-w-lg mx-auto">
             {isUk ? "Реальні результати наших пацієнтів" : "Real results from our patients"}
           </p>
           <div className="grid sm:grid-cols-2 gap-6">
             {BEFORE_AFTER.map((c) => (
               <div key={c.id} className="bg-slate-50 rounded-2xl p-5 border border-gray-100">
-                <h3 className="font-bold text-gray-900 mb-3">{isUk ? c.procedureUk : c.procedureEn}</h3>
+                <h3 className="font-bold text-gray-900 dark:text-white mb-3">{isUk ? c.procedureUk : c.procedureEn}</h3>
                 <div className="flex gap-3 mb-3">
-                  <div className="flex-1 aspect-[4/3] rounded-xl bg-gray-300 flex items-center justify-center text-gray-500 text-sm font-medium">
+                  <div className="flex-1 aspect-[4/3] rounded-xl bg-gray-300 flex items-center justify-center text-gray-500 dark:text-neutral-400 text-sm font-medium">
                     {isUk ? "До" : "Before"}
                   </div>
                   <div className="flex-1 aspect-[4/3] rounded-xl bg-linear-to-br from-white to-cyan-50 border-2 border-cyan-200 flex items-center justify-center text-cyan-600 text-sm font-medium">
@@ -395,10 +395,10 @@ export function SmileProDemo({ lang }: { lang: string }) {
       {/* ── Price List ──────────────────────────────────────────────────────── */}
       <section className="bg-slate-50 py-16 md:py-20">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-3">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-3">
             {isUk ? "Прайс-лист" : "Price List"}
           </h2>
-          <p className="text-center text-gray-400 mb-10">
+          <p className="text-center text-gray-400 dark:text-neutral-500 mb-10">
             {isUk ? "Прозорі ціни без прихованих платежів" : "Transparent pricing with no hidden fees"}
           </p>
 
@@ -411,7 +411,7 @@ export function SmileProDemo({ lang }: { lang: string }) {
                 className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${
                   priceTab === tab.id
                     ? "bg-cyan-500 text-white shadow-md shadow-cyan-200"
-                    : "bg-white text-gray-500 border border-gray-200 hover:border-cyan-200"
+                    : "bg-white text-gray-500 dark:text-neutral-400 border border-gray-200 dark:border-neutral-700 hover:border-cyan-200"
                 }`}
               >
                 {isUk ? tab.labelUk : tab.labelEn}
@@ -421,7 +421,7 @@ export function SmileProDemo({ lang }: { lang: string }) {
 
           {/* Table */}
           {PRICE_TABS.filter((t) => t.id === priceTab).map((tab) => (
-            <div key={tab.id} className="bg-white rounded-2xl border border-gray-100 overflow-hidden">
+            <div key={tab.id} className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 overflow-hidden">
               {tab.rows.map((row, idx) => (
                 <div
                   key={idx}
@@ -487,10 +487,10 @@ export function SmileProDemo({ lang }: { lang: string }) {
       {/* ── Reviews ─────────────────────────────────────────────────────────── */}
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-3">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-3">
             {isUk ? "Відгуки пацієнтів" : "Patient Reviews"}
           </h2>
-          <p className="text-center text-gray-400 mb-12">
+          <p className="text-center text-gray-400 dark:text-neutral-500 mb-12">
             {isUk ? "Що кажуть наші пацієнти" : "What our patients say"}
           </p>
           <div className="grid md:grid-cols-3 gap-6">
@@ -501,12 +501,12 @@ export function SmileProDemo({ lang }: { lang: string }) {
                     {(isUk ? r.nameUk : r.nameEn).charAt(0)}
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900 text-sm">{isUk ? r.nameUk : r.nameEn}</div>
+                    <div className="font-semibold text-gray-900 dark:text-white text-sm">{isUk ? r.nameUk : r.nameEn}</div>
                     <div className="text-xs text-cyan-600">{isUk ? r.procedureUk : r.procedureEn}</div>
                   </div>
                 </div>
                 <div className="text-yellow-400 text-sm mb-2">{"⭐".repeat(r.starsCount)}</div>
-                <p className="text-sm text-gray-600 leading-relaxed">{isUk ? r.textUk : r.textEn}</p>
+                <p className="text-sm text-gray-600 dark:text-neutral-300 leading-relaxed">{isUk ? r.textUk : r.textEn}</p>
               </div>
             ))}
           </div>
@@ -516,17 +516,17 @@ export function SmileProDemo({ lang }: { lang: string }) {
       {/* ── Booking Form ────────────────────────────────────────────────────── */}
       <section className="bg-slate-50 py-16 md:py-20">
         <div className="max-w-2xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-3">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-3">
             {isUk ? "Запис на прийом" : "Book an Appointment"}
           </h2>
-          <p className="text-center text-gray-400 mb-10">
+          <p className="text-center text-gray-400 dark:text-neutral-500 mb-10">
             {isUk ? "Оберіть зручний час — ми зателефонуємо для підтвердження" : "Pick a convenient time — we'll call to confirm"}
           </p>
 
           {bookSent ? (
             <div className="text-center bg-cyan-50 border border-cyan-200 rounded-2xl p-10">
               <div className="text-4xl mb-3">✅</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                 {isUk ? "Заявку надіслано!" : "Request Sent!"}
               </h3>
               <p className="text-gray-500">
@@ -541,18 +541,18 @@ export function SmileProDemo({ lang }: { lang: string }) {
                 e.preventDefault();
                 setBookSent(true);
               }}
-              className="bg-white rounded-2xl border border-gray-100 p-6 md:p-8 space-y-5"
+              className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-6 md:p-8 space-y-5"
             >
               {/* Service type */}
               <div>
-                <label htmlFor="sp-service" className="block text-sm font-semibold text-gray-700 mb-1">
+                <label htmlFor="sp-service" className="block text-sm font-semibold text-gray-700 dark:text-neutral-300 mb-1">
                   {isUk ? "Тип послуги" : "Service Type"}
                 </label>
                 <select
                   id="sp-service"
                   value={bookService}
                   onChange={(e) => setBookService(e.target.value)}
-                  className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-100"
+                  className="w-full border border-gray-200 dark:border-neutral-700 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-100"
                 >
                   <option value="">{isUk ? "Оберіть послугу" : "Select service"}</option>
                   {SERVICES.map((s) => (
@@ -563,14 +563,14 @@ export function SmileProDemo({ lang }: { lang: string }) {
 
               {/* Doctor */}
               <div>
-                <label htmlFor="sp-doctor" className="block text-sm font-semibold text-gray-700 mb-1">
+                <label htmlFor="sp-doctor" className="block text-sm font-semibold text-gray-700 dark:text-neutral-300 mb-1">
                   {isUk ? "Бажаний лікар" : "Preferred Doctor"}
                 </label>
                 <select
                   id="sp-doctor"
                   value={bookDoctor}
                   onChange={(e) => setBookDoctor(e.target.value)}
-                  className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-100"
+                  className="w-full border border-gray-200 dark:border-neutral-700 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-100"
                 >
                   <option value="">{isUk ? "Будь-який лікар" : "Any doctor"}</option>
                   {DOCTORS.map((d) => (
@@ -581,7 +581,7 @@ export function SmileProDemo({ lang }: { lang: string }) {
 
               {/* Date */}
               <div>
-                <label htmlFor="sp-date" className="block text-sm font-semibold text-gray-700 mb-1">
+                <label htmlFor="sp-date" className="block text-sm font-semibold text-gray-700 dark:text-neutral-300 mb-1">
                   {isUk ? "Бажана дата" : "Preferred Date"}
                 </label>
                 <input
@@ -589,13 +589,13 @@ export function SmileProDemo({ lang }: { lang: string }) {
                   type="date"
                   value={bookDate}
                   onChange={(e) => setBookDate(e.target.value)}
-                  className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-100"
+                  className="w-full border border-gray-200 dark:border-neutral-700 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-100"
                 />
               </div>
 
               {/* Name */}
               <div>
-                <label htmlFor="sp-name" className="block text-sm font-semibold text-gray-700 mb-1">
+                <label htmlFor="sp-name" className="block text-sm font-semibold text-gray-700 dark:text-neutral-300 mb-1">
                   {isUk ? "Ваше ім'я" : "Your Name"}
                 </label>
                 <input
@@ -604,13 +604,13 @@ export function SmileProDemo({ lang }: { lang: string }) {
                   value={bookName}
                   onChange={(e) => setBookName(e.target.value)}
                   placeholder={isUk ? "Ім'я та прізвище" : "Full name"}
-                  className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-100"
+                  className="w-full border border-gray-200 dark:border-neutral-700 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-100"
                 />
               </div>
 
               {/* Phone */}
               <div>
-                <label htmlFor="sp-phone" className="block text-sm font-semibold text-gray-700 mb-1">
+                <label htmlFor="sp-phone" className="block text-sm font-semibold text-gray-700 dark:text-neutral-300 mb-1">
                   {isUk ? "Телефон" : "Phone"}
                 </label>
                 <input
@@ -619,7 +619,7 @@ export function SmileProDemo({ lang }: { lang: string }) {
                   value={bookPhone}
                   onChange={(e) => setBookPhone(e.target.value)}
                   placeholder="+380 (__) ___-__-__"
-                  className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-100"
+                  className="w-full border border-gray-200 dark:border-neutral-700 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-100"
                 />
               </div>
 
@@ -641,7 +641,7 @@ export function SmileProDemo({ lang }: { lang: string }) {
             {/* Brand */}
             <div>
               <div className="text-xl font-bold text-white mb-3">😁 SmilePro</div>
-              <p className="text-sm text-gray-400 leading-relaxed">
+              <p className="text-sm text-gray-400 dark:text-neutral-500 leading-relaxed">
                 {isUk
                   ? "Сучасна стоматологія для всієї родини. Ваша усмішка — наша місія."
                   : "Modern dentistry for the whole family. Your smile is our mission."}
@@ -677,7 +677,7 @@ export function SmileProDemo({ lang }: { lang: string }) {
               <div className="mt-2 inline-block bg-red-500/20 text-red-300 text-xs font-semibold px-3 py-1 rounded-full">
                 🚨 {isUk ? "Екстрена лінія: +380 (44) 765-43-21" : "Emergency: +380 (44) 765-43-21"}
               </div>
-              <p className="text-sm text-gray-400 mt-2">
+              <p className="text-sm text-gray-400 dark:text-neutral-500 mt-2">
                 ✉️ info@smilepro.ua
               </p>
             </div>

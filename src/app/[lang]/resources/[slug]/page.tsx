@@ -532,7 +532,7 @@ export default async function ResourcePage({
             <div className="max-w-3xl mx-auto">
               {/* Intro */}
               {(checklistContent || guideContent) && (
-                <p className="text-gray-700 text-lg leading-relaxed mb-10 pb-8 border-b">
+                <p className="text-gray-700 dark:text-neutral-300 text-lg leading-relaxed mb-10 pb-8 border-b">
                   {isUk
                     ? (checklistContent?.introUk || guideContent?.introUk)
                     : (checklistContent?.introEn || guideContent?.introEn)}
@@ -544,10 +544,10 @@ export default async function ResourcePage({
                 <div className="space-y-10">
                   {(isUk ? checklistContent.sectionsUk : checklistContent.sectionsEn).map((section, si) => (
                     <div key={si}>
-                      <h2 className="text-xl font-bold text-gray-900 mb-4">{section.heading}</h2>
+                      <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">{section.heading}</h2>
                       <ul className="space-y-2">
                         {section.items.map((item, ii) => (
-                          <li key={ii} className="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors">
+                          <li key={ii} className="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 dark:bg-neutral-900 transition-colors">
                             <CheckSquare className="w-5 h-5 text-indigo-500 shrink-0 mt-0.5" />
                             <span className="text-gray-700">{item}</span>
                           </li>
@@ -563,12 +563,12 @@ export default async function ResourcePage({
                 <div className="space-y-10">
                   {(isUk ? guideContent.sectionsUk : guideContent.sectionsEn).map((section, si) => (
                     <div key={si}>
-                      <h2 className="text-xl font-bold text-gray-900 mb-4">{section.heading}</h2>
+                      <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">{section.heading}</h2>
                       <div className="prose prose-gray max-w-none">
                         {section.text.split("\n\n").map((para, pi) => (
                           <p
                             key={pi}
-                            className="text-gray-700 leading-relaxed mb-4"
+                            className="text-gray-700 dark:text-neutral-300 leading-relaxed mb-4"
                             dangerouslySetInnerHTML={{
                               __html: para
                                 .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
@@ -585,7 +585,7 @@ export default async function ResourcePage({
               {/* Speed test tool */}
               {slug === "website-speed-test" && (
                 <div>
-                  <p className="text-gray-700 text-lg leading-relaxed mb-8 pb-8 border-b">
+                  <p className="text-gray-700 dark:text-neutral-300 text-lg leading-relaxed mb-8 pb-8 border-b">
                     {isUk
                       ? "Введіть URL свого сайту — отримайте миттєвий аналіз Core Web Vitals від Google Lighthouse: LCP, CLS, FCP, TTFB та загальний Performance Score."
                       : "Enter your website URL to get an instant Core Web Vitals analysis from Google Lighthouse: LCP, CLS, FCP, TTFB, and an overall Performance Score."}
@@ -621,7 +621,7 @@ export default async function ResourcePage({
                 {resource.tags.length > 0 && (
                   <div className="flex flex-wrap gap-2 mb-5">
                     {resource.tags.map((tag) => (
-                      <span key={tag} className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+                      <span key={tag} className="text-sm text-gray-500 dark:text-neutral-400 bg-gray-100 dark:bg-neutral-800 px-3 py-1 rounded-full">
                         {tag}
                       </span>
                     ))}
@@ -663,7 +663,7 @@ export default async function ResourcePage({
         </section>
 
         {/* Back + CTA */}
-        <section className="py-12 bg-gray-50 border-t">
+        <section className="py-12 bg-gray-50 dark:bg-neutral-900 border-t">
           <Container>
             <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
               <Link

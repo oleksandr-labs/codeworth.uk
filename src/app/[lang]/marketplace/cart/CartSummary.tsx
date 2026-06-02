@@ -30,9 +30,9 @@ export function CartSummary() {
 
   return (
     <div className="space-y-5">
-      <div className="bg-white rounded-2xl border border-gray-100 p-6">
-        <h2 className="font-bold text-gray-900 mb-5">{isUk ? "Підсумок замовлення" : "Order Summary"}</h2>
-        <div className="space-y-3 text-sm text-gray-600 mb-5">
+      <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-6">
+        <h2 className="font-bold text-gray-900 dark:text-white mb-5">{isUk ? "Підсумок замовлення" : "Order Summary"}</h2>
+        <div className="space-y-3 text-sm text-gray-600 dark:text-neutral-300 mb-5">
           <div className="flex justify-between">
             <span>{isUk ? "Підсумок" : "Subtotal"}</span>
             <span className="font-semibold text-gray-900">
@@ -45,7 +45,7 @@ export function CartSummary() {
               <span>−{discount.toLocaleString(locale)} ₴</span>
             </div>
           )}
-          <div className="border-t border-gray-100 pt-3 flex justify-between font-bold text-gray-900 text-base">
+          <div className="border-t border-gray-100 dark:border-neutral-700 pt-3 flex justify-between font-bold text-gray-900 dark:text-white text-base">
             <span>{isUk ? "Разом" : "Total"}</span>
             <span>{isHydrated ? `${total.toLocaleString(locale)} ₴` : "—"}</span>
           </div>
@@ -58,13 +58,13 @@ export function CartSummary() {
         </Link>
         <Link
           href={`/${lang}/marketplace/catalog`}
-          className="flex items-center justify-center w-full py-2.5 mt-3 text-sm text-gray-500 hover:text-gray-700 transition-colors"
+          className="flex items-center justify-center w-full py-2.5 mt-3 text-sm text-gray-500 dark:text-neutral-400 hover:text-gray-700 dark:text-neutral-300 transition-colors"
         >
           {isUk ? "← Продовжити покупки" : "← Continue Shopping"}
         </Link>
       </div>
 
-      <div className="bg-white rounded-2xl border border-gray-100 p-5 space-y-3">
+      <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-5 space-y-3">
         {trustBadges.map((b) => (
           <div key={b.text} className="flex items-center gap-3 text-sm text-gray-600">
             <b.icon className="w-4 h-4 text-indigo-500 shrink-0" />

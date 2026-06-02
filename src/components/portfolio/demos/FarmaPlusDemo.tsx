@@ -267,9 +267,9 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
   );
 
   return (
-    <div className="min-h-screen bg-white text-gray-800 font-sans">
+    <div className="min-h-screen bg-white text-gray-800 dark:text-neutral-200 font-sans">
       {/* ── Header ──────────────────────────────────────────────────────── */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-30">
+      <header className="bg-white border-b border-gray-200 dark:border-neutral-700 sticky top-0 z-30">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center gap-4 flex-wrap">
           <span className="text-xl font-bold text-green-600 shrink-0">
             💊 FarmaPlus
@@ -279,7 +279,7 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
             {NAV.map((n) => (
               <button
                 key={n.en}
-                className="text-gray-600 hover:text-green-600 transition-colors"
+                className="text-gray-600 dark:text-neutral-300 hover:text-green-600 transition-colors"
               >
                 {isUk ? n.uk : n.en}
               </button>
@@ -298,7 +298,7 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
 
           <button
             onClick={() => setShowCart(!showCart)}
-            className="relative text-gray-600 hover:text-green-600 transition-colors shrink-0"
+            className="relative text-gray-600 dark:text-neutral-300 hover:text-green-600 transition-colors shrink-0"
             aria-label="Cart"
           >
             <span className="text-xl">🛒</span>
@@ -321,12 +321,12 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
           <div className="inline-block bg-green-100 text-green-700 text-sm font-semibold px-4 py-1 rounded-full mb-6">
             ✚ {isUk ? "Ліцензована мережа аптек" : "Licensed Pharmacy Network"}
           </div>
-          <h1 className="text-3xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight">
+          <h1 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4 leading-tight">
             {isUk
               ? "Ваша Здорова Аптека Онлайн"
               : "Your Healthy Pharmacy Online"}
           </h1>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 dark:text-neutral-300 mb-8 max-w-2xl mx-auto">
             {isUk
               ? "Понад 5 000 медичних товарів з доставкою по Києву. Рецептурні та безрецептурні препарати від перевірених постачальників."
               : "Over 5,000 medical products delivered across Kyiv. Prescription and OTC medicines from verified suppliers."}
@@ -370,12 +370,12 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
       </section>
 
       {/* ── Product Catalog ─────────────────────────────────────────────── */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-neutral-950">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-2">
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-2">
             💊 {isUk ? "Каталог Медикаментів" : "Medicine Catalog"}
           </h2>
-          <p className="text-center text-gray-500 mb-8">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-8">
             {isUk
               ? "Оберіть категорію та додайте потрібне до кошика"
               : "Choose a category and add what you need to your cart"}
@@ -390,7 +390,7 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   activeCategory === cat.id
                     ? "bg-green-500 text-white shadow-md"
-                    : "bg-gray-100 text-gray-600 hover:bg-green-100 hover:text-green-700"
+                    : "bg-gray-100 dark:bg-neutral-800 text-gray-600 dark:text-neutral-300 hover:bg-green-100 hover:text-green-700"
                 }`}
               >
                 {cat.emoji} {isUk ? cat.uk : cat.en}
@@ -403,7 +403,7 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
             {filteredProducts.map((p) => (
               <div
                 key={p.id}
-                className="border border-gray-200 rounded-xl p-5 hover:shadow-lg transition-shadow bg-white"
+                className="border border-gray-200 dark:border-neutral-700 rounded-xl p-5 hover:shadow-lg transition-shadow bg-white"
               >
                 <div className="flex items-start justify-between mb-3">
                   <span className="text-3xl">{p.emoji}</span>
@@ -417,13 +417,13 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
                     {p.rx ? "Rx" : "OTC"}
                   </span>
                 </div>
-                <h3 className="font-bold text-gray-900 mb-1">
+                <h3 className="font-bold text-gray-900 dark:text-white mb-1">
                   {isUk ? p.nameUk : p.nameEn}
                 </h3>
-                <p className="text-sm text-gray-500 mb-2">
+                <p className="text-sm text-gray-500 dark:text-neutral-400 mb-2">
                   {isUk ? p.descUk : p.descEn}
                 </p>
-                <p className="text-xs text-gray-400 mb-3">
+                <p className="text-xs text-gray-400 dark:text-neutral-500 mb-3">
                   {isUk ? "Дозування" : "Dosage"}: {p.dosage}
                 </p>
                 <div className="flex items-center justify-between">
@@ -447,12 +447,12 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
       {showCart && (
         <section className="py-12 bg-green-50 border-y border-green-200">
           <div className="max-w-3xl mx-auto px-4">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
               🛒 {isUk ? "Кошик" : "Shopping Cart"}
             </h2>
 
             {cart.length === 0 ? (
-              <p className="text-gray-500 text-center py-8">
+              <p className="text-gray-500 dark:text-neutral-400 text-center py-8">
                 {isUk ? "Кошик порожній" : "Your cart is empty"}
               </p>
             ) : (
@@ -461,13 +461,13 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
                   {cart.map((item) => (
                     <div
                       key={item.product.id}
-                      className="flex items-center gap-4 bg-white rounded-xl p-4 border border-gray-200"
+                      className="flex items-center gap-4 bg-white dark:bg-neutral-800 rounded-xl p-4 border border-gray-200"
                     >
                       <span className="text-2xl shrink-0">
                         {item.product.emoji}
                       </span>
                       <div className="flex-1 min-w-0">
-                        <p className="font-semibold text-gray-900 truncate">
+                        <p className="font-semibold text-gray-900 dark:text-white truncate">
                           {isUk ? item.product.nameUk : item.product.nameEn}
                         </p>
                         <p className="text-sm text-gray-500">
@@ -478,7 +478,7 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
                       <div className="flex items-center gap-2 shrink-0">
                         <button
                           onClick={() => updateQty(item.product.id, -1)}
-                          className="w-7 h-7 rounded-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold text-sm flex items-center justify-center"
+                          className="w-7 h-7 rounded-full bg-gray-200 hover:bg-gray-300 text-gray-700 dark:text-neutral-300 font-bold text-sm flex items-center justify-center"
                         >
                           -
                         </button>
@@ -500,11 +500,11 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
                 </div>
 
                 <div className="bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="flex justify-between text-sm text-gray-600 mb-2">
+                  <div className="flex justify-between text-sm text-gray-600 dark:text-neutral-300 mb-2">
                     <span>{isUk ? "Товари" : "Subtotal"}</span>
                     <span>{subtotal} ₴</span>
                   </div>
-                  <div className="flex justify-between text-sm text-gray-600 mb-3">
+                  <div className="flex justify-between text-sm text-gray-600 dark:text-neutral-300 mb-3">
                     <span>{isUk ? "Доставка" : "Delivery"}</span>
                     <span>
                       {deliveryFee === 0 ? (
@@ -517,13 +517,13 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
                     </span>
                   </div>
                   {subtotal > 0 && subtotal < 500 && (
-                    <p className="text-xs text-gray-400 mb-3">
+                    <p className="text-xs text-gray-400 dark:text-neutral-500 mb-3">
                       {isUk
                         ? `Ще ${500 - subtotal} ₴ до безкоштовної доставки`
                         : `${500 - subtotal} ₴ more for free delivery`}
                     </p>
                   )}
-                  <div className="border-t border-gray-200 pt-3 flex justify-between items-center">
+                  <div className="border-t border-gray-200 dark:border-neutral-700 pt-3 flex justify-between items-center">
                     <span className="font-bold text-lg text-gray-900">
                       {isUk ? "Разом" : "Total"}
                     </span>
@@ -544,10 +544,10 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
       {/* ── Prescription Upload ─────────────────────────────────────────── */}
       <section className="py-16 bg-blue-50">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-3">
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-3">
             📋 {isUk ? "Завантаження Рецепту" : "Prescription Upload"}
           </h2>
-          <p className="text-center text-gray-500 mb-10 max-w-2xl mx-auto">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-10 max-w-2xl mx-auto">
             {isUk
               ? "Замовляйте рецептурні ліки онлайн — просто завантажте фото рецепта"
               : "Order prescription medicines online — simply upload a photo of your prescription"}
@@ -588,7 +588,7 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
                   {s.step}
                 </div>
                 <span className="text-3xl block mb-3">{s.emoji}</span>
-                <h3 className="font-bold text-gray-900 mb-2">
+                <h3 className="font-bold text-gray-900 dark:text-white mb-2">
                   {isUk ? s.titleUk : s.titleEn}
                 </h3>
                 <p className="text-sm text-gray-500">
@@ -598,8 +598,8 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
             ))}
           </div>
 
-          <div className="mt-8 bg-white rounded-xl p-6 border border-blue-200 text-center">
-            <p className="text-sm text-gray-600 mb-4">
+          <div className="mt-8 bg-white dark:bg-neutral-800 rounded-xl p-6 border border-blue-200 text-center">
+            <p className="text-sm text-gray-600 dark:text-neutral-300 mb-4">
               {isUk
                 ? "Перетягніть фото рецепта сюди або натисніть для вибору файлу"
                 : "Drag your prescription photo here or click to select a file"}
@@ -618,12 +618,12 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
       </section>
 
       {/* ── Pharmacy Locator ────────────────────────────────────────────── */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-neutral-950">
         <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-2">
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-2">
             📍 {isUk ? "Наші Аптеки" : "Our Pharmacies"}
           </h2>
-          <p className="text-center text-gray-500 mb-10">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-10">
             {isUk
               ? "Завітайте до найближчої аптеки мережі FarmaPlus"
               : "Visit the nearest FarmaPlus pharmacy"}
@@ -635,7 +635,7 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
               return (
                 <div
                   key={ph.id}
-                  className="border border-gray-200 rounded-xl p-5 hover:shadow-md transition-shadow"
+                  className="border border-gray-200 dark:border-neutral-700 rounded-xl p-5 hover:shadow-md transition-shadow"
                 >
                   <div className="flex items-start justify-between mb-3">
                     <h3 className="font-bold text-gray-900">
@@ -657,10 +657,10 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
                           : "Closed"}
                     </span>
                   </div>
-                  <p className="text-sm text-gray-500 mb-2">
+                  <p className="text-sm text-gray-500 dark:text-neutral-400 mb-2">
                     📍 {isUk ? ph.addressUk : ph.addressEn}
                   </p>
-                  <p className="text-sm text-gray-500 mb-2">
+                  <p className="text-sm text-gray-500 dark:text-neutral-400 mb-2">
                     🕐 {ph.open} — {ph.close}
                   </p>
                   <p className="text-sm text-gray-500">📞 {ph.phone}</p>
@@ -674,10 +674,10 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
       {/* ── Health Corner ───────────────────────────────────────────────── */}
       <section className="py-16 bg-green-50">
         <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-2">
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-2">
             🩺 {isUk ? "Куточок Здоров'я" : "Health Corner"}
           </h2>
-          <p className="text-center text-gray-500 mb-10">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-10">
             {isUk
               ? "Корисні поради від наших фармацевтів"
               : "Useful tips from our pharmacists"}
@@ -693,10 +693,10 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
                 <span className="text-xs font-semibold text-green-600 bg-green-100 px-2.5 py-0.5 rounded-full">
                   {isUk ? tip.tag.uk : tip.tag.en}
                 </span>
-                <h3 className="font-bold text-gray-900 mt-3 mb-2">
+                <h3 className="font-bold text-gray-900 dark:text-white mt-3 mb-2">
                   {isUk ? tip.titleUk : tip.titleEn}
                 </h3>
-                <p className="text-sm text-gray-500 leading-relaxed">
+                <p className="text-sm text-gray-500 dark:text-neutral-400 leading-relaxed">
                   {isUk ? tip.descUk : tip.descEn}
                 </p>
               </article>
@@ -706,12 +706,12 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
       </section>
 
       {/* ── Delivery Info ───────────────────────────────────────────────── */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-neutral-950">
         <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-2">
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-2">
             🚚 {isUk ? "Доставка" : "Delivery Options"}
           </h2>
-          <p className="text-center text-gray-500 mb-10">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-10">
             {isUk
               ? "Обирайте зручний спосіб отримання замовлення"
               : "Choose the delivery method that suits you best"}
@@ -728,13 +728,13 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
                 }`}
               >
                 <span className="text-3xl block mb-3">{opt.emoji}</span>
-                <h3 className="font-bold text-gray-900 mb-1">
+                <h3 className="font-bold text-gray-900 dark:text-white mb-1">
                   {isUk ? opt.nameUk : opt.nameEn}
                 </h3>
                 <p className="text-sm text-green-600 font-semibold mb-2">
                   {isUk ? opt.timeUk : opt.timeEn}
                 </p>
-                <p className="text-2xl font-bold text-gray-900 mb-3">
+                <p className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
                   {opt.price === 0 ? (
                     <span className="text-green-600">
                       {isUk ? "Безкоштовно" : "Free"}
@@ -756,7 +756,7 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
           </div>
 
           <div className="mt-8 bg-blue-50 rounded-xl p-5 border border-blue-200">
-            <h3 className="font-bold text-gray-900 mb-2">
+            <h3 className="font-bold text-gray-900 dark:text-white mb-2">
               📍 {isUk ? "Зони покриття" : "Coverage Zones"}
             </h3>
             <p className="text-sm text-gray-600">
@@ -771,10 +771,10 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
       {/* ── Reviews ─────────────────────────────────────────────────────── */}
       <section className="py-16 bg-green-50">
         <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-2">
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-2">
             ⭐ {isUk ? "Відгуки Клієнтів" : "Customer Reviews"}
           </h2>
-          <p className="text-center text-gray-500 mb-10">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-10">
             {isUk
               ? "Що кажуть наші клієнти про FarmaPlus"
               : "What our customers say about FarmaPlus"}
@@ -789,7 +789,7 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-lg">{"⭐".repeat(r.rating)}</span>
                 </div>
-                <p className="text-sm text-gray-600 leading-relaxed mb-4 italic">
+                <p className="text-sm text-gray-600 dark:text-neutral-300 leading-relaxed mb-4 italic">
                   &ldquo;{isUk ? r.textUk : r.textEn}&rdquo;
                 </p>
                 <p className="text-sm font-bold text-gray-900">
@@ -810,7 +810,7 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
               <span className="text-xl font-bold text-white block mb-3">
                 💊 FarmaPlus
               </span>
-              <p className="text-sm text-gray-400 mb-3">
+              <p className="text-sm text-gray-400 dark:text-neutral-500 mb-3">
                 {isUk
                   ? "Мережа аптек — ваш надійний партнер у здоров'ї з 2015 року."
                   : "Pharmacy network — your trusted health partner since 2015."}
@@ -827,10 +827,10 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
               <h4 className="font-bold text-white mb-3">
                 {isUk ? "Контакти" : "Contact"}
               </h4>
-              <p className="text-sm text-gray-400 mb-1">
+              <p className="text-sm text-gray-400 dark:text-neutral-500 mb-1">
                 📞 0-800-300-100 ({isUk ? "безкоштовно" : "toll-free"})
               </p>
-              <p className="text-sm text-gray-400 mb-1">
+              <p className="text-sm text-gray-400 dark:text-neutral-500 mb-1">
                 ✉️ info@farmaplus.ua
               </p>
               <p className="text-sm text-gray-400">
@@ -843,7 +843,7 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
               <h4 className="font-bold text-white mb-3">
                 {isUk ? "Зони доставки" : "Delivery Zones"}
               </h4>
-              <ul className="text-sm text-gray-400 space-y-1">
+              <ul className="text-sm text-gray-400 dark:text-neutral-500 space-y-1">
                 <li>
                   {isUk
                     ? "Шевченківський район"
@@ -871,13 +871,13 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
               <h4 className="font-bold text-white mb-3">
                 {isUk ? "Графік роботи" : "Working Hours"}
               </h4>
-              <p className="text-sm text-gray-400 mb-1">
+              <p className="text-sm text-gray-400 dark:text-neutral-500 mb-1">
                 {isUk ? "Пн — Пт: 08:00 — 22:00" : "Mon — Fri: 08:00 — 22:00"}
               </p>
-              <p className="text-sm text-gray-400 mb-1">
+              <p className="text-sm text-gray-400 dark:text-neutral-500 mb-1">
                 {isUk ? "Сб: 09:00 — 20:00" : "Sat: 09:00 — 20:00"}
               </p>
-              <p className="text-sm text-gray-400 mb-3">
+              <p className="text-sm text-gray-400 dark:text-neutral-500 mb-3">
                 {isUk ? "Нд: 10:00 — 18:00" : "Sun: 10:00 — 18:00"}
               </p>
               <p className="text-xs text-gray-500">

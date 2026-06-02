@@ -99,13 +99,13 @@ export function MetaTagGenerator({ isUk }: Props) {
       <div className="space-y-5">
         {/* Title */}
         <div>
-          <label className="block text-sm font-semibold text-neutral-700 mb-1.5">{t.title}</label>
+          <label className="block text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-1.5">{t.title}</label>
           <input
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder={t.titlePh}
-            className="w-full px-4 py-3 rounded-xl border border-neutral-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
           />
           <div className="mt-1.5 flex items-center justify-between text-xs text-neutral-400">
             <span>{t.titleTip}</span>
@@ -118,13 +118,13 @@ export function MetaTagGenerator({ isUk }: Props) {
 
         {/* Description */}
         <div>
-          <label className="block text-sm font-semibold text-neutral-700 mb-1.5">{t.desc}</label>
+          <label className="block text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-1.5">{t.desc}</label>
           <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             placeholder={t.descPh}
             rows={3}
-            className="w-full px-4 py-3 rounded-xl border border-neutral-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 resize-none"
+            className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 resize-none"
           />
           <div className="mt-1.5 flex items-center justify-between text-xs text-neutral-400">
             <span>{t.descTip}</span>
@@ -137,25 +137,25 @@ export function MetaTagGenerator({ isUk }: Props) {
 
         {/* Keywords */}
         <div>
-          <label className="block text-sm font-semibold text-neutral-700 mb-1.5">{t.keys}</label>
+          <label className="block text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-1.5">{t.keys}</label>
           <input
             type="text"
             value={keywords}
             onChange={(e) => setKeywords(e.target.value)}
             placeholder={t.keysPh}
-            className="w-full px-4 py-3 rounded-xl border border-neutral-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
           />
         </div>
 
         {/* URL */}
         <div>
-          <label className="block text-sm font-semibold text-neutral-700 mb-1.5">{t.urlLabel}</label>
+          <label className="block text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-1.5">{t.urlLabel}</label>
           <input
             type="url"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
             placeholder={t.urlPh}
-            className="w-full px-4 py-3 rounded-xl border border-neutral-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
           />
         </div>
       </div>

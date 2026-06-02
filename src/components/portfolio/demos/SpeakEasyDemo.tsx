@@ -174,7 +174,7 @@ export function SpeakEasyDemo({ lang }: Props) {
       </section>
 
       {/* ── Languages ───────────────────────────────────────── */}
-      <section id="languages" className="py-20 bg-white">
+      <section id="languages" className="py-20 bg-white dark:bg-neutral-950">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-extrabold text-slate-900 mb-3">
@@ -251,7 +251,7 @@ export function SpeakEasyDemo({ lang }: Props) {
       </section>
 
       {/* ── Teachers ────────────────────────────────────────── */}
-      <section id="teachers" className="py-20 bg-white">
+      <section id="teachers" className="py-20 bg-white dark:bg-neutral-950">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-extrabold text-slate-900 mb-3">

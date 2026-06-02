@@ -273,14 +273,14 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
           <div className="inline-flex items-center gap-2 bg-white/80 border border-orange-200 rounded-full px-4 py-1.5 text-sm font-medium text-orange-600 mb-6 shadow-sm">
             🌟 {isUk ? "Студія творчості для дітей 3–14 років" : "Creative studio for children aged 3–14"}
           </div>
-          <h1 className="text-4xl md:text-6xl font-extrabold text-gray-800 leading-tight mb-4">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-gray-800 dark:text-neutral-200 leading-tight mb-4">
             {isUk ? (
               <>Місце де <span className="text-orange-500">Мистецтво</span> — це <span className="text-sky-500">Гра</span></>
             ) : (
               <>Where <span className="text-orange-500">Art</span> is <span className="text-sky-500">Play</span></>
             )}
           </h1>
-          <p className="text-xl text-gray-500 mb-8">
+          <p className="text-xl text-gray-500 dark:text-neutral-400 mb-8">
             {isUk
               ? "✏️ Малювання · 🏺 Глина · ✂️ Колаж · Для дітей 3–14 років"
               : "✏️ Drawing · 🏺 Clay · ✂️ Collage · For ages 3–14"}
@@ -302,10 +302,10 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
       {/* ── CLASS PROGRAMS ─────────────────────────────────────── */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-extrabold text-center text-gray-800 mb-2">
+          <h2 className="text-3xl font-extrabold text-center text-gray-800 dark:text-neutral-200 mb-2">
             {isUk ? "🖌️ Програми занять" : "🖌️ Class Programs"}
           </h2>
-          <p className="text-center text-gray-500 mb-10">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-10">
             {isUk ? "Підберіть ідеальну програму для вашої дитини" : "Find the perfect program for your child"}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
@@ -316,7 +316,7 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
               >
                 <div className="text-4xl text-center">{p.emoji}</div>
                 <div className="text-center">
-                  <div className="font-extrabold text-gray-800 text-lg">{isUk ? p.nameUk : p.nameEn}</div>
+                  <div className="font-extrabold text-gray-800 dark:text-neutral-200 text-lg">{isUk ? p.nameUk : p.nameEn}</div>
                   <div className="text-sm text-gray-500">{isUk ? p.ageUk : p.ageEn}</div>
                 </div>
                 <div className={`${p.badge} text-white text-xl font-extrabold text-center rounded-xl py-2`}>
@@ -324,12 +324,12 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
                 </div>
                 <ul className="space-y-1">
                   {(isUk ? p.topicsUk : p.topicsEn).map((t) => (
-                    <li key={t} className="text-sm text-gray-700 flex items-start gap-1.5">
+                    <li key={t} className="text-sm text-gray-700 dark:text-neutral-300 flex items-start gap-1.5">
                       <span className="text-orange-400 mt-0.5">✦</span>{t}
                     </li>
                   ))}
                 </ul>
-                <div className="mt-auto text-xs text-gray-500 text-center border-t border-white/60 pt-2">
+                <div className="mt-auto text-xs text-gray-500 dark:text-neutral-400 text-center border-t border-white/60 pt-2">
                   🕐 {isUk ? p.schedUk : p.schedEn}
                 </div>
               </div>
@@ -341,10 +341,10 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
       {/* ── WEEKLY SCHEDULE ────────────────────────────────────── */}
       <section className="py-16 px-4 bg-sky-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-extrabold text-center text-gray-800 mb-2">
+          <h2 className="text-3xl font-extrabold text-center text-gray-800 dark:text-neutral-200 mb-2">
             {isUk ? "📅 Розклад занять" : "📅 Weekly Schedule"}
           </h2>
-          <p className="text-center text-gray-500 mb-8">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-8">
             {isUk ? "Оберіть зручний день та час" : "Choose a convenient day and time"}
           </p>
           {/* Day tabs */}
@@ -356,7 +356,7 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
                 className={`px-5 py-2 rounded-full font-bold text-sm transition-all ${
                   activeDay === d
                     ? "bg-orange-500 text-white shadow-md"
-                    : "bg-white border border-orange-200 text-gray-600 hover:border-orange-400"
+                    : "bg-white border border-orange-200 text-gray-600 dark:text-neutral-300 hover:border-orange-400"
                 }`}
               >
                 {isUk ? DAY_LABELS[d].uk : DAY_LABELS[d].en}
@@ -384,7 +384,7 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
                   disabled={slot.status === "full"}
                   className={`text-sm font-bold px-4 py-2 rounded-full shrink-0 ${
                     slot.status === "full"
-                      ? "bg-gray-100 text-gray-400 cursor-not-allowed"
+                      ? "bg-gray-100 dark:bg-neutral-800 text-gray-400 dark:text-neutral-500 cursor-not-allowed"
                       : "bg-linear-to-br from-orange-400 to-rose-400 text-white hover:shadow-md transition-shadow"
                   }`}
                 >
@@ -399,10 +399,10 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
       {/* ── KIDS GALLERY ───────────────────────────────────────── */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-extrabold text-center text-gray-800 mb-2">
+          <h2 className="text-3xl font-extrabold text-center text-gray-800 dark:text-neutral-200 mb-2">
             {isUk ? "🖼️ Галерея робіт" : "🖼️ Kids Gallery"}
           </h2>
-          <p className="text-center text-gray-500 mb-10">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-10">
             {isUk ? "Справжнє мистецтво, створене нашими учнями" : "Real art created by our students"}
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-3 gap-4">
@@ -427,10 +427,10 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
       {/* ── WORKSHOPS ──────────────────────────────────────────── */}
       <section className="py-16 px-4 bg-yellow-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-extrabold text-center text-gray-800 mb-2">
+          <h2 className="text-3xl font-extrabold text-center text-gray-800 dark:text-neutral-200 mb-2">
             {isUk ? "🎉 Тематичні майстер-класи" : "🎉 Themed Workshops"}
           </h2>
-          <p className="text-center text-gray-500 mb-10">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-10">
             {isUk ? "Особливі заняття для особливих спогадів" : "Special sessions for special memories"}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -438,9 +438,9 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
               <div key={w.titleEn} className={`rounded-2xl border-2 ${w.border} bg-linear-to-br ${w.color} p-6 flex gap-4`}>
                 <div className="text-4xl shrink-0">{w.emoji}</div>
                 <div className="flex-1 min-w-0">
-                  <div className="font-extrabold text-gray-800 text-lg mb-0.5">{isUk ? w.titleUk : w.titleEn}</div>
-                  <div className="text-sm text-gray-500 mb-1">📅 {isUk ? w.dateUk : w.dateEn} · ⏱ {isUk ? w.duration : w.durationEn}</div>
-                  <p className="text-sm text-gray-600 mb-3">{isUk ? w.descUk : w.descEn}</p>
+                  <div className="font-extrabold text-gray-800 dark:text-neutral-200 text-lg mb-0.5">{isUk ? w.titleUk : w.titleEn}</div>
+                  <div className="text-sm text-gray-500 dark:text-neutral-400 mb-1">📅 {isUk ? w.dateUk : w.dateEn} · ⏱ {isUk ? w.duration : w.durationEn}</div>
+                  <p className="text-sm text-gray-600 dark:text-neutral-300 mb-3">{isUk ? w.descUk : w.descEn}</p>
                   <div className="flex items-center justify-between flex-wrap gap-2">
                     <span className="text-xl font-extrabold text-orange-500">{w.price}</span>
                     <button className="bg-linear-to-br from-orange-400 to-rose-400 text-white text-sm font-bold px-5 py-2 rounded-full shadow hover:shadow-md transition-shadow">
@@ -457,10 +457,10 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
       {/* ── ART THERAPY ────────────────────────────────────────── */}
       <section className="py-16 px-4 bg-violet-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-extrabold text-center text-gray-800 mb-2">
+          <h2 className="text-3xl font-extrabold text-center text-gray-800 dark:text-neutral-200 mb-2">
             {isUk ? "🧠 Арт-терапія для дітей" : "🧠 Art Therapy for Children"}
           </h2>
-          <p className="text-center text-gray-500 mb-4 max-w-2xl mx-auto">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-4 max-w-2xl mx-auto">
             {isUk
               ? "Арт-терапія відрізняється від звичайних занять: тут головне не результат, а процес. Сертифікований фахівець використовує мистецтво як інструмент підтримки емоційного здоров'я дитини."
               : "Art therapy differs from regular classes: here the process matters more than the result. A certified specialist uses art as a tool to support a child's emotional wellbeing."}
@@ -470,13 +470,13 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
               <div key={b.titleEn} className="bg-white rounded-2xl border border-violet-100 p-5 shadow-sm hover:shadow-md transition-shadow flex gap-4">
                 <div className="text-3xl shrink-0">{b.emoji}</div>
                 <div>
-                  <div className="font-bold text-gray-800 mb-1">{isUk ? b.titleUk : b.titleEn}</div>
+                  <div className="font-bold text-gray-800 dark:text-neutral-200 mb-1">{isUk ? b.titleUk : b.titleEn}</div>
                   <p className="text-sm text-gray-600">{isUk ? b.descUk : b.descEn}</p>
                 </div>
               </div>
             ))}
           </div>
-          <div className="mt-8 bg-white rounded-2xl border border-violet-200 p-5 text-sm text-gray-600 text-center">
+          <div className="mt-8 bg-white dark:bg-neutral-800 rounded-2xl border border-violet-200 p-5 text-sm text-gray-600 dark:text-neutral-300 text-center">
             {isUk
               ? "💜 Заняття проводить Олена Мельник — сертифікований арт-терапевт (УAAT). Перша консультація безкоштовна."
               : "💜 Sessions led by Olena Melnyk — certified art therapist (UAAT). First consultation is free."}
@@ -487,10 +487,10 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
       {/* ── ADULTS EVENINGS ────────────────────────────────────── */}
       <section className="py-16 px-4 bg-rose-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-extrabold text-center text-gray-800 mb-2">
+          <h2 className="text-3xl font-extrabold text-center text-gray-800 dark:text-neutral-200 mb-2">
             {isUk ? "👨‍👧 Вечори для дорослих та дітей" : "👨‍👧 Parent & Child Evenings"}
           </h2>
-          <p className="text-center text-gray-500 mb-8">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-8">
             {isUk ? "Творіть разом — п'ятниця 19:00" : "Create together — Fridays at 19:00"}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
@@ -501,7 +501,7 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
             ].map((item) => (
               <div key={item.titleEn} className="bg-white rounded-2xl border border-rose-200 p-5 text-center shadow-sm hover:shadow-md transition-shadow">
                 <div className="text-4xl mb-3">{item.emoji}</div>
-                <div className="font-bold text-gray-800 mb-1">{isUk ? item.titleUk : item.titleEn}</div>
+                <div className="font-bold text-gray-800 dark:text-neutral-200 mb-1">{isUk ? item.titleUk : item.titleEn}</div>
                 <p className="text-sm text-gray-600">{isUk ? item.descUk : item.descEn}</p>
               </div>
             ))}
@@ -520,10 +520,10 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
       {/* ── ABOUT ──────────────────────────────────────────────── */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-extrabold text-center text-gray-800 mb-2">
+          <h2 className="text-3xl font-extrabold text-center text-gray-800 dark:text-neutral-200 mb-2">
             {isUk ? "💛 Про нашу студію" : "💛 About Our Studio"}
           </h2>
-          <p className="text-center text-gray-500 mb-10 max-w-2xl mx-auto">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-10 max-w-2xl mx-auto">
             {isUk
               ? "ArtPlay Studio заснована у 2016 році в Одесі. Ми переконані: кожна дитина — художник. Наша місія — не навчити «правильно малювати», а розкрити творчий потенціал через радість та гру."
               : "ArtPlay Studio was founded in 2016 in Odesa. We believe every child is an artist. Our mission is not to teach 'correct' drawing, but to unlock creative potential through joy and play."}
@@ -532,7 +532,7 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
             {TEACHERS.map((t) => (
               <div key={t.nameEn} className="bg-orange-50 border border-orange-100 rounded-2xl p-5 text-center hover:shadow-md transition-shadow">
                 <div className="text-5xl mb-3">{t.emoji}</div>
-                <div className="font-extrabold text-gray-800 mb-0.5">{isUk ? t.nameUk : t.nameEn}</div>
+                <div className="font-extrabold text-gray-800 dark:text-neutral-200 mb-0.5">{isUk ? t.nameUk : t.nameEn}</div>
                 <div className="text-sm font-semibold text-orange-500 mb-1">{isUk ? t.specialtyUk : t.specialtyEn}</div>
                 <div className="text-xs text-gray-500">{isUk ? t.eduUk : t.eduEn}</div>
               </div>
@@ -540,7 +540,7 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
           </div>
           <div className="mt-10 bg-linear-to-br from-orange-50 to-sky-50 rounded-2xl border border-orange-100 p-6 text-center">
             <div className="text-2xl mb-2">🌈</div>
-            <p className="text-gray-700 font-medium">
+            <p className="text-gray-700 dark:text-neutral-300 font-medium">
               {isUk
                 ? "«Ми не виправляємо роботи дітей і не порівнюємо їх між собою. Кожен витвір унікальний, як і кожна дитина.»"
                 : "\"We never correct children's works or compare them. Every creation is unique, just like every child.\""}
@@ -552,10 +552,10 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
       {/* ── BOOKING FORM ───────────────────────────────────────── */}
       <section className="py-16 px-4 bg-sky-50">
         <div className="max-w-lg mx-auto">
-          <h2 className="text-3xl font-extrabold text-center text-gray-800 mb-2">
+          <h2 className="text-3xl font-extrabold text-center text-gray-800 dark:text-neutral-200 mb-2">
             {isUk ? "📝 Записатись на пробний урок" : "📝 Book a Free Lesson"}
           </h2>
-          <p className="text-center text-gray-500 mb-8">
+          <p className="text-center text-gray-500 dark:text-neutral-400 mb-8">
             {isUk ? "Перший урок — безкоштовно. Без зобов'язань." : "First lesson is free. No commitment."}
           </p>
           {submitted ? (
@@ -564,7 +564,7 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
               <div className="text-xl font-extrabold text-green-600 mb-2">
                 {isUk ? "Ура! Заявку отримано!" : "Hooray! Request received!"}
               </div>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-600 dark:text-neutral-300 text-sm">
                 {isUk
                   ? "Ми зателефонуємо вам протягом кількох годин, щоб підтвердити час першого уроку 🌟"
                   : "We'll call you within a few hours to confirm the first lesson time 🌟"}
@@ -579,7 +579,7 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
           ) : (
             <form onSubmit={handleSubmit} className="bg-white rounded-2xl border border-sky-100 p-6 shadow-sm space-y-4">
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1">
+                <label className="block text-sm font-semibold text-gray-700 dark:text-neutral-300 mb-1">
                   {isUk ? "Ім'я дитини" : "Child's name"} *
                 </label>
                 <input
@@ -588,18 +588,18 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
                   value={form.childName}
                   onChange={(e) => setForm({ ...form, childName: e.target.value })}
                   placeholder={isUk ? "Наприклад: Соня" : "E.g. Anna"}
-                  className="w-full border border-gray-200 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-300"
+                  className="w-full border border-gray-200 dark:border-neutral-700 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-300"
                 />
               </div>
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1">
+                <label className="block text-sm font-semibold text-gray-700 dark:text-neutral-300 mb-1">
                   {isUk ? "Вік дитини" : "Child's age"} *
                 </label>
                 <select
                   required
                   value={form.age}
                   onChange={(e) => setForm({ ...form, age: e.target.value })}
-                  className="w-full border border-gray-200 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-300"
+                  className="w-full border border-gray-200 dark:border-neutral-700 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-300"
                 >
                   <option value="">{isUk ? "Оберіть вік" : "Select age"}</option>
                   <option value="3-6">{isUk ? "3–6 років" : "3–6 years"}</option>
@@ -608,13 +608,13 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1">
+                <label className="block text-sm font-semibold text-gray-700 dark:text-neutral-300 mb-1">
                   {isUk ? "Програма" : "Program interest"}
                 </label>
                 <select
                   value={form.program}
                   onChange={(e) => setForm({ ...form, program: e.target.value })}
-                  className="w-full border border-gray-200 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-300"
+                  className="w-full border border-gray-200 dark:border-neutral-700 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-300"
                 >
                   <option value="">{isUk ? "Оберіть програму" : "Select program"}</option>
                   <option value="little">{isUk ? "Маленькі Художники (3–6)" : "Little Artists (3–6)"}</option>
@@ -625,13 +625,13 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1">
+                <label className="block text-sm font-semibold text-gray-700 dark:text-neutral-300 mb-1">
                   {isUk ? "Зручний час" : "Preferred schedule"}
                 </label>
                 <select
                   value={form.schedule}
                   onChange={(e) => setForm({ ...form, schedule: e.target.value })}
-                  className="w-full border border-gray-200 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-300"
+                  className="w-full border border-gray-200 dark:border-neutral-700 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-300"
                 >
                   <option value="">{isUk ? "Оберіть час" : "Select time"}</option>
                   <option value="morning">{isUk ? "Ранок (10:00–12:00)" : "Morning (10:00–12:00)"}</option>
@@ -641,7 +641,7 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1">
+                <label className="block text-sm font-semibold text-gray-700 dark:text-neutral-300 mb-1">
                   {isUk ? "Ваше ім'я (батько/мати)" : "Parent's name"} *
                 </label>
                 <input
@@ -650,11 +650,11 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
                   value={form.parentName}
                   onChange={(e) => setForm({ ...form, parentName: e.target.value })}
                   placeholder={isUk ? "Ваше ім'я" : "Your name"}
-                  className="w-full border border-gray-200 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-300"
+                  className="w-full border border-gray-200 dark:border-neutral-700 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-300"
                 />
               </div>
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1">
+                <label className="block text-sm font-semibold text-gray-700 dark:text-neutral-300 mb-1">
                   {isUk ? "Номер телефону" : "Phone number"} *
                 </label>
                 <input
@@ -663,7 +663,7 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
                   value={form.phone}
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
                   placeholder="+380 XX XXX XX XX"
-                  className="w-full border border-gray-200 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-300"
+                  className="w-full border border-gray-200 dark:border-neutral-700 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-300"
                 />
               </div>
               <button
@@ -692,7 +692,7 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
                 <span className="text-xl font-extrabold text-orange-400">ArtPlay</span>
                 <span className="text-xl font-extrabold text-sky-400">Studio</span>
               </div>
-              <p className="text-sm text-gray-400 max-w-xs">
+              <p className="text-sm text-gray-400 dark:text-neutral-500 max-w-xs">
                 {isUk
                   ? "Дитяча студія творчості та мистецтва для дітей 3–14 років в Одесі"
                   : "Children's art & creativity studio for ages 3–14 in Odesa"}
@@ -700,7 +700,7 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
             </div>
             <div>
               <div className="font-semibold text-white mb-2">{isUk ? "📍 Адреса" : "📍 Address"}</div>
-              <div className="text-sm text-gray-400 space-y-1">
+              <div className="text-sm text-gray-400 dark:text-neutral-500 space-y-1">
                 <div>📌 {isUk ? "вул. Дерибасівська 14, Одеса" : "14 Derybasivska St, Odesa"}</div>
                 <div>📞 +380 48 777 12 34</div>
                 <div>✉️ hello@artplay.od.ua</div>
@@ -708,7 +708,7 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
             </div>
             <div>
               <div className="font-semibold text-white mb-2">{isUk ? "🕐 Години роботи" : "🕐 Hours"}</div>
-              <div className="text-sm text-gray-400 space-y-1">
+              <div className="text-sm text-gray-400 dark:text-neutral-500 space-y-1">
                 <div>{isUk ? "Пн–Пт: 10:00–20:00" : "Mon–Fri: 10:00–20:00"}</div>
                 <div>{isUk ? "Субота: 10:00–16:00" : "Sat: 10:00–16:00"}</div>
                 <div>{isUk ? "Неділя: вихідний" : "Sun: closed"}</div>

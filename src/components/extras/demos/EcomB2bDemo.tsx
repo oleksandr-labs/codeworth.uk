@@ -82,7 +82,7 @@ export function EcomB2bDemo({ isUk }: Props) {
           const currentTier = [...p.tiers].reverse().find((t) => q >= t.min);
           const nextTier = p.tiers.find((t) => q < t.min);
           return (
-            <div key={p.id} className="rounded-2xl border border-neutral-200 bg-white overflow-hidden">
+            <div key={p.id} className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white overflow-hidden">
               <div className="flex items-center gap-4 p-4">
                 <div className={`w-16 h-16 rounded-xl bg-linear-to-br ${p.color} flex items-center justify-center text-3xl shrink-0`}>
                   {p.emoji}
@@ -96,7 +96,7 @@ export function EcomB2bDemo({ isUk }: Props) {
                 <div className="flex items-center gap-2">
                   <button
                     onClick={() => setQty((s) => ({ ...s, [p.id]: Math.max(1, (s[p.id] ?? 0) - 10) }))}
-                    className="w-8 h-8 rounded bg-neutral-100 hover:bg-neutral-200 text-sm font-semibold"
+                    className="w-8 h-8 rounded bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 text-sm font-semibold"
                     aria-label="−10"
                   >
                     −10
@@ -105,32 +105,32 @@ export function EcomB2bDemo({ isUk }: Props) {
                     type="number"
                     value={q}
                     onChange={(e) => setQty((s) => ({ ...s, [p.id]: Math.max(0, parseInt(e.target.value || "0", 10)) }))}
-                    className="w-16 px-2 py-1 border border-neutral-200 rounded text-center text-sm font-semibold tabular-nums focus:outline-none focus:ring-2 focus:ring-indigo-100"
+                    className="w-16 px-2 py-1 border border-neutral-200 dark:border-neutral-700 rounded text-center text-sm font-semibold tabular-nums focus:outline-none focus:ring-2 focus:ring-indigo-100"
                     min={0}
                     aria-label={isUk ? "Кількість" : "Quantity"}
                   />
                   <button
                     onClick={() => setQty((s) => ({ ...s, [p.id]: (s[p.id] ?? 0) + 10 }))}
-                    className="w-8 h-8 rounded bg-neutral-100 hover:bg-neutral-200 text-sm font-semibold"
+                    className="w-8 h-8 rounded bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 text-sm font-semibold"
                     aria-label="+10"
                   >
                     +10
                   </button>
                 </div>
                 <div className="text-right shrink-0">
-                  <p className="font-bold text-neutral-900 tabular-nums">{fmt(currentPrice)}/{isUk ? "шт" : "ea"}</p>
-                  <p className="text-xs text-neutral-500 tabular-nums">{isUk ? "Разом:" : "Total:"} {fmt(currentPrice * q)}</p>
+                  <p className="font-bold text-neutral-900 dark:text-white tabular-nums">{fmt(currentPrice)}/{isUk ? "шт" : "ea"}</p>
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400 tabular-nums">{isUk ? "Разом:" : "Total:"} {fmt(currentPrice * q)}</p>
                 </div>
               </div>
 
               {/* Tier ladder */}
-              <div className="bg-neutral-50 px-4 py-2 border-t border-neutral-100 flex items-center gap-2 flex-wrap text-xs">
+              <div className="bg-neutral-50 dark:bg-neutral-900 px-4 py-2 border-t border-neutral-100 dark:border-neutral-700 flex items-center gap-2 flex-wrap text-xs">
                 <span className="text-neutral-500">{isUk ? "Знижки:" : "Tier discounts:"}</span>
                 {p.tiers.map((t, i) => (
                   <span
                     key={i}
                     className={`px-2 py-0.5 rounded-md font-semibold ${
-                      currentTier === t ? "bg-emerald-500 text-white" : "bg-white border border-neutral-200 text-neutral-600"
+                      currentTier === t ? "bg-emerald-500 text-white" : "bg-white border border-neutral-200 dark:border-neutral-700 text-neutral-600"
                     }`}
                   >
                     {t.min}+: −{t.discount}%
@@ -154,7 +154,7 @@ export function EcomB2bDemo({ isUk }: Props) {
           value={companyName}
           onChange={(e) => setCompanyName(e.target.value)}
           placeholder={isUk ? "Назва компанії" : "Company name"}
-          className="px-3 py-2.5 rounded-lg border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 text-sm"
+          className="px-3 py-2.5 rounded-lg border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 text-sm"
           aria-label={isUk ? "Компанія" : "Company"}
         />
         <input
@@ -162,7 +162,7 @@ export function EcomB2bDemo({ isUk }: Props) {
           value={vat}
           onChange={(e) => setVat(e.target.value)}
           placeholder={isUk ? "ЄДРПОУ / VAT" : "VAT number"}
-          className="px-3 py-2.5 rounded-lg border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 text-sm"
+          className="px-3 py-2.5 rounded-lg border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 text-sm"
           aria-label={isUk ? "ЄДРПОУ" : "VAT"}
         />
       </div>
@@ -180,7 +180,7 @@ export function EcomB2bDemo({ isUk }: Props) {
             <label
               key={m.id}
               className={`flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-all ${
-                payment === m.id ? "border-indigo-500 bg-indigo-50/50" : "border-neutral-200 hover:bg-neutral-50"
+                payment === m.id ? "border-indigo-500 bg-indigo-50/50" : "border-neutral-200 dark:border-neutral-700 hover:bg-neutral-50"
               }`}
             >
               <input
@@ -199,7 +199,7 @@ export function EcomB2bDemo({ isUk }: Props) {
       </div>
 
       {/* Summary */}
-      <div className="rounded-2xl border border-neutral-200 bg-white p-5 space-y-2 text-sm">
+      <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white p-5 space-y-2 text-sm">
         <div className="flex justify-between text-neutral-600">
           <span>{isUk ? "Сума товарів" : "Subtotal"}</span>
           <span className="tabular-nums">{fmt(subtotal)}</span>

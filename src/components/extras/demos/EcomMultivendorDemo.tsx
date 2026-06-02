@@ -83,17 +83,17 @@ export function EcomMultivendorDemo({ isUk }: Props) {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {products.length > 0 ? products.map((p, i) => (
-            <div key={i} className="rounded-xl border border-neutral-200 bg-white overflow-hidden hover:shadow-md transition-shadow">
+            <div key={i} className="rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white overflow-hidden hover:shadow-md transition-shadow">
               <div className={`aspect-square bg-linear-to-br ${vendor.color} flex items-center justify-center text-5xl opacity-90`}>
                 {p.emoji}
               </div>
               <div className="p-3">
-                <p className="font-medium text-neutral-900 text-sm line-clamp-1">{isUk ? p.nameUk : p.nameEn}</p>
+                <p className="font-medium text-neutral-900 dark:text-white text-sm line-clamp-1">{isUk ? p.nameUk : p.nameEn}</p>
                 <p className="text-indigo-700 font-bold mt-1">{fmt(p.price)}</p>
               </div>
             </div>
           )) : (
-            <div className="col-span-full text-center p-8 text-sm text-neutral-500 border-2 border-dashed border-neutral-200 rounded-xl">
+            <div className="col-span-full text-center p-8 text-sm text-neutral-500 dark:text-neutral-400 border-2 border-dashed border-neutral-200 dark:border-neutral-700 rounded-xl">
               {isUk ? "Демо-каталог цього продавця" : "Vendor catalog (demo)"}
             </div>
           )}
@@ -111,10 +111,10 @@ export function EcomMultivendorDemo({ isUk }: Props) {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between flex-wrap gap-3">
-        <h3 className="text-lg font-bold text-neutral-900 flex items-center gap-2">
+        <h3 className="text-lg font-bold text-neutral-900 dark:text-white flex items-center gap-2">
           <Store className="w-5 h-5 text-indigo-600" />
           {isUk ? "Маркетплейс — продавці" : "Marketplace vendors"}
-          <span className="px-2 py-0.5 rounded-full bg-neutral-100 text-neutral-600 text-xs font-semibold tabular-nums">
+          <span className="px-2 py-0.5 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 text-xs font-semibold tabular-nums">
             {filtered.length}
           </span>
         </h3>
@@ -125,7 +125,7 @@ export function EcomMultivendorDemo({ isUk }: Props) {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder={isUk ? "Пошук продавця..." : "Search vendors..."}
-            className="w-full pl-9 pr-3 py-2 rounded-lg border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 text-sm"
+            className="w-full pl-9 pr-3 py-2 rounded-lg border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 text-sm"
             aria-label={isUk ? "Пошук" : "Search"}
           />
         </div>
@@ -136,7 +136,7 @@ export function EcomMultivendorDemo({ isUk }: Props) {
           <button
             key={v.id}
             onClick={() => setSelectedVendor(v.id)}
-            className="text-left rounded-2xl border border-neutral-200 bg-white overflow-hidden hover:shadow-lg hover:border-indigo-300 transition-all"
+            className="text-left rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white overflow-hidden hover:shadow-lg hover:border-indigo-300 transition-all"
           >
             <div className={`relative h-24 bg-linear-to-br ${v.color} flex items-center justify-center text-5xl`}>
               {v.emoji}
@@ -156,7 +156,7 @@ export function EcomMultivendorDemo({ isUk }: Props) {
                   {isUk ? v.cityUk : v.cityEn}
                 </span>
               </div>
-              <div className="flex items-center justify-between pt-2 border-t border-neutral-100 text-xs text-neutral-500">
+              <div className="flex items-center justify-between pt-2 border-t border-neutral-100 dark:border-neutral-700 text-xs text-neutral-500">
                 <span>{v.products} {isUk ? "товарів" : "items"}</span>
                 <span className="text-indigo-600 font-semibold flex items-center gap-0.5">
                   {isUk ? "Перейти" : "View"}

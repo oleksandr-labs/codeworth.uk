@@ -54,7 +54,7 @@ export function AbTestDemo({ isUk }: Props) {
               key={t.id}
               onClick={() => setTestIdx(i)}
               className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all ${
-                i === testIdx ? "bg-violet-600 text-white" : "bg-neutral-100 text-neutral-600 hover:bg-violet-50"
+                i === testIdx ? "bg-violet-600 text-white" : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-violet-50"
               }`}
             >
               {isUk ? t.nameUk : t.nameEn}
@@ -76,9 +76,9 @@ export function AbTestDemo({ isUk }: Props) {
               <div className="flex items-center justify-between px-4 py-2 border-b border-neutral-100">
                 <span className="flex items-center gap-2">
                   <span className={`w-7 h-7 rounded-full font-bold text-sm flex items-center justify-center ${
-                    v.isControl ? "bg-neutral-100 text-neutral-600" : "bg-violet-100 text-violet-700"
+                    v.isControl ? "bg-neutral-100 dark:bg-neutral-800 text-neutral-600" : "bg-violet-100 text-violet-700"
                   }`}>{v.label}</span>
-                  <span className="text-xs font-semibold text-neutral-500 uppercase">
+                  <span className="text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase">
                     {v.isControl ? (isUk ? "Контроль" : "Control") : (isUk ? "Варіант" : "Variant")}
                   </span>
                 </span>
@@ -91,13 +91,13 @@ export function AbTestDemo({ isUk }: Props) {
               </div>
 
               {/* Sample variant rendering */}
-              <div className="p-6 bg-neutral-50 flex items-center justify-center min-h-[120px]">
+              <div className="p-6 bg-neutral-50 dark:bg-neutral-900 flex items-center justify-center min-h-[120px]">
                 {test.id === "cta-color" ? (
                   <button className={`px-6 py-3 rounded-lg ${v.color} text-white font-semibold shadow-sm transition-colors`}>
                     {isUk ? v.textUk : v.text}
                   </button>
                 ) : (
-                  <p className="text-center font-bold text-neutral-900 text-lg leading-tight">
+                  <p className="text-center font-bold text-neutral-900 dark:text-white text-lg leading-tight">
                     {isUk ? v.textUk : v.text}
                   </p>
                 )}
@@ -107,29 +107,29 @@ export function AbTestDemo({ isUk }: Props) {
               <div className="p-4 space-y-3">
                 <div className="grid grid-cols-2 gap-3 text-sm">
                   <div>
-                    <div className="text-xs text-neutral-500 uppercase tracking-wider mb-1">
+                    <div className="text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mb-1">
                       <Users className="w-3 h-3 inline mr-1" />
                       {isUk ? "Відвідувачі" : "Visitors"}
                     </div>
-                    <div className="font-bold text-neutral-900 tabular-nums">{v.visitors.toLocaleString()}</div>
+                    <div className="font-bold text-neutral-900 dark:text-white tabular-nums">{v.visitors.toLocaleString()}</div>
                   </div>
                   <div>
-                    <div className="text-xs text-neutral-500 uppercase tracking-wider mb-1">
+                    <div className="text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mb-1">
                       {isUk ? "Конверсії" : "Conversions"}
                     </div>
-                    <div className="font-bold text-neutral-900 tabular-nums">{v.conversions}</div>
+                    <div className="font-bold text-neutral-900 dark:text-white tabular-nums">{v.conversions}</div>
                   </div>
                 </div>
                 <div>
                   <div className="flex items-center justify-between mb-1">
-                    <span className="text-xs text-neutral-500 uppercase tracking-wider">
+                    <span className="text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">
                       {isUk ? "Конверсія" : "Conversion rate"}
                     </span>
                     <span className={`font-bold tabular-nums ${isWinner ? "text-emerald-600" : "text-neutral-900"}`}>
                       {v.rate.toFixed(2)}%
                     </span>
                   </div>
-                  <div className="h-2 rounded-full bg-neutral-100 overflow-hidden">
+                  <div className="h-2 rounded-full bg-neutral-100 dark:bg-neutral-800 overflow-hidden">
                     <div
                       className={`h-full ${isWinner ? "bg-emerald-500" : "bg-neutral-400"} rounded-full transition-all`}
                       style={{ width: `${(v.rate / 15) * 100}%` }}

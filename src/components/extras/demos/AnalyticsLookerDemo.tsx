@@ -80,13 +80,13 @@ export function AnalyticsLookerDemo({ isUk }: Props) {
         <h3 className="text-lg font-bold text-neutral-900">
           {isUk ? "Аналітичний дашборд" : "Analytics Dashboard"}
         </h3>
-        <div className="flex gap-1 rounded-lg bg-neutral-100 p-1">
+        <div className="flex gap-1 rounded-lg bg-neutral-100 dark:bg-neutral-800 p-1">
           {RANGES.map((r) => (
             <button
               key={r.id}
               onClick={() => setRange(r.id as keyof typeof KPIS)}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-all ${
-                range === r.id ? "bg-white text-neutral-900 shadow-sm" : "text-neutral-500"
+                range === r.id ? "bg-white text-neutral-900 dark:text-white shadow-sm" : "text-neutral-500"
               }`}
             >
               <Calendar className="w-3.5 h-3.5" />
@@ -102,7 +102,7 @@ export function AnalyticsLookerDemo({ isUk }: Props) {
           const Icon = k.icon;
           const positive = k.delta >= 0;
           return (
-            <div key={k.key} className={`rounded-xl border border-neutral-200 bg-white p-4`}>
+            <div key={k.key} className={`rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 p-4`}>
               <div className="flex items-center justify-between mb-3">
                 <div className={`w-9 h-9 rounded-lg ${k.bg} ${k.color} flex items-center justify-center`}>
                   <Icon className="w-4 h-4" />
@@ -112,15 +112,15 @@ export function AnalyticsLookerDemo({ isUk }: Props) {
                   {Math.abs(k.delta).toFixed(1)}%
                 </span>
               </div>
-              <div className="text-xs text-neutral-500 mb-1">{isUk ? k.labelUk : k.labelEn}</div>
-              <div className="text-2xl font-bold text-neutral-900 tabular-nums">{k.value}</div>
+              <div className="text-xs text-neutral-500 dark:text-neutral-400 mb-1">{isUk ? k.labelUk : k.labelEn}</div>
+              <div className="text-2xl font-bold text-neutral-900 dark:text-white tabular-nums">{k.value}</div>
             </div>
           );
         })}
       </div>
 
       {/* Main chart */}
-      <div className="rounded-2xl border border-neutral-200 bg-white p-5">
+      <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white p-5">
         <div className="flex items-center justify-between mb-4">
           <h4 className="font-bold text-neutral-900">{isUk ? "Сесії за період" : "Sessions over time"}</h4>
           <span className="text-xs text-neutral-500">{isUk ? "Live дані" : "Live data"}</span>
@@ -135,16 +135,16 @@ export function AnalyticsLookerDemo({ isUk }: Props) {
       </div>
 
       {/* Traffic sources */}
-      <div className="rounded-2xl border border-neutral-200 bg-white p-5">
-        <h4 className="font-bold text-neutral-900 mb-4">{isUk ? "Джерела трафіку" : "Traffic sources"}</h4>
+      <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white p-5">
+        <h4 className="font-bold text-neutral-900 dark:text-white mb-4">{isUk ? "Джерела трафіку" : "Traffic sources"}</h4>
         <div className="space-y-3">
           {SOURCES.map((s) => (
             <div key={s.name}>
               <div className="flex items-center justify-between mb-1.5 text-sm">
                 <span className="text-neutral-700">{s.name}</span>
-                <span className="font-semibold text-neutral-900 tabular-nums">{s.value}%</span>
+                <span className="font-semibold text-neutral-900 dark:text-white tabular-nums">{s.value}%</span>
               </div>
-              <div className="h-2 rounded-full bg-neutral-100 overflow-hidden">
+              <div className="h-2 rounded-full bg-neutral-100 dark:bg-neutral-800 overflow-hidden">
                 <div
                   className={`h-full ${s.color} rounded-full transition-all duration-700`}
                   style={{ width: `${s.value}%` }}

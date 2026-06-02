@@ -41,7 +41,7 @@ export function ServiceStickyCta({ lang, serviceName }: Props) {
                 ? `Цікавить «${serviceName}»?`
                 : `Interested in ${serviceName}?`}
             </p>
-            <p className="text-xs text-gray-500 dark:text-gray-400 hidden sm:block">
+            <p className="text-xs text-gray-500 dark:text-neutral-400 dark:text-gray-400 dark:text-neutral-500 hidden sm:block">
               {isUk ? "Отримайте безкоштовну консультацію за 24 год" : "Get a free consultation within 24 hours"}
             </p>
           </div>
@@ -56,7 +56,7 @@ export function ServiceStickyCta({ lang, serviceName }: Props) {
           <button
             onClick={() => setDismissed(true)}
             aria-label={isUk ? "Закрити" : "Dismiss"}
-            className="p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 rounded-lg transition-colors"
+            className="p-2 text-gray-400 dark:text-neutral-500 hover:text-gray-600 dark:text-neutral-300 dark:hover:text-gray-300 rounded-lg transition-colors"
           >
             <X className="w-4 h-4" />
           </button>

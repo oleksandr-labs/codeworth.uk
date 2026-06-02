@@ -27,7 +27,7 @@ const COLORS = [
   { name: "Red 500", hex: "#EF4444", class: "bg-red-500" },
   { name: "Neutral 900", hex: "#171717", class: "bg-neutral-900" },
   { name: "Neutral 500", hex: "#737373", class: "bg-neutral-500" },
-  { name: "Neutral 100", hex: "#F5F5F5", class: "bg-neutral-100 border border-neutral-200" },
+  { name: "Neutral 100", hex: "#F5F5F5", class: "bg-neutral-100 dark:bg-neutral-800 border border-neutral-200" },
   { name: "White", hex: "#FFFFFF", class: "bg-white border border-neutral-200" },
 ];
 
@@ -56,7 +56,7 @@ const RADIUS = [
 
 function Section({ title, id, children }: { title: string; id: string; children: React.ReactNode }) {
   return (
-    <section id={id} className="py-16 border-b border-neutral-100 dark:border-neutral-800">
+    <section id={id} className="py-16 border-b border-neutral-100 dark:border-neutral-700 dark:border-neutral-800">
       <h2 className="text-2xl font-heading font-bold text-neutral-900 dark:text-white mb-8">{title}</h2>
       {children}
     </section>
@@ -75,7 +75,7 @@ export default function StyleGuidePage() {
             <h1 className="text-5xl font-heading font-extrabold text-neutral-900 dark:text-white mt-6 mb-3">
               Design System
             </h1>
-            <p className="text-lg text-neutral-500 max-w-xl">
+            <p className="text-lg text-neutral-500 dark:text-neutral-400 max-w-xl">
               Токени, компоненти та правила дизайн-системи Codeworth.
             </p>
           </Container>
@@ -88,7 +88,7 @@ export default function StyleGuidePage() {
               {COLORS.map((c) => (
                 <div key={c.name} className="flex flex-col gap-2">
                   <div className={`h-16 rounded-xl ${c.class}`} />
-                  <div className="text-xs font-medium text-neutral-700 dark:text-neutral-300">{c.name}</div>
+                  <div className="text-xs font-medium text-neutral-700 dark:text-neutral-300 ">{c.name}</div>
                   <div className="text-xs text-neutral-400 font-mono">{c.hex}</div>
                 </div>
               ))}
@@ -101,7 +101,7 @@ export default function StyleGuidePage() {
               {GRADIENTS.map((g) => (
                 <div key={g.name} className="flex flex-col gap-2">
                   <div className={`h-20 rounded-2xl ${g.class}`} />
-                  <div className="text-xs font-medium text-neutral-700 dark:text-neutral-300">{g.name}</div>
+                  <div className="text-xs font-medium text-neutral-700 dark:text-neutral-300 ">{g.name}</div>
                 </div>
               ))}
             </div>
@@ -117,10 +117,10 @@ export default function StyleGuidePage() {
                 { label: "H4 — 24px, font-heading, bold", el: <h4 className="text-2xl font-heading font-bold text-neutral-900 dark:text-white">Заголовок H4</h4> },
                 { label: "Body Large — 18px, neutral-600", el: <p className="text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed">Основний текст великий. Inter, 18px, leading-relaxed. Використовується для описів секцій і лідів.</p> },
                 { label: "Body — 16px, neutral-600", el: <p className="text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">Стандартний основний текст. Inter, 16px, leading-relaxed. Найпоширеніший розмір для контенту.</p> },
-                { label: "Body Small — 14px, neutral-500", el: <p className="text-sm text-neutral-500 dark:text-neutral-400">Малий текст. 14px. Використовується для підписів, метаданих, опцій форм.</p> },
+                { label: "Body Small — 14px, neutral-500", el: <p className="text-sm text-neutral-500 dark:text-neutral-400 ">Малий текст. 14px. Використовується для підписів, метаданих, опцій форм.</p> },
                 { label: "Caption — 12px, neutral-400", el: <p className="text-xs text-neutral-400 uppercase tracking-widest font-semibold">CAPTION / OVERLINE текст</p> },
               ].map(({ label, el }) => (
-                <div key={label} className="pb-5 border-b border-neutral-100 dark:border-neutral-800">
+                <div key={label} className="pb-5 border-b border-neutral-100 dark:border-neutral-700 dark:border-neutral-800">
                   <div className="text-xs text-neutral-400 font-mono mb-3">{label}</div>
                   {el}
                 </div>
@@ -164,7 +164,7 @@ export default function StyleGuidePage() {
               <span className="px-3 py-1 rounded-full bg-red-100 text-red-700 text-xs font-medium">🔴 Складний</span>
               <span className="px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 text-xs font-medium">Тег</span>
               <span className="px-3 py-1 rounded-full bg-violet-100 text-violet-700 text-xs font-medium">SEO</span>
-              <span className="px-3 py-1 rounded-full bg-neutral-100 text-neutral-600 text-xs font-medium">Next.js</span>
+              <span className="px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 text-xs font-medium">Next.js</span>
             </div>
           </Section>
 

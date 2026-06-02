@@ -36,7 +36,7 @@ export function EcomGiftCardDemo({ isUk }: Props) {
         <div className="space-y-5">
           {/* Designs */}
           <div>
-            <label className="block text-sm font-semibold text-neutral-900 mb-2">
+            <label className="block text-sm font-semibold text-neutral-900 dark:text-white mb-2">
               {isUk ? "Дизайн картки" : "Card design"}
             </label>
             <div className="grid grid-cols-4 gap-2">
@@ -58,7 +58,7 @@ export function EcomGiftCardDemo({ isUk }: Props) {
 
           {/* Amount */}
           <div>
-            <label className="block text-sm font-semibold text-neutral-900 mb-2">
+            <label className="block text-sm font-semibold text-neutral-900 dark:text-white mb-2">
               {isUk ? "Сума" : "Amount"}
             </label>
             <div className="grid grid-cols-5 gap-2 mb-2">
@@ -69,7 +69,7 @@ export function EcomGiftCardDemo({ isUk }: Props) {
                   className={`py-2 rounded-lg text-sm font-semibold transition-colors ${
                     !customAmount && amount === a
                       ? "bg-indigo-600 text-white"
-                      : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200"
+                      : "bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200"
                   }`}
                 >
                   {fmt(a)}
@@ -83,14 +83,14 @@ export function EcomGiftCardDemo({ isUk }: Props) {
               value={customAmount}
               onChange={(e) => setCustomAmount(e.target.value)}
               placeholder={isUk ? "Або введіть свою суму (₴)" : "Or enter custom amount (£)"}
-              className="w-full px-3 py-2 rounded-lg border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 text-sm"
+              className="w-full px-3 py-2 rounded-lg border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 text-sm"
               aria-label={isUk ? "Своя сума" : "Custom amount"}
             />
           </div>
 
           {/* Recipient */}
           <div>
-            <label htmlFor="recipient-input" className="block text-sm font-semibold text-neutral-900 mb-2">
+            <label htmlFor="recipient-input" className="block text-sm font-semibold text-neutral-900 dark:text-white mb-2">
               <Mail className="w-3.5 h-3.5 inline mr-1" />
               {isUk ? "Email отримувача" : "Recipient email"}
             </label>
@@ -100,13 +100,13 @@ export function EcomGiftCardDemo({ isUk }: Props) {
               value={recipient}
               onChange={(e) => setRecipient(e.target.value)}
               placeholder="recipient@example.com"
-              className="w-full px-3 py-2 rounded-lg border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 text-sm"
+              className="w-full px-3 py-2 rounded-lg border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 text-sm"
             />
           </div>
 
           {/* Personal message */}
           <div>
-            <label htmlFor="message-input" className="block text-sm font-semibold text-neutral-900 mb-2">
+            <label htmlFor="message-input" className="block text-sm font-semibold text-neutral-900 dark:text-white mb-2">
               {isUk ? "Особисте повідомлення" : "Personal message"}
             </label>
             <textarea
@@ -116,14 +116,14 @@ export function EcomGiftCardDemo({ isUk }: Props) {
               placeholder={isUk ? "Щасливого Дня народження!" : "Happy birthday!"}
               maxLength={200}
               rows={2}
-              className="w-full px-3 py-2 rounded-lg border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 text-sm resize-none"
+              className="w-full px-3 py-2 rounded-lg border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 text-sm resize-none"
             />
             <p className="text-xs text-neutral-400 mt-1">{message.length}/200</p>
           </div>
 
           {/* Send date */}
           <div>
-            <label htmlFor="senddate-input" className="block text-sm font-semibold text-neutral-900 mb-2">
+            <label htmlFor="senddate-input" className="block text-sm font-semibold text-neutral-900 dark:text-white mb-2">
               <Calendar className="w-3.5 h-3.5 inline mr-1" />
               {isUk ? "Дата відправлення" : "Send date"}
             </label>
@@ -132,7 +132,7 @@ export function EcomGiftCardDemo({ isUk }: Props) {
               type="date"
               value={sendDate}
               onChange={(e) => setSendDate(e.target.value)}
-              className="w-full px-3 py-2 rounded-lg border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 text-sm"
+              className="w-full px-3 py-2 rounded-lg border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 text-sm"
             />
           </div>
 
@@ -167,12 +167,12 @@ export function EcomGiftCardDemo({ isUk }: Props) {
           {message && (
             <div className="rounded-xl bg-amber-50 border border-amber-200 p-3">
               <p className="text-xs text-amber-700 uppercase tracking-wider mb-1">{isUk ? "Повідомлення" : "Message"}</p>
-              <p className="text-sm text-neutral-700 italic">"{message}"</p>
+              <p className="text-sm text-neutral-700 dark:text-neutral-300 italic">"{message}"</p>
             </div>
           )}
 
           {sendDate && (
-            <div className="text-xs text-neutral-500 flex items-center gap-1">
+            <div className="text-xs text-neutral-500 dark:text-neutral-400 flex items-center gap-1">
               <Calendar className="w-3 h-3" />
               {isUk ? "Буде надіслано:" : "Will be sent:"} {sendDate}
             </div>

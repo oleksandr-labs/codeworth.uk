@@ -69,7 +69,7 @@ export function BMICalculator({ lang, color }: BMICalculatorProps) {
         </div>
 
         {/* Inputs */}
-        <div className="bg-neutral-50 dark:bg-neutral-800/60 rounded-2xl border border-neutral-100 dark:border-neutral-700/50 p-6 mb-6">
+        <div className="bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-800/60 rounded-2xl border border-neutral-100 dark:border-neutral-700 /50 p-6 mb-6">
           <div className="grid grid-cols-2 gap-6 mb-6">
             <div>
               <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
@@ -125,7 +125,7 @@ export function BMICalculator({ lang, color }: BMICalculatorProps) {
               </div>
             </div>
           ) : (
-            <div className="rounded-xl p-5 bg-neutral-100 dark:bg-neutral-700/40 text-center text-neutral-400 dark:text-neutral-500 text-sm">
+            <div className="rounded-xl p-5 bg-neutral-100 dark:bg-neutral-800 dark:bg-neutral-700/40 text-center text-neutral-400 dark:text-neutral-500 text-sm">
               {isUk
                 ? "Введіть вагу та зріст, щоб побачити результат"
                 : "Enter your weight and height to see the result"}

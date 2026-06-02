@@ -72,8 +72,8 @@ export function EcomCouponsDemo({ isUk }: Props) {
 
   return (
     <div className="space-y-6">
-      <div className="rounded-2xl border border-neutral-200 bg-white p-5 space-y-4">
-        <h3 className="text-lg font-bold text-neutral-900 flex items-center gap-2">
+      <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white p-5 space-y-4">
+        <h3 className="text-lg font-bold text-neutral-900 dark:text-white flex items-center gap-2">
           <Tag className="w-5 h-5 text-indigo-600" />
           {isUk ? "Промокод" : "Promo code"}
         </h3>
@@ -86,7 +86,7 @@ export function EcomCouponsDemo({ isUk }: Props) {
                 value={code}
                 onChange={(e) => { setCode(e.target.value); setError(null); }}
                 placeholder={isUk ? "Введіть промокод" : "Enter promo code"}
-                className={`flex-1 px-4 py-2.5 rounded-lg border ${error ? "border-rose-300 bg-rose-50/50" : "border-neutral-200 bg-white"} focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 text-sm uppercase tracking-wider`}
+                className={`flex-1 px-4 py-2.5 rounded-lg border ${error ? "border-rose-300 bg-rose-50/50" : "border-neutral-200 dark:border-neutral-700 bg-white"} focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 text-sm uppercase tracking-wider`}
                 aria-label={isUk ? "Промокод" : "Promo code"}
               />
               <button
@@ -143,11 +143,11 @@ export function EcomCouponsDemo({ isUk }: Props) {
       </div>
 
       {/* Order summary */}
-      <div className="rounded-2xl border border-neutral-200 bg-white p-5 space-y-2">
-        <h3 className="font-bold text-neutral-900 mb-3">{isUk ? "Підсумок замовлення" : "Order summary"}</h3>
+      <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white p-5 space-y-2">
+        <h3 className="font-bold text-neutral-900 dark:text-white mb-3">{isUk ? "Підсумок замовлення" : "Order summary"}</h3>
         <div className="flex justify-between text-sm">
           <span className="text-neutral-500">{isUk ? "Сума" : "Subtotal"}</span>
-          <span className="text-neutral-900 tabular-nums">{fmt(SUBTOTAL)}</span>
+          <span className="text-neutral-900 dark:text-white tabular-nums">{fmt(SUBTOTAL)}</span>
         </div>
         {applied && (
           <div className="flex justify-between text-sm text-emerald-700">
@@ -158,7 +158,7 @@ export function EcomCouponsDemo({ isUk }: Props) {
             <span className="tabular-nums">−{fmt(discount)}</span>
           </div>
         )}
-        <div className="flex justify-between pt-3 border-t border-neutral-100 text-base">
+        <div className="flex justify-between pt-3 border-t border-neutral-100 dark:border-neutral-700 text-base">
           <span className="font-bold text-neutral-900">{isUk ? "Разом" : "Total"}</span>
           <span className="font-bold text-indigo-700 tabular-nums">{fmt(total)}</span>
         </div>

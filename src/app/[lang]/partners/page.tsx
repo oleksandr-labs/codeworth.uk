@@ -86,7 +86,7 @@ const TECH_STACK: TechItem[] = [
     why: { uk: "Автоматичний деплой, глобальний CDN, SSL — нульова конфігурація", en: "Auto deployment, global CDN, SSL — zero configuration" },
     url: "https://vercel.com",
     tag: { uk: "Хостинг", en: "Hosting" },
-    tagColor: "bg-gray-100 text-gray-700",
+    tagColor: "bg-gray-100 dark:bg-neutral-800 text-gray-700",
   },
   {
     name: "PostgreSQL + Prisma",
@@ -140,7 +140,7 @@ const TECH_STACK: TechItem[] = [
     why: { uk: "Весь код зберігається, будь-яку зміну можна повернути, PR — аудит кожної правки", en: "All code is versioned, every change is reversible, PRs audit every edit" },
     url: "https://github.com",
     tag: { uk: "VCS", en: "VCS" },
-    tagColor: "bg-gray-100 text-gray-700",
+    tagColor: "bg-gray-100 dark:bg-neutral-800 text-gray-700",
   },
   {
     name: "Contentful",
@@ -287,13 +287,13 @@ export default async function PartnersPage({
         </section>
 
         {/* Tech Stack */}
-        <section id="tech-stack" className="py-16 bg-white">
+        <section id="tech-stack" className="py-16 bg-white dark:bg-neutral-950">
           <Container>
             <div className="mb-10">
-              <h2 className="text-3xl font-bold text-gray-900 mb-3">
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">
                 {isUk ? "Технологічний стек Codeworth" : "Codeworth Tech Stack"}
               </h2>
-              <p className="text-gray-600 max-w-2xl">
+              <p className="text-gray-600 dark:text-neutral-300 max-w-2xl">
                 {isUk
                   ? "Використовуємо сучасний, добре перевірений стек. Нічого модного заради модного — лише технології, що забезпечують якість, швидкість та підтримуваність."
                   : "We use a modern, well-tested stack. Nothing trendy for the sake of trends — only technologies that ensure quality, speed, and maintainability."}
@@ -305,22 +305,22 @@ export default async function PartnersPage({
               if (items.length === 0) return null;
               return (
                 <div key={cat.id} className="mb-10">
-                  <h3 className="text-lg font-semibold text-gray-500 uppercase tracking-wide mb-4">
+                  <h3 className="text-lg font-semibold text-gray-500 dark:text-neutral-400 uppercase tracking-wide mb-4">
                     {isUk ? cat.uk : cat.en}
                   </h3>
                   <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {items.map((tech) => (
-                      <div key={tech.name} className="bg-gray-50 border border-gray-200 rounded-xl p-5">
+                      <div key={tech.name} className="bg-gray-50 dark:bg-neutral-900 border border-gray-200 dark:border-neutral-700 rounded-xl p-5">
                         <div className="flex items-start justify-between mb-2">
                           <span className="font-bold text-gray-900">{tech.name}</span>
                           <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${tech.tagColor}`}>
                             {isUk ? tech.tag.uk : tech.tag.en}
                           </span>
                         </div>
-                        <p className="text-sm text-gray-600 mb-3 leading-relaxed">
+                        <p className="text-sm text-gray-600 dark:text-neutral-300 mb-3 leading-relaxed">
                           {isUk ? tech.description.uk : tech.description.en}
                         </p>
-                        <div className="bg-white border border-gray-100 rounded-lg p-2.5 mb-3">
+                        <div className="bg-white border border-gray-100 dark:border-neutral-700 rounded-lg p-2.5 mb-3">
                           <p className="text-xs text-indigo-700">
                             <span className="font-medium">{isUk ? "Чому:" : "Why:"}</span>{" "}
                             {isUk ? tech.why.uk : tech.why.en}
@@ -330,7 +330,7 @@ export default async function PartnersPage({
                           href={tech.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 text-xs text-gray-400 hover:text-indigo-600 transition-colors"
+                          className="inline-flex items-center gap-1 text-xs text-gray-400 dark:text-neutral-500 hover:text-indigo-600 transition-colors"
                         >
                           {tech.url.replace("https://", "")}
                           <ExternalLink className="w-3 h-3" />
@@ -348,10 +348,10 @@ export default async function PartnersPage({
         <section id="partner-program" className="py-16 bg-indigo-50 border-t">
           <Container>
             <div className="mb-10">
-              <h2 className="text-3xl font-bold text-gray-900 mb-3">
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">
                 {isUk ? "Партнерська програма" : "Partner Program"}
               </h2>
-              <p className="text-gray-600 max-w-2xl">
+              <p className="text-gray-600 dark:text-neutral-300 max-w-2xl">
                 {isUk
                   ? "Для агентств, фрілансерів та консультантів, які хочуть надавати клієнтам якісні веб-рішення. Заробляйте на рефералах або передайте технічну частину нам."
                   : "For agencies, freelancers, and consultants who want to provide clients with quality web solutions. Earn on referrals or delegate the technical side to us."}
@@ -362,7 +362,7 @@ export default async function PartnersPage({
               {benefits.map((b) => (
                 <div key={b.title} className="bg-white rounded-xl p-5 border border-indigo-100">
                   <div className="text-3xl mb-3">{b.emoji}</div>
-                  <h3 className="font-semibold text-gray-900 mb-1">{b.title}</h3>
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-1">{b.title}</h3>
                   <p className="text-sm text-gray-600">{b.desc}</p>
                 </div>
               ))}
@@ -438,11 +438,11 @@ export default async function PartnersPage({
           </Container>
         </section>
         {/* Partnership application form */}
-        <section className="py-20 bg-white" id="apply">
+        <section className="py-20 bg-white dark:bg-neutral-950" id="apply">
           <Container>
             <div className="max-w-2xl mx-auto">
               <div className="text-center mb-10">
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
                   {isUk ? "Стати партнером" : "Become a Partner"}
                 </h2>
                 <p className="text-gray-600">
@@ -451,7 +451,7 @@ export default async function PartnersPage({
                     : "Fill out the form and we'll get back to you within 2 business days."}
                 </p>
               </div>
-              <div className="bg-gray-50 rounded-2xl p-8 border border-gray-200">
+              <div className="bg-gray-50 dark:bg-neutral-900 rounded-2xl p-8 border border-gray-200">
                 <PartnershipForm lang={lang} />
               </div>
             </div>

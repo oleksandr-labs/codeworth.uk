@@ -74,16 +74,16 @@ export default async function BlogPage({ params }: { params: Promise<{ lang: str
                 {isUk ? "Головна" : "Home"}
               </Link>
               <span>/</span>
-              <span className="text-neutral-700 font-medium">{isUk ? "Блог" : "Blog"}</span>
+              <span className="text-neutral-700 dark:text-neutral-300 font-medium">{isUk ? "Блог" : "Blog"}</span>
             </nav>
             <div className="max-w-3xl mx-auto text-center">
               <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-4">
                 {isUk ? "Блог" : "Blog"}
               </p>
-              <h1 className="text-5xl lg:text-6xl font-heading font-extrabold text-neutral-900 mb-5">
+              <h1 className="text-5xl lg:text-6xl font-heading font-extrabold text-neutral-900 dark:text-white mb-5">
                 {isUk ? "Знання & Кейси" : "Knowledge & Cases"}
               </h1>
-              <p className="text-lg text-neutral-500 mb-8 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-lg text-neutral-500 dark:text-neutral-400 mb-8 max-w-2xl mx-auto leading-relaxed">
                 {isUk
                   ? `${postCount} статей від команди Codeworth — практичні гайди з веб-розробки на Next.js, реальні SEO-кейси, огляди інструментів та розбір проєктів із конкретними метриками.`
                   : `${postCount} articles from the Codeworth team — practical Next.js development guides, real SEO case studies, tool reviews, and project breakdowns with concrete metrics.`}
@@ -112,7 +112,7 @@ export default async function BlogPage({ params }: { params: Promise<{ lang: str
                   <Link
                     key={cat.id}
                     href={`/${lang}/blog/category/${cat.id}`}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-neutral-200 text-sm text-neutral-600 font-medium shadow-sm hover:border-indigo-300 hover:text-indigo-600 transition-colors"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-sm text-neutral-600 dark:text-neutral-300 font-medium shadow-sm hover:border-indigo-300 hover:text-indigo-600 transition-colors"
                   >
                     <span aria-hidden="true">{cat.icon}</span>
                     {isUk ? cat.label.uk : cat.label.en}
@@ -123,7 +123,7 @@ export default async function BlogPage({ params }: { params: Promise<{ lang: str
           </Container>
         </section>
 
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-white dark:bg-neutral-950">
           <Container>
             <BlogContent />
           </Container>

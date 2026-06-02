@@ -465,7 +465,7 @@ export function NovitaDemo({ lang }: { lang: string }) {
                   key={i}
                   className="bg-[#F7EDE9] rounded-2xl p-6 border border-[#EDD5DA] hover:shadow-md transition-shadow"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-white border border-[#EDD5DA] flex items-center justify-center mb-4 shadow-sm">
+                  <div className="w-12 h-12 rounded-xl bg-white dark:bg-neutral-800 border border-[#EDD5DA] flex items-center justify-center mb-4 shadow-sm">
                     <Icon className="w-6 h-6 text-[#5C2D35]" />
                   </div>
                   <div className="font-bold text-base text-[#5C2D35] mb-2 font-sans">{s.title}</div>

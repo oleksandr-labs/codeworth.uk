@@ -133,16 +133,16 @@ export default async function CareerPositionPage({
               {/* Main content */}
               <div className="lg:col-span-2 space-y-10">
                 <div>
-                  <h2 className="text-xl font-bold text-gray-900 mb-4">
+                  <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
                     {isUk ? "Про роль" : "About the Role"}
                   </h2>
-                  <p className="text-gray-700 leading-relaxed">
+                  <p className="text-gray-700 dark:text-neutral-300 leading-relaxed">
                     {isUk ? job.descriptionUk : job.descriptionEn}
                   </p>
                 </div>
 
                 <div>
-                  <h2 className="text-xl font-bold text-gray-900 mb-4">
+                  <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
                     {isUk ? "Обов'язки" : "Responsibilities"}
                   </h2>
                   <ul className="space-y-2">
@@ -156,7 +156,7 @@ export default async function CareerPositionPage({
                 </div>
 
                 <div>
-                  <h2 className="text-xl font-bold text-gray-900 mb-4">
+                  <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
                     {isUk ? "Вимоги" : "Requirements"}
                   </h2>
                   <ul className="space-y-2">
@@ -171,10 +171,10 @@ export default async function CareerPositionPage({
 
                 {niceToHave && niceToHave.length > 0 && (
                   <div>
-                    <h2 className="text-xl font-bold text-gray-900 mb-2">
+                    <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                       {isUk ? "Буде перевагою" : "Nice to Have"}
                     </h2>
-                    <p className="text-sm text-gray-500 mb-4">
+                    <p className="text-sm text-gray-500 dark:text-neutral-400 mb-4">
                       {isUk
                         ? "Не обов'язково, але дасть перевагу на співбесіді:"
                         : "Not required, but will give you an edge in the interview:"}
@@ -191,7 +191,7 @@ export default async function CareerPositionPage({
                 )}
 
                 <div>
-                  <h2 className="text-xl font-bold text-gray-900 mb-4">
+                  <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
                     {isUk ? "Ми пропонуємо" : "We Offer"}
                   </h2>
                   <ul className="space-y-2">
@@ -207,11 +207,11 @@ export default async function CareerPositionPage({
 
               {/* Sidebar — apply form */}
               <div>
-                <div className="sticky top-8 bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
-                  <h3 className="font-bold text-gray-900 text-lg mb-1">
+                <div className="sticky top-8 bg-white dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700 rounded-2xl p-6 shadow-sm">
+                  <h3 className="font-bold text-gray-900 dark:text-white text-lg mb-1">
                     {isUk ? "Зацікавила вакансія?" : "Interested in this role?"}
                   </h3>
-                  <p className="text-gray-500 text-sm mb-5">
+                  <p className="text-gray-500 dark:text-neutral-400 text-sm mb-5">
                     {isUk
                       ? "Заповніть форму — відповідаємо протягом 2 робочих днів."
                       : "Fill in the form — we respond within 2 business days."}
@@ -229,9 +229,9 @@ export default async function CareerPositionPage({
         </section>
 
         {/* Other positions */}
-        <section className="py-12 bg-gray-50 border-t">
+        <section className="py-12 bg-gray-50 dark:bg-neutral-900 border-t">
           <Container>
-            <h2 className="text-lg font-semibold text-gray-800 mb-4">
+            <h2 className="text-lg font-semibold text-gray-800 dark:text-neutral-200 mb-4">
               {isUk ? "Інші вакансії" : "Other Positions"}
             </h2>
             <div className="grid sm:grid-cols-2 gap-4">
@@ -239,9 +239,9 @@ export default async function CareerPositionPage({
                 <Link
                   key={j.slug}
                   href={`/${lang}/careers/${j.slug}`}
-                  className="bg-white border border-gray-200 rounded-xl p-4 hover:border-indigo-300 transition-colors group"
+                  className="bg-white border border-gray-200 dark:border-neutral-700 rounded-xl p-4 hover:border-indigo-300 transition-colors group"
                 >
-                  <p className="font-medium text-gray-900 group-hover:text-indigo-700 transition-colors mb-1">
+                  <p className="font-medium text-gray-900 dark:text-white group-hover:text-indigo-700 transition-colors mb-1">
                     {isUk ? j.titleUk : j.titleEn}
                   </p>
                   <p className="text-sm text-gray-500">

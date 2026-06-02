@@ -40,7 +40,7 @@ export function I18nSwitcherDemo({ isUk }: Props) {
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all capitalize ${
               v === variant
                 ? "bg-indigo-600 text-white shadow-sm"
-                : "bg-neutral-100 text-neutral-600 hover:bg-indigo-50"
+                : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-indigo-50"
             }`}
           >
             {v === "dropdown" ? (isUk ? "Випадаючий список" : "Dropdown") : (isUk ? "Інлайн кнопки" : "Inline buttons")}
@@ -48,15 +48,15 @@ export function I18nSwitcherDemo({ isUk }: Props) {
         ))}
       </div>
 
-      <div className="rounded-2xl border border-neutral-200 bg-white">
+      <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white">
         {/* Header bar with switcher */}
-        <div className="px-6 py-4 border-b border-neutral-100 flex items-center justify-between">
+        <div className="px-6 py-4 border-b border-neutral-100 dark:border-neutral-700 flex items-center justify-between">
           <div className="text-sm font-semibold text-neutral-700">Codeworth</div>
           {variant === "dropdown" ? (
             <div className="relative">
               <button
                 onClick={() => setOpen((o) => !o)}
-                className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-neutral-200 hover:border-indigo-300 text-sm font-medium text-neutral-700 transition-colors"
+                className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-neutral-200 dark:border-neutral-700 hover:border-indigo-300 text-sm font-medium text-neutral-700 dark:text-neutral-300 transition-colors"
                 aria-haspopup="listbox"
                 aria-expanded={open}
               >
@@ -67,7 +67,7 @@ export function I18nSwitcherDemo({ isUk }: Props) {
               {open && (
                 <ul
                   role="listbox"
-                  className="absolute right-0 mt-2 w-44 rounded-lg border border-neutral-200 bg-white shadow-lg z-10 overflow-hidden"
+                  className="absolute right-0 mt-2 w-44 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 shadow-lg z-10 overflow-hidden"
                 >
                   {LOCALES.map((l) => (
                     <li key={l.code}>
@@ -75,7 +75,7 @@ export function I18nSwitcherDemo({ isUk }: Props) {
                         onClick={() => { setCurrent(l.code); setOpen(false); }}
                         role="option"
                         aria-selected={l.code === current}
-                        className="w-full px-3 py-2 flex items-center justify-between text-sm text-neutral-700 hover:bg-indigo-50 transition-colors"
+                        className="w-full px-3 py-2 flex items-center justify-between text-sm text-neutral-700 dark:text-neutral-300 hover:bg-indigo-50 transition-colors"
                       >
                         <span className="flex items-center gap-2">
                           <span>{l.flag}</span>
@@ -97,7 +97,7 @@ export function I18nSwitcherDemo({ isUk }: Props) {
                   className={`px-2.5 py-1 rounded-md text-xs font-semibold transition-colors ${
                     l.code === current
                       ? "bg-indigo-600 text-white"
-                      : "text-neutral-500 hover:bg-indigo-50 hover:text-indigo-700"
+                      : "text-neutral-500 dark:text-neutral-400 hover:bg-indigo-50 hover:text-indigo-700"
                   }`}
                   aria-pressed={l.code === current}
                 >
@@ -113,7 +113,7 @@ export function I18nSwitcherDemo({ isUk }: Props) {
           <p className="text-xs text-neutral-400 mb-3 uppercase tracking-wider">
             {isUk ? "Приклад контенту:" : "Sample content:"} {currentLocale.name}
           </p>
-          <h3 className="text-2xl font-bold text-neutral-900 mb-4">{sample.hero}</h3>
+          <h3 className="text-2xl font-bold text-neutral-900 dark:text-white mb-4">{sample.hero}</h3>
           <button className="px-5 py-2.5 rounded-lg bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700 transition-colors">
             {sample.cta}
           </button>

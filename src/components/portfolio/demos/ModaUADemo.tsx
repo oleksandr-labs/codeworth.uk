@@ -153,7 +153,7 @@ export function ModaUADemo({ lang }: { lang: string }) {
     <div className="bg-white text-[#111111] font-sans min-h-screen" style={{fontFamily:"Inter, system-ui, sans-serif"}}>
 
       {/* STICKY NAV */}
-      <nav className="sticky top-0 z-40 bg-white border-b border-stone-200">
+      <nav className="sticky top-0 z-40 bg-white dark:bg-neutral-800 border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14">
           {/* Logo */}
           <div className="flex items-center gap-2 shrink-0">
@@ -397,7 +397,7 @@ export function ModaUADemo({ lang }: { lang: string }) {
                   {filtered.map(product => (
                     <div
                       key={product.id}
-                      className="group bg-white border border-stone-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer relative"
+                      className="group bg-white dark:bg-neutral-800 border border-stone-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer relative"
                       onClick={() => openProduct(product.id)}
                     >
                       {/* Badge */}
@@ -410,7 +410,7 @@ export function ModaUADemo({ lang }: { lang: string }) {
                       )}
                       {/* Wishlist button */}
                       <button
-                        className="absolute top-2 right-2 z-10 w-8 h-8 flex items-center justify-center bg-white border border-stone-200 hover:border-[#111111] transition-colors"
+                        className="absolute top-2 right-2 z-10 w-8 h-8 flex items-center justify-center bg-white dark:bg-neutral-800 border border-stone-200 hover:border-[#111111] transition-colors"
                         onClick={e => { e.stopPropagation(); toggleWishlist(product.id); }}
                       >
                         <span className={wishlist.includes(product.id) ? "text-red-500" : "text-stone-400"}>
@@ -892,7 +892,7 @@ export function ModaUADemo({ lang }: { lang: string }) {
             className="absolute inset-0 bg-black/20"
             onClick={() => setCartOpen(false)}
           />
-          <div className="relative w-full max-w-sm bg-white shadow-2xl flex flex-col h-full overflow-hidden">
+          <div className="relative w-full max-w-sm bg-white dark:bg-neutral-800 shadow-2xl flex flex-col h-full overflow-hidden">
             {/* Header */}
             <div className="flex items-center justify-between px-5 py-4 border-b border-stone-200 shrink-0">
               <h2 className="text-sm font-semibold tracking-widest uppercase text-[#111111]">
@@ -1028,7 +1028,7 @@ export function ModaUADemo({ lang }: { lang: string }) {
             className="absolute inset-0 bg-black/30"
             onClick={() => setSizeGuideOpen(false)}
           />
-          <div className="relative bg-white shadow-2xl w-full max-w-lg">
+          <div className="relative bg-white dark:bg-neutral-800 shadow-2xl w-full max-w-lg">
             <div className="flex items-center justify-between px-6 py-4 border-b border-stone-200">
               <h3 className="text-sm font-semibold tracking-widest uppercase text-[#111111]">
                 {t("Розмірна сітка","Size Guide")}

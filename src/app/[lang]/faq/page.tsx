@@ -182,7 +182,7 @@ export default async function FAQPage({ params }: { params: Promise<{ lang: stri
           <Container>
             <div className="max-w-2xl mx-auto text-center">
               <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-4">FAQ</p>
-              <h1 className="text-5xl lg:text-6xl font-heading font-extrabold text-neutral-900 mb-4">
+              <h1 className="text-5xl lg:text-6xl font-heading font-extrabold text-neutral-900 dark:text-white mb-4">
                 {isUk
                   ? <>{`Відповіді на ваші`}<br /><span className="gradient-text">{`запитання`}</span></>
                   : <>{"Answers to your"}<br /><span className="gradient-text">{"questions"}</span></>}
@@ -197,14 +197,14 @@ export default async function FAQPage({ params }: { params: Promise<{ lang: stri
         </section>
 
         {/* Category nav */}
-        <div className="sticky top-16 z-40 bg-white border-b border-neutral-100 shadow-sm">
+        <div className="sticky top-16 z-40 bg-white dark:bg-neutral-800 border-b border-neutral-100 dark:border-neutral-700 shadow-sm">
           <Container>
             <div className="flex gap-1 overflow-x-auto py-3 no-scrollbar">
               {FAQ_SECTIONS.map((section) => (
                 <a
                   key={section.id}
                   href={`#${section.id}`}
-                  className="shrink-0 px-4 py-2 rounded-lg text-sm font-medium text-neutral-600 hover:bg-indigo-50 hover:text-indigo-700 transition-colors whitespace-nowrap"
+                  className="shrink-0 px-4 py-2 rounded-lg text-sm font-medium text-neutral-600 dark:text-neutral-300 hover:bg-indigo-50 hover:text-indigo-700 transition-colors whitespace-nowrap"
                 >
                   {section.title}
                 </a>
@@ -213,7 +213,7 @@ export default async function FAQPage({ params }: { params: Promise<{ lang: stri
           </Container>
         </div>
 
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-white dark:bg-neutral-950">
           <Container>
             <FAQContent sections={FAQ_SECTIONS} />
           </Container>

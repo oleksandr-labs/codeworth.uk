@@ -151,9 +151,9 @@ export function HomeFindDemo({ lang }: { lang: string }) {
 
   /* ── render ── */
   return (
-    <div className="min-h-screen bg-gray-50 text-stone-700 font-sans">
+    <div className="min-h-screen bg-gray-50 dark:bg-neutral-900 text-stone-700 font-sans">
       {/* ════════ HEADER ════════ */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-30">
+      <header className="bg-white border-b border-gray-200 dark:border-neutral-700 sticky top-0 z-30">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="text-xl font-bold text-teal-600">🏠 HomeFind</div>
           <nav className="hidden md:flex gap-6 text-sm font-medium text-stone-600">
@@ -182,7 +182,7 @@ export function HomeFindDemo({ lang }: { lang: string }) {
           </p>
 
           {/* search bar */}
-          <div className="bg-gray-50 border border-gray-200 rounded-2xl p-4 md:p-6 max-w-4xl mx-auto">
+          <div className="bg-gray-50 dark:bg-neutral-900 border border-gray-200 dark:border-neutral-700 rounded-2xl p-4 md:p-6 max-w-4xl mx-auto">
             {/* buy/rent toggle */}
             <div className="flex gap-2 mb-4 justify-center">
               {(["buy", "rent"] as const).map((t) => (
@@ -291,7 +291,7 @@ export function HomeFindDemo({ lang }: { lang: string }) {
             {filtered.map((p) => (
               <div
                 key={p.id}
-                className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow"
+                className="bg-white rounded-xl border border-gray-200 dark:border-neutral-700 overflow-hidden hover:shadow-lg transition-shadow"
               >
                 {/* image placeholder */}
                 <div className="h-44 bg-linear-to-br from-teal-50 to-teal-100 flex items-center justify-center text-6xl">
@@ -374,19 +374,19 @@ export function HomeFindDemo({ lang }: { lang: string }) {
 
               {/* stats */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
-                <div className="bg-gray-50 rounded-lg p-3 text-center">
+                <div className="bg-gray-50 dark:bg-neutral-900 rounded-lg p-3 text-center">
                   <div className="text-lg font-bold text-teal-600">{selectedProperty.area}</div>
                   <div className="text-xs text-stone-400">m²</div>
                 </div>
-                <div className="bg-gray-50 rounded-lg p-3 text-center">
+                <div className="bg-gray-50 dark:bg-neutral-900 rounded-lg p-3 text-center">
                   <div className="text-lg font-bold text-teal-600">{selectedProperty.rooms}</div>
                   <div className="text-xs text-stone-400">{isUk ? "Кімнат" : "Rooms"}</div>
                 </div>
-                <div className="bg-gray-50 rounded-lg p-3 text-center">
+                <div className="bg-gray-50 dark:bg-neutral-900 rounded-lg p-3 text-center">
                   <div className="text-lg font-bold text-teal-600">{selectedProperty.floor}</div>
                   <div className="text-xs text-stone-400">{isUk ? "Поверх" : "Floor"}</div>
                 </div>
-                <div className="bg-gray-50 rounded-lg p-3 text-center">
+                <div className="bg-gray-50 dark:bg-neutral-900 rounded-lg p-3 text-center">
                   <div className="text-lg font-bold text-teal-600">${Math.round(selectedProperty.price / selectedProperty.area)}</div>
                   <div className="text-xs text-stone-400">{isUk ? "$/м²" : "$/m²"}</div>
                 </div>
@@ -403,7 +403,7 @@ export function HomeFindDemo({ lang }: { lang: string }) {
               </div>
 
               {/* floor plan placeholder */}
-              <div className="bg-gray-100 rounded-lg p-6 text-center mb-5">
+              <div className="bg-gray-100 dark:bg-neutral-800 rounded-lg p-6 text-center mb-5">
                 <div className="text-3xl mb-2">📐</div>
                 <p className="text-xs text-stone-400">{isUk ? "План поверху" : "Floor Plan"}</p>
               </div>
@@ -503,7 +503,7 @@ export function HomeFindDemo({ lang }: { lang: string }) {
                       className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
                         mortTerm === y
                           ? "bg-teal-600 text-white"
-                          : "bg-gray-100 text-stone-600 hover:bg-teal-50"
+                          : "bg-gray-100 dark:bg-neutral-800 text-stone-600 hover:bg-teal-50"
                       }`}
                     >
                       {y} {isUk ? "р." : "yr"}
@@ -581,7 +581,7 @@ export function HomeFindDemo({ lang }: { lang: string }) {
               { step: 2, emoji: "✅", titleEn: "Verify", titleUk: "Верифікація", descEn: "Our team verifies documents and conducts a free property valuation within 24 hours.", descUk: "Наша команда перевіряє документи та проводить безкоштовну оцінку протягом 24 годин." },
               { step: 3, emoji: "🚀", titleEn: "Publish", titleUk: "Публікація", descEn: "Your listing goes live with professional photos and appears in search results immediately.", descUk: "Ваше оголошення виходить з професійними фото та одразу з'являється у пошуку." },
             ].map((s) => (
-              <div key={s.step} className="bg-white rounded-xl border border-gray-200 p-6">
+              <div key={s.step} className="bg-white rounded-xl border border-gray-200 dark:border-neutral-700 p-6">
                 <div className="w-12 h-12 mx-auto mb-4 bg-teal-50 rounded-full flex items-center justify-center text-2xl">
                   {s.emoji}
                 </div>
@@ -595,7 +595,7 @@ export function HomeFindDemo({ lang }: { lang: string }) {
           </div>
 
           {/* benefits */}
-          <div className="bg-white rounded-xl border border-gray-200 p-6 md:p-8 max-w-3xl mx-auto">
+          <div className="bg-white rounded-xl border border-gray-200 dark:border-neutral-700 p-6 md:p-8 max-w-3xl mx-auto">
             <h3 className="font-bold text-stone-800 mb-4">
               {isUk ? "Чому HomeFind?" : "Why HomeFind?"}
             </h3>
@@ -626,7 +626,7 @@ export function HomeFindDemo({ lang }: { lang: string }) {
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {agents.map((a, i) => (
-              <div key={i} className="bg-gray-50 rounded-xl border border-gray-200 p-5 text-center hover:shadow-md transition-shadow">
+              <div key={i} className="bg-gray-50 dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-700 p-5 text-center hover:shadow-md transition-shadow">
                 <div className="text-4xl mb-3">{a.emoji}</div>
                 <h3 className="font-bold text-stone-800 mb-0.5">{isUk ? a.nameUk : a.nameEn}</h3>
                 <p className="text-xs text-teal-600 font-medium mb-3">{isUk ? a.specUk : a.specEn}</p>
@@ -652,7 +652,7 @@ export function HomeFindDemo({ lang }: { lang: string }) {
           </p>
           <div className="grid sm:grid-cols-2 gap-6">
             {neighborhoods.map((n, i) => (
-              <div key={i} className="bg-white rounded-xl border border-gray-200 p-5 hover:shadow-md transition-shadow">
+              <div key={i} className="bg-white rounded-xl border border-gray-200 dark:border-neutral-700 p-5 hover:shadow-md transition-shadow">
                 <div className="flex items-center justify-between mb-3">
                   <h3 className="font-bold text-stone-800 text-lg">{isUk ? n.nameUk : n.nameEn}</h3>
                   <span className="text-sm font-bold text-teal-600">${n.avgPrice}/m²</span>
@@ -681,7 +681,7 @@ export function HomeFindDemo({ lang }: { lang: string }) {
           </p>
           <div className="grid md:grid-cols-3 gap-6">
             {reviews.map((r, i) => (
-              <div key={i} className="bg-gray-50 rounded-xl border border-gray-200 p-5">
+              <div key={i} className="bg-gray-50 dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-700 p-5">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 shrink-0 bg-teal-100 rounded-full flex items-center justify-center text-lg">
                     {r.emoji}

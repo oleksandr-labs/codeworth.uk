@@ -88,7 +88,7 @@ export function MktWelcomeSeriesDemo({ isUk }: Props) {
               <div className={`relative z-10 w-10 h-10 rounded-full flex items-center justify-center transition-all ${
                 i === active ? "bg-indigo-600 text-white ring-4 ring-indigo-100 scale-110" :
                 i < active ? "bg-emerald-500 text-white" :
-                "bg-white border-2 border-neutral-200 text-neutral-500"
+                "bg-white border-2 border-neutral-200 dark:border-neutral-700 text-neutral-500"
               }`}>
                 <Mail className="w-4 h-4" />
               </div>
@@ -102,19 +102,19 @@ export function MktWelcomeSeriesDemo({ isUk }: Props) {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {/* Email preview */}
-        <div className="rounded-2xl border border-neutral-200 bg-white overflow-hidden">
-          <div className="px-4 py-3 border-b border-neutral-100 bg-neutral-50">
-            <div className="flex items-center justify-between text-xs text-neutral-500 mb-1">
+        <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white overflow-hidden">
+          <div className="px-4 py-3 border-b border-neutral-100 dark:border-neutral-700 bg-neutral-50">
+            <div className="flex items-center justify-between text-xs text-neutral-500 dark:text-neutral-400 mb-1">
               <span className="flex items-center gap-1.5">
                 <Send className="w-3 h-3" />
                 noreply@codeworth.uk
               </span>
               <span>{isUk ? email.delayLabel.uk : email.delayLabel.en}</span>
             </div>
-            <h4 className="font-bold text-neutral-900 text-sm">{isUk ? email.subjectUk : email.subjectEn}</h4>
+            <h4 className="font-bold text-neutral-900 dark:text-white text-sm">{isUk ? email.subjectUk : email.subjectEn}</h4>
           </div>
           <div className="p-5 space-y-4">
-            <p className="text-sm text-neutral-700 leading-relaxed">{isUk ? email.bodyUk : email.bodyEn}</p>
+            <p className="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">{isUk ? email.bodyUk : email.bodyEn}</p>
             <button className="w-full py-2.5 rounded-lg bg-indigo-600 text-white font-semibold text-sm hover:bg-indigo-700 transition-colors">
               {isUk ? email.ctaUk : email.ctaEn}
             </button>
@@ -126,8 +126,8 @@ export function MktWelcomeSeriesDemo({ isUk }: Props) {
 
         {/* Metrics + automation rules */}
         <div className="space-y-4">
-          <div className="rounded-2xl border border-neutral-200 bg-white p-5">
-            <h4 className="font-bold text-neutral-900 mb-4 flex items-center gap-2">
+          <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white p-5">
+            <h4 className="font-bold text-neutral-900 dark:text-white mb-4 flex items-center gap-2">
               <Eye className="w-4 h-4 text-indigo-500" />
               {isUk ? "Метрики листа" : "Email metrics"}
             </h4>
@@ -137,7 +137,7 @@ export function MktWelcomeSeriesDemo({ isUk }: Props) {
                   <span className="text-neutral-600">{isUk ? "Open rate" : "Open rate"}</span>
                   <span className="font-bold tabular-nums">{email.metrics.open}%</span>
                 </div>
-                <div className="h-2 rounded-full bg-neutral-100 overflow-hidden">
+                <div className="h-2 rounded-full bg-neutral-100 dark:bg-neutral-800 overflow-hidden">
                   <div
                     className="h-full bg-indigo-500 rounded-full"
                     style={{ width: `${email.metrics.open}%` }}
@@ -154,7 +154,7 @@ export function MktWelcomeSeriesDemo({ isUk }: Props) {
                   <span className="text-neutral-600">{isUk ? "Click rate" : "Click rate"}</span>
                   <span className="font-bold tabular-nums">{email.metrics.click}%</span>
                 </div>
-                <div className="h-2 rounded-full bg-neutral-100 overflow-hidden">
+                <div className="h-2 rounded-full bg-neutral-100 dark:bg-neutral-800 overflow-hidden">
                   <div
                     className="h-full bg-emerald-500 rounded-full"
                     style={{ width: `${email.metrics.click}%` }}

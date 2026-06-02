@@ -71,7 +71,7 @@ export default function LoginForm() {
         <h1 className="text-2xl font-bold text-neutral-900 dark:text-white mb-2">
           {isUk ? "Вхід до кабінету" : "Sign In"}
         </h1>
-        <p className="text-neutral-500 text-sm">
+        <p className="text-neutral-500 dark:text-neutral-400 text-sm">
           {isUk ? "Немає акаунту?" : "No account?"}{" "}
           <Link href={`/${lang}/contact`} className="text-indigo-600 hover:underline font-medium">
             {isUk ? "Зверніться до нас" : "Contact us"}
@@ -80,7 +80,7 @@ export default function LoginForm() {
       </div>
 
       {/* Form card */}
-      <div className="bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-100 dark:border-neutral-800 p-8 shadow-sm">
+      <div className="bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-100 dark:border-neutral-700 dark:border-neutral-800 p-8 shadow-sm">
         <form onSubmit={handleSubmit} className="space-y-5">
           {/* Email */}
           <div>
@@ -129,7 +129,7 @@ export default function LoginForm() {
                 type="button"
                 onClick={() => setShowPassword((v) => !v)}
                 aria-label={showPassword ? (isUk ? "Сховати пароль" : "Hide password") : (isUk ? "Показати пароль" : "Show password")}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-600 dark:text-neutral-300 dark:hover:text-neutral-300 transition-colors"
               >
                 {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
               </button>

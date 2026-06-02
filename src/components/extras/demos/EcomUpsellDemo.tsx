@@ -45,7 +45,7 @@ export function EcomUpsellDemo({ isUk }: Props) {
 
   return (
     <div className="space-y-6">
-      <div className="flex gap-1 rounded-lg bg-neutral-100 p-1 w-fit">
+      <div className="flex gap-1 rounded-lg bg-neutral-100 dark:bg-neutral-800 p-1 w-fit">
         {([
           { id: "bundle", labelEn: "Bundle (FBT)", labelUk: "Бандл (FBT)" },
           { id: "cross-sell", labelEn: "Cross-sell carousel", labelUk: "Cross-sell карусель" },
@@ -54,7 +54,7 @@ export function EcomUpsellDemo({ isUk }: Props) {
             key={v.id}
             onClick={() => setLayout(v.id)}
             className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all ${
-              layout === v.id ? "bg-white text-neutral-900 shadow-sm" : "text-neutral-500"
+              layout === v.id ? "bg-white text-neutral-900 dark:text-white shadow-sm" : "text-neutral-500"
             }`}
           >
             {isUk ? v.labelUk : v.labelEn}
@@ -63,8 +63,8 @@ export function EcomUpsellDemo({ isUk }: Props) {
       </div>
 
       {layout === "bundle" && (
-        <div className="rounded-2xl border border-neutral-200 bg-white p-5 space-y-5">
-          <h3 className="font-bold text-neutral-900 flex items-center gap-2">
+        <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white p-5 space-y-5">
+          <h3 className="font-bold text-neutral-900 dark:text-white flex items-center gap-2">
             <Sparkles className="w-5 h-5 text-amber-500" />
             {isUk ? "Часто купують разом" : "Frequently bought together"}
           </h3>
@@ -75,7 +75,7 @@ export function EcomUpsellDemo({ isUk }: Props) {
               <div className={`w-24 h-24 rounded-xl bg-linear-to-br ${MAIN_PRODUCT.color} flex items-center justify-center text-4xl ring-2 ring-indigo-300`}>
                 {MAIN_PRODUCT.emoji}
               </div>
-              <p className="text-xs text-center mt-1 text-neutral-500 max-w-[96px]">{isUk ? "Цей товар" : "This item"}</p>
+              <p className="text-xs text-center mt-1 text-neutral-500 dark:text-neutral-400 max-w-[96px]">{isUk ? "Цей товар" : "This item"}</p>
             </div>
 
             {selectedItems.map((item) => (
@@ -98,7 +98,7 @@ export function EcomUpsellDemo({ isUk }: Props) {
                 <label
                   key={item.id}
                   className={`flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-all ${
-                    isSelected ? "border-indigo-300 bg-indigo-50/50" : "border-neutral-200 hover:bg-neutral-50"
+                    isSelected ? "border-indigo-300 bg-indigo-50/50" : "border-neutral-200 dark:border-neutral-700 hover:bg-neutral-50"
                   }`}
                 >
                   <input
@@ -112,21 +112,21 @@ export function EcomUpsellDemo({ isUk }: Props) {
                     {item.emoji}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="font-medium text-neutral-900 text-sm">{isUk ? item.nameUk : item.nameEn}</p>
+                    <p className="font-medium text-neutral-900 dark:text-white text-sm">{isUk ? item.nameUk : item.nameEn}</p>
                     {item.savings > 0 && (
                       <p className="text-xs text-emerald-600 font-semibold">
                         {isUk ? "Знижка" : "Save"} {fmt(item.savings)} {isUk ? "у бандлі" : "in bundle"}
                       </p>
                     )}
                   </div>
-                  <span className="font-bold text-neutral-900 tabular-nums">{fmt(item.price)}</span>
+                  <span className="font-bold text-neutral-900 dark:text-white tabular-nums">{fmt(item.price)}</span>
                 </label>
               );
             })}
           </div>
 
           {/* Total */}
-          <div className="pt-4 border-t border-neutral-100 space-y-1 text-sm">
+          <div className="pt-4 border-t border-neutral-100 dark:border-neutral-700 space-y-1 text-sm">
             <div className="flex justify-between text-neutral-500">
               <span>{isUk ? "Сума товарів" : "Items subtotal"}</span>
               <span className="tabular-nums">{fmt(MAIN_PRODUCT.price + itemsTotal)}</span>
@@ -137,7 +137,7 @@ export function EcomUpsellDemo({ isUk }: Props) {
                 <span className="tabular-nums">−{fmt(savings)}</span>
               </div>
             )}
-            <div className="flex justify-between pt-2 mt-2 border-t border-neutral-100 text-base">
+            <div className="flex justify-between pt-2 mt-2 border-t border-neutral-100 dark:border-neutral-700 text-base">
               <span className="font-bold text-neutral-900">{isUk ? "Разом" : "Total"}</span>
               <span className="font-bold text-indigo-700 tabular-nums">{fmt(bundleTotal)}</span>
             </div>
@@ -150,7 +150,7 @@ export function EcomUpsellDemo({ isUk }: Props) {
 
       {layout === "cross-sell" && (
         <div>
-          <h3 className="font-bold text-neutral-900 flex items-center gap-2 mb-4">
+          <h3 className="font-bold text-neutral-900 dark:text-white flex items-center gap-2 mb-4">
             <TrendingUp className="w-5 h-5 text-emerald-500" />
             {isUk ? "Можливо вас зацікавить" : "You might also like"}
           </h3>
@@ -159,12 +159,12 @@ export function EcomUpsellDemo({ isUk }: Props) {
               {RECOMMENDATIONS.map((item) => {
                 const isAdded = selected.has(item.id);
                 return (
-                  <div key={item.id} className="flex-shrink-0 w-48 rounded-xl border border-neutral-200 bg-white overflow-hidden">
+                  <div key={item.id} className="flex-shrink-0 w-48 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white overflow-hidden">
                     <div className={`aspect-square bg-linear-to-br ${item.color} flex items-center justify-center text-5xl`}>
                       {item.emoji}
                     </div>
                     <div className="p-3 space-y-2">
-                      <h4 className="font-semibold text-neutral-900 text-sm line-clamp-1">{isUk ? item.nameUk : item.nameEn}</h4>
+                      <h4 className="font-semibold text-neutral-900 dark:text-white text-sm line-clamp-1">{isUk ? item.nameUk : item.nameEn}</h4>
                       <p className="font-bold text-indigo-700">{fmt(item.price)}</p>
                       <button
                         onClick={() => toggle(item.id)}

@@ -40,10 +40,10 @@ export default function GlobalError({
           className="text-center max-w-md"
         >
           <div className="text-7xl mb-6 select-none" aria-hidden="true">⚠️</div>
-          <h1 className="text-2xl font-bold text-neutral-900 mb-3">
+          <h1 className="text-2xl font-bold text-neutral-900 dark:text-white mb-3">
             {isUk ? "Критична помилка додатку" : "Critical application error"}
           </h1>
-          <p className="text-neutral-500 mb-2">
+          <p className="text-neutral-500 dark:text-neutral-400 mb-2">
             {isUk
               ? "Щось пішло не так на рівні програми. Спробуйте оновити сторінку."
               : "Something went wrong at the application level. Please try refreshing the page."}
@@ -62,7 +62,7 @@ export default function GlobalError({
             </button>
             <a
               href="/"
-              className="px-6 py-3 border border-neutral-200 text-neutral-700 rounded-xl font-semibold hover:bg-neutral-50 transition-colors"
+              className="px-6 py-3 border border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-xl font-semibold hover:bg-neutral-50 dark:hover:bg-neutral-800 dark:bg-neutral-900 transition-colors"
             >
               {isUk ? "На головну" : "Go home"}
             </a>

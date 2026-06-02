@@ -34,10 +34,10 @@ function TechBlog({ isUk }: { isUk: boolean }) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Блог — IT медіа" : "Blog — Tech Media"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk ? "Пошук, фільтр за категорією, картки зі статтями, featured пост." : "Search, category filter, article cards, featured post."}
       </p>
 
@@ -65,12 +65,12 @@ function TechBlog({ isUk }: { isUk: boolean }) {
         <input
           value={search} onChange={(e) => setSearch(e.target.value)}
           type="search" placeholder={isUk ? "Пошук статей..." : "Search articles..."}
-          className="flex-1 px-4 py-2.5 rounded-xl border border-neutral-200 focus:border-indigo-400 focus:outline-none text-sm"
+          className="flex-1 px-4 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 focus:border-indigo-400 focus:outline-none text-sm"
         />
         <div className="flex flex-wrap gap-2">
           {cats.map((c) => (
             <button key={c} onClick={() => setCategory(c)}
-              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${category === c ? "bg-indigo-600 text-white" : "bg-neutral-100 text-neutral-600 hover:bg-indigo-50"}`}>
+              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${category === c ? "bg-indigo-600 text-white" : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-indigo-50"}`}>
               {c}
             </button>
           ))}
@@ -80,7 +80,7 @@ function TechBlog({ isUk }: { isUk: boolean }) {
       {/* Articles grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {filtered.map((p) => (
-          <article key={p.id} className="bg-white rounded-2xl border border-neutral-200 overflow-hidden hover:shadow-lg transition-all cursor-pointer group">
+          <article key={p.id} className="bg-white rounded-2xl border border-neutral-200 dark:border-neutral-700 overflow-hidden hover:shadow-lg transition-all cursor-pointer group">
             <div className={`h-24 bg-gradient-to-br ${p.img}`} />
             <div className="p-4">
               <div className="flex items-center gap-2 mb-2">
@@ -89,10 +89,10 @@ function TechBlog({ isUk }: { isUk: boolean }) {
                 <span className="text-xs text-neutral-400">{isUk ? p.readTimeUk : p.readTime} {isUk ? "читання" : "read"}</span>
                 <span className="text-xs text-neutral-400 ml-auto">👁 {p.views}</span>
               </div>
-              <h3 className="font-semibold text-neutral-900 text-sm leading-snug mb-2 group-hover:text-indigo-700 transition-colors">
+              <h3 className="font-semibold text-neutral-900 dark:text-white text-sm leading-snug mb-2 group-hover:text-indigo-700 transition-colors">
                 {isUk ? p.titleUk : p.title}
               </h3>
-              <p className="text-xs text-neutral-500 line-clamp-2">{isUk ? p.excerptUk : p.excerpt}</p>
+              <p className="text-xs text-neutral-500 dark:text-neutral-400 line-clamp-2">{isUk ? p.excerptUk : p.excerpt}</p>
               <p className="text-xs text-neutral-400 mt-3">{isUk ? p.dateUk : p.date}</p>
             </div>
           </article>
@@ -126,17 +126,17 @@ function LifestyleBlog({ isUk }: { isUk: boolean }) {
 
   return (
     <div>
-      <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-2">
+      <h2 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-2">
         {isUk ? "Блог — Лайфстайл / Б'юті" : "Blog — Lifestyle / Beauty"}
       </h2>
-      <p className="text-neutral-500 text-sm mb-8">
+      <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk ? "Pinterest-стиль, лайки та збереження, теги категорій, підписка." : "Pinterest-style layout, likes & saves, category tags, newsletter subscribe."}
       </p>
 
       {/* Newsletter banner */}
       <div className="bg-gradient-to-r from-rose-50 to-pink-50 border border-rose-200 rounded-2xl p-5 mb-8 flex flex-col sm:flex-row items-center gap-4">
         <div className="flex-1">
-          <p className="font-semibold text-neutral-900 mb-0.5">
+          <p className="font-semibold text-neutral-900 dark:text-white mb-0.5">
             {isUk ? "💌 Отримуй нові пости першою" : "💌 Get new posts first"}
           </p>
           <p className="text-sm text-neutral-500">
@@ -154,21 +154,21 @@ function LifestyleBlog({ isUk }: { isUk: boolean }) {
       {/* Posts grid — masonry-like */}
       <div className="columns-1 sm:columns-2 gap-4 space-y-4">
         {LIFESTYLE_POSTS.map((p) => (
-          <article key={p.id} className="break-inside-avoid bg-white rounded-2xl overflow-hidden border border-neutral-100 shadow-sm hover:shadow-md transition-all cursor-pointer">
+          <article key={p.id} className="break-inside-avoid bg-white dark:bg-neutral-800 rounded-2xl overflow-hidden border border-neutral-100 dark:border-neutral-700 shadow-sm hover:shadow-md transition-all cursor-pointer">
             <div className={`bg-gradient-to-br ${p.img} ${p.id % 3 === 0 ? "h-40" : "h-28"}`} />
             <div className="p-4">
               <span className="text-xs font-semibold text-rose-500 mb-2 block">{isUk ? p.tagUk : p.tag}</span>
-              <h3 className="font-semibold text-neutral-900 text-sm leading-snug mb-3">
+              <h3 className="font-semibold text-neutral-900 dark:text-white text-sm leading-snug mb-3">
                 {isUk ? p.titleUk : p.title}
               </h3>
               <div className="flex items-center justify-between">
                 <span className="text-xs text-neutral-400">{isUk ? p.dateUk : p.date}</span>
                 <div className="flex items-center gap-3">
-                  <button onClick={() => toggleLike(p.id)} className="flex items-center gap-1 text-xs text-neutral-500 hover:text-rose-500 transition-colors">
+                  <button onClick={() => toggleLike(p.id)} className="flex items-center gap-1 text-xs text-neutral-500 dark:text-neutral-400 hover:text-rose-500 transition-colors">
                     <span>{liked.includes(p.id) ? "❤️" : "🤍"}</span>
                     <span>{p.likes + (liked.includes(p.id) ? 1 : 0)}</span>
                   </button>
-                  <button onClick={() => toggleSave(p.id)} className="flex items-center gap-1 text-xs text-neutral-500 hover:text-amber-500 transition-colors">
+                  <button onClick={() => toggleSave(p.id)} className="flex items-center gap-1 text-xs text-neutral-500 dark:text-neutral-400 hover:text-amber-500 transition-colors">
                     <span>{saved.includes(p.id) ? "🔖" : "📑"}</span>
                     <span>{p.saved + (saved.includes(p.id) ? 1 : 0)}</span>
                   </button>

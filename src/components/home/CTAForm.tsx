@@ -72,7 +72,7 @@ export function CTAForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="mt-3 w-full px-8 py-4 rounded-xl bg-amber-400 text-neutral-900 font-bold hover:bg-amber-300 transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-amber-400/30 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+        className="mt-3 w-full px-8 py-4 rounded-xl bg-amber-400 text-neutral-900 dark:text-white font-bold hover:bg-amber-300 transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-amber-400/30 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
       >
         {status === "loading" ? (
           <><Loader2 className="w-5 h-5 animate-spin" /> {isUk ? "Відправляємо..." : "Sending..."}</>

@@ -386,7 +386,7 @@ export function LexProDemo({ lang }: { lang: string }) {
       </section>
 
       {/* ── Practice Areas ── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-neutral-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">
@@ -496,7 +496,7 @@ export function LexProDemo({ lang }: { lang: string }) {
       </section>
 
       {/* ── Client Types ── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-neutral-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">
@@ -668,7 +668,7 @@ export function LexProDemo({ lang }: { lang: string }) {
       </section>
 
       {/* ── Blog / Insights ── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-neutral-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">

@@ -564,7 +564,7 @@ export function CarpathiaStayDemo({ lang }: { lang: string }) {
           {rooms.map((room) => (
             <div
               key={room.id}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-green-900/10 bg-white shadow-md transition-shadow hover:shadow-xl"
+              className="group flex flex-col overflow-hidden rounded-2xl border border-green-900/10 bg-white dark:bg-neutral-800 shadow-md transition-shadow hover:shadow-xl"
             >
               {/* image placeholder */}
               <div className="flex h-44 items-center justify-center bg-linear-to-br from-[#166534] to-[#14532d] text-6xl">
@@ -732,7 +732,7 @@ export function CarpathiaStayDemo({ lang }: { lang: string }) {
           {activities.map((act, i) => (
             <div
               key={i}
-              className="group rounded-2xl border border-green-900/10 bg-white p-6 shadow-sm transition-shadow hover:shadow-lg"
+              className="group rounded-2xl border border-green-900/10 bg-white dark:bg-neutral-800 p-6 shadow-sm transition-shadow hover:shadow-lg"
             >
               <div className="mb-3 flex items-center gap-3">
                 <span className="text-4xl">{act.icon}</span>
@@ -874,7 +874,7 @@ export function CarpathiaStayDemo({ lang }: { lang: string }) {
           {testimonials.map((rev, i) => (
             <div
               key={i}
-              className="rounded-2xl border border-green-900/10 bg-white p-6 shadow-sm"
+              className="rounded-2xl border border-green-900/10 bg-white dark:bg-neutral-800 p-6 shadow-sm"
             >
               <div className="mb-3 flex items-center justify-between">
                 <span className="text-lg text-amber-500">{stars(rev.stars)}</span>

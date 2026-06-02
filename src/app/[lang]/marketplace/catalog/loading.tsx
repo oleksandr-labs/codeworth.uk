@@ -3,7 +3,7 @@ import { Skeleton } from "@/components/ui/Skeleton";
 
 function ProductCardSkeleton() {
   return (
-    <div className="rounded-2xl border border-neutral-100 bg-white overflow-hidden">
+    <div className="rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white overflow-hidden">
       <Skeleton className="h-44 w-full rounded-none" />
       <div className="p-5 space-y-3">
         <div className="flex justify-between items-start">
@@ -39,11 +39,11 @@ export default function CatalogLoading() {
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Sidebar skeleton */}
             <aside className="w-full lg:w-64 shrink-0 space-y-6">
-              <div className="bg-white border border-neutral-100 rounded-2xl p-5 space-y-4">
+              <div className="bg-white border border-neutral-100 dark:border-neutral-700 rounded-2xl p-5 space-y-4">
                 <Skeleton className="h-5 w-24" />
                 <Skeleton className="h-10 w-full rounded-xl" />
               </div>
-              <div className="bg-white border border-neutral-100 rounded-2xl p-5 space-y-3">
+              <div className="bg-white border border-neutral-100 dark:border-neutral-700 rounded-2xl p-5 space-y-3">
                 <Skeleton className="h-5 w-28" />
                 {Array.from({ length: 5 }).map((_, i) => (
                   <div key={i} className="flex items-center gap-2">
@@ -52,7 +52,7 @@ export default function CatalogLoading() {
                   </div>
                 ))}
               </div>
-              <div className="bg-white border border-neutral-100 rounded-2xl p-5 space-y-3">
+              <div className="bg-white border border-neutral-100 dark:border-neutral-700 rounded-2xl p-5 space-y-3">
                 <Skeleton className="h-5 w-20" />
                 {Array.from({ length: 3 }).map((_, i) => (
                   <div key={i} className="flex items-center gap-2">

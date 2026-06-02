@@ -552,7 +552,7 @@ export function DentaLuxDemo({ lang }: { lang: string }) {
                   <div className={`bg-linear-to-br ${item.afterClass} flex flex-col items-center justify-center relative overflow-hidden border-l border-white/50`}>
                     <div className="flex gap-0.5 mb-3">
                       {[7, 9, 10, 10, 9, 7].map((h, i) => (
-                        <div key={i} style={{ height: `${h * 4}px` }} className="w-2.5 rounded-t-full bg-white border border-sky-100 shadow-sm rounded-b-sm" />
+                        <div key={i} style={{ height: `${h * 4}px` }} className="w-2.5 rounded-t-full bg-white dark:bg-neutral-800 border border-sky-100 shadow-sm rounded-b-sm" />
                       ))}
                     </div>
                     <span className="text-xs font-bold text-sky-600 uppercase tracking-widest bg-white/80 backdrop-blur-sm px-2 py-0.5 rounded">

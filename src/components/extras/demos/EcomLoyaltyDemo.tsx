@@ -94,7 +94,7 @@ export function EcomLoyaltyDemo({ isUk }: Props) {
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
         <button
           onClick={() => earn(50)}
-          className="flex flex-col items-center gap-1 p-3 rounded-xl border border-neutral-200 bg-white hover:bg-indigo-50 hover:border-indigo-300 transition-all text-sm"
+          className="flex flex-col items-center gap-1 p-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white hover:bg-indigo-50 hover:border-indigo-300 transition-all text-sm"
         >
           <ShoppingBag className="w-5 h-5 text-indigo-600" />
           <span className="font-semibold text-neutral-900">+50</span>
@@ -102,7 +102,7 @@ export function EcomLoyaltyDemo({ isUk }: Props) {
         </button>
         <button
           onClick={() => earn(20)}
-          className="flex flex-col items-center gap-1 p-3 rounded-xl border border-neutral-200 bg-white hover:bg-indigo-50 hover:border-indigo-300 transition-all text-sm"
+          className="flex flex-col items-center gap-1 p-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white hover:bg-indigo-50 hover:border-indigo-300 transition-all text-sm"
         >
           <Sparkles className="w-5 h-5 text-violet-600" />
           <span className="font-semibold text-neutral-900">+20</span>
@@ -110,7 +110,7 @@ export function EcomLoyaltyDemo({ isUk }: Props) {
         </button>
         <button
           onClick={() => earn(100)}
-          className="flex flex-col items-center gap-1 p-3 rounded-xl border border-neutral-200 bg-white hover:bg-indigo-50 hover:border-indigo-300 transition-all text-sm"
+          className="flex flex-col items-center gap-1 p-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white hover:bg-indigo-50 hover:border-indigo-300 transition-all text-sm"
         >
           <TrendingUp className="w-5 h-5 text-emerald-600" />
           <span className="font-semibold text-neutral-900">+100</span>
@@ -119,8 +119,8 @@ export function EcomLoyaltyDemo({ isUk }: Props) {
       </div>
 
       {/* Rewards catalog */}
-      <div className="rounded-2xl border border-neutral-200 bg-white p-5">
-        <h3 className="font-bold text-neutral-900 mb-3 flex items-center gap-2">
+      <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white p-5">
+        <h3 className="font-bold text-neutral-900 dark:text-white mb-3 flex items-center gap-2">
           <Gift className="w-5 h-5 text-rose-500" />
           {isUk ? "Каталог винагород" : "Rewards catalog"}
         </h3>
@@ -137,8 +137,8 @@ export function EcomLoyaltyDemo({ isUk }: Props) {
                   isRedeemed
                     ? "border-emerald-300 bg-emerald-50"
                     : affordable
-                    ? "border-neutral-200 bg-white hover:border-indigo-300 hover:bg-indigo-50/50"
-                    : "border-neutral-200 bg-neutral-50 opacity-50 cursor-not-allowed"
+                    ? "border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-indigo-300 hover:bg-indigo-50/50"
+                    : "border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900 opacity-50 cursor-not-allowed"
                 }`}
               >
                 <div className="flex items-start justify-between mb-2">
@@ -147,7 +147,7 @@ export function EcomLoyaltyDemo({ isUk }: Props) {
                     {r.points} pts
                   </span>
                 </div>
-                <p className="text-sm font-medium text-neutral-900 mb-1">{isUk ? r.titleUk : r.titleEn}</p>
+                <p className="text-sm font-medium text-neutral-900 dark:text-white mb-1">{isUk ? r.titleUk : r.titleEn}</p>
                 <p className={`text-xs ${isRedeemed ? "text-emerald-600 font-semibold" : "text-neutral-500"}`}>
                   {isRedeemed ? (isUk ? "✓ Активовано" : "✓ Redeemed") : affordable ? (isUk ? "Активувати →" : "Redeem →") : (isUk ? `Ще ${r.points - points} балів` : `Need ${r.points - points} more`)}
                 </p>

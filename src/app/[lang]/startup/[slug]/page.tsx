@@ -166,13 +166,13 @@ export default async function StartupSolutionPage({ params }: Props) {
           <div className="bg-white border-b border-neutral-100">
             <Container>
               <div className="py-3 flex items-center gap-2 text-sm text-neutral-500">
-                <Link href={lp("/")} className="hover:text-neutral-800 transition-colors">{isUk ? "Головна" : "Home"}</Link>
+                <Link href={lp("/")} className="hover:text-neutral-800 dark:text-neutral-200 transition-colors">{isUk ? "Головна" : "Home"}</Link>
                 <span>/</span>
-                <Link href={lp("/startup")} className="hover:text-neutral-800 transition-colors">
+                <Link href={lp("/startup")} className="hover:text-neutral-800 dark:text-neutral-200 transition-colors">
                   {isUk ? "Стартап рішення" : "Startup Solutions"}
                 </Link>
                 <span>/</span>
-                <span className="text-neutral-800 font-medium">{solution.titleEn}</span>
+                <span className="text-neutral-800 dark:text-neutral-200 font-medium">{solution.titleEn}</span>
               </div>
             </Container>
           </div>
@@ -199,7 +199,7 @@ export default async function StartupSolutionPage({ params }: Props) {
                 <div className="flex flex-wrap items-center justify-center gap-4">
                   <Link
                     href={lp(`/contact?source=startup&slug=${slug}&package=standard`)}
-                    className="inline-flex items-center gap-2 bg-white text-gray-900 font-bold px-7 py-3.5 rounded-2xl hover:bg-white/90 transition-colors shadow-lg"
+                    className="inline-flex items-center gap-2 bg-white text-gray-900 dark:text-white font-bold px-7 py-3.5 rounded-2xl hover:bg-white/90 transition-colors shadow-lg"
                   >
                     <ShoppingCart className="w-5 h-5" />
                     {isUk ? `Замовити від £${solution.priceFrom}` : `Order from £${solution.priceFrom}`}
@@ -215,7 +215,7 @@ export default async function StartupSolutionPage({ params }: Props) {
 
           {/* Demo Preview */}
           {DemoComponent && (
-            <section className="py-12 bg-neutral-100 border-b border-neutral-200">
+            <section className="py-12 bg-neutral-100 dark:bg-neutral-800 border-b border-neutral-200">
               <Container>
                 <div className="text-center mb-6">
                   <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-2">
@@ -240,16 +240,16 @@ export default async function StartupSolutionPage({ params }: Props) {
                 <div className="lg:col-span-2 space-y-8">
 
                   {/* For whom */}
-                  <div className="bg-white rounded-2xl border border-neutral-100 p-6">
+                  <div className="bg-white rounded-2xl border border-neutral-100 dark:border-neutral-700 p-6">
                     <div className="flex items-center gap-2 mb-4">
                       <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center">
                         <Target className="w-4 h-4 text-indigo-600" />
                       </div>
-                      <h2 className="font-bold text-neutral-900 text-lg">
+                      <h2 className="font-bold text-neutral-900 dark:text-white text-lg">
                         {isUk ? "Для кого це рішення" : "Who This Is For"}
                       </h2>
                     </div>
-                    <p className="text-neutral-600 leading-relaxed">
+                    <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed">
                       {isUk ? solution.targetAudience : solution.targetAudienceEn}
                     </p>
                   </div>
@@ -280,12 +280,12 @@ export default async function StartupSolutionPage({ params }: Props) {
                   </div>
 
                   {/* Sections included */}
-                  <div className="bg-white rounded-2xl border border-neutral-100 p-6">
+                  <div className="bg-white rounded-2xl border border-neutral-100 dark:border-neutral-700 p-6">
                     <div className="flex items-center gap-2 mb-4">
                       <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center">
                         <Layers className="w-4 h-4 text-indigo-600" />
                       </div>
-                      <h2 className="font-bold text-neutral-900 text-lg">
+                      <h2 className="font-bold text-neutral-900 dark:text-white text-lg">
                         {isUk ? "Що включено в лендінг" : "What's Included in the Landing"}
                       </h2>
                     </div>
@@ -302,7 +302,7 @@ export default async function StartupSolutionPage({ params }: Props) {
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2">
                     {solution.tags.map((tag) => (
-                      <span key={tag} className="px-3 py-1 bg-neutral-100 text-neutral-600 rounded-full text-xs font-medium">
+                      <span key={tag} className="px-3 py-1 bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 rounded-full text-xs font-medium">
                         #{tag}
                       </span>
                     ))}
@@ -323,13 +323,13 @@ export default async function StartupSolutionPage({ params }: Props) {
                       </div>
                       <Link
                         href={lp(`/contact?source=startup&slug=${slug}&package=standard`)}
-                        className="block w-full text-center bg-white text-gray-900 font-bold py-3 rounded-xl hover:bg-white/90 transition-colors"
+                        className="block w-full text-center bg-white text-gray-900 dark:text-white font-bold py-3 rounded-xl hover:bg-white/90 transition-colors"
                       >
                         {isUk ? "Замовити зараз" : "Order Now"}
                       </Link>
                     </div>
 
-                    <div className="bg-neutral-50 rounded-xl border border-neutral-200 p-4 text-sm text-neutral-600 space-y-2">
+                    <div className="bg-neutral-50 dark:bg-neutral-900 rounded-xl border border-neutral-200 dark:border-neutral-700 p-4 text-sm text-neutral-600 dark:text-neutral-300 space-y-2">
                       <div className="flex items-center gap-2">
                         <Check className="w-4 h-4 text-emerald-500" />
                         {isUk ? "Безкоштовна консультація" : "Free consultation"}
@@ -355,7 +355,7 @@ export default async function StartupSolutionPage({ params }: Props) {
           </div>
 
           {/* Packages */}
-          <section className="py-16 bg-neutral-50 border-y border-neutral-100">
+          <section className="py-16 bg-neutral-50 dark:bg-neutral-900 border-y border-neutral-100">
             <Container>
               <div className="text-center mb-10">
                 <h2 className="text-3xl font-heading font-extrabold text-neutral-900">
@@ -369,7 +369,7 @@ export default async function StartupSolutionPage({ params }: Props) {
                     className={`rounded-2xl p-6 border-2 ${
                       pkg.highlight
                         ? "border-indigo-600 bg-indigo-50"
-                        : "border-neutral-200 bg-white"
+                        : "border-neutral-200 dark:border-neutral-700 bg-white"
                     }`}
                   >
                     {pkg.highlight && (
@@ -377,9 +377,9 @@ export default async function StartupSolutionPage({ params }: Props) {
                         ⭐ {isUk ? "Популярний" : "Most Popular"}
                       </div>
                     )}
-                    <div className="font-bold text-neutral-900 text-xl mb-1">{pkg.name}</div>
-                    <div className="text-2xl font-extrabold text-neutral-900 mb-0.5">{pkg.price}</div>
-                    <div className="text-sm text-neutral-500 mb-5 flex items-center gap-1">
+                    <div className="font-bold text-neutral-900 dark:text-white text-xl mb-1">{pkg.name}</div>
+                    <div className="text-2xl font-extrabold text-neutral-900 dark:text-white mb-0.5">{pkg.price}</div>
+                    <div className="text-sm text-neutral-500 dark:text-neutral-400 mb-5 flex items-center gap-1">
                       <Clock className="w-3.5 h-3.5" /> {pkg.days}
                     </div>
                     <ul className="space-y-2 mb-6">
@@ -408,9 +408,9 @@ export default async function StartupSolutionPage({ params }: Props) {
 
           {/* Related solutions */}
           {related.length > 0 && (
-            <section className="py-16 bg-white">
+            <section className="py-16 bg-white dark:bg-neutral-950">
               <Container>
-                <h2 className="text-2xl font-heading font-bold text-neutral-900 mb-8">
+                <h2 className="text-2xl font-heading font-bold text-neutral-900 dark:text-white mb-8">
                   {isUk ? "Схожі рішення" : "Related Solutions"}
                 </h2>
                 <div className="grid sm:grid-cols-3 gap-5">
@@ -418,14 +418,14 @@ export default async function StartupSolutionPage({ params }: Props) {
                     <Link
                       key={s.slug}
                       href={lp(`/startup/${s.slug}`)}
-                      className="group flex items-center gap-4 p-4 rounded-2xl border border-neutral-200 hover:border-indigo-300 hover:shadow-sm transition-all"
+                      className="group flex items-center gap-4 p-4 rounded-2xl border border-neutral-200 dark:border-neutral-700 hover:border-indigo-300 hover:shadow-sm transition-all"
                     >
                       <span className="text-3xl shrink-0">{s.icon}</span>
                       <div className="min-w-0">
-                        <div className="font-semibold text-neutral-800 group-hover:text-indigo-700 transition-colors truncate text-sm">
+                        <div className="font-semibold text-neutral-800 dark:text-neutral-200 group-hover:text-indigo-700 transition-colors truncate text-sm">
                           {s.titleEn}
                         </div>
-                        <div className="text-xs text-neutral-500 mt-0.5">
+                        <div className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">
                           {isUk ? `від £${s.priceFrom}` : `from £${s.priceFrom}`} · {s.deliveryDays} {isUk ? "днів" : "days"}
                         </div>
                       </div>
@@ -438,11 +438,11 @@ export default async function StartupSolutionPage({ params }: Props) {
           )}
 
           {/* Back nav */}
-          <div className="py-8 bg-white border-t border-neutral-100">
+          <div className="py-8 bg-white dark:bg-neutral-800 border-t border-neutral-100">
             <Container>
               <Link
                 href={lp("/startup")}
-                className="inline-flex items-center gap-2 text-sm text-neutral-500 hover:text-indigo-600 transition-colors"
+                className="inline-flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400 hover:text-indigo-600 transition-colors"
               >
                 <ArrowLeft className="w-4 h-4" />
                 {isUk ? "Всі стартап-рішення" : "All Startup Solutions"}

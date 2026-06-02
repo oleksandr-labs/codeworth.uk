@@ -354,7 +354,7 @@ export function FinAdvisorsDemo({ lang }: { lang: string }) {
               ].map((stat) => (
                 <div key={stat.val}>
                   <div className="text-[#C5A55A] font-serif text-2xl font-bold">{stat.val}</div>
-                  <div className="text-gray-400 text-xs uppercase tracking-wide">{stat.label}</div>
+                  <div className="text-gray-400 dark:text-neutral-500 text-xs uppercase tracking-wide">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -384,7 +384,7 @@ export function FinAdvisorsDemo({ lang }: { lang: string }) {
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#1E3A5F]">
               {isUk ? "Наші Послуги" : "Our Services"}
             </h2>
-            <p className="text-gray-500 mt-3 max-w-2xl mx-auto">
+            <p className="text-gray-500 dark:text-neutral-400 mt-3 max-w-2xl mx-auto">
               {isUk
                 ? "Комплексний фінансовий супровід для бізнесу на кожному етапі розвитку."
                 : "Comprehensive financial support for businesses at every stage of growth."}
@@ -395,13 +395,13 @@ export function FinAdvisorsDemo({ lang }: { lang: string }) {
             {services.map((s, i) => (
               <div
                 key={i}
-                className="bg-white rounded-2xl p-6 border border-gray-100 hover:border-[#C5A55A] hover:shadow-lg transition-all group"
+                className="bg-white rounded-2xl p-6 border border-gray-100 dark:border-neutral-700 hover:border-[#C5A55A] hover:shadow-lg transition-all group"
               >
                 <div className="w-12 h-12 bg-[#1E3A5F]/10 rounded-xl flex items-center justify-center text-[#1E3A5F] group-hover:bg-[#C5A55A]/20 group-hover:text-[#C5A55A] transition-colors mb-4">
                   {s.icon}
                 </div>
                 <h3 className="font-serif font-bold text-[#1E3A5F] text-lg mb-2">{s.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
+                <p className="text-gray-500 dark:text-neutral-400 text-sm leading-relaxed">{s.desc}</p>
                 <button className="mt-4 text-[#C5A55A] text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all">
                   {isUk ? "Детальніше" : "Learn More"} <ChevronRight className="w-4 h-4" />
                 </button>
@@ -422,7 +422,7 @@ export function FinAdvisorsDemo({ lang }: { lang: string }) {
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
               {isUk ? "Калькулятор Економії" : "Savings Calculator"}
             </h2>
-            <p className="text-gray-400 mt-3 max-w-xl mx-auto">
+            <p className="text-gray-400 dark:text-neutral-500 mt-3 max-w-xl mx-auto">
               {isUk
                 ? "Дізнайтесь, скільки ваша компанія може заощадити на податках за допомогою оптимізації."
                 : "Find out how much your company could save on taxes through optimization."}
@@ -476,22 +476,22 @@ export function FinAdvisorsDemo({ lang }: { lang: string }) {
               <div className="mt-8 pt-8 border-t border-white/20">
                 <div className="grid grid-cols-3 gap-4 text-center">
                   <div className="bg-white/10 rounded-xl p-4">
-                    <div className="text-gray-400 text-xs uppercase tracking-wide mb-1">
+                    <div className="text-gray-400 dark:text-neutral-500 text-xs uppercase tracking-wide mb-1">
                       {isUk ? "Поточні Податки" : "Current Taxes"}
                     </div>
                     <div className="text-white font-serif text-xl font-bold">
                       ${currentTax.toLocaleString("en-US", { maximumFractionDigits: 0 })}
                     </div>
-                    <div className="text-gray-500 text-xs">{taxRate}%</div>
+                    <div className="text-gray-500 dark:text-neutral-400 text-xs">{taxRate}%</div>
                   </div>
                   <div className="bg-white/10 rounded-xl p-4">
-                    <div className="text-gray-400 text-xs uppercase tracking-wide mb-1">
+                    <div className="text-gray-400 dark:text-neutral-500 text-xs uppercase tracking-wide mb-1">
                       {isUk ? "Після Оптимізації" : "After Optimization"}
                     </div>
                     <div className="text-white font-serif text-xl font-bold">
                       ${optimizedTax.toLocaleString("en-US", { maximumFractionDigits: 0 })}
                     </div>
-                    <div className="text-gray-500 text-xs">{optimizedRate.toFixed(1)}%</div>
+                    <div className="text-gray-500 dark:text-neutral-400 text-xs">{optimizedRate.toFixed(1)}%</div>
                   </div>
                   <div className="bg-[#C5A55A]/20 border border-[#C5A55A]/40 rounded-xl p-4">
                     <div className="text-[#C5A55A] text-xs uppercase tracking-wide mb-1 font-semibold">
@@ -505,7 +505,7 @@ export function FinAdvisorsDemo({ lang }: { lang: string }) {
                     </div>
                   </div>
                 </div>
-                <p className="text-gray-500 text-xs text-center mt-4">
+                <p className="text-gray-500 dark:text-neutral-400 text-xs text-center mt-4">
                   {isUk
                     ? "* Попередня оцінка. Фактичний результат залежить від структури бізнесу та юрисдикції."
                     : "* Preliminary estimate. Actual results depend on business structure and jurisdiction."}
@@ -517,7 +517,7 @@ export function FinAdvisorsDemo({ lang }: { lang: string }) {
       </section>
 
       {/* ── CASE STUDIES ───────────────────────────────────────────────────── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-neutral-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <p className="text-[#C5A55A] text-sm font-semibold uppercase tracking-widest mb-2">
@@ -532,7 +532,7 @@ export function FinAdvisorsDemo({ lang }: { lang: string }) {
             {cases.map((c, i) => (
               <div
                 key={i}
-                className="bg-[#f8f7f5] rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow"
+                className="bg-[#f8f7f5] rounded-2xl overflow-hidden border border-gray-100 dark:border-neutral-700 hover:shadow-lg transition-shadow"
               >
                 <div className="bg-[#1E3A5F] p-6 text-center">
                   <div className="text-[#C5A55A] font-serif text-4xl font-bold">{c.metric}</div>
@@ -543,12 +543,12 @@ export function FinAdvisorsDemo({ lang }: { lang: string }) {
                     <Briefcase className="w-4 h-4 text-[#C5A55A]" />
                     <span className="font-serif font-bold text-[#1E3A5F]">{c.client}</span>
                   </div>
-                  <p className="text-gray-400 text-xs mb-3">{c.industry}</p>
+                  <p className="text-gray-400 dark:text-neutral-500 text-xs mb-3">{c.industry}</p>
                   <div className="mb-3">
                     <p className="text-xs font-semibold text-[#1E3A5F] uppercase tracking-wide mb-1">
                       {isUk ? "Виклик" : "Challenge"}
                     </p>
-                    <p className="text-gray-600 text-sm">{c.challenge}</p>
+                    <p className="text-gray-600 dark:text-neutral-300 text-sm">{c.challenge}</p>
                   </div>
                   <div className="bg-[#C5A55A]/10 rounded-lg p-3 flex items-start gap-2">
                     <Check className="w-4 h-4 text-[#C5A55A] mt-0.5 shrink-0" />
@@ -577,7 +577,7 @@ export function FinAdvisorsDemo({ lang }: { lang: string }) {
             {team.map((t, i) => (
               <div
                 key={i}
-                className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-[#C5A55A] hover:shadow-lg transition-all"
+                className="bg-white rounded-2xl p-6 text-center border border-gray-100 dark:border-neutral-700 hover:border-[#C5A55A] hover:shadow-lg transition-all"
               >
                 <div className="w-16 h-16 bg-linear-to-br from-[#1E3A5F] to-[#162d4a] rounded-full flex items-center justify-center text-white font-serif font-bold text-lg mx-auto mb-4">
                   {t.initials}
@@ -609,7 +609,7 @@ export function FinAdvisorsDemo({ lang }: { lang: string }) {
       </section>
 
       {/* ── PRICING ────────────────────────────────────────────────────────── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-neutral-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <p className="text-[#C5A55A] text-sm font-semibold uppercase tracking-widest mb-2">
@@ -618,7 +618,7 @@ export function FinAdvisorsDemo({ lang }: { lang: string }) {
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#1E3A5F]">
               {isUk ? "Прозоре Ціноутворення" : "Transparent Pricing"}
             </h2>
-            <p className="text-gray-500 mt-3 max-w-xl mx-auto">
+            <p className="text-gray-500 dark:text-neutral-400 mt-3 max-w-xl mx-auto">
               {isUk
                 ? "Оберіть формат співпраці, що найкраще підходить вашому бізнесу."
                 : "Choose the engagement format that best fits your business needs."}
@@ -632,7 +632,7 @@ export function FinAdvisorsDemo({ lang }: { lang: string }) {
                 className={`rounded-2xl p-8 border-2 transition-shadow ${
                   tier.highlight
                     ? "border-[#C5A55A] bg-[#1E3A5F] text-white shadow-xl scale-[1.02]"
-                    : "border-gray-200 bg-white hover:border-[#C5A55A] hover:shadow-lg"
+                    : "border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-[#C5A55A] hover:shadow-lg"
                 }`}
               >
                 {tier.highlight && (
@@ -716,10 +716,10 @@ export function FinAdvisorsDemo({ lang }: { lang: string }) {
               </button>
             </div>
           ) : (
-            <form onSubmit={handleContactSubmit} className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm space-y-5">
+            <form onSubmit={handleContactSubmit} className="bg-white rounded-2xl p-8 border border-gray-200 dark:border-neutral-700 shadow-sm space-y-5">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-gray-600 mb-1 uppercase tracking-wide">
+                  <label className="block text-xs font-semibold text-gray-600 dark:text-neutral-300 mb-1 uppercase tracking-wide">
                     {isUk ? "Назва Компанії" : "Company Name"}
                   </label>
                   <input
@@ -728,18 +728,18 @@ export function FinAdvisorsDemo({ lang }: { lang: string }) {
                     onChange={(e) => setFormCompany(e.target.value)}
                     required
                     placeholder={isUk ? "ТОВ Альфа" : "Acme Corp"}
-                    className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm text-[#1E3A5F] focus:border-[#C5A55A] focus:outline-none"
+                    className="w-full border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 text-sm text-[#1E3A5F] focus:border-[#C5A55A] focus:outline-none"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-gray-600 mb-1 uppercase tracking-wide">
+                  <label className="block text-xs font-semibold text-gray-600 dark:text-neutral-300 mb-1 uppercase tracking-wide">
                     {isUk ? "Діапазон Виручки" : "Revenue Range"}
                   </label>
                   <select
                     value={formRevenue}
                     onChange={(e) => setFormRevenue(e.target.value)}
                     required
-                    className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm text-[#1E3A5F] focus:border-[#C5A55A] focus:outline-none"
+                    className="w-full border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 text-sm text-[#1E3A5F] focus:border-[#C5A55A] focus:outline-none"
                   >
                     <option value="">{isUk ? "Оберіть..." : "Select..."}</option>
                     {revenueRanges.map((r) => (
@@ -751,14 +751,14 @@ export function FinAdvisorsDemo({ lang }: { lang: string }) {
 
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-gray-600 mb-1 uppercase tracking-wide">
+                  <label className="block text-xs font-semibold text-gray-600 dark:text-neutral-300 mb-1 uppercase tracking-wide">
                     {isUk ? "Послуга" : "Service Interest"}
                   </label>
                   <select
                     value={formService}
                     onChange={(e) => setFormService(e.target.value)}
                     required
-                    className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm text-[#1E3A5F] focus:border-[#C5A55A] focus:outline-none"
+                    className="w-full border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 text-sm text-[#1E3A5F] focus:border-[#C5A55A] focus:outline-none"
                   >
                     <option value="">{isUk ? "Оберіть..." : "Select..."}</option>
                     {serviceOptions.map((s) => (
@@ -767,7 +767,7 @@ export function FinAdvisorsDemo({ lang }: { lang: string }) {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-gray-600 mb-1 uppercase tracking-wide">
+                  <label className="block text-xs font-semibold text-gray-600 dark:text-neutral-300 mb-1 uppercase tracking-wide">
                     {isUk ? "Телефон" : "Phone"}
                   </label>
                   <input
@@ -776,7 +776,7 @@ export function FinAdvisorsDemo({ lang }: { lang: string }) {
                     onChange={(e) => setFormPhone(e.target.value)}
                     required
                     placeholder="+380 44 000 0000"
-                    className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm text-[#1E3A5F] focus:border-[#C5A55A] focus:outline-none"
+                    className="w-full border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 text-sm text-[#1E3A5F] focus:border-[#C5A55A] focus:outline-none"
                   />
                 </div>
               </div>
@@ -788,7 +788,7 @@ export function FinAdvisorsDemo({ lang }: { lang: string }) {
                 <Mail className="w-5 h-5" />
                 {isUk ? "Надіслати Заявку" : "Submit Request"}
               </button>
-              <p className="text-gray-400 text-xs text-center">
+              <p className="text-gray-400 dark:text-neutral-500 text-xs text-center">
                 {isUk
                   ? "Ми відповідаємо протягом 1 робочого дня. Конфіденційність гарантована."
                   : "We respond within 1 business day. Confidentiality guaranteed."}

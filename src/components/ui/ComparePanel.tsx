@@ -47,7 +47,7 @@ export function ComparePanel() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3">
         <div className="flex items-center gap-3 flex-wrap md:flex-nowrap">
           {/* Icon + label */}
-          <div className="flex items-center gap-2 shrink-0 text-sm font-semibold text-neutral-700 dark:text-neutral-200">
+          <div className="flex items-center gap-2 shrink-0 text-sm font-semibold text-neutral-700 dark:text-neutral-300 dark:text-neutral-200">
             <BarChart2 className="w-4 h-4 text-indigo-500" />
             <span>{isUk ? "Порівняння" : "Compare"}</span>
             <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-indigo-100 text-indigo-700 text-xs font-bold">
@@ -60,10 +60,10 @@ export function ComparePanel() {
             {items.map((item) => (
               <div
                 key={item.slug}
-                className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 shrink-0"
+                className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 shrink-0"
               >
                 <span className="text-base leading-none">{item.emoji}</span>
-                <span className="text-sm font-medium text-neutral-800 dark:text-neutral-100 max-w-[120px] truncate">
+                <span className="text-sm font-medium text-neutral-800 dark:text-neutral-200 dark:text-neutral-100 max-w-[120px] truncate">
                   {item.title}
                 </span>
                 <span
@@ -99,7 +99,7 @@ export function ComparePanel() {
           <div className="flex items-center gap-2 shrink-0 ml-auto">
             <button
               onClick={clearAll}
-              className="text-sm text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors px-2 py-1 rounded hover:bg-neutral-100 dark:hover:bg-neutral-800"
+              className="text-sm text-neutral-500 hover:text-neutral-700 dark:text-neutral-300 dark:hover:text-neutral-300 transition-colors px-2 py-1 rounded hover:bg-neutral-100 dark:hover:bg-neutral-700 dark:bg-neutral-800 dark:hover:bg-neutral-800"
             >
               {isUk ? "Очистити" : "Clear all"}
             </button>

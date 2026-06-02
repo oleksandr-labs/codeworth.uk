@@ -1,10 +1,10 @@
 export function EdtechCoursePreview() {
   return (
     <div className="font-sans">
-      <nav className="flex items-center justify-between px-8 py-4 bg-white border-b border-gray-100">
+      <nav className="flex items-center justify-between px-8 py-4 bg-white dark:bg-neutral-800 border-b border-gray-100">
         <div className="flex items-center gap-2">
           <div className="w-7 h-7 rounded-lg bg-teal-600 flex items-center justify-center text-white text-xs font-bold">🎓</div>
-          <span className="font-bold text-gray-900 text-sm">LaunchPad Academy</span>
+          <span className="font-bold text-gray-900 dark:text-white text-sm">LaunchPad Academy</span>
         </div>
         <div className="flex items-center gap-4 text-xs text-gray-500">
           <span>Curriculum</span><span>Instructors</span>
@@ -31,8 +31,8 @@ export function EdtechCoursePreview() {
         <p className="text-xs text-teal-300 mt-3">30-day money-back guarantee if you don&apos;t land your first customer</p>
       </section>
 
-      <section className="px-8 py-10 bg-white border-b border-gray-100">
-        <h2 className="text-xl font-bold text-gray-900 text-center mb-6">What you&apos;ll build & learn</h2>
+      <section className="px-8 py-10 bg-white dark:bg-neutral-800 border-b border-gray-100">
+        <h2 className="text-xl font-bold text-gray-900 dark:text-white text-center mb-6">What you&apos;ll build & learn</h2>
         <div className="grid grid-cols-2 gap-3 max-w-3xl mx-auto">
           {[
             ["Week 1–2", "Validate your idea in 7 days (without building anything)"],
@@ -48,7 +48,7 @@ export function EdtechCoursePreview() {
         </div>
       </section>
 
-      <section className="px-8 py-8 bg-gray-50 border-t border-gray-100 text-center">
+      <section className="px-8 py-8 bg-gray-50 dark:bg-neutral-900 border-t border-gray-100 dark:border-neutral-700 text-center">
         <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto text-center">
           {[["$0 → $12K", "Average MRR after 90 days"], ["89%", "Completion rate"], ["4.9 ⭐", "Average rating"]].map(([n, l]) => (
             <div key={l}>

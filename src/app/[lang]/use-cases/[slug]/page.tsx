@@ -91,18 +91,18 @@ export default async function UseCaseDetailPage({
       <main id="main-content" className="flex-1">
 
         {/* Breadcrumb */}
-        <div className="pt-24 pb-0 bg-white border-b border-neutral-100">
+        <div className="pt-24 pb-0 bg-white dark:bg-neutral-800 border-b border-neutral-100">
           <Container>
             <nav className="flex items-center gap-2 text-xs text-neutral-400 pb-4">
-              <Link href={`/${lang}`} className="hover:text-neutral-600 transition-colors">
+              <Link href={`/${lang}`} className="hover:text-neutral-600 dark:text-neutral-300 transition-colors">
                 {isUk ? "Головна" : "Home"}
               </Link>
               <ChevronRight className="w-3 h-3" />
-              <Link href={`/${lang}/use-cases`} className="hover:text-neutral-600 transition-colors">
+              <Link href={`/${lang}/use-cases`} className="hover:text-neutral-600 dark:text-neutral-300 transition-colors">
                 {isUk ? "Рішення" : "Use Cases"}
               </Link>
               <ChevronRight className="w-3 h-3" />
-              <span className="text-neutral-600 truncate max-w-[200px]">
+              <span className="text-neutral-600 dark:text-neutral-300 truncate max-w-[200px]">
                 {isUk ? uc.titleUk : uc.titleEn}
               </span>
             </nav>
@@ -113,14 +113,14 @@ export default async function UseCaseDetailPage({
         <section className={`py-16 ${bg}`}>
           <Container>
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-neutral-200 text-neutral-600 text-xs font-semibold mb-6">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-neutral-600 dark:text-neutral-300 text-xs font-semibold mb-6">
                 <span>{catIcon}</span>
                 <span>{isUk ? catMeta.uk : catMeta.en}</span>
               </div>
               <div className={`w-16 h-16 rounded-2xl bg-linear-to-br ${gradient} flex items-center justify-center text-3xl mb-6`}>
                 {uc.icon}
               </div>
-              <h1 className="text-4xl lg:text-5xl font-heading font-extrabold text-neutral-900 mb-4 leading-tight">
+              <h1 className="text-4xl lg:text-5xl font-heading font-extrabold text-neutral-900 dark:text-white mb-4 leading-tight">
                 {isUk ? uc.titleUk : uc.titleEn}
               </h1>
               {(uc.whoUk || uc.whoEn) && (
@@ -129,7 +129,7 @@ export default async function UseCaseDetailPage({
                   <span className="text-neutral-600">{isUk ? uc.whoUk : uc.whoEn}</span>
                 </p>
               )}
-              <p className="text-xl text-neutral-600 leading-relaxed">
+              <p className="text-xl text-neutral-600 dark:text-neutral-300 leading-relaxed">
                 {isUk ? uc.problemUk : uc.problemEn}
               </p>
             </div>
@@ -150,7 +150,7 @@ export default async function UseCaseDetailPage({
                     <span>⚠️</span>
                     {isUk ? "Проблема" : "The Problem"}
                   </h2>
-                  <p className="text-lg text-neutral-700 leading-relaxed">
+                  <p className="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed">
                     {isUk ? uc.problemUk : uc.problemEn}
                   </p>
                 </div>
@@ -161,7 +161,7 @@ export default async function UseCaseDetailPage({
                     <span>🔧</span>
                     {isUk ? "Рішення Codeworth" : "Codeworth Solution"}
                   </h2>
-                  <p className="text-lg text-neutral-700 leading-relaxed">
+                  <p className="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed">
                     {isUk ? uc.solutionUk : uc.solutionEn}
                   </p>
                 </div>
@@ -169,7 +169,7 @@ export default async function UseCaseDetailPage({
                 {/* Result quote */}
                 <blockquote className="relative pl-6 border-l-4 border-indigo-500">
                   <CheckCircle2 className="absolute -left-2.5 top-0 w-5 h-5 bg-white text-indigo-600" />
-                  <p className="text-lg font-semibold text-neutral-800 italic">
+                  <p className="text-lg font-semibold text-neutral-800 dark:text-neutral-200 italic">
                     "{isUk ? uc.resultQuoteUk : uc.resultQuoteEn}"
                   </p>
                   <footer className="mt-2 text-sm text-neutral-400">
@@ -203,8 +203,8 @@ export default async function UseCaseDetailPage({
 
                 {/* Related portfolio */}
                 {uc.relatedPortfolio.length > 0 && (
-                  <div className="p-5 rounded-2xl border border-neutral-200 bg-white">
-                    <h3 className="text-sm font-bold text-neutral-500 uppercase tracking-widest mb-3">
+                  <div className="p-5 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white">
+                    <h3 className="text-sm font-bold text-neutral-500 dark:text-neutral-400 uppercase tracking-widest mb-3">
                       {isUk ? "Схожі кейси" : "Related Cases"}
                     </h3>
                     <ul className="space-y-2">
@@ -225,8 +225,8 @@ export default async function UseCaseDetailPage({
 
                 {/* Related services */}
                 {uc.relatedServices.length > 0 && (
-                  <div className="p-5 rounded-2xl border border-neutral-200 bg-white">
-                    <h3 className="text-sm font-bold text-neutral-500 uppercase tracking-widest mb-3">
+                  <div className="p-5 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white">
+                    <h3 className="text-sm font-bold text-neutral-500 dark:text-neutral-400 uppercase tracking-widest mb-3">
                       {isUk ? "Пов'язані послуги" : "Related Services"}
                     </h3>
                     <ul className="space-y-2">
@@ -252,9 +252,9 @@ export default async function UseCaseDetailPage({
 
         {/* Related use cases */}
         {relatedCases.length > 0 && (
-          <section className="py-16 bg-neutral-50 border-t border-neutral-100">
+          <section className="py-16 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100">
             <Container>
-              <h2 className="text-2xl font-heading font-extrabold text-neutral-900 mb-8">
+              <h2 className="text-2xl font-heading font-extrabold text-neutral-900 dark:text-white mb-8">
                 {isUk ? "Схожі рішення" : "Similar Solutions"}
               </h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -262,11 +262,11 @@ export default async function UseCaseDetailPage({
                   <Link
                     key={rel.slug}
                     href={`/${lang}/use-cases/${rel.slug}`}
-                    className="group flex items-start gap-4 p-5 rounded-2xl border border-neutral-200 bg-white hover:shadow-md transition-shadow"
+                    className="group flex items-start gap-4 p-5 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:shadow-md transition-shadow"
                   >
                     <span className="text-2xl shrink-0">{rel.icon}</span>
                     <div>
-                      <h3 className="font-bold text-neutral-800 text-sm leading-snug group-hover:text-indigo-600 transition-colors">
+                      <h3 className="font-bold text-neutral-800 dark:text-neutral-200 text-sm leading-snug group-hover:text-indigo-600 transition-colors">
                         {isUk ? rel.titleUk : rel.titleEn}
                       </h3>
                       <p className="text-xs text-neutral-400 mt-1 line-clamp-2">

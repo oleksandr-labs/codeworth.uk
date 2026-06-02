@@ -84,12 +84,12 @@ function KPI({ icon: Icon, label, value, delta, positive }: {
   icon: React.ElementType; label: string; value: string; delta: string; positive: boolean;
 }) {
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 p-5">
-      <div className="flex items-center gap-2 text-gray-400 mb-3">
+    <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-5">
+      <div className="flex items-center gap-2 text-gray-400 dark:text-neutral-500 mb-3">
         <Icon className="w-4 h-4" />
         <span className="text-sm">{label}</span>
       </div>
-      <div className="text-2xl font-bold text-gray-900 mb-1">{value}</div>
+      <div className="text-2xl font-bold text-gray-900 dark:text-white mb-1">{value}</div>
       <div className={`flex items-center gap-1 text-xs font-medium ${positive ? "text-green-600" : "text-red-500"}`}>
         <TrendingUp className="w-3.5 h-3.5" />
         {delta}
@@ -186,11 +186,11 @@ export default function DashboardClient() {
           <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center font-bold text-sm">C</div>
           <div>
             <div className="font-bold text-sm">Codeworth</div>
-            <div className="text-gray-400 text-xs">{isUk ? "Мій кабінет" : "My Dashboard"}</div>
+            <div className="text-gray-400 dark:text-neutral-500 text-xs">{isUk ? "Мій кабінет" : "My Dashboard"}</div>
           </div>
         </Link>
         {onClose && (
-          <button onClick={onClose} className="md:hidden text-gray-400 hover:text-white p-1">
+          <button onClick={onClose} className="md:hidden text-gray-400 dark:text-neutral-500 hover:text-white p-1">
             <X className="w-5 h-5" />
           </button>
         )}
@@ -205,7 +205,7 @@ export default function DashboardClient() {
               key={item.id}
               onClick={() => { setTab(item.id); onClose?.(); }}
               className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm transition-colors ${
-                active ? "bg-indigo-600 text-white" : "text-gray-400 hover:bg-white/10 hover:text-white"
+                active ? "bg-indigo-600 text-white" : "text-gray-400 dark:text-neutral-500 hover:bg-white/10 hover:text-white"
               }`}
             >
               <Icon className="w-4 h-4 shrink-0" />
@@ -227,7 +227,7 @@ export default function DashboardClient() {
         </div>
         <Link
           href="/"
-          className="flex items-center gap-2 px-3 py-2 text-sm text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-white/10"
+          className="flex items-center gap-2 px-3 py-2 text-sm text-gray-400 dark:text-neutral-500 hover:text-white transition-colors rounded-lg hover:bg-white/10"
         >
           <LogOut className="w-4 h-4" /> {isUk ? "Вийти" : "Log Out"}
         </Link>
@@ -264,10 +264,10 @@ export default function DashboardClient() {
       {/* Main */}
       <div className="flex-1 overflow-auto">
         {/* Top bar */}
-        <div className="bg-white border-b border-gray-100 px-4 md:px-6 py-4 flex items-center justify-between sticky top-0 z-10">
+        <div className="bg-white border-b border-gray-100 dark:border-neutral-700 px-4 md:px-6 py-4 flex items-center justify-between sticky top-0 z-10">
           <div className="flex items-center gap-3">
             <button
-              className="md:hidden text-gray-500 hover:text-gray-900 p-1"
+              className="md:hidden text-gray-500 dark:text-neutral-400 hover:text-gray-900 dark:text-white p-1"
               onClick={() => setSidebarOpen(true)}
               aria-label="Open menu"
             >
@@ -280,7 +280,7 @@ export default function DashboardClient() {
           <Link
             href="/"
             target="_blank"
-            className="flex items-center gap-1.5 text-sm text-gray-500 hover:text-indigo-600 transition-colors"
+            className="flex items-center gap-1.5 text-sm text-gray-500 dark:text-neutral-400 hover:text-indigo-600 transition-colors"
           >
             <ExternalLink className="w-4 h-4" />
             <span className="hidden sm:inline">{isUk ? "Мій сайт" : "My Site"}</span>
@@ -334,11 +334,11 @@ export default function DashboardClient() {
                     const Icon = item.icon;
                     return (
                       <div key={i} className="flex items-center gap-4 px-6 py-3.5">
-                        <div className={`w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center ${item.color}`}>
+                        <div className={`w-8 h-8 rounded-full bg-gray-50 dark:bg-neutral-900 flex items-center justify-center ${item.color}`}>
                           <Icon className="w-4 h-4" />
                         </div>
                         <span className="flex-1 text-sm text-gray-700">{item.text}</span>
-                        <span className="text-xs text-gray-400 shrink-0">{item.time}</span>
+                        <span className="text-xs text-gray-400 dark:text-neutral-500 shrink-0">{item.time}</span>
                       </div>
                     );
                   })}
@@ -379,31 +379,31 @@ export default function DashboardClient() {
               )}
 
               {/* General Info */}
-              <div className="bg-white rounded-2xl border border-gray-100 p-6 space-y-4">
+              <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-6 space-y-4">
                 <h2 className="font-bold text-gray-900">{isUk ? "Загальна інформація" : "General Info"}</h2>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <label className="flex flex-col gap-1.5">
                     <span className="text-xs font-medium text-gray-500">{isUk ? "Назва компанії" : "Company Name"}</span>
                     <input value={companyName} onChange={(e) => setCompanyName(e.target.value)}
-                      className="border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                      className="border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" />
                   </label>
                   <label className="flex flex-col gap-1.5">
                     <span className="text-xs font-medium text-gray-500">{isUk ? "Слоган" : "Tagline"}</span>
                     <input value={tagline} onChange={(e) => setTagline(e.target.value)}
                       placeholder={isUk ? "Наш слоган..." : "Your catchy tagline..."}
-                      className="border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                      className="border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" />
                   </label>
                 </div>
                 <label className="flex flex-col gap-1.5">
                   <span className="text-xs font-medium text-gray-500">{isUk ? "Опис (про нас)" : "Description (About Us)"}</span>
                   <textarea value={description} onChange={(e) => setDescription(e.target.value)} rows={3}
                     placeholder={isUk ? "Розкажіть про свій бізнес..." : "Tell us about your business..."}
-                    className="border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none" />
+                    className="border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none" />
                 </label>
               </div>
 
               {/* Contact Info */}
-              <div className="bg-white rounded-2xl border border-gray-100 p-6 space-y-4">
+              <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-6 space-y-4">
                 <h2 className="font-bold text-gray-900">{isUk ? "Контактна інформація" : "Contact Information"}</h2>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {[
@@ -413,19 +413,19 @@ export default function DashboardClient() {
                     { icon: Globe, label: isUk ? "Сайт" : "Website", value: "", setter: () => {}, placeholder: "yourbiz.com" },
                   ].map(({ icon: Icon, label, value, setter, placeholder }) => (
                     <label key={label} className="flex flex-col gap-1.5">
-                      <span className="text-xs font-medium text-gray-500 flex items-center gap-1">
+                      <span className="text-xs font-medium text-gray-500 dark:text-neutral-400 flex items-center gap-1">
                         <Icon className="w-3.5 h-3.5" /> {label}
                       </span>
                       <input value={value} onChange={(e) => setter(e.target.value)} placeholder={placeholder}
-                        className="border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                        className="border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" />
                     </label>
                   ))}
                 </div>
               </div>
 
               {/* Working Hours */}
-              <div className="bg-white rounded-2xl border border-gray-100 p-6 space-y-4">
-                <h2 className="font-bold text-gray-900 flex items-center gap-2">
+              <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-6 space-y-4">
+                <h2 className="font-bold text-gray-900 dark:text-white flex items-center gap-2">
                   <Clock className="w-4 h-4 text-gray-400" />
                   {isUk ? "Графік роботи" : "Working Hours"}
                 </h2>
@@ -436,13 +436,13 @@ export default function DashboardClient() {
                     { day: isUk ? "Неділя" : "Sunday",     from: "",      to: "" },
                   ].map(({ day, from, to }) => (
                     <div key={day} className="flex items-center gap-3">
-                      <span className="text-sm text-gray-600 w-28 shrink-0">{day}</span>
+                      <span className="text-sm text-gray-600 dark:text-neutral-300 w-28 shrink-0">{day}</span>
                       <input defaultValue={from} placeholder={isUk ? "Закрито" : "Closed"}
-                        className="border border-gray-200 rounded-lg px-3 py-1.5 text-sm w-24 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
-                      {from && <span className="text-gray-400 text-sm">–</span>}
+                        className="border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-1.5 text-sm w-24 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                      {from && <span className="text-gray-400 dark:text-neutral-500 text-sm">–</span>}
                       {from && (
                         <input defaultValue={to}
-                          className="border border-gray-200 rounded-lg px-3 py-1.5 text-sm w-24 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                          className="border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-1.5 text-sm w-24 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
                       )}
                     </div>
                   ))}
@@ -450,7 +450,7 @@ export default function DashboardClient() {
               </div>
 
               {/* Social Media */}
-              <div className="bg-white rounded-2xl border border-gray-100 p-6 space-y-4">
+              <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-6 space-y-4">
                 <h2 className="font-bold text-gray-900">{isUk ? "Соціальні мережі" : "Social Media"}</h2>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {[
@@ -460,36 +460,36 @@ export default function DashboardClient() {
                     { icon: Send,          label: "Telegram",  value: "",        setter: () => {},     placeholder: "t.me/yourbiz" },
                   ].map(({ icon: Icon, label, value, setter, placeholder }) => (
                     <label key={label} className="flex flex-col gap-1.5">
-                      <span className="text-xs font-medium text-gray-500 flex items-center gap-1">
+                      <span className="text-xs font-medium text-gray-500 dark:text-neutral-400 flex items-center gap-1">
                         <Icon className="w-3.5 h-3.5" /> {label}
                       </span>
                       <input value={value} onChange={(e) => setter(e.target.value)} placeholder={placeholder}
-                        className="border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                        className="border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" />
                     </label>
                   ))}
                 </div>
               </div>
 
               {/* Hero Section */}
-              <div className="bg-white rounded-2xl border border-gray-100 p-6 space-y-4">
+              <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-6 space-y-4">
                 <h2 className="font-bold text-gray-900">{isUk ? "Головна секція (Hero)" : "Hero Section"}</h2>
                 <label className="flex flex-col gap-1.5">
                   <span className="text-xs font-medium text-gray-500">{isUk ? "Заголовок" : "Heading"}</span>
                   <input value={heroHeading} onChange={(e) => setHeroHeading(e.target.value)}
                     placeholder={isUk ? "Ваш головний заголовок..." : "Your main headline..."}
-                    className="border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                    className="border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" />
                 </label>
                 <label className="flex flex-col gap-1.5">
                   <span className="text-xs font-medium text-gray-500">{isUk ? "Підзаголовок" : "Subheading"}</span>
                   <input value={heroSub} onChange={(e) => setHeroSub(e.target.value)}
                     placeholder={isUk ? "Додатковий опис..." : "Supporting description..."}
-                    className="border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                    className="border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" />
                 </label>
                 <label className="flex flex-col gap-1.5">
                   <span className="text-xs font-medium text-gray-500">{isUk ? "Текст кнопки (CTA)" : "Button text (CTA)"}</span>
                   <input value={heroCta} onChange={(e) => setHeroCta(e.target.value)}
                     placeholder={isUk ? "Зв'язатись з нами" : "Get in touch"}
-                    className="border border-gray-200 rounded-lg px-3 py-2 text-sm w-64 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                    className="border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 text-sm w-64 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
                 </label>
               </div>
 
@@ -514,10 +514,10 @@ export default function DashboardClient() {
               )}
 
               {/* Color Palettes */}
-              <div className="bg-white rounded-2xl border border-gray-100 p-6 space-y-4">
+              <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-6 space-y-4">
                 <div>
                   <h2 className="font-bold text-gray-900">{isUk ? "Кольорова схема" : "Color Palette"}</h2>
-                  <p className="text-sm text-gray-500 mt-1">{isUk ? "Обери основну кольорову палету сайту" : "Choose the main color palette for your site"}</p>
+                  <p className="text-sm text-gray-500 dark:text-neutral-400 mt-1">{isUk ? "Обери основну кольорову палету сайту" : "Choose the main color palette for your site"}</p>
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                   {PALETTES.map((p) => (
@@ -525,7 +525,7 @@ export default function DashboardClient() {
                       key={p.id}
                       onClick={() => setPalette(p.id)}
                       className={`flex items-center gap-3 p-3 rounded-xl border-2 transition-all ${
-                        palette === p.id ? "border-indigo-600 bg-indigo-50" : "border-gray-200 hover:border-gray-300"
+                        palette === p.id ? "border-indigo-600 bg-indigo-50" : "border-gray-200 dark:border-neutral-700 hover:border-gray-300"
                       }`}
                     >
                       <div className="flex gap-1">
@@ -539,10 +539,10 @@ export default function DashboardClient() {
               </div>
 
               {/* Font Pairs */}
-              <div className="bg-white rounded-2xl border border-gray-100 p-6 space-y-4">
+              <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-6 space-y-4">
                 <div>
                   <h2 className="font-bold text-gray-900">{isUk ? "Шрифтова пара" : "Font Pair"}</h2>
-                  <p className="text-sm text-gray-500 mt-1">{isUk ? "Обери стиль шрифтів для заголовків та тексту" : "Choose font style for headings and body text"}</p>
+                  <p className="text-sm text-gray-500 dark:text-neutral-400 mt-1">{isUk ? "Обери стиль шрифтів для заголовків та тексту" : "Choose font style for headings and body text"}</p>
                 </div>
                 <div className="space-y-2">
                   {FONT_PAIRS.map((f) => (
@@ -550,26 +550,26 @@ export default function DashboardClient() {
                       key={f.id}
                       onClick={() => setFontPair(f.id)}
                       className={`w-full flex items-center justify-between px-4 py-3 rounded-xl border-2 transition-all ${
-                        fontPair === f.id ? "border-indigo-600 bg-indigo-50" : "border-gray-200 hover:border-gray-300"
+                        fontPair === f.id ? "border-indigo-600 bg-indigo-50" : "border-gray-200 dark:border-neutral-700 hover:border-gray-300"
                       }`}
                     >
                       <div className="text-left">
-                        <div className="font-semibold text-gray-900 text-sm">{f.name}</div>
+                        <div className="font-semibold text-gray-900 dark:text-white text-sm">{f.name}</div>
                         <div className="text-xs text-gray-500">{f.heading} · {f.body}</div>
                       </div>
-                      <div className="text-sm text-gray-400 italic">{f.sample}</div>
+                      <div className="text-sm text-gray-400 dark:text-neutral-500 italic">{f.sample}</div>
                     </button>
                   ))}
                 </div>
               </div>
 
               {/* Preview */}
-              <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden">
+              <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 overflow-hidden">
                 <div className="px-6 py-4 border-b border-gray-100">
                   <h2 className="font-bold text-gray-900">{isUk ? "Попередній перегляд" : "Preview"}</h2>
                 </div>
                 <div className="p-6" style={{ background: currentPalette.bg }}>
-                  <div className="rounded-xl overflow-hidden border border-gray-200 shadow-sm">
+                  <div className="rounded-xl overflow-hidden border border-gray-200 dark:border-neutral-700 shadow-sm">
                     <div className="px-6 py-4 flex items-center justify-between" style={{ background: currentPalette.primary }}>
                       <span className="text-white font-bold text-sm">{companyName}</span>
                       <div className="flex gap-3">
@@ -614,8 +614,8 @@ export default function DashboardClient() {
               </div>
 
               {/* Bar chart */}
-              <div className="bg-white rounded-2xl border border-gray-100 p-6">
-                <h2 className="font-bold text-gray-900 mb-4">{isUk ? "Відвідувачі за тиждень" : "Visitors This Week"}</h2>
+              <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-6">
+                <h2 className="font-bold text-gray-900 dark:text-white mb-4">{isUk ? "Відвідувачі за тиждень" : "Visitors This Week"}</h2>
                 <div className="flex items-end gap-3 h-40">
                   {MOCK_VISITORS.map((v, i) => (
                     <div key={i} className="flex-1 flex flex-col items-center gap-1">
@@ -632,8 +632,8 @@ export default function DashboardClient() {
 
               <div className="grid md:grid-cols-2 gap-6">
                 {/* Top pages */}
-                <div className="bg-white rounded-2xl border border-gray-100 p-6">
-                  <h2 className="font-bold text-gray-900 mb-4">{isUk ? "Топ сторінок" : "Top Pages"}</h2>
+                <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-6">
+                  <h2 className="font-bold text-gray-900 dark:text-white mb-4">{isUk ? "Топ сторінок" : "Top Pages"}</h2>
                   <div className="space-y-3">
                     {[
                       { page: "/",        pct: 45 },
@@ -642,19 +642,19 @@ export default function DashboardClient() {
                       { page: "/about",   pct: 12 },
                     ].map(({ page, pct }) => (
                       <div key={page} className="flex items-center gap-3">
-                        <span className="text-sm text-gray-600 w-24 shrink-0 font-mono">{page}</span>
-                        <div className="flex-1 bg-gray-100 rounded-full h-2">
+                        <span className="text-sm text-gray-600 dark:text-neutral-300 w-24 shrink-0 font-mono">{page}</span>
+                        <div className="flex-1 bg-gray-100 dark:bg-neutral-800 rounded-full h-2">
                           <div className="bg-indigo-500 h-2 rounded-full" style={{ width: `${pct}%` }} />
                         </div>
-                        <span className="text-xs text-gray-500 w-8 text-right shrink-0">{pct}%</span>
+                        <span className="text-xs text-gray-500 dark:text-neutral-400 w-8 text-right shrink-0">{pct}%</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* Traffic sources */}
-                <div className="bg-white rounded-2xl border border-gray-100 p-6">
-                  <h2 className="font-bold text-gray-900 mb-4">{isUk ? "Джерела трафіку" : "Traffic Sources"}</h2>
+                <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-6">
+                  <h2 className="font-bold text-gray-900 dark:text-white mb-4">{isUk ? "Джерела трафіку" : "Traffic Sources"}</h2>
                   <div className="space-y-3">
                     {[
                       { label: "Organic Search", pct: 48, color: "bg-green-500" },
@@ -663,11 +663,11 @@ export default function DashboardClient() {
                       { label: "Referral",       pct: 7,  color: "bg-amber-500" },
                     ].map(({ label, pct, color }) => (
                       <div key={label} className="flex items-center gap-3">
-                        <span className="text-sm text-gray-600 w-28 shrink-0">{label}</span>
-                        <div className="flex-1 bg-gray-100 rounded-full h-2">
+                        <span className="text-sm text-gray-600 dark:text-neutral-300 w-28 shrink-0">{label}</span>
+                        <div className="flex-1 bg-gray-100 dark:bg-neutral-800 rounded-full h-2">
                           <div className={`${color} h-2 rounded-full`} style={{ width: `${pct}%` }} />
                         </div>
-                        <span className="text-xs text-gray-500 w-8 text-right shrink-0">{pct}%</span>
+                        <span className="text-xs text-gray-500 dark:text-neutral-400 w-8 text-right shrink-0">{pct}%</span>
                       </div>
                     ))}
                   </div>
@@ -686,11 +686,11 @@ export default function DashboardClient() {
           {/* ═══ SUBSCRIPTION ════════════════════════════════════════════════════ */}
           {tab === "subscription" && (
             <>
-              <div className="bg-white rounded-2xl border border-gray-100 p-6">
+              <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-6">
                 <div className="flex items-center justify-between mb-6">
                   <div>
-                    <h2 className="font-bold text-gray-900 text-lg">{isUk ? "Поточний план" : "Current Plan"}</h2>
-                    <p className="text-sm text-gray-500 mt-0.5">{isUk ? "Наступний платіж: 1 червня 2026" : "Next payment: June 1, 2026"}</p>
+                    <h2 className="font-bold text-gray-900 dark:text-white text-lg">{isUk ? "Поточний план" : "Current Plan"}</h2>
+                    <p className="text-sm text-gray-500 dark:text-neutral-400 mt-0.5">{isUk ? "Наступний платіж: 1 червня 2026" : "Next payment: June 1, 2026"}</p>
                   </div>
                   <span className="bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full">
                     {isUk ? "Активний" : "Active"}
@@ -741,8 +741,8 @@ export default function DashboardClient() {
                           </span>
                         )}
                       </div>
-                      <div className="text-xl font-bold text-gray-900 mb-1">{plan.price}</div>
-                      <div className="text-xs text-gray-500 mb-4">{plan.period}</div>
+                      <div className="text-xl font-bold text-gray-900 dark:text-white mb-1">{plan.price}</div>
+                      <div className="text-xs text-gray-500 dark:text-neutral-400 mb-4">{plan.period}</div>
                       <ul className="space-y-1.5 mb-4">
                         {plan.features.map((f) => (
                           <li key={f} className="flex items-center gap-2 text-sm text-gray-600">
@@ -764,7 +764,7 @@ export default function DashboardClient() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl border border-gray-100 p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between">
+              <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between">
                 <div>
                   <div className="font-semibold text-gray-900">{isUk ? "Є питання щодо плану?" : "Questions about your plan?"}</div>
                   <div className="text-sm text-gray-500">{isUk ? "Ми допоможемо підібрати найкраще рішення" : "We'll help you find the best solution"}</div>
@@ -784,20 +784,20 @@ export default function DashboardClient() {
           {tab === "support" && (
             <>
               {/* FAQ */}
-              <div className="bg-white rounded-2xl border border-gray-100 p-6">
-                <h2 className="font-bold text-gray-900 mb-4">FAQ</h2>
+              <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-6">
+                <h2 className="font-bold text-gray-900 dark:text-white mb-4">FAQ</h2>
                 <div className="space-y-2">
                   {faqItems.map((item, i) => (
-                    <div key={i} className="border border-gray-100 rounded-xl overflow-hidden">
+                    <div key={i} className="border border-gray-100 dark:border-neutral-700 rounded-xl overflow-hidden">
                       <button
                         onClick={() => setFaqOpen(faqOpen === i ? null : i)}
-                        className="w-full flex items-center justify-between px-4 py-3.5 text-left text-sm font-medium text-gray-800 hover:bg-gray-50 transition-colors"
+                        className="w-full flex items-center justify-between px-4 py-3.5 text-left text-sm font-medium text-gray-800 dark:text-neutral-200 hover:bg-gray-50 dark:bg-neutral-900 transition-colors"
                       >
                         {item.q}
-                        {faqOpen === i ? <ChevronUp className="w-4 h-4 text-gray-400 shrink-0" /> : <ChevronDown className="w-4 h-4 text-gray-400 shrink-0" />}
+                        {faqOpen === i ? <ChevronUp className="w-4 h-4 text-gray-400 dark:text-neutral-500 shrink-0" /> : <ChevronDown className="w-4 h-4 text-gray-400 dark:text-neutral-500 shrink-0" />}
                       </button>
                       {faqOpen === i && (
-                        <div className="px-4 pb-4 text-sm text-gray-600 border-t border-gray-100 pt-3">
+                        <div className="px-4 pb-4 text-sm text-gray-600 dark:text-neutral-300 border-t border-gray-100 dark:border-neutral-700 pt-3">
                           {item.a}
                         </div>
                       )}
@@ -807,7 +807,7 @@ export default function DashboardClient() {
               </div>
 
               {/* Contact form */}
-              <div className="bg-white rounded-2xl border border-gray-100 p-6 space-y-4">
+              <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-6 space-y-4">
                 <h2 className="font-bold text-gray-900">{isUk ? "Написати нам" : "Send Us a Message"}</h2>
 
                 {supportSent ? (
@@ -823,7 +823,7 @@ export default function DashboardClient() {
                         value={supportSubject}
                         onChange={(e) => setSupportSubject(e.target.value)}
                         placeholder={isUk ? "Наприклад: питання про домен..." : "E.g. domain connection question..."}
-                        className="border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                        className="border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
                       />
                     </label>
                     <label className="flex flex-col gap-1.5">
@@ -833,7 +833,7 @@ export default function DashboardClient() {
                         onChange={(e) => setSupportMsg(e.target.value)}
                         rows={4}
                         placeholder={isUk ? "Опишіть ваше питання..." : "Describe your issue or question..."}
-                        className="border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none"
+                        className="border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none"
                       />
                     </label>
                     <button
@@ -848,14 +848,14 @@ export default function DashboardClient() {
               </div>
 
               {/* Contact info */}
-              <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6 flex flex-col sm:flex-row gap-6">
+              <div className="bg-gray-50 dark:bg-neutral-900 rounded-2xl border border-gray-200 dark:border-neutral-700 p-6 flex flex-col sm:flex-row gap-6">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center">
                     <Mail className="w-5 h-5 text-indigo-600" />
                   </div>
                   <div>
-                    <div className="text-xs text-gray-500 mb-0.5">Email</div>
-                    <a href="mailto:hello@codeworth.uk" className="text-sm font-medium text-gray-800 hover:text-indigo-600">
+                    <div className="text-xs text-gray-500 dark:text-neutral-400 mb-0.5">Email</div>
+                    <a href="mailto:hello@codeworth.uk" className="text-sm font-medium text-gray-800 dark:text-neutral-200 hover:text-indigo-600">
                       hello@codeworth.uk
                     </a>
                   </div>
@@ -865,8 +865,8 @@ export default function DashboardClient() {
                     <Send className="w-5 h-5 text-indigo-600" />
                   </div>
                   <div>
-                    <div className="text-xs text-gray-500 mb-0.5">Telegram</div>
-                    <a href="https://t.me/codenest_ua" className="text-sm font-medium text-gray-800 hover:text-indigo-600">
+                    <div className="text-xs text-gray-500 dark:text-neutral-400 mb-0.5">Telegram</div>
+                    <a href="https://t.me/codenest_ua" className="text-sm font-medium text-gray-800 dark:text-neutral-200 hover:text-indigo-600">
                       @codeworth_uk
                     </a>
                   </div>
@@ -879,29 +879,29 @@ export default function DashboardClient() {
           {tab === "settings" && (
             <>
               {/* Profile */}
-              <div className="bg-white rounded-2xl border border-gray-100 p-6 space-y-4">
+              <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-6 space-y-4">
                 <h2 className="font-bold text-gray-900">{isUk ? "Профіль" : "Profile"}</h2>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <label className="flex flex-col gap-1.5">
                     <span className="text-xs font-medium text-gray-500">{isUk ? "Ім'я" : "First Name"}</span>
                     <input defaultValue="" placeholder={isUk ? "Ваше ім'я" : "Your first name"}
-                      className="border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                      className="border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" />
                   </label>
                   <label className="flex flex-col gap-1.5">
                     <span className="text-xs font-medium text-gray-500">{isUk ? "Прізвище" : "Last Name"}</span>
                     <input defaultValue="" placeholder={isUk ? "Ваше прізвище" : "Your last name"}
-                      className="border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                      className="border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" />
                   </label>
                 </div>
                 <label className="flex flex-col gap-1.5">
                   <span className="text-xs font-medium text-gray-500">Email</span>
                   <input value={user.email ?? ""} readOnly
-                    className="border border-gray-200 rounded-lg px-3 py-2 text-sm bg-gray-50 text-gray-500 cursor-not-allowed" />
+                    className="border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 text-sm bg-gray-50 dark:bg-neutral-900 text-gray-500 dark:text-neutral-400 cursor-not-allowed" />
                 </label>
               </div>
 
               {/* Password */}
-              <div className="bg-white rounded-2xl border border-gray-100 p-6 space-y-4">
+              <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-6 space-y-4">
                 <h2 className="font-bold text-gray-900">{isUk ? "Зміна пароля" : "Change Password"}</h2>
                 {pwSaved && (
                   <div className="flex items-center gap-2 bg-green-50 text-green-700 border border-green-200 rounded-xl px-4 py-3 text-sm font-medium">
@@ -918,7 +918,7 @@ export default function DashboardClient() {
                     <label key={label} className="flex flex-col gap-1.5">
                       <span className="text-xs font-medium text-gray-500">{label}</span>
                       <input type="password" placeholder="••••••••"
-                        className="border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full sm:w-80" />
+                        className="border border-gray-200 dark:border-neutral-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full sm:w-80" />
                     </label>
                   ))}
                 </div>
@@ -932,12 +932,12 @@ export default function DashboardClient() {
               </div>
 
               {/* Notifications */}
-              <div className="bg-white rounded-2xl border border-gray-100 p-6">
-                <h2 className="font-bold text-gray-900 mb-4">{isUk ? "Сповіщення" : "Notifications"}</h2>
+              <div className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-6">
+                <h2 className="font-bold text-gray-900 dark:text-white mb-4">{isUk ? "Сповіщення" : "Notifications"}</h2>
                 <div className="flex items-center justify-between">
                   <div>
                     <div className="text-sm font-medium text-gray-800">{isUk ? "Email-сповіщення" : "Email Notifications"}</div>
-                    <div className="text-xs text-gray-500 mt-0.5">{isUk ? "Отримувати оновлення про сайт на email" : "Receive site updates via email"}</div>
+                    <div className="text-xs text-gray-500 dark:text-neutral-400 mt-0.5">{isUk ? "Отримувати оновлення про сайт на email" : "Receive site updates via email"}</div>
                   </div>
                   <button
                     onClick={() => setNotifEmail(!notifEmail)}
@@ -953,7 +953,7 @@ export default function DashboardClient() {
               {/* Danger zone */}
               <div className="bg-white rounded-2xl border border-red-100 p-6">
                 <h2 className="font-bold text-red-600 mb-2">{isUk ? "Небезпечна зона" : "Danger Zone"}</h2>
-                <p className="text-sm text-gray-500 mb-4">
+                <p className="text-sm text-gray-500 dark:text-neutral-400 mb-4">
                   {isUk
                     ? "Для видалення акаунту зверніться до нашої підтримки."
                     : "To delete your account, please contact our support team."}

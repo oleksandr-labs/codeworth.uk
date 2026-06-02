@@ -35,7 +35,7 @@ export function MiniCart({ className }: { className?: string }) {
       <button
         onClick={() => setOpen((v) => !v)}
         aria-label={isUk ? `Кошик — ${count} ${count === 1 ? "товар" : "товарів"}` : `Cart — ${count} ${count === 1 ? "item" : "items"}`}
-        className="relative p-2 rounded-lg text-neutral-500 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+        className="relative p-2 rounded-lg text-neutral-500 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-700 dark:bg-neutral-800 dark:hover:bg-neutral-800 transition-colors"
       >
         <ShoppingCart className="w-5 h-5" />
         {count > 0 && (
@@ -56,9 +56,9 @@ export function MiniCart({ className }: { className?: string }) {
 
       {/* Dropdown */}
       {open && (
-        <div className="absolute right-0 top-full mt-2 z-50 w-80 bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-2xl shadow-xl overflow-hidden">
+        <div className="absolute right-0 top-full mt-2 z-50 w-80 bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 dark:border-neutral-800 rounded-2xl shadow-xl overflow-hidden">
           {/* Header */}
-          <div className="flex items-center justify-between px-4 py-3 border-b border-neutral-100 dark:border-neutral-800">
+          <div className="flex items-center justify-between px-4 py-3 border-b border-neutral-100 dark:border-neutral-700 dark:border-neutral-800">
             <span className="text-sm font-semibold text-neutral-900 dark:text-white">
               {isUk ? "Кошик" : "Cart"}
               {count > 0 && (
@@ -67,7 +67,7 @@ export function MiniCart({ className }: { className?: string }) {
             </span>
             <button
               onClick={() => setOpen(false)}
-              className="p-1 rounded-lg text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+              className="p-1 rounded-lg text-neutral-400 hover:text-neutral-700 dark:text-neutral-300 dark:hover:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-700 dark:bg-neutral-800 dark:hover:bg-neutral-800 transition-colors"
               aria-label={isUk ? "Закрити кошик" : "Close cart"}
             >
               <X className="w-4 h-4" />
@@ -77,7 +77,7 @@ export function MiniCart({ className }: { className?: string }) {
           {/* Items */}
           {items.length === 0 ? (
             <div className="py-10 text-center">
-              <Package className="w-10 h-10 text-neutral-200 dark:text-neutral-700 mx-auto mb-3" />
+              <Package className="w-10 h-10 text-neutral-200 dark:text-neutral-700 dark:text-neutral-300 mx-auto mb-3" />
               <p className="text-sm text-neutral-400 dark:text-neutral-500">{isUk ? "Кошик порожній" : "Your cart is empty"}</p>
               <Link
                 href={`/${lang}/marketplace/catalog`}
@@ -107,7 +107,7 @@ export function MiniCart({ className }: { className?: string }) {
                       </p>
                       <button
                         onClick={() => removeItem(item.id)}
-                        className="mt-1 text-xs text-neutral-300 dark:text-neutral-600 hover:text-red-500 dark:hover:text-red-400 transition-colors"
+                        className="mt-1 text-xs text-neutral-300 dark:text-neutral-600 dark:text-neutral-300 hover:text-red-500 dark:hover:text-red-400 transition-colors"
                         aria-label={isUk ? `Видалити ${item.title}` : `Remove ${item.title}`}
                       >
                         <X className="w-3.5 h-3.5" />
@@ -118,7 +118,7 @@ export function MiniCart({ className }: { className?: string }) {
               </ul>
 
               {/* Footer */}
-              <div className="p-4 border-t border-neutral-100 dark:border-neutral-800 space-y-3">
+              <div className="p-4 border-t border-neutral-100 dark:border-neutral-700 dark:border-neutral-800 space-y-3">
                 <div className="flex justify-between items-center text-sm">
                   <span className="text-neutral-500 dark:text-neutral-400">{isUk ? "Разом:" : "Total:"}</span>
                   <span className="font-bold text-neutral-900 dark:text-white">
@@ -136,7 +136,7 @@ export function MiniCart({ className }: { className?: string }) {
                 <Link
                   href={`/${lang}/marketplace/cart`}
                   onClick={() => setOpen(false)}
-                  className="block text-center text-xs text-neutral-400 dark:text-neutral-500 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"
+                  className="block text-center text-xs text-neutral-400 dark:text-neutral-500 hover:text-neutral-600 dark:text-neutral-300 dark:hover:text-neutral-300 transition-colors"
                 >
                   {isUk ? "Переглянути кошик" : "View cart"}
                 </Link>

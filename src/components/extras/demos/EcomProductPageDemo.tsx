@@ -91,8 +91,8 @@ export function EcomProductPageDemo({ isUk }: Props) {
         {/* Details */}
         <div className="space-y-5">
           <div>
-            <p className="text-xs font-bold text-neutral-500 uppercase tracking-widest mb-1">{PRODUCT.brand}</p>
-            <h2 className="text-2xl font-bold text-neutral-900 leading-tight mb-2">
+            <p className="text-xs font-bold text-neutral-500 dark:text-neutral-400 uppercase tracking-widest mb-1">{PRODUCT.brand}</p>
+            <h2 className="text-2xl font-bold text-neutral-900 dark:text-white leading-tight mb-2">
               {isUk ? PRODUCT.nameUk : PRODUCT.nameEn}
             </h2>
             <div className="flex items-center gap-3 text-sm">
@@ -107,7 +107,7 @@ export function EcomProductPageDemo({ isUk }: Props) {
                 {PRODUCT.reviews} {isUk ? "відгуків" : "reviews"}
               </a>
               <span className="text-neutral-400">·</span>
-              <span className="text-neutral-500 text-xs">SKU: {PRODUCT.sku}</span>
+              <span className="text-neutral-500 dark:text-neutral-400 text-xs">SKU: {PRODUCT.sku}</span>
             </div>
           </div>
 
@@ -122,7 +122,7 @@ export function EcomProductPageDemo({ isUk }: Props) {
 
           {/* Color */}
           <div>
-            <p className="text-sm font-semibold text-neutral-900 mb-2">
+            <p className="text-sm font-semibold text-neutral-900 dark:text-white mb-2">
               {isUk ? "Колір:" : "Color:"} <span className="font-normal text-neutral-600">{isUk ? currentColor.labelUk : currentColor.labelEn}</span>
             </p>
             <div className="flex gap-2">
@@ -131,7 +131,7 @@ export function EcomProductPageDemo({ isUk }: Props) {
                   key={c.id}
                   onClick={() => setColor(c.id)}
                   className={`w-10 h-10 rounded-full border-2 transition-all ${
-                    color === c.id ? "border-indigo-600 scale-110" : "border-neutral-200 hover:border-neutral-400"
+                    color === c.id ? "border-indigo-600 scale-110" : "border-neutral-200 dark:border-neutral-700 hover:border-neutral-400"
                   }`}
                   style={{ backgroundColor: c.hex }}
                   aria-label={isUk ? c.labelUk : c.labelEn}
@@ -143,7 +143,7 @@ export function EcomProductPageDemo({ isUk }: Props) {
 
           {/* Size */}
           <div>
-            <p className="text-sm font-semibold text-neutral-900 mb-2">
+            <p className="text-sm font-semibold text-neutral-900 dark:text-white mb-2">
               {isUk ? "Розмір:" : "Size:"} <span className="font-normal text-neutral-600">{size}</span>
             </p>
             <div className="flex gap-2">
@@ -159,8 +159,8 @@ export function EcomProductPageDemo({ isUk }: Props) {
                       size === s
                         ? "border-indigo-600 bg-indigo-50 text-indigo-700"
                         : oos
-                        ? "border-neutral-200 text-neutral-300 line-through cursor-not-allowed"
-                        : "border-neutral-200 text-neutral-700 hover:border-neutral-400"
+                        ? "border-neutral-200 dark:border-neutral-700 text-neutral-300 line-through cursor-not-allowed"
+                        : "border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 hover:border-neutral-400"
                     }`}
                     aria-pressed={size === s}
                   >
@@ -185,10 +185,10 @@ export function EcomProductPageDemo({ isUk }: Props) {
 
           {/* Quantity + Add to cart */}
           <div className="flex gap-3">
-            <div className="flex items-center gap-2 px-3 py-2 rounded-lg border border-neutral-200 bg-white">
+            <div className="flex items-center gap-2 px-3 py-2 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white">
               <button
                 onClick={() => setQty(Math.max(1, qty - 1))}
-                className="text-neutral-500 hover:text-neutral-900 px-1"
+                className="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:text-white px-1"
                 aria-label={isUk ? "Зменшити" : "Decrease"}
               >
                 −
@@ -196,7 +196,7 @@ export function EcomProductPageDemo({ isUk }: Props) {
               <span className="w-6 text-center font-semibold tabular-nums">{qty}</span>
               <button
                 onClick={() => setQty(qty + 1)}
-                className="text-neutral-500 hover:text-neutral-900 px-1"
+                className="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:text-white px-1"
                 aria-label={isUk ? "Збільшити" : "Increase"}
               >
                 +
@@ -227,8 +227,8 @@ export function EcomProductPageDemo({ isUk }: Props) {
             </button>
             <button
               onClick={() => setFavorited((f) => !f)}
-              className={`p-2.5 rounded-lg border border-neutral-200 transition-colors ${
-                favorited ? "bg-rose-50 text-rose-500 border-rose-200" : "text-neutral-500 hover:text-rose-500"
+              className={`p-2.5 rounded-lg border border-neutral-200 dark:border-neutral-700 transition-colors ${
+                favorited ? "bg-rose-50 text-rose-500 border-rose-200" : "text-neutral-500 dark:text-neutral-400 hover:text-rose-500"
               }`}
               aria-label={favorited ? (isUk ? "Видалити з обраного" : "Remove from favorites") : (isUk ? "Додати в обране" : "Add to favorites")}
               aria-pressed={favorited}
@@ -236,7 +236,7 @@ export function EcomProductPageDemo({ isUk }: Props) {
               <Heart className={`w-4 h-4 ${favorited ? "fill-rose-500" : ""}`} />
             </button>
             <button
-              className="p-2.5 rounded-lg border border-neutral-200 text-neutral-500 hover:text-neutral-900 transition-colors"
+              className="p-2.5 rounded-lg border border-neutral-200 dark:border-neutral-700 text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:text-white transition-colors"
               aria-label={isUk ? "Поділитись" : "Share"}
             >
               <Share2 className="w-4 h-4" />
