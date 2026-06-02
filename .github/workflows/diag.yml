@@ -15,5 +15,9 @@ jobs:
           script: |
             echo "=== Service status ==="
             systemctl is-active codeworth
-            echo "=== Last 20 log lines ==="
-            journalctl -u codeworth --no-pager -n 20 2>&1
+            echo "=== Logs around errors ==="
+            journalctl -u codeworth --no-pager -n 50 2>&1 | grep -v EPROTO | tail -30
+            echo "=== Nginx config check ==="
+            grep -A3 "proxy_pass\|listen 443\|listen 80" /etc/nginx/sites-enabled/codeworth.uk | head -20
+            echo "=== Test request ==="
+            curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:3010/en
