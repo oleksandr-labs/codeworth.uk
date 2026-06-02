@@ -41,12 +41,12 @@ export function Header() {
   const NAV_LINKS = lang === "uk" ? NAV_LINKS_UK : NAV_LINKS_EN;
 
   // Build locale-prefixed path helper
-  const lp = (path: string) => `/${lang}${path}`;
+  const lp = (path: string) => lang === "en" ? (path || "/") : `/${lang}${path}`;
 
   // Build alternate-language path for the switcher
   const altLang = lang === "en" ? "uk" : "en";
-  const pathWithoutLocale = pathname.replace(new RegExp(`^/${lang}`), "") || "/";
-  const altPath = `/${altLang}${pathWithoutLocale}`;
+  const pathWithoutLocale = pathname.replace(new RegExp(`^/(en|uk)`), "") || "/";
+  const altPath = altLang === "en" ? (pathWithoutLocale || "/") : `/${altLang}${pathWithoutLocale}`;
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);

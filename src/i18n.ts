@@ -8,26 +8,36 @@ export function isValidLocale(value: string): value is Locale {
 
 const BASE_URL = 'https://codeworth.uk';
 
-// Maps URL segment → BCP 47 hreflang code used in <link rel="alternate"> and sitemap.
-// 'en' segment targets en-GB (UK primary market); 'uk' segment targets uk (Ukraine).
 export const HREFLANG_CODES: Record<Locale, string> = {
   en: 'en-GB',
   uk: 'uk',
 };
 
 /**
+ * Returns the public URL path for a given locale + path.
+ * EN (default) has no prefix: /about
+ * UK has prefix: /uk/about
+ */
+export function localePath(lang: string, path = ''): string {
+  const cleanPath = path && !path.startsWith('/') ? `/${path}` : path;
+  if (lang === defaultLocale) return cleanPath || '/';
+  return `/${lang}${cleanPath}`;
+}
+
+/**
  * Builds Next.js `alternates` metadata with canonical URL + hreflang links.
- * @param lang  current locale ('en' | 'uk')
- * @param path  path WITHOUT locale prefix, e.g. '/services' or '/blog/my-post'
+ * EN pages are canonical at root (no /en prefix).
  */
 export function buildAlternates(lang: string, path = '') {
   const cleanPath = path && !path.startsWith('/') ? `/${path}` : path;
+  const enUrl = `${BASE_URL}${cleanPath}`;
+  const ukUrl = `${BASE_URL}/uk${cleanPath}`;
   return {
-    canonical: `/${lang}${cleanPath}`,
+    canonical: lang === defaultLocale ? cleanPath || '/' : `/uk${cleanPath}`,
     languages: {
-      'en-GB': `${BASE_URL}/en${cleanPath}`,
-      uk: `${BASE_URL}/uk${cleanPath}`,
-      'x-default': `${BASE_URL}/en${cleanPath}`,
+      'en-GB': enUrl,
+      uk: ukUrl,
+      'x-default': enUrl,
     },
   };
 }

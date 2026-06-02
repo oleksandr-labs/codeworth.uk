@@ -107,7 +107,7 @@ const SOCIALS = [
 export function Footer() {
   const params = useParams();
   const lang = (params?.lang as string) ?? "en";
-  const lp = (path: string) => `/${lang}${path}`;
+  const lp = (path: string) => lang === "en" ? (path || "/") : `/${lang}${path}`;
   const isUk = lang === "uk";
 
   const SERVICES = isUk ? SERVICES_UK : SERVICES_EN;
