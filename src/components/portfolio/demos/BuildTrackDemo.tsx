@@ -1,268 +1,198 @@
 "use client";
 import { useState } from "react";
 
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+// Each project: start month index, length in months, % done
 const PROJECTS = [
-  { id: "P-041", name: "Kirkstall Road — 24 units", phase: "Foundation", progress: 38, budget: 1_240_000, spent: 471_200, due: "Mar 2026", pm: "R. Hughes", status: "on-track" },
-  { id: "P-038", name: "Chapel Allerton — 8 units", phase: "Superstructure", progress: 72, budget: 640_000, spent: 460_800, due: "Sep 2025", pm: "S. Patel", status: "on-track" },
-  { id: "P-035", name: "Headingley Mews — 12 units", phase: "Fit-Out", progress: 91, budget: 820_000, spent: 795_400, due: "Jul 2025", pm: "R. Hughes", status: "overrun" },
-  { id: "P-033", name: "Roundhay — 6 units", phase: "Handover", progress: 98, budget: 410_000, spent: 402_000, due: "Jun 2025", pm: "T. Walsh", status: "on-track" },
+  { id: "P-041", name: "Kirkstall Road", units: 24, start: 0, len: 14, done: 38, pm: "R. Hughes", budget: 1.24, phase: "Foundation" },
+  { id: "P-038", name: "Chapel Allerton", units: 8, start: 2, len: 7, done: 72, pm: "S. Patel", budget: 0.64, phase: "Superstructure" },
+  { id: "P-035", name: "Headingley Mews", units: 12, start: 1, len: 6, done: 91, pm: "R. Hughes", budget: 0.82, phase: "Fit-Out" },
+  { id: "P-033", name: "Roundhay", units: 6, start: 3, len: 3, done: 98, pm: "T. Walsh", budget: 0.41, phase: "Handover" },
 ];
 
-const SUBCONTRACTORS = [
-  { name: "Leeds Groundwork Ltd", trade: "Groundworks", invoice: "£18,400", cis: "£3,680", net: "£14,720", status: "paid" },
-  { name: "Northern Frames", trade: "Timber Frame", invoice: "£42,000", cis: "£8,400", net: "£33,600", status: "pending" },
-  { name: "Electra UK", trade: "Electrical 1st Fix", invoice: "£9,200", cis: "£1,840", net: "£7,360", status: "overdue" },
-  { name: "PlumbRight Ltd", trade: "Plumbing", invoice: "£14,600", cis: "£2,920", net: "£11,680", status: "pending" },
-  { name: "Brickwork Solutions", trade: "Bricklaying", invoice: "£28,800", cis: "£5,760", net: "£23,040", status: "paid" },
+const CIS = [
+  { name: "Leeds Groundwork", trade: "Groundworks", gross: 18400, status: "paid" },
+  { name: "Northern Frames", trade: "Timber Frame", gross: 42000, status: "pending" },
+  { name: "Electra UK", trade: "Electrical", gross: 9200, status: "overdue" },
+  { name: "PlumbRight Ltd", trade: "Plumbing", gross: 14600, status: "pending" },
 ];
-
-const DOCS = [
-  { name: "Kirkstall Rd — Planning Approval", type: "Planning", version: "v1.0", date: "12 Jan 2025", approved: true },
-  { name: "Chapel Allerton — Structural Calc", type: "Engineering", version: "v2.3", date: "08 Mar 2025", approved: true },
-  { name: "Headingley — Building Regs Notice", type: "Compliance", version: "v1.1", date: "15 Apr 2025", approved: false },
-  { name: "Kirkstall Rd — Foundation Drawing", type: "Drawing", version: "v4.1", date: "28 May 2025", approved: true },
-  { name: "Roundhay — EPC Certificate", type: "Certificate", version: "v1.0", date: "30 May 2025", approved: true },
-];
-
-const STATUS_COLOR: Record<string, string> = {
-  "on-track": "text-emerald-600 bg-emerald-50 dark:bg-emerald-900/20 dark:text-emerald-400",
-  overrun: "text-red-600 bg-red-50 dark:bg-red-900/20 dark:text-red-400",
-  paid: "text-emerald-600 bg-emerald-50 dark:bg-emerald-900/20",
-  pending: "text-amber-600 bg-amber-50 dark:bg-amber-900/20",
-  overdue: "text-red-600 bg-red-50 dark:bg-red-900/20",
-};
 
 export function BuildTrackDemo({ lang }: { lang: string }) {
-  const [section, setSection] = useState<"projects" | "cis" | "docs" | "milestones">("projects");
+  const [hovered, setHovered] = useState<string | null>(null);
   const isUk = lang === "uk";
+  const colW = 100 / 12;
+  const cisTotal = CIS.reduce((s, c) => s + c.gross * 0.2, 0);
 
   return (
-    <div className="min-h-screen bg-amber-50 dark:bg-stone-950 font-sans">
-      {/* Rugged construction header */}
-      <header className="bg-amber-500 px-6 py-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <span className="text-3xl">🏗️</span>
-            <div>
-              <div className="font-black text-white text-xl tracking-tight uppercase">BuildTrack</div>
-              <div className="text-amber-100 text-xs font-medium">Construction ERP · Leeds, UK</div>
-            </div>
+    <div className="min-h-screen bg-[#1c1917] text-stone-100 font-sans">
+
+      {/* ── HERO BANNER ── */}
+      <div className="bg-gradient-to-r from-amber-600 to-amber-500 px-8 py-6">
+        <div className="flex items-end justify-between max-w-6xl mx-auto">
+          <div>
+            <div className="text-amber-900/70 text-xs font-bold uppercase tracking-[0.2em]">Construction ERP</div>
+            <h1 className="text-4xl font-black text-white tracking-tight">BuildTrack<span className="text-amber-900/50 text-lg ml-2">/ Leeds</span></h1>
           </div>
-          <div className="flex gap-6 text-center text-white">
-            <div><div className="font-black text-xl">4</div><div className="text-xs text-amber-100">{isUk ? "Проєкти" : "Projects"}</div></div>
-            <div><div className="font-black text-xl">12</div><div className="text-xs text-amber-100">{isUk ? "Субпідряди" : "Subcons"}</div></div>
-            <div><div className="font-black text-xl">£3.1M</div><div className="text-xs text-amber-100">{isUk ? "Бюджет" : "Total budget"}</div></div>
+          <div className="flex gap-8 text-white">
+            {[
+              { v: "4", l: isUk ? "проєкти" : "live projects" },
+              { v: "£3.1M", l: isUk ? "портфель" : "portfolio value" },
+              { v: "12", l: isUk ? "субпідряди" : "subcontractors" },
+              { v: "£22.6k", l: isUk ? "CIS до HMRC" : "CIS due HMRC" },
+            ].map(s => (
+              <div key={s.l} className="text-right">
+                <div className="text-2xl font-black">{s.v}</div>
+                <div className="text-[10px] text-amber-100 uppercase tracking-wide">{s.l}</div>
+              </div>
+            ))}
           </div>
         </div>
-      </header>
-
-      {/* Section switcher — pill style */}
-      <div className="bg-white dark:bg-stone-900 border-b border-stone-200 dark:border-stone-700 px-6 py-3 flex gap-2 flex-wrap">
-        {([
-          { id: "projects", label: isUk ? "📋 Проєкти" : "📋 Projects" },
-          { id: "cis", label: isUk ? "🧾 CIS Платежі" : "🧾 CIS Payments" },
-          { id: "docs", label: isUk ? "📁 Документи" : "📁 Documents" },
-          { id: "milestones", label: isUk ? "🎯 Майлстоуни" : "🎯 Milestones" },
-        ] as const).map(s => (
-          <button
-            key={s.id}
-            onClick={() => setSection(s.id)}
-            className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors ${
-              section === s.id
-                ? "bg-amber-500 text-white"
-                : "bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300 hover:bg-amber-100 dark:hover:bg-amber-900/30"
-            }`}
-          >
-            {s.label}
-          </button>
-        ))}
       </div>
 
-      <main className="p-6 max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto px-8 py-8 space-y-10">
 
-        {/* PROJECTS */}
-        {section === "projects" && (
-          <div className="space-y-4">
-            <h2 className="text-base font-bold text-stone-900 dark:text-white uppercase tracking-wide">
-              {isUk ? "Активні проєкти" : "Active projects"}
-            </h2>
-            {PROJECTS.map(p => {
-              const pct = (p.spent / p.budget) * 100;
-              const overBudget = pct > 95;
-              return (
-                <div key={p.id} className={`bg-white dark:bg-stone-800 rounded-2xl border-2 p-5 ${overBudget ? "border-red-300 dark:border-red-700" : "border-stone-100 dark:border-stone-700"}`}>
-                  <div className="flex items-start justify-between mb-3">
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <span className="font-mono text-xs text-stone-400 dark:text-stone-500">{p.id}</span>
-                        <span className={`text-xs px-2 py-0.5 rounded-full font-semibold ${STATUS_COLOR[p.status]}`}>
-                          {p.status === "on-track" ? (isUk ? "В графіку" : "On track") : (isUk ? "Перевищення" : "Overrun")}
-                        </span>
-                      </div>
-                      <div className="font-bold text-stone-900 dark:text-white mt-1">{p.name}</div>
-                      <div className="text-sm text-stone-500 dark:text-stone-400">{p.phase} · PM: {p.pm} · Due: {p.due}</div>
-                    </div>
-                    <div className="text-right">
-                      <div className="font-bold text-stone-900 dark:text-white">£{p.spent.toLocaleString()}</div>
-                      <div className="text-xs text-stone-400 dark:text-stone-500">of £{p.budget.toLocaleString()}</div>
-                    </div>
-                  </div>
-                  {/* Progress bars */}
-                  <div className="space-y-2">
-                    <div>
-                      <div className="flex justify-between text-xs text-stone-500 dark:text-stone-400 mb-1">
-                        <span>{isUk ? "Завершення" : "Completion"}</span>
-                        <span className="font-bold text-stone-900 dark:text-white">{p.progress}%</span>
-                      </div>
-                      <div className="h-3 bg-stone-100 dark:bg-stone-700 rounded-full overflow-hidden">
-                        <div className="h-3 bg-amber-500 rounded-full" style={{ width: `${p.progress}%` }} />
-                      </div>
-                    </div>
-                    <div>
-                      <div className="flex justify-between text-xs text-stone-500 dark:text-stone-400 mb-1">
-                        <span>{isUk ? "Бюджет витрачено" : "Budget used"}</span>
-                        <span className={`font-bold ${overBudget ? "text-red-500" : "text-stone-900 dark:text-white"}`}>{pct.toFixed(1)}%</span>
-                      </div>
-                      <div className="h-3 bg-stone-100 dark:bg-stone-700 rounded-full overflow-hidden">
-                        <div className={`h-3 rounded-full ${overBudget ? "bg-red-400" : "bg-emerald-500"}`} style={{ width: `${Math.min(100, pct)}%` }} />
-                      </div>
-                    </div>
-                  </div>
+        {/* ── SECTION: GANTT TIMELINE ── */}
+        <section>
+          <div className="flex items-center gap-3 mb-5">
+            <div className="w-1 h-6 bg-amber-500 rounded-full" />
+            <h2 className="font-black text-lg uppercase tracking-wide">{isUk ? "Програма робіт 2025" : "2025 Build Programme"}</h2>
+          </div>
+
+          {/* Month grid header */}
+          <div className="flex border-b border-stone-700 pb-2 mb-1 pl-44">
+            {MONTHS.map((m, i) => (
+              <div key={m} className={`text-[10px] text-center flex-1 font-mono ${i === 5 ? "text-amber-400 font-bold" : "text-stone-500"}`}>{m}</div>
+            ))}
+          </div>
+
+          {/* Gantt rows */}
+          <div className="space-y-2 relative">
+            {/* "today" line at June */}
+            <div className="absolute top-0 bottom-0 w-px bg-amber-500/40 z-10" style={{ left: `calc(11rem + ${5.5 * colW}%)` }}>
+              <div className="absolute -top-1 -translate-x-1/2 w-2 h-2 bg-amber-500 rounded-full" />
+            </div>
+
+            {PROJECTS.map(p => (
+              <div
+                key={p.id}
+                className="flex items-center group"
+                onMouseEnter={() => setHovered(p.id)}
+                onMouseLeave={() => setHovered(null)}
+              >
+                <div className="w-44 pr-4 shrink-0">
+                  <div className="text-sm font-bold text-stone-100">{p.name}</div>
+                  <div className="text-[10px] text-stone-500">{p.units} units · {p.pm}</div>
                 </div>
-              );
-            })}
-          </div>
-        )}
-
-        {/* CIS */}
-        {section === "cis" && (
-          <div className="space-y-4">
-            <div className="flex items-center justify-between">
-              <h2 className="text-base font-bold text-stone-900 dark:text-white uppercase tracking-wide">
-                {isUk ? "CIS Утримання — поточний місяць" : "CIS Deductions — current month"}
-              </h2>
-              <div className="bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 text-sm font-bold px-4 py-2 rounded-xl">
-                {isUk ? "До сплати HMRC:" : "HMRC due:"} £22,600
+                <div className="flex-1 relative h-9">
+                  <div
+                    className="absolute h-9 rounded-md bg-stone-800 border border-stone-700 overflow-hidden flex items-center"
+                    style={{ left: `${p.start * colW}%`, width: `${p.len * colW}%` }}
+                  >
+                    {/* progress fill */}
+                    <div
+                      className="absolute inset-y-0 left-0 bg-gradient-to-r from-amber-600 to-amber-500 transition-all"
+                      style={{ width: `${p.done}%` }}
+                    />
+                    <span className="relative z-10 text-[10px] font-bold px-2 text-white whitespace-nowrap">
+                      {p.phase} · {p.done}%
+                    </span>
+                  </div>
+                  {hovered === p.id && (
+                    <div className="absolute -top-8 left-0 bg-stone-950 border border-amber-500/40 rounded-lg px-3 py-1 text-[10px] z-20 whitespace-nowrap" style={{ left: `${p.start * colW}%` }}>
+                      £{p.budget}M · {isUk ? "завершення" : "due"} {MONTHS[Math.min(11, p.start + p.len - 1)]}
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
-            <div className="bg-white dark:bg-stone-800 rounded-2xl border border-stone-100 dark:border-stone-700 overflow-hidden">
-              <table className="w-full text-sm">
-                <thead className="bg-stone-50 dark:bg-stone-700/50">
-                  <tr>
-                    {[isUk ? "Субпідрядник" : "Subcontractor", isUk ? "Вид робіт" : "Trade", isUk ? "Рахунок" : "Invoice", "CIS (20%)", isUk ? "Виплата" : "Net pay", isUk ? "Статус" : "Status"].map(h => (
-                      <th key={h} className="px-4 py-3 text-left text-xs font-semibold text-stone-500 dark:text-stone-400 uppercase tracking-wide">{h}</th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {SUBCONTRACTORS.map(s => (
-                    <tr key={s.name} className="border-t border-stone-50 dark:border-stone-700/50 hover:bg-amber-50/50 dark:hover:bg-amber-900/10">
-                      <td className="px-4 py-3 font-semibold text-stone-900 dark:text-white">{s.name}</td>
-                      <td className="px-4 py-3 text-stone-500 dark:text-stone-400">{s.trade}</td>
-                      <td className="px-4 py-3 font-medium text-stone-700 dark:text-stone-300">{s.invoice}</td>
-                      <td className="px-4 py-3 text-amber-600 font-semibold">{s.cis}</td>
-                      <td className="px-4 py-3 font-bold text-stone-900 dark:text-white">{s.net}</td>
-                      <td className="px-4 py-3">
-                        <span className={`text-xs px-2 py-1 rounded-full font-semibold ${STATUS_COLOR[s.status]}`}>
-                          {s.status === "paid" ? (isUk ? "Сплачено" : "Paid") : s.status === "pending" ? (isUk ? "Очікує" : "Pending") : (isUk ? "Прострочено" : "Overdue")}
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-              <div className="px-4 py-3 bg-amber-50 dark:bg-amber-900/10 text-xs text-stone-500 dark:text-stone-400">
-                ⚡ {isUk ? "Авторозрахунок CIS — нуль ручної роботи. Наступний платіж HMRC:" : "CIS auto-calculated — zero manual work. Next HMRC payment:"} <strong className="text-stone-800 dark:text-stone-200">19 Jul 2025</strong>
-              </div>
-            </div>
+            ))}
           </div>
-        )}
+        </section>
 
-        {/* DOCS */}
-        {section === "docs" && (
-          <div className="space-y-4">
-            <div className="flex items-center justify-between">
-              <h2 className="text-base font-bold text-stone-900 dark:text-white uppercase tracking-wide">
-                {isUk ? "Сховище документів" : "Document Vault"}
-              </h2>
-              <button className="bg-amber-500 text-white text-sm px-4 py-2 rounded-lg hover:bg-amber-600 transition-colors">
-                📤 {isUk ? "Завантажити" : "Upload"}
-              </button>
+        {/* ── SECTION: TWO COLUMNS — CIS + cost ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+          {/* CIS subcontractor payments */}
+          <section>
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-1 h-6 bg-amber-500 rounded-full" />
+              <h2 className="font-black text-lg uppercase tracking-wide">{isUk ? "CIS Виплати" : "CIS Payments"}</h2>
             </div>
             <div className="space-y-2">
-              {DOCS.map(d => (
-                <div key={d.name} className={`bg-white dark:bg-stone-800 rounded-xl border p-4 flex items-center justify-between ${d.approved ? "border-stone-100 dark:border-stone-700" : "border-amber-200 dark:border-amber-800/50"}`}>
-                  <div className="flex items-center gap-4">
-                    <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-lg ${
-                      d.type === "Planning" ? "bg-blue-100 dark:bg-blue-900/30" :
-                      d.type === "Engineering" ? "bg-purple-100 dark:bg-purple-900/30" :
-                      d.type === "Compliance" ? "bg-amber-100 dark:bg-amber-900/30" :
-                      d.type === "Drawing" ? "bg-emerald-100 dark:bg-emerald-900/30" : "bg-stone-100 dark:bg-stone-700"
-                    }`}>
-                      {d.type === "Drawing" ? "📐" : d.type === "Certificate" ? "🏆" : d.type === "Compliance" ? "⚖️" : "📄"}
-                    </div>
+              {CIS.map(c => {
+                const cis = c.gross * 0.2;
+                const net = c.gross - cis;
+                return (
+                  <div key={c.name} className="bg-stone-900 rounded-lg border border-stone-800 p-3.5 flex items-center justify-between">
                     <div>
-                      <div className="font-semibold text-stone-900 dark:text-white text-sm">{d.name}</div>
-                      <div className="text-xs text-stone-400 dark:text-stone-500 mt-0.5">{d.type} · {d.version} · {d.date}</div>
+                      <div className="font-bold text-sm">{c.name}</div>
+                      <div className="text-[10px] text-stone-500">{c.trade}</div>
+                    </div>
+                    <div className="flex items-center gap-4 text-right">
+                      <div>
+                        <div className="text-[9px] text-stone-600 uppercase">Gross</div>
+                        <div className="text-xs text-stone-300">£{c.gross.toLocaleString()}</div>
+                      </div>
+                      <div>
+                        <div className="text-[9px] text-amber-600 uppercase">CIS 20%</div>
+                        <div className="text-xs text-amber-400 font-bold">−£{cis.toLocaleString()}</div>
+                      </div>
+                      <div>
+                        <div className="text-[9px] text-stone-600 uppercase">Net</div>
+                        <div className="text-sm font-black">£{net.toLocaleString()}</div>
+                      </div>
+                      <span className={`text-[9px] px-2 py-1 rounded font-bold uppercase ${
+                        c.status === "paid" ? "bg-emerald-500/15 text-emerald-400" :
+                        c.status === "pending" ? "bg-amber-500/15 text-amber-400" :
+                        "bg-red-500/15 text-red-400"
+                      }`}>{c.status}</span>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    {d.approved
-                      ? <span className="text-xs bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 px-2 py-1 rounded-lg font-medium">✓ {isUk ? "Затверджено" : "Approved"}</span>
-                      : <span className="text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 px-2 py-1 rounded-lg font-medium">⏳ {isUk ? "На затвердженні" : "Pending"}</span>
-                    }
-                    <button className="text-xs text-stone-400 dark:text-stone-500 hover:text-amber-500 transition-colors">⬇</button>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
-          </div>
-        )}
+            <div className="mt-3 bg-amber-500/10 border border-amber-500/30 rounded-lg px-4 py-2.5 flex justify-between text-sm">
+              <span className="text-amber-200">{isUk ? "Сума CIS до HMRC (19 Jul):" : "Total CIS due HMRC (19 Jul):"}</span>
+              <span className="font-black text-amber-400">£{cisTotal.toLocaleString()}</span>
+            </div>
+          </section>
 
-        {/* MILESTONES */}
-        {section === "milestones" && (
-          <div className="space-y-4">
-            <h2 className="text-base font-bold text-stone-900 dark:text-white uppercase tracking-wide">
-              {isUk ? "Майлстоуни та білінг" : "Milestones & Billing"} · Kirkstall Road
-            </h2>
-            <div className="relative">
-              <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-stone-200 dark:bg-stone-700" />
+          {/* Cost breakdown bars */}
+          <section>
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-1 h-6 bg-amber-500 rounded-full" />
+              <h2 className="font-black text-lg uppercase tracking-wide">{isUk ? "Бюджет — Kirkstall Rd" : "Cost — Kirkstall Rd"}</h2>
+            </div>
+            <div className="bg-stone-900 rounded-xl border border-stone-800 p-5 space-y-4">
               {[
-                { label: isUk ? "Підписання контракту" : "Contract signed", amount: "£62,000", date: "10 Jan 2025", done: true, paid: true },
-                { label: isUk ? "Фундамент завершено" : "Foundation complete", amount: "£186,000", date: "28 Feb 2025", done: true, paid: true },
-                { label: isUk ? "Суперструктура" : "Superstructure", amount: "£248,000", date: "15 May 2025", done: false, paid: false },
-                { label: isUk ? "Перекриття + покрівля" : "Roof & slab", amount: "£186,000", date: "01 Aug 2025", done: false, paid: false },
-                { label: isUk ? "Оздоблення та фасад" : "Fit-out & façade", amount: "£310,000", date: "15 Nov 2025", done: false, paid: false },
-                { label: isUk ? "Здача замовнику" : "Practical completion", amount: "£248,000", date: "01 Mar 2026", done: false, paid: false },
-              ].map((m, i) => (
-                <div key={i} className="relative flex items-start gap-4 mb-5 pl-14">
-                  <div className={`absolute left-3.5 -translate-x-1/2 w-5 h-5 rounded-full border-2 flex items-center justify-center text-xs ${
-                    m.done ? "bg-amber-500 border-amber-500 text-white" : "bg-white dark:bg-stone-800 border-stone-300 dark:border-stone-600"
-                  }`}>
-                    {m.done ? "✓" : ""}
-                  </div>
-                  <div className={`flex-1 bg-white dark:bg-stone-800 rounded-xl border p-4 flex items-center justify-between ${m.done ? "border-amber-200 dark:border-amber-800/50" : "border-stone-100 dark:border-stone-700 opacity-75"}`}>
-                    <div>
-                      <div className="font-semibold text-stone-900 dark:text-white">{m.label}</div>
-                      <div className="text-xs text-stone-400 dark:text-stone-500 mt-0.5">{m.date}</div>
+                { l: isUk ? "Земляні роботи" : "Groundworks", spent: 142, total: 160 },
+                { l: isUk ? "Каркас" : "Frame & structure", spent: 218, total: 340 },
+                { l: isUk ? "Покрівля" : "Roofing", spent: 0, total: 120 },
+                { l: isUk ? "Інженерні мережі" : "M&E services", spent: 84, total: 280 },
+                { l: isUk ? "Оздоблення" : "Fit-out", spent: 27, total: 340 },
+              ].map(c => {
+                const pct = Math.round((c.spent / c.total) * 100);
+                return (
+                  <div key={c.l}>
+                    <div className="flex justify-between text-xs mb-1.5">
+                      <span className="text-stone-300">{c.l}</span>
+                      <span className="text-stone-500 font-mono">£{c.spent}k / £{c.total}k</span>
                     </div>
-                    <div className="text-right flex items-center gap-3">
-                      <span className="font-bold text-stone-900 dark:text-white">{m.amount}</span>
-                      {m.paid
-                        ? <span className="text-xs bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 px-2 py-1 rounded-lg">✓ {isUk ? "Сплачено" : "Paid"}</span>
-                        : m.done
-                        ? <button className="text-xs bg-amber-500 text-white px-2 py-1 rounded-lg hover:bg-amber-600 transition-colors">{isUk ? "Виставити рахунок" : "Invoice client"}</button>
-                        : <span className="text-xs text-stone-300 dark:text-stone-600">{isUk ? "Очікується" : "Upcoming"}</span>
-                      }
+                    <div className="h-2.5 bg-stone-800 rounded-full overflow-hidden">
+                      <div className="h-2.5 bg-gradient-to-r from-amber-600 to-amber-400 rounded-full" style={{ width: `${pct}%` }} />
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
+              <div className="border-t border-stone-800 pt-3 flex justify-between">
+                <span className="text-sm text-stone-400">{isUk ? "Витрачено / Бюджет" : "Spent / Budget"}</span>
+                <span className="font-black"><span className="text-amber-400">£471k</span> <span className="text-stone-600">/ £1.24M</span></span>
+              </div>
             </div>
-          </div>
-        )}
+          </section>
 
-      </main>
+        </div>
+      </div>
     </div>
   );
 }
