@@ -57,7 +57,7 @@ export default async function ComparePage({ params }: { params: Promise<Params> 
 
   const isUk = lang === "uk";
   const competitorName = isUk ? data.competitorUk : data.competitorEn;
-  const codenestWins = data.rows.filter((r) => r.winner === "codenest").length;
+  const codenestWins = data.rows.filter((r) => r.winner === "Codeworth").length;
   const competitorWins = data.rows.filter((r) => r.winner === "competitor").length;
   const ties = data.rows.filter((r) => r.winner === "tie").length;
 
@@ -190,13 +190,13 @@ export default async function ComparePage({ params }: { params: Promise<Params> 
                   {data.rows.map((row, i) => (
                     <tr
                       key={i}
-                      className={`${row.winner === "codenest" ? "bg-emerald-50/30" : row.winner === "competitor" ? "bg-red-50/30" : ""} hover:bg-neutral-50 transition-colors`}
+                      className={`${row.winner === "Codeworth" ? "bg-emerald-50/30" : row.winner === "competitor" ? "bg-red-50/30" : ""} hover:bg-neutral-50 transition-colors`}
                     >
                       <td className="px-6 py-4">
                         <div className="font-medium text-neutral-900 text-sm">
                           {isUk ? row.feature : row.featureEn}
                         </div>
-                        {row.winner === "codenest" && (
+                        {row.winner === "Codeworth" && (
                           <span className="text-xs text-emerald-600 font-medium mt-0.5 block">
                             {isUk ? "✓ Перевага CodeNest" : "✓ CodeNest wins"}
                           </span>
@@ -207,7 +207,7 @@ export default async function ComparePage({ params }: { params: Promise<Params> 
                           </span>
                         )}
                       </td>
-                      <td className={`px-6 py-4 text-center ${row.winner === "codenest" ? "font-medium" : ""}`}>
+                      <td className={`px-6 py-4 text-center ${row.winner === "Codeworth" ? "font-medium" : ""}`}>
                         <CellValue
                           value={isUk ? row.codenest : (row.codenestEn ?? row.codenest)}
                           lang={lang}

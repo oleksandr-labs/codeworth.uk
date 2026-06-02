@@ -67,7 +67,7 @@ export default async function CompareIndexPage({ params }: { params: Promise<{ l
           <Container>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {COMPARE_DATA.map((item) => {
-                const codenestWins = item.rows.filter((r) => r.winner === "codenest").length;
+                const codenestWins = item.rows.filter((r) => r.winner === "Codeworth").length;
                 const total = item.rows.length;
                 return (
                   <Link
