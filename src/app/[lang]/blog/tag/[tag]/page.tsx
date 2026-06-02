@@ -28,23 +28,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isUk = lang === "uk";
   return {
     title: isUk
-      ? `#${decoded} — Статті блогу CodeNest`
-      : `#${decoded} — CodeNest Blog Articles`,
+      ? `#${decoded} — Статті блогу Codeworth`
+      : `#${decoded} — Codeworth Blog Articles`,
     description: isUk
-      ? `${posts.length} ${posts.length === 1 ? "стаття" : posts.length < 5 ? "статті" : "статей"} з тегом «${decoded}» у блозі веб-студії CodeNest.`
-      : `${posts.length} ${posts.length === 1 ? "article" : "articles"} tagged «${decoded}» on the CodeNest blog.`,
+      ? `${posts.length} ${posts.length === 1 ? "стаття" : posts.length < 5 ? "статті" : "статей"} з тегом «${decoded}» у блозі веб-студії Codeworth.`
+      : `${posts.length} ${posts.length === 1 ? "article" : "articles"} tagged «${decoded}» on the Codeworth blog.`,
     openGraph: {
-      title: isUk ? `#${decoded} — Блог CodeNest` : `#${decoded} — CodeNest Blog`,
+      title: isUk ? `#${decoded} — Блог Codeworth` : `#${decoded} — Codeworth Blog`,
       description: isUk
-        ? `Статті з тегом «${decoded}» у блозі CodeNest.`
-        : `Articles tagged «${decoded}» on the CodeNest blog.`,
+        ? `Статті з тегом «${decoded}» у блозі Codeworth.`
+        : `Articles tagged «${decoded}» on the Codeworth blog.`,
       type: "website",
       url: `https://codeworth.uk/${lang}/blog/tag/${tag}`,
-      images: [{ url: "/og/blog.png", width: 1200, height: 630, alt: isUk ? "Блог CodeNest" : "CodeNest Blog" }],
+      images: [{ url: "/og/blog.png", width: 1200, height: 630, alt: isUk ? "Блог Codeworth" : "Codeworth Blog" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: isUk ? `#${decoded} — Блог CodeNest` : `#${decoded} — CodeNest Blog`,
+      title: isUk ? `#${decoded} — Блог Codeworth` : `#${decoded} — Codeworth Blog`,
       images: ["/og/blog.png"],
     },
     alternates: buildAlternates(lang, `blog/tag/${tag}`),

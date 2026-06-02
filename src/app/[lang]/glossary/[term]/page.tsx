@@ -29,11 +29,11 @@ export async function generateMetadata({
   if (!term) return {};
   const isUk = lang === "uk";
   const title = isUk
-    ? `${term.termUk} — що це таке: визначення та приклади | CodeNest Глосарій`
-    : `${term.termEn} — Definition and Examples | CodeNest Glossary`;
+    ? `${term.termUk} — що це таке: визначення та приклади | Codeworth Глосарій`
+    : `${term.termEn} — Definition and Examples | Codeworth Glossary`;
   const desc = isUk
-    ? `${term.termUk}: ${term.shortDescription} Дізнайтесь більше у глосарії CodeNest.`
-    : `${term.termEn}: ${term.shortDescription} Learn more in the CodeNest glossary.`;
+    ? `${term.termUk}: ${term.shortDescription} Дізнайтесь більше у глосарії Codeworth.`
+    : `${term.termEn}: ${term.shortDescription} Learn more in the Codeworth glossary.`;
   return {
     title,
     description: desc,
@@ -108,7 +108,7 @@ export default async function GlossaryTermPage({
     description: term.shortDescription,
     inDefinedTermSet: {
       "@type": "DefinedTermSet",
-      name: isUk ? "Глосарій CodeNest" : "CodeNest Glossary",
+      name: isUk ? "Глосарій Codeworth" : "Codeworth Glossary",
       url: `https://codeworth.uk/${lang}/glossary`,
     },
   };
@@ -174,18 +174,18 @@ export default async function GlossaryTermPage({
                 </div>
               )}
 
-              {/* How CodeNest applies */}
+              {/* How Codeworth applies */}
               {term.relatedService && SERVICE_NAMES[term.relatedService] && (
                 <div className="bg-gray-50 border border-gray-200 rounded-xl p-5 mb-10">
                   <h3 className="font-semibold text-gray-800 mb-2">
                     {isUk
-                      ? `Як CodeNest застосовує ${term.termUk}`
-                      : `How CodeNest applies ${term.termEn}`}
+                      ? `Як Codeworth застосовує ${term.termUk}`
+                      : `How Codeworth applies ${term.termEn}`}
                   </h3>
                   <p className="text-gray-600 mb-4">
                     {isUk
-                      ? `CodeNest використовує ${term.termUk} у послузі «${SERVICE_NAMES[term.relatedService].uk}». Хочете дізнатись більше або замовити — звертайтесь до нас.`
-                      : `CodeNest applies ${term.termEn} in the "${SERVICE_NAMES[term.relatedService].en}" service. Want to learn more or order — contact us.`}
+                      ? `Codeworth використовує ${term.termUk} у послузі «${SERVICE_NAMES[term.relatedService].uk}». Хочете дізнатись більше або замовити — звертайтесь до нас.`
+                      : `Codeworth applies ${term.termEn} in the "${SERVICE_NAMES[term.relatedService].en}" service. Want to learn more or order — contact us.`}
                   </p>
                   <Link
                     href={`/${lang}/services/${term.relatedService}`}

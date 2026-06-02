@@ -16,8 +16,8 @@ export async function generateMetadata({
   const isUk = lang === "uk";
 
   const title = isUk
-    ? "Машинне навчання для бізнесу | ML-рішення по галузях | CodeNest"
-    : "Machine Learning by Industry | ML Solutions for Business | CodeNest";
+    ? "Машинне навчання для бізнесу | ML-рішення по галузях | Codeworth"
+    : "Machine Learning by Industry | ML Solutions for Business | Codeworth";
   const description = isUk
     ? "10 спеціалізованих ML-рішень для банків, рітейлу, SaaS, логістики та інших галузей. Від £4,000. Реальні кейси, пакети та ROI."
     : "10 specialised ML solutions for banking, retail, SaaS, logistics and more. From £4,000. Real cases, packages and ROI metrics.";
@@ -46,7 +46,7 @@ export default async function MLHubPage({
   const schema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: isUk ? "ML-рішення CodeNest по галузях" : "CodeNest ML Solutions by Industry",
+    name: isUk ? "ML-рішення Codeworth по галузях" : "Codeworth ML Solutions by Industry",
     description: isUk
       ? "Спеціалізовані ML-розробки для 10 галузей"
       : "Specialised machine learning development for 10 industries",

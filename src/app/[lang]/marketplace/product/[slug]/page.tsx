@@ -46,7 +46,7 @@ export async function generateMetadata({
     "@type": "Product",
     name: niche.title,
     description: niche.metaDescription,
-    brand: { "@type": "Brand", name: "CodeNest" },
+    brand: { "@type": "Brand", name: "Codeworth" },
     offers: {
       "@type": "Offer",
       price: niche.priceFrom,
@@ -62,8 +62,8 @@ export async function generateMetadata({
   };
 
   const ogTitle = isUk
-    ? `${niche.title} — готовий сайт | CodeNest`
-    : `${niche.title} — Ready Website | CodeNest`;
+    ? `${niche.title} — готовий сайт | Codeworth`
+    : `${niche.title} — Ready Website | Codeworth`;
   const ogImage = `/og/niches/${slug}.png`;
   return {
     title: ogTitle,
@@ -135,12 +135,12 @@ function getFakeReviews(isUk: boolean) {
     ? [
         { name: "Олена Кравець", city: "Київ", text: "Сайт запустили за 12 днів. Все чисто, швидко і за бюджет. Замовники вже пишуть з сайту.", stars: 5 },
         { name: "Микола Бондар", city: "Львів", text: "Обрали розширений пакет — отримали більше ніж очікували. Менеджер весь час на зв'язку.", stars: 5 },
-        { name: "Інна Сидоренко", city: "Харків", text: "Чудовий дизайн, швидкий сайт. Google вже індексує. Рекомендую CodeNest!", stars: 5 },
+        { name: "Інна Сидоренко", city: "Харків", text: "Чудовий дизайн, швидкий сайт. Google вже індексує. Рекомендую Codeworth!", stars: 5 },
       ]
     : [
         { name: "Elena Kravets", city: "Kyiv", text: "The site launched in 12 days. Everything clean, fast, and on budget. Clients are already writing from the site.", stars: 5 },
         { name: "Mykola Bondar", city: "Lviv", text: "Chose the Extended package — got more than expected. The manager was always in touch.", stars: 5 },
-        { name: "Inna Sydorenko", city: "Kharkiv", text: "Great design, fast website. Google is already indexing. I recommend CodeNest!", stars: 5 },
+        { name: "Inna Sydorenko", city: "Kharkiv", text: "Great design, fast website. Google is already indexing. I recommend Codeworth!", stars: 5 },
       ];
 }
 

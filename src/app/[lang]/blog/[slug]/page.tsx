@@ -58,7 +58,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return {};
   const ogImage = `/og/blog/${slug}.png`;
   return {
-    title: `${post.title} | CodeNest Blog`,
+    title: `${post.title} | Codeworth Blog`,
     description: post.excerpt,
     keywords: post.tags.join(", "),
     alternates: buildAlternates(lang, `blog/${slug}`),
@@ -98,7 +98,7 @@ function getPostContent(post: (typeof BLOG_POSTS)[0], isUk: boolean): string[] {
       `У цій статті ми детально розглянемо ключові аспекти теми та надамо практичні рекомендації для вашого бізнесу.`,
       `**Чому це важливо?**\n\nСучасний цифровий ринок вимагає від бізнесу постійної адаптації та вдосконалення. Розуміння актуальних трендів та інструментів дає конкурентну перевагу.`,
       `**Практичні рекомендації**\n\n1. Починайте з аудиту поточного стану\n2. Визначте пріоритети та цілі\n3. Впроваджуйте зміни поетапно\n4. Вимірюйте результати та ітеруйте`,
-      `**Висновок**\n\nЗастосовуючи описані підходи, ви зможете суттєво покращити результати вашого бізнесу в цифровому просторі. Команда CodeNest завжди готова допомогти з реалізацією.`,
+      `**Висновок**\n\nЗастосовуючи описані підходи, ви зможете суттєво покращити результати вашого бізнесу в цифровому просторі. Команда Codeworth завжди готова допомогти з реалізацією.`,
     ];
   }
   return [
@@ -106,7 +106,7 @@ function getPostContent(post: (typeof BLOG_POSTS)[0], isUk: boolean): string[] {
     `In this article, we'll take a closer look at the key aspects of the topic and provide practical recommendations for your business.`,
     `**Why it matters?**\n\nThe modern digital market demands that businesses continuously adapt and improve. Understanding current trends and tools gives a competitive edge.`,
     `**Practical recommendations**\n\n1. Start with an audit of the current state\n2. Define priorities and goals\n3. Implement changes step by step\n4. Measure results and iterate`,
-    `**Conclusion**\n\nBy applying the approaches described here, you can significantly improve your business results in the digital space. The CodeNest team is always ready to help with implementation.`,
+    `**Conclusion**\n\nBy applying the approaches described here, you can significantly improve your business results in the digital space. The Codeworth team is always ready to help with implementation.`,
   ];
 }
 
@@ -141,7 +141,7 @@ export default async function BlogPostPage({ params }: Props) {
     ...(authorData && {
       jobTitle: isUk ? authorData.role : authorData.roleEn,
       url: `https://codeworth.uk/${lang}/blog/author/${authorData.slug}`,
-      worksFor: { "@type": "Organization", name: "CodeNest", url: "https://codeworth.uk" },
+      worksFor: { "@type": "Organization", name: "Codeworth", url: "https://codeworth.uk" },
       ...(authorData.social?.linkedin && { sameAs: [authorData.social.linkedin] }),
     }),
   };
@@ -152,7 +152,7 @@ export default async function BlogPostPage({ params }: Props) {
     name: isUk ? reviewerData.name : reviewerData.nameEn,
     jobTitle: isUk ? reviewerData.role : reviewerData.roleEn,
     url: `https://codeworth.uk/${lang}/blog/author/${reviewerData.slug}`,
-    worksFor: { "@type": "Organization", name: "CodeNest" },
+    worksFor: { "@type": "Organization", name: "Codeworth" },
     ...(reviewerData.social?.linkedin && { sameAs: [reviewerData.social.linkedin] }),
   } : undefined;
 
@@ -166,7 +166,7 @@ export default async function BlogPostPage({ params }: Props) {
     ...(reviewerSchema && { reviewedBy: reviewerSchema }),
     publisher: {
       "@type": "Organization",
-      name: "CodeNest",
+      name: "Codeworth",
       url: "https://codeworth.uk",
       logo: { "@type": "ImageObject", url: "https://codeworth.uk/logo.png" },
     },
@@ -322,7 +322,7 @@ export default async function BlogPostPage({ params }: Props) {
                 {relatedServices.length > 0 && (
                   <div className="mt-8 p-6 rounded-2xl border border-neutral-100 bg-neutral-50">
                     <h3 className="text-sm font-semibold text-neutral-500 uppercase tracking-wider mb-4">
-                      {isUk ? "Пов'язані послуги CodeNest" : "Related CodeNest Services"}
+                      {isUk ? "Пов'язані послуги Codeworth" : "Related Codeworth Services"}
                     </h3>
                     <div className="flex flex-wrap gap-3">
                       {relatedServices.map((rawSvc) => {
@@ -350,8 +350,8 @@ export default async function BlogPostPage({ params }: Props) {
                   </h3>
                   <p className="text-indigo-200 text-sm mb-5">
                     {isUk
-                      ? "Команда CodeNest готова втілити ці ідеї у вашому проєкті. Безкоштовна консультація."
-                      : "The CodeNest team is ready to implement these ideas in your project. Free consultation."}
+                      ? "Команда Codeworth готова втілити ці ідеї у вашому проєкті. Безкоштовна консультація."
+                      : "The Codeworth team is ready to implement these ideas in your project. Free consultation."}
                   </p>
                   <Link href={`/${lang}/contact`} className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-indigo-700 font-semibold text-sm hover:bg-indigo-50 transition-colors">
                     {isUk ? "Обговорити проєкт" : "Discuss the Project"}
@@ -376,10 +376,10 @@ export default async function BlogPostPage({ params }: Props) {
                           ) : post.author}
                         </div>
                         <div className="text-xs text-indigo-600 font-medium mt-0.5 mb-2">
-                          {authorData ? (isUk ? authorData.role : authorData.roleEn) : "CodeNest Team"}
+                          {authorData ? (isUk ? authorData.role : authorData.roleEn) : "Codeworth Team"}
                         </div>
                         <p className="text-sm text-neutral-600 leading-relaxed">
-                          {authorData ? (isUk ? authorData.bio : authorData.bioEn) : (isUk ? "Спеціаліст команди CodeNest." : "CodeNest team specialist.")}
+                          {authorData ? (isUk ? authorData.bio : authorData.bioEn) : (isUk ? "Спеціаліст команди Codeworth." : "Codeworth team specialist.")}
                         </p>
                       </div>
                     </div>
@@ -450,7 +450,7 @@ export default async function BlogPostPage({ params }: Props) {
                             ) : post.author}
                           </div>
                           <div className="text-xs text-indigo-600 font-medium">
-                            {sidebarAuthor ? (isUk ? sidebarAuthor.role : sidebarAuthor.roleEn) : "CodeNest Team"}
+                            {sidebarAuthor ? (isUk ? sidebarAuthor.role : sidebarAuthor.roleEn) : "Codeworth Team"}
                           </div>
                         </div>
                       </div>

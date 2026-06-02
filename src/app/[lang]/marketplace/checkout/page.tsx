@@ -7,7 +7,7 @@ import CheckoutForm from "./CheckoutForm";
 
 export const metadata: Metadata = {
   title: "Оформлення замовлення — Маркетплейс",
-  description: "Оформіть замовлення на готовий сайт від CodeNest.",
+  description: "Оформіть замовлення на готовий сайт від Codeworth.",
   robots: { index: false, follow: false },
 };
 

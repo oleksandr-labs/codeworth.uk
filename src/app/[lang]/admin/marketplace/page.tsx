@@ -3,7 +3,7 @@ import AdminClient from "./AdminClient";
 
 export const metadata: Metadata = {
   title: "Admin — Маркетплейс",
-  description: "Адміністративна панель маркетплейсу CodeNest.",
+  description: "Адміністративна панель маркетплейсу Codeworth.",
   robots: { index: false, follow: false },
 };
 

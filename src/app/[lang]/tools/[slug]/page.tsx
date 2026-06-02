@@ -36,8 +36,8 @@ export async function generateMetadata({
   if (!tool) return {};
 
   const title = isUk
-    ? `${tool.title} — Безкоштовно | CodeNest`
-    : `${tool.titleEn} — Free Online Tool | CodeNest`;
+    ? `${tool.title} — Безкоштовно | Codeworth`
+    : `${tool.titleEn} — Free Online Tool | Codeworth`;
   const description = isUk ? tool.description : tool.descriptionEn;
 
   return {

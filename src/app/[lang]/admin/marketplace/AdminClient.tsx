@@ -197,7 +197,7 @@ export default function AdminClient() {
         <Link href="/" className="flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center font-bold text-sm">C</div>
           <div>
-            <div className="font-bold text-sm">CodeNest</div>
+            <div className="font-bold text-sm">Codeworth</div>
             <div className="text-gray-400 text-xs">Admin Panel</div>
           </div>
         </Link>

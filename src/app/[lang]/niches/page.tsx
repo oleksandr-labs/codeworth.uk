@@ -12,27 +12,27 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isUk = lang === "uk";
   return {
     title: isUk
-      ? `Готові рішення для ${NICHES_DATA.length}+ ніш — CodeNest | від £499 | 3–7 днів`
-      : `Ready-Made Solutions for ${NICHES_DATA.length}+ Business Niches — CodeNest | from £499`,
+      ? `Готові рішення для ${NICHES_DATA.length}+ ніш — Codeworth | від £499 | 3–7 днів`
+      : `Ready-Made Solutions for ${NICHES_DATA.length}+ Business Niches — Codeworth | from £499`,
     description: isUk
       ? `${NICHES_DATA.length}+ живих демо-сайтів для ресторанів, салонів краси, клінік, магазинів, юристів, фітнес-клубів та інших. Перегляньте демо — замовте за 3–7 днів від £499.`
       : `${NICHES_DATA.length}+ live demo sites for restaurants, beauty salons, clinics, stores, lawyers, fitness clubs and more. View the demo — order in 3–7 days from £499.`,
     openGraph: {
       title: isUk
-        ? `Готові рішення для ${NICHES_DATA.length}+ ніш — CodeNest | від £499`
-        : `Ready-Made Solutions for ${NICHES_DATA.length}+ Solutions — CodeNest | from £499`,
+        ? `Готові рішення для ${NICHES_DATA.length}+ ніш — Codeworth | від £499`
+        : `Ready-Made Solutions for ${NICHES_DATA.length}+ Solutions — Codeworth | from £499`,
       description: isUk
         ? `${NICHES_DATA.length}+ живих демо-сайтів. Запуск за 3–7 днів від £499. Адаптуємо під ваш бренд.`
         : `${NICHES_DATA.length}+ live demos. Launch in 3–7 days from £499. Customized for your brand.`,
       type: "website",
       url: `https://codeworth.uk/${lang}/niches`,
-      images: [{ url: "/og/niches.png", width: 1200, height: 630, alt: isUk ? "Нішеві сайти CodeNest" : "CodeNest Niche Websites" }],
+      images: [{ url: "/og/niches.png", width: 1200, height: 630, alt: isUk ? "Нішеві сайти Codeworth" : "Codeworth Niche Websites" }],
     },
     twitter: {
       card: "summary_large_image",
       title: isUk
-        ? `Готові рішення для ${NICHES_DATA.length}+ ніш — CodeNest | від £499`
-        : `Ready-Made Solutions for ${NICHES_DATA.length}+ Solutions — CodeNest | from £499`,
+        ? `Готові рішення для ${NICHES_DATA.length}+ ніш — Codeworth | від £499`
+        : `Ready-Made Solutions for ${NICHES_DATA.length}+ Solutions — Codeworth | from £499`,
       images: ["/og/niches.png"],
     },
     alternates: buildAlternates(lang, 'niches'),
@@ -117,7 +117,7 @@ export default async function NichesPage({ params }: { params: Promise<{ lang: s
       name: n.title,
       description: n.subtitle,
       url: `https://codeworth.uk/${lang}/niches/${n.slug}`,
-      brand: { "@type": "Brand", name: "CodeNest" },
+      brand: { "@type": "Brand", name: "Codeworth" },
       offers: {
         "@type": "Offer",
         priceCurrency: isUk ? "UAH" : "GBP",

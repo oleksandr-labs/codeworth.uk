@@ -20,15 +20,15 @@ export async function generateMetadata({
   const isUk = lang === "uk";
   return {
     title: isUk
-      ? "UI Компоненти та Живі Демо — Showcase | CodeNest"
-      : "UI Components & Live Demos — Showcase | CodeNest",
+      ? "UI Компоненти та Живі Демо — Showcase | Codeworth"
+      : "UI Components & Live Demos — Showcase | Codeworth",
     description: isUk
-      ? "Інтерактивна галерея UI-компонентів CodeNest: кнопки, картки, форми, анімації, інтерактивні модулі. Всі компоненти — живий код."
-      : "Interactive UI component gallery by CodeNest: buttons, cards, forms, animations, interactive modules. All components — live code.",
+      ? "Інтерактивна галерея UI-компонентів Codeworth: кнопки, картки, форми, анімації, інтерактивні модулі. Всі компоненти — живий код."
+      : "Interactive UI component gallery by Codeworth: buttons, cards, forms, animations, interactive modules. All components — live code.",
     alternates: buildAlternates(lang, "showcase"),
     openGraph: {
-      title: isUk ? "UI Showcase | CodeNest" : "UI Showcase | CodeNest",
-      description: isUk ? "Живі демо всіх UI-компонентів CodeNest." : "Live demos of all CodeNest UI components.",
+      title: isUk ? "UI Showcase | Codeworth" : "UI Showcase | Codeworth",
+      description: isUk ? "Живі демо всіх UI-компонентів Codeworth." : "Live demos of all Codeworth UI components.",
       type: "website",
       url: `https://codeworth.uk/${lang}/showcase`,
     },
@@ -98,8 +98,8 @@ export default async function ShowcasePage({
               </h1>
               <p className="text-xl text-slate-300 leading-relaxed max-w-xl">
                 {isUk
-                  ? "Інтерактивна галерея всіх UI-компонентів та модулів CodeNest. Клієнт бачить — клієнт розуміє. Всі елементи — з реального коду проєктів."
-                  : "Interactive gallery of all CodeNest UI components and modules. See it before you order it. All elements come from real project code."}
+                  ? "Інтерактивна галерея всіх UI-компонентів та модулів Codeworth. Клієнт бачить — клієнт розуміє. Всі елементи — з реального коду проєктів."
+                  : "Interactive gallery of all Codeworth UI components and modules. See it before you order it. All elements come from real project code."}
               </p>
             </div>
 
@@ -126,7 +126,7 @@ export default async function ShowcasePage({
               🖱️ {isUk ? "Кнопки" : "Buttons"}
             </h2>
             <p className="text-neutral-500 text-sm mb-8">
-              {isUk ? "Стилі та стани кнопок у дизайн-системі CodeNest." : "Button styles and states in the CodeNest design system."}
+              {isUk ? "Стилі та стани кнопок у дизайн-системі Codeworth." : "Button styles and states in the Codeworth design system."}
             </p>
             <div className="space-y-6">
               <div>
@@ -276,7 +276,7 @@ export default async function ShowcasePage({
                   {[1,2,3,4,5].map((i) => <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />)}
                 </div>
                 <p className="text-neutral-700 text-sm leading-relaxed mb-4">
-                  "{isUk ? "CodeNest зробили наш сайт за 3 тижні. Конверсія з 1.2% до 3.8% — говорить сама за себе." : "CodeNest built our site in 3 weeks. Conversion from 1.2% to 3.8% — says it all."}"
+                  "{isUk ? "Codeworth зробили наш сайт за 3 тижні. Конверсія з 1.2% до 3.8% — говорить сама за себе." : "Codeworth built our site in 3 weeks. Conversion from 1.2% to 3.8% — says it all."}"
                 </p>
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-full bg-linear-to-br from-indigo-400 to-purple-500 flex items-center justify-center text-white font-bold text-sm">О</div>

@@ -11,23 +11,23 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isUk = lang === "uk";
   return {
-    title: isUk ? "Контакти — CodeNest | Зв'яжіться з нами" : "Contact — CodeNest | Get in Touch",
+    title: isUk ? "Контакти — Codeworth | Зв'яжіться з нами" : "Contact — Codeworth | Get in Touch",
     description: isUk
-      ? "Зв'яжіться з командою CodeNest для обговорення вашого проєкту. Telegram, Email, телефон. Відповідаємо протягом 2 годин."
-      : "Contact the CodeNest team to discuss your project. Telegram, Email, phone. We respond within 2 hours.",
+      ? "Зв'яжіться з командою Codeworth для обговорення вашого проєкту. Telegram, Email, телефон. Відповідаємо протягом 2 годин."
+      : "Contact the Codeworth team to discuss your project. Telegram, Email, phone. We respond within 2 hours.",
     alternates: buildAlternates(lang, 'contact'),
     openGraph: {
-      title: isUk ? "Контакти — CodeNest" : "Contact — CodeNest",
+      title: isUk ? "Контакти — Codeworth" : "Contact — Codeworth",
       description: isUk
-        ? "Зв'яжіться з командою CodeNest. Telegram, Email, телефон. Відповідаємо протягом 2 годин."
-        : "Contact the CodeNest team. Telegram, Email, phone. We respond within 2 hours.",
+        ? "Зв'яжіться з командою Codeworth. Telegram, Email, телефон. Відповідаємо протягом 2 годин."
+        : "Contact the Codeworth team. Telegram, Email, phone. We respond within 2 hours.",
       type: "website",
       url: `https://codeworth.uk/${lang}/contact`,
-      images: [{ url: "/og/contact.png", width: 1200, height: 630, alt: isUk ? "Контакти CodeNest" : "CodeNest Contacts" }],
+      images: [{ url: "/og/contact.png", width: 1200, height: 630, alt: isUk ? "Контакти Codeworth" : "Codeworth Contacts" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: isUk ? "Контакти — CodeNest" : "Contact — CodeNest",
+      title: isUk ? "Контакти — Codeworth" : "Contact — Codeworth",
       description: isUk ? "Відповідаємо протягом 2 годин." : "We respond within 2 hours.",
       images: ["/og/contact.png"],
     },
@@ -38,7 +38,7 @@ const MESSENGERS = [
   { name: "Telegram", handle: "@codeworth_uk", href: "https://t.me/codenest_ua", bg: "bg-sky-500", emoji: "✈️" },
   { name: "Instagram", handle: "@codenest.ua", href: "https://instagram.com/codenest.ua", bg: "bg-linear-to-br from-purple-500 to-pink-500", emoji: "📷" },
   { name: "Viber", handle: "+38 (000) 000-00-00", href: "viber://chat?number=+380000000000", bg: "bg-violet-600", emoji: "📱" },
-  { name: "Facebook", handle: "CodeNest UA", href: "https://facebook.com/codenest.ua", bg: "bg-blue-600", emoji: "📘" },
+  { name: "Facebook", handle: "Codeworth UA", href: "https://facebook.com/codenest.ua", bg: "bg-blue-600", emoji: "📘" },
 ];
 
 const QUICK_FAQ_UK = [
@@ -59,7 +59,7 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "@id": "https://codeworth.uk/#business",
-  name: "CodeNest",
+  name: "Codeworth",
   description: "Веб-студія повного циклу — розробка сайтів, SEO, дизайн та маркетплейс готових рішень для бізнесу в Україні.",
   url: "https://codeworth.uk",
   email: "hello@codeworth.uk",

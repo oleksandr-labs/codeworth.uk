@@ -9,18 +9,18 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isUk = lang === "uk";
   return {
-    title: isUk ? "Політика конфіденційності | CodeNest" : "Privacy Policy | CodeNest",
+    title: isUk ? "Політика конфіденційності | Codeworth" : "Privacy Policy | Codeworth",
     description: isUk
-      ? "Політика конфіденційності CodeNest — як ми збираємо, зберігаємо та захищаємо ваші персональні дані."
-      : "CodeNest Privacy Policy — how we collect, store, and protect your personal data.",
+      ? "Політика конфіденційності Codeworth — як ми збираємо, зберігаємо та захищаємо ваші персональні дані."
+      : "Codeworth Privacy Policy — how we collect, store, and protect your personal data.",
     openGraph: {
-      title: isUk ? "Політика конфіденційності — CodeNest" : "Privacy Policy — CodeNest",
+      title: isUk ? "Політика конфіденційності — Codeworth" : "Privacy Policy — Codeworth",
       description: isUk
-        ? "Умови збору та обробки персональних даних у веб-студії CodeNest."
-        : "Terms for collection and processing of personal data at CodeNest web studio.",
+        ? "Умови збору та обробки персональних даних у веб-студії Codeworth."
+        : "Terms for collection and processing of personal data at Codeworth web studio.",
       type: "website",
       url: `https://codeworth.uk/${lang}/privacy`,
-      images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "CodeNest" }],
+      images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "Codeworth" }],
     },
     twitter: {
       card: "summary_large_image",
@@ -76,13 +76,13 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
               {isUk ? (
                 <>
                   <p className="lead text-neutral-600">
-                    Ця Політика конфіденційності описує, як CodeNest (далі — «ми», «нас») збирає,
+                    Ця Політика конфіденційності описує, як Codeworth (далі — «ми», «нас») збирає,
                     використовує та захищає ваші персональні дані під час використання сайту{" "}
                     <Link href="https://codeworth.uk">codeworth.uk</Link> та пов'язаних сервісів.
                   </p>
                   <h2>1. Хто ми</h2>
                   <p>
-                    CodeNest — веб-студія повного циклу, що надає послуги розробки сайтів, SEO,
+                    Codeworth — веб-студія повного циклу, що надає послуги розробки сайтів, SEO,
                     дизайну та продає готові нішеві рішення через маркетплейс.
                   </p>
                   <ul>
@@ -172,13 +172,13 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
               ) : (
                 <>
                   <p className="lead text-neutral-600">
-                    This Privacy Policy describes how CodeNest (hereinafter — "we", "us") collects,
+                    This Privacy Policy describes how Codeworth (hereinafter — "we", "us") collects,
                     uses, and protects your personal data when you use the website{" "}
                     <Link href="https://codeworth.uk">codeworth.uk</Link> and related services.
                   </p>
                   <h2>1. Who we are</h2>
                   <p>
-                    CodeNest is a full-cycle web studio offering website development, SEO, design
+                    Codeworth is a full-cycle web studio offering website development, SEO, design
                     services, and selling ready-made niche solutions through our marketplace.
                   </p>
                   <ul>

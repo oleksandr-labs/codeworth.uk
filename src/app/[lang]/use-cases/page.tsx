@@ -25,20 +25,20 @@ export async function generateMetadata({
   const isUk = lang === "uk";
   return {
     title: isUk
-      ? "Рішення для Вашого Бізнесу — 15 Кейсів Застосування | CodeNest"
-      : "Solutions for Your Business — 15 Use Cases | CodeNest",
+      ? "Рішення для Вашого Бізнесу — 15 Кейсів Застосування | Codeworth"
+      : "Solutions for Your Business — 15 Use Cases | Codeworth",
     description: isUk
-      ? "Знайдіть готове рішення для вашої задачі: онлайн-записи, AI-підтримка, SEO, e-commerce, автоматизація. Конкретні результати від CodeNest."
-      : "Find a ready solution for your challenge: online bookings, AI support, SEO, e-commerce, automation. Concrete results from CodeNest.",
+      ? "Знайдіть готове рішення для вашої задачі: онлайн-записи, AI-підтримка, SEO, e-commerce, автоматизація. Конкретні результати від Codeworth."
+      : "Find a ready solution for your challenge: online bookings, AI support, SEO, e-commerce, automation. Concrete results from Codeworth.",
     alternates: buildAlternates(lang, "use-cases"),
     openGraph: {
-      title: isUk ? "Рішення для Вашого Бізнесу | CodeNest" : "Solutions for Your Business | CodeNest",
+      title: isUk ? "Рішення для Вашого Бізнесу | Codeworth" : "Solutions for Your Business | Codeworth",
       description: isUk
         ? "15 готових рішень для бізнес-задач."
         : "15 ready-made solutions for business challenges.",
       type: "website",
       url: `https://codeworth.uk/${lang}/use-cases`,
-      images: [{ url: "/og/use-cases.png", width: 1200, height: 630, alt: "Use Cases — CodeNest" }],
+      images: [{ url: "/og/use-cases.png", width: 1200, height: 630, alt: "Use Cases — Codeworth" }],
     },
   };
 }

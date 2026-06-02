@@ -19,27 +19,27 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isUk = lang === "uk";
   return {
     title: isUk
-      ? "Готові рішення та кейси — CodeNest | від £499 | Запуск за 3–7 днів"
-      : "Ready Solutions & Case Studies — CodeNest | from £499 | Launch in 3–7 days",
+      ? "Готові рішення та кейси — Codeworth | від £499 | Запуск за 3–7 днів"
+      : "Ready Solutions & Case Studies — Codeworth | from £499 | Launch in 3–7 days",
     description: isUk
-      ? "120+ готових рішень для різних ніш бізнесу від CodeNest. Ресторани, салони краси, медицина, е-комерс, SaaS — від £499, запуск за 3–7 днів."
-      : "120+ ready-made solutions for various business niches by CodeNest. Restaurants, beauty salons, medical, e-commerce, SaaS — from £499, launch in 3–7 days.",
+      ? "120+ готових рішень для різних ніш бізнесу від Codeworth. Ресторани, салони краси, медицина, е-комерс, SaaS — від £499, запуск за 3–7 днів."
+      : "120+ ready-made solutions for various business niches by Codeworth. Restaurants, beauty salons, medical, e-commerce, SaaS — from £499, launch in 3–7 days.",
     alternates: buildAlternates(lang, 'portfolio'),
     openGraph: {
       title: isUk
-        ? "Готові рішення та кейси — CodeNest | від £499"
-        : "Ready Solutions & Case Studies — CodeNest | from £499",
+        ? "Готові рішення та кейси — Codeworth | від £499"
+        : "Ready Solutions & Case Studies — Codeworth | from £499",
       description: isUk
-        ? "120+ готових рішень для різних ніш бізнесу від CodeNest. від £499, запуск за 3–7 днів."
-        : "120+ ready-made solutions for various business niches by CodeNest. From £499, launch in 3–7 days.",
+        ? "120+ готових рішень для різних ніш бізнесу від Codeworth. від £499, запуск за 3–7 днів."
+        : "120+ ready-made solutions for various business niches by Codeworth. From £499, launch in 3–7 days.",
       type: "website",
       url: `https://codeworth.uk/${lang}/portfolio`,
-      images: [{ url: "/og/portfolio.png", width: 1200, height: 630, alt: isUk ? "Портфоліо CodeNest" : "CodeNest Portfolio" }],
+      images: [{ url: "/og/portfolio.png", width: 1200, height: 630, alt: isUk ? "Портфоліо Codeworth" : "Codeworth Portfolio" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: isUk ? "Портфоліо — CodeNest" : "Portfolio — CodeNest",
-      description: isUk ? "120+ реалізованих проєктів від веб-студії CodeNest." : "120+ completed projects by CodeNest web studio.",
+      title: isUk ? "Портфоліо — Codeworth" : "Portfolio — Codeworth",
+      description: isUk ? "120+ реалізованих проєктів від веб-студії Codeworth." : "120+ completed projects by Codeworth web studio.",
       images: ["/og/portfolio.png"],
     },
   };
@@ -48,8 +48,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 const portfolioItemListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  name: "Портфоліо CodeNest",
-  description: "Реалізовані проєкти веб-студії CodeNest",
+  name: "Портфоліо Codeworth",
+  description: "Реалізовані проєкти веб-студії Codeworth",
   url: "https://codeworth.uk/portfolio",
   numberOfItems: PROJECTS.length,
   itemListElement: PROJECTS.map((project, index) => ({

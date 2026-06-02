@@ -12,8 +12,8 @@ import { StarRating } from "@/components/ui/StarRating";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 
 export const metadata: Metadata = {
-  title: "Style Guide — CodeNest Design System",
-  description: "Дизайн-система CodeNest: кольорова палітра, типографіка, компоненти, токени.",
+  title: "Style Guide — Codeworth Design System",
+  description: "Дизайн-система Codeworth: кольорова палітра, типографіка, компоненти, токени.",
   robots: { index: false, follow: false },
 };
 
@@ -76,7 +76,7 @@ export default function StyleGuidePage() {
               Design System
             </h1>
             <p className="text-lg text-neutral-500 max-w-xl">
-              Токени, компоненти та правила дизайн-системи CodeNest.
+              Токени, компоненти та правила дизайн-системи Codeworth.
             </p>
           </Container>
         </div>

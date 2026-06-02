@@ -14,24 +14,24 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isUk = lang === "uk";
   return {
-    title: isUk ? "Про нас — CodeNest" : "About Us — CodeNest",
+    title: isUk ? "Про нас — Codeworth" : "About Us — Codeworth",
     description: isUk
-      ? "Дізнайтеся більше про команду CodeNest — веб-студію повного циклу. Наша місія, цінності, методологія та технічний стек."
-      : "Learn more about the CodeNest team — a full-cycle web studio. Our mission, values, methodology, and tech stack.",
+      ? "Дізнайтеся більше про команду Codeworth — веб-студію повного циклу. Наша місія, цінності, методологія та технічний стек."
+      : "Learn more about the Codeworth team — a full-cycle web studio. Our mission, values, methodology, and tech stack.",
     alternates: buildAlternates(lang, 'about'),
     openGraph: {
-      title: isUk ? "Про нас — CodeNest" : "About Us — CodeNest",
+      title: isUk ? "Про нас — Codeworth" : "About Us — Codeworth",
       description: isUk
-        ? "Дізнайтеся більше про команду CodeNest — веб-студію повного циклу. Наша місія, цінності та технічний стек."
-        : "Learn more about the CodeNest team — a full-cycle web studio. Our mission, values, and tech stack.",
+        ? "Дізнайтеся більше про команду Codeworth — веб-студію повного циклу. Наша місія, цінності та технічний стек."
+        : "Learn more about the Codeworth team — a full-cycle web studio. Our mission, values, and tech stack.",
       type: "website",
       url: `https://codeworth.uk/${lang}/about`,
-      images: [{ url: "/og/about.png", width: 1200, height: 630, alt: "CodeNest Team" }],
+      images: [{ url: "/og/about.png", width: 1200, height: 630, alt: "Codeworth Team" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: isUk ? "Про нас — CodeNest" : "About Us — CodeNest",
-      description: isUk ? "Команда CodeNest — веб-студія повного циклу в Україні." : "CodeNest team — full-cycle web studio.",
+      title: isUk ? "Про нас — Codeworth" : "About Us — Codeworth",
+      description: isUk ? "Команда Codeworth — веб-студія повного циклу в Україні." : "Codeworth team — full-cycle web studio.",
       images: ["/og/about.png"],
     },
   };
@@ -56,7 +56,7 @@ const TIMELINE_UK = [
   { year: "2022", title: "Перші 20 клієнтів", text: "Перший корпоративний клієнт, перший e-commerce проєкт." },
   { year: "2023", title: "Студія", text: "Реєстрація студії, розширення до 5 спеціалістів, 60+ проєктів." },
   { year: "2024", title: "Маркетплейс", text: "Запуск напряму готових нішевих рішень, 85+ клієнтів." },
-  { year: "2025", title: "CodeNest 2.0", text: "Новий сайт, нові продукти, масштабування команди." },
+  { year: "2025", title: "Codeworth 2.0", text: "Новий сайт, нові продукти, масштабування команди." },
 ];
 
 const TIMELINE_EN = [
@@ -64,18 +64,18 @@ const TIMELINE_EN = [
   { year: "2022", title: "First 20 Clients", text: "First corporate client, first e-commerce project." },
   { year: "2023", title: "Studio", text: "Official registration, expanded to 5 specialists, 60+ projects." },
   { year: "2024", title: "Marketplace", text: "Launched niche ready-made solutions, 85+ clients." },
-  { year: "2025", title: "CodeNest 2.0", text: "New website, new products, team scaling." },
+  { year: "2025", title: "Codeworth 2.0", text: "New website, new products, team scaling." },
 ];
 
 const TEAM_UK = [
-  { name: "Олексій Коваленко", role: "CEO & Full-Stack Developer", skills: "Next.js, TypeScript, PostgreSQL, Architecture", avatar: "О", bio: "10+ років у веб-розробці. Архітектор всіх проєктів CodeNest, відповідальний за технічну якість та масштабованість.", linkedin: "https://linkedin.com/in/", github: "https://github.com/" },
+  { name: "Олексій Коваленко", role: "CEO & Full-Stack Developer", skills: "Next.js, TypeScript, PostgreSQL, Architecture", avatar: "О", bio: "10+ років у веб-розробці. Архітектор всіх проєктів Codeworth, відповідальний за технічну якість та масштабованість.", linkedin: "https://linkedin.com/in/", github: "https://github.com/" },
   { name: "Аліна Мороз", role: "Lead UI/UX Designer", skills: "Figma, Motion Design, Design Systems, Branding", avatar: "А", bio: "Спеціалізується на conversion-driven дизайні. Створює інтерфейси що не просто красиві, а продають.", linkedin: "https://linkedin.com/in/", dribbble: "https://dribbble.com/" },
   { name: "Денис Бондаренко", role: "Frontend Developer", skills: "React, Tailwind, Framer Motion, Performance", avatar: "Д", bio: "Фронтенд-розробник з пристрастю до анімацій та продуктивності. Lighthouse 95+ — його стандарт.", linkedin: "https://linkedin.com/in/", github: "https://github.com/" },
   { name: "Катерина Лисенко", role: "SEO & Content Strategist", skills: "SEO, Copywriting, Analytics, Link Building", avatar: "К", bio: "SEO-стратег що виводить сайти в ТОП-3 Google. Автор 40+ блог-постів та контент-стратегій.", linkedin: "https://linkedin.com/in/" },
 ];
 
 const TEAM_EN = [
-  { name: "Oleksiy Kovalenko", role: "CEO & Full-Stack Developer", skills: "Next.js, TypeScript, PostgreSQL, Architecture", avatar: "O", bio: "10+ years in web development. Architect of all CodeNest projects, responsible for technical quality and scalability.", linkedin: "https://linkedin.com/in/", github: "https://github.com/" },
+  { name: "Oleksiy Kovalenko", role: "CEO & Full-Stack Developer", skills: "Next.js, TypeScript, PostgreSQL, Architecture", avatar: "O", bio: "10+ years in web development. Architect of all Codeworth projects, responsible for technical quality and scalability.", linkedin: "https://linkedin.com/in/", github: "https://github.com/" },
   { name: "Alina Moroz", role: "Lead UI/UX Designer", skills: "Figma, Motion Design, Design Systems, Branding", avatar: "A", bio: "Specializes in conversion-driven design. Creates interfaces that aren't just beautiful — they sell.", linkedin: "https://linkedin.com/in/", dribbble: "https://dribbble.com/" },
   { name: "Denys Bondarenko", role: "Frontend Developer", skills: "React, Tailwind, Framer Motion, Performance", avatar: "D", bio: "Frontend developer with a passion for animations and performance. Lighthouse 95+ is his standard.", linkedin: "https://linkedin.com/in/", github: "https://github.com/" },
   { name: "Kateryna Lysenko", role: "SEO & Content Strategist", skills: "SEO, Copywriting, Analytics, Link Building", avatar: "K", bio: "SEO strategist who ranks sites in Google's top 3. Author of 40+ blog posts and content strategies.", linkedin: "https://linkedin.com/in/" },
@@ -113,7 +113,7 @@ const STATS_EN = [
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "CodeNest",
+  name: "Codeworth",
   url: "https://codeworth.uk",
   logo: "https://codeworth.uk/logo.svg",
   description: "Веб-студія повного циклу — розробка сайтів, SEO, дизайн та маркетплейс готових рішень для бізнесу в Україні.",
@@ -169,8 +169,8 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
               </h1>
               <p className="text-xl text-neutral-500 leading-relaxed max-w-2xl">
                 {isUk
-                  ? "CodeNest — команда розробників, дизайнерів та маркетологів, що перетворює ідеї на продукти. Ми вірємо, що якісний сайт може бути доступним кожному бізнесу в Україні."
-                  : "CodeNest is a team of developers, designers, and marketers that turns ideas into products. We believe quality websites can be accessible to every business."}
+                  ? "Codeworth — команда розробників, дизайнерів та маркетологів, що перетворює ідеї на продукти. Ми вірємо, що якісний сайт може бути доступним кожному бізнесу в Україні."
+                  : "Codeworth is a team of developers, designers, and marketers that turns ideas into products. We believe quality websites can be accessible to every business."}
               </p>
             </div>
           </Container>
@@ -206,13 +206,13 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
                 <div className="space-y-4 text-neutral-600 leading-relaxed">
                   {isUk ? (
                     <>
-                      <p>CodeNest виник з простої ідеї: малий та середній бізнес в Україні заслуговує на той самий рівень цифрових продуктів, що й корпорації.</p>
+                      <p>Codeworth виник з простої ідеї: малий та середній бізнес в Україні заслуговує на той самий рівень цифрових продуктів, що й корпорації.</p>
                       <p>Ми розробляємо сайти, що не просто гарно виглядають — вони продають, залучають трафік і автоматизують рутину. Кожен проєкт — це інвестиція у зростання бізнесу клієнта.</p>
                       <p>Наш маркетплейс готових нішевих рішень — спроба ще більше знизити бар&apos;єр входу: якісний сайт з першого дня, за передбачуваною ціною.</p>
                     </>
                   ) : (
                     <>
-                      <p>CodeNest was born from a simple idea: small and medium-sized businesses deserve the same level of digital products as corporations.</p>
+                      <p>Codeworth was born from a simple idea: small and medium-sized businesses deserve the same level of digital products as corporations.</p>
                       <p>We build websites that don't just look great — they sell, drive traffic, and automate routine tasks. Every project is an investment in the client's business growth.</p>
                       <p>Our marketplace of ready-made niche solutions is an effort to lower the barrier even further: a quality website from day one, at a predictable price.</p>
                     </>
@@ -276,8 +276,8 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
               </p>
               <h2 className="text-4xl font-heading font-extrabold text-neutral-900 mb-4">
                 {isUk
-                  ? <>{`Люди, що стоять`}<br />{`за `}<span className="gradient-text">CodeNest</span></>
-                  : <>The people behind<br /><span className="gradient-text">CodeNest</span></>}
+                  ? <>{`Люди, що стоять`}<br />{`за `}<span className="gradient-text">Codeworth</span></>
+                  : <>The people behind<br /><span className="gradient-text">Codeworth</span></>}
               </h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">

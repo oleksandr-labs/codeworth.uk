@@ -62,7 +62,7 @@ export default async function MLNichePage({
     serviceType: niche.schemaServiceType,
     provider: {
       "@type": "Organization",
-      name: "CodeNest",
+      name: "Codeworth",
       url: "https://codeworth.uk",
     },
     offers: {

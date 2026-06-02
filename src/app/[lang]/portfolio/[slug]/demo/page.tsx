@@ -305,8 +305,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isUk = lang === "uk";
   return {
     title: isUk
-      ? `${project.title} — Демо сайту | Портфоліо CodeNest`
-      : `${project.title} — Live Demo | CodeNest Portfolio`,
+      ? `${project.title} — Демо сайту | Портфоліо Codeworth`
+      : `${project.title} — Live Demo | Codeworth Portfolio`,
     description: isUk
       ? `Демонстрація готового сайту: ${project.description}`
       : `Live demo website: ${project.description}`,

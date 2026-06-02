@@ -18,8 +18,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isUk = lang === "uk";
 
   const title = isUk
-    ? `AI Каталог рішень — ${AI_PRODUCTS.length} готових AI-продуктів | CodeNest`
-    : `AI Solutions Catalog — ${AI_PRODUCTS.length} ready-to-deploy AI products | CodeNest`;
+    ? `AI Каталог рішень — ${AI_PRODUCTS.length} готових AI-продуктів | Codeworth`
+    : `AI Solutions Catalog — ${AI_PRODUCTS.length} ready-to-deploy AI products | Codeworth`;
   const description = isUk
     ? `${AI_PRODUCTS.length} готових AI-рішень для бізнесу: чат-боти, генератори контенту, vision search, recommendation engines. Ціни від ₴2 500. SoftwareApplication schema, Rich Snippets ready.`
     : `${AI_PRODUCTS.length} ready-to-deploy AI products: chatbots, content generators, visual search, recommendation engines. From £75. SoftwareApplication schema, Rich Snippets ready.`;
@@ -49,7 +49,7 @@ export default async function AISolutionsCatalogPage({ params }: Props) {
   const itemListSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: isUk ? "Каталог AI-рішень CodeNest" : "CodeNest AI Solutions Catalog",
+    name: isUk ? "Каталог AI-рішень Codeworth" : "Codeworth AI Solutions Catalog",
     numberOfItems: AI_PRODUCTS.length,
     itemListElement: AI_PRODUCTS.map((product, i) => ({
       "@type": "ListItem",
@@ -69,7 +69,7 @@ export default async function AISolutionsCatalogPage({ params }: Props) {
         url: `https://codeworth.uk/${lang}/extras/${product.id}`,
         provider: {
           "@type": "Organization",
-          name: "CodeNest",
+          name: "Codeworth",
         },
       },
     })),

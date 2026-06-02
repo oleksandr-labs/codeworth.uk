@@ -109,7 +109,7 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ slu
   const { slug } = await params;
 
   const cfg = SERVICE_CONFIGS[slug] ?? {
-    title: "CodeNest Service",
+    title: "Codeworth Service",
     subtitle: "Professional Digital Solutions",
     chips: ["Next.js", "TypeScript", "Tailwind"],
     gradient: ["#1e1b4b", "#312e81"] as [string, string],
@@ -199,7 +199,7 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ slu
               </svg>
             </div>
             <span style={{ color: "rgba(255,255,255,0.6)", fontSize: 22, fontWeight: 600, letterSpacing: "0.02em" }}>
-              CodeNest
+              Codeworth
             </span>
           </div>
 
@@ -233,7 +233,7 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ slu
                   marginBottom: 12,
                 }}
               >
-                CodeNest · AI & ML Services
+                Codeworth · AI & ML Services
               </div>
               <div
                 style={{

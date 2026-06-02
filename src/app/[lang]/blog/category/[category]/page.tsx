@@ -27,24 +27,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const posts = BLOG_POSTS.filter((p) => p.category === cat.label.uk);
   const count = posts.length;
   const desc = isUk
-    ? `${count} ${count === 1 ? "стаття" : count < 5 ? "статті" : "статей"} у категорії «${label}» — блог CodeNest.`
-    : `${count} ${count === 1 ? "article" : "articles"} in the «${label}» category on the CodeNest blog.`;
+    ? `${count} ${count === 1 ? "стаття" : count < 5 ? "статті" : "статей"} у категорії «${label}» — блог Codeworth.`
+    : `${count} ${count === 1 ? "article" : "articles"} in the «${label}» category on the Codeworth blog.`;
 
   return {
     title: isUk
-      ? `${label} — Блог CodeNest`
-      : `${label} — CodeNest Blog`,
+      ? `${label} — Блог Codeworth`
+      : `${label} — Codeworth Blog`,
     description: desc,
     openGraph: {
-      title: isUk ? `${label} — Блог CodeNest` : `${label} — CodeNest Blog`,
+      title: isUk ? `${label} — Блог Codeworth` : `${label} — Codeworth Blog`,
       description: desc,
       type: "website",
       url: `https://codeworth.uk/${lang}/blog/category/${category}`,
-      images: [{ url: "/og/blog.png", width: 1200, height: 630, alt: isUk ? "Блог CodeNest" : "CodeNest Blog" }],
+      images: [{ url: "/og/blog.png", width: 1200, height: 630, alt: isUk ? "Блог Codeworth" : "Codeworth Blog" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: isUk ? `${label} — Блог CodeNest` : `${label} — CodeNest Blog`,
+      title: isUk ? `${label} — Блог Codeworth` : `${label} — Codeworth Blog`,
       images: ["/og/blog.png"],
     },
     alternates: buildAlternates(lang, `blog/category/${category}`),
@@ -87,7 +87,7 @@ export default async function BlogCategoryPage({ params }: Props) {
   const collectionSchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: isUk ? `${label} — Блог CodeNest` : `${label} — CodeNest Blog`,
+    name: isUk ? `${label} — Блог Codeworth` : `${label} — Codeworth Blog`,
     description: description,
     url: `https://codeworth.uk/${lang}/blog/category/${category}`,
     hasPart: posts.slice(0, 10).map((p) => ({

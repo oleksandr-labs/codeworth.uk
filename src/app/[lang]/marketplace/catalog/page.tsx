@@ -33,17 +33,17 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "Каталог готових сайтів для бізнесу — ресторани, салони краси, медицина, будівництво та ще 30+ ніш. Фільтрація за категорією, ціною та складністю."
       : "Catalog of ready-made websites for business — restaurants, beauty salons, medicine, construction and 30+ more niches. Filter by category, price, and complexity.",
     openGraph: {
-      title: isUk ? "Каталог готових рішень — CodeNest" : "Ready-Made Solutions Catalog — CodeNest",
+      title: isUk ? "Каталог готових рішень — Codeworth" : "Ready-Made Solutions Catalog — Codeworth",
       description: isUk
         ? "33 готових нішевих сайти для бізнесу. Фільтруйте за категорією, ціною та складністю."
         : "33 ready-made niche websites for business. Filter by category, price, and complexity.",
       type: "website",
       url: `https://codeworth.uk/${lang}/marketplace/catalog`,
-      images: [{ url: "/og/marketplace.png", width: 1200, height: 630, alt: isUk ? "Каталог CodeNest" : "CodeNest Catalog" }],
+      images: [{ url: "/og/marketplace.png", width: 1200, height: 630, alt: isUk ? "Каталог Codeworth" : "Codeworth Catalog" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: isUk ? "Каталог готових рішень — CodeNest" : "Ready-Made Solutions Catalog — CodeNest",
+      title: isUk ? "Каталог готових рішень — Codeworth" : "Ready-Made Solutions Catalog — Codeworth",
       images: ["/og/marketplace.png"],
     },
     alternates: buildAlternates(lang, 'marketplace/catalog'),

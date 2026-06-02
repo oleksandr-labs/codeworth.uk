@@ -167,16 +167,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const desc = isUk ? project.description : (project.descriptionEn ?? project.description);
   const res = isUk ? project.result : (project.resultEn ?? project.result);
   const ogTitle = isUk
-    ? `${project.title} — Кейс CodeNest`
-    : `${project.title} — CodeNest Case Study`;
+    ? `${project.title} — Кейс Codeworth`
+    : `${project.title} — Codeworth Case Study`;
   const ogDescription = isUk
     ? `${project.description} Результат: ${project.result}`
     : `${desc} Result: ${res}`;
   const ogImage = `/og/portfolio/${slug}.png`;
   return {
     title: isUk
-      ? `${project.title} — Кейс | CodeNest`
-      : `${project.title} — Case Study | CodeNest`,
+      ? `${project.title} — Кейс | Codeworth`
+      : `${project.title} — Case Study | Codeworth`,
     description: ogDescription,
     alternates: buildAlternates(lang, `portfolio/${slug}`),
     openGraph: {
@@ -247,14 +247,14 @@ export default async function PortfolioProjectPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: isUk
-      ? `${project.title} — Кейс CodeNest`
-      : `${project.title} — CodeNest Case Study`,
+      ? `${project.title} — Кейс Codeworth`
+      : `${project.title} — Codeworth Case Study`,
     description,
     image: `https://codeworth.uk/og/portfolio/${project.slug}.png`,
-    author: { "@type": "Organization", name: "CodeNest", url: "https://codeworth.uk" },
+    author: { "@type": "Organization", name: "Codeworth", url: "https://codeworth.uk" },
     publisher: {
       "@type": "Organization",
-      name: "CodeNest",
+      name: "Codeworth",
       url: "https://codeworth.uk",
       logo: { "@type": "ImageObject", url: "https://codeworth.uk/logo.png" },
     },
@@ -273,13 +273,13 @@ export default async function PortfolioProjectPage({ params }: Props) {
       ? `Готове рішення для ${project.niche ?? project.category}. Запуск за ${deliveryDays} днів.`
       : `Ready-made solution for ${project.niche ?? project.category}. Launch in ${deliveryDays} days.`,
     image: `https://codeworth.uk/og/portfolio/${project.slug}.png`,
-    brand: { "@type": "Brand", name: "CodeNest" },
+    brand: { "@type": "Brand", name: "Codeworth" },
     offers: {
       "@type": "Offer",
       priceCurrency: "GBP",
       price: priceGbp,
       availability: "https://schema.org/InStock",
-      seller: { "@type": "Organization", name: "CodeNest", url: "https://codeworth.uk" },
+      seller: { "@type": "Organization", name: "Codeworth", url: "https://codeworth.uk" },
       url: `https://codeworth.uk/${lang}/portfolio/${project.slug}`,
     },
   };

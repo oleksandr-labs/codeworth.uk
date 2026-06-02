@@ -9,18 +9,18 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isUk = lang === "uk";
   return {
-    title: isUk ? "Угода користувача | CodeNest" : "Terms of Service | CodeNest",
+    title: isUk ? "Угода користувача | Codeworth" : "Terms of Service | Codeworth",
     description: isUk
-      ? "Угода користувача CodeNest — умови надання послуг веб-розробки, маркетплейсу та підтримки."
-      : "CodeNest Terms of Service — conditions for web development, marketplace, and support services.",
+      ? "Угода користувача Codeworth — умови надання послуг веб-розробки, маркетплейсу та підтримки."
+      : "Codeworth Terms of Service — conditions for web development, marketplace, and support services.",
     openGraph: {
-      title: isUk ? "Угода користувача — CodeNest" : "Terms of Service — CodeNest",
+      title: isUk ? "Угода користувача — Codeworth" : "Terms of Service — Codeworth",
       description: isUk
-        ? "Умови надання послуг веб-розробки, маркетплейсу та підтримки від CodeNest."
-        : "Conditions for web development, marketplace, and support services from CodeNest.",
+        ? "Умови надання послуг веб-розробки, маркетплейсу та підтримки від Codeworth."
+        : "Conditions for web development, marketplace, and support services from Codeworth.",
       type: "website",
       url: `https://codeworth.uk/${lang}/terms-of-service`,
-      images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "CodeNest" }],
+      images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "Codeworth" }],
     },
     twitter: {
       card: "summary_large_image",
@@ -76,7 +76,7 @@ export default async function TermsOfServicePage({ params }: { params: Promise<{
               {isUk ? (
                 <>
                   <p className="lead text-neutral-600">
-                    Ця Угода користувача регулює умови надання послуг компанією CodeNest
+                    Ця Угода користувача регулює умови надання послуг компанією Codeworth
                     (далі — «Виконавець», «ми») клієнтам (далі — «Замовник», «ви»).
                     Використовуючи сайт або замовляючи послуги, ви погоджуєтесь з умовами цієї Угоди.
                   </p>
@@ -84,7 +84,7 @@ export default async function TermsOfServicePage({ params }: { params: Promise<{
                   <p>
                     Виконавець надає такі послуги: розробку веб-сайтів, лендінгів та веб-застосунків;
                     SEO-оптимізацію; UI/UX дизайн; розробку чат-ботів та CRM; підтримку та супровід сайтів;
-                    а також продаж готових нішевих рішень через Маркетплейс CodeNest.
+                    а також продаж готових нішевих рішень через Маркетплейс Codeworth.
                   </p>
                   <h2>2. Порядок замовлення</h2>
                   <ol>
@@ -185,7 +185,7 @@ export default async function TermsOfServicePage({ params }: { params: Promise<{
               ) : (
                 <>
                   <p className="lead text-neutral-600">
-                    This Terms of Service Agreement governs the provision of services by CodeNest
+                    This Terms of Service Agreement governs the provision of services by Codeworth
                     (hereinafter — "Service Provider", "we") to clients (hereinafter — "Client", "you").
                     By using the website or ordering services, you agree to the terms of this Agreement.
                   </p>
@@ -194,7 +194,7 @@ export default async function TermsOfServicePage({ params }: { params: Promise<{
                     The Service Provider offers the following services: development of websites, landing pages,
                     and web applications; SEO optimisation; UI/UX design; chatbot and CRM development;
                     website maintenance and support; as well as the sale of ready-made niche solutions
-                    through the CodeNest Marketplace.
+                    through the Codeworth Marketplace.
                   </p>
                   <h2>2. Ordering Process</h2>
                   <ol>

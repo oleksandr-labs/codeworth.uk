@@ -113,7 +113,7 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "CodeNest",
+    name: "Codeworth",
     description: isUk ? city.description : city.descriptionEn,
     url: `https://codeworth.uk/${lang}/location/${city.slug}`,
     email: "hello@codeworth.uk",
@@ -244,7 +244,7 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
           <Container>
             <div className="text-center max-w-2xl mx-auto mb-14">
               <h2 className="text-3xl lg:text-4xl font-heading font-extrabold text-neutral-900 mb-4">
-                {isUk ? `Чому обирають CodeNest у ${cityName}` : `Why businesses in ${cityName} choose CodeNest`}
+                {isUk ? `Чому обирають Codeworth у ${cityName}` : `Why businesses in ${cityName} choose Codeworth`}
               </h2>
               <p className="text-neutral-500">
                 {isUk

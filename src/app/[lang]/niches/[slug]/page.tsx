@@ -140,7 +140,7 @@ export default async function NichePage({
         },
         {
           q: "Чи буде сайт оптимізований для Google?",
-          a: "Так. Всі рішення CodeNest мають вбудовану SEO-оптимізацію: Title, Description, Schema.org розмітку, швидке завантаження (LCP < 2.5с) та адаптивний дизайн — що саме те, що любить Google.",
+          a: "Так. Всі рішення Codeworth мають вбудовану SEO-оптимізацію: Title, Description, Schema.org розмітку, швидке завантаження (LCP < 2.5с) та адаптивний дизайн — що саме те, що любить Google.",
         },
         ...(niche.nicheFaq ?? []),
       ]
@@ -163,7 +163,7 @@ export default async function NichePage({
         },
         {
           q: "Will the website be optimized for Google?",
-          a: "Yes. All CodeNest solutions have built-in SEO: Title, Description, Schema.org markup, fast loading (LCP < 2.5s), and responsive design — exactly what Google loves.",
+          a: "Yes. All Codeworth solutions have built-in SEO: Title, Description, Schema.org markup, fast loading (LCP < 2.5s), and responsive design — exactly what Google loves.",
         },
         ...(niche.nicheFaq ?? []),
       ];
@@ -178,7 +178,7 @@ export default async function NichePage({
     ],
   };
 
-  // Schema.org: Product (for CodeNest offer) + LocalBusiness/AutoRepair/Bakery (for demo business)
+  // Schema.org: Product (for Codeworth offer) + LocalBusiness/AutoRepair/Bakery (for demo business)
   const productLd = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -191,10 +191,10 @@ export default async function NichePage({
       price: niche.priceFrom,
       priceCurrency: "UAH",
       availability: "https://schema.org/InStock",
-      seller: { "@type": "Organization", name: "CodeNest", url: "https://codeworth.uk" },
+      seller: { "@type": "Organization", name: "Codeworth", url: "https://codeworth.uk" },
     },
     aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "200" },
-    brand: { "@type": "Brand", name: "CodeNest" },
+    brand: { "@type": "Brand", name: "Codeworth" },
   };
 
   // LocalBusiness schema for the demo niche type
@@ -1410,7 +1410,7 @@ export default async function NichePage({
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-10">
                 <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: niche.color }}>
-                  {isUk ? "Замовити у CodeNest" : "Order from CodeNest"}
+                  {isUk ? "Замовити у Codeworth" : "Order from Codeworth"}
                 </p>
                 <h2 className="text-3xl font-heading font-extrabold text-neutral-900 dark:text-white mb-3">
                   {isUk
@@ -1650,8 +1650,8 @@ export default async function NichePage({
                   </h3>
                   <p className="text-sm text-indigo-200/70">
                     {isUk
-                      ? "CodeNest розробляє AI/ML рішення спеціально для цього типу бізнесу."
-                      : "CodeNest builds AI/ML solutions tailored for this type of business."}
+                      ? "Codeworth розробляє AI/ML рішення спеціально для цього типу бізнесу."
+                      : "Codeworth builds AI/ML solutions tailored for this type of business."}
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-2 shrink-0">

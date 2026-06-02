@@ -39,11 +39,11 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "CodeNest — Full-Cycle Web Studio | codeworth.uk",
-    template: "%s | CodeNest",
+    default: "Codeworth — Full-Cycle Web Studio | codeworth.uk",
+    template: "%s | Codeworth",
   },
   description:
-    "CodeNest — full-cycle web studio. Website development, e-commerce, PWA, SEO, CRM, UI/UX design and a marketplace of ready-made solutions for small and medium businesses.",
+    "Codeworth — full-cycle web studio. Website development, e-commerce, PWA, SEO, CRM, UI/UX design and a marketplace of ready-made solutions for small and medium businesses.",
   keywords: [
     "web studio",
     "website development",
@@ -51,24 +51,24 @@ export const metadata: Metadata = {
     "Next.js",
     "SEO",
     "UK",
-    "CodeNest",
+    "Codeworth",
   ],
-  authors: [{ name: "CodeNest" }],
-  creator: "CodeNest",
+  authors: [{ name: "Codeworth" }],
+  creator: "Codeworth",
   metadataBase: new URL("https://codeworth.uk"),
   openGraph: {
     type: "website",
     locale: "en_GB",
     alternateLocale: ["uk_UA"],
     url: "https://codeworth.uk",
-    siteName: "CodeNest",
-    title: "CodeNest — Full-Cycle Web Studio",
+    siteName: "Codeworth",
+    title: "Codeworth — Full-Cycle Web Studio",
     description:
       "Website development, e-commerce, PWA and a marketplace of ready-made solutions for businesses.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "CodeNest — Full-Cycle Web Studio",
+    title: "Codeworth — Full-Cycle Web Studio",
     description: "Website development and marketplace solutions for businesses.",
   },
   robots: {
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "CodeNest",
+    title: "Codeworth",
   },
   formatDetection: {
     telephone: false,
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "CodeNest",
+  name: "Codeworth",
   url: "https://codeworth.uk",
   logo: "https://codeworth.uk/logo.svg",
   description: "Full-cycle web studio — website development, SEO, design and a marketplace of ready-made solutions for businesses.",
@@ -110,7 +110,7 @@ const organizationSchema = {
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "CodeNest",
+  name: "Codeworth",
   url: "https://codeworth.uk",
   potentialAction: {
     "@type": "SearchAction",

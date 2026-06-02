@@ -51,10 +51,10 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ slu
 
   const post = BLOG_POSTS.find((p) => p.slug === slug);
 
-  const title = post?.title ?? "CodeNest Blog";
+  const title = post?.title ?? "Codeworth Blog";
   const excerpt = post?.excerpt ?? "Insights on web development, SEO, and digital marketing.";
   const category = post?.category ?? "Blog";
-  const author = post?.author ?? "CodeNest Team";
+  const author = post?.author ?? "Codeworth Team";
   const readTime = post?.readTime ?? 5;
   const date = post?.date ? formatDate(post.date) : "";
   const emoji = post?.emoji ?? "📝";
@@ -136,7 +136,7 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ slu
                 </svg>
               </div>
               <span style={{ color: "rgba(255,255,255,0.7)", fontSize: 20, fontWeight: 600, letterSpacing: "0.02em" }}>
-                CodeNest Blog
+                Codeworth Blog
               </span>
             </div>
             <div

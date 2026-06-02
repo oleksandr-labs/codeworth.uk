@@ -24,8 +24,8 @@ export async function generateMetadata({
   if (!resource) return {};
   const isUk = lang === "uk";
   const title = isUk
-    ? `${resource.titleUk} | Безкоштовно від CodeNest`
-    : `${resource.titleEn} | Free from CodeNest`;
+    ? `${resource.titleUk} | Безкоштовно від Codeworth`
+    : `${resource.titleEn} | Free from Codeworth`;
   const desc = isUk ? resource.descriptionUk : resource.descriptionEn;
   return {
     title,
@@ -48,8 +48,8 @@ const RESOURCE_CONTENT: Record<string, {
   sectionsEn: { heading: string; items: string[] }[];
 }> = {
   "website-launch-checklist": {
-    introUk: "Запускаєте сайт і хочете бути впевнені, що нічого не забули? Цей чек-ліст — результат перевірки 50+ сайтів командою CodeNest. Кожен пункт критично важливий для SEO, безпеки та першого враження клієнтів.",
-    introEn: "Launching a website and want to make sure nothing is missed? This checklist is the result of auditing 50+ websites by the CodeNest team. Every item is critical for SEO, security, and first client impressions.",
+    introUk: "Запускаєте сайт і хочете бути впевнені, що нічого не забули? Цей чек-ліст — результат перевірки 50+ сайтів командою Codeworth. Кожен пункт критично важливий для SEO, безпеки та першого враження клієнтів.",
+    introEn: "Launching a website and want to make sure nothing is missed? This checklist is the result of auditing 50+ websites by the Codeworth team. Every item is critical for SEO, security, and first client impressions.",
     sectionsUk: [
       {
         heading: "🔒 Безпека та HTTPS",
@@ -468,8 +468,8 @@ export default async function ResourcePage({
         description: isUk ? resource.descriptionUk : resource.descriptionEn,
         datePublished: resource.updatedAt,
         dateModified: resource.updatedAt,
-        author: { "@type": "Organization", name: "CodeNest", url: "https://codeworth.uk" },
-        publisher: { "@type": "Organization", name: "CodeNest", url: "https://codeworth.uk" },
+        author: { "@type": "Organization", name: "Codeworth", url: "https://codeworth.uk" },
+        publisher: { "@type": "Organization", name: "Codeworth", url: "https://codeworth.uk" },
       };
     }
     if (resource.category === "tool") {

@@ -43,8 +43,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!solution) return {};
 
   const title = isUk
-    ? `${solution.title} — Готовий лендінг для стартапу | CodeNest`
-    : `${solution.titleEn} — Ready-Made Startup Landing | CodeNest`;
+    ? `${solution.title} — Готовий лендінг для стартапу | Codeworth`
+    : `${solution.titleEn} — Ready-Made Startup Landing | Codeworth`;
   const description = isUk
     ? `${solution.description} Запуск за ${solution.deliveryDays} дні від £${solution.priceFrom}.`
     : `${solution.descriptionEn} Launch in ${solution.deliveryDays} days from £${solution.priceFrom}.`;
@@ -145,13 +145,13 @@ export default async function StartupSolutionPage({ params }: Props) {
     "@type": "Product",
     name: isUk ? `${solution.title} — Стартап лендінг` : `${solution.titleEn} — Startup Landing`,
     description: isUk ? solution.description : solution.descriptionEn,
-    brand: { "@type": "Brand", name: "CodeNest" },
+    brand: { "@type": "Brand", name: "Codeworth" },
     offers: {
       "@type": "Offer",
       priceCurrency: "GBP",
       price: solution.priceFrom,
       availability: "https://schema.org/InStock",
-      seller: { "@type": "Organization", name: "CodeNest", url: "https://codeworth.uk" },
+      seller: { "@type": "Organization", name: "Codeworth", url: "https://codeworth.uk" },
     },
   };
 

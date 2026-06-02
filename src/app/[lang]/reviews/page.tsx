@@ -21,11 +21,11 @@ export async function generateMetadata({
   const isUk = lang === "uk";
   const { averageRating, totalCount } = REVIEWS_AGGREGATE;
   const title = isUk
-    ? `Відгуки про CodeNest — веб-студію, якій довіряють | ★${averageRating}/5`
-    : `CodeNest Reviews — A Web Studio You Can Trust | ★${averageRating}/5`;
+    ? `Відгуки про Codeworth — веб-студію, якій довіряють | ★${averageRating}/5`
+    : `Codeworth Reviews — A Web Studio You Can Trust | ★${averageRating}/5`;
   const desc = isUk
-    ? `Реальні відгуки ${totalCount}+ клієнтів CodeNest. Рейтинг ${averageRating}/5. Ресторани, клініки, магазини, SaaS — читайте реальні результати.`
-    : `Real reviews from ${totalCount}+ CodeNest clients. Rating ${averageRating}/5. Restaurants, clinics, shops, SaaS — read real results.`;
+    ? `Реальні відгуки ${totalCount}+ клієнтів Codeworth. Рейтинг ${averageRating}/5. Ресторани, клініки, магазини, SaaS — читайте реальні результати.`
+    : `Real reviews from ${totalCount}+ Codeworth clients. Rating ${averageRating}/5. Restaurants, clinics, shops, SaaS — read real results.`;
   return {
     title,
     description: desc,
@@ -75,7 +75,7 @@ export default async function ReviewsPage({
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "CodeNest",
+    name: "Codeworth",
     url: "https://codeworth.uk",
     aggregateRating: {
       "@type": "AggregateRating",
@@ -125,13 +125,13 @@ export default async function ReviewsPage({
               <div>
                 <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                   {isUk
-                    ? "Відгуки клієнтів CodeNest — реальні проєкти та результати"
-                    : "CodeNest Client Reviews — Real Projects & Results"}
+                    ? "Відгуки клієнтів Codeworth — реальні проєкти та результати"
+                    : "Codeworth Client Reviews — Real Projects & Results"}
                 </h1>
                 <p className="text-gray-600 text-lg mb-8">
                   {isUk
-                    ? `${totalCount}+ компаній обрали CodeNest для розробки свого сайту. Ось що вони кажуть.`
-                    : `${totalCount}+ companies chose CodeNest for their website development. Here's what they say.`}
+                    ? `${totalCount}+ компаній обрали Codeworth для розробки свого сайту. Ось що вони кажуть.`
+                    : `${totalCount}+ companies chose Codeworth for their website development. Here's what they say.`}
                 </p>
                 {/* Big rating */}
                 <div className="flex items-center gap-4 mb-6">
@@ -222,7 +222,7 @@ export default async function ReviewsPage({
                         {
                           step: 1,
                           title: "Перейдіть за посиланням",
-                          desc: "Натисніть кнопку «Google відгук» нижче — ми відкриємо вашу Google-сторінку CodeNest.",
+                          desc: "Натисніть кнопку «Google відгук» нижче — ми відкриємо вашу Google-сторінку Codeworth.",
                         },
                         {
                           step: 2,
@@ -239,7 +239,7 @@ export default async function ReviewsPage({
                         {
                           step: 1,
                           title: "Click the link",
-                          desc: "Click the “Google Review” button below — we'll open CodeNest's Google page.",
+                          desc: "Click the “Google Review” button below — we'll open Codeworth's Google page.",
                         },
                         {
                           step: 2,

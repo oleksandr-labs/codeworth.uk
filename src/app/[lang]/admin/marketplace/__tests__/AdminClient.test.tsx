@@ -47,7 +47,7 @@ describe("AdminClient", () => {
     expect(screen.getAllByText("Дашборд").length).toBeGreaterThan(0);
   });
 
-  it("shows CodeNest Admin Panel branding", () => {
+  it("shows Codeworth Admin Panel branding", () => {
     renderAdmin();
     expect(screen.getAllByText("Admin Panel")[0]).toBeInTheDocument();
   });

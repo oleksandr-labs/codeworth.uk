@@ -16,8 +16,8 @@ export async function generateMetadata({
   const isUk = lang === "uk";
 
   const title = isUk
-    ? "Штучний інтелект для бізнесу | AI-рішення по галузях | CodeNest"
-    : "AI Solutions by Industry | Artificial Intelligence for Business | CodeNest";
+    ? "Штучний інтелект для бізнесу | AI-рішення по галузях | Codeworth"
+    : "AI Solutions by Industry | Artificial Intelligence for Business | Codeworth";
   const description = isUk
     ? "10 спеціалізованих AI-рішень для медицини, e-commerce, FinTech, маркетингу та інших галузей. Від £1,200. Кейси, пакети та ціни."
     : "10 specialised AI solutions for healthcare, e-commerce, FinTech, marketing and more. From £1,200. Real cases, packages and pricing.";
@@ -46,7 +46,7 @@ export default async function AIHubPage({
   const schema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: isUk ? "AI-рішення CodeNest по галузях" : "CodeNest AI Solutions by Industry",
+    name: isUk ? "AI-рішення Codeworth по галузях" : "Codeworth AI Solutions by Industry",
     description: isUk
       ? "Спеціалізовані AI-розробки для 10 галузей"
       : "Specialised AI development for 10 industries",

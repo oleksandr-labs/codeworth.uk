@@ -47,7 +47,7 @@ const MOCK_NICHE: NicheData = {
   tags: ["ресторан"],
   sampleSections: ["Hero"],
   color: "from-orange-400 to-red-500",
-  metaDescription: "Сайт для ресторану від CodeNest",
+  metaDescription: "Сайт для ресторану від Codeworth",
   gradient: "from-orange-400 to-red-500",
 };
 

@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!service) return {};
   const ogImage = `/og/services/${slug}.png`;
   return {
-    title: `${service.title} | CodeNest`,
+    title: `${service.title} | Codeworth`,
     description: service.metaDescription,
     keywords: [service.keyword],
     alternates: buildAlternates(lang, `services/${slug}`),
@@ -99,7 +99,7 @@ export default async function ServicePage({ params }: Props) {
     description: service.description,
     provider: {
       "@type": "Organization",
-      name: "CodeNest",
+      name: "Codeworth",
       url: "https://codeworth.uk",
     },
     url: `https://codeworth.uk/services/${service.slug}`,

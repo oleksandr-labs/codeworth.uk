@@ -15,32 +15,32 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isUk = lang === "uk";
   return {
     title: isUk
-      ? "Послуги веб-розробки та digital-маркетингу | CodeNest"
-      : "Web Development & Digital Marketing Services | CodeNest",
+      ? "Послуги веб-розробки та digital-маркетингу | Codeworth"
+      : "Web Development & Digital Marketing Services | Codeworth",
     description: isUk
-      ? "Повний цикл digital-послуг: розробка сайтів, інтернет-магазинів, PWA, SEO, UI/UX дизайн, CRM, чат-боти. CodeNest — веб-студія повного циклу в Україні."
-      : "Full-cycle digital services: website development, e-commerce, PWA, SEO, UI/UX design, CRM, chatbots. CodeNest — full-cycle web studio.",
+      ? "Повний цикл digital-послуг: розробка сайтів, інтернет-магазинів, PWA, SEO, UI/UX дизайн, CRM, чат-боти. Codeworth — веб-студія повного циклу в Україні."
+      : "Full-cycle digital services: website development, e-commerce, PWA, SEO, UI/UX design, CRM, chatbots. Codeworth — full-cycle web studio.",
     alternates: buildAlternates(lang, 'services'),
     openGraph: {
-      title: isUk ? "Послуги — CodeNest" : "Services — CodeNest",
+      title: isUk ? "Послуги — Codeworth" : "Services — Codeworth",
       description: isUk
         ? "Повний цикл digital-послуг: розробка сайтів, SEO, UI/UX дизайн, CRM, чат-боти. Веб-студія повного циклу в Україні."
         : "Full-cycle digital services: website development, SEO, UI/UX design, CRM, chatbots. Full-cycle web studio.",
       type: "website",
       url: `https://codeworth.uk/${lang}/services`,
-      images: [{ url: "/og/services.png", width: 1200, height: 630, alt: isUk ? "Послуги CodeNest" : "CodeNest Services" }],
+      images: [{ url: "/og/services.png", width: 1200, height: 630, alt: isUk ? "Послуги Codeworth" : "Codeworth Services" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: isUk ? "Послуги — CodeNest" : "Services — CodeNest",
-      description: isUk ? "Розробка сайтів, SEO, дизайн та digital-маркетинг від CodeNest." : "Web development, SEO, design, and digital marketing by CodeNest.",
+      title: isUk ? "Послуги — Codeworth" : "Services — Codeworth",
+      description: isUk ? "Розробка сайтів, SEO, дизайн та digital-маркетинг від Codeworth." : "Web development, SEO, design, and digital marketing by Codeworth.",
       images: ["/og/services.png"],
     },
   };
 }
 
 const SERVICES_FAQ_UK = [
-  { q: "Які послуги надає CodeNest?", a: "CodeNest — веб-студія повного циклу. Ми розробляємо сайти та інтернет-магазини, займаємось SEO-просуванням, UI/UX дизайном, налаштуванням CRM і чат-ботів, SMM та email-маркетингом. Всі послуги — в одному місці." },
+  { q: "Які послуги надає Codeworth?", a: "Codeworth — веб-студія повного циклу. Ми розробляємо сайти та інтернет-магазини, займаємось SEO-просуванням, UI/UX дизайном, налаштуванням CRM і чат-ботів, SMM та email-маркетингом. Всі послуги — в одному місці." },
   { q: "Чи можна замовити кілька послуг одразу?", a: "Так. Більшість наших клієнтів замовляють комплекс: розробка сайту + SEO + UI/UX дизайн. Комплексні проєкти виконуються швидше і вигідніше, ніж окремі замовлення у різних виконавців." },
   { q: "Чи працюєте ви з малим бізнесом?", a: "Так, це наш основний клієнт. Ми розробили спеціальний маркетплейс готових нішевих рішень — сайт для ресторану, салону, лікаря, юриста тощо — за фіксованою ціною і швидкі терміни запуску." },
   { q: "Чи надаєте послуги після здачі проєкту?", a: "Так. До кожного проєкту входить 1 місяць гарантійної підтримки. Далі — пакети технічної підтримки, SEO-супровід та доробки за фіксованим тарифом." },
@@ -48,7 +48,7 @@ const SERVICES_FAQ_UK = [
 ];
 
 const SERVICES_FAQ_EN = [
-  { q: "What services does CodeNest offer?", a: "CodeNest is a full-cycle web studio. We build websites and e-commerce stores, handle SEO, UI/UX design, CRM setup, chatbots, SMM, and email marketing. Everything in one place — no need to manage multiple agencies." },
+  { q: "What services does Codeworth offer?", a: "Codeworth is a full-cycle web studio. We build websites and e-commerce stores, handle SEO, UI/UX design, CRM setup, chatbots, SMM, and email marketing. Everything in one place — no need to manage multiple agencies." },
   { q: "Can I order multiple services at once?", a: "Yes. Most of our clients order a bundle: website development + SEO + UI/UX design. Combined projects are completed faster and are more cost-effective than separate orders from different vendors." },
   { q: "Do you work with small businesses?", a: "Yes, that's our core audience. We've built a marketplace of ready-made niche solutions — websites for restaurants, salons, doctors, lawyers and more — at a fixed price with fast launch timelines." },
   { q: "Do you provide ongoing support after project delivery?", a: "Yes. Every project includes 1 month of free warranty support. After that, technical support packages, SEO maintenance, and add-on development are available at a fixed monthly rate." },
@@ -80,7 +80,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
   const servicesItemListSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: isUk ? "Послуги CodeNest" : "CodeNest Services",
+    name: isUk ? "Послуги Codeworth" : "Codeworth Services",
     url: `https://codeworth.uk/${lang}/services`,
     itemListElement: SERVICES_DATA.map((s, i) => ({
       "@type": "ListItem",

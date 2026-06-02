@@ -19,11 +19,11 @@ export async function generateMetadata({
   const { lang } = await params;
   const isUk = lang === "uk";
   const title = isUk
-    ? "Безкоштовні матеріали для бізнесу — чек-листи, гайди, шаблони | CodeNest"
-    : "Free Business Resources — Checklists, Guides, Templates | CodeNest";
+    ? "Безкоштовні матеріали для бізнесу — чек-листи, гайди, шаблони | Codeworth"
+    : "Free Business Resources — Checklists, Guides, Templates | Codeworth";
   const desc = isUk
-    ? "Завантажте безкоштовно: чек-ліст запуску сайту, SEO-аудит, гайди з цифрового маркетингу. 9+ практичних матеріалів від веб-студії CodeNest."
-    : "Download for free: website launch checklist, SEO audit, digital marketing guides. 9+ practical resources from CodeNest web studio.";
+    ? "Завантажте безкоштовно: чек-ліст запуску сайту, SEO-аудит, гайди з цифрового маркетингу. 9+ практичних матеріалів від веб-студії Codeworth."
+    : "Download for free: website launch checklist, SEO audit, digital marketing guides. 9+ practical resources from Codeworth web studio.";
   return {
     title,
     description: desc,
@@ -70,7 +70,7 @@ export default async function ResourcesPage({
   const collectionSchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: isUk ? "Безкоштовні матеріали CodeNest" : "CodeNest Free Resources",
+    name: isUk ? "Безкоштовні матеріали Codeworth" : "Codeworth Free Resources",
     url: `https://codeworth.uk/${lang}/resources`,
     description: isUk
       ? "Безкоштовні чек-листи, гайди та шаблони для власників бізнесу"

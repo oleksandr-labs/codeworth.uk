@@ -159,7 +159,7 @@ export default async function UseCaseDetailPage({
                 <div>
                   <h2 className="flex items-center gap-2 text-sm font-bold text-indigo-600 uppercase tracking-widest mb-3">
                     <span>🔧</span>
-                    {isUk ? "Рішення CodeNest" : "CodeNest Solution"}
+                    {isUk ? "Рішення Codeworth" : "Codeworth Solution"}
                   </h2>
                   <p className="text-lg text-neutral-700 leading-relaxed">
                     {isUk ? uc.solutionUk : uc.solutionEn}
@@ -173,7 +173,7 @@ export default async function UseCaseDetailPage({
                     "{isUk ? uc.resultQuoteUk : uc.resultQuoteEn}"
                   </p>
                   <footer className="mt-2 text-sm text-neutral-400">
-                    — CodeNest {isUk ? "клієнтський кейс" : "client case study"}
+                    — Codeworth {isUk ? "клієнтський кейс" : "client case study"}
                   </footer>
                 </blockquote>
 

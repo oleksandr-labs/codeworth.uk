@@ -20,11 +20,11 @@ export async function generateMetadata({
   const { lang } = await params;
   const isUk = lang === "uk";
   const title = isUk
-    ? "Вакансії CodeNest — робота у веб-студії | Frontend, Design, SEO"
-    : "CodeNest Careers — Work at a Web Studio | Frontend, Design, SEO";
+    ? "Вакансії Codeworth — робота у веб-студії | Frontend, Design, SEO"
+    : "Codeworth Careers — Work at a Web Studio | Frontend, Design, SEO";
   const desc = isUk
-    ? "Відкриті вакансії CodeNest: Frontend Developer (Next.js), UI/UX Designer, SEO Specialist. Remote та офіс у Києві. Цікаві проєкти, гнучкий графік."
-    : "Open positions at CodeNest: Frontend Developer (Next.js), UI/UX Designer, SEO Specialist. Remote and Kyiv office. Interesting projects, flexible hours.";
+    ? "Відкриті вакансії Codeworth: Frontend Developer (Next.js), UI/UX Designer, SEO Specialist. Remote та офіс у Києві. Цікаві проєкти, гнучкий графік."
+    : "Open positions at Codeworth: Frontend Developer (Next.js), UI/UX Designer, SEO Specialist. Remote and Kyiv office. Interesting projects, flexible hours.";
   return {
     title,
     description: desc,
@@ -53,10 +53,10 @@ export default async function CareersPage({
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    name: isUk ? "Як подати заявку у CodeNest" : "How to Apply to CodeNest",
+    name: isUk ? "Як подати заявку у Codeworth" : "How to Apply to Codeworth",
     description: isUk
-      ? "Процес найму в CodeNest — 4 кроки, 7–10 робочих днів"
-      : "CodeNest hiring process — 4 steps, 7–10 business days",
+      ? "Процес найму в Codeworth — 4 кроки, 7–10 робочих днів"
+      : "Codeworth hiring process — 4 steps, 7–10 business days",
     step: [
       {
         "@type": "HowToStep",
@@ -111,7 +111,7 @@ export default async function CareersPage({
       },
       hiringOrganization: {
         "@type": "Organization",
-        name: "CodeNest",
+        name: "Codeworth",
         sameAs: "https://codeworth.uk",
       },
       baseSalary: {
@@ -169,7 +169,7 @@ export default async function CareersPage({
                 {isUk ? `${JOBS.filter((j) => j.isUrgent).length} термінова вакансія` : `${JOBS.filter((j) => j.isUrgent).length} urgent opening`}
               </div>
               <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-                {isUk ? "Приєднуйся до CodeNest" : "Join CodeNest"}
+                {isUk ? "Приєднуйся до Codeworth" : "Join Codeworth"}
               </h1>
               <p className="text-xl text-slate-300 mb-8">
                 {isUk
@@ -185,11 +185,11 @@ export default async function CareersPage({
           </Container>
         </section>
 
-        {/* Why CodeNest */}
+        {/* Why Codeworth */}
         <section className="py-16 bg-white border-b">
           <Container>
             <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-              {isUk ? "Чому CodeNest?" : "Why CodeNest?"}
+              {isUk ? "Чому Codeworth?" : "Why Codeworth?"}
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {VALUES.map((v) => (
@@ -259,7 +259,7 @@ export default async function CareersPage({
         <section className="py-16 bg-white">
           <Container>
             <h2 className="text-2xl font-bold text-gray-900 mb-3 text-center">
-              {isUk ? "Команда про роботу в CodeNest" : "Team About Working at CodeNest"}
+              {isUk ? "Команда про роботу в Codeworth" : "Team About Working at Codeworth"}
             </h2>
             <p className="text-gray-500 text-center mb-10">
               {isUk ? "Реальні враження наших колег" : "Real impressions from our colleagues"}

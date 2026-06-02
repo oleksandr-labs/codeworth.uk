@@ -114,7 +114,7 @@ export default function CheckoutForm() {
 
       // LiqPay — redirect to payment page
       if (payment === "liqpay" && subtotal > 0) {
-        const description = items.map((i) => i.title).join(", ") || "CodeNest order";
+        const description = items.map((i) => i.title).join(", ") || "Codeworth order";
         const liqRes = await fetch("/api/liqpay/create", {
           method: "POST",
           headers: { "Content-Type": "application/json" },

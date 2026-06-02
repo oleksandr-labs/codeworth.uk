@@ -26,11 +26,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!extra) return {};
 
   const title = isUk
-    ? `Демо: ${extra.title} — CodeNest`
-    : `Demo: ${extra.title} — CodeNest`;
+    ? `Демо: ${extra.title} — Codeworth`
+    : `Demo: ${extra.title} — Codeworth`;
   const description = isUk
-    ? `Перегляньте живі приклади модуля «${extra.title}» від CodeNest.`
-    : `See live examples of the ${extra.title} module by CodeNest.`;
+    ? `Перегляньте живі приклади модуля «${extra.title}» від Codeworth.`
+    : `See live examples of the ${extra.title} module by Codeworth.`;
 
   return {
     title,

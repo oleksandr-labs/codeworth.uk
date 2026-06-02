@@ -11,11 +11,11 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isUk = lang === "uk";
   const title = isUk
-    ? "CodeNest vs альтернативи — порівняння для бізнесу"
-    : "CodeNest vs Alternatives — Business Comparison";
+    ? "Codeworth vs альтернативи — порівняння для бізнесу"
+    : "Codeworth vs Alternatives — Business Comparison";
   const desc = isUk
-    ? "Порівняйте CodeNest з Wix, Tilda, WordPress, Shopify, фрілансером та шаблонами. Об'єктивний аналіз щоб обрати найкраще рішення для вашого бізнесу."
-    : "Compare CodeNest with Wix, Tilda, WordPress, Shopify, freelancers, and templates. Objective analysis to choose the best solution for your business.";
+    ? "Порівняйте Codeworth з Wix, Tilda, WordPress, Shopify, фрілансером та шаблонами. Об'єктивний аналіз щоб обрати найкраще рішення для вашого бізнесу."
+    : "Compare Codeworth with Wix, Tilda, WordPress, Shopify, freelancers, and templates. Objective analysis to choose the best solution for your business.";
   return {
     title,
     description: desc,
@@ -50,13 +50,13 @@ export default async function CompareIndexPage({ params }: { params: Promise<{ l
               </div>
               <h1 className="text-4xl lg:text-5xl font-heading font-extrabold text-neutral-900 mb-6 leading-tight">
                 {isUk
-                  ? <>{`CodeNest `}<span className="gradient-text">{"vs Альтернативи"}</span></>
-                  : <>{`CodeNest `}<span className="gradient-text">{"vs Alternatives"}</span></>}
+                  ? <>{`Codeworth `}<span className="gradient-text">{"vs Альтернативи"}</span></>
+                  : <>{`Codeworth `}<span className="gradient-text">{"vs Alternatives"}</span></>}
               </h1>
               <p className="text-lg text-neutral-500 max-w-2xl mx-auto">
                 {isUk
-                  ? "Порівняємо CodeNest з найпопулярнішими рішеннями для створення сайтів — чесно та об'єктивно, щоб ви обрали правильний варіант."
-                  : "We compare CodeNest with the most popular website solutions — honestly and objectively, so you can make the right choice."}
+                  ? "Порівняємо Codeworth з найпопулярнішими рішеннями для створення сайтів — чесно та об'єктивно, щоб ви обрали правильний варіант."
+                  : "We compare Codeworth with the most popular website solutions — honestly and objectively, so you can make the right choice."}
               </p>
             </div>
           </Container>
@@ -78,7 +78,7 @@ export default async function CompareIndexPage({ params }: { params: Promise<{ l
                     {/* Color header */}
                     <div className={`h-24 bg-linear-to-br ${item.competitorBg} flex items-center justify-between px-6`}>
                       <div className="text-white">
-                        <div className="text-xs font-medium text-white/70 mb-1">CodeNest vs</div>
+                        <div className="text-xs font-medium text-white/70 mb-1">Codeworth vs</div>
                         <div className="text-2xl font-heading font-extrabold">
                           {isUk ? item.competitorUk : item.competitorEn}
                         </div>
@@ -98,7 +98,7 @@ export default async function CompareIndexPage({ params }: { params: Promise<{ l
                         <div className="flex items-center gap-1.5">
                           <div className="w-2 h-2 rounded-full bg-emerald-400" />
                           <span className="text-xs text-neutral-500">
-                            {isUk ? `CodeNest виграє ${codenestWins}/${total}` : `CodeNest wins ${codenestWins}/${total}`}
+                            {isUk ? `Codeworth виграє ${codenestWins}/${total}` : `Codeworth wins ${codenestWins}/${total}`}
                           </span>
                         </div>
                         <span className="inline-flex items-center gap-1 text-xs text-indigo-600 font-medium opacity-0 group-hover:opacity-100 transition-opacity">

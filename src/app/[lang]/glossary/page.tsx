@@ -13,11 +13,11 @@ export async function generateMetadata({
   const isUk = lang === "uk";
   return {
     title: isUk
-      ? "Глосарій веб-розробки: 100+ термінів від A до Я | CodeNest"
-      : "Web Development Glossary: 100+ Terms A to Z | CodeNest",
+      ? "Глосарій веб-розробки: 100+ термінів від A до Я | Codeworth"
+      : "Web Development Glossary: 100+ Terms A to Z | Codeworth",
     description: isUk
-      ? "100+ ключових термінів SEO, API, CMS, Core Web Vitals, PWA та цифрового маркетингу. Зрозумілий словник без жаргону від CodeNest."
-      : "100+ key terms: SEO, API, CMS, Core Web Vitals, PWA and digital marketing. Clear glossary without jargon by CodeNest.",
+      ? "100+ ключових термінів SEO, API, CMS, Core Web Vitals, PWA та цифрового маркетингу. Зрозумілий словник без жаргону від Codeworth."
+      : "100+ key terms: SEO, API, CMS, Core Web Vitals, PWA and digital marketing. Clear glossary without jargon by Codeworth.",
     alternates: buildAlternates(`/${lang}/glossary`),
   };
 }

@@ -39,26 +39,26 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isUk = lang === "uk";
   return {
     title: isUk
-      ? "CodeNest — Веб-студія повного циклу | Розробка сайтів в Україні"
-      : "CodeNest — Full-Cycle Web Studio | Website Development",
+      ? "Codeworth — Веб-студія повного циклу | Розробка сайтів в Україні"
+      : "Codeworth — Full-Cycle Web Studio | Website Development",
     description: isUk
       ? "Розробка сайтів, інтернет-магазинів, SEO, UI/UX дизайн. Маркетплейс готових нішевих рішень. 120+ проєктів. Старт від 4 900 грн."
       : "Website development, e-commerce, SEO, UI/UX design. 120+ projects delivered. Starting from £120. Free consultation.",
     keywords: isUk
-      ? ["розробка сайтів", "веб-студія Україна", "інтернет-магазин", "SEO", "UI/UX дизайн", "CodeNest"]
-      : ["website development", "web studio", "e-commerce", "SEO", "UI/UX design", "CodeNest"],
+      ? ["розробка сайтів", "веб-студія Україна", "інтернет-магазин", "SEO", "UI/UX дизайн", "Codeworth"]
+      : ["website development", "web studio", "e-commerce", "SEO", "UI/UX design", "Codeworth"],
     openGraph: {
-      title: isUk ? "CodeNest — Веб-студія повного циклу" : "CodeNest — Full-Cycle Web Studio",
+      title: isUk ? "Codeworth — Веб-студія повного циклу" : "Codeworth — Full-Cycle Web Studio",
       description: isUk
         ? "Розробка сайтів, інтернет-магазинів, SEO та UI/UX дизайн. Маркетплейс готових нішевих рішень. 120+ проєктів."
         : "Website development, e-commerce, SEO, and UI/UX design. Marketplace of ready-made niche solutions. 120+ projects.",
       type: "website",
       url: `https://codeworth.uk/${lang}`,
-      images: [{ url: "/og/home.png", width: 1200, height: 630, alt: isUk ? "CodeNest — Веб-студія" : "CodeNest — Web Studio" }],
+      images: [{ url: "/og/home.png", width: 1200, height: 630, alt: isUk ? "Codeworth — Веб-студія" : "Codeworth — Web Studio" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: isUk ? "CodeNest — Веб-студія повного циклу" : "CodeNest — Full-Cycle Web Studio",
+      title: isUk ? "Codeworth — Веб-студія повного циклу" : "Codeworth — Full-Cycle Web Studio",
       description: isUk
         ? "120+ проєктів. Сайти, магазини, SEO. Старт від 4 900 грн."
         : "120+ projects. Websites, stores, SEO. Starting from £120.",
@@ -108,8 +108,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               </h2>
               <p className="mt-4 text-neutral-500">
                 {isUk
-                  ? "Відповіді на найпоширеніші запитання про розробку сайтів та роботу з CodeNest."
-                  : "Answers to the most common questions about website development and working with CodeNest."}
+                  ? "Відповіді на найпоширеніші запитання про розробку сайтів та роботу з Codeworth."
+                  : "Answers to the most common questions about website development and working with Codeworth."}
               </p>
             </div>
             <div className="max-w-3xl mx-auto space-y-4">

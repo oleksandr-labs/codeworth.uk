@@ -24,8 +24,8 @@ export async function generateMetadata({
   if (!job) return {};
   const isUk = lang === "uk";
   const title = isUk
-    ? `${job.titleUk} — Вакансія CodeNest`
-    : `${job.titleEn} — CodeNest Career`;
+    ? `${job.titleUk} — Вакансія Codeworth`
+    : `${job.titleEn} — Codeworth Career`;
   const desc = isUk ? job.descriptionUk : job.descriptionEn;
   return {
     title,
@@ -62,7 +62,7 @@ export default async function CareerPositionPage({
     },
     hiringOrganization: {
       "@type": "Organization",
-      name: "CodeNest",
+      name: "Codeworth",
       sameAs: "https://codeworth.uk",
     },
     baseSalary: {

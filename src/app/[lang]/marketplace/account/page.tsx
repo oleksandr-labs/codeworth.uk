@@ -5,7 +5,7 @@ import AccountClient from "./AccountClient";
 
 export const metadata: Metadata = {
   title: "Особистий кабінет — Маркетплейс",
-  description: "Ваш особистий кабінет покупця CodeNest — замовлення, проєкти, налаштування.",
+  description: "Ваш особистий кабінет покупця Codeworth — замовлення, проєкти, налаштування.",
   robots: { index: false, follow: false },
 };
 

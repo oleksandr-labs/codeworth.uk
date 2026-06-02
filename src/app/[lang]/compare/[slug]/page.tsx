@@ -77,7 +77,7 @@ export default async function ComparePage({ params }: { params: Promise<Params> 
     mainEntity: [
       {
         "@type": "Question",
-        name: isUk ? `Що краще: CodeNest чи ${competitorName}?` : `What's better: CodeNest or ${competitorName}?`,
+        name: isUk ? `Що краще: Codeworth чи ${competitorName}?` : `What's better: Codeworth or ${competitorName}?`,
         acceptedAnswer: {
           "@type": "Answer",
           text: isUk ? data.verdictUk : data.verdictEn,
@@ -85,7 +85,7 @@ export default async function ComparePage({ params }: { params: Promise<Params> 
       },
       {
         "@type": "Question",
-        name: isUk ? `Коли обирати CodeNest замість ${competitorName}?` : `When to choose CodeNest over ${competitorName}?`,
+        name: isUk ? `Коли обирати Codeworth замість ${competitorName}?` : `When to choose Codeworth over ${competitorName}?`,
         acceptedAnswer: {
           "@type": "Answer",
           text: isUk
@@ -127,7 +127,7 @@ export default async function ComparePage({ params }: { params: Promise<Params> 
               <span>/</span>
               <Link href={`/${lang}/compare`} className="hover:text-white transition-colors">{isUk ? "Порівняння" : "Comparison"}</Link>
               <span>/</span>
-              <span className="text-neutral-300">{`CodeNest vs ${competitorName}`}</span>
+              <span className="text-neutral-300">{`Codeworth vs ${competitorName}`}</span>
             </nav>
 
             <div className="flex items-center gap-3 mb-6">
@@ -137,7 +137,7 @@ export default async function ComparePage({ params }: { params: Promise<Params> 
             </div>
 
             <h1 className="text-4xl lg:text-6xl font-heading font-extrabold mb-6 leading-tight">
-              <span className="bg-linear-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">CodeNest</span>
+              <span className="bg-linear-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">Codeworth</span>
               {" vs "}
               <span className="text-white">{competitorName}</span>
             </h1>
@@ -149,7 +149,7 @@ export default async function ComparePage({ params }: { params: Promise<Params> 
             <div className="flex flex-wrap gap-4">
               <div className="flex items-center gap-2 bg-emerald-500/20 border border-emerald-500/30 px-4 py-2 rounded-xl">
                 <span className="text-emerald-400 font-extrabold text-2xl font-heading">{codenestWins}</span>
-                <span className="text-emerald-300 text-sm">{isUk ? "перевага CodeNest" : "CodeNest wins"}</span>
+                <span className="text-emerald-300 text-sm">{isUk ? "перевага Codeworth" : "Codeworth wins"}</span>
               </div>
               <div className="flex items-center gap-2 bg-red-500/20 border border-red-500/30 px-4 py-2 rounded-xl">
                 <span className="text-red-400 font-extrabold text-2xl font-heading">{competitorWins}</span>
@@ -179,7 +179,7 @@ export default async function ComparePage({ params }: { params: Promise<Params> 
                       {isUk ? "Характеристика" : "Feature"}
                     </th>
                     <th className="px-6 py-4 font-heading font-bold text-sm text-center w-1/3">
-                      <span className="bg-linear-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">CodeNest</span>
+                      <span className="bg-linear-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">Codeworth</span>
                     </th>
                     <th className="px-6 py-4 font-heading font-bold text-sm text-center w-1/3">
                       {competitorName}
@@ -198,7 +198,7 @@ export default async function ComparePage({ params }: { params: Promise<Params> 
                         </div>
                         {row.winner === "Codeworth" && (
                           <span className="text-xs text-emerald-600 font-medium mt-0.5 block">
-                            {isUk ? "✓ Перевага CodeNest" : "✓ CodeNest wins"}
+                            {isUk ? "✓ Перевага Codeworth" : "✓ Codeworth wins"}
                           </span>
                         )}
                         {row.winner === "competitor" && (
@@ -231,12 +231,12 @@ export default async function ComparePage({ params }: { params: Promise<Params> 
         <section className="py-16 bg-neutral-50">
           <Container>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* CodeNest */}
+              {/* Codeworth */}
               <div className="rounded-2xl bg-white border-2 border-indigo-200 p-8">
                 <h3 className="font-heading font-extrabold text-xl text-neutral-900 mb-2">
-                  {isUk ? "Обирайте CodeNest, якщо:" : "Choose CodeNest if:"}
+                  {isUk ? "Обирайте Codeworth, якщо:" : "Choose Codeworth if:"}
                 </h3>
-                <p className="text-sm text-indigo-600 font-medium mb-5">CodeNest web studio</p>
+                <p className="text-sm text-indigo-600 font-medium mb-5">Codeworth web studio</p>
                 <ul className="space-y-3">
                   {(isUk ? data.useCasesCodeworthUk : data.useCasesCodeworthEn).map((item) => (
                     <li key={item} className="flex items-start gap-3">
@@ -249,7 +249,7 @@ export default async function ComparePage({ params }: { params: Promise<Params> 
                   href={`/${lang}/contact`}
                   className="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold transition-colors"
                 >
-                  {isUk ? "Замовити у CodeNest" : "Order from CodeNest"} <ArrowRight className="w-4 h-4" />
+                  {isUk ? "Замовити у Codeworth" : "Order from Codeworth"} <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
 
@@ -291,18 +291,18 @@ export default async function ComparePage({ params }: { params: Promise<Params> 
           <Container>
             <div className="max-w-3xl mx-auto">
               <h2 className="text-xl font-heading font-extrabold text-neutral-900 mb-6">
-                {isUk ? `FAQ: CodeNest vs ${competitorName}` : `FAQ: CodeNest vs ${competitorName}`}
+                {isUk ? `FAQ: Codeworth vs ${competitorName}` : `FAQ: Codeworth vs ${competitorName}`}
               </h2>
               <div className="space-y-4">
                 <div className="rounded-xl bg-white border border-neutral-100 p-5">
                   <h3 className="font-heading font-bold text-neutral-900 mb-2 text-sm">
-                    {isUk ? `Що краще: CodeNest чи ${competitorName}?` : `What's better: CodeNest or ${competitorName}?`}
+                    {isUk ? `Що краще: Codeworth чи ${competitorName}?` : `What's better: Codeworth or ${competitorName}?`}
                   </h3>
                   <p className="text-neutral-600 text-sm leading-relaxed">{isUk ? data.verdictUk : data.verdictEn}</p>
                 </div>
                 <div className="rounded-xl bg-white border border-neutral-100 p-5">
                   <h3 className="font-heading font-bold text-neutral-900 mb-2 text-sm">
-                    {isUk ? `Коли обирати CodeNest замість ${competitorName}?` : `When to choose CodeNest over ${competitorName}?`}
+                    {isUk ? `Коли обирати Codeworth замість ${competitorName}?` : `When to choose Codeworth over ${competitorName}?`}
                   </h3>
                   <p className="text-neutral-600 text-sm leading-relaxed">
                     {isUk
@@ -328,7 +328,7 @@ export default async function ComparePage({ params }: { params: Promise<Params> 
                   href={`/${lang}/compare/${c.slug}`}
                   className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-neutral-200 text-sm text-neutral-700 hover:border-indigo-300 hover:bg-indigo-50 hover:text-indigo-700 transition-all"
                 >
-                  <Scale className="w-3 h-3" /> {`CodeNest vs ${isUk ? c.competitorUk : c.competitorEn}`}
+                  <Scale className="w-3 h-3" /> {`Codeworth vs ${isUk ? c.competitorUk : c.competitorEn}`}
                 </Link>
               ))}
             </div>
@@ -340,7 +340,7 @@ export default async function ComparePage({ params }: { params: Promise<Params> 
           <Container>
             <div className="max-w-2xl mx-auto text-center">
               <h2 className="text-3xl font-heading font-extrabold mb-4">
-                {isUk ? "Обрали CodeNest?" : "Chose CodeNest?"}
+                {isUk ? "Обрали Codeworth?" : "Chose Codeworth?"}
               </h2>
               <p className="text-neutral-400 mb-8">
                 {isUk

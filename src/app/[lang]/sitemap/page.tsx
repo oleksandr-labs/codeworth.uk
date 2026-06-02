@@ -31,23 +31,23 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isUk = lang === "uk";
   return {
-    title: isUk ? "Карта сайту | CodeNest — Веб-студія" : "Site Map | CodeNest — Web Studio",
+    title: isUk ? "Карта сайту | Codeworth — Веб-студія" : "Site Map | Codeworth — Web Studio",
     description: isUk
-      ? "Повна карта сайту CodeNest — всі сторінки послуг, маркетплейсу, рішень, блогу та компанії в одному місці."
-      : "Complete CodeNest site map — all service pages, marketplace, solutions, blog, and company pages in one place.",
+      ? "Повна карта сайту Codeworth — всі сторінки послуг, маркетплейсу, рішень, блогу та компанії в одному місці."
+      : "Complete Codeworth site map — all service pages, marketplace, solutions, blog, and company pages in one place.",
     robots: { index: true, follow: true },
     openGraph: {
-      title: isUk ? "Карта сайту — CodeNest" : "Site Map — CodeNest",
+      title: isUk ? "Карта сайту — Codeworth" : "Site Map — Codeworth",
       description: isUk
-        ? "Повна карта сайту CodeNest — всі сторінки послуг, маркетплейсу, рішень, блогу та компанії."
-        : "Complete CodeNest site map — all service pages, marketplace, solutions, blog, and company pages.",
+        ? "Повна карта сайту Codeworth — всі сторінки послуг, маркетплейсу, рішень, блогу та компанії."
+        : "Complete Codeworth site map — all service pages, marketplace, solutions, blog, and company pages.",
       type: "website",
       url: `https://codeworth.uk/${lang}/sitemap`,
-      images: [{ url: "/og/sitemap.png", width: 1200, height: 630, alt: isUk ? "Карта сайту CodeNest" : "CodeNest Site Map" }],
+      images: [{ url: "/og/sitemap.png", width: 1200, height: 630, alt: isUk ? "Карта сайту Codeworth" : "Codeworth Site Map" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: isUk ? "Карта сайту — CodeNest" : "Site Map — CodeNest",
+      title: isUk ? "Карта сайту — Codeworth" : "Site Map — Codeworth",
       images: ["/og/sitemap.png"],
     },
     alternates: buildAlternates(lang, 'sitemap'),
@@ -78,7 +78,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ lang: 
       color: "indigo",
       links: [
         { href: lp("/"), label: isUk ? "Головна" : "Home", description: isUk ? "Презентація студії та ключові послуги" : "Studio presentation and key services" },
-        { href: lp("/about"), label: isUk ? "Про нас" : "About us", description: isUk ? "Команда, місія та цінності CodeNest" : "Team, mission, and values of CodeNest" },
+        { href: lp("/about"), label: isUk ? "Про нас" : "About us", description: isUk ? "Команда, місія та цінності Codeworth" : "Team, mission, and values of Codeworth" },
         { href: lp("/portfolio"), label: isUk ? "Портфоліо" : "Portfolio", description: isUk ? "Наші кращі реалізовані проєкти" : "Our best completed projects" },
         { href: lp("/pricing"), label: isUk ? "Ціни" : "Pricing", description: isUk ? "Тарифи та пакети послуг" : "Plans and service packages" },
         { href: lp("/contact"), label: isUk ? "Контакти" : "Contact", description: isUk ? "Зв'яжіться з нами" : "Get in touch with us" },
@@ -92,7 +92,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ lang: 
       icon: Briefcase,
       color: "violet",
       links: [
-        { href: lp("/services"), label: isUk ? "Всі послуги" : "All services", description: isUk ? "Огляд усіх послуг CodeNest" : "Overview of all CodeNest services" },
+        { href: lp("/services"), label: isUk ? "Всі послуги" : "All services", description: isUk ? "Огляд усіх послуг Codeworth" : "Overview of all Codeworth services" },
         ...SERVICES_DATA.map((s) => {
           const svc = getServiceLocalized(s.slug, lang) ?? s;
           return {

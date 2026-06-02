@@ -19,11 +19,11 @@ export async function generateMetadata({
   const { lang } = await params;
   const isUk = lang === "uk";
   const title = isUk
-    ? "Технологічний стек та партнери CodeNest — Next.js, Vercel, Tailwind"
-    : "CodeNest Tech Stack & Partners — Next.js, Vercel, Tailwind";
+    ? "Технологічний стек та партнери Codeworth — Next.js, Vercel, Tailwind"
+    : "Codeworth Tech Stack & Partners — Next.js, Vercel, Tailwind";
   const desc = isUk
-    ? "Технологічний стек CodeNest: Next.js 15, TypeScript, Tailwind CSS, Vercel. Партнерська програма для агентств та фрілансерів."
-    : "CodeNest tech stack: Next.js 15, TypeScript, Tailwind CSS, Vercel. Partner program for agencies and freelancers.";
+    ? "Технологічний стек Codeworth: Next.js 15, TypeScript, Tailwind CSS, Vercel. Партнерська програма для агентств та фрілансерів."
+    : "Codeworth tech stack: Next.js 15, TypeScript, Tailwind CSS, Vercel. Partner program for agencies and freelancers.";
   return {
     title,
     description: desc,
@@ -229,13 +229,13 @@ export default async function PartnersPage({
     "@context": "https://schema.org",
     "@type": "TechArticle",
     headline: isUk
-      ? "Технологічний стек CodeNest — інструменти, якими ми будуємо продукти"
-      : "CodeNest Tech Stack — Tools We Use to Build Products",
+      ? "Технологічний стек Codeworth — інструменти, якими ми будуємо продукти"
+      : "Codeworth Tech Stack — Tools We Use to Build Products",
     description: isUk
-      ? "Огляд технологічного стеку CodeNest: Next.js 15, TypeScript, Tailwind CSS, Vercel та ін."
-      : "Overview of CodeNest tech stack: Next.js 15, TypeScript, Tailwind CSS, Vercel and more.",
-    author: { "@type": "Organization", name: "CodeNest", url: "https://codeworth.uk" },
-    publisher: { "@type": "Organization", name: "CodeNest", url: "https://codeworth.uk" },
+      ? "Огляд технологічного стеку Codeworth: Next.js 15, TypeScript, Tailwind CSS, Vercel та ін."
+      : "Overview of Codeworth tech stack: Next.js 15, TypeScript, Tailwind CSS, Vercel and more.",
+    author: { "@type": "Organization", name: "Codeworth", url: "https://codeworth.uk" },
+    publisher: { "@type": "Organization", name: "Codeworth", url: "https://codeworth.uk" },
     datePublished: "2024-01-01",
     dateModified: "2026-01-01",
     url: `https://codeworth.uk/${lang}/partners`,
@@ -291,7 +291,7 @@ export default async function PartnersPage({
           <Container>
             <div className="mb-10">
               <h2 className="text-3xl font-bold text-gray-900 mb-3">
-                {isUk ? "Технологічний стек CodeNest" : "CodeNest Tech Stack"}
+                {isUk ? "Технологічний стек Codeworth" : "Codeworth Tech Stack"}
               </h2>
               <p className="text-gray-600 max-w-2xl">
                 {isUk

@@ -10,25 +10,25 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isUk = lang === "uk";
   return {
     title: isUk
-      ? "FAQ — Часті питання про розробку сайтів | CodeNest"
-      : "FAQ — Frequently Asked Questions | CodeNest",
+      ? "FAQ — Часті питання про розробку сайтів | Codeworth"
+      : "FAQ — Frequently Asked Questions | Codeworth",
     description: isUk
-      ? "Відповіді на популярні питання про розробку сайтів, ціни, терміни, оплату, маркетплейс та технічну підтримку. CodeNest веб-студія."
-      : "Answers to common questions about web development, pricing, timelines, payment, marketplace, and technical support. CodeNest web studio.",
+      ? "Відповіді на популярні питання про розробку сайтів, ціни, терміни, оплату, маркетплейс та технічну підтримку. Codeworth веб-студія."
+      : "Answers to common questions about web development, pricing, timelines, payment, marketplace, and technical support. Codeworth web studio.",
     alternates: buildAlternates(lang, 'faq'),
     openGraph: {
-      title: isUk ? "FAQ — CodeNest" : "FAQ — CodeNest",
+      title: isUk ? "FAQ — Codeworth" : "FAQ — Codeworth",
       description: isUk
         ? "Відповіді на популярні питання про розробку сайтів, ціни, терміни та технічну підтримку."
         : "Answers to common questions about web development, pricing, timelines, and technical support.",
       type: "website",
       url: `https://codeworth.uk/${lang}/faq`,
-      images: [{ url: "/og/faq.png", width: 1200, height: 630, alt: "FAQ — CodeNest" }],
+      images: [{ url: "/og/faq.png", width: 1200, height: 630, alt: "FAQ — Codeworth" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: "FAQ — CodeNest",
-      description: isUk ? "Відповіді на питання про веб-розробку від CodeNest." : "Answers about web development from CodeNest.",
+      title: "FAQ — Codeworth",
+      description: isUk ? "Відповіді на питання про веб-розробку від Codeworth." : "Answers about web development from Codeworth.",
       images: ["/og/faq.png"],
     },
   };
@@ -39,7 +39,7 @@ const FAQ_SECTIONS_UK = [
     id: "general",
     title: "Загальні питання",
     items: [
-      { q: "Що робить CodeNest?", a: "CodeNest — веб-студія повного циклу: розробка сайтів, інтернет-магазинів, PWA, SEO-просування, UI/UX дизайн, чат-боти та маркетплейс готових нішевих рішень для малого та середнього бізнесу." },
+      { q: "Що робить Codeworth?", a: "Codeworth — веб-студія повного циклу: розробка сайтів, інтернет-магазинів, PWA, SEO-просування, UI/UX дизайн, чат-боти та маркетплейс готових нішевих рішень для малого та середнього бізнесу." },
       { q: "Де ви знаходитесь? Чи працюєте дистанційно?", a: "Ми базуємось у Києві, але працюємо дистанційно по всій Україні. Всі комунікації — через Telegram, Zoom, Notion та Figma." },
       { q: "Скільки часу займає розробка сайту?", a: "Лендінг — 5–10 днів. Корпоративний сайт — 2–4 тижні. Інтернет-магазин — 4–8 тижнів. Складний портал — 2–4 місяці. Терміни фіксуємо у договорі." },
       { q: "Чи можна побачити приклади робіт?", a: "Так, перегляньте наше портфоліо з 8+ реалізованих проєктів. Також у маркетплейсі є 35 live демо-сторінок різних ніш." },
@@ -95,7 +95,7 @@ const FAQ_SECTIONS_EN = [
     id: "general",
     title: "General Questions",
     items: [
-      { q: "What does CodeNest do?", a: "CodeNest is a full-cycle web studio: website development, e-commerce, PWA, SEO promotion, UI/UX design, chatbots, and a marketplace of ready-made niche solutions for small and medium businesses." },
+      { q: "What does Codeworth do?", a: "Codeworth is a full-cycle web studio: website development, e-commerce, PWA, SEO promotion, UI/UX design, chatbots, and a marketplace of ready-made niche solutions for small and medium businesses." },
       { q: "Where are you located? Do you work remotely?", a: "We are based in Kyiv but work remotely across Ukraine. All communication is via Telegram, Zoom, Notion, and Figma." },
       { q: "How long does website development take?", a: "Landing page — 5–10 days. Corporate site — 2–4 weeks. Online store — 4–8 weeks. Complex portal — 2–4 months. Deadlines are fixed in the contract." },
       { q: "Can I see examples of your work?", a: "Yes, check out our portfolio with 8+ completed projects. The marketplace also has 35 live demo pages across different niches." },
@@ -189,8 +189,8 @@ export default async function FAQPage({ params }: { params: Promise<{ lang: stri
               </h1>
               <p className="text-lg text-neutral-500">
                 {isUk
-                  ? "Все що ви хотіли знати про CodeNest, розробку сайтів та маркетплейс."
-                  : "Everything you wanted to know about CodeNest, web development, and the marketplace."}
+                  ? "Все що ви хотіли знати про Codeworth, розробку сайтів та маркетплейс."
+                  : "Everything you wanted to know about Codeworth, web development, and the marketplace."}
               </p>
             </div>
           </Container>

@@ -12,24 +12,24 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isUk = lang === "uk";
   return {
     title: isUk
-      ? "Маркетплейс готових сайтів для бізнесу | CodeNest"
-      : "Ready-Made Business Website Marketplace | CodeNest",
+      ? "Маркетплейс готових сайтів для бізнесу | Codeworth"
+      : "Ready-Made Business Website Marketplace | Codeworth",
     description: isUk
-      ? "Готові нішеві сайти для 35 типів бізнесу: ресторани, салони, клініки, магазини, юристи. Запуск за 3 дні. Від 4 900 грн. CodeNest Marketplace."
-      : "Ready-made niche websites for 35 business types: restaurants, salons, clinics, stores, lawyers. Launch in 3 days. CodeNest Marketplace.",
+      ? "Готові нішеві сайти для 35 типів бізнесу: ресторани, салони, клініки, магазини, юристи. Запуск за 3 дні. Від 4 900 грн. Codeworth Marketplace."
+      : "Ready-made niche websites for 35 business types: restaurants, salons, clinics, stores, lawyers. Launch in 3 days. Codeworth Marketplace.",
     alternates: buildAlternates(lang, 'marketplace'),
     openGraph: {
-      title: isUk ? "Маркетплейс готових сайтів | CodeNest" : "Ready-Made Website Marketplace | CodeNest",
+      title: isUk ? "Маркетплейс готових сайтів | Codeworth" : "Ready-Made Website Marketplace | Codeworth",
       description: isUk
         ? "Готові нішеві сайти для 35 типів бізнесу. Запуск за 3 дні. Від 4 900 грн."
         : "Ready-made niche websites for 35 business types. Launch in 3 days.",
       type: "website",
       url: `https://codeworth.uk/${lang}/marketplace`,
-      images: [{ url: "/og/marketplace.png", width: 1200, height: 630, alt: isUk ? "Маркетплейс CodeNest" : "CodeNest Marketplace" }],
+      images: [{ url: "/og/marketplace.png", width: 1200, height: 630, alt: isUk ? "Маркетплейс Codeworth" : "Codeworth Marketplace" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: isUk ? "Маркетплейс готових сайтів | CodeNest" : "Ready-Made Website Marketplace | CodeNest",
+      title: isUk ? "Маркетплейс готових сайтів | Codeworth" : "Ready-Made Website Marketplace | Codeworth",
       description: isUk ? "35 нішевих сайтів. Запуск за 3 дні." : "35 niche websites. Launch in 3 days.",
       images: ["/og/marketplace.png"],
     },

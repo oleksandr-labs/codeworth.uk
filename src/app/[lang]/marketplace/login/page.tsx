@@ -4,8 +4,8 @@ import { Footer } from "@/components/layout/Footer";
 import LoginForm from "./LoginForm";
 
 export const metadata: Metadata = {
-  title: "Вхід до кабінету — Маркетплейс CodeNest",
-  description: "Увійдіть до особистого кабінету покупця CodeNest, щоб керувати замовленнями та проєктами.",
+  title: "Вхід до кабінету — Маркетплейс Codeworth",
+  description: "Увійдіть до особистого кабінету покупця Codeworth, щоб керувати замовленнями та проєктами.",
   robots: { index: false, follow: false },
 };
 

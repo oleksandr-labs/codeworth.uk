@@ -27,11 +27,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const role = isUk ? author.role : author.roleEn;
   const posts = BLOG_POSTS.filter((p) => p.author === author.name);
   const title = isUk
-    ? `${name} — ${role} | CodeNest Blog`
-    : `${name} — ${role} | CodeNest Blog`;
+    ? `${name} — ${role} | Codeworth Blog`
+    : `${name} — ${role} | Codeworth Blog`;
   const description = isUk
-    ? `${posts.length} статей від ${name}, ${role} в CodeNest. ${author.bio.slice(0, 120)}...`
-    : `${posts.length} articles by ${name}, ${role} at CodeNest. ${author.bioEn.slice(0, 120)}...`;
+    ? `${posts.length} статей від ${name}, ${role} в Codeworth. ${author.bio.slice(0, 120)}...`
+    : `${posts.length} articles by ${name}, ${role} at Codeworth. ${author.bioEn.slice(0, 120)}...`;
   return {
     title,
     description,
@@ -63,7 +63,7 @@ export default async function BlogAuthorPage({ params }: Props) {
     name,
     jobTitle: role,
     description: bio,
-    worksFor: { "@type": "Organization", name: "CodeNest", url: "https://codeworth.uk" },
+    worksFor: { "@type": "Organization", name: "Codeworth", url: "https://codeworth.uk" },
     url: `https://codeworth.uk/${lang}/blog/author/${slug}`,
   };
 
@@ -101,7 +101,7 @@ export default async function BlogAuthorPage({ params }: Props) {
                   <div className="mt-4 flex items-center gap-3 text-white/50 text-sm">
                     <span>{posts.length} {isUk ? "статей" : "articles"}</span>
                     <span>·</span>
-                    <span>CodeNest</span>
+                    <span>Codeworth</span>
                   </div>
                 </div>
               </div>

@@ -17,22 +17,22 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isUk = lang === "uk";
   return {
     title: isUk
-      ? `Готові лендінги для стартапів — CodeNest | від £299 | Запуск за 3–7 днів`
-      : `Startup Landing Pages — CodeNest | from £299 | Launch in 3–7 Days`,
+      ? `Готові лендінги для стартапів — Codeworth | від £299 | Запуск за 3–7 днів`
+      : `Startup Landing Pages — Codeworth | from £299 | Launch in 3–7 Days`,
     description: isUk
       ? `${STARTUP_SOLUTIONS.length}+ готових лендінгів для стартапів. SaaS waitlist, MVP, мобільний додаток, D2C бренд, newsletter. Тестуй гіпотезу — запускай за 3 дні від £299.`
       : `${STARTUP_SOLUTIONS.length}+ ready-made startup landing pages. SaaS waitlist, MVP, mobile app, D2C brand, newsletter. Test your hypothesis — launch in 3 days from £299.`,
     alternates: buildAlternates(lang, "startup"),
     openGraph: {
       title: isUk
-        ? "Готові лендінги для стартапів — CodeNest"
-        : "Startup Landing Pages — CodeNest",
+        ? "Готові лендінги для стартапів — Codeworth"
+        : "Startup Landing Pages — Codeworth",
       description: isUk
         ? "Тестуй гіпотезу і запускай за 3 дні від £299."
         : "Test your hypothesis and launch in 3 days from £299.",
       type: "website",
       url: `https://codeworth.uk/${lang}/startup`,
-      images: [{ url: "/og/startup.png", width: 1200, height: 630, alt: isUk ? "Стартап лендінги CodeNest" : "CodeNest Startup Landings" }],
+      images: [{ url: "/og/startup.png", width: 1200, height: 630, alt: isUk ? "Стартап лендінги Codeworth" : "Codeworth Startup Landings" }],
     },
   };
 }

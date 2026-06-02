@@ -10,7 +10,7 @@ import { CartSummary } from "./CartSummary";
 
 export const metadata: Metadata = {
   title: "Кошик — Маркетплейс",
-  description: "Ваш кошик замовлень на CodeNest Маркетплейс.",
+  description: "Ваш кошик замовлень на Codeworth Маркетплейс.",
   robots: { index: false, follow: false },
 };
 

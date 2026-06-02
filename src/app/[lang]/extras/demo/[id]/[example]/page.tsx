@@ -91,8 +91,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!extra || !ex) return {};
 
   const title = isUk
-    ? `Демо: ${isUk ? ex.titleUk : ex.title} — CodeNest`
-    : `Demo: ${ex.title} — CodeNest`;
+    ? `Демо: ${isUk ? ex.titleUk : ex.title} — Codeworth`
+    : `Demo: ${ex.title} — Codeworth`;
   const description = isUk ? ex.descriptionUk : ex.description;
 
   return {

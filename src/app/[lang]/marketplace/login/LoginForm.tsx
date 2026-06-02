@@ -66,7 +66,7 @@ export default function LoginForm() {
           <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center">
             <span className="text-white font-bold text-lg">C</span>
           </div>
-          <span className="font-bold text-xl text-neutral-900 dark:text-white">CodeNest</span>
+          <span className="font-bold text-xl text-neutral-900 dark:text-white">Codeworth</span>
         </Link>
         <h1 className="text-2xl font-bold text-neutral-900 dark:text-white mb-2">
           {isUk ? "Вхід до кабінету" : "Sign In"}

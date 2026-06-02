@@ -11,11 +11,11 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isUk = lang === "uk";
   const title = isUk
-    ? "Розробка сайтів по всій Україні — Веб-студія CodeNest"
-    : "Website Development Across Ukraine — CodeNest Web Studio";
+    ? "Розробка сайтів по всій Україні — Веб-студія Codeworth"
+    : "Website Development Across Ukraine — Codeworth Web Studio";
   const desc = isUk
-    ? "CodeNest розробляє сайти для бізнесу у Києві, Харкові, Львові, Одесі, Дніпрі та ще 10 містах України. Локальне SEO, швидкий запуск, офіційний договір."
-    : "CodeNest builds websites for businesses in Kyiv, Kharkiv, Lviv, Odesa, Dnipro, and 10 more Ukrainian cities. Local SEO, fast launch, official contract.";
+    ? "Codeworth розробляє сайти для бізнесу у Києві, Харкові, Львові, Одесі, Дніпрі та ще 10 містах України. Локальне SEO, швидкий запуск, офіційний договір."
+    : "Codeworth builds websites for businesses in Kyiv, Kharkiv, Lviv, Odesa, Dnipro, and 10 more Ukrainian cities. Local SEO, fast launch, official contract.";
   return {
     title,
     description: desc,

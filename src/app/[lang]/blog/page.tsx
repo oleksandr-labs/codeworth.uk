@@ -14,27 +14,27 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isUk = lang === "uk";
   return {
     title: isUk
-      ? "Блог — CodeNest | Веб-розробка, SEO, дизайн, кейси"
-      : "Blog — CodeNest | Web Development, SEO, Design, Cases",
+      ? "Блог — Codeworth | Веб-розробка, SEO, дизайн, кейси"
+      : "Blog — Codeworth | Web Development, SEO, Design, Cases",
     description: isUk
-      ? "Блог CodeNest — статті про веб-розробку на Next.js, SEO-просування, UI/UX дизайн, e-commerce та кейси клієнтів. Корисний контент для бізнесу."
-      : "CodeNest Blog — articles about Next.js web development, SEO, UI/UX design, e-commerce, and client case studies. Useful content for businesses.",
+      ? "Блог Codeworth — статті про веб-розробку на Next.js, SEO-просування, UI/UX дизайн, e-commerce та кейси клієнтів. Корисний контент для бізнесу."
+      : "Codeworth Blog — articles about Next.js web development, SEO, UI/UX design, e-commerce, and client case studies. Useful content for businesses.",
     alternates: buildAlternates(lang, 'blog'),
     openGraph: {
-      title: isUk ? "Блог — CodeNest" : "Blog — CodeNest",
+      title: isUk ? "Блог — Codeworth" : "Blog — Codeworth",
       description: isUk
-        ? "Блог CodeNest — статті про веб-розробку на Next.js, SEO-просування, UI/UX дизайн, e-commerce та кейси клієнтів."
-        : "CodeNest Blog — articles about Next.js web development, SEO, UI/UX design, e-commerce, and client case studies.",
+        ? "Блог Codeworth — статті про веб-розробку на Next.js, SEO-просування, UI/UX дизайн, e-commerce та кейси клієнтів."
+        : "Codeworth Blog — articles about Next.js web development, SEO, UI/UX design, e-commerce, and client case studies.",
       type: "website",
       url: `https://codeworth.uk/${lang}/blog`,
-      images: [{ url: "/og/blog.png", width: 1200, height: 630, alt: isUk ? "Блог CodeNest" : "CodeNest Blog" }],
+      images: [{ url: "/og/blog.png", width: 1200, height: 630, alt: isUk ? "Блог Codeworth" : "Codeworth Blog" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: isUk ? "Блог — CodeNest" : "Blog — CodeNest",
+      title: isUk ? "Блог — Codeworth" : "Blog — Codeworth",
       description: isUk
-        ? "Статті про веб-розробку, SEO, дизайн та e-commerce від команди CodeNest."
-        : "Articles about web development, SEO, design, and e-commerce from the CodeNest team.",
+        ? "Статті про веб-розробку, SEO, дизайн та e-commerce від команди Codeworth."
+        : "Articles about web development, SEO, design, and e-commerce from the Codeworth team.",
       images: ["/og/blog.png"],
     },
   };
@@ -85,8 +85,8 @@ export default async function BlogPage({ params }: { params: Promise<{ lang: str
               </h1>
               <p className="text-lg text-neutral-500 mb-8 max-w-2xl mx-auto leading-relaxed">
                 {isUk
-                  ? `${postCount} статей від команди CodeNest — практичні гайди з веб-розробки на Next.js, реальні SEO-кейси, огляди інструментів та розбір проєктів із конкретними метриками.`
-                  : `${postCount} articles from the CodeNest team — practical Next.js development guides, real SEO case studies, tool reviews, and project breakdowns with concrete metrics.`}
+                  ? `${postCount} статей від команди Codeworth — практичні гайди з веб-розробки на Next.js, реальні SEO-кейси, огляди інструментів та розбір проєктів із конкретними метриками.`
+                  : `${postCount} articles from the Codeworth team — practical Next.js development guides, real SEO case studies, tool reviews, and project breakdowns with concrete metrics.`}
               </p>
 
               {/* Stats strip */}

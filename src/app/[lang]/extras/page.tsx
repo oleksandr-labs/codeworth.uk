@@ -9,23 +9,23 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isUk = lang === "uk";
   return {
     title: isUk
-      ? "Доробки та модулі — CodeNest | Розширення для вашого сайту"
-      : "Add-ons & Modules — CodeNest | Extensions for Your Website",
+      ? "Доробки та модулі — Codeworth | Розширення для вашого сайту"
+      : "Add-ons & Modules — Codeworth | Extensions for Your Website",
     description: isUk
       ? "42+ готових модулі та доробки для сайту: форми, інтеграції, сторінки, аналітика, SEO-аудит. Підключимо до вашого проєкту від 800 ₴."
       : "42+ ready-made modules and add-ons for your website: forms, integrations, pages, analytics, SEO audit. From £20. Installed and configured for your project.",
     openGraph: {
-      title: isUk ? "Доробки та модулі — CodeNest" : "Add-ons & Modules — CodeNest",
+      title: isUk ? "Доробки та модулі — Codeworth" : "Add-ons & Modules — Codeworth",
       description: isUk
         ? "Готові модулі та функції для вашого сайту. Від форм і калькуляторів до CRM та онлайн-оплати."
         : "Ready-made modules and features for your website. From forms and calculators to CRM and online payments.",
       type: "website",
       url: `https://codeworth.uk/${lang}/extras`,
-      images: [{ url: "/og/extras.png", width: 1200, height: 630, alt: isUk ? "Доробки та модулі CodeNest" : "CodeNest Add-ons" }],
+      images: [{ url: "/og/extras.png", width: 1200, height: 630, alt: isUk ? "Доробки та модулі Codeworth" : "Codeworth Add-ons" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: isUk ? "Доробки та модулі — CodeNest" : "Add-ons & Modules — CodeNest",
+      title: isUk ? "Доробки та модулі — Codeworth" : "Add-ons & Modules — Codeworth",
       description: isUk ? "42+ готових модулів від 800 ₴." : "42+ ready-made modules from £20.",
       images: ["/og/extras.png"],
     },
@@ -48,8 +48,8 @@ export default async function ExtrasPage({ params }: { params: Promise<{ lang: s
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Доробки та модулі CodeNest",
-    description: "Готові модулі, функції та доробки для сайтів від студії CodeNest",
+    name: "Доробки та модулі Codeworth",
+    description: "Готові модулі, функції та доробки для сайтів від студії Codeworth",
     url: "https://codeworth.uk/extras",
     numberOfItems: EXTRAS.length,
     itemListElement: EXTRAS.map((extra, index) => ({

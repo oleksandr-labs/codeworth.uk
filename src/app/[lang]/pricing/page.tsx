@@ -14,25 +14,25 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isUk = lang === "uk";
   return {
     title: isUk
-      ? "Ціни на розробку сайтів — CodeNest | Прозорі тарифи"
-      : "Website Development Pricing — CodeNest | Transparent Rates",
+      ? "Ціни на розробку сайтів — Codeworth | Прозорі тарифи"
+      : "Website Development Pricing — Codeworth | Transparent Rates",
     description: isUk
       ? "Прозорі ціни на розробку сайтів, інтернет-магазинів та готових нішевих рішень. Starter від 15 000 грн, Business від 40 000 грн. Без прихованих платежів."
       : "Transparent pricing for website development, e-commerce, and ready-made niche solutions. Starter from $375, Business from $1,000. No hidden fees.",
     alternates: buildAlternates(lang, 'pricing'),
     openGraph: {
-      title: isUk ? "Ціни — CodeNest | Прозорі тарифи" : "Pricing — CodeNest | Transparent Rates",
+      title: isUk ? "Ціни — Codeworth | Прозорі тарифи" : "Pricing — Codeworth | Transparent Rates",
       description: isUk
         ? "Прозорі ціни на розробку сайтів та нішевих рішень. Starter від 15 000 грн. Без прихованих платежів."
         : "Transparent pricing for website development and niche solutions. Starter from $375. No hidden fees.",
       type: "website",
       url: `https://codeworth.uk/${lang}/pricing`,
-      images: [{ url: "/og/pricing.png", width: 1200, height: 630, alt: isUk ? "Ціни CodeNest" : "CodeNest Pricing" }],
+      images: [{ url: "/og/pricing.png", width: 1200, height: 630, alt: isUk ? "Ціни Codeworth" : "Codeworth Pricing" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: isUk ? "Ціни — CodeNest" : "Pricing — CodeNest",
-      description: isUk ? "Прозорі ціни на веб-розробку від CodeNest." : "Transparent web development pricing by CodeNest.",
+      title: isUk ? "Ціни — Codeworth" : "Pricing — Codeworth",
+      description: isUk ? "Прозорі ціни на веб-розробку від Codeworth." : "Transparent web development pricing by Codeworth.",
       images: ["/og/pricing.png"],
     },
   };
@@ -82,8 +82,8 @@ export default async function PricingPage({ params }: { params: Promise<{ lang: 
   const offersSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: isUk ? "Розробка сайтів — CodeNest" : "Website Development — CodeNest",
-    provider: { "@type": "Organization", name: "CodeNest", url: "https://codeworth.uk" },
+    name: isUk ? "Розробка сайтів — Codeworth" : "Website Development — Codeworth",
+    provider: { "@type": "Organization", name: "Codeworth", url: "https://codeworth.uk" },
     url: `https://codeworth.uk/${lang}/pricing`,
     offers: [
       {

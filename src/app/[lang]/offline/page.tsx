@@ -6,7 +6,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isUk = lang === "uk";
   return {
-    title: isUk ? "Немає з'єднання | CodeNest" : "No Connection | CodeNest",
+    title: isUk ? "Немає з'єднання | Codeworth" : "No Connection | Codeworth",
     robots: { index: false, follow: false },
   };
 }

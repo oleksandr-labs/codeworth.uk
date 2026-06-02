@@ -20,26 +20,26 @@ export async function generateMetadata({
   const isUk = lang === "uk";
   return {
     title: isUk
-      ? "Безкоштовні Веб-Інструменти — Калькулятор Сайту, SEO Чек-ліст | CodeNest"
-      : "Free Web Tools — Website Cost Calculator, SEO Checklist & More | CodeNest",
+      ? "Безкоштовні Веб-Інструменти — Калькулятор Сайту, SEO Чек-ліст | Codeworth"
+      : "Free Web Tools — Website Cost Calculator, SEO Checklist & More | Codeworth",
     description: isUk
       ? "10 безкоштовних інструментів для власників сайтів: калькулятор вартості, SEO чек-ліст, генератор мета-тегів та інше."
       : "10 free tools for website owners: cost calculator, SEO audit checklist, meta tag generator, UTM builder and more.",
     alternates: buildAlternates(lang, "tools"),
     openGraph: {
       title: isUk
-        ? "Безкоштовні Веб-Інструменти | CodeNest"
-        : "Free Web Tools | CodeNest",
+        ? "Безкоштовні Веб-Інструменти | Codeworth"
+        : "Free Web Tools | Codeworth",
       description: isUk
         ? "10 безкоштовних інструментів для власників сайтів."
         : "10 free tools for website owners.",
       type: "website",
       url: `https://codeworth.uk/${lang}/tools`,
-      images: [{ url: "/og/tools.png", width: 1200, height: 630, alt: "Free Web Tools — CodeNest" }],
+      images: [{ url: "/og/tools.png", width: 1200, height: 630, alt: "Free Web Tools — Codeworth" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: isUk ? "Безкоштовні Веб-Інструменти | CodeNest" : "Free Web Tools | CodeNest",
+      title: isUk ? "Безкоштовні Веб-Інструменти | Codeworth" : "Free Web Tools | Codeworth",
       description: isUk
         ? "10 безкоштовних інструментів для власників сайтів."
         : "10 free tools for website owners.",
