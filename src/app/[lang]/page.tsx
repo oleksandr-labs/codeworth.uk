@@ -3,7 +3,6 @@ import { buildAlternates } from "@/i18n";
 import dynamic from "next/dynamic";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Container } from "@/components/layout/Container";
 import { HeroSection } from "@/components/home/HeroSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { HowWeWorkSection } from "@/components/home/HowWeWorkSection";
@@ -15,6 +14,7 @@ const MarketplaceTeaser = dynamic(() => import("@/components/home/MarketplaceTea
 const TestimonialsSection = dynamic(() => import("@/components/home/TestimonialsSection").then((m) => ({ default: m.TestimonialsSection })));
 const BlogPreviewSection = dynamic(() => import("@/components/home/BlogPreviewSection").then((m) => ({ default: m.BlogPreviewSection })));
 const CTASection = dynamic(() => import("@/components/home/CTASection").then((m) => ({ default: m.CTASection })));
+import { FAQSection } from "@/components/home/FAQSection";
 
 const HOME_FAQ_UK = [
   { q: "Скільки коштує розробка сайту?", a: "Вартість залежить від типу проєкту. Лендінг — від 4 900 грн, корпоративний сайт — від 15 000 грн, інтернет-магазин — від 25 000 грн. Точна ціна формується після безкоштовної консультації та аналізу ваших цілей." },
@@ -23,6 +23,10 @@ const HOME_FAQ_UK = [
   { q: "Чи займаєтесь SEO-просуванням після запуску?", a: "Так. Базова SEO-оптимізація входить в кожен проєкт: title, description, Schema.org, sitemap, robots.txt. Також надаємо послуги технічного SEO-аудиту та щомісячного супроводу." },
   { q: "Чи можу я редагувати сайт після запуску самостійно?", a: "Звісно. Ми підключаємо Sanity CMS — інтуїтивна панель керування контентом без знання коду. Проводимо навчання та надаємо відео-інструкції." },
   { q: "Яка гарантія та підтримка після здачі?", a: "1 місяць безкоштовної гарантійної підтримки входить у кожен проєкт. Далі — пакети підтримки від 1 500 грн/місяць. Час реакції на критичні баги — до 4 годин." },
+  { q: "Чи є у вас готові рішення для мого типу бізнесу?", a: "Так. У нашому маркетплейсі є 33+ нішевих рішення: ресторани, салони краси, будівельники, медицина, юридичні фірми, навчальні заклади тощо. Можна придбати готовий шаблон і запустити сайт за 1–3 дні." },
+  { q: "Ви працюєте з клієнтами з інших країн?", a: "Так. Ми маємо досвід роботи з клієнтами з UK, EU та США. Спілкуємось англійською, всі договори та фінансові операції адаптовані для міжнародних клієнтів. Оплата — у зручній для вас валюті." },
+  { q: "Що включає базова SEO-оптимізація?", a: "Технічна SEO: швидкість (Core Web Vitals 90+), структурована розмітка Schema.org, XML-sitemap, robots.txt, канонічні URL, Open Graph теги. На вимогу — семантичне ядро, SEO-тексти та стратегія просування." },
+  { q: "Яку CMS ви рекомендуєте та чи є альтернативи?", a: "Для більшості проєктів — Sanity CMS (headless, зручний редактор, хмарне сховище). Альтернативи: Strapi (self-hosted), Contentful, або власна адмін-панель. Вибір залежить від бюджету та технічних вимог." },
 ];
 
 const HOME_FAQ_EN = [
@@ -32,6 +36,10 @@ const HOME_FAQ_EN = [
   { q: "Do you handle SEO after launch?", a: "Yes. Basic SEO is included in every project: title, description, Schema.org, sitemap, robots.txt. We also offer technical SEO audits and monthly ongoing support packages." },
   { q: "Can I edit the website myself after launch?", a: "Absolutely. We integrate Sanity CMS — an intuitive content management panel that requires no coding knowledge. We provide training and video tutorials." },
   { q: "What warranty and support do you offer post-launch?", a: "1 month of free warranty support is included in every project. After that, support packages start from £37/month. Response time for critical issues — within 4 hours." },
+  { q: "Do you have ready-made solutions for my type of business?", a: "Yes. Our marketplace has 33+ niche solutions: restaurants, beauty salons, builders, medical clinics, law firms, schools, and more. Buy a ready template and launch your site in 1–3 days." },
+  { q: "Do you work with clients from other countries?", a: "Absolutely. We have experience with clients from the UK, EU, and US. We communicate in English, all contracts and payments are adapted for international clients in your preferred currency." },
+  { q: "What does basic SEO optimisation include?", a: "Technical SEO: speed (Core Web Vitals 90+), Schema.org structured data, XML sitemap, robots.txt, canonical URLs, Open Graph tags. On request — keyword research, SEO copywriting, and a growth strategy." },
+  { q: "Which CMS do you recommend and are there alternatives?", a: "For most projects — Sanity CMS (headless, intuitive editor, cloud storage). Alternatives: Strapi (self-hosted), Contentful, or a custom admin panel. The choice depends on your budget and technical requirements." },
 ];
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -98,30 +106,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <TestimonialsSection />
         <BlogPreviewSection lang={lang} />
 
-        {/* FAQ */}
-        <section className="py-24 bg-neutral-50 border-t border-neutral-100">
-          <Container>
-            <div className="max-w-2xl mx-auto text-center mb-12">
-              <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">FAQ</p>
-              <h2 className="text-4xl font-heading font-extrabold text-neutral-900">
-                {isUk ? "Часті питання" : "Frequently Asked Questions"}
-              </h2>
-              <p className="mt-4 text-neutral-500">
-                {isUk
-                  ? "Відповіді на найпоширеніші запитання про розробку сайтів та роботу з Codeworth."
-                  : "Answers to the most common questions about website development and working with Codeworth."}
-              </p>
-            </div>
-            <div className="max-w-3xl mx-auto space-y-4">
-              {faqItems.map((item) => (
-                <div key={item.q} className="p-6 rounded-2xl border border-neutral-100 bg-white">
-                  <h3 className="font-heading font-bold text-neutral-900 mb-2">{item.q}</h3>
-                  <p className="text-neutral-500 text-sm leading-relaxed">{item.a}</p>
-                </div>
-              ))}
-            </div>
-          </Container>
-        </section>
+        <FAQSection items={faqItems} isUk={isUk} />
 
         <CTASection lang={lang} />
       </main>
