@@ -143,6 +143,11 @@ import { DigitalFirstBankDemo } from "@/components/portfolio/demos/DigitalFirstB
 import { UrbanDeskDemo } from "@/components/portfolio/demos/UrbanDeskDemo";
 import { EscapeQuestDemo } from "@/components/portfolio/demos/EscapeQuestDemo";
 import { VinoCaveDemo } from "@/components/portfolio/demos/VinoCaveDemo";
+import { WholesaleHubDemo } from "@/components/portfolio/demos/WholesaleHubDemo";
+import { ChainOpsDemo } from "@/components/portfolio/demos/ChainOpsDemo";
+import { BuildTrackDemo } from "@/components/portfolio/demos/BuildTrackDemo";
+import { RetailCoreDemo } from "@/components/portfolio/demos/RetailCoreDemo";
+import { AgencyDeskDemo } from "@/components/portfolio/demos/AgencyDeskDemo";
 
 interface Props {
   params: Promise<{ lang: string; slug: string }>;
@@ -292,6 +297,11 @@ const DEMOS: Record<string, React.ComponentType<{ lang: string }>> = {
   "coworking-urban": UrbanDeskDemo,
   "escape-quest-arena": EscapeQuestDemo,
   "wine-cave-bar": VinoCaveDemo,
+  "erp-wholesale": WholesaleHubDemo,
+  "erp-restaurant-chain": ChainOpsDemo,
+  "erp-construction": BuildTrackDemo,
+  "erp-retail-chain": RetailCoreDemo,
+  "erp-agency": AgencyDeskDemo,
 };
 
 export async function generateStaticParams() {
