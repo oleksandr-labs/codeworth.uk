@@ -1,0 +1,135 @@
+import type { Metadata } from "next";
+import { buildAlternates } from "@/i18n";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { Container } from "@/components/layout/Container";
+import Link from "next/link";
+import { BlogContent } from "@/components/blog/BlogContent";
+import { BLOG_POSTS, BLOG_CATEGORIES } from "@/lib/data/blog";
+
+export const revalidate = 300; // ISR: revalidate every 5 minutes
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  const isUk = lang === "uk";
+  return {
+    title: isUk
+      ? "Блог — CodeNest | Веб-розробка, SEO, дизайн, кейси"
+      : "Blog — CodeNest | Web Development, SEO, Design, Cases",
+    description: isUk
+      ? "Блог CodeNest — статті про веб-розробку на Next.js, SEO-просування, UI/UX дизайн, e-commerce та кейси клієнтів. Корисний контент для бізнесу."
+      : "CodeNest Blog — articles about Next.js web development, SEO, UI/UX design, e-commerce, and client case studies. Useful content for businesses.",
+    alternates: buildAlternates(lang, 'blog'),
+    openGraph: {
+      title: isUk ? "Блог — CodeNest" : "Blog — CodeNest",
+      description: isUk
+        ? "Блог CodeNest — статті про веб-розробку на Next.js, SEO-просування, UI/UX дизайн, e-commerce та кейси клієнтів."
+        : "CodeNest Blog — articles about Next.js web development, SEO, UI/UX design, e-commerce, and client case studies.",
+      type: "website",
+      url: `https://codenest.com.ua/${lang}/blog`,
+      images: [{ url: "/og/blog.png", width: 1200, height: 630, alt: isUk ? "Блог CodeNest" : "CodeNest Blog" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: isUk ? "Блог — CodeNest" : "Blog — CodeNest",
+      description: isUk
+        ? "Статті про веб-розробку, SEO, дизайн та e-commerce від команди CodeNest."
+        : "Articles about web development, SEO, design, and e-commerce from the CodeNest team.",
+      images: ["/og/blog.png"],
+    },
+  };
+}
+
+const HERO_CATEGORIES = BLOG_CATEGORIES.filter((c) => c.id !== 'all' && c.icon).slice(0, 10);
+
+export default async function BlogPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const isUk = lang === "uk";
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codenest.com.ua/${lang}` },
+      { "@type": "ListItem", position: 2, name: isUk ? "Блог" : "Blog", item: `https://codenest.com.ua/${lang}/blog` },
+    ],
+  };
+
+
+  const postCount = BLOG_POSTS.length;
+  const categoryCount = BLOG_CATEGORIES.filter((c) => c.id !== 'all').length;
+  const tagCount = new Set(BLOG_POSTS.flatMap((p) => p.tags)).size;
+
+  return (
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <main id="main-content" className="flex-1">
+
+        {/* Hero */}
+        <section className="pt-32 pb-16 gradient-hero">
+          <Container>
+            <nav className="flex items-center gap-2 text-sm text-neutral-400 mb-8">
+              <Link href={`/${lang}`} className="hover:text-indigo-600 transition-colors">
+                {isUk ? "Головна" : "Home"}
+              </Link>
+              <span>/</span>
+              <span className="text-neutral-700 font-medium">{isUk ? "Блог" : "Blog"}</span>
+            </nav>
+            <div className="max-w-3xl mx-auto text-center">
+              <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-4">
+                {isUk ? "Блог" : "Blog"}
+              </p>
+              <h1 className="text-5xl lg:text-6xl font-heading font-extrabold text-neutral-900 mb-5">
+                {isUk ? "Знання & Кейси" : "Knowledge & Cases"}
+              </h1>
+              <p className="text-lg text-neutral-500 mb-8 max-w-2xl mx-auto leading-relaxed">
+                {isUk
+                  ? `${postCount} статей від команди CodeNest — практичні гайди з веб-розробки на Next.js, реальні SEO-кейси, огляди інструментів та розбір проєктів із конкретними метриками.`
+                  : `${postCount} articles from the CodeNest team — practical Next.js development guides, real SEO case studies, tool reviews, and project breakdowns with concrete metrics.`}
+              </p>
+
+              {/* Stats strip */}
+              <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm">
+                <div className="flex flex-col items-center">
+                  <span className="text-2xl font-heading font-extrabold text-neutral-900">{postCount}</span>
+                  <span className="text-neutral-500">{isUk ? "статей" : "articles"}</span>
+                </div>
+                <div className="w-px h-10 bg-neutral-200 self-center hidden sm:block" />
+                <div className="flex flex-col items-center">
+                  <span className="text-2xl font-heading font-extrabold text-neutral-900">{categoryCount}</span>
+                  <span className="text-neutral-500">{isUk ? "категорій" : "categories"}</span>
+                </div>
+                <div className="w-px h-10 bg-neutral-200 self-center hidden sm:block" />
+                <div className="flex flex-col items-center">
+                  <span className="text-2xl font-heading font-extrabold text-neutral-900">{tagCount}+</span>
+                  <span className="text-neutral-500">{isUk ? "тегів" : "tags"}</span>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap justify-center gap-2">
+                {HERO_CATEGORIES.map((cat) => (
+                  <Link
+                    key={cat.id}
+                    href={`/${lang}/blog/category/${cat.id}`}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-neutral-200 text-sm text-neutral-600 font-medium shadow-sm hover:border-indigo-300 hover:text-indigo-600 transition-colors"
+                  >
+                    <span aria-hidden="true">{cat.icon}</span>
+                    {isUk ? cat.label.uk : cat.label.en}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </Container>
+        </section>
+
+        <section className="py-24 bg-white">
+          <Container>
+            <BlogContent />
+          </Container>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+}

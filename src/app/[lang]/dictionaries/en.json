@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "services": "Services",
+    "extras": "Add-ons",
+    "marketplace": "Marketplace",
+    "niches": "Niches",
+    "portfolio": "Portfolio",
+    "pricing": "Pricing",
+    "blog": "Blog",
+    "about": "About Us",
+    "contact": "Contact",
+    "getStarted": "Get Started"
+  },
+  "footer": {
+    "services": "Services",
+    "company": "Company",
+    "socials": "Socials",
+    "tagline": "Full-cycle web studio — websites, e-commerce, PWA, SEO, CRM, UI/UX design and a marketplace of ready-made solutions.",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "sitemap": "Sitemap"
+  },
+  "common": {
+    "learnMore": "Learn more",
+    "viewAll": "View all",
+    "backTo": "Back to",
+    "readMore": "Read more",
+    "orderNow": "Order now",
+    "contactUs": "Contact us",
+    "tryDemo": "Try demo",
+    "loading": "Loading...",
+    "results": "results",
+    "noResults": "Nothing found",
+    "search": "Search",
+    "clear": "Clear",
+    "filters": "Filters",
+    "sort": "Sort",
+    "price": "Price",
+    "rating": "Rating",
+    "category": "Category",
+    "all": "All",
+    "new": "New",
+    "popular": "Popular",
+    "sale": "Sale"
+  },
+  "locale": {
+    "switchTo": "Українська",
+    "switchHref": "/uk"
+  },
+  "skipToContent": "Skip to main content",
+  "cookie": {
+    "message": "We use cookies to improve your experience.",
+    "accept": "Accept",
+    "decline": "Decline"
+  },
+  "chat": {
+    "title": "Quick answers",
+    "cta": "Chat with us"
+  },
+  "bottomNav": {
+    "home": "Home",
+    "catalog": "Catalog",
+    "blog": "Blog",
+    "contact": "Contact"
+  }
+}

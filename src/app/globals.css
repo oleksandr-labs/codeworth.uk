@@ -1,26 +1,486 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Enable .dark class dark mode variant for Tailwind v4 */
+@custom-variant dark (&:where(.dark, .dark *));
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+/* ===== Codeworth Design System ===== */
+@theme {
+  /* === Fonts === */
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-syne);
   --font-mono: var(--font-geist-mono);
+
+  /* === Color Palette === */
+  /* Primary — deep indigo */
+  --color-primary-50: #eef2ff;
+  --color-primary-100: #e0e7ff;
+  --color-primary-200: #c7d2fe;
+  --color-primary-300: #a5b4fc;
+  --color-primary-400: #818cf8;
+  --color-primary-500: #6366f1;
+  --color-primary-600: #4f46e5;
+  --color-primary-700: #4338ca;
+  --color-primary-800: #3730a3;
+  --color-primary-900: #312e81;
+  --color-primary-950: #1E1B4B;
+
+  /* Accent — amber/golden */
+  --color-accent-50: #fffbeb;
+  --color-accent-100: #fef3c7;
+  --color-accent-200: #fde68a;
+  --color-accent-300: #fcd34d;
+  --color-accent-400: #fbbf24;
+  --color-accent-500: #f59e0b;
+  --color-accent-600: #d97706;
+  --color-accent-700: #b45309;
+  --color-accent-800: #92400e;
+  --color-accent-900: #78350f;
+
+  /* Neutrals — warm grays */
+  --color-neutral-50: #fafaf9;
+  --color-neutral-100: #f5f5f4;
+  --color-neutral-200: #e7e5e4;
+  --color-neutral-300: #d6d3d1;
+  --color-neutral-400: #a8a29e;
+  --color-neutral-500: #78716c;
+  --color-neutral-600: #57534e;
+  --color-neutral-700: #44403c;
+  --color-neutral-800: #292524;
+  --color-neutral-900: #1c1917;
+  --color-neutral-950: #0c0a09;
+
+  /* Semantic */
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+
+  /* Surface */
+  --color-background: #fafaf9;
+  --color-background-dark: #0F0E17;
+  --color-surface: #ffffff;
+  --color-surface-dark: #1a1825;
+
+  /* === Breakpoints === */
+  --breakpoint-xs: 360px;
+
+  /* === Spacing === */
+  --spacing-section: 6rem;
+  --spacing-section-sm: 4rem;
+
+  /* === Border Radius === */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+
+  /* === Shadows === */
+  --shadow-card: 0 4px 24px -4px rgb(30 27 75 / 0.08);
+  --shadow-card-hover: 0 12px 40px -8px rgb(30 27 75 / 0.16);
+  --shadow-glow: 0 0 40px rgb(99 102 241 / 0.3);
+
+  /* === Z-index Scale === */
+  /* Usage guide:
+     --z-base      (0)  — normal document flow
+     --z-raised    (10) — cards that lift on hover
+     --z-dropdown  (100)— dropdowns, tooltips, popovers
+     --z-sticky    (200)— sticky headers, back-to-top
+     --z-overlay   (300)— backdrop overlays, drawers
+     --z-modal     (400)— modal dialogs, lightboxes
+     --z-toast     (500)— toast notifications
+     --z-cursor    (9999)— custom cursor (always on top)
+  */
+  --z-base: 0;
+  --z-raised: 10;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+  --z-cursor: 9999;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* === Base Styles === */
+:root {
+  color-scheme: light;
+}
+
+/* === Dark Mode Variables === */
+.dark {
+  color-scheme: dark;
+
+  --color-background: #0F0E17;
+  --color-surface: #1a1825;
+  --color-surface-dark: #110f1e;
+
+  --color-neutral-50: #1c1917;
+  --color-neutral-100: #292524;
+  --color-neutral-200: #44403c;
+  --color-neutral-300: #57534e;
+  --color-neutral-400: #78716c;
+  --color-neutral-500: #a8a29e;
+  --color-neutral-600: #d6d3d1;
+  --color-neutral-700: #e7e5e4;
+  --color-neutral-800: #f5f5f4;
+  --color-neutral-900: #fafaf9;
+  --color-neutral-950: #fafaf9;
+
+  --shadow-card: 0 4px 24px -4px rgb(0 0 0 / 0.4);
+  --shadow-card-hover: 0 12px 40px -8px rgb(0 0 0 / 0.6);
+  --shadow-glow: 0 0 40px rgb(99 102 241 / 0.4);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-neutral-900);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+/* === Typography === */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), var(--font-sans), system-ui, sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+/* === Gradient Text Utility === */
+.gradient-text {
+  background: linear-gradient(135deg, #6366f1 0%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-primary {
+  background: linear-gradient(135deg, #4338ca 0%, #6366f1 50%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* === Gradient Backgrounds === */
+.gradient-hero {
+  background: radial-gradient(ellipse 80% 60% at 50% -10%, rgb(99 102 241 / 0.15) 0%, transparent 70%),
+              radial-gradient(ellipse 40% 40% at 80% 20%, rgb(245 158 11 / 0.08) 0%, transparent 60%),
+              #fafaf9;
+}
+
+.gradient-mesh {
+  background:
+    radial-gradient(at 20% 30%, rgb(99 102 241 / 0.12) 0px, transparent 50%),
+    radial-gradient(at 80% 70%, rgb(245 158 11 / 0.08) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgb(67 56 202 / 0.06) 0px, transparent 50%);
+}
+
+/* === Card Glass Effect === */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.dark .glass-card {
+  background: rgba(26, 24, 37, 0.7);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* === Dark mode gradient backgrounds === */
+.dark .gradient-hero {
+  background: radial-gradient(ellipse 80% 60% at 50% -10%, rgb(99 102 241 / 0.2) 0%, transparent 70%),
+              radial-gradient(ellipse 40% 40% at 80% 20%, rgb(245 158 11 / 0.1) 0%, transparent 60%),
+              #0F0E17;
+}
+
+.dark .gradient-mesh {
+  background:
+    radial-gradient(at 20% 30%, rgb(99 102 241 / 0.15) 0px, transparent 50%),
+    radial-gradient(at 80% 70%, rgb(245 158 11 / 0.1) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgb(67 56 202 / 0.1) 0px, transparent 50%);
+}
+
+/* === Animations === */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgb(99 102 241 / 0.3); }
+  50% { box-shadow: 0 0 40px rgb(99 102 241 / 0.6); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* === Scroll-triggered animations === */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-page-enter {
+  animation: page-enter 0.2s ease-in-out both;
+}
+
+/* For elements that start invisible and animate in when .is-visible class is added */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* === Selection === */
+::selection {
+  background-color: rgb(99 102 241 / 0.2);
+  color: #1E1B4B;
+}
+
+/* === Fluid Typography (clamp) === */
+.text-fluid-h1 {
+  font-size: clamp(2rem, 6vw, 4rem); /* 32px → 64px */
+  line-height: 1.15;
+}
+
+.text-fluid-h2 {
+  font-size: clamp(1.5rem, 4vw, 2.75rem); /* 24px → 44px */
+  line-height: 1.2;
+}
+
+.text-fluid-h3 {
+  font-size: clamp(1.25rem, 2.5vw, 2rem); /* 20px → 32px */
+  line-height: 1.25;
+}
+
+.text-fluid-body {
+  font-size: clamp(0.9375rem, 1.5vw, 1.125rem); /* 15px → 18px */
+  line-height: 1.7;
+}
+
+/* === Minimum touch target size (44x44px) === */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === Focus visible ring === */
+:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* === Parallax === */
+.parallax-layer {
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+/* === Custom Cursor === */
+.custom-cursor,
+.custom-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s ease;
+}
+
+/* Inner dot */
+.custom-cursor {
+  width: 8px;
+  height: 8px;
+  background-color: #6366f1;
+  transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+}
+
+/* Outer ring */
+.custom-cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 2px solid rgb(99 102 241 / 0.5);
+  transition: transform 0.15s ease, width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
+}
+
+/* Hover state — grows ring, hides dot */
+.custom-cursor.is-hovering {
+  width: 4px;
+  height: 4px;
+  background-color: #f59e0b;
+}
+.custom-cursor-ring.is-hovering {
+  width: 52px;
+  height: 52px;
+  border-color: rgb(245 158 11 / 0.6);
+}
+
+/* Text selection — change cursor shape */
+.custom-cursor.is-text {
+  width: 2px;
+  height: 20px;
+  border-radius: 1px;
+  background-color: #6366f1;
+}
+.custom-cursor-ring.is-text {
+  opacity: 0;
+}
+
+/* Hide on mobile (touch devices) */
+@media (hover: none) {
+  .custom-cursor,
+  .custom-cursor-ring {
+    display: none;
+  }
+}
+
+/* === Scrollbar === */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f5f5f4;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #1a1825;
+}
+::-webkit-scrollbar-thumb {
+  background: #a8a29e;
+  border-radius: 4px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #44403c;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6366f1;
+}
+
+/* === Print Styles === */
+@media print {
+  /* Hide navigation, footer, interactive elements */
+  header,
+  footer,
+  nav,
+  .no-print,
+  [data-no-print] {
+    display: none !important;
+  }
+
+  /* Reset backgrounds for paper */
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  main {
+    padding: 0 !important;
+  }
+
+  /* Remove colored backgrounds from sections */
+  section {
+    background: #fff !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  /* Ensure prose text is black */
+  h1, h2, h3, h4, h5, h6, p, li, span {
+    color: #000 !important;
+  }
+
+  /* Keep links visible */
+  a {
+    color: #000 !important;
+    text-decoration: underline;
+  }
+
+  /* Show href after links */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #555 !important;
+  }
+
+  /* Page breaks */
+  h2 {
+    page-break-before: auto;
+    page-break-after: avoid;
+  }
+
+  p, li {
+    page-break-inside: avoid;
+  }
+
+  /* Remove shadows and borders that look bad on paper */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Full width for content */
+  .container,
+  [class*="max-w-"] {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 }
