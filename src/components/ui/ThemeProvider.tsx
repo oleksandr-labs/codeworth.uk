@@ -41,7 +41,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const stored = localStorage.getItem("Codeworth-theme") as Theme | null;
+    const stored = localStorage.getItem("codeworth-theme") as Theme | null;
     const initial: Theme = stored || "system";
     const resolved = initial === "system" ? getSystemTheme() : initial;
 
@@ -66,7 +66,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   }, [theme, mounted]);
 
   const setTheme = (newTheme: Theme) => {
-    localStorage.setItem("Codeworth-theme", newTheme);
+    localStorage.setItem("codeworth-theme", newTheme);
     const resolved = newTheme === "system" ? getSystemTheme() : newTheme;
     setThemeState(newTheme);
     setResolvedTheme(resolved);

@@ -64,7 +64,7 @@ export default function CookieConsent() {
       aria-labelledby="cookie-title"
       aria-describedby="cookie-desc"
     >
-      <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden">
+      <div className="bg-white dark:bg-neutral-800 rounded-2xl shadow-2xl border border-gray-100 dark:border-neutral-700 overflow-hidden">
         {/* Header */}
         <div className="flex items-start justify-between p-5 pb-4">
           <div className="flex items-center gap-3">
@@ -72,17 +72,17 @@ export default function CookieConsent() {
               <Cookie className="w-5 h-5 text-indigo-600" />
             </div>
             <div>
-              <h2 id="cookie-title" className="font-bold text-gray-900 text-sm">
+              <h2 id="cookie-title" className="font-bold text-gray-900 dark:text-white text-sm">
                 {isUk ? "Ми використовуємо cookies" : "We use cookies"}
               </h2>
-              <p id="cookie-desc" className="text-xs text-gray-500 mt-0.5">
+              <p id="cookie-desc" className="text-xs text-gray-500 dark:text-neutral-400 mt-0.5">
                 {isUk ? "Для покращення вашого досвіду на сайті" : "To improve your experience on the site"}
               </p>
             </div>
           </div>
           <button
             onClick={rejectAll}
-            className="text-gray-400 hover:text-gray-600 transition-colors p-1 rounded-lg hover:bg-gray-100 flex-shrink-0"
+            className="text-gray-400 dark:text-neutral-500 hover:text-gray-600 dark:hover:text-neutral-300 transition-colors p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 flex-shrink-0"
             aria-label={isUk ? "Відхилити всі та закрити" : "Reject all and close"}
           >
             <X className="w-4 h-4" />
@@ -91,7 +91,7 @@ export default function CookieConsent() {
 
         {/* Body */}
         <div className="px-5 pb-4">
-          <p className="text-sm text-gray-600 leading-relaxed">
+          <p className="text-sm text-gray-600 dark:text-neutral-300 leading-relaxed">
             {isUk
               ? "Ми використовуємо cookies для аналітики та покращення сайту."
               : "We use cookies for analytics and to improve the site."}{" "}
@@ -118,10 +118,10 @@ export default function CookieConsent() {
               {/* Necessary */}
               <div className="flex items-start justify-between gap-3">
                 <div>
-                  <div className="text-sm font-medium text-gray-800">
+                  <div className="text-sm font-medium text-gray-800 dark:text-neutral-200">
                     {isUk ? "Необхідні" : "Necessary"}
                   </div>
-                  <div className="text-xs text-gray-500 mt-0.5">
+                  <div className="text-xs text-gray-500 dark:text-neutral-400 mt-0.5">
                     {isUk ? "Потрібні для роботи сайту" : "Required for the site to function"}
                   </div>
                 </div>
@@ -147,11 +147,11 @@ export default function CookieConsent() {
                 <div>
                   <label
                     htmlFor="cookie-analytics"
-                    className="text-sm font-medium text-gray-800 cursor-pointer"
+                    className="text-sm font-medium text-gray-800 dark:text-neutral-200 cursor-pointer"
                   >
                     {isUk ? "Аналітика" : "Analytics"}
                   </label>
-                  <div className="text-xs text-gray-500 mt-0.5">
+                  <div className="text-xs text-gray-500 dark:text-neutral-400 mt-0.5">
                     {isUk ? "Google Analytics, статистика відвідувань" : "Google Analytics, visit statistics"}
                   </div>
                 </div>
@@ -168,7 +168,7 @@ export default function CookieConsent() {
                   <label
                     htmlFor="cookie-analytics"
                     className={`w-10 h-5 rounded-full flex items-center px-0.5 cursor-pointer transition-colors ${
-                      prefs.analytics ? "bg-indigo-600" : "bg-gray-200"
+                      prefs.analytics ? "bg-indigo-600" : "bg-gray-200 dark:bg-neutral-600"
                     }`}
                   >
                     <div
@@ -185,11 +185,11 @@ export default function CookieConsent() {
                 <div>
                   <label
                     htmlFor="cookie-marketing"
-                    className="text-sm font-medium text-gray-800 cursor-pointer"
+                    className="text-sm font-medium text-gray-800 dark:text-neutral-200 cursor-pointer"
                   >
                     {isUk ? "Маркетинг" : "Marketing"}
                   </label>
-                  <div className="text-xs text-gray-500 mt-0.5">
+                  <div className="text-xs text-gray-500 dark:text-neutral-400 mt-0.5">
                     {isUk ? "Персоналізована реклама, ретаргетинг" : "Personalized ads, retargeting"}
                   </div>
                 </div>
@@ -206,7 +206,7 @@ export default function CookieConsent() {
                   <label
                     htmlFor="cookie-marketing"
                     className={`w-10 h-5 rounded-full flex items-center px-0.5 cursor-pointer transition-colors ${
-                      prefs.marketing ? "bg-indigo-600" : "bg-gray-200"
+                      prefs.marketing ? "bg-indigo-600" : "bg-gray-200 dark:bg-neutral-600"
                     }`}
                   >
                     <div
@@ -242,7 +242,7 @@ export default function CookieConsent() {
             <>
               <button
                 onClick={rejectAll}
-                className="flex-1 py-2.5 px-4 text-sm font-medium text-gray-600 bg-gray-100 rounded-xl hover:bg-gray-200 transition-colors"
+                className="flex-1 py-2.5 px-4 text-sm font-medium text-gray-600 dark:text-neutral-300 bg-gray-100 dark:bg-neutral-700 rounded-xl hover:bg-gray-200 dark:hover:bg-neutral-600 transition-colors"
               >
                 {isUk ? "Відхилити" : "Reject"}
               </button>
