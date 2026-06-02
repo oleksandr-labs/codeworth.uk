@@ -90,11 +90,6 @@ jobs:
             rm -f "$APP/.next/standalone/.env"
             ln -sfn "$APP/.env" "$APP/.next/standalone/.env"
 
-            # Update nginx config and reload
-            cp "$APP/nginx/codeworth.uk.conf" /etc/nginx/sites-available/codeworth.uk
-            ln -sf /etc/nginx/sites-available/codeworth.uk /etc/nginx/sites-enabled/codeworth.uk
-            nginx -t && systemctl reload nginx && echo "==> Nginx reloaded"
-
             # Restart app
             systemctl restart codeworth
             sleep 3
