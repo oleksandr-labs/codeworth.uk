@@ -100,6 +100,20 @@ const nextConfig: NextConfig = {
     ];
   },
 
+  // Rewrites: serve EN content at clean root paths (no /en prefix)
+  async rewrites() {
+    return [
+      // Root → /en
+      { source: "/", destination: "/en" },
+      // Any path without locale prefix → /en/path
+      // Excludes: uk, api, _next, static files, special routes
+      {
+        source: "/:path((?!en|uk|api|_next|favicon|manifest\\.json|sw\\.js|robots\\.txt|sitemap\\.xml|og|opengraph|apple-icon).*)",
+        destination: "/en/:path",
+      },
+    ];
+  },
+
   // Redirects
   async redirects() {
     return [

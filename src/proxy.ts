@@ -11,35 +11,32 @@ function getPreferredLocale(request: NextRequest): string {
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // /en/... → 301 redirect to /... (canonical: EN has no prefix)
+  // /en/... → 301 redirect to clean path (canonical: EN has no prefix)
   if (pathname.startsWith('/en/') || pathname === '/en') {
     const cleanPath = pathname === '/en' ? '/' : pathname.slice(3);
-    request.nextUrl.pathname = cleanPath;
-    return NextResponse.redirect(request.nextUrl, 301);
+    return NextResponse.redirect(new URL(cleanPath, request.url), 301);
   }
 
-  // /uk/... or /uk — already has non-default locale prefix, serve as-is
+  // /uk/... — already has non-default locale prefix, serve as-is
   const pathnameHasLocale = locales
     .filter((l) => l !== defaultLocale)
     .some((locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`);
 
   if (pathnameHasLocale) return NextResponse.next();
 
-  // No locale prefix — determine which locale to serve
+  // Paths without locale prefix — check if user prefers UK
   const cookieLocale = request.cookies.get('NEXT_LOCALE')?.value;
   const locale =
     (cookieLocale && isValidLocale(cookieLocale) ? cookieLocale : null) ??
     getPreferredLocale(request);
 
   if (locale !== defaultLocale) {
-    // Non-default: redirect to /uk/...
-    request.nextUrl.pathname = `/${locale}${pathname}`;
-    return NextResponse.redirect(request.nextUrl);
+    // UK user: redirect to /uk/...
+    return NextResponse.redirect(new URL(`/${locale}${pathname}`, request.url));
   }
 
-  // Default locale (en): rewrite internally to /en/... but keep URL clean
-  const rewritePath = pathname === '/' ? '/en' : `/en${pathname}`;
-  return NextResponse.rewrite(new URL(rewritePath, request.url));
+  // EN user: pass through — next.config.ts rewrites handle /→/en internally
+  return NextResponse.next();
 }
 
 export const config = {
