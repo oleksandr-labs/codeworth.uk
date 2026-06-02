@@ -37,14 +37,14 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
 
-      - name: Upload build to server
+      - name: Upload build + nginx config to server
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.HETZNER_HOST }}
           username: ${{ secrets.HETZNER_USER }}
           key: ${{ secrets.HETZNER_SSH_KEY }}
           port: 22
-          source: ".next/standalone/,.next/static/,public/"
+          source: ".next/standalone/,.next/static/,public/,nginx/codeworth.uk.conf"
           target: "/var/www/codeworth.uk/"
           strip_components: 0
           overwrite: true
@@ -62,7 +62,7 @@ jobs:
             set -e
             APP=/var/www/codeworth.uk
 
-            # Link static assets into standalone (Next.js requirement)
+            # Symlink static assets into standalone
             mkdir -p "$APP/.next/standalone/.next"
             ln -sfn "$APP/.next/static" "$APP/.next/standalone/.next/static"
             rm -rf "$APP/.next/standalone/public"
@@ -78,25 +78,32 @@ jobs:
                 echo "${key}=${val}" >> "$APP/.env"
               fi
             }
-            sync_env "NEXT_PUBLIC_SITE_URL"     "${{ secrets.NEXT_PUBLIC_SITE_URL }}"
-            sync_env "TELEGRAM_BOT_TOKEN"       "${{ secrets.TELEGRAM_BOT_TOKEN }}"
-            sync_env "TELEGRAM_CHAT_ID"         "${{ secrets.TELEGRAM_CHAT_ID }}"
-            sync_env "RESEND_API_KEY"           "${{ secrets.RESEND_API_KEY }}"
-            sync_env "RECAPTCHA_SECRET_KEY"     "${{ secrets.RECAPTCHA_SECRET_KEY }}"
-            sync_env "LIQPAY_PUBLIC_KEY"        "${{ secrets.LIQPAY_PUBLIC_KEY }}"
-            sync_env "LIQPAY_PRIVATE_KEY"       "${{ secrets.LIQPAY_PRIVATE_KEY }}"
+            sync_env "NEXT_PUBLIC_SITE_URL"  "${{ secrets.NEXT_PUBLIC_SITE_URL }}"
+            sync_env "TELEGRAM_BOT_TOKEN"    "${{ secrets.TELEGRAM_BOT_TOKEN }}"
+            sync_env "TELEGRAM_CHAT_ID"      "${{ secrets.TELEGRAM_CHAT_ID }}"
+            sync_env "RESEND_API_KEY"        "${{ secrets.RESEND_API_KEY }}"
+            sync_env "RECAPTCHA_SECRET_KEY"  "${{ secrets.RECAPTCHA_SECRET_KEY }}"
+            sync_env "LIQPAY_PUBLIC_KEY"     "${{ secrets.LIQPAY_PUBLIC_KEY }}"
+            sync_env "LIQPAY_PRIVATE_KEY"    "${{ secrets.LIQPAY_PRIVATE_KEY }}"
 
             # Link .env into standalone
             rm -f "$APP/.next/standalone/.env"
             ln -sfn "$APP/.env" "$APP/.next/standalone/.env"
 
-            # Restart service
+            # Update nginx config and reload
+            cp "$APP/nginx/codeworth.uk.conf" /etc/nginx/sites-available/codeworth.uk
+            ln -sf /etc/nginx/sites-available/codeworth.uk /etc/nginx/sites-enabled/codeworth.uk
+            nginx -t && systemctl reload nginx && echo "==> Nginx reloaded"
+
+            # Restart app
             systemctl restart codeworth
             sleep 3
             systemctl is-active codeworth && echo "==> Service active"
-            echo "==> Deploy done — $(date)"
+            echo "==> Deploy done"
 
       - name: Smoke test
         run: |
           sleep 5
-          curl -fsS -o /dev/null -w "HTTP %{http_code} | %{time_total}s\n" https://codeworth.uk/ || echo "Not yet (DNS/SSL pending)"
+          curl -fsS -o /dev/null -w "HTTP %{http_code} | %{time_total}s\n" https://codeworth.uk/ || \
+          curl -fsS -o /dev/null -w "HTTP %{http_code} | %{time_total}s\n" http://codeworth.uk/ || \
+          echo "Site check done"

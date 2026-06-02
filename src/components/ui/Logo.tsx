@@ -86,7 +86,7 @@ export function LogoWordmark({
           textClassName
         )}
       >
-        Code<span className="text-indigo-600 dark:text-indigo-400">Nest</span>
+        Code<span className="text-indigo-600 dark:text-indigo-400">worth</span>
       </span>
     </span>
   );
