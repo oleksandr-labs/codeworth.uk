@@ -88,7 +88,7 @@ export function FloatingChat() {
   };
 
   return (
-    <div className="fixed bottom-6 right-4 md:bottom-8 md:right-6 z-40 no-print flex flex-col items-end gap-3">
+    <div className="fixed bottom-24 right-4 md:bottom-24 md:right-6 z-40 no-print flex flex-col items-end gap-3">
       {/* Chat / Menu panel */}
       {open && (
         <div className="w-80 sm:w-96 bg-white dark:bg-neutral-900 rounded-2xl shadow-2xl shadow-neutral-900/20 border border-neutral-200 dark:border-neutral-700 overflow-hidden animate-fade-up">
