@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         ? "Повний цикл digital-послуг: розробка сайтів, SEO, UI/UX дизайн, CRM, чат-боти. Веб-студія повного циклу в Україні."
         : "Full-cycle digital services: website development, SEO, UI/UX design, CRM, chatbots. Full-cycle web studio.",
       type: "website",
-      url: `https://codenest.com.ua/${lang}/services`,
+      url: `https://codeworth.uk/${lang}/services`,
       images: [{ url: "/og/services.png", width: 1200, height: 630, alt: isUk ? "Послуги CodeNest" : "CodeNest Services" }],
     },
     twitter: {
@@ -81,12 +81,12 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: isUk ? "Послуги CodeNest" : "CodeNest Services",
-    url: `https://codenest.com.ua/${lang}/services`,
+    url: `https://codeworth.uk/${lang}/services`,
     itemListElement: SERVICES_DATA.map((s, i) => ({
       "@type": "ListItem",
       position: i + 1,
       name: s.title,
-      url: `https://codenest.com.ua/${lang}/services/${s.slug}`,
+      url: `https://codeworth.uk/${lang}/services/${s.slug}`,
     })),
   };
 

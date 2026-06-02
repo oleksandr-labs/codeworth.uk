@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: isUk ? `${label} — Блог CodeNest` : `${label} — CodeNest Blog`,
       description: desc,
       type: "website",
-      url: `https://codenest.com.ua/${lang}/blog/category/${category}`,
+      url: `https://codeworth.uk/${lang}/blog/category/${category}`,
       images: [{ url: "/og/blog.png", width: 1200, height: 630, alt: isUk ? "Блог CodeNest" : "CodeNest Blog" }],
     },
     twitter: {
@@ -78,9 +78,9 @@ export default async function BlogCategoryPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codenest.com.ua/${lang}` },
-      { "@type": "ListItem", position: 2, name: isUk ? "Блог" : "Blog", item: `https://codenest.com.ua/${lang}/blog` },
-      { "@type": "ListItem", position: 3, name: label, item: `https://codenest.com.ua/${lang}/blog/category/${category}` },
+      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codeworth.uk/${lang}` },
+      { "@type": "ListItem", position: 2, name: isUk ? "Блог" : "Blog", item: `https://codeworth.uk/${lang}/blog` },
+      { "@type": "ListItem", position: 3, name: label, item: `https://codeworth.uk/${lang}/blog/category/${category}` },
     ],
   };
 
@@ -89,11 +89,11 @@ export default async function BlogCategoryPage({ params }: Props) {
     "@type": "CollectionPage",
     name: isUk ? `${label} — Блог CodeNest` : `${label} — CodeNest Blog`,
     description: description,
-    url: `https://codenest.com.ua/${lang}/blog/category/${category}`,
+    url: `https://codeworth.uk/${lang}/blog/category/${category}`,
     hasPart: posts.slice(0, 10).map((p) => ({
       "@type": "BlogPosting",
       headline: p.title,
-      url: `https://codenest.com.ua/${lang}/blog/${p.slug}`,
+      url: `https://codeworth.uk/${lang}/blog/${p.slug}`,
       datePublished: p.date,
       author: { "@type": "Person", name: p.author },
     })),

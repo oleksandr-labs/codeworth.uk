@@ -94,7 +94,7 @@ describe("CartClient", () => {
     mockUseCart.subtotal = 10000;
     render(<CartClient />);
     fireEvent.change(screen.getByPlaceholderText(/введіть промокод/i), {
-      target: { value: "codenest10" },
+      target: { value: "codeworth10" },
     });
     fireEvent.click(screen.getByRole("button", { name: /застосувати/i }));
     expect(screen.getByText(/промокод застосовано — знижка 10%/i)).toBeInTheDocument();
@@ -120,7 +120,7 @@ describe("CartClient", () => {
     mockUseCart.subtotal = 10000;
     render(<CartClient />);
     fireEvent.change(screen.getByPlaceholderText(/введіть промокод/i), {
-      target: { value: "CODENEST10" },
+      target: { value: "codeworth10" },
     });
     fireEvent.click(screen.getByRole("button", { name: /застосувати/i }));
     // Both the success message and the discount line contain "знижка 10%"

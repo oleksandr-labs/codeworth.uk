@@ -52,7 +52,7 @@ export async function generateMetadata({
       price: niche.priceFrom,
       priceCurrency: "UAH",
       availability: "https://schema.org/InStock",
-      url: `https://codenest.com.ua/marketplace/product/${niche.slug}`,
+      url: `https://codeworth.uk/marketplace/product/${niche.slug}`,
     },
     aggregateRating: {
       "@type": "AggregateRating",
@@ -74,7 +74,7 @@ export async function generateMetadata({
       title: ogTitle,
       description: niche.metaDescription,
       type: "website",
-      url: `https://codenest.com.ua/${lang}/marketplace/product/${slug}`,
+      url: `https://codeworth.uk/${lang}/marketplace/product/${slug}`,
       images: [{ url: ogImage, width: 1200, height: 630, alt: niche.title }],
     },
     twitter: {
@@ -158,7 +158,7 @@ export default async function ProductPage({
   const TRUST_BADGES = getTrustBadges(isUk);
   const FAKE_REVIEWS = getFakeReviews(isUk);
 
-  const demoUrl = `https://codenest.com.ua/${lang}/niches/${niche.slug}`;
+  const demoUrl = `https://codeworth.uk/${lang}/niches/${niche.slug}`;
   const qrSvg = await QRCode.toString(demoUrl, {
     type: "svg",
     margin: 1,
@@ -174,10 +174,10 @@ export default async function ProductPage({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Головна", item: "https://codenest.com.ua" },
-      { "@type": "ListItem", position: 2, name: "Маркетплейс", item: "https://codenest.com.ua/marketplace" },
-      { "@type": "ListItem", position: 3, name: "Каталог", item: "https://codenest.com.ua/marketplace/catalog" },
-      { "@type": "ListItem", position: 4, name: niche.title, item: `https://codenest.com.ua/marketplace/product/${niche.slug}` },
+      { "@type": "ListItem", position: 1, name: "Головна", item: "https://codeworth.uk" },
+      { "@type": "ListItem", position: 2, name: "Маркетплейс", item: "https://codeworth.uk/marketplace" },
+      { "@type": "ListItem", position: 3, name: "Каталог", item: "https://codeworth.uk/marketplace/catalog" },
+      { "@type": "ListItem", position: 4, name: niche.title, item: `https://codeworth.uk/marketplace/product/${niche.slug}` },
     ],
   };
 
@@ -234,7 +234,7 @@ export default async function ProductPage({
                 <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4">
                   <div>
                     <div className="text-white font-semibold">{niche.title}</div>
-                    <div className="text-white/70 text-sm">codenest.com.ua/niches/{niche.slug}</div>
+                    <div className="text-white/70 text-sm">codeworth.uk/niches/{niche.slug}</div>
                   </div>
                   <div
                     className="hidden md:flex flex-col items-center gap-1 shrink-0"
@@ -300,7 +300,7 @@ export default async function ProductPage({
                   <div className="w-3 h-3 rounded-full bg-green-400" />
                 </div>
                 <div className="flex-1 bg-white rounded-lg px-3 py-1 text-xs text-neutral-400 text-center">
-                  codenest.com.ua/{lang}/niches/{niche.slug}
+                  codeworth.uk/{lang}/niches/{niche.slug}
                 </div>
                 <Link
                   href={`/${lang}/niches/${niche.slug}`}

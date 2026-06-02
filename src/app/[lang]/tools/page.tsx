@@ -34,7 +34,7 @@ export async function generateMetadata({
         ? "10 безкоштовних інструментів для власників сайтів."
         : "10 free tools for website owners.",
       type: "website",
-      url: `https://codenest.com.ua/${lang}/tools`,
+      url: `https://codeworth.uk/${lang}/tools`,
       images: [{ url: "/og/tools.png", width: 1200, height: 630, alt: "Free Web Tools — CodeNest" }],
     },
     twitter: {

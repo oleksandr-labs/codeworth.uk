@@ -63,7 +63,7 @@ export default async function CareerPositionPage({
     hiringOrganization: {
       "@type": "Organization",
       name: "CodeNest",
-      sameAs: "https://codenest.com.ua",
+      sameAs: "https://codeworth.uk",
     },
     baseSalary: {
       "@type": "MonetaryAmount",
@@ -75,7 +75,7 @@ export default async function CareerPositionPage({
         unitText: "MONTH",
       },
     },
-    url: `https://codenest.com.ua/${lang}/careers/${position}`,
+    url: `https://codeworth.uk/${lang}/careers/${position}`,
   };
 
   const requirements = isUk ? job.requirementsUk : job.requirementsEn;

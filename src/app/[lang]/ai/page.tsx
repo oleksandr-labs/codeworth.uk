@@ -30,7 +30,7 @@ export async function generateMetadata({
       title,
       description,
       type: "website",
-      url: `https://codenest.com.ua/${lang}/ai`,
+      url: `https://codeworth.uk/${lang}/ai`,
     },
   };
 }
@@ -50,11 +50,11 @@ export default async function AIHubPage({
     description: isUk
       ? "Спеціалізовані AI-розробки для 10 галузей"
       : "Specialised AI development for 10 industries",
-    url: `https://codenest.com.ua/${lang}/ai`,
+    url: `https://codeworth.uk/${lang}/ai`,
     hasPart: AI_NICHES.map((n) => ({
       "@type": "Service",
       name: isUk ? n.h1Uk : n.h1En,
-      url: `https://codenest.com.ua/${lang}/ai/${n.slug}`,
+      url: `https://codeworth.uk/${lang}/ai/${n.slug}`,
     })),
   };
 

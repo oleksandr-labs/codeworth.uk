@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         ? "Дізнайтеся більше про команду CodeNest — веб-студію повного циклу. Наша місія, цінності та технічний стек."
         : "Learn more about the CodeNest team — a full-cycle web studio. Our mission, values, and tech stack.",
       type: "website",
-      url: `https://codenest.com.ua/${lang}/about`,
+      url: `https://codeworth.uk/${lang}/about`,
       images: [{ url: "/og/about.png", width: 1200, height: 630, alt: "CodeNest Team" }],
     },
     twitter: {
@@ -114,8 +114,8 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "CodeNest",
-  url: "https://codenest.com.ua",
-  logo: "https://codenest.com.ua/logo.svg",
+  url: "https://codeworth.uk",
+  logo: "https://codeworth.uk/logo.svg",
   description: "Веб-студія повного циклу — розробка сайтів, SEO, дизайн та маркетплейс готових рішень для бізнесу в Україні.",
   foundingDate: "2021",
   numberOfEmployees: { "@type": "QuantitativeValue", value: 8 },
@@ -123,7 +123,7 @@ const organizationSchema = {
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "customer service",
-    email: "hello@codenest.com.ua",
+    email: "hello@codeworth.uk",
     availableLanguage: ["Ukrainian", "English"],
   },
   sameAs: [
@@ -137,7 +137,7 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Головна", item: "https://codenest.com.ua" },
+    { "@type": "ListItem", position: 1, name: "Головна", item: "https://codeworth.uk" },
     { "@type": "ListItem", position: 2, name: "Про нас" },
   ],
 };
@@ -320,7 +320,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
                   ? "Шукаємо Frontend Developer та UI/UX Designer. Повністю дистанційно, гнучкий графік, цікаві проєкти."
                   : "Looking for a Frontend Developer and UI/UX Designer. Fully remote, flexible hours, exciting projects."}
               </p>
-              <a href="mailto:jobs@codenest.com.ua" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-indigo-600 text-white font-semibold text-sm hover:bg-indigo-700 transition-colors">
+              <a href="mailto:jobs@codeworth.uk" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-indigo-600 text-white font-semibold text-sm hover:bg-indigo-700 transition-colors">
                 {isUk ? "Надіслати CV" : "Send CV"}
                 <ArrowRight className="w-4 h-4" />
               </a>

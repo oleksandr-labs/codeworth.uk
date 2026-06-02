@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         ? "Готові нішеві сайти для 35 типів бізнесу. Запуск за 3 дні. Від 4 900 грн."
         : "Ready-made niche websites for 35 business types. Launch in 3 days.",
       type: "website",
-      url: `https://codenest.com.ua/${lang}/marketplace`,
+      url: `https://codeworth.uk/${lang}/marketplace`,
       images: [{ url: "/og/marketplace.png", width: 1200, height: 630, alt: isUk ? "Маркетплейс CodeNest" : "CodeNest Marketplace" }],
     },
     twitter: {
@@ -259,7 +259,7 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Головна", item: "https://codenest.com.ua" },
+    { "@type": "ListItem", position: 1, name: "Головна", item: "https://codeworth.uk" },
     { "@type": "ListItem", position: 2, name: "Маркетплейс" },
   ],
 };
@@ -277,7 +277,7 @@ export default async function MarketplacePage({ params }: { params: Promise<{ la
     "@type": "CollectionPage",
     name: "Маркетплейс готових сайтів для бізнесу",
     description: "Готові нішеві сайти для 35 типів бізнесу: ресторани, салони, клініки, магазини, юристи. Запуск за 3 дні.",
-    url: "https://codenest.com.ua/marketplace",
+    url: "https://codeworth.uk/marketplace",
     mainEntity: {
       "@type": "ItemList",
       numberOfItems: NICHES.reduce((acc, g) => acc + g.items.length, 0),
@@ -288,7 +288,7 @@ export default async function MarketplacePage({ params }: { params: Promise<{ la
           item: {
             "@type": "Product",
             name: `Сайт «${item.name}»`,
-            url: `https://codenest.com.ua/niches/${item.slug}`,
+            url: `https://codeworth.uk/niches/${item.slug}`,
             offers: {
               "@type": "Offer",
               priceCurrency: "UAH",

@@ -291,7 +291,7 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ slu
             borderTop: `1px solid rgba(255,255,255,0.08)`,
           }}
         >
-          <span style={{ color: "rgba(255,255,255,0.35)", fontSize: 16 }}>codenest.com.ua</span>
+          <span style={{ color: "rgba(255,255,255,0.35)", fontSize: 16 }}>codeworth.uk</span>
           <span style={{ color: "rgba(255,255,255,0.35)", fontSize: 16 }}>UK-based · GDPR-compliant</span>
         </div>
       </div>

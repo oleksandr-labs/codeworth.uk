@@ -331,7 +331,7 @@ export default function AccountClient() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 text-xs text-indigo-700 font-medium hover:underline"
               >
-                @codenest_ua <ExternalLink className="w-3 h-3" />
+                @codeworth_uk <ExternalLink className="w-3 h-3" />
               </a>
             </div>
           </aside>
@@ -672,8 +672,8 @@ export default function AccountClient() {
                 {/* Quick contacts */}
                 <div className="grid sm:grid-cols-3 gap-4">
                   {[
-                    { icon: "💬", title: "Telegram", sub: "@codenest_ua", href: "https://t.me/codenest_ua" },
-                    { icon: "📧", title: "Email", sub: "hello@codenest.com.ua", href: "mailto:hello@codenest.com.ua" },
+                    { icon: "💬", title: "Telegram", sub: "@codeworth_uk", href: "https://t.me/codenest_ua" },
+                    { icon: "📧", title: "Email", sub: "hello@codeworth.uk", href: "mailto:hello@codeworth.uk" },
                     { icon: "📞", title: isUk ? "Телефон" : "Phone", sub: "+38 000 000 00 00", href: "tel:+380000000000" },
                   ].map((c) => (
                     <a

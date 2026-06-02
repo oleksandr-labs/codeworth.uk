@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: service.title,
       description: service.metaDescription,
       type: "website",
-      url: `https://codenest.com.ua/${lang}/services/${slug}`,
+      url: `https://codeworth.uk/${lang}/services/${slug}`,
       images: [{ url: ogImage, width: 1200, height: 630, alt: service.shortTitle }],
     },
     twitter: {
@@ -86,8 +86,8 @@ export default async function ServicePage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Головна", item: "https://codenest.com.ua" },
-      { "@type": "ListItem", position: 2, name: "Послуги", item: "https://codenest.com.ua/services" },
+      { "@type": "ListItem", position: 1, name: "Головна", item: "https://codeworth.uk" },
+      { "@type": "ListItem", position: 2, name: "Послуги", item: "https://codeworth.uk/services" },
       { "@type": "ListItem", position: 3, name: service.title },
     ],
   };
@@ -100,9 +100,9 @@ export default async function ServicePage({ params }: Props) {
     provider: {
       "@type": "Organization",
       name: "CodeNest",
-      url: "https://codenest.com.ua",
+      url: "https://codeworth.uk",
     },
-    url: `https://codenest.com.ua/services/${service.slug}`,
+    url: `https://codeworth.uk/services/${service.slug}`,
     offers: {
       "@type": "Offer",
       priceCurrency: "UAH",

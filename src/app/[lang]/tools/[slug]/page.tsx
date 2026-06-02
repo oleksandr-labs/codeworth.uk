@@ -48,7 +48,7 @@ export async function generateMetadata({
       title,
       description,
       type: "website",
-      url: `https://codenest.com.ua/${lang}/tools/${slug}`,
+      url: `https://codeworth.uk/${lang}/tools/${slug}`,
     },
   };
 }

@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         ? "Готові модулі та функції для вашого сайту. Від форм і калькуляторів до CRM та онлайн-оплати."
         : "Ready-made modules and features for your website. From forms and calculators to CRM and online payments.",
       type: "website",
-      url: `https://codenest.com.ua/${lang}/extras`,
+      url: `https://codeworth.uk/${lang}/extras`,
       images: [{ url: "/og/extras.png", width: 1200, height: 630, alt: isUk ? "Доробки та модулі CodeNest" : "CodeNest Add-ons" }],
     },
     twitter: {
@@ -37,7 +37,7 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Головна", item: "https://codenest.com.ua" },
+    { "@type": "ListItem", position: 1, name: "Головна", item: "https://codeworth.uk" },
     { "@type": "ListItem", position: 2, name: "Доробки та модулі" },
   ],
 };
@@ -50,14 +50,14 @@ export default async function ExtrasPage({ params }: { params: Promise<{ lang: s
     "@type": "ItemList",
     name: "Доробки та модулі CodeNest",
     description: "Готові модулі, функції та доробки для сайтів від студії CodeNest",
-    url: "https://codenest.com.ua/extras",
+    url: "https://codeworth.uk/extras",
     numberOfItems: EXTRAS.length,
     itemListElement: EXTRAS.map((extra, index) => ({
       "@type": "ListItem",
       position: index + 1,
       name: extra.title,
       description: extra.description,
-      url: `https://codenest.com.ua/contact?extra=${extra.id}`,
+      url: `https://codeworth.uk/contact?extra=${extra.id}`,
     })),
   };
 

@@ -57,7 +57,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description,
       type: "website",
-      url: `https://codenest.com.ua/${lang}/startup/${slug}`,
+      url: `https://codeworth.uk/${lang}/startup/${slug}`,
     },
   };
 }
@@ -151,7 +151,7 @@ export default async function StartupSolutionPage({ params }: Props) {
       priceCurrency: "GBP",
       price: solution.priceFrom,
       availability: "https://schema.org/InStock",
-      seller: { "@type": "Organization", name: "CodeNest", url: "https://codenest.com.ua" },
+      seller: { "@type": "Organization", name: "CodeNest", url: "https://codeworth.uk" },
     },
   };
 

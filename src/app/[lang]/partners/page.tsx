@@ -27,7 +27,7 @@ export async function generateMetadata({
   return {
     title,
     description: desc,
-    openGraph: { title, description: desc, type: "website", url: `https://codenest.com.ua/${lang}/partners` },
+    openGraph: { title, description: desc, type: "website", url: `https://codeworth.uk/${lang}/partners` },
     alternates: buildAlternates(lang, "/partners"),
   };
 }
@@ -220,7 +220,7 @@ export default async function PartnersPage({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codenest.com.ua/${lang}` },
+      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codeworth.uk/${lang}` },
       { "@type": "ListItem", position: 2, name: isUk ? "Партнери" : "Partners" },
     ],
   };
@@ -234,11 +234,11 @@ export default async function PartnersPage({
     description: isUk
       ? "Огляд технологічного стеку CodeNest: Next.js 15, TypeScript, Tailwind CSS, Vercel та ін."
       : "Overview of CodeNest tech stack: Next.js 15, TypeScript, Tailwind CSS, Vercel and more.",
-    author: { "@type": "Organization", name: "CodeNest", url: "https://codenest.com.ua" },
-    publisher: { "@type": "Organization", name: "CodeNest", url: "https://codenest.com.ua" },
+    author: { "@type": "Organization", name: "CodeNest", url: "https://codeworth.uk" },
+    publisher: { "@type": "Organization", name: "CodeNest", url: "https://codeworth.uk" },
     datePublished: "2024-01-01",
     dateModified: "2026-01-01",
-    url: `https://codenest.com.ua/${lang}/partners`,
+    url: `https://codeworth.uk/${lang}/partners`,
     inLanguage: lang,
     about: TECH_STACK.map((t) => ({
       "@type": "SoftwareApplication",

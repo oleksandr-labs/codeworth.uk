@@ -46,7 +46,7 @@ export async function generateMetadata({
       title,
       description: niche.metaDescription,
       type: "website",
-      url: `https://codenest.com.ua/${lang}/niches/${niche.slug}`,
+      url: `https://codeworth.uk/${lang}/niches/${niche.slug}`,
       images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
     },
     twitter: {
@@ -172,8 +172,8 @@ export default async function NichePage({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codenest.com.ua/${lang}` },
-      { "@type": "ListItem", position: 2, name: isUk ? "Рішення" : "Solutions", item: `https://codenest.com.ua/${lang}/niches` },
+      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codeworth.uk/${lang}` },
+      { "@type": "ListItem", position: 2, name: isUk ? "Рішення" : "Solutions", item: `https://codeworth.uk/${lang}/niches` },
       { "@type": "ListItem", position: 3, name: niche.title },
     ],
   };
@@ -184,14 +184,14 @@ export default async function NichePage({
     "@type": "Product",
     name: niche.title,
     description: niche.metaDescription,
-    url: `https://codenest.com.ua/niches/${niche.slug}`,
-    image: `https://codenest.com.ua/og/${niche.slug}.png`,
+    url: `https://codeworth.uk/niches/${niche.slug}`,
+    image: `https://codeworth.uk/og/${niche.slug}.png`,
     offers: {
       "@type": "Offer",
       price: niche.priceFrom,
       priceCurrency: "UAH",
       availability: "https://schema.org/InStock",
-      seller: { "@type": "Organization", name: "CodeNest", url: "https://codenest.com.ua" },
+      seller: { "@type": "Organization", name: "CodeNest", url: "https://codeworth.uk" },
     },
     aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "200" },
     brand: { "@type": "Brand", name: "CodeNest" },
@@ -203,8 +203,8 @@ export default async function NichePage({
     "@type": niche.schemaType ?? "LocalBusiness",
     name: niche.title,
     description: niche.metaDescription,
-    image: `https://codenest.com.ua/og/${niche.slug}.png`,
-    url: `https://codenest.com.ua/niches/${niche.slug}`,
+    image: `https://codeworth.uk/og/${niche.slug}.png`,
+    url: `https://codeworth.uk/niches/${niche.slug}`,
     priceRange: `від ${niche.priceFrom.toLocaleString("uk-UA")} ₴`,
     areaServed: { "@type": "Country", name: "Ukraine" },
   };
@@ -314,7 +314,7 @@ export default async function NichePage({
                     <div className="w-3 h-3 rounded-full bg-green-400" />
                     <div className="flex-1 bg-white/20 rounded-full h-5 ml-2 flex items-center px-3">
                       <span className="text-white/60 text-xs">
-                        codenest.com.ua/niches/{niche.slug}
+                        codeworth.uk/niches/{niche.slug}
                       </span>
                     </div>
                   </div>

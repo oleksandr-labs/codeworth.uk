@@ -183,7 +183,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: ogTitle,
       description: ogDescription,
       type: "article",
-      url: `https://codenest.com.ua/${lang}/portfolio/${slug}`,
+      url: `https://codeworth.uk/${lang}/portfolio/${slug}`,
       images: [{ url: ogImage, width: 1200, height: 630, alt: project.title }],
     },
     twitter: {
@@ -237,8 +237,8 @@ export default async function PortfolioProjectPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Головна", item: "https://codenest.com.ua" },
-      { "@type": "ListItem", position: 2, name: "Портфоліо", item: "https://codenest.com.ua/portfolio" },
+      { "@type": "ListItem", position: 1, name: "Головна", item: "https://codeworth.uk" },
+      { "@type": "ListItem", position: 2, name: "Портфоліо", item: "https://codeworth.uk/portfolio" },
       { "@type": "ListItem", position: 3, name: project.title },
     ],
   };
@@ -250,16 +250,16 @@ export default async function PortfolioProjectPage({ params }: Props) {
       ? `${project.title} — Кейс CodeNest`
       : `${project.title} — CodeNest Case Study`,
     description,
-    image: `https://codenest.com.ua/og/portfolio/${project.slug}.png`,
-    author: { "@type": "Organization", name: "CodeNest", url: "https://codenest.com.ua" },
+    image: `https://codeworth.uk/og/portfolio/${project.slug}.png`,
+    author: { "@type": "Organization", name: "CodeNest", url: "https://codeworth.uk" },
     publisher: {
       "@type": "Organization",
       name: "CodeNest",
-      url: "https://codenest.com.ua",
-      logo: { "@type": "ImageObject", url: "https://codenest.com.ua/logo.png" },
+      url: "https://codeworth.uk",
+      logo: { "@type": "ImageObject", url: "https://codeworth.uk/logo.png" },
     },
     datePublished: project.year ? `${project.year}-01-01` : undefined,
-    url: `https://codenest.com.ua/${lang}/portfolio/${project.slug}`,
+    url: `https://codeworth.uk/${lang}/portfolio/${project.slug}`,
     inLanguage: isUk ? "uk" : "en",
     about: { "@type": "Thing", name: project.category },
     keywords: project.tech?.join(", "),
@@ -272,15 +272,15 @@ export default async function PortfolioProjectPage({ params }: Props) {
     description: isUk
       ? `Готове рішення для ${project.niche ?? project.category}. Запуск за ${deliveryDays} днів.`
       : `Ready-made solution for ${project.niche ?? project.category}. Launch in ${deliveryDays} days.`,
-    image: `https://codenest.com.ua/og/portfolio/${project.slug}.png`,
+    image: `https://codeworth.uk/og/portfolio/${project.slug}.png`,
     brand: { "@type": "Brand", name: "CodeNest" },
     offers: {
       "@type": "Offer",
       priceCurrency: "GBP",
       price: priceGbp,
       availability: "https://schema.org/InStock",
-      seller: { "@type": "Organization", name: "CodeNest", url: "https://codenest.com.ua" },
-      url: `https://codenest.com.ua/${lang}/portfolio/${project.slug}`,
+      seller: { "@type": "Organization", name: "CodeNest", url: "https://codeworth.uk" },
+      url: `https://codeworth.uk/${lang}/portfolio/${project.slug}`,
     },
   };
 
@@ -389,7 +389,7 @@ export default async function PortfolioProjectPage({ params }: Props) {
               : `/${lang}/niches/${project.nicheSlug}`;
             const demoLabel = hasDedicated
               ? project.title.toLowerCase().replace(/\s+/g, "") + ".ua"
-              : `codenest.com.ua/niches/${project.nicheSlug}`;
+              : `codeworth.uk/niches/${project.nicheSlug}`;
 
             return (
               <section className="py-16 bg-neutral-50 dark:bg-neutral-900/80">

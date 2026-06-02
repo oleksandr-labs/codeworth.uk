@@ -855,8 +855,8 @@ export default function DashboardClient() {
                   </div>
                   <div>
                     <div className="text-xs text-gray-500 mb-0.5">Email</div>
-                    <a href="mailto:hello@codenest.com.ua" className="text-sm font-medium text-gray-800 hover:text-indigo-600">
-                      hello@codenest.com.ua
+                    <a href="mailto:hello@codeworth.uk" className="text-sm font-medium text-gray-800 hover:text-indigo-600">
+                      hello@codeworth.uk
                     </a>
                   </div>
                 </div>
@@ -867,7 +867,7 @@ export default function DashboardClient() {
                   <div>
                     <div className="text-xs text-gray-500 mb-0.5">Telegram</div>
                     <a href="https://t.me/codenest_ua" className="text-sm font-medium text-gray-800 hover:text-indigo-600">
-                      @codenest_ua
+                      @codeworth_uk
                     </a>
                   </div>
                 </div>

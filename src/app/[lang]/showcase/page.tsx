@@ -30,7 +30,7 @@ export async function generateMetadata({
       title: isUk ? "UI Showcase | CodeNest" : "UI Showcase | CodeNest",
       description: isUk ? "Живі демо всіх UI-компонентів CodeNest." : "Live demos of all CodeNest UI components.",
       type: "website",
-      url: `https://codenest.com.ua/${lang}/showcase`,
+      url: `https://codeworth.uk/${lang}/showcase`,
     },
   };
 }

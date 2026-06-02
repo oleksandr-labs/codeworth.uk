@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         ? "Блог CodeNest — статті про веб-розробку на Next.js, SEO-просування, UI/UX дизайн, e-commerce та кейси клієнтів."
         : "CodeNest Blog — articles about Next.js web development, SEO, UI/UX design, e-commerce, and client case studies.",
       type: "website",
-      url: `https://codenest.com.ua/${lang}/blog`,
+      url: `https://codeworth.uk/${lang}/blog`,
       images: [{ url: "/og/blog.png", width: 1200, height: 630, alt: isUk ? "Блог CodeNest" : "CodeNest Blog" }],
     },
     twitter: {
@@ -50,8 +50,8 @@ export default async function BlogPage({ params }: { params: Promise<{ lang: str
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codenest.com.ua/${lang}` },
-      { "@type": "ListItem", position: 2, name: isUk ? "Блог" : "Blog", item: `https://codenest.com.ua/${lang}/blog` },
+      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codeworth.uk/${lang}` },
+      { "@type": "ListItem", position: 2, name: isUk ? "Блог" : "Blog", item: `https://codeworth.uk/${lang}/blog` },
     ],
   };
 

@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         ? "Зв'яжіться з командою CodeNest. Telegram, Email, телефон. Відповідаємо протягом 2 годин."
         : "Contact the CodeNest team. Telegram, Email, phone. We respond within 2 hours.",
       type: "website",
-      url: `https://codenest.com.ua/${lang}/contact`,
+      url: `https://codeworth.uk/${lang}/contact`,
       images: [{ url: "/og/contact.png", width: 1200, height: 630, alt: isUk ? "Контакти CodeNest" : "CodeNest Contacts" }],
     },
     twitter: {
@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 }
 
 const MESSENGERS = [
-  { name: "Telegram", handle: "@codenest_ua", href: "https://t.me/codenest_ua", bg: "bg-sky-500", emoji: "✈️" },
+  { name: "Telegram", handle: "@codeworth_uk", href: "https://t.me/codenest_ua", bg: "bg-sky-500", emoji: "✈️" },
   { name: "Instagram", handle: "@codenest.ua", href: "https://instagram.com/codenest.ua", bg: "bg-linear-to-br from-purple-500 to-pink-500", emoji: "📷" },
   { name: "Viber", handle: "+38 (000) 000-00-00", href: "viber://chat?number=+380000000000", bg: "bg-violet-600", emoji: "📱" },
   { name: "Facebook", handle: "CodeNest UA", href: "https://facebook.com/codenest.ua", bg: "bg-blue-600", emoji: "📘" },
@@ -58,11 +58,11 @@ const QUICK_FAQ_EN = [
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://codenest.com.ua/#business",
+  "@id": "https://codeworth.uk/#business",
   name: "CodeNest",
   description: "Веб-студія повного циклу — розробка сайтів, SEO, дизайн та маркетплейс готових рішень для бізнесу в Україні.",
-  url: "https://codenest.com.ua",
-  email: "hello@codenest.com.ua",
+  url: "https://codeworth.uk",
+  email: "hello@codeworth.uk",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Київ",
@@ -180,8 +180,8 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
                       </div>
                       <div>
                         <p className="text-xs text-neutral-400 mb-0.5">Email</p>
-                        <a href="mailto:hello@codenest.com.ua" className="font-medium text-neutral-900 hover:text-indigo-600 transition-colors">
-                          hello@codenest.com.ua
+                        <a href="mailto:hello@codeworth.uk" className="font-medium text-neutral-900 hover:text-indigo-600 transition-colors">
+                          hello@codeworth.uk
                         </a>
                       </div>
                     </div>

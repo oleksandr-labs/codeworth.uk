@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         ? "Розробка сайтів, інтернет-магазинів, SEO та UI/UX дизайн. Маркетплейс готових нішевих рішень. 120+ проєктів."
         : "Website development, e-commerce, SEO, and UI/UX design. Marketplace of ready-made niche solutions. 120+ projects.",
       type: "website",
-      url: `https://codenest.com.ua/${lang}`,
+      url: `https://codeworth.uk/${lang}`,
       images: [{ url: "/og/home.png", width: 1200, height: 630, alt: isUk ? "CodeNest — Веб-студія" : "CodeNest — Web Studio" }],
     },
     twitter: {

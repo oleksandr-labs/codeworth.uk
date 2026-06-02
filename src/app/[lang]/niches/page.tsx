@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         ? `${NICHES_DATA.length}+ живих демо-сайтів. Запуск за 3–7 днів від £499. Адаптуємо під ваш бренд.`
         : `${NICHES_DATA.length}+ live demos. Launch in 3–7 days from £499. Customized for your brand.`,
       type: "website",
-      url: `https://codenest.com.ua/${lang}/niches`,
+      url: `https://codeworth.uk/${lang}/niches`,
       images: [{ url: "/og/niches.png", width: 1200, height: 630, alt: isUk ? "Нішеві сайти CodeNest" : "CodeNest Niche Websites" }],
     },
     twitter: {
@@ -91,8 +91,8 @@ export default async function NichesPage({ params }: { params: Promise<{ lang: s
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codenest.com.ua/${lang}` },
-      { "@type": "ListItem", position: 2, name: isUk ? "Рішення" : "Solutions", item: `https://codenest.com.ua/${lang}/niches` },
+      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codeworth.uk/${lang}` },
+      { "@type": "ListItem", position: 2, name: isUk ? "Рішення" : "Solutions", item: `https://codeworth.uk/${lang}/niches` },
     ],
   };
 
@@ -105,7 +105,7 @@ export default async function NichesPage({ params }: { params: Promise<{ lang: s
       "@type": "ListItem",
       position: i + 1,
       name: n.title,
-      url: `https://codenest.com.ua/${lang}/niches/${n.slug}`,
+      url: `https://codeworth.uk/${lang}/niches/${n.slug}`,
     })),
   };
 
@@ -116,14 +116,14 @@ export default async function NichesPage({ params }: { params: Promise<{ lang: s
       "@type": "Product",
       name: n.title,
       description: n.subtitle,
-      url: `https://codenest.com.ua/${lang}/niches/${n.slug}`,
+      url: `https://codeworth.uk/${lang}/niches/${n.slug}`,
       brand: { "@type": "Brand", name: "CodeNest" },
       offers: {
         "@type": "Offer",
         priceCurrency: isUk ? "UAH" : "GBP",
         price: isUk ? String(n.priceFrom) : String(Math.ceil(n.priceFrom / 40 / 5) * 5),
         availability: "https://schema.org/InStock",
-        url: `https://codenest.com.ua/${lang}/niches/${n.slug}`,
+        url: `https://codeworth.uk/${lang}/niches/${n.slug}`,
       },
     })),
   };

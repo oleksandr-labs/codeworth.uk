@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         ? "Умови збору та обробки персональних даних у веб-студії CodeNest."
         : "Terms for collection and processing of personal data at CodeNest web studio.",
       type: "website",
-      url: `https://codenest.com.ua/${lang}/privacy`,
+      url: `https://codeworth.uk/${lang}/privacy`,
       images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "CodeNest" }],
     },
     twitter: {
@@ -36,7 +36,7 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Головна", item: "https://codenest.com.ua" },
+    { "@type": "ListItem", position: 1, name: "Головна", item: "https://codeworth.uk" },
     { "@type": "ListItem", position: 2, name: "Політика конфіденційності" },
   ],
 };
@@ -78,7 +78,7 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
                   <p className="lead text-neutral-600">
                     Ця Політика конфіденційності описує, як CodeNest (далі — «ми», «нас») збирає,
                     використовує та захищає ваші персональні дані під час використання сайту{" "}
-                    <Link href="https://codenest.com.ua">codenest.com.ua</Link> та пов'язаних сервісів.
+                    <Link href="https://codeworth.uk">codeworth.uk</Link> та пов'язаних сервісів.
                   </p>
                   <h2>1. Хто ми</h2>
                   <p>
@@ -86,9 +86,9 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
                     дизайну та продає готові нішеві рішення через маркетплейс.
                   </p>
                   <ul>
-                    <li>Сайт: codenest.com.ua</li>
-                    <li>Email: hello@codenest.com.ua</li>
-                    <li>Telegram: @codenest_ua</li>
+                    <li>Сайт: codeworth.uk</li>
+                    <li>Email: hello@codeworth.uk</li>
+                    <li>Telegram: @codeworth_uk</li>
                     <li>Місцезнаходження: м. Київ, Україна</li>
                   </ul>
                   <h2>2. Які дані ми збираємо</h2>
@@ -149,7 +149,7 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
                     <li><strong>Перенесення</strong> — отримати дані у машинно-зчитуваному форматі</li>
                     <li><strong>Відкликання згоди</strong> — в будь-який момент</li>
                   </ul>
-                  <p>Для реалізації прав надішліть запит на hello@codenest.com.ua. Ми відповімо протягом 30 днів.</p>
+                  <p>Для реалізації прав надішліть запит на hello@codeworth.uk. Ми відповімо протягом 30 днів.</p>
                   <h2>8. Безпека даних</h2>
                   <ul>
                     <li>HTTPS/TLS шифрування всіх передач даних</li>
@@ -165,8 +165,8 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
                   </p>
                   <h2>10. Контакти</h2>
                   <ul>
-                    <li>Email: hello@codenest.com.ua</li>
-                    <li>Telegram: @codenest_ua</li>
+                    <li>Email: hello@codeworth.uk</li>
+                    <li>Telegram: @codeworth_uk</li>
                   </ul>
                 </>
               ) : (
@@ -174,7 +174,7 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
                   <p className="lead text-neutral-600">
                     This Privacy Policy describes how CodeNest (hereinafter — "we", "us") collects,
                     uses, and protects your personal data when you use the website{" "}
-                    <Link href="https://codenest.com.ua">codenest.com.ua</Link> and related services.
+                    <Link href="https://codeworth.uk">codeworth.uk</Link> and related services.
                   </p>
                   <h2>1. Who we are</h2>
                   <p>
@@ -182,9 +182,9 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
                     services, and selling ready-made niche solutions through our marketplace.
                   </p>
                   <ul>
-                    <li>Website: codenest.com.ua</li>
-                    <li>Email: hello@codenest.com.ua</li>
-                    <li>Telegram: @codenest_ua</li>
+                    <li>Website: codeworth.uk</li>
+                    <li>Email: hello@codeworth.uk</li>
+                    <li>Telegram: @codeworth_uk</li>
                     <li>Location: Kyiv, Ukraine</li>
                   </ul>
                   <h2>2. What data we collect</h2>
@@ -245,7 +245,7 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
                     <li><strong>Portability</strong> — receive your data in a machine-readable format</li>
                     <li><strong>Withdrawal of consent</strong> — at any time</li>
                   </ul>
-                  <p>To exercise these rights, send a request to hello@codenest.com.ua. We will respond within 30 days.</p>
+                  <p>To exercise these rights, send a request to hello@codeworth.uk. We will respond within 30 days.</p>
                   <h2>8. Data security</h2>
                   <ul>
                     <li>HTTPS/TLS encryption for all data transfers</li>
@@ -261,8 +261,8 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
                   </p>
                   <h2>10. Contact</h2>
                   <ul>
-                    <li>Email: hello@codenest.com.ua</li>
-                    <li>Telegram: @codenest_ua</li>
+                    <li>Email: hello@codeworth.uk</li>
+                    <li>Telegram: @codeworth_uk</li>
                   </ul>
                 </>
               )}

@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         ? "Тестуй гіпотезу і запускай за 3 дні від £299."
         : "Test your hypothesis and launch in 3 days from £299.",
       type: "website",
-      url: `https://codenest.com.ua/${lang}/startup`,
+      url: `https://codeworth.uk/${lang}/startup`,
       images: [{ url: "/og/startup.png", width: 1200, height: 630, alt: isUk ? "Стартап лендінги CodeNest" : "CodeNest Startup Landings" }],
     },
   };

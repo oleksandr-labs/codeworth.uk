@@ -30,7 +30,7 @@ export async function generateMetadata({
       title,
       description,
       type: "website",
-      url: `https://codenest.com.ua/${lang}/ml`,
+      url: `https://codeworth.uk/${lang}/ml`,
     },
   };
 }
@@ -50,11 +50,11 @@ export default async function MLHubPage({
     description: isUk
       ? "Спеціалізовані ML-розробки для 10 галузей"
       : "Specialised machine learning development for 10 industries",
-    url: `https://codenest.com.ua/${lang}/ml`,
+    url: `https://codeworth.uk/${lang}/ml`,
     hasPart: ML_NICHES.map((n) => ({
       "@type": "Service",
       name: isUk ? n.h1Uk : n.h1En,
-      url: `https://codenest.com.ua/${lang}/ml/${n.slug}`,
+      url: `https://codeworth.uk/${lang}/ml/${n.slug}`,
     })),
   };
 

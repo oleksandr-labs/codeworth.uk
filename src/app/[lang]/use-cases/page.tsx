@@ -37,7 +37,7 @@ export async function generateMetadata({
         ? "15 готових рішень для бізнес-задач."
         : "15 ready-made solutions for business challenges.",
       type: "website",
-      url: `https://codenest.com.ua/${lang}/use-cases`,
+      url: `https://codeworth.uk/${lang}/use-cases`,
       images: [{ url: "/og/use-cases.png", width: 1200, height: 630, alt: "Use Cases — CodeNest" }],
     },
   };

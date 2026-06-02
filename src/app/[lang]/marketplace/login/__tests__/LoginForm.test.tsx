@@ -52,7 +52,7 @@ describe("LoginForm", () => {
 
   it("показує демо-дані", () => {
     render(<LoginForm />);
-    expect(screen.getByText(/demo@codenest.com.ua/i)).toBeInTheDocument();
+    expect(screen.getByText(/demo@codeworth.uk/i)).toBeInTheDocument();
     expect(screen.getByText(/demo123/i)).toBeInTheDocument();
   });
 
@@ -75,17 +75,17 @@ describe("LoginForm", () => {
 
   it("викликає login з email та паролем при сабміті", async () => {
     const { container } = render(<LoginForm />);
-    fireEvent.change(screen.getByLabelText("Email", { selector: "input" }), { target: { value: "demo@codenest.com.ua" } });
+    fireEvent.change(screen.getByLabelText("Email", { selector: "input" }), { target: { value: "demo@codeworth.uk" } });
     fireEvent.change(screen.getByLabelText("Пароль", { selector: "input" }), { target: { value: "demo123" } });
     fireEvent.submit(container.querySelector("form")!);
     await waitFor(() => {
-      expect(mockLogin).toHaveBeenCalledWith("demo@codenest.com.ua", "demo123");
+      expect(mockLogin).toHaveBeenCalledWith("demo@codeworth.uk", "demo123");
     });
   });
 
   it("редіректить на /marketplace/account після успішного входу", async () => {
     const { container } = render(<LoginForm />);
-    fireEvent.change(screen.getByLabelText("Email", { selector: "input" }), { target: { value: "demo@codenest.com.ua" } });
+    fireEvent.change(screen.getByLabelText("Email", { selector: "input" }), { target: { value: "demo@codeworth.uk" } });
     fireEvent.change(screen.getByLabelText("Пароль", { selector: "input" }), { target: { value: "demo123" } });
     fireEvent.submit(container.querySelector("form")!);
     await waitFor(() => {

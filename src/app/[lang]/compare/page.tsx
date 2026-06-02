@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       title,
       description: desc,
       type: "website",
-      url: `https://codenest.com.ua/${lang}/compare`,
+      url: `https://codeworth.uk/${lang}/compare`,
       images: [{ url: "/og/compare.png", width: 1200, height: 630, alt: title }],
     },
     twitter: { card: "summary_large_image", title, images: ["/og/compare.png"] },

@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       title,
       description: desc,
       type: "website",
-      url: `https://codenest.com.ua/${lang}/location`,
+      url: `https://codeworth.uk/${lang}/location`,
       images: [{ url: "/og/location.png", width: 1200, height: 630, alt: title }],
     },
     twitter: { card: "summary_large_image", title, images: ["/og/location.png"] },
@@ -35,7 +35,7 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Головна", item: "https://codenest.com.ua" },
+    { "@type": "ListItem", position: 1, name: "Головна", item: "https://codeworth.uk" },
     { "@type": "ListItem", position: 2, name: "Міста" },
   ],
 };

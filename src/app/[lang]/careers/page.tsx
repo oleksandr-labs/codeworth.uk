@@ -28,7 +28,7 @@ export async function generateMetadata({
   return {
     title,
     description: desc,
-    openGraph: { title, description: desc, type: "website", url: `https://codenest.com.ua/${lang}/careers` },
+    openGraph: { title, description: desc, type: "website", url: `https://codeworth.uk/${lang}/careers` },
     alternates: buildAlternates(lang, "/careers"),
   };
 }
@@ -45,7 +45,7 @@ export default async function CareersPage({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codenest.com.ua/${lang}` },
+      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codeworth.uk/${lang}` },
       { "@type": "ListItem", position: 2, name: isUk ? "Вакансії" : "Careers" },
     ],
   };
@@ -112,7 +112,7 @@ export default async function CareersPage({
       hiringOrganization: {
         "@type": "Organization",
         name: "CodeNest",
-        sameAs: "https://codenest.com.ua",
+        sameAs: "https://codeworth.uk",
       },
       baseSalary: {
         "@type": "MonetaryAmount",
@@ -124,7 +124,7 @@ export default async function CareersPage({
           unitText: "MONTH",
         },
       },
-      url: `https://codenest.com.ua/${lang}/careers/${job.slug}`,
+      url: `https://codeworth.uk/${lang}/careers/${job.slug}`,
     })),
   };
 
@@ -305,7 +305,7 @@ export default async function CareersPage({
                   : "Send us your CV — we're always happy to meet talented people and keep all resumes on file."}
               </p>
               <a
-                href={`mailto:hr@codenest.com.ua?subject=${isUk ? "Відкрита заявка" : "Open Application"}`}
+                href={`mailto:hr@codeworth.uk?subject=${isUk ? "Відкрита заявка" : "Open Application"}`}
                 className="inline-flex items-center gap-2 bg-indigo-600 text-white font-semibold px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition-colors text-sm"
               >
                 {isUk ? "Надіслати CV" : "Send CV"}

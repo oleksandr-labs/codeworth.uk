@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description,
       type: "website",
-      url: `https://codenest.com.ua/${lang}/ai-solutions`,
+      url: `https://codeworth.uk/${lang}/ai-solutions`,
     },
   };
 }
@@ -66,7 +66,7 @@ export default async function AISolutionsCatalogPage({ params }: Props) {
           priceCurrency: isUk ? "UAH" : "GBP",
           availability: "https://schema.org/InStock",
         },
-        url: `https://codenest.com.ua/${lang}/extras/${product.id}`,
+        url: `https://codeworth.uk/${lang}/extras/${product.id}`,
         provider: {
           "@type": "Organization",
           name: "CodeNest",
@@ -79,9 +79,9 @@ export default async function AISolutionsCatalogPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codenest.com.ua/${lang}` },
-      { "@type": "ListItem", position: 2, name: isUk ? "AI-рішення" : "AI Solutions", item: `https://codenest.com.ua/${lang}/ai` },
-      { "@type": "ListItem", position: 3, name: isUk ? "Каталог" : "Catalog", item: `https://codenest.com.ua/${lang}/ai-solutions` },
+      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codeworth.uk/${lang}` },
+      { "@type": "ListItem", position: 2, name: isUk ? "AI-рішення" : "AI Solutions", item: `https://codeworth.uk/${lang}/ai` },
+      { "@type": "ListItem", position: 3, name: isUk ? "Каталог" : "Catalog", item: `https://codeworth.uk/${lang}/ai-solutions` },
     ],
   };
 

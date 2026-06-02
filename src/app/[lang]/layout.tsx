@@ -39,7 +39,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "CodeNest — Full-Cycle Web Studio | codenest.com.ua",
+    default: "CodeNest — Full-Cycle Web Studio | codeworth.uk",
     template: "%s | CodeNest",
   },
   description:
@@ -55,12 +55,12 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "CodeNest" }],
   creator: "CodeNest",
-  metadataBase: new URL("https://codenest.com.ua"),
+  metadataBase: new URL("https://codeworth.uk"),
   openGraph: {
     type: "website",
     locale: "en_GB",
     alternateLocale: ["uk_UA"],
-    url: "https://codenest.com.ua",
+    url: "https://codeworth.uk",
     siteName: "CodeNest",
     title: "CodeNest — Full-Cycle Web Studio",
     description:
@@ -90,15 +90,15 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "CodeNest",
-  url: "https://codenest.com.ua",
-  logo: "https://codenest.com.ua/logo.svg",
+  url: "https://codeworth.uk",
+  logo: "https://codeworth.uk/logo.svg",
   description: "Full-cycle web studio — website development, SEO, design and a marketplace of ready-made solutions for businesses.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Київ",
     addressCountry: "UA",
   },
-  email: "hello@codenest.com.ua",
+  email: "hello@codeworth.uk",
   sameAs: [
     "https://instagram.com/codenest.ua",
     "https://facebook.com/codenest.ua",
@@ -111,12 +111,12 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "CodeNest",
-  url: "https://codenest.com.ua",
+  url: "https://codeworth.uk",
   potentialAction: {
     "@type": "SearchAction",
     target: {
       "@type": "EntryPoint",
-      urlTemplate: "https://codenest.com.ua/blog?q={search_term_string}",
+      urlTemplate: "https://codeworth.uk/blog?q={search_term_string}",
     },
     "query-input": "required name=search_term_string",
   },
@@ -156,7 +156,7 @@ export default async function LocaleLayout({
         {/* Anti-FOUC: set dark class before paint */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('codenest-theme');var d=t==='dark'||(t==='system'||!t)&&window.matchMedia('(prefers-color-scheme: dark)').matches;if(d)document.documentElement.classList.add('dark')}catch(e){}})()`,
+            __html: `(function(){try{var t=localStorage.getItem('codeworth-theme');var d=t==='dark'||(t==='system'||!t)&&window.matchMedia('(prefers-color-scheme: dark)').matches;if(d)document.documentElement.classList.add('dark')}catch(e){}})()`,
           }}
         />
         <script

@@ -66,7 +66,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: post.title,
       description: post.excerpt,
       type: "article",
-      url: `https://codenest.com.ua/${lang}/blog/${slug}`,
+      url: `https://codeworth.uk/${lang}/blog/${slug}`,
       images: [{ url: ogImage, width: 1200, height: 630, alt: post.title }],
       publishedTime: post.date,
       authors: [post.author],
@@ -140,8 +140,8 @@ export default async function BlogPostPage({ params }: Props) {
     name: isUk ? authorData?.name ?? post.author : authorData?.nameEn ?? post.author,
     ...(authorData && {
       jobTitle: isUk ? authorData.role : authorData.roleEn,
-      url: `https://codenest.com.ua/${lang}/blog/author/${authorData.slug}`,
-      worksFor: { "@type": "Organization", name: "CodeNest", url: "https://codenest.com.ua" },
+      url: `https://codeworth.uk/${lang}/blog/author/${authorData.slug}`,
+      worksFor: { "@type": "Organization", name: "CodeNest", url: "https://codeworth.uk" },
       ...(authorData.social?.linkedin && { sameAs: [authorData.social.linkedin] }),
     }),
   };
@@ -151,7 +151,7 @@ export default async function BlogPostPage({ params }: Props) {
     "@type": "Person",
     name: isUk ? reviewerData.name : reviewerData.nameEn,
     jobTitle: isUk ? reviewerData.role : reviewerData.roleEn,
-    url: `https://codenest.com.ua/${lang}/blog/author/${reviewerData.slug}`,
+    url: `https://codeworth.uk/${lang}/blog/author/${reviewerData.slug}`,
     worksFor: { "@type": "Organization", name: "CodeNest" },
     ...(reviewerData.social?.linkedin && { sameAs: [reviewerData.social.linkedin] }),
   } : undefined;
@@ -161,18 +161,18 @@ export default async function BlogPostPage({ params }: Props) {
     "@type": "Article",
     headline: post.title,
     description: post.excerpt,
-    image: `https://codenest.com.ua/og/blog/${post.slug}.png`,
+    image: `https://codeworth.uk/og/blog/${post.slug}.png`,
     author: authorSchema,
     ...(reviewerSchema && { reviewedBy: reviewerSchema }),
     publisher: {
       "@type": "Organization",
       name: "CodeNest",
-      url: "https://codenest.com.ua",
-      logo: { "@type": "ImageObject", url: "https://codenest.com.ua/logo.png" },
+      url: "https://codeworth.uk",
+      logo: { "@type": "ImageObject", url: "https://codeworth.uk/logo.png" },
     },
     datePublished: post.date,
     dateModified: post.updatedDate ?? post.date,
-    url: `https://codenest.com.ua/${lang}/blog/${post.slug}`,
+    url: `https://codeworth.uk/${lang}/blog/${post.slug}`,
     keywords: post.tags.join(", "),
     articleSection: post.category,
     inLanguage: isUk ? "uk" : "en",
@@ -196,8 +196,8 @@ export default async function BlogPostPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Головна", item: "https://codenest.com.ua" },
-      { "@type": "ListItem", position: 2, name: "Блог", item: "https://codenest.com.ua/blog" },
+      { "@type": "ListItem", position: 1, name: "Головна", item: "https://codeworth.uk" },
+      { "@type": "ListItem", position: 2, name: "Блог", item: "https://codeworth.uk/blog" },
       { "@type": "ListItem", position: 3, name: post.title },
     ],
   };
@@ -313,7 +313,7 @@ export default async function BlogPostPage({ params }: Props) {
 
                 {/* Share */}
                 <ShareButtons
-                  url={`https://codenest.com.ua/${lang}/blog/${post.slug}`}
+                  url={`https://codeworth.uk/${lang}/blog/${post.slug}`}
                   title={post.title}
                   isUk={isUk}
                 />

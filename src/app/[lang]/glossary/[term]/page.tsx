@@ -41,7 +41,7 @@ export async function generateMetadata({
       title,
       description: desc,
       type: "article",
-      url: `https://codenest.com.ua/${lang}/glossary/${termSlug}`,
+      url: `https://codeworth.uk/${lang}/glossary/${termSlug}`,
     },
     alternates: buildAlternates(lang, `/glossary/${termSlug}`),
   };
@@ -90,12 +90,12 @@ export default async function GlossaryTermPage({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codenest.com.ua/${lang}` },
+      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codeworth.uk/${lang}` },
       {
         "@type": "ListItem",
         position: 2,
         name: isUk ? "Глосарій" : "Glossary",
-        item: `https://codenest.com.ua/${lang}/glossary`,
+        item: `https://codeworth.uk/${lang}/glossary`,
       },
       { "@type": "ListItem", position: 3, name: term.termUk },
     ],
@@ -109,7 +109,7 @@ export default async function GlossaryTermPage({
     inDefinedTermSet: {
       "@type": "DefinedTermSet",
       name: isUk ? "Глосарій CodeNest" : "CodeNest Glossary",
-      url: `https://codenest.com.ua/${lang}/glossary`,
+      url: `https://codeworth.uk/${lang}/glossary`,
     },
   };
 

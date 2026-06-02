@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         ? "Прозорі ціни на розробку сайтів та нішевих рішень. Starter від 15 000 грн. Без прихованих платежів."
         : "Transparent pricing for website development and niche solutions. Starter from $375. No hidden fees.",
       type: "website",
-      url: `https://codenest.com.ua/${lang}/pricing`,
+      url: `https://codeworth.uk/${lang}/pricing`,
       images: [{ url: "/og/pricing.png", width: 1200, height: 630, alt: isUk ? "Ціни CodeNest" : "CodeNest Pricing" }],
     },
     twitter: {
@@ -63,8 +63,8 @@ export default async function PricingPage({ params }: { params: Promise<{ lang: 
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codenest.com.ua/${lang}` },
-      { "@type": "ListItem", position: 2, name: isUk ? "Ціни" : "Pricing", item: `https://codenest.com.ua/${lang}/pricing` },
+      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codeworth.uk/${lang}` },
+      { "@type": "ListItem", position: 2, name: isUk ? "Ціни" : "Pricing", item: `https://codeworth.uk/${lang}/pricing` },
     ],
   };
 
@@ -83,8 +83,8 @@ export default async function PricingPage({ params }: { params: Promise<{ lang: 
     "@context": "https://schema.org",
     "@type": "Service",
     name: isUk ? "Розробка сайтів — CodeNest" : "Website Development — CodeNest",
-    provider: { "@type": "Organization", name: "CodeNest", url: "https://codenest.com.ua" },
-    url: `https://codenest.com.ua/${lang}/pricing`,
+    provider: { "@type": "Organization", name: "CodeNest", url: "https://codeworth.uk" },
+    url: `https://codeworth.uk/${lang}/pricing`,
     offers: [
       {
         "@type": "Offer",
@@ -94,7 +94,7 @@ export default async function PricingPage({ params }: { params: Promise<{ lang: 
         price: isUk ? "15000" : "375",
         priceValidUntil: "2026-12-31",
         availability: "https://schema.org/InStock",
-        url: `https://codenest.com.ua/${lang}/pricing`,
+        url: `https://codeworth.uk/${lang}/pricing`,
       },
       {
         "@type": "Offer",
@@ -104,7 +104,7 @@ export default async function PricingPage({ params }: { params: Promise<{ lang: 
         price: isUk ? "40000" : "1000",
         priceValidUntil: "2026-12-31",
         availability: "https://schema.org/InStock",
-        url: `https://codenest.com.ua/${lang}/pricing`,
+        url: `https://codeworth.uk/${lang}/pricing`,
       },
       {
         "@type": "Offer",
@@ -114,7 +114,7 @@ export default async function PricingPage({ params }: { params: Promise<{ lang: 
         price: isUk ? "80000" : "2000",
         priceValidUntil: "2026-12-31",
         availability: "https://schema.org/InStock",
-        url: `https://codenest.com.ua/${lang}/pricing`,
+        url: `https://codeworth.uk/${lang}/pricing`,
       },
     ],
   };

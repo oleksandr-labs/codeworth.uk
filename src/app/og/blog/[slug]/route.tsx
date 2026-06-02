@@ -274,7 +274,7 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ slu
             position: "relative",
           }}
         >
-          <span style={{ color: "rgba(255,255,255,0.4)", fontSize: 15 }}>codenest.com.ua</span>
+          <span style={{ color: "rgba(255,255,255,0.4)", fontSize: 15 }}>codeworth.uk</span>
           <span style={{ color: "rgba(255,255,255,0.4)", fontSize: 15 }}>Web Studio · UK</span>
         </div>
       </div>

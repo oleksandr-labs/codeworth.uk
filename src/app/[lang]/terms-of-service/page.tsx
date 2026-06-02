@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         ? "Умови надання послуг веб-розробки, маркетплейсу та підтримки від CodeNest."
         : "Conditions for web development, marketplace, and support services from CodeNest.",
       type: "website",
-      url: `https://codenest.com.ua/${lang}/terms-of-service`,
+      url: `https://codeworth.uk/${lang}/terms-of-service`,
       images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "CodeNest" }],
     },
     twitter: {
@@ -36,7 +36,7 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Головна", item: "https://codenest.com.ua" },
+    { "@type": "ListItem", position: 1, name: "Головна", item: "https://codeworth.uk" },
     { "@type": "ListItem", position: 2, name: "Угода користувача" },
   ],
 };
@@ -177,9 +177,9 @@ export default async function TermsOfServicePage({ params }: { params: Promise<{
                   </p>
                   <h2>13. Контакти</h2>
                   <ul>
-                    <li>Email: hello@codenest.com.ua</li>
-                    <li>Telegram: @codenest_ua</li>
-                    <li>Сайт: codenest.com.ua</li>
+                    <li>Email: hello@codeworth.uk</li>
+                    <li>Telegram: @codeworth_uk</li>
+                    <li>Сайт: codeworth.uk</li>
                   </ul>
                 </>
               ) : (
@@ -289,9 +289,9 @@ export default async function TermsOfServicePage({ params }: { params: Promise<{
                   </p>
                   <h2>13. Contact</h2>
                   <ul>
-                    <li>Email: hello@codenest.com.ua</li>
-                    <li>Telegram: @codenest_ua</li>
-                    <li>Website: codenest.com.ua</li>
+                    <li>Email: hello@codeworth.uk</li>
+                    <li>Telegram: @codeworth_uk</li>
+                    <li>Website: codeworth.uk</li>
                   </ul>
                 </>
               )}

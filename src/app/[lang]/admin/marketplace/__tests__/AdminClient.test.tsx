@@ -24,7 +24,7 @@ jest.mock("next/navigation", () => ({
 
 jest.mock("@/hooks/useAuth", () => ({
   useAuth: () => ({
-    user: { id: "1", email: "admin@codenest.com.ua", firstName: "Admin", lastName: "User", role: "admin" },
+    user: { id: "1", email: "admin@codeworth.uk", firstName: "Admin", lastName: "User", role: "admin" },
     isLoading: false,
     isAuthenticated: true,
     logout: jest.fn(),
@@ -151,7 +151,7 @@ describe("AdminClient", () => {
   it("finances tab shows promo codes", () => {
     renderAdmin();
     fireEvent.click(screen.getAllByRole("button", { name: /фінанси/i })[0]);
-    expect(screen.getByText("CODENEST10")).toBeInTheDocument();
+    expect(screen.getByText("codeworth10")).toBeInTheDocument();
     expect(screen.getByText("SPRING2026")).toBeInTheDocument();
   });
 });

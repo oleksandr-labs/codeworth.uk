@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         ? "120+ готових рішень для різних ніш бізнесу від CodeNest. від £499, запуск за 3–7 днів."
         : "120+ ready-made solutions for various business niches by CodeNest. From £499, launch in 3–7 days.",
       type: "website",
-      url: `https://codenest.com.ua/${lang}/portfolio`,
+      url: `https://codeworth.uk/${lang}/portfolio`,
       images: [{ url: "/og/portfolio.png", width: 1200, height: 630, alt: isUk ? "Портфоліо CodeNest" : "CodeNest Portfolio" }],
     },
     twitter: {
@@ -50,13 +50,13 @@ const portfolioItemListSchema = {
   "@type": "ItemList",
   name: "Портфоліо CodeNest",
   description: "Реалізовані проєкти веб-студії CodeNest",
-  url: "https://codenest.com.ua/portfolio",
+  url: "https://codeworth.uk/portfolio",
   numberOfItems: PROJECTS.length,
   itemListElement: PROJECTS.map((project, index) => ({
     "@type": "ListItem",
     position: index + 1,
     name: project.title,
-    url: `https://codenest.com.ua/portfolio/${project.slug}`,
+    url: `https://codeworth.uk/portfolio/${project.slug}`,
     description: project.description,
   })),
 };

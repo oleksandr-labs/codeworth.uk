@@ -173,7 +173,7 @@ export default function LoginForm() {
             {isUk ? "Демо-доступ:" : "Demo access:"}
           </p>
           <p className="text-xs text-indigo-600 dark:text-indigo-500">
-            Email: <code className="font-mono">demo@codenest.com.ua</code>
+            Email: <code className="font-mono">demo@codeworth.uk</code>
           </p>
           <p className="text-xs text-indigo-600 dark:text-indigo-500">
             {isUk ? "Пароль:" : "Password:"} <code className="font-mono">demo123</code>

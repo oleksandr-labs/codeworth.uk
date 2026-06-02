@@ -91,7 +91,7 @@ const MOCK_ADMIN_INVOICES = [
 ];
 
 const MOCK_PROMO_CODES = [
-  { code: "CODENEST10", discount: "10%", type: "percent", uses: 12, limit: 50, active: true, expires: "2026-12-31" },
+  { code: "codeworth10", discount: "10%", type: "percent", uses: 12, limit: 50, active: true, expires: "2026-12-31" },
   { code: "SPRING2026", discount: "500 ₴", type: "fixed", uses: 5, limit: 20, active: true, expires: "2026-05-31" },
   { code: "LAUNCH15", discount: "15%", type: "percent", uses: 30, limit: 30, active: false, expires: "2026-01-31" },
 ];
@@ -140,7 +140,7 @@ function exportOrdersCSV(filter: string, isUk: boolean) {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = `codenest-orders-${new Date().toISOString().slice(0, 10)}.csv`;
+  a.download = `codeworth-orders-${new Date().toISOString().slice(0, 10)}.csv`;
   a.click();
   URL.revokeObjectURL(url);
 }
@@ -241,7 +241,7 @@ export default function AdminClient() {
           <div className="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center text-xs font-bold">A</div>
           <div>
             <div className="text-sm font-medium">Admin</div>
-            <div className="text-xs text-gray-400">admin@codenest.com.ua</div>
+            <div className="text-xs text-gray-400">admin@codeworth.uk</div>
           </div>
         </div>
         <Link

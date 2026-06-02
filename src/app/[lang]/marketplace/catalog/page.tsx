@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         ? "33 готових нішевих сайти для бізнесу. Фільтруйте за категорією, ціною та складністю."
         : "33 ready-made niche websites for business. Filter by category, price, and complexity.",
       type: "website",
-      url: `https://codenest.com.ua/${lang}/marketplace/catalog`,
+      url: `https://codeworth.uk/${lang}/marketplace/catalog`,
       images: [{ url: "/og/marketplace.png", width: 1200, height: 630, alt: isUk ? "Каталог CodeNest" : "CodeNest Catalog" }],
     },
     twitter: {

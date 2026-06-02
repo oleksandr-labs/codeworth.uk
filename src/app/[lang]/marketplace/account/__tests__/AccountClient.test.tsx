@@ -45,7 +45,7 @@ const mockUseAuth = {
     id: "u_demo",
     firstName: "Демо",
     lastName: "Користувач",
-    email: "demo@codenest.com.ua",
+    email: "demo@codeworth.uk",
     role: "user" as const,
   },
   isAuthenticated: true,
@@ -65,7 +65,7 @@ beforeEach(() => {
     id: "u_demo",
     firstName: "Демо",
     lastName: "Користувач",
-    email: "demo@codenest.com.ua",
+    email: "demo@codeworth.uk",
     role: "user" as const,
   };
 });
@@ -102,7 +102,7 @@ describe("AccountClient", () => {
 
   it("displays user email", () => {
     renderAccount();
-    expect(screen.getByText("demo@codenest.com.ua")).toBeInTheDocument();
+    expect(screen.getByText("demo@codeworth.uk")).toBeInTheDocument();
   });
 
   it("displays user initials", () => {

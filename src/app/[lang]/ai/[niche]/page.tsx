@@ -38,7 +38,7 @@ export async function generateMetadata({
       title,
       description,
       type: "website",
-      url: `https://codenest.com.ua/${lang}/ai/${niche.slug}`,
+      url: `https://codeworth.uk/${lang}/ai/${niche.slug}`,
     },
   };
 }
@@ -63,7 +63,7 @@ export default async function AINichePage({
     provider: {
       "@type": "Organization",
       name: "CodeNest",
-      url: "https://codenest.com.ua",
+      url: "https://codeworth.uk",
     },
     offers: {
       "@type": "Offer",
@@ -71,7 +71,7 @@ export default async function AINichePage({
       price: niche.schemaPriceGBP,
       priceSpecification: { "@type": "PriceSpecification", minPrice: niche.schemaPriceGBP, priceCurrency: "GBP" },
     },
-    url: `https://codenest.com.ua/${lang}/ai/${niche.slug}`,
+    url: `https://codeworth.uk/${lang}/ai/${niche.slug}`,
   };
 
   const faqSchema = {
@@ -93,9 +93,9 @@ export default async function AINichePage({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codenest.com.ua/${lang}` },
-      { "@type": "ListItem", position: 2, name: isUk ? "AI-рішення" : "AI Solutions", item: `https://codenest.com.ua/${lang}/ai` },
-      { "@type": "ListItem", position: 3, name: isUk ? niche.h1Uk : niche.h1En, item: `https://codenest.com.ua/${lang}/ai/${niche.slug}` },
+      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codeworth.uk/${lang}` },
+      { "@type": "ListItem", position: 2, name: isUk ? "AI-рішення" : "AI Solutions", item: `https://codeworth.uk/${lang}/ai` },
+      { "@type": "ListItem", position: 3, name: isUk ? niche.h1Uk : niche.h1En, item: `https://codeworth.uk/${lang}/ai/${niche.slug}` },
     ],
   };
 

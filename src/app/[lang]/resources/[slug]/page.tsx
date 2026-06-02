@@ -34,7 +34,7 @@ export async function generateMetadata({
       title,
       description: desc,
       type: "article",
-      url: `https://codenest.com.ua/${lang}/resources/${slug}`,
+      url: `https://codeworth.uk/${lang}/resources/${slug}`,
     },
     alternates: buildAlternates(lang, `/resources/${slug}`),
   };
@@ -429,8 +429,8 @@ export default async function ResourcePage({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codenest.com.ua/${lang}` },
-      { "@type": "ListItem", position: 2, name: isUk ? "Ресурси" : "Resources", item: `https://codenest.com.ua/${lang}/resources` },
+      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codeworth.uk/${lang}` },
+      { "@type": "ListItem", position: 2, name: isUk ? "Ресурси" : "Resources", item: `https://codeworth.uk/${lang}/resources` },
       { "@type": "ListItem", position: 3, name: isUk ? resource.titleUk : resource.titleEn },
     ],
   };
@@ -468,8 +468,8 @@ export default async function ResourcePage({
         description: isUk ? resource.descriptionUk : resource.descriptionEn,
         datePublished: resource.updatedAt,
         dateModified: resource.updatedAt,
-        author: { "@type": "Organization", name: "CodeNest", url: "https://codenest.com.ua" },
-        publisher: { "@type": "Organization", name: "CodeNest", url: "https://codenest.com.ua" },
+        author: { "@type": "Organization", name: "CodeNest", url: "https://codeworth.uk" },
+        publisher: { "@type": "Organization", name: "CodeNest", url: "https://codeworth.uk" },
       };
     }
     if (resource.category === "tool") {
@@ -486,7 +486,7 @@ export default async function ResourcePage({
     return null;
   })();
 
-  const pageUrl = `https://codenest.com.ua/${lang}/resources/${slug}`;
+  const pageUrl = `https://codeworth.uk/${lang}/resources/${slug}`;
   const pageTitle = encodeURIComponent(isUk ? resource.titleUk : resource.titleEn);
   const encodedUrl = encodeURIComponent(pageUrl);
 

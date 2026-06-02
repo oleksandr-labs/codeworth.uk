@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
       title,
       description: desc,
       type: "website",
-      url: `https://codenest.com.ua/${lang}/location/${city.slug}`,
+      url: `https://codeworth.uk/${lang}/location/${city.slug}`,
       images: [{ url: "/og/location.png", width: 1200, height: 630, alt: title }],
     },
     twitter: { card: "summary_large_image", title, images: ["/og/location.png"] },
@@ -104,8 +104,8 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codenest.com.ua/${lang}` },
-      { "@type": "ListItem", position: 2, name: isUk ? "Міста" : "Cities", item: `https://codenest.com.ua/${lang}/location` },
+      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codeworth.uk/${lang}` },
+      { "@type": "ListItem", position: 2, name: isUk ? "Міста" : "Cities", item: `https://codeworth.uk/${lang}/location` },
       { "@type": "ListItem", position: 3, name: cityName },
     ],
   };
@@ -115,8 +115,8 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
     "@type": "LocalBusiness",
     name: "CodeNest",
     description: isUk ? city.description : city.descriptionEn,
-    url: `https://codenest.com.ua/${lang}/location/${city.slug}`,
-    email: "hello@codenest.com.ua",
+    url: `https://codeworth.uk/${lang}/location/${city.slug}`,
+    email: "hello@codeworth.uk",
     address: {
       "@type": "PostalAddress",
       addressLocality: isUk ? "Київ" : "Kyiv",

@@ -31,7 +31,7 @@ export async function generateMetadata({
       title,
       description: desc,
       type: "website",
-      url: `https://codenest.com.ua/${lang}/resources`,
+      url: `https://codeworth.uk/${lang}/resources`,
       images: [{ url: "/og/resources.png", width: 1200, height: 630, alt: title }],
     },
     alternates: buildAlternates(lang, "/resources"),
@@ -62,7 +62,7 @@ export default async function ResourcesPage({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codenest.com.ua/${lang}` },
+      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codeworth.uk/${lang}` },
       { "@type": "ListItem", position: 2, name: isUk ? "Ресурси" : "Resources" },
     ],
   };
@@ -71,7 +71,7 @@ export default async function ResourcesPage({
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: isUk ? "Безкоштовні матеріали CodeNest" : "CodeNest Free Resources",
-    url: `https://codenest.com.ua/${lang}/resources`,
+    url: `https://codeworth.uk/${lang}/resources`,
     description: isUk
       ? "Безкоштовні чек-листи, гайди та шаблони для власників бізнесу"
       : "Free checklists, guides and templates for business owners",

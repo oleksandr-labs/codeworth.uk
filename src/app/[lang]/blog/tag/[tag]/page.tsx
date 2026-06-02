@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         ? `Статті з тегом «${decoded}» у блозі CodeNest.`
         : `Articles tagged «${decoded}» on the CodeNest blog.`,
       type: "website",
-      url: `https://codenest.com.ua/${lang}/blog/tag/${tag}`,
+      url: `https://codeworth.uk/${lang}/blog/tag/${tag}`,
       images: [{ url: "/og/blog.png", width: 1200, height: 630, alt: isUk ? "Блог CodeNest" : "CodeNest Blog" }],
     },
     twitter: {
@@ -72,9 +72,9 @@ export default async function BlogTagPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Головна", item: "https://codenest.com.ua" },
-      { "@type": "ListItem", position: 2, name: "Блог", item: "https://codenest.com.ua/blog" },
-      { "@type": "ListItem", position: 3, name: `#${decoded}`, item: `https://codenest.com.ua/blog/tag/${tag}` },
+      { "@type": "ListItem", position: 1, name: "Головна", item: "https://codeworth.uk" },
+      { "@type": "ListItem", position: 2, name: "Блог", item: "https://codeworth.uk/blog" },
+      { "@type": "ListItem", position: 3, name: `#${decoded}`, item: `https://codeworth.uk/blog/tag/${tag}` },
     ],
   };
 

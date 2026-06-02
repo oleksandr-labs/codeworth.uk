@@ -63,8 +63,8 @@ export default async function BlogAuthorPage({ params }: Props) {
     name,
     jobTitle: role,
     description: bio,
-    worksFor: { "@type": "Organization", name: "CodeNest", url: "https://codenest.com.ua" },
-    url: `https://codenest.com.ua/${lang}/blog/author/${slug}`,
+    worksFor: { "@type": "Organization", name: "CodeNest", url: "https://codeworth.uk" },
+    url: `https://codeworth.uk/${lang}/blog/author/${slug}`,
   };
 
   return (

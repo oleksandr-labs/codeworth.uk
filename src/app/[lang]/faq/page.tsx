@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         ? "Відповіді на популярні питання про розробку сайтів, ціни, терміни та технічну підтримку."
         : "Answers to common questions about web development, pricing, timelines, and technical support.",
       type: "website",
-      url: `https://codenest.com.ua/${lang}/faq`,
+      url: `https://codeworth.uk/${lang}/faq`,
       images: [{ url: "/og/faq.png", width: 1200, height: 630, alt: "FAQ — CodeNest" }],
     },
     twitter: {
@@ -155,8 +155,8 @@ export default async function FAQPage({ params }: { params: Promise<{ lang: stri
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codenest.com.ua/${lang}` },
-      { "@type": "ListItem", position: 2, name: "FAQ", item: `https://codenest.com.ua/${lang}/faq` },
+      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codeworth.uk/${lang}` },
+      { "@type": "ListItem", position: 2, name: "FAQ", item: `https://codeworth.uk/${lang}/faq` },
     ],
   };
   const faqSchema = {

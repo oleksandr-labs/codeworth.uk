@@ -41,7 +41,7 @@ export default async function GlossaryPage({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codenest.com.ua/${lang}` },
+      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codeworth.uk/${lang}` },
       { "@type": "ListItem", position: 2, name: isUk ? "Глосарій" : "Glossary" },
     ],
   };
@@ -50,7 +50,7 @@ export default async function GlossaryPage({
     "@context": "https://schema.org",
     "@type": "DefinedTermSet",
     name: heading,
-    url: `https://codenest.com.ua/${lang}/glossary`,
+    url: `https://codeworth.uk/${lang}/glossary`,
     description: subheading,
   };
 

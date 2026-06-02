@@ -34,7 +34,7 @@ export async function generateMetadata({
       title: isUk ? uc.metaTitleUk : uc.metaTitleEn,
       description: isUk ? uc.metaDescriptionUk : uc.metaDescriptionEn,
       type: "article",
-      url: `https://codenest.com.ua/${lang}/use-cases/${slug}`,
+      url: `https://codeworth.uk/${lang}/use-cases/${slug}`,
     },
   };
 }

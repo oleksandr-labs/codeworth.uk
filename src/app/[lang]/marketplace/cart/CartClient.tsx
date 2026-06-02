@@ -29,7 +29,7 @@ export default function CartClient() {
   const [promoApplied, setPromoApplied] = useState(false);
 
   const applyPromo = () => {
-    if (promo.toLowerCase() === "codenest10") {
+    if (promo.toLowerCase() === "codeworth10") {
       setPromoApplied(true);
     }
   };

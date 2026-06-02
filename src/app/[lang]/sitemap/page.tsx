@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         ? "Повна карта сайту CodeNest — всі сторінки послуг, маркетплейсу, рішень, блогу та компанії."
         : "Complete CodeNest site map — all service pages, marketplace, solutions, blog, and company pages.",
       type: "website",
-      url: `https://codenest.com.ua/${lang}/sitemap`,
+      url: `https://codeworth.uk/${lang}/sitemap`,
       images: [{ url: "/og/sitemap.png", width: 1200, height: 630, alt: isUk ? "Карта сайту CodeNest" : "CodeNest Site Map" }],
     },
     twitter: {

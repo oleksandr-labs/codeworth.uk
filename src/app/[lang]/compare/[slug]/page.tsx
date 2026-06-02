@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
       title,
       description: desc,
       type: "website",
-      url: `https://codenest.com.ua/${lang}/compare/${slug}`,
+      url: `https://codeworth.uk/${lang}/compare/${slug}`,
       images: [{ url: "/og/compare.png", width: 1200, height: 630, alt: title }],
     },
     twitter: { card: "summary_large_image", title, images: ["/og/compare.png"] },
@@ -65,8 +65,8 @@ export default async function ComparePage({ params }: { params: Promise<Params> 
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codenest.com.ua/${lang}` },
-      { "@type": "ListItem", position: 2, name: isUk ? "Порівняння" : "Comparison", item: `https://codenest.com.ua/${lang}/compare` },
+      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codeworth.uk/${lang}` },
+      { "@type": "ListItem", position: 2, name: isUk ? "Порівняння" : "Comparison", item: `https://codeworth.uk/${lang}/compare` },
       { "@type": "ListItem", position: 3, name: isUk ? data.seoTitleUk : data.seoTitleEn },
     ],
   };
@@ -89,8 +89,8 @@ export default async function ComparePage({ params }: { params: Promise<Params> 
         acceptedAnswer: {
           "@type": "Answer",
           text: isUk
-            ? (data.useCasesCodenestUk.join("; "))
-            : (data.useCasesCodenestEn.join("; ")),
+            ? (data.useCasesCodeworthUk.join("; "))
+            : (data.useCasesCodeworthEn.join("; ")),
         },
       },
     ],
@@ -101,7 +101,7 @@ export default async function ComparePage({ params }: { params: Promise<Params> 
     "@type": "WebPage",
     name: isUk ? data.seoTitleUk : data.seoTitleEn,
     description: isUk ? data.seoDescUk : data.seoDescEn,
-    url: `https://codenest.com.ua/${lang}/compare/${slug}`,
+    url: `https://codeworth.uk/${lang}/compare/${slug}`,
     datePublished: "2024-01-01",
     dateModified: "2026-01-01",
     inLanguage: lang,
@@ -209,7 +209,7 @@ export default async function ComparePage({ params }: { params: Promise<Params> 
                       </td>
                       <td className={`px-6 py-4 text-center ${row.winner === "Codeworth" ? "font-medium" : ""}`}>
                         <CellValue
-                          value={isUk ? row.codenest : (row.codenestEn ?? row.codenest)}
+                          value={isUk ? row.Codeworth : (row.CodeworthEn ?? row.Codeworth)}
                           lang={lang}
                         />
                       </td>
@@ -238,7 +238,7 @@ export default async function ComparePage({ params }: { params: Promise<Params> 
                 </h3>
                 <p className="text-sm text-indigo-600 font-medium mb-5">CodeNest web studio</p>
                 <ul className="space-y-3">
-                  {(isUk ? data.useCasesCodenestUk : data.useCasesCodenestEn).map((item) => (
+                  {(isUk ? data.useCasesCodeworthUk : data.useCasesCodeworthEn).map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
                       <span className="text-neutral-700 text-sm">{item}</span>
@@ -306,8 +306,8 @@ export default async function ComparePage({ params }: { params: Promise<Params> 
                   </h3>
                   <p className="text-neutral-600 text-sm leading-relaxed">
                     {isUk
-                      ? data.useCasesCodenestUk.join("; ")
-                      : data.useCasesCodenestEn.join("; ")}
+                      ? data.useCasesCodeworthUk.join("; ")
+                      : data.useCasesCodeworthEn.join("; ")}
                   </p>
                 </div>
               </div>

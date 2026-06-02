@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description,
       type: "website",
-      url: `https://codenest.com.ua/${lang}/extras/demo/${id}`,
+      url: `https://codeworth.uk/${lang}/extras/demo/${id}`,
     },
   };
 }
