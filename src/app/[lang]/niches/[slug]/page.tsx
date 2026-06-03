@@ -11,7 +11,6 @@ import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
 import { NicheStats } from "@/components/niches/NicheStats";
-import { NicheReviews } from "@/components/niches/NicheReviews";
 import { BookingSection } from "@/components/niches/BookingSection";
 import { NicheCalculator } from "@/components/niches/NicheCalculator";
 import { PropertyFilter } from "@/components/niches/PropertyFilter";
@@ -1496,9 +1495,6 @@ export default async function NichePage({
             </div>
           </Container>
         </section>
-
-        {/* ── Reviews ───────────────────────────────────────────────────────── */}
-        <NicheReviews slug={niche.slug} color={niche.color} />
 
         {/* ── FAQ ───────────────────────────────────────────────────────────── */}
         <section className="py-20 bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-800/40">

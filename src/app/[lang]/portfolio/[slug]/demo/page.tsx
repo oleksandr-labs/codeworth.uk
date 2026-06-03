@@ -143,6 +143,11 @@ import { DigitalFirstBankDemo } from "@/components/portfolio/demos/DigitalFirstB
 import { UrbanDeskDemo } from "@/components/portfolio/demos/UrbanDeskDemo";
 import { EscapeQuestDemo } from "@/components/portfolio/demos/EscapeQuestDemo";
 import { VinoCaveDemo } from "@/components/portfolio/demos/VinoCaveDemo";
+import { TalentScanDemo } from "@/components/portfolio/demos/TalentScanDemo";
+import { PriceSenseDemo } from "@/components/portfolio/demos/PriceSenseDemo";
+import { DocSenseDemo } from "@/components/portfolio/demos/DocSenseDemo";
+import { MachineGuardDemo } from "@/components/portfolio/demos/MachineGuardDemo";
+import { VisualFindDemo } from "@/components/portfolio/demos/VisualFindDemo";
 import { WholesaleHubDemo } from "@/components/portfolio/demos/WholesaleHubDemo";
 import { ChainOpsDemo } from "@/components/portfolio/demos/ChainOpsDemo";
 import { BuildTrackDemo } from "@/components/portfolio/demos/BuildTrackDemo";
@@ -300,6 +305,11 @@ const DEMOS: Record<string, React.ComponentType<{ lang: string }>> = {
   "coworking-urban": UrbanDeskDemo,
   "escape-quest-arena": EscapeQuestDemo,
   "wine-cave-bar": VinoCaveDemo,
+  "ai-resume-screener": TalentScanDemo,
+  "ai-price-optimizer": PriceSenseDemo,
+  "ai-doc-analyzer": DocSenseDemo,
+  "ai-predictive-maintenance": MachineGuardDemo,
+  "ai-image-search": VisualFindDemo,
   "erp-wholesale": WholesaleHubDemo,
   "erp-restaurant-chain": ChainOpsDemo,
   "erp-construction": BuildTrackDemo,

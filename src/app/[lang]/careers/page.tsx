@@ -4,9 +4,9 @@ import { buildAlternates } from "@/i18n";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
-import { JOBS, TEAM_TESTIMONIALS } from "@/lib/data/careers";
+import { JOBS } from "@/lib/data/careers";
 import { CareersJobList } from "@/components/careers/CareersJobList";
-import { ArrowRight, Briefcase, Zap, CheckCircle, Quote } from "lucide-react";
+import { ArrowRight, Briefcase, Zap, CheckCircle } from "lucide-react";
 
 export async function generateStaticParams() {
   return [{ lang: "uk" }, { lang: "en" }];
@@ -249,40 +249,6 @@ export default async function CareersPage({
                   {i < 3 && (
                     <div className="hidden lg:block absolute top-5 left-10 w-full h-px bg-indigo-100" style={{ left: "2.75rem", width: "calc(100% - 1rem)" }} />
                   )}
-                </div>
-              ))}
-            </div>
-          </Container>
-        </section>
-
-        {/* Team testimonials */}
-        <section className="py-16 bg-white dark:bg-neutral-950">
-          <Container>
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 text-center">
-              {isUk ? "Команда про роботу в Codeworth" : "Team About Working at Codeworth"}
-            </h2>
-            <p className="text-gray-500 dark:text-neutral-400 text-center mb-10">
-              {isUk ? "Реальні враження наших колег" : "Real impressions from our colleagues"}
-            </p>
-            <div className="grid md:grid-cols-3 gap-6">
-              {TEAM_TESTIMONIALS.map((t) => (
-                <div key={t.nameEn} className="bg-gray-50 dark:bg-neutral-900 rounded-2xl p-6 flex flex-col gap-4 border border-gray-100">
-                  <Quote className="w-7 h-7 text-indigo-300 shrink-0" />
-                  <p className="text-gray-700 dark:text-neutral-300 leading-relaxed flex-1">
-                    &ldquo;{isUk ? t.quoteUk : t.quoteEn}&rdquo;
-                  </p>
-                  <div className="flex items-center gap-3 pt-2 border-t border-gray-200">
-                    <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-xl shrink-0">
-                      {t.emoji}
-                    </div>
-                    <div>
-                      <p className="font-semibold text-gray-900 dark:text-white text-sm">{isUk ? t.nameUk : t.nameEn}</p>
-                      <p className="text-xs text-gray-500">
-                        {isUk ? t.roleUk : t.roleEn} · {t.yearsInTeam}{" "}
-                        {isUk ? "р. в команді" : "yr in team"}
-                      </p>
-                    </div>
-                  </div>
                 </div>
               ))}
             </div>
