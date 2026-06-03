@@ -99,12 +99,6 @@ const organizationSchema = {
     addressCountry: "UA",
   },
   email: "hello@codeworth.uk",
-  sameAs: [
-    "https://instagram.com/codenest.ua",
-    "https://facebook.com/codenest.ua",
-    "https://t.me/codenest_ua",
-    "https://linkedin.com/company/codenest-ua",
-  ],
 };
 
 const websiteSchema = {

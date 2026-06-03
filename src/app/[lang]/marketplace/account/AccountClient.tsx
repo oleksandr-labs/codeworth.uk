@@ -324,14 +324,12 @@ export default function AccountClient() {
 
             <div className="mt-4 p-4 bg-indigo-50 rounded-2xl border border-indigo-100">
               <div className="text-xs font-semibold text-indigo-800 mb-1">{isUk ? "Потрібна допомога?" : "Need help?"}</div>
-              <div className="text-xs text-indigo-600 mb-3">{isUk ? "Пишіть нам у Telegram" : "Message us on Telegram"}</div>
+              <div className="text-xs text-indigo-600 mb-3">{isUk ? "Напишіть нам на email" : "Email us anytime"}</div>
               <a
-                href="https://t.me/codenest_ua"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="mailto:hello@codeworth.uk"
                 className="flex items-center gap-1.5 text-xs text-indigo-700 font-medium hover:underline"
               >
-                @codeworth_uk <ExternalLink className="w-3 h-3" />
+                hello@codeworth.uk <ExternalLink className="w-3 h-3" />
               </a>
             </div>
           </aside>
@@ -670,11 +668,9 @@ export default function AccountClient() {
                 <h1 className="text-2xl font-bold font-syne text-gray-900">{isUk ? "Підтримка" : "Support"}</h1>
 
                 {/* Quick contacts */}
-                <div className="grid sm:grid-cols-3 gap-4">
+                <div className="grid sm:grid-cols-1 gap-4">
                   {[
-                    { icon: "💬", title: "Telegram", sub: "@codeworth_uk", href: "https://t.me/codenest_ua" },
                     { icon: "📧", title: "Email", sub: "hello@codeworth.uk", href: "mailto:hello@codeworth.uk" },
-                    { icon: "📞", title: isUk ? "Телефон" : "Phone", sub: "+38 000 000 00 00", href: "tel:+380000000000" },
                   ].map((c) => (
                     <a
                       key={c.title}

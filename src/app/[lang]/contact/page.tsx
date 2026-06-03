@@ -5,7 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { ContactForm } from "@/components/contact/ContactForm";
-import { Phone, Mail, MapPin, Clock, MessageCircle, HelpCircle } from "lucide-react";
+import { Mail, MapPin, Clock, MessageCircle, HelpCircle } from "lucide-react";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
@@ -33,13 +33,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     },
   };
 }
-
-const MESSENGERS = [
-  { name: "Telegram", handle: "@codeworth_uk", href: "https://t.me/codenest_ua", bg: "bg-sky-500", emoji: "✈️" },
-  { name: "Instagram", handle: "@codenest.ua", href: "https://instagram.com/codenest.ua", bg: "bg-linear-to-br from-purple-500 to-pink-500", emoji: "📷" },
-  { name: "Viber", handle: "+38 (000) 000-00-00", href: "viber://chat?number=+380000000000", bg: "bg-violet-600", emoji: "📱" },
-  { name: "Facebook", handle: "Codeworth UA", href: "https://facebook.com/codenest.ua", bg: "bg-blue-600", emoji: "📘" },
-];
 
 const QUICK_FAQ_UK = [
   { q: "Скільки коштує розробка сайту?", a: "Від 8 000 грн за лендінг до 60 000+ грн за складний портал. Точну ціну визначаємо після брифу." },
@@ -83,11 +76,6 @@ const localBusinessSchema = {
     "@type": "Country",
     name: "Ukraine",
   },
-  sameAs: [
-    "https://instagram.com/codenest.ua",
-    "https://facebook.com/codenest.ua",
-    "https://t.me/codenest_ua",
-  ],
 };
 
 export default async function ContactPage({ params }: { params: Promise<{ lang: string }> }) {
@@ -165,17 +153,6 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
                       <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center shrink-0">
-                        <Phone className="w-4 h-4 text-indigo-600" />
-                      </div>
-                      <div>
-                        <p className="text-xs text-neutral-400 mb-0.5">{isUk ? "Телефон" : "Phone"}</p>
-                        <a href="tel:+380000000000" className="font-medium text-neutral-900 dark:text-white hover:text-indigo-600 transition-colors">
-                          +38 (000) 000-00-00
-                        </a>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center shrink-0">
                         <Mail className="w-4 h-4 text-indigo-600" />
                       </div>
                       <div>
@@ -209,33 +186,6 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
                         </p>
                       </div>
                     </div>
-                  </div>
-                </div>
-
-                {/* Messengers */}
-                <div>
-                  <h3 className="text-lg font-heading font-bold text-neutral-900 dark:text-white mb-5">
-                    {isUk ? "Месенджери" : "Messengers"}
-                  </h3>
-                  <div className="space-y-3">
-                    {MESSENGERS.map((m) => (
-                      <a
-                        key={m.name}
-                        href={m.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-3 p-3 rounded-xl border border-neutral-100 dark:border-neutral-700 hover:border-indigo-200 hover:bg-indigo-50 transition-all group"
-                      >
-                        <div className={`w-10 h-10 rounded-xl ${m.bg} flex items-center justify-center text-lg`}>
-                          {m.emoji}
-                        </div>
-                        <div>
-                          <p className="font-medium text-neutral-900 dark:text-white text-sm group-hover:text-indigo-700 transition-colors">{m.name}</p>
-                          <p className="text-xs text-neutral-400">{m.handle}</p>
-                        </div>
-                        <MessageCircle className="w-4 h-4 text-neutral-300 group-hover:text-indigo-400 ml-auto transition-colors" />
-                      </a>
-                    ))}
                   </div>
                 </div>
               </div>

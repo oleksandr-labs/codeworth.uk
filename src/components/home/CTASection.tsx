@@ -48,14 +48,7 @@ export function CTASection({ lang }: { lang: string }) {
           <div className="flex items-center justify-center gap-2 text-white/60 text-sm">
             <MessageCircle className="w-4 h-4" />
             {isUk ? "Або напишіть нам у" : "Or message us on"}{" "}
-            <a
-              href="https://t.me/Codeworth_ua"
-              className="text-white/90 hover:text-white font-medium underline transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Telegram
-            </a>
+            <span className="text-white/90 font-medium">Telegram</span>
           </div>
         </div>
       </Container>

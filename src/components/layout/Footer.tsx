@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { Container } from "./Container";
-import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
+import { Mail, MapPin, ArrowUpRight } from "lucide-react";
 import { LogoWordmark } from "@/components/ui/Logo";
 import { analytics } from "@/lib/analytics";
 
@@ -99,12 +99,6 @@ const ML_NICHES_EN = [
   { label: "ML for AgriTech", href: "/ml/agritech" },
 ];
 
-const SOCIALS = [
-  { label: "Telegram", href: "https://t.me/Codeworth_ua" },
-  { label: "Instagram", href: "https://instagram.com/Codeworth.ua" },
-  { label: "Facebook", href: "https://facebook.com/Codeworth.ua" },
-  { label: "LinkedIn", href: "https://linkedin.com/company/Codeworth-ua" },
-];
 
 export function Footer() {
   const params = useParams();
@@ -134,10 +128,6 @@ export function Footer() {
                 : "Building digital nests for business. Full-cycle web studio — from idea to launch."}
             </p>
             <div className="flex flex-col gap-2 text-sm mb-5">
-              <a href="tel:+380000000000" onClick={() => analytics.ctaClick("phone", "footer")} className="flex items-center gap-2 text-neutral-400 hover:text-white transition-colors">
-                <Phone className="w-4 h-4 shrink-0 text-indigo-400" />
-                +38 (000) 000-00-00
-              </a>
               <a href="mailto:hello@codeworth.uk" onClick={() => analytics.ctaClick("email", "footer")} className="flex items-center gap-2 text-neutral-400 hover:text-white transition-colors">
                 <Mail className="w-4 h-4 shrink-0 text-indigo-400" />
                 hello@codeworth.uk
@@ -146,19 +136,6 @@ export function Footer() {
                 <MapPin className="w-4 h-4 shrink-0 text-indigo-400" />
                 {isUk ? "Київ, Україна" : "Kyiv, Ukraine"}
               </span>
-            </div>
-            <div className="flex flex-wrap gap-3 mb-5">
-              {SOCIALS.map((s) => (
-                <a
-                  key={s.href}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs text-neutral-500 hover:text-neutral-200 transition-colors"
-                >
-                  {s.label}
-                </a>
-              ))}
             </div>
             <Link
               href={lp("/contact")}

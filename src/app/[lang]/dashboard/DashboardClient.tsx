@@ -860,17 +860,6 @@ export default function DashboardClient() {
                     </a>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center">
-                    <Send className="w-5 h-5 text-indigo-600" />
-                  </div>
-                  <div>
-                    <div className="text-xs text-gray-500 dark:text-neutral-400 mb-0.5">Telegram</div>
-                    <a href="https://t.me/codenest_ua" className="text-sm font-medium text-gray-800 dark:text-neutral-200 hover:text-indigo-600">
-                      @codeworth_uk
-                    </a>
-                  </div>
-                </div>
               </div>
             </>
           )}
