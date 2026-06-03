@@ -40,7 +40,7 @@ export function CountUp({ end, suffix = "", duration = 1800 }: Props) {
   }, [end, duration]);
 
   return (
-    <span ref={ref}>
+    <span ref={ref} className="font-sans tabular-nums tracking-normal">
       {value}{suffix}
     </span>
   );

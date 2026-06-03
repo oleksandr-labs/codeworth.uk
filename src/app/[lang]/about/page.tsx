@@ -67,20 +67,6 @@ const TIMELINE_EN = [
   { year: "2025", title: "Codeworth 2.0", text: "New website, new products, team scaling." },
 ];
 
-const TEAM_UK = [
-  { name: "Олексій Коваленко", role: "CEO & Full-Stack Developer", skills: "Next.js, TypeScript, PostgreSQL, Architecture", avatar: "О", bio: "10+ років у веб-розробці. Архітектор всіх проєктів Codeworth, відповідальний за технічну якість та масштабованість.", linkedin: "https://linkedin.com/in/", github: "https://github.com/" },
-  { name: "Аліна Мороз", role: "Lead UI/UX Designer", skills: "Figma, Motion Design, Design Systems, Branding", avatar: "А", bio: "Спеціалізується на conversion-driven дизайні. Створює інтерфейси що не просто красиві, а продають.", linkedin: "https://linkedin.com/in/", dribbble: "https://dribbble.com/" },
-  { name: "Денис Бондаренко", role: "Frontend Developer", skills: "React, Tailwind, Framer Motion, Performance", avatar: "Д", bio: "Фронтенд-розробник з пристрастю до анімацій та продуктивності. Lighthouse 95+ — його стандарт.", linkedin: "https://linkedin.com/in/", github: "https://github.com/" },
-  { name: "Катерина Лисенко", role: "SEO & Content Strategist", skills: "SEO, Copywriting, Analytics, Link Building", avatar: "К", bio: "SEO-стратег що виводить сайти в ТОП-3 Google. Автор 40+ блог-постів та контент-стратегій.", linkedin: "https://linkedin.com/in/" },
-];
-
-const TEAM_EN = [
-  { name: "Oleksiy Kovalenko", role: "CEO & Full-Stack Developer", skills: "Next.js, TypeScript, PostgreSQL, Architecture", avatar: "O", bio: "10+ years in web development. Architect of all Codeworth projects, responsible for technical quality and scalability.", linkedin: "https://linkedin.com/in/", github: "https://github.com/" },
-  { name: "Alina Moroz", role: "Lead UI/UX Designer", skills: "Figma, Motion Design, Design Systems, Branding", avatar: "A", bio: "Specializes in conversion-driven design. Creates interfaces that aren't just beautiful — they sell.", linkedin: "https://linkedin.com/in/", dribbble: "https://dribbble.com/" },
-  { name: "Denys Bondarenko", role: "Frontend Developer", skills: "React, Tailwind, Framer Motion, Performance", avatar: "D", bio: "Frontend developer with a passion for animations and performance. Lighthouse 95+ is his standard.", linkedin: "https://linkedin.com/in/", github: "https://github.com/" },
-  { name: "Kateryna Lysenko", role: "SEO & Content Strategist", skills: "SEO, Copywriting, Analytics, Link Building", avatar: "K", bio: "SEO strategist who ranks sites in Google's top 3. Author of 40+ blog posts and content strategies.", linkedin: "https://linkedin.com/in/" },
-];
-
 const TECH_STACK = [
   { name: "Next.js", color: "bg-black text-white" },
   { name: "TypeScript", color: "bg-blue-600 text-white" },
@@ -142,7 +128,6 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
   const isUk = lang === "uk";
   const VALUES = isUk ? VALUES_UK : VALUES_EN;
   const TIMELINE = isUk ? TIMELINE_UK : TIMELINE_EN;
-  const TEAM = isUk ? TEAM_UK : TEAM_EN;
   const STATS = isUk ? STATS_UK : STATS_EN;
   return (
     <div className="flex flex-col min-h-screen">
@@ -262,34 +247,26 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
           </Container>
         </section>
 
-        {/* Team */}
+        {/* Team / Hiring */}
         <section className="py-24 bg-white dark:bg-neutral-950">
           <Container>
-            <div className="max-w-2xl mx-auto text-center mb-16">
+            <div className="max-w-2xl mx-auto text-center mb-12">
               <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
                 {isUk ? "Команда" : "Team"}
               </p>
               <h2 className="text-4xl font-heading font-extrabold text-neutral-900 dark:text-white mb-4">
                 {isUk
-                  ? <>{`Люди, що стоять`}<br />{`за `}<span className="gradient-text">Codeworth</span></>
-                  : <>The people behind<br /><span className="gradient-text">Codeworth</span></>}
+                  ? <>{`Команда, що `}<span className="gradient-text">росте</span></>
+                  : <>A team that <span className="gradient-text">keeps growing</span></>}
               </h2>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-              {TEAM.map((member) => (
-                <div key={member.name} className="text-center p-6 rounded-2xl border border-neutral-100 dark:border-neutral-700 hover:shadow-md transition-shadow duration-200">
-                  <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-indigo-500 to-indigo-700 text-white font-heading font-extrabold text-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-indigo-500/25">
-                    {member.avatar}
-                  </div>
-                  <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-0.5">{member.name}</h3>
-                  <p className="text-sm text-indigo-600 font-medium mb-1">{member.role}</p>
-                  <p className="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed mb-3">{member.bio}</p>
-                  <p className="text-xs text-neutral-400">{member.skills}</p>
-                </div>
-              ))}
+              <p className="mt-3 text-neutral-500 dark:text-neutral-400">
+                {isUk
+                  ? "Розробники, дизайнери та маркетологи, що перетворюють ідеї на продукти. Ми розширюємось — і шукаємо нових людей у команду."
+                  : "Developers, designers, and marketers turning ideas into products. We're growing — and looking for new people to join us."}
+              </p>
             </div>
             {/* Hiring */}
-            <div className="p-8 rounded-2xl bg-linear-to-br from-indigo-50 to-violet-50 border border-indigo-100 text-center">
+            <div className="p-8 rounded-2xl bg-linear-to-br from-indigo-50 to-violet-50 border border-indigo-100 text-center max-w-2xl mx-auto">
               <h3 className="font-heading font-bold text-xl text-neutral-900 dark:text-white mb-2">
                 {isUk ? "Ми наймаємо!" : "We're Hiring!"}
               </h3>
