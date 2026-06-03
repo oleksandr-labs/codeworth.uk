@@ -18,6 +18,7 @@ const SERVICES_UK = [
   { label: "Чат-боти", href: "/services/chatbots" },
   { label: "Штучний інтелект (AI)", href: "/services/artificial-intelligence" },
   { label: "Machine Learning", href: "/services/machine-learning" },
+  { label: "ERP-системи", href: "/erp-development" },
 ];
 
 const SERVICES_EN = [
@@ -31,6 +32,7 @@ const SERVICES_EN = [
   { label: "Chatbots", href: "/services/chatbots" },
   { label: "Artificial Intelligence", href: "/services/artificial-intelligence" },
   { label: "Machine Learning", href: "/services/machine-learning" },
+  { label: "ERP Systems", href: "/erp-development" },
 ];
 
 const COMPANY_UK = [
