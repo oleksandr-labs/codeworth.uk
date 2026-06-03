@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
@@ -309,7 +310,7 @@ export function CalmMindDemo({ lang }: { lang: string }) {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-2 shrink-0">
-            <span className="text-2xl">🧠</span>
+            <EmojiIcon emoji="🧠" className="w-7 h-7" />
             <div>
               <span className="font-bold text-slate-800 text-lg leading-tight">CalmMind</span>
               <p className="text-xs text-sky-600 leading-tight">
@@ -422,7 +423,7 @@ export function CalmMindDemo({ lang }: { lang: string }) {
                 <div className="w-8 h-8 bg-sky-600 text-white text-sm font-bold rounded-full flex items-center justify-center mx-auto mb-3">
                   {item.step}
                 </div>
-                <div className="text-3xl mb-2">{item.emoji}</div>
+                <div className="mb-2"><EmojiIcon emoji={item.emoji} className="w-8 h-8" /></div>
                 <h3 className="font-semibold text-slate-800 mb-2">
                   {isUk ? item.titleUk : item.titleEn}
                 </h3>
@@ -447,7 +448,7 @@ export function CalmMindDemo({ lang }: { lang: string }) {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {SERVICES.map((svc) => (
               <div key={svc.nameEn} className={`border rounded-2xl p-5 ${svc.color}`}>
-                <div className="text-3xl mb-3">{svc.emoji}</div>
+                <div className="mb-3"><EmojiIcon emoji={svc.emoji} className="w-8 h-8" /></div>
                 <h3 className="font-semibold text-slate-800 mb-1">
                   {isUk ? svc.nameUk : svc.nameEn}
                 </h3>
@@ -558,7 +559,7 @@ export function CalmMindDemo({ lang }: { lang: string }) {
           <div className="grid md:grid-cols-3 gap-6">
             {THERAPISTS.map((t) => (
               <div key={t.nameEn} className="bg-white border border-sky-100 rounded-2xl p-6 shadow-sm">
-                <div className="text-5xl text-center mb-3">{t.emoji}</div>
+                <div className="text-center mb-3"><EmojiIcon emoji={t.emoji} className="w-14 h-14" /></div>
                 <div className="text-center mb-3">
                   <h3 className="font-bold text-slate-800">{isUk ? t.nameUk : t.nameEn}</h3>
                   <p className="text-xs text-slate-500 mt-1 leading-snug">
@@ -605,7 +606,7 @@ export function CalmMindDemo({ lang }: { lang: string }) {
           <div className="grid md:grid-cols-3 gap-6">
             {GROUPS.map((g) => (
               <div key={g.nameEn} className="bg-teal-50 border border-teal-100 rounded-2xl p-6">
-                <div className="text-3xl mb-3">{g.emoji}</div>
+                <div className="mb-3"><EmojiIcon emoji={g.emoji} className="w-8 h-8" /></div>
                 <h3 className="font-semibold text-slate-800 mb-2">{isUk ? g.nameUk : g.nameEn}</h3>
                 <p className="text-sm text-slate-500 mb-4 leading-relaxed">{isUk ? g.descUk : g.descEn}</p>
                 <div className="space-y-1 text-xs text-slate-500 border-t border-teal-200 pt-3">
@@ -631,7 +632,7 @@ export function CalmMindDemo({ lang }: { lang: string }) {
           <div className="grid md:grid-cols-3 gap-6">
             {RESOURCES.map((r) => (
               <div key={r.titleEn} className="bg-white border border-sky-100 rounded-2xl p-6 shadow-sm flex flex-col">
-                <div className="text-4xl mb-3">{r.emoji}</div>
+                <div className="mb-3"><EmojiIcon emoji={r.emoji} className="w-10 h-10" /></div>
                 <h3 className="font-semibold text-slate-800 mb-2">{isUk ? r.titleUk : r.titleEn}</h3>
                 <p className="text-sm text-slate-500 mb-4 leading-relaxed flex-1">{isUk ? r.descUk : r.descEn}</p>
                 <div className="text-xs text-slate-400 mb-3">{isUk ? r.typeUk : r.typeEn}</div>
@@ -681,7 +682,7 @@ export function CalmMindDemo({ lang }: { lang: string }) {
 
           {bookSubmitted ? (
             <div className="bg-green-50 border border-green-200 rounded-2xl p-8 text-center">
-              <div className="text-4xl mb-3">🌿</div>
+              <div className="mb-3"><EmojiIcon emoji="🌿" className="w-10 h-10" /></div>
               <h3 className="font-bold text-green-800 text-lg mb-2">
                 {isUk ? "Дякуємо!" : "Thank you!"}
               </h3>
@@ -850,7 +851,7 @@ export function CalmMindDemo({ lang }: { lang: string }) {
           <div className="grid sm:grid-cols-3 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <span className="text-2xl">🧠</span>
+                <EmojiIcon emoji="🧠" className="w-7 h-7" />
                 <span className="font-bold text-white text-lg">CalmMind</span>
               </div>
               <p className="text-xs text-slate-400 leading-relaxed">

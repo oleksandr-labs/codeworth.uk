@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 const STYLES = [
   { id: 1, tab: "haircuts", nameUk: "Fade з текстурою", nameEn: "Textured Fade", time: "45 хв / 45 min", price: 350, beforeEmoji: "🧔", afterEmoji: "💈" },
@@ -250,11 +251,11 @@ export function LordCutDemo({ lang }: { lang: string }) {
                 {/* Before / After */}
                 <div className="flex h-24">
                   <div className="flex-1 flex flex-col items-center justify-center gap-1" style={{ background: "#161212", borderRight: "1px solid #2e2626" }}>
-                    <span style={{ fontSize: "2rem", filter: "grayscale(100%)", opacity: 0.6 }}>{style.beforeEmoji}</span>
+                    <span style={{ filter: "grayscale(100%)", opacity: 0.6 }}><EmojiIcon emoji={style.beforeEmoji} className="w-14 h-14" /></span>
                     <span className="text-xs" style={{ color: "#5a4a3a" }}>Before</span>
                   </div>
                   <div className="flex-1 flex flex-col items-center justify-center gap-1" style={{ background: "#1C1818" }}>
-                    <span style={{ fontSize: "2rem" }}>{style.afterEmoji}</span>
+                    <EmojiIcon emoji={style.afterEmoji} className="w-14 h-14" />
                     <span className="text-xs" style={{ color: "#C8A96E" }}>After</span>
                   </div>
                 </div>
@@ -300,10 +301,10 @@ export function LordCutDemo({ lang }: { lang: string }) {
               >
                 <div className="flex items-center gap-4 mb-3">
                   <div
-                    className="shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-2xl"
+                    className="shrink-0 w-12 h-12 rounded-full flex items-center justify-center"
                     style={{ background: "#2a1e14", border: "2px solid #8B5E3C" }}
                   >
-                    {barber.emoji}
+                    <EmojiIcon emoji={barber.emoji} className="w-7 h-7" />
                   </div>
                   <div>
                     <div className="font-serif font-bold text-base" style={{ color: "#F2EDE4" }}>
@@ -459,7 +460,7 @@ export function LordCutDemo({ lang }: { lang: string }) {
                             border: selectedBarber === barber.id ? "1px solid #8B5E3C" : "1px solid #2e2626",
                           }}
                         >
-                          <span style={{ fontSize: "1.2rem" }}>{barber.emoji}</span>
+                          <EmojiIcon emoji={barber.emoji} className="w-5 h-5" />
                           <div>
                             <div className="text-xs font-semibold" style={{ color: "#F2EDE4" }}>
                               {isUk ? barber.nameUk.split(" ")[0] : barber.nameEn.split(" ")[0]}

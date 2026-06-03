@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -385,9 +386,9 @@ export function InkSoulDemo({ lang }: { lang: string }) {
                   {artist.portfolioEmoji.map((emoji, i) => (
                     <div
                       key={i}
-                      className="w-12 h-12 bg-[#0A0A0A] border border-[#222] flex items-center justify-center text-xl"
+                      className="w-12 h-12 bg-[#0A0A0A] border border-[#222] flex items-center justify-center"
                     >
-                      {emoji}
+                      <EmojiIcon emoji={emoji} className="w-5 h-5" />
                     </div>
                   ))}
                 </div>
@@ -439,9 +440,7 @@ export function InkSoulDemo({ lang }: { lang: string }) {
                 onMouseEnter={() => setHoveredItem(item.id)}
                 onMouseLeave={() => setHoveredItem(null)}
               >
-                <span className="text-5xl transition-transform group-hover:scale-110">
-                  {item.emoji}
-                </span>
+                <EmojiIcon emoji={item.emoji} className="w-14 h-14 transition-transform group-hover:scale-110" />
                 {/* crimson overlay on hover */}
                 <div
                   className={`absolute inset-0 bg-[#881337]/80 flex flex-col items-center justify-center transition-opacity duration-300 ${
@@ -486,7 +485,7 @@ export function InkSoulDemo({ lang }: { lang: string }) {
                 className="bg-[#0A0A0A] border border-[#1a1a1a] p-6 hover:border-[#881337]/30 transition-colors"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl">{style.emoji}</span>
+                  <EmojiIcon emoji={style.emoji} className="w-7 h-7" />
                   <h3 className="font-black tracking-[0.1em] uppercase text-[#F5F5F0]">
                     {isUk ? style.nameUk : style.nameEn}
                   </h3>
@@ -703,7 +702,7 @@ export function InkSoulDemo({ lang }: { lang: string }) {
                 key={svc.nameEn}
                 className="bg-[#0A0A0A] border border-[#1a1a1a] p-7 hover:border-[#881337]/40 transition-colors"
               >
-                <span className="text-3xl mb-5 block">{svc.emoji}</span>
+                <EmojiIcon emoji={svc.emoji} className="w-8 h-8 mb-5" />
                 <h3 className="font-black tracking-[0.1em] uppercase text-[#F5F5F0] mb-3">
                   {isUk ? svc.nameUk : svc.nameEn}
                 </h3>
@@ -740,7 +739,7 @@ export function InkSoulDemo({ lang }: { lang: string }) {
                 key={step.periodEn}
                 className="bg-[#0F0F0F] border border-[#1a1a1a] p-5 hover:border-[#881337]/30 transition-colors"
               >
-                <div className="text-3xl mb-4">{step.emoji}</div>
+                <EmojiIcon emoji={step.emoji} className="w-8 h-8 mb-4" />
                 <p className="text-[#881337] text-xs tracking-[0.1em] uppercase font-semibold mb-1">
                   {isUk ? step.periodUk : step.periodEn}
                 </p>

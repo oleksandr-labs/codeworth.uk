@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 /* ── helpers ─────────────────────────────────────────────────────────── */
 
@@ -385,7 +386,7 @@ export function GoodFoodDemo({ lang }: { lang: string }) {
                 key={plan.id}
                 className="border border-gray-100 dark:border-neutral-700 rounded-2xl p-6 hover:shadow-lg transition-shadow bg-linear-to-br from-white to-green-50"
               >
-                <div className="text-4xl mb-3">{plan.emoji}</div>
+                <div className="mb-3"><EmojiIcon emoji={plan.emoji} className="w-10 h-10" /></div>
                 <h3 className="text-xl font-bold text-green-700">{t(isUk, plan.name.en, plan.name.uk)}</h3>
                 <p className="text-sm text-gray-500 dark:text-neutral-400 mt-1">{plan.cal} {t(isUk, "cal / day", "ккал / день")}</p>
 
@@ -459,7 +460,7 @@ export function GoodFoodDemo({ lang }: { lang: string }) {
                     : "bg-white text-gray-600 dark:text-neutral-300 border-gray-200 dark:border-neutral-700 hover:bg-gray-50"
                 }`}
               >
-                {info.emoji} {t(isUk, info.en, info.uk)}
+                <EmojiIcon emoji={info.emoji} className="w-4 h-4 inline-block align-middle mr-1" />{t(isUk, info.en, info.uk)}
               </button>
             ))}
           </div>
@@ -489,14 +490,14 @@ export function GoodFoodDemo({ lang }: { lang: string }) {
                         key={idx}
                         className="bg-white rounded-xl p-4 flex items-start gap-3 border border-gray-100 dark:border-neutral-700 hover:shadow-md transition-shadow"
                       >
-                        <span className="text-3xl shrink-0">{meal.emoji}</span>
+                        <EmojiIcon emoji={meal.emoji} className="w-8 h-8 shrink-0" />
                         <div className="flex-1 min-w-0">
                           <h4 className="font-semibold text-sm truncate">{t(isUk, meal.name.en, meal.name.uk)}</h4>
                           <div className="flex items-center gap-2 mt-1 flex-wrap">
                             <span className="text-xs text-gray-500">{meal.cal} {t(isUk, "cal", "ккал")}</span>
                             {meal.allergens.map((a) => (
                               <span key={a} className="text-xs bg-yellow-50 text-yellow-700 px-1.5 py-0.5 rounded" title={ALLERGEN_MAP[a]?.en}>
-                                {ALLERGEN_MAP[a]?.emoji}
+                                <EmojiIcon emoji={ALLERGEN_MAP[a]?.emoji} className="w-5 h-5 inline-block align-middle" />
                               </span>
                             ))}
                           </div>
@@ -537,7 +538,7 @@ export function GoodFoodDemo({ lang }: { lang: string }) {
                 <div className="space-y-4 mb-6">
                   {cartItems.map((item) => (
                     <div key={item.id} className="flex items-center gap-3 bg-gray-50 dark:bg-neutral-900 rounded-xl p-3">
-                      <span className="text-2xl shrink-0">{item.emoji}</span>
+                      <EmojiIcon emoji={item.emoji} className="w-7 h-7 shrink-0" />
                       <div className="flex-1 min-w-0">
                         <h4 className="font-medium text-sm truncate">{item.name}</h4>
                         <p className="text-xs text-gray-500">{item.cal} {t(isUk, "cal", "ккал")} · ~{item.protein}g {t(isUk, "protein", "білка")}</p>
@@ -738,7 +739,7 @@ export function GoodFoodDemo({ lang }: { lang: string }) {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {STEPS.map((step, idx) => (
               <div key={idx} className="text-center bg-white dark:bg-neutral-800 rounded-2xl p-6 border border-gray-100 dark:border-neutral-700 hover:shadow-md transition-shadow">
-                <div className="text-4xl mb-3">{step.emoji}</div>
+                <div className="mb-3"><EmojiIcon emoji={step.emoji} className="w-10 h-10" /></div>
                 <div className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-green-600 text-white text-xs font-bold mb-3">
                   {idx + 1}
                 </div>
@@ -759,7 +760,7 @@ export function GoodFoodDemo({ lang }: { lang: string }) {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {FARMS.map((farm, idx) => (
               <div key={idx} className="bg-linear-to-br from-green-50 to-white rounded-2xl p-6 border border-green-100 hover:shadow-md transition-shadow">
-                <div className="text-4xl mb-3">{farm.emoji}</div>
+                <div className="mb-3"><EmojiIcon emoji={farm.emoji} className="w-10 h-10" /></div>
                 <h3 className="font-bold text-gray-900">{t(isUk, farm.name.en, farm.name.uk)}</h3>
                 <p className="text-sm text-gray-500 dark:text-neutral-400 mt-1">{t(isUk, farm.desc.en, farm.desc.uk)}</p>
               </div>
@@ -777,7 +778,7 @@ export function GoodFoodDemo({ lang }: { lang: string }) {
             {REVIEWS.map((review, idx) => (
               <div key={idx} className="bg-white rounded-2xl p-6 border border-gray-100 dark:border-neutral-700 hover:shadow-md transition-shadow">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="text-3xl">{review.emoji}</span>
+                  <EmojiIcon emoji={review.emoji} className="w-8 h-8" />
                   <div>
                     <h4 className="font-bold text-gray-900">{review.name}</h4>
                     <p className="text-xs text-orange-600 font-medium">{t(isUk, review.plan.en, review.plan.uk)}</p>

@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { BLOG_POSTS } from "@/lib/data/blog";
 import { Clock, Calendar, ArrowLeft, Tag } from "lucide-react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 interface Props {
   params: Promise<{ lang: string; tag: string }>;
@@ -131,7 +132,7 @@ export default async function BlogTagPage({ params }: Props) {
                     >
                       {/* Cover */}
                       <div className={`h-36 bg-linear-to-br ${post.color} flex items-center justify-center`}>
-                        <span className="text-5xl">{post.emoji}</span>
+                        <EmojiIcon emoji={post.emoji} className="w-16 h-16 text-white/80" />
                       </div>
 
                       <div className="p-5">

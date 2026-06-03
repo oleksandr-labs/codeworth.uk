@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 const SAMPLES = [
   { id: "floral",   label: "Floral midi dress",  emoji: "🌸", bg: "from-pink-100 to-rose-100 dark:from-pink-900/20 dark:to-rose-900/20" },
@@ -107,7 +108,7 @@ export function VisualFindDemo({ lang }: { lang: string }) {
                     : "border-slate-200 dark:border-neutral-700 hover:border-pink-300 dark:hover:border-pink-700 text-neutral-600 dark:text-neutral-400"
                 }`}
               >
-                <span className="text-xl">{s.emoji}</span>
+                <EmojiIcon emoji={s.emoji} className="w-5 h-5" />
                 {s.label}
               </button>
             ))}
@@ -121,7 +122,7 @@ export function VisualFindDemo({ lang }: { lang: string }) {
         {searching && (
           <div className="text-center py-8">
             <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-pink-50 dark:bg-pink-900/20 text-pink-700 dark:text-pink-400 font-semibold">
-              <span className="animate-spin text-xl">⚙️</span>
+              <EmojiIcon emoji="⚙️" className="w-5 h-5 animate-spin" />
               {isUk
                 ? "CLIP embedding · Qdrant vector search · 0.08с"
                 : "CLIP embedding · Qdrant vector search · 0.08s"}
@@ -149,8 +150,8 @@ export function VisualFindDemo({ lang }: { lang: string }) {
               {results.map(r => (
                 <div key={r.id} className="bg-white dark:bg-neutral-900 rounded-2xl border border-pink-100 dark:border-neutral-800 overflow-hidden hover:shadow-lg transition-shadow">
                   {/* Image */}
-                  <div className={`aspect-square bg-linear-to-br ${r.bg} flex items-center justify-center text-6xl relative`}>
-                    {r.emoji}
+                  <div className={`aspect-square bg-linear-to-br ${r.bg} flex items-center justify-center relative`}>
+                    <EmojiIcon emoji={r.emoji} className="w-16 h-16" />
                     <button
                       onClick={() => toggleWish(r.id)}
                       className={`absolute top-3 right-3 text-xl transition-transform hover:scale-110 ${wishlist.has(r.id) ? "text-pink-500" : "text-neutral-300 dark:text-neutral-600"}`}
@@ -204,7 +205,7 @@ export function VisualFindDemo({ lang }: { lang: string }) {
                 <div key={s.step} className="flex gap-3">
                   <div className="w-8 h-8 rounded-full bg-pink-100 dark:bg-pink-900/20 flex items-center justify-center text-pink-600 dark:text-pink-400 font-black text-sm shrink-0">{s.step}</div>
                   <div>
-                    <div className="text-xl mb-1">{s.icon}</div>
+                    <div className="mb-1"><EmojiIcon emoji={s.icon} className="w-5 h-5" /></div>
                     <div className="font-semibold text-sm text-neutral-900 dark:text-white">{s.title}</div>
                     <div className="text-xs text-neutral-400 dark:text-neutral-500 mt-0.5">{s.desc}</div>
                   </div>

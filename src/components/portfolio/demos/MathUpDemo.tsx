@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 interface Props { lang: string; }
 
@@ -290,7 +291,7 @@ export function MathUpDemo({ lang }: Props) {
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="text-2xl">📐</span>
+            <EmojiIcon emoji="📐" className="w-7 h-7" />
             <span className="font-extrabold text-xl text-slate-900 tracking-tight">Math<span className="text-blue-600">Up</span></span>
           </div>
           <div className="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600">
@@ -356,7 +357,7 @@ export function MathUpDemo({ lang }: Props) {
                   href="#trial"
                   className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-400 text-white font-bold px-7 py-4 rounded-2xl text-base transition-colors shadow-xl shadow-blue-500/30"
                 >
-                  🎯 {isUk ? "Записатись на безкоштовний урок" : "Book a free lesson"}
+                  <EmojiIcon emoji="🎯" className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? "Записатись на безкоштовний урок" : "Book a free lesson"}
                 </a>
                 <a
                   href="#courses"
@@ -379,7 +380,7 @@ export function MathUpDemo({ lang }: Props) {
             <div className="hidden md:block">
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-8">
                 <div className="text-center mb-6">
-                  <div className="text-5xl mb-3">📊</div>
+                  <div className="mb-3"><EmojiIcon emoji="📊" className="w-14 h-14" /></div>
                   <div className="text-white font-bold text-xl mb-1">{heroCard.title}</div>
                   <div className="text-slate-300 text-sm">{heroCard.subtitle}</div>
                 </div>
@@ -416,7 +417,7 @@ export function MathUpDemo({ lang }: Props) {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {forWhom.map((card) => (
               <div key={card.title} className="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm hover:shadow-md transition-shadow">
-                <div className="text-4xl mb-4">{card.icon}</div>
+                <div className="mb-4"><EmojiIcon emoji={card.icon} className="w-10 h-10" /></div>
                 <h3 className="font-bold text-slate-900 mb-2 text-base">{card.title}</h3>
                 <p className="text-sm text-slate-500 leading-relaxed">{card.desc}</p>
               </div>
@@ -439,7 +440,7 @@ export function MathUpDemo({ lang }: Props) {
                 <div className="bg-blue-600 w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold text-sm mb-4">
                   {step.step}
                 </div>
-                <div className="text-2xl mb-3">{step.icon}</div>
+                <div className="mb-3"><EmojiIcon emoji={step.icon} className="w-7 h-7" /></div>
                 <h3 className="font-bold text-slate-900 mb-2">{step.title}</h3>
                 <p className="text-sm text-slate-500 leading-relaxed">{step.desc}</p>
               </div>
@@ -508,7 +509,7 @@ export function MathUpDemo({ lang }: Props) {
                     <div className="text-white/70 text-xs font-semibold uppercase tracking-wider mb-1">{course.grade}</div>
                     <div className="text-white font-extrabold text-xl leading-tight">{course.title}</div>
                   </div>
-                  <span className="text-5xl opacity-80">{course.icon}</span>
+                  <EmojiIcon emoji={course.icon} className="w-14 h-14 opacity-80" />
                 </div>
                 {course.badge && (
                   <div className="bg-blue-600 text-white text-xs font-bold text-center py-1.5 tracking-wide uppercase">
@@ -583,8 +584,8 @@ export function MathUpDemo({ lang }: Props) {
             {results.map((r) => (
               <div key={r.name} className="bg-white rounded-2xl border border-slate-100 p-5 shadow-sm">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-xl">
-                    {r.emoji}
+                  <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                    <EmojiIcon emoji={r.emoji} className="w-5 h-5 inline-block align-middle" />
                   </div>
                   <div>
                     <div className="font-bold text-slate-900 text-sm">{r.name}</div>
@@ -625,7 +626,7 @@ export function MathUpDemo({ lang }: Props) {
           <div className="grid md:grid-cols-3 gap-8">
             {teachers.map((t) => (
               <div key={t.name} className={`${t.color} rounded-3xl border border-slate-100 p-7`}>
-                <div className="text-5xl mb-4">{t.emoji}</div>
+                <div className="mb-4"><EmojiIcon emoji={t.emoji} className="w-14 h-14" /></div>
                 <h3 className="font-extrabold text-slate-900 text-xl mb-0.5">{t.name}</h3>
                 <div className="text-blue-600 font-semibold text-sm mb-1">{t.title}</div>
                 <div className="text-slate-500 text-sm mb-1">{t.exp} · {t.degree}</div>
@@ -673,7 +674,7 @@ export function MathUpDemo({ lang }: Props) {
       {/* ── Guarantee ───────────────────────────────────────── */}
       <section className="py-16 bg-linear-to-r from-blue-600 to-indigo-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <div className="text-5xl mb-5">🛡️</div>
+          <div className="mb-5"><EmojiIcon emoji="🛡️" className="w-14 h-14" /></div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-4">
             {isUk ? "Гарантія результату" : "Results guarantee"}
           </h2>
@@ -737,7 +738,7 @@ export function MathUpDemo({ lang }: Props) {
           </div>
           {submitted ? (
             <div className="bg-white rounded-3xl p-10 text-center">
-              <div className="text-5xl mb-4">🎉</div>
+              <div className="mb-4"><EmojiIcon emoji="🎉" className="w-14 h-14" /></div>
               <h3 className="text-2xl font-extrabold text-slate-900 mb-2">
                 {isUk ? "Заявку отримано!" : "Request received!"}
               </h3>
@@ -811,7 +812,7 @@ export function MathUpDemo({ lang }: Props) {
             {/* Brand */}
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <span className="text-xl">📐</span>
+                <EmojiIcon emoji="📐" className="w-5 h-5" />
                 <span className="font-extrabold text-white text-lg">Math<span className="text-blue-400">Up</span></span>
               </div>
               <p className="text-sm leading-relaxed mb-5">
@@ -821,10 +822,10 @@ export function MathUpDemo({ lang }: Props) {
               </p>
               <div className="space-y-1.5 text-sm">
                 <a href="tel:+380501234567" className="flex items-center gap-2 hover:text-white transition-colors">
-                  <span className="text-blue-500">📞</span> +38 050 123 45 67
+                  <EmojiIcon emoji="📞" className="w-4 h-4 inline-block align-middle mr-1 text-blue-500" /> +38 050 123 45 67
                 </a>
                 <a href="mailto:hello@mathup.ua" className="flex items-center gap-2 hover:text-white transition-colors">
-                  <span className="text-blue-500">✉️</span> hello@mathup.ua
+                  <EmojiIcon emoji="✉️" className="w-4 h-4 inline-block align-middle mr-1 text-blue-500" /> hello@mathup.ua
                 </a>
               </div>
             </div>

@@ -3,6 +3,7 @@ import { buildAlternates } from "@/i18n";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Check, Clock, Layers, ArrowRight, Star, ChevronRight, Tag, X, ShoppingCart, Package, Sparkles } from "lucide-react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 import { NICHES_DATA, getNiche, getNicheLocalized, COMPLEXITY_LABELS_NICHE } from "@/lib/data/niches";
 import { BLOG_POSTS } from "@/lib/data/blog";
 import { PROJECTS } from "@/lib/data/portfolio";
@@ -258,7 +259,7 @@ export default async function NichePage({
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="flex items-center gap-3 mb-6">
-                  <span className="text-5xl">{niche.emoji}</span>
+                  <EmojiIcon emoji={niche.emoji} className="w-16 h-16 text-white/80" />
                   <span className="px-3 py-1 rounded-full text-sm font-medium bg-white/20 text-white">
                     {niche.category}
                   </span>
@@ -318,8 +319,8 @@ export default async function NichePage({
                     </div>
                   </div>
                   <div className="space-y-3">
-                    <div className="bg-white/20 rounded-lg h-32 flex items-center justify-center text-4xl">
-                      {niche.emoji}
+                    <div className="bg-white/20 rounded-lg h-32 flex items-center justify-center">
+                      <EmojiIcon emoji={niche.emoji} className="w-16 h-16 text-white/80" />
                     </div>
                     <div className="bg-white/10 rounded h-4 w-3/4" />
                     <div className="bg-white/10 rounded h-3 w-full" />
@@ -1166,7 +1167,7 @@ export default async function NichePage({
                     key={v.title}
                     className="group p-6 rounded-2xl border border-neutral-100 dark:border-neutral-700 /50 bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-800/60 hover:border-indigo-200 dark:hover:border-indigo-700/50 hover:shadow-md transition-all"
                   >
-                    <div className="text-3xl mb-3">{v.emoji}</div>
+                    <div className="mb-3"><EmojiIcon emoji={v.emoji} className="w-8 h-8 text-neutral-700 dark:text-neutral-200" /></div>
                     <h3 className="font-bold text-neutral-900 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                       {v.title}
                     </h3>
@@ -1258,10 +1259,10 @@ export default async function NichePage({
                   >
                     {/* Avatar */}
                     <div
-                      className="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center text-3xl ring-4 ring-offset-2 dark:ring-offset-neutral-800"
+                      className="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center ring-4 ring-offset-2 dark:ring-offset-neutral-800"
                       style={{ backgroundColor: niche.color + "20" }}
                     >
-                      {member.emoji}
+                      <EmojiIcon emoji={member.emoji} className="w-8 h-8" />
                     </div>
                     <div className="font-bold text-neutral-900 dark:text-white text-lg mb-1">
                       {member.name}
@@ -1528,7 +1529,7 @@ export default async function NichePage({
         <section className={`py-20 bg-linear-to-br ${niche.gradient} text-white`}>
           <Container>
             <div className="text-center max-w-3xl mx-auto">
-              <div className="text-6xl mb-6">{niche.emoji}</div>
+              <div className="mb-6"><EmojiIcon emoji={niche.emoji} className="w-20 h-20 text-white/80 mx-auto" /></div>
               <h2 className="text-3xl md:text-4xl font-bold font-syne mb-6">
                 {isUk ? "Готові запустити сайт для вашого бізнесу?" : "Ready to Launch a Website for Your Business?"}
               </h2>
@@ -1570,7 +1571,7 @@ export default async function NichePage({
                   >
                     <div className={`h-2 bg-linear-to-r ${post.color}`} />
                     <div className="p-5">
-                      <div className="text-2xl mb-3">{post.emoji}</div>
+                      <div className="mb-3"><EmojiIcon emoji={post.emoji} className="w-8 h-8 text-white/80" /></div>
                       <div className="text-xs font-medium text-indigo-600 dark:text-indigo-400 mb-2">{post.category}</div>
                       <h3 className="font-semibold text-neutral-900 dark:text-white group-hover:text-indigo-700 dark:group-hover:text-indigo-400 transition-colors leading-snug mb-3 line-clamp-2">
                         {post.title}
@@ -1685,9 +1686,9 @@ export default async function NichePage({
                     className="group bg-white dark:bg-neutral-800/60 rounded-2xl p-6 border border-neutral-100 dark:border-neutral-700 /50 hover:border-neutral-200 dark:hover:border-neutral-600 hover:shadow-md transition-all"
                   >
                     <div
-                      className={`w-12 h-12 rounded-xl bg-linear-to-br ${n.gradient} flex items-center justify-center text-2xl mb-4`}
+                      className={`w-12 h-12 rounded-xl bg-linear-to-br ${n.gradient} flex items-center justify-center mb-4`}
                     >
-                      {n.emoji}
+                      <EmojiIcon emoji={n.emoji} className="w-5 h-5 inline-block align-middle mr-1" />
                     </div>
                     <h3 className="font-bold text-neutral-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors mb-2">
                       {n.title}

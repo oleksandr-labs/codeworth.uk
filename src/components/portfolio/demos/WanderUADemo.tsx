@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 const SLIDES = [
   { emoji: "🏖️", destEn: "Maldives", destUk: "Мальдіви", taglineEn: "Paradise awaits", taglineUk: "Рай чекає" },
@@ -153,8 +154,8 @@ export function WanderUADemo({ lang }: { lang: string }) {
       {/* HERO */}
       <section className="relative bg-[#0B3D91] overflow-hidden" style={{ minHeight: "90vh" }}>
         {/* Slide background */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-10 text-[30vw] leading-none select-none pointer-events-none">
-          {SLIDES[activeSlide].emoji}
+        <div className="absolute inset-0 flex items-center justify-center opacity-10 leading-none select-none pointer-events-none">
+          <EmojiIcon emoji={SLIDES[activeSlide].emoji} className="w-16 h-16" />
         </div>
 
         <div className="relative max-w-5xl mx-auto px-4 pt-20 pb-12 flex flex-col items-center text-center gap-6">
@@ -170,7 +171,7 @@ export function WanderUADemo({ lang }: { lang: string }) {
 
           {/* Tagline */}
           <p className="text-2xl sm:text-3xl text-[#F5DEB3] font-light italic">
-            {SLIDES[activeSlide].emoji} {isUk ? SLIDES[activeSlide].taglineUk : SLIDES[activeSlide].taglineEn}
+            <EmojiIcon emoji={SLIDES[activeSlide].emoji} className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? SLIDES[activeSlide].taglineUk : SLIDES[activeSlide].taglineEn}
           </p>
 
           {/* Search form */}
@@ -238,7 +239,7 @@ export function WanderUADemo({ lang }: { lang: string }) {
                 onClick={() => handleDestinationClick(dest.id)}
                 className="bg-[#0B3D91]/60 hover:bg-[#0B3D91] border border-white/10 hover:border-[#06B6D4] rounded-2xl p-5 flex flex-col items-center gap-2 transition-all group"
               >
-                <span className="text-4xl">{dest.emoji}</span>
+                <EmojiIcon emoji={dest.emoji} className="w-10 h-10" />
                 <span className="font-bold text-sm">{isUk ? dest.labelUk : dest.labelEn}</span>
                 <span className="text-[#06B6D4] text-xs font-semibold">from ${dest.from}</span>
                 <span className="text-white/50 text-xs">{dest.toursCount} {isUk ? "турів" : "tours"}</span>
@@ -307,8 +308,8 @@ export function WanderUADemo({ lang }: { lang: string }) {
                 className="bg-[#0B3D91]/40 border border-white/10 hover:border-[#06B6D4]/50 rounded-2xl overflow-hidden transition-all hover:shadow-lg hover:shadow-[#06B6D4]/10 flex flex-col"
               >
                 {/* Emoji hero */}
-                <div className="bg-[#0B3D91] flex items-center justify-center py-8 text-6xl">
-                  {tour.emoji}
+                <div className="bg-[#0B3D91] flex items-center justify-center py-8">
+                  <EmojiIcon emoji={tour.emoji} className="w-16 h-16" />
                 </div>
                 <div className="p-5 flex flex-col flex-1 gap-3">
                   {/* Badges row */}
@@ -370,7 +371,7 @@ export function WanderUADemo({ lang }: { lang: string }) {
           <div className="bg-[#0B1A3B] border border-white/20 rounded-3xl max-w-2xl w-full shadow-2xl">
             {/* Modal header */}
             <div className="bg-[#0B3D91] rounded-t-3xl p-6 flex items-start gap-4">
-              <span className="text-6xl">{currentTour.emoji}</span>
+              <EmojiIcon emoji={currentTour.emoji} className="w-16 h-16" />
               <div className="flex-1">
                 <h2 className="text-2xl font-black leading-tight">{isUk ? currentTour.nameUk : currentTour.nameEn}</h2>
                 <div className="flex items-center gap-3 mt-2 flex-wrap">
@@ -577,7 +578,7 @@ export function WanderUADemo({ lang }: { lang: string }) {
               { icon:"📞", labelEn:"24/7 support",         labelUk:"Підтримка 24/7" },
             ].map((badge) => (
               <div key={badge.labelEn} className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-5 py-3">
-                <span className="text-xl">{badge.icon}</span>
+                <EmojiIcon emoji={badge.icon} className="w-5 h-5" />
                 <span className="text-sm font-semibold">{isUk ? badge.labelUk : badge.labelEn}</span>
               </div>
             ))}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 const isUkStr = (isUk: boolean, en: string, uk: string) => (isUk ? uk : en);
 
@@ -339,7 +340,7 @@ export function QuickBiteDemo({ lang }: { lang: string }) {
                     : "bg-white/20 border-white/40 text-white hover:bg-white/30"
                 }`}
               >
-                {cat.emoji} {isUk ? cat.uk : cat.en}
+                <EmojiIcon emoji={cat.emoji} className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? cat.uk : cat.en}
               </button>
             ))}
           </div>
@@ -374,7 +375,7 @@ export function QuickBiteDemo({ lang }: { lang: string }) {
                         : "bg-gray-100 dark:bg-neutral-800 text-gray-400 dark:text-neutral-500 hover:bg-gray-200"
                     }`}
                   >
-                    <span className="text-xl">{step.emoji}</span>
+                    <EmojiIcon emoji={step.emoji} className="w-5 h-5" />
                     <span className="text-xs font-semibold whitespace-nowrap">{isUk ? step.uk : step.en}</span>
                   </button>
                   {idx < ORDER_STEPS.length - 1 && (
@@ -436,7 +437,7 @@ export function QuickBiteDemo({ lang }: { lang: string }) {
                   : "bg-white text-gray-600 dark:text-neutral-300 border-gray-200 dark:border-neutral-700 hover:border-red-300 hover:text-red-600"
               }`}
             >
-              <span>{cat.emoji}</span>
+              <EmojiIcon emoji={cat.emoji} className="w-5 h-5 inline-block align-middle" />
               <span>{isUk ? cat.uk : cat.en}</span>
             </button>
           ))}
@@ -466,7 +467,7 @@ export function QuickBiteDemo({ lang }: { lang: string }) {
                     r.category === "salads" ? "from-green-50 to-emerald-100" :
                     "from-blue-50 to-indigo-100"
                   } relative`}>
-                    <span className="group-hover:scale-110 transition-transform inline-block">{r.emoji}</span>
+                    <EmojiIcon emoji={r.emoji} className="w-16 h-16 group-hover:scale-110 transition-transform inline-block" />
                     <span className={`absolute top-2 right-2 text-xs font-bold px-2 py-0.5 rounded-full ${
                       r.open ? "bg-green-100 text-green-700" : "bg-red-100 text-red-600"
                     }`}>
@@ -513,7 +514,7 @@ export function QuickBiteDemo({ lang }: { lang: string }) {
               >
                 ←
               </button>
-              <div className="text-4xl shrink-0">{selectedRest.emoji}</div>
+              <div className="shrink-0"><EmojiIcon emoji={selectedRest.emoji} className="w-10 h-10" /></div>
               <div className="flex-1 min-w-0">
                 <div className="font-extrabold text-xl">{selectedRest.name}</div>
                 <div className="text-red-200 text-sm">{isUk ? selectedRest.cuisine.uk : selectedRest.cuisine.en}</div>
@@ -557,8 +558,8 @@ export function QuickBiteDemo({ lang }: { lang: string }) {
                       const inCart = cart.find((c) => c.id === item.id);
                       return (
                         <div key={item.id} className="flex gap-3 p-3 bg-gray-50 dark:bg-neutral-900 rounded-xl border border-gray-100 dark:border-neutral-700 hover:border-red-200 transition">
-                          <div className="text-3xl shrink-0 w-12 h-12 bg-white dark:bg-neutral-800 rounded-xl flex items-center justify-center shadow-sm">
-                            {item.emoji}
+                          <div className="shrink-0 w-12 h-12 bg-white dark:bg-neutral-800 rounded-xl flex items-center justify-center shadow-sm">
+                            <EmojiIcon emoji={item.emoji} className="w-8 h-8" />
                           </div>
                           <div className="flex-1 min-w-0">
                             <div className="font-semibold text-sm text-gray-900">{isUk ? item.name.uk : item.name.en}</div>
@@ -709,7 +710,7 @@ export function QuickBiteDemo({ lang }: { lang: string }) {
               ) : (
                 cart.map((item) => (
                   <div key={item.id} className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-neutral-900 rounded-xl">
-                    <span className="text-2xl shrink-0">{item.emoji}</span>
+                    <EmojiIcon emoji={item.emoji} className="w-7 h-7 shrink-0" />
                     <div className="flex-1 min-w-0">
                       <div className="font-semibold text-sm text-gray-800 dark:text-neutral-200 truncate">{item.name}</div>
                       <div className="text-red-600 text-sm font-bold">₴{item.price}</div>

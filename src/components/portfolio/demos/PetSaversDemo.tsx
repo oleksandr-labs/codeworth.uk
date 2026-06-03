@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -197,7 +198,7 @@ export function PetSaversDemo({ lang }: { lang: string }) {
             {SERVICES.map((svc) => (
               <div key={svc.en} style={{ background: "#fff", border: "1px solid #E5E7EB", borderRadius: 10, padding: "24px 20px", position: "relative" }}>
                 <div style={{ position: "absolute", top: 12, right: 12, background: "#B91C1C", color: "#fff", fontSize: 10, fontWeight: 700, padding: "2px 7px", borderRadius: 20 }}>24h</div>
-                <div style={{ fontSize: 32, marginBottom: 10 }}>{svc.emoji}</div>
+                <div style={{ marginBottom: 10 }}><EmojiIcon emoji={svc.emoji} className="w-14 h-14" /></div>
                 <h3 style={{ fontWeight: 700, fontSize: 16, marginBottom: 6 }}>{isUk ? svc.uk : svc.en}</h3>
                 <p style={{ color: "#6B7280", fontSize: 13, lineHeight: 1.5 }}>{isUk ? svc.descUk : svc.descEn}</p>
               </div>
@@ -229,7 +230,7 @@ export function PetSaversDemo({ lang }: { lang: string }) {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 20 }}>
             {TEAM.map((doc) => (
               <div key={doc.name} style={{ background: "#fff", border: "1px solid #E5E7EB", borderRadius: 10, padding: "20px", textAlign: "center" }}>
-                <div style={{ width: 72, height: 72, borderRadius: "50%", background: "#1F2937", margin: "0 auto 14px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 28 }}>🩺</div>
+                <div style={{ width: 72, height: 72, borderRadius: "50%", background: "#1F2937", margin: "0 auto 14px", display: "flex", alignItems: "center", justifyContent: "center" }}><EmojiIcon emoji="🩺" className="w-10 h-10" /></div>
                 <h3 style={{ fontWeight: 700, fontSize: 15, marginBottom: 4 }}>{doc.name}</h3>
                 <p style={{ color: "#B91C1C", fontSize: 13, fontWeight: 600, marginBottom: 4 }}>{isUk ? doc.specUk : doc.specEn}</p>
                 <p style={{ color: "#9CA3AF", fontSize: 12 }}>{isUk ? doc.scheduleUk : doc.scheduleEn}</p>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -293,7 +294,7 @@ export function CoachAndriyDemo({ lang }: { lang: string }) {
               { emoji: "🔄", en: "500+ Transformations", uk: "500+ трансформацій" },
             ].map((c) => (
               <div key={c.en} className="flex items-center justify-center gap-2 text-sm font-semibold text-zinc-300">
-                <span className="text-xl">{c.emoji}</span>
+                <EmojiIcon emoji={c.emoji} className="w-5 h-5" />
                 <span>{isUk ? c.uk : c.en}</span>
               </div>
             ))}
@@ -320,7 +321,7 @@ export function CoachAndriyDemo({ lang }: { lang: string }) {
                 className="rounded-2xl border border-zinc-700 bg-[#09090b] p-6 hover:border-lime-500/50 transition-colors"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="text-3xl">{p.emoji}</span>
+                  <EmojiIcon emoji={p.emoji} className="w-8 h-8" />
                   <h3 className="text-xl font-bold text-lime-400">
                     {isUk ? p.nameUk : p.nameEn}
                   </h3>
@@ -568,7 +569,7 @@ export function CoachAndriyDemo({ lang }: { lang: string }) {
                   </th>
                   {PROGRAMS.map((p) => (
                     <th key={p.nameEn} className="py-3 px-4 text-center font-bold text-lime-400">
-                      {p.emoji} {isUk ? p.nameUk : p.nameEn}
+                      <EmojiIcon emoji={p.emoji} className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? p.nameUk : p.nameEn}
                     </th>
                   ))}
                 </tr>
@@ -646,7 +647,7 @@ export function CoachAndriyDemo({ lang }: { lang: string }) {
                 key={r.nameEn}
                 className="rounded-2xl border border-zinc-700 bg-[#09090b] p-6 text-center hover:border-lime-500/50 transition-colors"
               >
-                <span className="text-4xl">{r.emoji}</span>
+                <EmojiIcon emoji={r.emoji} className="w-10 h-10" />
                 <h3 className="mt-4 font-bold text-zinc-200">{isUk ? r.nameUk : r.nameEn}</h3>
                 <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
                   {isUk ? r.descUk : r.descEn}

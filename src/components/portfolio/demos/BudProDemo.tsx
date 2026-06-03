@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 const SERVICES = [
   { id: "turnkey", emoji: "🏠", nameUk: "Будівництво під ключ", nameEn: "Turnkey Construction", descUk: "Від фундаменту до здачі. Проєкт, матеріали, роботи.", descEn: "Foundation to handover. Design, materials, works.", priceUk: "від 4 500 ₴/м²", priceEn: "from 4,500 ₴/m²" },
@@ -169,7 +170,7 @@ export function BudProDemo({ lang }: { lang: string }) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {SERVICES.map((s) => (
               <div key={s.id} className="bg-[#252525] border-t-4 border-[#E8650A] rounded-lg p-6 flex flex-col gap-3">
-                <div className="text-4xl">{s.emoji}</div>
+                <EmojiIcon emoji={s.emoji} className="w-10 h-10" />
                 <h3 className="text-xl font-black text-white uppercase">{isUk ? s.nameUk : s.nameEn}</h3>
                 <p className="text-[#6B7280] text-sm leading-relaxed">{isUk ? s.descUk : s.descEn}</p>
                 <div className="text-[#E8650A] font-black text-lg mt-auto">{isUk ? s.priceUk : s.priceEn}</div>
@@ -285,18 +286,18 @@ export function BudProDemo({ lang }: { lang: string }) {
               <div key={p.id} className="bg-[#252525] border border-[#2C2C2E] rounded-lg overflow-hidden">
                 <div className="p-5">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-12 h-12 rounded-full bg-[#E8650A]/20 flex items-center justify-center text-2xl shrink-0">
-                      {p.emoji}
+                    <div className="w-12 h-12 rounded-full bg-[#E8650A]/20 flex items-center justify-center shrink-0">
+                      <EmojiIcon emoji={p.emoji} className="w-7 h-7" />
                     </div>
                     <div>
                       <h3 className="font-black text-white text-sm leading-tight">{isUk ? p.nameUk : p.nameEn}</h3>
                       <span className="text-[#E8650A] text-xs font-bold uppercase">{p.type} · {p.year}</span>
                     </div>
                   </div>
-                  <div className="flex items-center justify-center gap-4 bg-[#1C1C1E] rounded-lg py-3 mb-4 text-2xl">
-                    <span title="Before">{p.beforeEmoji}</span>
+                  <div className="flex items-center justify-center gap-4 bg-[#1C1C1E] rounded-lg py-3 mb-4">
+                    <EmojiIcon emoji={p.beforeEmoji} className="w-7 h-7" />
                     <span className="text-[#6B7280] text-sm font-bold">→</span>
-                    <span title="After">{p.afterEmoji}</span>
+                    <EmojiIcon emoji={p.afterEmoji} className="w-7 h-7" />
                   </div>
                   <div className="flex flex-wrap gap-2 mb-4">
                     <span className="bg-[#1C1C1E] text-[#6B7280] text-xs px-2 py-1 rounded">{isUk ? p.areaUk : p.areaEn}</span>
@@ -359,7 +360,7 @@ export function BudProDemo({ lang }: { lang: string }) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {TEAM.map((member) => (
               <div key={member.nameEn} className="bg-[#252525] border border-[#2C2C2E] rounded-lg p-6 text-center">
-                <div className="text-5xl mb-4">{member.emoji}</div>
+                <div className="mb-4"><EmojiIcon emoji={member.emoji} className="w-14 h-14" /></div>
                 <h3 className="text-white font-black text-lg">{isUk ? member.nameUk : member.nameEn}</h3>
                 <p className="text-[#E8650A] text-sm font-bold mt-1">{isUk ? member.roleUk : member.roleEn}</p>
                 <p className="text-[#6B7280] text-sm mt-2">{isUk ? `Досвід: ${member.expUk}` : `Experience: ${member.expEn}`}</p>

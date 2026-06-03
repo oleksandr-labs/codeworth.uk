@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 export function LittleMomentsDemo({ lang }: { lang: string }) {
   const isUk = lang === "uk";
@@ -294,7 +295,7 @@ export function LittleMomentsDemo({ lang }: { lang: string }) {
                     fontWeight: activeMilestone === i ? 700 : 400,
                   }}
                 >
-                  {m.emoji} {m.title}
+                  <EmojiIcon emoji={m.emoji} className="w-4 h-4 inline-block align-middle mr-1" />{m.title}
                 </button>
               ))}
             </div>
@@ -302,7 +303,7 @@ export function LittleMomentsDemo({ lang }: { lang: string }) {
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }}>
               <div style={{ background: pastelBg[activeMilestone], borderRadius: 8, padding: 40, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                 <div>
-                  <div style={{ fontSize: 48, marginBottom: 16 }}>{milestones[activeMilestone].emoji}</div>
+                  <div style={{ marginBottom: 16 }}><EmojiIcon emoji={milestones[activeMilestone].emoji} className="w-16 h-16" /></div>
                   <h3 style={{ fontSize: 28, fontWeight: 400, fontStyle: "italic", color: pastelText[activeMilestone], marginBottom: 4 }}>
                     {milestones[activeMilestone].title}
                   </h3>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 export function PinkyPopDemo({ lang }: { lang: string }) {
   const isUk = lang === "uk";
@@ -331,7 +332,7 @@ export function PinkyPopDemo({ lang }: { lang: string }) {
                 onClick={buildMasterNote}
                 className="w-full bg-linear-to-br from-[#E91E8C] to-[#9C27B0] text-white font-black py-4 rounded-2xl text-base hover:opacity-90 transition-opacity shadow-lg"
               >
-                💅 {isUk ? "Показати майстру" : "Show to Master"}
+                <EmojiIcon emoji="💅" className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? "Показати майстру" : "Show to Master"}
               </button>
 
               {masterNote && (
@@ -452,9 +453,9 @@ export function PinkyPopDemo({ lang }: { lang: string }) {
       <section className="py-12 px-6 bg-linear-to-br from-[#9C27B0] to-[#E91E8C]">
         <div className="max-w-3xl mx-auto flex flex-col md:flex-row items-center gap-8">
           {/* Featured nail preview */}
-          <div className="shrink-0 w-32 h-32 rounded-3xl flex items-center justify-center text-6xl shadow-2xl"
+          <div className="shrink-0 w-32 h-32 rounded-3xl flex items-center justify-center shadow-2xl"
             style={{ backgroundColor: "#F5F03A" }}>
-            💅
+            <EmojiIcon emoji="💅" className="w-16 h-16" />
           </div>
           <div>
             <span className="bg-[#111111] text-[#F5F03A] text-xs font-black uppercase tracking-widest px-3 py-1 rounded-full">
@@ -552,8 +553,8 @@ export function PinkyPopDemo({ lang }: { lang: string }) {
                 key={i}
                 className="bg-[#1a0a1a] rounded-3xl p-6 text-center border-2 border-white/5 hover:border-[#E91E8C]/40 transition-colors group"
               >
-                <div className="w-20 h-20 rounded-full bg-linear-to-br from-[#E91E8C] to-[#9C27B0] flex items-center justify-center text-4xl mx-auto mb-4 group-hover:scale-110 transition-transform">
-                  {master.emoji}
+                <div className="w-20 h-20 rounded-full bg-linear-to-br from-[#E91E8C] to-[#9C27B0] flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                  <EmojiIcon emoji={master.emoji} className="w-10 h-10" />
                 </div>
                 <h3 className="font-black text-xl mb-1">{master.name}</h3>
                 <p className="text-[#E91E8C] text-sm font-bold mb-2">{master.experience}</p>
@@ -580,7 +581,7 @@ export function PinkyPopDemo({ lang }: { lang: string }) {
 
           {bookingSubmitted ? (
             <div className="bg-linear-to-br from-[#E91E8C] to-[#9C27B0] rounded-3xl p-10 text-center">
-              <div className="text-6xl mb-4">🎉</div>
+              <div className="mb-4"><EmojiIcon emoji="🎉" className="w-16 h-16" /></div>
               <h3 className="text-2xl font-black mb-2">
                 {isUk ? "Запис підтверджено!" : "Booking Confirmed!"}
               </h3>
@@ -710,7 +711,7 @@ export function PinkyPopDemo({ lang }: { lang: string }) {
                 type="submit"
                 className="w-full bg-linear-to-br from-[#E91E8C] to-[#9C27B0] text-white font-black py-4 rounded-2xl text-base hover:opacity-90 transition-opacity shadow-xl mt-2"
               >
-                💅 {isUk ? "Підтвердити запис" : "Confirm Booking"}
+                <EmojiIcon emoji="💅" className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? "Підтвердити запис" : "Confirm Booking"}
               </button>
             </form>
           )}
@@ -727,7 +728,7 @@ export function PinkyPopDemo({ lang }: { lang: string }) {
               <div className="text-2xl font-black">
                 <span className="text-[#E91E8C]">Pinky</span>
                 <span className="text-[#F5F03A]">Pop</span>
-                <span className="text-white"> 💅</span>
+                <EmojiIcon emoji="💅" className="w-5 h-5 inline-block align-middle text-white" />
               </div>
               <p className="text-white/30 text-sm mt-1">
                 {isUk ? "Студія нейл-арту" : "Nail Art Studio"}

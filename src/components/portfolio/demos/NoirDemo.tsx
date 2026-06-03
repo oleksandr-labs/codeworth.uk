@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 // ─── Data ───────────────────────────────────────────────────────────────────
 
@@ -464,7 +465,7 @@ export function NoirDemo({ lang }: { lang: string }) {
               { icon: "👔", label: t.dress },
             ].map((item, i) => (
               <div key={i} className="border border-amber-900/30 p-5">
-                <span className="text-2xl block mb-2">{item.icon}</span>
+                <EmojiIcon emoji={item.icon} className="w-7 h-7 block mb-2" />
                 <p className="text-stone-400 text-xs leading-relaxed">{item.label}</p>
               </div>
             ))}
@@ -508,7 +509,7 @@ export function NoirDemo({ lang }: { lang: string }) {
                   { icon: "🎖", label: isUk ? "San Pellegrino Emerging Chef" : "San Pellegrino Emerging Chef" },
                 ].map((award, i) => (
                   <div key={i} className="border border-amber-900/30 p-4">
-                    <span className="text-lg block mb-1">{award.icon}</span>
+                    <EmojiIcon emoji={award.icon} className="w-5 h-5 block mb-1" />
                     <p className="text-stone-400 text-xs leading-snug">{award.label}</p>
                   </div>
                 ))}
@@ -534,9 +535,7 @@ export function NoirDemo({ lang }: { lang: string }) {
                 key={i}
                 className="relative aspect-square bg-zinc-900 border border-amber-900/20 flex items-center justify-center group cursor-pointer overflow-hidden"
               >
-                <span className="text-4xl transition-transform group-hover:scale-110 duration-300">
-                  {item.emoji}
-                </span>
+                <EmojiIcon emoji={item.emoji} className="w-10 h-10 transition-transform group-hover:scale-110 duration-300" />
                 <div className="absolute inset-0 bg-amber-500/0 group-hover:bg-amber-500/10 transition-colors duration-300 flex items-end p-3">
                   <p className="text-amber-200 text-xs font-serif italic opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     {isUk ? item.titleUk : item.titleEn}

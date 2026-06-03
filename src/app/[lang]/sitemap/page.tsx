@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { buildAlternates } from "@/i18n";
 import Link from "next/link";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
@@ -272,7 +273,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ lang: 
                           href={lp(`/niches/${niche.slug}`)}
                           className="flex items-center gap-3 px-5 py-2.5 hover:bg-orange-50 transition-colors group"
                         >
-                          <span className="text-lg shrink-0">{niche.emoji}</span>
+                          <EmojiIcon emoji={niche.emoji} className="w-5 h-5 shrink-0" />
                           <div className="flex-1 min-w-0">
                             <span className="text-sm font-medium text-gray-800 dark:text-neutral-200 group-hover:text-orange-700 transition-colors">
                               {niche.title}

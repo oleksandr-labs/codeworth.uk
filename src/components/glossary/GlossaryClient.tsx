@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { GLOSSARY_TERMS, GLOSSARY_CATEGORIES, type GlossaryCategory } from "@/lib/data/glossary";
 import { Search, ArrowRight } from "lucide-react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 interface Props {
   lang: string;
@@ -94,7 +95,7 @@ export function GlossaryClient({ lang, isUk }: Props) {
                     : "bg-gray-100 dark:bg-neutral-800 text-gray-600 dark:text-neutral-300 hover:bg-gray-200"
                 }`}
               >
-                {cat.emoji} {isUk ? cat.label : cat.labelEn}
+                <EmojiIcon emoji={cat.emoji} className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? cat.label : cat.labelEn}
               </button>
             ))}
           </div>
@@ -124,7 +125,7 @@ export function GlossaryClient({ lang, isUk }: Props) {
                     >
                       <div className="flex items-start justify-between mb-2">
                         <span className="text-xs font-medium text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full">
-                          {catMeta?.emoji} {isUk ? catMeta?.label : catMeta?.labelEn}
+                          {catMeta?.emoji && <EmojiIcon emoji={catMeta.emoji} className="w-3.5 h-3.5 inline-block align-middle mr-1" />}{isUk ? catMeta?.label : catMeta?.labelEn}
                         </span>
                         <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-indigo-500 transition-colors shrink-0" aria-hidden="true" />
                       </div>

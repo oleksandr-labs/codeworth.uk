@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 /* ───────────── data ───────────── */
 
@@ -259,9 +260,9 @@ export function SweetBakeryDemo({ lang }: { lang: string }) {
               ? "Ремісничий хліб на заквасці, здобна випічка та торти на замовлення. Традиції, яким ви можете довіряти з 2015 року."
               : "Artisan sourdough bread, fine pastries, and custom cakes. Traditions you can trust since 2015."}
           </p>
-          <div className="flex justify-center gap-3 text-3xl mb-8">
+          <div className="flex justify-center gap-3 mb-8">
             {["🥐", "🍞", "🧁", "🎂", "🥖", "🍰"].map((e) => (
-              <span key={e} className="hover:scale-125 transition-transform cursor-default">{e}</span>
+              <EmojiIcon key={e} emoji={e} className="w-8 h-8 hover:scale-125 transition-transform cursor-default" />
             ))}
           </div>
           <div className="flex flex-wrap justify-center gap-3">
@@ -315,7 +316,7 @@ export function SweetBakeryDemo({ lang }: { lang: string }) {
               className="bg-white rounded-2xl border border-[#fdba74]/30 p-5 flex flex-col hover:shadow-lg hover:shadow-[#fdba74]/20 transition-shadow"
             >
               <div className="flex items-start gap-3 mb-3">
-                <span className="text-3xl shrink-0">{p.emoji}</span>
+                <EmojiIcon emoji={p.emoji} className="w-8 h-8 shrink-0" />
                 <div>
                   <h3 className="font-bold text-[#78350f]">{isUk ? p.nameUk : p.nameEn}</h3>
                   <p className="text-sm text-[#92400e]/80">{isUk ? p.descUk : p.desc}</p>
@@ -513,7 +514,7 @@ export function SweetBakeryDemo({ lang }: { lang: string }) {
               <span className="absolute -top-3 right-4 bg-[#78350f] text-white text-xs font-bold px-3 py-1 rounded-full">
                 {isUk ? s.badgeUk : s.badgeEn}
               </span>
-              <p className="text-4xl mb-3">{s.emoji}</p>
+              <EmojiIcon emoji={s.emoji} className="w-10 h-10 mb-3" />
               <h3 className="font-bold text-[#78350f] mb-1">{isUk ? s.nameUk : s.nameEn}</h3>
               <p className="text-xl font-extrabold text-[#fb923c] mb-3">{s.price} ₴</p>
               <button className="bg-[#78350f] hover:bg-[#92400e] text-white text-sm font-semibold px-5 py-2 rounded-full transition-colors">
@@ -543,7 +544,7 @@ export function SweetBakeryDemo({ lang }: { lang: string }) {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
             {SOURDOUGH_STEPS.map((s, i) => (
               <div key={i} className="bg-[#92400e]/60 rounded-2xl p-5 text-center">
-                <p className="text-3xl mb-2">{s.emoji}</p>
+                <EmojiIcon emoji={s.emoji} className="w-8 h-8 mb-2" />
                 <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#fdba74] text-[#78350f] text-sm font-bold mb-2">
                   {i + 1}
                 </div>
@@ -582,7 +583,7 @@ export function SweetBakeryDemo({ lang }: { lang: string }) {
               key={i}
               className="bg-white rounded-2xl border border-[#fdba74]/30 p-6 flex flex-col hover:shadow-lg hover:shadow-[#fdba74]/20 transition-shadow"
             >
-              <p className="text-4xl mb-3">{c.emoji}</p>
+              <EmojiIcon emoji={c.emoji} className="w-10 h-10 mb-3" />
               <h3 className="text-lg font-bold text-[#78350f] mb-2">{isUk ? c.nameUk : c.nameEn}</h3>
               <p className="text-sm text-[#92400e]/80 mb-4">{isUk ? c.descUk : c.descEn}</p>
               <div className="mt-auto pt-4 border-t border-[#fef3c7]">
@@ -606,7 +607,7 @@ export function SweetBakeryDemo({ lang }: { lang: string }) {
           <div className="grid md:grid-cols-3 gap-6">
             {REVIEWS.map((r, i) => (
               <div key={i} className="bg-white rounded-2xl p-6 border border-[#fdba74]/30">
-                <p className="text-sm mb-3">{r.emoji}</p>
+                <EmojiIcon emoji={r.emoji} className="w-5 h-5 inline-block align-middle mb-3" />
                 <p className="text-sm text-[#92400e] mb-4 italic leading-relaxed">
                   &ldquo;{isUk ? r.textUk : r.textEn}&rdquo;
                 </p>

@@ -12,6 +12,7 @@ import {
   GLOSSARY_TERM_SLUGS,
 } from "@/lib/data/glossary";
 import { ArrowRight, BookOpen, ExternalLink, FileText } from "lucide-react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 import { BLOG_POSTS } from "@/lib/data/blog";
 
 export async function generateStaticParams() {
@@ -135,7 +136,7 @@ export default async function GlossaryTermPage({
             </nav>
             <div className="flex items-center gap-2 mb-4">
               <span className="text-xs font-medium text-indigo-300 bg-indigo-900/50 border border-indigo-700 px-3 py-1 rounded-full">
-                {catMeta?.emoji} {isUk ? catMeta?.label : catMeta?.labelEn}
+                {catMeta?.emoji && <EmojiIcon emoji={catMeta.emoji} className="w-3.5 h-3.5 inline-block align-middle mr-1" />}{isUk ? catMeta?.label : catMeta?.labelEn}
               </span>
             </div>
             <h1 className="text-3xl sm:text-5xl font-bold text-white mb-4">{term.termUk}</h1>
@@ -213,7 +214,7 @@ export default async function GlossaryTermPage({
                     href={`/${lang}/blog/${relatedBlogPost.slug}`}
                     className="inline-flex items-center gap-2 text-indigo-600 font-medium hover:text-indigo-800 transition-colors text-sm"
                   >
-                    {relatedBlogPost.emoji} {relatedBlogPost.title}
+                    <EmojiIcon emoji={relatedBlogPost.emoji} className="w-4 h-4 inline-block align-middle mr-1" />{relatedBlogPost.title}
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>

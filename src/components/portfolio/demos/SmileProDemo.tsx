@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -201,7 +202,7 @@ export function SmileProDemo({ lang }: { lang: string }) {
               { emoji: "📐", valueEn: "3D", valueUk: "3D", labelEn: "Digital Scanning", labelUk: "Цифрове сканування" },
             ].map((b) => (
               <div key={b.emoji} className="text-center">
-                <div className="text-3xl mb-1">{b.emoji}</div>
+                <div className="mb-1"><EmojiIcon emoji={b.emoji} className="w-8 h-8" /></div>
                 <div className="text-2xl font-bold text-cyan-600">{isUk ? b.valueUk : b.valueEn}</div>
                 <div className="text-sm text-gray-400">{isUk ? b.labelUk : b.labelEn}</div>
               </div>
@@ -227,7 +228,7 @@ export function SmileProDemo({ lang }: { lang: string }) {
                 key={s.id}
                 className="bg-white rounded-2xl p-6 border border-gray-100 dark:border-neutral-700 hover:border-cyan-200 hover:shadow-lg hover:shadow-cyan-50 transition-all"
               >
-                <div className="text-3xl mb-3">{s.emoji}</div>
+                <div className="mb-3"><EmojiIcon emoji={s.emoji} className="w-8 h-8" /></div>
                 <h3 className="font-bold text-gray-900 dark:text-white mb-1">{isUk ? s.nameUk : s.nameEn}</h3>
                 <p className="text-sm text-gray-400 dark:text-neutral-500 mb-3">{isUk ? s.descUk : s.descEn}</p>
                 <div className="text-cyan-600 font-semibold text-sm">{isUk ? s.priceUk : s.priceEn}</div>
@@ -346,7 +347,7 @@ export function SmileProDemo({ lang }: { lang: string }) {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {DOCTORS.map((d) => (
               <div key={d.id} className="bg-white rounded-2xl p-6 border border-gray-100 dark:border-neutral-700 text-center">
-                <div className="text-5xl mb-3">{d.emoji}</div>
+                <div className="mb-3"><EmojiIcon emoji={d.emoji} className="w-14 h-14" /></div>
                 <h3 className="font-bold text-gray-900">{isUk ? d.nameUk : d.nameEn}</h3>
                 <p className="text-sm text-cyan-600 font-medium mt-1">{isUk ? d.specUk : d.specEn}</p>
                 <p className="text-xs text-gray-400 dark:text-neutral-500 mt-1">
@@ -475,7 +476,7 @@ export function SmileProDemo({ lang }: { lang: string }) {
               },
             ].map((item) => (
               <div key={item.emoji} className="bg-white/10 backdrop-blur rounded-2xl p-6">
-                <div className="text-3xl mb-3">{item.emoji}</div>
+                <div className="mb-3"><EmojiIcon emoji={item.emoji} className="w-8 h-8" /></div>
                 <h3 className="font-bold text-lg mb-2">{isUk ? item.titleUk : item.titleEn}</h3>
                 <p className="text-sm text-cyan-100">{isUk ? item.descUk : item.descEn}</p>
               </div>

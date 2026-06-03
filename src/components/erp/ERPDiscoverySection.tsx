@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, PhoneCall } from "lucide-react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 import { Container } from "@/components/layout/Container";
 
 type Step = {
@@ -149,7 +150,7 @@ export function ERPDiscoverySection({ lang }: { lang: string }) {
                     onClick={() => choose(opt.value)}
                     className="flex items-center gap-3 p-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-indigo-500/50 text-left transition-all group"
                   >
-                    <span className="text-2xl shrink-0">{opt.emoji}</span>
+                    <EmojiIcon emoji={opt.emoji} className="w-6 h-6 shrink-0 text-white/80" />
                     <span className="text-sm font-medium text-white/90 group-hover:text-white leading-snug">
                       {isUk ? opt.uk : opt.en}
                     </span>
@@ -191,7 +192,7 @@ export function ERPDiscoverySection({ lang }: { lang: string }) {
                   return (
                     <div key={s.key} className="bg-white/5 rounded-xl px-3 py-2">
                       <div className="text-[10px] text-neutral-500 uppercase tracking-wide">{isUk ? s.q.uk.split("?")[0] : s.q.en.split("?")[0]}</div>
-                      <div className="text-sm font-medium text-white mt-0.5">{opt.emoji} {isUk ? opt.uk : opt.en}</div>
+                      <div className="text-sm font-medium text-white mt-0.5 flex items-center gap-1.5"><EmojiIcon emoji={opt.emoji} className="w-4 h-4 shrink-0" />{isUk ? opt.uk : opt.en}</div>
                     </div>
                   );
                 })}

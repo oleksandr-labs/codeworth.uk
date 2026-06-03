@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 const AGE_GROUPS = [
   { id: "0-1", ukL: "👶 0–1 рік", enL: "👶 0–1 yr" },
@@ -326,8 +327,8 @@ export function ToyLandDemo({ lang }: { lang: string }) {
           {/* Decorative toys grid */}
           <div className="shrink-0 grid grid-cols-3 gap-3">
             {["🧱", "🚗", "🧸", "🌈", "🎨", "🤖", "🧩", "🎲", "🦕"].map((em, i) => (
-              <div key={i} className="w-16 h-16 rounded-2xl bg-white/70 backdrop-blur flex items-center justify-center text-3xl shadow-sm hover:scale-110 transition-transform">
-                {em}
+              <div key={i} className="w-16 h-16 rounded-2xl bg-white/70 backdrop-blur flex items-center justify-center shadow-sm hover:scale-110 transition-transform">
+                <EmojiIcon emoji={em} className="w-8 h-8" />
               </div>
             ))}
           </div>
@@ -354,7 +355,7 @@ export function ToyLandDemo({ lang }: { lang: string }) {
                 onClick={() => document.getElementById("product-grid")?.scrollIntoView({ behavior: "smooth" })}
                 className={`bg-linear-to-br ${cat.color} rounded-3xl p-4 text-center hover:scale-105 transition-transform shadow-sm`}
               >
-                <div className="text-4xl mb-2">{cat.emoji}</div>
+                <div className="mb-2"><EmojiIcon emoji={cat.emoji} className="w-10 h-10" /></div>
                 <p className="font-black text-stone-900 text-sm leading-tight">{isUk ? cat.nameUk : cat.nameEn}</p>
                 <p className="text-stone-700 text-[10px] mt-1">{isUk ? cat.countUk : cat.countEn}</p>
               </button>
@@ -485,7 +486,7 @@ export function ToyLandDemo({ lang }: { lang: string }) {
                 >
                   {/* Colorful top */}
                   <div className={`relative h-40 ${gradient} flex items-center justify-center cursor-pointer`} onClick={() => setSelectedProduct(product.id)}>
-                    <span className="text-6xl">{product.emoji}</span>
+                    <EmojiIcon emoji={product.emoji} className="w-16 h-16" />
 
                     {/* Age badge */}
                     <span className="absolute top-2 left-2 bg-white/80 text-stone-700 text-[10px] font-bold px-2 py-0.5 rounded-full backdrop-blur">
@@ -610,7 +611,7 @@ export function ToyLandDemo({ lang }: { lang: string }) {
               { cert: "ASTM F963", emoji: "🇺🇸", titleUk: "США стандарт", titleEn: "US Standard", textUk: "Американський стандарт безпеки іграшок", textEn: "American toy safety standard" },
             ].map(item => (
               <div key={item.cert} className="bg-white rounded-3xl p-5 shadow-sm border border-green-100 text-center">
-                <div className="text-4xl mb-3">{item.emoji}</div>
+                <div className="mb-3"><EmojiIcon emoji={item.emoji} className="w-10 h-10" /></div>
                 <div className="inline-block bg-green-100 text-green-700 text-xs font-black px-3 py-1 rounded-full mb-2">{item.cert}</div>
                 <h3 className="font-black text-stone-900 text-base mb-1">{isUk ? item.titleUk : item.titleEn}</h3>
                 <p className="text-stone-500 text-xs leading-relaxed">{isUk ? item.textUk : item.textEn}</p>
@@ -641,8 +642,8 @@ export function ToyLandDemo({ lang }: { lang: string }) {
                 </div>
                 <p className="text-stone-700 text-sm leading-relaxed mb-5">"{isUk ? r.textUk : r.textEn}"</p>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-yellow-100 border-2 border-yellow-300 flex items-center justify-center text-xl">
-                    {r.emoji}
+                  <div className="w-10 h-10 rounded-full bg-yellow-100 border-2 border-yellow-300 flex items-center justify-center">
+                    <EmojiIcon emoji={r.emoji} className="w-5 h-5" />
                   </div>
                   <span className="font-bold text-stone-800 text-sm">{isUk ? r.nameUk : r.nameEn}</span>
                 </div>
@@ -739,7 +740,7 @@ export function ToyLandDemo({ lang }: { lang: string }) {
                         quizAnswers.gender === g.id ? g.color + " shadow-md scale-105" : "border-stone-200 bg-white text-stone-600"
                       }`}
                     >
-                      <span className="text-3xl">{g.emoji}</span>
+                      <EmojiIcon emoji={g.emoji} className="w-8 h-8" />
                       <span>{isUk ? g.uk : g.en}</span>
                     </button>
                   ))}
@@ -819,8 +820,8 @@ export function ToyLandDemo({ lang }: { lang: string }) {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                   {getQuizResults().length > 0 ? getQuizResults().map((product, idx) => (
                     <div key={product.id} className={`rounded-2xl overflow-hidden border border-stone-100 shadow-sm hover:shadow-md transition-shadow flex`}>
-                      <div className={`w-20 shrink-0 ${CARD_GRADIENTS[idx % CARD_GRADIENTS.length]} flex items-center justify-center text-3xl`}>
-                        {product.emoji}
+                      <div className={`w-20 shrink-0 ${CARD_GRADIENTS[idx % CARD_GRADIENTS.length]} flex items-center justify-center`}>
+                        <EmojiIcon emoji={product.emoji} className="w-8 h-8" />
                       </div>
                       <div className="p-3 flex-1 flex flex-col justify-between">
                         <div>
@@ -1056,8 +1057,8 @@ export function ToyLandDemo({ lang }: { lang: string }) {
                     if (!product) return null;
                     return (
                       <div key={item.id} className="flex gap-3 bg-stone-50 rounded-2xl p-3 border border-stone-100">
-                        <div className={`w-14 h-14 rounded-xl ${CARD_GRADIENTS[item.id % CARD_GRADIENTS.length]} flex items-center justify-center text-2xl shrink-0`}>
-                          {product.emoji}
+                        <div className={`w-14 h-14 rounded-xl ${CARD_GRADIENTS[item.id % CARD_GRADIENTS.length]} flex items-center justify-center shrink-0`}>
+                          <EmojiIcon emoji={product.emoji} className="w-7 h-7" />
                         </div>
                         <div className="flex-1 min-w-0">
                           <p className="font-bold text-stone-900 text-xs leading-snug line-clamp-2">
@@ -1146,7 +1147,7 @@ export function ToyLandDemo({ lang }: { lang: string }) {
             <div className="relative bg-white rounded-3xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
               {/* Image area */}
               <div className={`relative h-52 ${gradient} rounded-t-3xl flex items-center justify-center`}>
-                <span className="text-8xl">{product.emoji}</span>
+                <EmojiIcon emoji={product.emoji} className="w-16 h-16" />
                 <span className="absolute top-4 left-4 bg-white/80 text-stone-700 text-xs font-bold px-3 py-1 rounded-full">
                   {AGE_GROUPS.find(a => a.id === product.age)?.[isUk ? "ukL" : "enL"] ?? product.age}
                 </span>
@@ -1289,7 +1290,7 @@ export function ToyLandDemo({ lang }: { lang: string }) {
                           quizAnswers.gender === g.id ? g.color + " shadow-md" : "border-stone-200 bg-white text-stone-600"
                         }`}
                       >
-                        <span className="text-2xl">{g.emoji}</span>
+                        <EmojiIcon emoji={g.emoji} className="w-7 h-7" />
                         <span>{isUk ? g.uk : g.en}</span>
                       </button>
                     ))}
@@ -1363,8 +1364,8 @@ export function ToyLandDemo({ lang }: { lang: string }) {
                   <div className="flex flex-col gap-3 mb-5">
                     {getQuizResults().length > 0 ? getQuizResults().map((product, idx) => (
                       <div key={product.id} className="flex gap-3 bg-stone-50 rounded-2xl p-3 border border-stone-100">
-                        <div className={`w-14 h-14 rounded-xl ${CARD_GRADIENTS[idx % CARD_GRADIENTS.length]} flex items-center justify-center text-2xl shrink-0`}>
-                          {product.emoji}
+                        <div className={`w-14 h-14 rounded-xl ${CARD_GRADIENTS[idx % CARD_GRADIENTS.length]} flex items-center justify-center shrink-0`}>
+                          <EmojiIcon emoji={product.emoji} className="w-7 h-7" />
                         </div>
                         <div className="flex-1">
                           <p className="font-bold text-stone-900 text-sm line-clamp-2">

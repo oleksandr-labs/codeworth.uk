@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 export function BridalLuxDemo({ lang }: { lang: string }) {
   const isUk = lang === "uk";
@@ -245,7 +246,7 @@ export function BridalLuxDemo({ lang }: { lang: string }) {
       {/* Hero */}
       <section className="bg-stone-50 py-24 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="text-7xl mb-8 select-none">🌸</div>
+          <div className="mb-8 select-none"><EmojiIcon emoji="🌸" className="w-16 h-16" /></div>
           <h1 className="font-serif text-5xl md:text-6xl text-stone-800 leading-tight mb-6 tracking-wide">
             {isUk
               ? "Ваша Весільна Казка Починається Тут"
@@ -338,8 +339,8 @@ export function BridalLuxDemo({ lang }: { lang: string }) {
                 key={dress.name}
                 className="bg-stone-50 border border-stone-100 rounded-2xl p-6 flex flex-col gap-3 hover:shadow-md transition-shadow"
               >
-                <div className="text-4xl text-center py-6 bg-rose-50 rounded-xl">
-                  👰
+                <div className="text-center py-6 bg-rose-50 rounded-xl">
+                  <EmojiIcon emoji="👰" className="w-10 h-10" />
                 </div>
                 <div className="font-serif text-xl text-stone-800">
                   {dress.name}
@@ -374,7 +375,7 @@ export function BridalLuxDemo({ lang }: { lang: string }) {
                 key={s.title}
                 className="bg-white border border-stone-100 rounded-2xl p-7 flex gap-5 items-start hover:shadow-md transition-shadow"
               >
-                <div className="text-4xl shrink-0">{s.emoji}</div>
+                <EmojiIcon emoji={s.emoji} className="w-10 h-10 shrink-0" />
                 <div>
                   <div className="font-serif text-lg text-stone-800 mb-1">
                     {s.title}
@@ -444,7 +445,7 @@ export function BridalLuxDemo({ lang }: { lang: string }) {
 
           {submitted ? (
             <div className="bg-white border border-rose-200 rounded-2xl p-10 text-center">
-              <div className="text-5xl mb-4">🌸</div>
+              <div className="mb-4"><EmojiIcon emoji="🌸" className="w-14 h-14" /></div>
               <h3 className="font-serif text-2xl text-stone-800 mb-2">
                 {isUk ? "Дякуємо!" : "Thank You!"}
               </h3>

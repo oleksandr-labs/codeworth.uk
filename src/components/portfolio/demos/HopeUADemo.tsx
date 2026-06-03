@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 export function HopeUADemo({ lang }: { lang: string }) {
   const isUk = lang === "uk";
@@ -179,7 +180,7 @@ export function HopeUADemo({ lang }: { lang: string }) {
       {/* NAV */}
       <nav style={{ background: "#1D4ED8", padding: "12px 24px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <span style={{ fontSize: 24 }}>🤍</span>
+          <EmojiIcon emoji="🤍" className="w-8 h-8" />
           <span style={{ color: "#fff", fontWeight: 800, fontSize: 20, letterSpacing: "-0.5px" }}>HopeUA</span>
         </div>
         <div style={{ display: "flex", gap: 16 }}>
@@ -213,7 +214,7 @@ export function HopeUADemo({ lang }: { lang: string }) {
 
           {/* Live counter */}
           <div style={{ display: "inline-flex", alignItems: "center", gap: 12, background: "rgba(255,255,255,0.12)", backdropFilter: "blur(8px)", border: "1px solid rgba(255,255,255,0.2)", borderRadius: 16, padding: "16px 32px", marginBottom: 32 }}>
-            <span style={{ fontSize: 28 }}>❤️</span>
+            <EmojiIcon emoji="❤️" className="w-8 h-8" />
             <div>
               <div style={{ color: "#EAB308", fontSize: 32, fontWeight: 900, letterSpacing: "-1px" }}>12,847</div>
               <div style={{ color: "rgba(255,255,255,0.75)", fontSize: 14 }}>
@@ -371,7 +372,7 @@ export function HopeUADemo({ lang }: { lang: string }) {
                         onClick={() => setSelectedProgram(prog.id)}
                         style={{ display: "flex", alignItems: "center", gap: 12, padding: "12px 16px", borderRadius: 12, border: `2px solid ${selectedProgram === prog.id ? "#1D4ED8" : "#E5E7EB"}`, background: selectedProgram === prog.id ? "#EFF6FF" : "#fff", cursor: "pointer", textAlign: "left" }}
                       >
-                        <span style={{ fontSize: 22, flexShrink: 0 }}>{prog.icon}</span>
+                        <EmojiIcon emoji={prog.icon} className="w-8 h-8 shrink-0" />
                         <div>
                           <div style={{ fontWeight: 700, fontSize: 14, color: "#111" }}>{isUk ? prog.uk : prog.en}</div>
                           <div style={{ fontSize: 12, color: "#6B7280" }}>{isUk ? prog.descUk : prog.descEn}</div>
@@ -428,7 +429,7 @@ export function HopeUADemo({ lang }: { lang: string }) {
                         onClick={() => setSelectedPayment(pay.id)}
                         style={{ padding: "10px 4px", borderRadius: 10, border: `2px solid ${selectedPayment === pay.id ? "#1D4ED8" : "#E5E7EB"}`, background: selectedPayment === pay.id ? "#EFF6FF" : "#fff", cursor: "pointer", fontSize: 11, fontWeight: 700, color: selectedPayment === pay.id ? "#1D4ED8" : "#374151" }}
                       >
-                        <div style={{ fontSize: 18, marginBottom: 2 }}>{pay.icon}</div>
+                        <div style={{ marginBottom: 2 }}><EmojiIcon emoji={pay.icon} className="w-5 h-5" /></div>
                         {pay.label}
                       </button>
                     ))}
@@ -463,7 +464,7 @@ export function HopeUADemo({ lang }: { lang: string }) {
               return (
                 <div key={prog.id} style={{ background: "#F9FAFB", borderRadius: 16, padding: "24px", border: "1px solid #E5E7EB" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
-                    <span style={{ fontSize: 28 }}>{prog.icon}</span>
+                    <EmojiIcon emoji={prog.icon} className="w-8 h-8" />
                     <div>
                       <div style={{ fontWeight: 700, fontSize: 16, color: "#111" }}>{isUk ? prog.uk : prog.en}</div>
                       <div style={{ fontSize: 12, color: "#6B7280" }}>{isUk ? prog.audienceUk : prog.audienceEn}</div>
@@ -498,7 +499,7 @@ export function HopeUADemo({ lang }: { lang: string }) {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 20 }}>
             {howToHelp.map((item) => (
               <div key={item.titleEn} style={{ background: "#fff", borderRadius: 16, padding: "28px 20px", textAlign: "center", border: "1px solid #E5E7EB", cursor: "pointer", transition: "all 0.2s" }}>
-                <div style={{ fontSize: 40, marginBottom: 12 }}>{item.icon}</div>
+                <div style={{ marginBottom: 12 }}><EmojiIcon emoji={item.icon} className="w-16 h-16" /></div>
                 <div style={{ fontWeight: 700, fontSize: 16, color: "#111", marginBottom: 8 }}>
                   {isUk ? item.titleUk : item.titleEn}
                 </div>
@@ -555,7 +556,7 @@ export function HopeUADemo({ lang }: { lang: string }) {
               {["2026-02", "2026-01", "2025-12", "2025-11"].map((month) => (
                 <div key={month} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "12px 16px", background: "#F9FAFB", borderRadius: 10, marginBottom: 8, border: "1px solid #E5E7EB" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                    <span style={{ fontSize: 18 }}>📄</span>
+                    <EmojiIcon emoji="📄" className="w-5 h-5" />
                     <span style={{ fontSize: 14, fontWeight: 600, color: "#111" }}>{isUk ? `Звіт ${month}` : `Report ${month}`}</span>
                   </div>
                   <span style={{ fontSize: 12, color: "#1D4ED8", fontWeight: 600, cursor: "pointer" }}>PDF ↓</span>
@@ -579,8 +580,8 @@ export function HopeUADemo({ lang }: { lang: string }) {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 20 }}>
             {team.map((member) => (
               <div key={member.name} style={{ background: "#fff", borderRadius: 16, padding: "24px 20px", textAlign: "center", border: "1px solid #E5E7EB" }}>
-                <div style={{ width: 72, height: 72, borderRadius: "50%", background: "linear-gradient(135deg, #1D4ED8, #3B82F6)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 32, margin: "0 auto 16px" }}>
-                  {member.emoji}
+                <div style={{ width: 72, height: 72, borderRadius: "50%", background: "linear-gradient(135deg, #1D4ED8, #3B82F6)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 16px" }}>
+                  <EmojiIcon emoji={member.emoji} className="w-14 h-14" />
                 </div>
                 <div style={{ fontWeight: 700, fontSize: 16, color: "#111", marginBottom: 4 }}>{member.name}</div>
                 <div style={{ fontSize: 13, color: "#1D4ED8", fontWeight: 600, marginBottom: 4 }}>

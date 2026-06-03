@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 const MENU_ITEMS = [
   { id: 1, tab: "espresso", nameUk: "Еспресо", nameEn: "Espresso", descUk: "Класичний подвійний шот Ethiopia Yirgacheffe", descEn: "Classic double shot Ethiopia Yirgacheffe", price: 65, vegan: true, emoji: "☕" },
@@ -282,7 +283,7 @@ export function BrewCoDemo({ lang }: { lang: string }) {
           <div className="grid grid-cols-2 gap-3">
             {ORIGINS.map((origin) => (
               <div key={origin.id} className="bg-white border border-amber-200 rounded-2xl p-4 shadow-sm">
-                <div className="text-3xl mb-2">{origin.flag}</div>
+                <EmojiIcon emoji={origin.flag} className="w-8 h-8 mb-2" />
                 <div className="font-serif font-semibold text-amber-900 text-sm mb-1">
                   {uk ? origin.nameUk : origin.nameEn}
                 </div>
@@ -330,7 +331,7 @@ export function BrewCoDemo({ lang }: { lang: string }) {
                     {t.seasonal}
                   </span>
                 )}
-                <div className="text-3xl mb-3">{item.emoji}</div>
+                <EmojiIcon emoji={item.emoji} className="w-8 h-8 mb-3" />
                 <div className="font-serif font-semibold text-amber-900 text-base mb-1">
                   {uk ? item.nameUk : item.nameEn}
                 </div>
@@ -376,7 +377,7 @@ export function BrewCoDemo({ lang }: { lang: string }) {
                       : "bg-white border-amber-200 hover:bg-amber-50"
                   }`}
                 >
-                  <div className="text-4xl mb-2">{origin.flag}</div>
+                  <EmojiIcon emoji={origin.flag} className="w-10 h-10 mb-2" />
                   <div className={`font-serif font-semibold text-base ${isActive ? "text-amber-50" : "text-amber-900"}`}>
                     {uk ? origin.nameUk : origin.nameEn}
                   </div>
@@ -392,7 +393,7 @@ export function BrewCoDemo({ lang }: { lang: string }) {
           {activeOrigin && (
             <div className="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm">
               <div className="flex flex-wrap gap-8">
-                <div className="text-5xl">{activeOrigin.flag}</div>
+                <EmojiIcon emoji={activeOrigin.flag} className="w-14 h-14" />
                 <div className="flex-1 min-w-0">
                   <h3 className="font-serif text-2xl font-bold text-amber-900 mb-4">
                     {uk ? activeOrigin.nameUk : activeOrigin.nameEn}
@@ -442,7 +443,7 @@ export function BrewCoDemo({ lang }: { lang: string }) {
                       : "bg-amber-50 text-amber-800 hover:bg-amber-100 border border-amber-200"
                   }`}
                 >
-                  <span>{m.emoji}</span>
+                  <EmojiIcon emoji={m.emoji} className="w-5 h-5 inline-block align-middle" />
                   <span>{uk ? m.nameUk : m.nameEn}</span>
                 </button>
               );
@@ -452,7 +453,7 @@ export function BrewCoDemo({ lang }: { lang: string }) {
           {/* Method detail */}
           <div className="bg-[#FEF9F0] border border-amber-200 rounded-2xl p-6">
             <div className="flex items-center gap-3 mb-6">
-              <span className="text-4xl">{activeMethod.emoji}</span>
+              <EmojiIcon emoji={activeMethod.emoji} className="w-10 h-10" />
               <h3 className="font-serif text-2xl font-bold text-amber-900">
                 {uk ? activeMethod.nameUk : activeMethod.nameEn}
               </h3>
@@ -541,7 +542,7 @@ export function BrewCoDemo({ lang }: { lang: string }) {
               const inCart = cartItems.find((ci) => ci.id === bean.id);
               return (
                 <div key={bean.id} className="bg-white border border-amber-200 rounded-2xl p-5 flex flex-col">
-                  <div className="text-4xl mb-3">{bean.emoji}</div>
+                  <EmojiIcon emoji={bean.emoji} className="w-10 h-10 mb-3" />
                   <div className="font-serif font-semibold text-amber-900 text-sm mb-1 leading-snug">
                     {uk ? bean.nameUk : bean.nameEn}
                   </div>
@@ -763,7 +764,7 @@ export function BrewCoDemo({ lang }: { lang: string }) {
                   const price = getBeanPrice(bean);
                   return (
                     <div key={ci.id} className="flex items-center gap-3 bg-amber-50 border border-amber-100 rounded-xl p-3">
-                      <span className="text-2xl shrink-0">{bean.emoji}</span>
+                      <EmojiIcon emoji={bean.emoji} className="w-7 h-7 shrink-0" />
                       <div className="flex-1 min-w-0">
                         <div className="text-sm font-semibold text-amber-900 truncate">
                           {uk ? bean.nameUk : bean.nameEn}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 const SERVICES = [
   { id: "brows", emoji: "🤨", nameUk: "Корекція брів", nameEn: "Brow Design", timeUk: "60 хв", timeEn: "60 min", priceFrom: 450, catColor: "bg-amber-100 text-amber-700" },
@@ -187,7 +188,7 @@ export function LumiereDemo({ lang }: { lang: string }) {
                   className="bg-white rounded-2xl p-6 flex flex-col items-center gap-3 border border-rose-100 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
                   onClick={() => setActiveService(activeService === s.id ? null : s.id)}
                 >
-                  <span style={{ fontSize: "2.5rem" }}>{s.emoji}</span>
+                  <EmojiIcon emoji={s.emoji} className="w-16 h-16" />
                   <span className="text-sm text-stone-600 text-center font-medium">{isUk ? s.nameUk : s.nameEn}</span>
                   <span className={`text-xs px-2 py-0.5 rounded-full ${s.catColor}`}>{isUk ? `від ${s.priceFrom} грн` : `from ${s.priceFrom} UAH`}</span>
                 </div>
@@ -230,7 +231,7 @@ export function LumiereDemo({ lang }: { lang: string }) {
               >
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-4">
-                    <span style={{ fontSize: "2rem" }}>{s.emoji}</span>
+                    <EmojiIcon emoji={s.emoji} className="w-14 h-14" />
                     <span className={`text-xs px-2.5 py-1 rounded-full ${s.catColor}`}>{isUk ? s.nameUk : s.nameEn}</span>
                   </div>
                   <h3 className="font-medium text-stone-800 mb-1">{isUk ? s.nameUk : s.nameEn}</h3>
@@ -293,13 +294,13 @@ export function LumiereDemo({ lang }: { lang: string }) {
                   <div className="flex h-40 relative">
                     <div className="flex-1 bg-stone-100 flex flex-col items-center justify-center gap-2">
                       <span className="text-xs text-stone-400 uppercase tracking-widest">{isUk ? "До" : "Before"}</span>
-                      <span style={{ fontSize: "2.5rem" }} className={shown === "before" ? "opacity-100" : "opacity-40 grayscale"}>{item.beforeEmoji}</span>
+                      <EmojiIcon emoji={item.beforeEmoji} className={`w-16 h-16${shown === "before" ? "" : " opacity-40 grayscale"}`} />
                     </div>
                     {/* Center divider */}
                     <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-0.5 bg-rose-300 z-10" />
                     <div className="flex-1 bg-rose-50 flex flex-col items-center justify-center gap-2">
                       <span className="text-xs text-rose-300 uppercase tracking-widest">{isUk ? "Після" : "After"}</span>
-                      <span style={{ fontSize: "2.5rem" }} className={shown === "after" ? "opacity-100" : "opacity-40"}>{item.afterEmoji}</span>
+                      <EmojiIcon emoji={item.afterEmoji} className={`w-16 h-16${shown === "after" ? "" : " opacity-40"}`} />
                     </div>
                   </div>
 
@@ -333,8 +334,8 @@ export function LumiereDemo({ lang }: { lang: string }) {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {MASTERS.map((m) => (
               <div key={m.name} className="bg-[#FAF6F1] rounded-2xl border border-stone-100 p-6 flex flex-col items-center text-center hover:shadow-md transition-shadow">
-                <div className="w-20 h-20 rounded-full bg-rose-100 flex items-center justify-center mb-4 text-4xl border-2 border-rose-200">
-                  {m.emoji}
+                <div className="w-20 h-20 rounded-full bg-rose-100 flex items-center justify-center mb-4 border-2 border-rose-200">
+                  <EmojiIcon emoji={m.emoji} className="w-10 h-10" />
                 </div>
                 <h3 className="font-medium text-stone-800 mb-1 text-sm">{m.name}</h3>
                 <p className="text-xs text-stone-400 mb-3">{isUk ? m.specUk : m.specEn}</p>
@@ -628,7 +629,7 @@ export function LumiereDemo({ lang }: { lang: string }) {
                           onClick={() => setBookingData((d) => ({ ...d, service: s.id }))}
                           className={`text-left p-3 rounded-xl border text-sm transition-colors ${bookingData.service === s.id ? "border-rose-400 bg-rose-50" : "border-stone-100 hover:border-rose-200"}`}
                         >
-                          <span className="block text-lg mb-1">{s.emoji}</span>
+                          <EmojiIcon emoji={s.emoji} className="w-5 h-5 block mb-1" />
                           <span className="block text-xs font-medium text-stone-700">{isUk ? s.nameUk : s.nameEn}</span>
                           <span className="block text-xs text-rose-400">{isUk ? `від ${s.priceFrom} ₴` : `from ${s.priceFrom}`}</span>
                         </button>
@@ -649,7 +650,7 @@ export function LumiereDemo({ lang }: { lang: string }) {
                           onClick={() => setBookingData((d) => ({ ...d, master: m.name }))}
                           className={`w-full text-left p-3 rounded-xl border text-sm transition-colors flex items-center gap-3 ${bookingData.master === m.name ? "border-rose-400 bg-rose-50" : "border-stone-100 hover:border-rose-200"}`}
                         >
-                          <span className="text-2xl shrink-0">{m.emoji}</span>
+                          <EmojiIcon emoji={m.emoji} className="w-7 h-7 shrink-0" />
                           <div>
                             <span className="block font-medium text-stone-700">{m.name}</span>
                             <span className="block text-xs text-stone-400">{isUk ? m.specUk : m.specEn}</span>

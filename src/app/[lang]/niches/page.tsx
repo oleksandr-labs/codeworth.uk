@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { NICHES_DATA, getNicheLocalized, NICHE_CATEGORY_EN } from "@/lib/data/niches";
 import { ArrowRight, Eye, Check, X } from "lucide-react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
@@ -184,7 +185,7 @@ export default async function NichesPage({ params }: { params: Promise<{ lang: s
                     >
                       {/* Gradient header */}
                       <div className={`h-24 bg-linear-to-br ${niche.gradient} flex items-center justify-center relative`}>
-                        <span className="text-4xl">{niche.emoji}</span>
+                        <EmojiIcon emoji={niche.emoji} className="w-12 h-12 text-white/80" />
                         <div className="absolute top-3 right-3 flex items-center gap-1.5">
                           <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${COMPLEXITY_COLOR[niche.complexity]}`}>
                             {COMPLEXITY_LABEL[niche.complexity]}

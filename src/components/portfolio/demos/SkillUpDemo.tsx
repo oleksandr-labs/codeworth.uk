@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 /* ───── data ───── */
 
@@ -344,7 +345,7 @@ export function SkillUpDemo({ lang }: { lang: string }) {
                   : "bg-white text-gray-600 dark:text-neutral-300 hover:bg-indigo-50"
               }`}
             >
-              {cat.emoji} {isUk ? cat.uk : cat.en}
+              <EmojiIcon emoji={cat.emoji} className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? cat.uk : cat.en}
             </button>
           ))}
         </div>
@@ -359,7 +360,7 @@ export function SkillUpDemo({ lang }: { lang: string }) {
                 className="group cursor-pointer rounded-2xl border border-gray-100 dark:border-neutral-700 bg-white dark:bg-neutral-800 p-6 shadow-sm transition hover:shadow-lg"
                 onClick={() => setSelectedCourse(course)}
               >
-                <div className="mb-3 text-4xl">{course.emoji}</div>
+                <div className="mb-3"><EmojiIcon emoji={course.emoji} className="w-10 h-10" /></div>
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-indigo-600">
                   {isUk ? course.titleUk : course.titleEn}
                 </h3>
@@ -401,7 +402,7 @@ export function SkillUpDemo({ lang }: { lang: string }) {
           >
             <div className="flex items-start justify-between">
               <div>
-                <span className="text-4xl">{selectedCourse.emoji}</span>
+                <EmojiIcon emoji={selectedCourse.emoji} className="w-10 h-10" />
                 <h3 className="mt-2 text-2xl font-bold text-gray-900">
                   {isUk ? selectedCourse.titleUk : selectedCourse.titleEn}
                 </h3>
@@ -513,7 +514,7 @@ export function SkillUpDemo({ lang }: { lang: string }) {
                       : "bg-white text-gray-700 dark:text-neutral-300 hover:bg-indigo-100"
                   }`}
                 >
-                  {g.emoji} {isUk ? g.uk : g.en}
+                  <EmojiIcon emoji={g.emoji} className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? g.uk : g.en}
                 </button>
               ))}
             </div>
@@ -536,7 +537,7 @@ export function SkillUpDemo({ lang }: { lang: string }) {
                         : "bg-white text-gray-700 dark:text-neutral-300 hover:bg-indigo-100"
                     }`}
                   >
-                    {f.emoji} {isUk ? f.uk : f.en}
+                    <EmojiIcon emoji={f.emoji} className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? f.uk : f.en}
                   </button>
                 ))}
               </div>
@@ -555,7 +556,7 @@ export function SkillUpDemo({ lang }: { lang: string }) {
                     <p className="mb-1 text-xs font-bold uppercase text-indigo-400">
                       {isUk ? `Курс ${i + 1}` : `Course ${i + 1}`}
                     </p>
-                    <span className="text-3xl">{c.emoji}</span>
+                    <EmojiIcon emoji={c.emoji} className="w-8 h-8" />
                     <h4 className="mt-2 font-bold text-gray-900">{isUk ? c.titleUk : c.titleEn}</h4>
                     <p className="mt-1 text-sm text-gray-500">
                       {c.modules.reduce((s, m) => s + m.hours, 0)}h &middot; ${c.price}
@@ -645,7 +646,7 @@ export function SkillUpDemo({ lang }: { lang: string }) {
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {INSTRUCTORS.map((inst) => (
               <div key={inst.nameEn} className="rounded-2xl border border-gray-100 dark:border-neutral-700 bg-gray-50 dark:bg-neutral-900 p-6 text-center shadow-sm">
-                <span className="text-5xl">{inst.emoji}</span>
+                <EmojiIcon emoji={inst.emoji} className="w-14 h-14" />
                 <h3 className="mt-3 text-lg font-bold text-gray-900">
                   {isUk ? inst.nameUk : inst.nameEn}
                 </h3>
@@ -673,7 +674,7 @@ export function SkillUpDemo({ lang }: { lang: string }) {
           <div className="mt-10 grid gap-6 sm:grid-cols-3">
             {TESTIMONIALS.map((t) => (
               <div key={t.nameEn} className="rounded-2xl bg-white/10 p-6 backdrop-blur">
-                <span className="text-4xl">{t.emoji}</span>
+                <EmojiIcon emoji={t.emoji} className="w-10 h-10" />
                 <p className="mt-4 text-sm leading-relaxed text-indigo-100">
                   &ldquo;{isUk ? t.textUk : t.textEn}&rdquo;
                 </p>

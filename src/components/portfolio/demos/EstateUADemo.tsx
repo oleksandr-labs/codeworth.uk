@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 export function EstateUADemo({ lang }: { lang: string }) {
   const isUk = lang === "uk";
@@ -229,8 +230,8 @@ export function EstateUADemo({ lang }: { lang: string }) {
               <div key={p.id} className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition-shadow flex flex-col">
                 {/* Card header */}
                 <div className="bg-indigo-50 p-6 flex items-start justify-between">
-                  <div className="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center text-3xl shrink-0">
-                    {p.emoji}
+                  <div className="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center shrink-0">
+                    <EmojiIcon emoji={p.emoji} className="w-8 h-8" />
                   </div>
                   {p.tag && (
                     <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${tagStyles[p.tag] ?? ""}`}>
@@ -284,7 +285,7 @@ export function EstateUADemo({ lang }: { lang: string }) {
 
             {/* Modal hero */}
             <div className="bg-indigo-50 rounded-t-3xl p-8 flex flex-col items-center text-center">
-              <div className="text-7xl mb-4">{activeProperty.emoji}</div>
+              <div className="mb-4"><EmojiIcon emoji={activeProperty.emoji} className="w-16 h-16" /></div>
               {activeProperty.tag && (
                 <span className={`text-xs font-semibold px-3 py-1.5 rounded-full mb-3 ${tagStyles[activeProperty.tag] ?? ""}`}>
                   {isUk ? tagLabels[activeProperty.tag]?.uk : tagLabels[activeProperty.tag]?.en}
@@ -446,7 +447,7 @@ export function EstateUADemo({ lang }: { lang: string }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {agents.map((a) => (
               <div key={a.nameEn} className="bg-slate-50 rounded-2xl p-6 text-center border border-slate-100 hover:border-indigo-200 transition-colors">
-                <div className="text-5xl mb-3">{a.emoji}</div>
+                <div className="mb-3"><EmojiIcon emoji={a.emoji} className="w-14 h-14" /></div>
                 <h3 className="font-bold text-slate-900 mb-0.5">{isUk ? a.name : a.nameEn}</h3>
                 <p className="text-sm text-indigo-600 font-medium mb-4">{a.spec}</p>
                 <div className="flex justify-center gap-4 text-sm text-slate-500 mb-5">

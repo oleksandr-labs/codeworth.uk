@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, TrendingUp } from "lucide-react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 import { Container } from "@/components/layout/Container";
 import { PROJECTS } from "@/lib/data/portfolio";
 
@@ -33,8 +34,8 @@ export function CasesSection({ lang }: { lang: string }) {
               className="group flex flex-col rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white overflow-hidden hover:shadow-lg hover:shadow-neutral-200/60 transition-all duration-300 hover:-translate-y-1"
             >
               {/* Color header */}
-              <div className={`h-28 bg-linear-to-br ${project.color} flex items-center justify-center text-5xl`}>
-                {project.emoji}
+              <div className={`h-28 bg-linear-to-br ${project.color} flex items-center justify-center`}>
+                <EmojiIcon emoji={project.emoji} className="w-16 h-16 text-white/80" />
               </div>
 
               <div className="flex flex-col flex-1 p-6">

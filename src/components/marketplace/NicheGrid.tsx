@@ -6,6 +6,7 @@ import { Search, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { useLocale } from "@/components/layout/LocaleProvider";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 interface NicheItem {
   name: string;
@@ -181,11 +182,11 @@ export function NicheGrid({ niches }: NicheGridProps) {
                 >
                   <div
                     className={cn(
-                      "w-12 h-12 rounded-xl bg-linear-to-br flex items-center justify-center text-2xl mb-4",
+                      "w-12 h-12 rounded-xl bg-linear-to-br flex items-center justify-center mb-4",
                       item.color
                     )}
                   >
-                    {item.emoji}
+                    <EmojiIcon emoji={item.emoji} className="w-6 h-6 text-white/80" />
                   </div>
                   <h4 className="font-heading font-bold text-neutral-900 dark:text-white mb-1 text-sm leading-tight">
                     {item.name}

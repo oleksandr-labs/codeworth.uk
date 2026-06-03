@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { buildAlternates } from "@/i18n";
 import { EXTRAS } from "@/lib/data/extras";
 import { getDemoExamples } from "@/lib/data/extras-demos";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 interface Props {
   params: Promise<{ lang: string; id: string }>;
@@ -78,7 +79,7 @@ export default async function ExtraDemoGalleryPage({ params }: Props) {
 
       {/* Hero */}
       <section className="max-w-6xl mx-auto px-4 py-16 text-center">
-        <div className="text-5xl mb-5">{extra.emoji}</div>
+        <div className="mb-5"><EmojiIcon emoji={extra.emoji} className="w-16 h-16 text-indigo-500" /></div>
         <h1 className="font-heading text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-4">
           {extra.title}
         </h1>

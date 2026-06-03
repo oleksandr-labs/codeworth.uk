@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 interface BMICalculatorProps {
   lang: string;
@@ -109,7 +110,7 @@ export function BMICalculator({ lang, color }: BMICalculatorProps) {
               className="rounded-xl p-5 flex items-start gap-4"
               style={{ backgroundColor: category.bg }}
             >
-              <span className="text-3xl shrink-0">{category.emoji}</span>
+              <EmojiIcon emoji={category.emoji} className="w-8 h-8 shrink-0" />
               <div className="flex-1">
                 <div className="flex items-baseline gap-3 mb-1">
                   <span className="text-4xl font-black font-syne" style={{ color: category.color }}>
@@ -148,7 +149,7 @@ export function BMICalculator({ lang, color }: BMICalculatorProps) {
                     : "none",
               }}
             >
-              <span className="text-lg shrink-0">{cat.emoji}</span>
+              <EmojiIcon emoji={cat.emoji} className="w-5 h-5 shrink-0" />
               <div>
                 <div className="text-xs font-semibold" style={{ color: cat.color }}>
                   {cat.label}

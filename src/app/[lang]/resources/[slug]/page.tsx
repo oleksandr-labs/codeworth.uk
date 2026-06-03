@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { RESOURCES, RESOURCE_CATEGORIES, getResource, RESOURCE_SLUGS } from "@/lib/data/resources";
 import { ArrowRight, CheckSquare, Clock, ExternalLink, Share2, Zap } from "lucide-react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 import { SpeedTestTool } from "@/components/resources/SpeedTestTool";
 
 export async function generateStaticParams() {
@@ -510,7 +511,7 @@ export default async function ResourcePage({
             </nav>
             <div className="flex items-center gap-2 mb-4">
               <span className="text-xs font-medium text-indigo-300 bg-indigo-900/50 border border-indigo-700 px-3 py-1 rounded-full">
-                {catMeta?.emoji} {isUk ? catMeta?.labelUk : catMeta?.labelEn}
+                {catMeta?.emoji && <EmojiIcon emoji={catMeta.emoji} className="w-4 h-4 inline-block align-middle mr-1" />}{isUk ? catMeta?.labelUk : catMeta?.labelEn}
               </span>
               <span className="text-xs text-indigo-300 flex items-center gap-1">
                 <Clock className="w-3.5 h-3.5" />

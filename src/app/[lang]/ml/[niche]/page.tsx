@@ -8,6 +8,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { Check, ChevronRight, ArrowRight, Database, TrendingUp, BookOpen, Shield } from "lucide-react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 export async function generateStaticParams() {
   return ML_NICHES.map((n) => ({ niche: n.slug }));
@@ -368,7 +369,7 @@ export default async function MLNichePage({
                       href={`/${lang}/blog/${post.slug}`}
                       className={`group rounded-xl bg-linear-to-br ${post.color} p-5 hover:scale-[1.02] transition-transform`}
                     >
-                      <div className="text-3xl mb-3">{post.emoji}</div>
+                      <div className="mb-3"><EmojiIcon emoji={post.emoji} className="w-8 h-8 text-white/80" /></div>
                       <h3 className="font-semibold text-white mb-2 line-clamp-2">{post.title}</h3>
                       <p className="text-sm text-white/80 line-clamp-2 mb-3">{post.excerpt}</p>
                       <div className="flex items-center gap-2 text-xs text-white/70">

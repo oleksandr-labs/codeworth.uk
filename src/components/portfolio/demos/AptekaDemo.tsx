@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 const G = "#16A34A";
 const BG = "#F8FAFC";
@@ -150,7 +151,7 @@ export function AptekaDemo({ lang }: { lang: string }) {
                 fontWeight: 500,
               }}
             >
-              {c.emoji} {isUk ? c.uk : c.en}
+              <EmojiIcon emoji={c.emoji} className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? c.uk : c.en}
             </button>
           ))}
         </div>
@@ -160,16 +161,15 @@ export function AptekaDemo({ lang }: { lang: string }) {
       {activeCategory && (
         <section style={{ padding: "24px", borderBottom: "1px solid #E2E8F0" }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: "#0F172A" }}>
-            {CATEGORIES.find((c) => c.key === activeCategory)?.emoji}{" "}
-            {isUk ? CATEGORIES.find((c) => c.key === activeCategory)?.uk : CATEGORIES.find((c) => c.key === activeCategory)?.en}
+            <EmojiIcon emoji={CATEGORIES.find((c) => c.key === activeCategory)?.emoji ?? ""} className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? CATEGORIES.find((c) => c.key === activeCategory)?.uk : CATEGORIES.find((c) => c.key === activeCategory)?.en}
           </h2>
           <div className="grid grid-cols-1 gap-4" style={{ maxWidth: 700, margin: "0 auto" }}>
             {currentDrugs.map((d, i) => (
               <div key={d.nameEn} style={{ background: "#fff", borderRadius: 12, border: "1px solid #E2E8F0", overflow: "hidden" }}>
                 <div style={{ display: "flex", gap: 16, padding: "16px", alignItems: "center" }}>
                   {/* Icon */}
-                  <div style={{ width: 56, height: 56, borderRadius: 10, background: d.color, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 26, flexShrink: 0 }}>
-                    💊
+                  <div style={{ width: 56, height: 56, borderRadius: 10, background: d.color, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    <EmojiIcon emoji="💊" className="w-8 h-8" />
                   </div>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 2 }}>
@@ -219,7 +219,7 @@ export function AptekaDemo({ lang }: { lang: string }) {
         <div className="grid grid-cols-3 gap-6" style={{ maxWidth: 560, margin: "0 auto" }}>
           {HOW_STEPS.map((s, i) => (
             <div key={s.en} style={{ textAlign: "center" }}>
-              <div style={{ width: 52, height: 52, background: "#DCFCE7", borderRadius: "50%", margin: "0 auto 10px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 24 }}>{s.emoji}</div>
+              <div style={{ width: 52, height: 52, background: "#DCFCE7", borderRadius: "50%", margin: "0 auto 10px", display: "flex", alignItems: "center", justifyContent: "center" }}><EmojiIcon emoji={s.emoji} className="w-8 h-8" /></div>
               <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 4 }}>
                 <span style={{ color: G }}>{i + 1}. </span>{isUk ? s.uk : s.en}
               </div>
@@ -232,14 +232,14 @@ export function AptekaDemo({ lang }: { lang: string }) {
       {/* PHARMACIES */}
       <section style={{ padding: "40px 24px", borderBottom: "1px solid #E2E8F0" }}>
         <h2 style={{ textAlign: "center", fontSize: 20, fontWeight: 700, marginBottom: 24, color: "#0F172A" }}>
-          📍 {isUk ? "Наші аптеки" : "Our Pharmacies"}
+          <EmojiIcon emoji="📍" className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? "Наші аптеки" : "Our Pharmacies"}
         </h2>
         <div className="grid grid-cols-1 gap-4" style={{ maxWidth: 560, margin: "0 auto" }}>
           {PHARMACIES.map((p) => (
             <div key={p.en} style={{ background: "#fff", borderRadius: 12, border: "1px solid #E2E8F0", padding: "16px 20px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div>
-                <div style={{ fontWeight: 600, marginBottom: 4 }}>🏥 {isUk ? p.uk : p.en}</div>
-                <div style={{ color: "#64748B", fontSize: 13 }}>🕐 {p.hours}</div>
+                <div style={{ fontWeight: 600, marginBottom: 4 }}><EmojiIcon emoji="🏥" className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? p.uk : p.en}</div>
+                <div style={{ color: "#64748B", fontSize: 13 }}><EmojiIcon emoji="🕐" className="w-4 h-4 inline-block align-middle mr-1" />{p.hours}</div>
               </div>
               <span style={{ background: p.inStock ? "#DCFCE7" : "#FEE2E2", color: p.inStock ? "#15803D" : "#DC2626", fontSize: 12, padding: "4px 12px", borderRadius: 20, fontWeight: 600 }}>
                 {p.inStock ? (isUk ? "В наявності" : "In stock") : (isUk ? "Немає" : "Out of stock")}
@@ -252,7 +252,7 @@ export function AptekaDemo({ lang }: { lang: string }) {
       {/* UPLOAD PRESCRIPTION */}
       <section style={{ padding: "40px 24px", background: "#fff" }}>
         <div style={{ maxWidth: 560, margin: "0 auto", background: "#F0FDF4", border: `2px dashed ${G}`, borderRadius: 16, padding: "28px 32px", textAlign: "center" }}>
-          <div style={{ fontSize: 40, marginBottom: 12 }}>📋</div>
+          <div style={{ marginBottom: 12 }}><EmojiIcon emoji="📋" className="w-16 h-16" /></div>
           <h3 style={{ fontSize: 18, fontWeight: 700, color: "#0F172A", marginBottom: 8 }}>
             {isUk ? "Завантажити рецепт" : "Upload Prescription"}
           </h3>

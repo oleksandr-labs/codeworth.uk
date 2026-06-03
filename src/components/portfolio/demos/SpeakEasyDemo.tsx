@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 interface Props { lang: string; }
 
@@ -162,7 +163,7 @@ export function SpeakEasyDemo({ lang }: Props) {
                       {isUk ? "Популярна" : "Popular"}
                     </span>
                   )}
-                  <div className="text-4xl mb-2">{l.flag}</div>
+                  <div className="mb-2"><EmojiIcon emoji={l.flag} className="w-10 h-10" /></div>
                   <div className="font-extrabold text-white text-lg">{l.name}</div>
                   <div className="text-white/70 text-xs mt-0.5">{l.levels}</div>
                   <div className="mt-3 text-white/80 text-xs">{l.students} {isUk ? "студентів" : "students"}</div>
@@ -188,7 +189,7 @@ export function SpeakEasyDemo({ lang }: Props) {
             {languages.map((l) => (
               <div key={l.name} className="bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
                 <div className={`h-24 bg-linear-to-br ${l.color} flex items-center justify-between px-6`}>
-                  <span className="text-5xl">{l.flag}</span>
+                  <EmojiIcon emoji={l.flag} className="w-14 h-14" />
                   {l.popular && (
                     <span className="text-xs font-bold bg-white/20 text-white border border-white/30 px-2.5 py-1 rounded-full">
                       ★ {isUk ? "Популярна" : "Popular"}
@@ -262,7 +263,7 @@ export function SpeakEasyDemo({ lang }: Props) {
           <div className="grid md:grid-cols-3 gap-8">
             {teachers.map((t) => (
               <div key={t.name} className="bg-slate-50 rounded-3xl p-7 border border-slate-100 hover:shadow-md transition-shadow">
-                <div className="text-5xl mb-4">{t.emoji}</div>
+                <div className="mb-4"><EmojiIcon emoji={t.emoji} className="w-14 h-14" /></div>
                 <h3 className="font-extrabold text-slate-900 text-xl mb-0.5">{t.name}</h3>
                 <div className="text-indigo-600 font-semibold text-sm mb-1">{t.lang}</div>
                 <div className="text-slate-400 text-xs mb-3">{t.cert} · {t.exp}</div>

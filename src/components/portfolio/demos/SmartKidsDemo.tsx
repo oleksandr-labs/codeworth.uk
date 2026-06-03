@@ -19,6 +19,7 @@ import {
   Heart,
   Sparkles,
 } from "lucide-react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 export function SmartKidsDemo({ lang }: { lang: string }) {
   const isUk = lang === "uk";
@@ -173,10 +174,10 @@ export function SmartKidsDemo({ lang }: { lang: string }) {
             >
               <div className="flex items-center gap-3 mb-3">
                 <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl"
+                  className="w-12 h-12 rounded-xl flex items-center justify-center"
                   style={{ background: prog.bg }}
                 >
-                  {prog.emoji}
+                  <EmojiIcon emoji={prog.emoji} className="w-7 h-7" />
                 </div>
                 <div>
                   <h3 className="font-extrabold text-lg text-gray-900 dark:text-white m-0">
@@ -237,7 +238,7 @@ export function SmartKidsDemo({ lang }: { lang: string }) {
                     <Clock className="w-4 h-4 inline mr-1 opacity-60" />
                     {slot.time}
                   </div>
-                  <div className="text-2xl">{prog.emoji}</div>
+                  <EmojiIcon emoji={prog.emoji} className="w-7 h-7" />
                   <div className="flex-1">
                     <div className="font-bold text-gray-900">{isUk ? prog.nameUk : prog.nameEn}</div>
                     <div className="text-xs text-gray-500">{isUk ? prog.ageUk : prog.ageEn}</div>
@@ -330,7 +331,7 @@ export function SmartKidsDemo({ lang }: { lang: string }) {
           <div className="grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] gap-5">
             {teachers.map((t, i) => (
               <div key={i} className="bg-amber-50 rounded-2xl p-6 text-center">
-                <div className="text-5xl mb-3">{t.emoji}</div>
+                <div className="mb-3"><EmojiIcon emoji={t.emoji} className="w-14 h-14" /></div>
                 <h3 className="font-extrabold text-base text-gray-900 dark:text-white mb-1">
                   {isUk ? t.nameUk : t.nameEn}
                 </h3>
@@ -472,7 +473,7 @@ export function SmartKidsDemo({ lang }: { lang: string }) {
                           borderColor: selectedProgram === prog.id ? prog.color : "#E5E7EB",
                         }}
                       >
-                        <span className="text-2xl">{prog.emoji}</span>
+                        <EmojiIcon emoji={prog.emoji} className="w-7 h-7" />
                         <div>
                           <div className="font-bold text-sm text-gray-900">
                             {isUk ? prog.nameUk : prog.nameEn}
@@ -563,7 +564,7 @@ export function SmartKidsDemo({ lang }: { lang: string }) {
                     <div className="font-bold text-gray-700 dark:text-neutral-300 mb-2">{isUk ? "Підсумок:" : "Summary:"}</div>
                     <div className="text-gray-600">
                       👶 {isUk ? "Вік" : "Age"}: {selectedAge} {isUk ? "р." : "y.o."} &nbsp;·&nbsp;{" "}
-                      {programById(selectedProgram)?.emoji}{" "}
+                      <EmojiIcon emoji={programById(selectedProgram)?.emoji ?? ""} className="w-5 h-5 inline-block align-middle" />{" "}
                       {isUk
                         ? programById(selectedProgram)?.nameUk
                         : programById(selectedProgram)?.nameEn}{" "}

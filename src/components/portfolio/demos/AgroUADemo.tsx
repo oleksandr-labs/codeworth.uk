@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 interface Props { lang: string; }
 
@@ -54,7 +55,7 @@ export function AgroUADemo({ lang }: Props) {
       <header className="sticky top-0 z-50 bg-[#fefce8]/96 backdrop-blur-sm border-b border-amber-200/60">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-4">
           <a href="#" className="flex items-center gap-2.5 shrink-0">
-            <span className="text-2xl">🌾</span>
+            <EmojiIcon emoji="🌾" className="w-7 h-7" />
             <div className="leading-none">
               <p className="font-bold text-green-900 text-[17px] tracking-tight">AgroUA</p>
               <p className="text-[10px] text-amber-700 font-medium tracking-wide uppercase">{isUk ? "Органічна ферма" : "Organic Farm"}</p>
@@ -182,12 +183,12 @@ export function AgroUADemo({ lang }: Props) {
             <div key={p.id}
               className={`bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer group ${p.status === "ended" ? "opacity-55" : ""}`}>
               {/* Visual top */}
-              <div className={`h-32 flex items-center justify-center text-6xl relative ${
+              <div className={`h-32 flex items-center justify-center relative ${
                 p.status === "available" ? "bg-linear-to-br from-amber-50 to-green-50" :
                 p.status === "soon" ? "bg-linear-to-br from-sky-50 to-indigo-50" :
                 "bg-stone-100"
               }`}>
-                {p.emoji}
+                <EmojiIcon emoji={p.emoji} className="w-16 h-16" />
                 {p.organic && (
                   <span className="absolute top-3 right-3 text-[10px] bg-green-600 text-white font-bold px-2 py-0.5 rounded-full">BIO</span>
                 )}
@@ -288,7 +289,7 @@ export function AgroUADemo({ lang }: Props) {
                 { icon: "📍", titleUk: "GPS-координати", titleEn: "GPS coordinates", descUk: "Кожне поле на карті — перевірте самі", descEn: "Every field on map — verify yourself" },
               ].map(f => (
                 <div key={f.icon} className="flex gap-3 bg-amber-50 border border-amber-200 rounded-2xl p-4">
-                  <span className="text-2xl shrink-0">{f.icon}</span>
+                  <EmojiIcon emoji={f.icon} className="w-7 h-7 shrink-0" />
                   <div>
                     <p className="font-semibold text-stone-900 text-[13px]">{isUk ? f.titleUk : f.titleEn}</p>
                     <p className="text-[11px] text-stone-500 mt-0.5 leading-relaxed">{isUk ? f.descUk : f.descEn}</p>
@@ -365,7 +366,7 @@ export function AgroUADemo({ lang }: Props) {
                   { icon: "💳", textUk: "Оплата: безготівкова, відстрочка для постійних партнерів", textEn: "Payment: bank transfer, deferred for regular partners" },
                 ].map(f => (
                   <div key={f.icon} className="flex items-center gap-3 text-[13px] text-stone-700">
-                    <span className="text-lg shrink-0">{f.icon}</span>
+                    <EmojiIcon emoji={f.icon} className="w-5 h-5 shrink-0" />
                     <span>{isUk ? f.textUk : f.textEn}</span>
                   </div>
                 ))}
@@ -449,7 +450,7 @@ export function AgroUADemo({ lang }: Props) {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2.5 mb-4">
-              <span className="text-3xl">🌾</span>
+              <EmojiIcon emoji="🌾" className="w-8 h-8" />
               <div>
                 <p className="font-bold text-white text-[18px] leading-none">AgroUA</p>
                 <p className="text-[10px] text-amber-500 font-bold uppercase tracking-widest mt-0.5">{isUk ? "Органічна ферма" : "Organic Farm"}</p>
@@ -514,8 +515,8 @@ export function AgroUADemo({ lang }: Props) {
                 { icon: "✈️", label: "Telegram" },
               ].map(s => (
                 <a key={s.label} href="#" title={s.label}
-                  className="w-9 h-9 rounded-xl bg-green-900 hover:bg-green-800 border border-green-800 flex items-center justify-center text-[16px] transition-colors">
-                  {s.icon}
+                  className="w-9 h-9 rounded-xl bg-green-900 hover:bg-green-800 border border-green-800 flex items-center justify-center transition-colors">
+                  <EmojiIcon emoji={s.icon} className="w-5 h-5" />
                 </a>
               ))}
             </div>
@@ -542,7 +543,7 @@ export function AgroUADemo({ lang }: Props) {
           <div className="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl" onClick={e => e.stopPropagation()}>
             {b2bDone ? (
               <div className="text-center py-6">
-                <div className="text-6xl mb-4">✅</div>
+                <div className="mb-4"><EmojiIcon emoji="✅" className="w-16 h-16" /></div>
                 <h3 className="font-bold text-xl text-green-900 mb-2">{isUk ? "Запит надіслано!" : "Request sent!"}</h3>
                 <p className="text-stone-500 text-sm">{isUk ? "Менеджер зв'яжеться з вами протягом 1 робочого дня" : "Our manager will contact you within 1 business day"}</p>
                 <button onClick={() => { setB2bOpen(false); setB2bDone(false); }} className="mt-5 px-6 py-2.5 bg-green-800 text-white rounded-xl font-semibold text-sm">OK</button>

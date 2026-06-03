@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import type { Extra } from "@/lib/data/extras";
 import { formatExtrasPrice, getExtraTitle, getExtraDesc } from "@/lib/data/extras";
 import { useLocale } from "@/components/layout/LocaleProvider";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 interface ExtraCardProps {
   extra: Extra;
@@ -30,8 +31,10 @@ export function ExtraCard({ extra }: ExtraCardProps) {
         )}
       </div>
 
-      {/* Emoji */}
-      <div className="text-4xl mb-4">{extra.emoji}</div>
+      {/* Icon */}
+      <div className="mb-4">
+        <EmojiIcon emoji={extra.emoji} className="w-10 h-10 text-indigo-500" />
+      </div>
 
       {/* Title & description */}
       <h3 className="font-heading font-bold text-neutral-900 dark:text-white group-hover:text-indigo-700 transition-colors mb-2 pr-16">

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 /* ───────────────────── data ───────────────────── */
 
@@ -210,7 +211,7 @@ export function HandMadeUADemo({ lang }: { lang: string }) {
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
           {/* logo */}
           <div className="shrink-0 flex items-center gap-2">
-            <span className="text-2xl">🧶</span>
+            <EmojiIcon emoji="🧶" className="w-7 h-7" />
             <span className="text-xl font-bold tracking-tight text-[#c2410c]">
               HandMadeUA
             </span>
@@ -240,8 +241,8 @@ export function HandMadeUADemo({ lang }: { lang: string }) {
 
           <div className="flex items-center gap-3">
             {/* cart counter */}
-            <span className="relative text-xl cursor-pointer" title={t("Cart", "Кошик")}>
-              🛒
+            <span className="relative cursor-pointer" title={t("Cart", "Кошик")}>
+              <EmojiIcon emoji="🛒" className="w-5 h-5 inline-block align-middle" />
               {cartCount > 0 && (
                 <span className="absolute -top-1 -right-2 bg-[#c2410c] text-white text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center">
                   {cartCount}
@@ -262,15 +263,15 @@ export function HandMadeUADemo({ lang }: { lang: string }) {
       {/* ============ HERO ============ */}
       <section className="relative overflow-hidden bg-linear-to-br from-[#fef3c7] via-[#fffbeb] to-[#fef3c7]">
         {/* decorative emoji */}
-        <div className="absolute inset-0 pointer-events-none select-none text-4xl opacity-10">
-          <span className="absolute top-6 left-[10%]">🧶</span>
-          <span className="absolute top-20 right-[15%]">🎨</span>
-          <span className="absolute bottom-16 left-[20%]">🏺</span>
-          <span className="absolute top-32 left-[50%]">🪡</span>
-          <span className="absolute bottom-8 right-[25%]">✂️</span>
-          <span className="absolute top-10 left-[70%]">🕯️</span>
-          <span className="absolute bottom-28 right-[10%]">🧼</span>
-          <span className="absolute bottom-10 left-[45%]">🪢</span>
+        <div className="absolute inset-0 pointer-events-none select-none opacity-10">
+          <EmojiIcon emoji="🧶" className="w-10 h-10 absolute top-6 left-[10%]" />
+          <EmojiIcon emoji="🎨" className="w-10 h-10 absolute top-20 right-[15%]" />
+          <EmojiIcon emoji="🏺" className="w-10 h-10 absolute bottom-16 left-[20%]" />
+          <EmojiIcon emoji="🪡" className="w-10 h-10 absolute top-32 left-[50%]" />
+          <EmojiIcon emoji="✂️" className="w-10 h-10 absolute bottom-8 right-[25%]" />
+          <EmojiIcon emoji="🕯️" className="w-10 h-10 absolute top-10 left-[70%]" />
+          <EmojiIcon emoji="🧼" className="w-10 h-10 absolute bottom-28 right-[10%]" />
+          <EmojiIcon emoji="🪢" className="w-10 h-10 absolute bottom-10 left-[45%]" />
         </div>
 
         <div className="relative max-w-4xl mx-auto px-4 py-24 sm:py-32 text-center">
@@ -321,7 +322,7 @@ export function HandMadeUADemo({ lang }: { lang: string }) {
               key={ws.id}
               className="bg-white border border-[#c2410c]/10 rounded-2xl p-6 flex flex-col hover:shadow-lg hover:shadow-[#c2410c]/5 transition-shadow"
             >
-              <div className="text-4xl mb-3">{ws.emoji}</div>
+              <div className="mb-3"><EmojiIcon emoji={ws.emoji} className="w-10 h-10" /></div>
               <h3 className="text-lg font-bold text-[#92400e] mb-1">
                 {isUk ? ws.nameUk : ws.nameEn}
               </h3>
@@ -368,7 +369,7 @@ export function HandMadeUADemo({ lang }: { lang: string }) {
 
           {bookingConfirmed ? (
             <div className="bg-white border border-[#65a30d]/30 rounded-2xl p-8 text-center">
-              <div className="text-5xl mb-4">🎉</div>
+              <div className="mb-4"><EmojiIcon emoji="🎉" className="w-14 h-14" /></div>
               <h3 className="text-2xl font-bold text-[#65a30d] mb-2">
                 {t("Booking Confirmed!", "Бронювання підтверджено!")}
               </h3>
@@ -549,7 +550,7 @@ export function HandMadeUADemo({ lang }: { lang: string }) {
               key={p.id}
               className="bg-white border border-[#c2410c]/10 rounded-2xl p-5 flex flex-col items-center text-center hover:shadow-lg hover:shadow-[#c2410c]/5 transition-shadow"
             >
-              <div className="text-5xl mb-3">{p.emoji}</div>
+              <div className="mb-3"><EmojiIcon emoji={p.emoji} className="w-14 h-14" /></div>
               <h3 className="text-sm font-bold text-[#92400e] mb-1">
                 {isUk ? p.nameUk : p.nameEn}
               </h3>
@@ -584,7 +585,7 @@ export function HandMadeUADemo({ lang }: { lang: string }) {
                 key={i}
                 className="bg-white border border-[#c2410c]/10 rounded-2xl p-6 text-center"
               >
-                <div className="text-5xl mb-3">{a.emoji}</div>
+                <div className="mb-3"><EmojiIcon emoji={a.emoji} className="w-14 h-14" /></div>
                 <h3 className="text-lg font-bold text-[#92400e]">
                   {isUk ? a.nameUk : a.nameEn}
                 </h3>
@@ -626,7 +627,7 @@ export function HandMadeUADemo({ lang }: { lang: string }) {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {STEPS.map((s, i) => (
             <div key={i} className="text-center">
-              <div className="text-5xl mb-4">{s.emoji}</div>
+              <div className="mb-4"><EmojiIcon emoji={s.emoji} className="w-14 h-14" /></div>
               <div className="text-xs text-[#c2410c] font-bold mb-1">
                 {t("Step", "Крок")} {i + 1}
               </div>
@@ -667,7 +668,7 @@ export function HandMadeUADemo({ lang }: { lang: string }) {
                     : "border-[#c2410c]/10"
                 }`}
               >
-                <div className="text-4xl mb-3">{gc.emoji}</div>
+                <div className="mb-3"><EmojiIcon emoji={gc.emoji} className="w-10 h-10" /></div>
                 <p className="text-3xl font-bold text-[#c2410c] mb-4">₴{gc.amount}</p>
                 <ul className="text-sm text-[#92400e]/70 space-y-2 mb-6 text-left">
                   {(isUk ? gc.includesUk : gc.includesEn).map((item, j) => (
@@ -701,9 +702,9 @@ export function HandMadeUADemo({ lang }: { lang: string }) {
             return (
               <div
                 key={i}
-                className={`${heights[i]} bg-linear-to-br from-[#fef3c7] to-[#fde68a] rounded-2xl flex items-center justify-center text-5xl border border-[#c2410c]/10 break-inside-avoid`}
+                className={`${heights[i]} bg-linear-to-br from-[#fef3c7] to-[#fde68a] rounded-2xl flex items-center justify-center border border-[#c2410c]/10 break-inside-avoid`}
               >
-                {emoji}
+                <EmojiIcon emoji={emoji} className="w-14 h-14" />
               </div>
             );
           })}
@@ -753,7 +754,7 @@ export function HandMadeUADemo({ lang }: { lang: string }) {
           {/* brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <span className="text-2xl">🧶</span>
+              <EmojiIcon emoji="🧶" className="w-7 h-7" />
               <span className="text-xl font-bold">HandMadeUA</span>
             </div>
             <p className="text-sm text-[#fef3c7]/60 leading-relaxed">

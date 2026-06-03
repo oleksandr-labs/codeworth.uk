@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 // ── Data ────────────────────────────────────────────────────────────────────
 
@@ -314,7 +315,7 @@ export function RepairProDemo({ lang }: { lang: string }) {
       <nav className="bg-white border-b border-gray-100 dark:border-neutral-700 sticky top-0 z-30">
         <div className="max-w-6xl mx-auto px-4 flex items-center justify-between h-14">
           <div className="flex items-center gap-2">
-            <span className="text-2xl">🔧</span>
+            <EmojiIcon emoji="🔧" className="w-7 h-7" />
             <span className="font-bold text-[#1F2937] text-lg tracking-tight">RepairPro</span>
           </div>
           <div className="hidden md:flex gap-6 text-sm font-medium text-gray-600">
@@ -423,7 +424,7 @@ export function RepairProDemo({ lang }: { lang: string }) {
                         calcDevice === d.key ? "border-[#F97316] bg-orange-50 text-[#F97316]" : "border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-orange-200"
                       }`}
                     >
-                      <span className="text-3xl">{d.emoji}</span>
+                      <EmojiIcon emoji={d.emoji} className="w-8 h-8" />
                       <span>{isUk ? d.uk : d.en}</span>
                     </button>
                   ))}
@@ -500,9 +501,9 @@ export function RepairProDemo({ lang }: { lang: string }) {
                 </button>
               </div>
               <div className="mt-4 pt-4 border-t border-orange-200 flex gap-4 flex-wrap text-sm text-gray-600">
-                <span>📱 {isUk ? deviceTypes.find((d) => d.key === calcDevice)?.uk : deviceTypes.find((d) => d.key === calcDevice)?.en}</span>
-                <span>🏷 {calcBrand === "Other" ? (isUk ? "Інший" : "Other") : calcBrand}</span>
-                <span>🔧 {isUk ? issues.find((i) => i.key === calcIssue)?.uk : issues.find((i) => i.key === calcIssue)?.en}</span>
+                <span><EmojiIcon emoji="📱" className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? deviceTypes.find((d) => d.key === calcDevice)?.uk : deviceTypes.find((d) => d.key === calcDevice)?.en}</span>
+                <span><EmojiIcon emoji="🏷" className="w-4 h-4 inline-block align-middle mr-1" />{calcBrand === "Other" ? (isUk ? "Інший" : "Other") : calcBrand}</span>
+                <span><EmojiIcon emoji="🔧" className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? issues.find((i) => i.key === calcIssue)?.uk : issues.find((i) => i.key === calcIssue)?.en}</span>
               </div>
             </div>
           )}
@@ -544,7 +545,7 @@ export function RepairProDemo({ lang }: { lang: string }) {
                   activeCategory === cat.key ? "bg-[#F97316] border-[#F97316] text-white" : "bg-white border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-300 hover:border-orange-200"
                 }`}
               >
-                {cat.emoji} {isUk ? cat.uk : cat.en}
+                <EmojiIcon emoji={cat.emoji} className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? cat.uk : cat.en}
               </button>
             ))}
           </div>
@@ -928,13 +929,13 @@ export function RepairProDemo({ lang }: { lang: string }) {
                   <div className="flex">
                     <div className="flex-1 p-4 bg-red-50 flex flex-col items-center justify-center gap-1 min-h-28">
                       <span className="text-red-400 font-bold text-xs uppercase tracking-wide">{isUk ? "До" : "Before"}</span>
-                      <span className="text-2xl">💔</span>
+                      <EmojiIcon emoji="💔" className="w-7 h-7" />
                       <span className="text-xs text-red-400 text-center">{isUk ? item.issueUk : item.issueEn}</span>
                     </div>
                     <div className="w-px bg-gray-200" />
                     <div className="flex-1 p-4 bg-emerald-50 flex flex-col items-center justify-center gap-1 min-h-28">
                       <span className="text-emerald-500 font-bold text-xs uppercase tracking-wide">{isUk ? "Після" : "After"}</span>
-                      <span className="text-2xl">✅</span>
+                      <EmojiIcon emoji="✅" className="w-7 h-7" />
                       <span className="text-xs text-emerald-600 text-center">{isUk ? "Відремонтовано" : "Repaired"}</span>
                     </div>
                   </div>
@@ -1002,7 +1003,7 @@ export function RepairProDemo({ lang }: { lang: string }) {
 
           <div className="border-t border-gray-700 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
-              <span className="text-xl">🔧</span>
+              <EmojiIcon emoji="🔧" className="w-5 h-5" />
               <span className="font-bold text-white">RepairPro</span>
               <span className="text-gray-500 dark:text-neutral-400 text-sm">— {isUk ? "Сервісний центр №1 в Дніпрі" : "Service Center #1 in Dnipro"}</span>
             </div>

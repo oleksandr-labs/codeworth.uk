@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { RESOURCES, RESOURCE_CATEGORIES } from "@/lib/data/resources";
 import { ArrowRight, Download, Clock, Zap } from "lucide-react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 export async function generateStaticParams() {
   return [{ lang: "uk" }, { lang: "en" }];
@@ -123,7 +124,7 @@ export default async function ResourcesPage({
         <section className="py-12 bg-white dark:bg-neutral-800 border-b">
           <Container>
             <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6">
-              🔥 {isUk ? "Популярне" : "Popular"}
+              <EmojiIcon emoji="🔥" className="w-5 h-5 inline-block align-middle mr-1" />{isUk ? "Популярне" : "Popular"}
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {popular.map((r) => (
@@ -223,10 +224,10 @@ function ResourceCard({
     >
       <div className="flex items-center justify-between mb-3">
         <span className="text-xs font-medium text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full">
-          {catMeta?.emoji} {isUk ? catMeta?.labelUk : catMeta?.labelEn}
+          {catMeta?.emoji && <EmojiIcon emoji={catMeta.emoji} className="w-4 h-4 inline-block align-middle mr-1" />}{isUk ? catMeta?.labelUk : catMeta?.labelEn}
         </span>
         {resource.isPopular && (
-          <span className="text-xs text-orange-600 font-medium">🔥 {isUk ? "Популярне" : "Popular"}</span>
+          <span className="text-xs text-orange-600 font-medium inline-flex items-center gap-1"><EmojiIcon emoji="🔥" className="w-3.5 h-3.5" />{isUk ? "Популярне" : "Popular"}</span>
         )}
       </div>
       <h3 className="font-semibold text-gray-900 dark:text-white text-sm mb-2 group-hover:text-indigo-700 transition-colors leading-snug flex-1">

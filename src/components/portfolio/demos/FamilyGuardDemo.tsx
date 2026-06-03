@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 export function FamilyGuardDemo({ lang }: { lang: string }) {
   const isUk = lang === "uk";
@@ -134,7 +135,7 @@ export function FamilyGuardDemo({ lang }: { lang: string }) {
           {services.map(s => (
             <div key={s.id} onClick={() => setActiveService(s.id === activeService ? null : s.id)}
               style={{ background: "#fff", borderRadius: 16, padding: 24, cursor: "pointer", border: `2px solid ${s.id === activeService ? "#C4704A" : "#F0E6D8"}`, boxShadow: "0 2px 8px rgba(0,0,0,0.05)", transition: "all 0.2s" }}>
-              <div style={{ fontSize: 32, marginBottom: 10 }}>{s.emoji}</div>
+              <div style={{ marginBottom: 10 }}><EmojiIcon emoji={s.emoji} className="w-14 h-14" /></div>
               <h3 style={{ fontWeight: 800, color: "#2D1B0E", margin: "0 0 4px" }}>{isUk ? s.titleUk : s.titleEn}</h3>
               <div style={{ color: "#C4704A", fontSize: 13, fontWeight: 600, marginBottom: 10 }}>{isUk ? s.subtitleUk : s.subtitleEn}</div>
               {activeService === s.id && (

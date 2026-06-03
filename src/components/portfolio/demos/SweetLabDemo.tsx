@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 const COLLECTION = [
   { id: 1, nameUk: "Тарт лимонний з меренгою", nameEn: "Tarte Citron Meringuée", emoji: "🍋", price: 345, remaining: 3, soldOut: false },
@@ -138,7 +139,7 @@ export function SweetLabDemo({ lang }: { lang: string }) {
       <nav className="sticky top-0 z-50 bg-white dark:bg-neutral-800 border-b border-gray-100 dark:border-neutral-700 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <a href="#" className="flex items-center gap-2">
-            <span className="text-2xl">⚗️</span>
+            <EmojiIcon emoji="⚗️" className="w-7 h-7" />
             <span className="text-xl font-bold tracking-tight text-gray-900">SweetLab</span>
           </a>
           <div className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
@@ -229,7 +230,7 @@ export function SweetLabDemo({ lang }: { lang: string }) {
                 key={item.id}
                 className={`bg-white rounded-2xl p-6 border border-gray-100 dark:border-neutral-700 transition-all ${item.soldOut ? "opacity-50 grayscale" : "hover:-translate-y-1 hover:shadow-lg"}`}
               >
-                <div className="text-4xl mb-3">{item.emoji}</div>
+                <div className="mb-3"><EmojiIcon emoji={item.emoji} className="w-10 h-10" /></div>
                 <div className="flex items-center gap-2 mb-2">
                   <h3 className="font-bold text-gray-900 dark:text-white text-sm leading-tight">
                     {isUk ? item.nameUk : item.nameEn}
@@ -330,7 +331,7 @@ export function SweetLabDemo({ lang }: { lang: string }) {
                 key={p.id}
                 className={`bg-white border border-gray-100 dark:border-neutral-700 rounded-2xl p-5 hover:-translate-y-1 hover:shadow-lg transition-all ${p.cat === "cakes" ? "rotate-1 hover:rotate-0" : ""}`}
               >
-                <div className="text-3xl mb-3">{p.emoji}</div>
+                <div className="mb-3"><EmojiIcon emoji={p.emoji} className="w-8 h-8" /></div>
                 <p className="font-bold text-sm text-gray-900 dark:text-white leading-tight mb-1">
                   {isUk ? p.nameUk : p.nameEn}
                 </p>
@@ -724,10 +725,10 @@ export function SweetLabDemo({ lang }: { lang: string }) {
                 {["🍰", "⚗️", "🎂", "🧁"].map((em, i) => (
                   <div
                     key={i}
-                    className="aspect-square rounded-2xl flex items-center justify-center text-5xl bg-white dark:bg-neutral-800 border border-gray-100 dark:border-neutral-700 shadow-sm"
+                    className="aspect-square rounded-2xl flex items-center justify-center bg-white dark:bg-neutral-800 border border-gray-100 dark:border-neutral-700 shadow-sm"
                     style={{ transform: i % 2 === 0 ? "rotate(-2deg)" : "rotate(2deg)" }}
                   >
-                    {em}
+                    <EmojiIcon emoji={em} className="w-14 h-14" />
                   </div>
                 ))}
               </div>
@@ -744,7 +745,7 @@ export function SweetLabDemo({ lang }: { lang: string }) {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8">
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <span className="text-xl">⚗️</span>
+              <EmojiIcon emoji="⚗️" className="w-5 h-5" />
               <span className="font-bold text-gray-900">SweetLab</span>
             </div>
             <p className="text-sm text-gray-500">
@@ -763,7 +764,7 @@ export function SweetLabDemo({ lang }: { lang: string }) {
               {isUk ? "Слідкуйте" : "Follow"}
             </p>
             <a href="#" className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-neutral-300 hover:text-gray-900 dark:text-white transition-colors">
-              <span>📸</span> @sweetlab.kyiv
+              <EmojiIcon emoji="📸" className="w-4 h-4 inline-block align-middle mr-1" />@sweetlab.kyiv
             </a>
           </div>
 

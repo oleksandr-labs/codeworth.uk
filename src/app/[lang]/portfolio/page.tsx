@@ -8,6 +8,7 @@ import { CTASection } from "@/components/home/CTASection";
 import { PortfolioContent } from "@/components/portfolio/PortfolioContent";
 import { CountUp } from "@/components/ui/CountUp";
 import { ExternalLink } from "lucide-react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 import { PROJECTS } from "@/lib/data/portfolio";
 import { NICHES_DATA, getNicheLocalized } from "@/lib/data/niches";
 import { cn } from "@/lib/utils";
@@ -89,14 +90,14 @@ export default async function PortfolioPage({ params }: { params: Promise<{ lang
                   : "Every project below is a ready-made solution you can order. Click to see details and pricing."}
               </p>
               <div className="flex items-center justify-center gap-3 text-sm">
-                <span className="px-3 py-1.5 rounded-full bg-emerald-100 text-emerald-700 font-medium">
-                  {isUk ? "✅ Від £499" : "✅ From £499"}
+                <span className="px-3 py-1.5 rounded-full bg-emerald-100 text-emerald-700 font-medium inline-flex items-center gap-1">
+                  <EmojiIcon emoji="✅" className="w-3.5 h-3.5" />{isUk ? "Від £499" : "From £499"}
                 </span>
-                <span className="px-3 py-1.5 rounded-full bg-indigo-100 text-indigo-700 font-medium">
-                  {isUk ? "⚡ Запуск за 3–7 днів" : "⚡ Launch in 3–7 days"}
+                <span className="px-3 py-1.5 rounded-full bg-indigo-100 text-indigo-700 font-medium inline-flex items-center gap-1">
+                  <EmojiIcon emoji="⚡" className="w-3.5 h-3.5" />{isUk ? "Запуск за 3–7 днів" : "Launch in 3–7 days"}
                 </span>
-                <span className="px-3 py-1.5 rounded-full bg-amber-100 text-amber-700 font-medium">
-                  {isUk ? "🎨 Customizer" : "🎨 Customizer"}
+                <span className="px-3 py-1.5 rounded-full bg-amber-100 text-amber-700 font-medium inline-flex items-center gap-1">
+                  <EmojiIcon emoji="🎨" className="w-3.5 h-3.5" />Customizer
                 </span>
               </div>
             </div>
@@ -166,7 +167,7 @@ export default async function PortfolioPage({ params }: { params: Promise<{ lang
               ].map((item, i) => (
                 <div key={i} className="relative p-6 rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-100 dark:border-neutral-700 hover:border-indigo-200 hover:shadow-sm transition-all">
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="text-2xl">{item.icon}</span>
+                    <EmojiIcon emoji={item.icon} className="w-7 h-7" />
                     <span className={`text-xs font-bold px-2 py-1 rounded-full ${item.color}`}>
                       {item.step}
                     </span>
@@ -258,7 +259,7 @@ export default async function PortfolioPage({ params }: { params: Promise<{ lang
                   className="group relative p-4 rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 hover:border-indigo-100 hover:shadow-md transition-all text-center overflow-hidden"
                 >
                   <div className={`absolute inset-x-0 top-0 h-1 bg-linear-to-r ${niche.gradient}`} />
-                  <div className="text-3xl mb-2">{niche.emoji}</div>
+                  <div className="mb-2"><EmojiIcon emoji={niche.emoji} className="w-8 h-8 text-white/80" /></div>
                   <div className="font-semibold text-neutral-900 dark:text-white text-xs leading-tight mb-1.5 group-hover:text-indigo-700 transition-colors">
                     {niche.title}
                   </div>

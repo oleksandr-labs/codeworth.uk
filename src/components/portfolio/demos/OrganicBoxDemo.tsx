@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 interface Props { lang: string; }
 
@@ -253,7 +254,7 @@ export function OrganicBoxDemo({ lang }: Props) {
               <div className="grid grid-cols-5 gap-2 px-5 pb-4">
                 {BOX_ITEMS.slice(0, 10).map((item, i) => (
                   <div key={i} className="bg-green-600/50 hover:bg-green-500/60 transition-colors rounded-xl py-2.5 text-center cursor-default group">
-                    <div className="text-[22px] group-hover:scale-110 transition-transform">{item.emoji}</div>
+                    <div className="group-hover:scale-110 transition-transform"><EmojiIcon emoji={item.emoji} className="w-8 h-8" /></div>
                     <p className="text-[9px] text-green-200 mt-1 leading-tight px-0.5">{isUk ? item.ukName.split(" ")[0] : item.enName.split(" ")[0]}</p>
                     <p className="text-[8px] text-green-300/70">{item.weight}</p>
                   </div>
@@ -320,8 +321,8 @@ export function OrganicBoxDemo({ lang }: Props) {
             { n: "04", emoji: "👨‍🍳", ukT: "Готуєш", enT: "You cook", ukD: "Рецепти під вміст кожного кошика — на email та у застосунку", enD: "Recipes for every box — by email and in app" },
           ].map(s => (
             <div key={s.n} className="text-center relative z-10">
-              <div className="w-12 h-12 rounded-full bg-white dark:bg-neutral-800 border-2 border-green-200 shadow-md flex items-center justify-center text-2xl mx-auto mb-3">
-                {s.emoji}
+              <div className="w-12 h-12 rounded-full bg-white dark:bg-neutral-800 border-2 border-green-200 shadow-md flex items-center justify-center mx-auto mb-3">
+                <EmojiIcon emoji={s.emoji} className="w-5 h-5" />
               </div>
               <p className="font-black text-green-900 mb-1.5 text-[15px]">{isUk ? s.ukT : s.enT}</p>
               <p className="text-stone-500 text-[12px] leading-relaxed">{isUk ? s.ukD : s.enD}</p>
@@ -349,7 +350,7 @@ export function OrganicBoxDemo({ lang }: Props) {
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-12">
             {BOX_ITEMS.map((item, i) => (
               <div key={i} className="bg-white border border-green-100 rounded-2xl p-4 text-center shadow-sm hover:shadow-md transition-all group">
-                <div className="text-4xl mb-2 group-hover:scale-110 transition-transform">{item.emoji}</div>
+                <div className="mb-2 group-hover:scale-110 transition-transform"><EmojiIcon emoji={item.emoji} className="w-10 h-10" /></div>
                 <p className="font-semibold text-stone-900 text-[13px] leading-tight mb-1">{isUk ? item.ukName : item.enName}</p>
                 <p className="text-[11px] text-stone-400 mb-1">{item.weight}</p>
                 <p className="text-[10px] text-green-600">📍 {isUk ? item.ukField : item.enField}</p>
@@ -516,8 +517,8 @@ export function OrganicBoxDemo({ lang }: Props) {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {RECIPES.map((r, i) => (
               <div key={i} className="bg-white rounded-3xl overflow-hidden border border-stone-100 shadow-sm hover:shadow-xl transition-all group cursor-pointer">
-                <div className={`h-32 flex items-center justify-center text-6xl group-hover:scale-110 transition-transform ${i % 2 === 0 ? "bg-linear-to-br from-green-50 to-emerald-100" : "bg-linear-to-br from-orange-50 to-amber-100"}`}>
-                  {r.emoji}
+                <div className={`h-32 flex items-center justify-center group-hover:scale-110 transition-transform ${i % 2 === 0 ? "bg-linear-to-br from-green-50 to-emerald-100" : "bg-linear-to-br from-orange-50 to-amber-100"}`}>
+                  <EmojiIcon emoji={r.emoji} className="w-16 h-16" />
                 </div>
                 <div className="p-5">
                   <div className="flex items-center gap-2 mb-2">

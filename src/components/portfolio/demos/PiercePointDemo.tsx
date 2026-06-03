@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
@@ -127,7 +128,7 @@ export function PiercePointDemo({ lang }: { lang: string }) {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16 }}>
             {SAFETY_CARDS.map((c) => (
               <div key={c.titleEn} style={{ background: CARD_BG, border: `1px solid ${BORDER}`, borderRadius: 12, padding: 20 }}>
-                <div style={{ fontSize: 28, marginBottom: 10 }}>{c.emojiIcon}</div>
+                <div style={{ marginBottom: 10 }}><EmojiIcon emoji={c.emojiIcon} className="w-10 h-10" /></div>
                 <div style={{ fontWeight: 700, color: ACCENT, fontSize: 14, marginBottom: 6 }}>{isUk ? c.titleUk : c.titleEn}</div>
                 <div style={{ fontSize: 12, color: SAND, opacity: 0.75, lineHeight: 1.5 }}>{isUk ? c.descUk : c.descEn}</div>
               </div>
@@ -179,7 +180,7 @@ export function PiercePointDemo({ lang }: { lang: string }) {
             {filteredItems.map((item) => (
               <div key={item.id} onClick={() => setSelectedItem(item.id)}
                 style={{ background: CARD_BG, border: `1px solid ${selectedItem === item.id ? ACCENT : BORDER}`, borderRadius: 12, padding: 16, cursor: "pointer", transition: "border-color .2s" }}>
-                <div style={{ fontSize: 36, textAlign: "center", marginBottom: 10 }}>{item.emoji}</div>
+                <div style={{ textAlign: "center", marginBottom: 10 }}><EmojiIcon emoji={item.emoji} className="w-14 h-14" /></div>
                 <div style={{ fontSize: 13, fontWeight: 700, color: "#fff", marginBottom: 4 }}>{isUk ? item.nameUk : item.nameEn}</div>
                 <div style={{ fontSize: 11, color: ACCENT, marginBottom: 6 }}>{item.material}</div>
                 <div style={{ fontSize: 11, color: "#888", marginBottom: 10 }}>{item.sizes.join(" / ")}</div>
@@ -214,7 +215,7 @@ export function PiercePointDemo({ lang }: { lang: string }) {
                     {isUk ? "Записатися з цією прикрасою" : "Book piercing with this jewelry"}
                   </button>
                 </div>
-                <div style={{ fontSize: 64 }}>{selectedProduct.emoji}</div>
+                <div><EmojiIcon emoji={selectedProduct.emoji} className="w-16 h-16" /></div>
               </div>
             </div>
           )}
@@ -228,7 +229,7 @@ export function PiercePointDemo({ lang }: { lang: string }) {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12 }}>
             {PORTFOLIO_TILES.map((tile) => (
               <div key={tile.id} style={{ background: CARD_BG, border: `1px solid ${BORDER}`, borderRadius: 10, aspectRatio: "1", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 8 }}>
-                <div style={{ fontSize: 36 }}>{tile.emoji}</div>
+                <div><EmojiIcon emoji={tile.emoji} className="w-14 h-14" /></div>
                 <div style={{ fontSize: 11, color: SAND, opacity: 0.7, textAlign: "center", padding: "0 8px" }}>{isUk ? tile.labelUk : tile.label}</div>
               </div>
             ))}
@@ -268,7 +269,7 @@ export function PiercePointDemo({ lang }: { lang: string }) {
           </h2>
           {bookingSent ? (
             <div style={{ background: `${ACCENT}20`, border: `1px solid ${ACCENT}`, borderRadius: 12, padding: 32, textAlign: "center" }}>
-              <div style={{ fontSize: 36, marginBottom: 12 }}>✅</div>
+              <div style={{ marginBottom: 12 }}><EmojiIcon emoji="✅" className="w-14 h-14" /></div>
               <div style={{ fontWeight: 700, color: "#fff", fontSize: 18 }}>{isUk ? "Запит надіслано!" : "Booking request sent!"}</div>
               <div style={{ color: SAND, fontSize: 13, marginTop: 8, opacity: 0.8 }}>{isUk ? "Підтвердимо протягом години." : "We'll confirm within the hour."}</div>
             </div>

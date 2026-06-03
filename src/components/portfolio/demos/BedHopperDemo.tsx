@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
@@ -208,7 +209,7 @@ export function BedHopperDemo({ lang }: { lang: string }) {
                 <div style={{ position: "absolute", top: 12, right: 12, background: ORANGE, color: WHITE, fontSize: 11, fontWeight: 800, padding: "3px 10px", borderRadius: 20 }}>
                   -{deal.discountPct}%
                 </div>
-                <div style={{ fontSize: 28, marginBottom: 8 }}>{deal.emoji}</div>
+                <div style={{ marginBottom: 8 }}><EmojiIcon emoji={deal.emoji} className="w-10 h-10" /></div>
                 <div style={{ fontWeight: 800, fontSize: 15, marginBottom: 2 }}>{deal.nameEn}</div>
                 <div style={{ color: "#6B7280", fontSize: 12, marginBottom: 10 }}>{deal.cityEn}</div>
                 <div style={{ display: "flex", gap: 8, alignItems: "baseline" }}>
@@ -232,7 +233,7 @@ export function BedHopperDemo({ lang }: { lang: string }) {
             {VIBES.map((v) => (
               <button key={v} onClick={() => { setActiveVibe(v); setExpandedHostel(null); }}
                 style={{ padding: "8px 16px", borderRadius: 20, border: `2px solid ${activeVibe === v ? ORANGE : BORDER}`, background: activeVibe === v ? ORANGE : WHITE, color: activeVibe === v ? WHITE : CHARCOAL, fontSize: 13, cursor: "pointer", fontWeight: 700 }}>
-                {VIBE_LABELS[v].emoji} {isUk ? VIBE_LABELS[v].uk : VIBE_LABELS[v].en}
+                <EmojiIcon emoji={VIBE_LABELS[v].emoji} className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? VIBE_LABELS[v].uk : VIBE_LABELS[v].en}
               </button>
             ))}
           </div>
@@ -243,8 +244,8 @@ export function BedHopperDemo({ lang }: { lang: string }) {
                 <div onClick={() => setExpandedHostel(expandedHostel === hostel.id ? null : hostel.id)}
                   style={{ padding: 18, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
                   <div style={{ display: "flex", gap: 14, alignItems: "center" }}>
-                    <div style={{ width: 52, height: 52, borderRadius: 10, background: `${ORANGE}15`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 26, flexShrink: 0 }}>
-                      {VIBE_LABELS[hostel.vibeType].emoji}
+                    <div style={{ width: 52, height: 52, borderRadius: 10, background: `${ORANGE}15`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                      <EmojiIcon emoji={VIBE_LABELS[hostel.vibeType].emoji} className="w-10 h-10" />
                     </div>
                     <div>
                       <div style={{ fontWeight: 800, fontSize: 16, marginBottom: 2 }}>{hostel.nameEn}</div>
@@ -336,7 +337,7 @@ export function BedHopperDemo({ lang }: { lang: string }) {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))", gap: 14 }}>
             {CITY_GUIDES.map((g) => (
               <div key={g.cityEn} style={{ background: WHITE, border: `1px solid #E5E7EB`, borderRadius: 14, padding: 18 }}>
-                <div style={{ fontSize: 32, marginBottom: 8 }}>{g.emoji}</div>
+                <div style={{ marginBottom: 8 }}><EmojiIcon emoji={g.emoji} className="w-14 h-14" /></div>
                 <div style={{ fontWeight: 800, fontSize: 16, marginBottom: 6 }}>{isUk ? g.cityUk : g.cityEn}</div>
                 <div style={{ fontSize: 12, color: "#4B5563", lineHeight: 1.5, borderLeft: `3px solid ${ORANGE}`, paddingLeft: 10 }}>
                   {isUk ? g.tipUk : g.tipEn}
@@ -362,7 +363,7 @@ export function BedHopperDemo({ lang }: { lang: string }) {
                 </div>
                 <div>
                   <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
-                    <span style={{ fontSize: 18 }}>{t.flag}</span>
+                    <EmojiIcon emoji={t.flag} className="w-8 h-8" />
                     <span style={{ fontWeight: 700, fontSize: 13 }}>{t.nameEn}</span>
                   </div>
                   <div style={{ fontSize: 11, color: "#9CA3AF", marginTop: 2 }}>{isUk ? t.dateUk : t.dateEn}</div>

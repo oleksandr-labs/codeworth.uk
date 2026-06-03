@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 interface Props { lang: string; }
 
@@ -306,7 +307,7 @@ export function PasikaDemo({ lang }: Props) {
                     <div className={`text-[10px] font-bold px-2.5 py-1 rounded-full ${h.badgeColor}`}>
                       {isUk ? h.ukTag : h.enTag}
                     </div>
-                    <span className="text-[42px]">{h.emoji}</span>
+                    <EmojiIcon emoji={h.emoji} className="w-16 h-16" />
                   </div>
                   <h3 className={`font-black text-[17px] leading-snug mb-1 ${h.textColor}`}>
                     {isUk ? h.ukName : h.enName}
@@ -338,8 +339,8 @@ export function PasikaDemo({ lang }: Props) {
           <div id="gifts" className="grid sm:grid-cols-3 gap-6">
             {GIFT_SETS.map(g => (
               <div key={g.id} className="bg-white border-2 border-amber-200 rounded-2xl overflow-hidden hover:shadow-xl hover:shadow-amber-200/60 transition-all">
-                <div className={`${g.color} h-32 flex items-center justify-center text-[64px]`}>
-                  {g.emoji}
+                <div className={`${g.color} h-32 flex items-center justify-center`}>
+                  <EmojiIcon emoji={g.emoji} className="w-16 h-16" />
                 </div>
                 <div className="p-5">
                   <div className="inline-block bg-amber-100 text-amber-700 text-[10px] font-bold px-2.5 py-1 rounded-full mb-3 uppercase tracking-wide">
@@ -458,7 +459,7 @@ export function PasikaDemo({ lang }: Props) {
           {HARVEST_CAL.map((h, i) => (
             <div key={h.ukName} className={`grid grid-cols-[100px_1fr] ${i < HARVEST_CAL.length - 1 ? "border-b border-amber-200" : ""}`}>
               <div className="px-4 py-3 flex items-center gap-2 border-r border-amber-200">
-                <span className="text-[18px]">{h.emoji}</span>
+                <EmojiIcon emoji={h.emoji} className="w-8 h-8" />
                 <p className="text-[11px] font-bold text-amber-800">{isUk ? h.ukName : h.enName}</p>
               </div>
               <div className="grid grid-cols-12">
@@ -488,7 +489,7 @@ export function PasikaDemo({ lang }: Props) {
               { emoji: "😴", uk: "Кращий сон", en: "Better sleep", ukD: "Ложка меду перед сном підвищує рівень серотоніну", enD: "A spoonful before bed raises serotonin levels" },
             ].map(b => (
               <div key={b.uk} className="bg-white/10 rounded-2xl p-5 border border-white/10">
-                <span className="text-[36px] block mb-3">{b.emoji}</span>
+                <EmojiIcon emoji={b.emoji} className="w-14 h-14 block mb-3" />
                 <h3 className="text-white font-bold text-[15px] mb-2">{isUk ? b.uk : b.en}</h3>
                 <p className="text-amber-200/60 text-[12px] leading-relaxed">{isUk ? b.ukD : b.enD}</p>
               </div>

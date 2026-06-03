@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 export function IPShieldDemo({ lang }: { lang: string }) {
   const isUk = lang === "uk";
@@ -163,7 +164,7 @@ export function IPShieldDemo({ lang }: { lang: string }) {
               background: activeService === i ? s.color + "22" : "transparent",
               color: activeService === i ? s.color : "#94a3b8", fontWeight: 700, cursor: "pointer", fontSize: 13,
             }}>
-              {s.emoji} {isUk ? s.titleUk : s.titleEn}
+              <EmojiIcon emoji={s.emoji} className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? s.titleUk : s.titleEn}
             </button>
           ))}
         </div>
@@ -171,7 +172,7 @@ export function IPShieldDemo({ lang }: { lang: string }) {
           <div style={{ display: "flex", alignItems: "flex-start", gap: 20, flexWrap: "wrap" }}>
             <div style={{ flex: 1, minWidth: 280 }}>
               <div style={{ display: "flex", gap: 12, alignItems: "center", marginBottom: 12 }}>
-                <span style={{ fontSize: 36 }}>{services[activeService].emoji}</span>
+                <EmojiIcon emoji={services[activeService].emoji} className="w-10 h-10" />
                 <div>
                   <h3 style={{ fontWeight: 800, margin: 0, fontSize: 20, color: services[activeService].color }}>{isUk ? services[activeService].titleUk : services[activeService].titleEn}</h3>
                   <span style={{ background: services[activeService].color + "33", color: services[activeService].color, borderRadius: 8, padding: "2px 10px", fontSize: 12, fontWeight: 700 }}>{isUk ? services[activeService].tagUk : services[activeService].tagEn}</span>

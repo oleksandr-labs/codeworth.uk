@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -271,7 +272,7 @@ export function HammamDemo({ lang }: { lang: string }) {
                 {/* Corner ornament */}
                 <div className="absolute top-2 right-2 text-amber-500/20 text-xl select-none">❋</div>
 
-                <div className="text-3xl">{c.emoji}</div>
+                <EmojiIcon emoji={c.emoji} className="w-8 h-8" />
                 <div>
                   <div className="font-bold text-amber-200 text-base leading-tight">
                     {isUk ? c.nameUk : c.nameEn}
@@ -384,7 +385,7 @@ export function HammamDemo({ lang }: { lang: string }) {
                               : "border-emerald-800/60 bg-emerald-900/20 hover:border-amber-700/40"
                           }`}
                         >
-                          <span className="text-2xl shrink-0">{addon.emoji}</span>
+                          <EmojiIcon emoji={addon.emoji} className="w-7 h-7 shrink-0" />
                           <div className="flex-1 min-w-0">
                             <div className={`text-sm font-medium ${active ? "text-amber-200" : "text-stone-300"}`}>
                               {isUk ? addon.nameUk : addon.nameEn}
@@ -429,7 +430,7 @@ export function HammamDemo({ lang }: { lang: string }) {
                             : "border-emerald-800/60 bg-emerald-900/20 text-stone-300 hover:border-amber-700/50"
                         }`}
                       >
-                        <div className="text-2xl mb-2">{type.emoji}</div>
+                        <div className="mb-2"><EmojiIcon emoji={type.emoji} className="w-7 h-7" /></div>
                         <div className="font-semibold text-sm mb-1">{isUk ? type.nameUk : type.nameEn}</div>
                         <div className="text-amber-400 text-sm">{type.surcharge > 0 ? `+₴${type.surcharge}` : isUk ? "Включено" : "Included"}</div>
                       </button>
@@ -506,14 +507,14 @@ export function HammamDemo({ lang }: { lang: string }) {
                       const addon = RITUAL_ADDONS.find((a) => a.id === id)!;
                       return (
                         <div key={id} className="flex justify-between text-xs text-stone-400 mb-1">
-                          <span>{addon.emoji} {isUk ? addon.nameUk : addon.nameEn}</span>
+                          <span><EmojiIcon emoji={addon.emoji} className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? addon.nameUk : addon.nameEn}</span>
                           <span className="text-stone-200">+₴{addon.price}</span>
                         </div>
                       );
                     })}
                     {hammamType.surcharge > 0 && (
                       <div className="flex justify-between text-xs text-stone-400 mb-1">
-                        <span>{hammamType.emoji} {isUk ? hammamType.nameUk : hammamType.nameEn}</span>
+                        <span><EmojiIcon emoji={hammamType.emoji} className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? hammamType.nameUk : hammamType.nameEn}</span>
                         <span className="text-stone-200">+₴{hammamType.surcharge}</span>
                       </div>
                     )}
@@ -589,7 +590,7 @@ export function HammamDemo({ lang }: { lang: string }) {
               >
                 <div className="p-5">
                   <div className="flex items-start justify-between gap-2 mb-3">
-                    <span className="text-2xl">{s.emoji}</span>
+                    <EmojiIcon emoji={s.emoji} className="w-7 h-7" />
                     <div className="text-right">
                       <div className="text-amber-300 font-bold">₴{s.price.toLocaleString()}</div>
                       <div className="text-stone-500 text-xs">⏱ {s.duration}</div>
@@ -644,7 +645,7 @@ export function HammamDemo({ lang }: { lang: string }) {
                       { emoji: "👘", en: "Robes & slippers provided", uk: "Халати та тапочки надаємо" },
                     ].map((item, i) => (
                       <li key={i} className="flex items-center gap-3 text-stone-300 text-sm">
-                        <span className="text-lg shrink-0">{item.emoji}</span>
+                        <EmojiIcon emoji={item.emoji} className="w-5 h-5 shrink-0" />
                         {isUk ? item.uk : item.en}
                       </li>
                     ))}
@@ -659,7 +660,7 @@ export function HammamDemo({ lang }: { lang: string }) {
                   <div className="grid grid-cols-2 gap-3 mb-6">
                     {PRIVATE_OCCASIONS.map((occ) => (
                       <div key={occ.nameEn} className="p-3 rounded-xl border border-emerald-800/50 bg-emerald-900/20 text-center">
-                        <div className="text-2xl mb-1">{occ.emoji}</div>
+                        <div className="mb-1"><EmojiIcon emoji={occ.emoji} className="w-7 h-7" /></div>
                         <div className="text-stone-300 text-xs">{isUk ? occ.nameUk : occ.nameEn}</div>
                       </div>
                     ))}
@@ -703,7 +704,7 @@ export function HammamDemo({ lang }: { lang: string }) {
                 <div key={idx} className="flex items-start gap-5 relative pl-2 sm:pl-0">
                   {/* Step number bubble */}
                   <div className="shrink-0 w-12 h-12 rounded-full border-2 border-amber-600/50 bg-emerald-950 flex flex-col items-center justify-center z-10 relative">
-                    <span className="text-lg leading-none">{step.emoji}</span>
+                    <EmojiIcon emoji={step.emoji} className="w-5 h-5 leading-none" />
                     <span className="text-amber-600 text-[9px] font-bold">{idx + 1}</span>
                   </div>
 
@@ -752,7 +753,7 @@ export function HammamDemo({ lang }: { lang: string }) {
                 <div className={`absolute top-2 right-2 text-amber-500/20 text-2xl select-none ${cert.highlight ? "top-8" : ""}`}>❋</div>
 
                 <div className={`p-6 ${cert.highlight ? "pt-9" : ""}`}>
-                  <div className="text-4xl mb-3 text-center">{cert.emoji}</div>
+                  <div className="mb-3 text-center"><EmojiIcon emoji={cert.emoji} className="w-10 h-10" /></div>
                   <h3 className="text-center font-bold text-amber-200 text-base mb-1">
                     {isUk ? cert.nameUk : cert.nameEn}
                   </h3>

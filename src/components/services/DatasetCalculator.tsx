@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 interface Props {
   isUk: boolean;
@@ -135,7 +136,7 @@ export function DatasetCalculator({ isUk }: Props) {
                       : "border-transparent bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200"
                   }`}
                 >
-                  <span>{dt.emoji}</span>
+                  <EmojiIcon emoji={dt.emoji} className="w-4 h-4" />
                   <span>{isUk ? dt.uk : dt.en}</span>
                 </button>
               ))}

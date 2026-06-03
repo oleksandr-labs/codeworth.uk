@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 /* ─── data ─── */
 
@@ -203,7 +204,7 @@ export function WowEventDemo({ lang }: { lang: string }) {
                 key={ev.id}
                 className="group rounded-2xl border border-pink-500/20 bg-[#1e293b] p-6 transition hover:border-pink-500/60 hover:shadow-lg hover:shadow-pink-600/10"
               >
-                <div className="mb-3 text-4xl">{ev.emoji}</div>
+                <div className="mb-3"><EmojiIcon emoji={ev.emoji} className="w-10 h-10" /></div>
                 <h3 className="mb-1 text-lg font-bold text-pink-300">
                   {isUk ? ev.uk : ev.en}
                 </h3>
@@ -238,7 +239,7 @@ export function WowEventDemo({ lang }: { lang: string }) {
                 key={s.titleEn}
                 className="rounded-2xl border border-blue-500/20 bg-[#0f172a] p-6 transition hover:border-blue-500/50"
               >
-                <div className="mb-3 text-3xl">{s.emoji}</div>
+                <div className="mb-3"><EmojiIcon emoji={s.emoji} className="w-8 h-8" /></div>
                 <h3 className="mb-2 text-lg font-bold text-blue-300">
                   {isUk ? s.titleUk : s.titleEn}
                 </h3>
@@ -280,7 +281,7 @@ export function WowEventDemo({ lang }: { lang: string }) {
                         : "bg-slate-700 text-slate-300 hover:bg-slate-600"
                     }`}
                   >
-                    {ev.emoji} {isUk ? ev.uk : ev.en}
+                    <EmojiIcon emoji={ev.emoji} className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? ev.uk : ev.en}
                   </button>
                 ))}
               </div>
@@ -346,7 +347,7 @@ export function WowEventDemo({ lang }: { lang: string }) {
                           : "border-slate-600 bg-slate-800 text-slate-300 hover:border-slate-500"
                       }`}
                     >
-                      <span className="shrink-0 text-xl">{a.emoji}</span>
+                      <EmojiIcon emoji={a.emoji} className="w-5 h-5 shrink-0" />
                       <span>
                         <span className="block font-medium">
                           {isUk ? a.uk : a.en}
@@ -410,7 +411,7 @@ export function WowEventDemo({ lang }: { lang: string }) {
                   <div
                     className={`flex h-44 items-center justify-center bg-linear-to-br ${colors[i % colors.length]}`}
                   >
-                    <span className="text-6xl">{p.emoji}</span>
+                    <EmojiIcon emoji={p.emoji} className="w-16 h-16" />
                   </div>
                   <div className="p-5">
                     <span className="mb-2 inline-block rounded-full bg-pink-600/20 px-3 py-0.5 text-xs font-semibold text-pink-300">
@@ -448,8 +449,8 @@ export function WowEventDemo({ lang }: { lang: string }) {
                 key={t.nameEn}
                 className="rounded-2xl border border-pink-500/20 bg-[#1e293b] p-6 text-center transition hover:border-pink-500/50"
               >
-                <div className="mx-auto mb-3 flex h-20 w-20 items-center justify-center rounded-full bg-linear-to-br from-pink-600 to-blue-500 text-4xl">
-                  {t.emoji}
+                <div className="mx-auto mb-3 flex h-20 w-20 items-center justify-center rounded-full bg-linear-to-br from-pink-600 to-blue-500">
+                  <EmojiIcon emoji={t.emoji} className="w-10 h-10" />
                 </div>
                 <h3 className="text-lg font-bold">
                   {isUk ? t.nameUk : t.nameEn}
@@ -514,9 +515,9 @@ export function WowEventDemo({ lang }: { lang: string }) {
             {INSTA_SQUARES.map((sq, i) => (
               <div
                 key={i}
-                className={`flex aspect-square items-center justify-center rounded-xl ${sq.bg} text-4xl shadow-lg transition hover:scale-105`}
+                className={`flex aspect-square items-center justify-center rounded-xl ${sq.bg} shadow-lg transition hover:scale-105`}
               >
-                {sq.emoji}
+                <EmojiIcon emoji={sq.emoji} className="w-10 h-10" />
               </div>
             ))}
           </div>

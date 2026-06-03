@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 interface Props { lang: string; }
 
@@ -252,9 +253,9 @@ export function AgroDroneDemo({ lang }: Props) {
         <div className="grid sm:grid-cols-2 gap-6">
           {SERVICES_DATA.map(s => (
             <div key={s.id} className="group bg-slate-900 border border-slate-800 hover:border-slate-600 rounded-3xl p-7 transition-all hover:shadow-2xl hover:shadow-slate-900/50">
-              <div className="w-14 h-14 rounded-2xl mb-5 flex items-center justify-center text-2xl shadow-lg"
+              <div className="w-14 h-14 rounded-2xl mb-5 flex items-center justify-center shadow-lg"
                 style={{ background: `linear-gradient(135deg, ${s.gradFrom}, ${s.gradTo})` }}>
-                {s.emoji}
+                <EmojiIcon emoji={s.emoji} className="w-7 h-7" />
               </div>
               <div className="flex items-start justify-between gap-4 mb-3">
                 <h3 className="font-bold text-white text-[18px] leading-tight">{isUk ? s.titleUk : s.titleEn}</h3>
@@ -328,7 +329,7 @@ export function AgroDroneDemo({ lang }: Props) {
                   {SERVICES_DATA.map(s => (
                     <button key={s.id} onClick={() => setCalcService(s.id)}
                       className={`py-3 px-3 rounded-xl border text-[13px] font-medium transition-all text-left ${calcService === s.id ? "border-lime-500 bg-lime-500/10 text-lime-300" : "border-slate-700 text-slate-400 hover:border-slate-600"}`}>
-                      {s.emoji} {isUk ? s.titleUk : s.titleEn}
+                      <EmojiIcon emoji={s.emoji} className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? s.titleUk : s.titleEn}
                     </button>
                   ))}
                 </div>
@@ -424,7 +425,7 @@ export function AgroDroneDemo({ lang }: Props) {
                   {d.badge}
                 </span>
               )}
-              <div className="text-4xl mb-4">{d.emoji}</div>
+              <div className="mb-4"><EmojiIcon emoji={d.emoji} className="w-10 h-10" /></div>
               <h3 className="font-bold text-white text-[15px] mb-4">{d.model}</h3>
               <div className="space-y-2 text-[12px]">
                 <div className="flex justify-between">

@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { solidBlur } from "@/lib/utils";
 import { Search, X, SlidersHorizontal, ArrowRight, ShoppingCart, Eye, Check, Clock, Zap, BarChart2, Star, ExternalLink } from "lucide-react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 import { NICHES_DATA, NICHE_CATEGORIES, NICHE_CATEGORY_EN, getNicheLocalized, type NicheData } from "@/lib/data/niches";
 import { Container } from "@/components/layout/Container";
 import { Badge } from "@/components/ui/Badge";
@@ -140,7 +141,7 @@ function QuickViewModal({ niche, onClose }: { niche: NicheData; onClose: () => v
               blurDataURL={solidBlur()}
             />
           ) : (
-            <span className="text-7xl drop-shadow-lg">{niche.emoji}</span>
+            <EmojiIcon emoji={niche.emoji} className="w-24 h-24 text-white/80 drop-shadow-lg" />
           )}
           <button
             onClick={onClose}
@@ -265,11 +266,11 @@ function ProductCard({
             blurDataURL={solidBlur()}
           />
         ) : (
-          <span className="text-5xl drop-shadow-sm">{niche.emoji}</span>
+          <EmojiIcon emoji={niche.emoji} className="w-16 h-16 text-white/80 drop-shadow-sm" />
         )}
         <div className="absolute top-3 left-3 flex flex-col gap-1">
-          {HOT_SLUGS.has(niche.slug) && <Badge variant="hot">🔥 {isUk ? "Хіт" : "Hot"}</Badge>}
-          {NEW_SLUGS.has(niche.slug) && <Badge variant="new">✨ {isUk ? "Новинка" : "New"}</Badge>}
+          {HOT_SLUGS.has(niche.slug) && <Badge variant="hot"><EmojiIcon emoji="🔥" className="w-3 h-3 inline-block align-middle mr-0.5" />{isUk ? "Хіт" : "Hot"}</Badge>}
+          {NEW_SLUGS.has(niche.slug) && <Badge variant="new"><EmojiIcon emoji="✨" className="w-3 h-3 inline-block align-middle mr-0.5" />{isUk ? "Новинка" : "New"}</Badge>}
         </div>
         <div className="absolute top-3 right-3">
           <span className={`text-xs font-medium px-2.5 py-1 rounded-full bg-white/90 ${COMPLEXITY_BADGE[niche.complexity]}`}>

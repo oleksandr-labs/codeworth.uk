@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { BLOG_POSTS, BLOG_CATEGORIES } from "@/lib/data/blog";
 import { Clock, Calendar, ArrowLeft, LayoutGrid } from "lucide-react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 interface Props {
   params: Promise<{ lang: string; category: string }>;
@@ -164,7 +165,7 @@ export default async function BlogCategoryPage({ params }: Props) {
                       className="group bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-100 dark:border-neutral-700 overflow-hidden hover:shadow-lg hover:border-indigo-100 transition-all duration-300"
                     >
                       <div className={`h-36 bg-linear-to-br ${post.color} flex items-center justify-center`}>
-                        <span className="text-5xl">{post.emoji}</span>
+                        <EmojiIcon emoji={post.emoji} className="w-16 h-16 text-white/80" />
                       </div>
                       <div className="p-5">
                         <div className="flex items-center gap-2 mb-3">

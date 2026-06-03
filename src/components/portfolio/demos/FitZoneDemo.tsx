@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 // ─── Data ───────────────────────────────────────────────────────────────────
 
@@ -512,7 +513,7 @@ export function FitZoneDemo({ lang }: { lang: string }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {TRAINERS.map((t, i) => (
               <div key={i} className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5 flex flex-col hover:border-zinc-600 transition-all">
-                <div className="text-5xl mb-3">{t.emoji}</div>
+                <div className="mb-3"><EmojiIcon emoji={t.emoji} className="w-14 h-14" /></div>
                 <div className="font-black uppercase tracking-tight text-white text-base mb-1">
                   {isUk ? t.nameUk : t.nameEn}
                 </div>
@@ -656,7 +657,7 @@ export function FitZoneDemo({ lang }: { lang: string }) {
                     : "bg-zinc-800 text-zinc-400 hover:text-white"
                 }`}
               >
-                {loc.emoji} {isUk ? loc.nameUk : loc.nameEn}
+                <EmojiIcon emoji={loc.emoji} className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? loc.nameUk : loc.nameEn}
               </button>
             ))}
           </div>
@@ -667,7 +668,7 @@ export function FitZoneDemo({ lang }: { lang: string }) {
             return (
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-zinc-900 border border-zinc-700 rounded-2xl p-6">
-                  <div className="text-4xl mb-3">{loc.emoji}</div>
+                  <div className="mb-3"><EmojiIcon emoji={loc.emoji} className="w-10 h-10" /></div>
                   <div className="font-black uppercase tracking-tight text-xl text-white mb-1">
                     {isUk ? loc.nameUk : loc.nameEn}
                   </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 export function BoxClubDemo({ lang }: { lang: string }) {
   const isUk = lang === "uk";
@@ -219,7 +220,7 @@ export function BoxClubDemo({ lang }: { lang: string }) {
             onMouseLeave={() => setBoxOpen(false)}
           >
             <div
-              className="w-32 h-32 mx-auto rounded-2xl flex items-center justify-center text-6xl shadow-2xl transition-all duration-500 border-4 border-white/30"
+              className="w-32 h-32 mx-auto rounded-2xl flex items-center justify-center shadow-2xl transition-all duration-500 border-4 border-white/30"
               style={{
                 background: boxOpen
                   ? "linear-gradient(135deg, #fff 0%, #fce7f3 100%)"
@@ -227,18 +228,15 @@ export function BoxClubDemo({ lang }: { lang: string }) {
                 transform: boxOpen ? "scale(1.1) rotate(-3deg)" : "scale(1) rotate(0deg)",
               }}
             >
-              <span
-                className="transition-all duration-300"
-                style={{ transform: boxOpen ? "translateY(-8px)" : "translateY(0)" }}
-              >
-                {boxOpen ? "🎉" : "📦"}
-              </span>
+              <div style={{ transform: boxOpen ? "translateY(-8px)" : "translateY(0)" }} className="transition-all duration-300">
+                <EmojiIcon emoji={boxOpen ? "🎉" : "📦"} className="w-16 h-16" />
+              </div>
             </div>
             {boxOpen && (
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 flex gap-2 animate-bounce">
-                <span className="text-lg">✨</span>
-                <span className="text-lg">💄</span>
-                <span className="text-lg">🌸</span>
+                <EmojiIcon emoji="✨" className="w-5 h-5" />
+                <EmojiIcon emoji="💄" className="w-5 h-5" />
+                <EmojiIcon emoji="🌸" className="w-5 h-5" />
               </div>
             )}
             <p className="mt-2 text-white/60 text-xs">{isUk ? "Наведи, щоб відкрити" : "Hover to open"}</p>
@@ -318,7 +316,7 @@ export function BoxClubDemo({ lang }: { lang: string }) {
           <div className="rounded-3xl border p-8" style={{ background: "linear-gradient(135deg, #2d1a2e 0%, #1f1a2e 100%)", borderColor: "#EC489940" }}>
             {quizStep === 0 && (
               <div className="text-center">
-                <div className="text-5xl mb-6">💖</div>
+                <div className="mb-6"><EmojiIcon emoji="💖" className="w-14 h-14" /></div>
                 <h3 className="text-2xl font-bold mb-3">{isUk ? "Готова дізнатися свій матч?" : "Ready to find your match?"}</h3>
                 <p className="text-slate-400 text-sm mb-8">
                   {isUk ? "Пройди наш короткий тест та отримай персональну рекомендацію." : "Take our short quiz and get a personalised recommendation."}
@@ -380,7 +378,7 @@ export function BoxClubDemo({ lang }: { lang: string }) {
 
             {quizStep === 6 && (
               <div className="text-center">
-                <div className="text-5xl mb-4 animate-bounce">🎉</div>
+                <div className="mb-4 animate-bounce"><EmojiIcon emoji="🎉" className="w-14 h-14" /></div>
                 <p className="text-xs uppercase tracking-widest mb-2" style={{ color: "#F9A8D4" }}>
                   {isUk ? "Твій результат" : "Your result"}
                 </p>
@@ -470,7 +468,7 @@ export function BoxClubDemo({ lang }: { lang: string }) {
                       </span>
                     </div>
                   )}
-                  <div className="text-4xl mb-3">{box.emoji}</div>
+                  <div className="mb-3"><EmojiIcon emoji={box.emoji} className="w-10 h-10" /></div>
                   <p className="font-bold text-lg mb-1">{isUk ? box.nameUk : box.nameEn}</p>
                   <p className="text-sm text-slate-400 mb-5">{isUk ? box.taglineUk : box.taglineEn}</p>
 
@@ -498,8 +496,7 @@ export function BoxClubDemo({ lang }: { lang: string }) {
                         </li>
                       ))}
                       <li className="flex items-center gap-2 text-sm font-semibold" style={{ color: box.color }}>
-                        <span>🎁</span>
-                        {lastItem}
+                        <EmojiIcon emoji="🎁" className="w-4 h-4 inline-block align-middle mr-1" />{lastItem}
                       </li>
                     </ul>
                   </div>
@@ -527,7 +524,7 @@ export function BoxClubDemo({ lang }: { lang: string }) {
       <section className="py-24 px-6 relative z-10" style={{ backgroundColor: "#1a1a1a" }}>
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
-            <div className="text-5xl mb-4">🎁</div>
+            <div className="mb-4"><EmojiIcon emoji="🎁" className="w-14 h-14" /></div>
             <span className="text-xs uppercase tracking-[0.3em] font-medium" style={{ color: "#F9A8D4" }}>
               {isUk ? "Подарувати підписку" : "Gift a subscription"}
             </span>
@@ -585,7 +582,7 @@ export function BoxClubDemo({ lang }: { lang: string }) {
                         color: giftBox === name ? "#F9A8D4" : "#d1d5db",
                       }}
                     >
-                      <span className="mr-3">{boxes.find(b => (isUk ? b.nameUk : b.nameEn) === name)?.emoji}</span>
+                      <EmojiIcon emoji={boxes.find(b => (isUk ? b.nameUk : b.nameEn) === name)?.emoji ?? ""} className="w-5 h-5 inline-block align-middle mr-3" />
                       {name}
                     </button>
                   ))}
@@ -679,7 +676,7 @@ export function BoxClubDemo({ lang }: { lang: string }) {
 
             {giftStep === 4 && (
               <div className="text-center py-4">
-                <div className="text-5xl mb-4">🎀</div>
+                <div className="mb-4"><EmojiIcon emoji="🎀" className="w-14 h-14" /></div>
                 <h3 className="text-2xl font-bold mb-3" style={{ color: "#F9A8D4" }}>
                   {isUk ? "Готово до оплати!" : "Ready to checkout!"}
                 </h3>
@@ -725,10 +722,10 @@ export function BoxClubDemo({ lang }: { lang: string }) {
               >
                 <div className="flex items-center gap-4">
                   <div
-                    className="w-12 h-12 rounded-full flex items-center justify-center text-2xl flex-shrink-0"
+                    className="w-12 h-12 rounded-full flex items-center justify-center shrink-0"
                     style={{ background: "linear-gradient(135deg, #EC489930, #be185d20)", border: "2px solid #EC489940" }}
                   >
-                    {t.avatar}
+                    <EmojiIcon emoji={t.avatar} className="w-7 h-7" />
                   </div>
                   <div>
                     <p className="font-bold text-sm">{t.name}</p>
@@ -766,7 +763,7 @@ export function BoxClubDemo({ lang }: { lang: string }) {
                 : "Monthly beauty box subscription — every box is a surprise and a little joy."}
             </p>
             <div className="mt-5 flex items-center gap-2 text-sm" style={{ color: "#F9A8D4" }}>
-              <span>📸</span>
+              <EmojiIcon emoji="📸" className="w-5 h-5 inline-block align-middle" />
               <span className="font-semibold">{isUk ? "@boxclub.kyiv" : "@boxclub.uk"}</span>
             </div>
           </div>
@@ -777,7 +774,7 @@ export function BoxClubDemo({ lang }: { lang: string }) {
             </p>
             <ul className="space-y-3 text-sm text-slate-400">
               <li className="flex items-start gap-2">
-                <svg className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "#EC4899" }} fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+                <svg className="w-4 h-4 mt-0.5 shrink-0" style={{ color: "#EC4899" }} fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
@@ -786,13 +783,13 @@ export function BoxClubDemo({ lang }: { lang: string }) {
                 </span>
               </li>
               <li className="flex items-center gap-2">
-                <svg className="w-4 h-4 flex-shrink-0" style={{ color: "#EC4899" }} fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+                <svg className="w-4 h-4 shrink-0" style={{ color: "#EC4899" }} fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 {isUk ? "+38 (044) 555-12-34" : "+44 20 7946 0345"}
               </li>
               <li className="flex items-center gap-2">
-                <svg className="w-4 h-4 flex-shrink-0" style={{ color: "#EC4899" }} fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+                <svg className="w-4 h-4 shrink-0" style={{ color: "#EC4899" }} fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
                 hello@boxclub.{isUk ? "ua" : "uk"}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 const EVENT_TYPES = [
   { id: "wedding",    labelEn: "Wedding",          labelUk: "Весілля",         emoji: "💍", basePrice: 5000 },
@@ -216,7 +217,7 @@ export function EventMasterDemo({ lang }: { lang: string }) {
                 key={et.id}
                 className="shrink-0 snap-start w-56 bg-linear-to-br from-purple-900 to-purple-800 border border-purple-700/50 hover:border-amber-400/50 rounded-2xl p-6 cursor-pointer transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-amber-400/10 group"
               >
-                <div className="text-5xl mb-4">{et.emoji}</div>
+                <div className="mb-4"><EmojiIcon emoji={et.emoji} className="w-14 h-14" /></div>
                 <h3 className="text-white font-bold text-lg mb-2 group-hover:text-amber-400 transition-colors">
                   {isUk ? et.labelUk : et.labelEn}
                 </h3>
@@ -248,7 +249,7 @@ export function EventMasterDemo({ lang }: { lang: string }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {SERVICES.map((svc, i) => (
               <div key={i} className="bg-purple-900/60 border border-purple-700/40 hover:border-amber-400/40 rounded-2xl p-7 transition-all hover:shadow-lg hover:shadow-purple-900/50 group">
-                <div className="text-4xl mb-4">{svc.emoji}</div>
+                <div className="mb-4"><EmojiIcon emoji={svc.emoji} className="w-10 h-10" /></div>
                 <h3 className="text-white font-bold text-xl mb-3 group-hover:text-amber-400 transition-colors">
                   {isUk ? svc.titleUk : svc.titleEn}
                 </h3>
@@ -448,8 +449,8 @@ export function EventMasterDemo({ lang }: { lang: string }) {
                 onClick={() => setActivePortfolio(activePortfolio === i ? null : i)}
               >
                 {/* Emoji thumbnail */}
-                <div className="h-44 bg-linear-to-br from-purple-800 to-violet-900 flex items-center justify-center text-7xl relative">
-                  {item.emoji}
+                <div className="h-44 bg-linear-to-br from-purple-800 to-violet-900 flex items-center justify-center relative">
+                  <EmojiIcon emoji={item.emoji} className="w-16 h-16" />
                   <div className="absolute top-3 left-3">
                     <span className="bg-amber-400 text-purple-950 text-xs font-bold px-3 py-1 rounded-full">
                       {isUk ? item.categoryUk : item.category}
@@ -502,7 +503,7 @@ export function EventMasterDemo({ lang }: { lang: string }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {WHY_US.map((item, i) => (
               <div key={i} className="bg-purple-900/50 border border-purple-700/30 rounded-2xl p-7 text-center hover:border-amber-400/40 transition-all group">
-                <div className="text-5xl mb-5">{item.emoji}</div>
+                <div className="mb-5"><EmojiIcon emoji={item.emoji} className="w-14 h-14" /></div>
                 <h3 className="text-white font-bold text-lg mb-3 group-hover:text-amber-400 transition-colors">
                   {isUk ? item.titleUk : item.titleEn}
                 </h3>

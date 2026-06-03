@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 interface Props {
   variant?: string;
@@ -95,8 +96,8 @@ export function ScrollAnimationsDemo({ isUk }: Props) {
               className={`rounded-2xl overflow-hidden shadow-sm border border-neutral-100 dark:border-neutral-700 ${anim.class} ${visible ? anim.visible : anim.hidden}`}
               style={{ transitionDelay: visible ? `${200 + i * 100}ms` : "0ms" }}
             >
-              <div className={`h-20 bg-linear-to-br ${card.color} flex items-center justify-center text-3xl`}>
-                {card.emoji}
+              <div className={`h-20 bg-linear-to-br ${card.color} flex items-center justify-center`}>
+                <EmojiIcon emoji={card.emoji} className="w-8 h-8 text-white/80" />
               </div>
               <div className="p-3 bg-white">
                 <p className="text-xs font-semibold text-neutral-800 dark:text-neutral-200 text-center">

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
@@ -273,7 +274,7 @@ export function AzureWindDemo({ lang }: { lang: string }) {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))", gap: 16 }}>
             {FLEET.map((yacht) => (
               <div key={yacht.nameEn} style={{ background: CARD_BG, border: `1px solid ${enquireYacht === yacht.nameEn ? GOLD : BORDER}`, borderRadius: 14, padding: 22, textAlign: "center" }}>
-                <div style={{ fontSize: 40, marginBottom: 10 }}>{yacht.emoji}</div>
+                <div style={{ marginBottom: 10 }}><EmojiIcon emoji={yacht.emoji} className="w-16 h-16" /></div>
                 <div style={{ fontWeight: 700, color: PEARL, fontSize: 16, marginBottom: 4 }}>{yacht.nameEn}</div>
                 <div style={{ color: GOLD, fontSize: 11, marginBottom: 14, textTransform: "uppercase", letterSpacing: 2, fontFamily: "system-ui, sans-serif" }}>{yacht.type}</div>
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 6, marginBottom: 16 }}>
@@ -306,7 +307,7 @@ export function AzureWindDemo({ lang }: { lang: string }) {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 14 }}>
             {SERVICES.map((s) => (
               <div key={s.titleEn} style={{ background: CARD_BG, border: `1px solid ${BORDER}`, borderRadius: 12, padding: 20 }}>
-                <div style={{ fontSize: 28, marginBottom: 10 }}>{s.emojiIcon}</div>
+                <div style={{ marginBottom: 10 }}><EmojiIcon emoji={s.emojiIcon} className="w-10 h-10" /></div>
                 <div style={{ fontWeight: 700, color: GOLD, fontSize: 14, marginBottom: 6 }}>{isUk ? s.titleUk : s.titleEn}</div>
                 <div style={{ fontSize: 12, color: "#7a9bbf", lineHeight: 1.5, fontFamily: "system-ui, sans-serif" }}>{isUk ? s.descUk : s.descEn}</div>
               </div>
@@ -322,7 +323,7 @@ export function AzureWindDemo({ lang }: { lang: string }) {
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "center" }}>
             {DESTINATIONS.map((d) => (
               <div key={d.nameEn} style={{ background: CARD_BG, border: `1px solid ${BORDER}`, borderRadius: 12, padding: "18px 24px", textAlign: "center", minWidth: 130 }}>
-                <div style={{ fontSize: 32, marginBottom: 8 }}>{d.emoji}</div>
+                <div style={{ marginBottom: 8 }}><EmojiIcon emoji={d.emoji} className="w-14 h-14" /></div>
                 <div style={{ fontWeight: 700, color: PEARL, fontSize: 15 }}>{isUk ? d.nameUk : d.nameEn}</div>
                 <div style={{ fontSize: 11, color: TEAL, marginTop: 4, fontFamily: "system-ui, sans-serif" }}>{isUk ? d.seasonUk : d.seasonEn}</div>
               </div>

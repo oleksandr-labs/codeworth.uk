@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 export function CodeKidsDemo({ lang }: { lang: string }) {
   const isUk = lang === "uk";
@@ -302,7 +303,7 @@ export function CodeKidsDemo({ lang }: { lang: string }) {
                 { emoji: "🤖", titleEn: "Robotics", titleUk: "Robotics", ageEn: "15–16 yrs", ageUk: "15–16 р.", bg: "#FFF7ED", fg: "#EA580C" },
               ].map((c) => (
                 <div key={c.titleEn} style={{ background: c.bg }} className="rounded-2xl p-5">
-                  <div className="text-4xl mb-3">{c.emoji}</div>
+                  <div className="mb-3"><EmojiIcon emoji={c.emoji} className="w-10 h-10" /></div>
                   <div className="font-extrabold text-sm mb-1" style={{ color: c.fg }}>{isUk ? c.titleUk : c.titleEn}</div>
                   <div className="text-xs text-slate-500">{isUk ? c.ageUk : c.ageEn}</div>
                 </div>
@@ -375,7 +376,7 @@ export function CodeKidsDemo({ lang }: { lang: string }) {
 
             {quizStep === 5 && (
               <div className="text-center">
-                <div className="text-6xl mb-4">{rec.emoji}</div>
+                <div className="mb-4"><EmojiIcon emoji={rec.emoji} className="w-16 h-16" /></div>
                 <div className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#5C2D91" }}>
                   {isUk ? "Рекомендований курс" : "Recommended course"}
                 </div>
@@ -429,7 +430,7 @@ export function CodeKidsDemo({ lang }: { lang: string }) {
               <div key={c.nameEn} style={{ background: c.color }} className="rounded-3xl p-7 border border-slate-100">
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <div className="text-4xl mb-2">{c.emoji}</div>
+                    <div className="mb-2"><EmojiIcon emoji={c.emoji} className="w-10 h-10" /></div>
                     <h3 className="font-extrabold text-xl text-slate-900">{isUk ? c.nameUk : c.nameEn}</h3>
                     <div className="text-sm mt-1" style={{ color: c.accent }}>{isUk ? c.durationUk : c.durationEn}</div>
                   </div>
@@ -560,7 +561,7 @@ export function CodeKidsDemo({ lang }: { lang: string }) {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {projects.map((p) => (
               <div key={p.title} className="rounded-2xl border border-slate-100 p-5 hover:shadow-lg hover:-translate-y-1 transition-all">
-                <div className="text-5xl mb-3">{p.emoji}</div>
+                <div className="mb-3"><EmojiIcon emoji={p.emoji} className="w-14 h-14" /></div>
                 <h3 className="font-extrabold text-slate-900 mb-1">{p.title}</h3>
                 <div className="text-xs font-semibold mb-2" style={{ color: "#5C2D91" }}>{p.author}</div>
                 <p className="text-slate-500 text-sm">{p.desc}</p>

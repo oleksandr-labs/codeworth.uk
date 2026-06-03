@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -361,7 +362,7 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
                 key={b.en}
                 className="bg-white border border-green-200 text-green-700 px-4 py-2 rounded-full font-medium shadow-sm"
               >
-                {b.emoji}{" "}
+                <EmojiIcon emoji={b.emoji} className="w-4 h-4 inline-block align-middle mr-1" />
                 {isUk ? b.uk : b.en}
               </span>
             ))}
@@ -393,7 +394,7 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
                     : "bg-gray-100 dark:bg-neutral-800 text-gray-600 dark:text-neutral-300 hover:bg-green-100 hover:text-green-700"
                 }`}
               >
-                {cat.emoji} {isUk ? cat.uk : cat.en}
+                <EmojiIcon emoji={cat.emoji} className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? cat.uk : cat.en}
               </button>
             ))}
           </div>
@@ -406,7 +407,7 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
                 className="border border-gray-200 dark:border-neutral-700 rounded-xl p-5 hover:shadow-lg transition-shadow bg-white"
               >
                 <div className="flex items-start justify-between mb-3">
-                  <span className="text-3xl">{p.emoji}</span>
+                  <EmojiIcon emoji={p.emoji} className="w-8 h-8" />
                   <span
                     className={`text-xs font-bold px-2 py-0.5 rounded-full ${
                       p.rx
@@ -463,9 +464,7 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
                       key={item.product.id}
                       className="flex items-center gap-4 bg-white dark:bg-neutral-800 rounded-xl p-4 border border-gray-200"
                     >
-                      <span className="text-2xl shrink-0">
-                        {item.product.emoji}
-                      </span>
+                      <EmojiIcon emoji={item.product.emoji} className="w-7 h-7 shrink-0" />
                       <div className="flex-1 min-w-0">
                         <p className="font-semibold text-gray-900 dark:text-white truncate">
                           {isUk ? item.product.nameUk : item.product.nameEn}
@@ -587,7 +586,7 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
                 <div className="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-3">
                   {s.step}
                 </div>
-                <span className="text-3xl block mb-3">{s.emoji}</span>
+                <EmojiIcon emoji={s.emoji} className="w-8 h-8 block mb-3" />
                 <h3 className="font-bold text-gray-900 dark:text-white mb-2">
                   {isUk ? s.titleUk : s.titleEn}
                 </h3>
@@ -689,7 +688,7 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
                 key={tip.titleEn}
                 className="bg-white rounded-xl p-6 border border-green-200 shadow-sm hover:shadow-md transition-shadow"
               >
-                <span className="text-3xl block mb-3">{tip.emoji}</span>
+                <EmojiIcon emoji={tip.emoji} className="w-8 h-8 block mb-3" />
                 <span className="text-xs font-semibold text-green-600 bg-green-100 px-2.5 py-0.5 rounded-full">
                   {isUk ? tip.tag.uk : tip.tag.en}
                 </span>
@@ -727,7 +726,7 @@ export function FarmaPlusDemo({ lang }: { lang: string }) {
                     : "bg-white border-gray-200"
                 }`}
               >
-                <span className="text-3xl block mb-3">{opt.emoji}</span>
+                <EmojiIcon emoji={opt.emoji} className="w-8 h-8 block mb-3" />
                 <h3 className="font-bold text-gray-900 dark:text-white mb-1">
                   {isUk ? opt.nameUk : opt.nameEn}
                 </h3>

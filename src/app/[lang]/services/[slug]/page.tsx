@@ -9,6 +9,7 @@ import { SERVICES_DATA, getServiceLocalized } from "@/lib/data/services";
 import { BLOG_POSTS } from "@/lib/data/blog";
 import { NICHES_DATA, getNicheLocalized } from "@/lib/data/niches";
 import { ArrowRight, Check, Clock, ChevronRight, TrendingUp, TrendingDown, Minus } from "lucide-react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 import { cn } from "@/lib/utils";
 import { AiCopywriterDemo } from "@/components/extras/demos/AiCopywriterDemo";
 import { AiEdtechDemo } from "@/components/extras/demos/AiEdtechDemo";
@@ -366,7 +367,7 @@ export default async function ServicePage({ params }: Props) {
                     className="group p-5 rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900 hover:bg-white hover:border-blue-200 hover:shadow-md transition-all"
                   >
                     <div className="flex items-start justify-between mb-3">
-                      <div className="text-3xl">{api.emoji}</div>
+                      <div><EmojiIcon emoji={api.emoji} className="w-8 h-8 text-neutral-700 dark:text-neutral-200" /></div>
                       <span className="text-xs font-semibold text-blue-600">{api.price}</span>
                     </div>
                     <h3 className="font-bold text-neutral-900 dark:text-white mb-1.5 group-hover:text-blue-700 transition-colors">
@@ -585,7 +586,7 @@ export default async function ServicePage({ params }: Props) {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
                 {service.useCases.map((uc) => (
                   <div key={uc.niche} className="flex items-start gap-4 p-5 rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:shadow-md transition-shadow">
-                    <span className="text-2xl shrink-0" aria-hidden="true">{uc.emoji}</span>
+                    <EmojiIcon emoji={uc.emoji} className="w-6 h-6 shrink-0 text-neutral-600 dark:text-neutral-300" />
                     <div>
                       <h3 className="font-heading font-bold text-neutral-900 dark:text-white text-sm mb-1">{uc.niche}</h3>
                       <p className="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed">{uc.description}</p>
@@ -697,8 +698,8 @@ export default async function ServicePage({ params }: Props) {
                     href={`/${lang}/blog/${post.slug}`}
                     className="group rounded-2xl border border-neutral-100 dark:border-neutral-700 overflow-hidden hover:shadow-lg hover:shadow-neutral-200/60 transition-all duration-300 hover:-translate-y-1 bg-white"
                   >
-                    <div className={cn(`h-28 bg-linear-to-br flex items-center justify-center text-4xl`, post.color)}>
-                      {post.emoji}
+                    <div className={cn(`h-28 bg-linear-to-br flex items-center justify-center`, post.color)}>
+                      <EmojiIcon emoji={post.emoji} className="w-10 h-10 text-white/80" />
                     </div>
                     <div className="p-4">
                       <span className="inline-block px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold mb-2">
@@ -735,10 +736,10 @@ export default async function ServicePage({ params }: Props) {
                   className="group flex items-start gap-4 p-5 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-indigo-200 hover:shadow-md transition-all"
                 >
                   <div
-                    className="w-10 h-10 rounded-xl flex items-center justify-center text-xl shrink-0"
+                    className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
                     style={{ background: `${niche.color}22` }}
                   >
-                    {niche.emoji}
+                    <EmojiIcon emoji={niche.emoji} className="w-8 h-8 text-white/80" />
                   </div>
                   <div>
                     <p className="font-heading font-bold text-neutral-900 dark:text-white group-hover:text-indigo-700 transition-colors text-sm">{niche.title}</p>

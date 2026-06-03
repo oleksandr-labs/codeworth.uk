@@ -6,6 +6,7 @@ import { User, Building2, CreditCard, CheckCircle, Shield, Lock, Loader2 } from 
 import { useCart } from "@/hooks/useCart";
 import { useLocale } from "@/components/layout/LocaleProvider";
 import { useRecaptcha } from "@/hooks/useRecaptcha";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 import { analytics } from "@/lib/analytics";
 
 export default function CheckoutForm() {
@@ -388,8 +389,8 @@ export default function CheckoutForm() {
             <div className="space-y-3 pb-4 border-b border-gray-100">
               {items.map((item) => (
                 <div key={item.id} className="flex items-start gap-3">
-                  <div className="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center text-xl shrink-0">
-                    {item.emoji}
+                  <div className="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center shrink-0">
+                    <EmojiIcon emoji={item.emoji} className="w-8 h-8 text-white/80" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="text-sm font-semibold text-gray-900 dark:text-white truncate">{item.title}</div>

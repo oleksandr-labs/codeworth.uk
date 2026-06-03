@@ -161,6 +161,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 import { cn } from "@/lib/utils";
 
 interface Props {
@@ -330,7 +331,7 @@ export default async function PortfolioProjectPage({ params }: Props) {
                     </span>
                     <span className="text-white/60 text-sm">{project.year}</span>
                   </div>
-                  <div className="text-6xl mb-4">{project.emoji}</div>
+                  <div className="mb-4"><EmojiIcon emoji={project.emoji} className="w-20 h-20 text-white/80" /></div>
                   <h1 className="text-4xl lg:text-5xl font-heading font-extrabold text-white mb-4 leading-tight">
                     {project.title}
                   </h1>
@@ -787,8 +788,8 @@ export default async function PortfolioProjectPage({ params }: Props) {
                       href={`/${lang}/portfolio/${p.slug}`}
                       className="group p-5 rounded-2xl border border-neutral-100 dark:border-neutral-700 /50 bg-white dark:bg-neutral-800/60 hover:shadow-md hover:-translate-y-1 transition-all duration-200"
                     >
-                      <div className={cn("h-28 rounded-xl bg-linear-to-br flex items-center justify-center text-4xl mb-4", p.color)}>
-                        {p.emoji}
+                      <div className={cn("h-28 rounded-xl bg-linear-to-br flex items-center justify-center mb-4", p.color)}>
+                        <EmojiIcon emoji={p.emoji} className="w-8 h-8 text-white/80" />
                       </div>
                       <h4 className="font-heading font-bold text-neutral-900 dark:text-white text-sm group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors mb-1">
                         {p.title}

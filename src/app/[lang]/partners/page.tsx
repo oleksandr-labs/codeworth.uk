@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { ArrowRight, CheckCircle, ExternalLink } from "lucide-react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 import { PartnershipForm } from "@/components/partners/PartnershipForm";
 
 export async function generateStaticParams() {
@@ -361,7 +362,7 @@ export default async function PartnersPage({
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
               {benefits.map((b) => (
                 <div key={b.title} className="bg-white rounded-xl p-5 border border-indigo-100">
-                  <div className="text-3xl mb-3">{b.emoji}</div>
+                  <div className="mb-3"><EmojiIcon emoji={b.emoji} className="w-8 h-8 text-indigo-500" /></div>
                   <h3 className="font-semibold text-gray-900 dark:text-white mb-1">{b.title}</h3>
                   <p className="text-sm text-gray-600">{b.desc}</p>
                 </div>

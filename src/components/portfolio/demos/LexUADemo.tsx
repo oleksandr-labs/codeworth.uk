@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 export function LexUADemo({ lang }: { lang: string }) {
   const isUk = lang === "uk";
@@ -475,7 +476,7 @@ export function LexUADemo({ lang }: { lang: string }) {
                       }
                 }
               >
-                {area.icon} {isUk ? area.titleUk : area.titleEn}
+                <EmojiIcon emoji={area.icon} className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? area.titleUk : area.titleEn}
               </button>
             ))}
           </div>
@@ -487,10 +488,10 @@ export function LexUADemo({ lang }: { lang: string }) {
           >
             <div className="flex items-start gap-5">
               <div
-                className="text-4xl shrink-0 w-16 h-16 rounded-lg flex items-center justify-center"
+                className="shrink-0 w-16 h-16 rounded-lg flex items-center justify-center"
                 style={{ backgroundColor: "#0f172a" }}
               >
-                {activePractice.icon}
+                <EmojiIcon emoji={activePractice.icon} className="w-10 h-10" />
               </div>
               <div>
                 <h3
@@ -528,7 +529,7 @@ export function LexUADemo({ lang }: { lang: string }) {
                   borderColor: activeTab === area.id ? "#c9a227" : "#2d3f5c",
                 }}
               >
-                <div className="text-2xl mb-3">{area.icon}</div>
+                <div className="mb-3"><EmojiIcon emoji={area.icon} className="w-7 h-7" /></div>
                 <h4
                   className="font-playfair font-semibold text-lg mb-2 group-hover:text-amber-300 transition-colors"
                   style={{ color: activeTab === area.id ? "#f0c040" : "#f8f4ec" }}
@@ -653,13 +654,13 @@ export function LexUADemo({ lang }: { lang: string }) {
               >
                 {/* Avatar circle */}
                 <div
-                  className="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl border-2"
+                  className="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center border-2"
                   style={{
                     backgroundColor: "#0f172a",
                     borderColor: "#c9a227",
                   }}
                 >
-                  {member.emoji}
+                  <EmojiIcon emoji={member.emoji} className="w-10 h-10" />
                 </div>
 
                 <h3
@@ -1068,7 +1069,7 @@ export function LexUADemo({ lang }: { lang: string }) {
               </h4>
               <ul className="flex flex-col gap-3">
                 <li className="flex items-start gap-2">
-                  <span className="text-sm shrink-0 mt-0.5">📍</span>
+                  <EmojiIcon emoji="📍" className="w-5 h-5 shrink-0 mt-0.5" />
                   <span className="font-inter text-xs text-slate-400" style={{ fontWeight: 300 }}>
                     {isUk
                       ? "вул. Хрещатик 22, офіс 501, Київ, 01001"
@@ -1076,11 +1077,11 @@ export function LexUADemo({ lang }: { lang: string }) {
                   </span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-sm shrink-0">📞</span>
+                  <EmojiIcon emoji="📞" className="w-5 h-5 shrink-0" />
                   <span className="font-inter text-xs text-slate-400">+380 44 000 11 22</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-sm shrink-0">✉️</span>
+                  <EmojiIcon emoji="✉️" className="w-5 h-5 shrink-0" />
                   <span className="font-inter text-xs text-slate-400">info@lexua.law</span>
                 </li>
               </ul>

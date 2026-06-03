@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 export function LexProDemo({ lang }: { lang: string }) {
   const isUk = lang === "uk";
@@ -311,7 +312,7 @@ export function LexProDemo({ lang }: { lang: string }) {
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="text-2xl">⚖️</span>
+            <EmojiIcon emoji="⚖️" className="w-7 h-7" />
             <div className="leading-tight">
               <span className="text-xl font-bold text-slate-800 tracking-tight">
                 LexPro
@@ -405,7 +406,7 @@ export function LexProDemo({ lang }: { lang: string }) {
                 key={area.title}
                 className="group border border-slate-200 rounded-xl p-6 hover:border-emerald-300 hover:shadow-lg transition-all"
               >
-                <span className="text-3xl mb-4 block">{area.icon}</span>
+                <EmojiIcon emoji={area.icon} className="w-8 h-8 mb-4 block" />
                 <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-emerald-700 transition-colors">
                   {area.title}
                 </h3>
@@ -470,8 +471,8 @@ export function LexProDemo({ lang }: { lang: string }) {
                 className="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-md transition-shadow"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-14 h-14 rounded-full bg-slate-100 flex items-center justify-center text-2xl shrink-0">
-                    {m.emoji}
+                  <div className="w-14 h-14 rounded-full bg-slate-100 flex items-center justify-center shrink-0">
+                    <EmojiIcon emoji={m.emoji} className="w-7 h-7" />
                   </div>
                   <div>
                     <h3 className="font-bold text-slate-800">{m.name}</h3>
@@ -480,13 +481,13 @@ export function LexProDemo({ lang }: { lang: string }) {
                 </div>
                 <div className="space-y-2 text-sm text-slate-500">
                   <p className="flex items-start gap-2">
-                    <span className="shrink-0">🎓</span> {m.education}
+                    <EmojiIcon emoji="🎓" className="w-5 h-5 shrink-0" /> {m.education}
                   </p>
                   <p className="flex items-start gap-2">
-                    <span className="shrink-0">📜</span> {m.bar}
+                    <EmojiIcon emoji="📜" className="w-5 h-5 shrink-0" /> {m.bar}
                   </p>
                   <p className="flex items-start gap-2">
-                    <span className="shrink-0">⚡</span> {m.spec}
+                    <EmojiIcon emoji="⚡" className="w-5 h-5 shrink-0" /> {m.spec}
                   </p>
                 </div>
               </div>
@@ -515,14 +516,14 @@ export function LexProDemo({ lang }: { lang: string }) {
                 key={seg.title}
                 className="border border-slate-200 rounded-xl p-6 hover:border-emerald-300 transition-colors"
               >
-                <span className="text-4xl block mb-3">{seg.icon}</span>
+                <EmojiIcon emoji={seg.icon} className="w-10 h-10 block mb-3" />
                 <h3 className="text-lg font-bold text-slate-800 mb-3">
                   {seg.title}
                 </h3>
                 <ul className="space-y-2">
                   {seg.services.map((s) => (
                     <li key={s} className="flex items-start gap-2 text-sm text-slate-600">
-                      <span className="text-emerald-500 shrink-0">✓</span>
+                      <EmojiIcon emoji="✓" className="w-5 h-5 text-emerald-500 shrink-0" />
                       {s}
                     </li>
                   ))}
@@ -687,8 +688,8 @@ export function LexProDemo({ lang }: { lang: string }) {
                 key={i}
                 className="group border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow"
               >
-                <div className="h-40 bg-linear-to-br from-slate-100 to-slate-200 flex items-center justify-center text-5xl">
-                  📄
+                <div className="h-40 bg-linear-to-br from-slate-100 to-slate-200 flex items-center justify-center">
+                  <EmojiIcon emoji="📄" className="w-14 h-14" />
                 </div>
                 <div className="p-5">
                   <div className="flex items-center gap-3 mb-3">
@@ -726,7 +727,7 @@ export function LexProDemo({ lang }: { lang: string }) {
 
           {formSent ? (
             <div className="bg-white border border-emerald-200 rounded-2xl p-10 text-center">
-              <span className="text-5xl block mb-4">✅</span>
+              <EmojiIcon emoji="✅" className="w-14 h-14 block mb-4" />
               <h3 className="text-xl font-bold text-slate-800 mb-2">
                 {isUk ? "Запит Надіслано!" : "Request Sent!"}
               </h3>
@@ -855,7 +856,7 @@ export function LexProDemo({ lang }: { lang: string }) {
             {/* Brand */}
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <span className="text-2xl">⚖️</span>
+                <EmojiIcon emoji="⚖️" className="w-7 h-7" />
                 <span className="text-xl font-bold text-white">LexPro</span>
               </div>
               <p className="text-sm text-slate-400 leading-relaxed">
@@ -871,9 +872,9 @@ export function LexProDemo({ lang }: { lang: string }) {
                 {isUk ? "Офіс Київ" : "Kyiv Office"}
               </h4>
               <div className="space-y-2 text-sm text-slate-400">
-                <p>📍 {isUk ? "вул. Хрещатик, 22, оф. 501" : "22 Khreschatyk St., office 501"}</p>
+                <p><EmojiIcon emoji="📍" className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? "вул. Хрещатик, 22, оф. 501" : "22 Khreschatyk St., office 501"}</p>
                 <p>{isUk ? "Київ, 01001" : "Kyiv, 01001"}</p>
-                <p>📞 +380 44 123 4567</p>
+                <p><EmojiIcon emoji="📞" className="w-4 h-4 inline-block align-middle mr-1" />+380 44 123 4567</p>
               </div>
             </div>
 
@@ -883,9 +884,9 @@ export function LexProDemo({ lang }: { lang: string }) {
                 {isUk ? "Офіс Львів" : "Lviv Office"}
               </h4>
               <div className="space-y-2 text-sm text-slate-400">
-                <p>📍 {isUk ? "пр. Свободи, 15, оф. 301" : "15 Svobody Ave., office 301"}</p>
+                <p><EmojiIcon emoji="📍" className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? "пр. Свободи, 15, оф. 301" : "15 Svobody Ave., office 301"}</p>
                 <p>{isUk ? "Львів, 79000" : "Lviv, 79000"}</p>
-                <p>📞 +380 32 987 6543</p>
+                <p><EmojiIcon emoji="📞" className="w-4 h-4 inline-block align-middle mr-1" />+380 32 987 6543</p>
               </div>
             </div>
 
@@ -895,8 +896,8 @@ export function LexProDemo({ lang }: { lang: string }) {
                 {isUk ? "Контакти" : "Contact"}
               </h4>
               <div className="space-y-2 text-sm text-slate-400">
-                <p>✉️ office@lexpro.ua</p>
-                <p>🌐 www.lexpro.ua</p>
+                <p><EmojiIcon emoji="✉️" className="w-4 h-4 inline-block align-middle mr-1" />office@lexpro.ua</p>
+                <p><EmojiIcon emoji="🌐" className="w-4 h-4 inline-block align-middle mr-1" />www.lexpro.ua</p>
                 <div className="pt-3 border-t border-slate-700 mt-3">
                   <p className="text-xs text-slate-500">
                     {isUk

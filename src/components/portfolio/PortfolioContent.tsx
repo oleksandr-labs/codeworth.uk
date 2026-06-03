@@ -2,7 +2,8 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import { ArrowUpRight, ExternalLink, Search, X, ZoomIn, ShoppingCart } from "lucide-react";
+import { ArrowUpRight, ExternalLink, Search, X, ZoomIn, ShoppingCart, TrendingUp } from "lucide-react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 import { PROJECTS } from "@/lib/data/portfolio";
 import { cn } from "@/lib/utils";
 import { Lightbox } from "@/components/ui/Lightbox";
@@ -220,10 +221,10 @@ export function PortfolioContent() {
                       }));
                       setLightbox({ images: imgs, index: 0 });
                     }}
-                    className={cn("w-full h-48 bg-linear-to-br flex items-center justify-center text-5xl relative group/prev cursor-zoom-in", project.color)}
+                    className={cn("w-full h-48 bg-linear-to-br flex items-center justify-center relative group/prev cursor-zoom-in", project.color)}
                     aria-label={isUk ? `Переглянути скріншоти: ${project.title}` : `View screenshots: ${project.title}`}
                   >
-                    {project.emoji}
+                    <EmojiIcon emoji={project.emoji} className="w-16 h-16 text-white/80" />
                     <div className="absolute inset-0 bg-black/0 group-hover/prev:bg-black/25 transition-colors flex items-center justify-center">
                       <ZoomIn className="w-7 h-7 text-white opacity-0 group-hover/prev:opacity-100 transition-opacity drop-shadow-lg" />
                     </div>
@@ -250,8 +251,9 @@ export function PortfolioContent() {
 
                     <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-4">{project.description}</p>
 
-                    <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-100 text-xs text-emerald-700 font-medium mb-4">
-                      📈 {project.result}
+                    <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-100 text-xs text-emerald-700 font-medium mb-4 flex items-center gap-1.5">
+                      <TrendingUp className="w-3.5 h-3.5 shrink-0" />
+                      {project.result}
                     </div>
 
                     <div className="flex flex-wrap gap-1.5 mb-4">

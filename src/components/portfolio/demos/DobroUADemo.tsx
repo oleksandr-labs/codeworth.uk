@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 interface Props { lang: string; }
 
@@ -173,7 +174,7 @@ export function DobroUADemo({ lang }: Props) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center gap-2 shrink-0">
-            <span className="text-2xl">💛</span>
+            <EmojiIcon emoji="💛" className="w-7 h-7" />
             <span className="text-lg font-bold text-[#1e3a5f]">
               DobroUA <span className="hidden sm:inline font-normal text-gray-500">Foundation</span>
             </span>
@@ -249,7 +250,7 @@ export function DobroUADemo({ lang }: Props) {
 
           {/* Live counter */}
           <div className="inline-flex items-center gap-3 bg-white/30 backdrop-blur rounded-2xl px-6 py-3">
-            <span className="text-3xl">📊</span>
+            <EmojiIcon emoji="📊" className="w-8 h-8" />
             <div className="text-left">
               <p className="text-2xl sm:text-3xl font-extrabold text-[#1e3a5f]">₴2,847,350</p>
               <p className="text-sm text-[#1e3a5f]/70 font-medium">
@@ -300,7 +301,7 @@ export function DobroUADemo({ lang }: Props) {
                 key={v.titleEn}
                 className="bg-amber-50/60 rounded-2xl p-8 text-center border border-amber-100 hover:shadow-lg transition-shadow"
               >
-                <span className="text-4xl block mb-4">{v.emoji}</span>
+                <EmojiIcon emoji={v.emoji} className="w-10 h-10 block mb-4" />
                 <h3 className="text-xl font-bold text-[#1e3a5f] mb-3">
                   {isUk ? v.titleUk : v.titleEn}
                 </h3>
@@ -334,7 +335,7 @@ export function DobroUADemo({ lang }: Props) {
                 className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 dark:border-neutral-700 hover:shadow-xl transition-shadow"
               >
                 <div className="flex items-start gap-4 mb-4">
-                  <span className="text-4xl shrink-0">{p.emoji}</span>
+                  <EmojiIcon emoji={p.emoji} className="w-10 h-10 shrink-0" />
                   <div>
                     <h3 className="text-lg font-bold text-[#1e3a5f]">
                       {isUk ? p.nameUk : p.nameEn}
@@ -391,7 +392,7 @@ export function DobroUADemo({ lang }: Props) {
             {donated ? (
               /* ── Thank You Confirmation ── */
               <div className="text-center py-8">
-                <span className="text-6xl block mb-4">🎉</span>
+                <EmojiIcon emoji="🎉" className="w-16 h-16 block mb-4" />
                 <h3 className="text-2xl font-bold text-[#1e3a5f] mb-2">
                   {isUk ? "Дякуємо за ваш внесок!" : "Thank You for Your Donation!"}
                 </h3>
@@ -599,7 +600,7 @@ export function DobroUADemo({ lang }: Props) {
                 key={s.labelEn}
                 className="text-center bg-amber-50/50 rounded-2xl p-6 border border-amber-100"
               >
-                <span className="text-3xl block mb-2">{s.emoji}</span>
+                <EmojiIcon emoji={s.emoji} className="w-8 h-8 block mb-2" />
                 <p className="text-3xl sm:text-4xl font-extrabold text-[#1e3a5f] mb-1">
                   {s.num}
                 </p>
@@ -632,7 +633,7 @@ export function DobroUADemo({ lang }: Props) {
                 key={r.titleEn}
                 className="bg-white rounded-2xl p-6 border border-gray-100 dark:border-neutral-700 hover:shadow-lg transition-shadow flex flex-col"
               >
-                <span className="text-4xl mb-4">{r.emoji}</span>
+                <EmojiIcon emoji={r.emoji} className="w-10 h-10 mb-4" />
                 <h3 className="text-lg font-bold text-[#1e3a5f] mb-2">
                   {isUk ? r.titleUk : r.titleEn}
                 </h3>
@@ -642,11 +643,11 @@ export function DobroUADemo({ lang }: Props) {
 
                 <div className="space-y-2 mb-5 text-xs">
                   <div className="flex items-center gap-2 text-gray-500">
-                    <span>🕐</span>
+                    <EmojiIcon emoji="🕐" className="w-5 h-5 inline-block align-middle" />
                     <span>{isUk ? r.timeUk : r.timeEn}</span>
                   </div>
                   <div className="flex items-center gap-2 text-gray-500">
-                    <span>✨</span>
+                    <EmojiIcon emoji="✨" className="w-5 h-5 inline-block align-middle" />
                     <span>{isUk ? r.skillsUk : r.skillsEn}</span>
                   </div>
                 </div>
@@ -775,7 +776,7 @@ export function DobroUADemo({ lang }: Props) {
                 key={p.name}
                 className="flex flex-col items-center justify-center py-4 px-2 bg-gray-50 dark:bg-neutral-900 rounded-xl border border-gray-100 dark:border-neutral-700 hover:border-amber-200 transition-colors"
               >
-                <span className="text-3xl mb-1">{p.emoji}</span>
+                <EmojiIcon emoji={p.emoji} className="w-8 h-8 mb-1" />
                 <span className="text-[10px] text-gray-400 dark:text-neutral-500 font-medium text-center leading-tight">
                   {p.name}
                 </span>
@@ -792,7 +793,7 @@ export function DobroUADemo({ lang }: Props) {
             {/* Column 1 — Brand */}
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <span className="text-2xl">💛</span>
+                <EmojiIcon emoji="💛" className="w-7 h-7" />
                 <span className="text-lg font-bold">DobroUA Foundation</span>
               </div>
               <p className="text-blue-200 text-sm leading-relaxed">
@@ -840,9 +841,9 @@ export function DobroUADemo({ lang }: Props) {
                 {["📘", "📸", "🐦", "📺"].map((icon, i) => (
                   <button
                     key={i}
-                    className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-lg transition-colors"
+                    className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
                   >
-                    {icon}
+                    <EmojiIcon emoji={icon} className="w-5 h-5 inline-block align-middle" />
                   </button>
                 ))}
               </div>

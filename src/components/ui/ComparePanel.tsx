@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 import { X, ArrowRight, BarChart2 } from "lucide-react";
 import { useCompare } from "@/hooks/useCompare";
 import { useLocale } from "@/components/layout/LocaleProvider";
@@ -62,7 +63,7 @@ export function ComparePanel() {
                 key={item.slug}
                 className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-neutral-50 dark:bg-neutral-900 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 shrink-0"
               >
-                <span className="text-base leading-none">{item.emoji}</span>
+                <EmojiIcon emoji={item.emoji} className="w-4 h-4 shrink-0" />
                 <span className="text-sm font-medium text-neutral-800 dark:text-neutral-200 dark:text-neutral-100 max-w-[120px] truncate">
                   {item.title}
                 </span>

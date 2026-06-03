@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -536,7 +537,7 @@ export function LapkaVetDemo({ lang }: { lang: string }) {
               },
             ].map((stat) => (
               <div key={stat.labelEn} className="text-center">
-                <span className="text-2xl">{stat.emoji}</span>
+                <EmojiIcon emoji={stat.emoji} className="w-7 h-7" />
                 <p className="text-2xl md:text-3xl font-bold text-green-700 mt-1">
                   {isUk ? stat.valueUk : stat.valueEn}
                 </p>
@@ -567,7 +568,7 @@ export function LapkaVetDemo({ lang }: { lang: string }) {
                 key={s.id}
                 className={`rounded-xl border p-5 ${s.color} hover:shadow-md transition-shadow`}
               >
-                <span className="text-3xl">{s.emoji}</span>
+                <EmojiIcon emoji={s.emoji} className="w-8 h-8" />
                 <h3 className="font-bold text-gray-800 dark:text-neutral-200 mt-3 mb-1">
                   {isUk ? s.nameUk : s.nameEn}
                 </h3>
@@ -680,7 +681,7 @@ export function LapkaVetDemo({ lang }: { lang: string }) {
                 key={d.nameEn}
                 className="bg-green-50 rounded-xl border border-green-100 p-5 text-center hover:shadow-md transition-shadow"
               >
-                <span className="text-4xl">{d.emoji}</span>
+                <EmojiIcon emoji={d.emoji} className="w-10 h-10" />
                 <h3 className="font-bold text-gray-800 dark:text-neutral-200 mt-3 mb-1">
                   {isUk ? d.nameUk : d.nameEn}
                 </h3>
@@ -718,7 +719,7 @@ export function LapkaVetDemo({ lang }: { lang: string }) {
                 className="bg-white rounded-xl border border-yellow-200 p-5 hover:shadow-md transition-shadow"
               >
                 <div className="flex items-start gap-3">
-                  <span className="text-3xl shrink-0">{p.emoji}</span>
+                  <EmojiIcon emoji={p.emoji} className="w-8 h-8 shrink-0" />
                   <div>
                     <h3 className="font-bold text-gray-800 dark:text-neutral-200 mb-1">
                       {isUk ? p.nameUk : p.nameEn}
@@ -755,7 +756,7 @@ export function LapkaVetDemo({ lang }: { lang: string }) {
                 key={tip.titleEn}
                 className="bg-linear-to-br from-green-50 to-yellow-50 rounded-xl border border-green-100 p-6 hover:shadow-md transition-shadow"
               >
-                <span className="text-3xl">{tip.emoji}</span>
+                <EmojiIcon emoji={tip.emoji} className="w-8 h-8" />
                 <span className="inline-block ml-2 text-xs font-semibold bg-yellow-200 text-yellow-800 px-2 py-0.5 rounded-full">
                   {isUk ? tip.tagUk : tip.tagEn}
                 </span>
@@ -876,7 +877,7 @@ export function LapkaVetDemo({ lang }: { lang: string }) {
                           : "bg-white text-gray-600 dark:text-neutral-300 border-green-200 hover:border-green-400"
                       }`}
                     >
-                      {pt.emoji} {isUk ? pt.valueUk : pt.valueEn}
+                      <EmojiIcon emoji={pt.emoji} className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? pt.valueUk : pt.valueEn}
                     </button>
                   ))}
                 </div>

@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 const scenarios = [
   {
@@ -489,7 +490,7 @@ export function LaserTagDemo({ lang }: { lang: string }) {
                     {isUk ? sc.tagUk : sc.tagEn}
                   </div>
 
-                  <div style={{ fontSize: 36, marginBottom: 12 }}>{sc.emoji}</div>
+                  <div style={{ marginBottom: 12 }}><EmojiIcon emoji={sc.emoji} className="w-10 h-10" /></div>
                   <h3 style={{ fontWeight: 900, fontSize: 16, letterSpacing: "0.08em", textTransform: "uppercase", color: "#fafaf9", marginBottom: 8 }}>
                     {isUk ? sc.nameUk : sc.nameEn}
                   </h3>
@@ -836,7 +837,7 @@ export function LaserTagDemo({ lang }: { lang: string }) {
                             boxShadow: selectedScenario === sc.id.toString() ? "0 0 12px #4d7c0f44" : "none",
                           }}
                         >
-                          <div style={{ fontSize: 22, marginBottom: 6 }}>{sc.emoji}</div>
+                          <div style={{ marginBottom: 6 }}><EmojiIcon emoji={sc.emoji} className="w-8 h-8" /></div>
                           <div style={{ fontWeight: 700, fontSize: 12, color: selectedScenario === sc.id.toString() ? "#86efac" : "#e7e5e4", textTransform: "uppercase", letterSpacing: "0.08em" }}>
                             {isUk ? sc.nameUk : sc.nameEn}
                           </div>
@@ -1228,7 +1229,7 @@ export function LaserTagDemo({ lang }: { lang: string }) {
                     borderRadius: i === leaderboard.length - 1 ? "0 0 6px 6px" : 0,
                   }}
                 >
-                  <div style={{ fontSize: 18 }}>{player.emoji}</div>
+                  <div><EmojiIcon emoji={player.emoji} className="w-5 h-5" /></div>
                   <div>
                     <div style={{ fontWeight: 900, fontSize: 14, letterSpacing: "0.1em", color: player.rank <= 3 ? "#f97316" : "#e7e5e4" }}>
                       {player.callsign}

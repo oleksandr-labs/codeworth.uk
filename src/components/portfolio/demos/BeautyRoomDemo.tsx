@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -368,7 +369,7 @@ export function BeautyRoomDemo({ lang }: { lang: string }) {
               key={svc.id}
               className={`rounded-2xl border p-6 transition-shadow hover:shadow-lg ${svc.color}`}
             >
-              <div className="mb-3 text-3xl">{svc.emoji}</div>
+              <EmojiIcon emoji={svc.emoji} className="w-8 h-8 mb-3" />
               <h3 className="mb-1 text-lg font-bold text-purple-800">
                 {isUk ? svc.nameUk : svc.nameEn}
               </h3>
@@ -406,8 +407,8 @@ export function BeautyRoomDemo({ lang }: { lang: string }) {
                 key={m.nameEn}
                 className="rounded-2xl border border-purple-100 bg-white dark:bg-neutral-800 p-6 text-center shadow-sm transition-shadow hover:shadow-md"
               >
-                <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-purple-100 text-3xl">
-                  {m.emoji}
+                <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-purple-100">
+                  <EmojiIcon emoji={m.emoji} className="w-8 h-8" />
                 </div>
                 <h3 className="text-lg font-bold text-purple-800">
                   {isUk ? m.nameUk : m.nameEn}
@@ -494,7 +495,7 @@ export function BeautyRoomDemo({ lang }: { lang: string }) {
                     }}
                     className="flex items-center gap-3 rounded-xl border border-purple-100 p-4 text-left transition-all hover:border-purple-400 hover:shadow-md"
                   >
-                    <span className="text-2xl">{svc.emoji}</span>
+                    <EmojiIcon emoji={svc.emoji} className="w-7 h-7" />
                     <div>
                       <div className="font-semibold text-purple-800">{isUk ? svc.nameUk : svc.nameEn}</div>
                       <div className="text-xs text-gray-400">{isUk ? svc.descUk : svc.descEn}</div>
@@ -557,7 +558,7 @@ export function BeautyRoomDemo({ lang }: { lang: string }) {
                     }}
                     className="flex w-full items-center gap-3 rounded-xl border border-purple-100 p-4 text-left transition-all hover:border-purple-400 hover:shadow-md"
                   >
-                    <span className="text-2xl">{m.emoji}</span>
+                    <EmojiIcon emoji={m.emoji} className="w-7 h-7" />
                     <div>
                       <div className="font-semibold text-purple-800">{isUk ? m.nameUk : m.nameEn}</div>
                       <div className="text-xs text-gray-400">{isUk ? m.specUk : m.specEn}</div>
@@ -730,7 +731,7 @@ export function BeautyRoomDemo({ lang }: { lang: string }) {
                   </div>
                 </div>
                 <div className="border-t border-purple-50 bg-purple-50/50 px-4 py-3 text-center">
-                  <span className="mr-1">{item.emoji}</span>
+                  <EmojiIcon emoji={item.emoji} className="w-4 h-4 inline-block align-middle mr-1" />
                   <span className="text-sm font-semibold text-purple-700">
                     {isUk ? item.labelUk : item.labelEn}
                   </span>
@@ -779,7 +780,7 @@ export function BeautyRoomDemo({ lang }: { lang: string }) {
                 key={tier.nameEn}
                 className={`rounded-2xl border p-6 transition-shadow hover:shadow-lg ${tier.color}`}
               >
-                <div className="mb-2 text-3xl">{tier.emoji}</div>
+                <EmojiIcon emoji={tier.emoji} className="w-8 h-8 mb-2" />
                 <h3 className="mb-1 text-xl font-bold text-purple-800">
                   {isUk ? tier.nameUk : tier.nameEn}
                 </h3>

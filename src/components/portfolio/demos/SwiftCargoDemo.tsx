@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 export function SwiftCargoDemo({ lang }: { lang: string }) {
   const isUk = lang === "uk";
@@ -228,7 +229,7 @@ export function SwiftCargoDemo({ lang }: { lang: string }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {SERVICES.map(s => (
               <div key={s.nameEn} className="border border-gray-200 dark:border-neutral-700 rounded-xl p-6 hover:shadow-lg hover:border-orange-300 transition-all group">
-                <div className="text-4xl mb-3">{s.emoji}</div>
+                <div className="mb-3"><EmojiIcon emoji={s.emoji} className="w-10 h-10" /></div>
                 <h3 className="text-lg font-bold text-[#1e3a5f] mb-2 group-hover:text-orange-600 transition-colors">
                   {isUk ? s.nameUk : s.nameEn}
                 </h3>
@@ -442,7 +443,7 @@ export function SwiftCargoDemo({ lang }: { lang: string }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {FLEET.map(v => (
               <div key={v.nameEn} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                <div className="text-5xl mb-4 text-center">{v.emoji}</div>
+                <div className="mb-4 text-center"><EmojiIcon emoji={v.emoji} className="w-14 h-14" /></div>
                 <h3 className="text-lg font-bold text-[#1e3a5f] text-center mb-3">
                   {isUk ? v.nameUk : v.nameEn}
                 </h3>
@@ -541,7 +542,7 @@ export function SwiftCargoDemo({ lang }: { lang: string }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {WHY_US.map(item => (
               <div key={item.titleEn} className="bg-white/10 backdrop-blur rounded-xl p-6 text-center hover:bg-white/15 transition-colors">
-                <div className="text-4xl mb-3">{item.emoji}</div>
+                <div className="mb-3"><EmojiIcon emoji={item.emoji} className="w-10 h-10" /></div>
                 <h3 className="font-bold text-lg mb-2">{isUk ? item.titleUk : item.titleEn}</h3>
                 <p className="text-sm text-gray-300">{isUk ? item.descUk : item.descEn}</p>
               </div>

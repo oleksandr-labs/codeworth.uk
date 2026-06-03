@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
@@ -338,7 +339,7 @@ export function SportPeakDemo({ lang }: { lang: string }) {
           <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
             {BRANDS.map(b => (
               <button key={b.name} className={`${b.color} rounded-2xl p-4 flex flex-col items-center gap-2 hover:ring-2 hover:ring-red-600 transition-all`}>
-                <span className="text-2xl">{b.emoji}</span>
+                <EmojiIcon emoji={b.emoji} className="w-7 h-7" />
                 <span className="font-black text-sm">{b.name}</span>
                 <span className="text-[10px] opacity-60 text-center">{isUk ? b.tagUk : b.tagEn}</span>
               </button>
@@ -419,7 +420,7 @@ export function SportPeakDemo({ lang }: { lang: string }) {
                 >
                   {/* Image area */}
                   <div className="relative h-48 bg-zinc-800 flex items-center justify-center cursor-pointer" onClick={() => setSelectedProduct(p.id)}>
-                    <span className="text-7xl select-none">{p.emoji}</span>
+                    <EmojiIcon emoji={p.emoji} className="w-16 h-16 select-none" />
                     {p.badge && (
                       <span className={`absolute top-2 left-2 px-2 py-0.5 text-xs font-black rounded-md ${badgeColor(p.badge)}`}>
                         {p.badge}
@@ -513,7 +514,7 @@ export function SportPeakDemo({ lang }: { lang: string }) {
               { emoji: "🎯", titleUk: "Консультація тренера", titleEn: "Trainer consultation", textUk: "Безкоштовно підберемо спорядження під ваш рівень та цілі.", textEn: "Free equipment selection based on your level and goals." },
             ].map(item => (
               <div key={item.titleEn} className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 hover:border-red-600 transition-colors">
-                <div className="text-4xl mb-4">{item.emoji}</div>
+                <div className="mb-4"><EmojiIcon emoji={item.emoji} className="w-10 h-10" /></div>
                 <h3 className="text-white font-black text-lg mb-2">{isUk ? item.titleUk : item.titleEn}</h3>
                 <p className="text-zinc-400 text-sm leading-relaxed">{isUk ? item.textUk : item.textEn}</p>
               </div>
@@ -543,8 +544,8 @@ export function SportPeakDemo({ lang }: { lang: string }) {
                   "{isUk ? t.textUk : t.textEn}"
                 </p>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center text-xl">
-                    {t.emoji}
+                  <div className="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center">
+                    <EmojiIcon emoji={t.emoji} className="w-5 h-5" />
                   </div>
                   <span className="text-white font-bold text-sm">{isUk ? t.nameUk : t.nameEn}</span>
                 </div>
@@ -571,7 +572,7 @@ export function SportPeakDemo({ lang }: { lang: string }) {
                 const p = PRODUCTS.find(p => p.id === id);
                 return p ? (
                   <span key={id} className="text-white text-sm font-bold bg-zinc-800 px-3 py-1 rounded-lg">
-                    {p.emoji} {isUk ? p.nameUk : p.nameEn}
+                    <EmojiIcon emoji={p.emoji} className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? p.nameUk : p.nameEn}
                   </span>
                 ) : null;
               })}
@@ -616,7 +617,7 @@ export function SportPeakDemo({ lang }: { lang: string }) {
                     <td className="text-zinc-500 font-semibold pb-4 pr-4 whitespace-nowrap">{isUk ? "Характеристика" : "Spec"}</td>
                     {compareProducts.map(p => (
                       <td key={p.id} className="pb-4 pr-4 text-center">
-                        <div className="text-4xl mb-2">{p.emoji}</div>
+                        <div className="mb-2"><EmojiIcon emoji={p.emoji} className="w-10 h-10" /></div>
                         <div className="text-white font-bold text-xs leading-tight">{isUk ? p.nameUk : p.nameEn}</div>
                         <div className="text-red-500 text-xs font-bold mt-1">{p.brand}</div>
                       </td>
@@ -780,7 +781,7 @@ export function SportPeakDemo({ lang }: { lang: string }) {
                             : "border-zinc-700 bg-zinc-800 hover:border-zinc-600"
                         }`}
                       >
-                        <div className="text-4xl mb-2">{opt.emoji}</div>
+                        <div className="mb-2"><EmojiIcon emoji={opt.emoji} className="w-10 h-10" /></div>
                         <div className="text-white text-sm font-bold leading-tight">{isUk ? opt.ukName : opt.enName}</div>
                         <div className="text-red-500 font-black mt-1">{opt.price.toLocaleString("uk-UA")} ₴</div>
                         {bundleItems.footwear === opt.id && <div className="text-red-400 text-xs mt-1">✓ {isUk ? "Обрано" : "Selected"}</div>}
@@ -821,7 +822,7 @@ export function SportPeakDemo({ lang }: { lang: string }) {
                               : "border-zinc-700 bg-zinc-800 hover:border-zinc-600"
                           }`}
                         >
-                          <div className="text-4xl mb-2">{opt.emoji}</div>
+                          <div className="mb-2"><EmojiIcon emoji={opt.emoji} className="w-10 h-10" /></div>
                           <div className="text-white text-sm font-bold leading-tight">{isUk ? opt.ukName : opt.enName}</div>
                           <div className="text-red-500 font-black mt-1">{opt.price.toLocaleString("uk-UA")} ₴</div>
                           {bundleItems.top === opt.id && <div className="text-red-400 text-xs mt-1">✓ {isUk ? "Обрано" : "Selected"}</div>}
@@ -842,7 +843,7 @@ export function SportPeakDemo({ lang }: { lang: string }) {
                               : "border-zinc-700 bg-zinc-800 hover:border-zinc-600"
                           }`}
                         >
-                          <div className="text-4xl mb-2">{opt.emoji}</div>
+                          <div className="mb-2"><EmojiIcon emoji={opt.emoji} className="w-10 h-10" /></div>
                           <div className="text-white text-sm font-bold leading-tight">{isUk ? opt.ukName : opt.enName}</div>
                           <div className="text-red-500 font-black mt-1">{opt.price.toLocaleString("uk-UA")} ₴</div>
                           {bundleItems.bottom === opt.id && <div className="text-red-400 text-xs mt-1">✓ {isUk ? "Обрано" : "Selected"}</div>}
@@ -882,7 +883,7 @@ export function SportPeakDemo({ lang }: { lang: string }) {
                             : "border-zinc-700 bg-zinc-800 hover:border-zinc-600"
                         }`}
                       >
-                        <div className="text-4xl mb-2">{opt.emoji}</div>
+                        <div className="mb-2"><EmojiIcon emoji={opt.emoji} className="w-10 h-10" /></div>
                         <div className="text-white text-sm font-bold leading-tight">{isUk ? opt.ukName : opt.enName}</div>
                         <div className="text-red-500 font-black mt-1">{opt.price.toLocaleString("uk-UA")} ₴</div>
                         {bundleItems.accessory === opt.id && <div className="text-red-400 text-xs mt-1">✓ {isUk ? "Обрано" : "Selected"}</div>}
@@ -923,7 +924,7 @@ export function SportPeakDemo({ lang }: { lang: string }) {
                           <p className="text-zinc-500 text-xs font-semibold uppercase tracking-wider mb-3">{slotLabel[slot]}</p>
                           {opt ? (
                             <>
-                              <div className="text-4xl mb-2">{opt.emoji}</div>
+                              <div className="mb-2"><EmojiIcon emoji={opt.emoji} className="w-10 h-10" /></div>
                               <div className="text-white text-sm font-bold leading-tight">{isUk ? opt.ukName : opt.enName}</div>
                               <div className="text-red-500 font-black text-sm mt-1">{opt.price.toLocaleString("uk-UA")} ₴</div>
                             </>
@@ -1133,7 +1134,7 @@ export function SportPeakDemo({ lang }: { lang: string }) {
               <div className="p-6 grid md:grid-cols-2 gap-6">
                 {/* Image */}
                 <div className="h-64 bg-zinc-800 rounded-2xl flex items-center justify-center">
-                  <span className="text-8xl">{p.emoji}</span>
+                  <EmojiIcon emoji={p.emoji} className="w-16 h-16" />
                 </div>
                 {/* Details */}
                 <div className="flex flex-col gap-4">
@@ -1256,8 +1257,8 @@ export function SportPeakDemo({ lang }: { lang: string }) {
                     if (!p) return null;
                     return (
                       <div key={ci.id} className="flex gap-3 bg-zinc-800 rounded-xl p-3">
-                        <div className="w-14 h-14 bg-zinc-700 rounded-lg flex items-center justify-center text-2xl shrink-0">
-                          {p.emoji}
+                        <div className="w-14 h-14 bg-zinc-700 rounded-lg flex items-center justify-center shrink-0">
+                          <EmojiIcon emoji={p.emoji} className="w-7 h-7" />
                         </div>
                         <div className="flex-1 min-w-0">
                           <p className="text-white text-sm font-bold leading-tight line-clamp-2">

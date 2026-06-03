@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 import Link from "next/link";
 import { ShoppingCart, X, ArrowRight, Package } from "lucide-react";
 import { useCart } from "@/hooks/useCart";
@@ -92,8 +93,8 @@ export function MiniCart({ className }: { className?: string }) {
               <ul className="max-h-60 overflow-y-auto divide-y divide-neutral-100 dark:divide-neutral-800">
                 {items.map((item) => (
                   <li key={item.id} className="flex items-start gap-3 px-4 py-3">
-                    <div className="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950 flex items-center justify-center text-xl shrink-0">
-                      {item.emoji}
+                    <div className="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950 flex items-center justify-center shrink-0">
+                      <EmojiIcon emoji={item.emoji} className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-sm font-medium text-neutral-900 dark:text-white line-clamp-1">

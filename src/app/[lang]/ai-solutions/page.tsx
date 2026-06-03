@@ -6,6 +6,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { ArrowRight, Sparkles, CheckCircle2 } from "lucide-react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 interface Props {
   params: Promise<{ lang: string }>;
@@ -206,7 +207,7 @@ function ProductCard({
       }`}
     >
       <div className="flex items-start justify-between gap-3 mb-3">
-        <div className="text-3xl">{product.emoji}</div>
+        <div><EmojiIcon emoji={product.emoji} className="w-8 h-8 text-white/80" /></div>
         {product.hasDemo && (
           <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold">
             <CheckCircle2 className="w-3 h-3" />

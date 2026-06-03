@@ -36,6 +36,7 @@ import { useRouter } from "next/navigation";
 import { useLocale } from "@/components/layout/LocaleProvider";
 import { useToast } from "@/components/ui/Toast";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 type AdminTab = "dashboard" | "products" | "orders" | "clients" | "reviews" | "analytics" | "finances" | "settings";
 
@@ -366,7 +367,7 @@ export default function AdminClient() {
                   { label: isUk ? "Відгуків на модерації" : "Reviews Pending", value: "2", sub: isUk ? "Очікують вашого рішення" : "Awaiting your decision", emoji: "⭐" },
                 ].map((s) => (
                   <div key={s.label} className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-5">
-                    <div className="text-3xl mb-3">{s.emoji}</div>
+                    <div className="mb-3"><EmojiIcon emoji={s.emoji} className="w-8 h-8 text-neutral-700 dark:text-neutral-200" /></div>
                     <div className="text-xs text-gray-500 dark:text-neutral-400 mb-1">{s.label}</div>
                     <div className="font-bold text-gray-900">{s.value}</div>
                     <div className="text-xs text-gray-400 dark:text-neutral-500 mt-0.5">{s.sub}</div>
@@ -406,7 +407,7 @@ export default function AdminClient() {
                   {NICHES_DATA.map((n) => (
                     <div key={n.slug} className="grid grid-cols-6 items-center px-5 py-3 hover:bg-gray-50 dark:bg-neutral-900 transition-colors">
                       <div className="col-span-2 flex items-center gap-3">
-                        <span className="text-xl">{n.emoji}</span>
+                        <EmojiIcon emoji={n.emoji} className="w-5 h-5 inline-block align-middle" />
                         <div>
                           <div className="text-sm font-medium text-gray-900">{n.title}</div>
                           <div className="text-xs text-gray-400">/niches/{n.slug}</div>
@@ -634,7 +635,7 @@ export default function AdminClient() {
                       <div key={p.name}>
                         <div className="flex items-center justify-between text-sm mb-1">
                           <div className="flex items-center gap-2">
-                            <span>{p.emoji}</span>
+                            <EmojiIcon emoji={p.emoji} className="w-5 h-5 inline-block align-middle" />
                             <span className="text-gray-700">{p.name}</span>
                           </div>
                           <span className="font-semibold text-gray-900">{p.sales}</span>

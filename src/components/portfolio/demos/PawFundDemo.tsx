@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 const ANIMALS = [
   {
@@ -416,11 +417,10 @@ export function PawFundDemo({ lang }: { lang: string }) {
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      fontSize: 60,
                       position: "relative",
                     }}
                   >
-                    {a.emoji}
+                    <EmojiIcon emoji={a.emoji} className="w-16 h-16" />
                     <span
                       style={{
                         position: "absolute",
@@ -550,7 +550,7 @@ export function PawFundDemo({ lang }: { lang: string }) {
             >
               ✕
             </button>
-            <div style={{ textAlign: "center", fontSize: 72, marginBottom: 12 }}>{animal.emoji}</div>
+            <div style={{ textAlign: "center", marginBottom: 12 }}><EmojiIcon emoji={animal.emoji} className="w-16 h-16" /></div>
             <h3 style={{ textAlign: "center", fontSize: 26, fontWeight: 800, color: colors.text, margin: "0 0 4px" }}>
               {isUk ? animal.nameUk : animal.nameEn}
             </h3>
@@ -817,7 +817,7 @@ export function PawFundDemo({ lang }: { lang: string }) {
                   border: `1px solid ${colors.border}`,
                 }}
               >
-                <div style={{ fontSize: 28, marginBottom: 8 }}>{b.icon}</div>
+                <div style={{ marginBottom: 8 }}><EmojiIcon emoji={b.icon} className="w-8 h-8" /></div>
                 <div style={{ fontSize: 13, color: colors.text, fontWeight: 600 }}>{isUk ? b.uk : b.en}</div>
               </div>
             ))}

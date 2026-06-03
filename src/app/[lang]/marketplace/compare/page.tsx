@@ -9,6 +9,7 @@ import { Container } from "@/components/layout/Container";
 import { NICHES_DATA, getNicheLocalized } from "@/lib/data/niches";
 import { ArrowLeft, Check, X, Eye } from "lucide-react";
 import { useLocale } from "@/components/layout/LocaleProvider";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 const COMPLEXITY_LABEL_UK: Record<string, string> = {
   simple: "Простий",
@@ -115,8 +116,8 @@ function CompareContent() {
                     </th>
                     {niches.map((n) => (
                       <th key={n.slug} className="p-4 bg-neutral-50 dark:bg-neutral-900 text-center last:rounded-tr-xl">
-                        <div className={`w-14 h-14 rounded-2xl bg-linear-to-br ${n.gradient} flex items-center justify-center text-2xl mx-auto mb-3`}>
-                          {n.emoji}
+                        <div className={`w-14 h-14 rounded-2xl bg-linear-to-br ${n.gradient} flex items-center justify-center mx-auto mb-3`}>
+                          <EmojiIcon emoji={n.emoji} className="w-12 h-12 text-white/80" />
                         </div>
                         <div className="font-heading font-bold text-neutral-900 dark:text-white text-sm">{n.title}</div>
                         <div className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">{n.subtitle}</div>

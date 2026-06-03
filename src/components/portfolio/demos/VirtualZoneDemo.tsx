@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 const experiences = [
   { id: 1, emoji: "🧟", nameUk: "Resident Evil: VR Edition", nameEn: "Resident Evil: VR Edition", genre: "horror", age: "18+", mode: "solo", duration: 30, price: 250, rating: 4.9, reviews: 342, difficultyUk: "Жорстке", difficultyEn: "Intense" },
@@ -167,7 +168,7 @@ export function VirtualZoneDemo({ lang }: { lang: string }) {
               { en: "5★ / 800+ visitors", uk: "5★ / 800+ відвідувачів", icon: "⭐" },
             ].map((s) => (
               <div key={s.en} className="bg-white/5 backdrop-blur-sm rounded-xl p-3 border border-white/10">
-                <div className="text-2xl mb-1">{s.icon}</div>
+                <div className="mb-1"><EmojiIcon emoji={s.icon} className="w-7 h-7" /></div>
                 <div className="text-sm font-semibold text-white">{isUk ? s.uk : s.en}</div>
               </div>
             ))}
@@ -219,8 +220,8 @@ export function VirtualZoneDemo({ lang }: { lang: string }) {
               className="bg-[#0A0A1A] rounded-2xl p-5 border border-violet-900/30 hover:border-[#7C3AED] hover:shadow-[0_0_20px_rgba(124,58,237,0.2)] transition-all group cursor-pointer"
               onClick={() => setSelectedExperience(exp)}>
               <div className="flex items-start justify-between mb-4">
-                <div className="w-14 h-14 rounded-xl bg-violet-900/30 flex items-center justify-center text-3xl shrink-0">
-                  {exp.emoji}
+                <div className="w-14 h-14 rounded-xl bg-violet-900/30 flex items-center justify-center shrink-0">
+                  <EmojiIcon emoji={exp.emoji} className="w-8 h-8" />
                 </div>
                 <div className="flex flex-col items-end gap-1">
                   <span className="text-xs px-2 py-0.5 rounded-full bg-violet-900/40 text-violet-300 border border-violet-800/50">
@@ -269,8 +270,8 @@ export function VirtualZoneDemo({ lang }: { lang: string }) {
             onClick={(e) => e.stopPropagation()}>
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-3">
-                <div className="w-16 h-16 rounded-xl bg-violet-900/30 flex items-center justify-center text-4xl">
-                  {selectedExperience.emoji}
+                <div className="w-16 h-16 rounded-xl bg-violet-900/30 flex items-center justify-center">
+                  <EmojiIcon emoji={selectedExperience.emoji} className="w-10 h-10" />
                 </div>
                 <div>
                   <h3 className="text-xl font-black text-white">{isUk ? selectedExperience.nameUk : selectedExperience.nameEn}</h3>
@@ -357,7 +358,7 @@ export function VirtualZoneDemo({ lang }: { lang: string }) {
               { icon: "🎖️", en: "Team roles", uk: "Командні ролі", descEn: "Each player gets a unique role and special abilities", descUk: "Кожен гравець отримує унікальну роль і здібності" },
             ].map((card) => (
               <div key={card.en} className="bg-[#0A0A1A] rounded-2xl p-6 border border-violet-900/30 text-center hover:border-violet-600 transition-all">
-                <div className="text-4xl mb-3">{card.icon}</div>
+                <div className="mb-3"><EmojiIcon emoji={card.icon} className="w-10 h-10" /></div>
                 <h3 className="text-lg font-bold text-white mb-2">{isUk ? card.uk : card.en}</h3>
                 <p className="text-sm text-gray-400">{isUk ? card.descUk : card.descEn}</p>
               </div>
@@ -368,7 +369,7 @@ export function VirtualZoneDemo({ lang }: { lang: string }) {
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
               {roles.map((r) => (
                 <div key={r.en} className="bg-violet-950/30 rounded-xl p-3 text-center border border-violet-900/30 hover:border-violet-500 transition-all">
-                  <div className="text-2xl mb-1">{r.emoji}</div>
+                  <div className="mb-1"><EmojiIcon emoji={r.emoji} className="w-7 h-7" /></div>
                   <div className="text-xs font-semibold text-white">{isUk ? r.uk : r.en}</div>
                 </div>
               ))}
@@ -408,7 +409,7 @@ export function VirtualZoneDemo({ lang }: { lang: string }) {
               return (
                 <button key={id} onClick={() => togglePassport(id)}
                   className={`aspect-square rounded-lg flex items-center justify-center text-xl transition-all ${done ? "bg-violet-900/50 border border-violet-500 shadow-[0_0_10px_rgba(124,58,237,0.4)]" : "bg-white/5 border border-white/10 hover:border-violet-700"}`}>
-                  {exp ? exp.emoji : <span className="text-xs text-gray-600">{id}</span>}
+                  {exp ? <EmojiIcon emoji={exp.emoji} className="w-5 h-5 inline-block align-middle" /> : <span className="text-xs text-gray-600">{id}</span>}
                 </button>
               );
             })}
@@ -459,7 +460,7 @@ export function VirtualZoneDemo({ lang }: { lang: string }) {
                       {experiences.slice(0, 6).map((exp) => (
                         <button key={exp.id}
                           className="flex items-center gap-2 p-3 rounded-xl bg-white/5 border border-white/10 hover:border-violet-500 hover:bg-violet-900/20 transition-all text-left">
-                          <span className="text-xl">{exp.emoji}</span>
+                          <EmojiIcon emoji={exp.emoji} className="w-5 h-5" />
                           <span className="text-xs text-white font-medium truncate">{isUk ? exp.nameUk : exp.nameEn}</span>
                         </button>
                       ))}

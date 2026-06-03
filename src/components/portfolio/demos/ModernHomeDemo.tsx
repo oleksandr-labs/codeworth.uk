@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 const isUkFn = (lang: string) => lang === "uk";
 
@@ -443,7 +444,7 @@ export function ModernHomeDemo({ lang }: { lang: string }) {
                       : "bg-white/20 border-white/40 text-white hover:bg-white/30"
                   }`}
                 >
-                  {r.emoji} {t(r.en, r.uk)}
+                  <EmojiIcon emoji={r.emoji} className="w-4 h-4 inline-block align-middle mr-1" />{t(r.en, r.uk)}
                 </button>
               ))}
             </div>
@@ -457,7 +458,7 @@ export function ModernHomeDemo({ lang }: { lang: string }) {
       <section className="max-w-6xl mx-auto px-4 py-8">
         <div className="flex items-center gap-4 mb-6">
           <h2 className="text-xl font-semibold">
-            {activeRoomData?.emoji} {t(activeRoomData?.en ?? "", activeRoomData?.uk ?? "")}
+            <EmojiIcon emoji={activeRoomData?.emoji ?? ""} className="w-4 h-4 inline-block align-middle mr-1" />{t(activeRoomData?.en ?? "", activeRoomData?.uk ?? "")}
           </h2>
           <span className="text-sm text-[#8C8C8C]">
             {filteredProducts.length} {t("items", "товарів")}
@@ -493,7 +494,7 @@ export function ModernHomeDemo({ lang }: { lang: string }) {
                 }}
                 className="w-full flex items-center gap-3 p-3 bg-[#F5F4F0] hover:bg-[#EDE8E3] rounded-xl transition-colors text-left"
               >
-                <span className="text-2xl">{p.emoji}</span>
+                <EmojiIcon emoji={p.emoji} className="w-7 h-7" />
                 <div className="flex-1 min-w-0">
                   <div className="font-medium text-sm truncate">{isUk ? p.nameUk : p.nameEn}</div>
                   <div className="text-xs text-[#8C8C8C]">{p.dimensions}</div>
@@ -685,10 +686,10 @@ export function ModernHomeDemo({ lang }: { lang: string }) {
             return (
               <div key={look.key} className="rounded-2xl overflow-hidden border border-[#EDE8E3] bg-[#FAF9F7]">
                 <div
-                  className="h-36 flex items-center justify-center text-4xl"
+                  className="h-36 flex items-center justify-center"
                   style={{ backgroundColor: look.bg }}
                 >
-                  {look.emoji}
+                  <EmojiIcon emoji={look.emoji} className="w-10 h-10" />
                 </div>
                 <div className="p-4">
                   <h3 className="font-semibold text-sm mb-1">
@@ -729,7 +730,7 @@ export function ModernHomeDemo({ lang }: { lang: string }) {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {MATERIALS.map((m) => (
             <div key={m.nameEn} className="bg-[#FAF9F7] rounded-2xl p-5 border border-[#EDE8E3]">
-              <div className="text-3xl mb-2">{m.emoji}</div>
+              <div className="mb-2"><EmojiIcon emoji={m.emoji} className="w-8 h-8" /></div>
               <h3 className="font-semibold text-sm mb-3">{isUk ? m.nameUk : m.nameEn}</h3>
               {/* Swatches */}
               <div className="flex gap-2 mb-3">
@@ -778,7 +779,7 @@ export function ModernHomeDemo({ lang }: { lang: string }) {
                     if (!p) return null;
                     return (
                       <div key={item.id} className="flex items-center gap-3 bg-[#F5F4F0] rounded-xl p-3">
-                        <span className="text-xl">{p.emoji}</span>
+                        <EmojiIcon emoji={p.emoji} className="w-5 h-5" />
                         <div className="flex-1 min-w-0">
                           <div className="text-sm font-medium truncate">{isUk ? p.nameUk : p.nameEn}</div>
                           <div className="text-xs text-[#8C8C8C]">

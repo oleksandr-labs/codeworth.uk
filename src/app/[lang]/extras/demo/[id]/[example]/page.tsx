@@ -64,6 +64,7 @@ import { EcomMultivendorDemo } from "@/components/extras/demos/EcomMultivendorDe
 import { EcomB2bDemo } from "@/components/extras/demos/EcomB2bDemo";
 import { IntCrmDemo } from "@/components/extras/demos/IntCrmDemo";
 import { MktWelcomeSeriesDemo } from "@/components/extras/demos/MktWelcomeSeriesDemo";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 interface Props {
   params: Promise<{ lang: string; id: string; example: string }>;
@@ -273,7 +274,7 @@ export default async function ExtraDemoExamplePage({ params }: Props) {
       <header className="border-b border-neutral-100 dark:border-neutral-700 bg-white sticky top-0 z-10">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <span className="text-2xl">{extra.emoji}</span>
+            <EmojiIcon emoji={extra.emoji} className="w-6 h-6 text-indigo-500" />
             <div>
               <div className="text-xs text-neutral-400 mb-0.5">
                 {isUk ? ex.industryUk : ex.industry}

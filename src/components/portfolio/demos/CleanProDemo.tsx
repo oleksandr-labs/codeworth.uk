@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 export function CleanProDemo({ lang }: { lang: string }) {
   const isUk = lang === "uk";
@@ -285,7 +286,7 @@ export function CleanProDemo({ lang }: { lang: string }) {
                 key={s.title}
                 className="border border-sky-100 rounded-2xl p-6 hover:shadow-lg hover:border-sky-200 transition-all group"
               >
-                <div className="text-4xl mb-4">{s.emoji}</div>
+                <div className="mb-4"><EmojiIcon emoji={s.emoji} className="w-10 h-10" /></div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-sky-600 transition-colors">
                   {s.title}
                 </h3>
@@ -499,7 +500,7 @@ export function CleanProDemo({ lang }: { lang: string }) {
                 <div className="w-16 h-16 rounded-full bg-sky-500 text-white text-2xl font-bold flex items-center justify-center mx-auto mb-4">
                   {s.num}
                 </div>
-                <div className="text-3xl mb-2">{s.emoji}</div>
+                <div className="mb-2"><EmojiIcon emoji={s.emoji} className="w-8 h-8" /></div>
                 <h3 className="font-semibold text-gray-900 dark:text-white mb-1">{s.title}</h3>
                 <p className="text-sm text-gray-400">{s.desc}</p>
                 {i < steps.length - 1 && (
@@ -524,7 +525,7 @@ export function CleanProDemo({ lang }: { lang: string }) {
             <div className="relative rounded-2xl overflow-hidden aspect-video bg-gray-300 flex items-center justify-center">
               <div className="absolute inset-0 bg-linear-to-br from-gray-400 to-gray-500 opacity-80" />
               <div className="relative text-center">
-                <div className="text-6xl mb-2">😟</div>
+                <div className="mb-2"><EmojiIcon emoji="😟" className="w-16 h-16" /></div>
                 <span className="inline-block bg-black/40 text-white text-sm font-semibold px-4 py-1.5 rounded-full">
                   {isUk ? "До прибирання" : "Before Cleaning"}
                 </span>
@@ -536,7 +537,7 @@ export function CleanProDemo({ lang }: { lang: string }) {
             <div className="relative rounded-2xl overflow-hidden aspect-video bg-sky-200 flex items-center justify-center">
               <div className="absolute inset-0 bg-linear-to-br from-sky-300 to-sky-400 opacity-80" />
               <div className="relative text-center">
-                <div className="text-6xl mb-2">✨</div>
+                <div className="mb-2"><EmojiIcon emoji="✨" className="w-16 h-16" /></div>
                 <span className="inline-block bg-white/40 text-white text-sm font-semibold px-4 py-1.5 rounded-full">
                   {isUk ? "Після прибирання" : "After Cleaning"}
                 </span>
@@ -564,7 +565,7 @@ export function CleanProDemo({ lang }: { lang: string }) {
                 key={t.name}
                 className="text-center bg-sky-50 rounded-2xl p-6 hover:shadow-md transition-shadow"
               >
-                <div className="text-5xl mb-3">{t.avatar}</div>
+                <div className="mb-3"><EmojiIcon emoji={t.avatar} className="w-14 h-14" /></div>
                 <h3 className="font-semibold text-gray-900 dark:text-white mb-1">{t.name}</h3>
                 <p className="text-sm text-sky-600 font-medium mb-1">{t.spec}</p>
                 <p className="text-xs text-gray-400 dark:text-neutral-500 mb-3">
@@ -590,7 +591,7 @@ export function CleanProDemo({ lang }: { lang: string }) {
           </p>
           <div className="grid sm:grid-cols-3 gap-6">
             <div className="bg-white rounded-2xl p-6 text-center border border-lime-200">
-              <div className="text-4xl mb-3">🏅</div>
+              <div className="mb-3"><EmojiIcon emoji="🏅" className="w-10 h-10" /></div>
               <h3 className="font-semibold text-lime-800 mb-2">
                 {isUk ? "Сертифіковані засоби" : "Certified Products"}
               </h3>
@@ -601,7 +602,7 @@ export function CleanProDemo({ lang }: { lang: string }) {
               </p>
             </div>
             <div className="bg-white rounded-2xl p-6 text-center border border-lime-200">
-              <div className="text-4xl mb-3">🧴</div>
+              <div className="mb-3"><EmojiIcon emoji="🧴" className="w-10 h-10" /></div>
               <h3 className="font-semibold text-lime-800 mb-2">
                 {isUk ? "Натуральні компоненти" : "Natural Ingredients"}
               </h3>
@@ -612,7 +613,7 @@ export function CleanProDemo({ lang }: { lang: string }) {
               </p>
             </div>
             <div className="bg-white rounded-2xl p-6 text-center border border-lime-200">
-              <div className="text-4xl mb-3">♻️</div>
+              <div className="mb-3"><EmojiIcon emoji="♻️" className="w-10 h-10" /></div>
               <h3 className="font-semibold text-lime-800 mb-2">
                 {isUk ? "Зменшення відходів" : "Waste Reduction"}
               </h3>

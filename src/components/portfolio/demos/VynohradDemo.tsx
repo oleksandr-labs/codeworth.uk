@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 interface Props { lang: string; }
 
@@ -323,7 +324,7 @@ export function VynohradDemo({ lang }: Props) {
               )}
               <div className="p-5">
                 <div className="flex items-start justify-between mb-4">
-                  <span className="text-[44px]">{wine.emoji}</span>
+                  <EmojiIcon emoji={wine.emoji} className="w-16 h-16" />
                   <div className="text-right">
                     <p className="text-[#C9A96E] font-black text-[20px]">{wine.price} ₴</p>
                     <p className="text-white/40 text-[11px]">{isUk ? "за пляшку" : "per bottle"}</p>
@@ -386,7 +387,7 @@ export function VynohradDemo({ lang }: Props) {
                 { emoji: "✋", ukT: "Ручний збір", enT: "Hand harvested" },
               ].map(f => (
                 <div key={f.ukT} className="flex items-center gap-3 bg-white/5 rounded-xl p-3.5 border border-white/5">
-                  <span className="text-2xl">{f.emoji}</span>
+                  <EmojiIcon emoji={f.emoji} className="w-7 h-7" />
                   <p className="text-white/70 font-semibold text-[13px]">{isUk ? f.ukT : f.enT}</p>
                 </div>
               ))}
@@ -407,7 +408,7 @@ export function VynohradDemo({ lang }: Props) {
                 { emoji: "🌿", ukN: "Резерв\n(молоді кущі)", enN: "Reserve\n(new vines)", ha: "12 га", color: "bg-white/5" },
               ].map((p, i) => (
                 <div key={i} className={`${p.color} rounded-xl p-2.5 text-center border border-white/5`}>
-                  <p className="text-xl mb-1">{p.emoji}</p>
+                  <p className="mb-1"><EmojiIcon emoji={p.emoji} className="w-5 h-5" /></p>
                   <p className="text-white/60 text-[9px] leading-tight whitespace-pre-line">{isUk ? p.ukN : p.enN}</p>
                   <p className="text-[#C9A96E] font-bold text-[11px] mt-1">{p.ha}</p>
                 </div>
@@ -439,7 +440,7 @@ export function VynohradDemo({ lang }: Props) {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {PAIRINGS.map(p => (
             <div key={p.ukFood} className="bg-[#150310] border border-white/5 hover:border-[#C9A96E]/30 rounded-2xl p-5 text-center transition-all">
-              <span className="text-[44px] block mb-3">{p.emoji}</span>
+              <div className="mb-3"><EmojiIcon emoji={p.emoji} className="w-16 h-16" /></div>
               <p className="text-white font-bold text-[14px] mb-1">{isUk ? p.ukFood : p.enFood}</p>
               <p className="text-[#C9A96E] text-[12px] font-semibold">+ {isUk ? p.ukWine : p.enWine}</p>
             </div>

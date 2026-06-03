@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 /* ─── flower types ─── */
 const FLOWER_TYPES = [
@@ -258,7 +259,7 @@ export function BloomShopDemo({ lang }: { lang: string }) {
               key={b.id}
               className={`group rounded-2xl ${b.bg} border border-white/60 p-5 shadow-sm transition-shadow hover:shadow-lg`}
             >
-              <div className="mb-3 text-center text-5xl">{b.emoji}</div>
+              <div className="mb-3 text-center"><EmojiIcon emoji={b.emoji} className="w-14 h-14" /></div>
               <h3 className="mb-1 text-center text-lg font-bold text-gray-800">
                 {isUk ? b.nameUk : b.nameEn}
               </h3>
@@ -329,7 +330,7 @@ export function BloomShopDemo({ lang }: { lang: string }) {
               const b = BOUQUETS.find((x) => x.id === selectedBouquet)!;
               return (
                 <div className="text-center">
-                  <div className="mb-2 text-5xl">{b.emoji}</div>
+                  <div className="mb-2"><EmojiIcon emoji={b.emoji} className="w-14 h-14" /></div>
                   <p className="mb-1 text-xl font-bold text-gray-800">
                     {isUk ? b.nameUk : b.nameEn}
                   </p>
@@ -407,7 +408,7 @@ export function BloomShopDemo({ lang }: { lang: string }) {
                           : "border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-violet-300"
                       }`}
                     >
-                      <span className="text-2xl">{e.emoji}</span>
+                      <EmojiIcon emoji={e.emoji} className="w-7 h-7" />
                       <div>
                         <span className="block text-sm font-semibold">
                           {isUk ? e.uk : e.en}
@@ -539,7 +540,7 @@ export function BloomShopDemo({ lang }: { lang: string }) {
                       <span className="font-semibold">
                         {isUk ? "Букет:" : "Bouquet:"}
                       </span>{" "}
-                      {b.emoji} {isUk ? b.nameUk : b.nameEn} ({selectedSize})
+                      <EmojiIcon emoji={b.emoji} className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? b.nameUk : b.nameEn} ({selectedSize})
                     </p>
                     <p>
                       <span className="font-semibold">
@@ -665,7 +666,7 @@ export function BloomShopDemo({ lang }: { lang: string }) {
               key={sub.en}
               className="rounded-2xl border border-violet-200 bg-white dark:bg-neutral-800 p-6 text-center shadow-sm transition-shadow hover:shadow-lg"
             >
-              <div className="mb-3 text-4xl">{sub.emoji}</div>
+              <div className="mb-3"><EmojiIcon emoji={sub.emoji} className="w-10 h-10" /></div>
               <h3 className="mb-1 text-xl font-bold text-gray-800">
                 {isUk ? sub.uk : sub.en}
               </h3>
@@ -705,7 +706,7 @@ export function BloomShopDemo({ lang }: { lang: string }) {
               key={f.en}
               className="flex items-start gap-3 rounded-xl bg-lime-50 p-4"
             >
-              <span className="shrink-0 text-2xl">{f.emoji}</span>
+              <EmojiIcon emoji={f.emoji} className="w-7 h-7 shrink-0" />
               <p className="text-sm text-gray-700">{isUk ? f.uk : f.en}</p>
             </div>
           ))}
@@ -730,7 +731,7 @@ export function BloomShopDemo({ lang }: { lang: string }) {
                 key={i}
                 className="rounded-2xl border border-violet-100 bg-violet-50 p-5 text-center"
               >
-                <div className="mb-3 text-4xl">{tip.emoji}</div>
+                <div className="mb-3"><EmojiIcon emoji={tip.emoji} className="w-10 h-10" /></div>
                 <h3 className="mb-2 font-bold text-gray-800">
                   {isUk ? tip.titleUk : tip.titleEn}
                 </h3>

@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { EXTRAS } from "@/lib/data/extras";
 import { ArrowRight, ExternalLink, CheckCircle2, AlertCircle, Info, Star, Zap } from "lucide-react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 export async function generateStaticParams() {
   return [{ lang: "uk" }, { lang: "en" }];
@@ -419,7 +420,7 @@ export default async function ShowcasePage({
               {interactiveExtras.map((extra) => (
                 <div key={extra.id} className="flex flex-col p-5 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:shadow-md transition-shadow">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="text-2xl">{extra.emoji}</span>
+                    <EmojiIcon emoji={extra.emoji} className="w-6 h-6 text-indigo-500" />
                     <div className="flex-1 min-w-0">
                       <h3 className="font-bold text-neutral-900 dark:text-white text-sm leading-snug truncate">{extra.title}</h3>
                       <p className="text-xs text-neutral-400">{extra.category}</p>

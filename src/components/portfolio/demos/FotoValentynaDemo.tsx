@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 // ─── Data ───────────────────────────────────────────────────────────────────
 
@@ -312,9 +313,7 @@ export function FotoValentynaDemo({ lang }: { lang: string }) {
               style={{ backgroundColor: photo.color }}
             >
               <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <span className="text-4xl mb-2 opacity-40 group-hover:opacity-70 transition-opacity">
-                  {photo.emoji}
-                </span>
+                <EmojiIcon emoji={photo.emoji} className="w-10 h-10 mb-2 opacity-40 group-hover:opacity-70 transition-opacity" />
                 <span className="text-[10px] tracking-[0.1em] uppercase text-[#111]/40 group-hover:text-[#111]/70 transition-colors">
                   {isUk ? photo.uk : photo.en}
                 </span>
@@ -348,9 +347,7 @@ export function FotoValentynaDemo({ lang }: { lang: string }) {
               className="aspect-[4/5] rounded-sm flex flex-col items-center justify-center"
               style={{ backgroundColor: currentPhoto.color }}
             >
-              <span className="text-7xl mb-4 opacity-50">
-                {currentPhoto.emoji}
-              </span>
+              <EmojiIcon emoji={currentPhoto.emoji} className="w-16 h-16 mb-4 opacity-50" />
               <span className="text-sm tracking-[0.15em] uppercase text-[#111]/50">
                 {isUk ? currentPhoto.uk : currentPhoto.en}
               </span>
@@ -430,9 +427,9 @@ export function FotoValentynaDemo({ lang }: { lang: string }) {
             </div>
 
             {/* Portrait placeholder */}
-            <div className="aspect-[3/4] rounded-sm bg-linear-to-br from-[#e8e0d8] to-[#d4a574]/20 flex items-center justify-center">
+            <div className="aspect-3/4 rounded-sm bg-linear-to-br from-[#e8e0d8] to-[#d4a574]/20 flex items-center justify-center">
               <div className="text-center">
-                <span className="text-6xl opacity-30">📷</span>
+                <EmojiIcon emoji="📷" className="w-16 h-16 opacity-30" />
                 <p className="text-[10px] tracking-[0.15em] uppercase text-[#111]/30 mt-4">
                   {isUk ? "Портрет фотографа" : "Photographer portrait"}
                 </p>
@@ -461,7 +458,7 @@ export function FotoValentynaDemo({ lang }: { lang: string }) {
             >
               <div className="flex items-start justify-between mb-6">
                 <div>
-                  <span className="text-3xl">{service.icon}</span>
+                  <EmojiIcon emoji={service.icon} className="w-8 h-8" />
                   <h3 className="text-lg font-serif text-[#111] mt-3">
                     {isUk ? service.uk : service.en}
                   </h3>
@@ -475,7 +472,7 @@ export function FotoValentynaDemo({ lang }: { lang: string }) {
                 {isUk ? service.descUk : service.descEn}
               </p>
 
-              <div className="flex flex-wrap gap-4 text-[10px] tracking-[0.1em] uppercase text-[#111]/40 mb-6">
+              <div className="flex flex-wrap gap-4 text-[10px] tracking-widest uppercase text-[#111]/40 mb-6">
                 <span>
                   ◷ {isUk ? service.duration.uk : service.duration.en}
                 </span>
@@ -574,8 +571,8 @@ export function FotoValentynaDemo({ lang }: { lang: string }) {
           {JOURNAL.map((article, i) => (
             <article key={i} className="group">
               {/* Placeholder image */}
-              <div className="aspect-[16/10] rounded-sm bg-[#e8e0d8] mb-5 flex items-center justify-center">
-                <span className="text-3xl opacity-30">📝</span>
+              <div className="aspect-16/10 rounded-sm bg-[#e8e0d8] mb-5 flex items-center justify-center">
+                <EmojiIcon emoji="📝" className="w-8 h-8 opacity-30" />
               </div>
               <p className="text-[10px] tracking-[0.15em] uppercase text-[#111]/30 mb-2">
                 {article.date}
@@ -625,7 +622,7 @@ export function FotoValentynaDemo({ lang }: { lang: string }) {
                   <p className="text-sm text-white/90">
                     {isUk ? t.nameUk : t.nameEn}
                   </p>
-                  <p className="text-[10px] tracking-[0.1em] uppercase text-[#d4a574]/60 mt-1">
+                  <p className="text-[10px] tracking-widest uppercase text-[#d4a574]/60 mt-1">
                     {isUk ? t.typeUk : t.typeEn}
                   </p>
                 </div>
@@ -661,9 +658,7 @@ export function FotoValentynaDemo({ lang }: { lang: string }) {
                 className="aspect-square rounded-sm flex items-center justify-center group cursor-pointer relative overflow-hidden"
                 style={{ backgroundColor: item.bg }}
               >
-                <span className="text-2xl opacity-30 group-hover:opacity-60 transition-opacity">
-                  {item.emoji}
-                </span>
+                <EmojiIcon emoji={item.emoji} className="w-7 h-7 opacity-30 group-hover:opacity-60 transition-opacity" />
                 <div className="absolute inset-0 bg-[#111]/0 group-hover:bg-[#111]/5 transition-colors" />
               </div>
             ))}
@@ -802,7 +797,7 @@ export function FotoValentynaDemo({ lang }: { lang: string }) {
               <p className="text-sm tracking-[0.25em] font-serif text-[#111]">
                 VALENTYNA
               </p>
-              <p className="text-[10px] tracking-[0.1em] uppercase text-[#111]/30 mt-1">
+              <p className="text-[10px] tracking-widest uppercase text-[#111]/30 mt-1">
                 {isUk ? "Київ, Україна" : "Kyiv, Ukraine"}
               </p>
             </div>
@@ -819,7 +814,7 @@ export function FotoValentynaDemo({ lang }: { lang: string }) {
               ))}
             </div>
 
-            <p className="text-[10px] tracking-[0.1em] text-[#111]/25">
+            <p className="text-[10px] tracking-widest text-[#111]/25">
               &copy; 2026 Valentyna.{" "}
               {isUk ? "Усі права захищено." : "All rights reserved."}
             </p>

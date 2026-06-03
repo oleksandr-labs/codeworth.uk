@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 export function BudProConstructDemo({ lang }: { lang: string }) {
   const isUk = lang === "uk";
@@ -328,7 +329,7 @@ export function BudProConstructDemo({ lang }: { lang: string }) {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((svc) => (
             <div key={svc.en} className="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-lg hover:border-yellow-400/50 transition-all group">
-              <div className="text-4xl mb-4">{svc.emoji}</div>
+              <div className="mb-4"><EmojiIcon emoji={svc.emoji} className="w-10 h-10" /></div>
               <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-yellow-600 transition-colors">
                 {isUk ? svc.uk : svc.en}
               </h3>
@@ -575,7 +576,7 @@ export function BudProConstructDemo({ lang }: { lang: string }) {
                 <p className="text-sm text-slate-400 leading-relaxed">
                   {isUk ? phase.descUk : phase.descEn}
                 </p>
-                <div className="text-3xl mt-3 opacity-30">{phase.emoji}</div>
+                <div className="mt-3 opacity-30"><EmojiIcon emoji={phase.emoji} className="w-8 h-8" /></div>
                 {idx < phases.length - 1 && (
                   <div className="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 text-yellow-500 text-xl">
                     ➜
@@ -597,7 +598,7 @@ export function BudProConstructDemo({ lang }: { lang: string }) {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {certifications.map((cert) => (
             <div key={cert.en} className="bg-white rounded-xl border border-slate-200 p-6 text-center hover:shadow-lg transition-shadow">
-              <div className="text-4xl mb-3">{cert.emoji}</div>
+              <div className="mb-3"><EmojiIcon emoji={cert.emoji} className="w-10 h-10" /></div>
               <h3 className="font-bold text-slate-900 mb-2 text-sm">
                 {isUk ? cert.uk : cert.en}
               </h3>
@@ -623,8 +624,8 @@ export function BudProConstructDemo({ lang }: { lang: string }) {
           <div className="grid md:grid-cols-3 gap-6">
             {team.map((person) => (
               <div key={person.en} className="bg-white rounded-xl border border-slate-200 p-6 text-center hover:shadow-lg transition-shadow">
-                <div className="w-20 h-20 bg-slate-800 rounded-full flex items-center justify-center text-4xl mx-auto mb-4">
-                  {person.emoji}
+                <div className="w-20 h-20 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <EmojiIcon emoji={person.emoji} className="w-10 h-10" />
                 </div>
                 <h3 className="font-bold text-slate-900 text-lg">{isUk ? person.uk : person.en}</h3>
                 <div className="text-yellow-600 font-semibold text-sm mb-2">{isUk ? person.roleUk : person.roleEn}</div>

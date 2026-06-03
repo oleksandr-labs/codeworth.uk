@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 const PROGRAMS = [
   {
@@ -241,7 +242,7 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
       <header className="bg-white border-b border-orange-100 sticky top-0 z-30 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between flex-wrap gap-3">
           <div className="flex items-center gap-2">
-            <span className="text-3xl">🎨</span>
+            <EmojiIcon emoji="🎨" className="w-8 h-8" />
             <div>
               <span className="text-xl font-extrabold text-orange-500">ArtPlay</span>
               <span className="text-xl font-extrabold text-sky-500"> Studio</span>
@@ -314,7 +315,7 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
                 key={p.nameEn}
                 className={`rounded-2xl border-2 ${p.border} bg-linear-to-br ${p.color} p-5 flex flex-col gap-3 hover:shadow-lg transition-shadow`}
               >
-                <div className="text-4xl text-center">{p.emoji}</div>
+                <div className="text-center"><EmojiIcon emoji={p.emoji} className="w-10 h-10" /></div>
                 <div className="text-center">
                   <div className="font-extrabold text-gray-800 dark:text-neutral-200 text-lg">{isUk ? p.nameUk : p.nameEn}</div>
                   <div className="text-sm text-gray-500">{isUk ? p.ageUk : p.ageEn}</div>
@@ -408,7 +409,7 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
           <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-3 gap-4">
             {GALLERY.map((item, i) => (
               <div key={i} className={`${item.bg} rounded-2xl p-4 flex flex-col items-center gap-2 border border-white shadow-sm hover:shadow-md transition-shadow`}>
-                <div className="text-6xl py-4">{item.emoji}</div>
+                <div className="py-4"><EmojiIcon emoji={item.emoji} className="w-16 h-16" /></div>
                 <div className="text-sm font-bold text-gray-700">{isUk ? item.nameUk : item.nameEn}, {item.age} {isUk ? "р." : "yrs"}</div>
                 <div className="text-xs text-gray-500">{isUk ? item.medUk : item.medEn}</div>
               </div>
@@ -436,7 +437,7 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {WORKSHOPS.map((w) => (
               <div key={w.titleEn} className={`rounded-2xl border-2 ${w.border} bg-linear-to-br ${w.color} p-6 flex gap-4`}>
-                <div className="text-4xl shrink-0">{w.emoji}</div>
+                <EmojiIcon emoji={w.emoji} className="w-10 h-10 shrink-0" />
                 <div className="flex-1 min-w-0">
                   <div className="font-extrabold text-gray-800 dark:text-neutral-200 text-lg mb-0.5">{isUk ? w.titleUk : w.titleEn}</div>
                   <div className="text-sm text-gray-500 dark:text-neutral-400 mb-1">📅 {isUk ? w.dateUk : w.dateEn} · ⏱ {isUk ? w.duration : w.durationEn}</div>
@@ -468,7 +469,7 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
             {THERAPY_BENEFITS.map((b) => (
               <div key={b.titleEn} className="bg-white rounded-2xl border border-violet-100 p-5 shadow-sm hover:shadow-md transition-shadow flex gap-4">
-                <div className="text-3xl shrink-0">{b.emoji}</div>
+                <EmojiIcon emoji={b.emoji} className="w-8 h-8 shrink-0" />
                 <div>
                   <div className="font-bold text-gray-800 dark:text-neutral-200 mb-1">{isUk ? b.titleUk : b.titleEn}</div>
                   <p className="text-sm text-gray-600">{isUk ? b.descUk : b.descEn}</p>
@@ -500,7 +501,7 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
               { emoji: "✂️", titleUk: "Колаж", titleEn: "Collage", descUk: "Створюємо арт-колаж із журналів та тканини", descEn: "Build an art collage from magazines & fabric" },
             ].map((item) => (
               <div key={item.titleEn} className="bg-white rounded-2xl border border-rose-200 p-5 text-center shadow-sm hover:shadow-md transition-shadow">
-                <div className="text-4xl mb-3">{item.emoji}</div>
+                <EmojiIcon emoji={item.emoji} className="w-10 h-10 mb-3" />
                 <div className="font-bold text-gray-800 dark:text-neutral-200 mb-1">{isUk ? item.titleUk : item.titleEn}</div>
                 <p className="text-sm text-gray-600">{isUk ? item.descUk : item.descEn}</p>
               </div>
@@ -531,7 +532,7 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {TEACHERS.map((t) => (
               <div key={t.nameEn} className="bg-orange-50 border border-orange-100 rounded-2xl p-5 text-center hover:shadow-md transition-shadow">
-                <div className="text-5xl mb-3">{t.emoji}</div>
+                <EmojiIcon emoji={t.emoji} className="w-14 h-14 mb-3" />
                 <div className="font-extrabold text-gray-800 dark:text-neutral-200 mb-0.5">{isUk ? t.nameUk : t.nameEn}</div>
                 <div className="text-sm font-semibold text-orange-500 mb-1">{isUk ? t.specialtyUk : t.specialtyEn}</div>
                 <div className="text-xs text-gray-500">{isUk ? t.eduUk : t.eduEn}</div>
@@ -539,7 +540,7 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
             ))}
           </div>
           <div className="mt-10 bg-linear-to-br from-orange-50 to-sky-50 rounded-2xl border border-orange-100 p-6 text-center">
-            <div className="text-2xl mb-2">🌈</div>
+            <div className="mb-2"><EmojiIcon emoji="🌈" className="w-7 h-7" /></div>
             <p className="text-gray-700 dark:text-neutral-300 font-medium">
               {isUk
                 ? "«Ми не виправляємо роботи дітей і не порівнюємо їх між собою. Кожен витвір унікальний, як і кожна дитина.»"
@@ -560,7 +561,7 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
           </p>
           {submitted ? (
             <div className="bg-white rounded-2xl border border-green-200 p-8 text-center shadow-sm">
-              <div className="text-6xl mb-4">🎨</div>
+              <EmojiIcon emoji="🎨" className="w-16 h-16 mb-4" />
               <div className="text-xl font-extrabold text-green-600 mb-2">
                 {isUk ? "Ура! Заявку отримано!" : "Hooray! Request received!"}
               </div>
@@ -688,7 +689,7 @@ export function ArtPlayDemo({ lang }: { lang: string }) {
           <div className="flex flex-wrap gap-8 justify-between mb-8">
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <span className="text-2xl">🎨</span>
+                <EmojiIcon emoji="🎨" className="w-7 h-7" />
                 <span className="text-xl font-extrabold text-orange-400">ArtPlay</span>
                 <span className="text-xl font-extrabold text-sky-400">Studio</span>
               </div>

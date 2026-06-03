@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -328,7 +329,7 @@ export function SmartHomeDemo({ lang }: { lang: string }) {
                     : "bg-slate-800/60 border-slate-700/50 text-slate-300 hover:border-[#10B981]/30"
                 }`}
               >
-                <span className="text-2xl">{c.emoji}</span>
+                <EmojiIcon emoji={c.emoji} className="w-7 h-7" />
                 <span className="text-xs font-medium">{isUk ? c.uk : c.en}</span>
               </button>
             ))}
@@ -411,9 +412,7 @@ export function SmartHomeDemo({ lang }: { lang: string }) {
                         : "border-slate-600 bg-slate-800/40 text-slate-300 hover:border-slate-500"
                     }`}
                   >
-                    <span className="text-2xl block mb-2">
-                      {h.key === "studio" ? "🏢" : h.key === "1bed" ? "🏠" : h.key === "2bed" ? "🏡" : "🏘️"}
-                    </span>
+                    <EmojiIcon emoji={h.key === "studio" ? "🏢" : h.key === "1bed" ? "🏠" : h.key === "2bed" ? "🏡" : "🏘️"} className="w-7 h-7 block mb-2" />
                     <span className="text-sm font-medium">{isUk ? h.uk : h.en}</span>
                   </button>
                 ))}
@@ -468,7 +467,7 @@ export function SmartHomeDemo({ lang }: { lang: string }) {
                         onChange={() => setConfigData((prev) => ({ ...prev, priority: p.key }))}
                         className="w-4 h-4 accent-[#10B981]"
                       />
-                      <span className="text-xl">{icons[p.key]}</span>
+                      <EmojiIcon emoji={icons[p.key]} className="w-5 h-5" />
                       <span className="font-medium">{isUk ? p.uk : p.en}</span>
                     </label>
                   );
@@ -694,7 +693,7 @@ export function SmartHomeDemo({ lang }: { lang: string }) {
                           : "border-slate-700 hover:border-slate-600 opacity-70"
                       }`}
                     >
-                      <div className="text-3xl mb-2">{prod.emoji}</div>
+                      <div className="mb-2"><EmojiIcon emoji={prod.emoji} className="w-8 h-8" /></div>
                       <h4 className="font-semibold text-sm mb-0.5 leading-tight">
                         {isUk ? prod.nameUk : prod.nameEn}
                       </h4>
@@ -763,7 +762,7 @@ export function SmartHomeDemo({ lang }: { lang: string }) {
                   {isUk ? "Популярний" : "Popular"}
                 </span>
               )}
-              <div className="text-3xl mb-3">{kit.emoji}</div>
+              <div className="mb-3"><EmojiIcon emoji={kit.emoji} className="w-8 h-8" /></div>
               <h3 className="font-bold text-lg mb-1">{isUk ? kit.nameUk : kit.nameEn}</h3>
               <p className="text-slate-400 text-sm mb-4">{isUk ? kit.descUk : kit.descEn}</p>
               <ul className="space-y-1.5 mb-5 flex-1">
@@ -824,7 +823,7 @@ export function SmartHomeDemo({ lang }: { lang: string }) {
                       : "bg-slate-800/40 border-slate-700/30 text-slate-500 opacity-50"
                   }`}
                 >
-                  <div className="text-xl mb-1">{prod.emoji}</div>
+                  <div className="mb-1"><EmojiIcon emoji={prod.emoji} className="w-5 h-5" /></div>
                   <p className="text-xs font-medium leading-tight">{isUk ? prod.nameUk : prod.nameEn}</p>
                   {compat && <span className="text-[#10B981] text-xs">✓</span>}
                 </div>
@@ -860,17 +859,17 @@ export function SmartHomeDemo({ lang }: { lang: string }) {
         {/* Trust badges */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           <div className="bg-slate-800/50 border border-slate-700/40 rounded-2xl p-5 text-center">
-            <div className="text-4xl mb-3">🔧</div>
+            <div className="mb-3"><EmojiIcon emoji="🔧" className="w-10 h-10" /></div>
             <h3 className="font-bold mb-1">{isUk ? "Послуга монтажу" : "Installation Service"}</h3>
             <p className="text-slate-400 text-sm">{isUk ? "Сертифіковані фахівці встановлять всі пристрої вдома. від ₴1,500." : "Certified specialists install all devices at your home. From ₴1,500."}</p>
           </div>
           <div className="bg-[#10B981]/10 border border-[#10B981]/30 rounded-2xl p-5 text-center">
-            <div className="text-4xl mb-3">🛡️</div>
+            <div className="mb-3"><EmojiIcon emoji="🛡️" className="w-10 h-10" /></div>
             <h3 className="font-bold mb-1">{isUk ? "Гарантія 3 роки" : "3-Year Warranty"}</h3>
             <p className="text-slate-400 text-sm">{isUk ? "На весь асортимент. Безкоштовний сервіс та заміна." : "On all products. Free service and replacement."}</p>
           </div>
           <div className="bg-slate-800/50 border border-slate-700/40 rounded-2xl p-5 text-center">
-            <div className="text-4xl mb-3">🚚</div>
+            <div className="mb-3"><EmojiIcon emoji="🚚" className="w-10 h-10" /></div>
             <h3 className="font-bold mb-1">{isUk ? "Доставка по Україні" : "Delivery Across Ukraine"}</h3>
             <p className="text-slate-400 text-sm">{isUk ? "Нова Пошта / Укрпошта. Від ₴3,500 — безкоштовно." : "Nova Post / Ukrposhta. Free for orders over ₴3,500."}</p>
           </div>
@@ -882,7 +881,7 @@ export function SmartHomeDemo({ lang }: { lang: string }) {
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-start justify-between gap-8">
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <span className="text-2xl">🏠</span>
+              <EmojiIcon emoji="🏠" className="w-7 h-7" />
               <span className="font-bold text-lg tracking-tight">SmartHome<span className="text-[#10B981]">UA</span></span>
             </div>
             <p className="text-slate-400 text-sm max-w-xs">

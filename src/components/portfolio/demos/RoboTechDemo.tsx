@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 export function RoboTechDemo({ lang }: { lang: string }) {
   const isUk = lang === "uk";
@@ -153,7 +154,7 @@ export function RoboTechDemo({ lang }: { lang: string }) {
               <div key={course.id} onClick={() => setActiveCourse(course.id === activeCourse ? null : course.id)}
                 style={{ background: "rgba(255,255,255,0.05)", border: `2px solid ${course.id === activeCourse ? course.color : "rgba(255,255,255,0.1)"}`, borderRadius: 16, padding: 24, cursor: "pointer", transition: "all 0.2s" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
-                  <div style={{ fontSize: 36 }}>{course.emoji}</div>
+                  <div><EmojiIcon emoji={course.emoji} className="w-10 h-10" /></div>
                   <div>
                     <h3 style={{ fontWeight: 800, margin: 0, color: course.color }}>{isUk ? course.titleUk : course.titleEn}</h3>
                     <div style={{ fontSize: 13, color: "#94a3b8", marginTop: 2 }}>{isUk ? course.ageUk : course.ageEn} · {isUk ? course.durationUk : course.durationEn}</div>
@@ -201,7 +202,7 @@ export function RoboTechDemo({ lang }: { lang: string }) {
             {projects.map(p => (
               <div key={p.id} onClick={() => setActiveProject(p.id === activeProject ? null : p.id)}
                 style={{ background: "rgba(255,255,255,0.05)", border: `2px solid ${activeProject === p.id ? p.color : "rgba(255,255,255,0.1)"}`, borderRadius: 16, padding: 24, cursor: "pointer" }}>
-                <div style={{ fontSize: 48, textAlign: "center", marginBottom: 12 }}>{p.emoji}</div>
+                <div style={{ textAlign: "center", marginBottom: 12 }}><EmojiIcon emoji={p.emoji} className="w-16 h-16" /></div>
                 <h3 style={{ fontWeight: 800, color: p.color, margin: "0 0 6px", textAlign: "center" }}>{isUk ? p.nameUk : p.nameEn}</h3>
                 <div style={{ textAlign: "center", color: "#94a3b8", fontSize: 13, marginBottom: 10 }}>{isUk ? p.authorUk : p.authorEn}</div>
                 <p style={{ color: "#cbd5e1", fontSize: 14, textAlign: "center" }}>{isUk ? p.descUk : p.descEn}</p>

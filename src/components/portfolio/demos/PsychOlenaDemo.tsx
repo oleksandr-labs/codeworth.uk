@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -391,7 +392,7 @@ export function PsychOlenaDemo({ lang }: { lang: string }) {
           {/* Photo placeholder */}
           <div className="shrink-0">
             <div className="w-64 h-64 md:w-72 md:h-72 rounded-full bg-linear-to-br from-green-200 to-stone-200 flex items-center justify-center shadow-lg">
-              <span className="text-7xl">🌿</span>
+              <EmojiIcon emoji="🌿" className="w-16 h-16" />
             </div>
           </div>
         </div>
@@ -450,7 +451,7 @@ export function PsychOlenaDemo({ lang }: { lang: string }) {
                   key={stat.label}
                   className="bg-white rounded-xl p-4 border border-stone-100 text-center shadow-sm"
                 >
-                  <span className="text-2xl block mb-1">{stat.emoji}</span>
+                  <EmojiIcon emoji={stat.emoji} className="w-7 h-7 block mb-1" />
                   <p className="font-semibold text-stone-700 text-sm">
                     {stat.label}
                   </p>
@@ -480,7 +481,7 @@ export function PsychOlenaDemo({ lang }: { lang: string }) {
                 key={s.nameEn}
                 className="bg-white rounded-2xl p-6 border border-stone-100 shadow-sm hover:shadow-md transition-shadow"
               >
-                <span className="text-3xl mb-3 block">{s.emoji}</span>
+                <EmojiIcon emoji={s.emoji} className="w-8 h-8 mb-3 block" />
                 <h3 className="text-lg font-semibold text-stone-800 mb-2">
                   {isUk ? s.nameUk : s.nameEn}
                 </h3>
@@ -583,9 +584,7 @@ export function PsychOlenaDemo({ lang }: { lang: string }) {
             <div
               className={`mt-8 rounded-2xl border p-6 text-center ${getRiskLevel().color}`}
             >
-              <span className="text-4xl block mb-2">
-                {getRiskLevel().emoji}
-              </span>
+              <EmojiIcon emoji={getRiskLevel().emoji} className="w-10 h-10 block mb-2" />
               <h3 className="text-xl font-bold mb-1">
                 {getRiskLevel().level}: {yesCount}/10
               </h3>
@@ -623,7 +622,7 @@ export function PsychOlenaDemo({ lang }: { lang: string }) {
                 key={p.titleEn}
                 className="bg-white rounded-2xl p-8 border border-stone-100 text-center shadow-sm"
               >
-                <span className="text-4xl mb-4 block">{p.emoji}</span>
+                <EmojiIcon emoji={p.emoji} className="w-10 h-10 mb-4 block" />
                 <h3 className="text-lg font-semibold text-stone-800 mb-3">
                   {isUk ? p.titleUk : p.titleEn}
                 </h3>
@@ -655,7 +654,7 @@ export function PsychOlenaDemo({ lang }: { lang: string }) {
                 className="bg-white rounded-2xl overflow-hidden border border-stone-100 shadow-sm hover:shadow-md transition-shadow"
               >
                 <div className="h-40 bg-linear-to-br from-green-100 to-stone-100 flex items-center justify-center">
-                  <span className="text-5xl">{a.emoji}</span>
+                  <EmojiIcon emoji={a.emoji} className="w-14 h-14" />
                 </div>
                 <div className="p-5">
                   <div className="flex items-center gap-2 text-xs text-stone-400 mb-2">

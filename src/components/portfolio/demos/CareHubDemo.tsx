@@ -5,6 +5,7 @@ import {
   Search, X, ChevronDown, ChevronUp,
   AlertTriangle, CheckCircle2, Clock,
 } from "lucide-react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 // ── Data ──────────────────────────────────────────────────────────────
 
@@ -504,7 +505,7 @@ export function CareHubDemo({ lang }: { lang: string }) {
                   onClick={() => setExpandedCqc(expandedCqc===d.id ? null : d.id)}
                 >
                   <div className="flex items-center gap-3 text-left">
-                    <span className="text-2xl">{d.emoji}</span>
+                    <EmojiIcon emoji={d.emoji} className="w-7 h-7" />
                     <div>
                       <div className="font-bold text-gray-800">{d.label}</div>
                       <div className="text-[10px] text-gray-400 mt-0.5">

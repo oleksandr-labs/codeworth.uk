@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 /* ───────────── constants ───────────── */
 
@@ -457,7 +458,7 @@ export function LaBoulangerieDemo({ lang }: { lang: string }) {
                     boxShadow: "0 4px 14px rgba(217,119,6,0.45)",
                   }}
                 >
-                  🎂 {isUk ? "Замовити торт" : "Order a Cake"}
+                  <EmojiIcon emoji="🎂" className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? "Замовити торт" : "Order a Cake"}
                 </button>
                 <button
                   style={{
@@ -471,7 +472,7 @@ export function LaBoulangerieDemo({ lang }: { lang: string }) {
                     fontFamily: "inherit",
                   }}
                 >
-                  🥐 {isUk ? "Переглянути меню" : "View Menu"}
+                  <EmojiIcon emoji="🥐" className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? "Переглянути меню" : "View Menu"}
                 </button>
               </div>
             </div>
@@ -495,9 +496,9 @@ export function LaBoulangerieDemo({ lang }: { lang: string }) {
                 La Boulangerie
               </p>
               <div style={{ height: 1, width: "100%", backgroundColor: COLORS.border }} />
-              <div className="flex gap-2 text-4xl flex-wrap justify-center">
+              <div className="flex gap-2 flex-wrap justify-center">
                 {"🥐🎂⚡🌸".split("").map((ch, i) => (
-                  <span key={i}>{ch}</span>
+                  <EmojiIcon key={i} emoji={ch} className="w-10 h-10" />
                 ))}
               </div>
               <div style={{ height: 1, width: "100%", backgroundColor: COLORS.border }} />
@@ -528,7 +529,7 @@ export function LaBoulangerieDemo({ lang }: { lang: string }) {
               </span>
               {FRESH_TODAY.map((item) => (
                 <span key={item.en} style={{ color: "rgba(255,255,255,0.8)" }} className="text-sm">
-                  {item.emoji} {isUk ? item.uk : item.en}
+                  <EmojiIcon emoji={item.emoji} className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? item.uk : item.en}
                   <span style={{ color: "rgba(255,255,255,0.35)" }} className="ml-1 text-xs">×{item.qty}</span>
                 </span>
               ))}
@@ -550,7 +551,7 @@ export function LaBoulangerieDemo({ lang }: { lang: string }) {
               style={{ backgroundColor: "rgba(255,255,255,0.22)", borderRadius: 24, padding: "6px 18px" }}
               className="text-white text-sm font-semibold"
             >
-              {b.icon}{" "}
+              <EmojiIcon emoji={b.icon} className="w-4 h-4 inline-block align-middle mr-1" />
               {"text" in b ? b.text : isUk ? b.uk : b.en}
             </span>
           ))}
@@ -577,7 +578,7 @@ export function LaBoulangerieDemo({ lang }: { lang: string }) {
                 gap: 8,
               }}
             >
-              <span className="text-lg">{item.emoji}</span>
+              <EmojiIcon emoji={item.emoji} className="w-5 h-5" />
               <span style={{ color: COLORS.text, fontSize: 12, fontWeight: 600, whiteSpace: "nowrap" }}>
                 {isUk ? item.uk : item.en}
               </span>
@@ -685,7 +686,7 @@ export function LaBoulangerieDemo({ lang }: { lang: string }) {
                   justifyContent: "center",
                 }}
               >
-                <span style={{ fontSize: 48 }}>{item.emoji}</span>
+                <EmojiIcon emoji={item.emoji} className="w-16 h-16" />
               </div>
 
               {/* Card body */}
@@ -752,7 +753,7 @@ export function LaBoulangerieDemo({ lang }: { lang: string }) {
               className="row-span-2 bg-linear-to-br from-amber-200 to-orange-300 rounded-2xl flex flex-col items-center justify-end pb-5"
               style={{ minHeight: 260 }}
             >
-              <span className="text-5xl mb-2">👨‍🍳</span>
+              <EmojiIcon emoji="👨‍🍳" className="w-14 h-14 mb-2" />
               <span style={{ color: COLORS.burgundy, fontSize: 10, fontWeight: 700, textAlign: "center", padding: "0 8px" }}>
                 {isUk ? "Клод Моро, 1988" : "Claude Moreau, 1988"}
               </span>
@@ -761,7 +762,7 @@ export function LaBoulangerieDemo({ lang }: { lang: string }) {
             <div
               className="bg-linear-to-br from-rose-100 to-pink-200 rounded-2xl flex flex-col items-center justify-center py-6"
             >
-              <span className="text-3xl mb-1">🥐</span>
+              <EmojiIcon emoji="🥐" className="w-8 h-8 mb-1" />
               <span style={{ color: COLORS.muted, fontSize: 10, fontWeight: 600 }}>
                 {isUk ? "Зранку 04:30" : "Morning 04:30"}
               </span>
@@ -770,7 +771,7 @@ export function LaBoulangerieDemo({ lang }: { lang: string }) {
             <div
               className="bg-linear-to-br from-yellow-100 to-amber-200 rounded-2xl flex flex-col items-center justify-center py-6"
             >
-              <span className="text-3xl mb-1">🏺</span>
+              <EmojiIcon emoji="🏺" className="w-8 h-8 mb-1" />
               <span style={{ color: COLORS.muted, fontSize: 10, fontWeight: 600 }}>
                 {isUk ? "Закваска 1988р." : "Starter since 1988"}
               </span>
@@ -808,10 +809,9 @@ export function LaBoulangerieDemo({ lang }: { lang: string }) {
                 alignItems: "center",
                 justifyContent: "center",
                 flexShrink: 0,
-                fontSize: 52,
               }}
             >
-              🍋
+              <EmojiIcon emoji="🍋" className="w-16 h-16" />
             </div>
             <div className="flex-1 min-w-0">
               <span style={{ color: COLORS.gold, fontSize: 10, letterSpacing: "0.3em" }} className="uppercase font-bold">
@@ -1079,7 +1079,7 @@ export function LaBoulangerieDemo({ lang }: { lang: string }) {
 
         <div className="mt-7 text-center">
           <span style={{ color: COLORS.muted }} className="text-sm">
-            ⭐ {isUk ? "Середня оцінка 4.9 на основі 800+ відгуків" : "Average rating 4.9 based on 800+ reviews"}
+            <EmojiIcon emoji="⭐" className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? "Середня оцінка 4.9 на основі 800+ відгуків" : "Average rating 4.9 based on 800+ reviews"}
           </span>
         </div>
       </div>
@@ -1120,7 +1120,7 @@ export function LaBoulangerieDemo({ lang }: { lang: string }) {
                   boxShadow: selectedEvent === ev.en ? "0 4px 16px rgba(124,45,18,0.25)" : "none",
                 }}
               >
-                <div className="text-3xl mb-2">{ev.emoji}</div>
+                <div className="mb-2"><EmojiIcon emoji={ev.emoji} className="w-8 h-8" /></div>
                 <div
                   style={{
                     color: selectedEvent === ev.en ? "#fff" : COLORS.burgundy,
@@ -1174,7 +1174,7 @@ export function LaBoulangerieDemo({ lang }: { lang: string }) {
               style={{ backgroundColor: "#F0FDF4", border: "1px solid #86EFAC", borderRadius: 16 }}
               className="p-6 text-center"
             >
-              <div className="text-3xl mb-2">✅</div>
+              <div className="mb-2"><EmojiIcon emoji="✅" className="w-8 h-8" /></div>
               <p className="font-semibold text-green-800 text-lg">
                 {isUk ? "Заявку отримано!" : "Request received!"}
               </p>
@@ -1212,10 +1212,9 @@ export function LaBoulangerieDemo({ lang }: { lang: string }) {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                fontSize: 22,
               }}
             >
-              🥐
+              <EmojiIcon emoji="🥐" className="w-8 h-8" />
             </div>
           </div>
           <div>
@@ -1240,7 +1239,7 @@ export function LaBoulangerieDemo({ lang }: { lang: string }) {
               key={i}
               className={`bg-linear-to-br ${ph.bg} rounded-xl aspect-square flex flex-col items-center justify-center cursor-pointer hover:opacity-90 transition-opacity`}
             >
-              <span className="text-3xl">{ph.emoji}</span>
+              <EmojiIcon emoji={ph.emoji} className="w-8 h-8" />
               <span style={{ fontSize: 8, color: "rgba(0,0,0,0.5)", marginTop: 4, textAlign: "center", padding: "0 4px" }}>
                 {ph.label}
               </span>
@@ -1290,7 +1289,7 @@ export function LaBoulangerieDemo({ lang }: { lang: string }) {
                 border: `1px solid rgba(255,255,255,0.8)`,
               }}
             >
-              <div className="text-4xl mb-3">{item.icon}</div>
+              <div className="mb-3"><EmojiIcon emoji={item.icon} className="w-10 h-10" /></div>
               <div style={{ color: COLORS.burgundy }} className="font-bold text-sm">
                 {isUk ? item.titleUk : item.titleEn}
               </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 // ─── Data ───────────────────────────────────────────────────────────────────
 
@@ -458,8 +459,8 @@ export function FitLifeDemo({ lang }: { lang: string }) {
                 key={i}
                 className="bg-white rounded-2xl p-6 border border-zinc-200 hover:border-orange-300 hover:shadow-lg transition-all text-center"
               >
-                <div className="w-20 h-20 mx-auto mb-4 bg-linear-to-br from-orange-100 to-orange-200 rounded-full flex items-center justify-center text-4xl">
-                  {t.emoji}
+                <div className="w-20 h-20 mx-auto mb-4 bg-linear-to-br from-orange-100 to-orange-200 rounded-full flex items-center justify-center">
+                  <EmojiIcon emoji={t.emoji} className="w-10 h-10" />
                 </div>
                 <h3 className="font-bold text-lg text-zinc-900 mb-1">
                   {isUk ? t.nameUk : t.nameEn}
@@ -609,7 +610,7 @@ export function FitLifeDemo({ lang }: { lang: string }) {
                 key={i}
                 className="bg-white rounded-2xl p-6 border border-zinc-200 hover:border-orange-300 hover:shadow-md transition-all"
               >
-                <div className="text-4xl mb-4">{f.emoji}</div>
+                <div className="mb-4"><EmojiIcon emoji={f.emoji} className="w-10 h-10" /></div>
                 <h3 className="font-bold text-lg text-zinc-900 mb-2">
                   {isUk ? f.nameUk : f.nameEn}
                 </h3>
@@ -642,7 +643,7 @@ export function FitLifeDemo({ lang }: { lang: string }) {
                 key={i}
                 className="bg-linear-to-br from-zinc-900 to-zinc-800 rounded-2xl p-6 text-white"
               >
-                <div className="text-4xl mb-4">{s.emoji}</div>
+                <div className="mb-4"><EmojiIcon emoji={s.emoji} className="w-10 h-10" /></div>
                 <h3 className="font-bold text-lg text-orange-400 mb-1">
                   {isUk ? s.nameUk : s.nameEn}
                 </h3>

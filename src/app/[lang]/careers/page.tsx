@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { buildAlternates } from "@/i18n";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
@@ -177,9 +178,9 @@ export default async function CareersPage({
                   : "Building the best websites in Ukraine. Looking for talented people who care about doing great work."}
               </p>
               <div className="flex items-center gap-4 text-slate-400 text-sm">
-                <span>👥 12 {isUk ? "людей у команді" : "people in team"}</span>
-                <span>🏆 {isUk ? "4 роки на ринку" : "4 years in market"}</span>
-                <span>⭐ {isUk ? "150+ проєктів" : "150+ projects"}</span>
+                <span className="inline-flex items-center gap-1"><EmojiIcon emoji="👥" className="w-4 h-4" />12 {isUk ? "людей у команді" : "people in team"}</span>
+                <span className="inline-flex items-center gap-1"><EmojiIcon emoji="🏆" className="w-4 h-4" />{isUk ? "4 роки на ринку" : "4 years in market"}</span>
+                <span className="inline-flex items-center gap-1"><EmojiIcon emoji="⭐" className="w-4 h-4" />{isUk ? "150+ проєктів" : "150+ projects"}</span>
               </div>
             </div>
           </Container>
@@ -194,7 +195,7 @@ export default async function CareersPage({
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {VALUES.map((v) => (
                 <div key={v.title} className="flex gap-4">
-                  <span className="text-3xl">{v.emoji}</span>
+                  <EmojiIcon emoji={v.emoji} className="w-8 h-8" />
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white mb-1">{v.title}</h3>
                     <p className="text-gray-600 dark:text-neutral-300 text-sm">{v.desc}</p>

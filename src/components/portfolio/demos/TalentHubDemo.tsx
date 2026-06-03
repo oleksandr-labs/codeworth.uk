@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 export function TalentHubDemo({ lang }: { lang: string }) {
   const isUk = lang === "uk";
@@ -331,7 +332,7 @@ export function TalentHubDemo({ lang }: { lang: string }) {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div className="flex items-center gap-2 shrink-0">
-              <span className="text-xl">💼</span>
+              <EmojiIcon emoji="💼" className="w-5 h-5" />
               <span className="text-xl font-bold text-indigo-800">Talent<span className="text-orange-500">Hub</span></span>
             </div>
             {/* Nav */}
@@ -534,7 +535,7 @@ export function TalentHubDemo({ lang }: { lang: string }) {
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
             {filteredJobs.length === 0 ? (
               <div className="col-span-3 text-center py-16 text-gray-400">
-                <div className="text-4xl mb-3">🔍</div>
+                <div className="mb-3"><EmojiIcon emoji="🔍" className="w-10 h-10" /></div>
                 <p className="text-lg font-medium">{isUk ? "Вакансій не знайдено" : "No jobs found"}</p>
                 <p className="text-sm mt-1">{isUk ? "Спробуйте змінити фільтри" : "Try adjusting your filters"}</p>
               </div>
@@ -547,8 +548,8 @@ export function TalentHubDemo({ lang }: { lang: string }) {
                 >
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center text-xl shrink-0">
-                        {job.company}
+                      <div className="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center shrink-0">
+                        <EmojiIcon emoji={job.company} className="w-5 h-5" />
                       </div>
                       <div>
                         <p className="font-bold text-gray-900 dark:text-white text-sm leading-tight">{job.title}</p>
@@ -603,8 +604,8 @@ export function TalentHubDemo({ lang }: { lang: string }) {
               <div className="bg-linear-to-br from-indigo-700 to-indigo-800 px-6 py-5 text-white">
                 <div className="flex items-start justify-between">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-2xl shrink-0">
-                      {selectedJobData.company}
+                    <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center shrink-0">
+                      <EmojiIcon emoji={selectedJobData.company} className="w-7 h-7" />
                     </div>
                     <div>
                       <h3 className="text-xl font-bold">{selectedJobData.title}</h3>
@@ -768,7 +769,7 @@ export function TalentHubDemo({ lang }: { lang: string }) {
             ].map((s) => (
               <div key={s.step} className="bg-white rounded-2xl p-6 text-center border border-gray-100 dark:border-neutral-700 shadow-sm relative overflow-hidden">
                 <div className="absolute top-4 right-4 text-5xl font-black text-indigo-50">{s.step}</div>
-                <div className="text-3xl mb-3">{s.icon}</div>
+                <div className="mb-3"><EmojiIcon emoji={s.icon} className="w-8 h-8" /></div>
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{s.title}</h3>
                 <p className="text-gray-500 dark:text-neutral-400 text-sm leading-relaxed">{s.desc}</p>
               </div>
@@ -856,8 +857,8 @@ export function TalentHubDemo({ lang }: { lang: string }) {
             {companies.map((co) => (
               <div key={co.name} className="bg-white rounded-2xl p-5 border border-gray-200 dark:border-neutral-700 hover:border-indigo-300 hover:shadow-md transition-all group">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-2xl shrink-0 group-hover:bg-indigo-100 transition-colors">
-                    {co.emoji}
+                  <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-indigo-100 transition-colors">
+                    <EmojiIcon emoji={co.emoji} className="w-7 h-7" />
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-900 dark:text-white text-sm">{co.name}</h3>
@@ -915,8 +916,8 @@ export function TalentHubDemo({ lang }: { lang: string }) {
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
             {(howTab === "candidates" ? candidateSteps : companySteps).map((step, i) => (
               <div key={i} className="text-center">
-                <div className="w-16 h-16 bg-indigo-700/50 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-3 border border-indigo-600">
-                  {step.icon}
+                <div className="w-16 h-16 bg-indigo-700/50 rounded-2xl flex items-center justify-center mx-auto mb-3 border border-indigo-600">
+                  <EmojiIcon emoji={step.icon} className="w-7 h-7" />
                 </div>
                 <div className="text-xs text-orange-400 font-bold mb-1">STEP {i + 1}</div>
                 <h3 className="font-bold text-white mb-2 text-sm">{step.title}</h3>
@@ -963,7 +964,7 @@ export function TalentHubDemo({ lang }: { lang: string }) {
       {/* ── NEWSLETTER ── */}
       <section className="py-16 bg-linear-to-br from-orange-500 to-orange-600 text-white">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="text-4xl mb-4">📬</div>
+          <div className="mb-4"><EmojiIcon emoji="📬" className="w-10 h-10" /></div>
           <h2 className="text-3xl font-bold mb-3">
             {isUk ? "IT-вакансії щотижня" : "Weekly IT Job Digest"}
           </h2>
@@ -1006,7 +1007,7 @@ export function TalentHubDemo({ lang }: { lang: string }) {
             {/* Brand */}
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <span className="text-xl">💼</span>
+                <EmojiIcon emoji="💼" className="w-5 h-5" />
                 <span className="text-xl font-bold">Talent<span className="text-orange-400">Hub</span></span>
               </div>
               <p className="text-indigo-400 text-sm leading-relaxed">

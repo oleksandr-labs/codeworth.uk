@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 const NAV_LINKS = [
   { en: "Services", uk: "Послуги" },
@@ -397,8 +398,8 @@ export function GlowBarDemo({ lang }: { lang: string }) {
                 key={master.nameEn}
                 className="bg-pink-50/60 rounded-2xl p-7 flex flex-col items-center text-center gap-4 border border-rose-100 hover:shadow-md transition-shadow"
               >
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-rose-100 to-pink-200 flex items-center justify-center text-4xl shadow-sm">
-                  {master.emoji}
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-rose-100 to-pink-200 flex items-center justify-center shadow-sm">
+                  <EmojiIcon emoji={master.emoji} className="w-10 h-10" />
                 </div>
                 <div>
                   <p className="font-bold text-stone-800 text-lg">

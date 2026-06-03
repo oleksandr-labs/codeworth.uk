@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 const OCCASIONS = [
   { key: "all", en: "All", uk: "Всі" },
@@ -472,8 +473,8 @@ export function BloomDemo({ lang }: { lang: string }) {
                   className={`${b.bg} rounded-2xl p-5 border border-rose-100 shadow-sm hover:shadow-md transition-shadow flex flex-col`}
                 >
                   {/* Emoji placeholder */}
-                  <div className="w-full h-36 rounded-xl bg-white/60 flex items-center justify-center text-6xl mb-4 border border-rose-100">
-                    {b.emoji}
+                  <div className="w-full h-36 rounded-xl bg-white/60 flex items-center justify-center mb-4 border border-rose-100">
+                    <EmojiIcon emoji={b.emoji} className="w-16 h-16" />
                   </div>
                   <h3 className="font-bold text-rose-900 text-base mb-1">
                     {isUk ? b.nameUk : b.nameEn}
@@ -834,7 +835,7 @@ export function BloomDemo({ lang }: { lang: string }) {
                     : "bg-white border-rose-100 text-rose-900"
                 }`}
               >
-                <div className="text-4xl mb-3">{sub.emoji}</div>
+                <div className="mb-3"><EmojiIcon emoji={sub.emoji} className="w-10 h-10" /></div>
                 <h3 className={`text-xl font-bold mb-1 ${sub.highlight ? "text-white" : "text-rose-800"}`}>
                   {isUk ? sub.planUk : sub.planEn}
                 </h3>
@@ -921,10 +922,10 @@ export function BloomDemo({ lang }: { lang: string }) {
             {GALLERY_ITEMS.map((item, i) => (
               <div
                 key={i}
-                className="aspect-square rounded-xl flex items-center justify-center text-4xl sm:text-5xl cursor-pointer hover:scale-105 transition-transform shadow-sm"
+                className="aspect-square rounded-xl flex items-center justify-center cursor-pointer hover:scale-105 transition-transform shadow-sm"
                 style={{ backgroundColor: item.bg }}
               >
-                {item.emoji}
+                <EmojiIcon emoji={item.emoji} className="w-14 h-14" />
               </div>
             ))}
           </div>

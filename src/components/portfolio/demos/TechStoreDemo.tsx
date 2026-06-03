@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 const categories = [
   { key: "smartphones", en: "Smartphones", uk: "Смартфони", emoji: "📱" },
@@ -275,7 +276,7 @@ export function TechStoreDemo({ lang }: { lang: string }) {
       <section className="px-4 pt-4 pb-2">
         <div className={`rounded-xl ${banners[activeBanner].bg} text-white p-6 relative overflow-hidden`}>
           <div className="relative z-10">
-            <div className="text-5xl mb-2">{banners[activeBanner].emoji}</div>
+            <div className="mb-2"><EmojiIcon emoji={banners[activeBanner].emoji} className="w-14 h-14" /></div>
             <h2 className="text-2xl font-bold mb-1">{isUk ? banners[activeBanner].titleUk : banners[activeBanner].titleEn}</h2>
             <p className="text-white/80 mb-4 text-sm">{isUk ? banners[activeBanner].subtitleUk : banners[activeBanner].subtitleEn}</p>
             <button className="bg-white text-gray-900 dark:text-white font-bold px-5 py-2 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-neutral-700 dark:bg-neutral-800 transition-colors">
@@ -301,7 +302,7 @@ export function TechStoreDemo({ lang }: { lang: string }) {
               onClick={() => setActiveCategory(link.cat)}
               className={`shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${activeCategory === link.cat ? "bg-cyan-500 text-white" : "bg-white text-gray-700 dark:text-neutral-300 hover:bg-cyan-50 hover:text-cyan-700 border border-gray-200"}`}
             >
-              <span>{link.emoji}</span>
+              <EmojiIcon emoji={link.emoji} className="w-5 h-5 inline-block align-middle" />
               <span>{isUk ? link.uk : link.en}</span>
             </button>
           ))}
@@ -321,7 +322,7 @@ export function TechStoreDemo({ lang }: { lang: string }) {
               onClick={() => { setActiveCategory(cat.key); setSelectedBrands([]); setSpecFilter("Any"); setPriceRange(50000); }}
               className={`shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${activeCategory === cat.key ? "bg-[#111827] text-cyan-400" : "bg-white text-gray-600 dark:text-neutral-300 hover:bg-gray-100 dark:hover:bg-neutral-700 dark:bg-neutral-800 border border-gray-200"}`}
             >
-              <span>{cat.emoji}</span>
+              <EmojiIcon emoji={cat.emoji} className="w-5 h-5 inline-block align-middle" />
               <span>{isUk ? cat.uk : cat.en}</span>
             </button>
           ))}
@@ -408,10 +409,10 @@ export function TechStoreDemo({ lang }: { lang: string }) {
                     <div key={product.id} className="bg-white rounded-xl border border-gray-200 dark:border-neutral-700 overflow-hidden hover:shadow-md transition-shadow flex flex-col">
                       {/* Image placeholder */}
                       <div
-                        className="bg-linear-to-br from-gray-50 to-gray-100 h-28 flex items-center justify-center text-4xl cursor-pointer"
+                        className="bg-linear-to-br from-gray-50 to-gray-100 h-28 flex items-center justify-center cursor-pointer"
                         onClick={() => setQuickViewProduct(product)}
                       >
-                        {product.emoji}
+                        <EmojiIcon emoji={product.emoji} className="w-10 h-10" />
                       </div>
                       <div className="p-2.5 flex flex-col flex-1">
                         <button
@@ -472,7 +473,7 @@ export function TechStoreDemo({ lang }: { lang: string }) {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {deals.map((deal) => (
             <div key={deal.id} className="bg-gray-800 rounded-xl p-3 border border-gray-700 hover:border-cyan-500 transition-colors">
-              <div className="text-3xl text-center mb-2">{deal.emoji}</div>
+              <div className="text-center mb-2"><EmojiIcon emoji={deal.emoji} className="w-8 h-8" /></div>
               <div className="text-xs font-semibold text-white mb-1 line-clamp-2 text-center">{isUk ? deal.nameUk : deal.nameEn}</div>
               <div className="flex items-center justify-center gap-1.5 mb-1">
                 <span className="text-sm font-bold text-cyan-400">₴{deal.price.toLocaleString()}</span>
@@ -651,7 +652,7 @@ export function TechStoreDemo({ lang }: { lang: string }) {
         <div className="flex flex-wrap gap-4 mb-4">
           {footerGuarantees.map((g) => (
             <div key={g.en} className="flex items-center gap-1.5 text-xs text-gray-400">
-              <span>{g.emoji}</span>
+              <EmojiIcon emoji={g.emoji} className="w-5 h-5 inline-block align-middle" />
               <span>{isUk ? g.uk : g.en}</span>
             </div>
           ))}
@@ -672,7 +673,7 @@ export function TechStoreDemo({ lang }: { lang: string }) {
                 <button onClick={() => setQuickViewProduct(null)} className="text-gray-400 dark:text-neutral-500 hover:text-gray-600 dark:text-neutral-300 text-xl shrink-0">✕</button>
               </div>
               {/* Product image placeholder */}
-              <div className="bg-gray-50 dark:bg-neutral-900 rounded-xl h-36 flex items-center justify-center text-6xl mb-4">{quickViewProduct.emoji}</div>
+              <div className="bg-gray-50 dark:bg-neutral-900 rounded-xl h-36 flex items-center justify-center mb-4"><EmojiIcon emoji={quickViewProduct.emoji} className="w-16 h-16" /></div>
               {/* Price & stock */}
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-baseline gap-2">
@@ -737,7 +738,7 @@ export function TechStoreDemo({ lang }: { lang: string }) {
               <div className="flex gap-2">
                 {compareList.map((p) => (
                   <div key={p.id} className="flex items-center gap-1 bg-gray-700 rounded-lg px-2 py-1">
-                    <span className="text-xs">{p.emoji}</span>
+                    <EmojiIcon emoji={p.emoji} className="w-5 h-5 inline-block align-middle" />
                     <span className="text-xs text-gray-300 max-w-[80px] truncate">{isUk ? p.nameUk : p.nameEn}</span>
                     <button onClick={() => toggleCompare(p)} className="text-gray-400 dark:text-neutral-500 hover:text-red-400 text-xs ml-1">✕</button>
                   </div>
@@ -766,7 +767,7 @@ export function TechStoreDemo({ lang }: { lang: string }) {
                       <th className="text-left py-2 px-3 text-gray-400 dark:text-neutral-500 font-medium w-1/5">{isUk ? "Характеристика" : "Spec"}</th>
                       {compareList.map((p) => (
                         <th key={p.id} className="py-2 px-3 text-center text-cyan-400 font-semibold">
-                          <div>{p.emoji}</div>
+                          <div><EmojiIcon emoji={p.emoji} className="w-5 h-5 inline-block align-middle" /></div>
                           <div className="text-[10px] text-gray-300 font-normal max-w-[100px] truncate mx-auto">{isUk ? p.nameUk : p.nameEn}</div>
                         </th>
                       ))}
@@ -838,7 +839,7 @@ export function TechStoreDemo({ lang }: { lang: string }) {
                 <div className="space-y-3">
                   {cartItems.map((item) => (
                     <div key={item.id} className="flex items-center gap-3 bg-gray-50 dark:bg-neutral-900 rounded-xl p-3 border border-gray-200">
-                      <div className="text-2xl shrink-0">{item.emoji}</div>
+                      <div className="shrink-0"><EmojiIcon emoji={item.emoji} className="w-7 h-7" /></div>
                       <div className="flex-1 min-w-0">
                         <div className="text-xs font-semibold text-gray-800 dark:text-neutral-200 truncate">{item.name}</div>
                         <div className="text-xs text-cyan-600 font-bold">₴{item.price.toLocaleString()}</div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 interface Props { lang: string; }
 
@@ -109,14 +110,14 @@ export function GreenLeafDemo({ lang }: Props) {
           {FLOATING_INGREDIENTS.map((emoji, i) => (
             <span
               key={i}
-              className="absolute text-3xl opacity-20"
+              className="absolute opacity-20"
               style={{
                 top: `${15 + i * 17}%`,
                 left: `${5 + i * 22}%`,
                 transform: `rotate(${-20 + i * 12}deg)`,
               }}
             >
-              {emoji}
+              <EmojiIcon emoji={emoji} className="w-8 h-8" />
             </span>
           ))}
           <span className="absolute text-3xl opacity-20 top-[60%] right-[8%]">🌿</span>
@@ -191,7 +192,7 @@ export function GreenLeafDemo({ lang }: Props) {
             {filteredItems.map(item => (
               <div key={item.id} className="bg-[#FAFFF8] rounded-2xl p-5 border border-[#A8D5B5]/40 hover:shadow-md transition-shadow flex flex-col gap-3">
                 <div className="flex items-start justify-between">
-                  <span className="text-4xl">{item.emoji}</span>
+                  <EmojiIcon emoji={item.emoji} className="w-10 h-10" />
                   {"seasonal" in item && item.seasonal && (
                     <span className="bg-amber-100 text-amber-700 text-xs font-bold px-2 py-0.5 rounded-full">
                       {t("Seasonal", "Сезонне")}
@@ -263,7 +264,7 @@ export function GreenLeafDemo({ lang }: Props) {
                   }`}
                 >
                   <div className="flex items-center gap-3 mb-2">
-                    <span className="text-3xl">{farm.emoji}</span>
+                    <EmojiIcon emoji={farm.emoji} className="w-8 h-8" />
                     <div>
                       <p className="font-bold text-[#1E3A22] text-sm">{isUk ? farm.nameUk : farm.nameEn}</p>
                       <p className="text-xs text-[#2D7A3A]/60">{isUk ? farm.locationUk : farm.locationEn}</p>
@@ -291,7 +292,7 @@ export function GreenLeafDemo({ lang }: Props) {
               { emoji: "🚫", en: "No pesticides", uk: "Без пестицидів", descEn: "Zero synthetic chemicals in our supply chain.", descUk: "Жодної синтетики у ланцюгу постачання." },
             ].map((c, i) => (
               <div key={i} className="bg-white rounded-xl p-5 border border-[#A8D5B5]/40 text-center">
-                <span className="text-3xl">{c.emoji}</span>
+                <EmojiIcon emoji={c.emoji} className="w-8 h-8" />
                 <p className="font-bold text-[#1E3A22] mt-2 mb-1">{isUk ? c.uk : c.en}</p>
                 <p className="text-xs text-[#1E3A22]/60">{isUk ? c.descUk : c.descEn}</p>
               </div>
@@ -430,7 +431,7 @@ export function GreenLeafDemo({ lang }: Props) {
               { emoji: "👨‍🍳", nameEn: "Vasyl Kovalenko", nameUk: "Василь Коваленко", roleEn: "Head Chef", roleUk: "Шеф-кухар", bioEn: "Trained in Paris and Kyiv. Believes vegetables are the most versatile ingredient.", bioUk: "Навчався в Парижі та Києві. Вважає овочі найвершатнішим інгредієнтом." },
             ].map((member, i) => (
               <div key={i} className="bg-[#FAFFF8] rounded-2xl p-6 border border-[#A8D5B5]/40 flex gap-4">
-                <span className="text-4xl shrink-0">{member.emoji}</span>
+                <EmojiIcon emoji={member.emoji} className="w-10 h-10 shrink-0" />
                 <div>
                   <p className="font-bold text-[#1E3A22]">{isUk ? member.nameUk : member.nameEn}</p>
                   <p className="text-xs font-semibold text-[#2D7A3A] mb-2">{isUk ? member.roleUk : member.roleEn}</p>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 const PRODUCTS = [
   { id:1, nameUk:"Міді-сукня класик", nameEn:"Classic Midi Dress", brand:"ModaUA", catUk:"Плаття", catEn:"Dresses", price:1890, oldPrice:2490, colors:["#111111","#c8a882","#4a6741"], sizes:["XS","S","M","L","XL"], availSizes:["S","M","L"], badge:"SALE", emoji:"👗", rating:4.8, reviews:124 },
@@ -264,7 +265,7 @@ export function ModaUADemo({ lang }: { lang: string }) {
               <div className="absolute top-6 right-8 w-32 h-48 bg-linear-to-b from-[#c8a882]/30 to-[#c8a882]/10 rounded-sm" />
               <div className="absolute bottom-8 left-6 w-24 h-36 bg-linear-to-t from-[#4a6741]/20 to-transparent rounded-sm" />
               <div className="relative z-10 text-center">
-                <div className="text-7xl mb-2">👗</div>
+                <div className="mb-2"><EmojiIcon emoji="👗" className="w-16 h-16" /></div>
                 <div className="text-xs text-stone-400 tracking-widest uppercase">{t("Нова колекція","New Collection")}</div>
               </div>
               <div className="absolute top-4 left-4 border border-stone-200 px-2 py-1 text-[10px] tracking-widest text-stone-400 uppercase bg-white">
@@ -419,7 +420,7 @@ export function ModaUADemo({ lang }: { lang: string }) {
                       </button>
                       {/* Image area */}
                       <div className="h-64 bg-stone-50 flex flex-col items-center justify-center relative overflow-hidden cursor-pointer" onClick={() => setSelectedProduct(product.id)}>
-                        <span className="text-6xl group-hover:scale-110 transition-transform duration-300">{product.emoji}</span>
+                        <EmojiIcon emoji={product.emoji} className="w-16 h-16 group-hover:scale-110 transition-transform duration-300" />
                         {/* Color dots */}
                         <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-1.5">
                           {product.colors.map(color => (
@@ -482,13 +483,13 @@ export function ModaUADemo({ lang }: { lang: string }) {
               <div>
                 {/* Main image */}
                 <div className="bg-white border border-stone-200 h-80 flex items-center justify-center mb-3">
-                  <span className="text-8xl">{detail.emoji}</span>
+                  <EmojiIcon emoji={detail.emoji} className="w-16 h-16" />
                 </div>
                 {/* Thumbnails */}
                 <div className="grid grid-cols-4 gap-2">
                   {[0,1,2,3].map(i => (
                     <div key={i} className="bg-white border border-stone-200 h-20 flex items-center justify-center cursor-pointer hover:border-[#111111] transition-colors">
-                      <span className="text-2xl opacity-60">{detail.emoji}</span>
+                      <EmojiIcon emoji={detail.emoji} className="w-7 h-7 opacity-60" />
                     </div>
                   ))}
                 </div>
@@ -664,8 +665,8 @@ export function ModaUADemo({ lang }: { lang: string }) {
               <div key={look.id} className={`bg-linear-to-br ${look.colorClass} rounded-3xl p-6 flex flex-col gap-4`}>
                 <div className="flex gap-2">
                   {look.emojis.map((em, i) => (
-                    <div key={i} className="w-16 h-16 bg-white/80 backdrop-blur rounded-2xl flex items-center justify-center text-3xl shadow-sm">
-                      {em}
+                    <div key={i} className="w-16 h-16 bg-white/80 backdrop-blur rounded-2xl flex items-center justify-center shadow-sm">
+                      <EmojiIcon emoji={em} className="w-8 h-8" />
                     </div>
                   ))}
                 </div>
@@ -717,7 +718,7 @@ export function ModaUADemo({ lang }: { lang: string }) {
                 <p className="text-stone-700 text-sm leading-relaxed mb-4">"{isUk ? r.textUk : r.textEn}"</p>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center text-lg">{r.emoji}</div>
+                    <div className="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center"><EmojiIcon emoji={r.emoji} className="w-5 h-5" /></div>
                     <span className="font-semibold text-stone-800 text-sm">{isUk ? r.nameUk : r.nameEn}</span>
                   </div>
                   <span className="text-xs text-stone-400 bg-stone-50 px-2 py-1 rounded-lg">
@@ -744,7 +745,7 @@ export function ModaUADemo({ lang }: { lang: string }) {
                 onClick={() => openProduct(product.id)}
               >
                 <div className="w-36 h-44 bg-stone-50 border border-stone-100 flex items-center justify-center mb-2 group-hover:shadow-md transition-shadow">
-                  <span className="text-4xl group-hover:scale-110 transition-transform duration-200">{product.emoji}</span>
+                  <EmojiIcon emoji={product.emoji} className="w-10 h-10 group-hover:scale-110 transition-transform duration-200" />
                 </div>
                 <div className="text-xs text-stone-500 truncate">{isUk ? product.nameUk : product.nameEn}</div>
                 <div className="text-xs font-semibold text-[#111111]">{product.price.toLocaleString()} ₴</div>
@@ -847,7 +848,7 @@ export function ModaUADemo({ lang }: { lang: string }) {
                 <button onClick={() => setSelectedProduct(null)} className="w-8 h-8 rounded-full bg-stone-100 hover:bg-stone-200 flex items-center justify-center text-stone-500">✕</button>
               </div>
               <div className="p-6 grid md:grid-cols-2 gap-6">
-                <div className="h-56 bg-stone-50 rounded-2xl flex items-center justify-center text-8xl">{p.emoji}</div>
+                <div className="h-56 bg-stone-50 rounded-2xl flex items-center justify-center"><EmojiIcon emoji={p.emoji} className="w-16 h-16" /></div>
                 <div className="flex flex-col gap-3">
                   <div>
                     <p className="text-stone-400 text-xs">{p.brand}</p>
@@ -909,7 +910,7 @@ export function ModaUADemo({ lang }: { lang: string }) {
 
             {cart.length === 0 ? (
               <div className="flex-1 flex flex-col items-center justify-center p-8 text-center">
-                <div className="text-4xl mb-4">🛍</div>
+                <div className="mb-4"><EmojiIcon emoji="🛍" className="w-10 h-10" /></div>
                 <p className="text-sm text-stone-500 mb-6">
                   {t("Ваш кошик порожній","Your cart is empty")}
                 </p>
@@ -949,7 +950,7 @@ export function ModaUADemo({ lang }: { lang: string }) {
                     return (
                       <div key={`${item.id}-${item.size}-${item.color}`} className="flex gap-3">
                         <div className="w-16 h-20 bg-stone-50 border border-stone-100 flex items-center justify-center shrink-0">
-                          <span className="text-2xl">{p.emoji}</span>
+                          <EmojiIcon emoji={p.emoji} className="w-7 h-7" />
                         </div>
                         <div className="flex-1 min-w-0">
                           <div className="text-xs font-medium text-[#111111] leading-snug mb-0.5 truncate">

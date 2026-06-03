@@ -31,6 +31,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { useLocale } from "@/components/layout/LocaleProvider";
 import { useToast } from "@/components/ui/Toast";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 type Tab = "dashboard" | "orders" | "projects" | "invoices" | "settings" | "support";
 
@@ -405,7 +406,7 @@ export default function AccountClient() {
                         key={o.id}
                         className="flex items-center gap-4 p-3 rounded-xl bg-gray-50 dark:bg-neutral-900 hover:bg-gray-100 dark:hover:bg-neutral-700 dark:bg-neutral-800 transition-colors"
                       >
-                        <span className="text-2xl">{o.emoji}</span>
+                        <EmojiIcon emoji={o.emoji} className="w-6 h-6 text-white/80" />
                         <div className="flex-1 min-w-0">
                           <div className="font-medium text-gray-900 dark:text-white text-sm truncate">{o.product}</div>
                           <div className="text-xs text-gray-400">#{o.id} · {o.date}</div>
@@ -462,7 +463,7 @@ export default function AccountClient() {
                       className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-6"
                     >
                       <div className="flex items-start gap-4">
-                        <span className="text-3xl">{o.emoji}</span>
+                        <EmojiIcon emoji={o.emoji} className="w-8 h-8 text-white/80" />
                         <div className="flex-1 min-w-0">
                           <div className="flex items-start justify-between gap-2 flex-wrap">
                             <div>
@@ -575,7 +576,7 @@ export default function AccountClient() {
                   {MOCK_PROJECTS.map((p) => (
                     <div key={p.id} className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-6">
                       <div className="flex items-start gap-4">
-                        <span className="text-3xl">{p.emoji}</span>
+                        <EmojiIcon emoji={p.emoji} className="w-8 h-8 text-white/80" />
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-3 flex-wrap">
                             <div className="font-semibold text-gray-900">{p.name}</div>

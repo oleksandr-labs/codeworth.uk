@@ -7,6 +7,7 @@ import { EXTRAS, EXTRA_CATEGORIES, getExtraTitle, getExtraDesc } from "@/lib/dat
 import { ExtraCard } from "./ExtraCard";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { useLocale } from "@/components/layout/LocaleProvider";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 export function ExtrasCatalog() {
   const lang = useLocale();
@@ -83,7 +84,7 @@ export function ExtrasCatalog() {
                     : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-indigo-50 hover:text-indigo-700"
                 )}
               >
-                {cat.emoji} {isUk ? cat.label : cat.labelEn} ({count})
+                <EmojiIcon emoji={cat.emoji} className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? cat.label : cat.labelEn} ({count})
               </button>
             );
           })}

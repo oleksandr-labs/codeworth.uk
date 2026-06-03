@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 export function KidJoyDemo({ lang }: { lang: string }) {
   const isUk = lang === "uk";
@@ -145,7 +146,7 @@ export function KidJoyDemo({ lang }: { lang: string }) {
           {filtered.map(club => (
             <div key={club.id} onClick={() => setSelectedClub(club.id === selectedClub ? null : club.id)}
               style={{ background: "#fff", borderRadius: 20, padding: 20, cursor: "pointer", border: `3px solid ${club.id === selectedClub ? club.color : "transparent"}`, boxShadow: "0 4px 12px rgba(0,0,0,0.08)", transition: "all 0.2s" }}>
-              <div style={{ fontSize: 40, marginBottom: 8 }}>{club.emoji}</div>
+              <div style={{ marginBottom: 8 }}><EmojiIcon emoji={club.emoji} className="w-16 h-16" /></div>
               <h3 style={{ fontWeight: 800, fontSize: 18, margin: "0 0 6px", color: "#1a1a1a" }}>
                 {isUk ? club.nameUk : club.nameEn}
               </h3>
@@ -194,7 +195,7 @@ export function KidJoyDemo({ lang }: { lang: string }) {
               return (
                 <div key={i} style={{ display: "flex", alignItems: "center", gap: 16, padding: "12px 16px", borderRadius: 14, background: slot.color + "20", borderLeft: `4px solid ${slot.color}` }}>
                   <div style={{ fontWeight: 800, fontSize: 16, minWidth: 50 }}>{slot.time}</div>
-                  <div style={{ fontSize: 24 }}>{club.emoji}</div>
+                  <div><EmojiIcon emoji={club.emoji} className="w-10 h-10" /></div>
                   <div style={{ flex: 1 }}>
                     <div style={{ fontWeight: 700 }}>{isUk ? club.nameUk : club.nameEn}</div>
                     <div style={{ fontSize: 12, color: "#666" }}>{isUk ? `${club.age} років · ${club.count} місць` : `Ages ${club.age} · ${club.count} spots`}</div>

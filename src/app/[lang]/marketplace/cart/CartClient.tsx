@@ -8,6 +8,7 @@ import { getNiche } from "@/lib/data/niches";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { useLocale } from "@/components/layout/LocaleProvider";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 const PACKAGE_MULTIPLIERS: Record<string, number> = {
   "Базовий": 1,
@@ -86,8 +87,8 @@ export default function CartClient() {
     <div className="space-y-4">
       {items.map((item) => (
         <div key={item.id} className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-5 flex items-start gap-4">
-          <div className="w-14 h-14 rounded-xl bg-indigo-50 flex items-center justify-center text-3xl shrink-0">
-            {item.emoji}
+          <div className="w-14 h-14 rounded-xl bg-indigo-50 flex items-center justify-center shrink-0">
+            <EmojiIcon emoji={item.emoji} className="w-8 h-8 text-white/80" />
           </div>
           <div className="flex-1 min-w-0">
             <div className="font-semibold text-gray-900">{item.title}</div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 const GREEN = "#4A7C59";
 const YELLOW = "#F5C518";
@@ -162,7 +163,7 @@ export function WildFieldDemo({ lang }: { lang: string }) {
         <div className="grid grid-cols-1 gap-4" style={{ maxWidth: 640, margin: "0 auto" }}>
           {HARVEST_TODAY.map((f) => (
             <div key={f.nameEn} style={{ background: CREAM, border: `1px solid ${GREEN}40`, borderRadius: 10, padding: "14px 18px", display: "flex", gap: 16, alignItems: "center" }}>
-              <span style={{ fontSize: 32 }}>{f.emoji}</span>
+              <EmojiIcon emoji={f.emoji} className="w-14 h-14" />
               <div>
                 <div style={{ fontWeight: 700, color: GREEN }}>{isUk ? f.nameUk : f.nameEn}</div>
                 <div style={{ fontSize: 13, color: "#666" }}>{isUk ? f.descUk : f.descEn}</div>
@@ -333,7 +334,7 @@ export function WildFieldDemo({ lang }: { lang: string }) {
         <div className="grid grid-cols-2 gap-4" style={{ maxWidth: 520, margin: "0 auto" }}>
           {ECO_PRINCIPLES.map((p) => (
             <div key={p.en} style={{ background: CREAM, border: `1px solid ${GREEN}30`, borderRadius: 10, padding: "14px 16px", display: "flex", alignItems: "center", gap: 12 }}>
-              <span style={{ fontSize: 24 }}>{p.emoji}</span>
+              <EmojiIcon emoji={p.emoji} className="w-10 h-10" />
               <span style={{ fontSize: 13, color: "#333" }}>{isUk ? p.uk : p.en}</span>
             </div>
           ))}

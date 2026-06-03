@@ -9,6 +9,7 @@ import { BLOG_AUTHORS, getAuthorBySlug } from "@/lib/data/blogAuthors";
 import { BLOG_POSTS } from "@/lib/data/blog";
 import { Clock, ArrowLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 interface Props {
   params: Promise<{ lang: string; slug: string }>;
@@ -88,8 +89,8 @@ export default async function BlogAuthorPage({ params }: Props) {
               </nav>
 
               <div className="flex items-start gap-6">
-                <div className="w-20 h-20 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-4xl shrink-0">
-                  {author.emoji}
+                <div className="w-20 h-20 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center shrink-0">
+                  <EmojiIcon emoji={author.emoji} className="w-16 h-16" />
                 </div>
                 <div>
                   <div className="text-indigo-400 text-sm font-semibold uppercase tracking-wider mb-1">
@@ -133,8 +134,8 @@ export default async function BlogAuthorPage({ params }: Props) {
                       href={`/${lang}/blog/${post.slug}`}
                       className="group rounded-2xl border border-neutral-100 dark:border-neutral-700 overflow-hidden hover:shadow-lg hover:shadow-neutral-200/60 transition-all duration-300 hover:-translate-y-1 bg-white"
                     >
-                      <div className={cn("h-36 bg-linear-to-br flex items-center justify-center text-4xl", post.color)}>
-                        {post.emoji}
+                      <div className={cn("h-36 bg-linear-to-br flex items-center justify-center", post.color)}>
+                        <EmojiIcon emoji={post.emoji} className="w-12 h-12 text-white/80" />
                       </div>
                       <div className="p-5">
                         <span className="inline-block px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold mb-2">
@@ -174,8 +175,8 @@ export default async function BlogAuthorPage({ params }: Props) {
                     href={`/${lang}/blog/author/${a.slug}`}
                     className="flex items-center gap-3 p-4 rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 hover:border-indigo-200 hover:shadow-sm transition-all group"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center text-xl shrink-0">
-                      {a.emoji}
+                    <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center shrink-0">
+                      <EmojiIcon emoji={a.emoji} className="w-8 h-8" />
                     </div>
                     <div className="min-w-0">
                       <div className="font-semibold text-neutral-900 dark:text-white text-sm truncate group-hover:text-indigo-700 transition-colors">

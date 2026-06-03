@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 /* ------------------------------------------------------------------ */
 /*  SmachnoDemo — Ukrainian restaurant "Смачно"                       */
@@ -344,7 +345,7 @@ export function SmachnoDemo({ lang }: { lang: string }) {
                 key={i}
                 className="bg-white/70 border border-[#d97706]/20 rounded-xl p-5 flex items-start gap-4 hover:shadow-md transition-shadow"
               >
-                <span className="text-3xl shrink-0">{dish.emoji}</span>
+                <EmojiIcon emoji={dish.emoji} className="w-8 h-8 shrink-0" />
                 <div className="flex-1 min-w-0">
                   <div className="flex items-baseline justify-between gap-3 flex-wrap">
                     <h3 className="font-bold text-[#7f1d1d] text-lg">
@@ -643,7 +644,7 @@ export function SmachnoDemo({ lang }: { lang: string }) {
                     : "border-[#d97706]/20 bg-white/60"
                 }`}
               >
-                <span className="text-4xl block mb-3">{pkg.emoji}</span>
+                <EmojiIcon emoji={pkg.emoji} className="w-10 h-10 mb-3" />
                 <h3 className="text-xl font-bold text-[#7f1d1d] mb-1">
                   {isUk ? pkg.uk : pkg.en}
                 </h3>
@@ -701,9 +702,7 @@ export function SmachnoDemo({ lang }: { lang: string }) {
                 key={i}
                 className="aspect-square rounded-xl bg-linear-to-br from-[#d97706]/15 via-[#f59e0b]/10 to-[#7f1d1d]/10 border border-[#d97706]/20 flex flex-col items-center justify-center hover:shadow-lg transition-shadow cursor-pointer group"
               >
-                <span className="text-5xl md:text-6xl group-hover:scale-110 transition-transform">
-                  {item.emoji}
-                </span>
+                <EmojiIcon emoji={item.emoji} className="w-16 h-16 group-hover:scale-110 transition-transform" />
                 <span className="text-sm text-[#92400e] font-medium mt-3">
                   {isUk ? item.uk : item.en}
                 </span>

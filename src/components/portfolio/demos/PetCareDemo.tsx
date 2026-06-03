@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -266,7 +267,7 @@ export function PetCareDemo({ lang }: { lang: string }) {
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between flex-wrap gap-2">
           {/* Logo */}
           <div className="flex items-center gap-2 shrink-0">
-            <span className="text-2xl">🐾</span>
+            <EmojiIcon emoji="🐾" className="w-7 h-7" />
             <div>
               <div className="font-bold text-teal-700 text-lg leading-tight">PetCare</div>
               <div className="text-xs text-teal-500 leading-tight">
@@ -296,7 +297,7 @@ export function PetCareDemo({ lang }: { lang: string }) {
 
           {/* Emergency badge */}
           <div className="shrink-0 flex items-center gap-2 bg-red-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow">
-            <span className="animate-pulse">🚨</span>
+            <EmojiIcon emoji="🚨" className="w-5 h-5 animate-pulse" />
             {isUk ? "Екстрена допомога: 24/7" : "Emergency: 24/7"}
           </div>
         </div>
@@ -310,14 +311,10 @@ export function PetCareDemo({ lang }: { lang: string }) {
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
           {/* Pet emoji row */}
-          <div className="flex justify-center gap-3 text-3xl mb-8 flex-wrap">
+          <div className="flex justify-center gap-3 mb-8 flex-wrap">
             {PET_EMOJIS.map((em, i) => (
-              <span
-                key={i}
-                className="inline-block"
-                style={{ animation: `bounce 1.4s ease-in-out ${i * 0.15}s infinite alternate` }}
-              >
-                {em}
+              <span key={i} style={{ animation: `bounce 1.4s ease-in-out ${i * 0.15}s infinite alternate` }} className="inline-block">
+                <EmojiIcon emoji={em} className="w-8 h-8" />
               </span>
             ))}
           </div>
@@ -375,7 +372,7 @@ export function PetCareDemo({ lang }: { lang: string }) {
                 key={svc.id}
                 className={`rounded-2xl border p-6 flex flex-col gap-3 hover:shadow-md transition-shadow ${svc.color}`}
               >
-                <span className="text-4xl">{svc.emoji}</span>
+                <EmojiIcon emoji={svc.emoji} className="w-10 h-10" />
                 <h3 className="font-bold text-gray-800 dark:text-neutral-200 text-lg">
                   {isUk ? svc.nameUk : svc.nameEn}
                 </h3>
@@ -411,7 +408,7 @@ export function PetCareDemo({ lang }: { lang: string }) {
           <div className="bg-teal-50 rounded-3xl border border-teal-100 p-8 shadow-sm">
             {bookingDone ? (
               <div className="text-center py-8">
-                <div className="text-6xl mb-4">🎉</div>
+                <div className="mb-4"><EmojiIcon emoji="🎉" className="w-16 h-16" /></div>
                 <h3 className="text-2xl font-bold text-teal-700 mb-2">
                   {isUk ? "Запис підтверджено!" : "Booking Confirmed!"}
                 </h3>
@@ -529,7 +526,7 @@ export function PetCareDemo({ lang }: { lang: string }) {
                               : "bg-white border-teal-100 hover:border-teal-300"
                           }`}
                         >
-                          <span className="text-xl shrink-0">{svc.emoji}</span>
+                          <EmojiIcon emoji={svc.emoji} className="w-5 h-5 shrink-0" />
                           <span className="font-medium text-sm">
                             {isUk ? svc.nameUk : svc.nameEn}
                           </span>
@@ -704,8 +701,8 @@ export function PetCareDemo({ lang }: { lang: string }) {
                 className="bg-white rounded-2xl border border-teal-100 p-6 text-center hover:shadow-md transition-shadow"
               >
                 {/* Avatar placeholder */}
-                <div className="w-24 h-24 rounded-full bg-linear-to-br from-teal-100 to-teal-200 flex items-center justify-center mx-auto mb-4 text-4xl border-4 border-white shadow-md">
-                  👩‍⚕️
+                <div className="w-24 h-24 rounded-full bg-linear-to-br from-teal-100 to-teal-200 flex items-center justify-center mx-auto mb-4 border-4 border-white shadow-md">
+                  <EmojiIcon emoji="👩‍⚕️" className="w-10 h-10" />
                 </div>
                 <h3 className="font-bold text-gray-800 dark:text-neutral-200 text-lg mb-0.5">
                   {isUk ? doc.name : doc.nameEn}
@@ -719,9 +716,9 @@ export function PetCareDemo({ lang }: { lang: string }) {
                 <p className="text-gray-600 dark:text-neutral-300 text-sm mb-4">
                   {isUk ? doc.bioUk : doc.bioEn}
                 </p>
-                <div className="flex justify-center gap-1.5 text-xl flex-wrap">
+                <div className="flex justify-center gap-1.5 flex-wrap">
                   {doc.animals.map((a, i) => (
-                    <span key={i} title={a}>{a}</span>
+                    <EmojiIcon key={i} emoji={a} className="w-5 h-5" />
                   ))}
                 </div>
               </div>
@@ -734,7 +731,7 @@ export function PetCareDemo({ lang }: { lang: string }) {
       <section className="py-16 px-4 bg-linear-to-br from-red-600 to-orange-500 text-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10">
-            <div className="text-5xl mb-3">🚨</div>
+            <div className="mb-3"><EmojiIcon emoji="🚨" className="w-14 h-14" /></div>
             <h2 className="text-4xl font-extrabold mb-2 drop-shadow">
               {isUk ? "Екстрена допомога 24/7" : "Emergency Care 24/7"}
             </h2>
@@ -860,8 +857,8 @@ export function PetCareDemo({ lang }: { lang: string }) {
                 className="bg-white rounded-2xl border border-teal-100 p-6 hover:shadow-md transition-shadow"
               >
                 {/* Pet photo placeholder */}
-                <div className="w-16 h-16 rounded-full bg-linear-to-br from-orange-100 to-orange-200 flex items-center justify-center text-3xl mb-4 border-4 border-white shadow">
-                  {t.emoji}
+                <div className="w-16 h-16 rounded-full bg-linear-to-br from-orange-100 to-orange-200 flex items-center justify-center mb-4 border-4 border-white shadow">
+                  <EmojiIcon emoji={t.emoji} className="w-8 h-8" />
                 </div>
                 <StarRating count={t.stars} />
                 <p className="text-gray-600 dark:text-neutral-300 text-sm mt-3 mb-4 leading-relaxed">
@@ -888,7 +885,7 @@ export function PetCareDemo({ lang }: { lang: string }) {
             {/* Brand */}
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <span className="text-2xl">🐾</span>
+                <EmojiIcon emoji="🐾" className="w-7 h-7" />
                 <div>
                   <div className="font-bold text-lg">PetCare</div>
                   <div className="text-teal-300 text-xs">

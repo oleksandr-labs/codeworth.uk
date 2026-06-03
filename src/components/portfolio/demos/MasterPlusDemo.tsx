@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 export function MasterPlusDemo({ lang }: { lang: string }) {
   const isUk = lang === "uk";
@@ -175,7 +176,7 @@ export function MasterPlusDemo({ lang }: { lang: string }) {
       <header className="bg-blue-900 text-white sticky top-0 z-50 shadow-lg">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <a href="#" className="text-xl font-bold tracking-wide flex items-center gap-2">
-            <span className="text-2xl">🔧</span>
+            <EmojiIcon emoji="🔧" className="w-7 h-7" />
             {isUk ? "Майстер Плюс" : "Master Plus"}
           </a>
 
@@ -215,10 +216,10 @@ export function MasterPlusDemo({ lang }: { lang: string }) {
       {/* ═══════ HERO ═══════ */}
       <section className="bg-linear-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20 px-4 relative overflow-hidden">
         {/* decorative emojis */}
-        <div className="absolute top-8 left-8 text-5xl opacity-15 select-none">🚗</div>
-        <div className="absolute top-16 right-12 text-4xl opacity-15 select-none">🔧</div>
-        <div className="absolute bottom-10 left-1/4 text-5xl opacity-10 select-none">🚗</div>
-        <div className="absolute bottom-8 right-1/3 text-4xl opacity-10 select-none">🔧</div>
+        <div className="absolute top-8 left-8 opacity-15 select-none"><EmojiIcon emoji="🚗" className="w-14 h-14" /></div>
+        <div className="absolute top-16 right-12 opacity-15 select-none"><EmojiIcon emoji="🔧" className="w-10 h-10" /></div>
+        <div className="absolute bottom-10 left-1/4 opacity-10 select-none"><EmojiIcon emoji="🚗" className="w-14 h-14" /></div>
+        <div className="absolute bottom-8 right-1/3 opacity-10 select-none"><EmojiIcon emoji="🔧" className="w-10 h-10" /></div>
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
@@ -263,7 +264,7 @@ export function MasterPlusDemo({ lang }: { lang: string }) {
               { emoji: "🚨", uk: "Евакуатор 24/7", en: "Tow Truck 24/7" },
             ].map((b) => (
               <div key={b.en} className="flex items-center gap-2 bg-white/10 rounded-full px-4 py-2 text-sm text-blue-100">
-                <span>{b.emoji}</span> {isUk ? b.uk : b.en}
+                <EmojiIcon emoji={b.emoji} className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? b.uk : b.en}
               </div>
             ))}
           </div>
@@ -282,14 +283,14 @@ export function MasterPlusDemo({ lang }: { lang: string }) {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {SERVICES.map((s) => (
               <div key={s.en} className="border border-gray-200 dark:border-neutral-700 rounded-xl p-5 hover:shadow-lg transition-shadow group bg-gray-50 dark:bg-neutral-900 hover:bg-white">
-                <div className="text-3xl mb-3">{s.emoji}</div>
+                <div className="mb-3"><EmojiIcon emoji={s.emoji} className="w-8 h-8" /></div>
                 <h3 className="font-bold text-lg text-blue-800 mb-1 group-hover:text-blue-600 transition-colors">
                   {isUk ? s.uk : s.en}
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-neutral-300 mb-3">{isUk ? s.descUk : s.descEn}</p>
                 <div className="flex items-center justify-between text-xs">
                   <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded font-semibold">{s.price}</span>
-                  <span className="text-gray-400">⏱ {s.duration}</span>
+                  <span className="text-gray-400"><EmojiIcon emoji="⏱" className="w-4 h-4 inline-block align-middle mr-1" />{s.duration}</span>
                 </div>
               </div>
             ))}
@@ -344,7 +345,7 @@ export function MasterPlusDemo({ lang }: { lang: string }) {
                       : "bg-white text-gray-700 dark:text-neutral-300 border-gray-300 hover:border-blue-400"
                   }`}
                 >
-                  <span>{loc.emoji}</span> {isUk ? loc.uk : loc.en}
+                  <EmojiIcon emoji={loc.emoji} className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? loc.uk : loc.en}
                 </button>
               ))}
             </div>
@@ -362,7 +363,7 @@ export function MasterPlusDemo({ lang }: { lang: string }) {
             {diagResult && diag && (
               <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 space-y-3">
                 <h4 className="font-bold text-blue-900 text-lg">
-                  📋 {isUk ? "Попередній діагноз" : "Preliminary Diagnosis"}
+                  <EmojiIcon emoji="📋" className="w-5 h-5 inline-block align-middle mr-1" />{isUk ? "Попередній діагноз" : "Preliminary Diagnosis"}
                 </h4>
                 <p className="text-gray-700">{isUk ? diag.diagUk : diag.diagEn}</p>
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -408,8 +409,7 @@ export function MasterPlusDemo({ lang }: { lang: string }) {
                     : "bg-gray-200 text-gray-600 dark:text-neutral-300 hover:bg-gray-300"
                 }`}
               >
-                {tab === "sedan" ? "🚘" : tab === "suv" ? "🚙" : "🚐"}{" "}
-                {isUk ? PRICE_DATA[tab].nameUk : PRICE_DATA[tab].nameEn}
+                <EmojiIcon emoji={tab === "sedan" ? "🚘" : tab === "suv" ? "🚙" : "🚐"} className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? PRICE_DATA[tab].nameUk : PRICE_DATA[tab].nameEn}
               </button>
             ))}
           </div>
@@ -524,7 +524,7 @@ export function MasterPlusDemo({ lang }: { lang: string }) {
             </div>
           ) : (
             <div className="bg-white/10 backdrop-blur rounded-2xl p-8 text-center">
-              <div className="text-5xl mb-4">✅</div>
+              <div className="mb-4"><EmojiIcon emoji="✅" className="w-14 h-14" /></div>
               <h3 className="text-2xl font-bold mb-2">
                 {isUk ? "Запис прийнято!" : "Booking Confirmed!"}
               </h3>
@@ -563,7 +563,7 @@ export function MasterPlusDemo({ lang }: { lang: string }) {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {WHY_US.map((item) => (
               <div key={item.en} className="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-                <div className="text-4xl mb-3">{item.emoji}</div>
+                <div className="mb-3"><EmojiIcon emoji={item.emoji} className="w-10 h-10" /></div>
                 <h3 className="font-bold text-blue-800 mb-2">{isUk ? item.uk : item.en}</h3>
                 <p className="text-sm text-gray-600">{isUk ? item.descUk : item.descEn}</p>
               </div>
@@ -595,7 +595,7 @@ export function MasterPlusDemo({ lang }: { lang: string }) {
                   </div>
                 </div>
                 <div className="flex items-center gap-3 mb-2">
-                  <span className="text-yellow-500">{"⭐".repeat(r.stars)}</span>
+                  <span className="text-yellow-500 flex items-center">{Array.from({ length: r.stars }).map((_, i) => <EmojiIcon key={i} emoji="⭐" className="w-4 h-4" />)}</span>
                   <span className="text-xs text-gray-400">{r.date}</span>
                 </div>
                 <div className="mb-2">
@@ -618,7 +618,7 @@ export function MasterPlusDemo({ lang }: { lang: string }) {
           {/* info */}
           <div>
             <div className="text-xl font-bold mb-3 flex items-center gap-2">
-              <span>🔧</span> {isUk ? "Майстер Плюс" : "Master Plus"}
+              <EmojiIcon emoji="🔧" className="w-5 h-5" /> {isUk ? "Майстер Плюс" : "Master Plus"}
             </div>
             <p className="text-sm text-blue-300 leading-relaxed">
               {isUk
@@ -631,11 +631,11 @@ export function MasterPlusDemo({ lang }: { lang: string }) {
           <div>
             <h4 className="font-bold mb-3">{isUk ? "Контакти" : "Contacts"}</h4>
             <div className="space-y-2 text-sm text-blue-200">
-              <p>📍 {isUk ? "вул. Промислова 18, Київ" : "18 Promyslova St, Kyiv"}</p>
-              <p>📞 +380 (44) 555-12-34</p>
-              <p>📧 info@masterplus.ua</p>
+              <p><EmojiIcon emoji="📍" className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? "вул. Промислова 18, Київ" : "18 Promyslova St, Kyiv"}</p>
+              <p><EmojiIcon emoji="📞" className="w-4 h-4 inline-block align-middle mr-1" />+380 (44) 555-12-34</p>
+              <p><EmojiIcon emoji="📧" className="w-4 h-4 inline-block align-middle mr-1" />info@masterplus.ua</p>
               <p className="text-red-400 font-semibold">
-                🚨 {isUk ? "Евакуатор 24/7:" : "Tow Truck 24/7:"} +380 (67) 999-00-00
+                <EmojiIcon emoji="🚨" className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? "Евакуатор 24/7:" : "Tow Truck 24/7:"} +380 (67) 999-00-00
               </p>
             </div>
           </div>

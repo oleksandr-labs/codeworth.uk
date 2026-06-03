@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 export function LingoSphereDemo({ lang }: { lang: string }) {
   const isUk = lang === "uk";
@@ -326,7 +327,7 @@ export function LingoSphereDemo({ lang }: { lang: string }) {
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-100 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="text-2xl">🌐</span>
+            <EmojiIcon emoji="🌐" className="w-7 h-7" />
             <span className="font-extrabold text-xl" style={{ color: "#0F1B3D" }}>
               Lingo<span style={{ color: "#3B4FCC" }}>Sphere</span>
             </span>
@@ -414,7 +415,7 @@ export function LingoSphereDemo({ lang }: { lang: string }) {
           <div className="bg-white rounded-3xl shadow-xl p-8">
             {!testStarted && !testFinished && (
               <div className="text-center">
-                <div className="text-6xl mb-5">📝</div>
+                <div className="mb-5"><EmojiIcon emoji="📝" className="w-16 h-16" /></div>
                 <h3 className="text-xl font-extrabold text-slate-900 mb-3">
                   {isUk ? "Готові пройти тест?" : "Ready to take the test?"}
                 </h3>
@@ -534,7 +535,7 @@ export function LingoSphereDemo({ lang }: { lang: string }) {
                   ? { background: lt.color, color: "#fff" }
                   : { background: "#F1F5F9", color: "#475569" }}
               >
-                {lt.flag} {isUk ? lt.nameUk : lt.nameEn}
+                <EmojiIcon emoji={lt.flag} className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? lt.nameUk : lt.nameEn}
               </button>
             ))}
           </div>
@@ -639,7 +640,7 @@ export function LingoSphereDemo({ lang }: { lang: string }) {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {teachers.map((t) => (
               <div key={t.name} className="bg-slate-50 rounded-3xl p-6 border border-slate-100 hover:shadow-md transition-shadow">
-                <div className="text-5xl mb-4">{t.emoji}</div>
+                <div className="mb-4"><EmojiIcon emoji={t.emoji} className="w-14 h-14" /></div>
                 <h3 className="font-extrabold text-slate-900 text-base mb-0.5">{t.name}</h3>
                 <div className="text-xs font-semibold mb-1" style={{ color: "#3B4FCC" }}>{t.langLabel}</div>
                 <div className="text-slate-400 text-xs mb-3">{t.certs} · {t.exp}</div>
@@ -666,7 +667,7 @@ export function LingoSphereDemo({ lang }: { lang: string }) {
 
           {submitted ? (
             <div className="bg-white rounded-3xl p-10 text-center">
-              <div className="text-5xl mb-4">🌍</div>
+              <div className="mb-4"><EmojiIcon emoji="🌍" className="w-14 h-14" /></div>
               <h3 className="text-2xl font-extrabold mb-2" style={{ color: "#0F1B3D" }}>
                 {isUk ? "Заявку отримано!" : "You're in!"}
               </h3>
@@ -726,7 +727,7 @@ export function LingoSphereDemo({ lang }: { lang: string }) {
           <div className="grid sm:grid-cols-3 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <span className="text-xl">🌐</span>
+                <EmojiIcon emoji="🌐" className="w-5 h-5" />
                 <span className="font-extrabold text-white">Lingo<span style={{ color: "#3B4FCC" }}>Sphere</span></span>
               </div>
               <p className="text-sm leading-relaxed">

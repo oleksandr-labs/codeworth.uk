@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -252,7 +253,7 @@ export function ZooLifeDemo({ lang }: { lang: string }) {
               const key = `${tabKey}-${p.nameEn}`;
               return (
                 <div key={p.nameEn} style={{ background: "#F9FAFB", border: "1px solid #E5E7EB", borderRadius: 10, padding: "16px", textAlign: "center" }}>
-                  <div style={{ fontSize: 36, marginBottom: 8 }}>{p.emoji}</div>
+                  <div style={{ marginBottom: 8 }}><EmojiIcon emoji={p.emoji} className="w-14 h-14" /></div>
                   <p style={{ fontWeight: 700, fontSize: 13, marginBottom: 2 }}>{isUk ? p.nameUk : p.nameEn}</p>
                   <p style={{ color: "#9CA3AF", fontSize: 11, marginBottom: 8 }}>{isUk ? p.typeUk : p.typeEn}</p>
                   <p style={{ fontWeight: 800, fontSize: 15, color: "#0D9488", marginBottom: 10 }}>{p.price}</p>
@@ -273,7 +274,7 @@ export function ZooLifeDemo({ lang }: { lang: string }) {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16 }}>
             {VET_SERVICES.map((s) => (
               <div key={s.en} style={{ background: "#fff", border: "1px solid #E5E7EB", borderRadius: 10, padding: "20px", textAlign: "center" }}>
-                <div style={{ fontSize: 32, marginBottom: 8 }}>{s.emoji}</div>
+                <div style={{ marginBottom: 8 }}><EmojiIcon emoji={s.emoji} className="w-14 h-14" /></div>
                 <h3 style={{ fontWeight: 700, fontSize: 14, marginBottom: 4 }}>{isUk ? s.uk : s.en}</h3>
                 <p style={{ color: "#0D9488", fontWeight: 700, marginBottom: 12 }}>{s.price}</p>
                 <button style={{ background: "#F9FAFB", border: "1px solid #0D9488", color: "#0D9488", padding: "7px 14px", borderRadius: 6, fontWeight: 600, fontSize: 12, cursor: "pointer" }}>

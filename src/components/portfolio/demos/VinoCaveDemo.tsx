@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type CSSProperties } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 // ─── SVG Icons ────────────────────────────────────────────────────────────────
 
@@ -560,7 +561,7 @@ export function VinoCaveDemo({ lang }: { lang: string }) {
                 <div className="flex items-center justify-between pt-3 border-t gap-2" style={{ borderColor: "#5C3020" }}>
                   <div className="text-xs text-[#D9C5A8] italic font-sans">{wine.notes.join(" · ")}</div>
                   <div className="flex items-center gap-1 text-xs font-sans shrink-0" style={{ color: accentGold }}>
-                    <span>🍽</span>
+                    <EmojiIcon emoji="🍽" className="w-4 h-4 inline-block align-middle mr-1" />
                     <span>{wine.pairing}</span>
                   </div>
                 </div>
@@ -598,7 +599,7 @@ export function VinoCaveDemo({ lang }: { lang: string }) {
                 <div className="text-2xl font-bold text-center" style={{ color: accentGold }}>+</div>
                 <div>
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-base">🍽</span>
+                    <EmojiIcon emoji="🍽" className="w-5 h-5" />
                     <span className="font-bold text-[#F5F0E8]">{p.food}</span>
                   </div>
                   <p className="text-sm text-[#D9C5A8] font-sans">{p.foodDesc}</p>
@@ -632,7 +633,7 @@ export function VinoCaveDemo({ lang }: { lang: string }) {
                 className="rounded-2xl p-5 border flex flex-col gap-3"
                 style={{ background: "#231610", borderColor: "#5C3020" }}
               >
-                <div className="text-3xl">{s.emoji}</div>
+                <EmojiIcon emoji={s.emoji} className="w-8 h-8" />
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-1.5">
                     <h3 className="font-bold text-[#F5F0E8]">{s.name}</h3>
@@ -764,10 +765,10 @@ export function VinoCaveDemo({ lang }: { lang: string }) {
               >
                 <div className="flex items-start gap-5 mb-5">
                   <div
-                    className="w-14 h-14 rounded-full flex items-center justify-center text-xl font-bold shrink-0 border-2"
+                    className="w-14 h-14 rounded-full flex items-center justify-center font-bold shrink-0 border-2"
                     style={{ background: accentBurgundy + "40", borderColor: accentBurgundy, color: "#F5F0E8" }}
                   >
-                    {s.country}
+                    <EmojiIcon emoji={s.country} className="w-5 h-5" />
                   </div>
                   <div>
                     <h3 className="font-bold text-[#F5F0E8] text-lg">{s.name}</h3>

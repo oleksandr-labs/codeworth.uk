@@ -1,5 +1,6 @@
 import { Container } from "@/components/layout/Container";
 import { Shield, Award, Clock, Zap } from "lucide-react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 const CLIENT_LOGOS = [
   { name: "Beauty Room", emoji: "💇", color: "from-pink-500 to-rose-500" },
@@ -65,7 +66,7 @@ export function ClientLogosSection({ lang }: { lang: string }) {
               key={client.name}
               className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 hover:border-indigo-200 hover:shadow-sm transition-all"
             >
-              <span className="text-lg" aria-hidden="true">{client.emoji}</span>
+              <EmojiIcon emoji={client.emoji} className="w-5 h-5 text-neutral-600 dark:text-neutral-300" />
               <span className="text-sm font-medium text-neutral-700">{client.name}</span>
             </div>
           ))}

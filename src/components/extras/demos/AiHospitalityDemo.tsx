@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 interface Props {
   variant: string;
@@ -237,7 +238,7 @@ export function AiHospitalityDemo({ isUk }: Props) {
                       : "bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200"
                   }`}
                 >
-                  <span>{s.emoji}</span>
+                  <EmojiIcon emoji={s.emoji} className="w-4 h-4" />
                   <span>{isUk ? s.uk : s.en}</span>
                 </button>
               ))}

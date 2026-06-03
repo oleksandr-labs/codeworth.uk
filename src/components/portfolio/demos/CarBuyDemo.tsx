@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 export function CarBuyDemo({ lang }: { lang: string }) {
   const isUk = lang === "uk";
@@ -506,10 +507,10 @@ export function CarBuyDemo({ lang }: { lang: string }) {
                     >
                       {/* Photo placeholder */}
                       <div
-                        className="h-36 flex items-center justify-center text-5xl relative"
+                        className="h-36 flex items-center justify-center relative"
                         style={{ background: `linear-gradient(135deg, ${car.color}22, ${car.color}44)` }}
                       >
-                        {car.emoji}
+                        <EmojiIcon emoji={car.emoji} className="w-14 h-14" />
                         <div
                           className="absolute top-2 left-2 text-xs text-white font-bold px-2 py-0.5 rounded-full"
                           style={{ background: "#16A34A" }}
@@ -588,7 +589,7 @@ export function CarBuyDemo({ lang }: { lang: string }) {
               style={{ background: "linear-gradient(135deg, #1E3A5F, #163d2e)" }}
             >
               <div className="flex items-center gap-4">
-                <span className="text-5xl">{carDetail.emoji}</span>
+                <EmojiIcon emoji={carDetail.emoji} className="w-14 h-14" />
                 <div>
                   <h3 className="text-2xl font-black text-white">{carDetail.name}</h3>
                   <p className="text-white/60 text-sm">
@@ -783,7 +784,7 @@ export function CarBuyDemo({ lang }: { lang: string }) {
                 key={i}
                 className="bg-white/10 border border-white/20 rounded-2xl p-5 text-center hover:bg-white/15 transition-colors"
               >
-                <div className="text-4xl mb-3">{step.emoji}</div>
+                <div className="mb-3"><EmojiIcon emoji={step.emoji} className="w-10 h-10" /></div>
                 <div className="flex items-center justify-center gap-2 mb-2">
                   <span
                     className="w-5 h-5 rounded-full flex items-center justify-center text-xs font-black text-white shrink-0"
@@ -956,7 +957,7 @@ export function CarBuyDemo({ lang }: { lang: string }) {
                 { emoji: "⚡", textUk: "Продаж за 7 днів у середньому", textEn: "Sold in 7 days on average" },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3 mb-3">
-                  <span className="text-xl">{item.emoji}</span>
+                  <EmojiIcon emoji={item.emoji} className="w-5 h-5" />
                   <span className="text-slate-700 text-sm font-medium">
                     {isUk ? item.textUk : item.textEn}
                   </span>

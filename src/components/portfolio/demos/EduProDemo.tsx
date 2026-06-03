@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 const BLUE = "#2563EB";
 const YELLOW = "#FBBF24";
@@ -333,7 +334,7 @@ export function EduProDemo({ lang }: { lang: string }) {
           {SUCCESS_STORIES.map((s) => (
             <div key={s.nameEn} style={{ background: "#fff", borderRadius: 14, border: "1px solid #E2E8F0", padding: "18px 16px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
-                <div style={{ width: 40, height: 40, borderRadius: "50%", background: s.avatarBg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, flexShrink: 0 }}>{s.emoji}</div>
+                <div style={{ width: 40, height: 40, borderRadius: "50%", background: s.avatarBg, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}><EmojiIcon emoji={s.emoji} className="w-8 h-8" /></div>
                 <span style={{ fontWeight: 700, fontSize: 14 }}>{isUk ? s.nameUk : s.nameEn}</span>
               </div>
               <div style={{ fontSize: 12, color: "#64748B", marginBottom: 4 }}>

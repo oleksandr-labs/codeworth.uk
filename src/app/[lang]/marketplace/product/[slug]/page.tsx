@@ -15,6 +15,7 @@ import {
   Clock,
   Star,
 } from "lucide-react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 import { NICHES_DATA, getNicheLocalized, COMPLEXITY_LABELS_NICHE } from "@/lib/data/niches";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -186,7 +187,7 @@ export default async function ProductPage({
             <div className="grid md:grid-cols-2 gap-12 items-start">
               <div>
                 <div className="flex items-center gap-3 mb-5">
-                  <span className="text-4xl">{niche.emoji}</span>
+                  <EmojiIcon emoji={niche.emoji} className="w-10 h-10 text-white/80" />
                   <span className="text-sm text-white/60">{niche.category}</span>
                 </div>
                 <h1 className="text-4xl font-bold font-syne mb-4">{niche.title}</h1>
@@ -214,7 +215,7 @@ export default async function ProductPage({
               <div
                 className={`rounded-2xl overflow-hidden bg-linear-to-br ${niche.gradient} aspect-[4/3] flex items-center justify-center relative`}
               >
-                <span className="text-9xl drop-shadow-lg">{niche.emoji}</span>
+                <EmojiIcon emoji={niche.emoji} className="w-32 h-32 text-white/80 drop-shadow-lg" />
                 <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4">
                   <div>
@@ -485,8 +486,8 @@ export default async function ProductPage({
                     href={`/${lang}/marketplace/product/${n.slug}`}
                     className="group bg-white dark:bg-neutral-800 rounded-2xl p-6 border border-gray-100 dark:border-neutral-700 hover:border-indigo-100 hover:shadow-md transition-all"
                   >
-                    <div className={`w-12 h-12 rounded-xl bg-linear-to-br ${n.gradient} flex items-center justify-center text-2xl mb-4`}>
-                      {n.emoji}
+                    <div className={`w-12 h-12 rounded-xl bg-linear-to-br ${n.gradient} flex items-center justify-center mb-4`}>
+                      <EmojiIcon emoji={n.emoji} className="w-8 h-8 text-white/80" />
                     </div>
                     <h3 className="font-bold text-gray-900 dark:text-white group-hover:text-indigo-600 transition-colors mb-1">
                       {n.title}

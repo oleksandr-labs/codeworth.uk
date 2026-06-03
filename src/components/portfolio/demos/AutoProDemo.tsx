@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 export function AutoProDemo({ lang }: { lang: string }) {
   const isUk = lang === "uk";
@@ -197,7 +198,7 @@ export function AutoProDemo({ lang }: { lang: string }) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {SERVICES.map((s) => (
             <div key={s.id} className="bg-[#1C1C1E] border border-zinc-800 p-6 flex flex-col gap-3 hover:border-[#DC2626] transition-colors">
-              <div className="text-3xl">{s.emoji}</div>
+              <EmojiIcon emoji={s.emoji} className="w-8 h-8" />
               <h3 className="text-lg font-black text-white uppercase tracking-wide">{isUk ? s.nameUk : s.nameEn}</h3>
               <p className="text-sm text-zinc-400 flex-1">{isUk ? s.descUk : s.descEn}</p>
               <div className="flex items-center justify-between mt-2">
@@ -375,7 +376,7 @@ export function AutoProDemo({ lang }: { lang: string }) {
                         onClick={() => setBookingService(s.id)}
                         className={`p-4 border text-left transition-colors ${bookingService === s.id ? "border-[#DC2626] bg-[#DC2626]/10" : "border-zinc-700 hover:border-zinc-500"}`}
                       >
-                        <div className="text-2xl mb-2">{s.emoji}</div>
+                        <div className="mb-2"><EmojiIcon emoji={s.emoji} className="w-7 h-7" /></div>
                         <div className="text-xs font-black text-white uppercase tracking-wide leading-tight">{isUk ? s.nameUk : s.nameEn}</div>
                       </button>
                     ))}
@@ -579,7 +580,7 @@ export function AutoProDemo({ lang }: { lang: string }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {MECHANICS.map((m, i) => (
               <div key={i} className="bg-[#1C1C1E] border border-zinc-800 p-6 text-center hover:border-[#DC2626] transition-colors">
-                <div className="text-5xl mb-4">{m.emoji}</div>
+                <div className="mb-4"><EmojiIcon emoji={m.emoji} className="w-14 h-14" /></div>
                 <h3 className="font-black text-white text-sm uppercase tracking-wide mb-1">{isUk ? m.nameUk : m.nameEn}</h3>
                 <p className="text-[#DC2626] text-xs font-bold uppercase tracking-wider mb-2">{isUk ? m.specUk : m.specEn}</p>
                 <p className="text-zinc-400 text-xs mb-3">{isUk ? m.expUk : m.expEn} {isUk ? "досвіду" : "experience"}</p>

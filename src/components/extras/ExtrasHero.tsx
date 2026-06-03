@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { EXTRAS, EXTRA_CATEGORIES } from "@/lib/data/extras";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 export function ExtrasHero({ lang }: { lang: string }) {
   const isUk = lang === "uk";
@@ -37,7 +38,7 @@ export function ExtrasHero({ lang }: { lang: string }) {
               key={cat.value}
               className="px-4 py-2 rounded-xl bg-white/10 text-white text-sm font-medium backdrop-blur-sm border border-white/10"
             >
-              {cat.emoji} {isUk ? cat.label : cat.labelEn}
+              <EmojiIcon emoji={cat.emoji} className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? cat.label : cat.labelEn}
             </span>
           ))}
         </div>

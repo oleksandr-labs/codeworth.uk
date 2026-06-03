@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 /* ───────────── constants ───────────── */
 
@@ -544,11 +545,10 @@ export function PretzelFarmDemo({ lang }: { lang: string }) {
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      fontSize: 48,
                       boxShadow: `0 8px 32px rgba(168,69,10,0.5)`,
                     }}
                   >
-                    🏺
+                    <EmojiIcon emoji="🏺" className="w-16 h-16" />
                   </div>
                 </div>
               </div>
@@ -595,7 +595,7 @@ export function PretzelFarmDemo({ lang }: { lang: string }) {
                 flexShrink: 0,
               }}
             >
-              {item.icon} {isUk ? item.uk : item.en}
+              <EmojiIcon emoji={item.icon} className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? item.uk : item.en}
             </span>
           ))}
         </div>
@@ -669,7 +669,7 @@ export function PretzelFarmDemo({ lang }: { lang: string }) {
                     "repeating-linear-gradient(45deg, #fff 0px, #fff 1px, transparent 1px, transparent 12px)",
                 }}
               />
-              <span className="text-7xl relative z-10">🏺</span>
+              <EmojiIcon emoji="🏺" className="w-16 h-16 relative z-10" />
               <span style={{ color: "rgba(255,255,255,0.85)", fontSize: 12, fontWeight: 600, marginTop: 8, position: "relative", zIndex: 1 }}>
                 {isUk ? "Закваска «Маруся», 2018–" : "Starter «Marusia», 2018–"}
               </span>
@@ -699,7 +699,7 @@ export function PretzelFarmDemo({ lang }: { lang: string }) {
                 }}
                 className="flex flex-col items-center justify-center gap-1"
               >
-                <span className="text-3xl">🌾</span>
+                <EmojiIcon emoji="🌾" className="w-8 h-8" />
                 <span style={{ color: "rgba(255,255,255,0.7)", fontSize: 10 }}>
                   {isUk ? "Ферма Полісся" : "Polissia Farm"}
                 </span>
@@ -712,7 +712,7 @@ export function PretzelFarmDemo({ lang }: { lang: string }) {
                 }}
                 className="flex flex-col items-center justify-center gap-1"
               >
-                <span className="text-3xl">🔥</span>
+                <EmojiIcon emoji="🔥" className="w-8 h-8" />
                 <span style={{ color: "rgba(255,255,255,0.7)", fontSize: 10 }}>
                   {isUk ? "Піч 250°C" : "Oven 250°C"}
                 </span>
@@ -787,7 +787,7 @@ export function PretzelFarmDemo({ lang }: { lang: string }) {
                     position: "relative",
                   }}
                 >
-                  <span style={{ fontSize: 52 }}>{item.emoji}</span>
+                  <EmojiIcon emoji={item.emoji} className="w-16 h-16" />
                   {/* Weight badge */}
                   <span
                     style={{
@@ -916,11 +916,10 @@ export function PretzelFarmDemo({ lang }: { lang: string }) {
                       alignItems: "center",
                       justifyContent: "center",
                       flexShrink: 0,
-                      fontSize: 17,
                       zIndex: 1,
                     }}
                   >
-                    {step.icon}
+                    <EmojiIcon emoji={step.icon} className="w-8 h-8" />
                   </div>
                   <div className="pt-2">
                     <p style={{ color: COLORS.terraLight }} className="text-xs font-bold">
@@ -1024,7 +1023,7 @@ export function PretzelFarmDemo({ lang }: { lang: string }) {
                   flexShrink: 0,
                 }}
               >
-                <span style={{ fontSize: 36 }}>🍽️</span>
+                <EmojiIcon emoji="🍽️" className="w-14 h-14" />
                 <span style={{ color: COLORS.terraLight, fontSize: 9, fontWeight: 700, letterSpacing: "0.08em", textAlign: "center" }}>
                   {isUk ? "Ресторани" : "Restaurants"}
                 </span>
@@ -1133,7 +1132,7 @@ export function PretzelFarmDemo({ lang }: { lang: string }) {
                 textAlign: "center",
               }}
             >
-              <div className="text-2xl mb-1">{b.icon}</div>
+              <div className="mb-1"><EmojiIcon emoji={b.icon} className="w-7 h-7" /></div>
               <p style={{ color: COLORS.muted, fontSize: 11 }}>{isUk ? b.uk : b.en}</p>
             </div>
           ))}
@@ -1337,7 +1336,7 @@ export function PretzelFarmDemo({ lang }: { lang: string }) {
             style={{ backgroundColor: "#F0FDF4", border: "1px solid #86EFAC", borderRadius: 16 }}
             className="p-7 text-center"
           >
-            <div className="text-4xl mb-3">🥖</div>
+            <div className="mb-3"><EmojiIcon emoji="🥖" className="w-10 h-10" /></div>
             <p className="font-bold text-green-800 text-lg mb-1">
               {isUk ? "Підписку оформлено!" : "Subscription confirmed!"}
             </p>

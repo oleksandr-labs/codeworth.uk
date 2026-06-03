@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { NicheGrid } from "@/components/marketplace/NicheGrid";
 import { ArrowRight, Check, Zap, DollarSign, Star, ShieldCheck, Headphones, Eye } from "lucide-react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
@@ -327,7 +328,7 @@ export default async function MarketplacePage({ params }: { params: Promise<{ la
               {/* Text content */}
               <div className="text-center lg:text-left">
                 <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-sm font-medium text-indigo-300">
-                  {isUk ? `✨ ${totalItems} готових рішень для ${NICHES.length} галузей` : `✨ ${totalItems} ready-made solutions for ${NICHES.length} industries`}
+                  <EmojiIcon emoji="✨" className="w-4 h-4 inline-block align-middle mr-1" />{isUk ? `${totalItems} готових рішень для ${NICHES.length} галузей` : `${totalItems} ready-made solutions for ${NICHES.length} industries`}
                 </div>
                 <h1 className="text-5xl lg:text-6xl font-heading font-extrabold text-white mb-6 leading-tight">
                   {isUk
@@ -369,7 +370,7 @@ export default async function MarketplacePage({ params }: { params: Promise<{ la
                       transition-transform hover:-translate-y-1 hover:shadow-lg hover:shadow-black/30
                       ${i === 4 ? "ring-2 ring-white/30 scale-105" : "opacity-80 hover:opacity-100"}`}
                   >
-                    <span className="text-3xl">{item.emoji}</span>
+                    <EmojiIcon emoji={item.emoji} className="w-8 h-8 text-white/80" />
                     <span className="text-white font-medium text-xs leading-tight">{item.name}</span>
                     <span className="text-white/70 text-[10px]">{isUk ? `від ${item.price} ₴` : `from ${item.price}`}</span>
                   </div>

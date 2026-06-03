@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 const STYLES = ["Всі", "Realism", "Geometric", "Watercolor", "Blackwork", "Fine Line"];
 const STYLES_EN = ["All", "Realism", "Geometric", "Watercolor", "Blackwork", "Fine Line"];
@@ -117,7 +118,7 @@ export function InkCityDemo({ lang }: { lang: string }) {
       <nav className="sticky top-0 z-50 bg-zinc-950/95 backdrop-blur border-b border-zinc-800">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
-            <span className="text-2xl">🖋</span>
+            <EmojiIcon emoji="🖋" className="w-7 h-7" />
             <span className="text-xl font-bold tracking-widest text-white uppercase">InkCity</span>
           </div>
 
@@ -250,8 +251,8 @@ export function InkCityDemo({ lang }: { lang: string }) {
                 key={item.id}
                 className="bg-zinc-900 rounded-xl overflow-hidden border border-zinc-800 hover:border-rose-500/40 transition-colors group"
               >
-                <div className="h-40 flex items-center justify-center text-6xl bg-zinc-800 group-hover:bg-zinc-700/80 transition-colors">
-                  {GALLERY_EMOJIS[item.style] ?? "🖋"}
+                <div className="h-40 flex items-center justify-center bg-zinc-800 group-hover:bg-zinc-700/80 transition-colors">
+                  <EmojiIcon emoji={GALLERY_EMOJIS[item.style] ?? "🖋"} className="w-16 h-16" />
                 </div>
                 <div className="p-3">
                   <p className="text-white text-sm font-semibold leading-tight mb-2">
@@ -290,8 +291,8 @@ export function InkCityDemo({ lang }: { lang: string }) {
                 key={artist.nameEn}
                 className="bg-zinc-900 rounded-2xl border border-zinc-800 p-6 flex flex-col items-center text-center hover:border-rose-500/30 transition-colors"
               >
-                <div className="w-20 h-20 rounded-full bg-zinc-800 border-2 border-rose-500/40 flex items-center justify-center text-3xl mb-4 shadow-lg">
-                  {artist.emoji}
+                <div className="w-20 h-20 rounded-full bg-zinc-800 border-2 border-rose-500/40 flex items-center justify-center mb-4 shadow-lg">
+                  <EmojiIcon emoji={artist.emoji} className="w-8 h-8" />
                 </div>
                 <h3 className="text-white font-bold text-lg mb-1">
                   {isUk ? artist.nameUk : artist.nameEn}
@@ -394,7 +395,7 @@ export function InkCityDemo({ lang }: { lang: string }) {
 
           {submitted ? (
             <div className="bg-zinc-800 rounded-2xl border border-rose-500/30 p-10 text-center">
-              <div className="text-5xl mb-4">🖋</div>
+              <div className="mb-4"><EmojiIcon emoji="🖋" className="w-14 h-14" /></div>
               <h3 className="text-white text-2xl font-black mb-2">
                 {isUk ? "Заявку прийнято!" : "Request Received!"}
               </h3>
@@ -537,7 +538,7 @@ export function InkCityDemo({ lang }: { lang: string }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-10">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <span className="text-xl">🖋</span>
+                <EmojiIcon emoji="🖋" className="w-5 h-5" />
                 <span className="text-lg font-black tracking-widest text-white uppercase">InkCity</span>
               </div>
               <p className="text-stone-500 text-xs leading-relaxed">
@@ -582,17 +583,17 @@ export function InkCityDemo({ lang }: { lang: string }) {
                 <div className="flex gap-3 mt-2">
                   <a
                     href="#"
-                    className="w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 hover:border-rose-500 flex items-center justify-center text-stone-400 hover:text-rose-400 transition-colors text-base"
+                    className="w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 hover:border-rose-500 flex items-center justify-center text-stone-400 hover:text-rose-400 transition-colors"
                     aria-label="Instagram"
                   >
-                    📷
+                    <EmojiIcon emoji="📷" className="w-5 h-5" />
                   </a>
                   <a
                     href="#"
-                    className="w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 hover:border-rose-500 flex items-center justify-center text-stone-400 hover:text-rose-400 transition-colors text-base"
+                    className="w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 hover:border-rose-500 flex items-center justify-center text-stone-400 hover:text-rose-400 transition-colors"
                     aria-label="TikTok"
                   >
-                    🎵
+                    <EmojiIcon emoji="🎵" className="w-5 h-5" />
                   </a>
                 </div>
               </div>

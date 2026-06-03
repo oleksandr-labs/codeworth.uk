@@ -10,6 +10,7 @@ import { Pagination } from "@/components/ui/Pagination";
 import { NewsletterForm } from "@/components/ui/NewsletterForm";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { useLocale } from "@/components/layout/LocaleProvider";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 const POSTS_PER_PAGE = 9;
 const BLOG_CATEGORY_LIST = BLOG_CATEGORIES.filter((c) => c.id !== 'all');
@@ -122,7 +123,7 @@ export function BlogContent() {
                 featured.color
               )}
             >
-              {featured.emoji}
+              <EmojiIcon emoji={featured.emoji} className="w-16 h-16 text-white/80" />
             </div>
             <div className="p-8 lg:p-10 flex flex-col justify-center">
               <span className="inline-block px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold mb-4">
@@ -322,7 +323,7 @@ export function BlogContent() {
                       post.color
                     )}
                   >
-                    {post.emoji}
+                    <EmojiIcon emoji={post.emoji} className="w-14 h-14 text-white/80" />
                     {isNewPost(post.date) && (
                       <span className="absolute top-3 right-3 bg-emerald-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide shadow">
                         {isUk ? "Нове" : "New"}
@@ -356,7 +357,7 @@ export function BlogContent() {
                           const authorFirstName = post.author.split(" ")[0];
                           const avatar = (
                             <span className="w-5 h-5 rounded-full bg-indigo-50 flex items-center justify-center text-[10px] font-bold text-indigo-600 shrink-0">
-                              {author?.emoji ?? post.author[0]}
+                              {author?.emoji ? <EmojiIcon emoji={author.emoji} className="w-8 h-8" /> : post.author[0]}
                             </span>
                           );
                           return author ? (

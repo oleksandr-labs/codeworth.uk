@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 function fmtUah(uah: number, isUk: boolean): string {
   if (isUk) return `${uah.toLocaleString("uk-UA")} ₴`;
@@ -1142,7 +1143,7 @@ function BundleBuilderDemo({ isUk }: { isUk: boolean }) {
             {items.map((item) => (
               <button key={item.id} onClick={() => toggle(item.id)}
                 className={`rounded-2xl p-4 text-left border-2 transition-all ${item.selected ? "border-amber-500 bg-amber-50 shadow-sm" : "border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-amber-300"}`}>
-                <div className="text-2xl mb-2">{item.emoji}</div>
+                <div className="mb-2"><EmojiIcon emoji={item.emoji} className="w-7 h-7 text-neutral-700 dark:text-neutral-200" /></div>
                 <p className="text-sm font-semibold text-neutral-900 dark:text-white leading-tight">{isUk ? item.nameUk : item.name}</p>
                 <p className="text-sm font-bold text-amber-700 mt-1">{fmtUah(item.price, isUk)}</p>
                 {item.selected && <p className="text-xs text-amber-600 mt-1 font-medium">✓ {isUk ? "Додано" : "Added"}</p>}
@@ -1162,7 +1163,7 @@ function BundleBuilderDemo({ isUk }: { isUk: boolean }) {
                 <div className="space-y-2 mb-4">
                   {selected.map((i) => (
                     <div key={i.id} className="flex justify-between text-sm gap-2">
-                      <span className="text-neutral-700 dark:text-neutral-300 truncate">{i.emoji} {isUk ? i.nameUk.split(" ")[0] : i.name.split(" ")[0]}</span>
+                      <span className="text-neutral-700 dark:text-neutral-300 truncate flex items-center gap-1"><EmojiIcon emoji={i.emoji} className="w-3.5 h-3.5 shrink-0" />{isUk ? i.nameUk.split(" ")[0] : i.name.split(" ")[0]}</span>
                       <span className="font-medium shrink-0">{fmtUah(i.price, isUk)}</span>
                     </div>
                   ))}
@@ -1769,7 +1770,7 @@ function FomoDemo({ isUk }: { isUk: boolean }) {
 
           {/* FOMO toast */}
           <div className={`absolute bottom-4 left-4 max-w-[240px] bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 rounded-xl shadow-xl p-3 flex gap-2.5 items-start transition-all duration-300 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}>
-            <div className="text-xl shrink-0">{msg.emoji}</div>
+            <div className="shrink-0 mt-0.5"><EmojiIcon emoji={msg.emoji} className="w-5 h-5 text-neutral-500 dark:text-neutral-400" /></div>
             <div className="flex-1 min-w-0">
               <p className="text-xs font-bold text-neutral-900 dark:text-white truncate">{isUk ? msg.nameUk : msg.name}</p>
               <p className="text-xs text-neutral-500 dark:text-neutral-400 leading-tight">{isUk ? msg.actionUk : msg.action}</p>

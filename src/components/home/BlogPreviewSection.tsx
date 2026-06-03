@@ -4,6 +4,7 @@ import { BLOG_POSTS } from "@/lib/data/blog";
 import { getAuthorByName } from "@/lib/data/blogAuthors";
 import { Clock, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 function formatDate(dateStr: string, locale: string) {
   return new Date(dateStr).toLocaleDateString(locale === "uk" ? "uk-UA" : "en-US", {
@@ -51,8 +52,8 @@ export function BlogPreviewSection({ lang }: { lang: string }) {
               className="group rounded-2xl border border-neutral-100 dark:border-neutral-700 overflow-hidden hover:shadow-lg hover:shadow-neutral-200/60 transition-all duration-300 hover:-translate-y-1 bg-white"
             >
               {/* Visual */}
-              <div className={cn("h-40 bg-linear-to-br flex items-center justify-center text-5xl", post.color)}>
-                {post.emoji}
+              <div className={cn("h-40 bg-linear-to-br flex items-center justify-center", post.color)}>
+                <EmojiIcon emoji={post.emoji} className="w-14 h-14 text-white/80" />
               </div>
               {/* Content */}
               <div className="p-6">
@@ -71,7 +72,7 @@ export function BlogPreviewSection({ lang }: { lang: string }) {
                       const author = getAuthorByName(post.author);
                       return (
                         <span className="w-5 h-5 rounded-full bg-indigo-50 flex items-center justify-center text-[10px] font-bold text-indigo-600 shrink-0">
-                          {author?.emoji ?? post.author?.[0] ?? "?"}
+                          {author?.emoji ? <EmojiIcon emoji={author.emoji} className="w-7 h-7" /> : (post.author?.[0] ?? "?")}
                         </span>
                       );
                     })()}

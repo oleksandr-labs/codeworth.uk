@@ -12,6 +12,7 @@ import { SERVICES_DATA, getServiceLocalized } from "@/lib/data/services";
 import { Clock, Calendar, ArrowLeft, ArrowRight, ChevronRight } from "lucide-react";
 import { NewsletterForm } from "@/components/ui/NewsletterForm";
 import { ShareButtons } from "@/components/ui/ShareButtons";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 import { ReadingProgress } from "@/components/blog/ReadingProgress";
 import { cn } from "@/lib/utils";
 
@@ -280,7 +281,7 @@ export default async function BlogPostPage({ params }: Props) {
 
               {/* Article */}
               <article className="lg:col-span-3">
-                <div className="text-5xl mb-8 flex justify-center">{post.emoji}</div>
+                <div className="mb-8 flex justify-center"><EmojiIcon emoji={post.emoji} className="w-16 h-16 text-neutral-700 dark:text-neutral-200" /></div>
 
                 <div className="prose prose-neutral max-w-none">
                   {getPostContent(post, isUk).map((para, i) => (
@@ -364,8 +365,8 @@ export default async function BlogPostPage({ params }: Props) {
                   const authorData = getAuthorByName(post.author);
                   return (
                     <div className="mt-8 p-6 rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900 flex gap-5">
-                      <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-indigo-100 to-indigo-200 flex items-center justify-center text-2xl shrink-0">
-                        {authorData?.emoji ?? post.author[0]}
+                      <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-indigo-100 to-indigo-200 flex items-center justify-center shrink-0">
+                        {authorData?.emoji ? <EmojiIcon emoji={authorData.emoji} className="w-8 h-8" /> : post.author[0]}
                       </div>
                       <div className="min-w-0">
                         <div className="font-heading font-bold text-neutral-900 dark:text-white text-base leading-tight">
@@ -438,8 +439,8 @@ export default async function BlogPostPage({ params }: Props) {
                     const sidebarAuthor = getAuthorByName(post.author);
                     return (
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center text-xl shrink-0">
-                          {sidebarAuthor?.emoji ?? post.author[0]}
+                        <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center shrink-0">
+                          {sidebarAuthor?.emoji ? <EmojiIcon emoji={sidebarAuthor.emoji} className="w-8 h-8 text-white/80" /> : post.author[0]}
                         </div>
                         <div>
                           <div className="font-semibold text-neutral-900 dark:text-white text-sm">
@@ -480,7 +481,7 @@ export default async function BlogPostPage({ params }: Props) {
                 {/* Niche demo link */}
                 {relatedNiche && (
                   <div className={`p-5 rounded-2xl bg-linear-to-br ${relatedNiche.gradient} text-white`}>
-                    <div className="text-3xl mb-2">{relatedNiche.emoji}</div>
+                    <div className="mb-2"><EmojiIcon emoji={relatedNiche.emoji} className="w-8 h-8 text-white/80" /></div>
                     <h3 className="font-heading font-bold text-white mb-1 text-sm">{isUk ? "Готове рішення" : "Ready-Made Solution"}</h3>
                     <p className="text-xs text-white/80 mb-3">{relatedNiche.subtitle}</p>
                     <div className="text-xs text-white/70 mb-3">
@@ -536,8 +537,8 @@ export default async function BlogPostPage({ params }: Props) {
                     href={`/${lang}/blog/${s.slug}`}
                     className="group bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-100 dark:border-neutral-700 overflow-hidden hover:shadow-lg hover:border-indigo-100 hover:-translate-y-1 transition-all duration-300"
                   >
-                    <div className={`h-36 bg-linear-to-br ${s.color} flex items-center justify-center text-5xl`}>
-                      {s.emoji}
+                    <div className={`h-36 bg-linear-to-br ${s.color} flex items-center justify-center`}>
+                      <EmojiIcon emoji={s.emoji} className="w-8 h-8 text-white/80" />
                     </div>
                     <div className="p-5">
                       <span className="inline-block text-xs font-semibold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-full mb-3">

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 export function HomeFindDemo({ lang }: { lang: string }) {
   const isUk = lang === "uk";
@@ -294,8 +295,8 @@ export function HomeFindDemo({ lang }: { lang: string }) {
                 className="bg-white rounded-xl border border-gray-200 dark:border-neutral-700 overflow-hidden hover:shadow-lg transition-shadow"
               >
                 {/* image placeholder */}
-                <div className="h-44 bg-linear-to-br from-teal-50 to-teal-100 flex items-center justify-center text-6xl">
-                  {p.emoji}
+                <div className="h-44 bg-linear-to-br from-teal-50 to-teal-100 flex items-center justify-center">
+                  <EmojiIcon emoji={p.emoji} className="w-16 h-16" />
                 </div>
                 <div className="p-5">
                   <div className="flex items-center gap-2 mb-2">
@@ -345,8 +346,8 @@ export function HomeFindDemo({ lang }: { lang: string }) {
             onClick={(e) => e.stopPropagation()}
           >
             {/* modal header image */}
-            <div className="h-48 bg-linear-to-br from-teal-100 to-teal-200 flex items-center justify-center text-7xl relative">
-              {selectedProperty.emoji}
+            <div className="h-48 bg-linear-to-br from-teal-100 to-teal-200 flex items-center justify-center relative">
+              <EmojiIcon emoji={selectedProperty.emoji} className="w-16 h-16" />
               <button
                 onClick={() => setSelectedId(null)}
                 className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/80 hover:bg-white text-stone-600 flex items-center justify-center text-lg font-bold transition-colors"
@@ -397,7 +398,7 @@ export function HomeFindDemo({ lang }: { lang: string }) {
               <div className="flex flex-wrap gap-2 mb-5">
                 {selectedProperty.features.map((f) => (
                   <span key={f} className="text-xs bg-teal-50 text-teal-700 px-2.5 py-1 rounded-full">
-                    {featureLabels[f]?.emoji} {featureLabels[f]?.[isUk ? "uk" : "en"]}
+                    {featureLabels[f]?.emoji && <EmojiIcon emoji={featureLabels[f].emoji} className="w-4 h-4 inline-block align-middle mr-1" />}{featureLabels[f]?.[isUk ? "uk" : "en"]}
                   </span>
                 ))}
               </div>
@@ -582,8 +583,8 @@ export function HomeFindDemo({ lang }: { lang: string }) {
               { step: 3, emoji: "🚀", titleEn: "Publish", titleUk: "Публікація", descEn: "Your listing goes live with professional photos and appears in search results immediately.", descUk: "Ваше оголошення виходить з професійними фото та одразу з'являється у пошуку." },
             ].map((s) => (
               <div key={s.step} className="bg-white rounded-xl border border-gray-200 dark:border-neutral-700 p-6">
-                <div className="w-12 h-12 mx-auto mb-4 bg-teal-50 rounded-full flex items-center justify-center text-2xl">
-                  {s.emoji}
+                <div className="w-12 h-12 mx-auto mb-4 bg-teal-50 rounded-full flex items-center justify-center">
+                  <EmojiIcon emoji={s.emoji} className="w-7 h-7" />
                 </div>
                 <div className="text-xs font-bold text-teal-600 mb-1">
                   {isUk ? "Крок" : "Step"} {s.step}
@@ -627,7 +628,7 @@ export function HomeFindDemo({ lang }: { lang: string }) {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {agents.map((a, i) => (
               <div key={i} className="bg-gray-50 dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-700 p-5 text-center hover:shadow-md transition-shadow">
-                <div className="text-4xl mb-3">{a.emoji}</div>
+                <div className="mb-3"><EmojiIcon emoji={a.emoji} className="w-10 h-10" /></div>
                 <h3 className="font-bold text-stone-800 mb-0.5">{isUk ? a.nameUk : a.nameEn}</h3>
                 <p className="text-xs text-teal-600 font-medium mb-3">{isUk ? a.specUk : a.specEn}</p>
                 <div className="flex justify-center gap-4 text-xs text-stone-500 mb-3">
@@ -683,8 +684,8 @@ export function HomeFindDemo({ lang }: { lang: string }) {
             {reviews.map((r, i) => (
               <div key={i} className="bg-gray-50 dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-700 p-5">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 shrink-0 bg-teal-100 rounded-full flex items-center justify-center text-lg">
-                    {r.emoji}
+                  <div className="w-10 h-10 shrink-0 bg-teal-100 rounded-full flex items-center justify-center">
+                    <EmojiIcon emoji={r.emoji} className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="font-semibold text-stone-800 text-sm">{isUk ? r.nameUk : r.nameEn}</div>

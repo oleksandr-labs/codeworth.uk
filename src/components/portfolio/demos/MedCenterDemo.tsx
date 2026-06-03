@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 // ─── SVG Icons ────────────────────────────────────────────────────────────────
 
@@ -549,7 +550,7 @@ export function MedCenterDemo({ lang }: { lang: string }) {
                   onClick={() => setSelectedArea(selectedArea === area.id ? null : area.id)}
                   className={`flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all ${selectedArea === area.id ? "border-teal-500 bg-teal-50 shadow-md" : "border-slate-200 bg-white dark:bg-neutral-800 hover:border-teal-300"}`}
                 >
-                  <span className="text-3xl">{area.emoji}</span>
+                  <EmojiIcon emoji={area.emoji} className="w-8 h-8" />
                   <span className="text-xs font-medium text-slate-700">{isUk ? area.nameUk : area.nameEn}</span>
                 </button>
               ))}
@@ -559,7 +560,7 @@ export function MedCenterDemo({ lang }: { lang: string }) {
               {activeArea ? (
                 <>
                   <h3 className="font-bold text-slate-900 mb-3 flex items-center gap-2">
-                    <span>{activeArea.emoji}</span>
+                    <EmojiIcon emoji={activeArea.emoji} className="w-5 h-5 inline-block align-middle" />
                     {isUk ? activeArea.nameUk : activeArea.nameEn}
                   </h3>
                   <p className="text-xs font-bold text-slate-400 uppercase tracking-wide mb-2">{t.commonSymp}:</p>

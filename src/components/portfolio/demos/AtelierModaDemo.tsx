@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 const FABRIC_TABS = [
   { key: "wool", labelEn: "Wool", labelUk: "Вовна" },
@@ -349,7 +350,7 @@ export function AtelierModaDemo({ lang }: { lang: string }) {
                 className="p-8 md:p-10 flex flex-col gap-5"
                 style={{ backgroundColor: "#FAFAF8" }}
               >
-                <span className="text-3xl">{s.emoji}</span>
+                <EmojiIcon emoji={s.emoji} className="w-8 h-8" />
                 <div>
                   <h3 className="text-lg font-serif mb-1" style={{ color: "#2C1810" }}>
                     {isUk ? s.titleUk : s.titleEn}
@@ -512,7 +513,7 @@ export function AtelierModaDemo({ lang }: { lang: string }) {
                   className="aspect-[3/4] flex flex-col items-center justify-center gap-2 mb-3 transition-transform group-hover:scale-[1.02]"
                   style={{ backgroundColor: item.color }}
                 >
-                  <span className="text-4xl">{item.emoji}</span>
+                  <EmojiIcon emoji={item.emoji} className="w-10 h-10" />
                 </div>
                 <h4 className="font-serif text-sm mb-0.5" style={{ color: "#2C1810" }}>
                   {isUk ? item.typeUk : item.typeEn}

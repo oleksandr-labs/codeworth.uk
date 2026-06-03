@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
 interface Props { lang: string; }
 
@@ -203,7 +204,7 @@ export function MelodyDemo({ lang }: Props) {
                   : [{ icon: "🎸", label: "Guitar", count: "340+" }, { icon: "🎹", label: "Piano", count: "280+" }, { icon: "🎤", label: "Vocals", count: "390+" }]
                 ).map((s) => (
                   <div key={s.label} className="bg-white/5 border border-white/10 rounded-2xl p-4 text-center">
-                    <div className="text-2xl mb-1">{s.icon}</div>
+                    <div className="mb-1"><EmojiIcon emoji={s.icon} className="w-7 h-7" /></div>
                     <div className="font-bold text-sm">{s.count}</div>
                     <div className="text-xs text-white/40">{s.label}</div>
                   </div>
@@ -232,7 +233,7 @@ export function MelodyDemo({ lang }: Props) {
                     <div className="font-extrabold text-white text-2xl">{d.title}</div>
                     <div className="text-white/80 text-xs mt-0.5">{d.subtitle}</div>
                   </div>
-                  <span className="text-5xl">{d.icon}</span>
+                  <EmojiIcon emoji={d.icon} className="w-14 h-14" />
                 </div>
                 <div className="p-5">
                   <div className="text-xs text-white/40 mb-3">{isUk ? "Вік:" : "Age:"} {d.age}</div>
@@ -271,7 +272,7 @@ export function MelodyDemo({ lang }: Props) {
                     : "bg-white/5 border-white/10"
                 }`}
               >
-                <div className="text-4xl mb-4">{f.icon}</div>
+                <div className="mb-4"><EmojiIcon emoji={f.icon} className="w-10 h-10" /></div>
                 <h3 className="font-extrabold text-xl mb-2">{f.title}</h3>
                 {f.badge && <div className="text-xs font-bold bg-white/20 rounded-full px-3 py-1 inline-block mb-3">⭐ {f.badge}</div>}
                 <p className={`text-sm leading-relaxed ${f.highlight ? "text-violet-100" : "text-white/50"}`}>{f.desc}</p>
@@ -290,7 +291,7 @@ export function MelodyDemo({ lang }: Props) {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {whyOnline.map((item) => (
               <div key={item.title} className="flex gap-4 p-5 rounded-2xl bg-white/5 border border-white/10">
-                <span className="text-3xl shrink-0">{item.icon}</span>
+                <EmojiIcon emoji={item.icon} className="w-8 h-8 shrink-0" />
                 <div>
                   <h3 className="font-bold mb-1 text-sm">{item.title}</h3>
                   <p className="text-white/50 text-xs leading-relaxed">{item.desc}</p>
@@ -311,7 +312,7 @@ export function MelodyDemo({ lang }: Props) {
           <div className="grid md:grid-cols-3 gap-8">
             {teachers.map((t) => (
               <div key={t.name} className="bg-white/5 border border-white/10 rounded-3xl p-7 hover:border-violet-500/30 transition-colors">
-                <div className="text-5xl mb-4">{t.emoji}</div>
+                <div className="mb-4"><EmojiIcon emoji={t.emoji} className="w-14 h-14" /></div>
                 <h3 className="font-extrabold text-xl mb-0.5">{t.name}</h3>
                 <div className="text-violet-400 font-semibold text-sm mb-3">{t.title}</div>
                 <p className="text-white/50 text-sm leading-relaxed mb-4">{t.bio}</p>
