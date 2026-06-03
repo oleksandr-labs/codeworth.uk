@@ -149,6 +149,8 @@ const DEDICATED_DEMOS = new Set([
   "erp-construction",
   "erp-retail-chain",
   "erp-agency",
+  "erp-clinic",
+  "erp-logistics",
 ]);
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -473,11 +475,11 @@ export default async function PortfolioProjectPage({ params }: Props) {
                     <>
                       <div>
                         <h2 className="text-2xl font-heading font-bold text-neutral-900 dark:text-white mb-4">🎯 {isUk ? "Задача клієнта" : "Client's Challenge"}</h2>
-                        <p className="text-neutral-600 dark:text-neutral-300 dark:text-neutral-400 leading-relaxed">{caseStudy.challenge}</p>
+                        <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">{caseStudy.challenge}</p>
                       </div>
                       <div>
                         <h2 className="text-2xl font-heading font-bold text-neutral-900 dark:text-white mb-4">🔧 {isUk ? "Наше рішення" : "Our Solution"}</h2>
-                        <p className="text-neutral-600 dark:text-neutral-300 dark:text-neutral-400 leading-relaxed">{caseStudy.solution}</p>
+                        <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">{caseStudy.solution}</p>
                       </div>
                       <div>
                         <h2 className="text-2xl font-heading font-bold text-neutral-900 dark:text-white mb-4">📈 {isUk ? "Результати" : "Results"}</h2>
@@ -498,7 +500,7 @@ export default async function PortfolioProjectPage({ params }: Props) {
                     <>
                       <div>
                         <h2 className="text-2xl font-heading font-bold text-neutral-900 dark:text-white mb-4">{isUk ? "Задача клієнта" : "Client's Challenge"}</h2>
-                        <p className="text-neutral-600 dark:text-neutral-300 dark:text-neutral-400 leading-relaxed">
+                        <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
                           {isUk
                             ? <>Клієнт звернувся з запитом на розробку сучасного сайту для <strong>{project.client}</strong>. Основні вимоги: конвертувати відвідувачів у клієнтів, бути швидким, адаптивним та SEO-оптимізованим.</>
                             : <>The client requested a modern website for <strong>{project.client}</strong>. Key requirements: convert visitors into customers, be fast, mobile-friendly, and SEO-optimized.</>}
@@ -506,7 +508,7 @@ export default async function PortfolioProjectPage({ params }: Props) {
                       </div>
                       <div>
                         <h2 className="text-2xl font-heading font-bold text-neutral-900 dark:text-white mb-4">{isUk ? "Наше рішення" : "Our Solution"}</h2>
-                        <p className="text-neutral-600 dark:text-neutral-300 dark:text-neutral-400 leading-relaxed mb-4">
+                        <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed mb-4">
                           {isUk
                             ? `Розробили сучасне рішення на стеку: ${project.tech.join(", ")}.`
                             : `Built a modern solution using: ${project.tech.join(", ")}.`}
@@ -536,61 +538,113 @@ export default async function PortfolioProjectPage({ params }: Props) {
                       </h3>
                       <p className="text-indigo-200 text-sm">
                         {isUk
-                          ? `Запуск за ${deliveryDays}+ днів · від ${isUk ? `₴${priceUah.toLocaleString("uk-UA")}` : `£${priceGbp}`}`
+                          ? `Запуск за ${deliveryDays}+ днів · від ₴${priceUah.toLocaleString("uk-UA")}`
                           : `Launch in ${deliveryDays}+ days · from £${priceGbp}`}
                       </p>
                     </div>
-                    <div className="grid sm:grid-cols-3 gap-px bg-neutral-100 dark:bg-neutral-700/50">
-                      {PACKAGES.map((pkg) => (
-                        <div key={pkg.name} className={cn(
-                          "p-5 bg-white dark:bg-neutral-800/80 flex flex-col",
-                          pkg.highlight && "ring-2 ring-indigo-500 ring-inset relative"
-                        )}>
-                          {pkg.highlight && (
-                            <span className="absolute top-3 right-3 text-[10px] font-bold bg-indigo-600 text-white px-2 py-0.5 rounded-full uppercase tracking-wider">
-                              {isUk ? "Популярний" : "Popular"}
-                            </span>
-                          )}
-                          <div className="font-heading font-bold text-neutral-900 dark:text-white mb-1">{pkg.name}</div>
-                          <div className="text-indigo-600 dark:text-indigo-400 font-semibold text-sm mb-1">{pkg.price}</div>
-                          <div className="flex items-center gap-1 text-xs text-neutral-400 mb-4">
-                            <Clock className="w-3 h-3" /> {pkg.days}
-                          </div>
-                          <ul className="space-y-1.5 flex-1">
-                            {pkg.includes.map((item) => (
-                              <li key={item} className="flex items-start gap-2 text-xs text-neutral-600 dark:text-neutral-300 dark:text-neutral-400">
-                                <Check className="w-3 h-3 text-emerald-500 shrink-0 mt-0.5" />
-                                {item}
-                              </li>
-                            ))}
-                          </ul>
+
+                    {project.packageIncludes ? (
+                      /* ERP / bespoke project — show what's included + single CTA */
+                      <div className="bg-white dark:bg-neutral-800/80 p-6">
+                        <div className="text-xs font-semibold uppercase tracking-wider text-neutral-400 dark:text-neutral-500 mb-4">
+                          {isUk ? "Що входить до проєкту" : "What's included"}
                         </div>
-                      ))}
-                    </div>
-                    <div className="p-5 bg-white dark:bg-neutral-800/80 flex flex-col sm:flex-row gap-3 border-t border-neutral-100 dark:border-neutral-700 /50">
-                      <Link
-                        href={`/${lang}/contact?project=${project.slug}&complexity=${project.complexity}`}
-                        className="flex-1 text-center px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm flex items-center justify-center gap-2 transition-colors"
-                      >
-                        <ShoppingCart className="w-4 h-4" />
-                        {isUk ? "Замовити зараз" : "Order Now"}
-                      </Link>
-                      <Link
-                        href={`/${lang}/marketplace`}
-                        className="px-5 py-3 rounded-xl border border-neutral-200 dark:border-neutral-600 text-neutral-700 dark:text-neutral-300 font-semibold text-sm flex items-center justify-center gap-2 hover:bg-neutral-50 dark:hover:bg-neutral-800 dark:bg-neutral-900 dark:hover:bg-neutral-700/50 transition-colors"
-                      >
-                        <Package className="w-4 h-4" />
-                        {isUk ? "Всі пакети" : "All packages"}
-                      </Link>
-                    </div>
-                    <div className="px-5 py-2.5 bg-neutral-50 dark:bg-neutral-900 /40 border-t border-neutral-100 dark:border-neutral-700 /30 text-center">
-                      <Link
-                        href={`/${lang}/compare`}
-                        className="text-xs text-neutral-400 dark:text-neutral-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-                      >
-                        {isUk ? "Порівняти тарифи →" : "Compare all plans →"}
-                      </Link>
-                    </div>
+                        <ul className="space-y-2.5 mb-6">
+                          {project.packageIncludes.map((item) => (
+                            <li key={item} className="flex items-start gap-3 text-sm text-neutral-700 dark:text-neutral-300">
+                              <Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                        <div className="flex items-center gap-3 p-4 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-100 dark:border-indigo-900/50 mb-5">
+                          <div className="flex-1 min-w-0">
+                            <div className="text-xs text-indigo-500 dark:text-indigo-400 mb-0.5">
+                              {isUk ? "Вартість від" : "Starting from"}
+                            </div>
+                            <div className="text-2xl font-extrabold font-heading text-indigo-700 dark:text-indigo-300">
+                              {isUk ? `₴${priceUah.toLocaleString("uk-UA")}` : `£${priceGbp.toLocaleString()}`}
+                            </div>
+                            <div className="flex items-center gap-1 text-xs text-neutral-400 mt-0.5">
+                              <Clock className="w-3 h-3 shrink-0" />
+                              {isUk ? `Запуск за ${deliveryDays}+ днів` : `Launch in ${deliveryDays}+ days`}
+                            </div>
+                          </div>
+                          <div className="text-3xl">🏗️</div>
+                        </div>
+                        <div className="flex flex-col gap-3">
+                          <Link
+                            href={`/${lang}/contact?project=${project.slug}&complexity=${project.complexity}`}
+                            className="w-full text-center px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm flex items-center justify-center gap-2 transition-colors"
+                          >
+                            <ShoppingCart className="w-4 h-4" />
+                            {isUk ? "Обговорити проєкт" : "Discuss Your Project"}
+                          </Link>
+                          <Link
+                            href={`/${lang}/erp-development`}
+                            className="w-full text-center px-5 py-3 rounded-xl border border-neutral-200 dark:border-neutral-600 text-neutral-700 dark:text-neutral-300 font-semibold text-sm flex items-center justify-center gap-2 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors"
+                          >
+                            <Package className="w-4 h-4" />
+                            {isUk ? "Всі ERP-рішення" : "All ERP Solutions"}
+                          </Link>
+                        </div>
+                      </div>
+                    ) : (
+                      /* Standard projects — tiered packages */
+                      <>
+                        <div className="grid sm:grid-cols-3 gap-px bg-neutral-100 dark:bg-neutral-700/50">
+                          {PACKAGES.map((pkg) => (
+                            <div key={pkg.name} className={cn(
+                              "p-5 bg-white dark:bg-neutral-800/80 flex flex-col",
+                              pkg.highlight && "ring-2 ring-indigo-500 ring-inset relative"
+                            )}>
+                              {pkg.highlight && (
+                                <span className="absolute top-3 right-3 text-[10px] font-bold bg-indigo-600 text-white px-2 py-0.5 rounded-full uppercase tracking-wider">
+                                  {isUk ? "Популярний" : "Popular"}
+                                </span>
+                              )}
+                              <div className="font-heading font-bold text-neutral-900 dark:text-white mb-1">{pkg.name}</div>
+                              <div className="text-indigo-600 dark:text-indigo-400 font-semibold text-sm mb-1">{pkg.price}</div>
+                              <div className="flex items-center gap-1 text-xs text-neutral-400 mb-4">
+                                <Clock className="w-3 h-3" /> {pkg.days}
+                              </div>
+                              <ul className="space-y-1.5 flex-1">
+                                {pkg.includes.map((item) => (
+                                  <li key={item} className="flex items-start gap-2 text-xs text-neutral-600 dark:text-neutral-400">
+                                    <Check className="w-3 h-3 text-emerald-500 shrink-0 mt-0.5" />
+                                    {item}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ))}
+                        </div>
+                        <div className="p-5 bg-white dark:bg-neutral-800/80 flex flex-col sm:flex-row gap-3 border-t border-neutral-100 dark:border-neutral-700 /50">
+                          <Link
+                            href={`/${lang}/contact?project=${project.slug}&complexity=${project.complexity}`}
+                            className="flex-1 text-center px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm flex items-center justify-center gap-2 transition-colors"
+                          >
+                            <ShoppingCart className="w-4 h-4" />
+                            {isUk ? "Замовити зараз" : "Order Now"}
+                          </Link>
+                          <Link
+                            href={`/${lang}/marketplace`}
+                            className="px-5 py-3 rounded-xl border border-neutral-200 dark:border-neutral-600 text-neutral-700 dark:text-neutral-300 font-semibold text-sm flex items-center justify-center gap-2 hover:bg-neutral-50 dark:bg-neutral-900 dark:hover:bg-neutral-800 transition-colors"
+                          >
+                            <Package className="w-4 h-4" />
+                            {isUk ? "Всі пакети" : "All packages"}
+                          </Link>
+                        </div>
+                        <div className="px-5 py-2.5 bg-neutral-50 dark:bg-neutral-900 /40 border-t border-neutral-100 dark:border-neutral-700 /30 text-center">
+                          <Link
+                            href={`/${lang}/compare`}
+                            className="text-xs text-neutral-400 dark:text-neutral-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                          >
+                            {isUk ? "Порівняти тарифи →" : "Compare all plans →"}
+                          </Link>
+                        </div>
+                      </>
+                    )}
                   </div>
                 </div>
 
@@ -718,7 +772,7 @@ export default async function PortfolioProjectPage({ params }: Props) {
 
           {/* ── Related ───────────────────────────────────────────────── */}
           {suggestions.length > 0 && (
-            <section className="py-16 bg-neutral-50 dark:bg-neutral-900 /80 border-t border-neutral-100 dark:border-neutral-700 dark:border-neutral-800">
+            <section className="py-16 bg-neutral-50 dark:bg-neutral-900 /80 border-t border-neutral-100 dark:border-neutral-800">
               <Container>
                 <h3 className="text-xl font-heading font-bold text-neutral-900 dark:text-white mb-8">{isUk ? "Схожі проєкти" : "Similar Projects"}</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
@@ -743,12 +797,12 @@ export default async function PortfolioProjectPage({ params }: Props) {
           )}
 
           {/* ── Prev / Next ───────────────────────────────────────────── */}
-          <section className="py-10 pb-28 md:pb-10 bg-white dark:bg-neutral-900 border-t border-neutral-100 dark:border-neutral-700 dark:border-neutral-800">
+          <section className="py-10 pb-28 md:pb-10 bg-white dark:bg-neutral-900 border-t border-neutral-100 dark:border-neutral-800">
             <Container>
               <div className="flex items-center justify-between gap-4">
                 {prevProject ? (
                   <Link href={`/${lang}/portfolio/${prevProject.slug}`}
-                    className="group flex items-center gap-3 p-3 rounded-xl hover:bg-neutral-50 dark:hover:bg-neutral-800 dark:bg-neutral-900 dark:hover:bg-neutral-800/60 transition-colors">
+                    className="group flex items-center gap-3 p-3 rounded-xl hover:bg-neutral-50 dark:bg-neutral-900 dark:hover:bg-neutral-800 transition-colors">
                     <ArrowLeft className="w-5 h-5 text-neutral-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 shrink-0 transition-colors" />
                     <div>
                       <div className="text-xs text-neutral-400 mb-0.5">{isUk ? "Попередній" : "Previous"}</div>
@@ -765,7 +819,7 @@ export default async function PortfolioProjectPage({ params }: Props) {
 
                 {nextProject ? (
                   <Link href={`/${lang}/portfolio/${nextProject.slug}`}
-                    className="group flex items-center gap-3 p-3 rounded-xl hover:bg-neutral-50 dark:hover:bg-neutral-800 dark:bg-neutral-900 dark:hover:bg-neutral-800/60 transition-colors text-right">
+                    className="group flex items-center gap-3 p-3 rounded-xl hover:bg-neutral-50 dark:bg-neutral-900 dark:hover:bg-neutral-800 transition-colors text-right">
                     <div>
                       <div className="text-xs text-neutral-400 mb-0.5">{isUk ? "Наступний" : "Next"}</div>
                       <div className="font-semibold text-sm text-neutral-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors line-clamp-1">

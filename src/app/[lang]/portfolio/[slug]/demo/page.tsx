@@ -148,6 +148,8 @@ import { ChainOpsDemo } from "@/components/portfolio/demos/ChainOpsDemo";
 import { BuildTrackDemo } from "@/components/portfolio/demos/BuildTrackDemo";
 import { RetailCoreDemo } from "@/components/portfolio/demos/RetailCoreDemo";
 import { AgencyDeskDemo } from "@/components/portfolio/demos/AgencyDeskDemo";
+import { CareHubDemo } from "@/components/portfolio/demos/CareHubDemo";
+import { FleetDeskDemo } from "@/components/portfolio/demos/FleetDeskDemo";
 import { DemoBanner } from "@/components/portfolio/demos/DemoBanner";
 
 interface Props {
@@ -303,6 +305,8 @@ const DEMOS: Record<string, React.ComponentType<{ lang: string }>> = {
   "erp-construction": BuildTrackDemo,
   "erp-retail-chain": RetailCoreDemo,
   "erp-agency": AgencyDeskDemo,
+  "erp-clinic": CareHubDemo,
+  "erp-logistics": FleetDeskDemo,
 };
 
 export async function generateStaticParams() {
