@@ -7,7 +7,7 @@ import { Container } from "@/components/layout/Container";
 import { CTASection } from "@/components/home/CTASection";
 import { ERPRoiCalculator } from "@/components/erp/ERPRoiCalculator";
 import {
-  Warehouse, UtensilsCrossed, HardHat, ShoppingBag, Briefcase, Stethoscope,
+  Warehouse, UtensilsCrossed, HardHat, ShoppingBag, Briefcase, Stethoscope, Truck,
   ArrowRight, Database, Workflow, Rocket, CheckCircle2, FileSpreadsheet,
   Layers, Network, ShieldCheck, Users, BarChart3, FileText, Plug2,
   ClipboardList, Banknote, ChevronDown,
@@ -67,6 +67,7 @@ const CASES = [
   { slug: "erp-retail-chain", icon: ShoppingBag, name: "RetailCore", sector: { en: "12-store fashion chain · London", uk: "Мережа 12 магазинів · Лондон" }, metric: { en: "Sell-through +19%", uk: "Sell-through +19%" }, colour: "from-violet-600 to-purple-700" },
   { slug: "erp-agency", icon: Briefcase, name: "AgencyDesk", sector: { en: "Digital agency · Edinburgh", uk: "Digital-агенція · Единбург" }, metric: { en: "Admin 12% → 3%", uk: "Адмін 12% → 3%" }, colour: "from-cyan-600 to-teal-700" },
   { slug: "erp-clinic", icon: Stethoscope, name: "CareHub", sector: { en: "4-site private clinic group · Bristol", uk: "Мережа 4 клінік · Брістоль" }, metric: { en: "Bookings +42%, zero conflicts", uk: "Запис +42%, нуль конфліктів" }, colour: "from-sky-600 to-blue-700" },
+  { slug: "erp-logistics", icon: Truck, name: "FleetDesk", sector: { en: "38-truck haulier · Leicester", uk: "Перевізник 38 тягачів · Лестер" }, metric: { en: "SLA misses −74%, pick acc. 99.4%", uk: "SLA −74%, точність пікінгу 99.4%" }, colour: "from-orange-600 to-amber-700" },
 ];
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -77,8 +78,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "Розробка ERP-систем під бізнес | Codeworth"
       : "Custom ERP Development for UK Business | Codeworth",
     description: isUk
-      ? "Розробка кастомних ERP-систем для британського бізнесу: склад, фінанси, персонал, проєкти. Заміна Excel на єдину систему. 5 реальних кейсів. Від £1999."
-      : "Custom ERP systems for UK SMB: warehouse, finance, staff, projects in one place. Replace spreadsheets with a system built for you. 5 real cases. From £1,999.",
+      ? "Розробка кастомних ERP-систем для британського бізнесу: склад, фінанси, персонал, проєкти. Заміна Excel на єдину систему. 7 реальних кейсів. Від £1999."
+      : "Custom ERP systems for UK SMB: warehouse, finance, staff, projects in one place. Replace spreadsheets with a system built for you. 7 real cases. From £1,999.",
     keywords: isUk
       ? ["розробка ERP", "ERP система під бізнес", "кастомна ERP", "автоматизація бізнесу"]
       : ["custom ERP development", "bespoke ERP UK", "ERP system development", "business management software UK"],
@@ -143,7 +144,7 @@ export default async function ErpDevelopmentPage({ params }: { params: Promise<{
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a href="#cases" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 font-semibold transition-colors">
-                  {isUk ? "5 реальних кейсів" : "See 5 real cases"}
+                  {isUk ? "7 реальних кейсів" : "See 7 real cases"}
                 </a>
               </div>
             </div>
@@ -207,7 +208,7 @@ export default async function ErpDevelopmentPage({ params }: { params: Promise<{
             <div className="max-w-2xl mb-12">
               <p className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest mb-3">{isUk ? "Кейси" : "Case studies"}</p>
               <h2 className="text-3xl font-heading font-extrabold text-neutral-900 dark:text-white">
-                {isUk ? "5 ERP-систем, які ми побудували" : "5 ERP systems we've built"}
+                {isUk ? "7 ERP-систем, які ми побудували" : "7 ERP systems we've built"}
               </h2>
               <p className="mt-3 text-neutral-500 dark:text-neutral-400">
                 {isUk ? "Кожна — з живим інтерактивним демо. Натисніть, щоб спробувати." : "Each with a live interactive demo. Click through to try them."}
@@ -395,6 +396,9 @@ export default async function ErpDevelopmentPage({ params }: { params: Promise<{
             </div>
           </Container>
         </section>
+
+        {/* DISCOVERY CALL */}
+        <ERPDiscoverySection lang={lang} />
 
         <CTASection lang={lang} />
       </main>

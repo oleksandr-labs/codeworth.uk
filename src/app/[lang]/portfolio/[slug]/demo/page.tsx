@@ -323,19 +323,26 @@ export async function generateStaticParams() {
   return Object.keys(DEMOS).map((slug) => ({ slug }));
 }
 
+const ERP_SLUGS = new Set(["erp-wholesale", "erp-restaurant-chain", "erp-construction", "erp-retail-chain", "erp-agency", "erp-clinic", "erp-logistics"]);
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang, slug } = await params;
   const project = PROJECTS.find((p) => p.slug === slug);
   if (!project || !DEMOS[slug]) return {};
   const isUk = lang === "uk";
+  const isErp = ERP_SLUGS.has(slug);
+  const desc = isUk ? project.description : (project.descriptionEn ?? project.description);
   return {
     title: isUk
       ? `${project.title} — Демо сайту | Портфоліо Codeworth`
       : `${project.title} — Live Demo | Codeworth Portfolio`,
     description: isUk
-      ? `Демонстрація готового сайту: ${project.description}`
-      : `Live demo website: ${project.description}`,
-    robots: { index: false },
+      ? `Інтерактивне демо: ${project.description}`
+      : `Interactive demo: ${desc}`,
+    robots: isErp ? { index: true, follow: true } : { index: false },
+    alternates: isErp ? {
+      canonical: `https://codeworth.uk/${lang}/portfolio/${slug}/demo`,
+    } : undefined,
   };
 }
 
@@ -343,9 +350,32 @@ export default async function PortfolioDemoPage({ params }: Props) {
   const { lang, slug } = await params;
   const DemoComponent = DEMOS[slug];
   if (!DemoComponent) notFound();
+  const project = PROJECTS.find((p) => p.slug === slug);
+  const isErp = ERP_SLUGS.has(slug);
+
+  const softwareLd = isErp && project ? {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: project.title,
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
+    description: project.descriptionEn ?? project.description,
+    offers: {
+      "@type": "Offer",
+      price: project.priceFrom ?? 1999,
+      priceCurrency: "GBP",
+      seller: { "@type": "Organization", name: "Codeworth", url: "https://codeworth.uk" },
+    },
+    url: `https://codeworth.uk/${lang}/portfolio/${slug}/demo`,
+    screenshot: `https://codeworth.uk/og/portfolio/${slug}.png`,
+    creator: { "@type": "Organization", name: "Codeworth", url: "https://codeworth.uk" },
+  } : null;
 
   return (
     <>
+      {softwareLd && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareLd) }} />
+      )}
       <DemoComponent lang={lang} />
       <DemoBanner lang={lang} slug={slug} />
     </>
