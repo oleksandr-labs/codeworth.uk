@@ -148,6 +148,7 @@ import { ChainOpsDemo } from "@/components/portfolio/demos/ChainOpsDemo";
 import { BuildTrackDemo } from "@/components/portfolio/demos/BuildTrackDemo";
 import { RetailCoreDemo } from "@/components/portfolio/demos/RetailCoreDemo";
 import { AgencyDeskDemo } from "@/components/portfolio/demos/AgencyDeskDemo";
+import { DemoBanner } from "@/components/portfolio/demos/DemoBanner";
 
 interface Props {
   params: Promise<{ lang: string; slug: string }>;
@@ -329,5 +330,10 @@ export default async function PortfolioDemoPage({ params }: Props) {
   const DemoComponent = DEMOS[slug];
   if (!DemoComponent) notFound();
 
-  return <DemoComponent lang={lang} />;
+  return (
+    <>
+      <DemoComponent lang={lang} />
+      <DemoBanner lang={lang} slug={slug} />
+    </>
+  );
 }

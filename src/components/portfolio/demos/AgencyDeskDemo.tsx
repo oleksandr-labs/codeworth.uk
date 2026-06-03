@@ -40,11 +40,38 @@ const TAG_COLOUR: Record<string, string> = {
   SEO: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300",
 };
 
+const SUBTASKS: Record<string, { en: string; uk: string; done: boolean }[]> = {
+  "T-203": [
+    { en: "Homepage hi-fi", uk: "Головна — hi-fi", done: true },
+    { en: "Product page", uk: "Сторінка товару", done: true },
+    { en: "Checkout flow", uk: "Флоу оформлення", done: false },
+    { en: "Mobile breakpoints", uk: "Мобільні breakpoints", done: false },
+    { en: "Design QA", uk: "QA дизайну", done: false },
+  ],
+  "T-220": [
+    { en: "Crawl & index audit", uk: "Аудит crawl/index", done: true },
+    { en: "Backlink profile", uk: "Профіль беклінків", done: true },
+    { en: "Content gap matrix", uk: "Матриця контент-прогалин", done: true },
+    { en: "Exec summary", uk: "Резюме для клієнта", done: false },
+  ],
+};
+
+const COMMENTS: Record<string, { who: string; en: string; uk: string; ago: string }[]> = {
+  "T-203": [
+    { who: "KM", en: "Client loves the hero — keep the bold type.", uk: "Клієнту зайшов hero — лишаємо жирний шрифт.", ago: "2h" },
+    { who: "AS", en: "Checkout needs a guest option, adding now.", uk: "У checkout треба гостьовий режим, додаю.", ago: "40m" },
+  ],
+  "T-220": [
+    { who: "JB", en: "Found 18 quick-win keywords, in the report.", uk: "Знайшов 18 quick-win ключів, у звіті.", ago: "1d" },
+  ],
+};
+
 export function AgencyDeskDemo({ lang }: { lang: string }) {
   const [cards, setCards] = useState(INITIAL);
   const [seconds, setSeconds] = useState(2_847);
   const [running, setRunning] = useState(true);
   const [activeTask, setActiveTask] = useState("T-203");
+  const [detailId, setDetailId] = useState<string | null>(null);
   const isUk = lang === "uk";
 
   useEffect(() => {
@@ -104,7 +131,7 @@ export function AgencyDeskDemo({ lang }: { lang: string }) {
                 </div>
                 <div className="flex-1 overflow-y-auto px-2.5 pb-2.5 space-y-2.5">
                   {colCards.map(c => (
-                    <div key={c.id} className={`bg-white dark:bg-neutral-800 rounded-xl border p-3 group ${c.id === activeTask ? "border-teal-400 ring-2 ring-teal-100 dark:ring-teal-900/40" : "border-neutral-200 dark:border-neutral-700"}`}>
+                    <div key={c.id} onClick={() => setDetailId(c.id)} className={`cursor-pointer bg-white dark:bg-neutral-800 rounded-xl border p-3 group hover:shadow-md transition-shadow ${c.id === activeTask ? "border-teal-400 ring-2 ring-teal-100 dark:ring-teal-900/40" : "border-neutral-200 dark:border-neutral-700"}`}>
                       <div className="flex items-center justify-between mb-1.5">
                         <span className={`text-[9px] px-1.5 py-0.5 rounded font-bold ${TAG_COLOUR[c.tag]}`}>{c.tag}</span>
                         <span className="font-mono text-[9px] text-neutral-300 dark:text-neutral-600">{c.id}</span>
@@ -122,8 +149,8 @@ export function AgencyDeskDemo({ lang }: { lang: string }) {
                         <div className="flex items-center gap-1.5">
                           <span className="text-[10px] text-neutral-400 dark:text-neutral-500">{c.hours}/{c.budget}h</span>
                           <div className="flex gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity">
-                            <button onClick={() => move(c.id, -1)} className="w-5 h-5 rounded bg-neutral-100 dark:bg-neutral-700 text-neutral-500 dark:text-neutral-300 text-xs hover:bg-neutral-200 dark:hover:bg-neutral-600">←</button>
-                            <button onClick={() => move(c.id, 1)} className="w-5 h-5 rounded bg-neutral-100 dark:bg-neutral-700 text-neutral-500 dark:text-neutral-300 text-xs hover:bg-neutral-200 dark:hover:bg-neutral-600">→</button>
+                            <button onClick={e => { e.stopPropagation(); move(c.id, -1); }} className="w-5 h-5 rounded bg-neutral-100 dark:bg-neutral-700 text-neutral-500 dark:text-neutral-300 text-xs hover:bg-neutral-200 dark:hover:bg-neutral-600">←</button>
+                            <button onClick={e => { e.stopPropagation(); move(c.id, 1); }} className="w-5 h-5 rounded bg-neutral-100 dark:bg-neutral-700 text-neutral-500 dark:text-neutral-300 text-xs hover:bg-neutral-200 dark:hover:bg-neutral-600">→</button>
                           </div>
                         </div>
                       </div>
@@ -159,6 +186,96 @@ export function AgencyDeskDemo({ lang }: { lang: string }) {
           <div className="font-bold text-teal-400">£{(Math.floor(seconds / 3600 * 95) + 285).toLocaleString()}</div>
         </div>
       </div>
+
+      {/* ── TASK DETAIL DRAWER ── */}
+      {detailId && (() => {
+        const c = cards.find(x => x.id === detailId);
+        if (!c) return null;
+        const subs = SUBTASKS[c.id] ?? [{ en: "Scope agreed", uk: "Обсяг узгоджено", done: true }, { en: "In delivery", uk: "У роботі", done: false }];
+        const subDone = subs.filter(s => s.done).length;
+        const comments = COMMENTS[c.id] ?? [];
+        return (
+          <>
+            <div onClick={() => setDetailId(null)} className="absolute inset-0 bg-black/40 z-30" />
+            <aside className="absolute top-0 right-0 bottom-0 w-full max-w-sm bg-white dark:bg-neutral-800 z-40 shadow-2xl flex flex-col overflow-hidden">
+              {/* Drawer header */}
+              <div className="px-5 py-4 border-b border-neutral-100 dark:border-neutral-700 flex items-start justify-between">
+                <div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className={`text-[9px] px-1.5 py-0.5 rounded font-bold ${TAG_COLOUR[c.tag]}`}>{c.tag}</span>
+                    <span className="font-mono text-[10px] text-neutral-400 dark:text-neutral-500">{c.id}</span>
+                  </div>
+                  <h3 className="font-bold text-neutral-900 dark:text-white">{c.title}</h3>
+                  <div className="text-xs text-neutral-400 dark:text-neutral-500">{c.client} · {isUk ? "до" : "due"} {c.due}</div>
+                </div>
+                <button onClick={() => setDetailId(null)} className="w-7 h-7 rounded-lg text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors">✕</button>
+              </div>
+
+              <div className="flex-1 overflow-y-auto p-5 space-y-5">
+                {/* Budget */}
+                <div>
+                  <div className="flex justify-between text-xs mb-1.5">
+                    <span className="text-neutral-500 dark:text-neutral-400">{isUk ? "Витрачено годин" : "Hours logged"}</span>
+                    <span className={`font-bold ${c.hours > c.budget ? "text-red-500" : "text-neutral-900 dark:text-white"}`}>{c.hours} / {c.budget}h</span>
+                  </div>
+                  <div className="h-2 bg-neutral-100 dark:bg-neutral-700 rounded-full overflow-hidden">
+                    <div className={`h-2 rounded-full ${c.hours > c.budget ? "bg-red-400" : "bg-teal-500"}`} style={{ width: `${Math.min(100, (c.hours / c.budget) * 100 || 2)}%` }} />
+                  </div>
+                </div>
+
+                {/* Subtasks */}
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-xs font-bold text-neutral-700 dark:text-neutral-200 uppercase tracking-wide">{isUk ? "Підзадачі" : "Subtasks"}</span>
+                    <span className="text-[10px] text-neutral-400 dark:text-neutral-500">{subDone}/{subs.length}</span>
+                  </div>
+                  <div className="space-y-1.5">
+                    {subs.map((s, i) => (
+                      <div key={i} className="flex items-center gap-2.5">
+                        <div className={`w-4 h-4 rounded flex items-center justify-center text-[9px] ${s.done ? "bg-teal-500 text-white" : "border border-neutral-300 dark:border-neutral-600"}`}>{s.done ? "✓" : ""}</div>
+                        <span className={`text-sm ${s.done ? "text-neutral-400 dark:text-neutral-500 line-through" : "text-neutral-700 dark:text-neutral-200"}`}>{isUk ? s.uk : s.en}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Team */}
+                <div>
+                  <span className="text-xs font-bold text-neutral-700 dark:text-neutral-200 uppercase tracking-wide">{isUk ? "Команда" : "Assigned"}</span>
+                  <div className="flex gap-1.5 mt-2">
+                    {c.team.map(t => <div key={t} className="w-8 h-8 rounded-full bg-teal-500 text-white text-xs flex items-center justify-center font-bold">{t}</div>)}
+                  </div>
+                </div>
+
+                {/* Comments */}
+                <div>
+                  <span className="text-xs font-bold text-neutral-700 dark:text-neutral-200 uppercase tracking-wide">{isUk ? "Коментарі" : "Activity"}</span>
+                  <div className="space-y-2.5 mt-2">
+                    {comments.length === 0 && <div className="text-xs text-neutral-400 dark:text-neutral-500 italic">{isUk ? "Поки що немає коментарів" : "No comments yet"}</div>}
+                    {comments.map((cm, i) => (
+                      <div key={i} className="flex gap-2.5">
+                        <div className="w-7 h-7 rounded-full bg-neutral-200 dark:bg-neutral-600 text-neutral-700 dark:text-neutral-200 text-[10px] flex items-center justify-center font-bold shrink-0">{cm.who}</div>
+                        <div className="flex-1">
+                          <div className="bg-neutral-50 dark:bg-neutral-700/50 rounded-xl rounded-tl-none px-3 py-2 text-sm text-neutral-700 dark:text-neutral-200">{isUk ? cm.uk : cm.en}</div>
+                          <div className="text-[10px] text-neutral-400 dark:text-neutral-500 mt-0.5">{cm.who} · {cm.ago} {isUk ? "тому" : "ago"}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Drawer footer */}
+              <div className="px-5 py-3 border-t border-neutral-100 dark:border-neutral-700 flex gap-2">
+                <button onClick={() => { setActiveTask(c.id); setDetailId(null); }} className="flex-1 bg-teal-600 hover:bg-teal-500 text-white text-sm font-semibold py-2 rounded-xl transition-colors">
+                  ▶ {isUk ? "Трекати цю задачу" : "Track this task"}
+                </button>
+                <button onClick={() => setDetailId(null)} className="px-4 text-sm text-neutral-500 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-700 rounded-xl transition-colors">{isUk ? "Закрити" : "Close"}</button>
+              </div>
+            </aside>
+          </>
+        );
+      })()}
 
     </div>
   );

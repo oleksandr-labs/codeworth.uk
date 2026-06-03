@@ -28,6 +28,24 @@ const ORDERS = [
   { id: "ORD-1837", client: "SteelWorx Ltd", val: "£8,900", items: 3, status: "Delivered", mins: 420 },
 ];
 
+const SUPPLIERS = [
+  { name: "Hanson Cement UK", cat: "Cement & Aggregates", lead: 2, rating: 4.8, openPO: 2, spend: "£142k", auto: true },
+  { name: "British Steel Ltd", cat: "Steel & Rebar", lead: 5, rating: 4.6, openPO: 1, spend: "£318k", auto: true },
+  { name: "Forterra Bricks", cat: "Bricks & Blocks", lead: 3, rating: 4.9, openPO: 0, spend: "£96k", auto: true },
+  { name: "Knauf Insulation", cat: "Insulation", lead: 4, rating: 4.4, openPO: 1, spend: "£54k", auto: false },
+  { name: "Polypipe Group", cat: "Plumbing & PVC", lead: 6, rating: 4.2, openPO: 3, spend: "£71k", auto: false },
+];
+
+// Monthly revenue for the bar chart (£k)
+const REV_12M = [62, 71, 68, 84, 79, 92, 88, 95, 102, 97, 110, 124];
+
+const TOP_SKUS = [
+  { name: "Steel Rebar 10mm", units: 8420, rev: "£185k" },
+  { name: "Portland Cement 25kg", units: 12100, rev: "£175k" },
+  { name: "Brick Standard", units: 940, rev: "£223k" },
+  { name: "C16 Timber 4.8m", units: 6200, rev: "£99k" },
+];
+
 export function WholesaleHubDemo({ lang }: { lang: string }) {
   const [active, setActive] = useState("stock");
   const [search, setSearch] = useState("");
@@ -198,10 +216,92 @@ export function WholesaleHubDemo({ lang }: { lang: string }) {
           </div>
         )}
 
-        {/* OTHER SECTIONS */}
-        {(active === "suppliers" || active === "reports") && (
-          <div className="flex-1 flex items-center justify-center text-white/20 text-sm">
-            {isUk ? "Розділ у розробці" : "Section coming soon"}
+        {/* ── SUPPLIERS ── */}
+        {active === "suppliers" && (
+          <div className="flex-1 overflow-auto">
+            <div className="px-4 py-3 flex items-center justify-between border-b border-white/5 sticky top-0 bg-[#0f1117]">
+              <span className="text-xs text-white/40">{SUPPLIERS.length} {isUk ? "постачальників" : "suppliers"} · {SUPPLIERS.filter(s => s.auto).length} {isUk ? "на авто-замовленні" : "auto-reorder on"}</span>
+              <button className="bg-sky-500 hover:bg-sky-400 text-white text-xs px-3 py-1.5 rounded-lg transition-colors">+ {isUk ? "Постачальник" : "Add supplier"}</button>
+            </div>
+            <table className="w-full text-xs">
+              <thead>
+                <tr className="border-b border-white/5">
+                  {[isUk ? "Постачальник" : "Supplier", isUk ? "Категорія" : "Category", isUk ? "Лід-тайм" : "Lead", isUk ? "Рейтинг" : "Rating", isUk ? "Відкриті PO" : "Open PO", "YTD spend", isUk ? "Авто" : "Auto"].map(h => (
+                    <th key={h} className="px-4 py-2.5 text-left text-white/30 font-normal tracking-wide">{h}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {SUPPLIERS.map(s => (
+                  <tr key={s.name} className="border-b border-white/[0.04] hover:bg-white/[0.03] transition-colors">
+                    <td className="px-4 py-2.5 text-white/90 font-medium">{s.name}</td>
+                    <td className="px-4 py-2.5 text-white/50">{s.cat}</td>
+                    <td className="px-4 py-2.5 text-white/60 tabular-nums">{s.lead} {isUk ? "дн" : "days"}</td>
+                    <td className="px-4 py-2.5">
+                      <span className={`tabular-nums ${s.rating >= 4.5 ? "text-emerald-400" : "text-amber-400"}`}>★ {s.rating}</span>
+                    </td>
+                    <td className="px-4 py-2.5 text-white/60 tabular-nums">{s.openPO}</td>
+                    <td className="px-4 py-2.5 text-white tabular-nums font-bold">{s.spend}</td>
+                    <td className="px-4 py-2.5">
+                      <span className={`px-2 py-0.5 rounded text-[10px] font-medium ${s.auto ? "bg-emerald-500/10 text-emerald-400" : "bg-white/5 text-white/30"}`}>
+                        {s.auto ? "ON" : "OFF"}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <div className="px-4 py-3 text-[10px] text-white/25">
+              ⚡ {isUk ? "Авто-замовлення спрацьовує коли залишок SKU падає нижче мінімуму" : "Auto-reorder fires when an SKU drops below its minimum threshold"}
+            </div>
+          </div>
+        )}
+
+        {/* ── REPORTS ── */}
+        {active === "reports" && (
+          <div className="flex-1 overflow-auto p-5 space-y-5">
+            {/* KPI row */}
+            <div className="grid grid-cols-4 gap-3">
+              {[
+                { l: isUk ? "Виручка (рік)" : "Revenue YTD", v: "£1.07M", d: "+18%" },
+                { l: isUk ? "Сер. час замовл." : "Avg order time", v: "7 min", d: "−72%" },
+                { l: isUk ? "Точність залишків" : "Stock accuracy", v: "99.1%", d: "+91%" },
+                { l: isUk ? "Активні клієнти" : "Active clients", v: "47", d: "+9" },
+              ].map(k => (
+                <div key={k.l} className="bg-white/[0.03] border border-white/10 rounded-xl p-3">
+                  <div className="text-lg font-black text-white tabular-nums">{k.v}</div>
+                  <div className="text-[10px] text-white/40">{k.l}</div>
+                  <div className="text-[10px] text-emerald-400 font-medium mt-0.5">{k.d}</div>
+                </div>
+              ))}
+            </div>
+            {/* Revenue chart */}
+            <div className="bg-white/[0.03] border border-white/10 rounded-xl p-4">
+              <div className="text-[10px] text-white/40 uppercase tracking-widest mb-3">{isUk ? "Виручка по місяцях (£k)" : "Monthly revenue (£k)"}</div>
+              <div className="flex items-end gap-1.5 h-32">
+                {REV_12M.map((v, i) => (
+                  <div key={i} className="flex-1 flex flex-col items-center gap-1">
+                    <div className="w-full bg-sky-500/80 rounded-t hover:bg-sky-400 transition-colors" style={{ height: `${(v / Math.max(...REV_12M)) * 100}%` }} title={`£${v}k`} />
+                    <span className="text-[8px] text-white/20">{["J","F","M","A","M","J","J","A","S","O","N","D"][i]}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* Top SKUs */}
+            <div className="bg-white/[0.03] border border-white/10 rounded-xl p-4">
+              <div className="text-[10px] text-white/40 uppercase tracking-widest mb-3">{isUk ? "Топ SKU за виручкою (рік)" : "Top SKUs by revenue (YTD)"}</div>
+              <div className="space-y-2">
+                {TOP_SKUS.map(s => (
+                  <div key={s.name} className="flex items-center justify-between text-xs">
+                    <span className="text-white/70">{s.name}</span>
+                    <div className="flex items-center gap-4">
+                      <span className="text-white/40 tabular-nums">{s.units.toLocaleString()} {isUk ? "од." : "units"}</span>
+                      <span className="text-white font-bold tabular-nums w-16 text-right">{s.rev}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         )}
 

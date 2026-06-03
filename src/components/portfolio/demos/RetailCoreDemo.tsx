@@ -21,6 +21,13 @@ const CATEGORIES = [
 
 const SALES_7D = [142, 168, 155, 189, 174, 212, 228];
 
+const MARKDOWN_LINES = [
+  { sku: "JKT-005", name: "Puffer Jacket Navy", stock: 42, price: 120, cost: 48, rec: 20 },
+  { sku: "DRS-008", name: "Midi Dress Floral", stock: 19, price: 140, cost: 49, rec: 30 },
+  { sku: "SWT-022", name: "Oversized Sweater", stock: 35, price: 95, cost: 38, rec: 25 },
+  { sku: "TRS-014", name: "Linen Trousers Tan", stock: 28, price: 85, cost: 34, rec: 15 },
+];
+
 function heatColour(st: number) {
   if (st >= 78) return "bg-violet-600";
   if (st >= 72) return "bg-violet-500";
@@ -31,7 +38,20 @@ function heatColour(st: number) {
 
 export function RetailCoreDemo({ lang }: { lang: string }) {
   const [period, setPeriod] = useState<"today" | "week" | "month">("today");
+  const [mdSku, setMdSku] = useState(MARKDOWN_LINES[0].sku);
+  const [mdPct, setMdPct] = useState(MARKDOWN_LINES[0].rec);
   const isUk = lang === "uk";
+
+  const mdLine = MARKDOWN_LINES.find(m => m.sku === mdSku)!;
+  const newPrice = mdLine.price * (1 - mdPct / 100);
+  const marginPct = Math.round(((newPrice - mdLine.cost) / newPrice) * 100);
+  const capitalReleased = Math.round(newPrice * mdLine.stock);
+  const marginLoss = Math.round((mdLine.price - newPrice) * mdLine.stock);
+
+  const selectMd = (sku: string) => {
+    setMdSku(sku);
+    setMdPct(MARKDOWN_LINES.find(m => m.sku === sku)!.rec);
+  };
   const totalRev = STORES.reduce((s, v) => s + v.rev, 0);
   const maxSale = Math.max(...SALES_7D);
 
@@ -144,23 +164,69 @@ export function RetailCoreDemo({ lang }: { lang: string }) {
           </div>
         </div>
 
-        {/* ── MARKDOWN RECOMMENDATIONS STRIP ── */}
+        {/* ── INTERACTIVE MARKDOWN ENGINE ── */}
         <div className="bg-gradient-to-r from-violet-600 to-purple-600 rounded-3xl p-6 text-white">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between mb-4">
             <div>
-              <div className="text-xs uppercase tracking-widest text-violet-200">{isUk ? "Markdown Engine" : "Markdown Engine"}</div>
-              <div className="text-lg font-bold mt-0.5">{isUk ? "4 позиції рекомендовані до знижки" : "4 lines flagged for markdown"}</div>
-              <div className="text-sm text-violet-200 mt-0.5">{isUk ? "Прогнозоване вивільнення капіталу: £4,820" : "Forecast capital released: £4,820"}</div>
+              <div className="text-xs uppercase tracking-widest text-violet-200">Markdown Engine</div>
+              <div className="text-lg font-bold mt-0.5">{isUk ? "Симуляція знижки — перетягни слайдер" : "Markdown simulator — drag the slider"}</div>
             </div>
-            <div className="flex gap-2">
-              {[{ sku: "JKT-005", md: 20 }, { sku: "DRS-008", md: 30 }, { sku: "SWT-022", md: 25 }, { sku: "TRS-014", md: 15 }].map(m => (
-                <div key={m.sku} className="bg-white/15 backdrop-blur rounded-xl px-3 py-2 text-center">
-                  <div className="font-mono text-[10px] text-violet-100">{m.sku}</div>
-                  <div className="font-black text-lg">−{m.md}%</div>
-                </div>
+            {/* SKU selector pills */}
+            <div className="flex gap-1.5">
+              {MARKDOWN_LINES.map(m => (
+                <button
+                  key={m.sku}
+                  onClick={() => selectMd(m.sku)}
+                  className={`font-mono text-[11px] px-2.5 py-1.5 rounded-lg transition-colors ${m.sku === mdSku ? "bg-white text-violet-700 font-bold" : "bg-white/15 text-violet-100 hover:bg-white/25"}`}
+                >
+                  {m.sku}
+                </button>
               ))}
-              <button className="bg-white text-violet-700 rounded-xl px-4 font-bold text-sm hover:bg-violet-50 transition-colors">
-                {isUk ? "Застосувати" : "Apply all"} →
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-6 items-center">
+            {/* Slider + line info */}
+            <div>
+              <div className="flex items-baseline justify-between mb-2">
+                <span className="font-semibold">{mdLine.name}</span>
+                <span className="text-violet-200 text-sm">{mdLine.stock} {isUk ? "од. в наявності" : "units in stock"}</span>
+              </div>
+              <div className="flex items-center gap-4">
+                <input
+                  type="range"
+                  min={0}
+                  max={50}
+                  value={mdPct}
+                  onChange={e => setMdPct(Number(e.target.value))}
+                  className="flex-1 accent-white h-2"
+                />
+                <span className="font-black text-3xl tabular-nums w-20 text-right">−{mdPct}%</span>
+              </div>
+              <div className="flex items-center gap-2 mt-2 text-xs text-violet-200">
+                <span className="line-through opacity-70">£{mdLine.price}</span>
+                <span>→</span>
+                <span className="font-bold text-white text-base">£{newPrice.toFixed(2)}</span>
+                {mdPct === mdLine.rec && <span className="bg-white/20 px-2 py-0.5 rounded-full text-[10px]">{isUk ? "рекомендовано" : "recommended"}</span>}
+              </div>
+            </div>
+
+            {/* Live recalculated metrics */}
+            <div className="flex gap-3">
+              <div className="bg-white/15 backdrop-blur rounded-2xl px-5 py-3 text-center min-w-[110px]">
+                <div className="text-[10px] uppercase text-violet-200">{isUk ? "Маржа після" : "Margin after"}</div>
+                <div className={`font-black text-2xl tabular-nums ${marginPct >= 30 ? "text-emerald-300" : marginPct >= 15 ? "text-amber-300" : "text-red-300"}`}>{marginPct}%</div>
+              </div>
+              <div className="bg-white/15 backdrop-blur rounded-2xl px-5 py-3 text-center min-w-[110px]">
+                <div className="text-[10px] uppercase text-violet-200">{isUk ? "Вивільнення" : "Capital out"}</div>
+                <div className="font-black text-2xl tabular-nums">£{capitalReleased.toLocaleString()}</div>
+              </div>
+              <div className="bg-white/15 backdrop-blur rounded-2xl px-5 py-3 text-center min-w-[110px]">
+                <div className="text-[10px] uppercase text-violet-200">{isUk ? "Втрата маржі" : "Margin given"}</div>
+                <div className="font-black text-2xl tabular-nums text-red-200">−£{marginLoss.toLocaleString()}</div>
+              </div>
+              <button className="bg-white text-violet-700 rounded-2xl px-5 font-bold text-sm hover:bg-violet-50 transition-colors">
+                {isUk ? "Застосувати" : "Apply"} →
               </button>
             </div>
           </div>
