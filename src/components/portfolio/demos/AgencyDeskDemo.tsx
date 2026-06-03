@@ -72,6 +72,7 @@ export function AgencyDeskDemo({ lang }: { lang: string }) {
   const [running, setRunning] = useState(true);
   const [activeTask, setActiveTask] = useState("T-203");
   const [detailId, setDetailId] = useState<string | null>(null);
+  const [clientView, setClientView] = useState(false);
   const isUk = lang === "uk";
 
   useEffect(() => {
@@ -109,15 +110,24 @@ export function AgencyDeskDemo({ lang }: { lang: string }) {
           <span className="text-neutral-400 dark:text-neutral-500 text-xs">· Edinburgh · 3 {isUk ? "активні клієнти" : "active clients"}</span>
         </div>
         <div className="flex items-center gap-3 text-xs">
-          <span className="text-neutral-500 dark:text-neutral-400">{isUk ? "Завантаженість" : "Utilisation"}: <strong className="text-teal-600 dark:text-teal-400">84%</strong></span>
-          <span className="text-neutral-500 dark:text-neutral-400">{isUk ? "Дебіторка" : "Outstanding"}: <strong className="text-amber-600">£1,100</strong></span>
-          <div className="flex -space-x-1.5">
+          {/* View toggle: agency team board vs client portal */}
+          <div className="flex bg-neutral-100 dark:bg-neutral-700 rounded-lg p-0.5">
+            <button onClick={() => setClientView(false)} className={`px-2.5 py-1 rounded-md font-medium transition-colors ${!clientView ? "bg-white dark:bg-neutral-800 text-teal-600 dark:text-teal-400 shadow-sm" : "text-neutral-500 dark:text-neutral-400"}`}>
+              {isUk ? "Команда" : "Team board"}
+            </button>
+            <button onClick={() => setClientView(true)} className={`px-2.5 py-1 rounded-md font-medium transition-colors ${clientView ? "bg-white dark:bg-neutral-800 text-teal-600 dark:text-teal-400 shadow-sm" : "text-neutral-500 dark:text-neutral-400"}`}>
+              {isUk ? "Клієнт" : "Client view"}
+            </button>
+          </div>
+          <span className="text-neutral-500 dark:text-neutral-400 hidden sm:inline">{isUk ? "Завантаженість" : "Utilisation"}: <strong className="text-teal-600 dark:text-teal-400">84%</strong></span>
+          <div className="hidden sm:flex -space-x-1.5">
             {["KM","AS","JB","LT"].map(t => <div key={t} className="w-6 h-6 rounded-full bg-teal-500 text-white text-[9px] flex items-center justify-center font-bold border-2 border-white dark:border-neutral-800">{t}</div>)}
           </div>
         </div>
       </div>
 
       {/* ── KANBAN BOARD (fills screen) ── */}
+      {!clientView && (
       <div className="flex-1 overflow-x-auto p-4">
         <div className="grid grid-cols-4 gap-3 h-full min-w-[760px]">
           {COLS.map(col => {
@@ -167,8 +177,85 @@ export function AgencyDeskDemo({ lang }: { lang: string }) {
           })}
         </div>
       </div>
+      )}
 
-      {/* ── FLOATING TIMER WIDGET ── */}
+      {/* ── CLIENT PORTAL VIEW ── */}
+      {clientView && (
+        <div className="flex-1 overflow-y-auto bg-gradient-to-b from-teal-50 to-neutral-100 dark:from-neutral-800 dark:to-neutral-900 p-6">
+          <div className="max-w-2xl mx-auto space-y-5">
+            {/* Client greeting */}
+            <div className="bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-200 dark:border-neutral-700 p-5">
+              <div className="text-xs text-teal-600 dark:text-teal-400 font-semibold uppercase tracking-wide">{isUk ? "Портал клієнта" : "Client Portal"}</div>
+              <h2 className="text-xl font-black text-neutral-900 dark:text-white mt-1">Caledonian Hotels Group</h2>
+              <p className="text-sm text-neutral-500 dark:text-neutral-400">{isUk ? "Проєкт: SEO Audit + Strategy · менеджер Kirsty Muir" : "Project: SEO Audit + Strategy · managed by Kirsty Muir"}</p>
+            </div>
+
+            {/* Progress */}
+            <div className="bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-200 dark:border-neutral-700 p-5">
+              <div className="flex items-center justify-between mb-2">
+                <span className="font-bold text-neutral-900 dark:text-white text-sm">{isUk ? "Прогрес проєкту" : "Project progress"}</span>
+                <span className="font-black text-teal-600 dark:text-teal-400">90%</span>
+              </div>
+              <div className="h-2.5 bg-neutral-100 dark:bg-neutral-700 rounded-full overflow-hidden">
+                <div className="h-2.5 bg-teal-500 rounded-full" style={{ width: "90%" }} />
+              </div>
+              <div className="text-xs text-neutral-400 dark:text-neutral-500 mt-2">{isUk ? "Очікувана здача: 05 червня" : "Expected delivery: 5 June"}</div>
+            </div>
+
+            {/* Deliverables */}
+            <div className="bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-200 dark:border-neutral-700 p-5">
+              <div className="font-bold text-neutral-900 dark:text-white text-sm mb-3">{isUk ? "Результати (deliverables)" : "Deliverables"}</div>
+              <div className="space-y-2">
+                {[
+                  { en: "Technical SEO crawl", uk: "Технічний SEO-аудит", done: true },
+                  { en: "Keyword gap analysis", uk: "Аналіз ключових прогалин", done: true },
+                  { en: "Competitor benchmark", uk: "Аналіз конкурентів", done: true },
+                  { en: "Strategy report (PDF)", uk: "Стратегічний звіт (PDF)", done: false },
+                ].map((d, i) => (
+                  <div key={i} className="flex items-center justify-between">
+                    <div className="flex items-center gap-2.5">
+                      <div className={`w-4 h-4 rounded flex items-center justify-center text-[9px] ${d.done ? "bg-teal-500 text-white" : "border border-neutral-300 dark:border-neutral-600"}`}>{d.done ? "✓" : ""}</div>
+                      <span className={`text-sm ${d.done ? "text-neutral-700 dark:text-neutral-200" : "text-neutral-400 dark:text-neutral-500"}`}>{isUk ? d.uk : d.en}</span>
+                    </div>
+                    {d.done && <button className="text-xs text-teal-600 dark:text-teal-400 hover:underline">↓ {isUk ? "Завантажити" : "Download"}</button>}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Approval needed */}
+            <div className="bg-amber-50 dark:bg-amber-900/20 rounded-2xl border border-amber-200 dark:border-amber-800/50 p-5">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-lg">📋</span>
+                <span className="font-bold text-amber-800 dark:text-amber-300 text-sm">{isUk ? "Потрібне ваше затвердження" : "Your approval needed"}</span>
+              </div>
+              <p className="text-sm text-amber-700 dark:text-amber-200/80 mb-3">{isUk ? "Перегляньте чернетку стратегічного звіту перед фіналізацією." : "Review the draft strategy report before we finalise it."}</p>
+              <div className="flex gap-2">
+                <button className="bg-teal-600 hover:bg-teal-500 text-white text-sm font-semibold px-4 py-2 rounded-xl transition-colors">✓ {isUk ? "Затвердити" : "Approve"}</button>
+                <button className="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-neutral-600 dark:text-neutral-300 text-sm px-4 py-2 rounded-xl hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors">{isUk ? "Запросити правки" : "Request changes"}</button>
+              </div>
+            </div>
+
+            {/* Invoices */}
+            <div className="bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-200 dark:border-neutral-700 p-5">
+              <div className="font-bold text-neutral-900 dark:text-white text-sm mb-3">{isUk ? "Рахунки" : "Invoices"}</div>
+              <div className="flex items-center justify-between py-2 border-b border-neutral-100 dark:border-neutral-700">
+                <div>
+                  <div className="text-sm text-neutral-800 dark:text-neutral-200 font-mono">INV-2024-089</div>
+                  <div className="text-xs text-neutral-400 dark:text-neutral-500">{isUk ? "Сплачено 01 червня" : "Paid 1 June"}</div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="font-bold text-neutral-900 dark:text-white">£3,600</span>
+                  <span className="text-xs bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 px-2 py-0.5 rounded-full font-semibold">{isUk ? "Оплачено" : "Paid"}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ── FLOATING TIMER WIDGET (team view only) ── */}
+      {!clientView && (
       <div className="absolute bottom-5 right-5 bg-neutral-900 dark:bg-black text-white rounded-2xl shadow-2xl border border-neutral-700 px-4 py-3 flex items-center gap-4 z-20">
         <div>
           <div className="text-[9px] text-neutral-400 uppercase tracking-widest">{isUk ? "Трекінг часу" : "Tracking"}</div>
@@ -186,6 +273,7 @@ export function AgencyDeskDemo({ lang }: { lang: string }) {
           <div className="font-bold text-teal-400">£{(Math.floor(seconds / 3600 * 95) + 285).toLocaleString()}</div>
         </div>
       </div>
+      )}
 
       {/* ── TASK DETAIL DRAWER ── */}
       {detailId && (() => {

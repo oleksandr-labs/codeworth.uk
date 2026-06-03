@@ -7,6 +7,17 @@ const NAV = [
   { id: "suppliers", icon: "🚚", label: "Suppliers" },
   { id: "invoice", icon: "🧾", label: "Invoice" },
   { id: "reports", icon: "📊", label: "Reports" },
+  { id: "portal", icon: "🛒", label: "B2B" },
+];
+
+// Catalogue shown in the customer-facing B2B portal
+const CATALOGUE = [
+  { sku: "BRK-001", name: "Brick Standard (pallet)", price: 237.5, unit: "pallet", inStock: true },
+  { sku: "CEM-204", name: "Portland Cement 25kg", price: 14.5, unit: "bag", inStock: true },
+  { sku: "STL-ROD", name: "Steel Rebar 10mm (6m)", price: 22.0, unit: "length", inStock: true },
+  { sku: "INS-100", name: "Rockwool Insulation Roll", price: 38.0, unit: "roll", inStock: true },
+  { sku: "PLY-12M", name: "Plywood 12mm Sheet", price: 31.0, unit: "sheet", inStock: false },
+  { sku: "TIM-C16", name: "C16 Timber 4.8m", price: 16.0, unit: "length", inStock: true },
 ];
 
 const STOCK = [
@@ -49,7 +60,19 @@ const TOP_SKUS = [
 export function WholesaleHubDemo({ lang }: { lang: string }) {
   const [active, setActive] = useState("stock");
   const [search, setSearch] = useState("");
+  const [cart, setCart] = useState<Record<string, number>>({ "STL-ROD": 50, "CEM-204": 20 });
+  const [placed, setPlaced] = useState(false);
   const isUk = lang === "uk";
+
+  const addToCart = (sku: string) => setCart(c => ({ ...c, [sku]: (c[sku] ?? 0) + 1 }));
+  const removeFromCart = (sku: string) => setCart(c => {
+    const n = (c[sku] ?? 0) - 1;
+    const next = { ...c };
+    if (n <= 0) delete next[sku]; else next[sku] = n;
+    return next;
+  });
+  const cartLines = Object.entries(cart).map(([sku, qty]) => ({ ...CATALOGUE.find(p => p.sku === sku)!, qty }));
+  const cartTotal = cartLines.reduce((s, l) => s + l.price * l.qty, 0);
 
   const filtered = STOCK.filter(s =>
     s.name.toLowerCase().includes(search.toLowerCase()) || s.sku.includes(search.toUpperCase())
@@ -300,6 +323,83 @@ export function WholesaleHubDemo({ lang }: { lang: string }) {
                     </div>
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ── B2B CLIENT PORTAL (customer-facing view) ── */}
+        {active === "portal" && (
+          <div className="flex-1 overflow-auto">
+            {/* Portal sub-header — visually distinct from operator chrome */}
+            <div className="bg-sky-500/10 border-b border-sky-500/20 px-4 py-2.5 flex items-center justify-between sticky top-0 backdrop-blur z-10">
+              <div className="flex items-center gap-2">
+                <span className="text-sky-400 text-xs font-bold uppercase tracking-wide">🛒 B2B {isUk ? "Портал" : "Portal"}</span>
+                <span className="text-white/40 text-xs">{isUk ? "вигляд клієнта · BuildRight Ltd" : "client view · BuildRight Ltd"}</span>
+              </div>
+              <div className="text-xs text-white/40">{isUk ? "Кредитний ліміт" : "Credit limit"}: <span className="text-emerald-400 font-bold">£15,000</span></div>
+            </div>
+
+            <div className="flex">
+              {/* Catalogue */}
+              <div className="flex-1 p-4 space-y-2">
+                <div className="text-[10px] text-white/30 uppercase tracking-widest mb-1">{isUk ? "Каталог — замовлення 24/7" : "Catalogue — order 24/7"}</div>
+                {CATALOGUE.map(p => (
+                  <div key={p.sku} className={`flex items-center justify-between rounded-lg border px-3 py-2.5 ${p.inStock ? "bg-white/[0.03] border-white/10" : "bg-white/[0.01] border-white/5 opacity-60"}`}>
+                    <div>
+                      <div className="text-sm text-white/90">{p.name}</div>
+                      <div className="text-[10px] text-white/40">{p.sku} · £{p.price.toFixed(2)} / {p.unit}</div>
+                    </div>
+                    {p.inStock ? (
+                      <div className="flex items-center gap-1.5">
+                        {cart[p.sku] ? (
+                          <>
+                            <button onClick={() => removeFromCart(p.sku)} className="w-6 h-6 rounded bg-white/10 text-white hover:bg-white/20 text-sm">−</button>
+                            <span className="w-7 text-center text-sm text-white tabular-nums">{cart[p.sku]}</span>
+                          </>
+                        ) : null}
+                        <button onClick={() => addToCart(p.sku)} className="w-6 h-6 rounded bg-sky-500 text-white hover:bg-sky-400 text-sm">+</button>
+                      </div>
+                    ) : (
+                      <span className="text-[10px] text-red-400 font-medium">{isUk ? "Немає" : "Out of stock"}</span>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              {/* Cart / basket */}
+              <div className="w-64 shrink-0 border-l border-white/5 p-4 bg-[#0a0c10]">
+                <div className="text-[10px] text-white/30 uppercase tracking-widest mb-3">{isUk ? "Кошик" : "Your basket"}</div>
+                {placed ? (
+                  <div className="text-center py-8">
+                    <div className="text-3xl mb-2">✅</div>
+                    <div className="text-sm text-emerald-400 font-bold">{isUk ? "Замовлення розміщено!" : "Order placed!"}</div>
+                    <div className="text-xs text-white/40 mt-1">{isUk ? "Надійшло оператору · ORD-1842" : "Sent to operator · ORD-1842"}</div>
+                    <button onClick={() => { setPlaced(false); setCart({}); }} className="mt-4 text-xs text-sky-400 hover:text-sky-300">{isUk ? "Нове замовлення" : "New order"}</button>
+                  </div>
+                ) : cartLines.length === 0 ? (
+                  <div className="text-xs text-white/30 italic py-8 text-center">{isUk ? "Кошик порожній" : "Basket is empty"}</div>
+                ) : (
+                  <>
+                    <div className="space-y-2 mb-3">
+                      {cartLines.map(l => (
+                        <div key={l.sku} className="flex justify-between text-xs">
+                          <span className="text-white/70">{l.qty}× {l.name.split("(")[0].trim()}</span>
+                          <span className="text-white tabular-nums">£{(l.price * l.qty).toFixed(0)}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="border-t border-white/10 pt-2 space-y-1">
+                      <div className="flex justify-between text-xs text-white/40"><span>{isUk ? "Сума" : "Subtotal"}</span><span className="tabular-nums">£{cartTotal.toFixed(0)}</span></div>
+                      <div className="flex justify-between text-xs text-white/40"><span>VAT 20%</span><span className="tabular-nums">£{(cartTotal * 0.2).toFixed(0)}</span></div>
+                      <div className="flex justify-between text-sm font-bold text-white"><span>{isUk ? "Разом" : "Total"}</span><span className="tabular-nums">£{(cartTotal * 1.2).toFixed(0)}</span></div>
+                    </div>
+                    <button onClick={() => setPlaced(true)} className="mt-3 w-full bg-sky-500 hover:bg-sky-400 text-white text-sm font-semibold py-2 rounded-lg transition-colors">
+                      {isUk ? "Розмістити замовлення" : "Place order"} →
+                    </button>
+                    <div className="text-[10px] text-white/25 mt-2 text-center">{isUk ? "На рахунок · оплата 14 днів" : "On account · 14-day terms"}</div>
+                  </>
+                )}
               </div>
             </div>
           </div>
