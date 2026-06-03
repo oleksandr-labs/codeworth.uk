@@ -4,18 +4,19 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, ArrowRight, Globe, Rocket } from "lucide-react";
+import { EmojiIcon } from "@/components/ui/EmojiIcon";
 import { cn } from "@/lib/utils";
 import { Container } from "./Container";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { LogoWordmark } from "@/components/ui/Logo";
 import { MiniCart } from "@/components/ui/MiniCart";
-import { SERVICES_DATA } from "@/lib/data/services";
-import { NICHE_CATEGORIES } from "@/lib/data/niches";
+import { SERVICES_DATA, getServiceLocalized } from "@/lib/data/services";
+import { NICHE_CATEGORIES, NICHE_CATEGORY_EN } from "@/lib/data/niches";
 import { analytics } from "@/lib/analytics";
 
 const NICHE_CATEGORY_ICONS: Record<string, string> = {
   "Їжа та гостинність": "🍽",
-  "Краса та здоров'я": "💄",
+  "Краса та здоров'я": "✂️",
   "Будівництво та нерухомість": "🏗",
   "Освіта та консалтинг": "📚",
   "Авто та логістика": "🚗",
@@ -24,7 +25,7 @@ const NICHE_CATEGORY_ICONS: Record<string, string> = {
   "IT та SaaS": "💻",
   "Здоров'я та розвиток": "🏥",
   "Дитяча та сімейна": "👶",
-  "Виробництво та хенд-мейд": "🔨",
+  "Виробництво та хенд-мейд": "🔧",
   "Бізнес-послуги": "📋",
   "Агробізнес та AgriTech": "🌾",
 };
@@ -152,6 +153,7 @@ export function Header() {
                 >
                   <div className="grid grid-cols-2 gap-1 mb-3">
                     {SERVICES_DATA.map((s) => {
+                      const sl = lang === "uk" ? s : (getServiceLocalized(s.slug, lang) ?? s);
                       const SIcon = s.icon;
                       return (
                         <Link
@@ -166,9 +168,9 @@ export function Header() {
                           </div>
                           <div className="min-w-0">
                             <div className="text-sm font-medium text-neutral-800 dark:text-neutral-200 group-hover:text-indigo-700 dark:group-hover:text-indigo-400 truncate transition-colors">
-                              {s.shortTitle}
+                              {sl.shortTitle}
                             </div>
-                            <div className="text-xs text-neutral-400">{lang === "uk" ? "від" : "from"} {s.priceFrom}</div>
+                            <div className="text-xs text-neutral-400">{lang === "uk" ? "від" : "from"} {sl.priceFrom}</div>
                           </div>
                         </Link>
                       );
@@ -252,8 +254,8 @@ export function Header() {
                         onClick={() => setSolutionsOpen(false)}
                         className="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-emerald-50 dark:hover:bg-emerald-950/30 transition-colors group"
                       >
-                        <span className="text-base shrink-0">{NICHE_CATEGORY_ICONS[cat] ?? "📦"}</span>
-                        <span className="text-xs font-medium text-neutral-700 dark:text-neutral-300 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 leading-tight">{cat}</span>
+                        <EmojiIcon emoji={NICHE_CATEGORY_ICONS[cat] ?? "📦"} className="w-4 h-4 shrink-0" />
+                        <span className="text-xs font-medium text-neutral-700 dark:text-neutral-300 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 leading-tight">{lang === "uk" ? cat : (NICHE_CATEGORY_EN[cat] ?? cat)}</span>
                       </Link>
                     ))}
                   </div>

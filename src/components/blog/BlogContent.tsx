@@ -234,7 +234,7 @@ export function BlogContent() {
               </span>
               {activeCategory && (
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-600 text-white text-xs font-medium">
-                  {activeCategory}
+                  {BLOG_CATEGORY_LIST.find(c => c.label.uk === activeCategory)?.label[isUk ? "uk" : "en"] ?? activeCategory}
                   <button
                     onClick={() => {
                       setActiveCategory("");
