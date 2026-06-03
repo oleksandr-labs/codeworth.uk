@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { CTASection } from "@/components/home/CTASection";
 import { ERPRoiCalculator } from "@/components/erp/ERPRoiCalculator";
+import { ERPDiscoverySection } from "@/components/erp/ERPDiscoverySection";
 import {
   Warehouse, UtensilsCrossed, HardHat, ShoppingBag, Briefcase, Stethoscope, Truck,
   ArrowRight, Database, Workflow, Rocket, CheckCircle2, FileSpreadsheet,
