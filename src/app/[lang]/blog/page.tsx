@@ -90,20 +90,20 @@ export default async function BlogPage({ params }: { params: Promise<{ lang: str
               </p>
 
               {/* Stats strip */}
-              <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm">
-                <div className="flex flex-col items-center">
-                  <span className="text-2xl font-heading font-extrabold text-neutral-900">{postCount}</span>
-                  <span className="text-neutral-500">{isUk ? "статей" : "articles"}</span>
+              <div className="flex flex-wrap justify-center gap-8 mb-8 text-sm">
+                <div className="flex flex-col items-center gap-0.5">
+                  <span className="text-4xl font-extrabold tabular-nums text-neutral-900 dark:text-white leading-none">{postCount}</span>
+                  <span className="text-neutral-500 dark:text-neutral-400 text-sm">{isUk ? "статей" : "articles"}</span>
                 </div>
-                <div className="w-px h-10 bg-neutral-200 self-center hidden sm:block" />
-                <div className="flex flex-col items-center">
-                  <span className="text-2xl font-heading font-extrabold text-neutral-900">{categoryCount}</span>
-                  <span className="text-neutral-500">{isUk ? "категорій" : "categories"}</span>
+                <div className="w-px h-12 bg-neutral-200 dark:bg-neutral-700 self-center hidden sm:block" />
+                <div className="flex flex-col items-center gap-0.5">
+                  <span className="text-4xl font-extrabold tabular-nums text-neutral-900 dark:text-white leading-none">{categoryCount}</span>
+                  <span className="text-neutral-500 dark:text-neutral-400 text-sm">{isUk ? "категорій" : "categories"}</span>
                 </div>
-                <div className="w-px h-10 bg-neutral-200 self-center hidden sm:block" />
-                <div className="flex flex-col items-center">
-                  <span className="text-2xl font-heading font-extrabold text-neutral-900">{tagCount}+</span>
-                  <span className="text-neutral-500">{isUk ? "тегів" : "tags"}</span>
+                <div className="w-px h-12 bg-neutral-200 dark:bg-neutral-700 self-center hidden sm:block" />
+                <div className="flex flex-col items-center gap-0.5">
+                  <span className="text-4xl font-extrabold tabular-nums text-neutral-900 dark:text-white leading-none">{tagCount}+</span>
+                  <span className="text-neutral-500 dark:text-neutral-400 text-sm">{isUk ? "тегів" : "tags"}</span>
                 </div>
               </div>
 
