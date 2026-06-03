@@ -40,5 +40,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Project management (not part of the codebase)
-TODO/
+# Project management — tracked intentionally
+# TODO/ removed from ignore so planning docs are versioned
