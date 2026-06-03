@@ -45,22 +45,22 @@ export function ChainOpsDemo({ lang }: { lang: string }) {
       <div className="flex items-center justify-between px-5 py-2.5 bg-neutral-900 border-b border-neutral-800 shrink-0">
         <div className="flex items-center gap-2">
           <span className="font-bold text-orange-400 tracking-tight">ChainOps</span>
-          <span className="text-neutral-600 text-xs">Manchester Group · 8 venues</span>
+          <span className="text-neutral-600 text-xs hidden sm:inline">Manchester Group · 8 venues</span>
         </div>
-        <div className="flex items-center gap-5 text-xs">
+        <div className="flex items-center gap-3 sm:gap-5 text-xs">
           <div className="text-center"><div className="font-black text-orange-400">£{(totalRev / 1000).toFixed(1)}k</div><div className="text-neutral-600">{isUk ? "виручка" : "revenue"}</div></div>
-          <div className="text-center"><div className="font-black text-red-400">£{totalWaste}</div><div className="text-neutral-600">{isUk ? "списання" : "waste"}</div></div>
+          <div className="text-center hidden sm:block"><div className="font-black text-red-400">£{totalWaste}</div><div className="text-neutral-600">{isUk ? "списання" : "waste"}</div></div>
           <div className="text-center"><div className="font-black text-emerald-400">29%</div><div className="text-neutral-600">food cost</div></div>
-          <div className="w-px h-6 bg-neutral-800" />
-          <div className="flex items-center gap-1.5 text-emerald-400"><span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" /><span>Live</span></div>
+          <div className="w-px h-6 bg-neutral-800 hidden sm:block" />
+          <div className="flex items-center gap-1.5 text-emerald-400"><span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" /><span className="hidden sm:inline">Live</span></div>
         </div>
       </div>
 
       {/* ── 3-COLUMN LAYOUT ── */}
       <div className="flex flex-1 overflow-hidden">
 
-        {/* COL 1 — Venue list */}
-        <div className="w-44 bg-neutral-900 border-r border-neutral-800 overflow-y-auto shrink-0">
+        {/* COL 1 — Venue list (desktop) */}
+        <div className="hidden md:block w-44 bg-neutral-900 border-r border-neutral-800 overflow-y-auto shrink-0">
           <div className="px-3 py-2 text-[10px] text-neutral-600 uppercase tracking-widest">{isUk ? "Точки" : "Venues"}</div>
           {VENUES.map(v => (
             <button
@@ -80,7 +80,22 @@ export function ChainOpsDemo({ lang }: { lang: string }) {
         </div>
 
         {/* COL 2 — Venue detail */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-4">
+        <div className="flex-1 overflow-y-auto">
+          {/* Mobile venue selector — horizontal scroll */}
+          <div className="md:hidden flex gap-2 overflow-x-auto px-4 py-2 border-b border-neutral-800 bg-neutral-900">
+            {VENUES.map(v => (
+              <button
+                key={v.id}
+                onClick={() => setSelected(v)}
+                className={`shrink-0 px-3 py-1.5 rounded-full text-xs font-semibold transition-colors ${
+                  selected.id === v.id ? "bg-orange-500 text-white" : "bg-neutral-800 text-neutral-300"
+                }`}
+              >
+                {v.name}{v.alert && " !"}
+              </button>
+            ))}
+          </div>
+          <div className="p-4 space-y-4">
           <div className="flex items-center justify-between">
             <h2 className="font-black text-xl text-orange-400">{selected.name}</h2>
             {selected.alert && <span className="bg-red-500/20 text-red-400 text-xs px-2 py-0.5 rounded-full">⚠ {isUk ? "Перевищення" : "Alert"}</span>}
@@ -143,10 +158,11 @@ export function ChainOpsDemo({ lang }: { lang: string }) {
               })}
             </div>
           </div>
+          </div>
         </div>
 
-        {/* COL 3 — Alerts feed */}
-        <div className="w-52 bg-neutral-900 border-l border-neutral-800 overflow-y-auto shrink-0">
+        {/* COL 3 — Alerts feed (desktop only) */}
+        <div className="hidden lg:block w-52 bg-neutral-900 border-l border-neutral-800 overflow-y-auto shrink-0">
           <div className="px-3 py-2 text-[10px] text-neutral-600 uppercase tracking-widest">{isUk ? "Сповіщення" : "Alerts"}</div>
           {ALERTS.map((a, i) => (
             <div key={i} className={`px-3 py-2.5 border-b border-neutral-800/60 border-l-2 ${a.sev === "high" ? "border-l-red-500" : a.sev === "med" ? "border-l-amber-500" : "border-l-neutral-600"}`}>

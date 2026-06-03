@@ -144,6 +144,11 @@ const DEDICATED_DEMOS = new Set([
   "aqua-zen-spa",
   "bridal-luxury-salon",
   "executive-hunt",
+  "erp-wholesale",
+  "erp-restaurant-chain",
+  "erp-construction",
+  "erp-retail-chain",
+  "erp-agency",
 ]);
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";

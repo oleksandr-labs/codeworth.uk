@@ -18,11 +18,59 @@ const CIS = [
   { name: "PlumbRight Ltd", trade: "Plumbing", gross: 14600, status: "pending" },
 ];
 
+// Per-project phase detail + linked documents (shown in the Gantt modal)
+const PROJECT_DETAIL: Record<string, {
+  phases: { en: string; uk: string; done: boolean }[];
+  docs: { name: string; type: string; ok: boolean }[];
+}> = {
+  "P-041": {
+    phases: [
+      { en: "Site setup & enabling", uk: "Підготовка майданчика", done: true },
+      { en: "Foundations & substructure", uk: "Фундамент", done: true },
+      { en: "Superstructure", uk: "Суперструктура", done: false },
+      { en: "Roof & weathertight", uk: "Покрівля", done: false },
+      { en: "Fit-out & handover", uk: "Оздоблення та здача", done: false },
+    ],
+    docs: [
+      { name: "Planning Approval", type: "Planning", ok: true },
+      { name: "Foundation Drawing v4.1", type: "Drawing", ok: true },
+      { name: "Building Regs Notice", type: "Compliance", ok: false },
+    ],
+  },
+  "P-038": {
+    phases: [
+      { en: "Foundations", uk: "Фундамент", done: true },
+      { en: "Timber frame erection", uk: "Монтаж каркаса", done: true },
+      { en: "Roof & cladding", uk: "Покрівля та фасад", done: false },
+      { en: "First fix M&E", uk: "Перший фікс інженерки", done: false },
+    ],
+    docs: [
+      { name: "Structural Calc v2.3", type: "Engineering", ok: true },
+      { name: "SAP Energy Assessment", type: "Compliance", ok: true },
+    ],
+  },
+};
+
+const DEFAULT_DETAIL = {
+  phases: [
+    { en: "Mobilisation", uk: "Мобілізація", done: true },
+    { en: "Build phase", uk: "Будівництво", done: true },
+    { en: "Finishing", uk: "Оздоблення", done: false },
+  ],
+  docs: [
+    { name: "Planning Approval", type: "Planning", ok: true },
+    { name: "EPC Certificate", type: "Certificate", ok: true },
+  ],
+};
+
 export function BuildTrackDemo({ lang }: { lang: string }) {
   const [hovered, setHovered] = useState<string | null>(null);
+  const [openId, setOpenId] = useState<string | null>(null);
   const isUk = lang === "uk";
   const colW = 100 / 12;
   const cisTotal = CIS.reduce((s, c) => s + c.gross * 0.2, 0);
+  const openProject = PROJECTS.find(p => p.id === openId);
+  const openDetail = openId ? (PROJECT_DETAIL[openId] ?? DEFAULT_DETAIL) : null;
 
   return (
     <div className="min-h-screen bg-[#1c1917] text-stone-100 font-sans">
@@ -85,8 +133,9 @@ export function BuildTrackDemo({ lang }: { lang: string }) {
                   <div className="text-[10px] text-stone-500">{p.units} units · {p.pm}</div>
                 </div>
                 <div className="flex-1 relative h-9">
-                  <div
-                    className="absolute h-9 rounded-md bg-stone-800 border border-stone-700 overflow-hidden flex items-center"
+                  <button
+                    onClick={() => setOpenId(p.id)}
+                    className="absolute h-9 rounded-md bg-stone-800 border border-stone-700 hover:border-amber-500 overflow-hidden flex items-center transition-colors cursor-pointer"
                     style={{ left: `${p.start * colW}%`, width: `${p.len * colW}%` }}
                   >
                     {/* progress fill */}
@@ -97,7 +146,7 @@ export function BuildTrackDemo({ lang }: { lang: string }) {
                     <span className="relative z-10 text-[10px] font-bold px-2 text-white whitespace-nowrap">
                       {p.phase} · {p.done}%
                     </span>
-                  </div>
+                  </button>
                   {hovered === p.id && (
                     <div className="absolute -top-8 left-0 bg-stone-950 border border-amber-500/40 rounded-lg px-3 py-1 text-[10px] z-20 whitespace-nowrap" style={{ left: `${p.start * colW}%` }}>
                       £{p.budget}M · {isUk ? "завершення" : "due"} {MONTHS[Math.min(11, p.start + p.len - 1)]}
@@ -193,6 +242,72 @@ export function BuildTrackDemo({ lang }: { lang: string }) {
 
         </div>
       </div>
+
+      {/* ── GANTT PHASE MODAL ── */}
+      {openProject && openDetail && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={() => setOpenId(null)}>
+          <div className="absolute inset-0 bg-black/60" />
+          <div onClick={e => e.stopPropagation()} className="relative bg-[#1c1917] border border-amber-500/30 rounded-2xl w-full max-w-lg max-h-[85vh] overflow-y-auto shadow-2xl">
+            {/* Modal header */}
+            <div className="bg-gradient-to-r from-amber-600 to-amber-500 px-5 py-4 flex items-start justify-between">
+              <div>
+                <div className="font-mono text-[10px] text-amber-900/70">{openProject.id}</div>
+                <h3 className="font-black text-white text-lg">{openProject.name}</h3>
+                <div className="text-amber-100 text-xs">{openProject.units} units · PM {openProject.pm} · £{openProject.budget}M</div>
+              </div>
+              <button onClick={() => setOpenId(null)} className="w-7 h-7 rounded-lg bg-black/20 text-white hover:bg-black/30 transition-colors">✕</button>
+            </div>
+
+            <div className="p-5 space-y-5">
+              {/* Overall progress */}
+              <div>
+                <div className="flex justify-between text-xs mb-1.5">
+                  <span className="text-stone-400">{isUk ? "Загальне завершення" : "Overall completion"}</span>
+                  <span className="font-bold text-amber-400">{openProject.done}%</span>
+                </div>
+                <div className="h-2.5 bg-stone-800 rounded-full overflow-hidden">
+                  <div className="h-2.5 bg-gradient-to-r from-amber-600 to-amber-400 rounded-full" style={{ width: `${openProject.done}%` }} />
+                </div>
+              </div>
+
+              {/* Phases checklist */}
+              <div>
+                <div className="text-xs font-black uppercase tracking-wide text-stone-300 mb-2">{isUk ? "Фази робіт" : "Build phases"}</div>
+                <div className="space-y-1.5">
+                  {openDetail.phases.map((ph, i) => (
+                    <div key={i} className="flex items-center gap-2.5">
+                      <div className={`w-4 h-4 rounded flex items-center justify-center text-[9px] ${ph.done ? "bg-amber-500 text-white" : "border border-stone-600"}`}>{ph.done ? "✓" : ""}</div>
+                      <span className={`text-sm ${ph.done ? "text-stone-500 line-through" : "text-stone-200"}`}>{isUk ? ph.uk : ph.en}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Document Vault */}
+              <div>
+                <div className="text-xs font-black uppercase tracking-wide text-stone-300 mb-2">{isUk ? "Документи проєкту" : "Document Vault"}</div>
+                <div className="space-y-1.5">
+                  {openDetail.docs.map(d => (
+                    <div key={d.name} className="flex items-center justify-between bg-stone-900 border border-stone-800 rounded-lg px-3 py-2">
+                      <div className="flex items-center gap-2.5">
+                        <span className="text-base">{d.type === "Drawing" ? "📐" : d.type === "Certificate" ? "🏆" : d.type === "Compliance" ? "⚖️" : d.type === "Engineering" ? "📊" : "📄"}</span>
+                        <div>
+                          <div className="text-sm text-stone-100">{d.name}</div>
+                          <div className="text-[10px] text-stone-500">{d.type}</div>
+                        </div>
+                      </div>
+                      {d.ok
+                        ? <span className="text-[10px] bg-emerald-500/15 text-emerald-400 px-2 py-1 rounded font-bold">✓ {isUk ? "Затв." : "Approved"}</span>
+                        : <span className="text-[10px] bg-amber-500/15 text-amber-400 px-2 py-1 rounded font-bold">⏳ {isUk ? "Очікує" : "Pending"}</span>}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
     </div>
   );
 }
