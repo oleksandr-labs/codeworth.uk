@@ -50,6 +50,7 @@ const CATEGORY_COLORS: Record<string, string> = {
   orange: "bg-orange-100 text-orange-700",
   cyan: "bg-cyan-100 text-cyan-700",
   amber: "bg-amber-100 text-amber-700",
+  slate: "bg-slate-100 text-slate-700",
 };
 
 const CATEGORY_ICONS: Record<UseCaseCategory, string> = {
@@ -59,6 +60,7 @@ const CATEGORY_ICONS: Record<UseCaseCategory, string> = {
   ecommerce: "🛒",
   ai: "🤖",
   trust: "💼",
+  erp: "🏭",
 };
 
 const CATEGORY_GRADIENT: Record<UseCaseCategory, string> = {
@@ -68,6 +70,7 @@ const CATEGORY_GRADIENT: Record<UseCaseCategory, string> = {
   ecommerce: "from-orange-500 to-amber-600",
   ai: "from-cyan-500 to-blue-600",
   trust: "from-amber-500 to-orange-600",
+  erp: "from-slate-600 to-slate-800",
 };
 
 function UseCaseCard({ uc, isUk, lang }: { uc: UseCase; isUk: boolean; lang: string }) {

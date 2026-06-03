@@ -46,6 +46,7 @@ const CATEGORY_BG: Record<UseCaseCategory, string> = {
   ecommerce: "bg-orange-50",
   ai: "bg-cyan-50",
   trust: "bg-amber-50",
+  erp: "bg-slate-50",
 };
 
 const CATEGORY_GRADIENT: Record<UseCaseCategory, string> = {
@@ -55,6 +56,7 @@ const CATEGORY_GRADIENT: Record<UseCaseCategory, string> = {
   ecommerce: "from-orange-500 to-amber-600",
   ai: "from-cyan-500 to-blue-600",
   trust: "from-amber-500 to-orange-600",
+  erp: "from-slate-600 to-slate-800",
 };
 
 const CATEGORY_ICONS: Record<UseCaseCategory, string> = {
@@ -64,6 +66,7 @@ const CATEGORY_ICONS: Record<UseCaseCategory, string> = {
   ecommerce: "🛒",
   ai: "🤖",
   trust: "💼",
+  erp: "🏭",
 };
 
 export default async function UseCaseDetailPage({

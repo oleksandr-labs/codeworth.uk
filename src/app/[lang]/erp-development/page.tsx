@@ -5,8 +5,9 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { CTASection } from "@/components/home/CTASection";
+import { ERPRoiCalculator } from "@/components/erp/ERPRoiCalculator";
 import {
-  Warehouse, UtensilsCrossed, HardHat, ShoppingBag, Briefcase,
+  Warehouse, UtensilsCrossed, HardHat, ShoppingBag, Briefcase, Stethoscope,
   ArrowRight, Database, Workflow, Rocket, CheckCircle2, FileSpreadsheet,
   Layers, Network, ShieldCheck, Users, BarChart3, FileText, Plug2,
   ClipboardList, Banknote, ChevronDown,
@@ -65,6 +66,7 @@ const CASES = [
   { slug: "erp-construction", icon: HardHat, name: "BuildTrack", sector: { en: "Housebuilder · Leeds", uk: "Забудовник · Лідс" }, metric: { en: "CIS: 2 days → 15 min", uk: "CIS: 2 дні → 15 хв" }, colour: "from-amber-600 to-yellow-700" },
   { slug: "erp-retail-chain", icon: ShoppingBag, name: "RetailCore", sector: { en: "12-store fashion chain · London", uk: "Мережа 12 магазинів · Лондон" }, metric: { en: "Sell-through +19%", uk: "Sell-through +19%" }, colour: "from-violet-600 to-purple-700" },
   { slug: "erp-agency", icon: Briefcase, name: "AgencyDesk", sector: { en: "Digital agency · Edinburgh", uk: "Digital-агенція · Единбург" }, metric: { en: "Admin 12% → 3%", uk: "Адмін 12% → 3%" }, colour: "from-cyan-600 to-teal-700" },
+  { slug: "erp-clinic", icon: Stethoscope, name: "CareHub", sector: { en: "4-site private clinic group · Bristol", uk: "Мережа 4 клінік · Брістоль" }, metric: { en: "Bookings +42%, zero conflicts", uk: "Запис +42%, нуль конфліктів" }, colour: "from-sky-600 to-blue-700" },
 ];
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -196,6 +198,9 @@ export default async function ErpDevelopmentPage({ params }: { params: Promise<{
           </Container>
         </section>
 
+        {/* ROI CALCULATOR */}
+        <ERPRoiCalculator lang={lang} />
+
         {/* CASES */}
         <section id="cases" className="py-20 bg-white dark:bg-neutral-950">
           <Container>
@@ -211,7 +216,7 @@ export default async function ErpDevelopmentPage({ params }: { params: Promise<{
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {CASES.map((c) => (
                 <Link key={c.slug} href={lp(`/portfolio/${c.slug}`)} className="group rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white dark:bg-neutral-800 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all">
-                  <div className={`h-28 bg-gradient-to-br ${c.colour} flex items-center justify-center`}>
+                  <div className={`h-28 bg-linear-to-br ${c.colour} flex items-center justify-center`}>
                     <c.icon className="w-12 h-12 text-white/90" strokeWidth={1.5} />
                   </div>
                   <div className="p-5">
@@ -360,6 +365,33 @@ export default async function ErpDevelopmentPage({ params }: { params: Promise<{
                   </p>
                 </details>
               ))}
+            </div>
+          </Container>
+        </section>
+
+        {/* RELATED CONTENT */}
+        <section className="py-16 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100 dark:border-neutral-800">
+          <Container>
+            <p className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest mb-8">{isUk ? "Пов'язані матеріали" : "Further reading"}</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl">
+              <Link href={lp("/use-cases/erp-wholesale-order-time")} className="group p-5 rounded-2xl border border-neutral-100 dark:border-neutral-800 bg-white dark:bg-neutral-800 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+                <div className="text-2xl mb-3">🏭</div>
+                <h3 className="font-heading font-bold text-neutral-900 dark:text-white text-sm leading-snug group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                  {isUk
+                    ? "Як оптовик з Бірмінгема скоротив час замовлення на 72%"
+                    : "How a Birmingham wholesaler cut order time 72%"}
+                </h3>
+                <p className="mt-1.5 text-xs text-neutral-500 dark:text-neutral-400">{isUk ? "Кейс · Use case" : "Case study · Use case"}</p>
+              </Link>
+              <Link href={lp("/blog/custom-erp-uk-cost-timeline")} className="group p-5 rounded-2xl border border-neutral-100 dark:border-neutral-800 bg-white dark:bg-neutral-800 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+                <div className="text-2xl mb-3">📖</div>
+                <h3 className="font-heading font-bold text-neutral-900 dark:text-white text-sm leading-snug group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                  {isUk
+                    ? "Кастомна ERP для UK SMB: вартість, терміни та чого очікувати"
+                    : "Custom ERP for UK SMB — cost, timeline, what to expect"}
+                </h3>
+                <p className="mt-1.5 text-xs text-neutral-500 dark:text-neutral-400">{isUk ? "Стаття · 11 хв читання" : "Article · 11 min read"}</p>
+              </Link>
             </div>
           </Container>
         </section>

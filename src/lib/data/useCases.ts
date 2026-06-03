@@ -4,7 +4,8 @@ export type UseCaseCategory =
   | "seo"
   | "ecommerce"
   | "ai"
-  | "trust";
+  | "trust"
+  | "erp";
 
 export interface UseCase {
   slug: string;
@@ -480,12 +481,43 @@ export const USE_CASES: UseCase[] = [
     relatedServices: ["web-apps"],
     relatedExtras: ["feat-before-after", "feat-lightbox"],
   },
+  {
+    slug: "erp-wholesale-order-time",
+    titleEn: "How a Birmingham wholesaler cut order processing time by 72%",
+    titleUk: "Як оптовик з Бірмінгема скоротив час обробки замовлення на 72%",
+    category: "erp",
+    icon: "🏭",
+    whoEn: "Wholesale distributors, B2B traders, multi-warehouse businesses",
+    whoUk: "Оптові дистриб'ютори, B2B-торговці, компанії з кількома складами",
+    problemEn:
+      "A Birmingham building-materials wholesaler managed 500+ SKUs across 3 warehouses in spreadsheets. Orders arrived by phone and email, were manually checked for stock, re-keyed into an invoicing tool, and confirmed by another call — 25 minutes per order, constant errors, and no visibility across sites.",
+    problemUk:
+      "Оптовик будматеріалів з Бірмінгема управляв 500+ SKU на 3 складах у Excel. Замовлення надходили по телефону та email, вручну перевірялись по залишках, переносились в інструмент виставлення рахунків і підтверджувались ще одним дзвінком — 25 хвилин на замовлення, постійні помилки, нульова видимість між складами.",
+    solutionEn:
+      "Codeworth built a custom ERP: real-time stock sync across all 3 warehouses with automatic low-stock alerts, a B2B portal where trade customers place orders 24/7 without calling, automated PDF invoice generation on order confirmation, and a live dashboard for stock and sales KPIs — all on Next.js + PostgreSQL + Prisma.",
+    solutionUk:
+      "Codeworth побудував кастомну ERP: синхронізація залишків по всіх 3 складах у реальному часі з автоматичними сповіщеннями про низький запас, B2B-портал де клієнти розміщують замовлення цілодобово без дзвінків, автоматичне генерування PDF-рахунків при підтвердженні замовлення та живий дашборд з KPI по залишках та продажах — на Next.js + PostgreSQL + Prisma.",
+    resultQuoteEn:
+      "Order processing time dropped from 25 minutes to 7 minutes. Stock discrepancies fell by 91%. Three full-time staff previously dedicated to manual order entry were redeployed to sales — and ROI was reached within 4 months.",
+    resultQuoteUk:
+      "Час обробки замовлення скоротився з 25 до 7 хвилин. Розбіжності в залишках знизились на 91%. Троє співробітників, що раніше вручну вводили замовлення, перейшли у відділ продажів — ROI досягнуто за 4 місяці.",
+    metaTitleEn: "How a Birmingham Wholesaler Cut Order Time 72% — Custom ERP | Codeworth",
+    metaTitleUk: "Як оптовик з Бірмінгема скоротив час замовлення на 72% — ERP | Codeworth",
+    metaDescriptionEn:
+      "Case study: custom ERP replaced spreadsheets for a UK wholesale distributor. Order time 25→7 min, stock errors −91%, ROI in 4 months. From £3,999.",
+    metaDescriptionUk:
+      "Кейс: кастомна ERP замінила Excel у UK оптовика. Час замовлення 25→7 хв, помилки залишків −91%, ROI за 4 місяці. Від £3,999.",
+    relatedPortfolio: ["erp-wholesale"],
+    relatedServices: ["web-apps"],
+    relatedExtras: [],
+  },
 ];
 
 export const USE_CASE_CATEGORY_LABELS: Record<
   UseCaseCategory,
   { en: string; uk: string; color: string }
 > = {
+  erp: { en: "ERP", uk: "ERP", color: "slate" },
   conversion: { en: "Conversion", uk: "Конверсія", color: "emerald" },
   automation: { en: "Automation", uk: "Автоматизація", color: "violet" },
   seo: { en: "SEO", uk: "SEO", color: "blue" },
