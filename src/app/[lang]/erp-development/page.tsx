@@ -8,8 +8,56 @@ import { CTASection } from "@/components/home/CTASection";
 import {
   Warehouse, UtensilsCrossed, HardHat, ShoppingBag, Briefcase,
   ArrowRight, Database, Workflow, Rocket, CheckCircle2, FileSpreadsheet,
-  Layers, Network, ShieldCheck,
+  Layers, Network, ShieldCheck, Users, BarChart3, FileText, Plug2,
+  ClipboardList, Banknote, ChevronDown,
 } from "lucide-react";
+
+const MODULES = [
+  { icon: Warehouse, en: "Warehouse & Inventory", uk: "Склад та інвентар", desc: { en: "Real-time stock levels, multi-location, barcode/QR scanning, automated reorder points.", uk: "Залишки в реальному часі, мультискладність, штрих-коди/QR, автозамовлення." } },
+  { icon: Banknote, en: "Finance & Accounting", uk: "Фінанси та бухгалтерія", desc: { en: "Invoicing, expense tracking, P&L, VAT returns, MTD-ready reports.", uk: "Інвойсинг, витрати, P&L, ПДВ, MTD-звіти для HMRC." } },
+  { icon: Users, en: "HR & Payroll", uk: "Персонал та зарплата", desc: { en: "Employee records, timesheets, holiday/sick tracking, payroll integration.", uk: "Картки співробітників, табелі, відпустки/лікарняні, інтеграція з payroll." } },
+  { icon: ClipboardList, en: "Projects & Tasks", uk: "Проєкти та задачі", desc: { en: "Project budgets, Gantt views, time logging, profitability per job.", uk: "Бюджет проєкту, Gantt, трекінг часу, рентабельність по кожному замовленню." } },
+  { icon: Network, en: "CRM & Sales Pipeline", uk: "CRM та продажі", desc: { en: "Leads, quotes, pipeline stages, email history, customer portal.", uk: "Ліди, комерційні пропозиції, стадії угоди, листування, портал клієнта." } },
+  { icon: BarChart3, en: "Analytics & Dashboards", uk: "Аналітика та дашборди", desc: { en: "Custom KPI boards, drill-down reports, export to Excel/PDF.", uk: "Власні KPI-борди, drill-down звіти, експорт у Excel/PDF." } },
+  { icon: FileText, en: "Document Management", uk: "Документообіг", desc: { en: "Contracts, PDFs, version history, e-signature, audit trail.", uk: "Договори, PDF, версіонування, електронний підпис, журнал дій." } },
+  { icon: Plug2, en: "API & Integrations", uk: "API та інтеграції", desc: { en: "Connect Xero, QuickBooks, Stripe, Shopify, Royal Mail, or any REST API.", uk: "Підключення Xero, QuickBooks, Stripe, Shopify, Royal Mail чи будь-якого REST API." } },
+];
+
+const COMPARE = [
+  { feature: { en: "Price", uk: "Ціна" }, custom: { en: "From £1,999 — pay only for what you need", uk: "Від £1,999 — платите тільки за потрібне" }, shelf: { en: "£500–£5,000+/mo licences forever", uk: "£500–£5,000+/міс ліцензій назавжди" } },
+  { feature: { en: "Ownership", uk: "Право власності" }, custom: { en: "100% yours — code, data, hosting", uk: "100% ваше — код, дані, хостинг" }, shelf: { en: "Vendor lock-in, data held elsewhere", uk: "Залежність від вендора, дані на чужих серверах" } },
+  { feature: { en: "Fit to your process", uk: "Відповідність процесам" }, custom: { en: "Built exactly around how you work", uk: "Побудовано під ваш реальний процес" }, shelf: { en: "You adapt your process to the software", uk: "Адаптуєте процеси під програму" } },
+  { feature: { en: "Scalability", uk: "Масштабованість" }, custom: { en: "Add modules as you grow, no extra licence", uk: "Додаєте модулі з ростом, без нових ліцензій" }, shelf: { en: "Tier upgrades, add-on fees", uk: "Апгрейд тарифу, додаткові тарифи за модулі" } },
+  { feature: { en: "Integration", uk: "Інтеграції" }, custom: { en: "We integrate any tool you already use", uk: "Інтегруємо будь-який інструмент, яким ви вже користуєтесь" }, shelf: { en: "Only certified partner integrations", uk: "Тільки сертифіковані партнерські інтеграції" } },
+  { feature: { en: "Support", uk: "Підтримка" }, custom: { en: "Direct access to the dev team (EN + UA)", uk: "Прямий доступ до команди розробників (EN + UA)" }, shelf: { en: "Ticketing queue, often overseas", uk: "Черга тікетів, часто закордонна підтримка" } },
+];
+
+const FAQS = [
+  {
+    q: { en: "How long does it take to build a custom ERP?", uk: "Скільки часу займає розробка кастомної ERP?" },
+    a: { en: "Most projects take 4–12 weeks depending on the number of modules and integrations. A focused MVP (e.g. inventory + invoicing) can be live in 4 weeks.", uk: "Більшість проєктів займають 4–12 тижнів залежно від кількості модулів та інтеграцій. Фокусний MVP (наприклад, склад + інвойсинг) можна запустити за 4 тижні." },
+  },
+  {
+    q: { en: "Can you migrate data from our spreadsheets / old system?", uk: "Чи можете ви перенести дані з наших таблиць / старої системи?" },
+    a: { en: "Yes. We handle data migration as part of every project — cleaning, mapping, and importing your existing records into the new system before go-live.", uk: "Так. Перенесення даних входить до кожного проєкту — очищення, маппінг і імпорт ваших поточних записів до нової системи перед запуском." },
+  },
+  {
+    q: { en: "Do I own the source code?", uk: "Чи маю я права на вихідний код?" },
+    a: { en: "Yes, fully. You receive the complete repository. We can continue maintaining it, or you can hand it to any developer.", uk: "Так, повністю. Ви отримуєте повний репозиторій. Ми можемо продовжити підтримку, або ви можете передати його будь-якому розробнику." },
+  },
+  {
+    q: { en: "What tech stack do you use?", uk: "Який технологічний стек ви використовуєте?" },
+    a: { en: "Next.js (React), PostgreSQL, Prisma ORM, TypeScript, Tailwind CSS. Hosted on your server or cloud of choice. All open-source, battle-tested technologies.", uk: "Next.js (React), PostgreSQL, Prisma ORM, TypeScript, Tailwind CSS. Розміщення на вашому сервері або обраному хмарному провайдері. Весь стек open-source." },
+  },
+  {
+    q: { en: "Can the ERP integrate with our existing tools (Xero, Shopify, etc.)?", uk: "Чи може ERP інтегруватися з нашими поточними інструментами (Xero, Shopify тощо)?" },
+    a: { en: "Absolutely. We integrate with any REST API — Xero, QuickBooks, Stripe, Shopify, Royal Mail, and more. If it has an API, we can connect it.", uk: "Так. Інтегруємо з будь-яким REST API — Xero, QuickBooks, Stripe, Shopify, Royal Mail та ін. Якщо є API — підключимо." },
+  },
+  {
+    q: { en: "What does a free discovery call include?", uk: "Що входить у безкоштовний discovery-дзвінок?" },
+    a: { en: "A 30–45 minute call where we map your current workflow, identify the biggest pain points, and give you a rough scope and price estimate — no obligation.", uk: "30–45 хвилин, де ми аналізуємо ваш поточний процес, визначаємо ключові болі та даємо приблизні обсяг і оцінку вартості — без зобов'язань." },
+  },
+];
 
 const CASES = [
   { slug: "erp-wholesale", icon: Warehouse, name: "WholesaleHub", sector: { en: "Wholesale distributor · Birmingham", uk: "Оптовий дистриб'ютор · Бірмінгем" }, metric: { en: "Order time 25 → 7 min", uk: "Час замовлення 25 → 7 хв" }, colour: "from-slate-600 to-slate-800" },
@@ -122,8 +170,34 @@ export default async function ErpDevelopmentPage({ params }: { params: Promise<{
           </Container>
         </section>
 
+        {/* MODULES */}
+        <section className="py-20 bg-neutral-50 dark:bg-neutral-900">
+          <Container>
+            <div className="max-w-2xl mb-12">
+              <p className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest mb-3">{isUk ? "Що входить" : "What's included"}</p>
+              <h2 className="text-3xl font-heading font-extrabold text-neutral-900 dark:text-white">
+                {isUk ? "Модулі ERP-системи" : "ERP modules we build"}
+              </h2>
+              <p className="mt-3 text-neutral-500 dark:text-neutral-400">
+                {isUk
+                  ? "Підбираємо тільки потрібні модулі — не платите за зайве. Кожен інтегрований між собою з єдиною базою даних."
+                  : "We pick only the modules you need — no bloat. Every module shares one database and talks to the others."}
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {MODULES.map((m) => (
+                <div key={m.en} className="p-5 rounded-2xl border border-neutral-100 dark:border-neutral-800 bg-white dark:bg-neutral-800">
+                  <m.icon className="w-7 h-7 text-indigo-500 mb-3" />
+                  <h3 className="font-heading font-bold text-sm text-neutral-900 dark:text-white mb-1">{isUk ? m.uk : m.en}</h3>
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed">{isUk ? m.desc.uk : m.desc.en}</p>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </section>
+
         {/* CASES */}
-        <section id="cases" className="py-20 bg-neutral-50 dark:bg-neutral-900">
+        <section id="cases" className="py-20 bg-white dark:bg-neutral-950">
           <Container>
             <div className="max-w-2xl mb-12">
               <p className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest mb-3">{isUk ? "Кейси" : "Case studies"}</p>
@@ -154,6 +228,48 @@ export default async function ErpDevelopmentPage({ params }: { params: Promise<{
                   </div>
                 </Link>
               ))}
+            </div>
+          </Container>
+        </section>
+
+        {/* CUSTOM VS SHELF */}
+        <section className="py-20 bg-neutral-50 dark:bg-neutral-900">
+          <Container>
+            <div className="max-w-2xl mb-12">
+              <p className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest mb-3">{isUk ? "Порівняння" : "Comparison"}</p>
+              <h2 className="text-3xl font-heading font-extrabold text-neutral-900 dark:text-white">
+                {isUk ? "Кастомна ERP vs SAP / Sage / Dynamics" : "Custom ERP vs SAP / Sage / Dynamics 365"}
+              </h2>
+              <p className="mt-3 text-neutral-500 dark:text-neutral-400">
+                {isUk
+                  ? "Готові системи підходять великим корпораціям. Для бізнесу до 200 людей кастомне рішення дешевше і точніше."
+                  : "Off-the-shelf works for large enterprises. For businesses under 200 people, a custom system is cheaper and a better fit."}
+              </p>
+            </div>
+            <div className="overflow-x-auto rounded-2xl border border-neutral-100 dark:border-neutral-800">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-neutral-100 dark:bg-neutral-800">
+                    <th className="text-left px-5 py-3 font-semibold text-neutral-500 dark:text-neutral-400 w-1/3">{isUk ? "Критерій" : "Feature"}</th>
+                    <th className="text-left px-5 py-3 font-semibold text-indigo-600 dark:text-indigo-400">{isUk ? "Codeworth Custom" : "Codeworth Custom"}</th>
+                    <th className="text-left px-5 py-3 font-semibold text-neutral-400">{isUk ? "Готова система" : "Off-the-shelf"}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {COMPARE.map((row, i) => (
+                    <tr key={i} className="border-t border-neutral-100 dark:border-neutral-800 bg-white dark:bg-neutral-900 odd:bg-neutral-50 odd:dark:bg-neutral-850">
+                      <td className="px-5 py-4 font-medium text-neutral-700 dark:text-neutral-300">{isUk ? row.feature.uk : row.feature.en}</td>
+                      <td className="px-5 py-4 text-neutral-700 dark:text-neutral-200">
+                        <span className="flex items-start gap-2">
+                          <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                          {isUk ? row.custom.uk : row.custom.en}
+                        </span>
+                      </td>
+                      <td className="px-5 py-4 text-neutral-400">{isUk ? row.shelf.uk : row.shelf.en}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </Container>
         </section>
@@ -219,6 +335,31 @@ export default async function ErpDevelopmentPage({ params }: { params: Promise<{
                   </div>
                 ))}
               </div>
+            </div>
+          </Container>
+        </section>
+
+        {/* FAQ */}
+        <section className="py-20 bg-white dark:bg-neutral-950">
+          <Container>
+            <div className="max-w-2xl mb-12">
+              <p className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest mb-3">FAQ</p>
+              <h2 className="text-3xl font-heading font-extrabold text-neutral-900 dark:text-white">
+                {isUk ? "Часті запитання" : "Frequently asked questions"}
+              </h2>
+            </div>
+            <div className="max-w-3xl space-y-3">
+              {FAQS.map((faq, i) => (
+                <details key={i} className="group rounded-2xl border border-neutral-100 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900 open:border-indigo-200 dark:open:border-indigo-800 transition-colors">
+                  <summary className="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer font-semibold text-neutral-900 dark:text-white list-none">
+                    {isUk ? faq.q.uk : faq.q.en}
+                    <ChevronDown className="w-5 h-5 text-neutral-400 group-open:rotate-180 transition-transform shrink-0" />
+                  </summary>
+                  <p className="px-6 pb-5 text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">
+                    {isUk ? faq.a.uk : faq.a.en}
+                  </p>
+                </details>
+              ))}
             </div>
           </Container>
         </section>
