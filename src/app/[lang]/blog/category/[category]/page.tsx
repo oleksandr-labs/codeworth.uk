@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
-import { BLOG_POSTS, BLOG_CATEGORIES } from "@/lib/data/blog";
+import { BLOG_POSTS, BLOG_CATEGORIES, getPostTitle, getPostExcerpt } from "@/lib/data/blog";
 import { Clock, Calendar, ArrowLeft, LayoutGrid } from "lucide-react";
 import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
@@ -175,10 +175,10 @@ export default async function BlogCategoryPage({ params }: Props) {
                           </span>
                         </div>
                         <h2 className="font-heading font-bold text-neutral-900 dark:text-white group-hover:text-indigo-700 transition-colors leading-snug mb-2 line-clamp-2">
-                          {post.title}
+                          {getPostTitle(post, lang)}
                         </h2>
                         <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed line-clamp-2 mb-4">
-                          {post.excerpt}
+                          {getPostExcerpt(post, lang)}
                         </p>
                         <div className="flex items-center gap-4 text-xs text-neutral-400 pt-3 border-t border-neutral-100">
                           <span className="flex items-center gap-1">

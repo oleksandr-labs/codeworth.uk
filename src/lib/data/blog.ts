@@ -10,7 +10,9 @@ export interface BlogCategory {
 export interface BlogPost {
   slug: string;
   title: string;
+  titleEn?: string;
   excerpt: string;
+  excerptEn?: string;
   category: string;
   tags: string[];
   date: string;
@@ -34,6 +36,53 @@ export interface BlogPost {
 }
 
 export const BLOG_POSTS: BlogPost[] = [
+  {
+    slug: "web-development-for-uk-businesses-guide-2026",
+    title: "Веб-розробка для UK-бізнесу: повний гід 2026",
+    titleEn: "Web Development for UK Businesses: Complete Guide 2026",
+    excerpt: "Усе що потрібно знати UK-бізнесу про розробку сайтів: типи сайтів, технології, вартість, терміни та як обрати агенцію.",
+    excerptEn: "Everything a UK business needs to know about web development: types of websites, technology choices, costs, timelines, and how to choose the right agency.",
+    category: "Веб-розробка",
+    tags: ["Web Development", "UK Business", "Next.js", "Website Cost", "Agency"],
+    date: "2026-05-20",
+    updatedDate: "2026-06-03",
+    readTime: 18,
+    author: "Олексій Коваленко",
+    featured: false,
+    emoji: "🏗",
+    color: "from-indigo-600 to-blue-700",
+    seoKeyword: { en: "web development uk businesses", uk: "веб-розробка для бізнесу UK" },
+    content: [
+      "Веб-сайт — це не просто \"онлайн-присутність\". Для UK-бізнесу в 2026 році це основний канал залучення клієнтів, інструмент довіри та автоматизований продавець, що працює 24/7. Але ринок веб-розробки сповнений плутанини: WordPress проти Next.js, фрілансер проти агенції, £500 проти £50 000. Цей гід допоможе вам зрозуміти кожен аспект.",
+      "**Типи сайтів для UK-бізнесу**\n\nВибір типу сайту залежить від вашої галузі та цілей:\n\n1. **Лендінг (від £375–800)** — для стартапів і тест-кампаній: один продукт, одна CTA-кнопка, максимальна конверсія\n2. **Корпоративний сайт (від £1 500)** — для B2B і сервісних компаній: структура, SEO, trust-сигнали, форма зворотного зв'язку\n3. **E-commerce (від £2 500)** — для роздрібної торгівлі: каталог, кошик, Stripe/LiqPay, управління замовленнями\n4. **Портфоліо (від £800)** — для фотографів, дизайнерів, агенцій: візуальний імпакт, галерея, кейси\n5. **SaaS / продуктовий сайт (від £3 000)** — для tech-компаній: pricing page, demo request, trial funnel",
+      "**Технологічний стек: Next.js vs WordPress**\n\nНайпоширеніше питання від UK-бізнесу: «Чи не простіше зробити на WordPress?». Відповідь залежить від цілей.\n\nWordPress підходить якщо: велика редакційна команда, важлива незалежність від розробника, достатньо базового SEO.\n\nNext.js (наш вибір) підходить якщо: Core Web Vitals є пріоритетом, потрібна кастомна логіка, важлива масштабованість. Next.js на 40–60% швидший за WordPress за LCP. Статичні сторінки (SSG) індексуються без затримок. TypeScript гарантує відсутність runtime-помилок.\n\nCodeworth будує всі проєкти на Next.js 15+ — це стандарт для сайтів, де SEO і швидкість критичні.",
+      "**Вартість веб-розробки в UK: реалістичні цифри 2026**\n\nБюджет сильно залежить від складності та виконавця:\n\n| Тип сайту | Фрілансер | Агенція |\n|---|---|---|\n| Лендінг | £300–600 | £500–1 200 |\n| Корпоративний | £800–2 000 | £1 500–5 000 |\n| E-commerce | £1 500–4 000 | £3 000–12 000 |\n| SaaS MVP | £3 000–8 000 | £6 000–20 000 |\n\nCodeworth пропонує фіксовані пакети від £375 — готові нішеві рішення для 60+ типів бізнесу, що запускаються за 3 дні замість 3–4 тижнів.",
+      "**Терміни розробки**\n\nРеалістичні терміни для стандартних проєктів:\n- Лендінг: 3–7 днів\n- Корпоративний сайт: 2–4 тижні\n- E-commerce: 4–8 тижнів\n- Кастомний SaaS: 2–4 місяці\n\nГоловні чинники затримок: несвоєчасне надання контенту від клієнта (фото, тексти, логотип), зміни вимог у процесі, ревізії дизайну. Codeworth вирішує перший пункт через структурований чеклист контенту — клієнт знає рівно що потрібно надати.",
+      "**Як обрати веб-агенцію в UK: 7 критеріїв**\n\n1. **Портфоліо у вашій ніші** — агенція, що робила сайти для ресторанів, краще розуміє специфіку ресторанного бізнесу\n2. **Реальні відгуки** — Google Reviews, Clutch.co, Trustpilot\n3. **Прозоре ціноутворення** — фіксована вартість або детальна кошторис, без прихованих доплат\n4. **Технічний стек** — питайте про Core Web Vitals, Schema.org, мобільну оптимізацію\n5. **Підтримка після запуску** — що входить у гарантійний період?\n6. **UK-досвід** — розуміння VAT, GDPR, Companies House, місцевого SEO\n7. **Час відповіді** — якщо агенція відповідає 3 дні на запит, подумайте двічі\n\nCodeworth відповідає на всі 7 критеріїв і надає 30-денну підтримку у кожному пакеті.",
+      "**SEO для нового сайту: що закладати з першого дня**\n\nТехнічне SEO, закладене в архітектуру, коштує у 10 разів менше, ніж ретрофіт:\n- Schema.org розмітка (LocalBusiness, Article, BreadcrumbList)\n- generateMetadata API для унікальних title/description на кожній сторінці\n- Sitemap.xml з автоматичним оновленням\n- hreflang для багатомовних сайтів\n- Core Web Vitals: LCP < 2.5s, CLS < 0.1, INP < 200ms\n- HTTPS і SSL сертифікат\n- Mobile-first дизайн (Google індексує мобільну версію)\n\nВсе це входить у кожен проєкт Codeworth за замовчуванням.",
+      "**Висновок: ваш наступний крок**\n\nВеб-розробка — це інвестиція, що окупається роками. Правильно побудований сайт приносить клієнтів без реклами через органічний пошук, підвищує довіру та скорочує час на обробку запитів.\n\nЯкщо ви UK-бізнес і шукаєте надійного партнера — перегляньте наші нішеві рішення або отримайте безкоштовну консультацію. Ми будуємо сайти, що ранжуються в Google і конвертують відвідувачів у клієнтів.",
+    ],
+    contentEn: [
+      "A website is not just an 'online presence'. For UK businesses in 2026, it is the primary client acquisition channel, a trust instrument, and an automated salesperson working 24/7. But the web development market is full of confusion: WordPress vs Next.js, freelancer vs agency, £500 vs £50,000. This guide will help you understand every aspect.",
+      "**Types of Websites for UK Businesses**\n\nThe right type of website depends on your industry and goals:\n\n1. **Landing Page (from £375–800)** — for startups and test campaigns: single product, single CTA, maximum conversion\n2. **Corporate Website (from £1,500)** — for B2B and service companies: structure, SEO, trust signals, contact form\n3. **E-commerce (from £2,500)** — for retail: catalogue, cart, Stripe payments, order management\n4. **Portfolio (from £800)** — for photographers, designers, agencies: visual impact, gallery, case studies\n5. **SaaS / Product Website (from £3,000)** — for tech companies: pricing page, demo request, trial funnel",
+      "**Technology Stack: Next.js vs WordPress**\n\nThe most common question from UK businesses: 'Isn't it simpler to build on WordPress?' The answer depends on your goals.\n\nWordPress works well when: you have a large editorial team, independence from developers is important, basic SEO is sufficient.\n\nNext.js (our choice) is better when: Core Web Vitals are a priority, custom logic is needed, scalability matters. Next.js is 40–60% faster than WordPress on LCP. Static pages (SSG) are indexed without delays. TypeScript eliminates runtime errors.\n\nCodeworth builds all projects on Next.js 15+ — the standard for sites where SEO and performance are critical.",
+      "**Web Development Costs in the UK: Realistic 2026 Figures**\n\nYour budget will vary significantly based on complexity and who you hire:\n\n| Website Type | Freelancer | Agency |\n|---|---|---|\n| Landing Page | £300–600 | £500–1,200 |\n| Corporate | £800–2,000 | £1,500–5,000 |\n| E-commerce | £1,500–4,000 | £3,000–12,000 |\n| SaaS MVP | £3,000–8,000 | £6,000–20,000 |\n\nCodeworth offers fixed-price packages from £375 — ready-made niche solutions for 60+ business types, launching in 3 days instead of 3–4 weeks.",
+      "**Development Timelines**\n\nRealistic timelines for standard projects:\n- Landing page: 3–7 days\n- Corporate website: 2–4 weeks\n- E-commerce: 4–8 weeks\n- Custom SaaS: 2–4 months\n\nThe main causes of delays: late content delivery from clients (photos, copy, logo), scope changes mid-project, multiple design revision rounds. Codeworth solves the first issue with a structured content checklist — clients know exactly what to provide and when.",
+      "**How to Choose a Web Agency in the UK: 7 Criteria**\n\n1. **Portfolio in your niche** — an agency that has built restaurant websites understands restaurant-specific needs\n2. **Genuine reviews** — Google Reviews, Clutch.co, Trustpilot with verifiable clients\n3. **Transparent pricing** — fixed price or detailed quote, no hidden extras\n4. **Technical stack** — ask about Core Web Vitals, Schema.org markup, mobile optimisation\n5. **Post-launch support** — what is included in the warranty period?\n6. **UK experience** — understanding of VAT, GDPR, Companies House, local SEO\n7. **Response time** — if an agency takes 3 days to reply to an enquiry, reconsider\n\nCodeworth meets all 7 criteria and includes 30-day support in every package.",
+      "**SEO for a New Website: What to Build In from Day One**\n\nTechnical SEO built into the architecture costs 10 times less than retrofitting later:\n- Schema.org markup (LocalBusiness, Article, BreadcrumbList)\n- generateMetadata API for unique title/description on every page\n- Auto-updating sitemap.xml\n- hreflang for multilingual sites\n- Core Web Vitals: LCP < 2.5s, CLS < 0.1, INP < 200ms\n- HTTPS and SSL certificate\n- Mobile-first design (Google indexes the mobile version first)\n\nAll of this is included in every Codeworth project by default.",
+      "**Next Steps**\n\nWeb development is an investment that pays off for years. A well-built website attracts clients without paid advertising through organic search, builds trust, and reduces the time spent handling enquiries.\n\nIf you are a UK business looking for a reliable partner — browse our niche solutions or book a free consultation. We build websites that rank in Google and convert visitors into clients.",
+    ],
+    faq: [
+      { q: "How much does a website cost for a UK small business?", qEn: "How much does a website cost for a UK small business?", a: "Prices range from £375 for a ready-made niche template to £5,000+ for a custom corporate website. Codeworth offers fixed-price packages starting at £375 that launch in 3 days.", aEn: "Prices range from £375 for a ready-made niche template to £5,000+ for a custom corporate website. Codeworth offers fixed-price packages starting at £375 that launch in 3 days." },
+      { q: "How long does it take to build a website?", qEn: "How long does it take to build a website?", a: "A landing page takes 3–7 days, a corporate website 2–4 weeks, and e-commerce 4–8 weeks. With Codeworth's ready-made niche solutions, standard sites launch in 3 days.", aEn: "A landing page takes 3–7 days, a corporate website 2–4 weeks, and e-commerce 4–8 weeks. With Codeworth's ready-made niche solutions, standard sites launch in 3 days." },
+      { q: "Next.js vs WordPress: which is better for a UK business?", qEn: "Next.js vs WordPress: which is better for a UK business?", a: "For businesses prioritising SEO and performance, Next.js is 40–60% faster than WordPress and delivers better Core Web Vitals scores. WordPress suits content-heavy editorial sites with large non-technical teams.", aEn: "For businesses prioritising SEO and performance, Next.js is 40–60% faster than WordPress and delivers better Core Web Vitals scores. WordPress suits content-heavy editorial sites with large non-technical teams." },
+      { q: "Do I need a website if I have Instagram?", qEn: "Do I need a website if I have Instagram?", a: "Yes. Instagram is rented land — the algorithm can reduce your reach overnight. A website is an owned asset that ranks in Google search results and provides a credible, branded experience you control entirely.", aEn: "Yes. Instagram is rented land — the algorithm can reduce your reach overnight. A website is an owned asset that ranks in Google search results and provides a credible, branded experience you control entirely." },
+      { q: "What is included in website support after launch?", qEn: "What is included in website support after launch?", a: "Codeworth includes 30 days of post-launch support in every package: bug fixes, minor content updates, and technical consultations. Extended support plans are available monthly.", aEn: "Codeworth includes 30 days of post-launch support in every package: bug fixes, minor content updates, and technical consultations. Extended support plans are available monthly." },
+    ],
+    reviewedBy: "kateryna-lysenko",
+    cluster: "A",
+    wordCount: 1800,
+  },
   {
     slug: "next-js-seo-guide-2024",
     title: "Next.js 14 та SEO: повний гід для бізнес-сайтів у 2024",
@@ -81,6 +130,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "restaurant-website-case-study",
     title: "Кейс: сайт ресторану з онлайн-бронюванням — +60% замовлень",
+    titleEn: "Case Study: Restaurant Website with Online Booking — +60% Reservations",
     excerpt: "Як ми розробили сайт для ресторану «Смачно» з інтегрованою системою бронювання і збільшили онлайн-замовлення на 60% за перший місяць.",
     category: "Кейси клієнтів",
     tags: ["Кейс", "Ресторан", "Бронювання"],
@@ -123,6 +173,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "figma-to-code-workflow",
     title: "Від Figma до коду: workflow дизайнера та розробника в Codeworth",
+    titleEn: "From Figma to Code: Designer and Developer Workflow at Codeworth",
     excerpt: "Як ми організуємо передачу дизайну в розробку: компонентна бібліотека у Figma, токени дизайн-системи та Code Connect.",
     category: "Дизайн і UX",
     tags: ["Figma", "Design Handoff", "Workflow"],
@@ -143,6 +194,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "ecommerce-ukraine-checklist",
     title: "Чеклист: 50 пунктів перед запуском інтернет-магазину в Україні",
+    titleEn: "E-commerce Pre-launch Checklist: 50 Items Before Your Online Store Goes Live",
     excerpt: "Повний список перевірок для e-commerce: від технічного SEO та юзабіліті до підключення LiqPay, Нова Пошта та відповідності GDPR.",
     category: "E-commerce",
     tags: ["E-commerce", "Чеклист", "Україна"],
@@ -166,6 +218,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "beauty-salon-website-guide",
     title: "Сайт для салону краси: що обов'язково має бути у 2024",
+    titleEn: "Beauty Salon Website: Essential Features You Cannot Skip in 2026",
     excerpt: "Онлайн-запис, портфоліо майстрів, відгуки та Google Maps — розбираємо, які функції реально збільшують кількість нових клієнтів у салоні краси.",
     category: "Кейси клієнтів",
     tags: ["Салон краси", "Онлайн-запис", "Краса"],
@@ -187,6 +240,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "fitness-club-website-features",
     title: "Сайт для фітнес-клубу: розклад, тренери та онлайн-абонемент",
+    titleEn: "Fitness Club Website: Timetable, Trainers and Online Membership",
     excerpt: "Як сайт для фітнес-клубу допомагає автоматизувати запис, продавати абонементи онлайн та утримувати клієнтів через персоналізований кабінет.",
     category: "Кейси клієнтів",
     tags: ["Фітнес", "Абонемент", "Тренери"],
@@ -208,6 +262,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "real-estate-website-2024",
     title: "Сайт агентства нерухомості: каталог з картою, фільтри та іпотечний калькулятор",
+    titleEn: "Real Estate Agency Website: Property Catalogue with Map, Filters and Mortgage Calculator",
     excerpt: "Розбираємо обов'язковий функціонал сайту для агентства нерухомості: інтерактивна карта, розширені фільтри та автоматичний підбір іпотеки.",
     category: "Кейси клієнтів",
     tags: ["Нерухомість", "Каталог", "Калькулятор"],
@@ -229,6 +284,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "medical-clinic-website-trust",
     title: "Сайт медичної клініки: як завоювати довіру пацієнтів онлайн",
+    titleEn: "Medical Clinic Website: How to Build Patient Trust Online",
     excerpt: "Профілі лікарів, онлайн-запис, телемедицина та SSL — що робить медичний сайт надійним і збільшує кількість звернень нових пацієнтів.",
     category: "Кейси клієнтів",
     tags: ["Медицина", "Клініка", "Телемедицина"],
@@ -251,6 +307,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "construction-company-portfolio-site",
     title: "Сайт будівельної компанії: портфоліо об'єктів та онлайн-калькулятор",
+    titleEn: "Construction Company Website: Project Portfolio and Online Cost Calculator",
     excerpt: "Як сайт з портфоліо реалізованих об'єктів та інтерактивним калькулятором вартості будівництва підвищує конверсію в заявки для будівельних компаній.",
     category: "Кейси клієнтів",
     tags: ["Будівництво", "Портфоліо", "Калькулятор"],
@@ -272,6 +329,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "ai-chatbot-for-business-ukraine",
     title: "ШІ-чат-бот для бізнесу в Україні: скорочуємо підтримку на 70%",
+    titleEn: "AI Chatbot for Business: How to Cut Support Costs by 70%",
     excerpt: "Реальний кейс впровадження GPT-4 чат-бота на сайт інтернет-магазину: автовідповіді, обробка замовлень та інтеграція з CRM без участі оператора.",
     category: "Маркетплейс і нішеві рішення",
     tags: ["AI", "Чат-бот", "GPT", "CRM", "Artificial Intelligence"],
@@ -294,6 +352,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "local-seo-ukraine-business",
     title: "Локальне SEO для малого бізнесу: Google Business Profile + сайт",
+    titleEn: "Local SEO for Small Business: Google Business Profile and Your Website",
     excerpt: "Покроковий гід по просуванню малого бізнесу в локальному пошуку Google: від налаштування Google Business до Schema.org LocalBusiness і відгуків.",
     category: "Локальний SEO",
     tags: ["SEO", "Локальне SEO", "Google Business"],
@@ -315,6 +374,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "restaurant-online-booking-conversion",
     title: "Онлайн-бронювання для ресторану: як збільшити завантаженість залу на 40%",
+    titleEn: "Online Booking for Restaurants: How to Increase Table Occupancy by 40%",
     excerpt: "Детальний розбір того, як система онлайн-бронювання столиків підвищує завантаженість ресторану, знижує навантаження на адміністратора та покращує клієнтський досвід.",
     category: "Кейси клієнтів",
     tags: ["Ресторан", "Бронювання", "Конверсія"],
@@ -336,6 +396,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "law-firm-website-trust",
     title: "Сайт для юридичної компанії: як онлайн-присутність приводить клієнтів",
+    titleEn: "Law Firm Website: How Online Presence Brings In New Clients",
     excerpt: "SEO-стратегія, профілі юристів та онлайн-консультації — розбираємо що робить сайт юридичної фірми ефективним інструментом залучення нових клієнтів.",
     category: "Кейси клієнтів",
     tags: ["Юридичні послуги", "Адвокат", "SEO"],
@@ -357,6 +418,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "online-course-platform-features",
     title: "Платформа для онлайн-курсів: LMS, тести та особистий кабінет студента",
+    titleEn: "Online Course Platform: LMS, Quizzes and Student Personal Dashboard",
     excerpt: "Що потрібно освітній платформі щоб утримувати студентів: навчальні матеріали, прогрес, тестування та сертифікати — кейс розробки LMS для онлайн-школи.",
     category: "Кейси клієнтів",
     tags: ["Освіта", "LMS", "Онлайн-курси"],
@@ -378,6 +440,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "saas-landing-page-conversion",
     title: "Лендінг для SaaS-продукту: структура, що конвертує відвідувачів у тріальних користувачів",
+    titleEn: "SaaS Landing Page: Structure That Converts Visitors Into Trial Users",
     excerpt: "Анатомія ефективного SaaS-лендінгу: hero з демо-відео, social proof, pricing table та onboarding flow — з реальними прикладами та конверсійними елементами.",
     category: "Веб-розробка",
     tags: ["SaaS", "Лендінг", "Конверсія"],
@@ -399,6 +462,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "travel-agency-website-booking",
     title: "Сайт для турагентства: онлайн-підбір турів та бронювання без менеджера",
+    titleEn: "Travel Agency Website: Online Tour Search and Booking Without a Manager",
     excerpt: "Як автоматизований підбір турів, фільтри за датами та бюджетом, і онлайн-оплата підвищують конверсію туристичного агентства та зменшують рутину менеджерів.",
     category: "Кейси клієнтів",
     tags: ["Туризм", "Тури", "Бронювання"],
@@ -420,6 +484,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "food-delivery-app-features-2024",
     title: "Сайт для служби доставки їжі: онлайн-замовлення, трекінг та програма лояльності",
+    titleEn: "Food Delivery Website: Online Orders, Tracking and Loyalty Programme",
     excerpt: "Які функції потрібні сучасному сайту доставки їжі — онлайн-меню з кошиком, реальний трекінг курʼєра, push-сповіщення та бонусна система для повторних клієнтів.",
     category: "Кейси клієнтів",
     tags: ["Доставка", "Food Tech", "Мобільний додаток"],
@@ -483,6 +548,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "accounting-website-features-ukraine",
     title: "Сайт для бухгалтерії та аутсорсингу: 8 елементів, що приводять клієнтів",
+    titleEn: "Accounting and Outsourcing Website: 8 Elements That Attract Clients",
     excerpt: "Які розділи та функції повинен мати сайт бухгалтерської фірми або аутсорсингу — від тарифного калькулятора до форми онлайн-консультації та Trust-сигналів.",
     category: "Кейси клієнтів",
     tags: ["Бухгалтерія", "Консалтинг", "B2B"],
@@ -504,6 +570,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "autoservice-website-online-booking",
     title: "Сайт для автосервісу: онлайн-запис, калькулятор ремонту та довіра клієнтів",
+    titleEn: "Auto Service Website: Online Booking, Repair Calculator and Customer Trust",
     excerpt: "Як збільшити завантаженість СТО на 40% завдяки онлайн-запису, фотозвітам та прозорому прайсу на сайті — реальні кейси та поради.",
     category: "Кейси клієнтів",
     tags: ["Автосервіс", "Онлайн-запис", "CRM"],
@@ -525,6 +592,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "photography-portfolio-website-tips",
     title: "Портфоліо-сайт для фотографа: як виграти клієнтів ще до першого контакту",
+    titleEn: "Photography Portfolio Website: Win Clients Before the First Contact",
     excerpt: "Структура ідеального сайту фотографа — галерея, пакети послуг, відгуки та форма замовлення, що конвертує переглядачів у замовників.",
     category: "Дизайн і UX",
     tags: ["Фотограф", "Портфоліо", "Галерея"],
@@ -546,6 +614,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "event-agency-website-conversion",
     title: "Сайт для івент-агентства: від першого кліку до підписаного договору",
+    titleEn: "Event Agency Website: From First Click to Signed Contract",
     excerpt: "Як структурувати сайт організатора свят та корпоративів — кейси, пакети, галерея подій та швидка форма запиту, що скорочує цикл угоди.",
     category: "Кейси клієнтів",
     tags: ["Івент", "Весілля", "Корпоратив"],
@@ -567,6 +636,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "psychologist-website-trust-design",
     title: "Сайт психолога або коуча: як дизайн створює довіру ще до першої сесії",
+    titleEn: "Psychologist or Coach Website: How Design Builds Trust Before the First Session",
     excerpt: "Специфіка UX для психотерапевтів — конфіденційність, нейтральні кольори, soft CTA та структура, що знижує тривогу потенційного клієнта.",
     category: "Дизайн і UX",
     tags: ["Психолог", "Коуч", "UX"],
@@ -588,6 +658,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "kids-center-website-parents-trust",
     title: "Сайт дитячого центру: 7 елементів, що переконують батьків записати дитину",
+    titleEn: "Children's Centre Website: 7 Elements That Convince Parents to Enrol Their Child",
     excerpt: "Як правильно подати педагогів, розклад і безпеку на сайті дитячого центру — від пробного заняття як CTA до Trust-сигналів для батьків.",
     category: "Кейси клієнтів",
     tags: ["Дитячий центр", "Освіта", "Батьки"],
@@ -609,6 +680,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "cleaning-company-website-leads",
     title: "Сайт клінінгової компанії: онлайн-розрахунок та форма замовлення, що конвертують",
+    titleEn: "Cleaning Company Website: Online Calculator and Lead Form That Convert",
     excerpt: "Як клінінговий бізнес отримує заявки 24/7 через онлайн-калькулятор вартості, фото до/після та систему онлайн-бронювання прибирання.",
     category: "Маркетплейс і нішеві рішення",
     tags: ["Клінінг", "Онлайн-замовлення", "Локальний бізнес"],
@@ -630,6 +702,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "veterinary-clinic-website-pet-owners",
     title: "Сайт ветеринарної клініки: онлайн-запис та чому власники тварин шукають вас в Google",
+    titleEn: "Veterinary Clinic Website: Online Booking and Why Pet Owners Search for You on Google",
     excerpt: "SEO та UX-стратегія для ветеринарних клінік — локальне SEO, картки лікарів, розклад і нагадування про вакцинацію через сайт.",
     category: "SEO та просування",
     tags: ["Ветеринар", "Локальне SEO", "Тварини"],
@@ -651,6 +724,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "bakery-online-orders-website",
     title: "Сайт кондитерської: онлайн-замовлення торту і чому Instagram не замінить сайт",
+    titleEn: "Bakery Website: Online Cake Orders and Why Instagram Alone Is Not Enough",
     excerpt: "Чому кондитерська без сайту втрачає до 60% клієнтів — і як правильно налаштувати форму замовлення, каталог десертів та SEO для локального пошуку.",
     category: "Маркетплейс і нішеві рішення",
     tags: ["Кондитерська", "Онлайн-замовлення", "Локальний бізнес"],
@@ -672,6 +746,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "pharmacy-website-seo-local",
     title: "Сайт аптеки та локальне SEO: як бути першими у Google за запитом «аптека [місто]»",
+    titleEn: "Pharmacy Website and Local SEO: How to Rank First for Pharmacy Near Me",
     excerpt: "Як оптимізувати сайт аптеки для локальних пошукових запитів — Google Business Profile, Schema.org Pharmacy, каталог товарів та онлайн-бронювання.",
     category: "Локальний SEO",
     tags: ["Аптека", "Локальне SEO", "Google Business"],
@@ -693,6 +768,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "fashion-store-ux-mobile-first",
     title: "Інтернет-магазин одягу: мобільний UX, що збільшує конверсію на 25%",
+    titleEn: "Online Fashion Store: Mobile-first UX That Increases Conversion by 25%",
     excerpt: "Розбираємо мобільний UX для fashion e-commerce — quick filters, size guide, zoom-галерея, checkout без реєстрації та push-повідомлення про наявність.",
     category: "Дизайн і UX",
     tags: ["Fashion", "E-commerce", "Mobile UX"],
@@ -714,6 +790,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "electronics-shop-product-page-seo",
     title: "Картка товару для магазину електроніки: як вивести в топ Google без платної реклами",
+    titleEn: "Electronics Store Product Page: How to Rank in Google Without Paid Ads",
     excerpt: "Schema.org Product, технічні характеристики, відгуки та порівняння — все, що потрібно картці товару електроніки для органічного трафіку та конверсії.",
     category: "SEO та просування",
     tags: ["Електроніка", "E-commerce", "SEO товару"],
@@ -735,6 +812,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "furniture-website-3d-visualization",
     title: "Сайт для меблевої компанії: 3D-візуалізація та конфігуратор як конкурентна перевага",
+    titleEn: "Furniture Company Website: 3D Visualisation and Configurator as Competitive Advantage",
     excerpt: "Як меблева компанія може збільшити конверсію вдвічі завдяки 3D-перегляду, кольоровому конфігуратору та AR-функції «поставити у кімнату».",
     category: "Дизайн і UX",
     tags: ["Меблі", "3D-візуалізація", "E-commerce"],
@@ -756,6 +834,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "flower-shop-seo-delivery-landing",
     title: "Сайт квіткового магазину: доставка квітів у день свята та як бути першими у Google",
+    titleEn: "Flower Shop Website: Same-day Delivery and How to Rank First in Google",
     excerpt: "SEO-стратегія для квіткових магазинів — швидке замовлення з доставкою, сезонні лендінги (8 березня, День Валентина), Google Business та відгуки.",
     category: "SEO та просування",
     tags: ["Квіти", "Доставка", "Локальне SEO"],
@@ -777,6 +856,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "logistics-company-website-b2b",
     title: "Сайт логістичної компанії: B2B продажі через онлайн-калькулятор та особистий кабінет",
+    titleEn: "Logistics Company Website: B2B Sales via Online Calculator and Client Portal",
     excerpt: "Як логістичним компаніям залучати корпоративних клієнтів через сайт — калькулятор вартості перевезення, API-інтеграції та портал для відстеження вантажів.",
     category: "Кейси клієнтів",
     tags: ["Логістика", "B2B", "Калькулятор"],
@@ -798,6 +878,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "ngo-donation-website-ukraine",
     title: "Сайт НКО та благодійного фонду: як підвищити довіру та збільшити донати",
+    titleEn: "NGO and Charity Website: How to Build Trust and Increase Donations",
     excerpt: "Ключові елементи сайту некомерційної організації — відкрита звітність, прогрес-бар збору коштів, особисті istorії та форма щомісячної підписки.",
     category: "Маркетплейс і нішеві рішення",
     tags: ["НКО", "Благодійність", "Фандрейзинг"],
@@ -819,6 +900,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "tattoo-spa-booking-instagram-website",
     title: "Тату-студія та SPA: чому ваш сайт важливіший за Instagram і як їх поєднати",
+    titleEn: "Tattoo Studio and SPA: Why Your Website Matters More Than Instagram",
     excerpt: "Як тату-студіям та SPA-центрам залучати клієнтів через SEO, а не тільки Instagram — онлайн-запис, портфоліо майстрів та Google Maps оптимізація.",
     category: "SEO та просування",
     tags: ["Тату", "SPA", "Онлайн-запис"],
@@ -840,6 +922,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "entertainment-quest-website-booking",
     title: "Сайт для квест-кімнат та розважальних центрів: онлайн-бронювання та SEO",
+    titleEn: "Escape Room and Entertainment Centre Website: Online Booking and SEO",
     excerpt: "Як розважальні заклади заповнюють графік через онлайн-бронювання на сайті — структура, відгуки та локальне SEO для пошуку «квест [місто]».",
     category: "Маркетплейс і нішеві рішення",
     tags: ["Квест", "Розваги", "Онлайн-бронювання"],
@@ -861,6 +944,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "coffee-bar-local-seo-loyalty",
     title: "Сайт кав'ярні: програма лояльності, онлайн-меню та локальне SEO для кафе",
+    titleEn: "Coffee Bar Website: Loyalty Programme, Online Menu and Local SEO",
     excerpt: "Як кав'ярні та бари використовують сайт для утримання постійних клієнтів — онлайн-меню, loyalty-програма, бронювання столика та Google Business.",
     category: "Локальний SEO",
     tags: ["Кав'ярня", "Лояльність", "Ресторанний бізнес"],
@@ -882,6 +966,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "agriculture-farm-direct-sales-website",
     title: "Сайт ферми та агробізнесу: прямі продажі від виробника через інтернет",
+    titleEn: "Farm and Agricultural Business Website: Direct Sales from Producer Online",
     excerpt: "Як фермерські господарства продають напряму через власний сайт — підписка на кошик, сезонний каталог, сертифікати органіки та SEO для «купити овочі».",
     category: "Маркетплейс і нішеві рішення",
     tags: ["Агро", "Органічні продукти", "Прямі продажі"],
@@ -903,6 +988,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "handmade-craft-etsy-website-seo",
     title: "Сайт хенд-мейд майстра: свій магазин замість Etsy та як знаходити клієнтів",
+    titleEn: "Handmade Craft Website: Your Own Shop Instead of Etsy and How to Find Clients",
     excerpt: "Порівнюємо власний сайт із Etsy та Rozetka для крафтових виробів — SEO, платежі, оплата підписок та контроль над аудиторією.",
     category: "E-commerce",
     tags: ["Хенд-мейд", "Крафт", "E-commerce"],
@@ -924,6 +1010,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "recruitment-agency-website-hr",
     title: "Сайт рекрутингової агенції: як залучати і роботодавців, і кандидатів одним сайтом",
+    titleEn: "Recruitment Agency Website: How to Attract Both Employers and Candidates",
     excerpt: "UX для HR-агенцій — дві аудиторії, дві воронки, один сайт: форма вакансії для роботодавців і профільний пошук для кандидатів з чіткою позиціонуванням.",
     category: "Кейси клієнтів",
     tags: ["HR", "Рекрутинг", "B2B"],
@@ -966,6 +1053,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "ecommerce-conversion-rate-optimization",
     title: "Конверсія інтернет-магазину: 12 перевірених методів підвищення продажів",
+    titleEn: "E-commerce Conversion Rate Optimisation: 12 Proven Methods to Increase Sales",
     excerpt: "Від product card до checkout — де губляться клієнти і як це виправити. A/B-тести, UX-шаблони та технічні рішення для e-commerce на Next.js.",
     category: "Конверсія (CRO)",
     tags: ["E-commerce", "Конверсія", "UX", "A/B тестування"],
@@ -987,6 +1075,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "local-seo-google-business-profile-2025",
     title: "Локальне SEO у 2025: як потрапити в топ Google Maps і залучити клієнтів поруч",
+    titleEn: "Local SEO in 2026: How to Rank on Google Maps and Attract Nearby Customers",
     excerpt: "Google Business Profile, локальні ключові слова, відгуки та Citations — повний гід для малого бізнесу. Як обійти конкурентів у локальній видачі без великого бюджету.",
     category: "Локальний SEO",
     tags: ["SEO", "Локальне SEO", "Google Maps", "Малий бізнес"],
@@ -1073,6 +1162,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "web-accessibility-wcag-ukraine-2025",
     title: "Доступність сайту (a11y) у 2025: що таке WCAG і чому бізнес має про це дбати",
+    titleEn: "Website Accessibility (WCAG) in 2026: What It Is and Why Businesses Must Care",
     excerpt: "WCAG 2.2, ARIA-атрибути, контрастність, клавіатурна навігація — практичний гід з доступності веб-сайту для українського бізнесу.",
     category: "Веб-розробка",
     tags: ["a11y", "WCAG", "Доступність"],
@@ -1095,6 +1185,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "nextjs-performance-optimization-core-web-vitals",
     title: "Оптимізація продуктивності Next.js: LCP, CLS та INP нижче порогу Google",
+    titleEn: "Next.js Performance Optimisation: LCP, CLS and INP Below Google Threshold",
     excerpt: "Практичні техніки для покращення Core Web Vitals у Next.js 15 — Image, dynamic import, font optimization, bundle analyzer та Vercel Edge.",
     category: "Продуктивність",
     tags: ["Next.js", "Core Web Vitals", "Продуктивність"],
@@ -1200,6 +1291,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "figma-to-nextjs-workflow-2025",
     title: "Від Figma до Next.js: як Codeworth передає дизайн у розробку без втрат",
+    titleEn: "From Figma to Next.js: How Codeworth Transfers Design to Development Without Compromise",
     excerpt: "Design tokens, Auto Layout, компонентна архітектура та Figma Dev Mode — процес що скорочує час на pixel-perfect верстку вдвічі.",
     category: "Дизайн і UX",
     tags: ["Figma", "Next.js", "Design System"],
@@ -1242,6 +1334,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "website-security-checklist-small-business-2025",
     title: "Безпека сайту для малого бізнесу: чеклист з 20 пунктів який захистить ваш сайт",
+    titleEn: "Small Business Website Security: 20-Point Checklist to Protect Your Site",
     excerpt: "HTTPS, CSP headers, rate limiting, SQL injection, XSS, CSRF — базова безпека сайту яку повинен мати кожен бізнес, незалежно від бюджету.",
     category: "Веб-розробка",
     tags: ["Безпека", "HTTPS", "Захист даних"],
@@ -1305,6 +1398,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "multilingual-website-seo-ukraine-europe-2025",
     title: "Багатомовний сайт: SEO для України та Європи — hreflang, локальний контент і технічна реалізація",
+    titleEn: "Multilingual Website SEO: hreflang, Local Content and Technical Implementation",
     excerpt: "hreflang теги, окремі домени vs субдиректорії, локалізований контент vs переклад — як побудувати мультимовний сайт який добре ранжується в обох регіонах.",
     category: "SEO та просування",
     tags: ["hreflang", "i18n", "Мультимовний SEO"],
@@ -1393,6 +1487,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "content-marketing-b2b-leads",
     title: "Контент-стратегія для B2B: як блог приносить ліди, а не просто трафік",
+    titleEn: "B2B Content Strategy: How a Blog Generates Leads, Not Just Traffic",
     excerpt: "Більшість B2B-блогів публікують статті, але не отримують заявок. Розбираємо як побудувати контент-стратегію що веде читача від статті до угоди.",
     category: "Контент-маркетинг",
     tags: ["Контент", "B2B", "Блог", "Ліди", "SEO"],
@@ -1415,6 +1510,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "developer-tools-2025",
     title: "Інструменти розробника у 2025: AI-асистенти, DX-утиліти та моніторинг",
+    titleEn: "Developer Tools in 2026: AI Assistants, DX Utilities and Monitoring",
     excerpt: "Які інструменти реально прискорюють розробку у 2025 році? Ділимося стеком Codeworth: від AI-кодингу до observability і локального дебагінгу.",
     category: "Інструменти та технології",
     tags: ["DevTools", "AI", "DX", "Моніторинг"],
@@ -1459,6 +1555,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "next-js-15-guide",
     title: "Що таке Next.js 15: повний гайд для бізнесу — переваги, можливості та ціна розробки",
+    titleEn: "What is Next.js 15: Complete Business Guide — Benefits, Features and Cost",
     excerpt: "Next.js 15 — найпопулярніший React-фреймворк для бізнес-сайтів. Пояснюємо простою мовою: що він дає, чим кращий за WordPress і скільки коштує розробка.",
     category: "Веб-розробка",
     tags: ["Next.js", "Веб-розробка", "React", "Бізнес-сайт"],
@@ -1502,6 +1599,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "pwa-for-small-business",
     title: "Що таке Progressive Web App (PWA): переваги для малого бізнесу в Україні",
+    titleEn: "What is a Progressive Web App (PWA): Benefits for Small Business",
     excerpt: "PWA — це сайт, який працює як мобільний додаток. Без App Store, без Android розробника, без $15 000 бюджету. Розбираємо, кому це підходить і що дає.",
     category: "Мобільний веб та PWA",
     tags: ["PWA", "Мобільний додаток", "Веб-розробка",
@@ -1545,6 +1643,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "nextjs-vs-wordpress",
     title: "Як сайт на Next.js порівняно з WordPress по швидкості та SEO — реальні цифри",
+    titleEn: "Next.js vs WordPress: Speed and SEO Performance Comparison with Real Numbers",
     excerpt: "Порівнюємо Next.js і WordPress не в теорії, а на реальних метриках: LCP, TTI, PageSpeed Insights, позиції в Google. Дані з реальних міграцій клієнтів.",
     category: "Веб-розробка",
     tags: ["Next.js", "WordPress", "SEO", "Продуктивність", "Порівняння"],
@@ -1610,6 +1709,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "core-web-vitals-guide",
     title: "Що таке Core Web Vitals і як їх покращити — практичний гайд для власників сайтів",
+    titleEn: "What Are Core Web Vitals and How to Improve Them: Practical Guide",
     excerpt: "LCP, INP, CLS — три метрики, які Google використовує для ранжування. Пояснюємо простою мовою, як їх виміряти та що конкретно виправити на Next.js сайті.",
     category: "Продуктивність",
     tags: ["Core Web Vitals", "LCP", "INP", "CLS", "PageSpeed", "SEO"],
@@ -1631,6 +1731,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "technical-seo-checklist-2026",
     title: "Технічне SEO у 2026: 15 обов'язкових кроків для кожного сайту",
+    titleEn: "Technical SEO in 2026: 15 Essential Steps for Every Website",
     excerpt: "Технічне SEO — фундамент, без якого контентна оптимізація не працює. Повний чек-ліст із 15 пунктів, які повинні бути виконані на кожному сайті.",
     category: "SEO та просування",
     tags: ["Технічне SEO", "SEO", "Чек-ліст", "Google Search Console"],
@@ -1675,6 +1776,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "ai-for-business-10-uses",
     title: "Штучний інтелект у бізнесі: 10 практичних застосувань AI прямо зараз",
+    titleEn: "AI in Business: 10 Practical Use Cases You Can Implement Right Now",
     excerpt: "AI — не далеке майбутнє. Малий та середній бізнес вже сьогодні автоматизує підтримку, маркетинг і аналітику за допомогою доступних AI-інструментів.",
     category: "AI та Автоматизація",
     tags: ["AI", "Автоматизація", "ChatGPT", "Бізнес", "Технології", "Artificial Intelligence"],
@@ -1720,6 +1822,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "digital-marketing-zero-budget",
     title: "Цифровий маркетинг для МСБ: з чого почати з нульовим бюджетом",
+    titleEn: "Digital Marketing for Small Business: Where to Start With a Zero Budget",
     excerpt: "Реклама — не єдиний спосіб залучити клієнтів. Розглядаємо 8 безкоштовних каналів, які дають реальні результати для малого бізнесу без витрат на рекламу.",
     category: "Маркетинг",
     tags: ["Маркетинг", "SMM", "SEO", "Малий бізнес", "Безкоштовно"],
@@ -1764,6 +1867,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "landing-page-high-conversion",
     title: "Лендінг з конверсією 10%+: анатомія ідеальної посадочної сторінки",
+    titleEn: "High-converting Landing Page: Anatomy of a Page With 10% Conversion Rate",
     excerpt: "Чому одні лендінги конвертують 1–2%, а інші — 10–15%? Розбираємо кожен елемент ефективного лендінгу з реальними прикладами та даними A/B тестів.",
     category: "Дизайн і UX",
     tags: ["Лендінг", "Конверсія", "UX", "CRO", "Дизайн"],
@@ -1787,6 +1891,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "website-cost-ukraine-2026",
     title: "Скільки коштує розробка сайту в Україні у 2026: повний розрахунок",
+    titleEn: "How Much Does a Website Cost in 2026: Complete Pricing Breakdown",
     excerpt: "Від лендінгу за 10 000 грн до SaaS за 300 000+: прозорий розрахунок вартості розробки з поясненням що входить у кожну суму та чому ціни так відрізняються.",
     category: "Кейси клієнтів",
     tags: ["Ціна сайту", "Розробка сайту", "Бюджет", "Веб-студія"],
@@ -1808,6 +1913,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "freelancer-vs-agency",
     title: "Фрілансер vs веб-студія: що вибрати для розробки сайту — чесне порівняння",
+    titleEn: "Freelancer vs Web Agency: Which to Choose for Website Development",
     excerpt: "Обидва варіанти мають сенс — але для різних ситуацій. Порівнюємо по ціні, якості, надійності та комунікації щоб допомогти зробити правильний вибір.",
     category: "Кейси клієнтів",
     tags: ["Фрілансер", "Веб-студія", "Розробка сайту", "Вибір підрядника"],
@@ -1831,6 +1937,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "online-store-ukraine-2026",
     title: "Як запустити інтернет-магазин в Україні: покроковий гайд 2026",
+    titleEn: "How to Launch an Online Store in 2026: Step-by-Step Guide",
     excerpt: "Від ідеї до першого замовлення за 30 днів. Розбираємо платформу, оплату, доставку, юридичні вимоги та мінімальний бюджет для старту e-commerce.",
     category: "E-commerce",
     tags: ["E-commerce", "Інтернет-магазин", "Бізнес", "Україна"],
@@ -1853,6 +1960,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "checkout-ux-mistakes",
     title: "Кошик та чекаут: 12 UX-помилок, що знищують конверсію магазину",
+    titleEn: "Shopping Cart and Checkout: 12 UX Mistakes That Destroy Conversion",
     excerpt: "70% кошиків покидаються. Половина причин — поганий UX чекауту. Розбираємо 12 найчастіших помилок та як їх виправити з реальними прикладами та A/B тестами.",
     category: "E-commerce",
     tags: ["E-commerce", "UX", "Конверсія", "Чекаут", "CRO"],
@@ -1873,6 +1981,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "payment-systems-ukraine-2026",
     title: "Оплата онлайн в Україні 2026: огляд усіх платіжних систем для інтернет-магазину",
+    titleEn: "Online Payments in 2026: Complete Guide to Payment Systems for E-commerce",
     excerpt: "LiqPay, Monobank, Fondy, WayForPay, Portmone — порівнюємо комісії, API, швидкість підключення та підтримку Apple Pay. Що обрати для вашого магазину.",
     category: "E-commerce",
     tags: ["Оплата онлайн", "LiqPay", "Monobank", "E-commerce", "Платіжні системи"],
@@ -1896,6 +2005,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "website-must-haves-small-business",
     title: "Сайт для малого бізнесу: мінімум функцій, максимум результату — що справді потрібно",
+    titleEn: "Small Business Website Must-haves: Minimum Features for Maximum Results",
     excerpt: "Не потрібно 50 сторінок і 20 інтеграцій. Розбираємо мінімальний набір функцій сайту, що дають 80% результату при 20% бюджету. Для власників бізнесу без IT-досвіду.",
     category: "Кейси клієнтів",
     tags: ["Малий бізнес", "Веб-сайт", "MVP", "Бюджет"],
@@ -1917,6 +2027,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "slow-website-15-reasons",
     title: "Чому сайт завантажується повільно: 15 причин та як кожну виправити",
+    titleEn: "Why Your Website Loads Slowly: 15 Causes and How to Fix Each One",
     excerpt: "Кожна секунда затримки = -7% конверсії. Систематично розбираємо 15 найчастіших причин повільного сайту — від зображень до хостингу — і даємо конкретне рішення.",
     category: "Продуктивність",
     tags: ["Продуктивність", "Оптимізація", "PageSpeed", "Core Web Vitals"],
@@ -1939,6 +2050,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "ml-churn-prediction-guide",
     title: "Прогнозування відтоку клієнтів: як ML зберігає 30% бази за 6 тижнів",
+    titleEn: "Customer Churn Prediction: How ML Saves 30% of Your User Base in 6 Weeks",
     excerpt: "Покроковий гід зі створення churn prediction моделі для SaaS і e-commerce: дані, алгоритми, деплой і ROI. Реальні цифри з кейсів Codeworth.",
     category: "AI та Автоматизація",
     tags: ["Machine Learning", "Churn Prediction", "Python", "XGBoost", "Аналітика"],
@@ -1984,6 +2096,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "ai-computer-vision-business",
     title: "Комп'ютерний зір у бізнесі: від контролю якості до підрахунку відвідувачів",
+    titleEn: "Computer Vision in Business: From Quality Control to Visitor Counting",
     excerpt: "Як Computer Vision автоматизує виробництво, рітейл і логістику. Реальні кейси: розпізнавання дефектів, аналіз полиць, підрахунок людей. Вартість і ROI для малого бізнесу.",
     category: "AI та Автоматизація",
     tags: ["Artificial Intelligence", "Computer Vision", "AI", "YOLO", "Python", "Автоматизація"],
@@ -2316,6 +2429,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "ai-bilingual-chatbot-dual-market",
     title: "Один бот — два ринки: як побудувати білінгвальний RAG чат-бот UK/UA",
+    titleEn: "One Bot, Two Markets: How to Build a Bilingual RAG Chatbot for UK and Ukraine",
     excerpt: "Як ми створили єдиний RAG чат-бот що відповідає UK та EN мовою залежно від запиту: архітектура, Qdrant з locale metadata, LangChain routing та бізнес-кейс для діаспорних компаній.",
     category: "AI та Автоматизація",
     tags: ["Artificial Intelligence", "RAG", "Chatbot", "Bilingual", "LangChain", "GPT-4o", "Ukrainian Diaspora"],
@@ -2386,6 +2500,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "ml-precision-agriculture-ndvi",
     title: "Точне землеробство з ML: супутниковий NDVI, LSTM-моделі та аналіз дронів",
+    titleEn: "Precision Agriculture with ML: Satellite NDVI, LSTM Models and Drone Analysis",
     excerpt: "Як ML трансформує сільське господарство: прогноз врожайності з похибкою 6% через Sentinel-2 + LSTM, детекція хвороб культур через YOLOv8 на дрон-знімках. Кейс 28 000 га агрохолдингу.",
     category: "AI та Автоматизація",
     tags: ["Machine Learning", "AgriTech", "NDVI", "LSTM", "Computer Vision", "Precision Farming", "Sentinel-2", "YOLOv8"],
@@ -2434,6 +2549,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "ai-voice-assistant-hospitality",
     title: "Голосовий AI для готелю: як Whisper + GPT-4o обробляє 3-мовний room service",
+    titleEn: "Voice AI for Hotels: How Whisper and GPT-4o Handle Multilingual Room Service",
     excerpt: "Як бутік-готель у Лондоні скоротив навантаження на reception на 58%, впровадивши голосового AI-асистента: Whisper STT, GPT-4o, ElevenLabs TTS. Запити EN/UA/PL, інтеграція з PMS, fallback на оператора.",
     category: "AI та Автоматизація",
     tags: ["Artificial Intelligence", "Voice AI", "Hospitality", "Whisper", "GPT-4o", "ElevenLabs", "HoReCa", "Multilingual"],
@@ -2457,6 +2573,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "ml-supply-chain-optimization",
     title: "Оптимізація ланцюга поставок з ML: як XGBoost + OR-Tools скоротили логістику на 19%",
+    titleEn: "Supply Chain Optimisation with ML: How XGBoost and OR-Tools Cut Logistics Costs by 19%",
     excerpt: "Як FMCG-дистриб'ютор з 340 торговими точками автоматизував планування запасів та маршрутизацію: XGBoost-прогноз попиту + Google OR-Tools VRP. Stockout −73%, логістика −19%, надлишки −41%.",
     category: "AI та Автоматизація",
     tags: ["Machine Learning", "Supply Chain", "XGBoost", "OR-Tools", "Logistics", "Demand Forecasting", "VRP", "FMCG"],
@@ -2480,6 +2597,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "ml-nlp-support-automation",
     title: "Автоматизація підтримки з BERT: як fine-tuning скоротив час відповіді на 81%",
+    titleEn: "Support Automation with BERT: How Fine-tuning Reduced Response Time by 81%",
     excerpt: "Як B2B SaaS-компанія автоматизувала класифікацію та маршрутизацію 1,200 тікетів на тиждень за допомогою fine-tuned BERT: 94% точність розпізнавання, пріоритизація SLA, автозаповнення відповідей.",
     category: "AI та Автоматизація",
     tags: ["Machine Learning", "NLP", "BERT", "Support Automation", "B2B SaaS", "Customer Support", "Fine-tuning", "Zendesk"],
@@ -3606,6 +3724,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "medical-ai-gdpr-guide",
     title: "Медичний AI та GDPR: Повний Гід для UK Клінік",
+    titleEn: "Medical AI and UK GDPR: Complete Compliance Guide for Healthcare Providers",
     excerpt: "Які правові підстави обробки медичних даних потрібні для AI-систем у UK після Brexit.",
     category: "AI та Автоматизація",
     tags: ["AI", "GDPR", "UK GDPR", "healthcare", "data protection", "ICO"],
@@ -3954,6 +4073,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "legal-ai-data-security-guide",
     title: "Безпека Даних у LegalTech AI: Що Потрібно Знати UK Адвокатам",
+    titleEn: "Data Security in LegalTech AI: What UK Lawyers Need to Know",
     excerpt: "Вимоги SRA, ICO та client confidentiality при використанні AI-інструментів у юридичній практиці UK.",
     category: "AI та Автоматизація",
     tags: ["AI", "legaltech", "data security", "SRA", "confidentiality", "UK", "GDPR"],
@@ -4462,6 +4582,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "clinical-ml-gdpr-guide",
     title: "Клінічний ML та UK GDPR: Правова Основа для Обробки Медичних Даних",
+    titleEn: "Clinical ML and UK GDPR: Legal Framework for Processing Medical Data",
     excerpt: "Правові підстави, технічні заходи та governance вимоги для ML-систем у NHS та приватних клініках UK.",
     category: "AI та Автоматизація",
     tags: ["ML", "healthcare", "GDPR", "NHS", "data governance", "clinical AI", "ICO"],
@@ -4556,6 +4677,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "custom-erp-uk-cost-timeline",
     title: "Кастомна ERP для UK SMB: вартість, терміни та чого очікувати",
+    titleEn: "Custom ERP for UK SMBs: Cost, Timeline and What to Expect",
     excerpt: "Детальний розбір: скільки коштує кастомна ERP-система для малого та середнього бізнесу в Британії, які модулі включати та коли повернуться інвестиції.",
     category: "Бізнес та технології",
     tags: ["ERP", "UK Business", "Automation", "Cost"],
@@ -4779,3 +4901,11 @@ export const BLOG_CATEGORIES: BlogCategory[] = [
   },
 ];
 
+
+export function getPostTitle(post: BlogPost, lang: string): string {
+  return lang === 'uk' ? post.title : (post.titleEn ?? post.title);
+}
+
+export function getPostExcerpt(post: BlogPost, lang: string): string {
+  return lang === 'uk' ? post.excerpt : (post.excerptEn ?? post.excerpt);
+}

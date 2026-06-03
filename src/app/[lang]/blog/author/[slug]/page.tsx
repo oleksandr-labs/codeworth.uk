@@ -6,7 +6,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { BLOG_AUTHORS, getAuthorBySlug } from "@/lib/data/blogAuthors";
-import { BLOG_POSTS } from "@/lib/data/blog";
+import { BLOG_POSTS, getPostTitle, getPostExcerpt } from "@/lib/data/blog";
 import { Clock, ArrowLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { EmojiIcon } from "@/components/ui/EmojiIcon";
@@ -142,10 +142,10 @@ export default async function BlogAuthorPage({ params }: Props) {
                           {post.category}
                         </span>
                         <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-2 leading-tight group-hover:text-indigo-700 transition-colors line-clamp-2">
-                          {post.title}
+                          {getPostTitle(post, lang)}
                         </h3>
                         <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-3 line-clamp-2">
-                          {post.excerpt}
+                          {getPostExcerpt(post, lang)}
                         </p>
                         <div className="flex items-center justify-between text-xs text-neutral-400 pt-3 border-t border-neutral-100">
                           <span>{formatDate(post.updatedDate ?? post.date, lang)}</span>

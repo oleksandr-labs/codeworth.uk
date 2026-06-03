@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import { Clock, ArrowRight, BookOpen, Search, X, Tag, Layers, ExternalLink, ArrowUpDown, Globe } from "lucide-react";
-import { BLOG_POSTS, BLOG_CATEGORIES } from "@/lib/data/blog";
+import { BLOG_POSTS, BLOG_CATEGORIES, getPostTitle, getPostExcerpt } from "@/lib/data/blog";
 import { getAuthorByName } from "@/lib/data/blogAuthors";
 import { cn } from "@/lib/utils";
 import { Pagination } from "@/components/ui/Pagination";
@@ -130,9 +130,9 @@ export function BlogContent() {
                 {featured.category}
               </span>
               <h2 className="text-2xl lg:text-3xl font-heading font-extrabold text-neutral-900 dark:text-white mb-3 group-hover:text-indigo-700 transition-colors leading-tight">
-                {featured.title}
+                {getPostTitle(featured, lang)}
               </h2>
-              <p className="text-neutral-500 dark:text-neutral-400 leading-relaxed mb-6">{featured.excerpt}</p>
+              <p className="text-neutral-500 dark:text-neutral-400 leading-relaxed mb-6">{getPostExcerpt(featured, lang)}</p>
               <div className="flex items-center gap-4 text-sm text-neutral-400 mb-6">
                 <span>{featured.author}</span>
                 <span>·</span>
@@ -345,10 +345,10 @@ export function BlogContent() {
                       {post.category}
                     </span>
                     <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-2 leading-tight group-hover:text-indigo-700 transition-colors">
-                      {post.title}
+                      {getPostTitle(post, lang)}
                     </h3>
                     <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-4 line-clamp-3">
-                      {post.excerpt}
+                      {getPostExcerpt(post, lang)}
                     </p>
                     <div className="flex items-center justify-between text-xs text-neutral-400 pt-3 border-t border-neutral-100">
                       <div className="flex items-center gap-2 min-w-0">

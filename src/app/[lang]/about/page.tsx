@@ -162,7 +162,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
               {STATS.map((s) => (
                 <div key={s.label} className="text-center">
-                  <div className="text-4xl font-heading font-extrabold gradient-text-primary mb-2">
+                  <div className="text-4xl font-sans font-extrabold tabular-nums tracking-tight gradient-text-primary mb-2">
                     <CountUp end={s.end} suffix={s.suffix} />
                   </div>
                   <div className="text-sm text-neutral-500">{s.label}</div>

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
-import { BLOG_POSTS, BLOG_CATEGORIES } from "@/lib/data/blog";
+import { BLOG_POSTS, BLOG_CATEGORIES, getPostTitle, getPostExcerpt } from "@/lib/data/blog";
 import { getAuthorByName, getAuthorBySlug } from "@/lib/data/blogAuthors";
 import { getNicheLocalized } from "@/lib/data/niches";
 import { SERVICES_DATA, getServiceLocalized } from "@/lib/data/services";
@@ -58,17 +58,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = BLOG_POSTS.find((p) => p.slug === slug);
   if (!post) return {};
   const ogImage = `/og/blog/${slug}.png`;
+  const localTitle = getPostTitle(post, lang);
+  const localExcerpt = getPostExcerpt(post, lang);
   return {
-    title: `${post.title} | Codeworth Blog`,
-    description: post.excerpt,
+    title: `${localTitle} | Codeworth Blog`,
+    description: localExcerpt,
     keywords: post.tags.join(", "),
     alternates: buildAlternates(lang, `blog/${slug}`),
     openGraph: {
-      title: post.title,
-      description: post.excerpt,
+      title: localTitle,
+      description: localExcerpt,
       type: "article",
       url: `https://codeworth.uk/${lang}/blog/${slug}`,
-      images: [{ url: ogImage, width: 1200, height: 630, alt: post.title }],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: localTitle }],
       publishedTime: post.date,
       authors: [post.author],
       section: post.category,
@@ -76,8 +78,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
-      description: post.excerpt,
+      title: localTitle,
+      description: localExcerpt,
       images: [ogImage],
     },
   };
@@ -243,7 +245,7 @@ export default async function BlogPostPage({ params }: Props) {
                 </span>
               )}
               <h1 className="text-3xl lg:text-5xl font-heading font-extrabold text-white mb-5 leading-tight">
-                {post.title}
+                {getPostTitle(post, lang)}
               </h1>
               <div className="flex flex-wrap items-center gap-5 text-white/70 text-sm">
                 <span className="flex items-center gap-1.5">
