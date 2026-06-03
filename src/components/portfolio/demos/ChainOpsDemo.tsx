@@ -28,8 +28,19 @@ const ALERTS = [
   { type: "sales", venue: "N. Quarter", msg: "Revenue 18% below target", sev: "low" },
 ];
 
+const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+const SHIFT_HOURS = 8;
+const ROTA_STAFF = [
+  { name: "Alice M.", role: "Chef", days: [true, true, false, true, true, true, false] },
+  { name: "Ben W.", role: "Sous Chef", days: [false, true, true, true, true, true, true] },
+  { name: "Clara T.", role: "Floor", days: [true, false, true, false, true, true, true] },
+  { name: "Dan K.", role: "Bar", days: [true, true, true, true, false, false, true] },
+  { name: "Eve S.", role: "KP", days: [false, false, true, true, true, true, false] },
+];
+
 export function ChainOpsDemo({ lang }: { lang: string }) {
   const [selected, setSelected] = useState(VENUES[0]);
+  const [rota, setRota] = useState<boolean[][]>(ROTA_STAFF.map(s => s.days));
   const isUk = lang === "uk";
   const totalRev = VENUES.reduce((s, v) => s + v.rev, 0);
   const totalWaste = VENUES.reduce((s, v) => s + v.waste, 0);
@@ -37,6 +48,12 @@ export function ChainOpsDemo({ lang }: { lang: string }) {
   const labour = selected.rev * 0.28;
   const food = selected.rev * (selected.fc / 100);
   const profit = selected.rev - labour - food - 220;
+
+  const toggleShift = (staffIdx: number, dayIdx: number) =>
+    setRota(prev => prev.map((row, i) => i === staffIdx ? row.map((on, j) => j === dayIdx ? !on : on) : row));
+  const staffHours = (i: number) => rota[i].filter(Boolean).length * SHIFT_HOURS;
+  const weekTotal = rota.reduce((s, row) => s + row.filter(Boolean).length * SHIFT_HOURS, 0);
+  const dayCover = (d: number) => rota.reduce((s, row) => s + (row[d] ? 1 : 0), 0);
 
   return (
     <div className="h-screen bg-neutral-950 flex flex-col overflow-hidden font-sans text-white">
@@ -158,6 +175,72 @@ export function ChainOpsDemo({ lang }: { lang: string }) {
               })}
             </div>
           </div>
+
+          {/* Interactive rota */}
+          <div className="bg-neutral-900 rounded-xl border border-neutral-800 p-4">
+            <div className="flex items-center justify-between mb-3">
+              <div className="text-[10px] text-neutral-600 uppercase tracking-wider">{isUk ? "Графік персоналу — тиждень 23" : "Staff rota — week 23"}</div>
+              <div className="text-[10px] text-neutral-500">{isUk ? "клік = зміна 8 год" : "click = 8h shift"}</div>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-xs border-separate" style={{ borderSpacing: "2px" }}>
+                <thead>
+                  <tr>
+                    <th className="text-left font-normal text-neutral-600 pr-2 pb-1">{isUk ? "Зміна" : "Staff"}</th>
+                    {DAYS.map((d, i) => {
+                      const cover = dayCover(i);
+                      return (
+                        <th key={d} className="font-normal pb-1 px-0.5">
+                          <div className="text-neutral-500 text-[10px]">{d}</div>
+                          <div className={`text-[9px] ${cover < 3 ? "text-red-400" : "text-neutral-600"}`}>{cover}</div>
+                        </th>
+                      );
+                    })}
+                    <th className="font-normal text-neutral-600 pl-2 pb-1">{isUk ? "Год" : "Hrs"}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {ROTA_STAFF.map((s, si) => {
+                    const hrs = staffHours(si);
+                    const over = hrs > 40;
+                    return (
+                      <tr key={s.name}>
+                        <td className="pr-2 whitespace-nowrap">
+                          <div className="text-neutral-200 font-medium">{s.name}</div>
+                          <div className="text-[9px] text-neutral-600">{s.role}</div>
+                        </td>
+                        {rota[si].map((on, di) => (
+                          <td key={di} className="text-center">
+                            <button
+                              onClick={() => toggleShift(si, di)}
+                              className={`w-7 h-7 rounded transition-colors ${
+                                on ? "bg-orange-500 hover:bg-orange-400 text-white" : "bg-neutral-800 hover:bg-neutral-700 text-neutral-700"
+                              }`}
+                              aria-label={`${s.name} ${DAYS[di]}`}
+                            >
+                              {on ? "✓" : ""}
+                            </button>
+                          </td>
+                        ))}
+                        <td className={`pl-2 text-center font-bold tabular-nums ${over ? "text-red-400" : "text-neutral-200"}`}>
+                          {hrs}{over && <span className="block text-[8px] font-normal text-red-400">{isUk ? "понад" : "OT"}</span>}
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+            <div className="flex items-center justify-between mt-3 pt-3 border-t border-neutral-800 text-xs">
+              <span className="text-neutral-500">{isUk ? "Всього годин/тиждень" : "Total hours/week"}</span>
+              <div className="flex items-center gap-3">
+                {rota.some((row, i) => staffHours(i) > 40) && (
+                  <span className="text-amber-400 text-[10px]">⚠ {isUk ? "є понаднормові" : "overtime flagged"}</span>
+                )}
+                <span className="font-bold text-orange-400 tabular-nums">{weekTotal}h</span>
+              </div>
+            </div>
+          </div>
           </div>
         </div>
 
@@ -172,19 +255,6 @@ export function ChainOpsDemo({ lang }: { lang: string }) {
               <div className="text-xs text-neutral-300 mt-0.5 leading-snug">{a.msg}</div>
             </div>
           ))}
-          <div className="px-3 py-3 border-t border-neutral-800 mt-2">
-            <div className="text-[10px] text-neutral-600 uppercase tracking-widest mb-2">{isUk ? "Рота — тижень 23" : "Rota — week 23"}</div>
-            {["Mon","Tue","Wed","Thu","Fri","Sat","Sun"].map((d, i) => (
-              <div key={d} className="flex items-center justify-between py-1">
-                <span className="text-[10px] text-neutral-500">{d}</span>
-                <div className="flex gap-0.5">
-                  {Array.from({ length: selected.staff }).map((_, j) => (
-                    <div key={j} className={`w-1.5 h-1.5 rounded-full ${j < (i === 0 || i === 6 ? selected.staff - 2 : selected.staff) ? "bg-orange-500" : "bg-neutral-800"}`} />
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
 
       </div>
