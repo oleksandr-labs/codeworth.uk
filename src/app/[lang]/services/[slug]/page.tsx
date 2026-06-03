@@ -627,18 +627,17 @@ export default async function ServicePage({ params }: Props) {
           <section className="py-24 bg-white dark:bg-neutral-800 border-t border-neutral-100">
             <Container>
               <div className="max-w-2xl mx-auto text-center mb-16">
-                <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">{isUk ? "Результати" : "Results"}</p>
+                <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">{isUk ? "Приклади" : "Examples"}</p>
                 <h2 className="text-4xl font-heading font-extrabold text-neutral-900">
-                  {isUk ? "Реальні кейси клієнтів" : "Real Client Cases"}
+                  {isUk ? "Приклади результатів" : "Example Results"}
                 </h2>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
                 {service.caseStudies.map((cs) => (
-                  <div key={cs.client} className="p-6 rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:shadow-md transition-shadow">
+                  <div key={cs.niche + cs.metric} className="p-6 rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:shadow-md transition-shadow">
                     <div className={`inline-flex items-center justify-center px-4 py-2 rounded-xl bg-linear-to-r ${service.gradient} text-white font-heading font-extrabold text-2xl mb-4`}>
                       {cs.metric}
                     </div>
-                    <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-1">{cs.client}</h3>
                     <p className="text-xs text-indigo-600 font-semibold uppercase tracking-wider mb-2">{cs.niche}</p>
                     <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">{cs.result}</p>
                   </div>

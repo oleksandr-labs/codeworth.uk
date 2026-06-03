@@ -11,6 +11,7 @@ import { CasesSection } from "@/components/home/CasesSection";
 import { ClientLogosSection } from "@/components/home/ClientLogosSection";
 // Lazy-load below-fold sections for better LCP
 const MarketplaceTeaser = dynamic(() => import("@/components/home/MarketplaceTeaser").then((m) => ({ default: m.MarketplaceTeaser })));
+const FoundingClientSection = dynamic(() => import("@/components/home/FoundingClientSection").then((m) => ({ default: m.FoundingClientSection })));
 const BlogPreviewSection = dynamic(() => import("@/components/home/BlogPreviewSection").then((m) => ({ default: m.BlogPreviewSection })));
 const CTASection = dynamic(() => import("@/components/home/CTASection").then((m) => ({ default: m.CTASection })));
 import { FAQSection } from "@/components/home/FAQSection";
@@ -99,6 +100,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <ServicesSection lang={lang} />
         <HowWeWorkSection lang={lang} />
         <WhyUsSection lang={lang} />
+        <FoundingClientSection lang={lang} />
         <CasesSection lang={lang} />
         <ClientLogosSection lang={lang} />
         <MarketplaceTeaser lang={lang} />

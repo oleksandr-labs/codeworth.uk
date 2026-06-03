@@ -41,18 +41,18 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 
 const SERVICES_FAQ_UK = [
   { q: "Які послуги надає Codeworth?", a: "Codeworth — веб-студія повного циклу. Ми розробляємо сайти та інтернет-магазини, займаємось SEO-просуванням, UI/UX дизайном, налаштуванням CRM і чат-ботів, SMM та email-маркетингом. Всі послуги — в одному місці." },
-  { q: "Чи можна замовити кілька послуг одразу?", a: "Так. Більшість наших клієнтів замовляють комплекс: розробка сайту + SEO + UI/UX дизайн. Комплексні проєкти виконуються швидше і вигідніше, ніж окремі замовлення у різних виконавців." },
-  { q: "Чи працюєте ви з малим бізнесом?", a: "Так, це наш основний клієнт. Ми розробили спеціальний маркетплейс готових нішевих рішень — сайт для ресторану, салону, лікаря, юриста тощо — за фіксованою ціною і швидкі терміни запуску." },
+  { q: "Чи можна замовити кілька послуг одразу?", a: "Так. Замовники часто обирають комплекс: розробка сайту + SEO + UI/UX дизайн. Комплексні проєкти виконуються швидше і вигідніше, ніж окремі замовлення у різних виконавців." },
+  { q: "Чи працюєте ви з малим бізнесом?", a: "Так, це наша основна аудиторія. У нас є маркетплейс готових нішевих рішень — сайт для ресторану, салону, лікаря, юриста тощо — за фіксованою ціною і швидкий старт." },
   { q: "Чи надаєте послуги після здачі проєкту?", a: "Так. До кожного проєкту входить 1 місяць гарантійної підтримки. Далі — пакети технічної підтримки, SEO-супровід та доробки за фіксованим тарифом." },
-  { q: "Чи є у вас портфоліо виконаних робіт?", a: "Так, у нашому портфоліо 37+ кейсів по різних нішах: e-commerce, ресторани, медицина, нерухомість, SaaS та інші. Кожен кейс містить опис задачі, рішення та конкретні метрики результату." },
+  { q: "Чи є у вас приклади робіт?", a: "Так, у нашому портфоліо 37+ нішевих прикладів: e-commerce, ресторани, медицина, нерухомість, SaaS та інші. Кожен приклад показує функціонал, дизайн та конкретні метрики результату." },
 ];
 
 const SERVICES_FAQ_EN = [
   { q: "What services does Codeworth offer?", a: "Codeworth is a full-cycle web studio. We build websites and e-commerce stores, handle SEO, UI/UX design, CRM setup, chatbots, SMM, and email marketing. Everything in one place — no need to manage multiple agencies." },
-  { q: "Can I order multiple services at once?", a: "Yes. Most of our clients order a bundle: website development + SEO + UI/UX design. Combined projects are completed faster and are more cost-effective than separate orders from different vendors." },
-  { q: "Do you work with small businesses?", a: "Yes, that's our core audience. We've built a marketplace of ready-made niche solutions — websites for restaurants, salons, doctors, lawyers and more — at a fixed price with fast launch timelines." },
+  { q: "Can I order multiple services at once?", a: "Yes. Customers often choose a bundle: website development + SEO + UI/UX design. Combined projects are completed faster and more cost-effectively than separate orders from different vendors." },
+  { q: "Do you work with small businesses?", a: "Yes, that's our core audience. We have a marketplace of ready-made niche solutions — websites for restaurants, salons, doctors, lawyers and more — at a fixed price with fast launch timelines." },
   { q: "Do you provide ongoing support after project delivery?", a: "Yes. Every project includes 1 month of free warranty support. After that, technical support packages, SEO maintenance, and add-on development are available at a fixed monthly rate." },
-  { q: "Do you have a portfolio of completed work?", a: "Yes — 37+ cases across different niches: e-commerce, restaurants, healthcare, real estate, SaaS, and more. Each case includes the task description, our solution, and measurable results." },
+  { q: "Do you have examples of your work?", a: "Yes — 37+ niche examples across e-commerce, restaurants, healthcare, real estate, SaaS, and more. Each example shows the functionality, design, and measurable results you can expect." },
 ];
 
 const PROCESS_STEPS_UK = [

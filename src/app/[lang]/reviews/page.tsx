@@ -136,7 +136,7 @@ export default async function ReviewsPage({
               </div>
               <div className="text-center">
                 <a
-                  href="https://g.page/r/codeworth"
+                  href="mailto:feedback@codeworth.uk"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-500 text-gray-900 font-semibold px-8 py-3 rounded-xl transition-colors"
@@ -169,7 +169,7 @@ export default async function ReviewsPage({
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="https://g.page/r/codeworth"
+                  href="mailto:feedback@codeworth.uk"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 bg-white text-gray-800 dark:text-neutral-200 border-2 border-gray-200 dark:border-neutral-700 font-semibold px-6 py-3 rounded-xl hover:border-indigo-400 transition-colors"

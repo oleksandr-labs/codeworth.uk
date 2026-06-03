@@ -10,7 +10,24 @@ import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { LogoWordmark } from "@/components/ui/Logo";
 import { MiniCart } from "@/components/ui/MiniCart";
 import { SERVICES_DATA } from "@/lib/data/services";
+import { NICHE_CATEGORIES } from "@/lib/data/niches";
 import { analytics } from "@/lib/analytics";
+
+const NICHE_CATEGORY_ICONS: Record<string, string> = {
+  "Їжа та гостинність": "🍽",
+  "Краса та здоров'я": "💄",
+  "Будівництво та нерухомість": "🏗",
+  "Освіта та консалтинг": "📚",
+  "Авто та логістика": "🚗",
+  "E-commerce та ритейл": "🛒",
+  "Креатив та розваги": "🎨",
+  "IT та SaaS": "💻",
+  "Здоров'я та розвиток": "🏥",
+  "Дитяча та сімейна": "👶",
+  "Виробництво та хенд-мейд": "🔨",
+  "Бізнес-послуги": "📋",
+  "Агробізнес та AgriTech": "🌾",
+};
 
 const NAV_LINKS_UK = [
   { label: "Послуги", href: "/services" },
@@ -51,7 +68,9 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
   const servicesTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const solutionsTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const servicesButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -62,6 +81,13 @@ export function Header() {
   const closeServices = () => {
     servicesTimeoutRef.current = setTimeout(() => setServicesOpen(false), 150);
   };
+  const openSolutions = () => {
+    if (solutionsTimeoutRef.current) clearTimeout(solutionsTimeoutRef.current);
+    setSolutionsOpen(true);
+  };
+  const closeSolutions = () => {
+    solutionsTimeoutRef.current = setTimeout(() => setSolutionsOpen(false), 150);
+  };
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -70,19 +96,17 @@ export function Header() {
   }, []);
 
   useEffect(() => {
-    if (!servicesOpen && !isMobileOpen) return;
+    if (!servicesOpen && !solutionsOpen && !isMobileOpen) return;
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        if (servicesOpen) {
-          setServicesOpen(false);
-          servicesButtonRef.current?.focus();
-        }
+        if (servicesOpen) { setServicesOpen(false); servicesButtonRef.current?.focus(); }
+        if (solutionsOpen) setSolutionsOpen(false);
         if (isMobileOpen) setIsMobileOpen(false);
       }
     };
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [servicesOpen, isMobileOpen]);
+  }, [servicesOpen, solutionsOpen, isMobileOpen]);
 
   // Desktop nav links excluding services and extras (rendered separately)
   const desktopLinks = NAV_LINKS.filter(
@@ -203,8 +227,52 @@ export function Header() {
               )}
             </div>
 
-            {/* Remaining desktop links */}
-            {desktopLinks.map((link) => (
+            {/* Solutions mega-menu dropdown */}
+            <div className="relative" onMouseEnter={openSolutions} onMouseLeave={closeSolutions}>
+              <button
+                aria-expanded={solutionsOpen}
+                aria-haspopup="true"
+                onClick={() => setSolutionsOpen((v) => !v)}
+                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-indigo-600 dark:hover:text-indigo-400 rounded-lg hover:bg-indigo-50 dark:hover:bg-indigo-950/50 transition-all duration-150"
+              >
+                {lang === "uk" ? "Рішення" : "Solutions"}
+                <ChevronDown className={cn("w-3.5 h-3.5 transition-transform duration-200", solutionsOpen && "rotate-180")} />
+              </button>
+              {solutionsOpen && (
+                <div
+                  role="menu"
+                  className="absolute top-full left-0 mt-1 w-96 bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-200 dark:border-neutral-700 shadow-2xl shadow-neutral-900/10 p-4 z-50"
+                >
+                  <div className="grid grid-cols-2 gap-1 mb-3">
+                    {NICHE_CATEGORIES.map((cat) => (
+                      <Link
+                        key={cat}
+                        href={lp(`/niches?category=${encodeURIComponent(cat)}`)}
+                        role="menuitem"
+                        onClick={() => setSolutionsOpen(false)}
+                        className="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-emerald-50 dark:hover:bg-emerald-950/30 transition-colors group"
+                      >
+                        <span className="text-base shrink-0">{NICHE_CATEGORY_ICONS[cat] ?? "📦"}</span>
+                        <span className="text-xs font-medium text-neutral-700 dark:text-neutral-300 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 leading-tight">{cat}</span>
+                      </Link>
+                    ))}
+                  </div>
+                  <div className="border-t border-neutral-100 dark:border-neutral-800 pt-3">
+                    <Link
+                      href={lp("/niches")}
+                      onClick={() => setSolutionsOpen(false)}
+                      className="flex items-center justify-between px-3 py-2 rounded-xl text-sm font-semibold text-emerald-700 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-950/30 transition-colors"
+                    >
+                      {lang === "uk" ? "Всі 60+ рішень по нішах" : "All 60+ niche solutions"}
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Remaining desktop links (excluding Solutions which is now a dropdown) */}
+            {desktopLinks.filter(l => l.href !== "/niches").map((link) => (
               <Link
                 key={link.href}
                 href={lp(link.href)}
