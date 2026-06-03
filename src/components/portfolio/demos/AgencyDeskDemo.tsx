@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { ClipboardCheck } from "lucide-react";
 
 type Card = {
   id: string;
@@ -226,7 +227,7 @@ export function AgencyDeskDemo({ lang }: { lang: string }) {
             {/* Approval needed */}
             <div className="bg-amber-50 dark:bg-amber-900/20 rounded-2xl border border-amber-200 dark:border-amber-800/50 p-5">
               <div className="flex items-center gap-2 mb-2">
-                <span className="text-lg">📋</span>
+                <ClipboardCheck className="w-5 h-5 text-amber-600 dark:text-amber-400" />
                 <span className="font-bold text-amber-800 dark:text-amber-300 text-sm">{isUk ? "Потрібне ваше затвердження" : "Your approval needed"}</span>
               </div>
               <p className="text-sm text-amber-700 dark:text-amber-200/80 mb-3">{isUk ? "Перегляньте чернетку стратегічного звіту перед фіналізацією." : "Review the draft strategy report before we finalise it."}</p>

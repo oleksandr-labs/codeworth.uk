@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
-import { Menu, X, ChevronDown, ArrowRight, Globe } from "lucide-react";
+import { Menu, X, ChevronDown, ArrowRight, Globe, Rocket } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Container } from "./Container";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
@@ -180,7 +180,7 @@ export function Header() {
                       onClick={() => setServicesOpen(false)}
                       className="flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium text-orange-600 dark:text-orange-400 hover:bg-orange-50 dark:hover:bg-orange-950/30 transition-colors"
                     >
-                      🚀 {lang === "uk" ? "Для стартапів" : "Startup Solutions"}
+                      <Rocket className="w-4 h-4" /> {lang === "uk" ? "Для стартапів" : "Startup Solutions"}
                     </Link>
                     <div className="flex gap-1 pt-1">
                       <Link

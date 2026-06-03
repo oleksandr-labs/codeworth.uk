@@ -1,7 +1,15 @@
 "use client";
 import { useState } from "react";
+import { Ruler, Award, Scale, BarChart3, FileText } from "lucide-react";
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+const DOC_ICON: Record<string, React.ElementType> = {
+  Drawing: Ruler,
+  Certificate: Award,
+  Compliance: Scale,
+  Engineering: BarChart3,
+};
 
 // Each project: start month index, length in months, % done
 const PROJECTS = [
@@ -290,7 +298,7 @@ export function BuildTrackDemo({ lang }: { lang: string }) {
                   {openDetail.docs.map(d => (
                     <div key={d.name} className="flex items-center justify-between bg-stone-900 border border-stone-800 rounded-lg px-3 py-2">
                       <div className="flex items-center gap-2.5">
-                        <span className="text-base">{d.type === "Drawing" ? "📐" : d.type === "Certificate" ? "🏆" : d.type === "Compliance" ? "⚖️" : d.type === "Engineering" ? "📊" : "📄"}</span>
+                        {(() => { const Ic = DOC_ICON[d.type] ?? FileText; return <Ic className="w-4 h-4 text-stone-400" strokeWidth={1.75} />; })()}
                         <div>
                           <div className="text-sm text-stone-100">{d.name}</div>
                           <div className="text-[10px] text-stone-500">{d.type}</div>

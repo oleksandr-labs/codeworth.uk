@@ -1,13 +1,14 @@
 "use client";
 import { useState } from "react";
+import { Package, ClipboardList, Truck, Receipt, BarChart3, ShoppingCart } from "lucide-react";
 
 const NAV = [
-  { id: "stock", icon: "📦", label: "Stock" },
-  { id: "orders", icon: "📋", label: "Orders" },
-  { id: "suppliers", icon: "🚚", label: "Suppliers" },
-  { id: "invoice", icon: "🧾", label: "Invoice" },
-  { id: "reports", icon: "📊", label: "Reports" },
-  { id: "portal", icon: "🛒", label: "B2B" },
+  { id: "stock", Icon: Package, label: "Stock" },
+  { id: "orders", Icon: ClipboardList, label: "Orders" },
+  { id: "suppliers", Icon: Truck, label: "Suppliers" },
+  { id: "invoice", Icon: Receipt, label: "Invoice" },
+  { id: "reports", Icon: BarChart3, label: "Reports" },
+  { id: "portal", Icon: ShoppingCart, label: "B2B" },
 ];
 
 // Catalogue shown in the customer-facing B2B portal
@@ -93,7 +94,7 @@ export function WholesaleHubDemo({ lang }: { lang: string }) {
               active === n.id ? "bg-sky-500/20 text-sky-400" : "text-white/30 hover:text-white/60 hover:bg-white/5"
             }`}
           >
-            <span className="text-base leading-none">{n.icon}</span>
+            <n.Icon className="w-4 h-4" strokeWidth={1.75} />
             <span className="text-[8px] leading-none">{n.label}</span>
           </button>
         ))}
