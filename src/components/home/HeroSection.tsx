@@ -14,17 +14,17 @@ const ROTATING_WORDS_EN = ["websites", "stores", "CRM systems", "PWA apps", "bra
 const TECH_LOGOS = ["Next.js", "React", "TypeScript", "Tailwind", "Node.js", "PostgreSQL"];
 
 const STATS_UK = [
-  { end: 120, suffix: "+", label: "Проєктів" },
-  { end: 85, suffix: "+", label: "Клієнтів" },
+  { end: 120, suffix: "+", label: "Шаблонів" },
+  { end: 60, suffix: "+", label: "Ніш" },
   { end: 4, suffix: "+", label: "Роки роботи" },
-  { end: 98, suffix: "%", label: "Задоволені" },
+  { end: 90, suffix: "+", label: "Core Web Vitals" },
 ];
 
 const STATS_EN = [
-  { end: 120, suffix: "+", label: "Projects" },
-  { end: 85, suffix: "+", label: "Clients" },
+  { end: 120, suffix: "+", label: "Templates" },
+  { end: 60, suffix: "+", label: "Niches" },
   { end: 4, suffix: "+", label: "Years" },
-  { end: 98, suffix: "%", label: "Satisfied" },
+  { end: 90, suffix: "+", label: "Core Web Vitals" },
 ];
 
 export function HeroSection() {

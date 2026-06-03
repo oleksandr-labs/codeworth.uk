@@ -22,7 +22,6 @@ import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { StarRating } from "@/components/ui/StarRating";
-import { Avatar } from "@/components/ui/Avatar";
 import AddToCartSection from "./AddToCartSection";
 
 export const revalidate = 600; // ISR: revalidate every 10 minutes
@@ -130,19 +129,6 @@ function getTrustBadges(isUk: boolean) {
   ];
 }
 
-function getFakeReviews(isUk: boolean) {
-  return isUk
-    ? [
-        { name: "Олена Кравець", city: "Київ", text: "Сайт запустили за 12 днів. Все чисто, швидко і за бюджет. Замовники вже пишуть з сайту.", stars: 5 },
-        { name: "Микола Бондар", city: "Львів", text: "Обрали розширений пакет — отримали більше ніж очікували. Менеджер весь час на зв'язку.", stars: 5 },
-        { name: "Інна Сидоренко", city: "Харків", text: "Чудовий дизайн, швидкий сайт. Google вже індексує. Рекомендую Codeworth!", stars: 5 },
-      ]
-    : [
-        { name: "Elena Kravets", city: "Kyiv", text: "The site launched in 12 days. Everything clean, fast, and on budget. Clients are already writing from the site.", stars: 5 },
-        { name: "Mykola Bondar", city: "Lviv", text: "Chose the Extended package — got more than expected. The manager was always in touch.", stars: 5 },
-        { name: "Inna Sydorenko", city: "Kharkiv", text: "Great design, fast website. Google is already indexing. I recommend Codeworth!", stars: 5 },
-      ];
-}
 
 export default async function ProductPage({
   params,
@@ -156,7 +142,6 @@ export default async function ProductPage({
 
   const PACKAGES = getPackages(isUk);
   const TRUST_BADGES = getTrustBadges(isUk);
-  const FAKE_REVIEWS = getFakeReviews(isUk);
 
   const demoUrl = `https://codeworth.uk/${lang}/niches/${niche.slug}`;
   const qrSvg = await QRCode.toString(demoUrl, {
@@ -209,7 +194,7 @@ export default async function ProductPage({
 
                 {/* Stars */}
                 <div className="mb-6">
-                  <StarRating value={5} readonly size="md" showValue reviewCount={12} className="[&_svg]:text-amber-400 [&_svg]:fill-amber-400" />
+                  <StarRating value={5} readonly size="md" className="[&_svg]:text-amber-400 [&_svg]:fill-amber-400" />
                 </div>
 
                 {/* Meta */}
@@ -447,30 +432,6 @@ export default async function ProductPage({
                   </div>
                 );
               })}
-            </div>
-          </Container>
-        </section>
-
-        {/* Reviews */}
-        <section className="py-16 bg-warm-50">
-          <Container>
-            <h2 className="text-2xl font-bold font-syne text-gray-900 dark:text-white mb-8">
-              {isUk ? "Відгуки клієнтів" : "Client Reviews"}
-            </h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              {FAKE_REVIEWS.map((r) => (
-                <div key={r.name} className="bg-white dark:bg-neutral-900 rounded-2xl p-6 border border-gray-100 dark:border-neutral-700 dark:border-neutral-800">
-                  <StarRating value={r.stars} readonly size="sm" className="mb-4" />
-                  <p className="text-gray-700 dark:text-neutral-300 text-sm mb-5 italic leading-relaxed">"{r.text}"</p>
-                  <div className="flex items-center gap-3">
-                    <Avatar name={r.name} size="sm" />
-                    <div>
-                      <div className="text-sm font-semibold text-gray-900 dark:text-white ">{r.name}</div>
-                      <div className="text-xs text-gray-400 dark:text-neutral-500 dark:text-neutral-500">{r.city}</div>
-                    </div>
-                  </div>
-                </div>
-              ))}
             </div>
           </Container>
         </section>

@@ -49,16 +49,16 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "Codeworth — Веб-студія повного циклу | Розробка сайтів в Україні"
       : "Codeworth — Full-Cycle Web Studio | Website Development",
     description: isUk
-      ? "Розробка сайтів, інтернет-магазинів, SEO, UI/UX дизайн. Маркетплейс готових нішевих рішень. 120+ проєктів. Старт від 4 900 грн."
-      : "Website development, e-commerce, SEO, UI/UX design. 120+ projects delivered. Starting from £120. Free consultation.",
+      ? "Розробка сайтів, інтернет-магазинів, SEO, UI/UX дизайн. 120+ готових нішевих шаблонів. Старт від 4 900 грн."
+      : "Website development, e-commerce, SEO, UI/UX design. 120+ ready-made niche templates. Starting from £120. Free consultation.",
     keywords: isUk
       ? ["розробка сайтів", "веб-студія Україна", "інтернет-магазин", "SEO", "UI/UX дизайн", "Codeworth"]
       : ["website development", "web studio", "e-commerce", "SEO", "UI/UX design", "Codeworth"],
     openGraph: {
       title: isUk ? "Codeworth — Веб-студія повного циклу" : "Codeworth — Full-Cycle Web Studio",
       description: isUk
-        ? "Розробка сайтів, інтернет-магазинів, SEO та UI/UX дизайн. Маркетплейс готових нішевих рішень. 120+ проєктів."
-        : "Website development, e-commerce, SEO, and UI/UX design. Marketplace of ready-made niche solutions. 120+ projects.",
+        ? "Розробка сайтів, інтернет-магазинів, SEO та UI/UX дизайн. 120+ готових нішевих шаблонів для будь-якого бізнесу."
+        : "Website development, e-commerce, SEO, and UI/UX design. 120+ ready-made niche templates for any business.",
       type: "website",
       url: `https://codeworth.uk/${lang}`,
       images: [{ url: "/og/home.png", width: 1200, height: 630, alt: isUk ? "Codeworth — Веб-студія" : "Codeworth — Web Studio" }],

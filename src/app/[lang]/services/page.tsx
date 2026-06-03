@@ -149,9 +149,9 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
           <Container>
             <div className="flex flex-wrap items-center justify-center gap-12">
               {[
-                { icon: CheckCircle, end: 120, suffix: "+", label: isUk ? "Проєктів" : "Projects", static: false },
-                { icon: Users, end: 85, suffix: "+", label: isUk ? "Клієнтів" : "Clients", static: false },
-                { icon: Star, end: 0, suffix: "4.9", label: isUk ? "Рейтинг" : "Rating", static: true },
+                { icon: CheckCircle, end: 120, suffix: "+", label: isUk ? "Шаблонів" : "Templates", static: false },
+                { icon: Users, end: 60, suffix: "+", label: isUk ? "Ніш" : "Niches", static: false },
+                { icon: Star, end: 0, suffix: "90+", label: isUk ? "Core Web Vitals" : "Core Web Vitals", static: true },
                 { icon: Clock, end: 4, suffix: "+", label: isUk ? "Роки досвіду" : "Years exp.", static: false },
               ].map(({ icon: Icon, end, suffix, label, static: isStatic }) => (
                 <div key={label} className="flex items-center gap-3">

@@ -13,15 +13,15 @@ export function CasesSection({ lang }: { lang: string }) {
       <Container>
         <div className="max-w-2xl mb-12">
           <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
-            {isUk ? "Кейси" : "Case Studies"}
+            {isUk ? "Приклади рішень" : "Solution Examples"}
           </p>
           <h2 className="text-4xl font-heading font-extrabold text-neutral-900 dark:text-white mb-4">
-            {isUk ? "Реальні результати клієнтів" : "Real client results"}
+            {isUk ? "Що може досягти ваш бізнес" : "What your business can achieve"}
           </h2>
           <p className="text-lg text-neutral-500 dark:text-neutral-400 leading-relaxed">
             {isUk
-              ? "Цифри, а не обіцянки — ось що ми робимо для бізнесу."
-              : "Numbers, not promises — this is what we do for business."}
+              ? "Реальні метрики з наших нішевих рішень — приклади того, що отримують бізнеси після запуску."
+              : "Real metrics from our niche solutions — examples of what businesses achieve after launch."}
           </p>
         </div>
 
@@ -73,7 +73,7 @@ export function CasesSection({ lang }: { lang: string }) {
             href={`/${lang}/portfolio`}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-indigo-200 text-indigo-700 font-semibold hover:bg-indigo-50 transition-colors"
           >
-            {isUk ? "Усі кейси" : "All case studies"} <ArrowRight className="w-4 h-4" />
+            {isUk ? "Усі рішення" : "All solutions"} <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </Container>

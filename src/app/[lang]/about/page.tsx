@@ -53,17 +53,17 @@ const VALUES_EN = [
 
 const TIMELINE_UK = [
   { year: "2021", title: "Заснування", text: "Перші фріланс-проєкти. Перша команда з 2 осіб." },
-  { year: "2022", title: "Перші 20 клієнтів", text: "Перший корпоративний клієнт, перший e-commerce проєкт." },
-  { year: "2023", title: "Студія", text: "Реєстрація студії, розширення до 5 спеціалістів, 60+ проєктів." },
-  { year: "2024", title: "Маркетплейс", text: "Запуск напряму готових нішевих рішень, 85+ клієнтів." },
+  { year: "2022", title: "Перші проєкти", text: "Перший корпоративний сайт, перший e-commerce проєкт." },
+  { year: "2023", title: "Студія", text: "Реєстрація студії, розширення до 5 спеціалістів, 60+ шаблонів." },
+  { year: "2024", title: "Маркетплейс", text: "Запуск маркетплейсу готових нішевих рішень, 120+ шаблонів." },
   { year: "2025", title: "Codeworth 2.0", text: "Новий сайт, нові продукти, масштабування команди." },
 ];
 
 const TIMELINE_EN = [
   { year: "2021", title: "Founded", text: "First freelance projects. First team of 2." },
-  { year: "2022", title: "First 20 Clients", text: "First corporate client, first e-commerce project." },
-  { year: "2023", title: "Studio", text: "Official registration, expanded to 5 specialists, 60+ projects." },
-  { year: "2024", title: "Marketplace", text: "Launched niche ready-made solutions, 85+ clients." },
+  { year: "2022", title: "First Projects", text: "First corporate website, first e-commerce project." },
+  { year: "2023", title: "Studio", text: "Official registration, expanded to 5 specialists, 60+ templates." },
+  { year: "2024", title: "Marketplace", text: "Launched marketplace of niche ready-made solutions, 120+ templates." },
   { year: "2025", title: "Codeworth 2.0", text: "New website, new products, team scaling." },
 ];
 
@@ -84,15 +84,15 @@ const TECH_STACK = [
 
 const STATS_UK = [
   { end: 2021, suffix: "", label: "Рік заснування" },
-  { end: 120, suffix: "+", label: "Виконаних проєктів" },
-  { end: 85, suffix: "+", label: "Постійних клієнтів" },
+  { end: 120, suffix: "+", label: "Готових шаблонів" },
+  { end: 60, suffix: "+", label: "Ніш" },
   { end: 8, suffix: "", label: "Спеціалістів" },
 ];
 
 const STATS_EN = [
   { end: 2021, suffix: "", label: "Founded" },
-  { end: 120, suffix: "+", label: "Projects Delivered" },
-  { end: 85, suffix: "+", label: "Regular Clients" },
+  { end: 120, suffix: "+", label: "Ready Templates" },
+  { end: 60, suffix: "+", label: "Niches" },
   { end: 8, suffix: "", label: "Specialists" },
 ];
 

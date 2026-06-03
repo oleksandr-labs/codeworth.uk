@@ -52,10 +52,10 @@ export function ClientLogosSection({ lang }: { lang: string }) {
           ))}
         </div>
 
-        {/* Client logos */}
+        {/* Industries */}
         <div className="text-center mb-8">
           <p className="text-sm text-neutral-500 dark:text-neutral-400 font-medium">
-            {isUk ? "Нам довіряють компанії по всій Україні" : "Trusted by companies across Ukraine"}
+            {isUk ? "Ніші які ми покриваємо" : "Industries We Cover"}
           </p>
         </div>
 
