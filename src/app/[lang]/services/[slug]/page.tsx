@@ -6,7 +6,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { SERVICES_DATA, getServiceLocalized } from "@/lib/data/services";
-import { BLOG_POSTS } from "@/lib/data/blog";
+import { BLOG_POSTS, getPostTitle, getPostExcerpt } from "@/lib/data/blog";
 import { NICHES_DATA, getNicheLocalized } from "@/lib/data/niches";
 import { ArrowRight, Check, Clock, ChevronRight, TrendingUp, TrendingDown, Minus } from "lucide-react";
 import { EmojiIcon } from "@/components/ui/EmojiIcon";
@@ -417,7 +417,7 @@ export default async function ServicePage({ params }: Props) {
                   <div className="flex items-center gap-2 text-white/80 text-sm">
                     <Clock className="w-4 h-4" /> {isUk ? "Термін:" : "Timeline:"} {service.deliveryTime}
                   </div>
-                  <div className="text-2xl font-heading font-extrabold">
+                  <div className="text-2xl font-sans font-extrabold tabular-nums tracking-tight">
                     {isUk ? `від ${service.priceFrom}` : `from ${service.priceFrom}`}
                   </div>
                 </div>
@@ -499,7 +499,7 @@ export default async function ServicePage({ params }: Props) {
                     <div className={`text-xs mb-5 ${pkg.highlight ? "text-white/70" : "text-neutral-500"}`}>
                       {pkg.desc}
                     </div>
-                    <div className={`text-2xl font-heading font-extrabold mb-6 ${pkg.highlight ? "text-white" : "text-neutral-900"}`}>
+                    <div className={`text-2xl font-sans font-extrabold tabular-nums tracking-tight mb-6 ${pkg.highlight ? "text-white" : "text-neutral-900"}`}>
                       {pkg.price}
                     </div>
                     <ul className="space-y-2.5 mb-8 flex-1">
@@ -706,7 +706,7 @@ export default async function ServicePage({ params }: Props) {
                         {post.category}
                       </span>
                       <h4 className="font-heading font-bold text-neutral-900 dark:text-white text-sm leading-tight group-hover:text-indigo-700 transition-colors line-clamp-2">
-                        {post.title}
+                        {getPostTitle(post, lang)}
                       </h4>
                     </div>
                   </Link>

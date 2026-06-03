@@ -79,7 +79,7 @@ export function MobileReadinessChecker({ isUk }: Props) {
       {/* Score */}
       <div className="flex items-center justify-between mb-4">
         <div>
-          <p className="text-3xl font-heading font-extrabold text-neutral-900">{pct}%</p>
+          <p className="text-3xl font-sans font-extrabold tabular-nums tracking-tight text-neutral-900">{pct}%</p>
           <p className={`text-sm font-semibold mt-0.5 ${gradeColor}`}>{gradeLabel}</p>
         </div>
         <div className="text-right">

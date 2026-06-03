@@ -358,7 +358,7 @@ export function WebsiteCostCalculator({ isUk }: Props) {
           {/* Price Range */}
           <div className="bg-linear-to-br from-indigo-600 to-violet-700 rounded-3xl p-8 text-center mb-6 text-white">
             <p className="text-indigo-200 text-sm mb-2">{isUk ? "Діапазон вартості" : "Price range"}</p>
-            <p className="text-4xl font-heading font-extrabold">
+            <p className="text-4xl font-sans font-extrabold tabular-nums tracking-tight">
               {fmt(price.min)} — {fmt(price.max)}
             </p>
             <p className="text-indigo-200 text-xs mt-2">

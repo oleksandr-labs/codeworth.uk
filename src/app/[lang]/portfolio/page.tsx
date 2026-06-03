@@ -114,7 +114,7 @@ export default async function PortfolioPage({ params }: { params: Promise<{ lang
                 { end: 4, suffix: "+", label: isUk ? "Роки роботи" : "Years" },
               ].map((s) => (
                 <div key={s.label}>
-                  <div className="text-3xl font-heading font-extrabold gradient-text-primary">
+                  <div className="text-3xl font-sans font-extrabold tabular-nums tracking-tight gradient-text-primary">
                     <CountUp end={s.end} suffix={s.suffix} />
                   </div>
                   <div className="text-sm text-neutral-500 dark:text-neutral-400 mt-0.5">{s.label}</div>
@@ -219,7 +219,7 @@ export default async function PortfolioPage({ params }: { params: Promise<{ lang
                 },
               ].map((item) => (
                 <div key={item.metric} className="p-6 rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 text-center hover:shadow-md transition-shadow">
-                  <div className={`text-3xl font-heading font-extrabold bg-linear-to-r ${item.color} bg-clip-text text-transparent mb-2`}>
+                  <div className={`text-3xl font-sans font-extrabold tabular-nums tracking-tight bg-linear-to-r ${item.color} bg-clip-text text-transparent mb-2`}>
                     {item.metric}
                   </div>
                   <p className="text-sm text-neutral-700 dark:text-neutral-300 font-medium leading-snug mb-3">{item.label}</p>

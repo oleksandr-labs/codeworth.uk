@@ -204,7 +204,7 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               {city.stats.map((stat) => (
                 <div key={stat.label} className="text-center text-white">
-                  <div className="text-3xl font-heading font-extrabold mb-1">{stat.value}</div>
+                  <div className="text-3xl font-sans font-extrabold tabular-nums tracking-tight mb-1">{stat.value}</div>
                   <div className="text-indigo-200 text-sm">{isUk ? stat.label : stat.labelEn}</div>
                 </div>
               ))}

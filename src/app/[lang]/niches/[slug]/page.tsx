@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Check, Clock, Layers, ArrowRight, Star, ChevronRight, Tag, X, ShoppingCart, Package, Sparkles } from "lucide-react";
 import { EmojiIcon } from "@/components/ui/EmojiIcon";
 import { NICHES_DATA, getNiche, getNicheLocalized, COMPLEXITY_LABELS_NICHE } from "@/lib/data/niches";
-import { BLOG_POSTS } from "@/lib/data/blog";
+import { BLOG_POSTS, getPostTitle, getPostExcerpt } from "@/lib/data/blog";
 import { PROJECTS } from "@/lib/data/portfolio";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -1574,7 +1574,7 @@ export default async function NichePage({
                       <div className="mb-3"><EmojiIcon emoji={post.emoji} className="w-8 h-8 text-white/80" /></div>
                       <div className="text-xs font-medium text-indigo-600 dark:text-indigo-400 mb-2">{post.category}</div>
                       <h3 className="font-semibold text-neutral-900 dark:text-white group-hover:text-indigo-700 dark:group-hover:text-indigo-400 transition-colors leading-snug mb-3 line-clamp-2">
-                        {post.title}
+                        {getPostTitle(post, lang)}
                       </h3>
                       <div className="flex items-center justify-between text-xs text-neutral-400">
                         <span className="flex items-center gap-1">

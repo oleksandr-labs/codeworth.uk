@@ -701,7 +701,7 @@ export default async function PortfolioProjectPage({ params }: Props) {
                     <div className="text-xs uppercase tracking-wider text-indigo-200 font-semibold mb-2">
                       {isUk ? "Вартість рішення" : "Solution Price"}
                     </div>
-                    <div className="text-3xl font-heading font-extrabold mb-0.5">
+                    <div className="text-3xl font-sans font-extrabold tabular-nums tracking-tight mb-0.5">
                       {isUk ? `₴${priceUah.toLocaleString("uk-UA")}` : `£${priceGbp}`}
                     </div>
                     <div className="text-indigo-200 text-xs mb-4 flex items-center gap-1">

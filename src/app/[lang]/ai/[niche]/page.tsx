@@ -4,6 +4,7 @@ import Link from "next/link";
 import { buildAlternates } from "@/i18n";
 import { AI_NICHES } from "@/lib/data/aiNiches";
 import { getAINicheBySlug, formatNichePrice, getGlossaryTermsForNichePage, getBlogPostsForNichePage } from "@/lib/nicheUtils";
+import { getPostTitle, getPostExcerpt } from "@/lib/data/blog";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
@@ -320,8 +321,8 @@ export default async function AINichePage({
                       className={`group rounded-xl bg-linear-to-br ${post.color} p-5 hover:scale-[1.02] transition-transform`}
                     >
                       <div className="mb-3"><EmojiIcon emoji={post.emoji} className="w-8 h-8 text-white/80" /></div>
-                      <h3 className="font-semibold text-white mb-2 line-clamp-2">{post.title}</h3>
-                      <p className="text-sm text-white/80 line-clamp-2 mb-3">{post.excerpt}</p>
+                      <h3 className="font-semibold text-white mb-2 line-clamp-2">{getPostTitle(post, lang)}</h3>
+                      <p className="text-sm text-white/80 line-clamp-2 mb-3">{getPostExcerpt(post, lang)}</p>
                       <div className="flex items-center gap-2 text-xs text-white/70">
                         <span>{post.readTime} {isUk ? "хв" : "min"}</span>
                         <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />

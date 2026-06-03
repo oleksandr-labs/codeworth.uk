@@ -159,7 +159,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
                     <Icon className="w-5 h-5 text-indigo-600" />
                   </div>
                   <div>
-                    <div className="text-2xl font-heading font-extrabold text-neutral-900">
+                    <div className="text-2xl font-sans font-extrabold tabular-nums tracking-tight text-neutral-900">
                       {isStatic ? suffix : <CountUp end={end} suffix={suffix} />}
                     </div>
                     <div className="text-xs text-neutral-400">{label}</div>

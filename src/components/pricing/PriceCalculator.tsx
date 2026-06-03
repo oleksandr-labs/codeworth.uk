@@ -186,7 +186,7 @@ export function PriceCalculator() {
             <div className="sticky top-24 rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 shadow-lg shadow-neutral-200/40 overflow-hidden">
               <div className="p-6 bg-indigo-600 text-white">
                 <p className="text-sm font-medium opacity-80 mb-1">{isUk ? "Орієнтовна вартість" : "Estimated price"}</p>
-                <div className="text-4xl font-heading font-extrabold">{formatPrice(projectTotal)}</div>
+                <div className="text-4xl font-sans font-extrabold tabular-nums tracking-tight">{formatPrice(projectTotal)}</div>
                 {monthlySupport > 0 && (
                   <p className="text-sm opacity-80 mt-2">+ {formatPrice(monthlySupport)}/{isUk ? "місяць підтримки" : "mo support"}</p>
                 )}
