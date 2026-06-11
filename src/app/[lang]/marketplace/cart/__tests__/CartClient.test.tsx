@@ -87,7 +87,7 @@ describe("CartClient", () => {
     expect(mockUseCart.removeItem).toHaveBeenCalledWith("42");
   });
 
-  it("applies promo code CODENEST10 and shows success message", () => {
+  it("applies promo code CODEWORTH10 and shows success message", () => {
     mockUseCart.items = [
       { id: "1", slug: "restaurant", title: "Ресторан", emoji: "🍽", package: "Базовий", price: 10000 },
     ];
@@ -163,6 +163,6 @@ describe("CartClient", () => {
       { id: "1", slug: "restaurant", title: "Ресторан", emoji: "🍽", package: "Базовий", price: 10000 },
     ];
     render(<CartClient />);
-    expect(screen.getByText(/CODENEST10/)).toBeInTheDocument();
+    expect(screen.getByText(/CODEWORTH10/)).toBeInTheDocument();
   });
 });

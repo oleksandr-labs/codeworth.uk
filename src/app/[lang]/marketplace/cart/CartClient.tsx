@@ -143,7 +143,7 @@ export default function CartClient() {
             {isUk ? "✓ Промокод застосовано — знижка 10%" : "✓ Promo code applied — 10% discount"}
           </p>
         )}
-        <p className="text-xs text-gray-400 dark:text-neutral-500 mt-2">{isUk ? "Спробуйте: CODENEST10" : "Try: CODENEST10"}</p>
+        <p className="text-xs text-gray-400 dark:text-neutral-500 mt-2">{isUk ? "Спробуйте: CODEWORTH10" : "Try: CODEWORTH10"}</p>
       </div>
 
       {/* Totals (mobile visible) */}

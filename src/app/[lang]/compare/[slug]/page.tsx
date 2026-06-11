@@ -57,7 +57,7 @@ export default async function ComparePage({ params }: { params: Promise<Params> 
 
   const isUk = lang === "uk";
   const competitorName = isUk ? data.competitorUk : data.competitorEn;
-  const codenestWins = data.rows.filter((r) => r.winner === "Codeworth").length;
+  const codeworthWins = data.rows.filter((r) => r.winner === "Codeworth").length;
   const competitorWins = data.rows.filter((r) => r.winner === "competitor").length;
   const ties = data.rows.filter((r) => r.winner === "tie").length;
 
@@ -148,7 +148,7 @@ export default async function ComparePage({ params }: { params: Promise<Params> 
             {/* Score */}
             <div className="flex flex-wrap gap-4">
               <div className="flex items-center gap-2 bg-emerald-500/20 border border-emerald-500/30 px-4 py-2 rounded-xl">
-                <span className="text-emerald-400 font-extrabold text-2xl font-heading">{codenestWins}</span>
+                <span className="text-emerald-400 font-extrabold text-2xl font-heading">{codeworthWins}</span>
                 <span className="text-emerald-300 text-sm">{isUk ? "перевага Codeworth" : "Codeworth wins"}</span>
               </div>
               <div className="flex items-center gap-2 bg-red-500/20 border border-red-500/30 px-4 py-2 rounded-xl">

@@ -67,7 +67,7 @@ export default async function CompareIndexPage({ params }: { params: Promise<{ l
           <Container>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {COMPARE_DATA.map((item) => {
-                const codenestWins = item.rows.filter((r) => r.winner === "Codeworth").length;
+                const codeworthWins = item.rows.filter((r) => r.winner === "Codeworth").length;
                 const total = item.rows.length;
                 return (
                   <Link
@@ -98,7 +98,7 @@ export default async function CompareIndexPage({ params }: { params: Promise<{ l
                         <div className="flex items-center gap-1.5">
                           <div className="w-2 h-2 rounded-full bg-emerald-400" />
                           <span className="text-xs text-neutral-500">
-                            {isUk ? `Codeworth виграє ${codenestWins}/${total}` : `Codeworth wins ${codenestWins}/${total}`}
+                            {isUk ? `Codeworth виграє ${codeworthWins}/${total}` : `Codeworth wins ${codeworthWins}/${total}`}
                           </span>
                         </div>
                         <span className="inline-flex items-center gap-1 text-xs text-indigo-600 font-medium opacity-0 group-hover:opacity-100 transition-opacity">

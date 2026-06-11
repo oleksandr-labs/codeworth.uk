@@ -1,13 +1,13 @@
-name: Deploy to Hetzner
+name: Build & Deploy Codeworth to Hetzner
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   workflow_dispatch:
 
 concurrency:
   group: deploy-codeworth
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build-and-deploy:

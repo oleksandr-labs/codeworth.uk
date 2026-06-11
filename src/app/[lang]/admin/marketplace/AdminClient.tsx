@@ -866,8 +866,8 @@ export default function AdminClient() {
                 {
                   title: isUk ? "Промокоди" : "Promo Codes",
                   items: isUk
-                    ? ["CODENEST10 — 10% знижка (активний)", "+ Додати промокод"]
-                    : ["CODENEST10 — 10% discount (active)", "+ Add promo code"],
+                    ? ["CODEWORTH10 — 10% знижка (активний)", "+ Додати промокод"]
+                    : ["CODEWORTH10 — 10% discount (active)", "+ Add promo code"],
                 },
               ].map((s) => (
                 <div key={s.title} className="bg-white rounded-2xl border border-gray-100 dark:border-neutral-700 p-6">
