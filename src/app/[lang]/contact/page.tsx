@@ -35,10 +35,10 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 }
 
 const QUICK_FAQ_UK = [
-  { q: "Скільки коштує ML-проєкт?", a: "Від 75 000 ₴ за PoC до 500 000+ ₴ за production ML-систему. Точна ціна після аудиту даних." },
-  { q: "Скільки часу займає розробка?", a: "PoC — 3–4 тижні, production ML — 8–12 тижнів, enterprise-система — 12–20 тижнів." },
+  { q: "Скільки коштує ML-проєкт?", a: "Discovery від £3,000, PoC від £15,000, production ML-система від £40,000. Точна ціна після аудиту даних." },
+  { q: "Скільки часу займає розробка?", a: "PoC — 4–6 тижнів, production ML — 8–12 тижнів, enterprise-система — 12–20 тижнів." },
   { q: "Чи потрібні нам власні дані?", a: "Для більшості ML-задач достатньо 1–10 тис. прикладів. Допомагаємо з розміткою та доповненням." },
-  { q: "Чи є гарантія якості моделі?", a: "Гарантуємо мінімальний F1-score або AUC перед здачею. 3 місяці гарантійної підтримки." },
+  { q: "Чи є гарантія якості моделі?", a: "Гарантуємо мінімальний F1-score або AUC перед здачею. 90 днів гарантійної підтримки." },
 ];
 
 const QUICK_FAQ_EN = [
@@ -58,8 +58,8 @@ const localBusinessSchema = {
   email: "hello@codeworth.uk",
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Kyiv",
-    addressCountry: "UA",
+    addressLocality: "London",
+    addressCountry: "GB",
   },
   openingHoursSpecification: [
     {
@@ -168,9 +168,9 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
                       </div>
                       <div>
                         <p className="text-xs text-neutral-400 mb-0.5">{isUk ? "Розташування" : "Location"}</p>
-                        <span className="font-medium text-neutral-900">{isUk ? "Київ, Україна" : "Kyiv, Ukraine"}</span>
+                        <span className="font-medium text-neutral-900">{isUk ? "Лондон, Великобританія" : "London, United Kingdom"}</span>
                         <p className="text-xs text-neutral-400">
-                          {isUk ? "Дистанційно — UK / EU / Україна" : "Remote — UK / EU / Ukraine"}
+                          {isUk ? "Дистанційно — UK / EU" : "Remote — UK / EU"}
                         </p>
                       </div>
                     </div>
