@@ -12,11 +12,8 @@ import { UtmBuilder } from "@/components/tools/UtmBuilder";
 import { KeywordDensityChecker } from "@/components/tools/KeywordDensityChecker";
 import { ColorContrastChecker } from "@/components/tools/ColorContrastChecker";
 import { RobotsTxtGenerator } from "@/components/tools/RobotsTxtGenerator";
-import { WebsiteCostCalculator } from "@/components/tools/WebsiteCostCalculator";
+import { MlRoiCalculator } from "@/components/tools/MlRoiCalculator";
 import { SchemaGenerator } from "@/components/tools/SchemaGenerator";
-import { SeoChecklist } from "@/components/tools/SeoChecklist";
-import { MobileReadinessChecker } from "@/components/tools/MobileReadinessChecker";
-import { PageSpeedAudit } from "@/components/tools/PageSpeedAudit";
 
 export async function generateStaticParams() {
   const builtTools = TOOLS.filter((t) => t.isBuilt);
@@ -55,6 +52,8 @@ export async function generateMetadata({
 
 function ToolComponent({ slug, isUk }: { slug: string; isUk: boolean }) {
   switch (slug) {
+    case "ml-roi-calculator":
+      return <MlRoiCalculator isUk={isUk} />;
     case "meta-tag-generator":
       return <MetaTagGenerator isUk={isUk} />;
     case "utm-builder":
@@ -65,16 +64,8 @@ function ToolComponent({ slug, isUk }: { slug: string; isUk: boolean }) {
       return <ColorContrastChecker isUk={isUk} />;
     case "robots-txt-generator":
       return <RobotsTxtGenerator isUk={isUk} />;
-    case "website-cost-calculator":
-      return <WebsiteCostCalculator isUk={isUk} />;
     case "schema-generator":
       return <SchemaGenerator isUk={isUk} />;
-    case "seo-checklist":
-      return <SeoChecklist isUk={isUk} />;
-    case "mobile-readiness-checker":
-      return <MobileReadinessChecker isUk={isUk} />;
-    case "page-speed-audit":
-      return <PageSpeedAudit isUk={isUk} />;
     default:
       return null;
   }
@@ -213,18 +204,18 @@ export default async function ToolPage({
             <div className="max-w-2xl mx-auto text-center p-10 rounded-3xl bg-linear-to-br from-indigo-50 to-violet-50 border border-indigo-100">
               <span className="text-4xl mb-4 block">🚀</span>
               <h2 className="text-2xl font-heading font-extrabold text-neutral-900 dark:text-white mb-3">
-                {isUk ? "Потрібен повноцінний сайт?" : "Ready for a proper website?"}
+                {isUk ? "Готові до ML-проєкту?" : "Ready to start an ML project?"}
               </h2>
               <p className="text-neutral-600 dark:text-neutral-300 mb-6 text-sm leading-relaxed">
                 {isUk
-                  ? "Ми розробляємо швидкі, SEO-оптимізовані сайти з інтерактивними функціями для бізнесу будь-якого розміру."
-                  : "We build fast, SEO-optimised websites with interactive features for businesses of any size."}
+                  ? "Ми розробляємо ML-рішення від PoC до production — fraud detection, churn prediction, NLP, computer vision для UK-бізнесу."
+                  : "We build ML solutions from PoC to production — fraud detection, churn prediction, NLP, computer vision for UK business."}
               </p>
               <Link
                 href={`/${lang}/contact`}
                 className="inline-flex items-center gap-2 px-8 py-3.5 rounded-2xl bg-indigo-600 text-white font-bold hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200 text-sm"
               >
-                {isUk ? "Обговорити проєкт" : "Discuss your project"}
+                {isUk ? "Обговорити ML-проєкт" : "Discuss your ML project"}
               </Link>
             </div>
           </Container>
