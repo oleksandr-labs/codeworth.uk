@@ -785,6 +785,183 @@ export const GEO_CITIES: GeoCity[] = [
       },
     ],
   },
+  {
+    slug: "liverpool",
+    nameUk: "Ліверпуль",
+    nameEn: "Liverpool",
+    region: "Мерсісайд",
+    regionEn: "Merseyside",
+    population: "2.2 млн",
+    populationEn: "2.2 million",
+    businesses: 68000,
+    description:
+      "Ліверпуль — динамічний технологічний хаб із потужним кластером цифрової охорони здоров'я (Liverpool Health Partners, £1.2B екосистема), розвиненим FinTech-районом Baltic Triangle, логістичним AI на базі Порту Ліверпуль та зростаючою life sciences індустрією. Codeworth розробляє ML-рішення для ліверпульських healthtech, фінтех та логістичних компаній, поєднуючи академічні дослідження університету з production-grade інженерією.",
+    descriptionEn:
+      "Liverpool is a dynamic tech hub anchored by a £1.2B digital health cluster (Liverpool Health Partners), the Baltic Triangle fintech and creative tech district, maritime logistics AI at the Port of Liverpool, and a growing life sciences sector. The city's strong university research base and diverse industry mix create significant demand for health data ML, fraud detection, and supply chain optimisation. Codeworth delivers production ML for Liverpool businesses at rates well below London.",
+    seoTitle: "ML-консалтинг у Ліверпулі | Машинне навчання для healthtech | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Liverpool | ML Agency | Codeworth",
+    seoDesc:
+      "Машинне навчання у Ліверпулі: healthtech AI, фінтех, логістика. Від £3,500. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Liverpool: health data ML, fintech fraud detection, logistics AI. From £3,500. Codeworth ML agency.",
+    stats: [
+      { label: "ML-компаній", labelEn: "ML companies", value: "420+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "2,800+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "95+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£52k" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "7+" },
+    ],
+    faq: [
+      {
+        q: "Як розвивається ML-ринок у Ліверпулі?",
+        qEn: "How is the ML market developing in Liverpool?",
+        a: "Ліверпуль активно розвиває AI-екосистему завдяки інвестиціям у цифрову охорону здоров'я, фінтех-дистрикту Baltic Triangle та університетським дослідженням. Кількість AI-стартапів зросла на 35% за два роки, що свідчить про динамічний ринок ML-послуг.",
+        aEn: "Liverpool's AI ecosystem is growing rapidly, driven by £1.2B investment in digital health, the Baltic Triangle fintech district, and strong university research output. The number of AI startups grew 35% in two years, reflecting healthy demand for ML consultancy and development services.",
+      },
+      {
+        q: "Що таке Baltic Triangle і як він пов'язаний з AI?",
+        qEn: "What is the Baltic Triangle and how is it connected to AI?",
+        a: "Baltic Triangle — це цифровий та креативний дистрикт Ліверпуля, де сконцентровані фінтех, маркетингові технологічні компанії та digital-агентства. Багато з них активно впроваджують ML для автоматизації маркетингу, fraud detection та аналітики клієнтської поведінки.",
+        aEn: "The Baltic Triangle is Liverpool's creative and digital district, home to fintech firms, marketing technology companies, and digital agencies. Many are adopting ML for marketing automation, fraud detection, and customer behaviour analytics — making it a high-demand area for Codeworth's services.",
+      },
+      {
+        q: "Чи можете ви розробляти ML для Liverpool Health Partners?",
+        qEn: "Can you build ML solutions for Liverpool health tech companies?",
+        a: "Так. Ми розробляємо health data ML з дотриманням вимог GDPR, NHS Data Security and Protection Toolkit та ICO. Наші рішення включають clinical NLP для аналізу медичних записів, predictive modelling для клінічних результатів та аналітику пацієнтів.",
+        aEn: "Yes. We build health data ML compliant with UK GDPR, NHS Data Security and Protection Toolkit, and ICO guidelines. Solutions include clinical NLP for medical records analysis, predictive modelling for clinical outcomes, and patient analytics for NHS and private health providers.",
+      },
+      {
+        q: "Яку роль відіграє AI у логістиці Порту Ліверпуль?",
+        qEn: "What role does AI play in Port of Liverpool logistics?",
+        a: "Порт Ліверпуль активно застосовує AI для оптимізації маршрутів, прогнозування затримок, управління запасами та автоматизації митних процесів. Ми розробляємо ML-рішення для логістичних компаній: route optimisation, demand forecasting та anomaly detection у ланцюгах поставок.",
+        aEn: "The Port of Liverpool is adopting AI for route optimisation, delay prediction, inventory management, and customs automation. We build ML solutions for logistics firms operating from the port: route optimisation models, demand forecasting, and anomaly detection in supply chains.",
+      },
+      {
+        q: "Скільки коштує ML-проєкт у Ліверпулі?",
+        qEn: "How much does a typical ML project cost in Liverpool?",
+        a: "ML-консалтинг у Ліверпулі на 20–25% дешевший за Лондон. Наші пакети стартують від £3,500 для PoC (3–4 тижні). Production ML-система — від £12,000. Фіксована ціна без прихованих витрат.",
+        aEn: "ML consulting in Liverpool runs 20–25% below London rates. Our packages start from £3,500 for a PoC (3–4 weeks). Production ML systems from £12,000. Fixed-price engagements with no hidden costs.",
+      },
+    ],
+  },
+  {
+    slug: "brighton",
+    nameUk: "Брайтон",
+    nameEn: "Brighton",
+    region: "Іст-Сассекс",
+    regionEn: "East Sussex",
+    population: "650,000",
+    populationEn: "650,000",
+    businesses: 32000,
+    description:
+      "Брайтон — провідний хаб для креативних технологій та digital-агентств у Південній Англії, відомий своєю розвиненою game dev спільнотою, marketing tech та sustainable tech екосистемою. Близькість до Лондона залучає талановитих ML-спеціалістів, які надають перевагу менш вартісному ринку нерухомості. Codeworth обслуговує брайтонські digital-агентства, gaming-студії та маркетингові платформи з production-grade ML.",
+    descriptionEn:
+      "Brighton is the South of England's leading creative tech and digital agency hub, with a thriving game development community, marketing technology firms, and sustainable tech startups. Its proximity to London attracts strong ML talent at lower cost-of-living rates. Codeworth serves Brighton digital agencies, gaming studios, and martech platforms with production-grade ML for personalisation, player analytics, and campaign optimisation.",
+    seoTitle: "ML-консалтинг у Брайтоні | Машинне навчання для digital-агентств | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Brighton | ML Agency | Codeworth",
+    seoDesc:
+      "Машинне навчання у Брайтоні: marketing AI, game analytics, personalisation. Від £3,500. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Brighton: marketing AI, game analytics, campaign optimisation ML. From £3,500. Codeworth ML agency.",
+    stats: [
+      { label: "ML-компаній", labelEn: "ML companies", value: "290+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "1,950+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "68+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£48k" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "4+" },
+    ],
+    faq: [
+      {
+        q: "Яка digital-технологічна сцена у Брайтоні?",
+        qEn: "What is Brighton's digital tech scene like?",
+        a: "Брайтон — один із найжвавіших digital-хабів Великобританії поза Лондоном. Тут сконцентровані сотні digital-агентств, маркетингових платформ, gaming-студій та sustainable tech компаній. Місто відоме своєю відкритою технологічною спільнотою та сильною культурою стартапів.",
+        aEn: "Brighton hosts one of the UK's most vibrant digital tech communities outside London. Hundreds of digital agencies, martech platforms, gaming studios, and sustainable tech firms are based here. The city is known for its open tech community, regular meetups, and strong startup culture — making it a natural fit for adopting ML early.",
+      },
+      {
+        q: "Які ML-застосування найбільш корисні для маркетингових компаній?",
+        qEn: "Which ML use cases are most valuable for marketing companies?",
+        a: "Для маркетингових компаній найбільш цінні: предиктивна сегментація аудиторії, ML-оптимізація рекламних кампаній, churn prediction для клієнтів, NLP-аналіз відгуків та LTV-прогнозування. Ці рішення безпосередньо покращують ROI рекламних витрат.",
+        aEn: "For marketing companies the highest-value ML use cases are: predictive audience segmentation, ML-driven campaign bid optimisation, client churn prediction, NLP sentiment analysis of reviews, and customer LTV forecasting. These directly improve return on ad spend and client retention.",
+      },
+      {
+        q: "Чи розробляєте ви ML для ігрової індустрії?",
+        qEn: "Do you develop ML for the gaming industry?",
+        a: "Так. Ми розробляємо ML для gaming: player behaviour analytics, churn prediction, dynamic difficulty adjustment, fraud detection для in-game транзакцій та matchmaking-алгоритми. Стек: PyTorch для нейронних мереж, Spark для event-стрімінгу, A/B тестування ML-гіпотез.",
+        aEn: "Yes. We build gaming ML for player behaviour analytics, churn prediction, dynamic difficulty adjustment, in-game transaction fraud detection, and matchmaking algorithms. Stack: PyTorch for neural networks, Apache Spark for event streaming, and rigorous A/B testing of ML-driven feature changes.",
+      },
+      {
+        q: "Чи можна працювати з вами дистанційно з Брайтона?",
+        qEn: "Can we work with you remotely from Brighton?",
+        a: "Так, ми повністю дистанційна команда. Більшість наших клієнтів по всій Великобританії взаємодіють через відео-зустрічі, Slack та async sprint-демо. Брайтонські клієнти відзначають, що отримують якість лондонського рівня при нижчих витратах.",
+        aEn: "Yes, we operate as a fully remote team. Most of our UK clients engage via video calls, Slack, and async sprint demos. Brighton clients consistently note they receive London-quality ML engineering at significantly lower cost — with no travel overhead.",
+      },
+      {
+        q: "Скільки коштує ML-консультант у Брайтоні?",
+        qEn: "How much does an ML consultant cost in Brighton?",
+        a: "Брайтонські ML-фрілансери беруть £450–£750/день. Наші фіксовані пакети стартують від £3,500 (PoC, 3–4 тижні) і дають передбачуваний бюджет без погодинного тарифу. Production ML — від £10,000.",
+        aEn: "Brighton ML freelancer rates run £450–£750/day. Our fixed-price packages start from £3,500 for a PoC (3–4 weeks) — giving predictable budget without hourly billing. Production ML systems from £10,000.",
+      },
+    ],
+  },
+  {
+    slug: "southampton",
+    nameUk: "Саутгемптон",
+    nameEn: "Southampton",
+    region: "Гемпшир",
+    regionEn: "Hampshire",
+    population: "850,000",
+    populationEn: "850,000",
+    businesses: 38000,
+    description:
+      "Саутгемптон — провідний центр морського AI (ABP, Lloyd's Register), оборонних технологій (BAE Systems), університетських досліджень ML (University of Southampton — один із провідних AI-дослідницьких центрів Великобританії) та фармацевтично-біотехнологічного сектору. Codeworth допомагає саутгемптонським компаніям впроваджувати ML у maritime operations, оборонних застосуваннях та life sciences.",
+    descriptionEn:
+      "Southampton is a centre for maritime AI (ABP, Lloyd's Register), defence technology (BAE Systems proximity), world-class ML research (University of Southampton AI group), and a growing pharma and biotech sector. The combination of heavy industry, academia, and regulated sectors creates demand for robust, explainable ML systems. Codeworth delivers production ML for Southampton businesses in maritime, defence supply chain, and life sciences.",
+    seoTitle: "ML-консалтинг у Саутгемптоні | Машинне навчання для maritime & defence | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Southampton | ML Agency | Codeworth",
+    seoDesc:
+      "Машинне навчання у Саутгемптоні: maritime AI, defence tech, biotech ML. Від £3,500. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Southampton: maritime AI, defence supply chain, biotech ML. From £3,500. Codeworth ML agency.",
+    stats: [
+      { label: "ML-компаній", labelEn: "ML companies", value: "310+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "2,100+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "72+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£50k" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "5+" },
+    ],
+    faq: [
+      {
+        q: "Як ML застосовується у морській індустрії Саутгемптона?",
+        qEn: "How is ML applied in Southampton's maritime industry?",
+        a: "Maritime AI у Саутгемптоні охоплює: predictive maintenance для суднових двигунів і обладнання, оптимізацію маршрутів для зниження витрат палива, ML-аналітику порту для управління трафіком, anomaly detection у вантажних операціях та NLP для автоматизації митної документації.",
+        aEn: "Maritime AI in Southampton covers predictive maintenance for ship engines and port equipment, route optimisation to reduce fuel costs, port traffic management ML, anomaly detection in cargo operations, and NLP for automated customs documentation. ABP and Lloyd's Register are active adopters — creating a strong ecosystem for maritime ML vendors.",
+      },
+      {
+        q: "Яку роль відіграє University of Southampton у ML-досліджень?",
+        qEn: "What role does the University of Southampton play in ML research?",
+        a: "University of Southampton входить до топ-10 UK університетів за ML-дослідженнями, із сильними групами у reinforcement learning, NLP та computer vision. Університет активно співпрацює з індустрією через спінофи та дослідницькі партнерства. Codeworth підтримує зв'язок з академічними колами для впровадження найновіших методів.",
+        aEn: "The University of Southampton ranks among the UK's top-10 ML research institutions, with strong groups in reinforcement learning, NLP, and computer vision. The university actively collaborates with industry through spinouts and research partnerships. This creates a pipeline of ML talent and cutting-edge techniques available to Southampton businesses.",
+      },
+      {
+        q: "Які регуляторні особливості ML у оборонному секторі?",
+        qEn: "What are the regulatory considerations for ML in the defence sector?",
+        a: "Оборонний ML підпадає під суворі вимоги: UK GDPR, Defence and Security Accelerator (DASA) стандарти, MOD AI Ethics principles та export control regulations. Ми розробляємо explainable AI з SHAP-документацією та audit trails, що відповідають вимогам оборонних контрактів.",
+        aEn: "Defence ML is subject to strict requirements including UK GDPR, Defence and Security Accelerator (DASA) standards, MOD AI Ethics Principles, and export control regulations. We build explainable ML with SHAP documentation and full audit trails — meeting the transparency requirements of MOD and prime contractor procurement.",
+      },
+      {
+        q: "Як ML використовується у біотех та фармацевтиці Саутгемптона?",
+        qEn: "How is ML used in Southampton biotech and pharma?",
+        a: "Для біотех та фармацевтики ML застосовується у: прискоренні drug discovery через молекулярне моделювання, clinical trial optimisation, NLP для аналізу наукової літератури, predictive analytics для manufacturing quality control та adverse event detection у пост-маркетинговому спостереженні.",
+        aEn: "Southampton biotech and pharma companies use ML for: accelerating drug discovery via molecular modelling, clinical trial optimisation, NLP analysis of scientific literature, predictive analytics for manufacturing quality control, and adverse event detection in post-market surveillance. We build compliant ML following GxP validation principles.",
+      },
+      {
+        q: "Який ROI дає ML для виробничих компаній Саутгемптона?",
+        qEn: "What ROI does ML deliver for Southampton manufacturing businesses?",
+        a: "Типові результати для виробничих компаній: predictive maintenance — зниження незапланованих простоїв на 40–60%, quality control CV — зниження браку на 25–35%, process optimisation — зниження витрат енергії на 15–20%. Середній термін окупності — 4–8 місяців.",
+        aEn: "Typical results for Southampton manufacturing clients: predictive maintenance reduces unplanned downtime by 40–60%, quality control CV cuts scrap rates by 25–35%, process optimisation lowers energy costs by 15–20%. Average payback period is 4–8 months — making the business case straightforward.",
+      },
+    ],
+  },
 ];
 
 export function getCity(slug: string): GeoCity | undefined {

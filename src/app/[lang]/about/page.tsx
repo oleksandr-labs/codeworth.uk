@@ -55,7 +55,7 @@ const TIMELINE_UK = [
   { year: "2021", title: "Заснування", text: "Перші фріланс-проєкти в data science та ML. Команда з 2 фахівців." },
   { year: "2022", title: "Перші ML-моделі", text: "Перша production-модель NLP-класифікатора. Перший контракт з UK-клієнтом." },
   { year: "2023", title: "ML-консалтинг", text: "Офіційна реєстрація, розширення до 5 спеціалістів. 10+ успішних ML-проєктів." },
-  { year: "2024", title: "Масштабування", text: "Запуск MLOps-практики. Fraud detection для FinTech. 40+ задеплоєних моделей." },
+  { year: "2024", title: "Масштабування", text: "Запуск MLOps-практики. Fraud detection для FinTech. 60+ задеплоєних моделей." },
   { year: "2025", title: "Codeworth 2.0", text: "Новий сайт, ML-портфоліо, вихід на UK та EU ринки." },
 ];
 
@@ -63,7 +63,7 @@ const TIMELINE_EN = [
   { year: "2021", title: "Founded", text: "First freelance projects in data science and ML. Team of 2 specialists." },
   { year: "2022", title: "First ML Models", text: "First production NLP classifier. First contract with a UK client." },
   { year: "2023", title: "ML Consultancy", text: "Official registration, expanded to 5 specialists. 10+ successful ML projects." },
-  { year: "2024", title: "Scaling Up", text: "MLOps practice launch. Fraud detection for FinTech. 40+ deployed models." },
+  { year: "2024", title: "Scaling Up", text: "MLOps practice launch. Fraud detection for FinTech. 60+ deployed models." },
   { year: "2025", title: "Codeworth 2.0", text: "New website, ML portfolio, expansion to UK and EU markets." },
 ];
 
@@ -83,17 +83,17 @@ const TECH_STACK = [
 ];
 
 const STATS_UK = [
-  { end: 40, suffix: "+", label: "ML-моделей" },
-  { end: 12, suffix: "+", label: "Галузей" },
-  { end: 4, suffix: "+", label: "Роки в ML" },
-  { end: 8, suffix: "", label: "Спеціалістів" },
+  { end: 60, suffix: "+", label: "ML-моделей" },
+  { end: 15, suffix: "+", label: "Галузей" },
+  { end: 5, suffix: "+", label: "Роки в ML" },
+  { end: 12, suffix: "", label: "Спеціалістів" },
 ];
 
 const STATS_EN = [
-  { end: 40, suffix: "+", label: "ML Models" },
-  { end: 12, suffix: "+", label: "Industries" },
-  { end: 4, suffix: "+", label: "Years in ML" },
-  { end: 8, suffix: "", label: "Specialists" },
+  { end: 60, suffix: "+", label: "ML Models" },
+  { end: 15, suffix: "+", label: "Industries" },
+  { end: 5, suffix: "+", label: "Years in ML" },
+  { end: 12, suffix: "", label: "Specialists" },
 ];
 
 const organizationSchema = {
@@ -104,7 +104,7 @@ const organizationSchema = {
   logo: "https://codeworth.uk/logo.svg",
   description: "ML-компанія — кастомні моделі машинного навчання, fraud detection, NLP, комп'ютерний зір та MLOps для UK та EU бізнесу.",
   foundingDate: "2021",
-  numberOfEmployees: { "@type": "QuantitativeValue", value: 8 },
+  numberOfEmployees: { "@type": "QuantitativeValue", value: 12 },
   address: { "@type": "PostalAddress", addressLocality: "London", addressCountry: "GB" },
   contactPoint: {
     "@type": "ContactPoint",

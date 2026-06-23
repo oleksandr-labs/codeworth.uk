@@ -56,7 +56,7 @@ export const USE_CASES: UseCase[] = [
     metaDescriptionEn:
       "GPT-4o RAG chatbot for 24/7 support. 68% queries resolved automatically. From £1,800. Codeworth.",
     metaDescriptionUk:
-      "RAG чат-бот GPT-4o для підтримки 24/7. 68% запитів вирішується автоматично. Від 75 000 ₴. Codeworth.",
+      "RAG чат-бот GPT-4o для підтримки 24/7. 68% запитів вирішується автоматично. Від £1,800. Codeworth.",
     relatedPortfolio: ["ai-chatbot-saas"],
     relatedServices: ["artificial-intelligence"],
     relatedExtras: ["ai-chatbot-rag", "feat-floating-chat"],
@@ -104,19 +104,19 @@ export const USE_CASES: UseCase[] = [
     problemUk:
       "AI звучить дорого і складно. Команда не знає з чого почати — чи потрібна кастомна модель, скільки даних потрібно, який реальний ROI.",
     solutionEn:
-      "We start with the smallest viable AI: a RAG chatbot using your existing FAQ or docs as the knowledge base. No custom model training, no large dataset. From £1,800 / 75,000 UAH. Live in 3 weeks.",
+      "We start with the smallest viable AI: a RAG chatbot using your existing FAQ or docs as the knowledge base. No custom model training, no large dataset. From £1,800. Live in 3 weeks.",
     solutionUk:
-      "Ми починаємо з найменшого можливого AI: RAG-чатбот на вашому існуючому FAQ або документації як базі знань. Без навчання кастомної моделі, без великого датасету. Від 75 000 ₴. Запуск за 3 тижні.",
+      "Ми починаємо з найменшого можливого AI: RAG-чатбот на вашому існуючому FAQ або документації як базі знань. Без навчання кастомної моделі, без великого датасету. Від £1,800. Запуск за 3 тижні.",
     resultQuoteEn:
       "68% of support queries resolved automatically. Support team workload halved. Average payback period: 6–8 weeks from reduced support staff hours.",
     resultQuoteUk:
       "68% запитів підтримки вирішуються автоматично. Навантаження на команду підтримки зменшується вдвічі. Середній термін окупності: 6–8 тижнів за рахунок скорочення годин роботи підтримки.",
     metaTitleEn: "Add AI Customer Support From £1,800 | RAG Chatbot | Codeworth",
-    metaTitleUk: "AI-підтримка від 75 000 ₴ | RAG чат-бот | Codeworth",
+    metaTitleUk: "AI-підтримка від £1,800 | RAG чат-бот | Codeworth",
     metaDescriptionEn:
       "RAG chatbot on your existing docs. 68% queries automated. From £1,800 / 3 weeks. Codeworth.",
     metaDescriptionUk:
-      "RAG чат-бот на вашій документації. 68% запитів автоматизовано. Від 75 000 ₴ / 3 тижні. Codeworth.",
+      "RAG чат-бот на вашій документації. 68% запитів автоматизовано. Від £1,800 / 3 тижні. Codeworth.",
     relatedPortfolio: ["ai-chatbot-saas"],
     relatedServices: ["artificial-intelligence"],
     relatedExtras: ["ai-chatbot-rag"],

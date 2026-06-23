@@ -17,6 +17,17 @@
 - [x] geo.ts: 13 cities stats and FAQ year references refreshed to 2026
 - [x] services.ts: technology refs, year mentions, UAH pricing actualized
 
+## Session 2026-06-23 — Sprint 2: Content Expansion + Data Actualization
+
+### Done (Sprint 2)
+- [x] blog.ts: added posts 101-110 (financial crime, NLP legal, e-comm recommendations, NHS clinical AI, transformers explainer, supply chain, CX personalisation, MLOps costs, insurance actuarial, vector embeddings)
+- [x] reviews.ts: populated REVIEWS with 9 UK ML client testimonials (from empty to 4.9★ aggregate)
+- [x] glossary.ts: reclassified web-dev category → 7 ML-appropriate categories + added 20 new AI/ML terms (attention, embeddings, gradient boosting, model registry, FCA Consumer Duty, algorithmic bias, ROI, etc.)
+- [x] use-cases.ts: fixed UAH/₴ prices → GBP; added 10 new ML use cases (AML, predictive maintenance, NHS coding, LLM support, dynamic pricing, HR attrition, document intelligence, demand sensing, credit risk, churn)
+- [x] about/page.tsx: updated stats (40→60+ models, 4→5+ years, 8→12 specialists, 12→15+ industries)
+- [x] careers.ts: 4 new ML positions (ML Engineer £55-85k, Senior ML Engineer £85-120k, NLP Engineer £60-90k, MLOps Engineer £70-100k)
+- [x] geo.ts: 3 new UK city pages (Liverpool, Brighton, Southampton) with ML stats + 5 FAQs each
+
 ### Pending
 - [ ] 19 Dependabot vulnerabilities (8 high) — address when time permits
 - [ ] mlops-checklist tool — component not yet built (coming soon)
