@@ -14,17 +14,17 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isUk = lang === "uk";
   return {
     title: isUk
-      ? "Блог — Codeworth | Веб-розробка, SEO, дизайн, кейси"
-      : "Blog — Codeworth | Web Development, SEO, Design, Cases",
+      ? "Блог — Codeworth | ML, AI, NLP, MLOps, LLM — гіди та кейси"
+      : "Blog — Codeworth | ML, AI, NLP, MLOps, LLM — Guides & Case Studies",
     description: isUk
-      ? "Блог Codeworth — статті про веб-розробку на Next.js, SEO-просування, UI/UX дизайн, e-commerce та кейси клієнтів. Корисний контент для бізнесу."
-      : "Codeworth Blog — articles about Next.js web development, SEO, UI/UX design, e-commerce, and client case studies. Useful content for businesses.",
+      ? "Блог Codeworth — практичні гіди з Machine Learning, NLP, Computer Vision, MLOps, LLM & RAG та предиктивної аналітики. Кейси та інсайти для UK бізнесу."
+      : "Codeworth Blog — practical guides on Machine Learning, NLP, Computer Vision, MLOps, LLM & RAG, and predictive analytics. Cases and insights for UK business.",
     alternates: buildAlternates(lang, 'blog'),
     openGraph: {
       title: isUk ? "Блог — Codeworth" : "Blog — Codeworth",
       description: isUk
-        ? "Блог Codeworth — статті про веб-розробку на Next.js, SEO-просування, UI/UX дизайн, e-commerce та кейси клієнтів."
-        : "Codeworth Blog — articles about Next.js web development, SEO, UI/UX design, e-commerce, and client case studies.",
+        ? "Практичні гіди з ML, NLP, Computer Vision, MLOps, LLM & RAG та предиктивної аналітики від Codeworth."
+        : "Practical guides on ML, NLP, Computer Vision, MLOps, LLM & RAG, and predictive analytics from Codeworth.",
       type: "website",
       url: `https://codeworth.uk/${lang}/blog`,
       images: [{ url: "/og/blog.png", width: 1200, height: 630, alt: isUk ? "Блог Codeworth" : "Codeworth Blog" }],
@@ -33,8 +33,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       card: "summary_large_image",
       title: isUk ? "Блог — Codeworth" : "Blog — Codeworth",
       description: isUk
-        ? "Статті про веб-розробку, SEO, дизайн та e-commerce від команди Codeworth."
-        : "Articles about web development, SEO, design, and e-commerce from the Codeworth team.",
+        ? "ML, NLP, MLOps, LLM & RAG — гіди та кейси від команди Codeworth."
+        : "ML, NLP, MLOps, LLM & RAG — guides and case studies from the Codeworth team.",
       images: ["/og/blog.png"],
     },
   };

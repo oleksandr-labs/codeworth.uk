@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { buildAlternates } from "@/i18n";
 import Link from "next/link";
-import { EmojiIcon } from "@/components/ui/EmojiIcon";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
@@ -14,13 +13,7 @@ import {
   Briefcase,
   ShoppingBag,
   BookOpen,
-  Info,
-  Phone,
-  HelpCircle,
   FileText,
-  LayoutGrid,
-  Users,
-  DollarSign,
   Image,
   Map,
   ChevronRight,
@@ -230,47 +223,6 @@ export default async function SitemapPage({ params }: { params: Promise<{ lang: 
                   </div>
                 );
               })}
-            </div>
-          </Container>
-        </section>
-
-        {/* Niches section */}
-        <section className="py-8 bg-gray-50">
-          <Container>
-            <div className="flex items-center gap-3 mb-8">
-              <LayoutGrid className="w-5 h-5 text-orange-600" />
-              <h2 className="text-2xl font-bold text-gray-900">{isUk ? "Готові рішення по галузях" : "Ready-Made Solutions by Industry"}</h2>
-              <span className="ml-2 px-3 py-1 bg-orange-100 text-orange-700 text-sm rounded-full font-medium">
-                {isUk ? `${NICHES_DATA.length}+ рішень` : `${NICHES_DATA.length}+ solutions`}
-              </span>
-            </div>
-            <div className="grid gap-6">
-              {nichesByCategory.map(({ category, niches }) => (
-                <div key={category} className="border border-orange-200 rounded-xl overflow-hidden">
-                  <div className="px-5 py-3 bg-orange-50 border-b border-orange-100">
-                    <h3 className="text-sm font-semibold text-orange-800">{category}</h3>
-                  </div>
-                  <ul className="divide-y divide-gray-100 bg-white">
-                    {niches.map((niche) => (
-                      <li key={niche.slug}>
-                        <Link
-                          href={lp(`/niches/${niche.slug}`)}
-                          className="flex items-center gap-3 px-5 py-2.5 hover:bg-orange-50 transition-colors group"
-                        >
-                          <EmojiIcon emoji={niche.emoji} className="w-5 h-5 shrink-0" />
-                          <div className="flex-1 min-w-0">
-                            <span className="text-sm font-medium text-gray-800 dark:text-neutral-200 group-hover:text-orange-700 transition-colors">
-                              {niche.title}
-                            </span>
-                            <span className="text-xs text-gray-400 dark:text-neutral-500 ml-2">{niche.subtitle}</span>
-                          </div>
-                          <ChevronRight className="w-4 h-4 text-gray-300 group-hover:text-orange-500 shrink-0 transition-colors" />
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
             </div>
           </Container>
         </section>

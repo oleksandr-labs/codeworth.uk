@@ -10,19 +10,25 @@ import { analytics } from "@/lib/analytics";
 const SERVICES_UK = [
   { label: "Штучний інтелект (AI)", href: "/services/artificial-intelligence" },
   { label: "Machine Learning", href: "/services/machine-learning" },
+  { label: "NLP та обробка тексту", href: "/services/nlp" },
+  { label: "Комп'ютерний зір (CV)", href: "/services/computer-vision" },
+  { label: "MLOps та деплой", href: "/services/mlops" },
+  { label: "LLM та RAG", href: "/services/llm-rag" },
+  { label: "Предиктивна аналітика", href: "/services/predictive-analytics" },
   { label: "AI-модулі та рішення", href: "/extras" },
-  { label: "Кейси використання", href: "/use-cases" },
   { label: "Ціни", href: "/pricing" },
-  { label: "Порівняння підходів", href: "/compare" },
 ];
 
 const SERVICES_EN = [
   { label: "Artificial Intelligence", href: "/services/artificial-intelligence" },
   { label: "Machine Learning", href: "/services/machine-learning" },
+  { label: "NLP & Text Processing", href: "/services/nlp" },
+  { label: "Computer Vision", href: "/services/computer-vision" },
+  { label: "MLOps & Deployment", href: "/services/mlops" },
+  { label: "LLM & RAG Development", href: "/services/llm-rag" },
+  { label: "Predictive Analytics", href: "/services/predictive-analytics" },
   { label: "AI Modules & Solutions", href: "/extras" },
-  { label: "Use Cases", href: "/use-cases" },
   { label: "Pricing", href: "/pricing" },
-  { label: "Compare Approaches", href: "/compare" },
 ];
 
 const COMPANY_UK = [

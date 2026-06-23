@@ -15,17 +15,17 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isUk = lang === "uk";
   return {
     title: isUk
-      ? "ML-послуги для бізнесу | Codeworth"
-      : "ML Services for Business | Codeworth",
+      ? "ML та AI послуги для бізнесу | NLP, CV, MLOps, LLM, Предиктивна аналітика | Codeworth"
+      : "ML & AI Services UK | NLP, Computer Vision, MLOps, LLM & RAG, Predictive Analytics | Codeworth",
     description: isUk
-      ? "Кастомні ML-моделі, fraud detection, NLP, комп'ютерний зір, RAG chatbots та MLOps. Від proof of concept до продакшн-деплою. Codeworth — ML-консалтинг."
-      : "Custom ML models, fraud detection, NLP, computer vision, RAG chatbots and MLOps. From proof of concept to production deployment. Codeworth — ML consultancy.",
+      ? "NLP-розробка, комп'ютерний зір, MLOps, LLM та RAG, предиктивна аналітика, кастомні ML-моделі. Codeworth — ML-консалтинг UK та EU. Від PoC до продакшну."
+      : "NLP development, computer vision, MLOps, LLM & RAG, predictive analytics and custom ML models — UK consultancy from PoC to production. Free discovery call.",
     alternates: buildAlternates(lang, 'services'),
     openGraph: {
-      title: isUk ? "ML-послуги — Codeworth" : "ML Services — Codeworth",
+      title: isUk ? "ML та AI послуги — Codeworth" : "ML & AI Services — Codeworth",
       description: isUk
-        ? "Кастомні ML-моделі, fraud detection, NLP та MLOps від Codeworth."
-        : "Custom ML models, fraud detection, NLP and MLOps by Codeworth.",
+        ? "NLP, комп'ютерний зір, MLOps, LLM & RAG, предиктивна аналітика та кастомні ML-моделі від Codeworth."
+        : "NLP, computer vision, MLOps, LLM & RAG, predictive analytics and custom ML models by Codeworth.",
       type: "website",
       url: `https://codeworth.uk/${lang}/services`,
       images: [{ url: "/og/services.png", width: 1200, height: 630, alt: isUk ? "ML-послуги Codeworth" : "Codeworth ML Services" }],

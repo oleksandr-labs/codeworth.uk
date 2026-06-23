@@ -152,10 +152,51 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     })),
   };
 
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": "https://codeworth.uk/#organization",
+    name: "Codeworth",
+    url: "https://codeworth.uk",
+    logo: "https://codeworth.uk/logo.png",
+    image: "https://codeworth.uk/og/home.png",
+    description: isUk
+      ? "ML/AI консалтинг для бізнесу — кастомні ML-моделі, NLP, комп'ютерний зір, MLOps, LLM та RAG системи."
+      : "ML/AI consultancy for business — custom ML models, NLP, computer vision, MLOps, LLM and RAG systems.",
+    email: "hello@codeworth.uk",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Kyiv",
+      addressCountry: "UA",
+    },
+    areaServed: ["GB", "UA", "EU"],
+    knowsAbout: [
+      "Machine Learning", "NLP", "Computer Vision", "MLOps", "LLM", "RAG",
+      "Predictive Analytics", "Fraud Detection", "Deep Learning", "Python",
+    ],
+    sameAs: [],
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://codeworth.uk/#website",
+    url: "https://codeworth.uk",
+    name: "Codeworth",
+    publisher: { "@id": "https://codeworth.uk/#organization" },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: { "@type": "EntryPoint", urlTemplate: "https://codeworth.uk/en/blog?q={search_term_string}" },
+      "query-input": "required name=search_term_string",
+    },
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
       <main id="main-content" className="flex-1">
         <HeroSection />
         <ServicesSection lang={lang} />

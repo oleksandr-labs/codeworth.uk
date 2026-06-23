@@ -69,6 +69,33 @@ const SERVICE_CONFIGS: Record<
     emoji: "⚙️",
     icon: "default",
   },
+  "computer-vision": {
+    title: "Computer Vision",
+    subtitle: "Object Detection · OCR · Quality Inspection · Medical Imaging",
+    chips: ["YOLOv8", "OpenCV", "PyTorch", "TensorRT"],
+    gradient: ["#0c1a2e", "#0e3554"],
+    accentColor: "#38bdf8",
+    emoji: "👁",
+    icon: "chart",
+  },
+  "llm-rag": {
+    title: "LLM & RAG Development",
+    subtitle: "RAG Systems · Fine-Tuning · AI Chatbots · On-Premise LLM",
+    chips: ["GPT-4o", "Llama 3", "LangChain", "Qdrant"],
+    gradient: ["#1e1b4b", "#3b0764"],
+    accentColor: "#a78bfa",
+    emoji: "🤖",
+    icon: "brain",
+  },
+  "predictive-analytics": {
+    title: "Predictive Analytics",
+    subtitle: "Demand Forecasting · Churn Prediction · Credit Risk · Revenue",
+    chips: ["XGBoost", "Prophet", "SHAP", "Airflow"],
+    gradient: ["#052e16", "#064e3b"],
+    accentColor: "#34d399",
+    emoji: "📈",
+    icon: "chart",
+  },
 };
 
 function renderIcon(type: string, color: string) {
