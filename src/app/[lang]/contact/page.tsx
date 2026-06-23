@@ -35,47 +35,47 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 }
 
 const QUICK_FAQ_UK = [
-  { q: "Скільки коштує розробка сайту?", a: "Від 8 000 грн за лендінг до 60 000+ грн за складний портал. Точну ціну визначаємо після брифу." },
-  { q: "Скільки часу займає розробка?", a: "Лендінг — 5–10 днів, корпоративний сайт — 2–4 тижні, e-commerce — 4–8 тижнів." },
-  { q: "Чи можу я редагувати сайт самостійно?", a: "Так, ми підключаємо CMS (Sanity) — ви самі змінюєте тексти, фото та сторінки." },
-  { q: "Чи є гарантія та підтримка?", a: "Так, 1–6 місяців безкоштовної підтримки залежно від пакету + платні плани обслуговування." },
+  { q: "Скільки коштує ML-проєкт?", a: "Від 75 000 ₴ за PoC до 500 000+ ₴ за production ML-систему. Точна ціна після аудиту даних." },
+  { q: "Скільки часу займає розробка?", a: "PoC — 3–4 тижні, production ML — 8–12 тижнів, enterprise-система — 12–20 тижнів." },
+  { q: "Чи потрібні нам власні дані?", a: "Для більшості ML-задач достатньо 1–10 тис. прикладів. Допомагаємо з розміткою та доповненням." },
+  { q: "Чи є гарантія якості моделі?", a: "Гарантуємо мінімальний F1-score або AUC перед здачею. 3 місяці гарантійної підтримки." },
 ];
 
 const QUICK_FAQ_EN = [
-  { q: "How much does a website cost?", a: "From $200 for a landing page to $1,500+ for a complex portal. Exact price is determined after briefing." },
-  { q: "How long does development take?", a: "Landing page — 5–10 days, corporate site — 2–4 weeks, e-commerce — 4–8 weeks." },
-  { q: "Can I edit the website myself?", a: "Yes, we connect a CMS (Sanity) — you can update texts, photos, and pages yourself." },
-  { q: "Is there a warranty and support?", a: "Yes, 1–6 months of free support depending on the package + paid maintenance plans." },
+  { q: "How much does an ML project cost?", a: "From £1,800 for a PoC to £12,000+ for an enterprise ML system. Exact price after data audit." },
+  { q: "How long does development take?", a: "PoC — 3–4 weeks, production ML — 8–12 weeks, enterprise platform — 12–20 weeks." },
+  { q: "Do we need our own data?", a: "Most ML tasks need 1–10K labelled examples. We help with annotation and data augmentation." },
+  { q: "Is there a quality guarantee?", a: "We guarantee minimum F1-score or AUC before delivery. 3-month warranty support included." },
 ];
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "ProfessionalService",
   "@id": "https://codeworth.uk/#business",
   name: "Codeworth",
-  description: "Веб-студія повного циклу — розробка сайтів, SEO, дизайн та маркетплейс готових рішень для бізнесу в Україні.",
+  description: "ML/AI consultancy for business — custom machine learning models, MLOps, NLP, Computer Vision for UK and EU companies.",
   url: "https://codeworth.uk",
   email: "hello@codeworth.uk",
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Київ",
+    addressLocality: "Kyiv",
     addressCountry: "UA",
   },
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "09:00",
-      closes: "19:00",
+      opens: "10:00",
+      closes: "18:00",
     },
   ],
-  priceRange: "₴₴",
-  currenciesAccepted: "UAH",
-  paymentAccepted: "Bank Transfer, LiqPay, Monobank",
-  areaServed: {
-    "@type": "Country",
-    name: "Ukraine",
-  },
+  priceRange: "££",
+  currenciesAccepted: "GBP, UAH",
+  paymentAccepted: "Bank Transfer, SWIFT",
+  areaServed: [
+    { "@type": "Country", name: "United Kingdom" },
+    { "@type": "Country", name: "Ukraine" },
+  ],
 };
 
 export default async function ContactPage({ params }: { params: Promise<{ lang: string }> }) {
@@ -170,7 +170,7 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
                         <p className="text-xs text-neutral-400 mb-0.5">{isUk ? "Розташування" : "Location"}</p>
                         <span className="font-medium text-neutral-900">{isUk ? "Київ, Україна" : "Kyiv, Ukraine"}</span>
                         <p className="text-xs text-neutral-400">
-                          {isUk ? "Працюємо дистанційно по всій Україні" : "Working remotely across Ukraine"}
+                          {isUk ? "Дистанційно — UK / EU / Україна" : "Remote — UK / EU / Ukraine"}
                         </p>
                       </div>
                     </div>

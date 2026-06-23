@@ -8,45 +8,30 @@ import { LogoWordmark } from "@/components/ui/Logo";
 import { analytics } from "@/lib/analytics";
 
 const SERVICES_UK = [
-  { label: "Розробка сайтів", href: "/services/website-dev" },
-  { label: "Інтернет-магазини", href: "/services/ecommerce" },
-  { label: "Лендінги", href: "/services/landing" },
-  { label: "SEO-просування", href: "/services/seo" },
-  { label: "UI/UX Дизайн", href: "/services/design" },
-  { label: "CRM та бізнес-системи", href: "/services/crm" },
-  { label: "Мобільні додатки (PWA)", href: "/services/mobile" },
-  { label: "Чат-боти", href: "/services/chatbots" },
   { label: "Штучний інтелект (AI)", href: "/services/artificial-intelligence" },
   { label: "Machine Learning", href: "/services/machine-learning" },
-  { label: "ERP-системи", href: "/erp-development" },
+  { label: "AI-модулі та рішення", href: "/extras" },
+  { label: "Кейси використання", href: "/use-cases" },
+  { label: "Ціни", href: "/pricing" },
+  { label: "Порівняння підходів", href: "/compare" },
 ];
 
 const SERVICES_EN = [
-  { label: "Website Development", href: "/services/website-dev" },
-  { label: "E-commerce", href: "/services/ecommerce" },
-  { label: "Landing Pages", href: "/services/landing" },
-  { label: "SEO Promotion", href: "/services/seo" },
-  { label: "UI/UX Design", href: "/services/design" },
-  { label: "CRM & Business Systems", href: "/services/crm" },
-  { label: "Mobile Apps (PWA)", href: "/services/mobile" },
-  { label: "Chatbots", href: "/services/chatbots" },
   { label: "Artificial Intelligence", href: "/services/artificial-intelligence" },
   { label: "Machine Learning", href: "/services/machine-learning" },
-  { label: "ERP Systems", href: "/erp-development" },
+  { label: "AI Modules & Solutions", href: "/extras" },
+  { label: "Use Cases", href: "/use-cases" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Compare Approaches", href: "/compare" },
 ];
 
 const COMPANY_UK = [
   { label: "Про нас", href: "/about" },
   { label: "Портфоліо", href: "/portfolio" },
   { label: "Відгуки", href: "/reviews" },
-  { label: "Маркетплейс", href: "/marketplace" },
-  { label: "Готові рішення по нішах", href: "/niches" },
-  { label: "Для стартапів", href: "/startup" },
-  { label: "Доробки та модулі", href: "/extras" },
-  { label: "Ціни", href: "/pricing" },
+  { label: "Вакансії", href: "/careers" },
   { label: "Блог", href: "/blog" },
   { label: "Глосарій", href: "/glossary" },
-  { label: "Вакансії", href: "/careers" },
   { label: "Контакти", href: "/contact" },
   { label: "Карта сайту", href: "/sitemap" },
 ];
@@ -55,14 +40,9 @@ const COMPANY_EN = [
   { label: "About Us", href: "/about" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "Reviews", href: "/reviews" },
-  { label: "Marketplace", href: "/marketplace" },
-  { label: "Niche Solutions", href: "/niches" },
-  { label: "Startup Solutions", href: "/startup" },
-  { label: "Add-ons & Modules", href: "/extras" },
-  { label: "Pricing", href: "/pricing" },
+  { label: "Careers", href: "/careers" },
   { label: "Blog", href: "/blog" },
   { label: "Glossary", href: "/glossary" },
-  { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
   { label: "Sitemap", href: "/sitemap" },
 ];
@@ -124,8 +104,8 @@ export function Footer() {
             </Link>
             <p className="text-sm text-neutral-400 leading-relaxed mb-5">
               {isUk
-                ? "Будуємо цифрові гнізда для бізнесу. Веб-студія повного циклу — від ідеї до запуску."
-                : "Building digital nests for business. Full-cycle web studio — from idea to launch."}
+                ? "ML/AI консалтинг для бізнесу. Розробляємо моделі, що вирішують реальні задачі."
+                : "ML/AI consultancy for business. We build models that solve real problems."}
             </p>
             <div className="flex flex-col gap-2 text-sm mb-5">
               <a href="mailto:hello@codeworth.uk" onClick={() => analytics.ctaClick("email", "footer")} className="flex items-center gap-2 text-neutral-400 hover:text-white transition-colors">

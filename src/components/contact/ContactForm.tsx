@@ -8,42 +8,44 @@ import { analytics } from "@/lib/analytics";
 import { useRecaptcha } from "@/hooks/useRecaptcha";
 
 const SERVICE_OPTIONS_UK = [
-  "Розробка сайту",
-  "Інтернет-магазин",
-  "Лендінг",
-  "SEO-просування",
-  "UI/UX Дизайн",
-  "Маркетплейс (готове рішення)",
-  "Доробка / Модуль",
-  "Технічна підтримка",
+  "Machine Learning (ML-модель)",
+  "Штучний інтелект (AI-система)",
+  "PoC / Proof of Concept",
+  "MLOps та підтримка моделей",
+  "NLP / Обробка тексту",
+  "Комп'ютерний зір (CV)",
+  "Recommendation Engine",
+  "AI-модуль / Готове рішення",
+  "Консультація по ML/AI",
   "Інше",
 ];
 
 const SERVICE_OPTIONS_EN = [
-  "Website Development",
-  "E-commerce",
-  "Landing Page",
-  "SEO Promotion",
-  "UI/UX Design",
-  "Marketplace (ready solution)",
-  "Add-on / Module",
-  "Technical Support",
+  "Machine Learning Model",
+  "Artificial Intelligence System",
+  "PoC / Proof of Concept",
+  "MLOps & Model Maintenance",
+  "NLP / Text Processing",
+  "Computer Vision (CV)",
+  "Recommendation Engine",
+  "AI Module / Ready Solution",
+  "ML/AI Consultation",
   "Other",
 ];
 
 const BUDGET_OPTIONS_UK = [
-  "До 10 000 грн",
-  "10 000 – 30 000 грн",
-  "30 000 – 80 000 грн",
-  "80 000+ грн",
+  "До £1,800 (PoC)",
+  "£1,800 – £4,500",
+  "£4,500 – £10,000",
+  "£10,000+",
   "Поки не визначився",
 ];
 
 const BUDGET_OPTIONS_EN = [
-  "Up to ₴10,000",
-  "₴10,000 – ₴30,000",
-  "₴30,000 – ₴80,000",
-  "₴80,000+",
+  "Up to £1,800 (PoC)",
+  "£1,800 – £4,500",
+  "£4,500 – £10,000",
+  "£10,000+",
   "Not decided yet",
 ];
 
@@ -62,7 +64,7 @@ export function ContactForm() {
   const defaultMessage = extraParam
     ? `${isUk ? "Хочу замовити" : "I want to order"}: ${decodeURIComponent(subjectParam || extraParam)}\n\n`
     : "";
-  const defaultService = extraParam ? (isUk ? "Доробка / Модуль" : "Add-on / Module") : "";
+  const defaultService = extraParam ? (isUk ? "AI-модуль / Готове рішення" : "AI Module / Ready Solution") : "";
 
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");

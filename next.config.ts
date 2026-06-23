@@ -138,6 +138,50 @@ const nextConfig: NextConfig = {
         destination: "/services/machine-learning",
         permanent: true,
       },
+      // Location pages → services
+      {
+        source: "/:lang/location/:path*",
+        destination: "/:lang/services",
+        permanent: true,
+      },
+      {
+        source: "/location/:path*",
+        destination: "/services",
+        permanent: true,
+      },
+      // Startup landing pages → portfolio
+      {
+        source: "/:lang/startup/:path*",
+        destination: "/:lang/portfolio",
+        permanent: true,
+      },
+      {
+        source: "/startup/:path*",
+        destination: "/portfolio",
+        permanent: true,
+      },
+      // Niches → AI solutions
+      {
+        source: "/:lang/niches/:path*",
+        destination: "/:lang/ai",
+        permanent: true,
+      },
+      {
+        source: "/niches/:path*",
+        destination: "/ai",
+        permanent: true,
+      },
+      // Marketplace → use-cases
+      {
+        source: "/:lang/marketplace/:path*",
+        destination: "/:lang/use-cases",
+        permanent: true,
+      },
+      {
+        source: "/marketplace/:path*",
+        destination: "/use-cases",
+        permanent: true,
+      },
       // www → non-www
       {
         source: "/:path*",

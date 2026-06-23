@@ -6,59 +6,60 @@ import { ArrowRight, Calculator } from "lucide-react";
 import { useLocale } from "@/components/layout/LocaleProvider";
 
 const PROJECT_TYPES_UK = [
-  { id: "landing", label: "Лендінг / Сайт-візитка", base: 8000 },
-  { id: "corporate", label: "Корпоративний сайт", base: 20000 },
-  { id: "ecommerce", label: "Інтернет-магазин", base: 40000 },
-  { id: "portal", label: "Портал / Платформа", base: 80000 },
-  { id: "marketplace", label: "Готове нішеве рішення", base: 4900 },
+  { id: "poc", label: "PoC / Proof of Concept", base: 75000 },
+  { id: "production-ml", label: "Production ML-модель", base: 180000 },
+  { id: "nlp", label: "Кастомна NLP-система", base: 270000 },
+  { id: "cv", label: "Комп'ютерний зір (CV)", base: 290000 },
+  { id: "enterprise", label: "Enterprise ML-платформа", base: 500000 },
 ];
 
 const PROJECT_TYPES_EN = [
-  { id: "landing", label: "Landing / Business card site", base: 8000 },
-  { id: "corporate", label: "Corporate website", base: 20000 },
-  { id: "ecommerce", label: "Online store", base: 40000 },
-  { id: "portal", label: "Portal / Platform", base: 80000 },
-  { id: "marketplace", label: "Ready-made niche solution", base: 4900 },
+  { id: "poc", label: "PoC / Proof of Concept", base: 1800 },
+  { id: "production-ml", label: "Production ML Model", base: 4500 },
+  { id: "nlp", label: "Custom NLP System", base: 6500 },
+  { id: "cv", label: "Computer Vision System", base: 7000 },
+  { id: "enterprise", label: "Enterprise ML Platform", base: 12000 },
 ];
 
 const FEATURES_UK = [
-  { id: "cms", label: "CMS (редагування контенту)", price: 5000 },
-  { id: "seo", label: "SEO-оптимізація", price: 5000 },
-  { id: "booking", label: "Онлайн-запис / Бронювання", price: 8000 },
-  { id: "blog", label: "Блог / Новини", price: 6000 },
-  { id: "multilang", label: "Мультимовність (UA/EN)", price: 8000 },
-  { id: "chat", label: "Онлайн-чат / Telegram-бот", price: 4000 },
-  { id: "analytics", label: "GA4 + аналітика", price: 2000 },
-  { id: "design", label: "Кастомний UI/UX дизайн", price: 10000 },
+  { id: "labelling", label: "Data labelling & annotation", price: 35000 },
+  { id: "mlops", label: "MLOps pipeline setup", price: 65000 },
+  { id: "ab-testing", label: "A/B model testing", price: 25000 },
+  { id: "xai", label: "Model explainability (XAI)", price: 33000 },
+  { id: "onprem", label: "On-prem deployment", price: 50000 },
+  { id: "api", label: "Real-time inference API", price: 30000 },
+  { id: "retraining", label: "Retraining automation", price: 42000 },
+  { id: "dashboard", label: "Custom reporting dashboard", price: 37000 },
 ];
 
 const FEATURES_EN = [
-  { id: "cms", label: "CMS (content editing)", price: 5000 },
-  { id: "seo", label: "SEO optimisation", price: 5000 },
-  { id: "booking", label: "Online booking / reservation", price: 8000 },
-  { id: "blog", label: "Blog / News", price: 6000 },
-  { id: "multilang", label: "Multilingual (UA/EN)", price: 8000 },
-  { id: "chat", label: "Live chat / Telegram bot", price: 4000 },
-  { id: "analytics", label: "GA4 + analytics", price: 2000 },
-  { id: "design", label: "Custom UI/UX design", price: 10000 },
+  { id: "labelling", label: "Data labelling & annotation", price: 800 },
+  { id: "mlops", label: "MLOps pipeline setup", price: 1500 },
+  { id: "ab-testing", label: "A/B model testing", price: 600 },
+  { id: "xai", label: "Model explainability (XAI)", price: 800 },
+  { id: "onprem", label: "On-prem deployment", price: 1200 },
+  { id: "api", label: "Real-time inference API", price: 700 },
+  { id: "retraining", label: "Retraining automation", price: 1000 },
+  { id: "dashboard", label: "Custom reporting dashboard", price: 900 },
 ];
 
 const SUPPORT_PLANS_UK = [
   { id: "none", label: "Без підтримки", price: 0 },
-  { id: "lite", label: "Lite (3 000 грн/міс)", price: 3000 },
-  { id: "pro", label: "Pro (7 000 грн/міс)", price: 7000 },
-  { id: "full", label: "Full (15 000 грн/міс)", price: 15000 },
+  { id: "basic", label: "Basic MLOps (33 000 ₴/міс)", price: 33000 },
+  { id: "pro", label: "Professional (62 000 ₴/міс)", price: 62000 },
+  { id: "enterprise", label: "Enterprise (custom)", price: 0 },
 ];
 
 const SUPPORT_PLANS_EN = [
-  { id: "none", label: "No support", price: 0 },
-  { id: "lite", label: "Lite (₴3,000/mo)", price: 3000 },
-  { id: "pro", label: "Pro (₴7,000/mo)", price: 7000 },
-  { id: "full", label: "Full (₴15,000/mo)", price: 15000 },
+  { id: "none", label: "No MLOps support", price: 0 },
+  { id: "basic", label: "Basic MLOps (£800/mo)", price: 800 },
+  { id: "pro", label: "Professional (£1,500/mo)", price: 1500 },
+  { id: "enterprise", label: "Enterprise (custom)", price: 0 },
 ];
 
-function formatPrice(n: number) {
-  return n.toLocaleString("uk-UA") + " ₴";
+function formatPrice(n: number, isUk: boolean) {
+  if (isUk) return n.toLocaleString("uk-UA") + " ₴";
+  return "£" + n.toLocaleString("en-GB");
 }
 
 export function PriceCalculator() {
@@ -77,11 +78,12 @@ export function PriceCalculator() {
 
   const featuresTotal = useMemo(() =>
     FEATURES.filter((f) => features.has(f.id)).reduce((sum, f) => sum + f.price, 0),
-    [features]
+    [features, FEATURES]
   );
 
   const projectTotal = selectedType.base + featuresTotal;
   const monthlySupport = selectedSupport.price;
+  const isEnterpriseSupport = support === "enterprise";
 
   function toggleFeature(id: string) {
     setFeatures((prev) => {
@@ -92,18 +94,20 @@ export function PriceCalculator() {
   }
 
   return (
-    <section className="py-24 bg-indigo-50">
+    <section className="py-24 bg-indigo-50 dark:bg-neutral-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold">
+          <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 text-sm font-semibold">
             <Calculator className="w-4 h-4" />
-            {isUk ? "Калькулятор" : "Calculator"}
+            {isUk ? "Калькулятор ML-проєкту" : "ML Project Calculator"}
           </div>
           <h2 className="text-4xl font-heading font-extrabold text-neutral-900 dark:text-white mb-4">
-            {isUk ? "Розрахуйте вартість проєкту" : "Calculate your project cost"}
+            {isUk ? "Розрахуйте орієнтовну вартість" : "Estimate your ML project cost"}
           </h2>
-          <p className="text-neutral-500">
-            {isUk ? "Орієнтовна вартість. Точна ціна визначається після безкоштовної консультації." : "Estimated price. Exact cost is determined after a free consultation."}
+          <p className="text-neutral-500 dark:text-neutral-400">
+            {isUk
+              ? "Орієнтовна вартість. Точна ціна визначається після безкоштовної консультації та аудиту даних."
+              : "Estimated price. Exact cost is determined after a free consultation and data audit."}
           </p>
         </div>
 
@@ -112,7 +116,9 @@ export function PriceCalculator() {
           <div className="lg:col-span-2 space-y-8">
             {/* Step 1: Project type */}
             <div>
-              <p className="text-sm font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-widest mb-4">{isUk ? "1. Тип проєкту" : "1. Project type"}</p>
+              <p className="text-sm font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-widest mb-4">
+                {isUk ? "1. Тип ML-проєкту" : "1. ML project type"}
+              </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {PROJECT_TYPES.map((pt) => (
                   <button
@@ -120,20 +126,24 @@ export function PriceCalculator() {
                     onClick={() => setProjectType(pt.id)}
                     className={`flex items-center justify-between px-4 py-3 rounded-xl border text-left text-sm transition-all ${
                       projectType === pt.id
-                        ? "border-indigo-500 bg-indigo-50 text-indigo-700 font-semibold"
-                        : "border-neutral-200 dark:border-neutral-700 bg-white text-neutral-700 dark:text-neutral-300 hover:border-indigo-200 hover:bg-white"
+                        ? "border-indigo-500 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 font-semibold"
+                        : "border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:border-indigo-200 hover:bg-white"
                     }`}
                   >
                     <span>{pt.label}</span>
-                    <span className="text-xs text-neutral-400 ml-2 shrink-0">{isUk ? "від" : "from"} {formatPrice(pt.base)}</span>
+                    <span className="text-xs text-neutral-400 ml-2 shrink-0">
+                      {isUk ? "від" : "from"} {formatPrice(pt.base, isUk)}
+                    </span>
                   </button>
                 ))}
               </div>
             </div>
 
-            {/* Step 2: Features */}
+            {/* Step 2: Add-ons */}
             <div>
-              <p className="text-sm font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-widest mb-4">{isUk ? "2. Додаткові функції" : "2. Additional features"}</p>
+              <p className="text-sm font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-widest mb-4">
+                {isUk ? "2. Додаткові компоненти" : "2. Add-on components"}
+              </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {FEATURES.map((f) => {
                   const selected = features.has(f.id);
@@ -143,8 +153,8 @@ export function PriceCalculator() {
                       onClick={() => toggleFeature(f.id)}
                       className={`flex items-center justify-between px-4 py-3 rounded-xl border text-left text-sm transition-all ${
                         selected
-                          ? "border-indigo-500 bg-indigo-50 text-indigo-700 font-medium"
-                          : "border-neutral-200 dark:border-neutral-700 bg-white text-neutral-700 dark:text-neutral-300 hover:border-indigo-200"
+                          ? "border-indigo-500 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 font-medium"
+                          : "border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:border-indigo-200"
                       }`}
                     >
                       <div className="flex items-center gap-2">
@@ -153,16 +163,18 @@ export function PriceCalculator() {
                         </span>
                         {f.label}
                       </div>
-                      <span className="text-xs text-neutral-400 ml-2 shrink-0">+{formatPrice(f.price)}</span>
+                      <span className="text-xs text-neutral-400 ml-2 shrink-0">+{formatPrice(f.price, isUk)}</span>
                     </button>
                   );
                 })}
               </div>
             </div>
 
-            {/* Step 3: Support */}
+            {/* Step 3: MLOps Retainer */}
             <div>
-              <p className="text-sm font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-widest mb-4">{isUk ? "3. Підтримка після запуску" : "3. Post-launch support"}</p>
+              <p className="text-sm font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-widest mb-4">
+                {isUk ? "3. MLOps-підтримка після деплою" : "3. Post-deploy MLOps support"}
+              </p>
               <div className="grid grid-cols-2 gap-3">
                 {SUPPORT_PLANS.map((sp) => (
                   <button
@@ -170,8 +182,8 @@ export function PriceCalculator() {
                     onClick={() => setSupport(sp.id)}
                     className={`px-4 py-3 rounded-xl border text-left text-sm transition-all ${
                       support === sp.id
-                        ? "border-indigo-500 bg-indigo-50 text-indigo-700 font-semibold"
-                        : "border-neutral-200 dark:border-neutral-700 bg-white text-neutral-700 dark:text-neutral-300 hover:border-indigo-200"
+                        ? "border-indigo-500 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 font-semibold"
+                        : "border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:border-indigo-200"
                     }`}
                   >
                     {sp.label}
@@ -185,41 +197,54 @@ export function PriceCalculator() {
           <div className="lg:col-span-1">
             <div className="sticky top-24 rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 shadow-lg shadow-neutral-200/40 overflow-hidden">
               <div className="p-6 bg-indigo-600 text-white">
-                <p className="text-sm font-medium opacity-80 mb-1">{isUk ? "Орієнтовна вартість" : "Estimated price"}</p>
-                <div className="text-4xl font-sans font-extrabold tabular-nums tracking-tight">{formatPrice(projectTotal)}</div>
+                <p className="text-sm font-medium opacity-80 mb-1">
+                  {isUk ? "Орієнтовна вартість" : "Estimated price"}
+                </p>
+                <div className="text-4xl font-sans font-extrabold tabular-nums tracking-tight">
+                  {formatPrice(projectTotal, isUk)}
+                </div>
                 {monthlySupport > 0 && (
-                  <p className="text-sm opacity-80 mt-2">+ {formatPrice(monthlySupport)}/{isUk ? "місяць підтримки" : "mo support"}</p>
+                  <p className="text-sm opacity-80 mt-2">
+                    + {formatPrice(monthlySupport, isUk)}/{isUk ? "міс MLOps" : "mo MLOps"}
+                  </p>
+                )}
+                {isEnterpriseSupport && (
+                  <p className="text-sm opacity-80 mt-2">
+                    + {isUk ? "Enterprise MLOps — індивідуально" : "Enterprise MLOps — custom quote"}
+                  </p>
                 )}
               </div>
 
               <div className="p-6 space-y-3 text-sm">
-                <div className="flex justify-between text-neutral-700">
+                <div className="flex justify-between text-neutral-700 dark:text-neutral-300">
                   <span>{selectedType.label}</span>
-                  <span className="font-medium">{formatPrice(selectedType.base)}</span>
+                  <span className="font-medium">{formatPrice(selectedType.base, isUk)}</span>
                 </div>
                 {FEATURES.filter((f) => features.has(f.id)).map((f) => (
-                  <div key={f.id} className="flex justify-between text-neutral-600">
+                  <div key={f.id} className="flex justify-between text-neutral-600 dark:text-neutral-400">
                     <span>{f.label}</span>
-                    <span>+{formatPrice(f.price)}</span>
+                    <span>+{formatPrice(f.price, isUk)}</span>
                   </div>
                 ))}
                 {features.size > 0 && (
-                  <div className="flex justify-between font-semibold text-neutral-800 dark:text-neutral-200 pt-3 border-t border-neutral-100">
+                  <div className="flex justify-between font-semibold text-neutral-800 dark:text-neutral-200 pt-3 border-t border-neutral-100 dark:border-neutral-700">
                     <span>{isUk ? "Разом" : "Total"}</span>
-                    <span>{formatPrice(projectTotal)}</span>
+                    <span>{formatPrice(projectTotal, isUk)}</span>
                   </div>
                 )}
               </div>
 
               <div className="px-6 pb-6">
                 <Link
-                  href={lp(`/contact?service=${encodeURIComponent(selectedType.label)}&budget=${encodeURIComponent(formatPrice(projectTotal))}`)}
+                  href={lp(`/contact?service=${encodeURIComponent(selectedType.label)}&budget=${encodeURIComponent(formatPrice(projectTotal, isUk))}`)}
                   className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition-colors"
                 >
-                  {isUk ? "Замовити консультацію" : "Book a consultation"}
+                  {isUk ? "Замовити безкоштовну консультацію" : "Book a free consultation"}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
-                <p className="text-xs text-neutral-400 text-center mt-3">{isUk ? "Безкоштовна консультація без зобов'язань" : "Free consultation, no obligations"}</p>
+                <p className="text-xs text-neutral-400 text-center mt-3">
+                  {isUk ? "Безкоштовна консультація без зобов'язань" : "Free consultation, no obligations"}
+                </p>
               </div>
             </div>
           </div>

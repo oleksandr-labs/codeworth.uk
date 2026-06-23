@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Codeworth — Веб-студія повного циклу";
+export const alt = "Codeworth — ML/AI Consultancy for Business";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -92,12 +92,12 @@ export default async function Image() {
             lineHeight: 1.4,
           }}
         >
-          Веб-студія повного циклу для малого та середнього бізнесу в Україні
+          ML/AI Consultancy — from PoC to production for UK &amp; EU business
         </div>
 
         {/* Chips */}
         <div style={{ display: "flex", gap: 12 }}>
-          {["Розробка сайтів", "Маркетплейс", "SEO", "UI/UX"].map((tag) => (
+          {["Machine Learning", "Artificial Intelligence", "MLOps", "UK / EU"].map((tag) => (
             <div
               key={tag}
               style={{

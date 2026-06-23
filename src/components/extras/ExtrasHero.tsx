@@ -19,16 +19,16 @@ export function ExtrasHero({ lang }: { lang: string }) {
 
         <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
           {isUk ? (
-            <>Доробки та{" "}<span className="text-transparent bg-clip-text bg-linear-to-r from-amber-400 to-yellow-300">модулі</span></>
+            <>Готові AI-{" "}<span className="text-transparent bg-clip-text bg-linear-to-r from-amber-400 to-yellow-300">модулі</span></>
           ) : (
-            <>Add-ons &{" "}<span className="text-transparent bg-clip-text bg-linear-to-r from-amber-400 to-yellow-300">modules</span></>
+            <>Ready-to-deploy{" "}<span className="text-transparent bg-clip-text bg-linear-to-r from-amber-400 to-yellow-300">AI modules</span></>
           )}
         </h1>
 
         <p className="max-w-2xl mx-auto text-lg text-indigo-200 mb-8 leading-relaxed">
           {isUk
-            ? "Вже маєте сайт і хочете додати конкретну функцію, сторінку або інтеграцію? Обирайте готовий модуль — ми встановимо і налаштуємо під ваш проєкт."
-            : "Already have a website and want to add a specific feature, page, or integration? Choose a ready-made module — we'll install and configure it for your project."}
+            ? "Готові AI-продукти для швидкого деплою у ваш бізнес: RAG чат-боти, NLP-пайплайни, комп'ютерний зір, recommendation engines. Від ідеї до продакшну за 3–14 днів."
+            : "Ready-to-deploy AI products for your business: RAG chatbots, NLP pipelines, computer vision, recommendation engines. From idea to production in 3–14 days."}
         </p>
 
         {/* Category pills */}
@@ -47,19 +47,19 @@ export function ExtrasHero({ lang }: { lang: string }) {
         <div className="flex flex-wrap justify-center gap-8">
           <div className="text-center">
             <p className="text-3xl font-extrabold text-white">{EXTRAS.length}+</p>
-            <p className="text-indigo-300 text-sm mt-1">{isUk ? "готових модулів" : "ready-made modules"}</p>
+            <p className="text-indigo-300 text-sm mt-1">{isUk ? "AI-модулів" : "AI modules"}</p>
           </div>
           <div className="text-center">
             <p className="text-3xl font-extrabold text-white">{popularCount}</p>
-            <p className="text-indigo-300 text-sm mt-1">{isUk ? "популярних доробок" : "popular add-ons"}</p>
+            <p className="text-indigo-300 text-sm mt-1">{isUk ? "популярних" : "popular"}</p>
           </div>
           <div className="text-center">
-            <p className="text-3xl font-extrabold text-white">{isUk ? "від 800 ₴" : "from £20"}</p>
+            <p className="text-3xl font-extrabold text-white">{isUk ? "від 2 500 ₴" : "from £350"}</p>
             <p className="text-indigo-300 text-sm mt-1">{isUk ? "мінімальна вартість" : "starting price"}</p>
           </div>
           <div className="text-center">
-            <p className="text-3xl font-extrabold text-white">{isUk ? "1–14 днів" : "1–14 days"}</p>
-            <p className="text-indigo-300 text-sm mt-1">{isUk ? "строк виконання" : "delivery time"}</p>
+            <p className="text-3xl font-extrabold text-white">{isUk ? "3–14 днів" : "3–14 days"}</p>
+            <p className="text-indigo-300 text-sm mt-1">{isUk ? "строк деплою" : "deployment time"}</p>
           </div>
         </div>
 
@@ -68,7 +68,7 @@ export function ExtrasHero({ lang }: { lang: string }) {
             href={`/${lang}/contact`}
             className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-amber-400 text-indigo-950 font-bold text-base hover:bg-amber-300 transition-colors shadow-lg shadow-amber-400/25"
           >
-            {isUk ? "Не знайшли потрібне? Напишіть нам →" : "Didn't find what you need? Contact us →"}
+            {isUk ? "Не знайшли потрібне AI-рішення? Напишіть нам →" : "Need a custom AI solution? Contact us →"}
           </Link>
         </div>
       </div>

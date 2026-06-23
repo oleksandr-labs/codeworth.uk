@@ -18,11 +18,11 @@ export async function generateMetadata({
   const { lang } = await params;
   const isUk = lang === "uk";
   const title = isUk
-    ? "Відгуки про Codeworth — залиште свій відгук"
-    : "Codeworth Reviews — Leave Your Review";
+    ? "Відгуки про Codeworth ML — залиште свій відгук"
+    : "Codeworth ML Reviews — Leave Your Review";
   const desc = isUk
-    ? "Ви наш клієнт? Залиште відгук у Google або Clutch та допоможіть іншим знайти надійного партнера."
-    : "Are you our client? Leave a review on Google or Clutch and help others find a reliable partner.";
+    ? "Ви наш ML-клієнт? Залиште відгук у Google або Clutch та допоможіть іншим знайти надійного ML-партнера."
+    : "Are you our ML client? Leave a review on Google or Clutch and help others find a reliable ML partner.";
   return {
     title,
     description: desc,
@@ -164,8 +164,8 @@ export default async function ReviewsPage({
               </h2>
               <p className="text-gray-600 dark:text-neutral-300 mb-8">
                 {isUk
-                  ? "Ваш відгук допомагає іншим власникам бізнесу обрати надійного партнера для розробки сайту."
-                  : "Your review helps other business owners choose a reliable web development partner."}
+                  ? "Ваш відгук допомагає іншим власникам бізнесу обрати надійного ML/AI партнера."
+                  : "Your review helps other business owners choose a reliable ML/AI partner."}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
@@ -182,7 +182,7 @@ export default async function ReviewsPage({
                   href={`/${lang}/contact`}
                   className="inline-flex items-center justify-center gap-2 bg-indigo-600 text-white font-semibold px-6 py-3 rounded-xl hover:bg-indigo-700 transition-colors"
                 >
-                  {isUk ? "Замовити сайт" : "Order a Website"}
+                  {isUk ? "Замовити ML проєкт" : "Start ML Project"}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>

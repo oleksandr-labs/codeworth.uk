@@ -20,27 +20,27 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isUk = lang === "uk";
   return {
     title: isUk
-      ? "Готові рішення та кейси — Codeworth | від £499 | Запуск за 3–7 днів"
-      : "Ready Solutions & Case Studies — Codeworth | from £499 | Launch in 3–7 days",
+      ? "ML/AI Кейси та портфоліо — Codeworth | Machine Learning для бізнесу"
+      : "ML/AI Case Studies & Portfolio — Codeworth | Machine Learning for Business",
     description: isUk
-      ? "120+ готових рішень для різних ніш бізнесу від Codeworth. Ресторани, салони краси, медицина, е-комерс, SaaS — від £499, запуск за 3–7 днів."
-      : "120+ ready-made solutions for various business niches by Codeworth. Restaurants, beauty salons, medical, e-commerce, SaaS — from £499, launch in 3–7 days.",
+      ? "Реальні ML/AI проєкти від Codeworth: predictive analytics, NLP, computer vision, recommendation engines для FinTech, Healthcare, Retail та SaaS."
+      : "Real ML/AI projects by Codeworth: predictive analytics, NLP, computer vision, recommendation engines for FinTech, Healthcare, Retail and SaaS.",
     alternates: buildAlternates(lang, 'portfolio'),
     openGraph: {
       title: isUk
-        ? "Готові рішення та кейси — Codeworth | від £499"
-        : "Ready Solutions & Case Studies — Codeworth | from £499",
+        ? "ML/AI Кейси та портфоліо — Codeworth"
+        : "ML/AI Case Studies & Portfolio — Codeworth",
       description: isUk
-        ? "120+ готових рішень для різних ніш бізнесу від Codeworth. від £499, запуск за 3–7 днів."
-        : "120+ ready-made solutions for various business niches by Codeworth. From £499, launch in 3–7 days.",
+        ? "ML/AI проєкти від Codeworth: predictive analytics, NLP, CV для FinTech, Healthcare, Retail."
+        : "ML/AI projects by Codeworth: predictive analytics, NLP, CV for FinTech, Healthcare, Retail.",
       type: "website",
       url: `https://codeworth.uk/${lang}/portfolio`,
       images: [{ url: "/og/portfolio.png", width: 1200, height: 630, alt: isUk ? "Портфоліо Codeworth" : "Codeworth Portfolio" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: isUk ? "Портфоліо — Codeworth" : "Portfolio — Codeworth",
-      description: isUk ? "120+ реалізованих проєктів від веб-студії Codeworth." : "120+ completed projects by Codeworth web studio.",
+      title: isUk ? "ML/AI Портфоліо — Codeworth" : "ML/AI Portfolio — Codeworth",
+      description: isUk ? "Реальні ML/AI проєкти від Codeworth для FinTech, Healthcare, Retail." : "Real ML/AI projects by Codeworth for FinTech, Healthcare, Retail.",
       images: ["/og/portfolio.png"],
     },
   };
@@ -50,7 +50,7 @@ const portfolioItemListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   name: "Портфоліо Codeworth",
-  description: "Реалізовані проєкти веб-студії Codeworth",
+  description: "ML/AI проєкти та кейси Codeworth",
   url: "https://codeworth.uk/portfolio",
   numberOfItems: PROJECTS.length,
   itemListElement: PROJECTS.map((project, index) => ({

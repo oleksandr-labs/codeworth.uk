@@ -28,8 +28,8 @@ export function FAQSection({ items, isUk }: { items: FAQItem[]; isUk: boolean })
           </h2>
           <p className="mt-4 text-neutral-500 dark:text-neutral-400">
             {isUk
-              ? "Відповіді на найпоширеніші запитання про розробку сайтів та роботу з Codeworth."
-              : "Answers to the most common questions about website development and working with Codeworth."}
+              ? "Відповіді на найпоширеніші запитання про ML/AI розробку та роботу з Codeworth."
+              : "Answers to the most common questions about ML/AI development and working with Codeworth."}
           </p>
         </div>
 

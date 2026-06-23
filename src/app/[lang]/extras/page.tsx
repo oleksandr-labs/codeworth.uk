@@ -9,24 +9,24 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isUk = lang === "uk";
   return {
     title: isUk
-      ? "Доробки та модулі — Codeworth | Розширення для вашого сайту"
-      : "Add-ons & Modules — Codeworth | Extensions for Your Website",
+      ? "AI-модулі та готові рішення — Codeworth | Від £350"
+      : "AI Modules & Ready-to-Deploy Solutions — Codeworth | From £350",
     description: isUk
-      ? "42+ готових модулі та доробки для сайту: форми, інтеграції, сторінки, аналітика, SEO-аудит. Підключимо до вашого проєкту від 800 ₴."
-      : "42+ ready-made modules and add-ons for your website: forms, integrations, pages, analytics, SEO audit. From £20. Installed and configured for your project.",
+      ? "29+ готових AI-продуктів для бізнесу: RAG чат-боти, генератори контенту, CV-пошук, recommendation engines. Швидкий деплой у ваш проєкт від £350."
+      : "29+ ready-to-deploy AI products for business: RAG chatbots, content generators, visual search, recommendation engines. Fast deployment from £350.",
     openGraph: {
-      title: isUk ? "Доробки та модулі — Codeworth" : "Add-ons & Modules — Codeworth",
+      title: isUk ? "AI-модулі — Codeworth" : "AI Modules — Codeworth",
       description: isUk
-        ? "Готові модулі та функції для вашого сайту. Від форм і калькуляторів до CRM та онлайн-оплати."
-        : "Ready-made modules and features for your website. From forms and calculators to CRM and online payments.",
+        ? "Готові AI-продукти: RAG чат-боти, CV, NLP, recommendation engines."
+        : "Ready-to-deploy AI products: RAG chatbots, CV, NLP, recommendation engines.",
       type: "website",
       url: `https://codeworth.uk/${lang}/extras`,
-      images: [{ url: "/og/extras.png", width: 1200, height: 630, alt: isUk ? "Доробки та модулі Codeworth" : "Codeworth Add-ons" }],
+      images: [{ url: "/og/extras.png", width: 1200, height: 630, alt: isUk ? "AI-модулі Codeworth" : "Codeworth AI Modules" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: isUk ? "Доробки та модулі — Codeworth" : "Add-ons & Modules — Codeworth",
-      description: isUk ? "42+ готових модулів від 800 ₴." : "42+ ready-made modules from £20.",
+      title: isUk ? "AI-модулі — Codeworth" : "AI Modules — Codeworth",
+      description: isUk ? "29+ готових AI-продуктів від £350." : "29+ ready-to-deploy AI products from £350.",
       images: ["/og/extras.png"],
     },
     alternates: buildAlternates(lang, 'extras'),

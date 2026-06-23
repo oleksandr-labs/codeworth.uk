@@ -10,28 +10,11 @@ import { Container } from "./Container";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { LogoWordmark } from "@/components/ui/Logo";
 import { SERVICES_DATA, getServiceLocalized } from "@/lib/data/services";
-import { NICHE_CATEGORIES, NICHE_CATEGORY_EN } from "@/lib/data/niches";
 import { analytics } from "@/lib/analytics";
-
-const NICHE_CATEGORY_ICONS: Record<string, string> = {
-  "Їжа та гостинність": "🍽",
-  "Краса та здоров'я": "✂️",
-  "Будівництво та нерухомість": "🏗",
-  "Освіта та консалтинг": "📚",
-  "Авто та логістика": "🚗",
-  "E-commerce та ритейл": "🛒",
-  "Креатив та розваги": "🎨",
-  "IT та SaaS": "💻",
-  "Здоров'я та розвиток": "🏥",
-  "Дитяча та сімейна": "👶",
-  "Виробництво та хенд-мейд": "🔧",
-  "Бізнес-послуги": "📋",
-  "Агробізнес та AgriTech": "🌾",
-};
 
 const NAV_LINKS_UK = [
   { label: "Послуги", href: "/services" },
-  { label: "Доробки", href: "/extras" },
+  { label: "AI-модулі", href: "/extras" },
   { label: "Портфоліо", href: "/portfolio" },
   { label: "Блог", href: "/blog" },
   { label: "Про нас", href: "/about" },
@@ -39,7 +22,7 @@ const NAV_LINKS_UK = [
 
 const NAV_LINKS_EN = [
   { label: "Services", href: "/services" },
-  { label: "Add-ons", href: "/extras" },
+  { label: "AI Modules", href: "/extras" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
