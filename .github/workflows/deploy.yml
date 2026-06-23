@@ -51,7 +51,7 @@ jobs:
           timeout: 180s
 
       - name: Link assets, sync secrets & restart
-        uses: appleboy/ssh-action@v1.2.0
+        uses: appleboy/ssh-action@v1.2.5
         with:
           host: ${{ secrets.HETZNER_HOST }}
           username: ${{ secrets.HETZNER_USER }}
