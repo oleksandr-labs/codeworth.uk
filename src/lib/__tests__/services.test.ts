@@ -1,8 +1,8 @@
 import { SERVICES_DATA, getService } from "../data/services";
 
 describe("SERVICES_DATA", () => {
-  it("contains 15 services", () => {
-    expect(SERVICES_DATA).toHaveLength(15);
+  it("contains 2 services (AI + ML)", () => {
+    expect(SERVICES_DATA).toHaveLength(2);
   });
 
   it("every service has required fields", () => {
@@ -59,9 +59,9 @@ describe("SERVICES_DATA", () => {
 
 describe("getService()", () => {
   it("returns service by valid slug", () => {
-    const s = getService("website-dev");
+    const s = getService("artificial-intelligence");
     expect(s).toBeDefined();
-    expect(s?.slug).toBe("website-dev");
+    expect(s?.slug).toBe("artificial-intelligence");
   });
 
   it("returns undefined for unknown slug", () => {

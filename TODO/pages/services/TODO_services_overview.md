@@ -1,52 +1,34 @@
-# Огляд послуг (Services Overview) — codenest.com.ua
-Опис: Головна сторінка розділу "Послуги". Статична (SSG), SEO-оптимізована, веде до окремих сторінок кожної послуги.
-**Статус:** ✅ Готово (MVP)
+# Огляд послуг (Services Overview) — codeworth.uk
+Опис: Головна сторінка розділу "Послуги". Лише AI та Machine Learning. Статична (SSG), SEO-оптимізована.
+**Статус:** ✅ Готово (MVP) — переорієнтовано на AI/ML
 **i18n статус:** ✅ Повністю перекладено (EN + UK)
-**✅ Проаналізовано 2026-05-01 — всі 24/24 задачі виконані.**
-**✅ Оновлено 2026-05-01 — FAQ-секція + FAQPage schema + виправлено локалізацію ItemList schema.**
 
 ---
+
+## Послуги (2 картки)
+- [x] Artificial Intelligence (штучний інтелект для бізнесу)
+- [x] Machine Learning (кастомні ML-моделі, предиктивна аналітика)
 
 ## Hero-секція
 - [x] Заголовок + підзаголовок + CTA "Обговорити проєкт"
 
-## Сітка послуг (14 карток)
-- [x] Картки послуг з іконками, описами та посиланнями — `services/page.tsx`
-- [x] Hover-анімація карток
-- [x] Посилання на окрему сторінку кожної послуги
-
-## Чому обирають CodeNest
-- [x] Лічильники: проєктів, клієнтів, років, ніш
-
 ## Процес роботи
-- [x] 5-крокова схема — `PROCESS_STEPS` у `services/page.tsx`
-
-## Відгуки клієнтів
-- [x] TestimonialsSection вбудована у сторінку
+- [x] 4-крокова схема: Аудит → PoC → Розробка → MLOps
 
 ## CTA-блок
 - [x] CTASection в кінці сторінки
 
-## Окремі сторінки послуг (/services/[slug])
-- [x] Features (6 карток переваг) — `service.features`
-- [x] What's included (чек-лист) — `service.includes`
-- [x] Packages (3 тарифи з highlight) — `service.packages`
-- [x] Use Cases (6 нішевих прикладів) — `service.useCases` + секція «Приклади по нішах»
-- [x] Process Steps (4 кроки) — `service.processSteps` + секція «Як це працює»
-- [x] Case Studies (3 кейси з метриками) — `service.caseStudies` + секція «Реальні кейси клієнтів»
-- [x] FAQ (5-7 питань) — `service.faq` + Schema.org FAQPage
-- [x] Related blog posts (3 статті) — маппінг по категоріях
-- [x] Related niches (3 ніші) — маппінг по ключових словах
-- [x] Other services (chips з іконками)
-- [x] Schema.org Service + BreadcrumbList + FAQPage
-
-## FAQ-секція (додано 2026-05-01)
-- ✅ FAQ секція з 5 питаннями про послуги (EN + UK) перед TestimonialsSection
-- ✅ Schema.org FAQPage JSON-LD → rich snippets у Google
+## FAQ-секція
+- [ ] FAQ 10 питань про AI/ML послуги (EN + UK)
+- [ ] Schema.org FAQPage JSON-LD
 
 ## SEO
-- [x] Title: "Послуги веб-розробки та digital-маркетингу | CodeNest"
-- [x] Meta Description
-- ✅ Schema.org: ItemList із посиланнями на всі послуги (локалізовано EN/UK, виправлено URL)
-- ✅ Schema.org: FAQPage для блоку частих питань
-- [x] Internal links до всіх підсторінок послуг
+- [ ] Title: "AI & Machine Learning Services | Codeworth"
+- [ ] Meta Description: оновити під AI/ML
+- [ ] Schema.org: ItemList (AI + ML services)
+- [ ] Internal links до /services/artificial-intelligence та /services/machine-learning
+
+## TODO (переробка)
+- [ ] Прибрати всі згадки старих 19 послуг (web dev, ecommerce, etc.)
+- [ ] Оновити заголовки та тексти під AI/ML позиціонування
+- [ ] Оновити статистику: не "14 послуг" а "AI + ML спеціалізація"

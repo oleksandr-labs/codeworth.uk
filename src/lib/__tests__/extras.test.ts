@@ -1,8 +1,8 @@
 import { EXTRAS, EXTRA_CATEGORIES, type Extra, type ExtraCategory } from "../data/extras";
 
 describe("EXTRAS", () => {
-  it("contains at least 40 items", () => {
-    expect(EXTRAS.length).toBeGreaterThanOrEqual(40);
+  it("contains at least 25 AI items", () => {
+    expect(EXTRAS.length).toBeGreaterThanOrEqual(25);
   });
 
   it("every extra has required fields", () => {
@@ -57,8 +57,8 @@ describe("EXTRAS", () => {
 });
 
 describe("EXTRA_CATEGORIES", () => {
-  it("contains exactly 10 categories", () => {
-    expect(EXTRA_CATEGORIES).toHaveLength(10);
+  it("contains exactly 1 category (AI)", () => {
+    expect(EXTRA_CATEGORIES).toHaveLength(1);
   });
 
   it("every category has required fields", () => {
