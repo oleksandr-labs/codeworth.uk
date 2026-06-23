@@ -1,4 +1,4 @@
-export interface CaseStudy {
+﻿export interface CaseStudy {
   challenge: string;
   solution: string;
   results: string[];
@@ -80,7 +80,7 @@ export const PROJECTS: Project[] = [
         "Support team redirected 60% of their time to product work",
       ],
     },
-  },,
+  },
   {
     slug: "hr-payroll-saas",
     title: "HRPulse — HR & Payroll SaaS",
@@ -99,7 +99,7 @@ export const PROJECTS: Project[] = [
     emoji: "📊",
     caseStudy: { challenge: "Потенційні клієнти не вірили, що SaaS може замінити їхні Excel-таблиці для HR.", solution: "Інтерактивна демо-таблиця з реальним пошуком і сортуванням дала відчути продукт без реєстрації.", results: ["Trial реєстрацій +340%", "Demo → Trial конверсія 78%", "CAC знижено на 45%"] },
     caseStudyEn: { challenge: "Potential clients didn't believe SaaS could replace their Excel spreadsheets for HR.", solution: "Interactive demo table with real search and sort let them feel the product without registering.", results: ["Trial signups +340%", "Demo → Trial conversion 78%", "CAC reduced by 45%"] },
-  },,
+  },
   {
     slug: "project-management-saas",
     title: "TaskFlow — Project Management SaaS",
@@ -118,7 +118,7 @@ export const PROJECTS: Project[] = [
     emoji: "📋",
     caseStudy: { challenge: "Команди боялися ще однієї «складної» PM-системи — занадто багато вже невдалих спроб.", solution: "Kanban прямо на лендингу: «спробуй без реєстрації» — перетягнув картку, полюбив продукт.", results: ["Демо-конверсій +295%", "Kanban wow-момент → 83% реєстрацій", "Churn після тріалу -28%"] },
     caseStudyEn: { challenge: "Teams feared yet another 'complex' PM system — too many past failed attempts.", solution: "Kanban directly on the landing: 'try without registration' — dragged a card, loved the product.", results: ["Demo conversions +295%", "Kanban wow → 83% registrations", "Post-trial churn -28%"] },
-  },,
+  },
   {
     slug: "hr-analytics-platform",
     title: "PeopleMetrics — HR-Аналітика та People Ops",
@@ -138,7 +138,7 @@ export const PROJECTS: Project[] = [
     nicheSlug: "saas",
     caseStudy: { challenge: "HR-директори отримували сюрпризи — ключові співробітники йшли несподівано, без попередніх сигналів.", solution: "AI-модель прогнозу плинності на основі 12 факторів ризику дала HR можливість діяти превентивно.", results: ["Плинність клієнтів -28%", "ROI: $8/$1", "Retention-заходів впроваджено: 340+"] },
     caseStudyEn: { challenge: "HR directors faced surprises — key employees left unexpectedly without advance signals.", solution: "AI turnover prediction model based on 12 risk factors gave HR the ability to act preventively.", results: ["Client turnover -28%", "ROI: $8/$1", "Retention actions taken: 340+"] },
-  },,
+  },
   {
     slug: "cv-quality-control",
     title: "QualityEye — Computer Vision QA",
@@ -175,7 +175,7 @@ export const PROJECTS: Project[] = [
         "System ROI: 8 months (savings on complaints + scrap reduction)",
       ],
     },
-  },,
+  },
   {
     slug: "nlp-review-monitor",
     title: "BrandPulse — NLP Sentiment Monitor",
@@ -212,7 +212,7 @@ export const PROJECTS: Project[] = [
         "SMM team saves 12 hours/week on manual monitoring",
       ],
     },
-  },,
+  },
   {
     slug: "ml-churn-predictor",
     title: "RetainIQ — ML Churn Prediction",
@@ -251,7 +251,7 @@ export const PROJECTS: Project[] = [
         "Model precision 82% — 4 out of 5 at-risk clients identified in time",
       ],
     },
-  },,
+  },
   {
     slug: "fraud-detection-fintech",
     title: "FraudShield — ML Fraud Detection",
@@ -293,7 +293,7 @@ export const PROJECTS: Project[] = [
         "Project ROI paid back in 3 weeks after launch",
       ],
     },
-  },,
+  },
   {
     slug: "demand-forecast-retail",
     title: "StockSense — ML Demand Forecasting",
@@ -334,7 +334,7 @@ export const PROJECTS: Project[] = [
         "Order preparation time per manager: from 3 hours to 25 minutes",
       ],
     },
-  },,
+  },
   {
     slug: "reco-engine-ecom",
     title: "PersonaCart — ML Recommendation Engine",
@@ -376,7 +376,7 @@ export const PROJECTS: Project[] = [
         "Cold start resolved for 92% of new users via content-based fallback",
       ],
     },
-  },,
+  },
   {
     slug: "ai-price-optimizer",
     title: "PriceSense — AI Dynamic Pricing",
@@ -413,7 +413,7 @@ export const PROJECTS: Project[] = [
         "Stale inventory: -23% thanks to timely markdowns",
       ],
     },
-  },,
+  },
   {
     slug: "ai-resume-screener",
     title: "TalentScan — AI HR Screening",
@@ -452,7 +452,7 @@ export const PROJECTS: Project[] = [
         "Time from application intake to shortlist report: from 4 days to 4 hours",
       ],
     },
-  },,
+  },
   {
     slug: "ai-doc-analyzer",
     title: "DocSense — AI Document Intelligence",
@@ -491,7 +491,7 @@ export const PROJECTS: Project[] = [
         "Client NPS: +34 points in the first quarter of use",
       ],
     },
-  },,
+  },
   {
     slug: "ai-predictive-maintenance",
     title: "MachineGuard — AI Predictive Maintenance",
@@ -533,7 +533,7 @@ export const PROJECTS: Project[] = [
         "Component lifespan utilisation: 94% vs 68% with calendar-based maintenance",
       ],
     },
-  },,
+  },
   {
     slug: "ai-image-search",
     title: "VisualFind — AI Visual Search Engine",
@@ -574,7 +574,7 @@ export const PROJECTS: Project[] = [
         "Visual search response time: p99 < 95ms",
       ],
     },
-  },,
+  },
   {
     slug: "ml-customer-segmentation",
     title: "SegmentIQ — ML Customer Segmentation & CLV",
@@ -613,7 +613,7 @@ export const PROJECTS: Project[] = [
         "VIP segment (Champions): NPS +22 points after personalised offers",
       ],
     },
-  },,
+  },
   {
     slug: "ml-credit-scoring",
     title: "CreditIQ — ML Credit Scoring Engine",
@@ -654,7 +654,7 @@ export const PROJECTS: Project[] = [
         "Implementation ROI: < 4 months (NPL savings + headcount efficiency)",
       ],
     },
-  },,
+  },
   {
     slug: "ml-insurance-document-ocr",
     title: "DocAI Insurance — ML Document Processing",
@@ -693,7 +693,7 @@ export const PROJECTS: Project[] = [
         "LayoutLM field extraction accuracy: 96.4% across all document types",
       ],
     },
-  },,
+  },
   {
     slug: "ml-energy-forecasting",
     title: "EnergyIQ — ML Energy Consumption Forecasting",
@@ -734,7 +734,7 @@ export const PROJECTS: Project[] = [
         "CO₂ emissions per site: −19% (ESG reporting for tenants)",
       ],
     },
-  },,
+  },
   {
     slug: "ai-invoice-automation",
     title: "InvoiceAI — AI Обробка Рахунків та Документів",
@@ -775,7 +775,7 @@ export const PROJECTS: Project[] = [
         "System ROI: 4 months",
       ],
     },
-  },,
+  },
   {
     slug: "ml-property-valuation",
     title: "EstateIQ — ML Автоматична Оцінка Нерухомості (AVM)",
@@ -814,7 +814,7 @@ export const PROJECTS: Project[] = [
         "Cost per valuation: −87%",
       ],
     },
-  },,
+  },
   {
     slug: "ai-bilingual-rag-chatbot",
     title: "DualBot — Білінгвальний RAG Чат-бот UK/UA",
@@ -854,7 +854,7 @@ export const PROJECTS: Project[] = [
         "Serving two markets without increasing support headcount",
       ],
     },
-  },,
+  },
   {
     slug: "ai-rag-healthcare-system",
     title: "MedAssist — GDPR-Сумісна RAG-Система для Клініки",
@@ -896,7 +896,7 @@ export const PROJECTS: Project[] = [
         "GDPR compliance audit: passed with no findings",
       ],
     },
-  },,
+  },
   {
     slug: "ml-fraud-detection-fca",
     title: "GuardAI — ML Fraud Detection з FCA Compliance",
@@ -937,7 +937,7 @@ export const PROJECTS: Project[] = [
         "Detection latency: 180 ms (p99)",
       ],
     },
-  },,
+  },
   {
     slug: "ml-harvest-precision-agriculture",
     title: "HarvestIQ — ML Точне Землеробство та Прогноз Врожайності",
@@ -978,7 +978,7 @@ export const PROJECTS: Project[] = [
         "System ROI: first full growing season",
       ],
     },
-  },,
+  },
   {
     slug: "ai-edtech-adaptive-lms",
     title: "LearnAI — Адаптивна AI-Платформа для EdTech",
@@ -1021,7 +1021,7 @@ export const PROJECTS: Project[] = [
         "Course upsell revenue: +55%",
       ],
     },
-  },,
+  },
   {
     slug: "ai-voice-hotel-assistant",
     title: "VoiceIQ — Голосовий AI-Асистент для Готелю",
@@ -1062,7 +1062,7 @@ export const PROJECTS: Project[] = [
         "Staff overtime: −31%",
       ],
     },
-  },,
+  },
   {
     slug: "ml-supply-chain-fmcg",
     title: "SupplyIQ — ML Оптимізація Ланцюга Поставок",
@@ -1105,7 +1105,7 @@ export const PROJECTS: Project[] = [
         "Working capital released: £340K in the first 6 months",
       ],
     },
-  },,
+  },
   {
     slug: "ml-support-triage-bert",
     title: "TriageAI — BERT Fine-tuning для Автоматизації Підтримки",
@@ -1146,7 +1146,7 @@ export const PROJECTS: Project[] = [
         "Agent satisfaction score: +28 points",
       ],
     },
-  },,
+  },
   {
     slug: "ai-content-studio",
     title: "ContentForge — GenAI Контент-Студія для Digital-Агентства",
@@ -1187,7 +1187,7 @@ export const PROJECTS: Project[] = [
         "Agency declined 4 prospective clients in Q1 2026 for poor fit — first time they had that luxury",
       ],
     },
-  },,
+  },
   {
     slug: "ml-patient-risk-scoring",
     title: "ClinicalIQ — ML Patient Risk Scoring",
@@ -1232,7 +1232,7 @@ export const PROJECTS: Project[] = [
         "ROI: 6 months (complication cost savings > system cost)",
       ],
     },
-  },,
+  },
   {
     slug: "ai-property-platform",
     title: "EstateIQ — AI Property Platform",
