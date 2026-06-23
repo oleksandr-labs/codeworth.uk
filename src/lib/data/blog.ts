@@ -1,4 +1,4 @@
-export interface BlogCategory {
+﻿export interface BlogCategory {
   id: string;
   label: { en: string; uk: string };
   description?: { en: string; uk: string };
@@ -57,7 +57,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "**Висновок: з чого почати**\n\nДля малого бізнесу оптимальний старт: ChatGPT Plus ($20/міс) для контенту + Tidio безкоштовно для чатботу + Canva Pro для дизайну. Це базовий AI-стек за $35/місяць який реально економить 5–10 годин на тиждень. Команда Codeworth інтегрує AI-чатботи та Make-автоматизацію у всі наші проєкти — це стандарт, не опція.",
     ],
     relatedNichePage: "/ai/marketing"
-  },,
+  },
   {
     slug: "ai-for-business-10-uses",
     title: "Штучний інтелект у бізнесі: 10 практичних застосувань AI прямо зараз",
@@ -80,7 +80,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "**Висновок**\n\nAI не замінить ваш бізнес — але конкурент, який використовує AI, зробить те саме швидше і дешевше. Починайте з малого: один процес, один інструмент. Codeworth допомагає інтегрувати AI в бізнес-процеси та веб-сайти — від простого чат-бота до складних RAG-систем зі знань вашої компанії.",
     ],
     relatedNichePage: "/ai/marketing"
-  },,
+  },
   {
     slug: "chatgpt-for-small-business",
     title: "ChatGPT для малого бізнесу: як автоматизувати рутину та заощадити час",
@@ -101,7 +101,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "**Custom GPTs: персональний AI-асистент для вашого бізнесу**\n\nChatGPT Plus дозволяє створювати Custom GPTs — персоналізованих асистентів з вашими інструкціями, знаннями та стилем:\n\n1. Завантажте документи компанії (прайс, FAQ, скрипти)\n2. Налаштуйте інструкції (тон, роль, обмеження)\n3. Поділіться посиланням з командою\n\nРезультат: кожен менеджер має доступ до AI-асистента, навченого на вашому бізнесі.",
       "**Висновок**\n\nChatGPT не виконає роботу за вас — але скоротить час рутинних задач на 40–70%. Ключ до успіху — якісні промпти та правило 'AI — перший чернетка, людина — фінальна верстка'. Почніть з однієї задачі сьогодні: напишіть п'ять постів для Instagram за допомогою ChatGPT і порівняйте якість та час.",
     ],
-  },,
+  },
   {
     slug: "ml-churn-prediction-guide",
     title: "Прогнозування відтоку клієнтів: як ML зберігає 30% бази за 6 тижнів",
@@ -124,7 +124,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "**Висновок**\n\nChurn prediction — один з найшвидших за окупністю ML-проєктів. Правильно побудована модель повертає інвестиції за 2–3 місяці. Codeworth реалізує повний цикл: від аналізу даних до деплою та MLOps-підтримки. Якщо ваш бізнес втрачає > 3% клієнтів на місяць — це саме той момент, щоб почати.",
     ],
     relatedNichePage: "/ml/saas"
-  },,
+  },
   {
     slug: "mlops-production-guide",
     title: "MLOps на практиці: як перевести ML-модель у продакшн і не втратити точність",
@@ -145,7 +145,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "**Архітектура production ML-системи**\n\nПовний стек для mid-size проєкту:\n\n```\nDані → Feature Store (Feast) → Training Pipeline (Airflow) → MLflow Model Registry\n                                                                      ↓\nClient Request → FastAPI Gateway → Model Serving (BentoML/TorchServe) → Response\n                                                                      ↓\n                              Prometheus + Grafana (моніторинг)\n```\n\nДля старту достатньо спрощеного варіанту: S3 + MLflow + FastAPI + Docker + GitHub Actions. Це покриває 80% потреб і займає 2–3 тижні налаштування.",
       "**Висновок**\n\nMLOps — не розкіш, а необхідність для будь-якої компанії, що серйозно ставиться до ML. Без нього модель деградує непомітно, а команда витрачає 80% часу на відтворення результатів. Codeworth будує MLOps-інфраструктуру з нуля та інтегрує в існуючі процеси. Перший крок — аудит поточного стану: що є, що відсутнє, де найбільші ризики.",
     ],
-  },,
+  },
   {
     slug: "ai-computer-vision-business",
     title: "Комп'ютерний зір у бізнесі: від контролю якості до підрахунку відвідувачів",
@@ -168,7 +168,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "**Висновок**\n\nComputer Vision у 2026 — це інструмент автоматизації, доступний малому та середньому бізнесу. Ключ до успіху: чітко визначена задача (не «AI для всього», а «виявляти дефект X»), якісні дані та правильна інтеграція в бізнес-процес. Codeworth проводить безкоштовну CV-консультацію: аналізуємо вашу задачу і кажемо, чи доцільно застосовувати Computer Vision і який буде ROI.",
     ],
     relatedNichePage: "/ai/manufacturing"
-  },,
+  },
   {
     slug: "ai-invoice-processing-automation",
     title: "AI обробка рахунків: як скоротити час обробки документів на 95%",
@@ -191,7 +191,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "**Conclusion**\n\nAI invoice processing is one of the most straightforward AI automation wins for accounting and finance teams. The technology is mature, the integration patterns are established, and the ROI is measurable from day one. For UK firms, it also solves a pressing compliance challenge — Making Tax Digital isn't optional, and AI document processing is the most efficient path to full compliance. Codeworth builds custom AI document processing systems for accounting firms, legal practices, and finance teams. If your team is spending more than 5% of its time on document data entry, the economics of automation almost certainly justify the investment.",
     ],
     relatedNichePage: "/ai/fintech"
-  },,
+  },
   {
     slug: "ml-property-valuation-avm",
     title: "ML-оцінка нерухомості: як побудувати AVM-модель точніше за людину",
@@ -214,7 +214,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "**Implementation Results and What's Next**\n\nFor the London + Kyiv estate agency (1,200 listings, 14 agents) where we deployed EstateIQ:\n- Manual valuation time: 2 days → 8 seconds\n- Valuation accuracy: MAPE 12–18% → 4.2%\n- Agent productivity: +38% more transactions per quarter (time previously spent on valuations redirected to client relationships)\n- Owner disputes: −76% (SHAP explanations resolved most objections before they escalated)\n- Portfolio revaluation: now runs automatically every Sunday night — 1,200 listings repriced in under 4 minutes\n\nThe AVM is updated weekly with new sold transaction data. When MAPE on recent transactions drifts above 6%, an automatic retraining job runs via Airflow. Data never goes stale.\n\nFor any real estate agency, developer, or property portal handling more than 200 listings, the economics of a custom AVM are compelling. Codeworth builds end-to-end AVM systems including data pipeline, model training, SHAP API, and property agent dashboard. The usual payback period is under 5 months.",
     ],
     relatedNichePage: "/ml/real-estate"
-  },,
+  },
   {
     slug: "ai-bilingual-chatbot-dual-market",
     title: "Один бот — два ринки: як побудувати білінгвальний RAG чат-бот UK/UA",
@@ -238,7 +238,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "**Results and When to Use This Approach**\n\nFor the DualBot deployment (service centre, 8 locations across London and Kyiv):\n- Autonomous resolution rate: 61% of English queries, 58% of Ukrainian queries handled without human agent\n- Average first response time: from 4 hours (human) to instant\n- Support cost reduction: 44% (one unified team instead of two separate queues)\n- Customer satisfaction (NPS): +27 points in the first quarter\n\nThe bilingual RAG approach works best when: your business genuinely operates in two markets with different pricing, contacts, or service areas; your customer base actively uses both languages (including code-switching); you need to maintain a single source of truth for your knowledge base rather than syncing two separate systems.\n\nIt works less well when the two markets are completely separate — in that case, two independent RAG systems may be simpler to manage. But for Ukrainian-UK businesses, the diaspora use case, and any company expanding from one market to the other, a unified bilingual system pays for itself in the first quarter. Codeworth has built this architecture for service businesses, e-commerce, and SaaS products. The implementation takes 4–6 weeks and the maintenance overhead is minimal.",
     ],
     relatedNichePage: "/ai/ecommerce"
-  },,
+  },
   {
     slug: "ai-rag-healthcare-gdpr",
     title: "RAG для медицини: GDPR-сумісна AI-система з self-hosted Qdrant та FHIR R4",
@@ -261,7 +261,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     relatedNichePage: "/ai/healthcare",
     reviewedBy: "oleksiy-kovalenko"
-  },,
+  },
   {
     slug: "ml-fraud-anomaly-detection-fca",
     title: "ML Fraud Detection для FinTech: Isolation Forest + LSTM та FCA Compliance",
@@ -284,7 +284,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     relatedNichePage: "/ml/banking",
     reviewedBy: "oleksiy-kovalenko"
-  },,
+  },
   {
     slug: "ml-precision-agriculture-ndvi",
     title: "Точне землеробство з ML: супутниковий NDVI, LSTM-моделі та аналіз дронів",
@@ -308,7 +308,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     relatedNichePage: "/ml/agritech",
     reviewedBy: "oleksiy-kovalenko"
-  },,
+  },
   {
     slug: "ai-edtech-personalized-learning",
     title: "AI-тьютор та персоналізоване навчання: як EdTech подвоює completion rate",
@@ -331,7 +331,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "**Results: What the Data Shows After 8 Months**\n\nFor the 3,400-student school after 8 months with the adaptive AI system:\n- Completion rate: 23% to 61% (166% improvement)\n- Refund requests in weeks 3–4: down 67%\n- Average CEFR improvement per 3-month course: +0.8 levels (vs. +0.5 for the previous static curriculum)\n- Human tutor hours per student per course: reduced by 40%\n- Student NPS: +41 points\n- Revenue per student via upsell to next course level: +55%\n\nThe completion rate improvement is the headline figure — but the mechanism behind it matters. The adaptive system is more engaging because it consistently presents challenges that are slightly above the student's current level — the Vygotsky zone of proximal development operationalised at scale. Students do not disengage from content that is calibrated to them.",
     ],
     relatedNichePage: "/ai/education"
-  },,
+  },
   {
     slug: "ai-voice-assistant-hospitality",
     title: "Голосовий AI для готелю: як Whisper + GPT-4o обробляє 3-мовний room service",
@@ -354,7 +354,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "**Results and Applicability Beyond Hotels**\n\nFor the South Kensington hotel after 6 months:\n- Reception workload reduction: 58% of routine requests handled without staff involvement\n- Guest satisfaction score: +0.4 stars (from 4.1 to 4.5 on booking platforms)\n- Negative reviews mentioning 'language barrier': down from 11% to 1.8% of reviews\n- Ukrainian-guest NPS: +52 points\n- Staff overtime costs: down 31%\n\nThe VoiceIQ architecture applies beyond hotels: restaurants (reservations and menu queries), spas, serviced apartments, concierge services, and airport lounges all have the same multilingual routine-request problem. For Ukrainian-owned hospitality businesses operating in both markets, the same system handles English and Ukrainian seamlessly — a competitive differentiator that costs less to implement than hiring a Ukrainian-speaking receptionist for every shift.",
     ],
     relatedNichePage: "/ai/hospitality"
-  },,
+  },
   {
     slug: "ml-supply-chain-optimization",
     title: "Оптимізація ланцюга поставок з ML: як XGBoost + OR-Tools скоротили логістику на 19%",
@@ -377,7 +377,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "**Results and Lessons for UK and Ukrainian Distribution**\n\nAfter 9 months in production:\n- Stockout rate: 8.3% to 2.2% (down 73%)\n- Slow/dead stock: 14% to 8.3% of warehouse value (down 41%)\n- Kilometres driven per week: down 19%\n- Driver overtime hours: down 88%\n- Manual buyer time on replenishment: down 65%\n- Working capital tied up in inventory: released £340K in the first 6 months\n\nFor UK FMCG and distribution businesses, the supply chain ML case is strong: margins are thin, logistics costs are high (particularly post-Brexit), and stockout penalties from major retailers are significant.\n\nFor Ukrainian distributors, the same infrastructure applies with adapted inputs: 1C/M.E.Doc for inventory data, Nova Poshta API for last-mile routing constraints. The SupplyIQ system Codeworth deployed for a Ukrainian pharmaceutical distributor (87 pharmacies, 600+ SKUs) used the same XGBoost + OR-Tools foundation with local system integrations.",
     ],
     relatedNichePage: "/ml/logistics"
-  },,
+  },
   {
     slug: "ml-nlp-support-automation",
     title: "Автоматизація підтримки з BERT: як fine-tuning скоротив час відповіді на 81%",
@@ -400,7 +400,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "**Results: SLA Compliance and Agent Satisfaction**\n\nFor the B2B SaaS company after 7 months:\n- Average first response time: 4.2 hours to 48 minutes (down 81%)\n- SLA compliance (first response within 4 hours for High priority): 67% to 96%\n- Classification accuracy (manual audit 3 months post-deployment): 93.8%\n- Tickets resolved without human response: 31%\n- Agent time on triage/classification: 35% to 6% of working time\n- Agent satisfaction score: +28 points\n\nFor UK B2B SaaS companies, the business case aligns with two pressures: SLA penalties in enterprise contracts and the high cost of support scaling (automation extends the existing team's capacity).\n\nFor Ukrainian SaaS companies, the same approach applies with multilingual models — XLM-RoBERTa handles mixed UA/EN queues effectively. Several Ukrainian tech companies have used TriageAI to handle mixed-language ticket queues without requiring bilingual staff for triage.",
     ],
     relatedNichePage: "/ml/saas"
-  },,
+  },
   {
     slug: "ai-content-generation-agency",
     title: "GenAI контент-студія для агентства: як AI скоротив виробництво контенту на 85%",
@@ -422,7 +422,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "**Results and What Changed for the Agency**\n\nFor the Cardiff agency after 10 months with ContentForge:\n- Content production time per 1,500-word piece: 3–5 days to 35–45 minutes (down 85–91%)\n- Content production cost as a percentage of revenue: 68% to 29%\n- Client count: 40 to 61 (same team, same headcount)\n- Organic traffic for AI-assisted content vs. previous human-only content: +18% on the same clients\n- Writer headcount change: unchanged — writers transitioned from full drafting to editing and strategy\n\nAt 29% production cost vs. 68%, the agency now operates with margins that allow selective client acquisition rather than growth-at-any-cost. They declined 4 prospective clients in Q1 2026 because the fit was not right — something the previous margin structure made impossible.\n\nFor UK and Ukrainian marketing agencies, the AI content pipeline is a genuine competitive advantage while adoption remains partial. Agencies that crack brand voice fidelity can produce content faster and at higher SEO quality than competitors still doing everything manually. The window for differentiation is probably 18-24 months before AI-assisted production becomes table stakes across the industry.",
     ],
     relatedNichePage: "/ai/marketing"
-  },,
+  },
   {
     slug: "ai-invoice-processing-mtd-guide",
     title: "How AI Cut Invoice Processing Time by 95% for 180 SMBs",
@@ -445,7 +445,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     relatedNichePage: "/ai/fintech",
     reviewedBy: "oleksiy-kovalenko"
-  },,
+  },
   {
     slug: "ml-demand-forecasting-retail",
     title: "How XGBoost + Prophet Beat Manual Forecasting by 3× in Retail",
@@ -467,7 +467,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "**Results After 12 Months**\n\nDemand forecast MAPE: 27% to 8.3% (-69% error). Excess inventory: 4.2 million GBP to 2.8 million GBP (-34%). Write-offs as percentage of revenue: 2.4% to 1.4% (-42%). Stockouts for top 500 SKUs: 8.3% to 3.1% (-63%). Buyer time on replenishment: 60% to 20% of working week.\n\nThe transition challenge was not technical but human: buyers who had planned by intuition initially overrode model recommendations heavily in the first 8 weeks. The team ran a 10-week parallel track -- showing buyers the model's recommendation alongside their own decision and tracking outcomes -- before switching to model-led replenishment. For UK retailers at 20+ stores and 1,000+ SKUs, the data required -- historical sales by SKU by location -- is almost always already in the existing ERP or POS system.",
     ],
     relatedNichePage: "/ml/retail"
-  },,
+  },
   {
     slug: "fca-ml-explainability-guide",
     title: "FCA Model Risk: What Every UK FinTech Must Know About XAI",
@@ -488,7 +488,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "**Appeals Dashboard: Human-in-the-Loop Architecture**\n\nA SHAP explanation satisfies 'explain the decision.' It does not satisfy 'customers must be able to challenge it.' For that, you need an appeals workflow:\n\n1. Customer receives a plain-English SHAP summary -- consumer language, not raw feature names\n2. Customer submits additional information or a written challenge via secure portal within 30 days\n3. Challenge routes to a human reviewer with full context: original inputs, SHAP explanation, customer submission, account history\n4. Reviewer makes an independent assessment; overrides are recorded with reason codes and feed back into model retraining signals\n5. Every step is written to an immutable audit log (append-only, cryptographically hash-chained) retained for 5 years\n\nGuardAI's fraud detection implementation passed FCA audit review on first submission using this architecture. The critical detail: SHAP values must be stored alongside every model decision at inference time, not reconstructed retroactively.",
       "**Fairness Monitoring Under Consumer Duty**\n\nConsumer Duty's good outcomes requirement has a fairness dimension: if your model produces systematically worse outcomes for customers with protected characteristics, the FCA expects you to know about it and remediate.\n\nQuarterly monitoring covers: approval rate parity (does the model decline specific demographic postcodes at significantly higher rates?); SHAP bias analysis (do feature contributions for protected groups differ in ways that could constitute indirect discrimination?); appeals outcome parity (are appeals from certain groups less likely to succeed?).\n\nBuilding SHAP, appeals, and fairness monitoring in from the start costs roughly 15-20% more in initial build. Retrofitting after FCA scrutiny typically costs 3-5x more. For UK FinTech firms, Consumer Duty is not an obstacle -- it is a design specification.",
     ],
-  },,
+  },
   {
     slug: "ml-credit-scoring-alternative-data",
     title: "Beyond FICO: How ML Uses Alternative Data for Credit Decisions",
@@ -511,7 +511,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     relatedNichePage: "/ml/banking",
     reviewedBy: "oleksiy-kovalenko"
-  },,
+  },
   {
     slug: "ml-fraud-detection-guide",
     title: "Real-time Fraud Detection with ML: Architecture and Results",
@@ -533,7 +533,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "**Deployment, Monitoring, and Model Drift**\n\nFraud patterns evolve. A model trained in January 2025 will degrade by June 2025 as fraudsters adapt. Production ML fraud detection requires:\n\n**Champion-Challenger Testing** — Run the new model on 10% of traffic. Compare precision, recall, and £-value of caught fraud vs. the production model. Promote only when statistically significant.\n\n**Feature Drift Monitoring** — Track the distribution of each input feature daily. If 'foreign IP' rate jumps from 2% to 8%, it might mean your customer base changed, or it might mean a fraud campaign has started — either way, you need to know.\n\n**Feedback Loop** — Investigators must label reviewed cases within 48 hours. These labels feed the weekly retraining pipeline. Without closed-loop feedback, model accuracy degrades 15-20% over 6 months.\n\nResults from the GuardAI deployment: fraud losses reduced by 67% in year one, false positive rate reduced from 2.1% (rule-based) to 0.4% (ML), £2.3M annual saving net of system costs. The FCA compliance team cited the system's explainability layer (SHAP values per decision) as a key factor in their supervisory review.",
     ],
     relatedNichePage: "/ml/banking"
-  },,
+  },
   {
     slug: "predictive-maintenance-ml",
     title: "Predicting Equipment Failure Before It Happens with ML",
@@ -554,7 +554,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "**ML Models for Failure Prediction**\n\nThree model types serve different prediction horizons:\n\n**Anomaly Detection (Unsupervised, 0-24h horizon)**: Isolation Forest or LSTM Autoencoder trained on normal operation. When reconstruction error exceeds threshold, trigger alert. No labelled failure data required — ideal for new equipment.\n\n**Remaining Useful Life (RUL) Regression (1-30 day horizon)**: LSTM or Temporal Fusion Transformer predicts days until failure. Requires historical run-to-failure data (expensive to collect — consider NASA CMAPSS dataset for initial validation).\n\n**Binary Classification (Week-ahead, 7-14 day horizon)**: XGBoost trained on features extracted 7 days before known failures. Simpler than RUL, more actionable — maintenance schedulers want 'will it fail this week?' not 'exactly 9.3 days remaining'.\n\nMachineGuard uses all three in an ensemble: anomaly detection for immediate alerts, RUL for maintenance planning, binary classification for weekly work order generation.",
       "**Results and Implementation Timeline**\n\nMachineGuard deployment at a UK food manufacturer (14 CNC machines, 8 conveyor motors, 6 compressors):\n\n- Unplanned downtime: −73% (from 340h/year to 92h/year)\n- Maintenance cost: −31% (optimised parts ordering, reduced overtime)\n- False alarm rate: 4.2% (industry benchmark: 8-12%)\n- Time to first value: 6 weeks (data collection: 2 weeks, model training: 2 weeks, integration: 2 weeks)\n\n**Implementation roadmap:**\n1. Sensor audit and installation (2-3 weeks)\n2. Data collection — minimum 8 weeks of normal operation before training\n3. Baseline model training and threshold calibration (2 weeks)\n4. Integration with CMMS (computerised maintenance management system) — work order auto-generation\n5. Operator training and dashboard rollout (1 week)\n6. Continuous improvement cycle — monthly model retraining with new failure events\n\nThe key lesson: start with your most critical, failure-prone equipment. A Pareto analysis typically shows that 20% of machines cause 80% of unplanned downtime — focus there first and demonstrate ROI before scaling.",
     ],
-  },,
+  },
   {
     slug: "ai-property-valuation",
     title: "How ML Models Predict Property Prices with 94% Accuracy",
@@ -576,7 +576,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "**Building vs. Buying: Make-or-Buy Decision**\n\nCommercial AVMs (CACI, Hometrack, e.surv) cost £2-15 per API call with volume discounts. For a lender doing 500 valuations/day, that's £300-7,500/day. Building a custom AVM costs £80,000-150,000 upfront plus £2,000-5,000/month for data licences and infrastructure.\n\nBuild if: you have 500+ valuations/month, need custom features (e.g., your own customer transaction history), or operate in a niche market (commercial property, HMOs) where generic AVMs underperform.\n\nBuy if: you're under 500 valuations/month, need FCA-compliant audit trails immediately, or are in a regulated context where model liability matters.\n\nHybrid approach: use a commercial AVM as a feature in your own model — their estimate becomes an input alongside your proprietary data. This is how several challenger banks have achieved 94%+ accuracy without building the core model from scratch.\n\nEstateIQ, our property AI platform, integrates an AVM component that achieved 94.1% accuracy (within 8% of sale price) on a London dataset of 280,000 transactions. The model powers property description generation, price recommendation for new listings, and portfolio valuation for investor clients.",
     ],
     relatedNichePage: "/ai/real-estate"
-  },,
+  },
   {
     slug: "ai-clinical-chatbot-nhs",
     title: "AI Клінічний Чат-бот для NHS: Сортування Пацієнтів та Запис",
@@ -609,7 +609,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     relatedNichePage: "/ai/healthcare",
     reviewedBy: "oleksiy-kovalenko"
-  },,
+  },
   {
     slug: "medical-ai-gdpr-guide",
     title: "Медичний AI та GDPR: Повний Гід для UK Клінік",
@@ -641,7 +641,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Key requirements: data minimisation, storage limitation, right to explanation for automated decisions (Article 22).",
       "Practical checklist: processing register, DPIA, DPO assessment, technical measures (AES-256 encryption, pseudonymisation), processor contracts.",
     ],
-  },,
+  },
   {
     slug: "ai-product-descriptions-bulk",
     title: "AI Генерація Описів Товарів у Масштабі: 10 000 SKU за День",
@@ -673,7 +673,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Results: an online retailer grew organic traffic by 41% in 3 months after bulk-generating descriptions for 12,000 products.",
     ],
     relatedNichePage: "/ai/ecommerce"
-  },,
+  },
   {
     slug: "ecommerce-ai-recommendations",
     title: "AI Рекомендації для E-Commerce: Від Collaborative Filtering до LLM",
@@ -704,7 +704,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "LLM-based recommenders: GPT-4 as a reasoning engine on top of embeddings. Advantage — understands natural language queries ('something for a mountain hike'). Disadvantage — latency and cost.",
       "Hybrid approach: CF for real-time recommendations + LLM for personalised explanations ('We recommend this because...'). 23% CTR increase in our case study.",
     ],
-  },,
+  },
   {
     slug: "making-tax-digital-ai",
     title: "Making Tax Digital та AI: Автоматизація VAT-звітності для UK Бізнесу",
@@ -735,7 +735,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "AI categorisation accuracy: 91–96% after fine-tuning on UK-specific transactions. The remainder goes into a human review queue.",
       "Time savings: accountants spend 70% less time preparing VAT Returns. ROI pays back in 2–3 months for practices with 50+ clients.",
     ],
-  },,
+  },
   {
     slug: "ai-brand-voice-guide",
     title: "AI та Голос Бренду: Як Навчити GPT Писати як Ваша Компанія",
@@ -766,7 +766,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Step 4 (for large companies): fine-tune GPT-3.5-turbo or Mistral on a corpus of brand texts. Cost from £200, quality jumps by 40%.",
     ],
     relatedNichePage: "/ai/marketing"
-  },,
+  },
   {
     slug: "ai-hr-bias-gdpr-uk",
     title: "AI в HR UK: Упередженість Алгоритмів та GDPR-Відповідність",
@@ -798,7 +798,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     relatedNichePage: "/ai/hr",
     reviewedBy: "kateryna-lysenko"
-  },,
+  },
   {
     slug: "hotel-chatbot-pms-integration",
     title: "AI Чат-бот для Готелю з Інтеграцією PMS: Booking, Check-in, Upsell",
@@ -829,7 +829,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Language: multilingual by default (EN/UK/PL/DE) — detected automatically from the guest's first message.",
       "ROI: a 150-room hotel increased upsell revenue by £18K/month and reduced reception response time from 8 min to 45 sec.",
     ],
-  },,
+  },
   {
     slug: "ai-speech-assessment-whisper",
     title: "AI Оцінка Мовлення з Whisper та GPT: EdTech-Рішення для Мовних Шкіл",
@@ -861,7 +861,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Result for a language school (300 students): teachers freed up 8 hours/week from routine assessment; students received instant feedback.",
     ],
     relatedNichePage: "/ai/education"
-  },,
+  },
   {
     slug: "ai-quality-control-manufacturing",
     title: "AI Контроль Якості у Виробництві: Computer Vision для Дефектів",
@@ -894,7 +894,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     relatedNichePage: "/ai/manufacturing",
     reviewedBy: "oleksiy-kovalenko"
-  },,
+  },
   {
     slug: "yolo-defect-detection-guide",
     title: "YOLO для Детекції Дефектів: Практичний Гід від Датасету до Продакшену",
@@ -925,7 +925,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Training: YOLOv8n (nano) for edge, YOLOv8l (large) for server deployment. Fine-tuning from COCO weights: 100 epochs, batch 16, lr 0.001.",
       "Edge optimisation: TensorRT for NVIDIA Jetson (3–5x speedup), ONNX for cross-platform, INT8 quantisation to reduce model size.",
     ],
-  },,
+  },
   {
     slug: "ai-contract-review-legal",
     title: "AI Аналіз Контрактів для UK LegalTech: NLP для Юридичних Документів",
@@ -958,7 +958,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     relatedNichePage: "/ai/legal",
     reviewedBy: "oleksiy-kovalenko"
-  },,
+  },
   {
     slug: "legal-ai-data-security-guide",
     title: "Безпека Даних у LegalTech AI: Що Потрібно Знати UK Адвокатам",
@@ -990,7 +990,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "ICO requirements: DPIA for AI systems processing client personal data. Legal basis — legitimate interests or consent.",
       "Practical checklist for law firms: vendor due diligence, data residency (UK/EU only), audit logs, staff training, client disclosure policy.",
     ],
-  },,
+  },
   {
     slug: "ai-property-description-generator",
     title: "AI Генератор Описів Нерухомості: від Spec Sheet до Compelling Listing",
@@ -1022,7 +1022,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Result for an agency (120 listings/month): 40 hours/month saved, 18% more views thanks to better descriptions.",
     ],
     relatedNichePage: "/ai/real-estate"
-  },,
+  },
   {
     slug: "ai-real-estate-chatbot-rightmove",
     title: "AI Чат-бот для Нерухомості з Rightmove API: Підбір Об'єктів 24/7",
@@ -1054,7 +1054,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Lead capture: every qualified chat → automatic lead in CRM (Salesforce/HubSpot) with full conversation transcript.",
     ],
     relatedNichePage: "/ai/real-estate"
-  },,
+  },
   {
     slug: "ml-recommendation-engine-guide",
     title: "ML Рекомендаційний Двигун: Від Матричної Факторизації до Deep Learning",
@@ -1086,7 +1086,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Evaluation metrics: Precision@K, Recall@K, NDCG@K, MAP. An A/B test with real users is the only reliable way to measure impact.",
     ],
     relatedNichePage: "/ml/retail"
-  },,
+  },
   {
     slug: "retail-dynamic-pricing-ml",
     title: "ML Динамічне Ціноутворення для Ритейлу: Максимізація Виручки в Real-Time",
@@ -1117,7 +1117,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Competitive monitoring: scraping competitor prices (Scraper API, Oxylabs) → feature engineering → influence on optimal price.",
       "Constraints: GDPR when using personal data for personalised pricing. UK Competition Act — prohibition on price-fixing agreements between competitors.",
     ],
-  },,
+  },
   {
     slug: "saas-ltv-prediction-ml",
     title: "ML Прогнозування LTV для SaaS: Від Когортного Аналізу до Neural Networks",
@@ -1148,7 +1148,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Deep learning: neural network on sequences of events (feature clicks, logins, usage depth) → 12-month LTV prediction. Outperforms classical models with sufficient data.",
       "Business applications: segmentation (high/medium/low LTV) → different retention strategies, personalised discounts, priority support for top-LTV customers.",
     ],
-  },,
+  },
   {
     slug: "ml-lead-scoring-trial-conversion",
     title: "ML Lead Scoring для Trial-to-Paid Конверсії: Як SaaS Збільшує Revenue",
@@ -1180,7 +1180,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Automation: high-score leads → automatic sales email, low-score → nurture sequence, very-low → product onboarding nudge.",
     ],
     relatedNichePage: "/ml/saas"
-  },,
+  },
   {
     slug: "vrp-route-optimization-ortools",
     title: "VRP та Оптимізація Маршрутів з OR-Tools: Гід для Логістичних Компаній",
@@ -1211,7 +1211,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Metaheuristics in OR-Tools: Guided Local Search, Simulated Annealing, Tabu Search. GLS is the best choice for most delivery problems.",
       "Real case: an FMCG distributor (200 points/day, 15 vehicles) reduced mileage by 23% and cut delivery time by 31% after deploying a VRP optimiser.",
     ],
-  },,
+  },
   {
     slug: "ml-predictive-maintenance-lstm",
     title: "LSTM для Predictive Maintenance: Прогнозування Відмов Обладнання за Часовими Рядами",
@@ -1244,7 +1244,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     relatedNichePage: "/ml/manufacturing",
     reviewedBy: "oleksiy-kovalenko"
-  },,
+  },
   {
     slug: "industry-4-oee-ml",
     title: "Industry 4.0 та ML для OEE: Як Підвищити Ефективність Виробничих Ліній",
@@ -1275,7 +1275,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Quality prediction: predicting defects before end-of-cycle based on process parameters (temperature, pressure, speed). Enables parameter correction mid-process.",
       "Typical project results: +8–15% OEE, which for a factory with £50M revenue = £4–7M additional output without new capital investment.",
     ],
-  },,
+  },
   {
     slug: "agritech-carbon-credits-ml",
     title: "ML для Carbon Credits в Агросекторі: Верифікація та Прогнозування Секвестрації",
@@ -1306,7 +1306,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Soil Organic Carbon (SOC) model: GIS data + soil chemical analysis + spectroscopy → regression model for spatial SOC estimation.",
       "Business model: a verified carbon credit on the Verra/Gold Standard market = £15–50/tonne CO₂. A 500-hectare farm can generate £20–80K/year.",
     ],
-  },,
+  },
   {
     slug: "sentinel-2-crop-analysis",
     title: "Sentinel-2 для Аналізу Посівів: ML на Безкоштовних Супутникових Даних",
@@ -1337,7 +1337,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Crop classification: multi-temporal NDVI/EVI/NDWI stack → Random Forest or CNN → crop map. Accuracy 85–92% for main UK crops (wheat, rapeseed, sugar beet).",
       "Google Earth Engine code: `var ndvi = image.normalizedDifference(['B8', 'B4'])` — 5 lines for country-wide NDVI in a season.",
     ],
-  },,
+  },
   {
     slug: "ml-ueba-insider-threat",
     title: "ML для UEBA: Виявлення Інсайдерських Загроз та Аномальної Поведінки",
@@ -1370,7 +1370,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     relatedNichePage: "/ml/cybersecurity",
     reviewedBy: "oleksiy-kovalenko"
-  },,
+  },
   {
     slug: "ml-false-positive-reduction-siem",
     title: "ML для Зменшення False Positives у SIEM: Practical Guide",
@@ -1403,7 +1403,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     relatedNichePage: "/ml/cybersecurity",
     reviewedBy: "oleksiy-kovalenko"
-  },,
+  },
   {
     slug: "proptech-ml-investment-scoring",
     title: "ML Скоринг Інвестиційної Привабливості Нерухомості для PropTech",
@@ -1434,7 +1434,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Yield prediction: regression model (Gradient Boosting) → forecast of gross yield and capital appreciation over 3–5 years.",
       "Risk scoring: spatial ML with GIS features (flood risk, crime rates, Ofsted school ratings) → composite risk score for each postcode.",
     ],
-  },,
+  },
   {
     slug: "ml-patient-risk-scoring",
     title: "ML Ризик-Скоринг Пацієнтів: Прогнозування Госпіталізацій та Ускладнень",
@@ -1467,7 +1467,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     relatedNichePage: "/ml/healthcare",
     reviewedBy: "oleksiy-kovalenko"
-  },,
+  },
   {
     slug: "clinical-ml-gdpr-guide",
     title: "Клінічний ML та UK GDPR: Правова Основа для Обробки Медичних Даних",
@@ -1499,7 +1499,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Anonymisation vs Pseudonymisation: anonymised data falls outside GDPR scope, but true anonymisation is hard — k-anonymity, l-diversity, differential privacy.",
       "Technical safeguards: Trusted Research Environments (TRE), federated learning (training without centralising data movement), synthetic data generation.",
     ],
-  },,
+  },
   {
     slug: "ml-energy-forecasting-guide",
     title: "ML Прогнозування Енергоспоживання: LSTM та Prophet для UK Енергетики",
@@ -1531,7 +1531,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Metrics: MAPE (Mean Absolute Percentage Error) < 2% — excellent for short-term. Ensemble models reduce error by 10–15%.",
     ],
     relatedNichePage: "/ml/energy"
-  },,
+  },
   {
     slug: "ml-development-cost-uk",
     title: "Скільки коштує розробка ML-моделі в UK? Гід з цінами 2026",
