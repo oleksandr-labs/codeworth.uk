@@ -37,8 +37,8 @@ export function CTASection({ lang }: { lang: string }) {
 
           <p className="text-lg text-indigo-200 mb-10 leading-relaxed">
             {isUk
-              ? "Залишіть заявку та отримайте безкоштовну консультацію протягом 24 годин. Розкажемо, як зробити ваш сайт інструментом росту."
-              : "Leave a request and get a free consultation within 24 hours. We'll show you how to make your website a growth tool."}
+              ? "Залишіть заявку та отримайте безкоштовну ML-консультацію протягом 24 годин. Разом визначимо, яке рішення принесе найбільший ROI."
+              : "Leave a request and get a free ML consultation within 24 hours. Together we'll identify which solution will deliver the highest ROI."}
           </p>
 
           {/* Contact form */}

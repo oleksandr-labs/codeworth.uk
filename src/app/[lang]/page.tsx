@@ -9,37 +9,98 @@ import { HowWeWorkSection } from "@/components/home/HowWeWorkSection";
 import { WhyUsSection } from "@/components/home/WhyUsSection";
 import { CasesSection } from "@/components/home/CasesSection";
 import { ClientLogosSection } from "@/components/home/ClientLogosSection";
+import { FAQSection } from "@/components/home/FAQSection";
 // Lazy-load below-fold sections for better LCP
 const MarketplaceTeaser = dynamic(() => import("@/components/home/MarketplaceTeaser").then((m) => ({ default: m.MarketplaceTeaser })));
+const TestimonialsSection = dynamic(() => import("@/components/home/TestimonialsSection").then((m) => ({ default: m.TestimonialsSection })));
 const FoundingClientSection = dynamic(() => import("@/components/home/FoundingClientSection").then((m) => ({ default: m.FoundingClientSection })));
 const BlogPreviewSection = dynamic(() => import("@/components/home/BlogPreviewSection").then((m) => ({ default: m.BlogPreviewSection })));
 const CTASection = dynamic(() => import("@/components/home/CTASection").then((m) => ({ default: m.CTASection })));
-import { FAQSection } from "@/components/home/FAQSection";
 
 const HOME_FAQ_UK = [
-  { q: "Скільки коштує розробка сайту?", a: "Вартість залежить від типу проєкту. Лендінг — від 4 900 грн, корпоративний сайт — від 15 000 грн, інтернет-магазин — від 25 000 грн. Точна ціна формується після безкоштовної консультації та аналізу ваших цілей." },
-  { q: "Скільки часу займає розробка?", a: "Лендінг — 1–2 тижні, корпоративний сайт — 3–4 тижні, інтернет-магазин — 4–8 тижнів. Терміни залежать від складності функціоналу та швидкості погодження з вашого боку." },
-  { q: "На якому технологічному стеку ви розробляєте?", a: "Ми працюємо на Next.js 16 + TypeScript + Tailwind CSS. Цей стек забезпечує максимальну швидкість (Core Web Vitals 90+), SEO-оптимізацію та надійність. Хостинг — Vercel або будь-який сервер під ваші потреби." },
-  { q: "Чи займаєтесь SEO-просуванням після запуску?", a: "Так. Базова SEO-оптимізація входить в кожен проєкт: title, description, Schema.org, sitemap, robots.txt. Також надаємо послуги технічного SEO-аудиту та щомісячного супроводу." },
-  { q: "Чи можу я редагувати сайт після запуску самостійно?", a: "Звісно. Ми підключаємо Sanity CMS — інтуїтивна панель керування контентом без знання коду. Проводимо навчання та надаємо відео-інструкції." },
-  { q: "Яка гарантія та підтримка після здачі?", a: "1 місяць безкоштовної гарантійної підтримки входить у кожен проєкт. Далі — пакети підтримки від 1 500 грн/місяць. Час реакції на критичні баги — до 4 годин." },
-  { q: "Чи є у вас готові рішення для мого типу бізнесу?", a: "Так. У нашому маркетплейсі є 33+ нішевих рішення: ресторани, салони краси, будівельники, медицина, юридичні фірми, навчальні заклади тощо. Можна придбати готовий шаблон і запустити сайт за 1–3 дні." },
-  { q: "Ви працюєте з клієнтами з інших країн?", a: "Так. Ми маємо досвід роботи з клієнтами з UK, EU та США. Спілкуємось англійською, всі договори та фінансові операції адаптовані для міжнародних клієнтів. Оплата — у зручній для вас валюті." },
-  { q: "Що включає базова SEO-оптимізація?", a: "Технічна SEO: швидкість (Core Web Vitals 90+), структурована розмітка Schema.org, XML-sitemap, robots.txt, канонічні URL, Open Graph теги. На вимогу — семантичне ядро, SEO-тексти та стратегія просування." },
-  { q: "Яку CMS ви рекомендуєте та чи є альтернативи?", a: "Для більшості проєктів — Sanity CMS (headless, зручний редактор, хмарне сховище). Альтернативи: Strapi (self-hosted), Contentful, або власна адмін-панель. Вибір залежить від бюджету та технічних вимог." },
+  {
+    q: "Скільки коштує розробка ML-моделі?",
+    a: "Вартість залежить від задачі та складності. Proof of concept — від 75 000 ₴ (3 тижні). Продакшн-модель з API та MLOps-моніторингом — від 150 000 ₴. Точна оцінка після безкоштовного аудиту ваших даних та цілей.",
+  },
+  {
+    q: "Скільки часу займає ML-проєкт?",
+    a: "Discovery та аудит даних — 1–2 тижні. Прототип — 3–6 тижнів. Повний продакшн-деплой з MLOps — 8–16 тижнів. Терміни залежать від якості наявних даних та складності задачі.",
+  },
+  {
+    q: "Скільки даних потрібно для початку?",
+    a: "Залежить від задачі. Text classification — від 1 000 прикладів. Fraud detection — від 10 000 транзакцій. Комп'ютерний зір — від 500 зображень на клас. Ми оцінюємо якість і достатність даних на першому етапі.",
+  },
+  {
+    q: "Ми зможемо підтримувати модель самостійно після деплою?",
+    a: "Так. Ми проводимо навчання команди, передаємо документацію, API-специфікацію та MLOps-конфігурацію. За бажанням налаштовуємо автоматичне перенавчання без вашої участі.",
+  },
+  {
+    q: "На якому стеку ви розробляєте ML-рішення?",
+    a: "Python + PyTorch/TensorFlow, FastAPI для REST API, MLflow для трекінгу, Docker + Kubernetes для деплою. Для LLM-рішень — LangChain, GPT-4o або відкриті моделі залежно від вимог до конфіденційності.",
+  },
+  {
+    q: "Чи можна розгорнути рішення на нашому сервері (on-prem)?",
+    a: "Так. Ми підтримуємо on-prem деплой, приватну хмару (AWS/GCP/Azure) та гібридні варіанти. Для чутливих галузей — медицина, фінанси — on-prem є пріоритетним варіантом.",
+  },
+  {
+    q: "Яка гарантія якості моделі?",
+    a: "Ми фіксуємо мінімальні метрики у специфікації (наприклад, precision ≥ 0.90, recall ≥ 0.85). Модель вважається готовою тільки якщо досягає цих порогів. 3 місяці гарантійної підтримки після деплою включені.",
+  },
+  {
+    q: "Як виміряти ROI від ML-рішення?",
+    a: "Разом з вами визначаємо бізнес-метрики до старту: час на операцію, відсоток помилок, витрати на персонал, відтік клієнтів тощо. Після деплою готуємо звіт про зміни за 30/60/90 днів.",
+  },
+  {
+    q: "Ви працюєте з клієнтами за межами України?",
+    a: "Так. Основний ринок — UK, EU та США. Усі договори та фінансові операції адаптовані для міжнародних клієнтів. Комунікація — англійською або українською.",
+  },
+  {
+    q: "Що таке MLOps і навіщо це потрібно?",
+    a: "MLOps — це CI/CD для ML-моделей: автоматизований деплой нових версій, моніторинг точності у продакшені, автоматичне перенавчання при деградації. Без MLOps модель «старіє» за 3–6 місяців — дані змінюються, якість падає.",
+  },
 ];
 
 const HOME_FAQ_EN = [
-  { q: "How much does website development cost?", a: "Pricing depends on the project type. A landing page starts from £120, a corporate website from £375, and an e-commerce store from £625. The exact price is set after a free consultation and analysis of your goals." },
-  { q: "How long does development take?", a: "A landing page takes 1–2 weeks, a corporate website 3–4 weeks, and an e-commerce store 4–8 weeks. Timelines depend on feature complexity and how quickly approvals come from your side." },
-  { q: "What tech stack do you use?", a: "We build on Next.js 16 + TypeScript + Tailwind CSS. This stack guarantees top speed (Core Web Vitals 90+), built-in SEO, and long-term reliability. Hosting on Vercel or any server of your choice." },
-  { q: "Do you handle SEO after launch?", a: "Yes. Basic SEO is included in every project: title, description, Schema.org, sitemap, robots.txt. We also offer technical SEO audits and monthly ongoing support packages." },
-  { q: "Can I edit the website myself after launch?", a: "Absolutely. We integrate Sanity CMS — an intuitive content management panel that requires no coding knowledge. We provide training and video tutorials." },
-  { q: "What warranty and support do you offer post-launch?", a: "1 month of free warranty support is included in every project. After that, support packages start from £37/month. Response time for critical issues — within 4 hours." },
-  { q: "Do you have ready-made solutions for my type of business?", a: "Yes. Our marketplace has 33+ niche solutions: restaurants, beauty salons, builders, medical clinics, law firms, schools, and more. Buy a ready template and launch your site in 1–3 days." },
-  { q: "Do you work with clients from other countries?", a: "Absolutely. We have experience with clients from the UK, EU, and US. We communicate in English, all contracts and payments are adapted for international clients in your preferred currency." },
-  { q: "What does basic SEO optimisation include?", a: "Technical SEO: speed (Core Web Vitals 90+), Schema.org structured data, XML sitemap, robots.txt, canonical URLs, Open Graph tags. On request — keyword research, SEO copywriting, and a growth strategy." },
-  { q: "Which CMS do you recommend and are there alternatives?", a: "For most projects — Sanity CMS (headless, intuitive editor, cloud storage). Alternatives: Strapi (self-hosted), Contentful, or a custom admin panel. The choice depends on your budget and technical requirements." },
+  {
+    q: "How much does ML model development cost?",
+    a: "Cost depends on the task and complexity. A proof of concept starts from £1,800 (3 weeks). A production model with API and MLOps monitoring starts from £3,800. Exact pricing follows a free data and goals audit.",
+  },
+  {
+    q: "How long does an ML project take?",
+    a: "Discovery and data audit — 1–2 weeks. Prototype — 3–6 weeks. Full production deployment with MLOps — 8–16 weeks. Timelines depend on data quality and task complexity.",
+  },
+  {
+    q: "How much data do we need to start?",
+    a: "It depends on the task. Text classification — from 1,000 labelled examples. Fraud detection — from 10,000 transactions. Computer vision — from 500 images per class. We assess data quality and sufficiency in the first stage.",
+  },
+  {
+    q: "Can we maintain the model ourselves after deployment?",
+    a: "Yes. We provide team training, documentation, API specs and MLOps configuration handover. Optionally, we set up automatic retraining with no manual intervention needed.",
+  },
+  {
+    q: "What tech stack do you use for ML solutions?",
+    a: "Python + PyTorch/TensorFlow, FastAPI for REST APIs, MLflow for experiment tracking, Docker + Kubernetes for deployment. For LLM solutions — LangChain, GPT-4o or open-source models depending on privacy requirements.",
+  },
+  {
+    q: "Can the solution be deployed on our own server (on-prem)?",
+    a: "Yes. We support on-prem, private cloud (AWS/GCP/Azure) and hybrid deployments. For sensitive sectors — healthcare, finance — on-prem is the default recommendation.",
+  },
+  {
+    q: "What quality guarantee does the model come with?",
+    a: "We specify minimum metrics in the project spec (e.g. precision ≥ 0.90, recall ≥ 0.85). The model is considered production-ready only when it meets those targets. 3 months of warranty support post-deployment included.",
+  },
+  {
+    q: "How do we measure ROI from an ML solution?",
+    a: "We define business metrics with you before starting: time per operation, error rate, staff costs, churn rate etc. After deployment, we produce a 30/60/90-day impact report.",
+  },
+  {
+    q: "Do you work with clients outside Ukraine?",
+    a: "Yes. Our main markets are the UK, EU and the US. All contracts and payments are set up for international clients. Communication in English or Ukrainian.",
+  },
+  {
+    q: "What is MLOps and why does it matter?",
+    a: "MLOps is CI/CD for ML models: automated deployment of new versions, accuracy monitoring in production, and automatic retraining on drift. Without MLOps, a model goes stale in 3–6 months as data distributions shift and performance degrades.",
+  },
 ];
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -47,29 +108,29 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isUk = lang === "uk";
   return {
     title: isUk
-      ? "Codeworth — Веб-студія повного циклу | Розробка сайтів в Україні"
-      : "Codeworth — Full-Cycle Web Studio | Website Development",
+      ? "Codeworth — ML-компанія | Машинне навчання для бізнесу"
+      : "Codeworth — ML Company | Machine Learning for Business",
     description: isUk
-      ? "Розробка сайтів, інтернет-магазинів, SEO, UI/UX дизайн. 120+ готових нішевих шаблонів. Старт від 4 900 грн."
-      : "Website development, e-commerce, SEO, UI/UX design. 120+ ready-made niche templates. Starting from £120. Free consultation.",
+      ? "Кастомні ML-моделі, fraud detection, NLP, комп'ютерний зір, MLOps. Proof of concept за 3 тижні. Codeworth — ML-консалтинг для UK та EU."
+      : "Custom ML models, fraud detection, NLP, computer vision, MLOps. Proof of concept in 3 weeks. Codeworth — ML consultancy for UK & EU businesses.",
     keywords: isUk
-      ? ["розробка сайтів", "веб-студія Україна", "інтернет-магазин", "SEO", "UI/UX дизайн", "Codeworth"]
-      : ["website development", "web studio", "e-commerce", "SEO", "UI/UX design", "Codeworth"],
+      ? ["машинне навчання", "ML-моделі", "fraud detection", "NLP", "комп'ютерний зір", "MLOps", "AI-консалтинг", "Codeworth"]
+      : ["machine learning", "ML models", "fraud detection", "NLP", "computer vision", "MLOps", "AI consultancy", "Codeworth"],
     openGraph: {
-      title: isUk ? "Codeworth — Веб-студія повного циклу" : "Codeworth — Full-Cycle Web Studio",
+      title: isUk ? "Codeworth — ML-компанія" : "Codeworth — ML Company",
       description: isUk
-        ? "Розробка сайтів, інтернет-магазинів, SEO та UI/UX дизайн. 120+ готових нішевих шаблонів для будь-якого бізнесу."
-        : "Website development, e-commerce, SEO, and UI/UX design. 120+ ready-made niche templates for any business.",
+        ? "Кастомні ML-моделі, fraud detection, NLP, комп'ютерний зір та MLOps для бізнесу."
+        : "Custom ML models, fraud detection, NLP, computer vision and MLOps for businesses.",
       type: "website",
       url: `https://codeworth.uk/${lang}`,
-      images: [{ url: "/og/home.png", width: 1200, height: 630, alt: isUk ? "Codeworth — Веб-студія" : "Codeworth — Web Studio" }],
+      images: [{ url: "/og/home.png", width: 1200, height: 630, alt: isUk ? "Codeworth — ML-компанія" : "Codeworth — ML Company" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: isUk ? "Codeworth — Веб-студія повного циклу" : "Codeworth — Full-Cycle Web Studio",
+      title: isUk ? "Codeworth — ML-компанія" : "Codeworth — ML Company",
       description: isUk
-        ? "120+ проєктів. Сайти, магазини, SEO. Старт від 4 900 грн."
-        : "120+ projects. Websites, stores, SEO. Starting from £120.",
+        ? "Fraud detection, NLP, MLOps. Proof of concept за 3 тижні."
+        : "Fraud detection, NLP, MLOps. Proof of concept in 3 weeks.",
       images: ["/og/home.png"],
     },
     alternates: buildAlternates(lang),
@@ -98,16 +159,15 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       <main id="main-content" className="flex-1">
         <HeroSection />
         <ServicesSection lang={lang} />
+        <CasesSection lang={lang} />
         <HowWeWorkSection lang={lang} />
         <WhyUsSection lang={lang} />
-        <FoundingClientSection lang={lang} />
-        <CasesSection lang={lang} />
+        <TestimonialsSection />
         <ClientLogosSection lang={lang} />
         <MarketplaceTeaser lang={lang} />
         <BlogPreviewSection lang={lang} />
-
+        <FoundingClientSection lang={lang} />
         <FAQSection items={faqItems} isUk={isUk} />
-
         <CTASection lang={lang} />
       </main>
       <Footer />

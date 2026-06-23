@@ -3,15 +3,15 @@ import { ArrowRight, Star, Zap, HeartHandshake } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 
 const PERKS_UK = [
-  { icon: Star, text: "Пріоритетна підтримка протягом 6 місяців" },
-  { icon: Zap, text: "Запуск протягом 7–14 днів" },
-  { icon: HeartHandshake, text: "Особиста увага та гнучкість умов" },
+  { icon: Star, text: "Discovery call + аудит даних за 48 годин" },
+  { icon: Zap, text: "Proof of concept за 2–3 тижні" },
+  { icon: HeartHandshake, text: "Спільна розробка рішення, не просто виконання" },
 ];
 
 const PERKS_EN = [
-  { icon: Star, text: "Priority support for 6 months" },
-  { icon: Zap, text: "Launch in 7–14 days" },
-  { icon: HeartHandshake, text: "Personal attention and flexible terms" },
+  { icon: Star, text: "Discovery call + data audit within 48 hours" },
+  { icon: Zap, text: "Proof of concept in 2–3 weeks" },
+  { icon: HeartHandshake, text: "We co-design the solution, not just execute" },
 ];
 
 export function FoundingClientSection({ lang }: { lang: string }) {
@@ -42,8 +42,8 @@ export function FoundingClientSection({ lang }: { lang: string }) {
 
           <p className="text-lg text-indigo-200 mb-8 leading-relaxed">
             {isUk
-              ? "Ми тільки починаємо — і саме зараз ми можемо приділити вашому проєкту максимум уваги. Умови, яких більше не буде."
-              : "We're just getting started — which means your project gets our full attention. Terms that won't last."}
+              ? "Ми тільки запускаємо ML-консалтинг на UK-ринку — і саме зараз кожен проєкт отримує максимальну увагу засновників. Умови, яких більше не буде."
+              : "We're just launching our ML consultancy in the UK market — which means every project gets founder-level attention. Terms that won't last."}
           </p>
 
           {/* Spots counter */}

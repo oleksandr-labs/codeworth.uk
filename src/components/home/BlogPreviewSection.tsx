@@ -26,13 +26,13 @@ export function BlogPreviewSection({ lang }: { lang: string }) {
             <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
               {isUk ? "Блог" : "Blog"}
             </p>
-            <h2 className="text-4xl lg:text-5xl font-heading font-extrabold text-neutral-900">
+            <h2 className="text-4xl lg:text-5xl font-heading font-extrabold text-neutral-900 dark:text-white">
               {isUk ? "Останні статті" : "Latest articles"}
             </h2>
-            <p className="mt-3 text-lg text-neutral-500">
+            <p className="mt-3 text-lg text-neutral-500 dark:text-neutral-400">
               {isUk
-                ? "Корисний контент про веб-розробку, SEO та маркетинг."
-                : "Useful content about web development, SEO and marketing."}
+                ? "Корисний контент про ML, AI та підготовку даних."
+                : "Useful content about ML, AI and data engineering."}
             </p>
           </div>
           <Link
@@ -49,7 +49,7 @@ export function BlogPreviewSection({ lang }: { lang: string }) {
             <Link
               key={post.slug}
               href={`/${lang}/blog/${post.slug}`}
-              className="group rounded-2xl border border-neutral-100 dark:border-neutral-700 overflow-hidden hover:shadow-lg hover:shadow-neutral-200/60 transition-all duration-300 hover:-translate-y-1 bg-white"
+              className="group rounded-2xl border border-neutral-100 dark:border-neutral-700 overflow-hidden hover:shadow-lg hover:shadow-neutral-200/60 transition-all duration-300 hover:-translate-y-1 bg-white dark:bg-neutral-800"
             >
               {/* Visual */}
               <div className={cn("h-40 bg-linear-to-br flex items-center justify-center", post.color)}>
@@ -57,7 +57,7 @@ export function BlogPreviewSection({ lang }: { lang: string }) {
               </div>
               {/* Content */}
               <div className="p-6">
-                <span className="inline-block px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold mb-3">
+                <span className="inline-block px-2.5 py-0.5 rounded-full bg-indigo-50 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300 text-xs font-semibold mb-3">
                   {post.category}
                 </span>
                 <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-2 leading-tight group-hover:text-indigo-700 transition-colors line-clamp-2">
