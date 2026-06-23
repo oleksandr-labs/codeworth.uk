@@ -19,7 +19,7 @@ export const ML_NICHES: MLNicheData[] = [
     metaTitleEn: "ML for Banking UK | FCA Fraud Detection | Codeworth",
     metaTitleUk: "ML для банків | Виявлення шахрайства | Codeworth",
     metaDescriptionEn: "FCA-compliant ML for banking: fraud detection −82%, credit scoring, AML. SHAP explainability included. From £8,000. UK & Ukraine.",
-    metaDescriptionUk: "ML для банків з відповідністю FCA: виявлення шахрайства −82%, кредитний скоринг, AML. SHAP-пояснення включено. Від 330 000 ₴.",
+    metaDescriptionUk: "ML для банків з відповідністю FCA: виявлення шахрайства −82%, кредитний скоринг, AML. SHAP-пояснення включено. Від £8,000.",
     keywordsEn: { primary: "ML for banking UK", secondary: ["FCA fraud detection ML", "credit scoring machine learning", "AML model banking UK"], localEn: ["fraud ML London", "banking ML Manchester", "fintech ML Edinburgh"] },
     keywordsUk: { primary: "ML для банків Україна", secondary: ["виявлення шахрайства ML", "кредитний скоринг ML", "AML модель банк"], localUk: ["ML банк Київ", "фінтех ML Харків", "скоринг ML Львів"] },
     packages: [
@@ -79,7 +79,7 @@ export const ML_NICHES: MLNicheData[] = [
     metaTitleEn: "ML for Retail UK | Demand Forecasting | Codeworth",
     metaTitleUk: "ML для рітейлу | Прогнозування попиту | Codeworth",
     metaDescriptionEn: "Retail ML: demand forecasting 3× better, waste −31%, personalisation +18% AOV. From £5,000. UK & Ukraine.",
-    metaDescriptionUk: "ML для рітейлу: прогнозування попиту у 3 рази краще, списання −31%, персоналізація +18% AOV. Від 205 000 ₴.",
+    metaDescriptionUk: "ML для рітейлу: прогнозування попиту у 3 рази краще, списання −31%, персоналізація +18% AOV. Від £5,000.",
     keywordsEn: { primary: "ML for retail UK", secondary: ["demand forecasting machine learning", "retail personalisation ML", "dynamic pricing ML"], localEn: ["retail ML London", "e-commerce ML Manchester", "demand forecasting UK"] },
     keywordsUk: { primary: "ML для рітейлу Україна", secondary: ["прогнозування попиту ML", "персоналізація рітейл", "динамічне ціноутворення ML"], localUk: ["ML рітейл Київ", "e-commerce ML Харків", "прогноз попиту Львів"] },
     packages: [
@@ -135,7 +135,7 @@ export const ML_NICHES: MLNicheData[] = [
     metaTitleEn: "ML for SaaS | Churn Prediction | Codeworth",
     metaTitleUk: "ML для SaaS | Прогнозування відтоку | Codeworth",
     metaDescriptionEn: "SaaS ML: churn prediction 91% accuracy, LTV scoring, upsell propensity. Churn −28%. From £5,000. UK & Ukraine.",
-    metaDescriptionUk: "ML для SaaS: прогнозування відтоку точність 91%, LTV-скоринг. Відтік −28%. Від 205 000 ₴.",
+    metaDescriptionUk: "ML для SaaS: прогнозування відтоку точність 91%, LTV-скоринг. Відтік −28%. Від £5,000.",
     keywordsEn: { primary: "ML for SaaS churn prediction", secondary: ["SaaS churn ML", "customer LTV machine learning", "upsell propensity model"], localEn: ["SaaS ML London", "churn prediction UK", "SaaS analytics ML"] },
     keywordsUk: { primary: "ML для SaaS відтік", secondary: ["прогнозування відтоку SaaS", "LTV скоринг SaaS", "ML апсейл"], localUk: ["ML SaaS Київ", "відтік ML Харків", "SaaS аналітика Львів"] },
     packages: [
@@ -191,7 +191,7 @@ export const ML_NICHES: MLNicheData[] = [
     metaTitleEn: "ML for Logistics UK | Route Optimisation | Codeworth",
     metaTitleUk: "ML для логістики | Оптимізація маршрутів | Codeworth",
     metaDescriptionEn: "Logistics ML: route optimisation −23% cost, inventory forecasting, supplier risk. From £5,000. UK & Ukraine.",
-    metaDescriptionUk: "ML для логістики: оптимізація маршрутів −23%, прогнозування запасів, ризики постачальників. Від 205 000 ₴.",
+    metaDescriptionUk: "ML для логістики: оптимізація маршрутів −23%, прогнозування запасів, ризики постачальників. Від £5,000.",
     keywordsEn: { primary: "ML for logistics UK", secondary: ["route optimisation machine learning", "supply chain ML", "inventory forecasting ML"], localEn: ["logistics ML London", "supply chain ML Manchester", "3PL ML UK"] },
     keywordsUk: { primary: "ML для логістики Україна", secondary: ["оптимізація маршрутів ML", "ланцюг постачання ML", "прогнозування запасів"], localUk: ["ML логістика Київ", "ланцюг постачання ML Харків", "3PL ML Одеса"] },
     packages: [
@@ -246,7 +246,7 @@ export const ML_NICHES: MLNicheData[] = [
     metaTitleEn: "ML for Manufacturing UK | Predictive Maintenance | Codeworth",
     metaTitleUk: "ML для виробництва | Прогнозоване обслуговування | Codeworth",
     metaDescriptionEn: "Manufacturing ML: predictive maintenance −73% downtime, quality control −61% defects. From £7,000. UK & Ukraine.",
-    metaDescriptionUk: "ML для виробництва: прогнозоване обслуговування −73% простої, контроль якості −61% дефекти. Від 288 000 ₴.",
+    metaDescriptionUk: "ML для виробництва: прогнозоване обслуговування −73% простої, контроль якості −61% дефекти. Від £7,000.",
     keywordsEn: { primary: "ML for manufacturing UK", secondary: ["predictive maintenance ML", "manufacturing quality control ML", "industrial ML UK"], localEn: ["manufacturing ML Midlands", "predictive maintenance ML UK", "industrial AI Birmingham"] },
     keywordsUk: { primary: "ML для виробництва Україна", secondary: ["прогнозоване обслуговування ML", "контроль якості ML", "промисловий ML"], localUk: ["ML виробництво Київ", "прогнозоване ТО Харків", "промислове ML Дніпро"] },
     packages: [
@@ -301,7 +301,7 @@ export const ML_NICHES: MLNicheData[] = [
     metaTitleEn: "ML for Agriculture UK | Crop Yield Prediction | Codeworth",
     metaTitleUk: "ML для сільського господарства | Прогноз врожаю | Codeworth",
     metaDescriptionEn: "AgriTech ML: yield prediction 94% accuracy, pest detection, precision irrigation. Yield +22%. From £6,000. UK & Ukraine.",
-    metaDescriptionUk: "AgriTech ML: прогноз врожаю 94%, виявлення шкідників, точне зрошення. Врожайність +22%. Від 247 000 ₴.",
+    metaDescriptionUk: "AgriTech ML: прогноз врожаю 94%, виявлення шкідників, точне зрошення. Врожайність +22%. Від £6,000.",
     keywordsEn: { primary: "ML for agriculture UK", secondary: ["crop yield prediction ML", "precision farming machine learning", "AgriTech ML UK"], localEn: ["AgriTech ML Yorkshire", "precision farming ML UK", "crop ML East Anglia"] },
     keywordsUk: { primary: "ML для сільського господарства", secondary: ["прогнозування врожаю ML", "точне землеробство ML", "агротех ML"], localUk: ["ML агро Київ", "точне землеробство Харків", "агро ML Одеса"] },
     packages: [
@@ -356,7 +356,7 @@ export const ML_NICHES: MLNicheData[] = [
     metaTitleEn: "ML for Cybersecurity UK | Anomaly Detection | Codeworth",
     metaTitleUk: "ML для кібербезпеки | Виявлення аномалій | Codeworth",
     metaDescriptionEn: "Cybersecurity ML: MTTD −76%, UEBA, malware classification 99.1%. From £7,000. UK & Ukraine.",
-    metaDescriptionUk: "ML для кібербезпеки: MTTD −76%, UEBA, класифікація шкідливого ПЗ 99.1%. Від 288 000 ₴.",
+    metaDescriptionUk: "ML для кібербезпеки: MTTD −76%, UEBA, класифікація шкідливого ПЗ 99.1%. Від £7,000.",
     keywordsEn: { primary: "ML for cybersecurity UK", secondary: ["network anomaly detection ML", "UEBA machine learning", "malware classification ML"], localEn: ["cybersecurity ML London", "UEBA ML UK", "threat detection ML"] },
     keywordsUk: { primary: "ML для кібербезпеки", secondary: ["виявлення аномалій ML", "UEBA машинне навчання", "класифікація шкідливого ПЗ"], localUk: ["ML кібербезпека Київ", "UEBA ML Харків", "виявлення загроз ML"] },
     packages: [
@@ -411,7 +411,7 @@ export const ML_NICHES: MLNicheData[] = [
     metaTitleEn: "ML for Real Estate UK | AVM Valuation | Codeworth",
     metaTitleUk: "ML для нерухомості | AVM оцінка | Codeworth",
     metaDescriptionEn: "PropTech ML: AVM valuation MAE £4,200, investment scoring, rental yield prediction. From £8,000. UK & Ukraine.",
-    metaDescriptionUk: "PropTech ML: AVM оцінка MAE £4 200, інвестиційний скоринг. Від 330 000 ₴.",
+    metaDescriptionUk: "PropTech ML: AVM оцінка MAE £4 200, інвестиційний скоринг. Від £8,000.",
     keywordsEn: { primary: "ML for real estate UK", secondary: ["automated valuation model AVM", "PropTech machine learning", "rental yield prediction ML"], localEn: ["AVM machine learning London", "PropTech ML UK", "property valuation ML"] },
     keywordsUk: { primary: "ML для нерухомості Україна", secondary: ["автоматична оцінка нерухомості ML", "PropTech ML", "прогноз дохідності оренди"], localUk: ["ML нерухомість Київ", "AVM оцінка Харків", "PropTech ML Львів"] },
     packages: [
@@ -466,7 +466,7 @@ export const ML_NICHES: MLNicheData[] = [
     metaTitleEn: "ML for Healthcare UK | Patient Risk Scoring | Codeworth",
     metaTitleUk: "ML для медицини | Ризик-скоринг пацієнтів | Codeworth",
     metaDescriptionEn: "Healthcare ML: readmission −34%, sepsis early warning, clinical pathway. GDPR + NICE compliant. From £8,000.",
-    metaDescriptionUk: "ML для медицини: повторні госпіталізації −34%, раннє попередження сепсису. GDPR + NICE. Від 330 000 ₴.",
+    metaDescriptionUk: "ML для медицини: повторні госпіталізації −34%, раннє попередження сепсису. GDPR + NICE. Від £8,000.",
     keywordsEn: { primary: "ML for healthcare NHS UK", secondary: ["patient risk scoring ML", "readmission prediction ML", "clinical pathway ML UK"], localEn: ["healthcare ML London", "NHS ML UK", "patient risk ML NHS"] },
     keywordsUk: { primary: "ML для медицини Україна", secondary: ["скоринг ризику пацієнтів", "прогноз повторної госпіталізації ML", "клінічний ML"], localUk: ["ML медицина Київ", "ризик-скоринг пацієнтів Харків", "клінічний ML Львів"] },
     packages: [
@@ -522,7 +522,7 @@ export const ML_NICHES: MLNicheData[] = [
     metaTitleEn: "ML for Energy UK | Load Forecasting | Codeworth",
     metaTitleUk: "ML для енергетики | Прогнозування навантаження | Codeworth",
     metaDescriptionEn: "Energy ML: load forecasting MAPE 2.1%, renewable prediction ±3.5%, imbalance cost −41%. From £4,000. UK & Ukraine.",
-    metaDescriptionUk: "ML для енергетики: прогноз навантаження MAPE 2,1%, ВДЕ ±3,5%, небаланс −41%. Від 165 000 ₴.",
+    metaDescriptionUk: "ML для енергетики: прогноз навантаження MAPE 2,1%, ВДЕ ±3,5%, небаланс −41%. Від £4,000.",
     keywordsEn: { primary: "ML for energy UK", secondary: ["energy load forecasting ML", "renewable output prediction ML", "grid optimisation machine learning"], localEn: ["energy ML UK", "load forecasting ML", "solar wind prediction ML"] },
     keywordsUk: { primary: "ML для енергетики Україна", secondary: ["прогнозування навантаження ML", "прогноз ВДЕ ML", "оптимізація мережі ML"], localUk: ["ML енергетика Київ", "прогноз навантаження Харків", "ВДЕ ML Одеса"] },
     packages: [
