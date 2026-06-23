@@ -4,46 +4,188 @@ import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
-import { ArrowRight, Clock, Zap } from "lucide-react";
-import {
-  STARTUP_SOLUTIONS,
-  STARTUP_CATEGORY_LABELS_EN,
-  STARTUP_CATEGORY_LABELS_UK,
-  type StartupCategory,
-} from "@/lib/data/startup";
+import { ArrowRight, CheckCircle, Clock, Zap, TrendingUp, Shield } from "lucide-react";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
   const isUk = lang === "uk";
   return {
     title: isUk
-      ? `Готові лендінги для стартапів — Codeworth | від £299 | Запуск за 3–7 днів`
-      : `Startup Landing Pages — Codeworth | from £299 | Launch in 3–7 Days`,
+      ? "ML для UK Стартапів | Codeworth — PoC за 3 тижні, Series A validation"
+      : "ML for UK Startups | Codeworth — PoC in 3 Weeks, Series A ML Validation",
     description: isUk
-      ? `${STARTUP_SOLUTIONS.length}+ готових лендінгів для стартапів. SaaS waitlist, MVP, мобільний додаток, D2C бренд, newsletter. Тестуй гіпотезу — запускай за 3 дні від £299.`
-      : `${STARTUP_SOLUTIONS.length}+ ready-made startup landing pages. SaaS waitlist, MVP, mobile app, D2C brand, newsletter. Test your hypothesis — launch in 3 days from £299.`,
+      ? "Спеціалізовані ML послуги для UK стартапів: швидкий PoC, Innovate UK grant support, investor-grade model validation, R&D tax credits. Від £1,800."
+      : "Specialised ML services for UK startups: fast PoC, Innovate UK grant support, investor-grade model validation, R&D tax credits. From £1,800.",
     alternates: buildAlternates(lang, "startup"),
     openGraph: {
-      title: isUk
-        ? "Готові лендінги для стартапів — Codeworth"
-        : "Startup Landing Pages — Codeworth",
+      title: isUk ? "ML для UK Стартапів | Codeworth" : "ML for UK Startups | Codeworth",
       description: isUk
-        ? "Тестуй гіпотезу і запускай за 3 дні від £299."
-        : "Test your hypothesis and launch in 3 days from £299.",
+        ? "PoC за 3 тижні. Innovate UK grant support. Series A validation."
+        : "PoC in 3 weeks. Innovate UK grant support. Series A ML validation.",
       type: "website",
       url: `https://codeworth.uk/${lang}/startup`,
-      images: [{ url: "/og/startup.png", width: 1200, height: 630, alt: isUk ? "Стартап лендінги Codeworth" : "Codeworth Startup Landings" }],
+      images: [{ url: "/og/startup.png", width: 1200, height: 630, alt: isUk ? "ML для стартапів Codeworth" : "Codeworth ML for Startups" }],
     },
   };
 }
 
-const CATEGORIES = Array.from(new Set(STARTUP_SOLUTIONS.map((s) => s.category))) as StartupCategory[];
+const STARTUP_PACKAGES = [
+  {
+    slug: "rapid-poc",
+    titleUk: "Rapid ML PoC",
+    titleEn: "Rapid ML PoC",
+    price: "£1,800",
+    delivery: { uk: "3 тижні", en: "3 weeks" },
+    badgeUk: "Популярний",
+    badgeEn: "Popular",
+    highlight: true,
+    descUk: "Швидке підтвердження ML-гіпотези перед залученням інвестицій або початком повного розроблення.",
+    descEn: "Fast ML hypothesis validation before fundraising or committing to a full build.",
+    includesUk: [
+      "Data quality audit та EDA",
+      "1 навчена та оцінена ML-модель",
+      "Звіт метрик (precision/recall/F1/AUC)",
+      "Порівняння з SOTA baseline",
+      "Investor-ready model card",
+      "Рекомендація: production або pivot",
+    ],
+    includesEn: [
+      "Data quality audit and EDA",
+      "1 trained and evaluated ML model",
+      "Metrics report (precision/recall/F1/AUC)",
+      "Comparison against SOTA baseline",
+      "Investor-ready model card",
+      "Recommendation: production or pivot",
+    ],
+  },
+  {
+    slug: "mvp-ml",
+    titleUk: "MVP ML System",
+    titleEn: "MVP ML System",
+    price: "£4,500",
+    delivery: { uk: "6–8 тижнів", en: "6–8 weeks" },
+    badgeUk: null,
+    badgeEn: null,
+    highlight: false,
+    descUk: "Production-ready ML система для MVP вашого продукту з API та базовим MLOps.",
+    descEn: "Production-ready ML system for your product MVP with API and basic MLOps.",
+    includesUk: [
+      "Все з Rapid PoC",
+      "FastAPI REST serving endpoint",
+      "Docker containerisation",
+      "CI/CD pipeline (GitHub Actions)",
+      "Базовий MLOps моніторинг",
+      "3 місяці гарантійної підтримки",
+    ],
+    includesEn: [
+      "Everything in Rapid PoC",
+      "FastAPI REST serving endpoint",
+      "Docker containerisation",
+      "CI/CD pipeline (GitHub Actions)",
+      "Basic MLOps monitoring",
+      "3 months warranty support",
+    ],
+  },
+  {
+    slug: "series-a-ml",
+    titleUk: "Series A ML Validation",
+    titleEn: "Series A ML Validation",
+    price: "£3,000",
+    delivery: { uk: "2–3 тижні", en: "2–3 weeks" },
+    badgeUk: null,
+    badgeEn: null,
+    highlight: false,
+    descUk: "Незалежна технічна валідація ML-системи для investor due diligence.",
+    descEn: "Independent technical validation of your ML system for investor due diligence.",
+    includesUk: [
+      "Аудит ML codebase та методології",
+      "Незалежна переоцінка метрик (holdout)",
+      "Звіт: data leakage, overfitting, bias",
+      "SHAP/explainability аналіз",
+      "Technical ML risk assessment",
+      "Investor-ready technical memo",
+    ],
+    includesEn: [
+      "ML codebase and methodology audit",
+      "Independent metric re-evaluation (holdout)",
+      "Report: data leakage, overfitting, bias",
+      "SHAP/explainability analysis",
+      "Technical ML risk assessment",
+      "Investor-ready technical memo",
+    ],
+  },
+  {
+    slug: "grant-support",
+    titleUk: "Innovate UK Grant Support",
+    titleEn: "Innovate UK Grant Support",
+    price: "£1,500",
+    delivery: { uk: "1–2 тижні", en: "1–2 weeks" },
+    badgeUk: null,
+    badgeEn: null,
+    highlight: false,
+    descUk: "Підготовка технічних секцій Innovate UK заявки та R&D tax credit документації.",
+    descEn: "Technical sections of Innovate UK applications and R&D tax credit documentation.",
+    includesUk: [
+      "ML methodology section (TRL assessment)",
+      "Feasibility analysis та uncertainty framing",
+      "Work package структура",
+      "Impact metrics та KPI framework",
+      "R&D tax credit technical narrative",
+      "HMRC documentation support",
+    ],
+    includesEn: [
+      "ML methodology section (TRL assessment)",
+      "Feasibility analysis and uncertainty framing",
+      "Work package structure",
+      "Impact metrics and KPI framework",
+      "R&D tax credit technical narrative",
+      "HMRC documentation support",
+    ],
+  },
+];
+
+const STARTUP_STAGES = [
+  {
+    stage: { uk: "Pre-Seed / Idea", en: "Pre-Seed / Idea" },
+    emoji: "💡",
+    needs: {
+      uk: "Чи взагалі це можливо з ML? Rapid PoC відповість за 3 тижні.",
+      en: "Is this even feasible with ML? Rapid PoC answers in 3 weeks.",
+    },
+    package: "rapid-poc",
+  },
+  {
+    stage: { uk: "Seed / MVP Build", en: "Seed / MVP Build" },
+    emoji: "🚀",
+    needs: {
+      uk: "MVP ML система для продукту. API готовий, PoC доведено.",
+      en: "MVP ML system for your product. API ready, PoC proven.",
+    },
+    package: "mvp-ml",
+  },
+  {
+    stage: { uk: "Series A / Fundraising", en: "Series A / Fundraising" },
+    emoji: "📈",
+    needs: {
+      uk: "VCs вимагають незалежну ML-валідацію. Series A Validation package.",
+      en: "VCs require independent ML validation. Series A Validation package.",
+    },
+    package: "series-a-ml",
+  },
+  {
+    stage: { uk: "Grant Application", en: "Grant Application" },
+    emoji: "🏛️",
+    needs: {
+      uk: "Innovate UK або UKRI grant. Технічні секції та R&D tax credits.",
+      en: "Innovate UK or UKRI grant. Technical sections and R&D tax credits.",
+    },
+    package: "grant-support",
+  },
+];
 
 export default async function StartupPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isUk = lang === "uk";
-  const lp = (path: string) => `/${lang}${path}`;
-  const CATEGORY_LABELS = isUk ? STARTUP_CATEGORY_LABELS_UK : STARTUP_CATEGORY_LABELS_EN;
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -51,181 +193,121 @@ export default async function StartupPage({ params }: { params: Promise<{ lang: 
       <main id="main-content" className="flex-1">
 
         {/* Hero */}
-        <section className="pt-32 pb-20 bg-gradient-to-br from-gray-950 via-indigo-950 to-violet-950 text-white">
+        <section className="pt-32 pb-20 bg-linear-to-br from-slate-900 via-violet-900 to-slate-900">
           <Container>
             <div className="max-w-3xl mx-auto text-center">
-              <div className="inline-flex items-center gap-2 bg-white/10 text-white/80 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6 border border-white/20">
-                🚀 {isUk ? "Стартап рішення" : "Startup Solutions"}
+              <div className="inline-flex items-center gap-2 bg-violet-500/20 border border-violet-500/30 text-violet-300 text-sm px-3 py-1.5 rounded-full mb-6">
+                <Zap className="w-4 h-4" />
+                {isUk ? "Для UK стартапів" : "For UK Startups"}
               </div>
-              <h1 className="text-5xl lg:text-6xl font-heading font-extrabold mb-6 leading-tight">
-                {isUk ? "Запусти стартап за 3 дні" : "Launch Your Startup in 3 Days"}
+              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+                {isUk ? "ML для UK Стартапів" : "ML for UK Startups"}
               </h1>
-              <p className="text-xl text-white/70 max-w-2xl mx-auto mb-8 leading-relaxed">
+              <p className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
                 {isUk
-                  ? "Готові лендінги для тестування гіпотез, залучення перших користувачів та інвесторів. Не трать місяці на розробку — тестуй швидко."
-                  : "Ready-made landing pages to test hypotheses, attract first users and investors. Don't spend months building — test fast."}
+                  ? "Від PoC за 3 тижні до Series A ML validation. Підтримка Innovate UK грантів та R&D tax credits. Ми розуміємо специфіку стартап-ринку UK."
+                  : "From PoC in 3 weeks to Series A ML validation. Innovate UK grant support and R&D tax credits. We understand UK startup market specifics."}
               </p>
-              <div className="flex flex-wrap items-center justify-center gap-3 mb-10 text-sm">
-                <span className="flex items-center gap-1.5 bg-white/10 border border-white/20 px-4 py-2 rounded-full">
-                  <Zap className="w-4 h-4 text-amber-400" />
-                  {STARTUP_SOLUTIONS.length}+ {isUk ? "шаблонів" : "templates"}
-                </span>
-                <span className="flex items-center gap-1.5 bg-white/10 border border-white/20 px-4 py-2 rounded-full">
-                  💰 {isUk ? "від £299" : "from £299"}
-                </span>
-                <span className="flex items-center gap-1.5 bg-white/10 border border-white/20 px-4 py-2 rounded-full">
-                  <Clock className="w-4 h-4 text-emerald-400" />
-                  {isUk ? "запуск за 3–7 днів" : "launch in 3–7 days"}
-                </span>
-              </div>
-              <Link
-                href={lp("/contact")}
-                className="inline-flex items-center gap-2 bg-white text-gray-900 dark:text-white font-bold px-8 py-4 rounded-2xl hover:bg-white/90 transition-colors text-lg shadow-lg"
-              >
-                {isUk ? "Замовити консультацію" : "Book a Free Consultation"}
-                <ArrowRight className="w-5 h-5" />
+              <Link href={`/${lang}/contact`} className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-violet-600 hover:bg-violet-700 text-white font-bold transition-colors">
+                {isUk ? "Поговорити про ваш стартап" : "Talk About Your Startup"} <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </Container>
         </section>
 
-        {/* What makes startups different */}
-        <section className="py-16 bg-white dark:bg-neutral-800 border-b border-neutral-100">
+        {/* Startup stages */}
+        <section className="py-16 bg-white dark:bg-neutral-900 border-b">
           <Container>
-            <div className="max-w-3xl mx-auto text-center mb-12">
-              <h2 className="text-3xl font-heading font-extrabold text-neutral-900 dark:text-white mb-3">
-                {isUk ? "Чому стартапам потрібен окремий підхід?" : "Why Do Startups Need a Different Approach?"}
-              </h2>
-              <p className="text-neutral-500">
-                {isUk
-                  ? "Нішеві сайти для ресторанів та салонів — одне. Стартап-лендінг для тестування гіпотези — зовсім інше."
-                  : "Niche sites for restaurants and salons are one thing. Startup landings for hypothesis testing are completely different."}
-              </p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {[
-                {
-                  icon: "🎯",
-                  title: isUk ? "Тестуй гіпотезу" : "Test Your Hypothesis",
-                  desc: isUk
-                    ? "Кожен шаблон побудований навколо ключової метрики. Дізнайся чи хочуть люди твій продукт — до того як витрачати гроші на розробку."
-                    : "Every template is built around a key metric. Find out if people want your product — before spending money on development.",
-                },
-                {
-                  icon: "⚡",
-                  title: isUk ? "Швидко і дешево" : "Fast and Affordable",
-                  desc: isUk
-                    ? "3–7 днів замість 3–8 тижнів. £299–£599 замість £5,000+. Ідеально для pre-seed стадії."
-                    : "3–7 days instead of 3–8 weeks. £299–£599 instead of £5,000+. Perfect for pre-seed stage.",
-                },
-                {
-                  icon: "📈",
-                  title: isUk ? "Вбудована аналітика" : "Analytics Built-in",
-                  desc: isUk
-                    ? "GA4 events, conversion tracking, heatmaps — все налаштовано. Одразу бачиш що працює."
-                    : "GA4 events, conversion tracking, heatmaps — all configured. See immediately what works.",
-                },
-              ].map((item, i) => (
-                <div key={i} className="p-6 rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-100 dark:border-neutral-700 hover:border-indigo-200 hover:shadow-sm transition-all">
-                  <div className="text-3xl mb-4">{item.icon}</div>
-                  <h3 className="font-bold text-neutral-900 dark:text-white text-lg mb-2">{item.title}</h3>
-                  <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">{item.desc}</p>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+              {isUk ? "Пакет для кожного етапу" : "A Package for Every Stage"}
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {STARTUP_STAGES.map((s) => (
+                <div key={s.package} className="bg-gray-50 dark:bg-neutral-800 rounded-2xl p-5 border border-neutral-100 dark:border-neutral-700">
+                  <div className="text-3xl mb-3">{s.emoji}</div>
+                  <h3 className="font-bold text-gray-900 dark:text-white mb-2">{isUk ? s.stage.uk : s.stage.en}</h3>
+                  <p className="text-gray-500 dark:text-neutral-400 text-sm">{isUk ? s.needs.uk : s.needs.en}</p>
                 </div>
               ))}
             </div>
           </Container>
         </section>
 
-        {/* Solutions grid */}
-        <section className="py-20 bg-neutral-50 dark:bg-neutral-900 ">
+        {/* Packages */}
+        <section className="py-16 bg-gray-50 dark:bg-neutral-800">
           <Container>
-            <div className="max-w-2xl mx-auto text-center mb-12">
-              <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
-                {isUk ? "Готові рішення" : "Ready Solutions"}
-              </p>
-              <h2 className="text-4xl font-heading font-extrabold text-neutral-900">
-                {isUk ? "Обери тип стартапу" : "Choose Your Startup Type"}
-              </h2>
-            </div>
-
-            {/* Category filters row */}
-            <div className="flex flex-wrap gap-2 justify-center mb-10">
-              {CATEGORIES.map((cat) => (
-                <span
-                  key={cat}
-                  className="px-3 py-1.5 rounded-full text-sm font-medium bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-neutral-600"
-                >
-                  {CATEGORY_LABELS[cat]}
-                </span>
-              ))}
-            </div>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {STARTUP_SOLUTIONS.map((solution) => (
-                <Link
-                  key={solution.slug}
-                  href={lp(`/startup/${solution.slug}`)}
-                  className="group bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-200 dark:border-neutral-700 hover:border-indigo-300 hover:shadow-md transition-all overflow-hidden flex flex-col"
-                >
-                  {/* Top accent */}
-                  <div className={`h-2 ${solution.color}`} />
-
-                  <div className="p-6 flex flex-col flex-1">
-                    <div className="flex items-start justify-between gap-3 mb-4">
-                      <span className="text-3xl">{solution.icon}</span>
-                      <span className="text-xs bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 px-2.5 py-1 rounded-full font-medium shrink-0">
-                        {CATEGORY_LABELS[solution.category]}
-                      </span>
-                    </div>
-
-                    <h3 className="font-heading font-bold text-neutral-900 dark:text-white text-lg mb-1 group-hover:text-indigo-700 transition-colors">
-                      {solution.titleEn}
-                    </h3>
-                    <p className={`text-sm font-semibold mb-3 ${solution.textColor}`}>
-                      {isUk ? solution.tagline : solution.taglineEn}
-                    </p>
-                    <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed flex-1 mb-4">
-                      {isUk ? solution.description : solution.descriptionEn}
-                    </p>
-
-                    <div className="flex items-center justify-between pt-4 border-t border-neutral-100">
-                      <div className="flex items-center gap-3 text-xs text-neutral-500">
-                        <span className="flex items-center gap-1">
-                          <Clock className="w-3.5 h-3.5" /> {solution.deliveryDays} {isUk ? "днів" : "days"}
-                        </span>
-                        <span className="font-semibold text-neutral-800">
-                          {isUk ? `від £${solution.priceFrom}` : `from £${solution.priceFrom}`}
-                        </span>
-                      </div>
-                      <span className="flex items-center gap-1 text-xs font-semibold text-indigo-600 group-hover:gap-2 transition-all">
-                        {isUk ? "Детальніше" : "View"} <ArrowRight className="w-3.5 h-3.5" />
-                      </span>
-                    </div>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-10 text-center">
+              {isUk ? "Стартап-пакети" : "Startup Packages"}
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {STARTUP_PACKAGES.map((pkg) => (
+                <div key={pkg.slug} className={`rounded-2xl border p-6 flex flex-col ${pkg.highlight ? "border-violet-400 bg-white dark:bg-neutral-900 ring-2 ring-violet-400/30" : "border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900"}`}>
+                  {(isUk ? pkg.badgeUk : pkg.badgeEn) && (
+                    <span className="inline-block text-xs font-bold bg-violet-100 text-violet-700 px-2 py-0.5 rounded-full mb-3">
+                      {isUk ? pkg.badgeUk : pkg.badgeEn}
+                    </span>
+                  )}
+                  <h3 className="font-bold text-gray-900 dark:text-white mb-1">{isUk ? pkg.titleUk : pkg.titleEn}</h3>
+                  <p className="text-gray-500 text-sm mb-4">{isUk ? pkg.descUk : pkg.descEn}</p>
+                  <div className="flex items-center gap-3 mb-5">
+                    <span className="text-2xl font-bold text-violet-600">{pkg.price}</span>
+                    <span className="text-xs text-gray-400 flex items-center gap-1">
+                      <Clock className="w-3 h-3" /> {isUk ? pkg.delivery.uk : pkg.delivery.en}
+                    </span>
                   </div>
-                </Link>
+                  <ul className="space-y-2 mb-6 flex-1">
+                    {(isUk ? pkg.includesUk : pkg.includesEn).map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-sm text-gray-600 dark:text-neutral-300">
+                        <CheckCircle className="w-4 h-4 text-violet-500 shrink-0 mt-0.5" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link href={`/${lang}/contact`} className={`block text-center py-2.5 rounded-xl font-semibold text-sm transition-colors ${pkg.highlight ? "bg-violet-600 hover:bg-violet-700 text-white" : "border border-violet-300 text-violet-700 hover:bg-violet-50"}`}>
+                    {isUk ? "Замовити" : "Order"}
+                  </Link>
+                </div>
               ))}
             </div>
           </Container>
         </section>
 
-        {/* CTA */}
-        <section className="py-20 bg-gradient-to-br from-indigo-600 to-violet-700 text-white">
+        {/* UK startup ecosystem */}
+        <section className="py-16 bg-white dark:bg-neutral-900 border-b">
           <Container>
-            <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-3xl font-heading font-extrabold mb-4">
-                {isUk ? "Не знаєш з чого почати?" : "Not Sure Where to Start?"}
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+                {isUk ? "Чому ми розуміємо UK стартап-ринок" : "Why We Understand the UK Startup Market"}
               </h2>
-              <p className="text-indigo-200 mb-8 leading-relaxed">
-                {isUk
-                  ? "Розкажи про свій стартап — ми підберемо найкраще рішення і розробимо лендінг за 3–7 днів."
-                  : "Tell us about your startup — we'll find the best solution and build your landing in 3–7 days."}
+              <div className="grid sm:grid-cols-3 gap-6">
+                {[
+                  { icon: "🏛️", uk: "Innovate UK & UKRI", en: "Innovate UK & UKRI", dUk: "Допомагаємо з технічними секціями Innovate UK SMART, KTP, Future Leaders Fellowship заявок.", dEn: "We help with technical sections of Innovate UK SMART, KTP, Future Leaders Fellowship applications." },
+                  { icon: "💸", uk: "R&D Tax Credits", en: "R&D Tax Credits", dUk: "Структуруємо ML-розробку для HMRC R&D tax credit eligibility. 20–30% eligible costs повертаються.", dEn: "We structure ML development for HMRC R&D tax credit eligibility. 20–30% of eligible costs returned." },
+                  { icon: "📊", uk: "Investor-Ready ML", en: "Investor-Ready ML", dUk: "Cambridge Innovation Capital, Parkwalk, Deeptech Labs — ми знаємо що хочуть бачити UK VC у ML due diligence.", dEn: "Cambridge Innovation Capital, Parkwalk, Deeptech Labs — we know what UK VCs expect in ML due diligence." },
+                ].map((item) => (
+                  <div key={item.uk} className="bg-gray-50 dark:bg-neutral-800 rounded-2xl p-6 border border-neutral-100">
+                    <span className="text-3xl mb-3 block">{item.icon}</span>
+                    <h3 className="font-bold text-gray-900 dark:text-white mb-2">{isUk ? item.uk : item.en}</h3>
+                    <p className="text-gray-500 text-sm">{isUk ? item.dUk : item.dEn}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Container>
+        </section>
+
+        {/* CTA */}
+        <section className="py-16 bg-violet-600">
+          <Container>
+            <div className="max-w-xl mx-auto text-center text-white">
+              <h2 className="text-2xl font-bold mb-3">
+                {isUk ? "Готові запустити ML у вашому стартапі?" : "Ready to launch ML in your startup?"}
+              </h2>
+              <p className="text-violet-100 mb-6">
+                {isUk ? "Discovery Call безкоштовний. Відповідаємо протягом 2 годин." : "Discovery Call is free. We respond within 2 hours."}
               </p>
-              <Link
-                href={lp("/contact?source=startup")}
-                className="inline-flex items-center gap-2 bg-white text-indigo-700 font-bold px-8 py-4 rounded-2xl hover:bg-white/90 transition-colors shadow-lg"
-              >
-                {isUk ? "Безкоштовна консультація" : "Free Consultation"}
-                <ArrowRight className="w-5 h-5" />
+              <Link href={`/${lang}/contact`} className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-violet-600 font-bold hover:bg-violet-50 transition-colors">
+                {isUk ? "Розпочати" : "Get Started"} <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </Container>

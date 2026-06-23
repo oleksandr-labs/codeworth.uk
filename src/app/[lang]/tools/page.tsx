@@ -20,29 +20,29 @@ export async function generateMetadata({
   const isUk = lang === "uk";
   return {
     title: isUk
-      ? "Безкоштовні Веб-Інструменти — Калькулятор Сайту, SEO Чек-ліст | Codeworth"
-      : "Free Web Tools — Website Cost Calculator, SEO Checklist & More | Codeworth",
+      ? "Безкоштовні ML Інструменти — ROI Калькулятор, MLOps Чек-ліст | Codeworth"
+      : "Free ML Tools — ROI Calculator, MLOps Checklist & More | Codeworth",
     description: isUk
-      ? "10 безкоштовних інструментів для власників сайтів: калькулятор вартості, SEO чек-ліст, генератор мета-тегів та інше."
-      : "10 free tools for website owners: cost calculator, SEO audit checklist, meta tag generator, UTM builder and more.",
+      ? "Безкоштовні інструменти для ML-проєктів: калькулятор ROI, MLOps чек-ліст, ML project brief генератор та інше."
+      : "Free tools for ML projects: ROI calculator, MLOps checklist, ML project brief generator and more.",
     alternates: buildAlternates(lang, "tools"),
     openGraph: {
       title: isUk
-        ? "Безкоштовні Веб-Інструменти | Codeworth"
-        : "Free Web Tools | Codeworth",
+        ? "Безкоштовні ML Інструменти | Codeworth"
+        : "Free ML Tools | Codeworth",
       description: isUk
-        ? "10 безкоштовних інструментів для власників сайтів."
-        : "10 free tools for website owners.",
+        ? "Безкоштовні інструменти для ML-проєктів."
+        : "Free tools for ML projects.",
       type: "website",
       url: `https://codeworth.uk/${lang}/tools`,
-      images: [{ url: "/og/tools.png", width: 1200, height: 630, alt: "Free Web Tools — Codeworth" }],
+      images: [{ url: "/og/tools.png", width: 1200, height: 630, alt: "Free ML Tools — Codeworth" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: isUk ? "Безкоштовні Веб-Інструменти | Codeworth" : "Free Web Tools | Codeworth",
+      title: isUk ? "Безкоштовні ML Інструменти | Codeworth" : "Free ML Tools | Codeworth",
       description: isUk
-        ? "10 безкоштовних інструментів для власників сайтів."
-        : "10 free tools for website owners.",
+        ? "Безкоштовні інструменти для ML-проєктів."
+        : "Free tools for ML projects.",
       images: ["/og/tools.png"],
     },
   };
@@ -155,13 +155,13 @@ export default async function ToolsPage({
               </div>
               <h1 className="text-5xl lg:text-6xl font-heading font-extrabold text-white mb-6 leading-tight">
                 {isUk
-                  ? "Безкоштовні Інструменти для Власників Сайтів"
-                  : "Free Tools for Website Owners"}
+                  ? "Безкоштовні ML Інструменти для Бізнесу"
+                  : "Free ML Tools for Business"}
               </h1>
               <p className="text-xl text-indigo-100 leading-relaxed max-w-xl">
                 {isUk
-                  ? "10 безкоштовних інструментів: калькулятор вартості, SEO чек-ліст, генератор мета-тегів, UTM-конструктор та інше. Без реєстрації."
-                  : "10 free tools: cost calculator, SEO checklist, meta tag generator, UTM builder and more. No account needed."}
+                  ? "Безкоштовні інструменти для оцінки ML-проєктів: калькулятор ROI, MLOps чек-ліст, генератор project brief, FCA compliance чек-ліст та інше. Без реєстрації."
+                  : "Free tools for ML project planning: ROI calculator, MLOps checklist, project brief generator, FCA compliance checklist and more. No account needed."}
               </p>
             </div>
           </Container>
@@ -194,18 +194,18 @@ export default async function ToolsPage({
             <div className="max-w-2xl mx-auto text-center p-10 rounded-3xl bg-linear-to-br from-indigo-50 to-violet-50 border border-indigo-100">
               <span className="text-5xl mb-5 block">🛠️</span>
               <h2 className="text-3xl font-heading font-extrabold text-neutral-900 dark:text-white mb-3">
-                {isUk ? "Потрібен власний інструмент?" : "Need a custom tool?"}
+                {isUk ? "Готові обговорити ML для вашого бізнесу?" : "Ready to discuss ML for your business?"}
               </h2>
               <p className="text-neutral-600 dark:text-neutral-300 mb-6 leading-relaxed">
                 {isUk
-                  ? "Ми розробляємо кастомні калькулятори, аудит-інструменти та генератори спеціально для вашого бізнесу."
-                  : "We build custom calculators, audit tools and generators tailored to your business needs."}
+                  ? "Ці інструменти допоможуть вам оцінити ML-готовність. Наступний крок — безкоштовна 30-хвилинна консультація."
+                  : "These tools help you assess ML readiness. The next step is a free 30-minute consultation."}
               </p>
               <Link
                 href={`/${lang}/contact`}
                 className="inline-flex items-center gap-2 px-8 py-3.5 rounded-2xl bg-indigo-600 text-white font-bold hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200"
               >
-                {isUk ? "Давайте збудуємо його" : "Let's build it"}
+                {isUk ? "Забронювати консультацію" : "Book a Consultation"}
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>

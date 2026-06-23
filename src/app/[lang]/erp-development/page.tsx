@@ -4,341 +4,233 @@ import { buildAlternates } from "@/i18n";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
-import { CTASection } from "@/components/home/CTASection";
-import { ERPRoiCalculator } from "@/components/erp/ERPRoiCalculator";
-import { ERPDiscoverySection } from "@/components/erp/ERPDiscoverySection";
-import {
-  Warehouse, UtensilsCrossed, HardHat, ShoppingBag, Briefcase, Stethoscope, Truck,
-  ArrowRight, Database, Workflow, Rocket, CheckCircle2, FileSpreadsheet,
-  Layers, Network, ShieldCheck, Users, BarChart3, FileText, Plug2,
-  ClipboardList, Banknote, ChevronDown,
-} from "lucide-react";
-
-const MODULES = [
-  { icon: Warehouse, en: "Warehouse & Inventory", uk: "Склад та інвентар", desc: { en: "Real-time stock levels, multi-location, barcode/QR scanning, automated reorder points.", uk: "Залишки в реальному часі, мультискладність, штрих-коди/QR, автозамовлення." } },
-  { icon: Banknote, en: "Finance & Accounting", uk: "Фінанси та бухгалтерія", desc: { en: "Invoicing, expense tracking, P&L, VAT returns, MTD-ready reports.", uk: "Інвойсинг, витрати, P&L, ПДВ, MTD-звіти для HMRC." } },
-  { icon: Users, en: "HR & Payroll", uk: "Персонал та зарплата", desc: { en: "Employee records, timesheets, holiday/sick tracking, payroll integration.", uk: "Картки співробітників, табелі, відпустки/лікарняні, інтеграція з payroll." } },
-  { icon: ClipboardList, en: "Projects & Tasks", uk: "Проєкти та задачі", desc: { en: "Project budgets, Gantt views, time logging, profitability per job.", uk: "Бюджет проєкту, Gantt, трекінг часу, рентабельність по кожному замовленню." } },
-  { icon: Network, en: "CRM & Sales Pipeline", uk: "CRM та продажі", desc: { en: "Leads, quotes, pipeline stages, email history, customer portal.", uk: "Ліди, комерційні пропозиції, стадії угоди, листування, портал клієнта." } },
-  { icon: BarChart3, en: "Analytics & Dashboards", uk: "Аналітика та дашборди", desc: { en: "Custom KPI boards, drill-down reports, export to Excel/PDF.", uk: "Власні KPI-борди, drill-down звіти, експорт у Excel/PDF." } },
-  { icon: FileText, en: "Document Management", uk: "Документообіг", desc: { en: "Contracts, PDFs, version history, e-signature, audit trail.", uk: "Договори, PDF, версіонування, електронний підпис, журнал дій." } },
-  { icon: Plug2, en: "API & Integrations", uk: "API та інтеграції", desc: { en: "Connect Xero, QuickBooks, Stripe, Shopify, Royal Mail, or any REST API.", uk: "Підключення Xero, QuickBooks, Stripe, Shopify, Royal Mail чи будь-якого REST API." } },
-];
-
-const COMPARE = [
-  { feature: { en: "Price", uk: "Ціна" }, custom: { en: "From £1,999 — pay only for what you need", uk: "Від £1,999 — платите тільки за потрібне" }, shelf: { en: "£500–£5,000+/mo licences forever", uk: "£500–£5,000+/міс ліцензій назавжди" } },
-  { feature: { en: "Ownership", uk: "Право власності" }, custom: { en: "100% yours — code, data, hosting", uk: "100% ваше — код, дані, хостинг" }, shelf: { en: "Vendor lock-in, data held elsewhere", uk: "Залежність від вендора, дані на чужих серверах" } },
-  { feature: { en: "Fit to your process", uk: "Відповідність процесам" }, custom: { en: "Built exactly around how you work", uk: "Побудовано під ваш реальний процес" }, shelf: { en: "You adapt your process to the software", uk: "Адаптуєте процеси під програму" } },
-  { feature: { en: "Scalability", uk: "Масштабованість" }, custom: { en: "Add modules as you grow, no extra licence", uk: "Додаєте модулі з ростом, без нових ліцензій" }, shelf: { en: "Tier upgrades, add-on fees", uk: "Апгрейд тарифу, додаткові тарифи за модулі" } },
-  { feature: { en: "Integration", uk: "Інтеграції" }, custom: { en: "We integrate any tool you already use", uk: "Інтегруємо будь-який інструмент, яким ви вже користуєтесь" }, shelf: { en: "Only certified partner integrations", uk: "Тільки сертифіковані партнерські інтеграції" } },
-  { feature: { en: "Support", uk: "Підтримка" }, custom: { en: "Direct access to the dev team (EN + UA)", uk: "Прямий доступ до команди розробників (EN + UA)" }, shelf: { en: "Ticketing queue, often overseas", uk: "Черга тікетів, часто закордонна підтримка" } },
-];
-
-const FAQS = [
-  {
-    q: { en: "How long does it take to build a custom ERP?", uk: "Скільки часу займає розробка кастомної ERP?" },
-    a: { en: "Most projects take 4–12 weeks depending on the number of modules and integrations. A focused MVP (e.g. inventory + invoicing) can be live in 4 weeks.", uk: "Більшість проєктів займають 4–12 тижнів залежно від кількості модулів та інтеграцій. Фокусний MVP (наприклад, склад + інвойсинг) можна запустити за 4 тижні." },
-  },
-  {
-    q: { en: "Can you migrate data from our spreadsheets / old system?", uk: "Чи можете ви перенести дані з наших таблиць / старої системи?" },
-    a: { en: "Yes. We handle data migration as part of every project — cleaning, mapping, and importing your existing records into the new system before go-live.", uk: "Так. Перенесення даних входить до кожного проєкту — очищення, маппінг і імпорт ваших поточних записів до нової системи перед запуском." },
-  },
-  {
-    q: { en: "Do I own the source code?", uk: "Чи маю я права на вихідний код?" },
-    a: { en: "Yes, fully. You receive the complete repository. We can continue maintaining it, or you can hand it to any developer.", uk: "Так, повністю. Ви отримуєте повний репозиторій. Ми можемо продовжити підтримку, або ви можете передати його будь-якому розробнику." },
-  },
-  {
-    q: { en: "What tech stack do you use?", uk: "Який технологічний стек ви використовуєте?" },
-    a: { en: "Next.js (React), PostgreSQL, Prisma ORM, TypeScript, Tailwind CSS. Hosted on your server or cloud of choice. All open-source, battle-tested technologies.", uk: "Next.js (React), PostgreSQL, Prisma ORM, TypeScript, Tailwind CSS. Розміщення на вашому сервері або обраному хмарному провайдері. Весь стек open-source." },
-  },
-  {
-    q: { en: "Can the ERP integrate with our existing tools (Xero, Shopify, etc.)?", uk: "Чи може ERP інтегруватися з нашими поточними інструментами (Xero, Shopify тощо)?" },
-    a: { en: "Absolutely. We integrate with any REST API — Xero, QuickBooks, Stripe, Shopify, Royal Mail, and more. If it has an API, we can connect it.", uk: "Так. Інтегруємо з будь-яким REST API — Xero, QuickBooks, Stripe, Shopify, Royal Mail та ін. Якщо є API — підключимо." },
-  },
-  {
-    q: { en: "What does a free discovery call include?", uk: "Що входить у безкоштовний discovery-дзвінок?" },
-    a: { en: "A 30–45 minute call where we map your current workflow, identify the biggest pain points, and give you a rough scope and price estimate — no obligation.", uk: "30–45 хвилин, де ми аналізуємо ваш поточний процес, визначаємо ключові болі та даємо приблизні обсяг і оцінку вартості — без зобов'язань." },
-  },
-];
-
-const CASES = [
-  { slug: "erp-wholesale", icon: Warehouse, name: "WholesaleHub", sector: { en: "Wholesale distributor · Birmingham", uk: "Оптовий дистриб'ютор · Бірмінгем" }, metric: { en: "Order time 25 → 7 min", uk: "Час замовлення 25 → 7 хв" }, colour: "from-slate-600 to-slate-800" },
-  { slug: "erp-restaurant-chain", icon: UtensilsCrossed, name: "ChainOps", sector: { en: "8-venue restaurant group · Manchester", uk: "Мережа 8 ресторанів · Манчестер" }, metric: { en: "Food waste −34%", uk: "Списання −34%" }, colour: "from-orange-600 to-red-700" },
-  { slug: "erp-construction", icon: HardHat, name: "BuildTrack", sector: { en: "Housebuilder · Leeds", uk: "Забудовник · Лідс" }, metric: { en: "CIS: 2 days → 15 min", uk: "CIS: 2 дні → 15 хв" }, colour: "from-amber-600 to-yellow-700" },
-  { slug: "erp-retail-chain", icon: ShoppingBag, name: "RetailCore", sector: { en: "12-store fashion chain · London", uk: "Мережа 12 магазинів · Лондон" }, metric: { en: "Sell-through +19%", uk: "Sell-through +19%" }, colour: "from-violet-600 to-purple-700" },
-  { slug: "erp-agency", icon: Briefcase, name: "AgencyDesk", sector: { en: "Digital agency · Edinburgh", uk: "Digital-агенція · Единбург" }, metric: { en: "Admin 12% → 3%", uk: "Адмін 12% → 3%" }, colour: "from-cyan-600 to-teal-700" },
-  { slug: "erp-clinic", icon: Stethoscope, name: "CareHub", sector: { en: "4-site private clinic group · Bristol", uk: "Мережа 4 клінік · Брістоль" }, metric: { en: "Bookings +42%, zero conflicts", uk: "Запис +42%, нуль конфліктів" }, colour: "from-sky-600 to-blue-700" },
-  { slug: "erp-logistics", icon: Truck, name: "FleetDesk", sector: { en: "38-truck haulier · Leicester", uk: "Перевізник 38 тягачів · Лестер" }, metric: { en: "SLA misses −74%, pick acc. 99.4%", uk: "SLA −74%, точність пікінгу 99.4%" }, colour: "from-orange-600 to-amber-700" },
-];
+import { ArrowRight, CheckCircle, Database } from "lucide-react";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
   const isUk = lang === "uk";
   return {
     title: isUk
-      ? "Розробка ERP-систем під бізнес | Codeworth"
-      : "Custom ERP Development for UK Business | Codeworth",
+      ? "ML-інтеграція з ERP та CRM | Codeworth — SAP, Dynamics, Salesforce"
+      : "ML Integration with ERP & CRM | Codeworth — SAP, Dynamics, Salesforce",
     description: isUk
-      ? "Розробка кастомних ERP-систем для британського бізнесу: склад, фінанси, персонал, проєкти. Заміна Excel на єдину систему. 7 реальних кейсів. Від £1999."
-      : "Custom ERP systems for UK SMB: warehouse, finance, staff, projects in one place. Replace spreadsheets with a system built for you. 7 real cases. From £1,999.",
-    keywords: isUk
-      ? ["розробка ERP", "ERP система під бізнес", "кастомна ERP", "автоматизація бізнесу"]
-      : ["custom ERP development", "bespoke ERP UK", "ERP system development", "business management software UK"],
+      ? "Інтеграція ML-моделей з вашими бізнес-системами: SAP, Microsoft Dynamics, Salesforce, Oracle, Sage. Demand forecasting, fraud detection, churn prediction безпосередньо у ваш workflow."
+      : "Integrate ML models with your business systems: SAP, Microsoft Dynamics, Salesforce, Oracle, Sage. Demand forecasting, fraud detection, churn prediction directly into your workflow.",
     alternates: buildAlternates(lang, "erp-development"),
     openGraph: {
-      title: isUk ? "Розробка ERP-систем під бізнес — Codeworth" : "Custom ERP Development for UK Business — Codeworth",
+      title: isUk ? "ML + ERP/CRM інтеграція | Codeworth" : "ML + ERP/CRM Integration | Codeworth",
       description: isUk
-        ? "Кастомні ERP-системи для британського бізнесу. 5 реальних кейсів. Від £1999."
-        : "Bespoke ERP systems for UK business. 5 real cases. From £1,999.",
+        ? "ML-моделі, що працюють всередині SAP, Dynamics, Salesforce. Без заміни систем."
+        : "ML models that work inside SAP, Dynamics, Salesforce. No system replacement needed.",
       type: "website",
-      url: `https://codeworth.uk${lang === "en" ? "" : "/" + lang}/erp-development`,
-      images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "Codeworth ERP Development" }],
+      url: `https://codeworth.uk/${lang}/erp-development`,
     },
   };
 }
 
+const INTEGRATIONS = [
+  { name: "SAP S/4HANA", logo: "🔷", uk: "SAP BTP ML inference + IBP demand forecasting API. ABAP custom RFC → ML scoring pipeline.", en: "SAP BTP ML inference + IBP demand forecasting API. ABAP custom RFC → ML scoring pipeline." },
+  { name: "Microsoft Dynamics 365", logo: "🟦", uk: "Azure ML integration via Power Automate або custom Dataverse plugin. Real-time scoring у Dynamics workflows.", en: "Azure ML integration via Power Automate or custom Dataverse plugin. Real-time scoring in Dynamics workflows." },
+  { name: "Salesforce", logo: "☁️", uk: "Einstein ML API або custom Apex callout до FastAPI inference endpoint. Lead scoring, churn prediction у CRM.", en: "Einstein ML API or custom Apex callout to FastAPI inference endpoint. Lead scoring, churn prediction in CRM." },
+  { name: "Oracle ERP Cloud", logo: "🔴", uk: "Oracle Integration Cloud (OIC) → ML inference API. Demand planning та financial anomaly detection.", en: "Oracle Integration Cloud (OIC) → ML inference API. Demand planning and financial anomaly detection." },
+  { name: "Sage Intacct / 200", logo: "🟢", uk: "REST API integration. Fraud detection та cash flow forecasting для UK SME.", en: "REST API integration. Fraud detection and cash flow forecasting for UK SMEs." },
+  { name: "Custom ERP/WMS", logo: "⚙️", uk: "REST, GraphQL або message queue (Kafka/RabbitMQ) інтеграція з будь-якою custom системою.", en: "REST, GraphQL or message queue (Kafka/RabbitMQ) integration with any custom system." },
+];
+
+const ML_USE_CASES = [
+  {
+    titleUk: "Demand Forecasting → ERP Reorder",
+    titleEn: "Demand Forecasting → ERP Reorder",
+    emoji: "📦",
+    descUk: "ML-прогноз попиту (XGBoost/Prophet) записується назад до ERP як reorder proposal. Жодного ручного введення.",
+    descEn: "ML demand forecast (XGBoost/Prophet) writes back to ERP as reorder proposals. Zero manual entry.",
+    systems: ["SAP", "Dynamics", "Oracle"],
+  },
+  {
+    titleUk: "Fraud Scoring → Transaction Approval",
+    titleEn: "Fraud Scoring → Transaction Approval",
+    emoji: "🛡️",
+    descUk: "Real-time ML fraud score вбудований у платіжний workflow. Автоматичне challenge/decline при перевищенні порогу.",
+    descEn: "Real-time ML fraud score embedded in payment workflow. Automatic challenge/decline when threshold exceeded.",
+    systems: ["Salesforce", "Sage", "Custom"],
+  },
+  {
+    titleUk: "Churn Prediction → CRM Action",
+    titleEn: "Churn Prediction → CRM Action",
+    emoji: "📉",
+    descUk: "Щоденний batch ML scoring → CRM task для sales rep при high churn risk. Retention action trackable у CRM.",
+    descEn: "Daily batch ML scoring → CRM task for sales rep on high churn risk. Retention action trackable in CRM.",
+    systems: ["Salesforce", "Dynamics", "HubSpot"],
+  },
+  {
+    titleUk: "Anomaly Detection → Finance Alert",
+    titleEn: "Anomaly Detection → Finance Alert",
+    emoji: "🚨",
+    descUk: "ML-аномалії у фінансових транзакціях → автоматичний alert у accounting module. Making Tax Digital сумісно.",
+    descEn: "ML anomalies in financial transactions → automatic alert in accounting module. Making Tax Digital compatible.",
+    systems: ["Sage", "Xero", "Dynamics"],
+  },
+];
+
+const INTEGRATION_PATTERNS = [
+  {
+    pattern: { uk: "Real-time API", en: "Real-time API" },
+    descUk: "FastAPI ML endpoint → синхронний HTTP callout з ERP/CRM під час транзакції. Latency < 100ms. Для fraud detection та credit scoring.",
+    descEn: "FastAPI ML endpoint → synchronous HTTP callout from ERP/CRM during transaction. Latency <100ms. For fraud detection and credit scoring.",
+  },
+  {
+    pattern: { uk: "Batch Scoring", en: "Batch Scoring" },
+    descUk: "Нічний або щогодинний batch job: ERP data export → ML inference → writeback results до ERP таблиці. Для demand forecasting та churn scoring.",
+    descEn: "Nightly or hourly batch job: ERP data export → ML inference → writeback results to ERP table. For demand forecasting and churn scoring.",
+  },
+  {
+    pattern: { uk: "Event-Driven (Kafka)", en: "Event-Driven (Kafka)" },
+    descUk: "ERP → Kafka event stream → ML consumer → action trigger. Zero-latency для high-volume transaction processing.",
+    descEn: "ERP → Kafka event stream → ML consumer → action trigger. Zero-latency for high-volume transaction processing.",
+  },
+  {
+    pattern: { uk: "Embedded Plugin", en: "Embedded Plugin" },
+    descUk: "ML-логіка вбудована у ERP як native plugin/extension (ABAP для SAP, Apex для Salesforce). Найтісніша інтеграція.",
+    descEn: "ML logic embedded in ERP as native plugin/extension (ABAP for SAP, Apex for Salesforce). Tightest integration.",
+  },
+];
+
 export default async function ErpDevelopmentPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isUk = lang === "uk";
-  const lp = (p: string) => (lang === "en" ? p : `/${lang}${p}`);
 
-  const PAINS = [
-    { icon: FileSpreadsheet, en: "Data scattered across spreadsheets", uk: "Дані розкидані по таблицях Excel" },
-    { icon: Network, en: "Disconnected tools that don't talk to each other", uk: "Розрізнені інструменти, що не зв'язані між собою" },
-    { icon: Layers, en: "Manual re-keying, duplicated effort, human error", uk: "Ручне перенесення даних, дублювання, помилки" },
-    { icon: ShieldCheck, en: "No single source of truth for decisions", uk: "Немає єдиного джерела правди для рішень" },
-  ];
-
-  const PROCESS = [
-    { icon: Workflow, n: "01", en: "Discovery & process mapping", uk: "Аналіз та мапування процесів", desc: { en: "We sit with your team, map every workflow, and find what to automate first.", uk: "Сідаємо з вашою командою, мапуємо процеси, визначаємо що автоматизувати першим." } },
-    { icon: Database, n: "02", en: "Build on a solid stack", uk: "Розробка на надійному стеку", desc: { en: "Next.js + PostgreSQL + Prisma. Real-time, secure, scales with you.", uk: "Next.js + PostgreSQL + Prisma. Real-time, безпечно, масштабується." } },
-    { icon: Rocket, n: "03", en: "Deploy, train, support", uk: "Запуск, навчання, підтримка", desc: { en: "We migrate your data, train your staff, and stay on for support.", uk: "Переносимо дані, навчаємо персонал, лишаємось на підтримці." } },
-  ];
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codeworth.uk/${lang}` },
+      { "@type": "ListItem", position: 2, name: "ML + ERP/CRM" },
+    ],
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <main id="main-content" className="flex-1">
 
-        {/* HERO */}
-        <section className="relative pt-32 pb-20 bg-neutral-950 text-white overflow-hidden">
-          <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
-          <Container className="relative">
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-indigo-300 mb-5">
-                <Database className="w-3.5 h-3.5" />
-                {isUk ? "ERP-розробка під ключ" : "Bespoke ERP Development"}
+        {/* Hero */}
+        <section className="pt-32 pb-20 bg-linear-to-br from-slate-900 via-blue-900 to-slate-900">
+          <Container>
+            <div className="max-w-3xl mx-auto text-center">
+              <div className="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-500/30 text-blue-300 text-sm px-3 py-1.5 rounded-full mb-6">
+                <Database className="w-4 h-4" />
+                {isUk ? "ML + Бізнес-системи" : "ML + Business Systems"}
               </div>
-              <h1 className="text-4xl sm:text-5xl font-heading font-extrabold leading-tight">
-                {isUk
-                  ? "Кастомні ERP-системи для вашого бізнесу"
-                  : "Custom ERP systems built around your business"}
+              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+                {isUk ? "ML-інтеграція з ERP та CRM" : "ML Integration with ERP & CRM"}
               </h1>
-              <p className="mt-5 text-lg text-neutral-300 leading-relaxed">
+              <p className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
                 {isUk
-                  ? "Замініть Excel і розрізнені інструменти єдиною системою: склад, фінанси, персонал, проєкти — в одному місці, в реальному часі."
-                  : "Replace spreadsheets and disconnected tools with one system: warehouse, finance, staff and projects — in one place, in real time."}
+                  ? "Ваші бізнес-системи вже зберігають цінні дані. Ми вбудовуємо ML-моделі безпосередньо у SAP, Dynamics, Salesforce — без заміни систем, без ручного введення."
+                  : "Your business systems already hold valuable data. We embed ML models directly into SAP, Dynamics, Salesforce — no system replacement, no manual data entry."}
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Link href={lp("/contact")} className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 font-semibold transition-colors">
-                  {isUk ? "Обговорити проєкт" : "Discuss your project"}
-                  <ArrowRight className="w-4 h-4" />
+              <div className="flex flex-wrap justify-center gap-4">
+                <Link href={`/${lang}/contact`} className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold transition-colors">
+                  {isUk ? "Обговорити інтеграцію" : "Discuss Integration"} <ArrowRight className="w-4 h-4" />
                 </Link>
-                <a href="#cases" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 font-semibold transition-colors">
-                  {isUk ? "7 реальних кейсів" : "See 7 real cases"}
-                </a>
-              </div>
-            </div>
-          </Container>
-        </section>
-
-        {/* PAIN POINTS */}
-        <section className="py-20 bg-white dark:bg-neutral-950 border-b border-neutral-100 dark:border-neutral-800">
-          <Container>
-            <div className="max-w-2xl mb-12">
-              <h2 className="text-3xl font-heading font-extrabold text-neutral-900 dark:text-white">
-                {isUk ? "Знайомо?" : "Sound familiar?"}
-              </h2>
-              <p className="mt-3 text-neutral-500 dark:text-neutral-400">
-                {isUk ? "Більшість бізнесів переростають таблиці — але не знають, з чого почати." : "Most growing businesses outgrow spreadsheets — but don't know where to start."}
-              </p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {PAINS.map((p) => (
-                <div key={p.en} className="p-5 rounded-2xl border border-neutral-100 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900">
-                  <p.icon className="w-7 h-7 text-indigo-500 mb-3" />
-                  <p className="text-sm font-medium text-neutral-700 dark:text-neutral-200">{isUk ? p.uk : p.en}</p>
-                </div>
-              ))}
-            </div>
-          </Container>
-        </section>
-
-        {/* MODULES */}
-        <section className="py-20 bg-neutral-50 dark:bg-neutral-900">
-          <Container>
-            <div className="max-w-2xl mb-12">
-              <p className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest mb-3">{isUk ? "Що входить" : "What's included"}</p>
-              <h2 className="text-3xl font-heading font-extrabold text-neutral-900 dark:text-white">
-                {isUk ? "Модулі ERP-системи" : "ERP modules we build"}
-              </h2>
-              <p className="mt-3 text-neutral-500 dark:text-neutral-400">
-                {isUk
-                  ? "Підбираємо тільки потрібні модулі — не платите за зайве. Кожен інтегрований між собою з єдиною базою даних."
-                  : "We pick only the modules you need — no bloat. Every module shares one database and talks to the others."}
-              </p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {MODULES.map((m) => (
-                <div key={m.en} className="p-5 rounded-2xl border border-neutral-100 dark:border-neutral-800 bg-white dark:bg-neutral-800">
-                  <m.icon className="w-7 h-7 text-indigo-500 mb-3" />
-                  <h3 className="font-heading font-bold text-sm text-neutral-900 dark:text-white mb-1">{isUk ? m.uk : m.en}</h3>
-                  <p className="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed">{isUk ? m.desc.uk : m.desc.en}</p>
-                </div>
-              ))}
-            </div>
-          </Container>
-        </section>
-
-        {/* ROI CALCULATOR */}
-        <ERPRoiCalculator lang={lang} />
-
-        {/* CASES */}
-        <section id="cases" className="py-20 bg-white dark:bg-neutral-950">
-          <Container>
-            <div className="max-w-2xl mb-12">
-              <p className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest mb-3">{isUk ? "Кейси" : "Case studies"}</p>
-              <h2 className="text-3xl font-heading font-extrabold text-neutral-900 dark:text-white">
-                {isUk ? "7 ERP-систем, які ми побудували" : "7 ERP systems we've built"}
-              </h2>
-              <p className="mt-3 text-neutral-500 dark:text-neutral-400">
-                {isUk ? "Кожна — з живим інтерактивним демо. Натисніть, щоб спробувати." : "Each with a live interactive demo. Click through to try them."}
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {CASES.map((c) => (
-                <Link key={c.slug} href={lp(`/portfolio/${c.slug}`)} className="group rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white dark:bg-neutral-800 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all">
-                  <div className={`h-28 bg-linear-to-br ${c.colour} flex items-center justify-center`}>
-                    <c.icon className="w-12 h-12 text-white/90" strokeWidth={1.5} />
-                  </div>
-                  <div className="p-5">
-                    <div className="font-heading font-bold text-lg text-neutral-900 dark:text-white">{c.name}</div>
-                    <div className="text-xs text-neutral-400 dark:text-neutral-500 mt-0.5">{isUk ? c.sector.uk : c.sector.en}</div>
-                    <div className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-600 dark:text-emerald-400">
-                      <CheckCircle2 className="w-4 h-4" />
-                      {isUk ? c.metric.uk : c.metric.en}
-                    </div>
-                    <div className="mt-4 flex items-center gap-1.5 text-sm font-medium text-indigo-600 dark:text-indigo-400 group-hover:gap-2.5 transition-all">
-                      {isUk ? "Кейс + живе демо" : "Case + live demo"}
-                      <ArrowRight className="w-4 h-4" />
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </Container>
-        </section>
-
-        {/* CUSTOM VS SHELF */}
-        <section className="py-20 bg-neutral-50 dark:bg-neutral-900">
-          <Container>
-            <div className="max-w-2xl mb-12">
-              <p className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest mb-3">{isUk ? "Порівняння" : "Comparison"}</p>
-              <h2 className="text-3xl font-heading font-extrabold text-neutral-900 dark:text-white">
-                {isUk ? "Кастомна ERP vs SAP / Sage / Dynamics" : "Custom ERP vs SAP / Sage / Dynamics 365"}
-              </h2>
-              <p className="mt-3 text-neutral-500 dark:text-neutral-400">
-                {isUk
-                  ? "Готові системи підходять великим корпораціям. Для бізнесу до 200 людей кастомне рішення дешевше і точніше."
-                  : "Off-the-shelf works for large enterprises. For businesses under 200 people, a custom system is cheaper and a better fit."}
-              </p>
-            </div>
-            <div className="overflow-x-auto rounded-2xl border border-neutral-100 dark:border-neutral-800">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="bg-neutral-100 dark:bg-neutral-800">
-                    <th className="text-left px-5 py-3 font-semibold text-neutral-500 dark:text-neutral-400 w-1/3">{isUk ? "Критерій" : "Feature"}</th>
-                    <th className="text-left px-5 py-3 font-semibold text-indigo-600 dark:text-indigo-400">{isUk ? "Codeworth Custom" : "Codeworth Custom"}</th>
-                    <th className="text-left px-5 py-3 font-semibold text-neutral-400">{isUk ? "Готова система" : "Off-the-shelf"}</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {COMPARE.map((row, i) => (
-                    <tr key={i} className="border-t border-neutral-100 dark:border-neutral-800 bg-white dark:bg-neutral-900 odd:bg-neutral-50 odd:dark:bg-neutral-850">
-                      <td className="px-5 py-4 font-medium text-neutral-700 dark:text-neutral-300">{isUk ? row.feature.uk : row.feature.en}</td>
-                      <td className="px-5 py-4 text-neutral-700 dark:text-neutral-200">
-                        <span className="flex items-start gap-2">
-                          <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
-                          {isUk ? row.custom.uk : row.custom.en}
-                        </span>
-                      </td>
-                      <td className="px-5 py-4 text-neutral-400">{isUk ? row.shelf.uk : row.shelf.en}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </Container>
-        </section>
-
-        {/* PROCESS */}
-        <section className="py-20 bg-white dark:bg-neutral-950">
-          <Container>
-            <div className="max-w-2xl mb-12">
-              <h2 className="text-3xl font-heading font-extrabold text-neutral-900 dark:text-white">
-                {isUk ? "Як ми працюємо" : "How we work"}
-              </h2>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {PROCESS.map((s) => (
-                <div key={s.n} className="relative p-6 rounded-2xl border border-neutral-100 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900">
-                  <div className="absolute top-5 right-5 text-3xl font-heading font-black text-neutral-100 dark:text-neutral-800">{s.n}</div>
-                  <s.icon className="w-8 h-8 text-indigo-500 mb-4" />
-                  <h3 className="font-heading font-bold text-neutral-900 dark:text-white">{isUk ? s.uk : s.en}</h3>
-                  <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">{isUk ? s.desc.uk : s.desc.en}</p>
-                </div>
-              ))}
-            </div>
-          </Container>
-        </section>
-
-        {/* PRICING / TECH STRIP */}
-        <section className="py-16 bg-neutral-950 text-white">
-          <Container>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-              <div>
-                <h2 className="text-3xl font-heading font-extrabold">
-                  {isUk ? "Прозоре ціноутворення" : "Transparent pricing"}
-                </h2>
-                <p className="mt-3 text-neutral-300">
-                  {isUk
-                    ? "Вартість залежить від складності процесів. Точну оцінку даємо після безкоштовного discovery-дзвінка."
-                    : "Cost depends on process complexity. We give a firm quote after a free discovery call."}
-                </p>
-                <div className="mt-6 flex items-baseline gap-2">
-                  <span className="text-sm text-neutral-400">{isUk ? "від" : "from"}</span>
-                  <span className="text-4xl font-heading font-black">£1,999</span>
-                </div>
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {["Next.js", "PostgreSQL", "Prisma", "TypeScript", "Tailwind CSS"].map((t) => (
-                    <span key={t} className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm">{t}</span>
-                  ))}
-                </div>
-                <Link href={lp("/contact")} className="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 font-semibold transition-colors">
-                  {isUk ? "Замовити безкоштовну оцінку" : "Get a free estimate"}
-                  <ArrowRight className="w-4 h-4" />
+                <Link href={`/${lang}/services`} className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-white/20 text-white font-semibold hover:bg-white/10 transition-all">
+                  {isUk ? "Наші ML-послуги" : "Our ML Services"}
                 </Link>
               </div>
-              <div className="grid grid-cols-2 gap-3">
+            </div>
+          </Container>
+        </section>
+
+        {/* Supported systems */}
+        <section className="py-16 bg-white dark:bg-neutral-900 border-b">
+          <Container>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+              {isUk ? "Підтримувані системи" : "Supported Systems"}
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {INTEGRATIONS.map((item) => (
+                <div key={item.name} className="bg-gray-50 dark:bg-neutral-800 rounded-2xl border border-neutral-100 dark:border-neutral-700 p-5">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-2xl">{item.logo}</span>
+                    <h3 className="font-bold text-gray-900 dark:text-white">{item.name}</h3>
+                  </div>
+                  <p className="text-gray-500 dark:text-neutral-400 text-sm">{isUk ? item.uk : item.en}</p>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </section>
+
+        {/* ML use cases in ERP */}
+        <section className="py-16 bg-gray-50 dark:bg-neutral-800 border-b">
+          <Container>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+              {isUk ? "ML use cases в ERP/CRM" : "ML Use Cases in ERP/CRM"}
+            </h2>
+            <div className="grid sm:grid-cols-2 gap-6">
+              {ML_USE_CASES.map((uc) => (
+                <div key={uc.titleEn} className="bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-100 dark:border-neutral-700 p-6">
+                  <div className="flex items-start gap-4">
+                    <span className="text-3xl">{uc.emoji}</span>
+                    <div className="flex-1">
+                      <h3 className="font-bold text-gray-900 dark:text-white mb-2">{isUk ? uc.titleUk : uc.titleEn}</h3>
+                      <p className="text-gray-500 text-sm mb-3">{isUk ? uc.descUk : uc.descEn}</p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {uc.systems.map((s) => (
+                          <span key={s} className="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full">{s}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </section>
+
+        {/* Integration patterns */}
+        <section className="py-16 bg-white dark:bg-neutral-900 border-b">
+          <Container>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+              {isUk ? "Патерни інтеграції" : "Integration Patterns"}
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {INTEGRATION_PATTERNS.map((p) => (
+                <div key={p.pattern.en} className="bg-gray-50 dark:bg-neutral-800 rounded-2xl border border-neutral-100 dark:border-neutral-700 p-5">
+                  <h3 className="font-bold text-blue-600 mb-2">{isUk ? p.pattern.uk : p.pattern.en}</h3>
+                  <p className="text-gray-500 text-sm">{isUk ? p.descUk : p.descEn}</p>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </section>
+
+        {/* Why ML in existing systems */}
+        <section className="py-16 bg-gray-50 dark:bg-neutral-800">
+          <Container>
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+                {isUk ? "Чому ML всередині ERP — правильний підхід?" : "Why ML Inside ERP Is the Right Approach?"}
+              </h2>
+              <div className="space-y-4">
                 {[
-                  { v: "£1,999+", l: isUk ? "стартовий проєкт" : "starter project" },
-                  { v: "4–12", l: isUk ? "тижнів розробки" : "weeks to build" },
-                  { v: "100%", l: isUk ? "власність коду" : "you own the code" },
-                  { v: "EN + UA", l: isUk ? "підтримка" : "support" },
-                ].map((k) => (
-                  <div key={k.l} className="p-5 rounded-2xl bg-white/5 border border-white/10">
-                    <div className="text-2xl font-heading font-black">{k.v}</div>
-                    <div className="text-xs text-neutral-400 mt-1">{k.l}</div>
+                  {
+                    uk: "Дані вже там. Ваш ERP містить роки транзакцій, інвентарю, клієнтів — ідеальна ML-сировина без дорогої міграції.",
+                    en: "The data is already there. Your ERP contains years of transactions, inventory, customers — perfect ML raw material without expensive migration.",
+                  },
+                  {
+                    uk: "Користувачі вже у системі. ML-результати у знайомому інтерфейсі — adoption rate значно вищий ніж окремий AI-дашборд.",
+                    en: "Users are already in the system. ML results in the familiar interface — adoption rate is significantly higher than a standalone AI dashboard.",
+                  },
+                  {
+                    uk: "Action-oriented. ML score, що автоматично створює задачу у CRM або reorder у ERP — це ROI. Score у таблиці Excel — це не ROI.",
+                    en: "Action-oriented. ML score that automatically creates a CRM task or ERP reorder — that's ROI. Score in an Excel table — that's not.",
+                  },
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-4 p-5 bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-100 dark:border-neutral-700">
+                    <CheckCircle className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                    <p className="text-gray-600 dark:text-neutral-300">{isUk ? item.uk : item.en}</p>
                   </div>
                 ))}
               </div>
@@ -346,62 +238,25 @@ export default async function ErpDevelopmentPage({ params }: { params: Promise<{
           </Container>
         </section>
 
-        {/* FAQ */}
-        <section className="py-20 bg-white dark:bg-neutral-950">
+        {/* CTA */}
+        <section className="py-16 bg-blue-600">
           <Container>
-            <div className="max-w-2xl mb-12">
-              <p className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest mb-3">FAQ</p>
-              <h2 className="text-3xl font-heading font-extrabold text-neutral-900 dark:text-white">
-                {isUk ? "Часті запитання" : "Frequently asked questions"}
+            <div className="max-w-xl mx-auto text-center text-white">
+              <h2 className="text-2xl font-bold mb-3">
+                {isUk ? "Яку систему використовує ваш бізнес?" : "Which system does your business use?"}
               </h2>
-            </div>
-            <div className="max-w-3xl space-y-3">
-              {FAQS.map((faq, i) => (
-                <details key={i} className="group rounded-2xl border border-neutral-100 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900 open:border-indigo-200 dark:open:border-indigo-800 transition-colors">
-                  <summary className="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer font-semibold text-neutral-900 dark:text-white list-none">
-                    {isUk ? faq.q.uk : faq.q.en}
-                    <ChevronDown className="w-5 h-5 text-neutral-400 group-open:rotate-180 transition-transform shrink-0" />
-                  </summary>
-                  <p className="px-6 pb-5 text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">
-                    {isUk ? faq.a.uk : faq.a.en}
-                  </p>
-                </details>
-              ))}
-            </div>
-          </Container>
-        </section>
-
-        {/* RELATED CONTENT */}
-        <section className="py-16 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100 dark:border-neutral-800">
-          <Container>
-            <p className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest mb-8">{isUk ? "Пов'язані матеріали" : "Further reading"}</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl">
-              <Link href={lp("/use-cases/erp-wholesale-order-time")} className="group p-5 rounded-2xl border border-neutral-100 dark:border-neutral-800 bg-white dark:bg-neutral-800 hover:shadow-lg hover:-translate-y-0.5 transition-all">
-                <div className="text-2xl mb-3">🏭</div>
-                <h3 className="font-heading font-bold text-neutral-900 dark:text-white text-sm leading-snug group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                  {isUk
-                    ? "Як оптовик з Бірмінгема скоротив час замовлення на 72%"
-                    : "How a Birmingham wholesaler cut order time 72%"}
-                </h3>
-                <p className="mt-1.5 text-xs text-neutral-500 dark:text-neutral-400">{isUk ? "Кейс · Use case" : "Case study · Use case"}</p>
-              </Link>
-              <Link href={lp("/blog/custom-erp-uk-cost-timeline")} className="group p-5 rounded-2xl border border-neutral-100 dark:border-neutral-800 bg-white dark:bg-neutral-800 hover:shadow-lg hover:-translate-y-0.5 transition-all">
-                <div className="text-2xl mb-3">📖</div>
-                <h3 className="font-heading font-bold text-neutral-900 dark:text-white text-sm leading-snug group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                  {isUk
-                    ? "Кастомна ERP для UK SMB: вартість, терміни та чого очікувати"
-                    : "Custom ERP for UK SMB — cost, timeline, what to expect"}
-                </h3>
-                <p className="mt-1.5 text-xs text-neutral-500 dark:text-neutral-400">{isUk ? "Стаття · 11 хв читання" : "Article · 11 min read"}</p>
+              <p className="text-blue-100 mb-6">
+                {isUk
+                  ? "Зв'яжіться з нами — проведемо безкоштовний ML integration assessment за 30 хвилин."
+                  : "Contact us — we'll run a free ML integration assessment in 30 minutes."}
+              </p>
+              <Link href={`/${lang}/contact`} className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-blue-600 font-bold hover:bg-blue-50 transition-colors">
+                {isUk ? "Отримати assessment" : "Get an Assessment"} <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </Container>
         </section>
 
-        {/* DISCOVERY CALL */}
-        <ERPDiscoverySection lang={lang} />
-
-        <CTASection lang={lang} />
       </main>
       <Footer />
     </div>
