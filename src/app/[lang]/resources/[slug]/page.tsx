@@ -48,6 +48,194 @@ const RESOURCE_CONTENT: Record<string, {
   sectionsUk: { heading: string; items: string[] }[];
   sectionsEn: { heading: string; items: string[] }[];
 }> = {
+  "ml-roi-checklist": {
+    introUk: "Перед тим як інвестувати в ML-проєкт, важливо перевірити: чи є у вас дані, чи визначена бізнес-мета, чи готова інфраструктура. Цей чек-ліст — результат аналізу 40+ ML-впроваджень Codeworth.",
+    introEn: "Before investing in an ML project, it is critical to verify: do you have the data, is the business objective defined, is your infrastructure ready. This checklist distils lessons from 40+ ML deployments by Codeworth.",
+    sectionsUk: [
+      {
+        heading: "📊 Дані та якість",
+        items: [
+          "Є щонайменше 12 місяців релевантних даних",
+          "Дані зберігаються в структурованому вигляді (SQL/CSV/data warehouse)",
+          "Відсутність даних (null values) < 20% у ключових полях",
+          "Визначений та надійний target label (що саме прогнозуємо)",
+          "Дані не мають критичного class imbalance (менше 1:100)",
+          "Є можливість збирати нові дані після деплою моделі",
+        ],
+      },
+      {
+        heading: "🎯 Бізнес-мета та ROI",
+        items: [
+          "Бізнес-проблема чітко сформульована (не 'впровадити AI', а 'знизити churn на 20%')",
+          "Визначена baseline метрика (поточна ефективність без ML)",
+          "Розрахований мінімально прийнятний ROI для ухвалення рішення",
+          "Stakeholder, відповідальний за ML-проєкт, визначений",
+          "Бюджет на Discovery + PoC + Production виділений окремо",
+          "Критерії success (go/no-go) після PoC узгоджені",
+        ],
+      },
+      {
+        heading: "🏗️ Технічна готовність",
+        items: [
+          "Є API або можливість інтеграції ML-моделі з existing systems",
+          "Cloud платформа або on-premise GPU обрані",
+          "Процес Data Engineering (pipeline від сирих даних до features) можливий",
+          "Команда або ресурси для MLOps після деплою передбачені",
+          "Data governance і privacy (UK GDPR) перевірені",
+          "Є внутрішня команда, здатна підтримувати ML-систему після деплою",
+        ],
+      },
+      {
+        heading: "⚠️ Ризики та blockers",
+        items: [
+          "Дані не містять особистої інформації без відповідних захистів (UK GDPR Art.22)",
+          "ML-рішення не підпадає під MHRA (не медичний пристрій) або є план сертифікації",
+          "Немає ключової залежності від одного data source, який може зникнути",
+          "Legal/compliance перевірили використання даних для ML",
+          "Є план для 'model degradation' — що робити, коли точність падає",
+        ],
+      },
+    ],
+    sectionsEn: [
+      {
+        heading: "📊 Data and Quality",
+        items: [
+          "At least 12 months of relevant historical data available",
+          "Data stored in structured format (SQL/CSV/data warehouse)",
+          "Missing values (nulls) < 20% in key fields",
+          "Target label is clearly defined and reliably measured",
+          "No critical class imbalance (less than 1:100 ratio)",
+          "Mechanism to collect new data after model deployment exists",
+        ],
+      },
+      {
+        heading: "🎯 Business Objective and ROI",
+        items: [
+          "Business problem clearly stated (not 'implement AI', but 'reduce churn by 20%')",
+          "Baseline metric defined (current performance without ML)",
+          "Minimum acceptable ROI threshold agreed for go/no-go decision",
+          "Business stakeholder accountable for the ML project identified",
+          "Budget for Discovery + PoC + Production allocated separately",
+          "Success criteria (go/no-go) after PoC agreed with stakeholders",
+        ],
+      },
+      {
+        heading: "🏗️ Technical Readiness",
+        items: [
+          "API or integration pathway for ML model with existing systems exists",
+          "Cloud platform or on-premise GPU infrastructure selected",
+          "Data engineering pipeline (raw data → features) is feasible",
+          "Team or budget for MLOps after deployment is planned",
+          "Data governance and privacy (UK GDPR) reviewed",
+          "Internal team capable of maintaining the ML system post-deployment exists",
+        ],
+      },
+      {
+        heading: "⚠️ Risks and Blockers",
+        items: [
+          "Data does not contain personal information without appropriate safeguards (UK GDPR Art.22)",
+          "ML solution does not fall under MHRA regulation (not a medical device) or certification plan exists",
+          "No critical dependency on a single data source that could become unavailable",
+          "Legal/compliance has reviewed the use of data for ML",
+          "Plan for model degradation defined — what happens when accuracy drops",
+        ],
+      },
+    ],
+  },
+  "mlops-production-checklist": {
+    introUk: "Задеплоїти ML-модель — це лише початок. Реальна цінність виникає коли модель стабільно працює в production місяцями. Цей чек-ліст покриває всі критичні компоненти надійного ML production.",
+    introEn: "Deploying an ML model is just the beginning. Real value emerges when the model runs reliably in production for months. This checklist covers all critical components of robust ML production.",
+    sectionsUk: [
+      {
+        heading: "📦 Model packaging та versioning",
+        items: [
+          "Модель збережена у стандартному форматі (MLflow / ONNX / pickle з версією)",
+          "Всі dependencies зафіксовані у requirements.txt або conda environment",
+          "Reproducible training: той самий код + дані = той самий результат",
+          "Model card задокументована (intended use, limitations, bias evaluation)",
+          "Git tag або commit sha прив'язані до кожної версії моделі",
+        ],
+      },
+      {
+        heading: "🚀 Inference та API",
+        items: [
+          "REST API задокументований (OpenAPI / Swagger spec)",
+          "Latency SLA визначена та перевірена (p95 < X ms)",
+          "Health check endpoint /health або /ping реалізований",
+          "API versioning (v1, v2) передбачений",
+          "Graceful degradation: fallback при недоступності моделі",
+          "Rate limiting та authentication на API endpoint",
+        ],
+      },
+      {
+        heading: "📊 Monitoring та alerting",
+        items: [
+          "Data drift monitoring (Jensen-Shannon divergence або PSI) налаштований",
+          "Model performance metrics (precision/recall/RMSE) логуються у production",
+          "Alerting при деградації metrics > X% за rolling window",
+          "Prediction distribution monitoring (чи модель видає 'дивні' відповіді)",
+          "Infrastructure metrics (CPU/memory/latency) в Grafana або аналог",
+          "Audit log усіх predictions для regulated use cases",
+        ],
+      },
+      {
+        heading: "🔄 Retraining pipeline",
+        items: [
+          "Automatic retraining trigger при data drift або performance degradation",
+          "A/B testing framework для порівняння нової та старої версії моделі",
+          "Shadow mode deployment: нова модель логує predictions без впливу на production",
+          "Rollback механізм: повернення до попередньої версії за < 5 хвилин",
+          "Training data versioning (DVC або аналог)",
+          "CI/CD pipeline для model training та deployment (GitHub Actions / Kubeflow)",
+        ],
+      },
+    ],
+    sectionsEn: [
+      {
+        heading: "📦 Model Packaging and Versioning",
+        items: [
+          "Model saved in a standard format (MLflow / ONNX / versioned pickle)",
+          "All dependencies pinned in requirements.txt or conda environment",
+          "Reproducible training: same code + data = same result",
+          "Model card documented (intended use, limitations, bias evaluation)",
+          "Git tag or commit SHA linked to each model version",
+        ],
+      },
+      {
+        heading: "🚀 Inference and API",
+        items: [
+          "REST API documented (OpenAPI / Swagger spec)",
+          "Latency SLA defined and validated (p95 < X ms)",
+          "Health check endpoint /health or /ping implemented",
+          "API versioning (v1, v2) planned",
+          "Graceful degradation: fallback when model is unavailable",
+          "Rate limiting and authentication on API endpoint",
+        ],
+      },
+      {
+        heading: "📊 Monitoring and Alerting",
+        items: [
+          "Data drift monitoring (Jensen-Shannon divergence or PSI) configured",
+          "Model performance metrics (precision/recall/RMSE) logged in production",
+          "Alerting when metric degradation > X% over rolling window",
+          "Prediction distribution monitoring (detecting 'unusual' model outputs)",
+          "Infrastructure metrics (CPU/memory/latency) in Grafana or equivalent",
+          "Audit log of all predictions for regulated use cases",
+        ],
+      },
+      {
+        heading: "🔄 Retraining Pipeline",
+        items: [
+          "Automatic retraining trigger on data drift or performance degradation",
+          "A/B testing framework for comparing new vs old model version",
+          "Shadow mode deployment: new model logs predictions without affecting production",
+          "Rollback mechanism: return to previous version in < 5 minutes",
+          "Training data versioning (DVC or equivalent)",
+          "CI/CD pipeline for model training and deployment (GitHub Actions / Kubeflow)",
+        ],
+      },
+    ],
+  },
   "website-launch-checklist": {
     introUk: "Запускаєте сайт і хочете бути впевнені, що нічого не забули? Цей чек-ліст — результат перевірки 50+ сайтів командою Codeworth. Кожен пункт критично важливий для SEO, безпеки та першого враження клієнтів.",
     introEn: "Launching a website and want to make sure nothing is missed? This checklist is the result of auditing 50+ websites by the Codeworth team. Every item is critical for SEO, security, and first client impressions.",
@@ -354,6 +542,86 @@ const GUIDE_CONTENT: Record<string, {
   sectionsUk: { heading: string; text: string }[];
   sectionsEn: { heading: string; text: string }[];
 }> = {
+  "ml-data-audit-guide": {
+    introUk: "Якість даних — головний фактор успіху ML-проєкту. 70% проєктів, що провалюються, роблять це через проблеми з даними, а не через вибір алгоритму. Цей гайд допоможе провести систематичний аудит перед початком ML-розробки.",
+    introEn: "Data quality is the primary success factor in ML projects. 70% of ML failures are caused by data problems, not algorithm choice. This guide helps you conduct a systematic data audit before starting ML development.",
+    sectionsUk: [
+      {
+        heading: "Крок 1: Інвентаризація даних",
+        text: "Зберіть повний перелік усіх доступних data sources: транзакційні бази (CRM, ERP), event logs (clickstream, server logs), external feeds (API, CSV uploads), і будь-які ручно зібрані дані.\n\nДля кожного джерела задокументуйте: обсяг (рядки, GB), частоту оновлення, відповідального власника, формат (SQL таблиця, CSV, JSON), та орієнтовний охоплений часовий діапазон.\n\n**Типова помилка:** команди припускають, що мають більше даних, ніж є насправді. Реальна inventory часто виявляє, що 'CRM' — це 3 різні системи з неузгодженими схемами.",
+      },
+      {
+        heading: "Крок 2: Оцінка якості та completeness",
+        text: "Для кожного ключового поля виміряйте: % null values (прийнятно < 5% для критичних полів), % дублікатів (рядки з ідентичними ключами), consistency (одне й те саме значення записано різними способами: 'Ltd', 'Limited', 'LTD'), і range violations (від'ємний вік, майбутні дати в historic records).\n\nІнструменти: Great Expectations (Python, open-source) для automated data validation, Pandas Profiling для quick EDA, AWS Glue Data Quality або dbt tests для warehouse даних.\n\n**UK GDPR note:** Під час аудиту ідентифікуйте всі поля, що є personal data за UK GDPR — ім'я, email, IP, location. Ці поля потребують окремого плану обробки перед ML.",
+      },
+      {
+        heading: "Крок 3: Target label analysis",
+        text: "Target label (що ML-модель прогнозуватиме) — найважливіше поле у датасеті. Перевірте:\n\n**Class distribution:** Для classification — скільки позитивних прикладів? Якщо менше 1%, class imbalance потребує спеціального підходу (SMOTE, class weights, threshold tuning).\n\n**Label quality:** Чи target надійно виміряний? Наприклад, для churn prediction: 'клієнт не купував 90+ днів' — операційне визначення, яке може включати seasonal buyers. Для fraud — помилкові мітки від manual review знижують якість.\n\n**Target leakage:** Чи є features, що 'знають майбутнє' (дані, що з'являються після того, як target реалізується)? Це найбільш поширена причина unrealistically high accuracy у PoC.",
+      },
+      {
+        heading: "Крок 4: Feature relevance та available history",
+        text: "Зберіть відповіді на:\n\n**Обсяг даних:** Для supervised learning — мінімум 1,000 labeled examples, краще 10,000+. Для time series — мінімум 2 повних сезонних цикли.\n\n**Feature coverage:** Які атрибути доступні для кожного прикладу? Неповні features (відсутні у 50%+ записів) малоцінні.\n\n**Historical consistency:** Чи змінювалась система, що генерує дані (schema changes, продукт-зміни, бізнес-правила)? Дані до major change часто несумісні з даними після.\n\n**Результат аудиту:** Документ з оцінкою 'ML Ready / Needs work / Not ready' для кожного data source, з конкретними action items для Data Engineering фази.",
+      },
+    ],
+    sectionsEn: [
+      {
+        heading: "Step 1: Data Inventory",
+        text: "Compile a complete list of all available data sources: transactional databases (CRM, ERP), event logs (clickstream, server logs), external feeds (API, CSV uploads), and any manually collected data.\n\nFor each source document: volume (rows, GB), update frequency, data owner, format (SQL table, CSV, JSON), and approximate time range covered.\n\n**Common mistake:** teams assume they have more data than they actually do. A real inventory often reveals that the 'CRM' is actually 3 different systems with inconsistent schemas.",
+      },
+      {
+        heading: "Step 2: Quality and Completeness Assessment",
+        text: "For each key field measure: % null values (acceptable < 5% for critical fields), % duplicates (rows with identical keys), consistency (the same value recorded in different ways: 'Ltd', 'Limited', 'LTD'), and range violations (negative age, future dates in historical records).\n\nTools: Great Expectations (Python, open-source) for automated data validation, Pandas Profiling for quick EDA, AWS Glue Data Quality or dbt tests for warehouse data.\n\n**UK GDPR note:** During the audit, identify all fields that constitute personal data under UK GDPR — name, email, IP address, location. These fields require a separate processing plan before ML.",
+      },
+      {
+        heading: "Step 3: Target Label Analysis",
+        text: "The target label (what the ML model will predict) is the most important field in the dataset. Check:\n\n**Class distribution:** For classification — how many positive examples? If under 1%, class imbalance requires special handling (SMOTE, class weights, threshold tuning).\n\n**Label quality:** Is the target reliably measured? For churn prediction: '90+ days without purchase' is an operational definition that may include seasonal buyers. For fraud — mislabelled examples from manual review degrade model quality.\n\n**Target leakage:** Are there features that 'know the future' (data that appears after the target event occurs)? This is the most common cause of unrealistically high accuracy in PoCs.",
+      },
+      {
+        heading: "Step 4: Feature Relevance and Available History",
+        text: "Gather answers to:\n\n**Data volume:** For supervised learning — minimum 1,000 labelled examples, ideally 10,000+. For time series — minimum 2 complete seasonal cycles.\n\n**Feature coverage:** What attributes are available for each record? Features missing in 50%+ of records are of limited value.\n\n**Historical consistency:** Did the system generating the data change (schema changes, product changes, business rule changes)? Data before a major change is often incompatible with data after.\n\n**Audit output:** A document rating each data source as 'ML Ready / Needs Work / Not Ready', with specific action items for the Data Engineering phase.",
+      },
+    ],
+  },
+  "fca-ml-compliance-guide": {
+    introUk: "Машинне навчання у UK фінансових послугах підпадає під складну регуляторну базу: FCA SS1/23, UK GDPR Article 22, Consumer Duty. Цей гайд допоможе орієнтуватись у вимогах та уникнути типових compliance-пасток.",
+    introEn: "Machine learning in UK financial services falls under a complex regulatory framework: FCA SS1/23, UK GDPR Article 22, and Consumer Duty. This guide helps you navigate the requirements and avoid common compliance traps.",
+    sectionsUk: [
+      {
+        heading: "FCA SS1/23: Model Risk Management",
+        text: "FCA Supervisory Statement SS1/23 (2023) — перший у Великобританії детальний регуляторний фреймворк для Model Risk Management (MRM). Застосовується до: великих deposit-takers та значних investment firms. Ключові вимоги:\n\n**Model inventory:** Централізований реєстр всіх моделей з класифікацією матеріальності (high/medium/low risk).\n\n**Model validation:** Незалежна валідація всіх high-risk моделей, включно з out-of-sample testing та stress testing.\n\n**Model governance:** Чіткі ролі та відповідальність: Model Developer, Model Owner, Independent Model Validation, Model Risk Committee.\n\n**Documentation:** Для кожної high-risk моделі — Model Development Document з описом методології, даних, обмежень та intended use.\n\n**Smaller firms:** Хоча SS1/23 прямо застосовується до великих фірм, FCA очікує пропорційного підходу від усіх regulated firms.",
+      },
+      {
+        heading: "UK GDPR Article 22: Automated Decision-Making",
+        text: "UK GDPR Article 22 надає фізичним особам право не підлягати рішенням, заснованим виключно на автоматизованій обробці, якщо такі рішення мають для них юридичний або суттєво аналогічний ефект.\n\n**Коли застосовується до ML:** Automated credit scoring, automated insurance underwriting, automated fraud investigation that results in account restriction.\n\n**Виключення:** Рішення необхідне для укладання/виконання договору; або людина здійснює meaningful oversight (не просто rubber stamp).\n\n**Right to explanation:** Клієнт може запитати пояснення автоматизованого рішення — ваша ML система повинна генерувати interpretable outputs (SHAP values або аналог).\n\n**Практична рекомендація:** Впровадьте human-in-the-loop для всіх high-impact automated decisions; задокументуйте, що людський перегляд є meaningful (не просто underwriter, який натискає 'approve' на 95% рішень).",
+      },
+      {
+        heading: "Consumer Duty (2023): Good Outcomes Test",
+        text: "FCA Consumer Duty (набрало чинності 31 липня 2023) вимагає від FCA-regulated фірм демонструвати, що їхні продукти та послуги надають 'good outcomes' для retail customers.\n\n**4 outcomes, де ML впливає:**\n1. **Products & Services:** Чи ML-driven продукт підходить цільовій аудиторії? (Algorithmic targeting повинен відповідати customer vulnerability assessment)\n2. **Price & Value:** Чи ML-based ціноутворення є справедливим? (Differential pricing може бути scrutinised)\n3. **Consumer Understanding:** Чи клієнти розуміють ML-driven рекомендації?\n4. **Consumer Support:** Чи є ефективний маршрут оскарження ML-рішення?\n\n**Практичні вимоги:** Документовані outcome monitoring metrics для ML-driven processes; регулярні reviews ML model performance з consumer outcomes perspective; Vulnerable Customer identification — ML не повинен систематично гіршати outcomes для vulnerable customers.",
+      },
+      {
+        heading: "Bias Testing та Fairness у UK регуляторному контексті",
+        text: "UK Equality Act 2010 забороняє дискримінацію за 9 protected characteristics: age, disability, gender reassignment, marriage/civil partnership, pregnancy/maternity, race, religion/belief, sex, sexual orientation.\n\n**ML Bias risk:** Якщо ML-модель використовує proxy features, що корелюють з protected characteristics (наприклад, postcode як proxy для race або disability), вона може порушувати Equality Act навіть без явного використання protected data.\n\n**FCA та ICO alignment:** ICO's Guidance on AI and Data Protection та FCA's Approach to Consumers вказують, що проактивне тестування на bias є regulatory expectation для regulated firms.\n\n**Практичний підхід:** Fairness audit на pre-deployment та щорічно: тестуйте model performance (accuracy, false positive rate, false negative rate) для кожної protected group. Документуйте результати. Якщо є disparate impact — investigate причини та коригуйте.",
+      },
+    ],
+    sectionsEn: [
+      {
+        heading: "FCA SS1/23: Model Risk Management",
+        text: "FCA Supervisory Statement SS1/23 (2023) is the UK's first detailed regulatory framework for Model Risk Management (MRM). Applies to: major deposit-takers and significant investment firms. Key requirements:\n\n**Model inventory:** A centralised register of all models with materiality classification (high/medium/low risk).\n\n**Model validation:** Independent validation of all high-risk models, including out-of-sample testing and stress testing.\n\n**Model governance:** Clear roles and responsibilities: Model Developer, Model Owner, Independent Model Validation, Model Risk Committee.\n\n**Documentation:** For each high-risk model — a Model Development Document covering methodology, data, limitations, and intended use.\n\n**Smaller firms:** While SS1/23 directly applies to large firms, FCA expects a proportionate approach from all regulated firms.",
+      },
+      {
+        heading: "UK GDPR Article 22: Automated Decision-Making",
+        text: "UK GDPR Article 22 gives individuals the right not to be subject to decisions based solely on automated processing if those decisions produce legal or similarly significant effects on them.\n\n**When it applies to ML:** Automated credit scoring, automated insurance underwriting, automated fraud investigation resulting in account restriction.\n\n**Exceptions:** The decision is necessary for entering into or performing a contract; or a human exercises meaningful oversight (not just rubber-stamping).\n\n**Right to explanation:** The individual can request an explanation of the automated decision — your ML system must generate interpretable outputs (SHAP values or equivalent).\n\n**Practical recommendation:** Implement human-in-the-loop for all high-impact automated decisions; document that human review is meaningful (not just an underwriter clicking 'approve' on 95% of decisions).",
+      },
+      {
+        heading: "Consumer Duty (2023): Good Outcomes Test",
+        text: "FCA Consumer Duty (effective 31 July 2023) requires FCA-regulated firms to demonstrate their products and services deliver 'good outcomes' for retail customers.\n\n**4 outcomes where ML has impact:**\n1. **Products & Services:** Is the ML-driven product suitable for the target audience? (Algorithmic targeting must align with customer vulnerability assessment)\n2. **Price & Value:** Is ML-based pricing fair? (Differential pricing may be scrutinised)\n3. **Consumer Understanding:** Do customers understand ML-driven recommendations?\n4. **Consumer Support:** Is there an effective route to challenge an ML decision?\n\n**Practical requirements:** Documented outcome monitoring metrics for ML-driven processes; regular ML model performance reviews from a consumer outcomes perspective; Vulnerable Customer identification — ML must not systematically worsen outcomes for vulnerable customers.",
+      },
+      {
+        heading: "Bias Testing and Fairness in UK Regulatory Context",
+        text: "The UK Equality Act 2010 prohibits discrimination based on 9 protected characteristics: age, disability, gender reassignment, marriage/civil partnership, pregnancy/maternity, race, religion/belief, sex, and sexual orientation.\n\n**ML Bias risk:** If an ML model uses proxy features correlated with protected characteristics (e.g., postcode as a proxy for race or disability), it may violate the Equality Act even without explicitly using protected data.\n\n**FCA and ICO alignment:** ICO's Guidance on AI and Data Protection and FCA's Approach to Consumers indicate that proactive bias testing is a regulatory expectation for regulated firms.\n\n**Practical approach:** Fairness audit pre-deployment and annually: test model performance (accuracy, false positive rate, false negative rate) for each protected group. Document results. If disparate impact is found — investigate root causes and remediate.",
+      },
+    ],
+  },
   "website-cost-guide": {
     introUk: "Одне з найпоширеніших питань від власників бізнесу: «Скільки коштує сайт?». Відповідь залежить від типу сайту, виконавця та функціональності. Цей гайд розкладає все по поличках.",
     introEn: "One of the most common questions from business owners: 'How much does a website cost?' The answer depends on the type of site, the provider, and functionality. This guide breaks it all down.",
