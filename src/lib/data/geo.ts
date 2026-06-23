@@ -38,11 +38,11 @@ export const GEO_CITIES: GeoCity[] = [
     seoDescEn:
       "Machine learning consultant London: fraud detection, credit scoring, NLP automation. FCA-compliant ML from £4,000. Codeworth ML agency.",
     stats: [
-      { label: "Фінтех-компаній", labelEn: "FinTech companies", value: "3,000+" },
-      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "45,000+" },
-      { label: "AI-стартапів", labelEn: "AI startups", value: "1,200+" },
-      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£72k" },
-      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "12+" },
+      { label: "Фінтех-компаній", labelEn: "FinTech companies", value: "3,600+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "54,000+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "1,450+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£86k" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "14+" },
     ],
     faq: [
       {
@@ -97,11 +97,11 @@ export const GEO_CITIES: GeoCity[] = [
     seoDescEn:
       "Machine learning consultant Manchester: demand forecasting, predictive maintenance, churn prediction. From £4,000. Codeworth ML agency.",
     stats: [
-      { label: "Tech-компаній", labelEn: "Tech companies", value: "10,000+" },
-      { label: "Рітейл-підприємств", labelEn: "Retail businesses", value: "8,500+" },
-      { label: "Виробничих підприємств", labelEn: "Manufacturing firms", value: "3,200+" },
-      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£55k" },
-      { label: "Зростання AI-сектору (2р)", labelEn: "AI sector growth (2yr)", value: "+34%" },
+      { label: "Tech-компаній", labelEn: "Tech companies", value: "12,000+" },
+      { label: "Рітейл-підприємств", labelEn: "Retail businesses", value: "10,200+" },
+      { label: "Виробничих підприємств", labelEn: "Manufacturing firms", value: "3,840+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£66k" },
+      { label: "Зростання AI-сектору (2р)", labelEn: "AI sector growth (2yr)", value: "+41%" },
     ],
     faq: [
       {
@@ -156,11 +156,11 @@ export const GEO_CITIES: GeoCity[] = [
     seoDescEn:
       "Machine learning consultant Birmingham: predictive maintenance, fraud detection, demand forecasting. From £4,000. Codeworth.",
     stats: [
-      { label: "Виробничих підприємств", labelEn: "Manufacturing firms", value: "5,200+" },
-      { label: "Фінансових компаній", labelEn: "Financial companies", value: "2,800+" },
-      { label: "Tech-стартапів", labelEn: "Tech startups", value: "1,900+" },
-      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£52k" },
-      { label: "Зростання digital-сектора", labelEn: "Digital sector growth (2yr)", value: "+28%" },
+      { label: "Виробничих підприємств", labelEn: "Manufacturing firms", value: "6,250+" },
+      { label: "Фінансових компаній", labelEn: "Financial companies", value: "3,350+" },
+      { label: "Tech-стартапів", labelEn: "Tech startups", value: "2,300+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£62k" },
+      { label: "Зростання digital-сектора", labelEn: "Digital sector growth (2yr)", value: "+34%" },
     ],
     faq: [
       {
@@ -215,11 +215,11 @@ export const GEO_CITIES: GeoCity[] = [
     seoDescEn:
       "Machine learning consultant Edinburgh: financial services, NHS Scotland, SaaS ML. From £4,000. Codeworth ML agency.",
     stats: [
-      { label: "Фінансових компаній", labelEn: "Financial companies", value: "1,400+" },
-      { label: "Дослідницьких інститутів", labelEn: "Research institutes", value: "12" },
-      { label: "Tech-компаній", labelEn: "Tech companies", value: "4,500+" },
-      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£58k" },
-      { label: "AI-патентів від унів.", labelEn: "AI patents from local unis", value: "240+" },
+      { label: "Фінансових компаній", labelEn: "Financial companies", value: "1,700+" },
+      { label: "Дослідницьких інститутів", labelEn: "Research institutes", value: "14" },
+      { label: "Tech-компаній", labelEn: "Tech companies", value: "5,400+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£70k" },
+      { label: "AI-патентів від унів.", labelEn: "AI patents from local unis", value: "290+" },
     ],
     faq: [
       {
@@ -274,11 +274,11 @@ export const GEO_CITIES: GeoCity[] = [
     seoDescEn:
       "Machine learning consultant Bristol: aerospace predictive maintenance, agritech, SaaS ML. From £4,000. Codeworth.",
     stats: [
-      { label: "Аерокосмічних компаній", labelEn: "Aerospace companies", value: "800+" },
-      { label: "Tech-компаній", labelEn: "Tech companies", value: "6,800+" },
-      { label: "AgriTech-стартапів", labelEn: "AgriTech startups", value: "120+" },
-      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£56k" },
-      { label: "Deep-tech стартапів", labelEn: "Deep-tech startups", value: "350+" },
+      { label: "Аерокосмічних компаній", labelEn: "Aerospace companies", value: "960+" },
+      { label: "Tech-компаній", labelEn: "Tech companies", value: "8,200+" },
+      { label: "AgriTech-стартапів", labelEn: "AgriTech startups", value: "145+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£67k" },
+      { label: "Deep-tech стартапів", labelEn: "Deep-tech startups", value: "420+" },
     ],
     faq: [
       {
@@ -333,11 +333,11 @@ export const GEO_CITIES: GeoCity[] = [
     seoDescEn:
       "Machine learning consultant Leeds: retail demand forecasting, fraud detection, clinical ML. From £4,000. Codeworth.",
     stats: [
-      { label: "Рітейл-підприємств", labelEn: "Retail businesses", value: "6,200+" },
-      { label: "Фінансових компаній", labelEn: "Financial companies", value: "1,800+" },
-      { label: "Tech-компаній", labelEn: "Tech companies", value: "5,400+" },
-      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£53k" },
-      { label: "NHS Trust-ів", labelEn: "NHS Trusts", value: "12" },
+      { label: "Рітейл-підприємств", labelEn: "Retail businesses", value: "7,450+" },
+      { label: "Фінансових компаній", labelEn: "Financial companies", value: "2,200+" },
+      { label: "Tech-компаній", labelEn: "Tech companies", value: "6,500+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£64k" },
+      { label: "NHS Trust-ів", labelEn: "NHS Trusts", value: "14" },
     ],
     faq: [
       {
@@ -392,11 +392,11 @@ export const GEO_CITIES: GeoCity[] = [
     seoDescEn:
       "Machine learning consultant Glasgow: NHS clinical ML, renewable energy forecasting, offshore predictive maintenance. From £4,000. Codeworth.",
     stats: [
-      { label: "Медичних організацій", labelEn: "Healthcare organisations", value: "2,100+" },
-      { label: "Енергетичних компаній", labelEn: "Energy companies", value: "1,400+" },
-      { label: "Tech-компаній", labelEn: "Tech companies", value: "5,800+" },
-      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£54k" },
-      { label: "Offshore ML проєктів (регіон)", labelEn: "Offshore ML projects (region)", value: "80+" },
+      { label: "Медичних організацій", labelEn: "Healthcare organisations", value: "2,500+" },
+      { label: "Енергетичних компаній", labelEn: "Energy companies", value: "1,700+" },
+      { label: "Tech-компаній", labelEn: "Tech companies", value: "7,000+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£65k" },
+      { label: "Offshore ML проєктів (регіон)", labelEn: "Offshore ML projects (region)", value: "95+" },
     ],
     faq: [
       {
@@ -451,11 +451,11 @@ export const GEO_CITIES: GeoCity[] = [
     seoDescEn:
       "Machine learning consultant Cardiff: NHS Wales, financial services ML, Welsh AI grants. From £4,000. Codeworth.",
     stats: [
-      { label: "Tech-компаній", labelEn: "Tech companies", value: "3,200+" },
-      { label: "AI-субсидій (DBW)", labelEn: "AI grants available (DBW)", value: "£2M+" },
-      { label: "Медичних організацій", labelEn: "Healthcare organisations", value: "1,100+" },
-      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£48k" },
-      { label: "Зростання tech-сектора (3р)", labelEn: "Tech sector growth (3yr)", value: "+41%" },
+      { label: "Tech-компаній", labelEn: "Tech companies", value: "3,850+" },
+      { label: "AI-субсидій (DBW)", labelEn: "AI grants available (DBW)", value: "£2.4M+" },
+      { label: "Медичних організацій", labelEn: "Healthcare organisations", value: "1,300+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£58k" },
+      { label: "Зростання tech-сектора (3р)", labelEn: "Tech sector growth (3yr)", value: "+49%" },
     ],
     faq: [
       {
@@ -510,11 +510,11 @@ export const GEO_CITIES: GeoCity[] = [
     seoDescEn:
       "Machine learning consultant Cambridge: deep learning, NLP, computer vision for Silicon Fen startups. From £4,000. Codeworth.",
     stats: [
-      { label: "AI-стартапів (Silicon Fen)", labelEn: "AI startups (Silicon Fen)", value: "600+" },
-      { label: "ML-дослідників (Uni Cam)", labelEn: "ML researchers (Uni Cambridge)", value: "800+" },
-      { label: "VC-інвестиції в AI (5р)", labelEn: "VC investment in AI (5yr)", value: "£8bn+" },
-      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£68k" },
-      { label: "Deep tech компаній", labelEn: "Deep tech companies", value: "1,400+" },
+      { label: "AI-стартапів (Silicon Fen)", labelEn: "AI startups (Silicon Fen)", value: "720+" },
+      { label: "ML-дослідників (Uni Cam)", labelEn: "ML researchers (Uni Cambridge)", value: "960+" },
+      { label: "VC-інвестиції в AI (5р)", labelEn: "VC investment in AI (5yr)", value: "£9.5bn+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£82k" },
+      { label: "Deep tech компаній", labelEn: "Deep tech companies", value: "1,700+" },
     ],
     faq: [
       {
@@ -569,11 +569,11 @@ export const GEO_CITIES: GeoCity[] = [
     seoDescEn:
       "Machine learning consultant Oxford: biomed ML, NLP, predictive analytics for Oxfordshire businesses. From £4,000. Codeworth.",
     stats: [
-      { label: "Фармацевтичних компаній", labelEn: "Pharmaceutical companies", value: "200+" },
-      { label: "AI spinouts (Uni Oxford)", labelEn: "AI spinouts (Uni Oxford)", value: "300+" },
-      { label: "MedTech компаній", labelEn: "MedTech companies", value: "180+" },
-      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£65k" },
-      { label: "EdTech стартапів", labelEn: "EdTech startups", value: "120+" },
+      { label: "Фармацевтичних компаній", labelEn: "Pharmaceutical companies", value: "240+" },
+      { label: "AI spinouts (Uni Oxford)", labelEn: "AI spinouts (Uni Oxford)", value: "360+" },
+      { label: "MedTech компаній", labelEn: "MedTech companies", value: "215+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£78k" },
+      { label: "EdTech стартапів", labelEn: "EdTech startups", value: "145+" },
     ],
     faq: [
       {
@@ -628,11 +628,11 @@ export const GEO_CITIES: GeoCity[] = [
     seoDescEn:
       "Machine learning consultant Sheffield: computer vision QA, predictive maintenance, Industry 4.0 ML. From £4,000. Codeworth.",
     stats: [
-      { label: "Manufacturing компаній", labelEn: "Manufacturing companies", value: "2,800+" },
-      { label: "AMRC партнерів", labelEn: "AMRC partners", value: "120+" },
-      { label: "Advanced manufacturing jobs", labelEn: "Advanced manufacturing jobs", value: "50,000+" },
-      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£50k" },
-      { label: "Industry 4.0 проєктів (5р)", labelEn: "Industry 4.0 projects (5yr)", value: "400+" },
+      { label: "Manufacturing компаній", labelEn: "Manufacturing companies", value: "3,350+" },
+      { label: "AMRC партнерів", labelEn: "AMRC partners", value: "145+" },
+      { label: "Advanced manufacturing jobs", labelEn: "Advanced manufacturing jobs", value: "60,000+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£60k" },
+      { label: "Industry 4.0 проєктів (5р)", labelEn: "Industry 4.0 projects (5yr)", value: "480+" },
     ],
     faq: [
       {
@@ -687,11 +687,11 @@ export const GEO_CITIES: GeoCity[] = [
     seoDescEn:
       "Machine learning consultant Newcastle: NHS ML, data analytics, predictive models for North East businesses. From £3,500. Codeworth.",
     stats: [
-      { label: "Охорони здоров'я організацій", labelEn: "Healthcare organisations", value: "600+" },
-      { label: "Tech компаній", labelEn: "Tech companies", value: "1,800+" },
-      { label: "Фінансових послуг компаній", labelEn: "Financial services firms", value: "400+" },
-      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£46k" },
-      { label: "North East Investment Zone grants", labelEn: "NE Investment Zone grants", value: "£80M+" },
+      { label: "Охорони здоров'я організацій", labelEn: "Healthcare organisations", value: "720+" },
+      { label: "Tech компаній", labelEn: "Tech companies", value: "2,200+" },
+      { label: "Фінансових послуг компаній", labelEn: "Financial services firms", value: "480+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£55k" },
+      { label: "North East Investment Zone grants", labelEn: "NE Investment Zone grants", value: "£95M+" },
     ],
     faq: [
       {
@@ -746,11 +746,11 @@ export const GEO_CITIES: GeoCity[] = [
     seoDescEn:
       "Machine learning consultant Nottingham: retail analytics, NHS ML, logistics demand forecasting. From £3,500. Codeworth.",
     stats: [
-      { label: "Retail компаній (HQ)", labelEn: "Retail companies (HQ)", value: "120+" },
-      { label: "Logistics/warehouse jobs", labelEn: "Logistics / warehouse jobs", value: "35,000+" },
-      { label: "NHS Trust ліжок", labelEn: "NHS Trust beds", value: "1,700+" },
-      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£48k" },
-      { label: "Tech компаній", labelEn: "Tech companies", value: "2,100+" },
+      { label: "Retail компаній (HQ)", labelEn: "Retail companies (HQ)", value: "145+" },
+      { label: "Logistics/warehouse jobs", labelEn: "Logistics / warehouse jobs", value: "42,000+" },
+      { label: "NHS Trust ліжок", labelEn: "NHS Trust beds", value: "2,050+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£58k" },
+      { label: "Tech компаній", labelEn: "Tech companies", value: "2,500+" },
     ],
     faq: [
       {

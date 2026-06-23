@@ -1,0 +1,27 @@
+# Codeworth.uk TODO & Done Log
+
+## Session 2026-06-23 — ML Rebranding + Actualization Sprint
+
+### Done (this chat)
+- [x] marketplace/page.tsx: "Website Marketplace" (UAH) → "ML Solution Packages for UK Business" (14 packages, GBP)
+- [x] startup/page.tsx: "Startup Landing Pages £299" → "ML for UK Startups" (PoC £1,800 / MVP £4,500 / Series A £3,000 / Innovate UK £1,500)
+- [x] erp-development/page.tsx: ERP dev → "ML Integration with ERP & CRM" (SAP/Dynamics/Salesforce/Oracle/Sage, 4 integration patterns)
+- [x] partners/page.tsx: Next.js/Vercel web stack → ML tech stack (Python/PyTorch/scikit-learn/FastAPI/SageMaker/MLflow)
+- [x] tools/page.tsx: "Free Web Tools" → "Free ML Tools" (metadata + hero)
+- [x] MlRoiCalculator.tsx: new 4-step ML ROI Calculator (problem/data/deploy/timeline → GBP + ROI)
+- [x] tools.ts: 5 web-dev tools replaced with ML equivalents (ml-roi-calculator live, 4 coming soon)
+- [x] extras.ts: formatExtrasPrice now native GBP; all 30 priceFrom UAH → GBP
+- [x] blog.ts: added posts 91-100 (ML governance, LLM fine-tuning, data pipeline, RL logistics, EU AI Act, salary guide, SME ML, energy forecasting, ML ROI, CV retail)
+- [x] glossary.ts: added 25 new ML terms (RLHF, constitutional AI, vector DB, feature store, data drift, concept drift, model card, responsible AI, foundation model, multimodal, agentic AI, CoT, few-shot, zero-shot, prompt engineering, LoRA, quantization, federated learning, edge AI, synthetic data, data augmentation, model compression, knowledge distillation, XAI, AI governance)
+- [x] resources.ts: added 7 UK ML resources (AI Safety Institute, Innovate UK grants, FCA AI Lab, Alan Turing Institute, ICO UK GDPR, NHS Digital AI, UK AI White Paper)
+- [x] geo.ts: 13 cities stats and FAQ year references refreshed to 2026
+- [x] services.ts: technology refs, year mentions, UAH pricing actualized
+
+### Pending
+- [ ] 19 Dependabot vulnerabilities (8 high) — address when time permits
+- [ ] mlops-checklist tool — component not yet built (coming soon)
+- [ ] ml-readiness-audit tool — component not yet built
+- [ ] model-card-generator tool — component not yet built
+- [ ] fca-ml-compliance-checklist tool — component not yet built
+- [ ] GSC integration for codeworth.uk — Google Search Console setup
+- [ ] FAQ blocks (10 Q&A) on remaining pages — standardize per site-wide rule

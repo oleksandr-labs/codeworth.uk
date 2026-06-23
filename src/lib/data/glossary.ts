@@ -2136,6 +2136,1207 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     relatedBlogPost: "ai-quality-control-manufacturing",
     relatedNichePage: "/ml/manufacturing"
   },
+  {
+    slug: "rlhf",
+    termUk: "RLHF (Навчання з підкріпленням за зворотним зв'язком людини)",
+    termEn: "RLHF (Reinforcement Learning from Human Feedback)",
+    category: "ai",
+    shortDescription: "Техніка вирівнювання великих мовних моделей із людськими цінностями: людські оцінювачі порівнюють відповіді моделі, reward model навчається на цих уподобаннях, а основна LLM оптимізується через RL.",
+    fullDescription: `RLHF — ключовий компонент alignment pipeline для сучасних LLM. Без нього базові GPT-моделі генерують токсичний або небезпечний контент.
+
+**Три етапи RLHF:**
+1. **SFT (Supervised Fine-Tuning):** LLM дообучається на curated demonstrations від людей-аннотаторів
+2. **Reward Model Training:** Людські оцінювачі попарно порівнюють відповіді (A > B). Reward model (зазвичай менша LLM) навчається передбачати ці переваги
+3. **RL Optimization (PPO/GRPO):** LLM оптимізується через Proximal Policy Optimization, максимізуючи reward від trained reward model
+
+**Реальні застосування:**
+- GPT-4 / ChatGPT (OpenAI InstructGPT pipeline)
+- Claude (Anthropic — використовує Constitutional AI поверх RLHF)
+- Llama 3 Instruct (Meta)
+- Gemini 1.5 (Google DeepMind)
+
+**Виклики RLHF:**
+- **Reward hacking:** LLM навчається "обдурювати" reward model, даючи довгі але порожні відповіді
+- **Annotator bias:** переваги оцінювачів відображають культурні та гендерні упередження
+- **Scalability:** попарна анотація дорога — вартість $0.5-5 за порівняння × мільйони пар
+
+**Альтернативи:**
+- **DPO (Direct Preference Optimization):** прибирає окремий reward model, математично еквівалентний PPO але стабільніший
+- **Constitutional AI (Anthropic):** self-critique на основі принципів замість масової людської анотації
+- **RLAIF:** AI анотатор замість людини для масштабованості`,
+    example: "UK fintech компанія дообучає open-source LLM (Llama 3 8B) для клієнтського чату: 500 пар відповідей анотовано compliance-командою → reward model → PPO. Результат: 73% зниження відповідей поза регуляторними рамками при збереженні usefulness score.",
+    relatedTerms: ["foundation-model", "constitutional-ai", "responsible-ai"],
+    relatedService: "artificial-intelligence",
+    relatedBlogPost: "what-is-llm-fine-tuning-guide",
+    relatedNichePage: "/ai/saas"
+  },
+  {
+    slug: "constitutional-ai",
+    termUk: "Конституційний ШІ (Constitutional AI)",
+    termEn: "Constitutional AI",
+    category: "ai",
+    shortDescription: "Підхід Anthropic до alignment: AI-модель самостійно критикує та переписує свої відповіді, керуючись набором принципів (конституцією), зменшуючи залежність від масової людської анотації.",
+    fullDescription: `Constitutional AI (CAI) — розроблена Anthropic методологія для навчання безпечних та корисних LLM з мінімальною людською участю в процесі безпеки.
+
+**Два ключові кроки:**
+
+**1. SL-CAI (Supervised Learning from AI Feedback):**
+- Модель генерує відповідь на потенційно шкідливий запит
+- Та сама модель критикує відповідь на основі конституції (набору принципів)
+- Модель переписує відповідь, усуваючи виявлені проблеми
+- Цей процес ітерується кілька разів
+- Фінальні пари (запит → безпечна відповідь) використовуються для SFT
+
+**2. RL-CAI (Reinforcement Learning from AI Feedback):**
+- AI-модель-суддя (замість людини) порівнює пари відповідей за конституцією
+- Ці AI-переваги тренують reward model
+- LLM оптимізується через PPO відносно цього reward model
+
+**Конституція Anthropic включає принципи:**
+- Не надавати інформацію, що сприяє завданню шкоди
+- Поважати людську автономію та відкрито визнавати невизначеність
+- Підтримувати демократичні цінності та свободу преси
+
+**Переваги перед класичним RLHF:**
+- Масштабованість: не потребує тисяч людських анотаторів для safety
+- Прозорість: принципи явно задокументовані та аудитовані
+- Консистентність: AI-суддя застосовує правила рівномірно
+
+**Застосування:** Claude (Anthropic), що демонструє high helpfulness при низькому рівні harmful outputs.`,
+    example: "Юридична фірма UK інтегрує Claude API для аналізу контрактів: Constitutional AI забезпечує, що модель відмовляється давати конкретні юридичні поради (натомість рекомендує консультацію з solicitor), навіть при наполягливих follow-up запитах клієнтів.",
+    relatedTerms: ["rlhf", "responsible-ai", "foundation-model"],
+    relatedService: "artificial-intelligence",
+    relatedBlogPost: "what-is-llm-fine-tuning-guide",
+    relatedNichePage: "/ai/legal"
+  },
+  {
+    slug: "vector-database",
+    termUk: "Векторна база даних",
+    termEn: "Vector Database",
+    category: "ai",
+    shortDescription: "Система зберігання та пошуку, оптимізована для high-dimensional векторних ембедингів. Дозволяє семантичний пошук за подібністю замість точного збігу, є ключовим компонентом RAG-архітектур.",
+    fullDescription: `Векторні бази даних зберігають ембединги (числові вектори 768–4096 вимірів) та підтримують ефективний пошук найближчих сусідів (ANN — Approximate Nearest Neighbor).
+
+**Ключові алгоритми ANN:**
+- **HNSW (Hierarchical Navigable Small World):** граф-based, найвища якість recall, використовується Qdrant/Weaviate
+- **IVF (Inverted File Index):** кластерний підхід, ефективний для дуже великих датасетів (Faiss/Milvus)
+- **ScaNN (Google):** оптимізований для Google-scale з quantization
+
+**Топ векторних баз:**
+| База | Особливість | Ліцензія |
+|------|------------|----------|
+| **Pinecone** | Managed cloud, простота | Proprietary |
+| **Qdrant** | Rust-based, high performance | Apache 2.0 |
+| **Weaviate** | Multimodal, GraphQL | BSD |
+| **pgvector** | PostgreSQL extension | Open source |
+| **Chroma** | Local/embedded, dev-friendly | Apache 2.0 |
+| **Milvus** | Billion-scale | Apache 2.0 |
+
+**Метрики подібності:**
+- Cosine similarity: кут між векторами (для текстових ембедингів)
+- Euclidean distance: геометрична відстань (для image features)
+- Dot product: для normalized vectors = cosine
+
+**RAG (Retrieval-Augmented Generation):**
+Векторна БД + LLM = можливість відповідати на питання про приватні документи без fine-tuning. Embed документи → store vectors → query time: embed питання → find top-K similar chunks → send to LLM as context.
+
+**UK use cases:**
+- Legal document search (знайди всі контракти з подібними умовами)
+- NHS: semantic search по клінічних нотатках
+- Financial services: semantic duplicate detection для транзакцій`,
+    example: "UK law firm з 500k документів впроваджує Qdrant + OpenAI ada-002 ембединги. Адвокати запитують природньою мовою «знайди контракти з форс-мажорними клаузами щодо pandemic» — система повертає топ-20 релевантних документів за 120ms замість 40 годин ручного пошуку.",
+    relatedTerms: ["rlhf", "foundation-model", "prompt-engineering"],
+    relatedService: "nlp",
+    relatedBlogPost: "what-is-rag-guide",
+    relatedNichePage: "/ai/legal"
+  },
+  {
+    slug: "feature-store",
+    termUk: "Feature Store (сховище ознак)",
+    termEn: "Feature Store",
+    category: "ai",
+    shortDescription: "Централізований репозиторій ML-ознак, що гарантує консистентність між тренувальним та продакшн-середовищем, усуває training-serving skew та прискорює розробку нових моделей.",
+    fullDescription: `Feature Store вирішує одну з найпоширеніших проблем MLOps: training-serving skew — коли feature logic під час тренування відрізняється від тієї, що використовується в продакшні.
+
+**Архітектура Feature Store:**
+
+**Offline Store (для тренування):**
+- Зберігає historical features у columnar форматі (Parquet/Delta Lake)
+- Підтримує point-in-time correct joins — уникає data leakage
+- Джерела: data warehouse, data lake, streaming pipeline
+
+**Online Store (для inference):**
+- Low-latency key-value store (Redis, DynamoDB, Bigtable)
+- Зберігає найактуальніші значення ознак для real-time predictions
+- Latency: <10ms для serving
+
+**Feature Registry:**
+- Каталог усіх ознак з metadata (власник, версія, лінія, опис)
+- Feature discovery: data scientists можуть знаходити та перевикористовувати ознаки
+- Версіонування та deprecation management
+
+**Топ Feature Store рішення:**
+- **Feast (open-source):** стандарт для cloud-agnostic deployments
+- **Hopsworks:** enterprise, з AutoML інтеграцією
+- **Tecton:** managed cloud service, Databricks-рідний
+- **Vertex AI Feature Store (Google):** якщо вже в GCP
+- **SageMaker Feature Store (AWS):** для AWS-екосистеми
+
+**Ключові переваги:**
+- **Reusability:** команда A будує ознаки → команда B використовує без дублювання
+- **Freshness guarantees:** SLA на оновлення ознак (наприклад, кожні 15 хвилин)
+- **Compliance:** audit trail хто і коли використовував які features`,
+    example: "UK bank з 12 ML-моделями (credit, fraud, churn, AML) впроваджує Feast: 340 ознак централізовано, 67 повторно використовуються між моделями. Training-serving skew знижено з 8% до 0.3%. Час розробки нової моделі: 6 тижнів → 10 днів.",
+    relatedTerms: ["mlops", "data-drift", "model-monitoring"],
+    relatedService: "mlops",
+    relatedBlogPost: "what-is-mlops-guide",
+    relatedNichePage: "/ml/banking"
+  },
+  {
+    slug: "data-drift",
+    termUk: "Дрейф даних (Data Drift)",
+    termEn: "Data Drift",
+    category: "ai",
+    shortDescription: "Статистична зміна розподілу вхідних даних з часом, що призводить до деградації якості ML-моделі навіть без зміни її ваг. Виявляється через KL divergence, PSI, Wasserstein distance.",
+    fullDescription: `Data drift (також covariare shift) — одна з головних причин деградації ML-моделей у продакшні. Модель тренувалась на одному розподілі даних, але отримує дані з іншого.
+
+**Типи дрейфу:**
+
+**1. Feature drift (Input drift):**
+- Зміна розподілу однієї або кількох вхідних ознак
+- Приклад: age distribution клієнтської бази змістилась через нову маркетингову кампанію
+
+**2. Label drift (Target drift):**
+- Зміна розподілу цільової змінної
+- Приклад: частота fraudulent transactions зросла через нову схему шахрайства
+
+**3. Prediction drift:**
+- Зміна розподілу predictions без змін у inputs
+- Ранній індикатор проблем у pipeline
+
+**Статистичні тести для детекції:**
+- **PSI (Population Stability Index):** < 0.1 = stable, 0.1-0.2 = moderate drift, > 0.2 = significant
+- **KL Divergence / JS Divergence:** ентропійні метрики для порівняння розподілів
+- **Wasserstein Distance (Earth Mover's):** для continuous distributions, більш robust
+- **Kolmogorov-Smirnov test:** для univariate distributions, p-value threshold 0.05
+
+**Автоматизований drift monitoring:**
+- Evidently AI: open-source, reports та real-time monitoring
+- Whylogs / WhyLabs: streaming data quality
+- Fiddler AI: enterprise model monitoring
+- MLflow + custom drift metrics
+
+**Причини drift у UK контексті:**
+- Brexit: зміна trade patterns вплинула на supply chain моделі
+- COVID-19: consumer behavior повністю змінився за тижні
+- Сезонність: retail, energy, transport мають quarterly patterns`,
+    example: "UK insurance company: модель pricing для motor insurance показала 15% PSI на feature «annual_mileage» після lockdowns. Автоматичний alert → data team виявив, що 40% клієнтів тепер WFH → модель перенавчена на post-COVID даних. Claims prediction RMSE покращилось на 22%.",
+    relatedTerms: ["concept-drift", "model-monitoring", "feature-store"],
+    relatedService: "mlops",
+    relatedBlogPost: "what-is-mlops-guide",
+    relatedNichePage: "/ml/insurance"
+  },
+  {
+    slug: "concept-drift",
+    termUk: "Дрейф концепції (Concept Drift)",
+    termEn: "Concept Drift",
+    category: "ai",
+    shortDescription: "Зміна статистичного зв'язку між вхідними ознаками та цільовою змінною з часом. На відміну від data drift, змінюється сама «концепція» того, що потрібно передбачити, і модель потребує перенавчання.",
+    fullDescription: `Concept drift відрізняється від data drift: при data drift змінюється P(X), при concept drift змінюється P(Y|X) — умовний розподіл цільової змінної при тих самих вхідних даних.
+
+**Типи concept drift:**
+
+**Abrupt drift:**
+- Раптова зміна через зовнішню подію
+- Приклад: fraud patterns повністю змінились після впровадження нового типу атаки
+- Виявляється швидко, але модель деградує різко
+
+**Gradual drift:**
+- Поступова зміна протягом місяців
+- Приклад: споживчі уподобання повільно зміщуються
+- Складніше виявити, але деградація поступова
+
+**Recurring drift (Seasonal):**
+- Циклічні зміни (сезони, свята, економічні цикли)
+- Модель може "забути" старі патерни
+- Рішення: ensemble з моделями різних часових вікон
+
+**Sudden institutional drift:**
+- Зміна регуляторного середовища змінює optimal decision boundary
+- UK приклад: зміна FCA правил credit scoring → те, що раніше вважалось low-risk, тепер high-risk
+
+**Методи адаптації:**
+1. **Periodic retraining:** регулярне перенавчання на sliding window
+2. **Online learning:** інкрементальне оновлення моделі (SGD, River library)
+3. **Ensemble methods:** зважування свіжих vs старих моделей (DDM, EDDM, ADWIN)
+4. **Concept drift detectors:** Page-Hinkley test, CUSUM, drift detection method
+
+**Моніторинг:**
+- Відстежувати performance metrics у реальному часі (AUC, F1, precision/recall)
+- Порівнювати rolling windows (last 7d vs last 30d)
+- Alert при статистично значущому падінні`,
+    example: "UK lender: credit scoring модель, навчена до 2020 року, показала різке зниження Gini coefficient (0.71 → 0.58) після COVID. Виявлено concept drift: зв'язок між employment_type та default_probability кардинально змінився (self-employed стали менш ризикованими). Повне перенавчання відновило Gini до 0.74.",
+    relatedTerms: ["data-drift", "model-monitoring", "mlops"],
+    relatedService: "mlops",
+    relatedBlogPost: "what-is-mlops-guide",
+    relatedNichePage: "/ml/banking"
+  },
+  {
+    slug: "model-card",
+    termUk: "Model Card (картка моделі)",
+    termEn: "Model Card",
+    category: "ai",
+    shortDescription: "Стандартизований документ, що описує ML-модель: призначення, метрики якості, обмеження, навчальні дані та етичні міркування. Вимагається регуляторами FCA SS1/23 та рекомендується Alan Turing Institute.",
+    fullDescription: `Model Card — концепція, запропонована Google (Mitchell et al., 2019), стала індустріальним стандартом для документування ML-моделей і є ключовим інструментом Responsible AI.
+
+**Обов'язкові секції Model Card:**
+
+**1. Model Details:**
+- Тип моделі, архітектура, версія
+- Дата тренування, власник, контакти
+- Ліцензія та обмеження використання
+
+**2. Intended Use:**
+- Primary intended uses (для чого розроблено)
+- Out-of-scope uses (що НЕ є призначеним використанням)
+- Цільова аудиторія
+
+**3. Factors:**
+- Relevant factors: демографічні, технічні умови
+- Evaluation factors: які групи/умови оцінювались
+
+**4. Metrics:**
+- Performance metrics (accuracy, AUC, F1, RMSE)
+- Decision thresholds та їх обґрунтування
+- Variation across groups (disaggregated evaluation)
+
+**5. Evaluation Data:**
+- Датасети для оцінки
+- Preprocessing та мотивація вибору
+
+**6. Training Data:**
+- (за можливості) опис тренувальних даних
+- Джерела та процедури збору
+
+**7. Ethical Considerations:**
+- Упередження та їх митigation
+- Privacy considerations
+- Potential harms
+
+**UK регуляторний контекст:**
+- **FCA SS1/23:** вимагає модельну документацію для моделей у фінансових рішеннях
+- **ICO Guidance on AI:** documentation як частина accountability (GDPR Article 5(2))
+- **Alan Turing Institute:** рекомендує Model Cards як частину AI assurance framework
+
+**Інструменти:**
+- Google Model Card Toolkit (Python)
+- Hugging Face Model Hub: стандартна форма для всіх публічних моделей
+- IBM AI FactSheets`,
+    example: "UK bank готує Model Card для credit decisioning model: задокументовано false positive rate 3.2% для age group 18-25 vs 1.8% загалом → compliance team вимагає bias mitigation → додатковий protected attributes analysis → FCA audit пройдено успішно.",
+    relatedTerms: ["responsible-ai", "xai", "ai-governance"],
+    relatedService: "machine-learning",
+    relatedBlogPost: "responsible-ai-uk-regulations",
+    relatedNichePage: "/ai/banking"
+  },
+  {
+    slug: "responsible-ai",
+    termUk: "Відповідальний ШІ (Responsible AI)",
+    termEn: "Responsible AI",
+    category: "ai",
+    shortDescription: "Фреймворк принципів та практик для етичної розробки та впровадження AI: справедливість, прозорість, підзвітність, конфіденційність та безпека. Регулюється UK CDEI, Alan Turing Institute та FCA.",
+    fullDescription: `Responsible AI — не просто етична концепція, а операційний фреймворк з конкретними технічними практиками та регуляторними вимогами.
+
+**П'ять ключових принципів (UK AI Council):**
+
+**1. Fairness (Справедливість):**
+- Виявлення та усунення упереджень у даних та моделях
+- Disaggregated evaluation по protected characteristics (Equality Act 2010)
+- Технічно: demographic parity, equalized odds, calibration across groups
+
+**2. Transparency (Прозорість):**
+- Model Cards та Data Sheets
+- Explainability (SHAP, LIME, attention maps)
+- Right to explanation (UK GDPR Article 22)
+
+**3. Accountability (Підзвітність):**
+- Human oversight для high-stakes decisions
+- Audit trails та model versioning
+- Clear ownership та escalation procedures
+
+**4. Privacy (Конфіденційність):**
+- Privacy by design в ML pipelines
+- Differential privacy для навчання на sensitive data
+- Data minimization: не збирати зайвих ознак
+
+**5. Safety & Security (Безпека):**
+- Adversarial robustness testing
+- Red-teaming для LLM
+- Incident response procedures
+
+**UK регуляторний ландшафт:**
+- **ICO:** AI Auditing Framework + GDPR enforcement
+- **FCA:** SS1/23 Model Risk Management (банки, insurtech)
+- **CQC:** AI in medical devices guidelines
+- **Alan Turing Institute:** TURING Trust AI Ethics programme
+- **CDEI (Centre for Data Ethics and Innovation):** national advisory body
+
+**Практичний чеклист:**
+- Bias audit до деплою
+- Explainability для кожного рішення, що торкається клієнта
+- Human review process для edge cases
+- Quarterly model performance reviews`,
+    example: "UK NHS Trust впроваджує AI для triage prioritization у A&E. Responsible AI процес: bias audit виявив 7% lower accuracy для patients 75+ → додаткові training data для цієї групи → clinical review board схвалює → деплой з mandatory human review для all AI-flagged cases.",
+    relatedTerms: ["xai", "ai-governance", "model-card"],
+    relatedService: "artificial-intelligence",
+    relatedBlogPost: "responsible-ai-uk-regulations",
+    relatedNichePage: "/ai/healthcare"
+  },
+  {
+    slug: "foundation-model",
+    termUk: "Фундаментальна модель (Foundation Model)",
+    termEn: "Foundation Model",
+    category: "ai",
+    shortDescription: "Великомасштабна модель, попередньо навчена на величезних датасетах (GPT-4o, Claude 3.5, Llama 3, Gemini 1.5), що адаптується до численних downstream задач через fine-tuning або prompting.",
+    fullDescription: `Термін «Foundation Model» введений Stanford HAI у 2021 році. Ці моделі кардинально змінили AI: замість навчання окремої моделі для кожної задачі — адаптуй одну велику модель.
+
+**Ключові характеристики:**
+
+**Масштаб:**
+- GPT-4: ~1.8 трильйони параметрів (оцінка)
+- Llama 3 70B: 70 мільярдів параметрів
+- Claude 3.5 Sonnet: ~200B+ параметрів (оцінка)
+- Gemini 1.5 Pro: ~1T+ параметрів (оцінка)
+
+**Навчання:**
+- Pretrain на трильйонах токенів з Інтернету, книг, коду, наукових статей
+- Unsupervised / self-supervised: next-token prediction (GPT) або masked language modeling (BERT)
+- Compute: тисячі A100/H100 GPU-місяців, вартість $10M-$100M+
+
+**Категорії Foundation Models:**
+- **Text:** GPT-4o, Claude 3.5, Llama 3, Gemini 1.5, Mistral Large
+- **Code:** GitHub Copilot (GPT-4), Claude, Gemini Code
+- **Image:** DALL-E 3, Stable Diffusion 3, Midjourney v6, Flux
+- **Multimodal:** GPT-4o Vision, Gemini 1.5 Pro, Claude 3.5 (text+images)
+- **Audio:** Whisper (STT), ElevenLabs (TTS), Suno (music)
+- **Video:** Sora (OpenAI), Runway Gen-3, Kling
+
+**Методи адаптації:**
+1. **Zero-shot:** використання без будь-якого налаштування
+2. **Few-shot prompting:** приклади у context window
+3. **Fine-tuning:** додаткове навчання на domain-specific даних
+4. **LoRA / QLoRA:** parameter-efficient fine-tuning
+5. **RAG:** доповнення зовнішніми знаннями
+
+**UK ринок:**
+- AWS Bedrock: Claude, Llama, Titan API
+- Azure OpenAI: GPT-4o, Embeddings (популярний у UK enterprise)
+- Google Vertex AI: Gemini, PaLM`,
+    example: "UK legal tech startup використовує Claude 3.5 Sonnet як foundation model: zero-shot — аналіз типових контрактів (95% accuracy); after fine-tuning на 10k UK legal documents — аналіз specialized IP contracts (98% accuracy, 40x швидше за junior solicitor).",
+    relatedTerms: ["rlhf", "lora", "multimodal-ai"],
+    relatedService: "artificial-intelligence",
+    relatedBlogPost: "what-is-llm-fine-tuning-guide",
+    relatedNichePage: "/ai/legal"
+  },
+  {
+    slug: "multimodal-ai",
+    termUk: "Мультимодальний ШІ (Multimodal AI)",
+    termEn: "Multimodal AI",
+    category: "ai",
+    shortDescription: "AI-системи, що обробляють декілька типів вхідних даних одночасно (текст + зображення + аудіо + відео). Приклади: GPT-4o Vision, Gemini 1.5 Pro, Claude 3.5 — відкривають нові класи бізнес-застосувань.",
+    fullDescription: `Мультимодальний AI знімає ключове обмеження ранніх LLM — роботу лише з текстом. Сучасні системи «розуміють» кілька модальностей одночасно.
+
+**Поточний стан (2025–2026):**
+
+**Text + Image (Vision):**
+- GPT-4o: аналіз зображень, графіків, документів, скриншотів
+- Claude 3.5 Sonnet: document understanding, diagram analysis
+- Gemini 1.5 Pro: до 1M token context + images
+
+**Text + Audio:**
+- GPT-4o Audio: real-time voice conversation з emotional awareness
+- Whisper + GPT-4: STT → text analysis pipeline
+- ElevenLabs: text → natural speech (100+ мов)
+
+**Text + Video:**
+- Gemini 1.5 Pro: відео до 1 години у context window
+- GPT-4o Video (2025): frame-by-frame video understanding
+
+**Image + Text Generation:**
+- DALL-E 3: text prompt → image
+- Stable Diffusion 3: open-source, local deployment
+- Flux 1.1: state-of-art якість (2024–2025)
+
+**Архітектурні підходи:**
+- **Cross-attention fusion:** окремі encoders для кожної модальності + cross-attention шар
+- **Unified tokenization:** зображення токенізуються як patches (ViT), аудіо як спектрограми
+- **CLIP-based alignment:** пов'язування visual та text representations у спільному просторі
+
+**UK бізнес-застосування:**
+- Insurance: автоматична оцінка збитків за фото ДТП
+- NHS: аналіз медичних зображень (X-ray, MRI) + клінічні нотатки
+- Retail: visual product search + text description
+- Legal: аналіз scanned documents та handwritten contracts`,
+    example: "UK insurance provider інтегрує GPT-4o Vision: водій фотографує пошкоджений автомобіль → модель визначає тип пошкодження, оцінює severity, cross-references з repair cost database → попередня оцінка збитків £2,400 готова за 30 секунд замість 3-5 днів очікування assessor.",
+    relatedTerms: ["foundation-model", "computer-vision", "agentic-ai"],
+    relatedService: "artificial-intelligence",
+    relatedBlogPost: "ai-use-cases-uk-business",
+    relatedNichePage: "/ai/insurance"
+  },
+  {
+    slug: "agentic-ai",
+    termUk: "Агентний ШІ (Agentic AI)",
+    termEn: "Agentic AI",
+    category: "ai",
+    shortDescription: "AI-системи, що автономно планують та виконують багатокрокові задачі, використовуючи інструменти, пам'ять та цикли зворотного зв'язку без постійного людського керівництва (LangGraph, AutoGPT, Claude Computer Use).",
+    fullDescription: `Agentic AI знаменує перехід від AI як «відповідача на питання» до AI як «виконавця задач». Агент отримує ціль і самостійно планує кроки для її досягнення.
+
+**Ключові компоненти агента:**
+
+**1. Planning (Планування):**
+- ReAct (Reason + Act): чергування міркування та дій
+- Tree-of-Thought: паралельне дослідження кількох шляхів
+- Hierarchical planning: декомпозиція великих задач на підзадачі
+
+**2. Tools (Інструменти):**
+- Web search (Bing, Google, Perplexity)
+- Code execution (Python sandbox)
+- API calls (CRM, databases, payment systems)
+- File operations (read/write/create)
+- Computer use (screenshots, mouse/keyboard — Claude)
+
+**3. Memory (Пам'ять):**
+- In-context: поточна розмова (до 200k токенів у Claude)
+- External: vector database для long-term knowledge
+- Episodic: збереження попередніх сесій
+
+**4. Feedback loops:**
+- Self-reflection: агент оцінює власні результати
+- Error recovery: виявлення та виправлення помилок
+- Human-in-the-loop: запит дозволу на критичні дії
+
+**Топ фреймворки (2026):**
+- **LangGraph:** graph-based agent workflows, production-ready
+- **AutoGen (Microsoft):** multi-agent conversations
+- **CrewAI:** role-based agent teams
+- **Claude Computer Use:** операційна система як інструмент
+
+**UK застосування:**
+- Accounts payable automation: агент обробляє invoices від початку до оплати
+- Customer service: агент вирішує складні запити з доступом до CRM, order system, policy documents
+- Legal research: агент збирає precedents, статути, коментарі
+
+**Ризики та governance:**
+- Human oversight для фінансових транзакцій >£X
+- Audit trail кожної дії агента
+- Sandbox execution для code agents`,
+    example: "UK accounting firm: агент на LangGraph + Claude отримує задачу «підготуй monthly management accounts для клієнта X». Агент: pulls Xero API → reconciles transactions → identifies anomalies → generates commentary → formats as PDF → emails draft to partner для review. Час: 25 хвилин vs 4 години вручну.",
+    relatedTerms: ["foundation-model", "chain-of-thought", "multimodal-ai"],
+    relatedService: "artificial-intelligence",
+    relatedBlogPost: "ai-automation-uk-business",
+    relatedNichePage: "/ai/saas"
+  },
+  {
+    slug: "chain-of-thought",
+    termUk: "Chain-of-Thought (ланцюжок міркувань)",
+    termEn: "Chain-of-Thought Prompting",
+    category: "ai",
+    shortDescription: "Техніка промптингу, що спонукає LLM міркувати крок за кроком перед фінальною відповіддю. Драматично покращує точність на складних задачах: математика, логіка, багатокрокові рішення.",
+    fullDescription: `Chain-of-Thought (CoT) prompting відкрили Wei et al. (Google Brain, 2022). Проста ідея — попросити модель «think step by step» — підвищила accuracy на GSM8K (шкільна математика) з 18% до 57%.
+
+**Варіанти CoT:**
+
+**Zero-Shot CoT:**
+- Просто додай «Let's think step by step» до промпту
+- Працює для GPT-4, Claude 3.5, Gemini 1.5+
+- Не потребує прикладів
+
+**Few-Shot CoT:**
+- Надай 3-8 прикладів задача → міркування → відповідь
+- Вищий контроль над стилем міркування
+- Більш consistent результати для специфічних задач
+
+**Self-Consistency CoT:**
+- Генеруй N різних CoT шляхів (temperature>0)
+- Вибирай відповідь majority voting
+- +10-15% до accuracy проти single-path CoT
+
+**Tree-of-Thought (ToT):**
+- Паралельне дослідження кількох гілок міркування
+- Backtracking при досягненні dead ends
+- State-of-art для складних puzzle та planning задач
+
+**Program-of-Thought (PoT):**
+- Модель генерує Python код замість природньомовного міркування
+- Код виконується → отримуємо точну відповідь
+- Ідеально для математики та аналізу даних
+
+**Коли CoT найефективніший:**
+- Arithmetic reasoning: multi-step calculations
+- Commonsense reasoning: logical inference chains
+- Symbolic reasoning: formal logic
+- Code debugging: трасування помилки крок за кроком
+
+**Коли НЕ потрібен:**
+- Прості classification задачі
+- Пряме fact retrieval
+- Завдання де latency критична`,
+    example: "UK tax advisory: без CoT — Claude робить помилку у multi-step VAT calculation з partial exemptions (56% accuracy). З Zero-Shot CoT: «Let's calculate step by step» → 94% accuracy. Few-Shot CoT з прикладами реальних UK VAT scenarios → 98% accuracy, повністю аудитовані calculations.",
+    relatedTerms: ["prompt-engineering", "agentic-ai", "foundation-model"],
+    relatedService: "nlp",
+    relatedBlogPost: "what-is-prompt-engineering",
+    relatedNichePage: "/ai/legal"
+  },
+  {
+    slug: "few-shot-learning",
+    termUk: "Few-Shot навчання",
+    termEn: "Few-Shot Learning",
+    category: "ai",
+    shortDescription: "Підхід ML, де модель узагальнює з дуже малої кількості (2–20) прикладів. In-context learning у LLM є формою few-shot. Критично важливий для UK бізнесів з обмеженими labeled datasets.",
+    fullDescription: `Few-Shot Learning вирішує фундаментальну проблему класичного ML: необхідність тисяч labeled прикладів. Людина навчається розпізнавати нові об'єкти з 1-5 прикладів — few-shot ML прагне до цього.
+
+**Три парадигми:**
+
+**1. In-Context Learning (LLM Few-Shot):**
+- Надай LLM 3-10 прикладів у prompt → модель «навчається» без gradient updates
+- GPT-4, Claude, Gemini: якість Few-Shot ≈ Fine-Tuned small model
+- Zero overhead: нові examples можна додавати без retraining
+
+**2. Meta-Learning (Learning to Learn):**
+- Модель навчається на тисячах tasks → засвоює «як швидко навчатись»
+- MAML (Model-Agnostic Meta-Learning): fast adaptation через 1-5 gradient steps
+- Prototypical Networks: class = prototype vector у embedding space
+
+**3. Transfer Learning + Fine-Tuning:**
+- Pretrained foundation model (BERT, ViT) + fine-tuning на 50-500 прикладах
+- Набагато менше даних, ніж навчання з нуля
+- Ефективно для domain-specific NLP (legal, medical, financial)
+
+**Практичні рекомендації для UK бізнесу:**
+
+| Кількість прикладів | Рекомендований підхід |
+|--------------------|-----------------------|
+| 0 | Zero-shot LLM prompting |
+| 3-20 | Few-shot prompting (GPT-4/Claude) |
+| 50-500 | LoRA fine-tuning на foundation model |
+| 500-5000 | Full fine-tuning невеликої моделі |
+| 5000+ | Train from scratch або large fine-tuning |
+
+**Типові UK use cases:**
+- Legal: класифікація нових типів контрактних клаузул (5-10 прикладів)
+- Медичні нотатки: vitals extraction з неструктурованого тексту
+- Fraud detection: нові схеми шахрайства (мало прикладів до виявлення)`,
+    example: "UK solicitor firm виявляє новий тип клаузул про post-Brexit compliance. 8 прикладів задокументовано → Few-Shot prompt для Claude → 91% precision на класифікації 1,200 контрактів. Альтернатива (labeled dataset + fine-tuning) потребувала б 3 місяці та 500+ прикладів.",
+    relatedTerms: ["zero-shot-learning", "transfer-learning", "prompt-engineering"],
+    relatedService: "machine-learning",
+    relatedBlogPost: "what-is-llm-fine-tuning-guide",
+    relatedNichePage: "/ai/legal"
+  },
+  {
+    slug: "zero-shot-learning",
+    termUk: "Zero-Shot навчання",
+    termEn: "Zero-Shot Learning",
+    category: "ai",
+    shortDescription: "Здатність моделі виконувати задачі без будь-яких task-специфічних тренувальних прикладів. Стало практично можливим завдяки великим мовним моделям та cross-modal representations.",
+    fullDescription: `Zero-Shot Learning (ZSL) — здатність моделі generalize на unseen classes або задачі без прикладів під час inference.
+
+**Два типи Zero-Shot:**
+
+**1. Traditional ZSL (Computer Vision):**
+- Модель не бачила клас під час тренування
+- Використовує semantic descriptions (attribute vectors, word embeddings)
+- Приклад: модель навчена на тисячах тварин — розпізнає зебру через «полосатий кінь» без прикладів зебр
+- Методи: DAP (Direct Attribute Prediction), CLIP, ALIGN
+
+**2. LLM Zero-Shot (In-Context):**
+- Великі мовні моделі виконують нові NLP задачі без fine-tuning
+- Задача задається через prompt: «Classify the sentiment of: [text]»
+- GPT-4, Claude 3.5: SOTA на багатьох benchmarks у zero-shot режимі
+
+**CLIP (Contrastive Language-Image Pre-Training, OpenAI):**
+- Найвпливовіша архітектура для zero-shot vision
+- Тренується на 400M пар (image, text) з Інтернету
+- At inference: порівнює image embedding з text embeddings → zero-shot classification
+- Дозволяє: «is this image about [anything]?» без specific training
+
+**Порівняння Zero-Shot vs Few-Shot:**
+- Zero-shot: швидший старт, нижча accuracy для специфічних задач
+- Few-shot: +10-30% accuracy з 5-10 прикладами
+- Правило: починай zero-shot → якщо accuracy < threshold → few-shot → fine-tune
+
+**Практичне значення для UK бізнесу:**
+- Sentiment analysis нових продуктів без labeled data
+- Content moderation: нові категорії без retraining
+- Document routing: новий тип документів → автоматична категоризація`,
+    example: "UK e-commerce retailer отримує customer reviews на 12 нових мовах (South Asian diaspora). Zero-shot GPT-4o: translate + sentiment + topic extraction без будь-яких labeled прикладів на цих мовах. Accuracy 89% vs 96% для few-shot (5 прикладів) — trade-off час-vs-якість вирішено на користь zero-shot для initial launch.",
+    relatedTerms: ["few-shot-learning", "foundation-model", "prompt-engineering"],
+    relatedService: "machine-learning",
+    relatedBlogPost: "ai-use-cases-uk-business",
+    relatedNichePage: "/ai/ecommerce"
+  },
+  {
+    slug: "prompt-engineering",
+    termUk: "Промпт-інжиніринг (Prompt Engineering)",
+    termEn: "Prompt Engineering",
+    category: "ai",
+    shortDescription: "Дисципліна створення ефективних LLM-запитів для отримання оптимальних результатів. Включає технки: CoT, few-shot, system prompts, output formatting, role prompting та structured outputs.",
+    fullDescription: `Prompt Engineering — мистецтво та наука комунікації з LLM. Якість промпту безпосередньо впливає на якість результату: різниця між хорошим та поганим промптом може становити 50%+ у accuracy.
+
+**Ключові техніки:**
+
+**System Prompts:**
+- Задають контекст, роль та обмеження для всієї сесії
+- «You are an experienced UK employment lawyer. Always cite relevant UK legislation. Never provide specific legal advice, recommend consulting a qualified solicitor.»
+
+**Role Prompting:**
+- «Act as a senior data scientist reviewing this ML code»
+- Активує domain knowledge та відповідний стиль відповіді
+
+**Chain-of-Thought:**
+- «Think step by step before answering»
+- Особливо ефективно для math, logic, multi-step reasoning
+
+**Few-Shot:**
+- 3-8 прикладів input→output у промпті
+- Показуємо формат та якість очікуваної відповіді
+
+**Structured Output:**
+- «Respond ONLY in JSON format: {"sentiment": "positive/negative/neutral", "confidence": 0-1, "reason": "..."}»
+- Критично для automated pipelines
+
+**Output Formatting:**
+- Markdown, bullet points, numbered lists
+- Explicit length constraints: «In exactly 3 bullet points»
+- Templates: «Fill in this template: [TEMPLATE]»
+
+**Negative Prompting:**
+- «Do NOT include caveats about consulting professionals»
+- «Avoid using jargon. Write for a non-technical audience.»
+
+**Prompt Chaining:**
+- Складні задачі → серія простих промптів
+- Output одного промпту = input наступного
+
+**UK-специфічні best practices:**
+- Явно вказувати UK jurisdiction: «UK law», «HMRC guidelines», «FCA regulations»
+- Reference specific UK frameworks: «per NICE guidelines», «per Companies Act 2006»
+- Mension currency: «£ GBP», «VAT», «NI contributions»
+
+**Промпт-безпека:**
+- Prompt injection: зловмисники намагаються перевизначити system prompt
+- Jailbreaking: обхід safety guidelines
+- PII leakage: модель може витягти sensitive data з context`,
+    example: "UK HR software компанія: initial prompt «Write a job description for software engineer» → generic output. Refined: «Write a UK-compliant job description for Senior Software Engineer (Python/ML) for London fintech. Include: salary range £85-110k + equity, Tier 2 sponsorship available, flexible working under UK flexible working regulations 2023. Format: role overview, responsibilities (8 bullets), requirements (5 must-have, 3 nice-to-have), benefits.» → 95% ready-to-publish результат.",
+    relatedTerms: ["chain-of-thought", "few-shot-learning", "agentic-ai"],
+    relatedService: "nlp",
+    relatedBlogPost: "what-is-prompt-engineering",
+    relatedNichePage: "/ai/saas"
+  },
+  {
+    slug: "lora",
+    termUk: "LoRA (Low-Rank Adaptation)",
+    termEn: "LoRA (Low-Rank Adaptation)",
+    category: "ai",
+    shortDescription: "Parameter-efficient техніка дообучання LLM: заморожує оригінальні ваги та навчає лише малорангові матриці-адаптери. Зменшує кількість тренованих параметрів у 10,000 разів, роблячи fine-tuning доступним на споживчих GPU.",
+    fullDescription: `LoRA (Hu et al., Microsoft, 2021) вирішила ключову проблему fine-tuning великих моделей: навчати GPT-3 (175B параметрів) звичайній компанії фінансово неможливо.
+
+**Математична основа:**
+
+Замість оновлення повної матриці W (d×k параметрів), LoRA навчає дві низькорангові матриці:
+- ΔW = B × A, де B (d×r) та A (r×k), r << min(d,k)
+- При forward pass: output = Wx + BAx (оригінальні ваги заморожені)
+- При inference: W' = W + BA (merge адаптерів у модель)
+
+**Практичні переваги:**
+
+| Параметр | Full Fine-Tuning | LoRA (r=16) |
+|----------|-----------------|-------------|
+| Llama 3 8B params | 8B (16GB VRAM) | 8M (200MB) |
+| GPU requirement | 4×A100 80GB | 1×RTX 3090 24GB |
+| Training cost | $500-2000 | $10-50 |
+| Storage per adapter | 16GB | 100-400MB |
+
+**Вибір rank (r):**
+- r=4-8: легка domain adaptation (tone, format)
+- r=16-32: значна задача-специфічна адаптація
+- r=64-128: near full fine-tuning quality (рідко потрібен)
+
+**QLoRA (Dettmers et al., 2023):**
+- Base model квантизований до 4-bit NF4
+- LoRA адаптери залишаються в BF16
+- Llama 3 70B fine-tuning на 1×A100 40GB
+- Незначна втрата якості (-1-2%)
+
+**Де застосовувати (UK контекст):**
+- Legal: fine-tune на UK statutes, case law, contract templates
+- Medical: adapt на NHS clinical guidelines, NICE pathways
+- Financial: customize на FCA handbook, specific product documentation
+- Customer service: align з brand voice та company policies`,
+    example: "UK insurtech стартап дообучає Mistral 7B на 50k внутрішніх insurance claim notes через LoRA (r=16). Витрати: 1×A100 40GB × 8 годин = £30. Результат: automated claim categorisation accuracy 94.3% vs 71.2% zero-shot. Адаптер 180MB зберігається окремо від base model.",
+    relatedTerms: ["foundation-model", "quantization", "few-shot-learning"],
+    relatedService: "machine-learning",
+    relatedBlogPost: "what-is-llm-fine-tuning-guide",
+    relatedNichePage: "/ai/insurance"
+  },
+  {
+    slug: "quantization",
+    termUk: "Квантизація моделей (Model Quantization)",
+    termEn: "Model Quantization",
+    category: "ai",
+    shortDescription: "Зниження точності числового представлення ваг моделі (float32→int8/int4) для зменшення розміру та прискорення inference. Дозволяє деплоїти великі моделі на edge-пристроях та знижує хмарні витрати.",
+    fullDescription: `Квантизація — ключова техніка оптимізації для production ML deployments. Без неї більшість LLM не можна деплоїти локально або на cost-effective hardware.
+
+**Типи числових форматів:**
+
+| Формат | Розмір (bits) | Параметрів для Llama 3 8B | VRAM |
+|--------|--------------|---------------------------|------|
+| float32 | 32 | 32GB | 34GB |
+| bfloat16 | 16 | 16GB | 18GB |
+| int8 | 8 | 8GB | 10GB |
+| int4 (NF4) | 4 | 4GB | 6GB |
+| int2 | 2 | 2GB | 3.5GB |
+
+**Підходи до квантизації:**
+
+**Post-Training Quantization (PTQ):**
+- Найпростіший: quantize після тренування без retraining
+- GPTQ: точна квантизація через second-order optimization
+- AWQ (Activation-Aware): враховує importance of weights per channel
+- GGUF (llama.cpp): CPU/GPU inference, популярний для local deployment
+
+**Quantization-Aware Training (QAT):**
+- Симулює quantization під час тренування → краща якість
+- Вищі compute costs для тренування
+- Результат: значно менша деградація при низьких bitwidths
+
+**Інструменти:**
+- **llama.cpp / Ollama:** GGUF формат, CPU inference, Windows/Mac/Linux
+- **bitsandbytes:** int8/int4 для PyTorch (LLM.int8(), NF4)
+- **AutoGPTQ:** GPTQ квантизація, GPU inference
+- **TensorRT (NVIDIA):** enterprise production inference
+- **OpenVINO (Intel):** edge та CPU deployment
+
+**Якість vs розмір (Llama 3 8B benchmark):**
+- float16: baseline (100%)
+- int8: 99.2% quality (-0.8%), 2x швидше
+- int4: 97.5% quality (-2.5%), 4x швидше
+
+**UK edge deployment scenarios:**
+- NHS medical devices: on-premise LLM без cloud (patient data privacy)
+- Manufacturing: quality inspection на factory floor
+- Retail: in-store product recommendation без cloud latency`,
+    example: "UK retail chain деплоїть customer service chatbot на in-store tablets (iPad Pro M4, 16GB RAM): Llama 3 8B в GGUF Q4_K_M (5.2GB) через Ollama. Latency 450ms/token (vs 180ms cloud), але zero data leaves store, no subscription cost. ROI: £0 vs £45k/рік Azure OpenAI для 200 магазинів.",
+    relatedTerms: ["edge-ai", "model-compression", "lora"],
+    relatedService: "mlops",
+    relatedBlogPost: "ml-infrastructure-cost-optimization",
+    relatedNichePage: "/ml/retail"
+  },
+  {
+    slug: "federated-learning",
+    termUk: "Федеративне навчання (Federated Learning)",
+    termEn: "Federated Learning",
+    category: "ai",
+    shortDescription: "Підхід ML-тренування на розподілених даних без централізації сирих даних. Кожен вузол навчається локально, центральний сервер агрегує лише градієнти. Відповідає UK GDPR Article 89 та ICO guidance.",
+    fullDescription: `Federated Learning (FL), запроваджений Google (2016) для Gboard, вирішує фундаментальний конфлікт: ML моделі потребують даних — але дані sensitive і не можна централізувати.
+
+**Архітектура Federated Learning:**
+
+**1. Ініціалізація:**
+- Центральний сервер (aggregator) розподіляє initial global model на всі вузли
+
+**2. Локальне тренування (паралельно):**
+- Кожен вузол навчається на СВОЇХ локальних даних
+- Обчислює локальні gradient updates (delta weights)
+- Ніякі raw data не залишають вузол
+
+**3. Агрегація:**
+- Вузли надсилають лише gradient updates (або model weights delta)
+- FedAvg: server усереднює gradients зважено за кількістю samples
+- FedProx: regularization term для non-IID data
+
+**4. Глобальне оновлення:**
+- Оновлена global model розподіляється назад
+- Повтор протягом N rounds
+
+**Виклики:**
+- **Non-IID data:** дані на різних вузлах статистично відмінні — деградація якості
+- **Communication overhead:** передача градієнтів може бути дорогою
+- **Stragglers:** повільні вузли затримують навчання
+- **Privacy attacks:** gradient inversion — потенційне відновлення raw data з градієнтів
+
+**Додаткові техніки приватності:**
+- **Differential Privacy:** додавання шуму до градієнтів (Google DP library)
+- **Secure Aggregation:** cryptographic aggregation — server не бачить individual gradients
+- **Homomorphic Encryption:** computation on encrypted gradients
+
+**UK регуляторний контекст:**
+- NHS: тренування на patient records між Trusts без transfer (GDPR Article 89)
+- Banking: fraud detection між банками без sharing customer data (UK GDPR, FCA)
+- Telecoms: network optimization на subscriber behavior data`,
+    example: "Консорціум 5 UK банків (Barclays, HSBC, Lloyds, NatWest, Santander): federated fraud detection model. Кожен банк навчається локально на своїх 2M+ транзакціях → надсилає лише encrypted gradients → aggregated model deployed у всіх. Fraud detection rate +34% vs best individual bank model. Жодні транзакційні дані клієнтів не покинули банк.",
+    relatedTerms: ["synthetic-data", "responsible-ai", "edge-ai"],
+    relatedService: "machine-learning",
+    relatedBlogPost: "ai-banking-fraud-detection",
+    relatedNichePage: "/ai/banking"
+  },
+  {
+    slug: "edge-ai",
+    termUk: "Edge AI (граничний штучний інтелект)",
+    termEn: "Edge AI",
+    category: "ai",
+    shortDescription: "Розгортання ML inference на локальних пристроях (IoT-датчики, смартфони, edge-сервери) без хмарної залежності. Зменшує latency, підвищує конфіденційність та дозволяє офлайн-роботу.",
+    fullDescription: `Edge AI переміщує inference з cloud на пристрій, що збирає дані. Критично для use cases, де cloud latency неприйнятна або підключення ненадійне.
+
+**Чому Edge замість Cloud:**
+
+| Критерій | Cloud AI | Edge AI |
+|----------|----------|---------|
+| Latency | 50-500ms | 1-50ms |
+| Privacy | Дані в cloud | Дані локально |
+| Connectivity | Потрібен інтернет | Офлайн-ready |
+| Cost at scale | $0.001-0.01/request | Hardware upfront |
+| Updates | Instant | Requires OTA update |
+
+**Hardware для Edge AI:**
+
+**NVIDIA Jetson серія:**
+- Orin NX: 100 TOPS, до 32GB, industrial IoT
+- AGX Orin: 275 TOPS, autonomous machines, robotics
+- Nano: 40 TOPS, entry-level, student/maker projects
+
+**Dedicated AI chips:**
+- Apple M-series: Neural Engine 38 TOPS (iPhone/Mac)
+- Google Coral (Edge TPU): 4 TOPS, USB/PCIe
+- Intel Myriad X (VPU): 4 TOPS, OpenVINO
+
+**ARM Cortex серія:**
+- Cortex-M55 + Ethos-U55/U65: мікроконтролери з ML acceleration
+- TinyML: ML на <1MB RAM (keyword spotting, anomaly detection)
+
+**ML Frameworks для Edge:**
+- **TensorFlow Lite:** cross-platform, quantization built-in
+- **ONNX Runtime:** vendor-neutral, широка апаратна підтримка
+- **TVM (Apache):** automatic optimization для target hardware
+- **Edge Impulse:** no-code platform для embedded ML
+
+**UK застосування:**
+- Predictive maintenance: vibration analysis на manufacturing equipment
+- Smart meters: anomaly detection без cloud (National Grid)
+- Security cameras: на-пристроєве розпізнавання без CCTV data to cloud (UK Surveillance Camera Code)
+- Smart buildings: HVAC optimization на local processors`,
+    example: "UK supermarket chain (500 магазинів): Jetson Orin NX у кожному магазині для shelf monitoring. On-device YOLO v8 inference 47FPS → out-of-stock alerts за 2 хвилини vs 30 хвилин manual check. Без cloud: customer CCTV ніколи не залишає магазин (ICO compliance). TCO 3 роки: £180k vs £2.1M cloud inference.",
+    relatedTerms: ["quantization", "model-compression", "federated-learning"],
+    relatedService: "mlops",
+    relatedBlogPost: "edge-ai-manufacturing-guide",
+    relatedNichePage: "/ml/manufacturing"
+  },
+  {
+    slug: "synthetic-data",
+    termUk: "Синтетичні дані (Synthetic Data)",
+    termEn: "Synthetic Data",
+    category: "ai",
+    shortDescription: "Штучно згенеровані дані, статистично схожі на реальні. Використовуються коли реальні дані дефіцитні, чутливі або незбалансовані. Відповідають UK GDPR при правильній анонімізації.",
+    fullDescription: `Synthetic Data — відповідь на один з найбільших бар'єрів впровадження AI у регульованих галузях: дані є, але через GDPR/confidentiality їх не можна використовувати для тренування.
+
+**Методи генерації синтетичних даних:**
+
+**Для табличних даних:**
+- **GAN (Generative Adversarial Network):** CTGAN, TVAE — найвища якість
+- **VAE (Variational Autoencoder):** стабільніший тренувальний процес
+- **Probabilistic models:** Gaussian Copulas, SDV library (простіше, менша якість)
+- **LLM-based:** GPT-4o для генерації structured records (customer profiles, transactions)
+
+**Для зображень:**
+- **Stable Diffusion / DALL-E:** photo-realistic synthetic images
+- **3D rendering:** Unity, Blender → realistic training images без реальних фото
+- **Data augmentation:** transforms existing images (flip, crop, color jitter)
+
+**Для тексту:**
+- **LLM generation:** GPT-4, Claude генерують synthetic NLP datasets
+- **Back-translation:** перекласти та назад для paraphrase generation
+- **Template-based:** варіанти заповнення шаблонів
+
+**Ключові показники якості синтетичних даних:**
+- **Fidelity:** чи схожий синтетичний розподіл на реальний?
+- **Utility:** чи модель, навчена на синтетичних даних, добре працює на реальних?
+- **Privacy:** чи можна відновити реальні записи? (linkage attack, membership inference)
+
+**UK GDPR та синтетичні дані:**
+- ICO Position Paper (2023): «properly anonymised synthetic data is out of scope of UK GDPR»
+- Але: de-identification ≠ anonymisation — потрібне privacy risk assessment
+- Differential Privacy при генерації: математичні гарантії анонімності
+
+**Інструменти:**
+- Gretel.ai: managed synthetic data platform
+- Mostly AI: enterprise, banking-focused
+- SDV (Synthetic Data Vault): open-source, Python`,
+    example: "UK medtech стартап розробляє ECG anomaly detection model: лише 200 labeled abnormal ECGs (рідкісна аритмія) vs 5,000 normal. CTGAN генерує 2,000 synthetic abnormal recordings → клас збалансовано → F1 score для rare class: 0.71 vs 0.34 без аугментації. NHS IG team підтвердила: synthetic data не потребує patient consent.",
+    relatedTerms: ["federated-learning", "data-augmentation", "responsible-ai"],
+    relatedService: "machine-learning",
+    relatedBlogPost: "ai-healthcare-uk-data",
+    relatedNichePage: "/ai/healthcare"
+  },
+  {
+    slug: "data-augmentation",
+    termUk: "Аугментація даних (Data Augmentation)",
+    termEn: "Data Augmentation",
+    category: "ai",
+    shortDescription: "Техніка розширення тренувальних датасетів через модифікацію існуючих прикладів (повороти зображень, парафразування тексту, додавання шуму) для покращення узагальнення моделі.",
+    fullDescription: `Data Augmentation — cost-effective спосіб збільшити ефективний розмір датасету без збору нових реальних даних.
+
+**Аугментація для зображень (Computer Vision):**
+
+**Геометричні трансформації:**
+- Horizontal/Vertical flip (де логічно)
+- Random crop та resize
+- Rotation (±15°, ±30°, ±45°)
+- Perspective transform, shear
+
+**Фотометричні трансформації:**
+- Brightness, contrast, saturation adjustment
+- Gaussian noise, blur
+- Random erasing (CutOut): видаляє прямокутний patch
+
+**Mixup / CutMix:**
+- Mixup: лінійна комбінація двох зображень та їх labels
+- CutMix: вставка патча з іншого зображення + proportional label mix
+
+**AutoAugment (Google):**
+- RL-based пошук оптимальних augmentation policies
+- Покращує ImageNet top-1 accuracy +1-2%
+
+**Аугментація для тексту (NLP):**
+- **Back-translation:** EN → DE → EN (змінює формулювання)
+- **Synonym replacement:** WordNet, BERT-based synonyms
+- **Random insertion/deletion/swap:** легкі трансформації
+- **EDA (Easy Data Augmentation):** поєднує 4 операції
+- **LLM paraphrasing:** GPT-4/Claude переформулює зі збереженням смислу (найвища якість)
+
+**Аугментація для табличних даних:**
+- SMOTE: synthetic minority oversampling для imbalanced classification
+- Gaussian noise injection на continuous features
+- Feature perturbation в межах realistic bounds
+
+**Для аудіо:**
+- Time stretching, pitch shifting
+- Background noise injection
+- SpecAugment: masking time/frequency bands (SOTA для ASR)
+
+**Коли аугментація НЕ допомагає:**
+- Якщо модель вже overfitting через інші причини (модель занадто маленька)
+- Якщо трансформації нереалістичні для домену (вертикальний flip обличь)`,
+    example: "UK pathology lab: 1,200 labeled histology slides для cancer detection model (YOLO v8). Standard augmentation (flip, rotation, color jitter) → 9,600 effective images. Додатково: Stain Augmentation (HED color space трансформації для різних staining protocols) → +6.2% AUC. Загальний датасет: 19,200 images з 1,200 оригінальних.",
+    relatedTerms: ["synthetic-data", "transfer-learning", "computer-vision"],
+    relatedService: "machine-learning",
+    relatedBlogPost: "ai-healthcare-uk-data",
+    relatedNichePage: "/ai/healthcare"
+  },
+  {
+    slug: "model-compression",
+    termUk: "Стиснення моделей (Model Compression)",
+    termEn: "Model Compression",
+    category: "ai",
+    shortDescription: "Зменшення розміру та обчислювальних вимог ML-моделі через pruning, квантизацію або knowledge distillation для production-деплою на обмеженому апаратному забезпеченні.",
+    fullDescription: `Model Compression — збірна назва для технік, що зменшують розмір моделі без суттєвої втрати якості. Критично для edge deployment та cost optimization у cloud.
+
+**Три основні підходи:**
+
+**1. Pruning (відсікання):**
+- **Unstructured pruning:** видалення окремих weights з малим magnitude
+- **Structured pruning:** видалення цілих нейронів, голів attention, шарів
+- **Magnitude-based:** видаляти ваги з |w| < threshold
+- **Gradient-based:** важливість = gradient × weight magnitude
+- Типовий результат: 50-90% sparsity з <5% accuracy loss
+
+**2. Quantization (квантизація):**
+- float32 → int8/int4 (розглянуто детально в окремому терміні)
+- 2-8x compression ratio з мінімальною деградацією
+
+**3. Knowledge Distillation:**
+- Teacher model → Student model (менший)
+- Student вчиться відтворювати soft probabilities teacher (не тільки hard labels)
+- Деталі в окремому терміні
+
+**Комбінований підхід (Production Pipeline):**
+1. Quantization-Aware Training (QAT)
+2. Structured pruning (видалення 30-50% attention heads)
+3. Knowledge distillation у менший студент
+4. TensorRT / ONNX optimization для target hardware
+5. Benchmark: latency, throughput, accuracy trade-off
+
+**Інструменти:**
+- **PyTorch:** torch.nn.utils.prune, torch.quantization
+- **TensorFlow Model Optimization Toolkit**
+- **Optimum (HuggingFace):** high-level API для compression
+- **Neural Magic SparseML:** end-to-end sparsification
+
+**Реальні benchmark результати:**
+- BERT-base → DistilBERT: 40% менше, 60% швидше, 97% performance
+- BERT-base → TinyBERT: 7.5x менше, 9.4x швидше, 96% performance
+- ResNet-50 int8 vs float32: 3.7x throughput, 4x less memory, 0.5% accuracy loss`,
+    example: "UK fintech: sentiment analysis model для 50k customer messages/день. BERT-large (340M params, 200ms/request) → compressed pipeline: quantization (int8) + DistilBERT → 15ms/request, 95.8% vs 96.7% accuracy. Savings: AWS inference cost £8,200/місяць → £680/місяць. ROI 3 місяці.",
+    relatedTerms: ["quantization", "knowledge-distillation", "edge-ai"],
+    relatedService: "mlops",
+    relatedBlogPost: "ml-infrastructure-cost-optimization",
+    relatedNichePage: "/ml/saas"
+  },
+  {
+    slug: "knowledge-distillation",
+    termUk: "Knowledge Distillation (дистиляція знань)",
+    termEn: "Knowledge Distillation",
+    category: "ai",
+    shortDescription: "Навчання компактної «студентської» моделі відтворювати виходи та внутрішні представлення більшої «вчительської» моделі. Дозволяє зберегти 90%+ якості teacher у значно меншому розмірі.",
+    fullDescription: `Knowledge Distillation (Hinton et al., Google, 2015) — елегантна техніка передачі «темних знань» від великої до малої моделі.
+
+**Ключова ідея:**
+
+Замість навчання student на hard labels (0 або 1), student навчається відтворювати soft probabilities teacher:
+- Teacher каже: «Це котик з P=0.92, песик P=0.06, кролик P=0.02»
+- Ці soft probs несуть більше інформації, ніж просто «котик»
+- Student засвоює тонкі relationships між класами
+
+**Типи дистиляції:**
+
+**Response-Based (Output Distillation):**
+- Student мінімізує KL divergence між своїм та teacher output
+- Temperature scaling: T>1 softens probabilities → більше information
+
+**Feature-Based (Intermediate Distillation):**
+- Student відтворює hidden representations з intermediate layers teacher
+- FitNets: student підганяє feature maps під teacher
+- Краща якість, але складніша реалізація
+
+**Relation-Based Distillation:**
+- Передача відносин між data points (similarities, flows)
+- RKD (Relational Knowledge Distillation): pairwise та triplet relations
+
+**Self-Distillation:**
+- Модель вчиться від власних попередніх прогнозів
+- Born-Again Networks: кілька поколінь дистиляції
+
+**Найвідоміші дистильовані моделі:**
+| Teacher | Student | Compression | Performance |
+|---------|---------|-------------|-------------|
+| BERT-base | DistilBERT | 40% | 97% |
+| BERT-large | TinyBERT | 7.5x | 96% |
+| RoBERTa-large | DistilRoBERTa | 50% | 95% |
+| GPT-2 124M | → fine-tuned smaller | varies | varies |
+
+**UK deployment scenarios:**
+- Embedded legal contract analyzer на solicitor laptops (offline)
+- Medical triage model на NHS tablets в rural areas
+- Real-time fraud scoring на bank POS terminals`,
+    example: "UK insurance call centre: GPT-4o fine-tuned для claims processing (teacher, $0.03/call, 1.2s latency). Knowledge distillation: Llama 3 8B student навчається на 200k teacher outputs. Student: $0.0008/call, 180ms latency, 93.7% accuracy vs 96.2% teacher. ROI: £340k/рік savings при 50k calls/день.",
+    relatedTerms: ["model-compression", "lora", "quantization"],
+    relatedService: "mlops",
+    relatedBlogPost: "ml-infrastructure-cost-optimization",
+    relatedNichePage: "/ai/insurance"
+  },
+  {
+    slug: "xai",
+    termUk: "Пояснюваний ШІ (XAI, Explainable AI)",
+    termEn: "Explainable AI (XAI)",
+    category: "ai",
+    shortDescription: "Методи інтерпретації рішень ML-моделей (SHAP, LIME, attention maps, контрфактуали). Вимагається FCA Consumer Duty 2023 та UK GDPR Article 22 для автоматизованих рішень, що впливають на споживачів.",
+    fullDescription: `XAI — набір технік, що перетворюють «чорну скриньку» ML-моделі у систему, рішення якої можна пояснити людям: клієнтам, регуляторам та бізнес-командам.
+
+**Класифікація методів XAI:**
+
+**За scope:**
+- **Global:** пояснює поведінку моделі в цілому (feature importance)
+- **Local:** пояснює конкретне передбачення (чому ця заявка відхилена?)
+
+**За підходом:**
+- **Model-agnostic:** працюють з будь-якою моделлю (SHAP, LIME)
+- **Model-specific:** для конкретних архітектур (attention maps для transformers)
+
+**Ключові методи:**
+
+**SHAP (SHapley Additive exPlanations):**
+- Теоретично обґрунтований (game theory Shapley values)
+- Кожна ознака отримує SHAP value: внесок у відхилення від baseline
+- Типи: TreeSHAP (дерева), DeepSHAP (нейронні мережі), KernelSHAP (model-agnostic)
+- Найпопулярніший метод для tabular ML в regulated industries
+
+**LIME (Local Interpretable Model-agnostic Explanations):**
+- Апроксимує складну модель простою (лінійною) локально
+- Генерує perturbed samples навколо точки → fits простша модель
+- Швидше SHAP для одного prediction
+
+**Counterfactual Explanations:**
+- «Ваша заявка відхилена. Якби ваш дохід був £31,000 (замість £28,000), вона б схвалена»
+- Action-oriented: клієнт знає що змінити
+- Вимога GDPR Article 22: right to meaningful information
+
+**Attention Maps (Transformers):**
+- Візуалізація які токени/патчі впливають на prediction
+- GradCAM: gradient-weighted activation maps для CNN
+- Limitation: attention ≠ causation (дискусійно)
+
+**UK регуляторні вимоги:**
+- **UK GDPR Article 22:** право на пояснення автоматизованих рішень
+- **FCA Consumer Duty 2023:** "good outcomes" — клієнт має розуміти рішення
+- **FCA SS1/23:** model documentation для financial models
+- **Equality Act 2010:** пояснення мають включати protected characteristics analysis`,
+    example: "UK mortgage lender: SHAP values для кожного відмовленого заявника. Customer portal: «Ваша заявка: основні фактори — loan-to-income ratio (внесок -0.23), employment history (внесок -0.18). Якби LTI був ≤4.5x, заявка б схвалена.» FCA audit: 100% decisions auditable, 0 complaints про lack of explanation у 2025.",
+    relatedTerms: ["responsible-ai", "model-card", "ai-governance"],
+    relatedService: "artificial-intelligence",
+    relatedBlogPost: "responsible-ai-uk-regulations",
+    relatedNichePage: "/ai/banking"
+  },
+  {
+    slug: "ai-governance",
+    termUk: "Управління ШІ (AI Governance)",
+    termEn: "AI Governance",
+    category: "ai",
+    shortDescription: "Сукупність політик, процесів та контролів для відповідального розвитку AI: управління ризиками моделей, журнали аудиту, людський нагляд, моніторинг упередженості. Регулюється UK FCA SS1/23 та CDEI.",
+    fullDescription: `AI Governance — операційний фреймворк, що гарантує: AI-системи в організації розробляються та використовуються безпечно, справедливо та відповідно до регуляторних вимог.
+
+**Компоненти AI Governance Framework:**
+
+**1. Model Risk Management (MRM):**
+- Tier-based класифікація моделей за ризиком (High/Medium/Low)
+- Independent model validation перед деплоєм
+- Ongoing monitoring та periodic review cycle
+- FCA SS1/23: обов'язково для всіх regulated firms
+
+**2. AI Inventory та Registry:**
+- Централізований реєстр всіх AI/ML моделей
+- Метадані: власник, призначення, ризик-tier, статус, дата review
+- Model Cards та Data Sheets для кожної моделі
+
+**3. Human Oversight:**
+- Human-in-the-loop для high-stakes decisions
+- Clear escalation paths: коли людина overrides AI
+- Audit trail людських переглядів та оверрайдів
+
+**4. Bias & Fairness Monitoring:**
+- Ongoing monitoring по protected characteristics (Equality Act 2010)
+- Disparate impact analysis: Statistical Parity Difference, Equal Opportunity
+- Automated alerts при виявленні bias drift
+
+**5. AI Incident Management:**
+- Процедури виявлення, репортингу та remediation AI incidents
+- UK: AI incidents що впливають на споживачів → FCA notification
+- Post-incident review та model update procedures
+
+**UK Regulatory Landscape 2026:**
+- **FCA SS1/23:** Model Risk Management (банки, insurtech, wealth managers)
+- **ICO:** Accountability Framework + GDPR Article 5(2)
+- **CDEI:** AI Assurance Guide, sector-specific roadmaps
+- **NHS AI Lab:** governance для clinical AI
+- **UK AI Safety Institute:** frontier model evaluation
+- **AI Act (EU):** UK firms з EU operations → compliance required
+
+**Governance Frameworks:**
+- **NIST AI RMF (Risk Management Framework):** US standard, широко adopted UK
+- **ISO/IEC 42001:** перший міжнародний стандарт для AI management systems
+- **Alan Turing Institute AIACC:** AI Assurance — Compliance and Certification`,
+    example: "UK insurtech (Lloyd's of London syndicate): впроваджує AI Governance після FCA SS1/23. Результат: 23 моделі класифіковані (8 High, 11 Medium, 4 Low risk), Model Registry в Confluence, quarterly validation cycle, dedicated Model Risk Officer призначений. FCA supervisory review: compliant. Board reporting: quarterly AI Risk Dashboard.",
+    relatedTerms: ["responsible-ai", "model-card", "xai"],
+    relatedService: "artificial-intelligence",
+    relatedBlogPost: "responsible-ai-uk-regulations",
+    relatedNichePage: "/ai/insurance"
+  },
 ];
 
 export const GLOSSARY_TERM_SLUGS = GLOSSARY_TERMS.map((t) => t.slug);

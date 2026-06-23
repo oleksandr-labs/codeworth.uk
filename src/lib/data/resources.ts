@@ -283,6 +283,125 @@ export const RESOURCES: Resource[] = [
       "Budget range: indicative budget or cost-per-outcome expectations",
     ],
   },
+  {
+    slug: "uk-ai-safety-institute-guide",
+    titleUk: "UK AI Safety Institute: Фреймворк тестування передових AI-систем",
+    titleEn: "UK AI Safety Institute: Frontier AI Testing Framework",
+    descriptionUk:
+      "Практичний гайд по фреймворку оцінки безпеки AISI для організацій, що розгортають передові AI-системи у Великій Британії. Охоплює методологію оцінки ризиків, вимоги до тестування, протоколи red-teaming та порядок взаємодії з регуляторами. Ключовий ресурс для UK-компаній, що використовують великі мовні моделі або агентні AI-системи.",
+    descriptionEn:
+      "Practical guide to the AISI safety evaluation framework for UK organisations deploying advanced AI systems. Covers risk assessment methodology, testing requirements, red-teaming protocols, and regulator engagement. Essential reading for UK companies leveraging large language models or agentic AI systems.",
+    category: "guide",
+    format: "page",
+    emailRequired: false,
+    relatedService: "machine-learning",
+    tags: ["AI safety", "AISI", "frontier AI", "UK regulation", "LLM testing", "red-teaming"],
+    updatedAt: "2026-06-01",
+    isPopular: true,
+    readTime: 22,
+  },
+  {
+    slug: "innovate-uk-ai-grant-guide-2026",
+    titleUk: "Innovate UK: Повний гайд по грантах на AI та Data-проєкти 2026",
+    titleEn: "Innovate UK AI & Data Grants: Complete Guide 2026",
+    descriptionUk:
+      "Детальний огляд усіх потоків фінансування Innovate UK для AI/ML-проєктів у 2026 році. Охоплює програми Smart Grants (£25k–£500k), Accelerated Knowledge Transfer, партнерства з Catapult-центрами та критерії відбору. Покрокові поради щодо структурування проєкту та оформлення заявки для максимізації шансів на успіх.",
+    descriptionEn:
+      "Comprehensive overview of all Innovate UK funding streams for AI/ML projects in 2026. Covers Smart Grants (£25k–£500k), Accelerated Knowledge Transfer, Catapult programme partnerships, and eligibility criteria. Step-by-step guidance on project structuring and application writing to maximise your chances of success.",
+    category: "guide",
+    format: "page",
+    emailRequired: false,
+    relatedService: "machine-learning",
+    tags: ["Innovate UK", "AI grants", "funding", "Smart Grants", "Catapult", "R&D tax relief"],
+    updatedAt: "2026-06-01",
+    isPopular: true,
+    readTime: 25,
+  },
+  {
+    slug: "fca-ai-lab-ml-finance",
+    titleEn: "FCA AI Lab: ML Applications in UK Financial Services",
+    titleUk: "FCA AI Lab: застосування ML у фінансових послугах Великої Британії",
+    descriptionUk:
+      "Аналітичний звіт на основі висновків регуляторного пісочниці FCA AI Lab: затверджені use-cases ML у фінтеху, страхуванні та кредитуванні. Охоплює вимоги щодо пояснюваності рішень, наслідки Consumer Duty для AI-систем та практичні настанови для ліцензованих фірм, що впроваджують автоматизоване прийняття рішень.",
+    descriptionEn:
+      "Analytical report drawn from FCA AI Lab regulatory sandbox findings: approved ML use cases in fintech, insurance, and credit. Covers explainability requirements, Consumer Duty implications for AI systems, and practical guidance for regulated firms implementing automated decision-making under UK financial services law.",
+    category: "report",
+    format: "page",
+    emailRequired: false,
+    relatedService: "machine-learning",
+    tags: ["FCA", "AI Lab", "fintech", "Consumer Duty", "explainability", "automated decisions", "UK finance"],
+    updatedAt: "2026-06-01",
+    isPopular: true,
+    readTime: 28,
+  },
+  {
+    slug: "alan-turing-institute-priorities-2026",
+    titleEn: "Alan Turing Institute: UK AI & ML Research Priorities 2026",
+    titleUk: "Alan Turing Institute: пріоритети AI та ML досліджень у Великій Британії 2026",
+    descriptionUk:
+      "Огляд стратегічного дослідницького порядку денного Інституту Алана Тюрінга на 2026 рік: безпечний AI, кліматичне ML, охорона здоров'я, економічна стійкість. Охоплює ключові академічно-промислові партнерства, програму Turing Fellowships та напрямки, що отримують пріоритетне фінансування. Корисно для UK ML-команд, що хочуть відстежувати національні R&D-пріоритети та можливості спільних досліджень.",
+    descriptionEn:
+      "Overview of the Alan Turing Institute's 2026 strategic research agenda: safe AI, climate ML, healthcare AI, and economic resilience. Covers key academic-industry partnerships, Turing Fellowships programme, and priority-funded research directions. Essential for UK ML teams benchmarking against national R&D priorities and exploring collaborative research opportunities.",
+    category: "report",
+    format: "page",
+    emailRequired: false,
+    relatedService: "machine-learning",
+    tags: ["Alan Turing Institute", "UK AI research", "safe AI", "climate ML", "healthcare AI", "Turing Fellowships"],
+    updatedAt: "2026-06-01",
+    isPopular: false,
+    readTime: 20,
+  },
+  {
+    slug: "ico-ml-uk-gdpr-compliance",
+    titleEn: "ICO Guide: ML Projects and UK GDPR Compliance",
+    titleUk: "Гайд ICO: ML-проєкти та відповідність UK GDPR",
+    descriptionUk:
+      "Практичний посібник ICO з дотримання вимог UK GDPR у ML-проєктах. Охоплює проведення DPIA (оцінки впливу на захист даних), статтю 22 щодо автоматизованого прийняття рішень, законні підстави для навчання ML-моделей, право на пояснення та стандарти анонімізації. Незамінний ресурс для дата-інженерів і ML-команд у регульованих секторах.",
+    descriptionEn:
+      "Practical ICO guidance on UK GDPR compliance for ML projects. Covers conducting DPIAs for ML systems, Article 22 automated decision-making restrictions, lawful bases for ML training data, right to explanation requirements, and anonymisation standards. Essential for data engineers and ML teams operating in regulated UK sectors.",
+    category: "guide",
+    format: "page",
+    emailRequired: false,
+    relatedService: "machine-learning",
+    tags: ["ICO", "UK GDPR", "DPIA", "automated decisions", "data protection", "Article 22", "anonymisation"],
+    updatedAt: "2026-06-01",
+    isPopular: true,
+    readTime: 24,
+  },
+  {
+    slug: "nhs-digital-ai-framework-2026",
+    titleEn: "NHS Digital AI Framework: Deploying ML in Healthcare",
+    titleUk: "Фреймворк NHS Digital AI: розгортання ML у системі охорони здоров'я",
+    descriptionUk:
+      "Офіційний фреймворк NHS Digital для клінічного впровадження AI. Охоплює вимоги DSPT (Data Security & Protection Toolkit), клінічну безпеку DCB0129/DCB0160, підходи до пояснюваності для клінічного персоналу та шлях сертифікації через NHS AI Lab. Обов'язковий ресурс для healthtech-компаній та лікарень, що впроваджують ML-рішення в NHS.",
+    descriptionEn:
+      "Official NHS Digital framework for clinical AI deployment in UK healthcare. Covers DSPT (Data Security & Protection Toolkit) compliance, clinical safety standards DCB0129/DCB0160, explainability approaches for clinical staff, and the NHS AI Lab approved deployment pathway. Mandatory reading for healthtech companies and NHS trusts implementing ML solutions.",
+    category: "guide",
+    format: "page",
+    emailRequired: false,
+    relatedService: "machine-learning",
+    tags: ["NHS", "healthcare AI", "DSPT", "clinical safety", "DCB0129", "NHS AI Lab", "healthtech UK"],
+    updatedAt: "2026-06-01",
+    isPopular: false,
+    readTime: 26,
+  },
+  {
+    slug: "uk-ai-regulation-white-paper",
+    titleEn: "UK Government AI Regulation: White Paper Business Guide",
+    titleUk: "Регулювання AI у Великій Британії: практичний гайд по Білій книзі для бізнесу",
+    descriptionUk:
+      "Практичний огляд проінноваційного підходу Уряду Великої Британії до регулювання AI (на противагу EU AI Act). Пояснює 5 ключових принципів (безпека, захищеність, справедливість, підзвітність, можливість оскарження), розподіл відповідальності між секторальними регуляторами та конкретні дії, які UK-компанії повинні вжити вже сьогодні. Включає порівняння з вимогами EU AI Act для транскордонних операцій.",
+    descriptionEn:
+      "Practical overview of the UK Government's pro-innovation AI regulation approach versus the EU AI Act. Explains the 5 core principles (safety, security, fairness, accountability, contestability), sector regulator responsibility framework, and concrete actions UK businesses must take now. Includes comparison with EU AI Act requirements for cross-border operations.",
+    category: "report",
+    format: "page",
+    emailRequired: false,
+    relatedService: "machine-learning",
+    tags: ["UK AI regulation", "White Paper", "EU AI Act", "AI governance", "compliance", "pro-innovation", "sector regulators"],
+    updatedAt: "2026-06-01",
+    isPopular: true,
+    readTime: 18,
+  },
 ];
 
 export const RESOURCE_SLUGS = RESOURCES.map((r) => r.slug);

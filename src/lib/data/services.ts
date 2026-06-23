@@ -97,7 +97,7 @@ export const SERVICES_DATA: Service[] = [
     iconColor: "text-violet-600",
     gradient: "from-violet-600 to-purple-700",
     keyword: "штучний інтелект для бізнесу Україна",
-    metaDescription: "Штучний інтелект для бізнесу в Україні. GPT-боти, RAG, NLP, комп'ютерний зір, GenAI. Codeworth від 15 000 грн. Реальні кейси: -68% навантаження на підтримку, -96% пропущених дефектів.",
+    metaDescription: "Штучний інтелект для бізнесу в Україні. GPT-боти, RAG, NLP, комп'ютерний зір, GenAI. Codeworth від £375. Реальні кейси: -68% навантаження на підтримку, -96% пропущених дефектів.",
     features: [
       { title: "GPT-бот з базою знань (RAG)", description: "Чат-бот на GPT-4o або Claude навчений на вашому контенті — відповідає клієнтам 24/7 без «галюцинацій». Кейс: SupportAI — 68% запитів закриваються без оператора, -$38K/рік на підтримку." },
       { title: "Комп'ютерний зір (CV)", description: "Детекція дефектів, об'єктів, обличь у реальному часі. YOLOv8 + PyTorch. Кейс: QualityEye — пропущених дефектів -96%, швидкість контролю ×12 vs ручний." },
@@ -118,21 +118,21 @@ export const SERVICES_DATA: Service[] = [
     packages: [
       {
         name: "AI Assistant",
-        price: "від 15 000 грн",
+        price: "від £375",
         desc: "GPT-бот для сайту або Telegram",
         features: ["GPT-4o / Claude 3.5 Sonnet", "До 200 документів у RAG", "Telegram або iframe на сайт", "Fallback на менеджера при невпевненості", "Аналітика запитів (дашборд)", "1 міс. підтримки"],
         highlight: false,
       },
       {
         name: "RAG Solution",
-        price: "від 40 000 грн",
+        price: "від £1,000",
         desc: "AI навчений на вашому контенті",
         features: ["RAG-пайплайн (LangChain + Qdrant)", "До 10 000 документів / сторінок", "Мультимодальні джерела (PDF, web, DB)", "API + інтеграція у будь-який канал", "Дашборд аналітики + intent analytics", "3 міс. підтримки + щомісячна оптимізація"],
         highlight: true,
       },
       {
         name: "Computer Vision / NLP",
-        price: "від 50 000 грн",
+        price: "від £1,250",
         desc: "CV або NLP-система корпоративного рівня",
         features: ["YOLOv8 / BERT / CLIP моделі", "Навчання на ваших даних (custom dataset)", "Real-time inference endpoint (< 100ms)", "React-дашборд з аналітикою та алертами", "MLOps моніторинг якості моделі", "Edge або хмарний деплой (NVIDIA Jetson / AWS)"],
         highlight: false,
@@ -140,9 +140,9 @@ export const SERVICES_DATA: Service[] = [
     ],
     faq: [
       { q: "Для якого бізнесу підходить AI?", a: "Для будь-якого, де є повторювані задачі: підтримка клієнтів, класифікація заявок, аналіз текстів, скринінг документів, контроль якості на виробництві, генерація контенту в масштабі." },
-      { q: "Скільки коштує GPT-бот для сайту?", a: "Базовий RAG-бот з 200 документами у базі — від 15 000 грн. Корпоративний RAG-пайплайн до 10 000 документів з дашбордом аналітики — від 40 000 грн. CV або NLP-система — від 50 000 грн." },
+      { q: "Скільки коштує GPT-бот для сайту?", a: "Базовий RAG-бот з 200 документами у базі — від £375. Корпоративний RAG-пайплайн до 10 000 документів з дашбордом аналітики — від £1,000. CV або NLP-система — від £1,250." },
       { q: "Чи буде бот «галюцинувати»?", a: "З RAG — ні. Бот відповідає лише на основі вашого контенту (вектори у Qdrant). Якщо відповіді немає в базі — відповідає 'не знаю' або переключає на менеджера. Ніяких вигаданих фактів." },
-      { q: "Чи підтримуєте після запуску?", a: "Так. Усі пакети включають підтримку (1–3 міс.). Після — monthly retainer від 5 000 грн: моніторинг якості, оновлення бази знань, оптимізація промптів, alert при деградації точності." },
+      { q: "Чи підтримуєте після запуску?", a: "Так. Усі пакети включають підтримку (1–3 міс.). Після — monthly retainer від £125: моніторинг якості, оновлення бази знань, оптимізація промптів, alert при деградації точності." },
       { q: "Яка точність комп'ютерного зору?", a: "Залежить від задачі та якості датасету. На типових задачах (дефекти виробництва, QR, штрих-коди, обличчя) — 90–97%. Для медичної діагностики — від 94%. Гарантуємо baseline accuracy на PoC-фазі." },
       { q: "Де зберігаються дані клієнтів?", a: "RAG-вектори зберігаються у Qdrant на вашому сервері або EU-хмарі (AWS Frankfurt / GCP europe-west3). Запити до OpenAI/Claude йдуть через enterprise tier — не використовуються для навчання моделей. CV-обробка — виключно на вашій інфраструктурі. Підписуємо NDA та DPA (Data Processing Agreement) до початку роботи." },
       { q: "Скільки часу займає впровадження?", a: "Простий GPT-бот — 1–2 тижні. RAG-рішення — 3–5 тижнів. CV або NLP-система корпоративного рівня — 5–10 тижнів залежно від об'єму даних. Завжди починаємо з PoC за 1–2 тижні, щоб ви побачили результат до повного бюджету." },
@@ -154,7 +154,7 @@ export const SERVICES_DATA: Service[] = [
       { q: "Коли обирати AI (GPT/RAG/CV), а коли ML (XGBoost/LSTM)?", a: "AI — якщо задача пов'язана з мовою, текстом, зображеннями або голосом: чат-боти, аналіз документів, генерація контенту, комп'ютерний зір, мовна модель навчена на вашому контенті (RAG). ML — якщо задача про структуровані дані та прогнозування: fraud detection, churn prediction, demand forecasting, кредитний скоринг, рекомендації. Часто вони доповнюють одне одного: ML-модель прогнозує ризик відтоку → AI-бот надсилає персоналізований retention-офер. Безкоштовна консультація допоможе визначити оптимальний підхід для вашої задачі." },
     ],
     deliveryTime: "2–10 тижнів",
-    priceFrom: "15 000 грн",
+    priceFrom: "£375",
     techStack: ["OpenAI GPT-4o", "Claude 3.5 Sonnet", "LangChain", "LlamaIndex", "Qdrant", "Pinecone", "YOLOv8", "OpenCV", "Whisper", "HuggingFace", "FastAPI", "Python", "Docker"],
     demoComponent: "ai-copywriter",
     crossLink: {
@@ -237,7 +237,7 @@ export const SERVICES_DATA: Service[] = [
     iconColor: "text-indigo-600",
     gradient: "from-indigo-600 to-blue-700",
     keyword: "machine learning для бізнесу Україна",
-    metaDescription: "Machine Learning для бізнесу в Україні. Fraud detection, прогноз відтоку, рекомендації, MLOps. Codeworth від 30 000 грн. Реальні кейси: -97% fraud, +176% CTR рекомендацій, -34% залишків.",
+    metaDescription: "Machine Learning для бізнесу в Україні. Fraud detection, прогноз відтоку, рекомендації, MLOps. Codeworth від £750. Реальні кейси: -97% fraud, +176% CTR рекомендацій, -34% залишків.",
     features: [
       { title: "Предиктивна аналітика та Churn", description: "XGBoost / LightGBM на 40+ поведінкових фічах. Кейс: RetainIQ — churn з 8.4% до 5.8% (-31%), MRR retention +$42K/міс, Customer Success продуктивність ×3." },
       { title: "Fraud Detection та скоринг", description: "Real-time ML-пайплайн: LightGBM + Kafka + Redis feature store, p99 latency < 30ms. Кейс: FraudShield — fraud rate -97%, false positives -40%, збитки -$180K/міс." },
@@ -258,14 +258,14 @@ export const SERVICES_DATA: Service[] = [
     packages: [
       {
         name: "ML Starter",
-        price: "від 30 000 грн",
+        price: "від £750",
         desc: "Аудит даних + перша ML-модель",
         features: ["Аудит якості та підготовка даних", "Базова модель (XGBoost / LightGBM)", "Hyperparameter tuning + валідація", "REST API endpoint", "Jupyter-звіт з поясненням результатів (SHAP)", "1 міс. підтримки"],
         highlight: false,
       },
       {
         name: "ML Production",
-        price: "від 60 000 грн",
+        price: "від £1,500",
         desc: "Кастомна модель + деплой + MLOps",
         features: ["Розширений feature engineering", "Ансамблі моделей + A/B тест vs baseline", "FastAPI endpoint (< 50ms latency)", "Інтеграція у ваш стек (CRM / ERP / SaaS)", "MLflow версіонування + моніторинг drift", "Дашборд метрик (React) + Telegram-алерти", "3 міс. підтримки + quarterly model review"],
         highlight: true,
@@ -289,11 +289,11 @@ export const SERVICES_DATA: Service[] = [
       { q: "Чи можна ML-модель зробити поясненою (explainable AI)?", a: "Так. Використовуємо SHAP (SHapley Additive exPlanations) та LIME для інтерпретації будь-якої black-box моделі. Важливо для кредитного скорингу (регуляторні вимоги), медицини та HR — де потрібно пояснити чому модель прийняла рішення." },
       { q: "Чи відповідають ваші ML-рішення вимогам FCA (UK)?", a: "Так. Для FinTech-клієнтів у Великобританії будуємо FCA-compliant системи: SHAP-пояснення для кожного автоматизованого рішення (блокування транзакції, кредитний скоринг), appeals workflow для клієнтів, immutable audit log (5 років). Consumer Duty 2023 compliance — включено в архітектуру з першого дня, не як afterthought." },
       { q: "Як ML допомагає з оптимізацією ланцюга поставок?", a: "XGBoost-модель прогнозує попит по кожному SKU та локації (MAPE 8–13%), автоматично розраховує reorder points та safety stock. Google OR-Tools оптимізує маршрути доставки (Vehicle Routing Problem) — зазвичай −15–25% кілометражу. Типовий результат для FMCG: stockout −70–80%, неліквід на складі −30–45%. ROI — перший повний операційний сезон." },
-      { q: "Скільки коштує ML-система для автоматизації підтримки клієнтів?", a: "Базова класифікація тікетів (fine-tuned BERT, Zendesk integration, до 5 категорій): від 25 000 грн. Повна система (14+ категорій, priority scoring, assignee routing, GPT-4o draft responses, auto-response для типових запитів): від 60 000 грн. Економія для B2B SaaS на 1 200 тікетів/тиждень: −65% часу тріажу, SLA compliance з 67% до 95%+." },
+      { q: "Скільки коштує ML-система для автоматизації підтримки клієнтів?", a: "Базова класифікація тікетів (fine-tuned BERT, Zendesk integration, до 5 категорій): від £625. Повна система (14+ категорій, priority scoring, assignee routing, GPT-4o draft responses, auto-response для типових запитів): від £1,500. Економія для B2B SaaS на 1 200 тікетів/тиждень: −65% часу тріажу, SLA compliance з 67% до 95%+." },
       { q: "Коли ML краще, ніж ручні правила (rule-based logic)?", a: "Правила добре працюють, коли логіка стабільна і однозначна (наприклад, 'якщо сума > 50 000 — запит у перевірку'). ML перевершує правила, коли: (1) факторів багато і їх взаємодія нелінійна (fraud має 50+ ознак); (2) розподіл даних постійно змінюється (нові схеми шахрайства, нові категорії клієнтів); (3) правил стає >50 і вони починають суперечити одне одному; (4) потрібна персоналізація на рівні кожного клієнта (рекомендації, dynamic pricing). Практичне правило: якщо ваш аналітик не може пояснити рішення менше ніж 10 умовами — час для ML." },
     ],
     deliveryTime: "4–12 тижнів",
-    priceFrom: "30 000 грн",
+    priceFrom: "£750",
     techStack: ["Python", "XGBoost", "LightGBM", "PyTorch", "scikit-learn", "Prophet", "MLflow", "Airflow", "Kafka", "Redis", "FastAPI", "Docker", "SHAP", "OR-Tools", "GeoPandas", "PostGIS", "TimescaleDB", "Sentinel-2 API"],
     crossLink: {
       slug: "artificial-intelligence",
@@ -346,7 +346,7 @@ export const SERVICES_DATA: Service[] = [
     iconColor: "text-indigo-600",
     gradient: "from-indigo-600 to-blue-600",
     keyword: "NLP розробка Україна",
-    metaDescription: "NLP та обробка тексту для бізнесу. Класифікація, NER, sentiment, RAG. Codeworth від 45 000 грн. Реальні кейси: 93% точність класифікації тікетів, -65% часу тріажу.",
+    metaDescription: "NLP та обробка тексту для бізнесу. Класифікація, NER, sentiment, RAG. Codeworth від £1,125. Реальні кейси: 93% точність класифікації тікетів, -65% часу тріажу.",
     features: [
       { title: "Класифікація текстів та тікетів", description: "Fine-tuned BERT на ваших даних: 14+ категорій, автоматичний routing, prioritization. Кейс: 1 200 тікетів/тиждень — -65% часу тріажу, SLA з 67% до 95%+" },
       { title: "Sentiment-аналіз та репутація бренду", description: "Аналіз відгуків, соцмереж, NPS у реальному часі. Багатокласовий sentiment (позитив/нейтраль/негатив/urgent). Кейс: BrandPulse — час реакції з 48 год до 1.8 год, рейтинг +0.7." },
@@ -367,14 +367,14 @@ export const SERVICES_DATA: Service[] = [
     packages: [
       {
         name: "NLP Starter",
-        price: "від 45 000 грн",
+        price: "від £1,125",
         desc: "Класифікатор або sentiment-аналізатор",
         features: ["Fine-tuned BERT/DistilBERT", "До 5 класів / категорій", "Датасет від 2 000 прикладів", "REST API endpoint", "SHAP-пояснення рішень", "1 міс. підтримки"],
         highlight: false,
       },
       {
         name: "NLP Production",
-        price: "від 80 000 грн",
+        price: "від £2,000",
         desc: "Повна NLP-система з моніторингом",
         features: ["14+ класів, мультизадачна модель", "NER + класифікація + sentiment одночасно", "RAG-пайплайн (LangChain + Qdrant)", "Інтеграція у CRM / Helpdesk", "Дашборд + MLOps моніторинг", "3 міс. підтримки + monthly review"],
         highlight: true,
@@ -391,12 +391,12 @@ export const SERVICES_DATA: Service[] = [
       { q: "Скільки даних потрібно для NLP-моделі?", a: "Для класифікації тексту — мінімум 500–2 000 прикладів на клас. Для NER — від 1 000 розмічених документів. Якщо даних мало, використовуємо few-shot learning та data augmentation. Точний обсяг визначаємо після аудиту." },
       { q: "Чи підтримує NLP українську мову?", a: "Так. Використовуємо mBERT, XLM-R та uk-specific моделі (робerta-base-uk). Для мультилінгвальних задач — один модель на EN+UK+PL з auto-detect мови. Підходить для UK+UA бізнесів з клієнтами обох ринків." },
       { q: "Яка точність NLP-класифікатора?", a: "Для класифікації тікетів підтримки: F1 92–96% на 14+ категоріях. Sentiment на продуктових відгуках: accuracy 89–93%. NER для договорів: precision 94%, recall 91%. Точні метрики залежать від якості та кількості ваших даних." },
-      { q: "Скільки коштує NLP-система?", a: "Базовий класифікатор (до 5 класів, BERT fine-tuning): від 45 000 грн. Повна NLP-система (14+ класів, NER + sentiment, CRM-інтеграція, MLOps): від 80 000 грн. Enterprise-платформа зі streaming та on-premise — за погодженням." },
+      { q: "Скільки коштує NLP-система?", a: "Базовий класифікатор (до 5 класів, BERT fine-tuning): від £1,125. Повна NLP-система (14+ класів, NER + sentiment, CRM-інтеграція, MLOps): від £2,000. Enterprise-платформа зі streaming та on-premise — за погодженням." },
       { q: "Чи можна NLP інтегрувати в Zendesk або Salesforce?", a: "Так. Ми інтегруємо NLP-моделі через REST API у будь-який helpdesk або CRM: Zendesk (webhook trigger), Salesforce (Apex callout), Freshdesk, Intercom, або власну систему. Час реакції < 200ms, щоб не сповільнювати workflow операторів." },
       { q: "Що таке RAG і коли варто використовувати NLP замість нього?", a: "RAG — пошук + генерація відповіді з бази документів (підходить для Q&A, чат-ботів). NLP — класифікація, витяг сутностей, sentiment (підходить для структурування даних, routing, аналітики). Часто вони доповнюють одне одного: NLP класифікує запит → RAG знаходить відповідь у базі → GPT-4o формулює." },
     ],
     deliveryTime: "3–8 тижнів",
-    priceFrom: "45 000 грн",
+    priceFrom: "£1,125",
     techStack: ["BERT", "XLM-R", "DistilBERT", "spaCy", "HuggingFace", "LangChain", "Qdrant", "FastAPI", "Python", "Docker", "MLflow"],
     crossLink: {
       slug: "artificial-intelligence",
@@ -445,7 +445,7 @@ export const SERVICES_DATA: Service[] = [
     iconColor: "text-sky-600",
     gradient: "from-sky-600 to-cyan-600",
     keyword: "комп'ютерний зір для бізнесу Україна",
-    metaDescription: "Комп'ютерний зір (Computer Vision) для бізнесу. YOLOv8, OCR, медична візуалізація. Codeworth від 60 000 грн. Реальні кейси: -96% пропущених дефектів, ×12 швидкість контролю.",
+    metaDescription: "Комп'ютерний зір (Computer Vision) для бізнесу. YOLOv8, OCR, медична візуалізація. Codeworth від £1,500. Реальні кейси: -96% пропущених дефектів, ×12 швидкість контролю.",
     features: [
       { title: "Детекція дефектів та контроль якості (QA)", description: "YOLOv8 + кастомний датасет: real-time інспекція конвеєра, класифікація типів браку. Кейс: QualityEye (Textile) — пропущені дефекти -96%, швидкість ×12 vs ручний контроль." },
       { title: "Детекція та трекінг об'єктів", description: "YOLO + ByteTrack: рахування відвідувачів, моніторинг складу (RFID-free), охоронне відеоспостереження з AI-тривогою. Latency < 50ms на RTX GPU." },
@@ -466,14 +466,14 @@ export const SERVICES_DATA: Service[] = [
     packages: [
       {
         name: "CV PoC",
-        price: "від 60 000 грн",
+        price: "від £1,500",
         desc: "Перша CV-модель на ваших зображеннях",
         features: ["YOLOv8 / EfficientDet fine-tuning", "Датасет 500–2 000 зображень", "До 5 класів об'єктів", "REST inference API", "Jupyter-звіт з метриками", "1 міс. підтримки"],
         highlight: false,
       },
       {
         name: "CV Production",
-        price: "від 120 000 грн",
+        price: "від £3,000",
         desc: "Повна CV-система з реальним деплоєм",
         features: ["Custom dataset 5 000+ зображень", "Multi-class detection + tracking", "Real-time відеострим (< 50ms)", "React-дашборд аналітики + алерти", "Edge або хмарний деплой", "3 міс. підтримки + MLOps моніторинг"],
         highlight: true,
@@ -491,11 +491,11 @@ export const SERVICES_DATA: Service[] = [
       { q: "Яка точність виявлення дефектів?", a: "На типових задачах промислового контролю якості: mAP@0.5 ≥ 0.88–0.95 (залежить від різноманітності дефектів та якості підсвічування). Для медичної візуалізації: AUC 0.90–0.97. Показуємо baseline точність на PoC до старту повного проєкту." },
       { q: "Чи може CV працювати в реальному часі (відео)?", a: "Так. YOLOv8 + TensorRT на RTX 4070: 120+ FPS, latency < 8ms. На NVIDIA Jetson Orin (edge): 30–60 FPS, < 33ms. Для IP-камер — streaming через RTSP + OpenCV pipeline з буферизацією черги." },
       { q: "Де обробляються відеодані?", a: "Для GDPR-чутливих задач (обличчя, медичні дані) — виключно on-premise або на вашому приватному сервері. Для загальних задач (дефекти, QR-коди) — cloud inference (AWS Rekognition або власний GPU-сервер в EU). Підписуємо NDA та DPA до початку роботи." },
-      { q: "Скільки коштує CV-система для виробничого контролю якості?", a: "PoC (перша модель, 1–3 типи дефектів, REST API): від 60 000 грн. Production-система (5+ типів дефектів, real-time відеоаналіз, дашборд, edge деплой): від 120 000 грн. Enterprise (10+ камер, MES інтеграція, on-premise): за погодженням." },
+      { q: "Скільки коштує CV-система для виробничого контролю якості?", a: "PoC (перша модель, 1–3 типи дефектів, REST API): від £1,500. Production-система (5+ типів дефектів, real-time відеоаналіз, дашборд, edge деплой): від £3,000. Enterprise (10+ камер, MES інтеграція, on-premise): за погодженням." },
       { q: "Чи підходить CV для мобільного застосунку?", a: "Так. Конвертуємо моделі в TFLite або Core ML для iOS/Android. Типові задачі: сканування документів, визначення продуктів за фото, AR-try-on для fashion. Inference на пристрої — без відправки зображень на сервер." },
     ],
     deliveryTime: "4–10 тижнів",
-    priceFrom: "60 000 грн",
+    priceFrom: "£1,500",
     techStack: ["YOLOv8", "YOLOv10", "EfficientDet", "PyTorch", "OpenCV", "TensorRT", "ONNX", "PaddleOCR", "CLIP", "Albumentations", "FastAPI", "Docker", "NVIDIA Jetson"],
     crossLink: {
       slug: "machine-learning",
@@ -544,14 +544,14 @@ export const SERVICES_DATA: Service[] = [
     iconColor: "text-orange-600",
     gradient: "from-orange-500 to-red-600",
     keyword: "MLOps деплой ML Україна",
-    metaDescription: "MLOps та деплой ML-моделей для бізнесу. CI/CD для ML, моніторинг дрейфу, автоперенавчання. Codeworth від 30 000 грн або retainer £800/mo. 87% моделей без MLOps деградують за 6 місяців.",
+    metaDescription: "MLOps та деплой ML-моделей для бізнесу. CI/CD для ML, моніторинг дрейфу, автоперенавчання. Codeworth від £750 або retainer £800/mo. 87% моделей без MLOps деградують за 6 місяців.",
     features: [
       { title: "ML Pipeline Automation (CI/CD for ML)", description: "Airflow / Prefect DAG: автоматизований пайплайн від інжинірингу фіч до деплою нової версії. GitHub Actions для версіонування, автоматичний тест якості перед релізом." },
       { title: "Model Serving (FastAPI / BentoML / Seldon)", description: "REST або gRPC endpoint, < 50ms latency, auto-scaling. A/B testing: shadow deployment та champion-challenger testing без downtime." },
       { title: "Data Drift та Concept Drift Monitoring", description: "Evidently AI + Grafana: моніторинг розподілу вхідних даних у реальному часі. Telegram-алерт при drift > threshold. Кейс: виявлення drift за 48 год проти 2 тижнів ручного аналізу." },
       { title: "Auto-Retraining Pipelines", description: "Scheduled + triggered retraining: Airflow DAG запускає перенавчання за розкладом або при drift-алерті. Автоматичне порівняння нової версії з production-baseline, rollback при деградації." },
       { title: "MLflow + Weights & Biases", description: "Версіонування моделей, метадані експериментів, model registry, reproducibility. Повна аудит-стежка для регуляторних вимог (FCA, NHS Digital)." },
-      { title: "MLOps Retainer (ongoing підтримка)", description: "£800/mo / 32 000 грн/міс: щомісячний аудит якості, drift alerts, перенавчання при необхідності, SLA-відповідь 4 год. Підходить для компаній без власних ML-інженерів." },
+      { title: "MLOps Retainer (ongoing підтримка)", description: "£800/mo: щомісячний аудит якості, drift alerts, перенавчання при необхідності, SLA-відповідь 4 год. Підходить для компаній без власних ML-інженерів." },
     ],
     includes: [
       "Аудит поточної ML-інфраструктури та виявлення вузьких місць",
@@ -565,14 +565,14 @@ export const SERVICES_DATA: Service[] = [
     packages: [
       {
         name: "MLOps Setup",
-        price: "від 30 000 грн",
+        price: "від £750",
         desc: "Базова MLOps-інфраструктура для однієї моделі",
         features: ["CI/CD pipeline (GitHub Actions)", "FastAPI model serving", "MLflow versioning", "Evidently drift monitoring", "Базовий Grafana dashboard", "1 міс. онбординг підтримки"],
         highlight: false,
       },
       {
         name: "MLOps Platform",
-        price: "від 60 000 грн",
+        price: "від £1,500",
         desc: "Повна платформа для кількох моделей",
         features: ["Airflow DAG з auto-retraining", "Multi-model serving (3–5 моделей)", "A/B testing + champion-challenger", "Повний Grafana/Prometheus stack", "MLflow + W&B model registry", "3 міс. підтримки + monthly review"],
         highlight: true,
@@ -588,12 +588,12 @@ export const SERVICES_DATA: Service[] = [
     faq: [
       { q: "Що таке MLOps і навіщо він потрібен?", a: "MLOps (Machine Learning Operations) — практики підтримки ML-моделей у продакшні. Без MLOps: розподіл вхідних даних змінюється → модель деградує непомітно → бізнес-метрики падають. З MLOps: автоматичний моніторинг, alert при деградації, auto-retraining. Середня модель без MLOps деградує на 10–15% за 6 місяців." },
       { q: "Чим MLOps відрізняється від DevOps?", a: "DevOps — деплой і моніторинг програмного коду. MLOps — деплой і моніторинг ML-моделей, де виходить не тільки код, але й артефакти моделей, датасети, метрики якості (F1, AUC) та розподіл вхідних даних. MLOps додає model registry, drift detection та automated retraining." },
-      { q: "Скільки коштують MLOps-послуги?", a: "Базовий MLOps setup (CI/CD + model serving + monitoring для 1 моделі): від 30 000 грн. Повна платформа (3–5 моделей + Airflow + A/B testing): від 60 000 грн. MLOps Retainer (ongoing): £800/міс або 32 000 грн/міс без зобов'язань." },
+      { q: "Скільки коштують MLOps-послуги?", a: "Базовий MLOps setup (CI/CD + model serving + monitoring для 1 моделі): від £750. Повна платформа (3–5 моделей + Airflow + A/B testing): від £1,500. MLOps Retainer (ongoing): £800/міс без зобов'язань." },
       { q: "Чи можна впровадити MLOps для вже існуючої моделі?", a: "Так, це навіть поширеніший сценарій. Аудитуємо поточний деплой, виявляємо ризики (відсутність моніторингу, ручне перенавчання, відсутність версіонування), впроваджуємо MLOps поступово без зупинки production." },
       { q: "Які MLOps-інструменти ви використовуєте?", a: "Orchestration: Airflow, Prefect, ZenML. Serving: FastAPI, BentoML, Seldon Core. Monitoring: Evidently AI, Grafana, Prometheus. Tracking: MLflow, Weights & Biases. CI/CD: GitHub Actions, Docker, Kubernetes. Вибір залежить від вашого стеку та бюджету." },
     ],
     deliveryTime: "2–6 тижнів (setup), потім retainer",
-    priceFrom: "30 000 грн",
+    priceFrom: "£750",
     techStack: ["MLflow", "Prefect", "Apache Airflow", "Evidently AI", "FastAPI", "BentoML", "Seldon Core", "Prometheus", "Grafana", "Docker", "Kubernetes", "GitHub Actions"],
     crossLink: {
       slug: "machine-learning",
@@ -642,7 +642,7 @@ export const SERVICES_DATA: Service[] = [
     iconColor: "text-violet-600",
     gradient: "from-violet-600 to-purple-700",
     keyword: "LLM RAG розробка Україна",
-    metaDescription: "LLM та RAG розробка для бізнесу. GPT-4o, Llama 3, корпоративні чат-боти, knowledge base Q&A. Codeworth від 45 000 грн. GDPR-compliant, on-premise деплой.",
+    metaDescription: "LLM та RAG розробка для бізнесу. GPT-4o, Llama 3, корпоративні чат-боти, knowledge base Q&A. Codeworth від £1,125. GDPR-compliant, on-premise деплой.",
     features: [
       { title: "RAG Системи (Retrieval-Augmented Generation)", description: "LangChain / LlamaIndex + Qdrant: семантичний пошук у корпоративних документах (PDF, web, DB), Q&A без галюцинацій. До 1M+ документів у векторній базі. Кейс: 68% запитів підтримки → AI без оператора." },
       { title: "Fine-Tuning LLM під ваш домен", description: "LoRA / QLoRA fine-tuning GPT-4o, Llama 3, Mistral на ваших даних: медична термінологія, юридичний стиль, фінансовий жаргон. Результат: точність у вузькому домені +40–60% vs zero-shot." },
@@ -663,21 +663,21 @@ export const SERVICES_DATA: Service[] = [
     packages: [
       {
         name: "RAG Starter",
-        price: "від 45 000 грн",
+        price: "від £1,125",
         desc: "RAG-бот для корпоративної бази знань",
         features: ["GPT-4o або Claude 3.5 Sonnet", "До 500 документів у Qdrant", "Web-інтерфейс або iframe", "Prompt engineering + eval", "Аналітика запитів", "1 міс. підтримки"],
         highlight: false,
       },
       {
         name: "RAG Production",
-        price: "від 80 000 грн",
+        price: "від £2,000",
         desc: "Корпоративна RAG-платформа",
         features: ["До 100 000 документів", "Multi-source ingestion (PDF/web/DB/API)", "Multi-channel (web/Telegram/WhatsApp)", "LLM Evals + автоматичне тестування", "MLOps моніторинг якості відповідей", "3 міс. підтримки + monthly review"],
         highlight: true,
       },
       {
         name: "LLM Fine-Tune",
-        price: "від 70 000 грн",
+        price: "від £1,750",
         desc: "Fine-tuned модель під ваш домен",
         features: ["LoRA/QLoRA fine-tuning Llama 3 / Mistral", "Підготовка датасету (1 000–10 000 пар)", "Автоматичне benchmarking vs GPT-4o", "On-premise деплой (vLLM / Ollama)", "GDPR/HIPAA-сумісна архітектура", "Технічна документація + навчання команди"],
         highlight: false,
@@ -687,12 +687,12 @@ export const SERVICES_DATA: Service[] = [
       { q: "Що таке RAG і чим він кращий за звичайного GPT-бота?", a: "RAG (Retrieval-Augmented Generation): бот спочатку шукає у вашій базі знань → потім генерує відповідь на основі знайденого. Звичайний GPT відповідає зі своїх загальних знань і може вигадати факти. RAG-бот відповідає виключно з вашого контенту та цитує джерело. Нуль галюцинацій." },
       { q: "Що краще: RAG чи Fine-Tuning?", a: "RAG — якщо дані часто оновлюються (ціни, документи, FAQ) або обсяг великий (1M+ сторінок). Fine-Tuning — якщо потрібний специфічний стиль відповіді, доменний жаргон або максимальна точність у вузькій задачі. Часто найкращий результат — RAG + Fine-Tuning разом." },
       { q: "Чи є GDPR-compliant LLM без відправки даних до OpenAI?", a: "Так. Self-hosted Llama 3 8B або Mistral 7B на вашому GPU-сервері: all inference on-premise, no data leaving your infrastructure. Ми розгортаємо через vLLM або Ollama з REST API, що є сумісним з OpenAI API. Продуктивність нижча ніж GPT-4o, але достатня для більшості бізнес-задач." },
-      { q: "Скільки коштує RAG-система?", a: "RAG Starter (до 500 документів, web-інтерфейс): від 45 000 грн. RAG Production (100K+ документів, multi-channel, MLOps): від 80 000 грн. Fine-tuning Llama 3 під ваш домен: від 70 000 грн. On-premise LLM deployment: від 25 000 грн (якщо модель вже є)." },
+      { q: "Скільки коштує RAG-система?", a: "RAG Starter (до 500 документів, web-інтерфейс): від £1,125. RAG Production (100K+ документів, multi-channel, MLOps): від £2,000. Fine-tuning Llama 3 під ваш домен: від £1,750. On-premise LLM deployment: від £625 (якщо модель вже є)." },
       { q: "Скільки часу займає побудова RAG-системи?", a: "RAG Starter: 2–3 тижні. RAG Production з multi-channel та MLOps: 5–8 тижнів. LLM Fine-tuning: 3–5 тижнів (залежить від обсягу датасету та GPU-ресурсів)." },
       { q: "Які LLM-моделі ви підтримуєте?", a: "OpenAI: GPT-4o, GPT-4o mini. Anthropic: Claude 3.5 Sonnet, Claude 3 Haiku. Google: Gemini 1.5 Pro. Open-source: Llama 3 (8B/70B), Mistral 7B/8x7B, Phi-3, Qwen 2.5. Вибір залежить від budget, privacy requirements та задачі." },
     ],
     deliveryTime: "2–8 тижнів",
-    priceFrom: "45 000 грн",
+    priceFrom: "£1,125",
     techStack: ["GPT-4o", "Claude 3.5", "Llama 3", "Mistral", "LangChain", "LlamaIndex", "Qdrant", "Pinecone", "vLLM", "Ollama", "FastAPI", "Python", "Docker"],
     crossLink: {
       slug: "nlp",
@@ -741,7 +741,7 @@ export const SERVICES_DATA: Service[] = [
     iconColor: "text-emerald-600",
     gradient: "from-emerald-500 to-teal-600",
     keyword: "предиктивна аналітика для бізнесу Україна",
-    metaDescription: "Предиктивна аналітика для бізнесу. ML-прогноз попиту, відтоку клієнтів, кредитного ризику. Codeworth від 30 000 грн. MAPE < 10%, AUC > 0.90. Реальні кейси: -34% надлишків, -31% відтоку.",
+    metaDescription: "Предиктивна аналітика для бізнесу. ML-прогноз попиту, відтоку клієнтів, кредитного ризику. Codeworth від £750. MAPE < 10%, AUC > 0.90. Реальні кейси: -34% надлишків, -31% відтоку.",
     features: [
       { title: "Demand Forecasting та управління запасами", description: "XGBoost + Prophet по кожному SKU × магазин, Airflow DAG щоночі. Кейс: StockSense — надлишок запасів -34%, списання -41%, MAPE 8.3% vs 27% baseline." },
       { title: "Churn Prediction та утримання клієнтів", description: "XGBoost на 40+ поведінкових фічах, SHAP-пояснення причин відтоку. Кейс: RetainIQ — churn з 8.4% до 5.8% (-31%), MRR retention +£1,050/міс." },
@@ -762,14 +762,14 @@ export const SERVICES_DATA: Service[] = [
     packages: [
       {
         name: "Analytics PoC",
-        price: "від 30 000 грн",
+        price: "від £750",
         desc: "Перша модель прогнозування на ваших даних",
         features: ["XGBoost / LightGBM / Prophet", "Аудит та підготовка даних", "Hyperparameter tuning", "REST API endpoint", "SHAP-пояснення + Jupyter-звіт", "1 міс. підтримки"],
         highlight: false,
       },
       {
         name: "Analytics Production",
-        price: "від 60 000 грн",
+        price: "від £1,500",
         desc: "Production forecasting система з MLOps",
         features: ["Ensemble моделей (XGB + LSTM + Prophet)", "Scenario modelling (base/pessimistic/optimistic)", "React дашборд + confidence intervals", "Inтеграція у ERP / BI-систему", "MLOps: Airflow DAG + drift monitoring", "3 міс. підтримки + quarterly review"],
         highlight: true,
@@ -787,10 +787,10 @@ export const SERVICES_DATA: Service[] = [
       { q: "Яка точність demand forecasting?", a: "MAPE 5–12% на типових retail задачах (120 магазинів, 5 000 SKU, 3 роки history). Seasonal adjustment включено. Для FMCG з волатильним попитом — MAPE 12–18%. Порівняно з ручним прогнозом (MAPE 25–40%) — значне покращення навіть у складних категоріях." },
       { q: "Скільки даних потрібно для предиктивної аналітики?", a: "Demand forecasting: мінімум 12–18 місяців продажів по SKU. Churn prediction: від 3 000 записів клієнтів з 6+ місяців history. Credit risk: від 2 000 виданих кредитів з відомими outcomes. Менше даних → transfer learning та feature engineering для компенсації." },
       { q: "Чи є SHAP-пояснення для кредитного скорингу (FCA UK)?", a: "Так, це обов'язкова вимога для FCA-regulated кредитування. SHAP надає покоефіцієнтне пояснення кожного рішення: які фічі найбільше вплинули на відмову. Appeals workflow з human-in-the-loop review. Consumer Duty 2023 compliance вбудовано в архітектуру." },
-      { q: "Скільки коштує ML demand forecasting для retail?", a: "PoC (базова forecast-модель, 1 категорія товарів, REST API): від 30 000 грн. Production система (всі SKU × магазини, Airflow DAG, BI інтеграція): від 60 000 грн. Типовий ROI для 120-магазинної мережі: -34% надлишків на складі = £100K+/рік." },
+      { q: "Скільки коштує ML demand forecasting для retail?", a: "PoC (базова forecast-модель, 1 категорія товарів, REST API): від £750. Production система (всі SKU × магазини, Airflow DAG, BI інтеграція): від £1,500. Типовий ROI для 120-магазинної мережі: -34% надлишків на складі = £100K+/рік." },
     ],
     deliveryTime: "3–10 тижнів",
-    priceFrom: "30 000 грн",
+    priceFrom: "£750",
     techStack: ["XGBoost", "LightGBM", "Prophet", "LSTM", "scikit-learn", "SHAP", "Optuna", "Airflow", "FastAPI", "MLflow", "Plotly", "Python", "PostgreSQL"],
     crossLink: {
       slug: "machine-learning",
