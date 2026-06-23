@@ -2135,7 +2135,7 @@ export const BLOG_POSTS: BlogPost[] = [
     emoji: "🏥",
     color: "emerald",
     cluster: "F",
-    seoKeyword: "machine learning healthcare UK NHS",
+    seoKeyword: { en: "machine learning healthcare UK NHS", uk: "машинне навчання охорона здоров'я NHS UK" },
     wordCount: 1800,
     content: [
       { type: "h2", text: "Чому ML набирає обертів у британській медицині" },
@@ -2198,7 +2198,7 @@ export const BLOG_POSTS: BlogPost[] = [
     emoji: "⚙️",
     color: "slate",
     cluster: "C",
-    seoKeyword: "MLOps best practices UK",
+    seoKeyword: { en: "MLOps best practices UK", uk: "MLOps найкращі практики UK" },
     wordCount: 1700,
     content: [
       { type: "h2", text: "Чому MLOps критичний для production ML" },
@@ -2255,7 +2255,7 @@ export const BLOG_POSTS: BlogPost[] = [
     emoji: "🎯",
     color: "cyan",
     cluster: "A",
-    seoKeyword: "AI personalization SaaS UK",
+    seoKeyword: { en: "AI personalization SaaS UK", uk: "AI персоналізація SaaS UK" },
     wordCount: 1600,
     content: [
       { type: "h2", text: "Чому персоналізація = retention у SaaS" },
@@ -2312,7 +2312,7 @@ export const BLOG_POSTS: BlogPost[] = [
     emoji: "🏢",
     color: "violet",
     cluster: "B",
-    seoKeyword: "LLM RAG enterprise UK",
+    seoKeyword: { en: "LLM RAG enterprise UK", uk: "LLM RAG enterprise UK корпоративний AI" },
     wordCount: 2000,
     content: [
       { type: "h2", text: "Чому RAG — стандарт для корпоративного AI" },
