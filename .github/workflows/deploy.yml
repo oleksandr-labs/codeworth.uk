@@ -2,7 +2,7 @@ name: Build & Deploy Codeworth to Hetzner
 
 on:
   push:
-    branches: [main]
+    branches: [master, main]
   workflow_dispatch:
 
 concurrency:
