@@ -21,11 +21,11 @@ export async function generateMetadata({
   const { lang } = await params;
   const isUk = lang === "uk";
   const title = isUk
-    ? "Вакансії Codeworth — робота у веб-студії | Frontend, Design, SEO"
-    : "Codeworth Careers — Work at a Web Studio | Frontend, Design, SEO";
+    ? "Вакансії Codeworth — ML-компанія | ML Engineer, Data Scientist, MLOps"
+    : "Codeworth Careers — ML Company | ML Engineer, Data Scientist, MLOps";
   const desc = isUk
-    ? "Відкриті вакансії Codeworth: Frontend Developer (Next.js), UI/UX Designer, SEO Specialist. Remote та офіс у Києві. Цікаві проєкти, гнучкий графік."
-    : "Open positions at Codeworth: Frontend Developer (Next.js), UI/UX Designer, SEO Specialist. Remote and Kyiv office. Interesting projects, flexible hours.";
+    ? "Відкриті вакансії в ML-команді Codeworth: ML Engineer, Data Scientist, MLOps Engineer, Technical ML Lead. 100% Remote, UK/EU. Гнучкий графік, цікаві ML-проєкти."
+    : "Open positions at Codeworth ML team: ML Engineer, Data Scientist, MLOps Engineer, Technical ML Lead. 100% Remote, UK/EU. Flexible hours, exciting ML projects.";
   return {
     title,
     description: desc,
@@ -131,20 +131,20 @@ export default async function CareersPage({
 
   const VALUES = isUk
     ? [
-        { emoji: "🌍", title: "100% Remote", desc: "Працюйте з будь-якої точки України або офісу у Києві" },
-        { emoji: "📚", title: "Навчання", desc: "Бюджет на курси, конференції та книги" },
-        { emoji: "⏰", title: "Гнучкий графік", desc: "Core hours 11:00–17:00, решта — ваш вибір" },
-        { emoji: "🚀", title: "Цікаві проєкти", desc: "30+ ніш: від ресторанів до SaaS-продуктів" },
-        { emoji: "💡", title: "Вплив", desc: "Ваші ідеї впроваджуються, а не складаються в шухляду" },
-        { emoji: "🤝", title: "Команда", desc: "Без мікроменеджменту — тільки довіра і результат" },
+        { emoji: "🌍", title: "100% Remote", desc: "Працюйте з будь-якої точки UK, ЄС або України" },
+        { emoji: "📚", title: "Навчання", desc: "£1,500/рік на курси, конференції та ML-сертифікації" },
+        { emoji: "⏰", title: "Гнучкий графік", desc: "Core hours 10:00–16:00 UTC, решта — ваш вибір" },
+        { emoji: "🤖", title: "ML-проєкти", desc: "FinTech, Healthcare, Retail — реальний продакшн ML" },
+        { emoji: "💡", title: "Вплив", desc: "Ваші архітектурні рішення впроваджуються з першого дня" },
+        { emoji: "🤝", title: "Команда", desc: "Без мікроменеджменту — тільки довіра і ML-результат" },
       ]
     : [
-        { emoji: "🌍", title: "100% Remote", desc: "Work from anywhere in Ukraine or our Kyiv office" },
-        { emoji: "📚", title: "Learning", desc: "Budget for courses, conferences, and books" },
-        { emoji: "⏰", title: "Flexible Hours", desc: "Core hours 11:00–17:00, the rest is your choice" },
-        { emoji: "🚀", title: "Interesting Projects", desc: "30+ niches: from restaurants to SaaS products" },
-        { emoji: "💡", title: "Impact", desc: "Your ideas get implemented, not shelved" },
-        { emoji: "🤝", title: "Team", desc: "No micromanagement — just trust and results" },
+        { emoji: "🌍", title: "100% Remote", desc: "Work from anywhere in the UK, EU or Ukraine" },
+        { emoji: "📚", title: "Learning", desc: "£1,500/year for courses, conferences, and ML certifications" },
+        { emoji: "⏰", title: "Flexible Hours", desc: "Core hours 10:00–16:00 UTC, the rest is your choice" },
+        { emoji: "🤖", title: "ML Projects", desc: "FinTech, Healthcare, Retail — real production ML" },
+        { emoji: "💡", title: "Impact", desc: "Your architecture decisions get implemented from day one" },
+        { emoji: "🤝", title: "Team", desc: "No micromanagement — just trust and ML results" },
       ];
 
   return (
@@ -170,12 +170,12 @@ export default async function CareersPage({
                 {isUk ? `${JOBS.filter((j) => j.isUrgent).length} термінова вакансія` : `${JOBS.filter((j) => j.isUrgent).length} urgent opening`}
               </div>
               <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-                {isUk ? "Приєднуйся до Codeworth" : "Join Codeworth"}
+                {isUk ? "Приєднуйся до ML-команди" : "Join the ML Team"}
               </h1>
               <p className="text-xl text-slate-300 mb-8">
                 {isUk
-                  ? "Будуємо найкращі сайти в Україні. Шукаємо талановитих людей, яким важливо робити класну роботу."
-                  : "Building the best websites in Ukraine. Looking for talented people who care about doing great work."}
+                  ? "Будуємо ML-рішення для UK та EU бізнесу. Шукаємо ML-інженерів та data scientists, яким важливо деплоїти моделі в продакшн."
+                  : "Building ML solutions for UK and EU businesses. Looking for ML engineers and data scientists who care about shipping models to production."}
               </p>
               <div className="flex items-center gap-4 text-slate-400 text-sm">
                 <span className="inline-flex items-center gap-1"><EmojiIcon emoji="👥" className="w-4 h-4" />12 {isUk ? "людей у команді" : "people in team"}</span>

@@ -1,470 +1,322 @@
 "use client";
 
 import { useState } from "react";
-import { Check, X, Minus, Clock } from "lucide-react";
+import { Check, X, Minus, Clock, RefreshCw } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLocale } from "@/components/layout/LocaleProvider";
 
-const DEV_PLANS_UK = [
+const ML_PLANS_UK = [
   {
-    name: "Starter",
-    price: "15 000",
+    name: "Proof of Concept",
+    price: "75 000 ₴",
     period: "разово",
-    description: "Лендінг або сайт-візитка. Ідеально для старту.",
+    delivery: "3–4 тижні",
+    description: "Швидко перевіримо ідею. Прототип моделі з документованими результатами.",
     highlight: false,
     features: [
-      { text: "До 5 сторінок", included: true },
-      { text: "Адаптивний дизайн (Mobile First)", included: true },
-      { text: "Базова SEO-оптимізація", included: true },
-      { text: "Форма зворотнього зв'язку", included: true },
-      { text: "Підключення домену і хостинг", included: true },
-      { text: "CMS для редагування контенту", included: false },
-      { text: "Інтеграція CRM / ERP", included: false },
-      { text: "Кастомна анімація (Framer Motion)", included: false },
+      { text: "Аудит даних та оцінка якості", included: true },
+      { text: "Розвідувальний аналіз даних (EDA)", included: true },
+      { text: "1 навчена та оцінена ML-модель", included: true },
+      { text: "Звіт метрик (precision/recall/F1)", included: true },
+      { text: "Базовий FastAPI serving endpoint", included: true },
+      { text: "MLOps дашборд моніторингу", included: false },
+      { text: "Кастомні інтеграції (CRM/ERP тощо)", included: false },
+      { text: "Гарантійна підтримка 3 місяці", included: false },
     ],
-    cta: "Замовити Starter",
-    delivery: "5–10 днів",
+    cta: "Розпочати PoC",
   },
   {
-    name: "Business",
-    price: "40 000",
-    period: "разово",
-    description: "Корпоративний сайт з CMS та інтеграціями.",
+    name: "Production ML",
+    price: "від 180 000 ₴",
+    period: "проєкт",
+    delivery: "8–12 тижнів",
+    description: "Продакшн-модель з API, моніторингом та документацією.",
     highlight: true,
     badge: "Найпопулярніший",
     features: [
-      { text: "До 15 сторінок", included: true },
-      { text: "Адаптивний дизайн (Mobile First)", included: true },
-      { text: "Повна SEO-оптимізація + Schema.org", included: true },
-      { text: "Форма + Email-нотифікації", included: true },
-      { text: "Підключення домену і хостинг", included: true },
-      { text: "CMS для редагування контенту", included: true },
-      { text: "Інтеграція CRM / ERP", included: "partial" },
-      { text: "Кастомна анімація (Framer Motion)", included: true },
+      { text: "Аудит даних та оцінка якості", included: true },
+      { text: "EDA + Feature engineering", included: true },
+      { text: "1 продакшн ML-модель", included: true },
+      { text: "Звіт метрик (precision/recall/F1)", included: true },
+      { text: "FastAPI REST serving (Docker/K8s)", included: true },
+      { text: "MLOps моніторинг + виявлення drift", included: true },
+      { text: "Кастомні інтеграції (CRM/ERP тощо)", included: "partial" },
+      { text: "Гарантійна підтримка 3 місяці", included: true },
     ],
-    cta: "Замовити Business",
-    delivery: "2–4 тижні",
+    cta: "Запустити в продакшн",
   },
   {
-    name: "Enterprise",
+    name: "Enterprise / MLOps",
     price: "Індивідуально",
     period: "",
-    description: "Портал, маркетплейс або складне кастомне рішення.",
+    delivery: "12–20 тижнів",
+    description: "Multi-model системи, real-time inference, повна MLOps-інфраструктура.",
     highlight: false,
     features: [
-      { text: "Необмежена кількість сторінок", included: true },
-      { text: "Адаптивний дизайн (Mobile First)", included: true },
-      { text: "Повна SEO-оптимізація + Schema.org", included: true },
-      { text: "Кабінет користувача / адмін-панель", included: true },
-      { text: "Підключення домену і хостинг", included: true },
-      { text: "CMS для редагування контенту", included: true },
-      { text: "Інтеграція CRM / ERP / API", included: true },
-      { text: "Кастомна анімація (Framer Motion)", included: true },
+      { text: "Аудит даних та оцінка якості", included: true },
+      { text: "EDA + Feature engineering", included: true },
+      { text: "Кілька ML-моделей", included: true },
+      { text: "Звіт метрик (precision/recall/F1)", included: true },
+      { text: "FastAPI REST serving (Docker/K8s)", included: true },
+      { text: "MLOps моніторинг + виявлення drift", included: true },
+      { text: "Кастомні інтеграції (CRM/ERP тощо)", included: true },
+      { text: "Розширена гарантійна підтримка 3 місяці", included: true },
     ],
-    cta: "Обговорити проєкт",
-    delivery: "4–12 тижнів",
+    cta: "Обговорити Enterprise",
   },
 ];
 
-const DEV_PLANS_EN = [
+const ML_PLANS_EN = [
   {
-    name: "Starter",
-    price: "15 000",
-    period: "one-time",
-    description: "Landing page or business card site. Perfect for getting started.",
+    name: "Proof of Concept",
+    price: "£1,800",
+    period: "one-off",
+    delivery: "3–4 weeks",
+    description: "Validate your ML idea fast. Working prototype with documented results.",
     highlight: false,
     features: [
-      { text: "Up to 5 pages", included: true },
-      { text: "Responsive design (Mobile First)", included: true },
-      { text: "Basic SEO optimisation", included: true },
-      { text: "Contact form", included: true },
-      { text: "Domain & hosting setup", included: true },
-      { text: "CMS for content editing", included: false },
-      { text: "CRM / ERP integration", included: false },
-      { text: "Custom animation (Framer Motion)", included: false },
+      { text: "Data audit & quality assessment", included: true },
+      { text: "Exploratory data analysis (EDA)", included: true },
+      { text: "1 trained & evaluated ML model", included: true },
+      { text: "Performance report (precision/recall/F1)", included: true },
+      { text: "Basic FastAPI serving endpoint", included: true },
+      { text: "MLOps monitoring dashboard", included: false },
+      { text: "Custom integrations (CRM/ERP/etc.)", included: false },
+      { text: "3-month warranty support", included: false },
     ],
-    cta: "Order Starter",
-    delivery: "5–10 days",
+    cta: "Start a PoC",
   },
   {
-    name: "Business",
-    price: "40 000",
-    period: "one-time",
-    description: "Corporate site with CMS and integrations.",
+    name: "Production ML",
+    price: "£4,500",
+    period: "project",
+    delivery: "8–12 weeks",
+    description: "Full production model with API, monitoring, and handover documentation.",
     highlight: true,
-    badge: "Most popular",
+    badge: "Most Popular",
     features: [
-      { text: "Up to 15 pages", included: true },
-      { text: "Responsive design (Mobile First)", included: true },
-      { text: "Full SEO optimisation + Schema.org", included: true },
-      { text: "Form + email notifications", included: true },
-      { text: "Domain & hosting setup", included: true },
-      { text: "CMS for content editing", included: true },
-      { text: "CRM / ERP integration", included: "partial" },
-      { text: "Custom animation (Framer Motion)", included: true },
+      { text: "Data audit & quality assessment", included: true },
+      { text: "EDA + Feature engineering", included: true },
+      { text: "1 production-grade ML model", included: true },
+      { text: "Performance report (precision/recall/F1)", included: true },
+      { text: "FastAPI REST serving (Docker/K8s)", included: true },
+      { text: "MLOps monitoring + drift detection", included: true },
+      { text: "Custom integrations (CRM/ERP/etc.)", included: "partial" },
+      { text: "3-month warranty support", included: true },
     ],
-    cta: "Order Business",
-    delivery: "2–4 weeks",
+    cta: "Start Production",
   },
   {
-    name: "Enterprise",
+    name: "Enterprise / MLOps",
     price: "Custom",
     period: "",
-    description: "Portal, marketplace or complex custom solution.",
+    delivery: "12–20 weeks",
+    description: "Multi-model systems, real-time inference, full MLOps infrastructure, dedicated team.",
     highlight: false,
     features: [
-      { text: "Unlimited pages", included: true },
-      { text: "Responsive design (Mobile First)", included: true },
-      { text: "Full SEO optimisation + Schema.org", included: true },
-      { text: "User cabinet / admin panel", included: true },
-      { text: "Domain & hosting setup", included: true },
-      { text: "CMS for content editing", included: true },
-      { text: "CRM / ERP / API integration", included: true },
-      { text: "Custom animation (Framer Motion)", included: true },
+      { text: "Data audit & quality assessment", included: true },
+      { text: "EDA + Feature engineering", included: true },
+      { text: "Multiple ML models", included: true },
+      { text: "Performance report (precision/recall/F1)", included: true },
+      { text: "FastAPI REST serving (Docker/K8s)", included: true },
+      { text: "MLOps monitoring + drift detection", included: true },
+      { text: "Custom integrations (CRM/ERP/etc.)", included: true },
+      { text: "3-month warranty support (extended)", included: true },
     ],
-    cta: "Discuss project",
-    delivery: "4–12 weeks",
-  },
-];
-
-const MARKETPLACE_PLANS_UK = [
-  {
-    name: "Basic",
-    price: "4 900",
-    description: "Стандартний шаблон без кастомізації.",
-    features: ["Готовий шаблон", "Встановлення на хостинг", "Навчання роботи з CMS"],
-  },
-  {
-    name: "Standard",
-    price: "9 900",
-    description: "Шаблон + кастомізація контенту.",
-    highlight: true,
-    badge: "Популярний",
-    features: ["Готовий шаблон", "Зміна кольорів та логотипу", "Заповнення вашим контентом", "SEO-базові налаштування"],
-  },
-  {
-    name: "Premium",
-    price: "19 900",
-    description: "Повна кастомізація під ваш бренд.",
-    features: ["Повна кастомізація дизайну", "SEO-налаштування + Schema.org", "Підключення домену", "Google Analytics + Maps", "30 днів підтримки"],
-  },
-];
-
-const MARKETPLACE_PLANS_EN = [
-  {
-    name: "Basic",
-    price: "4 900",
-    description: "Standard template without customisation.",
-    features: ["Ready-made template", "Hosting installation", "CMS training"],
-  },
-  {
-    name: "Standard",
-    price: "9 900",
-    description: "Template + content customisation.",
-    highlight: true,
-    badge: "Popular",
-    features: ["Ready-made template", "Colour & logo changes", "Filled with your content", "Basic SEO settings"],
-  },
-  {
-    name: "Premium",
-    price: "19 900",
-    description: "Full customisation to your brand.",
-    features: ["Full design customisation", "SEO settings + Schema.org", "Domain connection", "Google Analytics + Maps", "30 days support"],
-  },
-];
-
-const SUPPORT_PLANS_UK = [
-  {
-    name: "Lite",
-    price: "3 000",
-    period: "/місяць",
-    description: "Базова підтримка для невеликих сайтів.",
-    highlight: false,
-    features: [
-      "До 5 год. технічної підтримки",
-      "Оновлення контенту (тексти, фото)",
-      "Моніторинг uptime",
-      "Бекапи щотижня",
-    ],
-  },
-  {
-    name: "Pro",
-    price: "7 000",
-    period: "/місяць",
-    description: "Підтримка + SEO-моніторинг.",
-    highlight: true,
-    badge: "Рекомендовано",
-    features: [
-      "До 15 год. технічної підтримки",
-      "SEO-моніторинг та звіти",
-      "Google Analytics звіти",
-      "Бекапи щодня",
-      "Пріоритетні відповіді",
-    ],
-  },
-  {
-    name: "Full",
-    price: "15 000",
-    period: "/місяць",
-    description: "Повний аутсорс цифрового розвитку.",
-    highlight: false,
-    features: [
-      "Необмежений час підтримки",
-      "Нові функції щомісяця",
-      "Dedicated менеджер",
-      "Бекапи в реальному часі",
-      "SLA 99.9% uptime",
-    ],
-  },
-];
-
-const SUPPORT_PLANS_EN = [
-  {
-    name: "Lite",
-    price: "3 000",
-    period: "/mo",
-    description: "Basic support for small sites.",
-    highlight: false,
-    features: [
-      "Up to 5 hrs technical support",
-      "Content updates (text, photos)",
-      "Uptime monitoring",
-      "Weekly backups",
-    ],
-  },
-  {
-    name: "Pro",
-    price: "7 000",
-    period: "/mo",
-    description: "Support + SEO monitoring.",
-    highlight: true,
-    badge: "Recommended",
-    features: [
-      "Up to 15 hrs technical support",
-      "SEO monitoring & reports",
-      "Google Analytics reports",
-      "Daily backups",
-      "Priority responses",
-    ],
-  },
-  {
-    name: "Full",
-    price: "15 000",
-    period: "/mo",
-    description: "Full digital development outsource.",
-    highlight: false,
-    features: [
-      "Unlimited support hours",
-      "New features every month",
-      "Dedicated manager",
-      "Real-time backups",
-      "SLA 99.9% uptime",
-    ],
+    cta: "Discuss Enterprise",
   },
 ];
 
 function FeatureIcon({ included }: { included: boolean | "partial" }) {
   if (included === true) return <Check className="w-4 h-4 text-emerald-500 shrink-0" />;
   if (included === "partial") return <Minus className="w-4 h-4 text-amber-400 shrink-0" />;
-  return <X className="w-4 h-4 text-neutral-300 shrink-0" />;
+  return <X className="w-4 h-4 text-neutral-300 dark:text-neutral-600 shrink-0" />;
 }
-
-type Tab = "one-time" | "subscription";
 
 export function PricingContent() {
   const lang = useLocale();
   const isUk = lang === "uk";
   const lp = (path: string) => `/${lang}${path}`;
-  const DEV_PLANS = isUk ? DEV_PLANS_UK : DEV_PLANS_EN;
-  const MARKETPLACE_PLANS = isUk ? MARKETPLACE_PLANS_UK : MARKETPLACE_PLANS_EN;
-  const SUPPORT_PLANS = isUk ? SUPPORT_PLANS_UK : SUPPORT_PLANS_EN;
-  const [tab, setTab] = useState<Tab>("one-time");
+  const ML_PLANS = isUk ? ML_PLANS_UK : ML_PLANS_EN;
 
   return (
     <div>
-      {/* Toggle */}
-      <div className="flex justify-center py-12">
-        <div className="inline-flex items-center bg-neutral-100 dark:bg-neutral-800 p-1 rounded-2xl gap-1">
-          <button
-            onClick={() => setTab("one-time")}
-            className={cn(
-              "px-6 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200",
-              tab === "one-time"
-                ? "bg-white text-indigo-700 shadow-sm"
-                : "text-neutral-500 dark:text-neutral-400 hover:text-neutral-700"
-            )}
-          >
-            {isUk ? "Разові послуги" : "One-time services"}
-          </button>
-          <button
-            onClick={() => setTab("subscription")}
-            className={cn(
-              "px-6 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200",
-              tab === "subscription"
-                ? "bg-white text-indigo-700 shadow-sm"
-                : "text-neutral-500 dark:text-neutral-400 hover:text-neutral-700"
-            )}
-          >
-            {isUk ? "Щомісячна підписка" : "Monthly subscription"}
-          </button>
+      {/* ML Project Plans */}
+      <section className="py-10 bg-white dark:bg-neutral-950">
+        <div className="max-w-2xl mx-auto text-center mb-12 px-4">
+          <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
+            {isUk ? "ML-проєкти" : "ML Projects"}
+          </p>
+          <h2 className="text-4xl font-heading font-extrabold text-neutral-900 dark:text-white">
+            {isUk ? "Тарифи на ML-розробку" : "ML Development Plans"}
+          </h2>
+          <p className="mt-3 text-neutral-500 dark:text-neutral-400">
+            {isUk
+              ? "Від швидкого PoC до enterprise MLOps-інфраструктури."
+              : "From rapid PoC to enterprise-grade MLOps infrastructure."}
+          </p>
         </div>
-      </div>
 
-      {tab === "one-time" ? (
-        <>
-          {/* Website Dev Plans */}
-          <section className="py-10 bg-white">
-            <div className="max-w-2xl mx-auto text-center mb-12 px-4">
-              <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">{isUk ? "Розробка сайтів" : "Web development"}</p>
-              <h2 className="text-4xl font-heading font-extrabold text-neutral-900">{isUk ? "Тарифи розробки" : "Development plans"}</h2>
-            </div>
-            <div className="flex md:grid md:grid-cols-3 gap-6 max-w-5xl mx-auto overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 md:pb-0 px-4 md:overflow-visible">
-              {DEV_PLANS.map((plan) => (
-                <div
-                  key={plan.name}
-                  className={cn(
-                    "relative p-8 rounded-2xl border transition-all duration-200 snap-start shrink-0 w-[85vw] md:w-auto",
-                    plan.highlight
-                      ? "border-indigo-300 bg-linear-to-b from-indigo-50 to-white shadow-xl shadow-indigo-500/15 scale-[1.02]"
-                      : "border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:shadow-md"
-                  )}
-                >
-                  {"badge" in plan && plan.badge && (
-                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-indigo-600 text-white text-xs font-bold whitespace-nowrap">
-                      {plan.badge}
-                    </div>
-                  )}
-                  <h3 className="font-heading font-bold text-xl text-neutral-900 dark:text-white mb-1">{plan.name}</h3>
-                  <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-4">{plan.description}</p>
-                  <div className="mb-6">
-                    <span className="text-4xl font-sans font-bold tabular-nums tracking-tight text-neutral-900">
-                      {(plan.price === "Індивідуально" || plan.price === "Custom") ? "" : "₴"}
-                      {plan.price}
-                    </span>
-                    {plan.period && <span className="text-neutral-400 text-sm ml-1">{plan.period}</span>}
-                  </div>
-                  <div className="text-xs text-neutral-400 mb-6 flex items-center gap-1.5">
-                    <Clock className="w-3.5 h-3.5" /> {isUk ? "Термін:" : "Timeline:"} {plan.delivery}
-                  </div>
-                  <ul className="space-y-3 mb-8">
-                    {plan.features.map((f) => (
-                      <li key={f.text} className="flex items-center gap-2.5 text-sm text-neutral-700">
-                        <FeatureIcon included={f.included as boolean | "partial"} />
-                        {f.text}
-                      </li>
-                    ))}
-                  </ul>
-                  <a
-                    href={lp("/contact")}
+        <div className="flex md:grid md:grid-cols-3 gap-6 max-w-5xl mx-auto overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 md:pb-0 px-4 md:overflow-visible">
+          {ML_PLANS.map((plan) => (
+            <div
+              key={plan.name}
+              className={cn(
+                "relative p-8 rounded-2xl border transition-all duration-200 snap-start shrink-0 w-[85vw] md:w-auto flex flex-col",
+                plan.highlight
+                  ? "border-indigo-300 dark:border-indigo-500 bg-linear-to-b from-indigo-50 to-white dark:from-indigo-950 dark:to-neutral-900 shadow-xl shadow-indigo-500/15 scale-[1.02]"
+                  : "border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:shadow-md"
+              )}
+            >
+              {"badge" in plan && plan.badge && (
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-indigo-600 text-white text-xs font-bold whitespace-nowrap">
+                  {plan.badge}
+                </div>
+              )}
+
+              <h3 className="font-heading font-bold text-xl text-neutral-900 dark:text-white mb-1">
+                {plan.name}
+              </h3>
+              <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-4">
+                {plan.description}
+              </p>
+
+              <div className="mb-2">
+                <span className="text-4xl font-sans font-bold tabular-nums tracking-tight text-neutral-900 dark:text-white">
+                  {plan.price}
+                </span>
+                {plan.period && (
+                  <span className="text-neutral-400 dark:text-neutral-500 text-sm ml-1">
+                    {plan.period}
+                  </span>
+                )}
+              </div>
+
+              <div className="text-xs text-neutral-400 dark:text-neutral-500 mb-6 flex items-center gap-1.5">
+                <Clock className="w-3.5 h-3.5" />
+                {isUk ? "Термін:" : "Timeline:"} {plan.delivery}
+              </div>
+
+              <ul className="space-y-3 mb-8 flex-1">
+                {plan.features.map((f) => (
+                  <li
+                    key={f.text}
                     className={cn(
-                      "block text-center px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200 hover:-translate-y-0.5",
-                      plan.highlight
-                        ? "bg-linear-to-r from-indigo-600 to-indigo-700 text-white shadow-lg shadow-indigo-500/30"
-                        : "border-2 border-indigo-200 text-indigo-700 hover:bg-indigo-50"
+                      "flex items-center gap-2.5 text-sm",
+                      f.included
+                        ? "text-neutral-700 dark:text-neutral-200"
+                        : "text-neutral-400 dark:text-neutral-500"
                     )}
                   >
-                    {plan.cta}
-                  </a>
-                </div>
-              ))}
-            </div>
-          </section>
+                    <FeatureIcon included={f.included as boolean | "partial"} />
+                    {f.text}
+                  </li>
+                ))}
+              </ul>
 
-          {/* Marketplace Plans */}
-          <section className="py-16 bg-neutral-50 dark:bg-neutral-900 ">
-            <div className="max-w-2xl mx-auto text-center mb-12 px-4">
-              <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">{isUk ? "Маркетплейс" : "Marketplace"}</p>
-              <h2 className="text-4xl font-heading font-extrabold text-neutral-900">{isUk ? "Готові нішеві рішення" : "Ready-made niche solutions"}</h2>
-              <p className="mt-3 text-neutral-500">{isUk ? "Купуйте готовий сайт для вашої ніші та запускайтесь швидко." : "Buy a ready-made site for your niche and launch fast."}</p>
-            </div>
-            <div className="flex md:grid md:grid-cols-3 gap-6 max-w-4xl mx-auto overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 md:pb-0 px-4 md:overflow-visible">
-              {MARKETPLACE_PLANS.map((plan) => (
-                <div
-                  key={plan.name}
-                  className={cn(
-                    "p-7 rounded-2xl border snap-start shrink-0 w-[85vw] md:w-auto",
-                    "highlight" in plan && plan.highlight
-                      ? "border-indigo-300 bg-white dark:bg-neutral-800 shadow-lg shadow-indigo-500/10"
-                      : "border-neutral-200 dark:border-neutral-700 bg-white"
-                  )}
-                >
-                  {"badge" in plan && plan.badge && (
-                    <span className="inline-block px-3 py-0.5 rounded-full bg-indigo-100 text-indigo-700 text-xs font-bold mb-3">
-                      {plan.badge}
-                    </span>
-                  )}
-                  <h3 className="font-heading font-bold text-lg text-neutral-900 dark:text-white mb-1">{plan.name}</h3>
-                  <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-4">{plan.description}</p>
-                  <div className="text-3xl font-sans font-bold tabular-nums tracking-tight text-neutral-900 dark:text-white mb-6">₴{plan.price}</div>
-                  <ul className="space-y-2 mb-6">
-                    {plan.features.map((f) => (
-                      <li key={f} className="flex items-center gap-2 text-sm text-neutral-600">
-                        <Check className="w-4 h-4 text-emerald-500 shrink-0" />
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                  <a href={lp("/marketplace")} className="block text-center px-5 py-2.5 rounded-xl border-2 border-indigo-200 text-indigo-700 text-sm font-semibold hover:bg-indigo-50 transition-colors">
-                    {isUk ? "Обрати в маркетплейсі" : "Browse marketplace"}
-                  </a>
-                </div>
-              ))}
-            </div>
-          </section>
-        </>
-      ) : (
-        /* Support Plans */
-        <section className="py-10 bg-white">
-          <div className="max-w-2xl mx-auto text-center mb-12 px-4">
-            <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">{isUk ? "Підписка" : "Subscription"}</p>
-            <h2 className="text-4xl font-heading font-extrabold text-neutral-900">{isUk ? "Технічна підтримка" : "Technical support"}</h2>
-            <p className="mt-3 text-neutral-500">{isUk ? "Щомісячне обслуговування та розвиток вашого сайту." : "Monthly maintenance and development of your website."}</p>
-          </div>
-          <div className="flex md:grid md:grid-cols-3 gap-6 max-w-4xl mx-auto overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 md:pb-0 px-4 md:overflow-visible">
-            {SUPPORT_PLANS.map((plan) => (
-              <div
-                key={plan.name}
+              <a
+                href={lp("/contact")}
                 className={cn(
-                  "relative p-7 rounded-2xl border transition-all duration-200 snap-start shrink-0 w-[85vw] md:w-auto",
+                  "block text-center px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200 hover:-translate-y-0.5",
                   plan.highlight
-                    ? "border-indigo-300 bg-indigo-50 shadow-lg shadow-indigo-500/10 scale-[1.02]"
-                    : "border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:shadow-md"
+                    ? "bg-linear-to-r from-indigo-600 to-indigo-700 text-white shadow-lg shadow-indigo-500/30 hover:from-indigo-700 hover:to-indigo-800"
+                    : "border-2 border-indigo-200 dark:border-indigo-700 text-indigo-700 dark:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-950"
                 )}
               >
-                {"badge" in plan && plan.badge && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-indigo-600 text-white text-xs font-bold whitespace-nowrap">
-                    {plan.badge}
-                  </div>
-                )}
-                <h3 className="font-heading font-bold text-lg text-neutral-900 dark:text-white mb-1">{plan.name}</h3>
-                <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-4">{plan.description}</p>
-                <div className="mb-6">
-                  <span className="text-3xl font-sans font-bold tabular-nums tracking-tight text-neutral-900">₴{plan.price}</span>
-                  <span className="text-neutral-400 text-sm">{plan.period}</span>
+                {plan.cta}
+              </a>
+            </div>
+          ))}
+        </div>
+
+        {/* Feature legend */}
+        <div className="flex items-center justify-center gap-6 mt-8 text-xs text-neutral-500 dark:text-neutral-400">
+          <span className="flex items-center gap-1.5">
+            <Check className="w-3.5 h-3.5 text-emerald-500" />
+            {isUk ? "Включено" : "Included"}
+          </span>
+          <span className="flex items-center gap-1.5">
+            <Minus className="w-3.5 h-3.5 text-amber-400" />
+            {isUk ? "Частково" : "Partial"}
+          </span>
+          <span className="flex items-center gap-1.5">
+            <X className="w-3.5 h-3.5 text-neutral-300 dark:text-neutral-600" />
+            {isUk ? "Не включено" : "Not included"}
+          </span>
+        </div>
+      </section>
+
+      {/* MLOps Retainer Section */}
+      <section className="py-16 bg-neutral-50 dark:bg-neutral-900">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="max-w-2xl mx-auto text-center mb-10">
+            <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
+              {isUk ? "Щомісячна підписка" : "Monthly Retainer"}
+            </p>
+            <h2 className="text-3xl font-heading font-extrabold text-neutral-900 dark:text-white">
+              {isUk ? "MLOps Ретейнер" : "MLOps Retainer"}
+            </h2>
+            <p className="mt-3 text-neutral-500 dark:text-neutral-400">
+              {isUk
+                ? "Тримайте моделі в актуальному стані. Ми стежимо за drift, перенавчаємо та звітуємо щомісяця."
+                : "Keep your models healthy. We monitor drift, trigger retraining, and report monthly."}
+            </p>
+          </div>
+
+          <div className="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl p-8 md:p-10 shadow-sm">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+              {/* Price */}
+              <div className="shrink-0">
+                <div className="text-4xl font-sans font-bold tabular-nums tracking-tight text-neutral-900 dark:text-white">
+                  {isUk ? "від 32 000 ₴" : "from £800"}
                 </div>
-                <ul className="space-y-2 mb-8">
-                  {plan.features.map((f) => (
-                    <li key={f} className="flex items-center gap-2 text-sm text-neutral-600">
-                      <Check className="w-4 h-4 text-emerald-500 shrink-0" /> {f}
-                    </li>
-                  ))}
-                </ul>
+                <div className="text-neutral-400 dark:text-neutral-500 text-sm mt-1">
+                  {isUk ? "/місяць" : "/month"}
+                </div>
+              </div>
+
+              {/* Features */}
+              <ul className="flex-1 grid sm:grid-cols-2 gap-3">
+                {(isUk
+                  ? [
+                      "Моніторинг drift та аномалій",
+                      "Автоматичні тригери перенавчання",
+                      "Версіонування моделей",
+                      "Щомісячний звіт продуктивності",
+                      "До 4 год. додаткової розробки",
+                    ]
+                  : [
+                      "Drift monitoring & anomaly alerts",
+                      "Automatic retraining triggers",
+                      "Model versioning",
+                      "Monthly performance report",
+                      "Up to 4h additional dev time",
+                    ]
+                ).map((feature) => (
+                  <li
+                    key={feature}
+                    className="flex items-center gap-2.5 text-sm text-neutral-700 dark:text-neutral-200"
+                  >
+                    <Check className="w-4 h-4 text-emerald-500 shrink-0" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
+              {/* CTA */}
+              <div className="shrink-0">
                 <a
-                  href={lp("/contact")}
-                  className={cn(
-                    "block text-center px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200",
-                    plan.highlight
-                      ? "bg-indigo-600 text-white hover:bg-indigo-700"
-                      : "border-2 border-indigo-200 text-indigo-700 hover:bg-indigo-50"
-                  )}
+                  href={lp("/contact?ref=mlops-retainer")}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-linear-to-r from-indigo-600 to-indigo-700 text-white font-semibold text-sm shadow-lg shadow-indigo-500/30 transition-all duration-200 hover:-translate-y-0.5 hover:from-indigo-700 hover:to-indigo-800"
                 >
-                  {isUk ? `Підключити ${plan.name}` : `Get ${plan.name}`}
+                  <RefreshCw className="w-4 h-4" />
+                  {isUk ? "Підключити ретейнер" : "Get Retainer"}
                 </a>
               </div>
-            ))}
+            </div>
           </div>
-        </section>
-      )}
+        </div>
+      </section>
     </div>
   );
 }

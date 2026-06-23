@@ -127,6 +127,17 @@ const nextConfig: NextConfig = {
         destination: "/:lang/services/artificial-intelligence",
         permanent: true,
       },
+      // Redirect old web-dev-specific pages to ML services
+      {
+        source: "/:lang/erp-development",
+        destination: "/:lang/services/machine-learning",
+        permanent: true,
+      },
+      {
+        source: "/erp-development",
+        destination: "/services/machine-learning",
+        permanent: true,
+      },
       // www → non-www
       {
         source: "/:path*",

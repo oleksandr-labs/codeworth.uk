@@ -4,23 +4,24 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { FAQContent } from "@/components/faq/FAQContent";
+import { CTASection } from "@/components/home/CTASection";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
   const isUk = lang === "uk";
   return {
     title: isUk
-      ? "FAQ — Часті питання про розробку сайтів | Codeworth"
-      : "FAQ — Frequently Asked Questions | Codeworth",
+      ? "FAQ — Часті питання про ML/AI | Codeworth"
+      : "FAQ — Frequently Asked Questions about ML/AI | Codeworth",
     description: isUk
-      ? "Відповіді на популярні питання про розробку сайтів, ціни, терміни, оплату, маркетплейс та технічну підтримку. Codeworth веб-студія."
-      : "Answers to common questions about web development, pricing, timelines, payment, marketplace, and technical support. Codeworth web studio.",
-    alternates: buildAlternates(lang, 'faq'),
+      ? "Відповіді на популярні питання про ML-розробку, вартість проєктів, дані, конфіденційність, MLOps та підтримку моделей. Codeworth ML-консалтинг."
+      : "Answers to common questions about ML development, project costs, data, privacy, MLOps and model support. Codeworth ML consultancy.",
+    alternates: buildAlternates(lang, "faq"),
     openGraph: {
-      title: isUk ? "FAQ — Codeworth" : "FAQ — Codeworth",
+      title: isUk ? "FAQ — Codeworth ML" : "FAQ — Codeworth ML",
       description: isUk
-        ? "Відповіді на популярні питання про розробку сайтів, ціни, терміни та технічну підтримку."
-        : "Answers to common questions about web development, pricing, timelines, and technical support.",
+        ? "Відповіді на питання про ML-розробку, ціни, дані та підтримку моделей."
+        : "Answers about ML development, pricing, data, and model support.",
       type: "website",
       url: `https://codeworth.uk/${lang}/faq`,
       images: [{ url: "/og/faq.png", width: 1200, height: 630, alt: "FAQ — Codeworth" }],
@@ -28,120 +29,242 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     twitter: {
       card: "summary_large_image",
       title: "FAQ — Codeworth",
-      description: isUk ? "Відповіді на питання про веб-розробку від Codeworth." : "Answers about web development from Codeworth.",
+      description: isUk ? "Відповіді на питання про ML/AI від Codeworth." : "Answers about ML/AI from Codeworth.",
       images: ["/og/faq.png"],
     },
   };
 }
+
+const FAQ_SECTIONS_EN = [
+  {
+    id: "general",
+    title: "General",
+    items: [
+      {
+        q: "What does Codeworth do?",
+        a: "Codeworth is an ML/AI consultancy. We build custom machine learning models, fraud detection systems, NLP pipelines, RAG chatbots, and computer vision solutions — then deploy them to production with full MLOps infrastructure.",
+      },
+      {
+        q: "Which industries do you work with?",
+        a: "Our main sectors are FinTech (fraud detection, credit scoring), Healthcare (clinical NLP, triage automation), Retail (demand forecasting, recommendation engines), Manufacturing (quality control CV), and SaaS (churn prediction, LLM features).",
+      },
+      {
+        q: "Where are you based? Do you work remotely?",
+        a: "Our team is distributed across Ukraine and the EU. We serve clients in the UK, EU, and globally. All collaboration happens remotely via Zoom, Slack, Notion, and GitHub.",
+      },
+      {
+        q: "Can I see examples of your ML work?",
+        a: "Yes — our portfolio has 40+ ML case studies. Each case shows the business problem, data used, ML approach, metrics achieved (F1, precision, recall, ROI), and the MLOps setup.",
+      },
+    ],
+  },
+  {
+    id: "ml-process",
+    title: "ML Process",
+    items: [
+      {
+        q: "What does a typical ML project look like?",
+        a: "Every project follows five phases: (1) Discovery — understand the business problem and data availability; (2) Data Audit — assess quality, labelling needs, and gaps; (3) Model Training — iterative experiments with MLflow tracking; (4) Production Deploy — FastAPI serving, Docker/K8s packaging, CI/CD; (5) MLOps — drift monitoring, automatic retraining, documentation handover.",
+      },
+      {
+        q: "How long does an ML project take?",
+        a: "A proof of concept runs 3–6 weeks. A full production deployment with monitoring takes 8–16 weeks. The primary variable is data readiness — projects where you already have labelled data move significantly faster.",
+      },
+      {
+        q: "What metrics do you guarantee?",
+        a: "We specify minimum acceptance metrics in the project spec before starting (e.g. precision ≥ 0.90, recall ≥ 0.85, AUC ≥ 0.92). The model is considered production-ready only when it meets those thresholds. If it doesn't — we keep training at no extra charge.",
+      },
+      {
+        q: "Do you do the data labelling too?",
+        a: "Yes — we can manage the labelling process using Label Studio, Prodigy, or third-party annotators. Labelling costs are estimated separately based on dataset size and annotation complexity.",
+      },
+      {
+        q: "What happens after the model is deployed?",
+        a: "We hand over all code, model artefacts, API specs, MLflow configuration, and documentation. We also offer ongoing MLOps retainer packages for drift monitoring, automatic retraining, and version management.",
+      },
+    ],
+  },
+  {
+    id: "data-privacy",
+    title: "Data & Privacy",
+    items: [
+      {
+        q: "Do you need access to our production data?",
+        a: "Not necessarily. We can work with anonymised or synthetic data for development and use real data only for final validation. For sensitive sectors (healthcare, finance) we support on-prem compute so data never leaves your infrastructure.",
+      },
+      {
+        q: "How do you handle GDPR compliance?",
+        a: "We sign a Data Processing Agreement (DPA) before any data exchange. Training data is stored only as long as needed. On-prem deployments are available for maximum data sovereignty. We document all data flows for your compliance records.",
+      },
+      {
+        q: "Can the model run on our own servers (on-prem)?",
+        a: "Yes. We support on-prem, private cloud (AWS/GCP/Azure VPC), and hybrid deployments. For regulated sectors this is often the preferred option — your data and model weights never leave your environment.",
+      },
+      {
+        q: "Who owns the model and code after delivery?",
+        a: "You do. After full payment all code, model artefacts, training notebooks, and MLflow experiment logs transfer to you. We retain the right to mention the project type in our portfolio (without client data).",
+      },
+    ],
+  },
+  {
+    id: "pricing",
+    title: "Pricing",
+    items: [
+      {
+        q: "How much does ML development cost?",
+        a: "A proof of concept starts at £1,800 (3–4 weeks). A full production model with API and MLOps monitoring starts at £4,500 (8–12 weeks). Enterprise multi-model systems are priced individually after a discovery call.",
+      },
+      {
+        q: "What payment terms do you offer?",
+        a: "50% upfront after signing the contract, 50% on final delivery. For larger engagements we can split into three milestones: 30% / 40% / 30% aligned to discovery, prototype approval, and production deploy.",
+      },
+      {
+        q: "Is there a cheaper way to start?",
+        a: "Yes — our Proof of Concept package (£1,800) is designed exactly for this. You get a working prototype with documented performance metrics. Most clients use it to validate the ML approach before committing to a full production build.",
+      },
+      {
+        q: "Do you offer ongoing maintenance pricing?",
+        a: "Yes — MLOps retainer packages start at £800/month. They include drift monitoring, automatic retraining triggers, monthly performance reports, and up to 4 hours of model updates.",
+      },
+    ],
+  },
+  {
+    id: "support",
+    title: "Support",
+    items: [
+      {
+        q: "What warranty do you provide?",
+        a: "All projects include 3 months of warranty support after production deployment. If the model performance drops below the agreed thresholds for reasons within our scope — we fix it at no extra cost.",
+      },
+      {
+        q: "How does ongoing support work?",
+        a: "Via Slack or email — we respond within 4 business hours. For critical production issues (model down, serving errors) we target a 2-hour response and same-day resolution.",
+      },
+      {
+        q: "Can your team train our in-house data scientists?",
+        a: "Yes. We offer knowledge transfer sessions covering model architecture decisions, MLflow setup, deployment configuration, and monitoring dashboards. We also provide annotated notebooks and written runbooks.",
+      },
+      {
+        q: "What if our data distribution changes significantly after deployment?",
+        a: "This is called concept drift — it's expected and normal. Our MLOps setup monitors data and model performance metrics continuously and alerts you when drift exceeds a threshold. The MLOps retainer includes automatic retraining triggers for this scenario.",
+      },
+    ],
+  },
+];
 
 const FAQ_SECTIONS_UK = [
   {
     id: "general",
     title: "Загальні питання",
     items: [
-      { q: "Що робить Codeworth?", a: "Codeworth — веб-студія повного циклу: розробка сайтів, інтернет-магазинів, PWA, SEO-просування, UI/UX дизайн, чат-боти та маркетплейс готових нішевих рішень для малого та середнього бізнесу." },
-      { q: "Де ви знаходитесь? Чи працюєте дистанційно?", a: "Ми базуємось у Києві, але працюємо дистанційно по всій Україні. Всі комунікації — через Telegram, Zoom, Notion та Figma." },
-      { q: "Скільки часу займає розробка сайту?", a: "Лендінг — 5–10 днів. Корпоративний сайт — 2–4 тижні. Інтернет-магазин — 4–8 тижнів. Складний портал — 2–4 місяці. Терміни фіксуємо у договорі." },
-      { q: "Чи можна побачити приклади робіт?", a: "Так, перегляньте наше портфоліо з 8+ реалізованих проєктів. Також у маркетплейсі є 35 live демо-сторінок різних ніш." },
+      {
+        q: "Що робить Codeworth?",
+        a: "Codeworth — ML/AI консалтинг. Ми будуємо кастомні ML-моделі, системи fraud detection, NLP-пайплайни, RAG-чатботи та комп'ютерний зір — і деплоємо їх у продакшн із повною MLOps-інфраструктурою.",
+      },
+      {
+        q: "З якими галузями ви працюєте?",
+        a: "Основні сектори: FinTech (fraud detection, кредитний скоринг), Healthcare (клінічний NLP, автоматизація тріажу), Retail (прогнозування попиту, рекомендаційні системи), Manufacturing (комп'ютерний зір для контролю якості) та SaaS (churn prediction, LLM-фічі).",
+      },
+      {
+        q: "Де ви знаходитесь? Чи працюєте дистанційно?",
+        a: "Команда розподілена між Україною та ЄС. Клієнти — UK, ЄС та глобально. Вся комунікація — дистанційно: Zoom, Slack, Notion, GitHub.",
+      },
+      {
+        q: "Чи є приклади ваших ML-проєктів?",
+        a: "Так — у портфоліо 40+ ML-кейсів. Кожен кейс показує бізнес-задачу, дані, ML-підхід, досягнуті метрики (F1, precision, recall, ROI) та MLOps-налаштування.",
+      },
+    ],
+  },
+  {
+    id: "ml-process",
+    title: "ML-процес",
+    items: [
+      {
+        q: "Як виглядає типовий ML-проєкт?",
+        a: "Кожен проєкт проходить 5 фаз: (1) Discovery — розуміємо бізнес-задачу та наявність даних; (2) Data Audit — оцінюємо якість, потреби в розмітці; (3) Навчання моделі — ітераційні експерименти з MLflow; (4) Продакшн-деплой — FastAPI, Docker/K8s, CI/CD; (5) MLOps — моніторинг дрейфу, перенавчання, документація.",
+      },
+      {
+        q: "Скільки часу займає ML-проєкт?",
+        a: "Proof of concept — 3–6 тижнів. Повний продакшн-деплой з моніторингом — 8–16 тижнів. Головна змінна — готовність даних: проєкти з розміченими даними рухаються значно швидше.",
+      },
+      {
+        q: "Які метрики ви гарантуєте?",
+        a: "До початку роботи ми фіксуємо мінімальні метрики у специфікації (наприклад, precision ≥ 0.90, recall ≥ 0.85, AUC ≥ 0.92). Модель вважається готовою тільки після досягнення цих порогів. Якщо ні — продовжуємо навчання безкоштовно.",
+      },
+      {
+        q: "Ви займаєтесь розміткою даних?",
+        a: "Так — ми управляємо процесом розмітки через Label Studio, Prodigy або сторонніх анотаторів. Вартість розмітки оцінюється окремо залежно від обсягу датасету та складності анотацій.",
+      },
+      {
+        q: "Що відбувається після деплою моделі?",
+        a: "Передаємо весь код, ваги моделі, специфікацію API, конфігурацію MLflow та документацію. Також пропонуємо MLOps-ретейнери для моніторингу дрейфу, автоматичного перенавчання та версіонування.",
+      },
+    ],
+  },
+  {
+    id: "data-privacy",
+    title: "Дані та конфіденційність",
+    items: [
+      {
+        q: "Вам потрібен доступ до наших виробничих даних?",
+        a: "Не обов'язково. Можемо працювати з анонімізованими або синтетичними даними для розробки та реальними тільки для фінальної валідації. Для чутливих секторів (охорона здоров'я, фінанси) підтримуємо on-prem обчислення — дані не виходять з вашої інфраструктури.",
+      },
+      {
+        q: "Як ви забезпечуєте дотримання GDPR?",
+        a: "Підписуємо DPA (угоду про обробку даних) до будь-якого обміну даними. Навчальні дані зберігаються тільки на час проєкту. On-prem деплой доступний для максимального суверенітету над даними. Документуємо всі потоки даних для ваших комплаєнс-записів.",
+      },
+      {
+        q: "Чи може модель працювати на наших серверах (on-prem)?",
+        a: "Так. Підтримуємо on-prem, приватну хмару (AWS/GCP/Azure VPC) та гібридні деплої. Для регульованих секторів це часто є пріоритетним варіантом.",
+      },
+      {
+        q: "Кому належить модель та код після здачі?",
+        a: "Вам. Після повної оплати весь код, ваги моделі, навчальні ноутбуки та MLflow-логи переходять до вас. Ми залишаємо право згадати тип проєкту у портфоліо (без клієнтських даних).",
+      },
     ],
   },
   {
     id: "pricing",
-    title: "Ціни та оплата",
+    title: "Ціни",
     items: [
-      { q: "Скільки коштує розробка сайту?", a: "Лендінг — від 8 000 грн, корпоративний сайт — від 15 000 грн, інтернет-магазин — від 40 000 грн. Готові нішеві рішення — від 4 900 грн. Точна ціна після консультації." },
-      { q: "Які методи оплати ви приймаєте?", a: "Банківський переказ (ФОП), LiqPay, Monobank. Договір підписуємо офіційно." },
-      { q: "Чи є передоплата?", a: "Так — 50% передоплата після підписання договору та затвердження ТЗ. Решта 50% — після здачі проєкту." },
-      { q: "Що входить у вартість?", a: "Дизайн, верстка, розробка, базове SEO, підключення аналітики, налаштування CMS, навчання та 1 місяць гарантійної підтримки." },
-      { q: "Чи є приховані платежі?", a: "Жодних. Ви отримуєте детальний кошторис до початку роботи. Будь-яка зміна обсягів — тільки з вашого підтвердження та нового кошторису." },
-    ],
-  },
-  {
-    id: "tech",
-    title: "Технічні питання",
-    items: [
-      { q: "На якій платформі ви розробляєте сайти?", a: "Переважно Next.js 16 + TypeScript + Tailwind CSS — найсучасніший стек для швидких SEO-сайтів. Для простих задач — HTML/CSS + Vanilla JS. WordPress — за окремим запитом." },
-      { q: "Чи буде мій сайт швидким?", a: "Так. Next.js з Static Site Generation та оптимізацією зображень дає LCP < 2.5с та PageSpeed 90+. Всі сайти проходять Core Web Vitals аудит перед запуском." },
-      { q: "Чи підходить сайт для мобільних пристроїв?", a: "Обов'язково. Всі наші сайти — Mobile First: розробляємо спочатку для мобільного, потім для десктопу." },
-      { q: "Чи буду я мати права на код?", a: "Так. Після повної оплати всі права на код та дизайн переходять до вас. Ми отримуємо право використовувати проєкт у портфоліо." },
-      { q: "Чи інтегруєте Google Analytics та SEO?", a: "Так, у всіх тарифах включено: GA4, Google Search Console, базова SEO-оптимізація, Schema.org та sitemap.xml." },
-    ],
-  },
-  {
-    id: "marketplace",
-    title: "Маркетплейс",
-    items: [
-      { q: "Що таке готові нішеві рішення?", a: "Це повноцінний сайт, заздалегідь розроблений для конкретної ніші бізнесу (ресторан, салон, клініка тощо). Ви купуєте, ми налаштовуємо під вас та запускаємо за 3 дні." },
-      { q: "Як відрізняється шаблон від розробки з нуля?", a: "Готове рішення — у 3–5 разів дешевше та готове за 3 дні. Розробка з нуля — унікальний дизайн, повний контроль та зайнятість. Готові рішення ідеальні для старту або обмеженого бюджету." },
-      { q: "Чи можна кастомізувати шаблон?", a: "Так. Базова кастомізація входить у ціну: ваш логотип, кольори, контент, контактні дані. Глибока зміна дизайну або функціоналу — за додатковим кошторисом." },
-      { q: "Скільки часу займе запуск готового рішення?", a: "3 робочих дні після отримання вашого контенту (тексти, фото, логотип, реквізити)." },
-      { q: "Що входить у підтримку після запуску?", a: "30 днів включено безкоштовно: дрібні правки, виправлення помилок, консультації. Далі можна підписатися на місячний тариф підтримки." },
+      {
+        q: "Скільки коштує ML-розробка?",
+        a: "Proof of concept — від £1,800 / 75 000 ₴ (3–4 тижні). Повна продакшн-модель з API та MLOps — від £4,500 / 180 000 ₴ (8–12 тижнів). Enterprise-системи оцінюються індивідуально після discovery call.",
+      },
+      {
+        q: "Які умови оплати?",
+        a: "50% передоплата після підписання договору, 50% після здачі. Для більших проєктів можна розбити на 3 етапи: 30% / 40% / 30% відповідно до discovery, затвердження прототипу та продакшн-деплою.",
+      },
+      {
+        q: "Чи є більш доступний старт?",
+        a: "Так — наш Proof of Concept пакет (£1,800 / 75 000 ₴) саме для цього. Ви отримуєте робочий прототип з документованими метриками ефективності. Більшість клієнтів використовують його для валідації ML-підходу до повного продакшн-білду.",
+      },
+      {
+        q: "Чи є послуги постійної підтримки?",
+        a: "Так — MLOps-ретейнери від £800/місяць (32 000 ₴). Включають: моніторинг дрейфу, тригери автоматичного перенавчання, щомісячні звіти ефективності та до 4 годин оновлень моделі.",
+      },
     ],
   },
   {
     id: "support",
-    title: "Підтримка та супровід",
+    title: "Підтримка",
     items: [
-      { q: "Чи надаєте гарантію на роботи?", a: "Так — 1 місяць гарантійної безкоштовної підтримки після запуску. Якщо щось перестало працювати з нашої вини — виправляємо негайно." },
-      { q: "Як відбувається технічна підтримка?", a: "Через Telegram або email. Відповідаємо протягом 2 годин у робочий час (Пн–Пт, 9:00–19:00)." },
-      { q: "Що робити якщо сайт зламали?", a: "Телефонуйте або пишіть у Telegram — реагуємо терміново. Відновлюємо з резервної копії, закриваємо вразливість, проводимо аудит безпеки." },
-      { q: "Чи навчаєте користуватися сайтом?", a: "Так. Після здачі проєкту проводимо онлайн-навчання (30–60 хв) по роботі з CMS. Записуємо відео-інструкцію для вашої команди." },
-    ],
-  },
-];
-
-const FAQ_SECTIONS_EN = [
-  {
-    id: "general",
-    title: "General Questions",
-    items: [
-      { q: "What does Codeworth do?", a: "Codeworth is a full-cycle web studio: website development, e-commerce, PWA, SEO promotion, UI/UX design, chatbots, and a marketplace of ready-made niche solutions for small and medium businesses." },
-      { q: "Where are you located? Do you work remotely?", a: "We are based in Kyiv but work remotely across Ukraine. All communication is via Telegram, Zoom, Notion, and Figma." },
-      { q: "How long does website development take?", a: "Landing page — 5–10 days. Corporate site — 2–4 weeks. Online store — 4–8 weeks. Complex portal — 2–4 months. Deadlines are fixed in the contract." },
-      { q: "Can I see examples of your work?", a: "Yes, check out our portfolio with 8+ completed projects. The marketplace also has 35 live demo pages across different niches." },
-    ],
-  },
-  {
-    id: "pricing",
-    title: "Pricing & Payment",
-    items: [
-      { q: "How much does a website cost?", a: "Landing page — from $200, corporate site — from $375, online store — from $1,000. Ready-made niche solutions — from $125. Exact price after consultation." },
-      { q: "What payment methods do you accept?", a: "Bank transfer, credit card, PayPal. We sign an official contract." },
-      { q: "Is there an upfront payment?", a: "Yes — 50% upfront after signing the contract and approving the specification. The remaining 50% upon project delivery." },
-      { q: "What's included in the price?", a: "Design, markup, development, basic SEO, analytics setup, CMS configuration, training, and 1 month of warranty support." },
-      { q: "Are there hidden fees?", a: "None. You receive a detailed estimate before work begins. Any scope changes are only made with your approval and a new estimate." },
-    ],
-  },
-  {
-    id: "tech",
-    title: "Technical Questions",
-    items: [
-      { q: "What platform do you build websites on?", a: "Primarily Next.js 16 + TypeScript + Tailwind CSS — the most modern stack for fast SEO websites. For simple tasks — HTML/CSS + Vanilla JS. WordPress — upon request." },
-      { q: "Will my website be fast?", a: "Yes. Next.js with Static Site Generation and image optimization delivers LCP < 2.5s and PageSpeed 90+. All sites pass Core Web Vitals audit before launch." },
-      { q: "Is the website mobile-friendly?", a: "Absolutely. All our websites are Mobile First: we design for mobile first, then desktop." },
-      { q: "Will I own the code?", a: "Yes. After full payment, all rights to the code and design transfer to you. We retain the right to use the project in our portfolio." },
-      { q: "Do you integrate Google Analytics and SEO?", a: "Yes, all packages include: GA4, Google Search Console, basic SEO optimization, Schema.org, and sitemap.xml." },
-    ],
-  },
-  {
-    id: "marketplace",
-    title: "Marketplace",
-    items: [
-      { q: "What are ready-made niche solutions?", a: "It's a fully developed website built specifically for a business niche (restaurant, salon, clinic, etc.). You purchase it, we customize it for you and launch within 3 days." },
-      { q: "How is a template different from custom development?", a: "A ready-made solution is 3–5 times cheaper and ready in 3 days. Custom development offers a unique design and full control. Ready solutions are ideal for starting out or with a limited budget." },
-      { q: "Can the template be customized?", a: "Yes. Basic customization is included: your logo, colors, content, contact details. Deep design or functionality changes are quoted separately." },
-      { q: "How long does it take to launch a ready-made solution?", a: "3 business days after receiving your content (texts, photos, logo, details)." },
-      { q: "What's included in post-launch support?", a: "30 days included free: minor edits, bug fixes, consultations. After that you can subscribe to a monthly maintenance plan." },
-    ],
-  },
-  {
-    id: "support",
-    title: "Support & Maintenance",
-    items: [
-      { q: "Do you provide a warranty?", a: "Yes — 1 month of free warranty support after launch. If something breaks due to our fault — we fix it immediately." },
-      { q: "How does technical support work?", a: "Via Telegram or email. We respond within 2 hours during business hours (Mon–Fri, 9:00–19:00)." },
-      { q: "What if the site gets hacked?", a: "Call or message us on Telegram — we respond urgently. We restore from backup, close the vulnerability, and conduct a security audit." },
-      { q: "Do you train us to use the website?", a: "Yes. After project delivery we conduct an online training session (30–60 min) on working with the CMS. We record a video tutorial for your team." },
+      {
+        q: "Яка гарантія включена?",
+        a: "Всі проєкти включають 3 місяці гарантійної підтримки після продакшн-деплою. Якщо показники моделі падають нижче погоджених порогів з нашої вини — виправляємо безкоштовно.",
+      },
+      {
+        q: "Як працює поточна підтримка?",
+        a: "Через Slack або email — відповідаємо протягом 4 робочих годин. Для критичних продакшн-проблем (модель не відповідає, помилки сервінгу) цільовий час відповіді — 2 години, вирішення — в той же день.",
+      },
+      {
+        q: "Чи навчаєте ви наших data scientists?",
+        a: "Так. Проводимо сесії передачі знань: архітектурні рішення, налаштування MLflow, конфігурація деплою, дашборди моніторингу. Надаємо анотовані ноутбуки та письмові runbooks.",
+      },
+      {
+        q: "Що якщо розподіл наших даних значно зміниться після деплою?",
+        a: "Це називається concept drift — очікуване і нормальне явище. Наш MLOps-стек безперервно моніторить метрики даних і моделі та сповіщає при перевищенні порогу дрейфу. MLOps-ретейнер включає тригери автоматичного перенавчання саме для цього сценарію.",
+      },
     ],
   },
 ];
@@ -170,6 +293,7 @@ export default async function FAQPage({ params }: { params: Promise<{ lang: stri
       }))
     ),
   };
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
@@ -184,13 +308,13 @@ export default async function FAQPage({ params }: { params: Promise<{ lang: stri
               <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-4">FAQ</p>
               <h1 className="text-5xl lg:text-6xl font-heading font-extrabold text-neutral-900 dark:text-white mb-4">
                 {isUk
-                  ? <>{`Відповіді на ваші`}<br /><span className="gradient-text">{`запитання`}</span></>
-                  : <>{"Answers to your"}<br /><span className="gradient-text">{"questions"}</span></>}
+                  ? <>{`Відповіді на ваші`}<br /><span className="gradient-text">{`ML-запитання`}</span></>
+                  : <>{"Answers to your"}<br /><span className="gradient-text">{"ML questions"}</span></>}
               </h1>
-              <p className="text-lg text-neutral-500">
+              <p className="text-lg text-neutral-500 dark:text-neutral-400">
                 {isUk
-                  ? "Все що ви хотіли знати про Codeworth, розробку сайтів та маркетплейс."
-                  : "Everything you wanted to know about Codeworth, web development, and the marketplace."}
+                  ? "Все що варто знати про ML-розробку, дані, ціни та підтримку."
+                  : "Everything worth knowing about ML development, data, pricing, and support."}
               </p>
             </div>
           </Container>
@@ -218,6 +342,8 @@ export default async function FAQPage({ params }: { params: Promise<{ lang: stri
             <FAQContent sections={FAQ_SECTIONS} />
           </Container>
         </section>
+
+        <CTASection lang={lang} />
       </main>
       <Footer />
     </div>

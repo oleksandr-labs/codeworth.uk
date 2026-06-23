@@ -11,11 +11,11 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isUk = lang === "uk";
   const title = isUk
-    ? "Codeworth vs альтернативи — порівняння для бізнесу"
-    : "Codeworth vs Alternatives — Business Comparison";
+    ? "Codeworth vs альтернативи — порівняння ML-підходів"
+    : "Codeworth vs Alternatives — ML Approach Comparison";
   const desc = isUk
-    ? "Порівняйте Codeworth з Wix, Tilda, WordPress, Shopify, фрілансером та шаблонами. Об'єктивний аналіз щоб обрати найкраще рішення для вашого бізнесу."
-    : "Compare Codeworth with Wix, Tilda, WordPress, Shopify, freelancers, and templates. Objective analysis to choose the best solution for your business.";
+    ? "Порівняйте Codeworth ML-консалтинг з власною ML-командою та AutoML-платформами. Об'єктивний аналіз: вартість, терміни, ризики та якість моделей."
+    : "Compare Codeworth ML consultancy with an in-house ML team and AutoML platforms. Objective analysis: cost, timeline, risks, and model quality.";
   return {
     title,
     description: desc,
