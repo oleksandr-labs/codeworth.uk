@@ -1051,8 +1051,6 @@ const SERVICES_EN: Record<string, Partial<Service>> = {
       { niche: "Cybersecurity", emoji: "🛡️", description: "Behavioural anomaly detection (Isolation Forest + LSTM), real-time scoring 180ms, FCA/GDPR compliance with SHAP explanations and immutable audit log" },
     ],
   },
-};
-
   nlp: {
     title: "NLP Development Services UK",
     shortTitle: "NLP",

@@ -1780,7 +1780,7 @@ export const BLOG_CATEGORIES: BlogCategory[] = [
   {
     id: 'ai',
     label: { en: 'AI & Machine Learning', uk: 'AI та Машинне навчання' },
-    description: { en: 'Machine learning, deep learning, NLP, computer vision, MLOps, AI strategy', uk: 'Машинне навчання, глибоке навчання, NLP, комп'ютерний зiр, MLOps, AI-стратегiя' },
+    description: { en: 'Machine learning, deep learning, NLP, computer vision, MLOps, AI strategy', uk: "Машинне навчання, глибоке навчання, NLP, комп'ютерний зір, MLOps, AI-стратегія" },
     icon: '🤖',
     color: 'violet',
   },
