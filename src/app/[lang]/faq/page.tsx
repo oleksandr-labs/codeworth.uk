@@ -50,7 +50,7 @@ const FAQ_SECTIONS_EN = [
       },
       {
         q: "Where are you based? Do you work remotely?",
-        a: "Our team is distributed across Ukraine and the EU. We serve clients in the UK, EU, and globally. All collaboration happens remotely via Zoom, Slack, Notion, and GitHub.",
+        a: "We are a UK-based ML consultancy serving clients in the UK, EU, and globally. All collaboration happens remotely via Zoom, Slack, Notion, and GitHub.",
       },
       {
         q: "Can I see examples of your ML work?",

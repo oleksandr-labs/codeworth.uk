@@ -106,8 +106,8 @@ export default async function CareersPage({
         "@type": "Place",
         address: {
           "@type": "PostalAddress",
-          addressLocality: "Kyiv",
-          addressCountry: "UA",
+          addressLocality: "London",
+          addressCountry: "GB",
         },
       },
       hiringOrganization: {
@@ -139,7 +139,7 @@ export default async function CareersPage({
         { emoji: "🤝", title: "Команда", desc: "Без мікроменеджменту — тільки довіра і ML-результат" },
       ]
     : [
-        { emoji: "🌍", title: "100% Remote", desc: "Work from anywhere in the UK, EU or Ukraine" },
+        { emoji: "🌍", title: "100% Remote", desc: "Work from anywhere in the UK or EU" },
         { emoji: "📚", title: "Learning", desc: "£1,500/year for courses, conferences, and ML certifications" },
         { emoji: "⏰", title: "Flexible Hours", desc: "Core hours 10:00–16:00 UTC, the rest is your choice" },
         { emoji: "🤖", title: "ML Projects", desc: "FinTech, Healthcare, Retail — real production ML" },

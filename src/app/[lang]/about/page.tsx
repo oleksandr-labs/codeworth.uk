@@ -105,7 +105,7 @@ const organizationSchema = {
   description: "ML-компанія — кастомні моделі машинного навчання, fraud detection, NLP, комп'ютерний зір та MLOps для UK та EU бізнесу.",
   foundingDate: "2021",
   numberOfEmployees: { "@type": "QuantitativeValue", value: 8 },
-  address: { "@type": "PostalAddress", addressLocality: "Kyiv", addressCountry: "UA" },
+  address: { "@type": "PostalAddress", addressLocality: "London", addressCountry: "GB" },
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "customer service",
