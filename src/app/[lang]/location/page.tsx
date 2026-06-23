@@ -11,11 +11,11 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isUk = lang === "uk";
   const title = isUk
-    ? "Розробка сайтів по всій Україні — Веб-студія Codeworth"
-    : "Website Development Across Ukraine — Codeworth Web Studio";
+    ? "ML-консалтинг по всьому UK — Codeworth | Лондон, Манчестер, Бірмінгем та інші"
+    : "ML Consulting Across the UK — Codeworth | London, Manchester, Birmingham & More";
   const desc = isUk
-    ? "Codeworth розробляє сайти для бізнесу у Києві, Харкові, Львові, Одесі, Дніпрі та ще 10 містах України. Локальне SEO, швидкий запуск, офіційний договір."
-    : "Codeworth builds websites for businesses in Kyiv, Kharkiv, Lviv, Odesa, Dnipro, and 10 more Ukrainian cities. Local SEO, fast launch, official contract.";
+    ? "Codeworth надає ML та AI послуги бізнесу у Лондоні, Манчестері, Бірмінгемі, Единбурзі та інших містах UK. Дистанційна робота, UK-GDPR compliance, повна підтримка від PoC до production."
+    : "Codeworth delivers ML and AI services to businesses in London, Manchester, Birmingham, Edinburgh, and across the UK. Remote-first, UK-GDPR compliant, full support from PoC to production.";
   return {
     title,
     description: desc,
@@ -35,8 +35,8 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Головна", item: "https://codeworth.uk" },
-    { "@type": "ListItem", position: 2, name: "Міста" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://codeworth.uk" },
+    { "@type": "ListItem", position: 2, name: "UK Locations" },
   ],
 };
 
@@ -55,17 +55,17 @@ export default async function LocationIndexPage({ params }: { params: Promise<{ 
           <Container>
             <div className="max-w-3xl mx-auto text-center">
               <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-4">
-                {isUk ? "Локальне SEO та веб-розробка" : "Local SEO & Web Development"}
+                {isUk ? "ML-консалтинг по всьому UK" : "ML Consulting Across the UK"}
               </p>
               <h1 className="text-4xl lg:text-6xl font-heading font-extrabold text-neutral-900 dark:text-white mb-6 leading-tight">
                 {isUk
-                  ? <>{`Розробка сайтів `}<span className="gradient-text">{"по всій Україні"}</span></>
-                  : <>{`Website Development `}<span className="gradient-text">{"Across Ukraine"}</span></>}
+                  ? <>{`ML та AI для бізнесу `}<span className="gradient-text">{"у кожному місті UK"}</span></>
+                  : <>{`ML and AI for Businesses `}<span className="gradient-text">{"Across the UK"}</span></>}
               </h1>
               <p className="text-lg text-neutral-500 dark:text-neutral-400 max-w-2xl mx-auto mb-8">
                 {isUk
-                  ? `Ми обслуговуємо бізнес у ${GEO_CITIES.length} містах України. Дистанційна робота, локальне SEO, повний супровід від консультації до запуску.`
-                  : `We serve businesses in ${GEO_CITIES.length} cities across Ukraine. Remote work, local SEO, full support from consultation to launch.`}
+                  ? `Обслуговуємо бізнес у ${GEO_CITIES.length} містах UK. Remote-first підхід, UK-GDPR compliance, повна підтримка від PoC до production ML.`
+                  : `We serve businesses in ${GEO_CITIES.length} UK cities. Remote-first approach, UK-GDPR compliant, full support from ML PoC to production deployment.`}
               </p>
               <Link
                 href={`/${lang}/contact`}
@@ -112,42 +112,42 @@ export default async function LocationIndexPage({ params }: { params: Promise<{ 
           </Container>
         </section>
 
-        {/* Why local SEO matters */}
-        <section className="py-20 bg-neutral-50 dark:bg-neutral-900 ">
+        {/* Why UK ML consulting */}
+        <section className="py-20 bg-neutral-50 dark:bg-neutral-900">
           <Container>
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-14">
                 <h2 className="text-3xl font-heading font-extrabold text-neutral-900 dark:text-white mb-4">
-                  {isUk ? "Чому важливо локальне SEO?" : "Why does local SEO matter?"}
+                  {isUk ? "Чому Codeworth для UK бізнесу?" : "Why Codeworth for UK Businesses?"}
                 </h2>
                 <p className="text-neutral-500">
                   {isUk
-                    ? "82% користувачів шукають послуги у своєму місті. Ваш бізнес має бути першим у Google Maps та органічній видачі."
-                    : "82% of users search for services in their city. Your business must appear first in Google Maps and organic search results."}
+                    ? "Ми розуміємо UK-специфіку: FCA compliance, NHS data requirements, Consumer Duty — і будуємо ML-рішення, що відповідають регуляторним вимогам."
+                    : "We understand UK-specific requirements: FCA compliance, NHS data standards, Consumer Duty — and build ML solutions that meet regulatory demands."}
                 </p>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {[
                   {
-                    uk: "Google My Business",
-                    en: "Google My Business",
-                    dUk: "Налаштовуємо та оптимізуємо профіль компанії в Google — зірки, відгуки, фото, графік роботи.",
-                    dEn: "We set up and optimize your company profile on Google — stars, reviews, photos, business hours.",
-                    icon: "📍",
+                    uk: "UK GDPR & Data Protection",
+                    en: "UK GDPR & Data Protection",
+                    dUk: "Усі ML-рішення відповідають UK GDPR та DPA 2018. Дані залишаються у UK (AWS eu-west-2 або Azure UK South).",
+                    dEn: "All ML solutions comply with UK GDPR and DPA 2018. Data stays in the UK (AWS eu-west-2 or Azure UK South).",
+                    icon: "🔐",
                   },
                   {
-                    uk: "Геозапити в SEO",
-                    en: "Geo-queries in SEO",
-                    dUk: "Оптимізуємо сайт під запити «послуга + місто» — потрапляємо в топ-3 Google у вашому регіоні.",
-                    dEn: "We optimize the site for 'service + city' queries — reaching the top 3 on Google in your region.",
-                    icon: "🔍",
+                    uk: "FCA та галузева відповідність",
+                    en: "FCA & Sector Compliance",
+                    dUk: "FCA SS1/23 Model Risk Management, NHS IG Toolkit, Consumer Duty — ми знаємо регуляторні вимоги вашої галузі.",
+                    dEn: "FCA SS1/23 Model Risk Management, NHS IG Toolkit, Consumer Duty — we know the regulatory requirements of your sector.",
+                    icon: "⚖️",
                   },
                   {
-                    uk: "Schema.org LocalBusiness",
-                    en: "Schema.org LocalBusiness",
-                    dUk: "Розмітка для Google про ваш бізнес — адреса, телефон, графік, відгуки відображаються у SERP.",
-                    dEn: "Markup for Google about your business — address, phone, hours, reviews shown in SERP.",
-                    icon: "⭐",
+                    uk: "Remote-first для всього UK",
+                    en: "Remote-First Across the UK",
+                    dUk: "Повністю дистанційна робота — команда в будь-якій точці UK. Ті ж стандарти deliverables незалежно від міста.",
+                    dEn: "Fully remote delivery — team available anywhere in the UK. Same deliverable standards regardless of location.",
+                    icon: "🌐",
                   },
                 ].map((item) => (
                   <div key={item.uk} className="rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 p-6">
@@ -170,8 +170,8 @@ export default async function LocationIndexPage({ params }: { params: Promise<{ 
               </h2>
               <p className="text-neutral-400 mb-8">
                 {isUk
-                  ? "Ми працюємо по всій Україні — напишіть нам і ми організуємо консультацію."
-                  : "We work across all of Ukraine — write to us and we'll arrange a consultation."}
+                  ? "Ми працюємо по всьому UK — напишіть нам і ми організуємо ML-консультацію незалежно від вашого місця розташування."
+                  : "We work across all of the UK — contact us and we'll arrange an ML consultation regardless of your location."}
               </p>
               <Link
                 href={`/${lang}/contact`}

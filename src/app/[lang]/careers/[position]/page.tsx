@@ -56,8 +56,8 @@ export default async function CareerPositionPage({
       "@type": "Place",
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Kyiv",
-        addressCountry: "UA",
+        addressLocality: "London",
+        addressCountry: "GB",
       },
     },
     hiringOrganization: {

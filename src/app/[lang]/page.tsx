@@ -94,8 +94,8 @@ const HOME_FAQ_EN = [
     a: "We define business metrics with you before starting: time per operation, error rate, staff costs, churn rate etc. After deployment, we produce a 30/60/90-day impact report.",
   },
   {
-    q: "Do you work with clients outside Ukraine?",
-    a: "Yes. Our main markets are the UK, EU and the US. All contracts and payments are set up for international clients. Communication in English or Ukrainian.",
+    q: "Do you work with clients outside the UK?",
+    a: "Yes. While we are UK-focused, we work with EU and US clients too. All contracts are governed by English law and payments are in GBP or EUR. Communication in English.",
   },
   {
     q: "What is MLOps and why does it matter?",
@@ -166,10 +166,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     email: "hello@codeworth.uk",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Kyiv",
-      addressCountry: "UA",
+      addressLocality: "London",
+      addressCountry: "GB",
     },
-    areaServed: ["GB", "UA", "EU"],
+    areaServed: ["GB", "EU", "US"],
     knowsAbout: [
       "Machine Learning", "NLP", "Computer Vision", "MLOps", "LLM", "RAG",
       "Predictive Analytics", "Fraud Detection", "Deep Learning", "Python",

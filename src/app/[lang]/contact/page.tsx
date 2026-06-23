@@ -70,11 +70,11 @@ const localBusinessSchema = {
     },
   ],
   priceRange: "££",
-  currenciesAccepted: "GBP, UAH",
-  paymentAccepted: "Bank Transfer, SWIFT",
+  currenciesAccepted: "GBP, EUR",
+  paymentAccepted: "Bank Transfer, SWIFT, Stripe",
   areaServed: [
     { "@type": "Country", name: "United Kingdom" },
-    { "@type": "Country", name: "Ukraine" },
+    { "@type": "Country", name: "European Union" },
   ],
 };
 
