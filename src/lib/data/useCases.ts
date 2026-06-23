@@ -122,6 +122,66 @@ export const USE_CASES: UseCase[] = [
     relatedExtras: ["ai-chatbot-rag"],
   },
   {
+    slug: "reduce-customer-churn",
+    titleEn: "How to predict and reduce customer churn with ML",
+    titleUk: "Як передбачити та скоротити відтік клієнтів за допомогою ML",
+    category: "ai",
+    icon: "📉",
+    whoEn: "SaaS, subscription businesses, telecom, fintech",
+    whoUk: "SaaS, підписочні бізнеси, телеком, фінтех",
+    problemEn:
+      "You only find out a customer has churned after they cancel. Retention teams reach out too late, offers go to the wrong accounts, and monthly churn sits at 4–7% despite heavy discount spend.",
+    problemUk:
+      "Ви дізнаєтесь про відтік клієнта тільки після скасування. Команда retention реагує занадто пізно, пропозиції йдуть не тим акаунтам, а місячний churn тримається на рівні 4–7% попри витрати на знижки.",
+    solutionEn:
+      "We build a churn prediction model trained on your behavioural, product usage, and payment data. The model scores every customer weekly on 30-day churn probability. High-risk accounts are surfaced to your CSM team with the top 3 intervention reasons — 2–3 weeks before they decide to leave.",
+    solutionUk:
+      "Ми будуємо модель прогнозу відтоку на основі ваших поведінкових, продуктових та платіжних даних. Модель щотижня скорює кожного клієнта за ймовірністю відтоку протягом 30 днів. Акаунти з високим ризиком виводяться у CSM-команду з топ-3 причинами для втручання — за 2–3 тижні до ухвалення рішення про відхід.",
+    resultQuoteEn:
+      "Clients with active churn prediction cut monthly churn from 6.2% to 3.8% within 90 days. Retention team efficiency doubles: same headcount saves 2.3× more revenue at-risk.",
+    resultQuoteUk:
+      "Клієнти з активним прогнозом відтоку скорочують місячний churn з 6.2% до 3.8% протягом 90 днів. Ефективність retention-команди подвоюється: той самий штат зберігає у 2.3× більше MRR під ризиком.",
+    metaTitleEn: "Predict and Reduce Customer Churn with ML | Codeworth",
+    metaTitleUk: "Прогноз та скорочення відтоку клієнтів з ML | Codeworth",
+    metaDescriptionEn:
+      "ML churn prediction model: weekly scoring, top 3 intervention reasons, 2–3 weeks lead time. Churn reduced 38%. Codeworth.",
+    metaDescriptionUk:
+      "ML-модель прогнозу відтоку: щотижневе скорування, топ-3 причини втручання, 2–3 тижні lead time. Churn знижено на 38%. Codeworth.",
+    relatedPortfolio: ["ml-churn-predictor"],
+    relatedServices: ["machine-learning", "predictive-analytics"],
+    relatedExtras: [],
+  },
+  {
+    slug: "automate-fraud-detection",
+    titleEn: "How to detect payment fraud in real time with ML",
+    titleUk: "Як виявляти платіжне шахрайство в реальному часі за допомогою ML",
+    category: "ai",
+    icon: "🛡️",
+    whoEn: "Fintech, payment processors, e-commerce, lending platforms",
+    whoUk: "Фінтех, платіжні процесори, e-commerce, кредитні платформи",
+    problemEn:
+      "Rule-based fraud filters block legitimate customers at 2–3% false-positive rate while missing sophisticated fraud patterns. Your fraud team reviews 800+ alerts daily but 60% are noise. Chargebacks cost 3–5× the original transaction.",
+    problemUk:
+      "Правильні фільтри шахрайства блокують легітимних клієнтів з false-positive rate 2–3%, пропускаючи складні шахрайські патерни. Ваша команда розглядає 800+ сповіщень щодня, але 60% — шум. Chargeback коштує у 3–5× більше від початкової транзакції.",
+    solutionEn:
+      "We build a real-time ML fraud detection system using gradient boosting + graph neural networks on your transaction history. The model runs in <50ms per transaction, cuts false positives by 60–70%, and surfaces high-confidence fraud cases with explainability (SHAP values) so analysts can act in seconds.",
+    solutionUk:
+      "Ми будуємо ML-систему виявлення шахрайства в реальному часі з використанням gradient boosting + graph neural networks на вашій транзакційній історії. Модель працює за <50ms на транзакцію, скорочує false positives на 60–70%, та виводить high-confidence випадки шахрайства з поясненнями (SHAP values) — аналітики реагують за секунди.",
+    resultQuoteEn:
+      "After deployment: 60–70% drop in false-positive fraud alerts, chargeback rate down 45%, fraud team reviews 4× fewer alerts for the same detection rate.",
+    resultQuoteUk:
+      "Після запуску: зниження false-positive сповіщень про шахрайство на 60–70%, рівень chargeback знижується на 45%, команда fraud розглядає у 4× менше сповіщень при тому самому рівні виявлення.",
+    metaTitleEn: "Real-Time ML Fraud Detection for Fintech | Codeworth",
+    metaTitleUk: "ML-виявлення шахрайства у реальному часі для фінтех | Codeworth",
+    metaDescriptionEn:
+      "ML fraud detection: <50ms per transaction, 60–70% fewer false positives, SHAP explainability. FCA-ready audit trail. Codeworth.",
+    metaDescriptionUk:
+      "ML-виявлення шахрайства: <50ms на транзакцію, 60–70% менше false positives, SHAP-пояснення. Готовий аудит-лог для FCA. Codeworth.",
+    relatedPortfolio: ["fraud-detection-fintech"],
+    relatedServices: ["machine-learning", "predictive-analytics"],
+    relatedExtras: [],
+  },
+  {
     slug: "monitor-brand-reputation",
     titleEn: "How to monitor brand reviews in real time",
     titleUk: "Як відстежувати відгуки про бренд у реальному часі",
