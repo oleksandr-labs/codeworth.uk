@@ -3,13 +3,12 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
-import { Menu, X, ChevronDown, ArrowRight, Globe, Rocket } from "lucide-react";
+import { Menu, X, ChevronDown, ArrowRight, Rocket } from "lucide-react";
 import { EmojiIcon } from "@/components/ui/EmojiIcon";
 import { cn } from "@/lib/utils";
 import { Container } from "./Container";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { LogoWordmark } from "@/components/ui/Logo";
-import { MiniCart } from "@/components/ui/MiniCart";
 import { SERVICES_DATA, getServiceLocalized } from "@/lib/data/services";
 import { NICHE_CATEGORIES, NICHE_CATEGORY_EN } from "@/lib/data/niches";
 import { analytics } from "@/lib/analytics";
@@ -33,10 +32,7 @@ const NICHE_CATEGORY_ICONS: Record<string, string> = {
 const NAV_LINKS_UK = [
   { label: "Послуги", href: "/services" },
   { label: "Доробки", href: "/extras" },
-  { label: "Маркетплейс", href: "/marketplace" },
-  { label: "Рішення", href: "/niches" },
   { label: "Портфоліо", href: "/portfolio" },
-  { label: "Ціни", href: "/pricing" },
   { label: "Блог", href: "/blog" },
   { label: "Про нас", href: "/about" },
 ];
@@ -44,12 +40,14 @@ const NAV_LINKS_UK = [
 const NAV_LINKS_EN = [
   { label: "Services", href: "/services" },
   { label: "Add-ons", href: "/extras" },
-  { label: "Marketplace", href: "/marketplace" },
-  { label: "Solutions", href: "/niches" },
   { label: "Portfolio", href: "/portfolio" },
-  { label: "Pricing", href: "/pricing" },
   { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
+];
+
+const LANGUAGES = [
+  { code: "en", flag: "🇬🇧", label: "English" },
+  { code: "uk", flag: "🇺🇦", label: "Українська" },
 ];
 
 export function Header() {
@@ -58,22 +56,22 @@ export function Header() {
   const lang = (params?.lang as string) ?? "en";
   const NAV_LINKS = lang === "uk" ? NAV_LINKS_UK : NAV_LINKS_EN;
 
-  // Build locale-prefixed path helper
   const lp = (path: string) => lang === "en" ? (path || "/") : `/${lang}${path}`;
 
-  // Build alternate-language path for the switcher
-  const altLang = lang === "en" ? "uk" : "en";
   const pathWithoutLocale = pathname.replace(new RegExp(`^/(en|uk)`), "") || "/";
-  const altPath = altLang === "en" ? (pathWithoutLocale || "/") : `/${altLang}${pathWithoutLocale}`;
+  const enPath = pathWithoutLocale || "/";
+  const ukPath = `/uk${pathWithoutLocale}`;
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const [langMenuOpen, setLangMenuOpen] = useState(false);
+
   const servicesTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const solutionsTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
   const servicesButtonRef = useRef<HTMLButtonElement>(null);
+  const langMenuRef = useRef<HTMLDivElement>(null);
 
   const openServices = () => {
     if (servicesTimeoutRef.current) clearTimeout(servicesTimeoutRef.current);
@@ -109,10 +107,23 @@ export function Header() {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [servicesOpen, solutionsOpen, isMobileOpen]);
 
-  // Desktop nav links excluding services and extras (rendered separately)
+  // Close lang menu on outside click
+  useEffect(() => {
+    if (!langMenuOpen) return;
+    const handleClick = (e: MouseEvent) => {
+      if (langMenuRef.current && !langMenuRef.current.contains(e.target as Node)) {
+        setLangMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [langMenuOpen]);
+
   const desktopLinks = NAV_LINKS.filter(
     (l) => l.href !== "/services" && l.href !== "/extras"
   );
+
+  const currentLang = LANGUAGES.find((l) => l.code === lang) ?? LANGUAGES[0];
 
   return (
     <header
@@ -194,20 +205,6 @@ export function Header() {
                         <ArrowRight className="w-3.5 h-3.5" />
                       </Link>
                     </div>
-                    <Link
-                      href={lp("/niches")}
-                      onClick={() => setServicesOpen(false)}
-                      className="flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium text-emerald-700 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-950/30 transition-colors"
-                    >
-                      🏪 {lang === "uk" ? "Готові рішення по нішах" : "Ready Solutions by Niche"}
-                    </Link>
-                    <Link
-                      href={lp("/startup")}
-                      onClick={() => setServicesOpen(false)}
-                      className="flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium text-orange-600 dark:text-orange-400 hover:bg-orange-50 dark:hover:bg-orange-950/30 transition-colors"
-                    >
-                      <Rocket className="w-4 h-4" /> {lang === "uk" ? "Для стартапів" : "Startup Solutions"}
-                    </Link>
                     <div className="flex gap-1 pt-1">
                       <Link
                         href={lp("/ai")}
@@ -229,52 +226,8 @@ export function Header() {
               )}
             </div>
 
-            {/* Solutions mega-menu dropdown */}
-            <div className="relative" onMouseEnter={openSolutions} onMouseLeave={closeSolutions}>
-              <button
-                aria-expanded={solutionsOpen}
-                aria-haspopup="true"
-                onClick={() => setSolutionsOpen((v) => !v)}
-                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-indigo-600 dark:hover:text-indigo-400 rounded-lg hover:bg-indigo-50 dark:hover:bg-indigo-950/50 transition-all duration-150"
-              >
-                {lang === "uk" ? "Рішення" : "Solutions"}
-                <ChevronDown className={cn("w-3.5 h-3.5 transition-transform duration-200", solutionsOpen && "rotate-180")} />
-              </button>
-              {solutionsOpen && (
-                <div
-                  role="menu"
-                  className="absolute top-full left-0 mt-1 w-96 bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-200 dark:border-neutral-700 shadow-2xl shadow-neutral-900/10 p-4 z-50"
-                >
-                  <div className="grid grid-cols-2 gap-1 mb-3">
-                    {NICHE_CATEGORIES.map((cat) => (
-                      <Link
-                        key={cat}
-                        href={lp(`/niches?category=${encodeURIComponent(cat)}`)}
-                        role="menuitem"
-                        onClick={() => setSolutionsOpen(false)}
-                        className="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-emerald-50 dark:hover:bg-emerald-950/30 transition-colors group"
-                      >
-                        <EmojiIcon emoji={NICHE_CATEGORY_ICONS[cat] ?? "📦"} className="w-4 h-4 shrink-0" />
-                        <span className="text-xs font-medium text-neutral-700 dark:text-neutral-300 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 leading-tight">{lang === "uk" ? cat : (NICHE_CATEGORY_EN[cat] ?? cat)}</span>
-                      </Link>
-                    ))}
-                  </div>
-                  <div className="border-t border-neutral-100 dark:border-neutral-800 pt-3">
-                    <Link
-                      href={lp("/niches")}
-                      onClick={() => setSolutionsOpen(false)}
-                      className="flex items-center justify-between px-3 py-2 rounded-xl text-sm font-semibold text-emerald-700 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-950/30 transition-colors"
-                    >
-                      {lang === "uk" ? "Всі 60+ рішень по нішах" : "All 60+ niche solutions"}
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Remaining desktop links (excluding Solutions which is now a dropdown) */}
-            {desktopLinks.filter(l => l.href !== "/niches").map((link) => (
+            {/* Remaining desktop links */}
+            {desktopLinks.map((link) => (
               <Link
                 key={link.href}
                 href={lp(link.href)}
@@ -287,18 +240,51 @@ export function Header() {
 
           {/* CTA */}
           <div className="hidden md:flex items-center gap-2">
-            <MiniCart />
             <ThemeToggle />
-            {/* Language switcher */}
-            <Link
-              href={altPath}
-              title={lang === "uk" ? "Switch to English" : "Перейти на українську"}
-              className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-neutral-500 dark:text-neutral-400 hover:text-indigo-600 dark:hover:text-indigo-400 rounded-lg hover:bg-indigo-50 dark:hover:bg-indigo-950/50 transition-all duration-150"
-              onClick={() => analytics.languageSwitch(lang, altLang)}
-            >
-              <Globe className="w-4 h-4" />
-              <span className="uppercase text-xs font-semibold tracking-wide">{altLang}</span>
-            </Link>
+
+            {/* Language dropdown */}
+            <div ref={langMenuRef} className="relative">
+              <button
+                onClick={() => setLangMenuOpen((v) => !v)}
+                aria-expanded={langMenuOpen}
+                aria-haspopup="listbox"
+                className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-neutral-500 dark:text-neutral-400 hover:text-indigo-600 dark:hover:text-indigo-400 rounded-lg hover:bg-indigo-50 dark:hover:bg-indigo-950/50 transition-all duration-150"
+              >
+                <span className="text-base leading-none">{currentLang.flag}</span>
+                <span className="uppercase text-xs font-semibold tracking-wide">{lang}</span>
+                <ChevronDown className={cn("w-3 h-3 transition-transform duration-200", langMenuOpen && "rotate-180")} />
+              </button>
+              {langMenuOpen && (
+                <div
+                  role="listbox"
+                  className="absolute right-0 top-full mt-1.5 bg-white dark:bg-neutral-900 rounded-xl border border-neutral-200 dark:border-neutral-700 shadow-xl shadow-neutral-900/10 py-1 min-w-[160px] z-50"
+                >
+                  {LANGUAGES.map((l) => (
+                    <Link
+                      key={l.code}
+                      href={l.code === "en" ? enPath : ukPath}
+                      role="option"
+                      aria-selected={lang === l.code}
+                      onClick={() => {
+                        setLangMenuOpen(false);
+                        if (lang !== l.code) analytics.languageSwitch(lang, l.code);
+                      }}
+                      className={cn(
+                        "flex items-center gap-2.5 px-4 py-2.5 text-sm transition-colors hover:bg-indigo-50 dark:hover:bg-indigo-950/50",
+                        lang === l.code
+                          ? "text-indigo-600 dark:text-indigo-400 font-semibold bg-indigo-50/60 dark:bg-indigo-950/30"
+                          : "text-neutral-700 dark:text-neutral-300"
+                      )}
+                    >
+                      <span className="text-base leading-none">{l.flag}</span>
+                      {l.label}
+                      {lang === l.code && <span className="ml-auto text-indigo-500 dark:text-indigo-400">✓</span>}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
             <Link
               href={lp("/contact")}
               className="px-5 py-2.5 text-sm font-semibold rounded-xl bg-linear-to-r from-indigo-600 to-indigo-700 text-white hover:from-indigo-700 hover:to-indigo-800 shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all duration-200 hover:-translate-y-0.5"
@@ -309,15 +295,15 @@ export function Header() {
 
           {/* Mobile controls */}
           <div className="md:hidden flex items-center gap-1">
-            <MiniCart />
             <ThemeToggle />
+            {/* Mobile lang toggle (simple, no dropdown) */}
             <Link
-              href={altPath}
+              href={lang === "en" ? ukPath : enPath}
               title={lang === "uk" ? "Switch to English" : "Перейти на українську"}
-              className="p-2 rounded-lg text-neutral-500 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
-              onClick={() => analytics.languageSwitch(lang, altLang)}
+              className="flex items-center gap-1 p-2 rounded-lg text-neutral-500 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors text-sm"
+              onClick={() => analytics.languageSwitch(lang, lang === "en" ? "uk" : "en")}
             >
-              <Globe className="w-4 h-4" />
+              <span className="text-base leading-none">{lang === "en" ? "🇺🇦" : "🇬🇧"}</span>
             </Link>
             <button
               className="p-2 rounded-lg text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
@@ -346,15 +332,29 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
-            <div className="pt-3 border-t border-neutral-100 mt-2 flex flex-col gap-2">
-              <Link
-                href={altPath}
-                className="flex items-center justify-center gap-2 px-5 py-3 text-sm font-medium rounded-xl border border-neutral-200 dark:border-neutral-700 text-neutral-600 dark:text-neutral-300"
-                onClick={() => { setIsMobileOpen(false); analytics.languageSwitch(lang, altLang); }}
-              >
-                <Globe className="w-4 h-4" />
-                {lang === "uk" ? "Switch to English" : "Перейти на українську"}
-              </Link>
+            <div className="pt-3 border-t border-neutral-100 dark:border-neutral-800 mt-2 flex flex-col gap-2">
+              {/* Language options in mobile menu */}
+              <div className="flex gap-2">
+                {LANGUAGES.map((l) => (
+                  <Link
+                    key={l.code}
+                    href={l.code === "en" ? enPath : ukPath}
+                    onClick={() => {
+                      setIsMobileOpen(false);
+                      if (lang !== l.code) analytics.languageSwitch(lang, l.code);
+                    }}
+                    className={cn(
+                      "flex-1 flex items-center justify-center gap-2 px-4 py-2.5 text-sm rounded-xl border transition-colors",
+                      lang === l.code
+                        ? "border-indigo-300 dark:border-indigo-700 bg-indigo-50 dark:bg-indigo-950/30 text-indigo-700 dark:text-indigo-400 font-semibold"
+                        : "border-neutral-200 dark:border-neutral-700 text-neutral-600 dark:text-neutral-300 hover:border-indigo-200 dark:hover:border-indigo-800"
+                    )}
+                  >
+                    <span className="text-base leading-none">{l.flag}</span>
+                    {l.label}
+                  </Link>
+                ))}
+              </div>
               <Link
                 href={lp("/contact")}
                 className="block text-center px-5 py-3 text-sm font-semibold rounded-xl bg-linear-to-r from-indigo-600 to-indigo-700 text-white"

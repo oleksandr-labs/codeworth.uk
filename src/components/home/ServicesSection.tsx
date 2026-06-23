@@ -1,155 +1,139 @@
 import Link from "next/link";
-import { ArrowRight, Globe, ShoppingCart, Smartphone, TrendingUp, Palette, Bot, Headphones, LayoutGrid } from "lucide-react";
+import { ArrowRight, Cpu, Bot, Shield, Eye, TrendingUp, Workflow, MessageSquare, Lightbulb } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { cn } from "@/lib/utils";
 
 const SERVICES_UK = [
   {
-    icon: Globe,
-    title: "Розробка сайтів",
-    description: "Корпоративні, лендінги, портфоліо — сайти що виглядають і працюють бездоганно.",
-    href: "/services/website-dev",
-    accent: "from-indigo-500 to-indigo-700",
-    bg: "bg-indigo-50",
-    iconColor: "text-indigo-600",
+    icon: Cpu,
+    title: "Розробка ML-моделей",
+    description: "Кастомні моделі класифікації, регресії та кластеризації — від прототипу до продакшену.",
+    href: "/services/ml-models",
+    bg: "bg-indigo-50 dark:bg-indigo-950/40",
+    iconColor: "text-indigo-600 dark:text-indigo-400",
   },
   {
-    icon: ShoppingCart,
-    title: "Інтернет-магазини",
-    description: "E-commerce платформи з кошиком, оплатою, CRM-інтеграцією та адмін-панеллю.",
-    href: "/services/ecommerce",
-    accent: "from-violet-500 to-violet-700",
-    bg: "bg-violet-50",
-    iconColor: "text-violet-600",
+    icon: MessageSquare,
+    title: "Обробка природньої мови",
+    description: "Класифікація тексту, NER, sentiment analysis, summarization та витяг структурованих даних.",
+    href: "/services/nlp",
+    bg: "bg-violet-50 dark:bg-violet-950/40",
+    iconColor: "text-violet-600 dark:text-violet-400",
   },
   {
-    icon: Smartphone,
-    title: "Мобільні додатки (PWA)",
-    description: "Прогресивні веб-додатки що встановлюються на телефон та працюють офлайн.",
-    href: "/services/mobile",
-    accent: "from-blue-500 to-blue-700",
-    bg: "bg-blue-50",
-    iconColor: "text-blue-600",
+    icon: Eye,
+    title: "Комп'ютерний зір",
+    description: "Детекція об'єктів, OCR, розпізнавання дефектів та аномалій на зображеннях і відео.",
+    href: "/services/computer-vision",
+    bg: "bg-blue-50 dark:bg-blue-950/40",
+    iconColor: "text-blue-600 dark:text-blue-400",
+  },
+  {
+    icon: Shield,
+    title: "Виявлення шахрайства",
+    description: "ML-системи для детекції аномалій, шахрайських транзакцій та верифікації у реальному часі.",
+    href: "/services/fraud-detection",
+    bg: "bg-emerald-50 dark:bg-emerald-950/40",
+    iconColor: "text-emerald-600 dark:text-emerald-400",
   },
   {
     icon: TrendingUp,
-    title: "SEO-просування",
-    description: "Вивід у топ Google: технічне SEO, контент-стратегія, посилальний профіль.",
-    href: "/services/seo",
-    accent: "from-emerald-500 to-emerald-700",
-    bg: "bg-emerald-50",
-    iconColor: "text-emerald-600",
-  },
-  {
-    icon: Palette,
-    title: "UI/UX Дизайн",
-    description: "Інтерфейси рівня Awwwards: дизайн-система, прототипи, мікроанімації.",
-    href: "/services/design",
-    accent: "from-pink-500 to-rose-600",
-    bg: "bg-pink-50",
-    iconColor: "text-pink-600",
-  },
-  {
-    icon: LayoutGrid,
-    title: "CRM та автоматизація",
-    description: "Кастомні CRM-системи, ERP, автоматизація бізнес-процесів та інтеграції.",
-    href: "/services/crm",
-    accent: "from-amber-500 to-orange-600",
-    bg: "bg-amber-50",
-    iconColor: "text-amber-600",
+    title: "Предиктивна аналітика",
+    description: "Прогнозування відтоку клієнтів, попиту, цін та ризиків на основі ваших даних.",
+    href: "/services/predictive-analytics",
+    bg: "bg-pink-50 dark:bg-pink-950/40",
+    iconColor: "text-pink-600 dark:text-pink-400",
   },
   {
     icon: Bot,
-    title: "Чат-боти",
-    description: "Telegram, Viber, Messenger боти для продажів, підтримки та автоматизації.",
-    href: "/services/chatbots",
-    accent: "from-cyan-500 to-cyan-700",
-    bg: "bg-cyan-50",
-    iconColor: "text-cyan-600",
+    title: "AI-чатботи та RAG",
+    description: "GPT-4o чатботи з Retrieval-Augmented Generation на ваших документах і базі знань.",
+    href: "/services/ai-chatbots",
+    bg: "bg-amber-50 dark:bg-amber-950/40",
+    iconColor: "text-amber-600 dark:text-amber-400",
   },
   {
-    icon: Headphones,
-    title: "Технічна підтримка",
-    description: "Обслуговування, оновлення, хостинг та цілодобова підтримка вашого сайту.",
-    href: "/services/support",
-    accent: "from-slate-500 to-slate-700",
-    bg: "bg-slate-50",
-    iconColor: "text-slate-600",
+    icon: Workflow,
+    title: "MLOps та деплой",
+    description: "CI/CD для моделей, моніторинг дрейфу, A/B-тестування та автоматичне перенавчання.",
+    href: "/services/mlops",
+    bg: "bg-cyan-50 dark:bg-cyan-950/40",
+    iconColor: "text-cyan-600 dark:text-cyan-400",
+  },
+  {
+    icon: Lightbulb,
+    title: "AI-консалтинг",
+    description: "Аудит даних, AI-стратегія, вибір стеку і roadmap впровадження ML у вашій компанії.",
+    href: "/services/ai-consulting",
+    bg: "bg-slate-50 dark:bg-slate-800/60",
+    iconColor: "text-slate-600 dark:text-slate-400",
   },
 ];
 
 const SERVICES_EN = [
   {
-    icon: Globe,
-    title: "Website Development",
-    description: "Corporate sites, landing pages, portfolios — websites that look and perform flawlessly.",
-    href: "/services/website-dev",
-    accent: "from-indigo-500 to-indigo-700",
-    bg: "bg-indigo-50",
-    iconColor: "text-indigo-600",
+    icon: Cpu,
+    title: "Custom ML Models",
+    description: "Classification, regression and clustering models built and deployed from prototype to production.",
+    href: "/services/ml-models",
+    bg: "bg-indigo-50 dark:bg-indigo-950/40",
+    iconColor: "text-indigo-600 dark:text-indigo-400",
   },
   {
-    icon: ShoppingCart,
-    title: "Online Stores",
-    description: "E-commerce platforms with cart, payments, CRM integration and admin panel.",
-    href: "/services/ecommerce",
-    accent: "from-violet-500 to-violet-700",
-    bg: "bg-violet-50",
-    iconColor: "text-violet-600",
+    icon: MessageSquare,
+    title: "Natural Language Processing",
+    description: "Text classification, NER, sentiment analysis, summarisation and structured data extraction at scale.",
+    href: "/services/nlp",
+    bg: "bg-violet-50 dark:bg-violet-950/40",
+    iconColor: "text-violet-600 dark:text-violet-400",
   },
   {
-    icon: Smartphone,
-    title: "Mobile Apps (PWA)",
-    description: "Progressive web apps that install on mobile and work offline.",
-    href: "/services/mobile",
-    accent: "from-blue-500 to-blue-700",
-    bg: "bg-blue-50",
-    iconColor: "text-blue-600",
+    icon: Eye,
+    title: "Computer Vision",
+    description: "Object detection, OCR, face recognition, defect detection and visual anomaly systems.",
+    href: "/services/computer-vision",
+    bg: "bg-blue-50 dark:bg-blue-950/40",
+    iconColor: "text-blue-600 dark:text-blue-400",
+  },
+  {
+    icon: Shield,
+    title: "Fraud Detection",
+    description: "Real-time anomaly detection, transaction fraud scoring and identity verification with ML.",
+    href: "/services/fraud-detection",
+    bg: "bg-emerald-50 dark:bg-emerald-950/40",
+    iconColor: "text-emerald-600 dark:text-emerald-400",
   },
   {
     icon: TrendingUp,
-    title: "SEO Promotion",
-    description: "Rank at the top of Google: technical SEO, content strategy, link profile.",
-    href: "/services/seo",
-    accent: "from-emerald-500 to-emerald-700",
-    bg: "bg-emerald-50",
-    iconColor: "text-emerald-600",
-  },
-  {
-    icon: Palette,
-    title: "UI/UX Design",
-    description: "Awwwards-level interfaces: design system, prototypes, micro-animations.",
-    href: "/services/design",
-    accent: "from-pink-500 to-rose-600",
-    bg: "bg-pink-50",
-    iconColor: "text-pink-600",
-  },
-  {
-    icon: LayoutGrid,
-    title: "CRM & Automation",
-    description: "Custom CRM systems, ERP, business process automation and integrations.",
-    href: "/services/crm",
-    accent: "from-amber-500 to-orange-600",
-    bg: "bg-amber-50",
-    iconColor: "text-amber-600",
+    title: "Predictive Analytics",
+    description: "Churn prediction, demand forecasting, dynamic pricing and risk scoring on your data.",
+    href: "/services/predictive-analytics",
+    bg: "bg-pink-50 dark:bg-pink-950/40",
+    iconColor: "text-pink-600 dark:text-pink-400",
   },
   {
     icon: Bot,
-    title: "Chatbots",
-    description: "Telegram, Viber, Messenger bots for sales, support and automation.",
-    href: "/services/chatbots",
-    accent: "from-cyan-500 to-cyan-700",
-    bg: "bg-cyan-50",
-    iconColor: "text-cyan-600",
+    title: "AI Chatbots & RAG",
+    description: "GPT-4o chatbots with Retrieval-Augmented Generation built on your documents and knowledge base.",
+    href: "/services/ai-chatbots",
+    bg: "bg-amber-50 dark:bg-amber-950/40",
+    iconColor: "text-amber-600 dark:text-amber-400",
   },
   {
-    icon: Headphones,
-    title: "Technical Support",
-    description: "Maintenance, updates, hosting and around-the-clock support for your site.",
-    href: "/services/support",
-    accent: "from-slate-500 to-slate-700",
-    bg: "bg-slate-50",
-    iconColor: "text-slate-600",
+    icon: Workflow,
+    title: "MLOps & Deployment",
+    description: "Model CI/CD, drift monitoring, A/B testing and automated retraining pipelines.",
+    href: "/services/mlops",
+    bg: "bg-cyan-50 dark:bg-cyan-950/40",
+    iconColor: "text-cyan-600 dark:text-cyan-400",
+  },
+  {
+    icon: Lightbulb,
+    title: "AI Strategy & Consulting",
+    description: "Data audit, AI roadmap, stack selection and implementation planning for your organisation.",
+    href: "/services/ai-consulting",
+    bg: "bg-slate-50 dark:bg-slate-800/60",
+    iconColor: "text-slate-600 dark:text-slate-400",
   },
 ];
 
@@ -168,15 +152,15 @@ export function ServicesSection({ lang }: { lang: string }) {
           </p>
           <h2 className="text-4xl lg:text-5xl font-heading font-extrabold text-neutral-900 dark:text-white mb-4">
             {isUk ? (
-              <>Все що потрібно для{" "}<span className="gradient-text">цифрового росту</span></>
+              <>Все що потрібно для{" "}<span className="gradient-text">ML у бізнесі</span></>
             ) : (
-              <>Everything you need for{" "}<span className="gradient-text">digital growth</span></>
+              <>Everything you need for{" "}<span className="gradient-text">ML in business</span></>
             )}
           </h2>
-          <p className="text-lg text-neutral-500">
+          <p className="text-lg text-neutral-500 dark:text-neutral-400">
             {isUk
-              ? "Повний цикл розробки — від ідеї та дизайну до запуску та підтримки."
-              : "Full development cycle — from idea and design to launch and support."}
+              ? "Від першого ML-прототипу до MLOps у продакшні — повний цикл."
+              : "From first ML prototype to MLOps in production — the full cycle."}
           </p>
         </div>
 
@@ -198,13 +182,13 @@ export function ServicesSection({ lang }: { lang: string }) {
                 >
                   <Icon className={cn("w-6 h-6", service.iconColor)} />
                 </div>
-                <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-2 group-hover:text-indigo-700 transition-colors">
+                <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-2 group-hover:text-indigo-700 dark:group-hover:text-indigo-400 transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-4">
                   {service.description}
                 </p>
-                <span className="inline-flex items-center gap-1 text-sm font-semibold text-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity">
+                <span className="inline-flex items-center gap-1 text-sm font-semibold text-indigo-600 dark:text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity">
                   {isUk ? "Детальніше" : "Learn more"}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
@@ -217,7 +201,7 @@ export function ServicesSection({ lang }: { lang: string }) {
         <div className="mt-12 text-center">
           <Link
             href={lp("/services")}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-indigo-200 text-indigo-700 font-semibold hover:bg-indigo-50 hover:border-indigo-300 transition-all duration-200"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-indigo-200 dark:border-indigo-800 text-indigo-700 dark:text-indigo-400 font-semibold hover:bg-indigo-50 dark:hover:bg-indigo-950/40 hover:border-indigo-300 transition-all duration-200"
           >
             {isUk ? "Переглянути всі послуги" : "View all services"}
             <ArrowRight className="w-4 h-4" />

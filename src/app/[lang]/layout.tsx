@@ -13,7 +13,6 @@ import { PageTransition } from "@/components/layout/PageTransition";
 import { ServiceWorkerRegister } from "@/components/layout/ServiceWorkerRegister";
 import { CustomCursor } from "@/components/ui/CustomCursor";
 import { BottomNav } from "@/components/layout/BottomNav";
-import { FloatingChat } from "@/components/ui/FloatingChat";
 import { NavProgress } from "@/components/layout/NavProgress";
 import "../globals.css";
 
@@ -39,17 +38,20 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Codeworth — Full-Cycle Web Studio | codeworth.uk",
+    default: "Codeworth — AI & Machine Learning Solutions | codeworth.uk",
     template: "%s | Codeworth",
   },
   description:
-    "Codeworth — full-cycle web studio. Website development, e-commerce, PWA, SEO, CRM, UI/UX design and a marketplace of ready-made solutions for small and medium businesses.",
+    "Codeworth — AI and Machine Learning consultancy. Custom ML models, fraud detection, churn prediction, NLP, computer vision and MLOps for UK businesses.",
   keywords: [
-    "web studio",
-    "website development",
-    "e-commerce",
-    "Next.js",
-    "SEO",
+    "machine learning",
+    "artificial intelligence",
+    "AI consultancy",
+    "ML solutions",
+    "fraud detection",
+    "NLP",
+    "computer vision",
+    "MLOps",
     "UK",
     "Codeworth",
   ],
@@ -62,14 +64,14 @@ export const metadata: Metadata = {
     alternateLocale: ["uk_UA"],
     url: "https://codeworth.uk",
     siteName: "Codeworth",
-    title: "Codeworth — Full-Cycle Web Studio",
+    title: "Codeworth — AI & Machine Learning Solutions",
     description:
-      "Website development, e-commerce, PWA and a marketplace of ready-made solutions for businesses.",
+      "Custom ML models, fraud detection, churn prediction, NLP and computer vision for UK businesses.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Codeworth — Full-Cycle Web Studio",
-    description: "Website development and marketplace solutions for businesses.",
+    title: "Codeworth — AI & Machine Learning Solutions",
+    description: "AI and ML consultancy for UK businesses. Fraud detection, NLP, computer vision, MLOps.",
   },
   robots: {
     index: true,
@@ -92,7 +94,7 @@ const organizationSchema = {
   name: "Codeworth",
   url: "https://codeworth.uk",
   logo: "https://codeworth.uk/logo.svg",
-  description: "Full-cycle web studio — website development, SEO, design and a marketplace of ready-made solutions for businesses.",
+  description: "AI and Machine Learning consultancy — custom ML models, fraud detection, churn prediction, NLP, computer vision and MLOps for UK businesses.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Київ",
@@ -183,7 +185,6 @@ export default async function LocaleLayout({
           <ServiceWorkerRegister />
           <CustomCursor />
           <BottomNav />
-          <FloatingChat />
         </ThemeProvider>
         <AnalyticsScripts gaId={GA_ID} fbPixelId={FB_PIXEL_ID} googleAdsId={GOOGLE_ADS_ID} />
         <RouteTracker />

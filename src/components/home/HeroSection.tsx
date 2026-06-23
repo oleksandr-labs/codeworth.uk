@@ -8,23 +8,23 @@ import { CountUp } from "@/components/ui/CountUp";
 import { useLocale } from "@/components/layout/LocaleProvider";
 import { analytics } from "@/lib/analytics";
 
-const ROTATING_WORDS_UK = ["сайтів", "магазинів", "CRM-систем", "PWA-додатків", "брендів"];
-const ROTATING_WORDS_EN = ["websites", "stores", "CRM systems", "PWA apps", "brands"];
+const ROTATING_WORDS_UK = ["прогнозування", "fraud-детекції", "NLP-завдань", "комп'ютерного зору", "автоматизації"];
+const ROTATING_WORDS_EN = ["predictions", "fraud detection", "NLP tasks", "computer vision", "automation"];
 
-const TECH_LOGOS = ["Next.js", "React", "TypeScript", "Tailwind", "Node.js", "PostgreSQL"];
+const TECH_LOGOS = ["Python", "PyTorch", "TensorFlow", "MLflow", "LangChain", "FastAPI"];
 
 const STATS_UK = [
-  { end: 120, suffix: "+", label: "Шаблонів" },
-  { end: 60, suffix: "+", label: "Ніш" },
-  { end: 4, suffix: "+", label: "Роки роботи" },
-  { end: 90, suffix: "+", label: "Core Web Vitals" },
+  { end: 40, suffix: "+", label: "ML-моделей" },
+  { end: 12, suffix: "+", label: "Галузей" },
+  { end: 4, suffix: "+", label: "Роки в ML" },
+  { end: 340, suffix: "%", label: "Середній ROI" },
 ];
 
 const STATS_EN = [
-  { end: 120, suffix: "+", label: "Templates" },
-  { end: 60, suffix: "+", label: "Niches" },
-  { end: 4, suffix: "+", label: "Years" },
-  { end: 90, suffix: "+", label: "Core Web Vitals" },
+  { end: 40, suffix: "+", label: "ML Models" },
+  { end: 12, suffix: "+", label: "Industries" },
+  { end: 4, suffix: "+", label: "Years in ML" },
+  { end: 340, suffix: "%", label: "Avg ROI" },
 ];
 
 export function HeroSection() {
@@ -51,7 +51,6 @@ export function HeroSection() {
     return () => clearInterval(interval);
   }, [ROTATING_WORDS.length]);
 
-  // Parallax: move decorative orbs on scroll
   useEffect(() => {
     const handleScroll = () => {
       const y = window.scrollY;
@@ -85,16 +84,16 @@ export function HeroSection() {
       <Container className="relative py-20 lg:py-32">
         <div className="max-w-5xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full bg-indigo-50 border border-indigo-100 text-sm font-medium text-indigo-700">
+          <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-100 dark:border-indigo-900/60 text-sm font-medium text-indigo-700 dark:text-indigo-300">
             <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
-            {isUk ? "Приймаємо нові проєкти" : "Accepting new projects"}
+            {isUk ? "Приймаємо нові проєкти" : "Taking on new projects"}
             <span className="text-indigo-400">•</span>
             {isUk ? "Безкоштовна консультація" : "Free consultation"}
           </div>
 
           {/* Heading */}
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-heading font-extrabold text-neutral-900 dark:text-white mb-6 leading-tight tracking-tight">
-            {isUk ? "Розробка" : "Development of"}{" "}
+            {isUk ? "AI для" : "AI for"}{" "}
             <span
               className={`gradient-text inline-block transition-all duration-300 ${
                 isAnimating ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"
@@ -103,21 +102,21 @@ export function HeroSection() {
               {ROTATING_WORDS[currentWord]}
             </span>
             <br />
-            <span className="text-neutral-800">
-              {isUk ? "для вашого бізнесу" : "for your business"}
+            <span className="text-neutral-800 dark:text-neutral-200">
+              {isUk ? "у вашому бізнесі" : "in your business"}
             </span>
           </h1>
 
           {/* Subheading */}
           <p className="text-lg sm:text-xl text-neutral-500 dark:text-neutral-400 mb-10 max-w-2xl mx-auto leading-relaxed">
             {isUk ? (
-              <>Codeworth — веб-студія повного циклу. Створюємо сайти, що{" "}
-              <span className="text-neutral-700 dark:text-neutral-300 font-medium">конвертують відвідувачів у клієнтів</span>.
-              Від дизайну до запуску — під ключ.</>
+              <>Codeworth — ML-компанія. Розробляємо моделі, що{" "}
+              <span className="text-neutral-700 dark:text-neutral-300 font-medium">перетворюють дані у бізнес-результати</span>.
+              Від прототипу до продакшену.</>
             ) : (
-              <>Codeworth — a full-cycle web studio. We build websites that{" "}
-              <span className="text-neutral-700 dark:text-neutral-300 font-medium">convert visitors into clients</span>.
-              From design to launch — turnkey.</>
+              <>Codeworth — an ML company. We build models that{" "}
+              <span className="text-neutral-700 dark:text-neutral-300 font-medium">convert data into business outcomes</span>.
+              From prototype to production.</>
             )}
           </p>
 
@@ -128,7 +127,7 @@ export function HeroSection() {
               <ArrowRight className="w-5 h-5" />
             </Button>
             <Button href={lp("/portfolio")} size="lg" variant="secondary" onClick={() => analytics.ctaClick("portfolio", "hero")}>
-              {isUk ? "Дивитися портфоліо" : "View portfolio"}
+              {isUk ? "Дивитися рішення" : "View solutions"}
             </Button>
           </div>
 
@@ -139,7 +138,7 @@ export function HeroSection() {
                 <div className="text-4xl font-sans font-bold tabular-nums tracking-tight text-neutral-900 dark:text-white mb-1">
                   <CountUp end={stat.end} suffix={stat.suffix} />
                 </div>
-                <div className="text-sm text-neutral-500">{stat.label}</div>
+                <div className="text-sm text-neutral-500 dark:text-neutral-400">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -147,7 +146,7 @@ export function HeroSection() {
           {/* Tech trust bar */}
           <div>
             <p className="text-xs text-neutral-400 uppercase tracking-widest mb-4">
-              {isUk ? "Працюємо на сучасному стеку" : "Built on modern stack"}
+              {isUk ? "Будуємо на сучасному ML-стеку" : "Built on the modern ML stack"}
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3">
               {TECH_LOGOS.map((tech) => (
@@ -166,7 +165,7 @@ export function HeroSection() {
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-neutral-400">
         <span className="text-xs tracking-widest uppercase">{isUk ? "Скрол" : "Scroll"}</span>
-        <div className="w-5 h-8 rounded-full border-2 border-neutral-300 flex items-start justify-center p-1">
+        <div className="w-5 h-8 rounded-full border-2 border-neutral-300 dark:border-neutral-600 flex items-start justify-center p-1">
           <div className="w-1 h-2 rounded-full bg-neutral-400 animate-bounce" />
         </div>
       </div>

@@ -1,93 +1,93 @@
-import { Zap, Shield, Paintbrush, Search, Award, HeartHandshake } from "lucide-react";
+import { Zap, Shield, Lock, TrendingUp, Cpu, HeartHandshake } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 
 const REASONS_UK = [
   {
     icon: Zap,
-    title: "Швидкий запуск",
-    description: "Лендінг — за 5 днів. Корпоративний сайт — за 2-3 тижні. Не затягуємо терміни.",
+    title: "Швидкий прототип",
+    description: "Proof of concept за 2–3 тижні — без місяців R&D і мільйонних бюджетів.",
     color: "text-amber-500",
-    bg: "bg-amber-50",
-  },
-  {
-    icon: Paintbrush,
-    title: "Преміальний дизайн",
-    description: "Кожен проєкт — унікальний. Жодних шаблонів із Envato. Тільки кастомний дизайн.",
-    color: "text-pink-500",
-    bg: "bg-pink-50",
-  },
-  {
-    icon: Search,
-    title: "SEO з першого дня",
-    description: "Технічна оптимізація, мікророзмітка Schema.org та правильна структура — в базі.",
-    color: "text-emerald-500",
-    bg: "bg-emerald-50",
+    bg: "bg-amber-50 dark:bg-amber-950/40",
   },
   {
     icon: Shield,
-    title: "Безпека та надійність",
-    description: "HTTPS, захист від DDoS, бекапи, моніторинг uptime — ваш сайт завжди онлайн.",
+    title: "Продакшн-якість",
+    description: "Не іграшкові моделі. MLflow, Docker, CI/CD та дрейф-моніторинг від першого дня.",
     color: "text-indigo-500",
-    bg: "bg-indigo-50",
+    bg: "bg-indigo-50 dark:bg-indigo-950/40",
   },
   {
-    icon: Award,
-    title: "Гарантія якості",
-    description: "6 місяців безкоштовної підтримки після запуску. Виправляємо все за домовленістю.",
+    icon: Lock,
+    title: "Конфіденційність даних",
+    description: "On-prem або приватний хмарний деплой. Ваші дані не покидають інфраструктуру.",
+    color: "text-emerald-500",
+    bg: "bg-emerald-50 dark:bg-emerald-950/40",
+  },
+  {
+    icon: TrendingUp,
+    title: "Вимірюваний ROI",
+    description: "Метрики точності, business-impact звіти та дашборди — не маркетинговий хайп.",
+    color: "text-pink-500",
+    bg: "bg-pink-50 dark:bg-pink-950/40",
+  },
+  {
+    icon: Cpu,
+    title: "MLOps з першого дня",
+    description: "Дрейф-детекція, A/B-тести моделей та автоматичне перенавчання закладено в архітектуру одразу.",
     color: "text-violet-500",
-    bg: "bg-violet-50",
+    bg: "bg-violet-50 dark:bg-violet-950/40",
   },
   {
     icon: HeartHandshake,
     title: "Партнерство, не угода",
-    description: "Радимо, навіть якщо задача виходить за рамки договору. Ваш успіх — наш успіх.",
+    description: "Консультуємо навіть після завершення контракту. Ваш успіх — наш успіх.",
     color: "text-rose-500",
-    bg: "bg-rose-50",
+    bg: "bg-rose-50 dark:bg-rose-950/40",
   },
 ];
 
 const REASONS_EN = [
   {
     icon: Zap,
-    title: "Fast Launch",
-    description: "Landing page in 5 days. Corporate site in 2–3 weeks. We never miss deadlines.",
+    title: "Rapid Prototyping",
+    description: "Proof of concept in 2–3 weeks — no months of R&D or seven-figure budgets.",
     color: "text-amber-500",
-    bg: "bg-amber-50",
-  },
-  {
-    icon: Paintbrush,
-    title: "Premium Design",
-    description: "Every project is unique. No Envato templates. Custom design only.",
-    color: "text-pink-500",
-    bg: "bg-pink-50",
-  },
-  {
-    icon: Search,
-    title: "SEO from Day One",
-    description: "Technical optimization, Schema.org markup and correct structure built in from the start.",
-    color: "text-emerald-500",
-    bg: "bg-emerald-50",
+    bg: "bg-amber-50 dark:bg-amber-950/40",
   },
   {
     icon: Shield,
-    title: "Security & Reliability",
-    description: "HTTPS, DDoS protection, backups, uptime monitoring — your site is always online.",
+    title: "Production-Ready Models",
+    description: "Not toy demos. MLflow, Docker, CI/CD and drift monitoring from day one.",
     color: "text-indigo-500",
-    bg: "bg-indigo-50",
+    bg: "bg-indigo-50 dark:bg-indigo-950/40",
   },
   {
-    icon: Award,
-    title: "Quality Guarantee",
-    description: "6 months of free support after launch. We fix everything as agreed.",
+    icon: Lock,
+    title: "Data Privacy First",
+    description: "On-prem or private cloud deployment. Your data never leaves your infrastructure.",
+    color: "text-emerald-500",
+    bg: "bg-emerald-50 dark:bg-emerald-950/40",
+  },
+  {
+    icon: TrendingUp,
+    title: "Measurable ROI",
+    description: "Accuracy metrics, business impact reports and dashboards — not marketing hype.",
+    color: "text-pink-500",
+    bg: "bg-pink-50 dark:bg-pink-950/40",
+  },
+  {
+    icon: Cpu,
+    title: "MLOps from Day One",
+    description: "Drift detection, model A/B testing and automated retraining built into the architecture from the start.",
     color: "text-violet-500",
-    bg: "bg-violet-50",
+    bg: "bg-violet-50 dark:bg-violet-950/40",
   },
   {
     icon: HeartHandshake,
     title: "Partnership, Not a Deal",
-    description: "We advise even when the task goes beyond the contract. Your success is our success.",
+    description: "We advise even after the contract ends. Your success is our success.",
     color: "text-rose-500",
-    bg: "bg-rose-50",
+    bg: "bg-rose-50 dark:bg-rose-950/40",
   },
 ];
 
@@ -98,7 +98,7 @@ export function WhyUsSection({ lang }: { lang: string }) {
   return (
     <>
       {/* Why Us */}
-      <section className="py-24 gradient-mesh bg-neutral-50">
+      <section className="py-24 gradient-mesh bg-neutral-50 dark:bg-neutral-950">
         <Container>
           <div className="max-w-2xl mx-auto text-center mb-16">
             <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
@@ -106,9 +106,9 @@ export function WhyUsSection({ lang }: { lang: string }) {
             </p>
             <h2 className="text-4xl lg:text-5xl font-heading font-extrabold text-neutral-900 dark:text-white mb-4">
               {isUk ? (
-                <>Обирають нас,{" "}<span className="gradient-text">бо ми результат</span></>
+                <>Обирають нас,{" "}<span className="gradient-text">бо ML справді окупається</span></>
               ) : (
-                <>They choose us{" "}<span className="gradient-text">because we deliver</span></>
+                <>They choose us{" "}<span className="gradient-text">because ML actually delivers ROI</span></>
               )}
             </h2>
           </div>

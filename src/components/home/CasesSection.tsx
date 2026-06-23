@@ -31,7 +31,7 @@ export function CasesSection({ lang }: { lang: string }) {
             <Link
               key={project.slug}
               href={`/${lang}/portfolio/${project.slug}`}
-              className="group flex flex-col rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white overflow-hidden hover:shadow-lg hover:shadow-neutral-200/60 transition-all duration-300 hover:-translate-y-1"
+              className="group flex flex-col rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white dark:bg-neutral-800 overflow-hidden hover:shadow-lg hover:shadow-neutral-200/60 dark:hover:shadow-neutral-900/60 transition-all duration-300 hover:-translate-y-1"
             >
               {/* Color header */}
               <div className={`h-28 bg-linear-to-br ${project.color} flex items-center justify-center`}>
@@ -40,7 +40,7 @@ export function CasesSection({ lang }: { lang: string }) {
 
               <div className="flex flex-col flex-1 p-6">
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="inline-block px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold">
+                  <span className="inline-block px-2 py-0.5 rounded-full bg-indigo-50 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300 text-xs font-semibold">
                     {project.niche}
                   </span>
                   <span className="text-neutral-300 text-xs">·</span>
@@ -57,9 +57,9 @@ export function CasesSection({ lang }: { lang: string }) {
 
                 {/* Top metric */}
                 {project.caseStudy?.results[0] && (
-                  <div className="flex items-start gap-2 p-3 rounded-xl bg-emerald-50 border border-emerald-100">
-                    <TrendingUp className="w-4 h-4 text-emerald-600 mt-0.5 shrink-0" />
-                    <span className="text-xs font-semibold text-emerald-700 leading-snug">
+                  <div className="flex items-start gap-2 p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/60">
+                    <TrendingUp className="w-4 h-4 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0" />
+                    <span className="text-xs font-semibold text-emerald-700 dark:text-emerald-300 leading-snug">
                       {project.caseStudy.results[0]}
                     </span>
                   </div>
