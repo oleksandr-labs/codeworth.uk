@@ -1,6 +1,11 @@
 export type UseCaseCategory =
   | "automation"
-  | "ai";
+  | "ai"
+  | "conversion"
+  | "seo"
+  | "ecommerce"
+  | "trust"
+  | "erp";
 
 export interface UseCase {
   slug: string;
@@ -154,4 +159,9 @@ export const USE_CASE_CATEGORY_LABELS: Record<
 > = {
   automation: { en: "Automation", uk: "Автоматизація", color: "violet" },
   ai: { en: "AI", uk: "AI", color: "cyan" },
+  conversion: { en: "Conversion", uk: "Конверсія", color: "emerald" },
+  seo: { en: "SEO", uk: "SEO", color: "blue" },
+  ecommerce: { en: "E-commerce", uk: "E-commerce", color: "orange" },
+  trust: { en: "Trust & Authority", uk: "Довіра", color: "amber" },
+  erp: { en: "ERP & Operations", uk: "ERP та операції", color: "slate" },
 };
