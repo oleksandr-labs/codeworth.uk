@@ -54,7 +54,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     fullDescription: `CMS (Content Management System) — це платформа, яка дозволяє власнику бізнесу самостійно редагувати тексти, додавати фото та публікувати новини на сайті без залучення розробника.\n\nНайвідоміші CMS: WordPress (43% всіх сайтів у світі), Shopify (для магазинів), Wix, Tilda. Сучасний підхід — Headless CMS: Sanity, Strapi, Contentful — де контент зберігається окремо від дизайну, що дає набагато більшу гнучкість.\n\nCodeworth працює як з класичними CMS, так і з headless-рішеннями — залежно від потреб клієнта.`,
     example: "Ресторан може самостійно щодня оновлювати меню через CMS без виклику програміста.",
     relatedTerms: ["headless-cms", "api", "ssr"],
-    relatedService: "website-dev",
+    relatedService: "machine-learning",
   },
   {
     slug: "ssr",
@@ -65,7 +65,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     fullDescription: `SSR (Server-Side Rendering) — підхід, при якому HTML-сторінка формується на сервері перед відправкою браузеру. На відміну від CSR (Client-Side Rendering), користувач одразу бачить готовий контент.\n\nПереваги: хороший для SEO (пошукові роботи бачать повний контент), швидше перше відображення. Недоліки: більше навантаження на сервер, повільніше при великій кількості одночасних запитів.\n\nNext.js підтримує SSR з коробки для сторінок, де контент змінюється часто: новини, акаунти, персоналізовані дані.`,
     example: "Сторінка профілю користувача з актуальними даними генерується на сервері при кожному вході.",
     relatedTerms: ["ssg", "csr", "isr", "next-js"],
-    relatedService: "website-dev",
+    relatedService: "machine-learning",
   },
   {
     slug: "ssg",
@@ -76,7 +76,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     fullDescription: `SSG (Static Site Generation) — підхід, при якому HTML-файли для всіх сторінок генеруються заздалегідь при збірці проєкту (build time), а не при кожному запиті.\n\nПереваги: максимальна швидкість (файли роздаються з CDN), відмінне SEO, дешевий хостинг, висока безпека (немає сервера, що обробляє запити). Ідеально для: портфоліо, блогів, корпоративних сайтів, лендінгів.\n\nCodeworth будує всі публічні сторінки через SSG — це забезпечує PageSpeed 95+ та миттєве завантаження.`,
     example: "Сторінки послуг, блогу та портфоліо Codeworth — всі статично згенеровані та роздаються через CDN.",
     relatedTerms: ["ssr", "isr", "csr", "next-js"],
-    relatedService: "website-dev",
+    relatedService: "machine-learning",
   },
   {
     slug: "csr",
@@ -87,7 +87,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     fullDescription: `CSR (Client-Side Rendering) — підхід, де браузер завантажує «порожній» HTML-файл, а потім JavaScript завантажує дані та будує сторінку прямо у браузері.\n\nПереваги: миттєва навігація між сторінками після першого завантаження, хороший для додатків з авторизацією. Недоліки: повільніше перше завантаження, гірше для SEO.\n\nCSR підходить для: кошика, особистого кабінету, адмін-панелей — сторінок, де SEO не важливе, але потрібна інтерактивність.`,
     example: "Кошик та кабінет користувача в маркетплейсі Codeworth — використовують CSR.",
     relatedTerms: ["ssg", "ssr", "react", "next-js"],
-    relatedService: "website-dev",
+    relatedService: "machine-learning",
   },
   {
     slug: "isr",
@@ -98,7 +98,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     fullDescription: `ISR (Incremental Static Regeneration) — технологія Next.js, що поєднує переваги SSG (швидкість) та SSR (свіжість даних). Сторінки генеруються статично, але автоматично оновлюються у фоні через заданий інтервал.\n\nЯк це працює: 1) Перший запит отримує кешовану (статичну) сторінку; 2) Якщо з моменту генерації пройшло більше N секунд — у фоні запускається перегенерація; 3) Наступний запит отримує оновлену версію.\n\nIdeально для: каталогів товарів, блогів, сторінок з цінами — де контент оновлюється, але не щосекунди.`,
     example: "Каталог маркетплейсу оновлюється кожні 10 хвилин через ISR без жодного впливу на швидкість.",
     relatedTerms: ["ssg", "ssr", "next-js"],
-    relatedService: "website-dev",
+    relatedService: "machine-learning",
   },
   {
     slug: "pwa",
@@ -120,7 +120,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     fullDescription: `Next.js — це фреймворк на основі React, розроблений компанією Vercel. Він вирішує головні проблеми «чистого» React: SEO, швидкість завантаження, маршрутизацію та деплой.\n\nОсновні можливості: App Router (вкладені макети), Server Components (рендеринг на сервері без JS у браузері), статична генерація (SSG), ISR, вбудована оптимізація зображень, i18n, TypeScript з коробки.\n\nCodeworth використовує Next.js 15+ для всіх проєктів — це забезпечує максимальний PageSpeed та SEO-готовність від першого дня.`,
     example: "Цей сайт (codeworth.uk) повністю побудований на Next.js з SSG для всіх публічних сторінок.",
     relatedTerms: ["react", "typescript", "ssg", "ssr", "vercel"],
-    relatedService: "website-dev",
+    relatedService: "machine-learning",
     relatedBlogPost: "next-js-seo-guide-2024",
   },
   {
@@ -132,7 +132,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     fullDescription: `React — бібліотека від Meta (Facebook), яка змінила підхід до веб-розробки. Замість маніпуляцій з DOM вручну, React дозволяє описувати UI як набір компонентів: кнопка, форма, навігація — кожен є незалежним блоком.\n\nVirtual DOM — ключова ідея React: замість прямого оновлення DOM (повільно), React спочатку оновлює «віртуальний» DOM в пам'яті, порівнює з реальним і вносить лише мінімальні зміни.\n\nReact — найпопулярніший інструмент для фронтенд-розробки. 60%+ нових проєктів будуються на React або Next.js.`,
     example: "Компоненти сайту Codeworth: Header, Footer, BlogCard, PriceCalculator — кожен є React-компонентом.",
     relatedTerms: ["next-js", "typescript", "csr"],
-    relatedService: "website-dev",
+    relatedService: "machine-learning",
   },
   {
     slug: "typescript",
@@ -143,7 +143,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     fullDescription: `TypeScript — мова програмування від Microsoft, що є надмножиною JavaScript. Головна відмінність: TypeScript додає статичну типізацію, тобто типи даних перевіряються ще до запуску програми.\n\nЧому це важливо для бізнесу: менше багів у продакшні, код легше читати та підтримувати, onboarding нових розробників швидший. Великі компанії (Google, Microsoft, Airbnb) перейшли на TypeScript саме через це.\n\nCodeworth пише весь код виключно на TypeScript з суворим режимом strict — 0 TypeScript errors у всіх проєктах.`,
     example: "Якщо функція очікує число, TypeScript не дасть передати рядок — помилка з'явиться в редакторі, а не на сайті клієнта.",
     relatedTerms: ["react", "next-js"],
-    relatedService: "website-dev",
+    relatedService: "machine-learning",
   },
   {
     slug: "headless-cms",
@@ -154,7 +154,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     fullDescription: `Headless CMS — це система керування контентом, де «голова» (фронтенд, UI) відділена від «тіла» (сховища контенту). Контент зберігається в CMS і роздається через API будь-якому фронтенду: сайту, мобільному додатку, смарт-дисплею.\n\nПопулярні headless CMS: Sanity, Strapi, Contentful, Ghost, Payload. На відміну від WordPress (монолітна CMS), headless дає необмежену гнучкість дизайну та максимальну швидкість.\n\nIdeально для: компаній, що публікують контент одночасно на сайті та в мобільному додатку; для складних редакційних команд.`,
     example: "The New York Times використовує headless CMS — один контент публікується на web, iOS та Android.",
     relatedTerms: ["cms", "api", "ssg"],
-    relatedService: "website-dev",
+    relatedService: "machine-learning",
   },
   {
     slug: "responsive-design",
@@ -165,7 +165,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     fullDescription: `Responsive Design (адаптивний дизайн) — підхід до верстки, при якому сайт автоматично змінює макет залежно від розміру екрана пристрою. Один код — правильне відображення на смартфоні, планшеті та настільному комп'ютері.\n\nЧому це критично: 60–70% трафіку в Україні — мобільний. Google враховує мобільну версію як основну при ранжируванні (Mobile-First Indexing). Сайт без адаптивності — це втрачені клієнти.\n\nAdaptive vs Responsive: adaptive дає кілька фіксованих макетів, responsive — один рідкий макет. Codeworth будує responsive-сайти з мобільним пріоритетом (Mobile First).`,
     example: "Шапка сайту на ПК має горизонтальне меню, на телефоні — кнопку «гамбургер» з випадним меню.",
     relatedTerms: ["mobile-first", "pwa", "ux"],
-    relatedService: "website-dev",
+    relatedService: "machine-learning",
   },
   {
     slug: "mobile-first",
@@ -176,7 +176,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     fullDescription: `Mobile First — стратегія розробки, за якою дизайнер і розробник починають з мобільної версії сайту і «розширюють» її до планшету та десктопу — а не навпаки.\n\nЧому це краще: обмеження мобільного змушують зосередитись на головному — позбавляються від зайвого. Потім на більших екранах додають деталі. Google Mobile-First Indexing підтримує цей підхід: сайт індексується через мобільну версію.\n\nCodeworth завжди проєктує Mobile First: спочатку затверджується мобільний макет, потім — адаптація для планшету і десктопу.`,
     example: "Кнопка «Замовити» на мобільному завжди видима і великого розміру. На десктопі вона в хедері серед інших елементів.",
     relatedTerms: ["responsive-design", "pwa", "ux"],
-    relatedService: "website-dev",
+    relatedService: "machine-learning",
   },
   {
     slug: "mvp",
@@ -209,7 +209,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     fullDescription: `GraphQL — мова запитів для API, розроблена Meta. Ключова відмінність від REST: клієнт сам визначає структуру відповіді. Замість «дай мені все про користувача», можна сказати «дай тільки ім'я та email».\n\nПереваги: менше зайвих даних (немає over-fetching), один ендпойнт замість десятків, типізована схема. Недоліки: складніше кешування, важче для новачків.\n\nGraphQL підходить для складних застосунків з багатьма пов'язаними сутностями: соцмережі, маркетплейси, dashboards.`,
     example: "Замість 3 REST-запитів (user, posts, comments) — один GraphQL-запит отримує все разом.",
     relatedTerms: ["rest-api", "api", "headless-cms"],
-    relatedService: "website-dev",
+    relatedService: "machine-learning",
   },
 
   // === SEO ===
@@ -397,7 +397,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     fullDescription: `ROI (Return on Investment) = (Прибуток - Витрати) / Витрати × 100%.\n\nПриклад: витратили 50 000 грн на сайт → залучили клієнтів на 200 000 грн → ROI = (200 000 - 50 000) / 50 000 × 100% = 300%.\n\nВажливо розуміти: ROI від сайту — довгостроковий. Перші 3–6 місяців сайт «набирає» трафік і клієнтів. Повний ROI рахується за 12–24 місяці. SEO-проєкти мають ROI 300–500% через 12 місяців за статистикою HubSpot.`,
     example: "Сайт за 30 000 грн генерує 5 нових клієнтів/місяць по 8 000 грн → ROI 1 200% за рік.",
     relatedTerms: ["cpc", "roas", "conversion-rate"],
-    relatedService: "website-dev",
+    relatedService: "machine-learning",
   },
   {
     slug: "roas",
@@ -545,7 +545,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     fullDescription: `Хостинг — це оренда місця на сервері для зберігання файлів сайту. Без хостингу сайт не буде доступний в інтернеті.\n\nТипи хостингу: **Shared** — ресурси сервера ділиться між багатьма сайтами (дешево, але повільно); **VPS** — виділений virtual сервер (середина між shared та dedicated); **Dedicated** — повністю ваш сервер; **Cloud/PaaS** — Vercel, Netlify — оптимально для Next.js.\n\nDля Next.js-проєктів Codeworth рекомендує Vercel: автоматичний CDN, автодеплой з GitHub, вбудована аналітика.`,
     example: "Vercel — хостинг для Next.js: деплой за 30 секунд після коміту в GitHub. Безкоштовний план для малих проєктів.",
     relatedTerms: ["vps", "cdn", "ssl", "vercel"],
-    relatedService: "website-dev",
+    relatedService: "machine-learning",
   },
   {
     slug: "vps",
@@ -556,7 +556,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     fullDescription: `VPS (Virtual Private Server) — тип хостингу, де на фізичному сервері через віртуалізацію створюється ізольоване середовище з гарантованими ресурсами (CPU, RAM, SSD).\n\nПереваги перед shared: власні ресурси (сусіди не впливають на швидкість), root-доступ, можливість встановлення будь-якого ПЗ. Ціни: $5–50/місяць залежно від ресурсів.\n\nVPS підходить для: WordPress зі значним трафіком, Node.js/Python серверів, баз даних, корпоративних сайтів. Для Next.js (статика + ISR) часто вистачає Vercel/Netlify.`,
     example: "Медична клініка з 10 000 відвідувань/місяць на WordPress потребує VPS, а не shared хостинг.",
     relatedTerms: ["hosting", "cdn", "ssl"],
-    relatedService: "website-dev",
+    relatedService: "machine-learning",
   },
   {
     slug: "cdn",
@@ -567,7 +567,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     fullDescription: `CDN (Content Delivery Network) — розподілена мережа серверів у різних точках світу. Коли користувач відкриває сайт, файли завантажуються з найближчого сервера CDN, а не з головного сервера.\n\nПереваги: менша затримка (latency), швидше завантаження для користувачів у будь-якій країні, зниження навантаження на origin-сервер, захист від DDoS-атак.\n\nVercel автоматично роздає SSG-сторінки через глобальний CDN. Cloudflare — безкоштовний CDN та захист для будь-якого сайту.`,
     example: "Сайт на сервері в Берліні: без CDN користувач з Харкова чекає 300мс; з CDN (сервер у Варшаві) — 50мс.",
     relatedTerms: ["hosting", "vps", "ssl", "lcp"],
-    relatedService: "website-dev",
+    relatedService: "machine-learning",
   },
   {
     slug: "ssl",
@@ -578,7 +578,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     fullDescription: `SSL (Secure Sockets Layer) / TLS (Transport Layer Security) — протоколи шифрування, що забезпечують безпечне з'єднання між браузером і сервером. Сайт з SSL отримує HTTPS та зелений замочок.\n\nЧому SSL обов'язковий: Google з 2014 року враховує HTTPS як фактор ранжирування; Chrome маркує HTTP-сайти як «небезпечні»; без SSL форми і оплати небезпечні; більшість сучасних API вимагають HTTPS.\n\nLet's Encrypt — безкоштовний SSL-сертифікат. Vercel та більшість хостингів автоматично встановлюють SSL.`,
     example: "https:// замість http:// — ознака SSL. Без нього Chrome показує «Небезпечно» і відлякує клієнтів.",
     relatedTerms: ["hosting", "cdn", "vps"],
-    relatedService: "website-dev",
+    relatedService: "machine-learning",
   },
   {
     slug: "vercel",
@@ -589,7 +589,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     fullDescription: `Vercel — компанія, що створила Next.js, та платформа для деплою JavaScript-проєктів. Ідеально оптимізована для Next.js: автоматичний CDN, ISR, Edge Functions, preview deployments для кожного PR.\n\nKлючові можливості: деплой за 30 секунд після push в GitHub, автоматичний SSL, глобальний CDN у 70+ точках світу, аналітика Core Web Vitals, функції Edge Runtime.\n\nCodeworth деплоює всі проєкти на Vercel: нульова конфігурація, автоматичне масштабування, безкоштовний план для MVP.`,
     example: "Після git push: Vercel автоматично запускає build, тести і деплоїть нову версію сайту за 45 секунд.",
     relatedTerms: ["hosting", "cdn", "next-js", "ssg"],
-    relatedService: "website-dev",
+    relatedService: "machine-learning",
   },
 
   // === ANALYTICS ===
@@ -667,7 +667,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     fullDescription: `Tailwind CSS — фреймворк, де замість написання власного CSS ви використовуєте готові утилітарні класи прямо в HTML: \`flex\`, \`pt-4\`, \`text-indigo-600\`.\n\nГоловна перевага: розробка в 3–5 разів швидша. Немає конфліктів імен класів. PurgeCSS автоматично видаляє невикористані стилі — фінальний bundle мінімальний.\n\nCodeworth використовує Tailwind CSS v4 у всіх проєктах. Це стандарт у сучасній Next.js-розробці.`,
     example: "Замість написання CSS-правил розробник пише `className=\"flex items-center gap-4 text-lg font-semibold\"` прямо в JSX.",
     relatedTerms: ["responsive-design", "mobile-first", "next-js"],
-    relatedService: "website-dev",
+    relatedService: "machine-learning",
   },
   {
     slug: "spa",
@@ -678,7 +678,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     fullDescription: `SPA (Single Page Application) — архітектура, де браузер завантажує один HTML-файл, а подальша навігація відбувається через JavaScript без перезавантаження сторінки.\n\nПереваги: плавна навігація (немає «кліпів» між сторінками), хороший UX для складних застосунків. Недоліки: гірше SEO без SSR/SSG (пошукові боти бачать порожню сторінку), більший початковий JS bundle.\n\nПрикладами SPA є Gmail, Trello, Figma. Для SEO-критичних сайтів краще використовувати SSG або SSR.`,
     example: "Gmail — класичний SPA: ви перемикаєте листи без перезавантаження сторінки.",
     relatedTerms: ["csr", "ssg", "ssr", "react"],
-    relatedService: "website-dev",
+    relatedService: "machine-learning",
   },
   {
     slug: "docker",
@@ -689,7 +689,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     fullDescription: `Docker дозволяє «упакувати» застосунок разом з усіма залежностями у контейнер — ізольоване середовище, що працює однаково на будь-якій машині.\n\nЧому це важливо: «Але ж у мене все працювало!» — найпоширеніша проблема розробки. Docker усуває її, оскільки оточення розробника, тестового сервера та продакшну ідентичні.\n\nДля бізнесу: спрощує деплой, масштабування та відновлення після збоїв.`,
     example: "Node.js-застосунок у Docker-контейнері однаково запускається на MacOS, Windows і Linux-сервері.",
     relatedTerms: ["vps", "hosting", "cicd"],
-    relatedService: "website-dev",
+    relatedService: "machine-learning",
   },
   {
     slug: "cicd",
@@ -700,7 +700,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     fullDescription: `CI/CD — практика автоматизації збірки, тестування та деплою коду. При кожному push розробника автоматично запускаються тести, перевіряється код і, якщо все гаразд, — нова версія деплоїться на сервер.\n\nCI (Continuous Integration): регулярне злиття змін з автоматичним тестуванням.\nCD (Continuous Delivery/Deployment): автоматичний деплой після проходження тестів.\n\nCodeworth використовує GitHub Actions для CI/CD: тести + ESLint + build + E2E тести при кожному PR.`,
     example: "Розробник пушить код → GitHub Actions запускає 1850+ тестів → якщо все пройшло → Vercel автоматично деплоїть нову версію.",
     relatedTerms: ["docker", "vercel", "vps"],
-    relatedService: "website-dev",
+    relatedService: "machine-learning",
   },
   {
     slug: "webhook",
@@ -722,7 +722,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     fullDescription: `OAuth 2.0 — відкритий стандарт авторизації, що дозволяє одному застосунку отримати обмежений доступ до акаунту користувача в іншому сервісі.\n\nЯк це працює: 1) Користувач натискає «Увійти через Google»; 2) Google запитує дозвіл; 3) Після підтвердження Google повертає токен доступу; 4) Ваш сайт використовує токен для отримання даних профілю.\n\nПереваги для бізнесу: менше бар'єрів при реєстрації (не потрібно придумувати ще один пароль), вищий рівень безпеки.`,
     example: "Кнопки «Увійти через Google», «Увійти через Facebook» — реалізовані через OAuth 2.0.",
     relatedTerms: ["api", "rest-api", "pwa"],
-    relatedService: "website-dev",
+    relatedService: "machine-learning",
   },
   {
     slug: "microservices",
@@ -733,7 +733,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     fullDescription: `Мікросервісна архітектура — підхід до розробки, де великий застосунок розбивається на невеликі, незалежні сервіси, кожен з яких відповідає за одну функцію.\n\nПереваги: кожен сервіс можна масштабувати незалежно, розробляти окремими командами, деплоїти без впливу на інші. Недоліки: складніше налагодження, потрібна добра інфраструктура (Docker, Kubernetes).\n\nДля МСБ мікросервіси зазвичай надмірні — краще починати з монолітної архітектури та переходити поступово.`,
     example: "Amazon розбив свій монолітний сайт на 1000+ мікросервісів — кожна функція (кошик, пошук, рекомендації) — окремий сервіс.",
     relatedTerms: ["api", "docker", "rest-api"],
-    relatedService: "website-dev",
+    relatedService: "machine-learning",
   },
 
   // === SEO (additional) ===
@@ -983,7 +983,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     fullDescription: `DNS (Domain Name System) — розподілена система, що перетворює доменні імена (codeworth.uk) на IP-адреси (147.182.145.87), за якими знаходяться сервери.\n\nТипи DNS-записів: A (домен → IPv4), AAAA (домен → IPv6), CNAME (аліас домену), MX (поштові сервери), TXT (верифікація, SPF для email).\n\nShop DNS-зміни до 48 годин (TTL). Для швидкого деплою встановлюйте короткий TTL (300 сек) заздалегідь.`,
     example: "Коли ви вводите codeworth.uk — DNS-сервер повертає IP-адресу Vercel → браузер з'єднується з сервером.",
     relatedTerms: ["hosting", "ssl", "cdn"],
-    relatedService: "website-dev",
+    relatedService: "machine-learning",
   },
   {
     slug: "serverless",
@@ -994,7 +994,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     fullDescription: `Serverless (безсерверна архітектура) — модель, де розробник пише функції, а хмарний провайдер автоматично запускає їх при запиті та масштабує без ручного управління серверами.\n\nПереваги: платиш тільки за фактичне виконання (не за простій), автоматичне масштабування, немає адміністрування серверів. Недоліки: «холодний старт» (перший запит повільніший), обмеження на тривалість виконання.\n\nPlatforms: AWS Lambda, Vercel Functions, Cloudflare Workers. Next.js API routes → автоматично serverless functions на Vercel.`,
     example: "Vercel Functions виконують Next.js API routes без окремого Node.js сервера: 0 трафіку → $0, 1M запитів → автоматичне масштабування.",
     relatedTerms: ["vercel", "cdn", "cicd"],
-    relatedService: "website-dev",
+    relatedService: "machine-learning",
   },
   {
     slug: "cloudflare",
@@ -1005,7 +1005,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     fullDescription: `Cloudflare — глобальна мережа (CDN + DNS + безпека), що проксує трафік до вашого сервера через 300+ дата-центрів по всьому світу.\n\nФункції: CDN (прискорення), DNS-хостинг (швидкий та надійний), DDoS-захист (автоматичний), Web Application Firewall (WAF), мінімізація JS/CSS/HTML, HTTP/3.\n\nДля бізнесу: безкоштовний план Cloudflare значно прискорює сайт (особливо для міжнародного трафіку) та захищає від атак без додаткових витрат.`,
     example: "Сайт на хостингу в Україні + Cloudflare CDN = швидке завантаження для відвідувачів з Франції або США завдяки кешу на локальному edge-вузлі.",
     relatedTerms: ["cdn", "ssl", "dns", "hosting"],
-    relatedService: "website-dev",
+    relatedService: "machine-learning",
   },
   {
     slug: "edge-network",
@@ -1016,7 +1016,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     fullDescription: `Edge Network — розподілена мережа серверів (PoP — Points of Presence) розташованих в різних регіонах світу, що обробляють запити максимально близько до кінцевого користувача.\n\nПеревага: замість одного сервера в Польщі — 100+ вузлів по всьому світу. Відвідувач з Бразилії отримує контент з бразильського вузла, а не чекає відповіді з Варшави.\n\nVercel Edge Network: 90+ регіонів → TTFB < 50мс для більшості користувачів світу. Vercel Edge Functions дозволяють виконувати код на рівні CDN.`,
     example: "Сайт на Vercel з TTFB < 50мс для відвідувачів з Токіо, Сан-Франциско та Варшави — завдяки Edge Network.",
     relatedTerms: ["cdn", "vercel", "ttfb", "serverless"],
-    relatedService: "website-dev",
+    relatedService: "machine-learning",
   },
 
   // === ANALYTICS (additional) ===
@@ -1123,7 +1123,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     fullDescription: `Git — безкоштовна розподілена система контролю версій, що відстежує зміни у файлах і дозволяє командам розробників ефективно співпрацювати.\n\nОсновні концепції: commit (зафіксована зміна), branch (гілка для окремої функції), merge (об'єднання гілок), pull request (запит на злиття змін). GitHub/GitLab/Bitbucket — хмарні платформи для зберігання Git-репозиторіїв.\n\nБез Git: «Фінал-ФІНАЛ-2-правки-ТОЧНО-ФІНАЛ.zip». З Git: повна історія змін, можливість повернутись до будь-якої версії, паралельна розробка без конфліктів.`,
     example: "Розробник ламає форму в «feature» гілці → main гілка залишається стабільною → баг виправлений в окремій гілці без впливу на продакшн.",
     relatedTerms: ["cicd", "docker", "next-js"],
-    relatedService: "website-dev",
+    relatedService: "machine-learning",
   },
   {
     slug: "brand-awareness",
@@ -1156,7 +1156,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     fullDescription: `Nginx (вимовляється «ен-джинкс») — high-performance веб-сервер з відкритим кодом, що широко використовується як: веб-сервер для статичних файлів, reverse proxy (перенаправляє трафік до Node.js), load balancer (розподіляє навантаження), SSL termination.\n\nДля VPS/dedicated серверів: Nginx обробляє 10 000+ одночасних з'єднань при мінімальному споживанні RAM (~2-5 МБ).\n\nПорівняння: Apache — старший, Nginx — швидший для статики та реверс-проксі. На Vercel Nginx не потрібен — він вбудований в платформу.`,
     example: "VPS-сервер: запити → Nginx (порт 80/443) → Node.js (порт 3000). Nginx обробляє SSL, кешування статики та стискання, Node.js — бізнес-логіку.",
     relatedTerms: ["vps", "ssl", "cdn", "serverless"],
-    relatedService: "website-dev",
+    relatedService: "machine-learning",
   },
   {
     slug: "ecommerce",
