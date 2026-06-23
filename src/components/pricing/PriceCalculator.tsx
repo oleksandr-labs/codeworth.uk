@@ -6,11 +6,11 @@ import { ArrowRight, Calculator } from "lucide-react";
 import { useLocale } from "@/components/layout/LocaleProvider";
 
 const PROJECT_TYPES_UK = [
-  { id: "poc", label: "PoC / Proof of Concept", base: 75000 },
-  { id: "production-ml", label: "Production ML-модель", base: 180000 },
-  { id: "nlp", label: "Кастомна NLP-система", base: 270000 },
-  { id: "cv", label: "Комп'ютерний зір (CV)", base: 290000 },
-  { id: "enterprise", label: "Enterprise ML-платформа", base: 500000 },
+  { id: "poc", label: "PoC / Proof of Concept", base: 1800 },
+  { id: "production-ml", label: "Production ML-модель", base: 4500 },
+  { id: "nlp", label: "Кастомна NLP-система", base: 6500 },
+  { id: "cv", label: "Комп'ютерний зір (CV)", base: 7000 },
+  { id: "enterprise", label: "Enterprise ML-платформа", base: 12000 },
 ];
 
 const PROJECT_TYPES_EN = [
@@ -22,14 +22,14 @@ const PROJECT_TYPES_EN = [
 ];
 
 const FEATURES_UK = [
-  { id: "labelling", label: "Data labelling & annotation", price: 35000 },
-  { id: "mlops", label: "MLOps pipeline setup", price: 65000 },
-  { id: "ab-testing", label: "A/B model testing", price: 25000 },
-  { id: "xai", label: "Model explainability (XAI)", price: 33000 },
-  { id: "onprem", label: "On-prem deployment", price: 50000 },
-  { id: "api", label: "Real-time inference API", price: 30000 },
-  { id: "retraining", label: "Retraining automation", price: 42000 },
-  { id: "dashboard", label: "Custom reporting dashboard", price: 37000 },
+  { id: "labelling", label: "Data labelling & annotation", price: 800 },
+  { id: "mlops", label: "MLOps pipeline setup", price: 1500 },
+  { id: "ab-testing", label: "A/B model testing", price: 600 },
+  { id: "xai", label: "Model explainability (XAI)", price: 800 },
+  { id: "onprem", label: "On-prem deployment", price: 1200 },
+  { id: "api", label: "Real-time inference API", price: 700 },
+  { id: "retraining", label: "Retraining automation", price: 1000 },
+  { id: "dashboard", label: "Custom reporting dashboard", price: 900 },
 ];
 
 const FEATURES_EN = [
@@ -45,8 +45,8 @@ const FEATURES_EN = [
 
 const SUPPORT_PLANS_UK = [
   { id: "none", label: "Без підтримки", price: 0 },
-  { id: "basic", label: "Basic MLOps (33 000 ₴/міс)", price: 33000 },
-  { id: "pro", label: "Professional (62 000 ₴/міс)", price: 62000 },
+  { id: "basic", label: "Basic MLOps (£800/міс)", price: 800 },
+  { id: "pro", label: "Professional (£1,500/міс)", price: 1500 },
   { id: "enterprise", label: "Enterprise (custom)", price: 0 },
 ];
 
@@ -57,8 +57,7 @@ const SUPPORT_PLANS_EN = [
   { id: "enterprise", label: "Enterprise (custom)", price: 0 },
 ];
 
-function formatPrice(n: number, isUk: boolean) {
-  if (isUk) return n.toLocaleString("uk-UA") + " ₴";
+function formatPrice(n: number, _isUk: boolean) {
   return "£" + n.toLocaleString("en-GB");
 }
 

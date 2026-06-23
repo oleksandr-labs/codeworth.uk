@@ -84,15 +84,15 @@ export const PROJECTS: Project[] = [
   {
     slug: "hr-payroll-saas",
     title: "HRPulse — HR & Payroll SaaS",
-    client: "Стартап B2B SaaS (HR / Payroll), Київ",
+    client: "B2B SaaS Startup (HR / Payroll), London",
     category: "AI / ML",
     niche: "IT / SaaS",
     year: 2025,
     complexity: "complex",
     tags: ["SaaS", "HR", "Payroll", "B2B", "Dashboard"],
     tech: ["Next.js", "TypeScript", "Tailwind CSS v4"],
-    description: "HR SaaS: демо-таблиця співробітників з пошуком/сортуванням, org chart SVG, payroll preview, відповідність КЗпП України, тріал 30 днів.",
-    descriptionEn: "HR SaaS: interactive employee table with search/sort, SVG org chart, payroll preview, Ukrainian labor law compliance, 30-day trial.",
+    description: "HR SaaS: демо-таблиця співробітників з пошуком/сортуванням, org chart SVG, payroll preview, UK employment law compliance, 30-day trial.",
+    descriptionEn: "HR SaaS: interactive employee table with search/sort, SVG org chart, payroll preview, UK employment law compliance, 30-day trial.",
     result: "Trial реєстрацій +340%. Демо-таблиця — «вау-момент» сайту: 78% демо-юзерів конвертуються.",
     resultEn: "Trial signups +340%. Demo table is the site's 'wow moment': 78% of demo users convert.",
     color: "from-teal-700 to-teal-900",
@@ -103,7 +103,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "project-management-saas",
     title: "TaskFlow — Project Management SaaS",
-    client: "Стартап B2B SaaS (командна робота), Київ",
+    client: "B2B SaaS Startup (Team Productivity), London",
     category: "AI / ML",
     niche: "IT / SaaS",
     year: 2025,
@@ -142,7 +142,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "cv-quality-control",
     title: "QualityEye — Computer Vision QA",
-    client: "Виробниче підприємство (текстиль), Харків",
+    client: "Textile Manufacturer, Manchester",
     category: "AI / ML",
     niche: "IT / SaaS",
     year: 2025,
@@ -297,7 +297,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "demand-forecast-retail",
     title: "StockSense — ML Demand Forecasting",
-    client: "Мережа роздрібних магазинів, 120 точок продажу, Україна",
+    client: "Retail Chain, 120 locations, UK",
     category: "AI / ML",
     niche: "IT / SaaS",
     industry: "retail",
@@ -380,7 +380,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "ai-price-optimizer",
     title: "PriceSense — AI Dynamic Pricing",
-    client: "E-commerce (електроніка, 50K+ SKU), Київ",
+    client: "E-commerce (Electronics, 50K+ SKU), London",
     category: "AI / ML",
     niche: "IT / SaaS",
     year: 2025,
@@ -417,7 +417,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "ai-resume-screener",
     title: "TalentScan — AI HR Screening",
-    client: "Рекрутингове агентство (100+ вакансій/міс), Київ",
+    client: "Recruitment Agency (100+ jobs/month), London",
     category: "AI / ML",
     niche: "IT / SaaS",
     industry: "hr",
@@ -456,7 +456,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "ai-doc-analyzer",
     title: "DocSense — AI Document Intelligence",
-    client: "Юридична фірма (корпоративне право), 200+ договорів/міс, Київ",
+    client: "Corporate Law Firm, 200+ contracts/month, London",
     category: "AI / ML",
     industry: "legal",
     relatedAINichePage: "/ai/legal",
@@ -537,7 +537,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "ai-image-search",
     title: "VisualFind — AI Visual Search Engine",
-    client: "Fashion e-commerce (40K+ SKU), 180K MAU, Київ",
+    client: "Fashion e-commerce (40K+ SKU), 180K MAU, London",
     category: "AI / ML",
     industry: "ecommerce",
     relatedAINichePage: "/ai/ecommerce",
@@ -578,7 +578,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "ml-customer-segmentation",
     title: "SegmentIQ — ML Customer Segmentation & CLV",
-    client: "Fashion-ритейл (мультибренд), 220 000+ клієнтів, Київ",
+    client: "Fashion Retail (Multi-brand), 220,000+ customers, London",
     category: "AI / ML",
     niche: "IT / SaaS",
     year: 2025,
@@ -617,7 +617,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "ml-credit-scoring",
     title: "CreditIQ — ML Credit Scoring Engine",
-    client: "Онлайн-кредитор (споживчі позики), 8 000+ заявок/міс, Харків",
+    client: "Online Lender (Consumer Loans), 8,000+ applications/month, London",
     category: "AI / ML",
     industry: "banking",
     relatedMLNichePage: "/ml/banking",
@@ -697,7 +697,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "ml-energy-forecasting",
     title: "EnergyIQ — ML Energy Consumption Forecasting",
-    client: "Мережа бізнес-центрів (12 об'єктів), 850 000 м², Київ",
+    client: "Business Centre Network (12 properties), 850,000 sq ft, London",
     category: "AI / ML",
     industry: "energy",
     relatedMLNichePage: "/ml/energy",
@@ -738,7 +738,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "ai-invoice-automation",
     title: "InvoiceAI — AI Обробка Рахунків та Документів",
-    client: "Мережа бухгалтерського аутсорсингу, 240 клієнтів-ФОП та ТОВ, Київ + Лондон",
+    client: "Accounting Outsourcing Network, 240 SME clients, London",
     category: "AI / ML",
     industry: "fintech",
     relatedAINichePage: "/ai/fintech",
@@ -779,7 +779,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "ml-property-valuation",
     title: "EstateIQ — ML Автоматична Оцінка Нерухомості (AVM)",
-    client: "Мережа агентств нерухомості, 18 офісів, Київ + Харків + Лондон (Canary Wharf)",
+    client: "Property Agency Network, 18 offices, London (Canary Wharf, City, West End)",
     category: "AI / ML",
     niche: "Нерухомість",
     year: 2026,
@@ -818,7 +818,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "ai-bilingual-rag-chatbot",
     title: "DualBot — Білінгвальний RAG Чат-бот UK/UA",
-    client: "Мережа сервісних центрів (8 локацій: Лондон × 4 + Київ × 4)",
+    client: "Service Centre Network (8 locations, London)",
     category: "AI / ML",
     industry: "saas",
     niche: "IT / SaaS",
@@ -858,7 +858,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "ai-rag-healthcare-system",
     title: "MedAssist — GDPR-Сумісна RAG-Система для Клініки",
-    client: "Приватна клініка, 12 лікарів, 400+ пацієнтів/день, Київ",
+    client: "Private Clinic, 12 doctors, 400+ patients/day, London",
     category: "AI / ML",
     industry: "healthcare",
     relatedAINichePage: "/ai/healthcare",
@@ -1191,7 +1191,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "ml-patient-risk-scoring",
     title: "ClinicalIQ — ML Patient Risk Scoring",
-    client: "Приватна клінічна мережа (4 лікарні, 1 200 ліжок), Київ",
+    client: "Private Healthcare Network (4 hospitals, 1,200 beds), London",
     category: "AI / ML",
     industry: "healthcare",
     relatedMLNichePage: "/ml/healthcare",

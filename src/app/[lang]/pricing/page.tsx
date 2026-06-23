@@ -17,13 +17,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "Ціни на ML/AI послуги — Codeworth | Прозорі тарифи"
       : "ML/AI Services Pricing — Codeworth | Transparent Rates",
     description: isUk
-      ? "Прозорі ціни на ML-розробку: Proof of Concept від 75 000 ₴, Production-модель від 180 000 ₴. MLOps-ретейнер від 32 000 ₴/місяць. Без прихованих платежів."
+      ? "Прозорі ціни на ML-розробку: Proof of Concept від £1,800, Production-модель від £4,500. MLOps-ретейнер від £800/місяць. Без прихованих платежів."
       : "Transparent ML development pricing: Proof of Concept from £1,800, Production model from £4,500. MLOps retainer from £800/month. No hidden fees.",
     alternates: buildAlternates(lang, 'pricing'),
     openGraph: {
       title: isUk ? "ML-ціни — Codeworth" : "ML Pricing — Codeworth",
       description: isUk
-        ? "PoC від 75 000 ₴, Production від 180 000 ₴, MLOps-ретейнер від 32 000 ₴/міс."
+        ? "PoC від £1,800, Production від £4,500, MLOps-ретейнер від £800/міс."
         : "PoC from £1,800, Production from £4,500, MLOps retainer from £800/month.",
       type: "website",
       url: `https://codeworth.uk/${lang}/pricing`,
@@ -42,8 +42,8 @@ const FAQ_UK = [
   { q: "Чи є приховані платежі?", a: "Ні. До початку роботи ми надаємо детальну специфікацію з переліком робіт та фіксованою ціною. Додаткова робота — тільки з вашого підтвердження та окремим кошторисом." },
   { q: "Яка схема оплати?", a: "50% передоплата після підписання договору, 50% після фінальної здачі. Для більших проєктів можна розбити на 3 етапи: 30% / 40% / 30% за результатами discovery, затвердження прототипу та продакшн-деплою." },
   { q: "Що входить у гарантійну підтримку?", a: "3 місяці гарантійної підтримки після продакшн-деплою включено у всі тарифи. Якщо метрики моделі падають нижче погоджених порогів з нашої вини — виправляємо безкоштовно." },
-  { q: "Що таке MLOps-ретейнер?", a: "Щомісячна підписка від 32 000 ₴/міс, що включає: моніторинг дрейфу даних та моделі, тригери автоматичного перенавчання, щомісячний звіт ефективності та до 4 годин оновлень. Ідеально для моделей, що потребують актуальності." },
-  { q: "Скільки коштує proof of concept?", a: "PoC-пакет — від 75 000 ₴ (3–4 тижні). Ви отримуєте робочий прототип моделі з документованими метриками (precision, recall, F1). Більшість клієнтів використовують PoC для валідації підходу перед повним продакшн-білдом." },
+  { q: "Що таке MLOps-ретейнер?", a: "Щомісячна підписка від £800/міс, що включає: моніторинг дрейфу даних та моделі, тригери автоматичного перенавчання, щомісячний звіт ефективності та до 4 годин оновлень. Ідеально для моделей, що потребують актуальності." },
+  { q: "Скільки коштує proof of concept?", a: "PoC-пакет — від £1,800 (3–4 тижні). Ви отримуєте робочий прототип моделі з документованими метриками (precision, recall, F1). Більшість клієнтів використовують PoC для валідації підходу перед повним продакшн-білдом." },
 ];
 
 const FAQ_EN = [
@@ -90,8 +90,8 @@ export default async function PricingPage({ params }: { params: Promise<{ lang: 
         "@type": "Offer",
         name: isUk ? "Proof of Concept" : "Proof of Concept",
         description: isUk ? "Прототип ML-моделі з документованими метриками за 3–4 тижні" : "ML model prototype with documented metrics in 3–4 weeks",
-        priceCurrency: isUk ? "UAH" : "GBP",
-        price: isUk ? "75000" : "1800",
+        priceCurrency: "GBP",
+        price: "1800",
         priceValidUntil: "2026-12-31",
         availability: "https://schema.org/InStock",
         url: `https://codeworth.uk/${lang}/pricing`,
@@ -100,8 +100,8 @@ export default async function PricingPage({ params }: { params: Promise<{ lang: 
         "@type": "Offer",
         name: isUk ? "Production ML" : "Production ML",
         description: isUk ? "Повна продакшн-модель з API та MLOps-моніторингом" : "Full production model with API and MLOps monitoring",
-        priceCurrency: isUk ? "UAH" : "GBP",
-        price: isUk ? "180000" : "4500",
+        priceCurrency: "GBP",
+        price: "4500",
         priceValidUntil: "2026-12-31",
         availability: "https://schema.org/InStock",
         url: `https://codeworth.uk/${lang}/pricing`,
@@ -110,8 +110,8 @@ export default async function PricingPage({ params }: { params: Promise<{ lang: 
         "@type": "Offer",
         name: "Enterprise / MLOps",
         description: isUk ? "Multi-model системи, real-time inference, повна MLOps-інфраструктура" : "Multi-model systems, real-time inference, full MLOps infrastructure",
-        priceCurrency: isUk ? "UAH" : "GBP",
-        price: isUk ? "0" : "0",
+        priceCurrency: "GBP",
+        price: "0",
         priceValidUntil: "2026-12-31",
         availability: "https://schema.org/InStock",
         url: `https://codeworth.uk/${lang}/contact`,

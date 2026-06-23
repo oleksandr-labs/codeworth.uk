@@ -8,7 +8,7 @@ import { useLocale } from "@/components/layout/LocaleProvider";
 const ML_PLANS_UK = [
   {
     name: "Proof of Concept",
-    price: "75 000 ₴",
+    price: "£1,800",
     period: "разово",
     delivery: "3–4 тижні",
     description: "Швидко перевіримо ідею. Прототип моделі з документованими результатами.",
@@ -27,7 +27,7 @@ const ML_PLANS_UK = [
   },
   {
     name: "Production ML",
-    price: "від 180 000 ₴",
+    price: "від £4,500",
     period: "проєкт",
     delivery: "8–12 тижнів",
     description: "Продакшн-модель з API, моніторингом та документацією.",
@@ -268,7 +268,7 @@ export function PricingContent() {
               {/* Price */}
               <div className="shrink-0">
                 <div className="text-4xl font-sans font-bold tabular-nums tracking-tight text-neutral-900 dark:text-white">
-                  {isUk ? "від 32 000 ₴" : "from £800"}
+                  {"from £800"}
                 </div>
                 <div className="text-neutral-400 dark:text-neutral-500 text-sm mt-1">
                   {isUk ? "/місяць" : "/month"}

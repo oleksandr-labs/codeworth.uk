@@ -49,7 +49,7 @@ export interface ExtraCategoryMeta {
 }
 
 export const EXTRA_CATEGORIES: ExtraCategoryMeta[] = [
-  { value: "ai",           label: "AI-функції",      labelEn: "AI Features",    emoji: "🤖", description: "Штучний інтелект для бізнес-сайтів",         descriptionEn: "Artificial intelligence for business sites" },
+  { value: "ai",           label: "AI/ML рішення",   labelEn: "AI/ML Solutions", emoji: "🤖", description: "Штучний інтелект та машинне навчання для бізнесу",  descriptionEn: "Artificial intelligence and machine learning for business automation" },
 ];
 
 export const EXTRAS: Extra[] = [

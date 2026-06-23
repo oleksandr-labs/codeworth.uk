@@ -490,6 +490,301 @@ export const GEO_CITIES: GeoCity[] = [
       },
     ],
   },
+  {
+    slug: "cambridge",
+    nameUk: "Кембридж",
+    nameEn: "Cambridge",
+    region: "Кембриджшир, Схід Англії",
+    regionEn: "Cambridgeshire, East of England",
+    population: "140 тис.",
+    populationEn: "140,000",
+    businesses: 12000,
+    description:
+      "Кембридж — глобальний центр AI та deep tech досліджень, де концентрація ML-таланту на душу населення є найвищою у Великобританії. Університет Кембриджу, ARM Holdings, Wayve та сотні deep tech стартапів формують унікальну екосистему для передових ML-проєктів. Cambridge AI Cluster (Silicon Fen) залучив £8+ млрд венчурних інвестицій за останні 5 років.",
+    descriptionEn:
+      "Cambridge is a global AI and deep tech research powerhouse — the UK's highest per-capita concentration of ML talent. University of Cambridge, ARM Holdings, Wayve, and hundreds of deep tech startups form the 'Silicon Fen' AI cluster, which attracted £8bn+ in venture investment over five years. Cambridge businesses demand research-grade ML solutions with rigorous evaluation standards.",
+    seoTitle: "ML-консалтинг у Кембриджі | Машинне навчання Silicon Fen | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Cambridge | AI Agency Silicon Fen | Codeworth",
+    seoDesc:
+      "ML-консалтинг у Кембриджі: deep learning, NLP, computer vision. Silicon Fen AI cluster. Від £4,000. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Cambridge: deep learning, NLP, computer vision for Silicon Fen startups. From £4,000. Codeworth.",
+    stats: [
+      { label: "AI-стартапів (Silicon Fen)", labelEn: "AI startups (Silicon Fen)", value: "600+" },
+      { label: "ML-дослідників (Uni Cam)", labelEn: "ML researchers (Uni Cambridge)", value: "800+" },
+      { label: "VC-інвестиції в AI (5р)", labelEn: "VC investment in AI (5yr)", value: "£8bn+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£68k" },
+      { label: "Deep tech компаній", labelEn: "Deep tech companies", value: "1,400+" },
+    ],
+    faq: [
+      {
+        q: "Чи є у вас досвід роботи з Cambridge University spin-outs?",
+        qEn: "Do you work with Cambridge University spin-outs?",
+        a: "Так. Ми розуміємо специфіку deep tech стартапів: translational research, IP-стратегія, investor-grade ML validation. Наша команда знайома з вимогами Cambridge Enterprise та UKRI innovate UK grants.",
+        aEn: "Yes. We understand deep tech startup requirements: translational research to product, IP strategy, investor-grade ML validation. We're familiar with Cambridge Enterprise requirements and UKRI Innovate UK grant applications.",
+      },
+      {
+        q: "Чим ML у Кембриджі відрізняється від інших UK-міст?",
+        qEn: "What makes ML in Cambridge different from other UK cities?",
+        a: "Кембридж вимагає research-grade стандартів: суворе cross-validation, ablation studies, reproducibility. Клієнти часто мають власні ML-команди та очікують від нас external validation і production engineering, а не базові послуги.",
+        aEn: "Cambridge clients typically demand research-grade rigour: strict cross-validation, ablation studies, reproducibility standards. Many have in-house ML researchers and need external production engineering and independent validation rather than basic ML services.",
+      },
+      {
+        q: "Чи може Codeworth допомогти з UKRI/Innovate UK заявкою?",
+        qEn: "Can Codeworth help with UKRI/Innovate UK grant applications?",
+        a: "Так. Ми допомагаємо з технічними секціями Innovate UK заявок: описом ML-методології, feasibility analysis, impact metrics та work package структурою. R&D tax credits також застосовні до ML-проєктів.",
+        aEn: "Yes. We assist with technical sections of Innovate UK applications: ML methodology description, feasibility analysis, impact metrics, and work package structure. R&D tax credits also apply to qualifying ML development.",
+      },
+      {
+        q: "Скільки коштує ML-консалтинг у Кембриджі?",
+        qEn: "How much does ML consulting cost in Cambridge?",
+        a: "Наші пакети починаються від £4,000 (PoC). Для Cambridge deep tech стартапів, що отримали Innovate UK грант, ми пропонуємо гнучкі умови milestone-based оплати.",
+        aEn: "Our packages start from £4,000 (PoC). For Cambridge deep tech startups with Innovate UK or other grant funding, we offer flexible milestone-based payment terms.",
+      },
+      {
+        q: "Чи маєте ви досвід з фармацевтичним та біотех ML?",
+        qEn: "Do you have experience with pharma and biotech ML?",
+        a: "Так. Drug discovery ML (molecule property prediction), clinical trial outcome modelling, genomics data pipelines та medical imaging. Дотримання GxP, MHRA та NHS IG вимог.",
+        aEn: "Yes. Drug discovery ML (molecule property prediction), clinical trial outcome modelling, genomics data pipelines, and medical imaging. Compliance with GxP, MHRA, and NHS IG requirements.",
+      },
+    ],
+  },
+  {
+    slug: "oxford",
+    nameUk: "Оксфорд",
+    nameEn: "Oxford",
+    region: "Оксфордшир, Захід Англії",
+    regionEn: "Oxfordshire, South East England",
+    population: "160 тис.",
+    populationEn: "160,000",
+    businesses: 14000,
+    description:
+      "Оксфорд — другий за значимістю UK академічний AI центр після Кембриджу. Oxford Internet Institute, Oxford Robotics Institute та численні spinout компанії (включно з Exscientia — першою AI drug discovery компанією на LSE) формують унікальне середовище для biomed ML, NLP та safety-focused AI. Місцевий ринок охоплює фармацевтику, освіту та advanced manufacturing.",
+    descriptionEn:
+      "Oxford is the UK's second most significant academic AI hub, home to the Oxford Internet Institute, Oxford Robotics Institute, and spinouts including Exscientia (the first AI drug discovery company on the London Stock Exchange). Strengths: biomed ML, NLP, and AI safety research. The Oxford ecosystem spans pharma, MedTech, education technology, and advanced manufacturing.",
+    seoTitle: "ML-консалтинг в Оксфорді | Машинне навчання для бізнесу | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Oxford | ML Agency Oxfordshire | Codeworth",
+    seoDesc:
+      "ML-консалтинг в Оксфорді: biomed ML, NLP, predictive analytics. Від £4,000. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Oxford: biomed ML, NLP, predictive analytics for Oxfordshire businesses. From £4,000. Codeworth.",
+    stats: [
+      { label: "Фармацевтичних компаній", labelEn: "Pharmaceutical companies", value: "200+" },
+      { label: "AI spinouts (Uni Oxford)", labelEn: "AI spinouts (Uni Oxford)", value: "300+" },
+      { label: "MedTech компаній", labelEn: "MedTech companies", value: "180+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£65k" },
+      { label: "EdTech стартапів", labelEn: "EdTech startups", value: "120+" },
+    ],
+    faq: [
+      {
+        q: "Чи є у вас досвід ML для фармацевтики в Оксфорді?",
+        qEn: "Do you have experience with pharma ML in Oxford?",
+        a: "Так. Drug discovery ML (QSAR modelling, molecule screening), clinical data analysis та bioinformatics pipelines. MHRA та ICH E9 guidance compliance для regulatory submissions.",
+        aEn: "Yes. Drug discovery ML (QSAR modelling, molecule property screening), clinical data analysis, and bioinformatics pipelines. MHRA and ICH E9 guidance compliance for regulatory submissions.",
+      },
+      {
+        q: "Скільки коштує ML для MedTech стартапу в Оксфорді?",
+        qEn: "What does ML cost for a MedTech startup in Oxford?",
+        a: "PoC від £4,000 (3–4 тижні) — ідеально для investor validation. Повна production ML система для MedTech: £8,000–£25,000 залежно від обсягу даних та regulatory вимог.",
+        aEn: "PoC from £4,000 (3–4 weeks) — ideal for investor validation. Full production ML for MedTech: £8,000–£25,000 depending on data volume and regulatory requirements.",
+      },
+      {
+        q: "Чи підтримуєте ви Innovate UK та NIHR гранти в Оксфорді?",
+        qEn: "Do you support Innovate UK and NIHR grants in Oxford?",
+        a: "Так. NIHR (National Institute for Health Research) гранти для MedTech та NHS AI, Innovate UK для загальних AI/ML проєктів. Ми допомагаємо з технічними секціями заявок та R&D tax credit documentation.",
+        aEn: "Yes. NIHR grants for MedTech and NHS AI projects, Innovate UK for general AI/ML. We assist with technical sections of applications and R&D tax credit documentation.",
+      },
+      {
+        q: "Чи маєте ви досвід з Oxford University spin-outs?",
+        qEn: "Do you work with Oxford University spin-outs?",
+        a: "Так. Розуміємо IP transfer процес та специфіку Oxford University Innovation (OUI). Допомагаємо spin-outs масштабувати ML від дослідницького прототипу до комерційного продукту.",
+        aEn: "Yes. We understand the IP transfer process and Oxford University Innovation (OUI) requirements. We help spin-outs scale ML from research prototype to commercial product.",
+      },
+      {
+        q: "Чи підходить Codeworth для EdTech ML в Оксфорді?",
+        qEn: "Is Codeworth suitable for EdTech ML in Oxford?",
+        a: "Так. Adaptive learning systems, assessment ML, student outcome prediction та personalised content recommendation. Досвід GDPR for children's data та UK PECR compliance для EdTech платформ.",
+        aEn: "Yes. Adaptive learning systems, assessment ML, student outcome prediction, and personalised content recommendation. Experience with GDPR for children's data and UK PECR compliance for EdTech platforms.",
+      },
+    ],
+  },
+  {
+    slug: "sheffield",
+    nameUk: "Шеффілд",
+    nameEn: "Sheffield",
+    region: "Йоркшир і Гамбер",
+    regionEn: "Yorkshire and the Humber",
+    population: "560 тис.",
+    populationEn: "560,000",
+    businesses: 28000,
+    description:
+      "Шеффілд — промисловий центр UK, що активно трансформується через advanced manufacturing та Industry 4.0 технології. AMRC (Advanced Manufacturing Research Centre) при Університеті Шеффілда є світовим лідером у machine learning для manufacturing — computer vision для QA, predictive maintenance та digital twin systems. Boeing, Rolls-Royce та BAE Systems є якорними партнерами.",
+    descriptionEn:
+      "Sheffield is the UK's advanced manufacturing hub, actively transforming through Industry 4.0 and ML-driven production optimisation. The AMRC (Advanced Manufacturing Research Centre) at the University of Sheffield is a world leader in ML for manufacturing — computer vision for quality assurance, predictive maintenance, and digital twin systems. Boeing, Rolls-Royce, and BAE Systems are anchor partners.",
+    seoTitle: "ML-консалтинг у Шеффілді | Машинне навчання для Manufacturing | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Sheffield | ML for Manufacturing UK | Codeworth",
+    seoDesc:
+      "ML-консалтинг у Шеффілді: computer vision QA, predictive maintenance, Industry 4.0. Від £4,000. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Sheffield: computer vision QA, predictive maintenance, Industry 4.0 ML. From £4,000. Codeworth.",
+    stats: [
+      { label: "Manufacturing компаній", labelEn: "Manufacturing companies", value: "2,800+" },
+      { label: "AMRC партнерів", labelEn: "AMRC partners", value: "120+" },
+      { label: "Advanced manufacturing jobs", labelEn: "Advanced manufacturing jobs", value: "50,000+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£50k" },
+      { label: "Industry 4.0 проєктів (5р)", labelEn: "Industry 4.0 projects (5yr)", value: "400+" },
+    ],
+    faq: [
+      {
+        q: "Чи є у вас досвід ML для Sheffield manufacturing?",
+        qEn: "Do you have manufacturing ML experience relevant to Sheffield?",
+        a: "Так. Computer vision для виявлення дефектів (YOLOv8), predictive maintenance на sensor data (LSTM/XGBoost), OEE оптимізація та digital twin integrations. Досвід роботи з даними SCADA/MES систем.",
+        aEn: "Yes. Computer vision for defect detection (YOLOv8), predictive maintenance on sensor data (LSTM/XGBoost), OEE optimisation, and digital twin integrations. Experience with SCADA/MES data systems.",
+      },
+      {
+        q: "Чи можете ви інтегруватися з AMRC проєктами?",
+        qEn: "Can you integrate with AMRC-led projects?",
+        a: "Так. Ми розуміємо AMRC методологію та можемо виступати як commercial ML partner для AMRC spin-out або licensing projects. Знайомі з Catapult (High Value Manufacturing Catapult) процесами.",
+        aEn: "Yes. We understand AMRC methodology and can act as commercial ML partner for AMRC spin-outs or licensing projects. Familiar with High Value Manufacturing Catapult processes.",
+      },
+      {
+        q: "Скільки коштує predictive maintenance ML у Шеффілді?",
+        qEn: "What does predictive maintenance ML cost in Sheffield?",
+        a: "Типовий проєкт: підключення до sensor API, feature engineering на vibration/temperature/power data, XGBoost або LSTM модель, alert pipeline. PoC £5,000–£8,000 (4–6 тижнів). Production: £15,000–£35,000.",
+        aEn: "Typical project: sensor API integration, feature engineering on vibration/temperature/power data, XGBoost or LSTM model, alert pipeline. PoC £5,000–£8,000 (4–6 weeks). Production: £15,000–£35,000.",
+      },
+      {
+        q: "Чи підходить Codeworth для Sheffield steel / metals sector?",
+        qEn: "Is Codeworth suitable for Sheffield's steel and metals sector?",
+        a: "Так. Досвід з process optimisation ML для metals: temperature prediction, yield optimisation, scrap reduction через ML-моделювання хімічного складу та параметрів прокатки.",
+        aEn: "Yes. Experience with process optimisation ML for metals: temperature prediction, yield optimisation, scrap reduction through ML modelling of chemical composition and rolling parameters.",
+      },
+      {
+        q: "Чи є гранти для Industry 4.0 ML у Шеффілді?",
+        qEn: "Are there grants for Industry 4.0 ML in Sheffield?",
+        a: "Так. Made Smarter programme, Innovate UK Advanced Manufacturing grants та South Yorkshire Investment Zone incentives. Ми допомагаємо з технічними секціями грантових заявок.",
+        aEn: "Yes. Made Smarter programme, Innovate UK Advanced Manufacturing grants, and South Yorkshire Investment Zone incentives. We assist with technical sections of grant applications.",
+      },
+    ],
+  },
+  {
+    slug: "newcastle",
+    nameUk: "Ньюкасл",
+    nameEn: "Newcastle",
+    region: "Північно-Схід Англії",
+    regionEn: "North East England",
+    population: "300 тис.",
+    populationEn: "300,000",
+    businesses: 18000,
+    description:
+      "Ньюкасл є стратегічним AI хабом Північно-Східної Англії з сильним фокусом на охорону здоров'я ML (NHS Newcastle, National Innovation Centre for Data). Місцевий уряд активно субсидує AI впровадження через North East Investment Zone. Університети Ньюкасла та Нортумбрії виробляють значну кількість ML-спеціалістів, що робить місто привабливим для ML-стартапів з точки зору вартості talent.",
+    descriptionEn:
+      "Newcastle is the strategic AI hub of North East England with a strong focus on healthcare ML (Newcastle Hospitals NHS, National Innovation Centre for Data) and financial services. The North East Investment Zone provides active AI adoption subsidies. Newcastle and Northumbria Universities produce substantial ML talent, making the city attractive for ML startups from a cost perspective — significantly lower than London or Cambridge.",
+    seoTitle: "ML-консалтинг у Ньюкаслі | Машинне навчання для Північно-Схід | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Newcastle | ML Agency North East | Codeworth",
+    seoDesc:
+      "ML-консалтинг у Ньюкаслі: NHS ML, data analytics, predictive models. Від £3,500. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Newcastle: NHS ML, data analytics, predictive models for North East businesses. From £3,500. Codeworth.",
+    stats: [
+      { label: "Охорони здоров'я організацій", labelEn: "Healthcare organisations", value: "600+" },
+      { label: "Tech компаній", labelEn: "Tech companies", value: "1,800+" },
+      { label: "Фінансових послуг компаній", labelEn: "Financial services firms", value: "400+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£46k" },
+      { label: "North East Investment Zone grants", labelEn: "NE Investment Zone grants", value: "£80M+" },
+    ],
+    faq: [
+      {
+        q: "Чи є досвід ML для Newcastle NHS?",
+        qEn: "Do you have experience with Newcastle NHS ML projects?",
+        a: "Так. ML для NHS з повним DSPT compliance, UK GDPR, NICE guidelines. Ключові моделі для Newcastle: patient readmission prediction, surgical outcome risk, A&E demand forecasting.",
+        aEn: "Yes. ML for NHS with full DSPT compliance, UK GDPR, and NICE guidelines. Key models for Newcastle NHS: patient readmission prediction, surgical outcome risk scoring, A&E demand forecasting.",
+      },
+      {
+        q: "Чи є гранти для AI у Ньюкаслі?",
+        qEn: "Are there AI grants available in Newcastle?",
+        a: "Так. North East Investment Zone, Innovate UK North East, British Business Bank scale-up loans. National Innovation Centre for Data (NICD) при Newcastle University також надає технічну підтримку ML проєктам.",
+        aEn: "Yes. North East Investment Zone, Innovate UK North East cluster, British Business Bank scale-up loans. The National Innovation Centre for Data (NICD) at Newcastle University also provides technical support for ML projects.",
+      },
+      {
+        q: "Скільки коштує ML-консалтинг у Ньюкаслі?",
+        qEn: "What does ML consulting cost in Newcastle?",
+        a: "Ньюкасл — одне з найбільш cost-effective міст UK для ML. Наші пакети від £3,500 (PoC). Завдяки нижчим local overheads ми можемо запропонувати більш конкурентні ставки ніж лондонські ML-агентства.",
+        aEn: "Newcastle is one of the UK's most cost-effective cities for ML. Our packages start from £3,500 (PoC). Lower local overheads allow us to offer more competitive rates than London-based ML agencies.",
+      },
+      {
+        q: "Чи маєте ви досвід з North East fintech?",
+        qEn: "Do you have North East fintech experience?",
+        a: "Так. Bagshot, Atom Bank та інші North East fintech компанії використовують ML для credit scoring, fraud detection та customer analytics. Ми будуємо FCA-compliant ML для UK fintech.",
+        aEn: "Yes. Atom Bank and other North East fintech companies actively use ML for credit scoring, fraud detection, and customer analytics. We build FCA-compliant ML solutions for UK fintech of all sizes.",
+      },
+      {
+        q: "Чи обслуговуєте ви весь North East регіон?",
+        qEn: "Do you serve the entire North East region?",
+        a: "Так. Ньюкасл, Сандерленд, Мідлсбро, Дарем та весь North East. Повністю дистанційна робота — географія не впливає на якість deliverables.",
+        aEn: "Yes. Newcastle, Sunderland, Middlesbrough, Durham, and the entire North East region. Fully remote delivery — geography does not affect the quality of our deliverables.",
+      },
+    ],
+  },
+  {
+    slug: "nottingham",
+    nameUk: "Ноттінгем",
+    nameEn: "Nottingham",
+    region: "Іст-Мідлендс",
+    regionEn: "East Midlands",
+    population: "330 тис.",
+    populationEn: "330,000",
+    businesses: 22000,
+    description:
+      "Ноттінгем — зростаючий ML хаб Іст-Мідлендсу з помітними секторами retail analytics (Boots HQ, Capital One UK HQ), охорони здоров'я (Nottingham University Hospitals NHS Trust — один з найбільших UK) та logistics ML (East Midlands Airport є найбільшим UK cargo hub). Університет Ноттінгему підтримує активне ML-дослідницьке середовище.",
+    descriptionEn:
+      "Nottingham is the East Midlands' growing ML hub with strong sectors in retail analytics (Boots UK and Capital One UK are headquartered here), healthcare (Nottingham University Hospitals NHS Trust — one of the UK's largest), and logistics ML (East Midlands Airport is the UK's largest cargo hub). The University of Nottingham maintains an active ML research environment.",
+    seoTitle: "ML-консалтинг у Ноттінгемі | Машинне навчання Іст-Мідлендс | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Nottingham | ML Agency East Midlands | Codeworth",
+    seoDesc:
+      "ML-консалтинг у Ноттінгемі: retail analytics, NHS ML, logistics forecasting. Від £3,500. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Nottingham: retail analytics, NHS ML, logistics demand forecasting. From £3,500. Codeworth.",
+    stats: [
+      { label: "Retail компаній (HQ)", labelEn: "Retail companies (HQ)", value: "120+" },
+      { label: "Logistics/warehouse jobs", labelEn: "Logistics / warehouse jobs", value: "35,000+" },
+      { label: "NHS Trust ліжок", labelEn: "NHS Trust beds", value: "1,700+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£48k" },
+      { label: "Tech компаній", labelEn: "Tech companies", value: "2,100+" },
+    ],
+    faq: [
+      {
+        q: "Чи є у вас досвід retail ML для Nottingham-based компаній?",
+        qEn: "Do you have retail ML experience relevant to Nottingham?",
+        a: "Так. Demand forecasting, inventory optimisation, customer segmentation та churn prediction для UK рітейлерів. Досвід роботи з Salesforce Commerce Cloud, Magento та custom retail data warehouses.",
+        aEn: "Yes. Demand forecasting, inventory optimisation, customer segmentation, and churn prediction for UK retailers. Experience with Salesforce Commerce Cloud, Magento, and custom retail data warehouses.",
+      },
+      {
+        q: "Скільки коштує logistics ML для East Midlands Airport cluster?",
+        qEn: "What does logistics ML cost for the East Midlands Airport cluster?",
+        a: "Logistics demand forecasting PoC: £5,000–£9,000 (4–6 тижнів). Охоплює: historical shipment data integration, seasonal feature engineering, XGBoost/Prophet model, API для WMS/TMS систем.",
+        aEn: "Logistics demand forecasting PoC: £5,000–£9,000 (4–6 weeks). Covers: historical shipment data integration, seasonal feature engineering, XGBoost/Prophet model, API for WMS/TMS systems.",
+      },
+      {
+        q: "Чи маєте ви досвід ML для Capital One UK типу fintech?",
+        qEn: "Do you have experience with Capital One UK-type fintech ML?",
+        a: "Так. Credit risk ML (logistic regression, gradient boosting на alternative data), fraud detection, customer lifetime value prediction. Всі моделі FCA SS1/23 compliant з SHAP explainability.",
+        aEn: "Yes. Credit risk ML (logistic regression, gradient boosting on alternative data), fraud detection, customer lifetime value prediction. All models FCA SS1/23 compliant with SHAP explainability.",
+      },
+      {
+        q: "Чи обслуговуєте ви весь East Midlands?",
+        qEn: "Do you serve the whole East Midlands?",
+        a: "Так. Ноттінгем, Лестер, Дербі, Лінкольн, Нортемптон та весь East Midlands. Повністю remote delivery.",
+        aEn: "Yes. Nottingham, Leicester, Derby, Lincoln, Northampton, and the entire East Midlands. Fully remote delivery.",
+      },
+      {
+        q: "Скільки коштує ML у Ноттінгемі порівняно з Лондоном?",
+        qEn: "How does Nottingham ML pricing compare to London?",
+        a: "Nottingham ML ставки на 20–30% нижчі ніж у Лондоні при тому ж рівні якості. Наші пакети від £3,500 (PoC). Менші local overheads дозволяють більш конкурентне ціноутворення.",
+        aEn: "Nottingham ML rates are 20–30% lower than London at the same quality level. Our packages start from £3,500 (PoC). Lower local overheads allow more competitive pricing without compromising on deliverable quality.",
+      },
+    ],
+  },
 ];
 
 export function getCity(slug: string): GeoCity | undefined {
