@@ -70,8 +70,8 @@ export default async function NotFound() {
             <Button href={`/${lang}/services`} variant="outline" size="lg">
               {isUk ? "Наші послуги" : "Our Services"}
             </Button>
-            <Button href={`/${lang}/marketplace/catalog`} variant="outline" size="lg">
-              {isUk ? "Маркетплейс" : "Marketplace"}
+            <Button href={`/${lang}/portfolio`} variant="outline" size="lg">
+              {isUk ? "Кейси" : "Case Studies"}
             </Button>
           </div>
 

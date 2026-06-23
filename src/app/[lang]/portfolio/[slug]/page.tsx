@@ -634,11 +634,11 @@ export default async function PortfolioProjectPage({ params }: Props) {
                             {isUk ? "Замовити зараз" : "Order Now"}
                           </Link>
                           <Link
-                            href={`/${lang}/marketplace`}
+                            href={`/${lang}/pricing`}
                             className="px-5 py-3 rounded-xl border border-neutral-200 dark:border-neutral-600 text-neutral-700 dark:text-neutral-300 font-semibold text-sm flex items-center justify-center gap-2 hover:bg-neutral-50 dark:bg-neutral-900 dark:hover:bg-neutral-800 transition-colors"
                           >
                             <Package className="w-4 h-4" />
-                            {isUk ? "Всі пакети" : "All packages"}
+                            {isUk ? "Ціни" : "Pricing"}
                           </Link>
                         </div>
                         <div className="px-5 py-2.5 bg-neutral-50 dark:bg-neutral-900 /40 border-t border-neutral-100 dark:border-neutral-700 /30 text-center">
