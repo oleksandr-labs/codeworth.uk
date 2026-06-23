@@ -19,7 +19,7 @@ export const AI_NICHES: AINicheData[] = [
     metaTitleEn: "AI for Healthcare UK | GDPR Clinical AI | Codeworth",
     metaTitleUk: "ШІ для медицини | AI для клінік | Codeworth",
     metaDescriptionEn: "GDPR-compliant AI for clinics: RAG on medical protocols, patient chatbots, document OCR. From £3,500. Search time −87% (MedAssist case). UK & Ukraine.",
-    metaDescriptionUk: "AI для клінік з GDPR: RAG на протоколах, чат-боти для пацієнтів, OCR документів. Від 150 000 ₴. Час пошуку −87% (кейс MedAssist).",
+    metaDescriptionUk: "AI для клінік з GDPR: RAG на протоколах, чат-боти для пацієнтів, OCR документів. Від £3,500. Час пошуку −87% (кейс MedAssist).",
     keywordsEn: { primary: "AI for healthcare UK", secondary: ["GDPR AI healthcare", "clinical chatbot UK", "RAG medical records"], localEn: ["AI healthcare London", "medical AI Manchester", "clinical AI Birmingham"] },
     keywordsUk: { primary: "ШІ для медицини Україна", secondary: ["AI для клінік", "медичний чат-бот", "GDPR AI медицина"], localUk: ["AI медицина Київ", "ШІ клініка Харків", "медичний AI Львів"] },
     packages: [
@@ -70,7 +70,7 @@ export const AI_NICHES: AINicheData[] = [
     metaTitleEn: "AI for E-commerce UK | Visual Search & Recommendations | Codeworth",
     metaTitleUk: "ШІ для e-commerce | Візуальний пошук та рекомендації | Codeworth",
     metaDescriptionEn: "AI for online stores: visual search, product description generation, personalised recommendations. From £1,500. Conversion +89% (VisualFind case). UK & Ukraine.",
-    metaDescriptionUk: "AI для інтернет-магазинів: візуальний пошук, AI-описи, рекомендації. Від 60 000 ₴. Конверсія +89% (кейс VisualFind). UK та Україна.",
+    metaDescriptionUk: "AI для інтернет-магазинів: візуальний пошук, AI-описи, рекомендації. Від £1,500. Конверсія +89% (кейс VisualFind). UK.",
     keywordsEn: { primary: "AI for ecommerce UK", secondary: ["visual search ecommerce", "AI product descriptions", "ecommerce personalisation AI"], localEn: ["AI ecommerce London", "visual search UK retailer", "AI product copy UK"] },
     keywordsUk: { primary: "AI для e-commerce Україна", secondary: ["візуальний пошук інтернет-магазин", "AI описи товарів", "персоналізація e-commerce"], localUk: ["AI інтернет-магазин Київ", "візуальний пошук Харків", "AI e-commerce Україна"] },
     packages: [
@@ -119,7 +119,7 @@ export const AI_NICHES: AINicheData[] = [
     metaTitleEn: "AI for FinTech UK | Invoice Automation & MTD | Codeworth",
     metaTitleUk: "AI для FinTech | Автоматизація рахунків, MTD | Codeworth",
     metaDescriptionEn: "AI for UK FinTech: invoice OCR, Making Tax Digital automation, fraud detection. From £2,500. Processing time −95% for 180 SMBs. GDPR-compliant.",
-    metaDescriptionUk: "AI для FinTech: OCR рахунків, Making Tax Digital, виявлення шахрайства. Від 100 000 ₴. Час обробки −95% для 180 компаній. GDPR-сумісно.",
+    metaDescriptionUk: "AI для FinTech: OCR рахунків, Making Tax Digital, виявлення шахрайства. Від £2,500. Час обробки −95% для 180 компаній. GDPR-сумісно.",
     keywordsEn: { primary: "AI invoice automation UK", secondary: ["Making Tax Digital AI", "FinTech AI software", "accounting automation UK"], localEn: ["AI accounting London", "invoice automation Birmingham", "MTD software UK"] },
     keywordsUk: { primary: "AI автоматизація рахунків Україна", secondary: ["AI бухгалтерія", "автоматизація фінансів AI", "FinTech AI Україна"], localUk: ["AI бухгалтерія Київ", "автоматизація рахунків Харків", "FinTech AI Львів"] },
     packages: [
@@ -167,7 +167,7 @@ export const AI_NICHES: AINicheData[] = [
     metaTitleEn: "AI for Marketing Agencies UK | Content Automation | Codeworth",
     metaTitleUk: "AI для маркетингу | Автоматизація контенту | Codeworth",
     metaDescriptionEn: "AI content pipeline for agencies: brand voice capture, bulk SEO articles, editorial automation. From £1,200. Content time −85%. UK & Ukraine.",
-    metaDescriptionUk: "AI-пайплайн контенту для агенцій: голос бренду, bulk SEO-статті, editorial автоматизація. Від 50 000 ₴. Час контенту −85%.",
+    metaDescriptionUk: "AI-пайплайн контенту для агенцій: голос бренду, bulk SEO-статті, editorial автоматизація. Від £1,200. Час контенту −85%.",
     keywordsEn: { primary: "AI content marketing UK", secondary: ["AI copywriting agency", "marketing automation AI", "AI brand voice"], localEn: ["AI marketing agency London", "content automation Birmingham", "AI copywriter UK"] },
     keywordsUk: { primary: "AI контент-маркетинг Україна", secondary: ["AI копірайтинг агенція", "автоматизація маркетингу AI", "AI голос бренду"], localUk: ["AI маркетинг Київ", "контент AI Харків", "AI копірайтинг Україна"] },
     packages: [
@@ -213,7 +213,7 @@ export const AI_NICHES: AINicheData[] = [
     metaTitleEn: "AI CV Screening UK | GDPR HR Automation | Codeworth",
     metaTitleUk: "AI скринінг резюме | GDPR HR-автоматизація | Codeworth",
     metaDescriptionEn: "AI CV screening for UK recruiters: 500 CVs in 23 min, UK Equality Act compliant, bias auditing. From £2,000. Screening time −91% (TalentScan case).",
-    metaDescriptionUk: "AI скринінг CV для рекрутерів: 500 резюме за 23 хв, відповідає Закону про рівність UK. Від 80 000 ₴. Час скринінгу −91% (кейс TalentScan).",
+    metaDescriptionUk: "AI скринінг CV для рекрутерів: 500 резюме за 23 хв, відповідає Закону про рівність UK. Від £2,000. Час скринінгу −91% (кейс TalentScan).",
     keywordsEn: { primary: "AI CV screening UK", secondary: ["AI recruitment software UK", "HR automation AI", "GDPR recruitment AI"], localEn: ["AI recruitment London", "CV screening Birmingham", "HR AI Manchester"] },
     keywordsUk: { primary: "AI скринінг резюме Україна", secondary: ["AI рекрутинг", "автоматизація HR AI", "GDPR рекрутинг AI"], localUk: ["AI рекрутинг Київ", "скринінг CV Харків", "HR AI Україна"] },
     packages: [
@@ -259,7 +259,7 @@ export const AI_NICHES: AINicheData[] = [
     metaTitleEn: "AI for Hotels UK | Voice Concierge & PMS Integration | Codeworth",
     metaTitleUk: "AI для готелів | Голосовий консьєрж та PMS | Codeworth",
     metaDescriptionEn: "AI concierge for hotels: multilingual voice assistant, PMS integration, automated check-in. From £2,000. Reception load −47% (VoiceIQ case). UK & Ukraine.",
-    metaDescriptionUk: "AI-консьєрж для готелів: мультимовний голосовий асистент, PMS інтеграція. Від 80 000 ₴. Навантаження на рецепцію −47% (кейс VoiceIQ).",
+    metaDescriptionUk: "AI-консьєрж для готелів: мультимовний голосовий асистент, PMS інтеграція. Від £2,000. Навантаження на рецепцію −47% (кейс VoiceIQ).",
     keywordsEn: { primary: "AI for hotels UK", secondary: ["hotel chatbot UK", "voice AI hospitality", "hotel PMS integration AI"], localEn: ["AI hotel London", "voice concierge Birmingham", "hotel AI Manchester"] },
     keywordsUk: { primary: "AI для готелів Україна", secondary: ["готельний чат-бот", "голосовий AI готель", "AI PMS інтеграція"], localUk: ["AI готель Київ", "голосовий консьєрж Одеса", "AI готель Україна"] },
     packages: [
@@ -305,7 +305,7 @@ export const AI_NICHES: AINicheData[] = [
     metaTitleEn: "AI for EdTech UK | Adaptive AI Tutoring | Codeworth",
     metaTitleUk: "AI для EdTech | Адаптивний AI-тьютор | Codeworth",
     metaDescriptionEn: "AI for e-learning: adaptive tutoring, Whisper pronunciation assessment, personalised learning paths. From £1,800. Completion 34%→71% (LearnAI case).",
-    metaDescriptionUk: "AI для e-learning: адаптивний тьютор, оцінка вимови Whisper. Від 72 000 ₴. Completion 34%→71% (кейс LearnAI).",
+    metaDescriptionUk: "AI для e-learning: адаптивний тьютор, оцінка вимови Whisper. Від £1,800. Completion 34%→71% (кейс LearnAI).",
     keywordsEn: { primary: "AI tutoring software UK", secondary: ["adaptive learning AI", "AI language learning", "EdTech AI platform"], localEn: ["AI tutoring London", "EdTech AI Birmingham", "online learning AI UK"] },
     keywordsUk: { primary: "AI навчання Україна", secondary: ["адаптивне навчання AI", "AI мовна школа", "EdTech AI платформа"], localUk: ["AI навчання Київ", "EdTech Харків", "AI курси Україна"] },
     packages: [
@@ -351,7 +351,7 @@ export const AI_NICHES: AINicheData[] = [
     metaTitleEn: "AI Manufacturing UK | Computer Vision Quality Control | Codeworth",
     metaTitleUk: "AI виробництво | Комп'ютерний зір контроль якості | Codeworth",
     metaDescriptionEn: "AI for manufacturing: YOLOv8 defect detection, predictive maintenance, production analytics. From £5,000. Defect rate −96% (QualityEye case). UK & Ukraine.",
-    metaDescriptionUk: "AI для виробництва: виявлення дефектів YOLOv8, predictive maintenance. Від 200 000 ₴. Дефекти −96% (кейс QualityEye).",
+    metaDescriptionUk: "AI для виробництва: виявлення дефектів YOLOv8, predictive maintenance. Від £5,000. Дефекти −96% (кейс QualityEye).",
     keywordsEn: { primary: "AI manufacturing quality control UK", secondary: ["computer vision defect detection", "predictive maintenance AI", "Industry 4.0 AI"], localEn: ["AI manufacturing Birmingham", "quality control AI UK", "Industry 4.0 London"] },
     keywordsUk: { primary: "AI контроль якості виробництво Україна", secondary: ["комп'ютерний зір дефекти", "predictive maintenance AI", "Індустрія 4.0 AI"], localUk: ["AI виробництво Харків", "контроль якості AI Дніпро", "AI завод Україна"] },
     packages: [
@@ -399,7 +399,7 @@ export const AI_NICHES: AINicheData[] = [
     metaTitleEn: "AI for Law Firms UK | Contract Review AI | Codeworth",
     metaTitleUk: "AI для юридичних фірм | AI перевірка контрактів | Codeworth",
     metaDescriptionEn: "AI for law firms: contract analysis, clause extraction, risk flagging, GDPR-compliant self-hosted. From £1,800. Review time 2h→18min (DocSense case).",
-    metaDescriptionUk: "AI для юридичних фірм: аналіз контрактів, витягування клаузул, виявлення ризиків. Від 72 000 ₴. Час перевірки 2год→18хв (кейс DocSense).",
+    metaDescriptionUk: "AI для юридичних фірм: аналіз контрактів, витягування клаузул, виявлення ризиків. Від £1,800. Час перевірки 2год→18хв (кейс DocSense).",
     keywordsEn: { primary: "AI contract review UK", secondary: ["legal AI software UK", "AI document analysis law firm", "GDPR legal AI"], localEn: ["AI law firm London", "contract review AI Birmingham", "legal document AI Manchester"] },
     keywordsUk: { primary: "AI перевірка контрактів Україна", secondary: ["AI юридичні документи", "AI аналіз договорів", "GDPR юридичний AI"], localUk: ["AI юридична фірма Київ", "перевірка контрактів AI Харків", "AI юрист Україна"] },
     packages: [
@@ -445,7 +445,7 @@ export const AI_NICHES: AINicheData[] = [
     metaTitleEn: "AI for Real Estate UK | Property AI & PropTech | Codeworth",
     metaTitleUk: "AI для нерухомості | PropTech AI | Codeworth",
     metaDescriptionEn: "AI for estate agents: property description generation, lead chatbot, AVM valuation. From £1,500. Listing time −70%. UK (Rightmove/Zoopla) & Ukraine.",
-    metaDescriptionUk: "AI для агентств нерухомості: генерація описів, чат-бот для лідів, AVM оцінка. Від 60 000 ₴. Час лістингу −70%.",
+    metaDescriptionUk: "AI для агентств нерухомості: генерація описів, чат-бот для лідів, AVM оцінка. Від £1,500. Час лістингу −70%.",
     keywordsEn: { primary: "AI for real estate UK", secondary: ["property description AI", "estate agent chatbot", "PropTech AI UK"], localEn: ["AI estate agent London", "property AI Birmingham", "PropTech AI Manchester"] },
     keywordsUk: { primary: "AI для нерухомості Україна", secondary: ["AI описи нерухомості", "чат-бот нерухомість", "PropTech AI Україна"], localUk: ["AI нерухомість Київ", "PropTech Харків", "AI агентство нерухомість Україна"] },
     packages: [
