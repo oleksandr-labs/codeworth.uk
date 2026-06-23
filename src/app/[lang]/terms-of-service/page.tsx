@@ -11,13 +11,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isUk ? "Угода користувача | Codeworth" : "Terms of Service | Codeworth",
     description: isUk
-      ? "Угода користувача Codeworth — умови надання послуг веб-розробки, маркетплейсу та підтримки."
-      : "Codeworth Terms of Service — conditions for web development, marketplace, and support services.",
+      ? "Угода користувача Codeworth — умови надання ML/AI консалтингових послуг."
+      : "Codeworth Terms of Service — conditions for machine learning, AI consulting, and MLOps services.",
     openGraph: {
       title: isUk ? "Угода користувача — Codeworth" : "Terms of Service — Codeworth",
       description: isUk
-        ? "Умови надання послуг веб-розробки, маркетплейсу та підтримки від Codeworth."
-        : "Conditions for web development, marketplace, and support services from Codeworth.",
+        ? "Умови надання ML/AI консалтингових послуг від Codeworth."
+        : "Conditions for machine learning, AI consulting, and MLOps services from Codeworth.",
       type: "website",
       url: `https://codeworth.uk/${lang}/terms-of-service`,
       images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "Codeworth" }],
@@ -191,10 +191,9 @@ export default async function TermsOfServicePage({ params }: { params: Promise<{
                   </p>
                   <h2>1. Subject of the Agreement</h2>
                   <p>
-                    The Service Provider offers the following services: development of websites, landing pages,
-                    and web applications; SEO optimisation; UI/UX design; chatbot and CRM development;
-                    website maintenance and support; as well as the sale of ready-made niche solutions
-                    through the Codeworth Marketplace.
+                    The Service Provider offers the following services: machine learning model development and
+                    deployment; AI consulting and strategy; data science and analytics; MLOps infrastructure;
+                    natural language processing; computer vision; and LLM/RAG application development.
                   </p>
                   <h2>2. Ordering Process</h2>
                   <ol>
@@ -208,67 +207,72 @@ export default async function TermsOfServicePage({ params }: { params: Promise<{
                   <ul>
                     <li><strong>Deposit</strong> — 50% of the total cost before work begins</li>
                     <li><strong>Balance</strong> — 50% upon completion and acceptance of work</li>
-                    <li>Payment methods: bank transfer, LiqPay, Stripe, USDT</li>
-                    <li>Marketplace ready-made solutions are paid in full upfront</li>
+                    <li>Payment methods: bank transfer, Stripe</li>
+                    <li>Project phases (Discovery, PoC, Production) are invoiced separately per SOW</li>
                   </ul>
                   <h2>4. Timelines</h2>
                   <p>
-                    Timelines are specified in the commercial proposal or on the relevant product page.
-                    The Service Provider is committed to meeting agreed deadlines. In the event of force
-                    majeure (martial law, natural disasters, etc.), deadlines may be rescheduled by
-                    mutual agreement.
+                    Timelines are specified in the Statement of Work (SOW) or commercial proposal.
+                    The Service Provider is committed to meeting agreed milestones. Changes to scope
+                    or data availability may affect timelines and will be communicated in writing.
                   </p>
                   <h2>5. Intellectual Property Rights</h2>
                   <ul>
                     <li>
-                      <strong>Custom work</strong> — upon full payment, all rights to the developed
-                      code and design transfer to the Client
+                      <strong>Custom ML systems</strong> — upon full payment, all rights to the
+                      developed code, models, and documentation transfer to the Client
                     </li>
                     <li>
-                      <strong>Marketplace ready-made solutions</strong> — the Client receives a licence
-                      to use the product for one business; resale and transfer of the code to third
-                      parties are prohibited
+                      The Service Provider retains rights to reusable frameworks, libraries, and
+                      know-how not specific to the Client's data or business
                     </li>
                     <li>
-                      The Service Provider reserves the right to use the project in their portfolio
-                      unless the Client has objected in writing
+                      The Service Provider reserves the right to reference the project in their
+                      portfolio unless the Client has objected in writing
+                    </li>
+                    <li>
+                      Training data and proprietary datasets provided by the Client remain the
+                      exclusive property of the Client
                     </li>
                   </ul>
-                  <h2>6. Warranty & Support</h2>
+                  <h2>6. Data Protection</h2>
                   <ul>
                     <li>
-                      <strong>Warranty period</strong> — 3 months after project delivery for fixing
-                      errors caused by the Service Provider
+                      The Service Provider processes Client data in accordance with UK GDPR and
+                      acts as a Data Processor where applicable
                     </li>
-                    <li>The warranty does not cover issues caused by the Client or third parties</li>
-                    <li>Ongoing support is provided under a separate agreement or support plan</li>
+                    <li>A Data Processing Agreement (DPA) is available upon request</li>
+                    <li>Client data is not used for training models for other clients</li>
+                    <li>Confidentiality of business data is maintained under NDA terms</li>
                   </ul>
-                  <h2>7. Refund Policy</h2>
+                  <h2>7. Warranty & Support</h2>
                   <ul>
-                    <li><strong>Before work begins</strong> — the deposit is refunded in full</li>
                     <li>
-                      <strong>During execution</strong> — a partial refund is issued minus the cost
-                      of work already completed
+                      <strong>Warranty period</strong> — 90 days after production deployment for
+                      defects attributable to the Service Provider
+                    </li>
+                    <li>Model performance degradation due to natural data drift is not a defect</li>
+                    <li>Ongoing MLOps support is provided under a separate retainer agreement</li>
+                  </ul>
+                  <h2>8. Refund Policy</h2>
+                  <ul>
+                    <li><strong>Before Discovery begins</strong> — full refund</li>
+                    <li>
+                      <strong>During PoC</strong> — partial refund minus cost of work completed
+                      to date, agreed in writing
                     </li>
                     <li>
-                      <strong>Marketplace ready-made solutions</strong> — no refund after access and
-                      source code have been transferred
+                      <strong>After Production Deployment</strong> — no refund; ongoing MLOps
+                      retainer may be cancelled with 30 days notice
                     </li>
                   </ul>
-                  <h2>8. Limitation of Liability</h2>
+                  <h2>9. Limitation of Liability</h2>
                   <p>The Service Provider is not liable for damages arising from:</p>
                   <ul>
-                    <li>Improper use of the developed product by the Client</li>
-                    <li>Actions of third parties (hacking, hosting provider issues)</li>
-                    <li>Force majeure circumstances (martial law, natural disasters)</li>
-                    <li>Loss of revenue or lost profits of the Client</li>
-                  </ul>
-                  <h2>9. Marketplace Terms</h2>
-                  <ul>
-                    <li>Ready-made solutions are provided "as is" with all described features</li>
-                    <li>Customisation of marketplace products is charged separately</li>
-                    <li>Hosting and domain are not included in the price of a ready-made solution</li>
-                    <li>The Service Provider provides technical support for 30 days after product delivery</li>
+                    <li>Client decisions made based on ML model outputs</li>
+                    <li>Model performance on data outside the validated training distribution</li>
+                    <li>Regulatory non-compliance not disclosed during the Discovery phase</li>
+                    <li>Force majeure circumstances</li>
                   </ul>
                   <h2>10. Privacy</h2>
                   <p>
@@ -277,9 +281,9 @@ export default async function TermsOfServicePage({ params }: { params: Promise<{
                   </p>
                   <h2>11. Governing Law</h2>
                   <p>
-                    This Agreement is governed by the laws of Ukraine. Disputes shall be resolved through
-                    negotiation, and if unsuccessful, through the courts at the Service Provider's
-                    registered location.
+                    This Agreement is governed by the laws of England and Wales. Disputes shall be
+                    resolved through negotiation, and if unsuccessful, through the courts of England
+                    and Wales.
                   </p>
                   <h2>12. Changes to the Agreement</h2>
                   <p>

@@ -178,14 +178,14 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
                   </p>
                   <h2>1. Who we are</h2>
                   <p>
-                    Codeworth is a full-cycle web studio offering website development, SEO, design
-                    services, and selling ready-made niche solutions through our marketplace.
+                    Codeworth is a machine learning and AI consultancy delivering production ML systems,
+                    data science solutions, and MLOps services to UK businesses.
                   </p>
                   <ul>
                     <li>Website: codeworth.uk</li>
                     <li>Email: hello@codeworth.uk</li>
                     <li>Telegram: @codeworth_uk</li>
-                    <li>Location: Kyiv, Ukraine</li>
+                    <li>Location: United Kingdom</li>
                   </ul>
                   <h2>2. What data we collect</h2>
                   <p>We only collect data necessary to provide services and improve your experience:</p>
