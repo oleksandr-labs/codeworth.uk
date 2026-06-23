@@ -7,11 +7,8 @@ import { Container } from "@/components/layout/Container";
 import { CTASection } from "@/components/home/CTASection";
 import { PortfolioContent } from "@/components/portfolio/PortfolioContent";
 import { CountUp } from "@/components/ui/CountUp";
-import { ExternalLink } from "lucide-react";
 import { EmojiIcon } from "@/components/ui/EmojiIcon";
 import { PROJECTS } from "@/lib/data/portfolio";
-import { NICHES_DATA, getNicheLocalized } from "@/lib/data/niches";
-import { cn } from "@/lib/utils";
 
 export const revalidate = 3600;
 
@@ -79,25 +76,25 @@ export default async function PortfolioPage({ params }: { params: Promise<{ lang
           <Container>
             <div className="max-w-3xl mx-auto text-center">
               <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-4">
-                {isUk ? "Готові рішення та кейси" : "Ready Solutions & Case Studies"}
+                {isUk ? "ML/AI Кейси" : "ML/AI Case Studies"}
               </p>
               <h1 className="text-5xl lg:text-6xl font-heading font-extrabold text-neutral-900 dark:text-white mb-4">
-                {isUk ? "Що ми можемо зробити для вас" : "What We Can Build for You"}
+                {isUk ? "Реальні ML-проєкти для бізнесу" : "Real ML Projects for Business"}
               </h1>
               <p className="text-lg text-neutral-500 dark:text-neutral-400 max-w-xl mx-auto mb-6">
                 {isUk
-                  ? "Кожен проєкт нижче — це готове рішення, яке ви можете замовити. Натисніть щоб побачити деталі та ціну."
-                  : "Every project below is a ready-made solution you can order. Click to see details and pricing."}
+                  ? "Кожен кейс нижче — реальний ML-проєкт із технічними деталями, метриками та бізнес-результатами."
+                  : "Every case study below is a real ML project with technical details, metrics, and business outcomes."}
               </p>
-              <div className="flex items-center justify-center gap-3 text-sm">
+              <div className="flex flex-wrap items-center justify-center gap-3 text-sm">
                 <span className="px-3 py-1.5 rounded-full bg-emerald-100 text-emerald-700 font-medium inline-flex items-center gap-1">
-                  <EmojiIcon emoji="✅" className="w-3.5 h-3.5" />{isUk ? "Від £499" : "From £499"}
+                  <EmojiIcon emoji="🧠" className="w-3.5 h-3.5" />{isUk ? "40+ ML моделей" : "40+ ML models"}
                 </span>
                 <span className="px-3 py-1.5 rounded-full bg-indigo-100 text-indigo-700 font-medium inline-flex items-center gap-1">
-                  <EmojiIcon emoji="⚡" className="w-3.5 h-3.5" />{isUk ? "Запуск за 3–7 днів" : "Launch in 3–7 days"}
+                  <EmojiIcon emoji="🏭" className="w-3.5 h-3.5" />{isUk ? "12 галузей" : "12 industries"}
                 </span>
                 <span className="px-3 py-1.5 rounded-full bg-amber-100 text-amber-700 font-medium inline-flex items-center gap-1">
-                  <EmojiIcon emoji="🎨" className="w-3.5 h-3.5" />Customizer
+                  <EmojiIcon emoji="📊" className="w-3.5 h-3.5" />{isUk ? "92% середній F1" : "92% avg F1"}
                 </span>
               </div>
             </div>
@@ -109,9 +106,10 @@ export default async function PortfolioPage({ params }: { params: Promise<{ lang
           <Container>
             <div className="flex flex-wrap items-center justify-center gap-10 text-center">
               {[
-                { end: 120, suffix: "+", label: isUk ? "Проєктів" : "Projects" },
-                { end: 85, suffix: "+", label: isUk ? "Клієнтів" : "Clients" },
+                { end: 40, suffix: "+", label: isUk ? "ML моделей" : "ML Models" },
+                { end: 12, suffix: "", label: isUk ? "Галузей" : "Industries" },
                 { end: 4, suffix: "+", label: isUk ? "Роки роботи" : "Years" },
+                { end: 92, suffix: "%", label: isUk ? "Середній F1" : "Avg F1 Score" },
               ].map((s) => (
                 <div key={s.label}>
                   <div className="text-3xl font-sans font-extrabold tabular-nums tracking-tight gradient-text-primary">
@@ -124,45 +122,54 @@ export default async function PortfolioPage({ params }: { params: Promise<{ lang
           </Container>
         </section>
 
-        {/* How it works */}
+        {/* How ML projects work */}
         <section className="py-16 bg-white dark:bg-neutral-800 border-b border-neutral-100">
           <Container>
             <div className="max-w-xl mx-auto text-center mb-10">
               <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
-                {isUk ? "Як це працює" : "How It Works"}
+                {isUk ? "Як ми працюємо" : "How We Work"}
               </p>
-              <h2 className="text-3xl font-heading font-extrabold text-neutral-900">
-                {isUk ? "Від прикладу до запуску — 3 кроки" : "From Example to Launch — 3 Steps"}
+              <h2 className="text-3xl font-heading font-extrabold text-neutral-900 dark:text-white">
+                {isUk ? "Від даних до production — 4 фази" : "From Data to Production — 4 Phases"}
               </h2>
             </div>
-            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
               {[
                 {
                   step: "01",
-                  icon: "👀",
-                  title: isUk ? "Вибери приклад" : "Pick an Example",
+                  icon: "🔍",
+                  title: isUk ? "Discovery & Аудит даних" : "Discovery & Data Audit",
                   desc: isUk
-                    ? "Перегляньте кейси та готові демо-сайти нижче. Знайдіть рішення для вашої ніші або схожий стиль."
-                    : "Browse the case studies and live demo sites below. Find the solution for your niche or a similar style.",
+                    ? "Визначаємо ML-задачу, аналізуємо ваші дані, оцінюємо якість та обсяг, формуємо технічне завдання."
+                    : "Define the ML task, analyse your data, assess quality and volume, form a technical specification.",
                   color: "bg-indigo-50 text-indigo-600",
                 },
                 {
                   step: "02",
-                  icon: "🖥️",
-                  title: isUk ? "Перегляньте демо" : "View the Demo",
+                  icon: "🧪",
+                  title: isUk ? "PoC / Прототип" : "PoC / Prototype",
                   desc: isUk
-                    ? "Кожен проєкт — живий сайт. Натисніть «Демо» щоб побачити як він виглядає в дії, змініть кольори і шрифти."
-                    : "Every project is a live site. Click 'Demo' to see it in action, change colors and fonts to match your brand.",
+                    ? "Тренуємо першу модель на ваших даних. Через 3–4 тижні ви бачите реальні метрики та можете рішити чи варто далі."
+                    : "Train the first model on your data. In 3–4 weeks you see real metrics and can decide whether to proceed.",
                   color: "bg-violet-50 text-violet-600",
                 },
                 {
                   step: "03",
-                  icon: "🚀",
-                  title: isUk ? "Замовте та запустіться" : "Order & Launch",
+                  icon: "⚙️",
+                  title: isUk ? "Production ML" : "Production ML",
                   desc: isUk
-                    ? "Натисніть «Замовити подібне», ми зв'яжемось протягом кількох годин і запустимо ваш сайт за 3–7 днів."
-                    : "Click 'Order Similar', we'll reach out within hours and launch your site in 3–7 days.",
+                    ? "Оптимізуємо модель, підключаємо до ваших систем через FastAPI, налаштовуємо моніторинг та CI/CD."
+                    : "Optimise the model, connect it to your systems via FastAPI, set up monitoring and CI/CD pipelines.",
                   color: "bg-emerald-50 text-emerald-600",
+                },
+                {
+                  step: "04",
+                  icon: "🚀",
+                  title: isUk ? "MLOps & Підтримка" : "MLOps & Support",
+                  desc: isUk
+                    ? "Автоматичне перетренування при drift, щомісячні звіти, SLA-відповідь за 4 години."
+                    : "Automatic retraining on drift, monthly reports, SLA response within 4 hours.",
+                  color: "bg-amber-50 text-amber-600",
                 },
               ].map((item, i) => (
                 <div key={i} className="relative p-6 rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-100 dark:border-neutral-700 hover:border-indigo-200 hover:shadow-sm transition-all">
@@ -180,41 +187,41 @@ export default async function PortfolioPage({ params }: { params: Promise<{ lang
           </Container>
         </section>
 
-        {/* Client success metrics */}
+        {/* ML results metrics */}
         <section className="py-16 bg-neutral-50 dark:bg-neutral-900 border-b border-neutral-100">
           <Container>
             <div className="max-w-2xl mx-auto text-center mb-10">
               <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
                 {isUk ? "Результати клієнтів" : "Client Results"}
               </p>
-              <h2 className="text-3xl font-heading font-extrabold text-neutral-900">
+              <h2 className="text-3xl font-heading font-extrabold text-neutral-900 dark:text-white">
                 {isUk ? "Що отримують наші клієнти" : "What Our Clients Achieve"}
               </h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {[
                 {
-                  metric: isUk ? "+60%" : "+60%",
-                  label: isUk ? "середній ріст онлайн-замовлень у перший місяць" : "average growth in online orders in the first month",
-                  example: isUk ? "Ресторан «Смачно»" : "Restaurant 'Smachno'",
+                  metric: "-23%",
+                  label: isUk ? "надлишкових запасів у ритейл-клієнта завдяки ML-прогнозуванню попиту" : "excess inventory for a retail client via ML demand forecasting",
+                  example: isUk ? "XGBoost + Prophet, 120 магазинів" : "XGBoost + Prophet, 120 stores",
                   color: "from-emerald-500 to-teal-600",
                 },
                 {
-                  metric: isUk ? "90+" : "90+",
-                  label: isUk ? "PageSpeed Score у кожного клієнта після запуску" : "PageSpeed Score for every client after launch",
-                  example: isUk ? "Core Web Vitals: LCP < 2.5с" : "Core Web Vitals: LCP < 2.5s",
+                  metric: "97%",
+                  label: isUk ? "точність виявлення шахрайства для FinTech-клієнта" : "fraud detection accuracy for a FinTech client",
+                  example: isUk ? "LightGBM + real-time inference API" : "LightGBM + real-time inference API",
                   color: "from-indigo-500 to-violet-600",
                 },
                 {
-                  metric: isUk ? "3 дні" : "3 days",
-                  label: isUk ? "середній термін запуску готового нішевого рішення" : "average launch time for a ready-made niche solution",
-                  example: isUk ? "vs 3–8 тижнів з нуля" : "vs 3–8 weeks from scratch",
+                  metric: "+34%",
+                  label: isUk ? "конверсія в покупку завдяки ML-рекомендаціям" : "purchase conversion via ML recommendations",
+                  example: isUk ? "Collaborative filtering, A/B tested" : "Collaborative filtering, A/B tested",
                   color: "from-amber-500 to-orange-600",
                 },
                 {
-                  metric: isUk ? "98%" : "98%",
-                  label: isUk ? "задоволених клієнтів рекомендують нас іншим" : "of satisfied clients recommend us to others",
-                  example: isUk ? "за результатами опитування 2025" : "based on 2025 survey",
+                  metric: "3 міс",
+                  label: isUk ? "до позитивного ROI у типовому Production ML проєкті" : "to positive ROI in a typical Production ML project",
+                  example: isUk ? "Середнє по всіх кейсах 2024" : "Average across 2024 case studies",
                   color: "from-pink-500 to-rose-600",
                 },
               ].map((item) => (
@@ -233,75 +240,6 @@ export default async function PortfolioPage({ params }: { params: Promise<{ lang
         {/* Projects grid with filter */}
         <PortfolioContent />
 
-        {/* Niche demo projects */}
-        <section className="py-24 bg-neutral-50 dark:bg-neutral-900 ">
-          <Container>
-            <div className="max-w-2xl mx-auto text-center mb-12">
-              <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
-                {isUk ? "Готові рішення по нішах" : "Ready Solutions by Niche"}
-              </p>
-              <h2 className="text-4xl font-heading font-extrabold text-neutral-900 dark:text-white mb-4">
-                {isUk ? `${NICHES_DATA.length}+ рішень — оберіть своє` : `${NICHES_DATA.length}+ Solutions — Choose Yours`}
-              </h2>
-              <p className="text-neutral-500 dark:text-neutral-400 leading-relaxed">
-                {isUk
-                  ? "Живі демо-сайти для різних типів бізнесу. Саме так виглядатиме ваш сайт. Можна замовити вже сьогодні."
-                  : "Live demo sites for different business types. This is exactly what your site will look like. Order today."}
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 mb-10">
-              {NICHES_DATA.map((rawNiche) => {
-                const niche = getNicheLocalized(rawNiche.slug, lang) ?? rawNiche;
-                return (<Link
-                  key={niche.slug}
-                  href={`/${lang}/niches/${niche.slug}`}
-                  className="group relative p-4 rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 hover:border-indigo-100 hover:shadow-md transition-all text-center overflow-hidden"
-                >
-                  <div className={`absolute inset-x-0 top-0 h-1 bg-linear-to-r ${niche.gradient}`} />
-                  <div className="mb-2"><EmojiIcon emoji={niche.emoji} className="w-8 h-8 text-white/80" /></div>
-                  <div className="font-semibold text-neutral-900 dark:text-white text-xs leading-tight mb-1.5 group-hover:text-indigo-700 transition-colors">
-                    {niche.title}
-                  </div>
-                  <div className="flex items-center justify-center gap-1">
-                    <span className={cn(
-                      "text-xs px-2 py-0.5 rounded-full font-medium",
-                      niche.complexity === "simple" ? "bg-emerald-50 text-emerald-600" :
-                      niche.complexity === "medium" ? "bg-amber-50 text-amber-600" :
-                      "bg-red-50 text-red-600"
-                    )}>
-                      {niche.complexity === "simple" ? "🟢" : niche.complexity === "medium" ? "🟡" : "🔴"}
-                    </span>
-                    <span className="text-xs text-neutral-400">
-                      {isUk ? `від ${(niche.priceFrom / 1000).toFixed(0)}к` : `from $${Math.round(niche.priceFrom / 40)}`}
-                    </span>
-                  </div>
-                  <div className="mt-2 text-[10px] text-indigo-500 font-medium opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-1">
-                    <ExternalLink className="w-3 h-3" /> Live Demo
-                  </div>
-                </Link>
-                );
-              })}
-            </div>
-
-            <div className="text-center flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Link
-                href={`/${lang}/niches`}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition-colors"
-              >
-                {isUk ? "Всі рішення по нішах" : "All Solutions by Niche"}
-                <ExternalLink className="w-4 h-4" />
-              </Link>
-              <Link
-                href={`/${lang}/marketplace`}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-indigo-200 text-indigo-700 font-semibold hover:bg-indigo-50 transition-colors"
-              >
-                {isUk ? "Маркетплейс (каталог + ціни)" : "Marketplace (catalog + prices)"}
-                <ExternalLink className="w-4 h-4" />
-              </Link>
-            </div>
-          </Container>
-        </section>
 
         <CTASection lang={lang} />
       </main>
