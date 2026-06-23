@@ -51,8 +51,8 @@ const HOME_FAQ_UK = [
     a: "Разом з вами визначаємо бізнес-метрики до старту: час на операцію, відсоток помилок, витрати на персонал, відтік клієнтів тощо. Після деплою готуємо звіт про зміни за 30/60/90 днів.",
   },
   {
-    q: "Ви працюєте з клієнтами за межами України?",
-    a: "Так. Основний ринок — UK, EU та США. Усі договори та фінансові операції адаптовані для міжнародних клієнтів. Комунікація — англійською або українською.",
+    q: "Як ви забезпечуєте відповідність FCA та UK GDPR у ML-проєктах?",
+    a: "Ми спеціалізуємось на regulated UK industries. Всі ML-моделі проходять документацію відповідно до FCA SS1/23, UK GDPR Article 22 (explainability), та Consumer Duty 2023. Для NHS-проєктів забезпечуємо DSPT-відповідність та клінічну безпеку DCB0129.",
   },
   {
     q: "Що таке MLOps і навіщо це потрібно?",
@@ -94,8 +94,8 @@ const HOME_FAQ_EN = [
     a: "We define business metrics with you before starting: time per operation, error rate, staff costs, churn rate etc. After deployment, we produce a 30/60/90-day impact report.",
   },
   {
-    q: "Do you work with clients outside the UK?",
-    a: "Yes. While we are UK-focused, we work with EU and US clients too. All contracts are governed by English law and payments are in GBP or EUR. Communication in English.",
+    q: "How do you ensure FCA and UK GDPR compliance in ML projects?",
+    a: "We specialise in regulated UK industries. All ML models are documented to FCA SS1/23, UK GDPR Article 22 (right to explanation), and Consumer Duty 2023 standards. For NHS projects we ensure DSPT compliance and clinical safety per DCB0129.",
   },
   {
     q: "What is MLOps and why does it matter?",

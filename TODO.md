@@ -36,3 +36,15 @@
 - [ ] fca-ml-compliance-checklist tool — component not yet built
 - [ ] GSC integration for codeworth.uk — Google Search Console setup
 - [ ] FAQ blocks (10 Q&A) on remaining pages — standardize per site-wide rule
+
+## Session 2026-06-23 — Sprint 3: Blog FAQs, Comparisons, Portfolio & Glossary
+
+### Done (Sprint 3)
+- [x] blog.ts: added posts 111-120 (bias/fairness, HR analytics, enterprise RAG, sustainability, evaluation metrics, open-source LLMs, property/AVM, multi-agent AI, e-comm fraud, ML tech debt) — each with faq:[5] bilingual Q&A
+- [x] blog.ts: added faq arrays to 40+ existing posts that were missing them (batch 1: posts 1-35, batch 2: posts 71-110)
+- [x] compare.ts: added 4 new comparison pages (vs AWS SageMaker, vs Azure ML, vs DataRobot, vs Big 4 consulting)
+- [x] portfolio.ts: added 5 new UK ML case studies (Aldermore fraud shield, Sheffield NHS, LawBrief NLP, Feel Good Foods, Paysend LLM support)
+- [x] page.tsx (homepage): fixed FAQ Q9 "Ukraine" question → UK GDPR/FCA compliance question
+- [x] glossary.ts: added 20 more terms (precision/recall, overfitting, ensemble, Random Forest, time-series, anomaly detection, PCA, data warehouse/lake, model serving, shadow mode, GDPR Article 22, DPIA, MLflow, etc.)
+- [x] services.ts: year refs updated, GPT-3→GPT-4o, Python 3.12
+- [x] niches.ts: year refs updated
