@@ -8,7 +8,6 @@ import { Container } from "@/components/layout/Container";
 import { SERVICES_DATA, getServiceLocalized } from "@/lib/data/services";
 import { BLOG_POSTS } from "@/lib/data/blog";
 import { PROJECTS } from "@/lib/data/portfolio";
-import { NICHES_DATA, NICHE_CATEGORIES, NICHE_CATEGORY_EN, getNicheLocalized } from "@/lib/data/niches";
 import { EXTRAS, EXTRA_CATEGORIES } from "@/lib/data/extras";
 import {
   Home,
@@ -32,16 +31,16 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isUk = lang === "uk";
   return {
-    title: isUk ? "Карта сайту | Codeworth — Веб-студія" : "Site Map | Codeworth — Web Studio",
+    title: isUk ? "Карта сайту | Codeworth — ML/AI Консалтинг" : "Site Map | Codeworth — ML/AI Consultancy",
     description: isUk
-      ? "Повна карта сайту Codeworth — всі сторінки послуг, маркетплейсу, рішень, блогу та компанії в одному місці."
-      : "Complete Codeworth site map — all service pages, marketplace, solutions, blog, and company pages in one place.",
+      ? "Повна карта сайту Codeworth — всі сторінки ML/AI послуг, кейсів, блогу та компанії в одному місці."
+      : "Complete Codeworth site map — all ML/AI service pages, case studies, blog, and company pages in one place.",
     robots: { index: true, follow: true },
     openGraph: {
       title: isUk ? "Карта сайту — Codeworth" : "Site Map — Codeworth",
       description: isUk
-        ? "Повна карта сайту Codeworth — всі сторінки послуг, маркетплейсу, рішень, блогу та компанії."
-        : "Complete Codeworth site map — all service pages, marketplace, solutions, blog, and company pages.",
+        ? "Повна карта сайту Codeworth — всі сторінки ML/AI послуг, кейсів, блогу та компанії."
+        : "Complete Codeworth site map — all ML/AI service pages, case studies, blog, and company pages.",
       type: "website",
       url: `https://codeworth.uk/${lang}/sitemap`,
       images: [{ url: "/og/sitemap.png", width: 1200, height: 630, alt: isUk ? "Карта сайту Codeworth" : "Codeworth Site Map" }],
@@ -67,18 +66,13 @@ export default async function SitemapPage({ params }: { params: Promise<{ lang: 
   const isUk = lang === "uk";
   const lp = (path: string) => `/${lang}${path}`;
 
-  const nichesByCategory = NICHE_CATEGORIES.map((cat) => ({
-    category: isUk ? cat : (NICHE_CATEGORY_EN[cat] ?? cat),
-    niches: NICHES_DATA.filter((n) => n.category === cat).map((n) => getNicheLocalized(n.slug, lang) ?? n),
-  })).filter((g) => g.niches.length > 0);
-
   const sections: SitemapSection[] = [
     {
       title: isUk ? "Головні сторінки" : "Main pages",
       icon: Home,
       color: "indigo",
       links: [
-        { href: lp("/"), label: isUk ? "Головна" : "Home", description: isUk ? "Презентація студії та ключові послуги" : "Studio presentation and key services" },
+        { href: lp("/"), label: isUk ? "Головна" : "Home", description: isUk ? "ML/AI консалтинг для бізнесу" : "ML/AI consultancy for business" },
         { href: lp("/about"), label: isUk ? "Про нас" : "About us", description: isUk ? "Команда, місія та цінності Codeworth" : "Team, mission, and values of Codeworth" },
         { href: lp("/portfolio"), label: isUk ? "Портфоліо" : "Portfolio", description: isUk ? "Наші кращі реалізовані проєкти" : "Our best completed projects" },
         { href: lp("/pricing"), label: isUk ? "Ціни" : "Pricing", description: isUk ? "Тарифи та пакети послуг" : "Plans and service packages" },
@@ -105,25 +99,15 @@ export default async function SitemapPage({ params }: { params: Promise<{ lang: 
       ],
     },
     {
-      title: isUk ? "Маркетплейс" : "Marketplace",
+      title: isUk ? "AI & ML Рішення" : "AI & ML Solutions",
       icon: ShoppingBag,
       color: "emerald",
       links: [
-        { href: lp("/marketplace"), label: isUk ? "Головна маркетплейсу" : "Marketplace home", description: isUk ? "Готові рішення для бізнесу" : "Ready-made solutions for business" },
-        { href: lp("/niches"), label: isUk ? "Всі рішення (33+)" : "All Solutions (33+)", description: isUk ? "Готові сайти по галузях" : "Ready-made websites by industry" },
-        { href: lp("/marketplace/catalog"), label: isUk ? "Каталог рішень" : "Solutions catalog", description: isUk ? "Всі продукти з фільтрами" : "All products with filters" },
-        ...NICHES_DATA.slice(0, 6).map((rawN) => {
-          const n = getNicheLocalized(rawN.slug, lang) ?? rawN;
-          return {
-            href: lp(`/marketplace/product/${n.slug}`),
-            label: `${n.emoji} ${n.title}`,
-            description: isUk
-              ? `Готове рішення — від ${n.priceFrom.toLocaleString("uk-UA")} ₴`
-              : `Ready-made solution — from $${Math.round(n.priceFrom / 40)}`,
-          };
-        }),
-        { href: lp("/marketplace/catalog"), label: isUk ? "→ Усі 33 продукти в каталозі" : "→ All 33 products in catalog", description: "" },
-        { href: lp("/startup"), label: isUk ? "🚀 Стартап-рішення" : "🚀 Startup Solutions", description: isUk ? "5+ готових лендінгів для стартапів" : "5+ ready-made landing pages for startups" },
+        { href: lp("/ai"), label: isUk ? "AI рішення за галузями" : "AI solutions by industry", description: isUk ? "AI для FinTech, Healthcare, Retail та інших" : "AI for FinTech, Healthcare, Retail and more" },
+        { href: lp("/ml"), label: isUk ? "ML рішення" : "ML solutions", description: isUk ? "Machine Learning для специфіки вашої ніші" : "Machine Learning tailored to your niche" },
+        { href: lp("/use-cases"), label: isUk ? "Use cases" : "Use cases", description: isUk ? "Конкретні сценарії застосування ML/AI" : "Specific ML/AI application scenarios" },
+        { href: lp("/compare"), label: isUk ? "Порівняння підходів" : "Compare approaches", description: isUk ? "Codeworth vs. in-house team vs. AutoML" : "Codeworth vs. in-house team vs. AutoML" },
+        { href: lp("/extras"), label: isUk ? "AI-модулі" : "AI modules", description: isUk ? "Готові AI-продукти для швидкого деплою" : "Ready-to-deploy AI products" },
       ],
     },
     {
@@ -131,7 +115,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ lang: 
       icon: BookOpen,
       color: "blue",
       links: [
-        { href: lp("/blog"), label: isUk ? "Всі статті" : "All articles", description: isUk ? "Корисний контент про веб-розробку та маркетинг" : "Useful content about web development and marketing" },
+        { href: lp("/blog"), label: isUk ? "Всі статті" : "All articles", description: isUk ? "Корисний контент про ML/AI та машинне навчання" : "Useful content about ML/AI and machine learning" },
         ...BLOG_POSTS.map((p) => ({
           href: lp(`/blog/${p.slug}`),
           label: `${p.emoji} ${p.title}`,
@@ -157,7 +141,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ lang: 
       icon: Zap,
       color: "orange",
       links: [
-        { href: lp("/extras"), label: isUk ? "Всі доробки" : "All add-ons", description: isUk ? "42+ готових модулі для сайту" : "42+ ready-made modules for your site" },
+        { href: lp("/extras"), label: isUk ? "Всі AI-модулі" : "All AI modules", description: isUk ? "29+ готових AI-продуктів для бізнесу" : "29+ ready-to-deploy AI products for business" },
         ...EXTRA_CATEGORIES.map((cat) => {
           const count = EXTRAS.filter((e) => e.category === cat.value).length;
           return {
@@ -204,8 +188,8 @@ export default async function SitemapPage({ params }: { params: Promise<{ lang: 
             </h1>
             <p className="text-gray-400 dark:text-neutral-500 text-lg max-w-2xl">
               {isUk
-                ? "Всі розділи, сторінки послуг, продукти маркетплейсу, статті блогу та нішеві demo-сторінки в одному зручному місці."
-                : "All sections, service pages, marketplace products, blog articles, and niche demo pages in one convenient place."}
+                ? "Всі розділи, сторінки ML/AI послуг, кейси, статті блогу та AI-модулі в одному зручному місці."
+                : "All sections, ML/AI service pages, case studies, blog articles, and AI modules in one convenient place."}
             </p>
           </Container>
         </section>
