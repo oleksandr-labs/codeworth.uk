@@ -84,3 +84,10 @@
 - [x] extras.ts: +10 ML extras (anomaly detector, email NLP classifier, churn predictor, sentiment dashboard, CV quality inspector, forecasting engine, entity extractor, notification optimizer, document classifier, risk scorer API)
 - [x] industries.ts: NEW FILE created — 8 UK industries with 4 ML applications each (financial services, healthcare, manufacturing, retail, legal, energy, insurance, logistics)
 - [x] faq/page.tsx: +2 sections (MLOps and Infrastructure x5 Q&A, Data and Privacy x5 Q&A)
+
+## Session 2026-06-24 — Sprint 9
+
+### Done (Sprint 9)
+- [x] aiNiches.ts: +5 UK niches (legal services, property/real estate, education/EdTech, recruitment/HR, charity/third sector)
+- [x] mlNiches.ts: +5 UK niches (cybersecurity, supply chain/logistics, private equity/asset management, media/entertainment, agriculture/AgriTech)
+- [x] blogAuthors.ts: expanded bios for all 4 existing authors + added 2 new (Marcus Powell ML Solutions Architect, Priya Ramanathan ML Research Engineer)
