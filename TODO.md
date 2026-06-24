@@ -91,3 +91,13 @@
 - [x] aiNiches.ts: +5 UK niches (legal services, property/real estate, education/EdTech, recruitment/HR, charity/third sector)
 - [x] mlNiches.ts: +5 UK niches (cybersecurity, supply chain/logistics, private equity/asset management, media/entertainment, agriculture/AgriTech)
 - [x] blogAuthors.ts: expanded bios for all 4 existing authors + added 2 new (Marcus Powell ML Solutions Architect, Priya Ramanathan ML Research Engineer)
+
+## Session 2026-06-24 — Sprint 10
+
+### Done (Sprint 10)
+- [x] services.ts: expanded FAQs for 5 under-populated services:
+  - mlops: 5 → 10 items (MLOps tools, pipeline setup time, model drift, CI/CD integration, FCA monitoring requirements)
+  - predictive-analytics: 5 → 10 items (vs BI reporting, accuracy benchmarks, data warehouse prerequisite, integration patterns, UK industry ROI)
+  - computer-vision: 6 → 11 items (hardware requirements, training data volume, CCTV integration, UK GDPR for people CV, validation methodology)
+  - nlp: 6 → 11 items (UK legal/financial models, NLP vs LLM, UK English handling, OCR+NLP pipelines, achievable accuracy)
+  - llm-rag: 6 → 11 items (LLM selection UK regulated, hallucination prevention, RAG vs fine-tuning, production costs, confidential documents)
