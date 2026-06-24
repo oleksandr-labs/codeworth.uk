@@ -1,9 +1,29 @@
 # Нові Портфоліо-Проєкти — План додавання
 
-**Статус:** ✅ 15/15 реалізовано (оновлено 2026-05-02)
+**Статус:** ✅ 15/15 (оригінал) + 23 ML case studies (Sprints 6/11/18) = 53+ всього
 **Пріоритет:** 🟡 Середній
 **Файл:** `src/lib/data/portfolio.ts`
-**Поточна кількість:** 226 проєктів (оновлено 2026-05-02: +fintech-credit-broker, +ml-patient-risk-scoring)
+**Поточна кількість:** 53+ UK ML case studies (оновлено 2026-06-24)
+
+### ML Case Studies додані в Sprints 6/11/18
+
+| Slug | Клієнт/Сектор | Статус |
+|------|--------------|--------|
+| `fintech-fraud-ml` | UK fintech fraud detection (GNN + XGBoost) | ✅ Sprint 6 |
+| `healthcare-patient-risk` | NHS patient risk scoring | ✅ Sprint 6 |
+| `ecommerce-recommendation` | ML recommendation engine | ✅ Sprint 6 |
+| `manufacturing-predictive-maintenance` | IoT predictive maintenance | ✅ Sprint 6 |
+| `saas-churn-ml` | SaaS churn prediction | ✅ Sprint 6 |
+| `aviva-claims-ml` | Aviva-style insurance claims ML | ✅ Sprint 11 |
+| `rolls-royce-engine-ml` | Rolls-Royce turbine CV monitoring | ✅ Sprint 11 |
+| `octopus-energy-demand-ml` | Octopus Energy demand forecasting | ✅ Sprint 11 |
+| `nationwide-mortgage-nlp` | Nationwide NLP mortgage processing | ✅ Sprint 11 |
+| `nhs-sepsis-early-warning` | NHS Sepsis early warning ML | ✅ Sprint 11 |
+| `barclays-fraud-ml` | Barclays-style fraud (graph neural networks) | 🔄 Sprint 18 |
+| `uk-nhs-bed-management` | NHS hospital bed occupancy ML | 🔄 Sprint 18 |
+| `uk-insurtech-dynamic-pricing` | UK insurtech telematics pricing | 🔄 Sprint 18 |
+| `uk-retailer-demand-ml` | UK multichannel retailer demand forecasting | 🔄 Sprint 18 |
+| `uk-proptech-valuation-ml` | UK PropTech AVM (MAPE 4.1%) | 🔄 Sprint 18 |
 
 ---
 

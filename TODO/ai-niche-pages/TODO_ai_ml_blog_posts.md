@@ -178,6 +178,91 @@
 
 ---
 
+## Sprint 6–18 — UK ML Industry Posts (2026-06-23/24)
+
+> Масова хвиля UK ML постів додана паралельними агент-спринтами. Всі пости мають contentEn + content + faq (5 питань) + seoKeyword.
+
+### Кластер: UK ML загальний (cluster H)
+
+| Slug | EN заголовок | Статус |
+|------|-------------|--------|
+| `ml-governance-framework-uk-2026` | UK AI/ML Governance Framework 2026: FCA SS1/23, BoE Model Risk | ✅ |
+| `llm-fine-tuning-uk-business` | LLM Fine-Tuning for UK Business: When to Fine-Tune vs RAG | ✅ |
+| `ml-data-pipeline-engineering-uk` | ML Data Pipeline Engineering for UK Production Systems | ✅ |
+| `reinforcement-learning-logistics-uk` | Reinforcement Learning for UK Logistics: Route Optimisation | ✅ |
+| `eu-ai-act-uk-impact-2026` | EU AI Act Impact on UK Business 2026: What Changes Post-Brexit | ✅ |
+| `ml-engineer-salary-guide-uk-2026` | ML Engineer Salary Guide UK 2026: £55k–£130k by Role | ✅ |
+| `sme-ml-adoption-guide-uk` | ML Adoption Guide for UK SMEs: Where to Start | ✅ |
+| `time-series-ml-energy-uk` | Time Series ML for UK Energy: Forecasting, Trading, Grid | ✅ |
+| `measuring-ml-roi-uk` | Measuring ML ROI for UK Business: Framework and KPIs | ✅ |
+| `computer-vision-retail-uk-2026` | Computer Vision in UK Retail 2026: From CCTV to Shelf Analytics | ✅ |
+| `ml-for-financial-crime-prevention-uk` | ML for Financial Crime Prevention in UK Banking: AML, PEP, SAR | ✅ |
+| `natural-language-processing-uk-legal` | NLP in UK Legal: Contract Analysis, Due Diligence, Compliance | ✅ |
+| `ml-product-recommendation-ecommerce-uk` | ML Product Recommendations for UK E-commerce | ✅ |
+| `ml-in-uk-nhs-clinical-ai` | ML in UK NHS: Clinical AI, Diagnostic Support, Resource Planning | ✅ |
+| `transformer-architecture-explained-uk` | Transformer Architecture Explained for UK Business Leaders | ✅ |
+| `ml-supply-chain-uk-manufacturing` | ML for UK Manufacturing Supply Chain: Disruption, Inventory | ✅ |
+| `ml-cx-personalisation-uk-retail` | ML for UK Retail CX: Personalisation, Churn, NPS Improvement | ✅ |
+| `mlops-cost-management-aws-azure` | MLOps Cost Management on AWS and Azure for UK Teams | ✅ |
+| `ml-insurance-uk-actuarial` | ML in UK Insurance: Actuarial Models, Claims Automation, Fraud | ✅ |
+| `vector-embeddings-semantic-search-uk` | Vector Embeddings and Semantic Search for UK Enterprise | ✅ |
+| `ml-bias-fairness-audit-uk` | ML Bias and Fairness Audit for UK Business: Equality Act 2010 | ✅ |
+| `ml-for-hr-people-analytics-uk` | ML for UK HR: People Analytics, Attrition, Performance | ✅ |
+| `enterprise-rag-production-lessons-uk` | Enterprise RAG in Production: Lessons from 12 UK Deployments | ✅ |
+| `ml-carbon-sustainability-uk` | ML for UK Carbon and Sustainability: ESG Reporting, Net Zero | ✅ |
+| `ml-model-evaluation-metrics-uk` | ML Model Evaluation Metrics for UK Business: Beyond Accuracy | ✅ |
+| `open-source-llm-uk-business` | Open-Source LLMs for UK Business: Llama, Mistral, Falcon | ✅ |
+| `ml-property-real-estate-uk` | ML for UK Property and Real Estate: AVM, Rental Yield, Planning | ✅ |
+| `multiagent-ai-systems-uk` | Multi-Agent AI Systems for UK Enterprise Automation | ✅ |
+| `ml-fraud-detection-uk-ecommerce` | ML Fraud Detection for UK E-commerce: Card, Account Takeover | ✅ |
+| `ml-technical-debt-uk` | ML Technical Debt in UK Organisations: How to Measure and Fix | ✅ |
+| `ml-a-b-testing-guide-uk` | ML A/B Testing Guide for UK Product Teams | ✅ |
+| `ml-for-uk-retail-banking` | ML in UK Retail Banking: Credit Underwriting, Collections, NBP | ✅ |
+| `ml-for-uk-cyber-security` | ML for UK Cybersecurity: Threat Detection, SIEM, Zero-Day | ✅ |
+| `ml-model-cards-uk-standard` | ML Model Cards for UK Business: FCA-Compliant Documentation | ✅ |
+| `ml-data-labeling-strategy-uk` | Data Labelling Strategy for UK ML Teams: Active Learning, HITL | ✅ |
+| `llm-evaluation-benchmarks-uk` | Evaluating LLMs for UK Business: Benchmarks and Custom Evals | ✅ |
+| `ml-knowledge-graphs-uk` | Knowledge Graphs and ML in the UK: RAG, Fraud, Drug Discovery | ✅ |
+| `ml-infrastructure-cost-optimisation-uk` | ML Infrastructure Cost Optimisation for UK Teams | ✅ |
+| `ml-for-uk-private-equity` | ML for UK Private Equity: Deal Sourcing, Portfolio Monitoring | ✅ |
+| `ml-for-uk-government-public-sector` | ML in UK Government: Benefits Fraud, Infrastructure, Services | ✅ |
+| `ml-success-factors-uk-2026` | Why UK ML Projects Succeed or Fail: 10 Critical Factors 2026 | ✅ |
+| `ml-time-series-forecasting-uk` | Time Series Forecasting with ML for UK Business | ✅ |
+| `ml-for-uk-supply-chain` | ML for UK Supply Chain: Disruption, Inventory, Supplier Risk | ✅ |
+| `responsible-ai-uk-2026` | Responsible AI in the UK 2026: Fairness, Transparency, Oversight | ✅ |
+| `mlflow-production-guide-uk` | MLflow for UK Production ML: Tracking, Registry, Deployment | ✅ |
+| `ml-customer-lifetime-value-uk` | Predicting Customer Lifetime Value with ML for UK Businesses | ✅ |
+| `ml-model-drift-detection-uk` | ML Model Drift Detection for UK Production Systems | ✅ |
+| `ml-feature-engineering-uk-guide` | Feature Engineering for UK ML Projects: Techniques That Work | ✅ |
+| `ml-for-uk-construction` | ML for UK Construction: Cost Overrun, Safety Monitoring, BIM | ✅ |
+| `ml-for-uk-media-publishing` | ML for UK Media: Recommendations, Paywall, Ad Revenue | ✅ |
+| `explainable-ai-shap-lime-uk` | Explainable AI in the UK: SHAP, LIME, Counterfactuals | ✅ |
+| `ml-feature-store-uk` | Feature Stores for UK ML Teams: Solving Train-Serve Skew | ✅ |
+| `ml-for-uk-charity-ngo` | ML for UK Charities: Donor Prediction, Impact Measurement | ✅ |
+| `ml-for-uk-agriculture-agritech` | ML for UK Agriculture: Crop Yield, Precision Farming, Carbon | ✅ |
+| `ml-data-quality-uk` | Data Quality for UK ML: Great Expectations, Validation Pipelines | ✅ |
+| `ml-for-uk-legal-compliance` | ML for UK Regulatory Compliance: Monitoring, Breach Detection | ✅ |
+| `transfer-learning-uk-domain` | Transfer Learning for UK Domain ML: Fine-Tuning BERT, Whisper | ✅ |
+| `ml-for-uk-education-edtech` | ML for UK Education: Personalised Learning, Dropout Prediction | ✅ |
+| `ml-for-uk-media-audience` | ML for UK Media Audience Intelligence and Ad Optimisation | ✅ |
+
+### Sprint 14 — Posts 161–170 (заплановано 2026-06-24)
+
+| Slug | EN заголовок | Статус |
+|------|-------------|--------|
+| `federated-learning-uk-privacy` | Federated Learning for UK Healthcare and Finance | 🔄 в процесі |
+| `llm-agents-agentic-ai-uk` | LLM Agents and Agentic AI for UK Enterprise | 🔄 в процесі |
+| `ml-for-uk-insurtech` | ML for UK Insurtech: Telematics Pricing, Claims Automation | 🔄 в процесі |
+| `automl-platforms-uk-guide` | AutoML Platforms Guide for UK Data Teams | 🔄 в процесі |
+| `synthetic-data-generation-uk` | Synthetic Data for UK Regulated Industries | 🔄 в процесі |
+| `vector-databases-uk-enterprise` | Vector Databases for UK Enterprise RAG | 🔄 в процесі |
+| `ml-for-uk-energy-trading` | ML for UK Energy Trading: Day-Ahead Forecasting, Demand Response | 🔄 в процесі |
+| `causal-inference-ml-uk` | Causal Inference in ML for UK Business Decisions | 🔄 в процесі |
+| `ml-model-compression-edge-uk` | ML Model Compression and Edge Deployment for UK IoT | 🔄 в процесі |
+| `reinforcement-learning-uk-business` | Reinforcement Learning for UK Business: Pricing, Logistics | 🔄 в процесі |
+
+---
+
 ## Пріоритет написання
 
 ### Фаза 1 — Case Studies (найбільший SEO-вплив, є реальні метрики)

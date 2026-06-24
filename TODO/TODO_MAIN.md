@@ -14,7 +14,8 @@
 **Монетизація:** ML-проєкти (PoC £1,800 → Production £4,500 → Enterprise), MLOps Retainer £800/mo.
 **Технічний стек:** Next.js 16.2, TypeScript, Tailwind v4, Static Export (`output: standalone`), GitHub Actions CI/CD → Hetzner atlas (88.198.199.50).
 **Деплой:** `main` гілка → GitHub Actions → rsync до `/var/www/codeworth.uk/` → nginx + SSL.
-**Дата:** 2026-06-23
+**Дата:** 2026-06-24 (оновлено після Sprints 6–18)
+**ML Adaptation Log:** [TODO_ML_ADAPTATION.md](TODO_ML_ADAPTATION.md) — повний журнал змін
 
 ### Ключові вимоги
 - **SEO-first** — кожна сторінка оптимізована під конкретний ML/AI keyword cluster
@@ -142,21 +143,38 @@
 
 > Контент-стратегія: [seo/TODO_SEO_MASTER.md → Topic Clusters](seo/TODO_SEO_MASTER.md)
 
+> **⚡ Sprint 6–18 (2026-06-23/24):** Додано 130+ ML blog posts. Повний список: [TODO_ai_ml_blog_posts.md](ai-niche-pages/TODO_ai_ml_blog_posts.md)
+
 ### Cluster 1: Machine Learning for Business
-- [ ] `machine-learning-cost-uk` — "How Much Does Machine Learning Cost UK?"
+- [ ] `machine-learning-cost-uk` — "How Much Does Machine Learning Cost UK?" ← ще не написано!
 - [ ] `ml-roi-business-guide` — "Measuring ML ROI: A Business Guide"
+- ✅ `measuring-ml-roi-uk` — ROI measurement framework (додано Sprint 12)
 - [ ] `gdpr-machine-learning-uk` — "GDPR Compliance in ML: UK Guide"
 - [ ] `ml-project-phases` — "ML Project Lifecycle: From PoC to Production"
+- ✅ `ml-governance-framework-uk-2026` — FCA SS1/23, AI Safety Institute (Sprint 13)
+- ✅ `ml-success-factors-uk-2026` — 10 Critical Success Factors (Sprint 13)
+- ✅ `responsible-ai-uk-2026` — Fairness, Transparency, Oversight (Sprint 13)
+- ✅ `eu-ai-act-uk-impact-2026` — EU AI Act post-Brexit (Sprint 12)
 
 ### Cluster 2: AI for Business
-- [ ] `ai-chatbot-rag-guide` — "Building AI Chatbot with RAG: Complete Guide"
+- [ ] `ai-chatbot-rag-guide` — "Building AI Chatbot with RAG: Complete Guide" ← пріоритет
 - [ ] `ai-implementation-guide-uk` — "How to Implement AI in Your UK Business"
 - [ ] `llm-vs-traditional-ml` — "LLM vs Traditional ML: When to Use Each"
+- ✅ `llm-fine-tuning-uk-business` — LLM Fine-Tuning vs RAG (Sprint 12)
+- ✅ `open-source-llm-uk-business` — Open-Source LLMs (Sprint 13)
+- ✅ `enterprise-rag-production-lessons-uk` — RAG production lessons (Sprint 13)
+- 🔄 `llm-agents-agentic-ai-uk` — LLM Agents (Sprint 14, in progress)
 
 ### Cluster 3: MLOps
-- [ ] `what-is-mlops` — "What is MLOps? A Business Guide" (HIGH PAA)
-- [ ] `model-drift-detection` — "How to Detect ML Model Drift"
-- [ ] `mlops-tools-comparison` — "MLflow vs Kubeflow vs SageMaker"
+- [ ] `what-is-mlops` — "What is MLOps? A Business Guide" (HIGH PAA) ← ще не написано!
+- ✅ `mlops-production-guide` — MLOps in Production (original post)
+- ✅ `mlflow-production-guide-uk` — MLflow for UK Production (Sprint 13)
+- ✅ `mlops-cost-management-aws-azure` — MLOps cost optimisation (Sprint 13)
+- ✅ `ml-model-drift-detection-uk` — Drift Detection (Sprint 13)
+- ✅ `ml-infrastructure-cost-optimisation-uk` — Infrastructure costs (Sprint 13)
+
+### Cluster 4: UK Industry ML (Sprint 6–14)
+> 60+ UK-нішевих постів. Повний список: [TODO_ai_ml_blog_posts.md](ai-niche-pages/TODO_ai_ml_blog_posts.md#sprint-6–18--uk-ml-industry-posts-2026-0623/24)
 
 ### Cluster 4: Industry (найвища SEO-цінність — ПОЧИНАТИ ЗВІДСИ)
 - [ ] `ml-fraud-detection-explained` — "How ML Fraud Detection Works"
