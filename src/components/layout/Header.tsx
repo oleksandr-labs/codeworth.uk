@@ -14,16 +14,16 @@ import { analytics } from "@/lib/analytics";
 
 const NAV_LINKS_UK = [
   { label: "Послуги", href: "/services" },
-  { label: "AI-модулі", href: "/extras" },
   { label: "Портфоліо", href: "/portfolio" },
+  { label: "Ціни", href: "/pricing" },
   { label: "Блог", href: "/blog" },
   { label: "Про нас", href: "/about" },
 ];
 
 const NAV_LINKS_EN = [
   { label: "Services", href: "/services" },
-  { label: "AI Modules", href: "/extras" },
   { label: "Portfolio", href: "/portfolio" },
+  { label: "Pricing", href: "/pricing" },
   { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
 ];
@@ -103,7 +103,7 @@ export function Header() {
   }, [langMenuOpen]);
 
   const desktopLinks = NAV_LINKS.filter(
-    (l) => l.href !== "/services" && l.href !== "/extras"
+    (l) => l.href !== "/services"
   );
 
   const currentLang = LANGUAGES.find((l) => l.code === lang) ?? LANGUAGES[0];
@@ -204,6 +204,22 @@ export function Header() {
                         📊 ML Solutions
                       </Link>
                     </div>
+                    <div className="flex gap-1">
+                      <Link
+                        href={lp("/compare")}
+                        onClick={() => setServicesOpen(false)}
+                        className="flex-1 flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-colors"
+                      >
+                        ⚖️ {lang === "uk" ? "Порівняти рішення" : "Compare solutions"}
+                      </Link>
+                      <Link
+                        href={lp("/resources")}
+                        onClick={() => setServicesOpen(false)}
+                        className="flex-1 flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-colors"
+                      >
+                        📚 {lang === "uk" ? "Ресурси" : "Resources"}
+                      </Link>
+                    </div>
                   </div>
                 </div>
               )}
@@ -270,9 +286,10 @@ export function Header() {
 
             <Link
               href={lp("/contact")}
-              className="px-5 py-2.5 text-sm font-semibold rounded-xl bg-linear-to-r from-indigo-600 to-indigo-700 text-white hover:from-indigo-700 hover:to-indigo-800 shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all duration-200 hover:-translate-y-0.5"
+              className="flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-xl bg-linear-to-r from-indigo-600 to-indigo-700 text-white hover:from-indigo-700 hover:to-indigo-800 shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all duration-200 hover:-translate-y-0.5"
             >
-              {lang === "uk" ? "Отримати консультацію" : "Get a consultation"}
+              <Rocket className="w-3.5 h-3.5" />
+              {lang === "uk" ? "Безкоштовна консультація" : "Free consultation"}
             </Link>
           </div>
 
