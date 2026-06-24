@@ -51,6 +51,8 @@ export interface BaseNicheData {
   relatedServiceSlug: string;
   crossLinkMLNiche?: string;
   crossLinkAINiche?: string;
+  /** Blog post slugs to cross-link from this niche page (internal linking / SEO) */
+  relatedBlogSlugs?: string[];
   schemaServiceType: string;
   schemaPriceGBP: string;
   iconEmoji: string;
