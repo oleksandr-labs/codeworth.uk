@@ -4,7 +4,7 @@ import Link from "next/link";
 import { buildAlternates } from "@/i18n";
 import { ML_NICHES } from "@/lib/data/mlNiches";
 import { getMLNicheBySlug, formatNichePrice, getGlossaryTermsForNichePage, getBlogPostsForNichePage } from "@/lib/nicheUtils";
-import { getPostTitle, getPostExcerpt } from "@/lib/data/blog";
+import { BLOG_POSTS, getPostTitle, getPostExcerpt } from "@/lib/data/blog";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
@@ -350,7 +350,15 @@ export default async function MLNichePage({
 
         {/* Related blog articles */}
         {(() => {
-          const posts = getBlogPostsForNichePage(`/ml/${niche.slug}`);
+          const byNichePath = getBlogPostsForNichePage(`/ml/${niche.slug}`);
+          const bySlug = niche.relatedBlogSlugs
+            ? BLOG_POSTS.filter(
+                (p) =>
+                  niche.relatedBlogSlugs!.includes(p.slug) &&
+                  !byNichePath.some((n) => n.slug === p.slug)
+              ).slice(0, 3)
+            : [];
+          const posts = [...byNichePath, ...bySlug].slice(0, 3);
           if (posts.length === 0) return null;
           return (
             <section className="py-16 bg-slate-900 border-t border-slate-800">
