@@ -129,6 +129,58 @@ const FAQ_SECTIONS_EN = [
     ],
   },
   {
+    id: "compliance",
+    title: "Compliance & Regulation",
+    items: [
+      {
+        q: "What is FCA SS1/23 and why does it matter for ML?",
+        a: "FCA SS1/23 is the Financial Conduct Authority's Supervisory Statement on Model Risk Management published in 2023. It sets out expectations for UK financial firms on model governance, validation, documentation, and ongoing monitoring. Any ML model used for credit decisions, insurance pricing, or trading at a regulated firm must comply. Codeworth delivers model documentation packages meeting SS1/23 requirements.",
+      },
+      {
+        q: "Do we need a DPIA for our ML project?",
+        a: "A Data Protection Impact Assessment is mandatory under UK GDPR for high-risk ML processing: large-scale profiling, systematic monitoring, or processing sensitive categories (health, financial, biometric data). Most production ML models in fintech, healthcare, and HR require a DPIA. We complete DPIAs as part of our project delivery — you receive a ready-to-submit document for your DPO.",
+      },
+      {
+        q: "How does UK GDPR Article 22 affect ML systems?",
+        a: "UK GDPR Article 22 gives individuals the right not to be subject to solely automated decisions with significant effects (loan refusal, insurance denial, hiring rejection). You must provide: a human review option, meaningful explanation of the decision, and ability to contest it. Codeworth builds explanation modules and human review workflows into every regulated ML system.",
+      },
+      {
+        q: "What is Consumer Duty and how does it affect ML?",
+        a: "FCA Consumer Duty (July 2023) requires financial firms to demonstrate good customer outcomes. ML models used for pricing, product selection, or customer communications must be shown not to harm retail customers — including vulnerable customers. Codeworth conducts Consumer Duty impact assessments for ML systems and documents outcomes monitoring frameworks.",
+      },
+      {
+        q: "How do you ensure ML models are not biased against protected characteristics?",
+        a: "We run disaggregated performance analysis across UK Equality Act protected characteristics (or proxies), apply SHAP fairness analysis to detect proxy discrimination, and document our bias testing methodology in the model card. For FCA-regulated models, we follow the FCA's fairness in financial services ML guidance.",
+      },
+    ],
+  },
+  {
+    id: "technology",
+    title: "Technology & Integration",
+    items: [
+      {
+        q: "What cloud platforms do you work with?",
+        a: "We are cloud-agnostic: AWS (primary — SageMaker, Lambda, RDS, S3), Microsoft Azure (Azure ML, Cognitive Services, Cosmos DB), Google Cloud (Vertex AI, BigQuery, Cloud Run). For UK regulated industries requiring data residency, we deploy to AWS eu-west-2 (London) or Azure UK South. We also support on-premises deployment for NHS and defence clients.",
+      },
+      {
+        q: "Can your ML integrate with our existing software?",
+        a: "Yes. We integrate with CRM (Salesforce, HubSpot, Dynamics 365), ERP (SAP S/4HANA, Oracle ERP Cloud, Sage), data warehouses (Snowflake, BigQuery, Redshift, Azure Synapse), and business applications via REST APIs, webhooks, or native connectors. We document all integration points in technical architecture specifications.",
+      },
+      {
+        q: "What is your standard ML tech stack?",
+        a: "Python 3.12, scikit-learn, PyTorch or TensorFlow, FastAPI for model serving, MLflow for experiment tracking, Airflow for pipeline orchestration, Docker and Kubernetes for deployment, Great Expectations for data quality. We adapt the stack to your existing infrastructure — if you're invested in Azure, we use Azure ML and Databricks rather than AWS.",
+      },
+      {
+        q: "How long does it take to deploy a production ML model?",
+        a: "PoC: 3-6 weeks. Production build: 8-16 weeks. Full MLOps pipeline including monitoring and retraining: add 2-4 weeks. Timeline depends on data readiness, integration complexity, and regulatory documentation requirements. NHS and FCA-regulated projects add 2-4 weeks for compliance documentation and review.",
+      },
+      {
+        q: "Do you provide model documentation and handover?",
+        a: "Yes. Every production ML delivery includes: model card (intended use, performance metrics, limitations, training data description), technical architecture diagram, API documentation, MLOps runbook, and FCA-compliant model risk register entry. We also provide 4 weeks of hypercare support after go-live and optional ongoing MLOps retainer from £800/month.",
+      },
+    ],
+  },
+  {
     id: "support",
     title: "Support",
     items: [
@@ -242,6 +294,58 @@ const FAQ_SECTIONS_UK = [
       {
         q: "Чи є послуги постійної підтримки?",
         a: "Так — MLOps-ретейнери від £800/місяць (32 000 ₴). Включають: моніторинг дрейфу, тригери автоматичного перенавчання, щомісячні звіти ефективності та до 4 годин оновлень моделі.",
+      },
+    ],
+  },
+  {
+    id: "compliance",
+    title: "Комплаєнс та регулювання",
+    items: [
+      {
+        q: "Що таке FCA SS1/23 і чому це важливо для ML?",
+        a: "FCA SS1/23 — це Supervisory Statement Управління фінансового нагляду щодо управління ризиками моделей, опублікований у 2023 році. Він встановлює вимоги для UK-фінансових компаній щодо управління моделями, валідації, документування та постійного моніторингу. Будь-яка ML-модель, що використовується для кредитних рішень, страхового ціноутворення або торгівлі у регульованій компанії, зобов'язана відповідати цим вимогам. Codeworth надає пакети документації моделей, що відповідають вимогам SS1/23.",
+      },
+      {
+        q: "Чи потрібна нам DPIA для ML-проєкту?",
+        a: "Оцінка впливу на захист даних є обов'язковою за UK GDPR для високоризикової ML-обробки: масштабне профілювання, систематичний моніторинг або обробка чутливих категорій (здоров'я, фінансові, біометричні дані). Більшість продакшн ML-моделей у фінтех, охороні здоров'я та HR потребують DPIA. Ми виконуємо DPIA в рамках доставки проєкту — ви отримуєте готовий до подання документ для вашого DPO.",
+      },
+      {
+        q: "Як Стаття 22 UK GDPR впливає на ML-системи?",
+        a: "Стаття 22 UK GDPR надає фізичним особам право не піддаватися виключно автоматизованим рішенням зі значними наслідками (відмова у кредиті, відмова у страхуванні, відхилення при найомі). Ви зобов'язані забезпечити: можливість людського перегляду, змістовне пояснення рішення та можливість його оскарження. Codeworth вбудовує модулі пояснень та робочі процеси людського перегляду у кожну регульовану ML-систему.",
+      },
+      {
+        q: "Що таке Consumer Duty і як це впливає на ML?",
+        a: "FCA Consumer Duty (липень 2023) зобов'язує фінансові компанії демонструвати добрі результати для клієнтів. ML-моделі, що використовуються для ціноутворення, відбору продуктів або комунікацій з клієнтами, мають підтверджувати відсутність шкоди роздрібним клієнтам — включно з вразливими клієнтами. Codeworth проводить оцінки впливу Consumer Duty для ML-систем і документує фреймворки моніторингу результатів.",
+      },
+      {
+        q: "Як ви забезпечуєте відсутність упередженості ML-моделей щодо захищених характеристик?",
+        a: "Ми проводимо дезагрегований аналіз продуктивності за захищеними характеристиками Закону про рівність UK (або проксі-ознаками), застосовуємо SHAP-аналіз справедливості для виявлення проксі-дискримінації та документуємо методологію тестування упередженості у картці моделі. Для FCA-регульованих моделей ми дотримуємось керівництва FCA щодо справедливості у ML для фінансових послуг.",
+      },
+    ],
+  },
+  {
+    id: "technology",
+    title: "Технології та інтеграція",
+    items: [
+      {
+        q: "З якими хмарними платформами ви працюєте?",
+        a: "Ми не прив'язані до конкретної хмари: AWS (основна — SageMaker, Lambda, RDS, S3), Microsoft Azure (Azure ML, Cognitive Services, Cosmos DB), Google Cloud (Vertex AI, BigQuery, Cloud Run). Для UK-регульованих галузей, що вимагають резидентності даних, розгортаємо в AWS eu-west-2 (Лондон) або Azure UK South. Також підтримуємо on-premises розгортання для NHS та оборонних клієнтів.",
+      },
+      {
+        q: "Чи може ваш ML інтегруватися з нашим існуючим ПЗ?",
+        a: "Так. Ми інтегруємося з CRM (Salesforce, HubSpot, Dynamics 365), ERP (SAP S/4HANA, Oracle ERP Cloud, Sage), сховищами даних (Snowflake, BigQuery, Redshift, Azure Synapse) та бізнес-додатками через REST API, вебхуки або нативні конектори. Усі точки інтеграції документуємо в технічних специфікаціях архітектури.",
+      },
+      {
+        q: "Який у вас стандартний ML-стек технологій?",
+        a: "Python 3.12, scikit-learn, PyTorch або TensorFlow, FastAPI для сервінгу моделей, MLflow для відстеження експериментів, Airflow для оркестрації пайплайнів, Docker і Kubernetes для розгортання, Great Expectations для якості даних. Ми адаптуємо стек до вашої існуючої інфраструктури — якщо ви інвестували в Azure, використовуємо Azure ML і Databricks замість AWS.",
+      },
+      {
+        q: "Скільки часу займає розгортання продакшн ML-моделі?",
+        a: "PoC: 3-6 тижнів. Продакшн-білд: 8-16 тижнів. Повний MLOps-пайплайн із моніторингом і перенавчанням: додати 2-4 тижні. Терміни залежать від готовності даних, складності інтеграції та вимог до комплаєнс-документації. NHS та FCA-регульовані проєкти додають 2-4 тижні на комплаєнс-документацію та перевірку.",
+      },
+      {
+        q: "Чи надаєте ви документацію моделі та передачу?",
+        a: "Так. Кожна продакшн ML-поставка включає: картку моделі (призначення, метрики продуктивності, обмеження, опис навчальних даних), діаграму технічної архітектури, документацію API, MLOps runbook та запис у реєстрі ризиків моделей, що відповідає FCA. Також надаємо 4 тижні hypercare-підтримки після запуску та опційний MLOps-ретейнер від £800/місяць.",
       },
     ],
   },

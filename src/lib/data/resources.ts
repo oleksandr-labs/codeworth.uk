@@ -402,6 +402,159 @@ export const RESOURCES: Resource[] = [
     isPopular: true,
     readTime: 18,
   },
+  {
+    slug: "ofcom-online-safety-ai-guide",
+    titleUk: "Посібник Ofcom щодо ШІ в Законі про онлайн-безпеку: зобов'язання платформ",
+    titleEn: "Ofcom Online Safety Act AI Guide: Obligations for UK Platforms",
+    descriptionUk:
+      "Офіційне керівництво Ofcom щодо зобов'язань у сфері ШІ для UK-платформ відповідно до Закону про онлайн-безпеку. Охоплює модерацію контенту, створеного ШІ, вимоги до прозорості та звітності. Обов'язковий документ для онлайн-сервісів.",
+    descriptionEn:
+      "Official Ofcom guidance on AI obligations for UK platforms under the Online Safety Act. Covers AI-generated content moderation, transparency requirements, and reporting obligations. Essential reading for any online service operating in the UK.",
+    category: "guide",
+    format: "page",
+    emailRequired: false,
+    tags: ["Ofcom", "Online Safety Act", "AI content moderation", "UK platforms", "transparency", "compliance"],
+    updatedAt: "2026-06-01",
+    readTime: 14,
+  },
+  {
+    slug: "nhs-ai-lab-evaluation-framework",
+    titleUk: "Фреймворк SAFE від NHS AI Lab: стандарти оцінки клінічного ШІ",
+    titleEn: "NHS AI Lab SAFE Evaluation Framework: Evidence Standards for Clinical AI",
+    descriptionUk:
+      "Фреймворк SAFE (Safety, Accuracy, Fairness, Explainability) від NHS AI Lab для валідації клінічних рішень на основі ШІ. Визначає стандарти доказової бази, необхідні для розгортання в NHS, та вимоги до клінічних випробувань.",
+    descriptionEn:
+      "The NHS AI Lab SAFE (Safety, Accuracy, Fairness, Explainability) validation framework for clinical AI solutions. Defines the evidence standards required for NHS deployment, clinical trial requirements, and post-market surveillance expectations.",
+    category: "guide",
+    format: "pdf",
+    emailRequired: false,
+    tags: ["NHS AI Lab", "clinical AI", "SAFE framework", "validation", "healthcare", "UK health tech"],
+    updatedAt: "2026-06-01",
+    readTime: 20,
+  },
+  {
+    slug: "ukri-responsible-ai-programme",
+    titleUk: "Програма відповідального ШІ UKRI: пріоритети фінансування 2024–2027",
+    titleEn: "UKRI Responsible AI Programme: £36M Funding Streams 2024–2027",
+    descriptionUk:
+      "Огляд програми відповідального ШІ Ради з досліджень та інновацій Великої Британії (UKRI) з бюджетом £36 млн на 2024–2027 роки. Охоплює пріоритети досліджень, умови подачі заявок, партнерства промисловості та академії.",
+    descriptionEn:
+      "Overview of the UK Research and Innovation (UKRI) Responsible AI programme committing £36M for 2024–2027. Covers research priorities, application eligibility, industry-academia partnership models, and expected deliverables for funded projects.",
+    category: "report",
+    format: "page",
+    emailRequired: false,
+    tags: ["UKRI", "responsible AI", "research funding", "UK innovation", "2024-2027", "AI research"],
+    updatedAt: "2026-06-01",
+    readTime: 12,
+  },
+  {
+    slug: "cdei-portfolio-algorithmic-tools",
+    titleUk: "Портфоліо алгоритмічних інструментів CDEI у держсекторі Великої Британії",
+    titleEn: "CDEI Portfolio of Algorithmic Tools in UK Public Sector",
+    descriptionUk:
+      "Аналіз Центру з питань етики даних та інновацій (CDEI) щодо використання алгоритмічних інструментів у держсекторі Великої Британії. Документує застосування в охороні здоров'я, поліції, освіті та соціальних послугах із оцінкою ризиків.",
+    descriptionEn:
+      "The Centre for Data Ethics and Innovation (CDEI) portfolio cataloguing algorithmic tool deployments across UK public sector organisations. Documents use cases in health, policing, education, and social services with risk assessments and accountability mechanisms.",
+    category: "report",
+    format: "pdf",
+    emailRequired: false,
+    tags: ["CDEI", "algorithmic tools", "public sector", "data ethics", "AI accountability", "UK government"],
+    updatedAt: "2026-06-01",
+    readTime: 22,
+  },
+  {
+    slug: "deloitte-uk-ai-adoption-2026",
+    titleUk: "Deloitte UK: дослідження впровадження ШІ 2026 — показники по галузях і ROI",
+    titleEn: "Deloitte UK AI Adoption Survey 2026: Industry Rates, Barriers and ROI",
+    descriptionUk:
+      "Щорічне дослідження Deloitte UK охоплює понад 1 000 організацій. Аналізує показники впровадження ШІ по секторах, ключові бар'єри (дефіцит кадрів, якість даних, регулювання), задокументований ROI та прогнози на 2027 рік.",
+    descriptionEn:
+      "Deloitte UK's annual survey covering 1,000+ organisations. Analyses AI adoption rates by sector, key barriers including talent shortages, data quality, and regulation, documented ROI figures, and forecasts for the UK AI market in 2027.",
+    category: "report",
+    format: "pdf",
+    emailRequired: true,
+    tags: ["Deloitte", "AI adoption", "UK survey", "ROI", "industry benchmarks", "2026"],
+    updatedAt: "2026-06-01",
+    isPopular: true,
+    readTime: 16,
+  },
+  {
+    slug: "mckinsey-state-ai-uk-2026",
+    titleUk: "McKinsey: стан ШІ у Великій Британії 2026 — інвестиції, таланти, продуктивність",
+    titleEn: "McKinsey State of AI in the UK 2026: Investment, Talent and Productivity Impact",
+    descriptionUk:
+      "Звіт McKinsey аналізує тенденції інвестицій у ШІ у Великій Британії, ринок талантів, вплив на продуктивність і конкурентоспроможність у порівнянні з ЄС та США. Містить секторальні кейс-стадіз та рекомендації для бізнесу.",
+    descriptionEn:
+      "McKinsey's flagship UK AI report analyses investment trends, the talent market, measured productivity uplift across sectors, and UK competitiveness versus the EU and US. Includes sector-specific case studies and actionable recommendations for business leaders.",
+    category: "report",
+    format: "pdf",
+    emailRequired: true,
+    tags: ["McKinsey", "UK AI", "investment", "talent", "productivity", "2026", "market analysis"],
+    updatedAt: "2026-06-01",
+    isPopular: true,
+    readTime: 19,
+  },
+  {
+    slug: "ons-ai-labour-market-uk",
+    titleUk: "ONS: вплив ШІ на ринок праці Великої Британії — оцінки зайнятості за секторами",
+    titleEn: "ONS Analysis of AI Impact on UK Labour Market: Occupational Exposure and Productivity",
+    descriptionUk:
+      "Аналіз Управління національної статистики (ONS) щодо впливу ШІ на ринок праці Великої Британії. Надає бали ризику для 370 професій, оцінки підвищення продуктивності та прогнози зайнятості до 2030 року.",
+    descriptionEn:
+      "Official ONS analysis quantifying AI exposure across UK occupations. Provides occupational exposure scores for 370 job categories, measured productivity uplift data, displacement risk assessments, and employment projections to 2030.",
+    category: "report",
+    format: "page",
+    emailRequired: false,
+    tags: ["ONS", "labour market", "AI impact", "occupational exposure", "productivity", "UK employment"],
+    updatedAt: "2026-06-01",
+    readTime: 17,
+  },
+  {
+    slug: "nist-ai-risk-management-uk",
+    titleUk: "Посібник із застосування NIST AI RMF для Великої Британії: відповідність FCA та ICO",
+    titleEn: "NIST AI Risk Management Framework UK Applicability Guide: Mapping to FCA and ICO",
+    descriptionUk:
+      "Практичний посібник з адаптації фреймворку управління ризиками NIST AI RMF до регуляторного середовища Великої Британії. Містить покрокову таблицю відповідності між NIST і вимогами FCA, ICO та CMA для UK-організацій.",
+    descriptionEn:
+      "Practical guide for applying the US NIST AI Risk Management Framework within the UK regulatory environment. Provides a detailed crosswalk mapping NIST controls to FCA, ICO, and CMA requirements, with implementation guidance for UK organisations.",
+    category: "guide",
+    format: "pdf",
+    emailRequired: false,
+    tags: ["NIST AI RMF", "risk management", "FCA", "ICO", "UK compliance", "AI governance", "framework"],
+    updatedAt: "2026-06-01",
+    readTime: 15,
+  },
+  {
+    slug: "bcs-ml-professional-standards",
+    titleUk: "Стандарти професійної сертифікації BCS з ML для UK-практиків",
+    titleEn: "BCS ML Professional Certification Standards for UK Practitioners",
+    descriptionUk:
+      "Стандарти Британського комп'ютерного товариства (BCS) щодо сертифікації фахівців з машинного навчання у Великій Британії. Охоплює шляхи до сертифікації, компетентнісні рамки, вимоги до безперервного навчання та визнання роботодавцями.",
+    descriptionEn:
+      "BCS (Chartered Institute for IT) professional certification standards for machine learning practitioners in the UK. Covers certification pathways, competency frameworks, continuing professional development requirements, and employer recognition across UK industries.",
+    category: "guide",
+    format: "page",
+    emailRequired: false,
+    tags: ["BCS", "ML certification", "professional standards", "UK practitioners", "CPD", "chartered IT"],
+    updatedAt: "2026-06-01",
+    readTime: 11,
+  },
+  {
+    slug: "techuk-ai-skills-report-2026",
+    titleUk: "techUK: звіт про дефіцит AI-навичок 2026 — 85 000 вакансій та шляхи усунення прогалини",
+    titleEn: "techUK AI Skills Gap Report 2026: 85,000 ML Jobs Unfilled and Training Pathways",
+    descriptionUk:
+      "Щорічний звіт techUK фіксує 85 000 незаповнених ML-вакансій у Великій Британії. Аналізує прогалини в навичках за регіонами та секторами, оцінює ефективність програм перепідготовки, учнівства та університетських курсів.",
+    descriptionEn:
+      "techUK's annual skills report identifies 85,000 unfilled ML roles across the UK. Analyses skills gaps by region and sector, evaluates the effectiveness of retraining programmes, apprenticeship schemes, and university AI curricula in closing the shortage.",
+    category: "report",
+    format: "pdf",
+    emailRequired: true,
+    tags: ["techUK", "AI skills", "skills gap", "ML jobs", "apprenticeships", "UK workforce", "2026"],
+    updatedAt: "2026-06-01",
+    isPopular: true,
+    readTime: 13,
+  },
 ];
 
 export const RESOURCE_SLUGS = RESOURCES.map((r) => r.slug);

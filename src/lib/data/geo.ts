@@ -962,6 +962,183 @@ export const GEO_CITIES: GeoCity[] = [
       },
     ],
   },
+  {
+    slug: "leicester",
+    nameUk: "Лестер",
+    nameEn: "Leicester",
+    region: "Іст-Мідлендс",
+    regionEn: "East Midlands",
+    population: "1.1 млн",
+    populationEn: "1.1 million",
+    businesses: 55000,
+    description:
+      "Лестер — динамічний центр Іст-Мідлендсу з кластерами life sciences та фармацевтики (Piramal, Walgreens Boots Alliance), текстильно-швейною промисловістю, що впроваджує ML-оптимізацію, та університетськими AI-дослідженнями. Логістичний парк SEGRO та різноманітне етнічне підприємництво роблять місто 19-м за величиною tech-кластером Великобританії. Codeworth будує ML-рішення для лестерських підприємств у сферах фармацевтики, рітейлу та логістики.",
+    descriptionEn:
+      "Leicester is a dynamic East Midlands centre with life sciences and pharma clusters (Piramal, Walgreens Boots Alliance), a textile and hosiery industry adopting ML optimisation, and strong university AI research from the University of Leicester. The SEGRO distribution park and diverse ethnic entrepreneurship make Leicester the UK's 19th largest tech cluster. Codeworth builds production ML for Leicester businesses in pharma, retail, and logistics.",
+    seoTitle: "ML-консалтинг у Лестері | Машинне навчання для life sciences | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Leicester | ML Agency East Midlands | Codeworth",
+    seoDesc:
+      "Машинне навчання у Лестері: life sciences AI, фармацевтика, логістика, текстиль. Від £4,000. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Leicester: life sciences AI, pharma ML, logistics forecasting, textile automation. From £4,000. Codeworth.",
+    stats: [
+      { label: "ML-компаній", labelEn: "ML companies", value: "280+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "1,850+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "62+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£47k" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "4+" },
+    ],
+    faq: [
+      {
+        q: "Який стан ML-ринку у Лестері?",
+        qEn: "What is the Leicester ML market like?",
+        a: "Лестер входить до топ-20 tech-кластерів Великобританії з понад 280 ML-компаніями та 1,850+ спеціалістами. Зростання зумовлене кластером life sciences, університетськими дослідженнями та сильним сектором логістики та рітейлу.",
+        aEn: "Leicester ranks among the UK's top-20 tech clusters with 280+ ML companies and 1,850+ specialists. Growth is driven by the life sciences cluster, university research, and a strong logistics and retail sector underpinned by the SEGRO distribution park.",
+      },
+      {
+        q: "Які ML-можливості існують у секторі life sciences Лестера?",
+        qEn: "What ML opportunities exist in Leicester's life sciences sector?",
+        a: "Фармацевтичні компанії Лестера, зокрема Piramal та Walgreens Boots Alliance, потребують ML для drug discovery, clinical trial optimisation, manufacturing quality control та pharmacovigilance. NLP-рішення для аналізу наукової літератури та adverse event detection також активно впроваджуються.",
+        aEn: "Leicester pharma companies including Piramal and Walgreens Boots Alliance need ML for drug discovery, clinical trial optimisation, manufacturing quality control, and pharmacovigilance. NLP solutions for scientific literature analysis and adverse event detection are also in strong demand.",
+      },
+      {
+        q: "Як Midlands Engine підтримує ML-ініціативи у Лестері?",
+        qEn: "How does the Midlands Engine support ML initiatives in Leicester?",
+        a: "Midlands Engine та LLEP (Leicester & Leicestershire Enterprise Partnership) надають гранти на цифровізацію та AI-впровадження для малого та середнього бізнесу. Компанії можуть отримати до 50% співфінансування на ML PoC через схеми Innovate UK та ERDF.",
+        aEn: "The Midlands Engine and LLEP (Leicester & Leicestershire Enterprise Partnership) provide digitalisation and AI adoption grants for SMEs. Businesses can access up to 50% co-funding for ML PoCs through Innovate UK and ERDF schemes.",
+      },
+      {
+        q: "Як ML використовується у текстильному виробництві Лестера?",
+        qEn: "How is ML used in Leicester's textile manufacturing sector?",
+        a: "Текстильні та трикотажні підприємства Лестера використовують ML для: прогнозування попиту та оптимізації запасів, computer vision для контролю якості тканини, предиктивного обслуговування ткацького обладнання та автоматизації дизайну патернів.",
+        aEn: "Leicester textile and hosiery manufacturers use ML for: demand forecasting and inventory optimisation, computer vision for fabric quality control (defect detection), predictive maintenance of knitting machinery, and automated pattern design optimisation.",
+      },
+      {
+        q: "Які AI-дослідження проводить Університет Лестера?",
+        qEn: "What AI research does the University of Leicester conduct?",
+        a: "Університет Лестера має активні AI-дослідницькі групи у сферах machine learning для медичної візуалізації, NLP, computer vision та data-driven epidemiology. Бізнеси можуть співпрацювати через Knowledge Transfer Partnerships (KTP) для спільної розробки ML-рішень.",
+        aEn: "The University of Leicester has active AI research groups in machine learning for medical imaging, NLP, computer vision, and data-driven epidemiology. Businesses can collaborate via Knowledge Transfer Partnerships (KTP) to co-develop ML solutions with academic support.",
+      },
+    ],
+  },
+  {
+    slug: "coventry",
+    nameUk: "Ковентрі",
+    nameEn: "Coventry",
+    region: "Уест-Мідлендс",
+    regionEn: "West Midlands",
+    population: "985,000",
+    populationEn: "985,000",
+    businesses: 42000,
+    description:
+      "Ковентрі — центр автомобільної та EV-промисловості Мідлендсу з потужним впливом Jaguar Land Rover та London Electric Vehicle Company. Ініціатива WMCA (West Midlands Combined Authority) щодо розумного регіону, AI-дослідження Університету Ковентрі та CS-центр Університету Ворвіка (топ-10 UK) роблять місто провідним центром advanced manufacturing ML. Codeworth допомагає ковентрійському бізнесу впроваджувати ML у виробництво, логістику та EV-технології.",
+    descriptionEn:
+      "Coventry is the Midlands' automotive and EV manufacturing hub with strong ties to Jaguar Land Rover and the London Electric Vehicle Company. The WMCA smart region initiative, Coventry University AI research, and the University of Warwick's top-10 Computer Science department make the city a leading advanced manufacturing ML centre. Codeworth helps Coventry businesses implement ML in manufacturing, logistics, and EV technology.",
+    seoTitle: "ML-консалтинг у Ковентрі | Машинне навчання для автовиробництва | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Coventry | Automotive AI Agency | Codeworth",
+    seoDesc:
+      "Машинне навчання у Ковентрі: automotive AI, EV ML, advanced manufacturing, WMCA smart region. Від £4,000. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Coventry: automotive AI, EV manufacturing ML, advanced manufacturing automation. From £4,000. Codeworth.",
+    stats: [
+      { label: "ML-компаній", labelEn: "ML companies", value: "265+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "1,720+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "58+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£48k" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "3+" },
+    ],
+    faq: [
+      {
+        q: "Яка ML-екосистема у Ковентрі?",
+        qEn: "What is the Coventry ML ecosystem like?",
+        a: "Ковентрі має понад 265 ML-компаній та 1,720+ спеціалістів, зосереджених переважно в automotive/EV та advanced manufacturing секторах. Університети Ковентрі та Ворвік забезпечують сильну академічну базу, а WMCA активно фінансує AI-ініціативи в регіоні.",
+        aEn: "Coventry has 265+ ML companies and 1,720+ specialists, concentrated primarily in automotive/EV and advanced manufacturing sectors. The Universities of Coventry and Warwick provide strong academic foundations, while WMCA actively funds AI initiatives across the region.",
+      },
+      {
+        q: "Які ML-застосування існують в автомобільній промисловості Ковентрі?",
+        qEn: "What ML applications exist in Coventry's automotive industry?",
+        a: "Автомобільні компанії Ковентрі впроваджують ML для: predictive maintenance виробничого обладнання, computer vision для контролю якості зварних швів та покриттів, оптимізації EV-батарейних циклів, прогнозування ланцюга постачання та автономного тестування транспортних засобів.",
+        aEn: "Coventry automotive companies deploy ML for: predictive maintenance of manufacturing equipment, computer vision for weld and coating quality control, EV battery cycle optimisation, supply chain forecasting, and autonomous vehicle testing. The JLR influence drives strong demand for production-grade ML engineering.",
+      },
+      {
+        q: "Які гранти WMCA доступні для ML-проєктів?",
+        qEn: "What West Midlands ML grants are available?",
+        a: "WMCA та West Midlands Growth Company пропонують кілька схем фінансування: Digital Growth Programme (до £10,000 для SME), Made Smarter West Midlands (до 50% покриття ML-пілотів для виробництва) та Innovate UK Smart Grants. Codeworth може допомогти з підготовкою заявки.",
+        aEn: "WMCA and West Midlands Growth Company offer several funding schemes: Digital Growth Programme (up to £10,000 for SMEs), Made Smarter West Midlands (up to 50% co-funding for manufacturing ML pilots), and Innovate UK Smart Grants. Codeworth can assist with application preparation.",
+      },
+      {
+        q: "Як JLR впроваджує ML у виробництво?",
+        qEn: "How is JLR adopting ML in manufacturing?",
+        a: "JLR активно впроваджує ML для predictive quality у фарбувальних цехах (зниження переробок на 40%), оптимізації закупівель, demand sensing для планування виробництва та battery health monitoring в EV-моделях Range Rover та Defender. Постачальники JLR теж потребують ML-компетенцій.",
+        aEn: "JLR is actively deploying ML for predictive quality in paint shops (reducing rework by 40%), procurement optimisation, demand sensing for production planning, and battery health monitoring in Range Rover and Defender EV models. JLR tier-1 and tier-2 suppliers increasingly need ML capabilities to meet JLR quality standards.",
+      },
+      {
+        q: "Як автоматизація виробництва у Ковентрі пов'язана з ML?",
+        qEn: "How does manufacturing automation in Coventry connect to ML?",
+        a: "Advanced manufacturing у Ковентрі переходить від rule-based автоматизації до adaptive ML-систем: роботи-зварювальники з CV-коригуванням траєкторії, AGV з reinforcement learning маршрутизацією, та цифрові двійники виробничих ліній для симуляції та оптимізації. Codeworth проєктує ці ML-шари поверх існуючої автоматики.",
+        aEn: "Advanced manufacturing in Coventry is transitioning from rule-based automation to adaptive ML systems: welding robots with CV trajectory correction, AGVs with reinforcement learning routing, and digital twins of production lines for simulation and optimisation. Codeworth designs these ML layers on top of existing automation infrastructure.",
+      },
+    ],
+  },
+  {
+    slug: "reading",
+    nameUk: "Редінг",
+    nameEn: "Reading",
+    region: "Беркшир",
+    regionEn: "Berkshire",
+    population: "342,000",
+    populationEn: "342,000",
+    businesses: 38000,
+    description:
+      "Редінг — серце технологічного коридору Темзи-Веллі з штаб-квартирами Microsoft UK, Oracle, Hewlett Packard Enterprise та Verizon. Розташований за 45 хвилин від Лондона, Редінг поєднує столичні зарплатні очікування з нижчими операційними витратами. Університет Редінга розвиває data science напрям, а потужна присутність fintech та cybersecurity компаній робить місто стратегічним ML-хабом. Codeworth будує ML для редінгських технологічних компаній, fintech та enterprise бізнесів.",
+    descriptionEn:
+      "Reading is the heart of the Thames Valley tech corridor, hosting Microsoft UK HQ, Oracle, Hewlett Packard Enterprise, and Verizon. Located 45 minutes from London, Reading combines capital-level talent expectations with lower operating costs. The University of Reading's data science programme and strong fintech and cybersecurity presence make it a strategic ML hub. Codeworth builds ML for Reading tech companies, fintech, and enterprise businesses.",
+    seoTitle: "ML-консалтинг у Редінгу | Машинне навчання Thames Valley | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Reading | Thames Valley ML Agency | Codeworth",
+    seoDesc:
+      "Машинне навчання у Редінгу: Thames Valley tech corridor, Microsoft UK, fintech ML, cybersecurity AI. Від £4,000. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Reading: Thames Valley tech corridor, fintech ML, cybersecurity AI, enterprise automation. From £4,000. Codeworth.",
+    stats: [
+      { label: "ML-компаній", labelEn: "ML companies", value: "390+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "2,600+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "84+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£60k" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "6+" },
+    ],
+    faq: [
+      {
+        q: "Що таке технологічний коридор Thames Valley у Редінгу?",
+        qEn: "What is the Reading Thames Valley tech corridor?",
+        a: "Thames Valley tech corridor — це концентрація глобальних технологічних компаній між Редінгом та Лондоном. Редінг є центром коридору з Microsoft UK, Oracle, HPE, Verizon, Fujitsu та сотнями SaaS та fintech компаній. Місто має найвищу щільність tech-роботодавців за межами Лондона.",
+        aEn: "The Thames Valley tech corridor is the concentration of global technology companies between Reading and London. Reading anchors the corridor with Microsoft UK, Oracle, HPE, Verizon, Fujitsu, and hundreds of SaaS and fintech companies. The city has the highest density of tech employers outside London.",
+      },
+      {
+        q: "Які ML-партнерські можливості надає Microsoft UK у Редінгу?",
+        qEn: "What Microsoft UK ML partnership opportunities exist in Reading?",
+        a: "Завдяки присутності Microsoft UK у Редінгу, місцеві бізнеси мають привілейований доступ до Azure ML partner ecosystem, Microsoft for Startups програми та Co-Sell partnerships. Codeworth є досвідченим у Azure ML Studio, Azure OpenAI Service та MLOps на Azure DevOps.",
+        aEn: "With Microsoft UK headquartered in Reading, local businesses have privileged access to the Azure ML partner ecosystem, Microsoft for Startups programme, and Co-Sell partnerships. Codeworth is experienced in Azure ML Studio, Azure OpenAI Service, and MLOps on Azure DevOps — making Reading engagements particularly well-suited to Azure-native deployments.",
+      },
+      {
+        q: "Які зарплатні орієнтири для ML-спеціалістів у Редінгу?",
+        qEn: "What are the ML salary benchmarks in Reading?",
+        a: "Зарплати ML-спеціалістів у Редінгу: Junior Data Scientist — £40,000–£50,000, Mid-level ML Engineer — £55,000–£70,000, Senior ML Engineer — £75,000–£95,000, Principal/Staff — £100,000+. Рівень на 10–15% нижче Лондона, але вартість проживання значно менша.",
+        aEn: "Reading ML specialist salaries: Junior Data Scientist £40,000–£50,000, Mid-level ML Engineer £55,000–£70,000, Senior ML Engineer £75,000–£95,000, Principal/Staff £100,000+. Rates run 10–15% below London but living costs are significantly lower, making Reading attractive for ML talent retention.",
+      },
+      {
+        q: "Як Thames Valley fintech компанії використовують ML?",
+        qEn: "How do Thames Valley fintech companies use ML?",
+        a: "Fintech компанії Thames Valley застосовують ML для: fraud detection та AML (anti-money laundering), credit risk scoring, algorithmic trading, customer churn prediction, NLP для автоматизації compliance та regtech рішень. Proximity до Лондонського фінансового центру забезпечує доступ до фінансових датасетів та регуляторної експертизи.",
+        aEn: "Thames Valley fintech companies deploy ML for: fraud detection and AML, credit risk scoring, algorithmic trading signals, customer churn prediction, and NLP for compliance automation and regtech solutions. Proximity to the London financial centre provides access to financial datasets and regulatory expertise.",
+      },
+      {
+        q: "Яка перевага Редінга для ML-компаній порівняно з Лондоном?",
+        qEn: "What is Reading's advantage for ML companies compared to London?",
+        a: "Редінг пропонує лондонський рівень tech-талантів та корпоративних клієнтів при витратах на 30–40% нижче. Офісна оренда у 3–4 рази дешевше, ніж у Центральному Лондоні. Crossrail (Elizabeth line) забезпечує 27-хвилинний маршрут до Паддінгтону, що дозволяє командам легко зустрічатися з лондонськими клієнтами.",
+        aEn: "Reading offers London-level tech talent and corporate clients at 30–40% lower costs. Office rents are 3–4x cheaper than Central London. The Elizabeth line (Crossrail) provides a 27-minute journey to Paddington, enabling teams to meet London clients easily while maintaining the cost advantages of a Thames Valley base.",
+      },
+    ],
+  },
 ];
 
 export function getCity(slug: string): GeoCity | undefined {

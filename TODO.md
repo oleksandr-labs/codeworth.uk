@@ -58,3 +58,12 @@
 - [x] extras-demos.ts: replaced 5 web-dev demos (website-redesign, website-quiz, landing-copywriter, saas-landing, fitness-landing) with ML equivalents (ml-roi-demo, ml-readiness-quiz, model-card-demo, fraud-detection-demo, churn-prediction-demo)
 - [x] glossary.ts: added 20 more terms (hyperparameter tuning, pipeline automation, active learning, GNN, tabular ML, counterfactual explanation, shadow/canary/blue-green deployment, tokenization, semantic similarity, data governance, cost-per-inference, etc.)
 - [x] compare.ts: added 4 more comparison pages (vs Accenture, vs freelance ML engineer, vs DIY MLOps, vs Google Vertex AI)
+
+## Session 2026-06-24 — Sprint 5: Blog 131-140, Resources, Cities, Glossary, FAQ
+
+### Done (Sprint 5)
+- [x] blog.ts: posts 131-140 (construction ML, media/publishing, XAI/SHAP/LIME, feature stores, charities ML, agriculture/AgriTech, data quality/Great Expectations, compliance surveillance ML, transfer learning, EdTech ML) — each with faq:[5] bilingual
+- [x] resources.ts: +10 new UK ML resources (Ofcom OSA, NHS AI Lab SAFE, UKRI Responsible AI, CDEI, Deloitte/McKinsey/ONS surveys, NIST RMF UK, BCS ML standards, techUK skills report)
+- [x] geo.ts: +3 new city pages (Leicester, Coventry, Reading) with stats + 5 FAQs each
+- [x] glossary.ts: +20 terms (bias-variance, regularization, dropout, batch norm, learning rate, SMOTE, data versioning, experiment tracking, CI/CD ML, OCR, question-answering, summarisation, ICO enforcement, MLOps maturity levels, confusion matrix, data pipeline, etc.)
+- [x] faq/page.tsx: +2 new sections (Compliance & Regulation × 5 Q&A, Technology & Integration × 5 Q&A) — FAQ page now ~32 items
