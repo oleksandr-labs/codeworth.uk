@@ -1171,6 +1171,336 @@ export const USE_CASES: UseCase[] = [
     relatedServices: ["machine-learning", "predictive-analytics"],
     relatedExtras: ["crm-ml-sync", "ml-explainability"],
   },
+  {
+    slug: "telecom-5g-network-optimisation-ml",
+    titleEn: "5G Network Optimisation with Machine Learning",
+    titleUk: "Оптимізація мережі 5G за допомогою машинного навчання",
+    category: "ai",
+    icon: "📡",
+    whoEn: "UK telecommunications operators, mobile network providers, RAN engineering teams",
+    whoUk: "UK телеком-оператори, провайдери мобільних мереж, команди інженерії RAN",
+    problemEn:
+      "UK 5G operators manage tens of thousands of cells where traffic demand shifts hour by hour, yet static configuration leaves congested cells overloaded while neighbouring cells sit idle. Manual RAN tuning by network engineers reacts days after a problem appears, dropped-call and throughput KPIs degrade during peak events, and energy costs rise because cells run at full power even when lightly loaded. Spectrum is a scarce, expensive asset and every percentage point of inefficiency is lost revenue.",
+    problemUk:
+      "UK-оператори 5G керують десятками тисяч сот, де попит на трафік змінюється щогодини, але статична конфігурація залишає перевантажені соти перевантаженими, тоді як сусідні соти простоюють. Ручне налаштування RAN мережевими інженерами реагує через дні після появи проблеми, KPI втрачених дзвінків та пропускної здатності погіршуються під час пікових подій, а витрати на енергію зростають, бо соти працюють на повній потужності навіть за низького навантаження. Спектр — дефіцитний дорогий ресурс, і кожен відсоток неефективності — це втрачений дохід.",
+    solutionEn:
+      "We build a network optimisation engine that combines gradient boosting traffic forecasting with reinforcement learning for real-time parameter control. Gradient boosting models predict per-cell load 15-60 minutes ahead from historical patterns, events, and weather, while an RL agent dynamically tunes antenna tilt, power, and handover thresholds to balance load across cells. The system integrates with the OSS via standard interfaces and runs a closed-loop policy with safety guardrails approved by RAN engineers.",
+    solutionUk:
+      "Ми будуємо рушій оптимізації мережі, що поєднує прогнозування трафіку через gradient boosting з навчанням з підкріпленням для керування параметрами в реальному часі. Моделі gradient boosting прогнозують навантаження кожної соти на 15-60 хвилин уперед з історичних патернів, подій та погоди, тоді як RL-агент динамічно налаштовує нахил антени, потужність та пороги хендоверу для балансування навантаження між сотами. Система інтегрується з OSS через стандартні інтерфейси та працює за політикою замкненого циклу з безпековими обмеженнями, затвердженими інженерами RAN.",
+    resultQuoteEn:
+      "Operators see network congestion reduced by 31%, peak-hour throughput improve by 18%, and cell energy consumption drop by 14% through load-aware power control, all without additional spectrum or hardware.",
+    resultQuoteUk:
+      "Оператори бачать зниження перевантаження мережі на 31%, покращення пропускної здатності в пікові години на 18% та зниження енергоспоживання сот на 14% завдяки керуванню потужністю з урахуванням навантаження, і все це без додаткового спектра чи обладнання.",
+    metaTitleEn: "5G Network Optimisation ML | RAN Tuning | Codeworth",
+    metaTitleUk: "Оптимізація мережі 5G ML | Налаштування RAN | Codeworth",
+    metaDescriptionEn:
+      "Gradient boosting + reinforcement learning for 5G RAN optimisation. Congestion −31%, throughput +18%, energy −14%. Codeworth.",
+    metaDescriptionUk:
+      "Gradient boosting + RL для оптимізації RAN 5G. Перевантаження −31%, пропускна здатність +18%, енергія −14%. Codeworth.",
+    relatedPortfolio: ["churn-prediction-saas", "fraud-detection-bank"],
+    relatedServices: ["machine-learning", "predictive-analytics"],
+    relatedExtras: ["iot-ml-pipeline", "anomaly-detection"],
+  },
+  {
+    slug: "radiology-chest-xray-triage-ml",
+    titleEn: "AI Chest X-Ray Triage for Radiology Departments",
+    titleUk: "AI-тріаж рентгенів грудної клітки для відділень радіології",
+    category: "ai",
+    icon: "🫁",
+    whoEn: "NHS trusts, radiology departments, teleradiology providers",
+    whoUk: "NHS-трасти, відділення радіології, провайдери телерадіології",
+    problemEn:
+      "NHS radiology departments face chronic reporting backlogs where chest X-rays can wait days to weeks for a consultant report, delaying detection of pneumothorax, consolidation, and suspicious nodules. Radiologist shortages mean urgent findings sit in undifferentiated worklists ordered by acquisition time rather than clinical risk, and a missed critical finding carries serious patient-safety and medico-legal consequences.",
+    problemUk:
+      "Відділення радіології NHS стикаються з хронічними чергами на опис, де рентгени грудної клітки можуть чекати дні-тижні на звіт консультанта, затримуючи виявлення пневмотораксу, консолідації та підозрілих вузлів. Дефіцит радіологів означає, що термінові знахідки лежать у недиференційованих списках, упорядкованих за часом отримання, а не за клінічним ризиком, а пропущена критична знахідка несе серйозні наслідки для безпеки пацієнта та медико-правові ризики.",
+    solutionEn:
+      "We deploy a CNN classifier based on an EfficientNet backbone that ingests DICOM studies directly from the PACS, flags abnormal chest X-rays, and re-prioritises the radiologist worklist so critical findings surface first. The model is trained and validated on UK-representative data, outputs calibrated confidence with saliency overlays for explainability, and operates strictly as a triage and decision-support tool with every study still reported by a radiologist, in line with MHRA medical-device guidance.",
+    solutionUk:
+      "Ми розгортаємо CNN-класифікатор на основі бекбона EfficientNet, що приймає DICOM-дослідження безпосередньо з PACS, позначає аномальні рентгени грудної клітки та перепріоритезує список радіолога, щоб критичні знахідки з'являлися першими. Модель навчена та валідована на репрезентативних для UK даних, видає каліброване значення впевненості з saliency-накладками для пояснюваності та працює суто як інструмент тріажу й підтримки рішень, де кожне дослідження все одно описує радіолог, відповідно до настанов MHRA щодо медичних виробів.",
+    resultQuoteEn:
+      "Trusts achieve a model AUC of 0.94 for abnormality detection, a 42% reduction in reporting backlog for normal studies, and faster time-to-report for urgent pathology through risk-based worklist prioritisation.",
+    resultQuoteUk:
+      "Трасти досягають AUC моделі 0.94 для виявлення аномалій, скорочення черги на опис нормальних досліджень на 42% та швидшого часу до звіту для термінової патології завдяки пріоритезації списку на основі ризику.",
+    metaTitleEn: "AI Chest X-Ray Triage | NHS Radiology | Codeworth",
+    metaTitleUk: "AI-тріаж рентгенів грудної клітки | Радіологія NHS | Codeworth",
+    metaDescriptionEn:
+      "EfficientNet CNN + DICOM/PACS for chest X-ray triage. AUC 0.94, backlog −42%. MHRA-aligned decision support. Codeworth.",
+    metaDescriptionUk:
+      "EfficientNet CNN + DICOM/PACS для тріажу рентгенів. AUC 0.94, черга −42%. Підтримка рішень за MHRA. Codeworth.",
+    relatedPortfolio: ["fraud-detection-bank", "churn-prediction-saas"],
+    relatedServices: ["computer-vision", "artificial-intelligence"],
+    relatedExtras: ["dicom-integration", "clinical-ai-validation"],
+  },
+  {
+    slug: "soil-health-monitoring-agritech-ml",
+    titleEn: "Soil Health Prediction with Satellite and Sensor Fusion",
+    titleUk: "Прогнозування здоров'я ґрунту з поєднанням супутникових та сенсорних даних",
+    category: "ai",
+    icon: "🌱",
+    whoEn: "UK arable farms, agritech providers, agronomy consultancies",
+    whoUk: "UK орні господарства, агротех-провайдери, агрономічні консалтинги",
+    problemEn:
+      "UK farmers manage soil organic matter, moisture, and nutrient levels largely blind between infrequent and expensive lab tests, leading to uniform fertiliser application that over-treats healthy zones and under-treats deficient ones. This wastes input cost, depresses yields, and increases nitrate runoff that breaches environmental regulations, while climate variability makes historical rules-of-thumb increasingly unreliable.",
+    problemUk:
+      "UK-фермери керують вмістом органіки, вологістю та рівнем поживних речовин у ґрунті значною мірою наосліп між нечастими й дорогими лабораторними аналізами, що призводить до рівномірного внесення добрив, яке переобробляє здорові зони й недообробляє дефіцитні. Це марнує вартість ресурсів, знижує врожаї та збільшує стік нітратів, що порушує екологічні норми, тоді як кліматична мінливість робить історичні правила дедалі ненадійнішими.",
+    solutionEn:
+      "We build a soil health prediction system that fuses Sentinel-2 satellite imagery, in-field IoT moisture and EC sensors, and weather data into a machine learning model that produces field-level maps of organic matter, moisture, and nutrient status. Predictions feed variable-rate application plans so fertiliser and water go exactly where they are needed, with the model continuously recalibrated against periodic lab samples to keep accuracy high.",
+    solutionUk:
+      "Ми будуємо систему прогнозування здоров'я ґрунту, що поєднує супутникові знімки Sentinel-2, польові IoT-сенсори вологості та EC і дані погоди в модель машинного навчання, яка створює карти органіки, вологості та статусу поживних речовин на рівні поля. Прогнози живлять плани змінного внесення, тож добрива й вода йдуть саме туди, де потрібні, а модель постійно перекалібровується за періодичними лабораторними пробами для збереження високої точності.",
+    resultQuoteEn:
+      "Farms report yields up 23%, fertiliser use down 19%, and measurable reductions in nitrate runoff, with the system paying for itself within a single growing season on most arable holdings.",
+    resultQuoteUk:
+      "Господарства повідомляють про зростання врожаїв на 23%, зниження використання добрив на 19% та вимірюване скорочення стоку нітратів, причому система окуповується протягом одного вегетаційного сезону на більшості орних угідь.",
+    metaTitleEn: "Soil Health Prediction ML | Satellite + Sensors | Codeworth",
+    metaTitleUk: "Прогноз здоров'я ґрунту ML | Супутник + сенсори | Codeworth",
+    metaDescriptionEn:
+      "Sentinel-2 + IoT sensor fusion for soil health prediction. Yield +23%, fertiliser −19%. Variable-rate ready. Codeworth.",
+    metaDescriptionUk:
+      "Sentinel-2 + IoT-сенсори для прогнозу здоров'я ґрунту. Врожай +23%, добрива −19%. Готово до змінного внесення. Codeworth.",
+    relatedPortfolio: ["churn-prediction-saas", "fraud-detection-bank"],
+    relatedServices: ["machine-learning", "predictive-analytics"],
+    relatedExtras: ["iot-ml-pipeline", "supply-chain-analytics"],
+  },
+  {
+    slug: "aml-transaction-graph-network-ml",
+    titleEn: "AML Graph Network Analysis for Banking",
+    titleUk: "Аналіз графових мереж AML для банків",
+    category: "ai",
+    icon: "🕸️",
+    whoEn: "UK banks, payment institutions, financial crime and AML teams",
+    whoUk: "UK банки, платіжні установи, команди фінансових злочинів та AML",
+    problemEn:
+      "Traditional rules-based AML systems generate enormous volumes of alerts, of which 90-95% are false positives, drowning financial crime analysts and inflating compliance costs into the tens of millions. Rules examine transactions in isolation and miss layered money-laundering typologies — smurfing, mule networks, and circular flows — that only become visible across the relationships between accounts. FCA scrutiny of AML effectiveness keeps rising while skilled analyst time is wasted clearing noise.",
+    problemUk:
+      "Традиційні AML-системи на правилах генерують величезні обсяги сповіщень, з яких 90-95% — хибнопозитивні, перевантажуючи аналітиків фінансових злочинів та роздуваючи витрати на комплаєнс до десятків мільйонів. Правила розглядають транзакції ізольовано й пропускають багатошарові типології відмивання — смурфінг, мережі дропів та циклічні потоки — які стають видимими лише через зв'язки між рахунками. Увага FCA до ефективності AML зростає, тоді як час кваліфікованих аналітиків марнується на розбір шуму.",
+    solutionEn:
+      "We build a graph neural network that models accounts and transactions as a network, learning structural patterns that signal laundering rings, mule activity, and circular flows invisible to flat rules. The GNN scores entities and subgraphs by risk, ranks alerts so analysts see the most suspicious networks first, and provides explainable subgraph evidence for SAR filing. The system layers on top of existing transaction monitoring and is fully auditable for FCA and JMLSG review.",
+    solutionUk:
+      "Ми будуємо графову нейронну мережу, що моделює рахунки й транзакції як мережу, навчаючись структурних патернів, які сигналізують про кільця відмивання, активність дропів та циклічні потоки, невидимі для плоских правил. GNN оцінює сутності й підграфи за ризиком, ранжує сповіщення, щоб аналітики бачили найпідозріліші мережі першими, та надає пояснюване підграфове свідчення для подання SAR. Система накладається поверх наявного моніторингу транзакцій і повністю аудитована для перевірки FCA та JMLSG.",
+    resultQuoteEn:
+      "Banks cut AML false positives by 68%, surface previously undetected laundering networks, and reduce average alert investigation time by 41% through graph-prioritised, explainable case packs.",
+    resultQuoteUk:
+      "Банки скорочують хибнопозитивні AML-сповіщення на 68%, виявляють раніше непомічені мережі відмивання та зменшують середній час розслідування сповіщення на 41% завдяки графово-пріоритезованим пояснюваним кейс-пакетам.",
+    metaTitleEn: "AML Graph Network Analysis | GNN Banking | Codeworth",
+    metaTitleUk: "Аналіз графових мереж AML | GNN для банків | Codeworth",
+    metaDescriptionEn:
+      "Graph neural networks for AML transaction analysis. False positives −68%, hidden networks surfaced. FCA/JMLSG auditable. Codeworth.",
+    metaDescriptionUk:
+      "Графові нейромережі для AML-аналізу транзакцій. Хибнопозитиви −68%, приховані мережі виявлено. Аудит FCA/JMLSG. Codeworth.",
+    relatedPortfolio: ["fraud-detection-bank", "fraud-detection-fintech"],
+    relatedServices: ["machine-learning", "artificial-intelligence"],
+    relatedExtras: ["ml-explainability", "compliance-audit-trail"],
+  },
+  {
+    slug: "ecommerce-returns-prediction-ml",
+    titleEn: "Returns Prediction for E-commerce Retailers",
+    titleUk: "Прогнозування повернень для e-commerce ритейлерів",
+    category: "ai",
+    icon: "📦",
+    whoEn: "UK online retailers, fashion e-commerce, multichannel merchants",
+    whoUk: "UK онлайн-ритейлери, фешн e-commerce, мультиканальні продавці",
+    problemEn:
+      "UK e-commerce returns reach 30-40% in categories like fashion, and every return destroys margin through reverse logistics, restocking, and write-offs of unsellable stock. Retailers discover return-prone orders only after dispatch, cannot intervene at the point of purchase, and lack the insight to identify serial returners or product-listing issues that systematically drive returns. The cumulative cost runs into millions while inflating the carbon footprint of last-mile delivery.",
+    problemUk:
+      "Повернення в UK e-commerce сягають 30-40% у категоріях на кшталт фешн, і кожне повернення руйнує маржу через зворотну логістику, поповнення складу та списання непродаваного товару. Ритейлери виявляють схильні до повернення замовлення лише після відправлення, не можуть втрутитися в момент покупки й не мають інсайтів для виявлення серійних повертачів чи проблем з лістингом товарів, що систематично спричиняють повернення. Сукупні витрати сягають мільйонів, водночас роздуваючи вуглецевий слід доставки останньої милі.",
+    solutionEn:
+      "We build an ensemble model — gradient boosting combined with neural embeddings of product, customer, and basket features — that scores every order's return probability in real time. High-risk orders trigger interventions: size guidance, fit recommendations, or fee prompts at checkout, while analytics surface problem SKUs and serial returners. The model integrates with the checkout, OMS, and warehouse systems and is retrained continuously on returns outcomes.",
+    solutionUk:
+      "Ми будуємо ансамблеву модель — gradient boosting у поєднанні з нейронними embedding-ознаками товару, клієнта та кошика — яка оцінює ймовірність повернення кожного замовлення в реальному часі. Замовлення високого ризику запускають втручання: підказки розміру, рекомендації посадки чи нагадування про комісію на чекауті, тоді як аналітика виявляє проблемні SKU та серійних повертачів. Модель інтегрується з чекаутом, OMS та складськими системами і безперервно перенавчається на результатах повернень.",
+    resultQuoteEn:
+      "Retailers reduce returns by 34%, save £2.1M annually in reverse-logistics and write-off costs, and improve net margin per order through point-of-purchase interventions and SKU-level insight.",
+    resultQuoteUk:
+      "Ритейлери скорочують повернення на 34%, заощаджують £2.1M щороку на зворотній логістиці та списаннях і покращують чисту маржу на замовлення завдяки втручанням у момент покупки та інсайтам на рівні SKU.",
+    metaTitleEn: "E-commerce Returns Prediction ML | Codeworth",
+    metaTitleUk: "Прогнозування повернень e-commerce ML | Codeworth",
+    metaDescriptionEn:
+      "Ensemble ML for e-commerce returns prediction. Returns −34%, £2.1M saved. Real-time checkout interventions. Codeworth.",
+    metaDescriptionUk:
+      "Ансамблеве ML для прогнозу повернень e-commerce. Повернення −34%, заощаджено £2.1M. Втручання на чекауті. Codeworth.",
+    relatedPortfolio: ["churn-prediction-saas", "ai-chatbot-saas"],
+    relatedServices: ["machine-learning", "predictive-analytics"],
+    relatedExtras: ["personalisation-engine", "supply-chain-analytics"],
+  },
+  {
+    slug: "ma-document-due-diligence-nlp",
+    titleEn: "M&A Due Diligence with NLP Document Analysis",
+    titleUk: "Due diligence M&A з NLP-аналізом документів",
+    category: "ai",
+    icon: "📋",
+    whoEn: "UK law firms, corporate M&A teams, private equity legal counsel",
+    whoUk: "UK юридичні фірми, корпоративні M&A команди, юрисконсульти приватного капіталу",
+    problemEn:
+      "M&A due diligence requires associates to manually review thousands of contracts in a data room — leases, supplier agreements, employment terms, and change-of-control clauses — under intense deal timelines. Manual review is slow, expensive at partner-leverage rates, and error-prone: a missed change-of-control or indemnity clause can derail a transaction or create post-completion liability worth far more than the legal fee.",
+    problemUk:
+      "Due diligence M&A вимагає від асоційованих юристів ручного перегляду тисяч контрактів у дата-румі — оренди, угоди з постачальниками, умови працевлаштування та положення про зміну контролю — у стислі строки угоди. Ручний перегляд повільний, дорогий за ставками партнерського важеля та схильний до помилок: пропущене положення про зміну контролю чи відшкодування може зірвати угоду або створити відповідальність після завершення, що коштує значно більше за гонорар.",
+    solutionEn:
+      "We build a due diligence platform powered by a fine-tuned Legal-BERT model with named entity recognition that ingests the entire data room, classifies documents, extracts key clauses and obligations, and flags red-flag provisions such as change-of-control, assignment, and unusual indemnities. Findings populate a structured issues list with source citations, and every extraction links back to the exact clause for lawyer verification under SRA-compliant supervision.",
+    solutionUk:
+      "Ми будуємо платформу due diligence на основі донавченої моделі Legal-BERT з розпізнаванням іменованих сутностей, яка приймає весь дата-рум, класифікує документи, витягує ключові положення й зобов'язання та позначає тривожні положення на кшталт зміни контролю, відступлення та незвичних відшкодувань. Знахідки наповнюють структурований список питань з посиланнями на джерела, а кожне витягання повертається до точного положення для перевірки юристом під наглядом, що відповідає SRA.",
+    resultQuoteEn:
+      "Firms cut due diligence review time by 78% and save an average of £180K in associate hours per deal, while improving consistency and dramatically reducing the risk of missed material clauses.",
+    resultQuoteUk:
+      "Фірми скорочують час перегляду due diligence на 78% та заощаджують у середньому £180K годин асоційованих юристів на угоду, водночас покращуючи узгодженість та різко знижуючи ризик пропущених істотних положень.",
+    metaTitleEn: "M&A Due Diligence NLP | Legal-BERT Contract Review | Codeworth",
+    metaTitleUk: "Due diligence M&A NLP | Перегляд контрактів Legal-BERT | Codeworth",
+    metaDescriptionEn:
+      "Legal-BERT + NER for M&A due diligence. Review time −78%, £180K saved per deal. SRA-compliant with citations. Codeworth.",
+    metaDescriptionUk:
+      "Legal-BERT + NER для due diligence M&A. Час перегляду −78%, заощаджено £180K на угоду. Відповідає SRA з цитуванням. Codeworth.",
+    relatedPortfolio: ["ai-chatbot-saas", "fraud-detection-bank"],
+    relatedServices: ["nlp", "machine-learning"],
+    relatedExtras: ["doc-intelligence", "legal-rag"],
+  },
+  {
+    slug: "content-recommendation-streaming-ml",
+    titleEn: "Content Recommendation for Streaming Media",
+    titleUk: "Рекомендації контенту для стрімінгових медіа",
+    category: "ai",
+    icon: "🎬",
+    whoEn: "UK streaming platforms, broadcasters, video-on-demand services",
+    whoUk: "UK стрімінгові платформи, мовники, відео-на-вимогу сервіси",
+    problemEn:
+      "Streaming platforms compete for attention against deep-pocketed global rivals, yet generic chronological or popularity-based menus bury relevant titles and drive subscribers to scroll, disengage, and ultimately churn. Cold-start problems plague new content and new users, catalogue investment is wasted when great titles go undiscovered, and editorial curation alone cannot personalise at the scale of a modern catalogue.",
+    problemUk:
+      "Стрімінгові платформи конкурують за увагу з глобальними суперниками з глибокими кишенями, але загальні хронологічні чи популярнісні меню ховають релевантні тайтли й змушують підписників гортати, втрачати інтерес і зрештою відпливати. Проблеми холодного старту переслідують новий контент і нових користувачів, інвестиції в каталог марнуються, коли чудові тайтли залишаються невідкритими, а сама лише редакційна курація не може персоналізувати в масштабі сучасного каталогу.",
+    solutionEn:
+      "We build a hybrid recommender that blends collaborative filtering, content-based embeddings from metadata and viewing behaviour, and contextual signals such as time of day and device. Two-tower neural retrieval handles scale, a ranking model orders candidates per user, and content-based fallbacks solve cold-start for new titles and viewers. The system runs A/B-tested rows in the UI and is fully GDPR-compliant in its handling of viewing data.",
+    solutionUk:
+      "Ми будуємо гібридний рекомендатор, що поєднує колаборативну фільтрацію, контентні embedding-ознаки з метаданих та поведінки перегляду й контекстні сигнали на кшталт часу доби та пристрою. Двобаштовий нейронний retrieval обробляє масштаб, ранжувальна модель упорядковує кандидатів для кожного користувача, а контентні fallback-и вирішують холодний старт для нових тайтлів та глядачів. Система працює з A/B-тестованими рядами в UI та повністю відповідає GDPR у обробці даних перегляду.",
+    resultQuoteEn:
+      "Platforms see watch time rise by 47%, content discovery from the long tail improve markedly, and subscriber retention strengthen as personalised rows replace generic menus.",
+    resultQuoteUk:
+      "Платформи бачать зростання часу перегляду на 47%, помітне покращення відкриття контенту з довгого хвоста та зміцнення утримання підписників, коли персоналізовані ряди замінюють загальні меню.",
+    metaTitleEn: "Streaming Content Recommendation ML | Codeworth",
+    metaTitleUk: "Рекомендації стрімінгового контенту ML | Codeworth",
+    metaDescriptionEn:
+      "Hybrid recommender for streaming media. Watch time +47%, long-tail discovery, cold-start solved. GDPR-compliant. Codeworth.",
+    metaDescriptionUk:
+      "Гібридний рекомендатор для стрімінгу. Час перегляду +47%, відкриття довгого хвоста, холодний старт вирішено. GDPR. Codeworth.",
+    relatedPortfolio: ["churn-prediction-saas", "ai-chatbot-saas"],
+    relatedServices: ["machine-learning", "artificial-intelligence"],
+    relatedExtras: ["personalisation-engine", "crm-ml-sync"],
+  },
+  {
+    slug: "warehouse-slot-optimisation-ml",
+    titleEn: "Warehouse Slot Optimisation with Reinforcement Learning",
+    titleUk: "Оптимізація слотів складу з навчанням з підкріпленням",
+    category: "ai",
+    icon: "🏭",
+    whoEn: "UK logistics operators, 3PL providers, e-commerce fulfilment centres",
+    whoUk: "UK логістичні оператори, 3PL-провайдери, центри фулфілменту e-commerce",
+    problemEn:
+      "Warehouse picking is the single largest labour cost in fulfilment, and static slotting plans quickly go stale as demand patterns shift seasonally and promotionally. Fast-moving SKUs end up in distant locations while slow movers occupy prime golden-zone slots, inflating walking distance, slowing order throughput, and capping the number of orders a workforce can fulfil during peak periods like Black Friday.",
+    problemUk:
+      "Комплектація на складі — найбільша окрема трудова витрата у фулфілменті, а статичні плани слотингу швидко застарівають, коли патерни попиту змінюються сезонно й через промоції. Швидкооборотні SKU опиняються у віддалених локаціях, тоді як повільні займають преміальні слоти золотої зони, роздуваючи відстань ходіння, сповільнюючи пропускну здатність замовлень і обмежуючи кількість замовлень, які робоча сила може виконати в пікові періоди на кшталт Чорної п'ятниці.",
+    solutionEn:
+      "We build a reinforcement learning engine for dynamic slotting that continuously re-optimises SKU placement based on velocity, affinity, and order-line co-occurrence. The RL agent learns a placement policy that minimises expected pick travel under warehouse constraints, recommends re-slotting moves the operations team can action, and adapts automatically to seasonal and promotional demand shifts. It integrates with the WMS and runs against a digital twin before any physical change.",
+    solutionUk:
+      "Ми будуємо рушій навчання з підкріпленням для динамічного слотингу, що безперервно переоптимізує розміщення SKU на основі швидкості, спорідненості та спільної появи в рядках замовлень. RL-агент навчається політики розміщення, яка мінімізує очікуваний шлях комплектації за обмежень складу, рекомендує переслотингові переміщення, які може виконати операційна команда, та автоматично адаптується до сезонних і промоційних зрушень попиту. Він інтегрується з WMS і працює проти цифрового двійника перед будь-якою фізичною зміною.",
+    resultQuoteEn:
+      "Operators cut picking travel time by 24%, lift order throughput per shift, and absorb peak demand with the same workforce through continuously optimised, demand-aware slotting.",
+    resultQuoteUk:
+      "Оператори скорочують час ходіння при комплектації на 24%, підвищують пропускну здатність замовлень за зміну та поглинають піковий попит тією ж робочою силою завдяки безперервно оптимізованому слотингу з урахуванням попиту.",
+    metaTitleEn: "Warehouse Slot Optimisation ML | RL Slotting | Codeworth",
+    metaTitleUk: "Оптимізація слотів складу ML | RL-слотинг | Codeworth",
+    metaDescriptionEn:
+      "Reinforcement learning for dynamic warehouse slotting. Picking time −24%, throughput up. WMS-integrated. Codeworth.",
+    metaDescriptionUk:
+      "Навчання з підкріпленням для динамічного слотингу складу. Час комплектації −24%, пропускна здатність зросла. Інтеграція з WMS. Codeworth.",
+    relatedPortfolio: ["churn-prediction-saas", "fraud-detection-bank"],
+    relatedServices: ["machine-learning", "predictive-analytics"],
+    relatedExtras: ["supply-chain-analytics", "erp-ml-integration"],
+  },
+  {
+    slug: "b2b-churn-prediction-telecoms-ml",
+    titleEn: "B2B Churn Prediction for Telecommunications",
+    titleUk: "Прогнозування відтоку B2B для телекомунікацій",
+    category: "ai",
+    icon: "📞",
+    whoEn: "UK telecom operators, B2B connectivity providers, account management teams",
+    whoUk: "UK телеком-оператори, B2B-провайдери зв'язку, команди ведення рахунків",
+    problemEn:
+      "B2B telecom contracts carry high lifetime value, but churn signals are scattered across usage records, support tickets, billing disputes, and contract-renewal dates that account managers cannot watch at scale. By the time a business customer gives notice, the renewal window has usually closed, and winning back lost enterprise accounts costs many times more than retaining them. Revenue forecasting suffers because at-risk ARR is invisible until it has already gone.",
+    problemUk:
+      "B2B телеком-контракти мають високу довічну цінність, але сигнали відтоку розкидані по записах використання, тікетах підтримки, платіжних спорах та датах продовження контрактів, які менеджери рахунків не можуть відстежувати в масштабі. Доки бізнес-клієнт подасть повідомлення, вікно продовження зазвичай уже закрите, а повернення втрачених корпоративних рахунків коштує в рази більше за їх утримання. Прогнозування доходу страждає, бо ARR під ризиком невидимий, доки вже не зник.",
+    solutionEn:
+      "We build a churn prediction system combining survival analysis with gradient boosting on usage, support, billing, and contract features to estimate both whether and when each B2B account is likely to leave. The model outputs time-to-churn risk scores, ranks accounts for proactive intervention, and surfaces the top drivers per account so account managers can act with a targeted retention offer well inside the renewal window.",
+    solutionUk:
+      "Ми будуємо систему прогнозування відтоку, що поєднує survival analysis з gradient boosting на ознаках використання, підтримки, білінгу та контрактів для оцінки як того, чи піде кожен B2B-рахунок, так і коли. Модель видає оцінки ризику часу до відтоку, ранжує рахунки для проактивного втручання та виявляє ключові драйвери для кожного рахунку, щоб менеджери діяли з націленою пропозицією утримання задовго до закриття вікна продовження.",
+    resultQuoteEn:
+      "Operators reduce B2B churn by 44% and protect £3.8M in annual recurring revenue through time-to-churn scoring that lets account teams intervene before the renewal window closes.",
+    resultQuoteUk:
+      "Оператори скорочують B2B-відтік на 44% та захищають £3.8M річного регулярного доходу завдяки оцінці часу до відтоку, що дозволяє командам рахунків втрутитися до закриття вікна продовження.",
+    metaTitleEn: "B2B Telecom Churn Prediction ML | Codeworth",
+    metaTitleUk: "Прогнозування B2B-відтоку телеком ML | Codeworth",
+    metaDescriptionEn:
+      "Survival analysis + gradient boosting for B2B telecom churn. Churn −44%, £3.8M ARR protected. Codeworth.",
+    metaDescriptionUk:
+      "Survival analysis + gradient boosting для B2B-відтоку телеком. Відтік −44%, захищено £3.8M ARR. Codeworth.",
+    relatedPortfolio: ["churn-prediction-saas", "fraud-detection-bank"],
+    relatedServices: ["machine-learning", "predictive-analytics"],
+    relatedExtras: ["crm-ml-sync", "ml-explainability"],
+  },
+  {
+    slug: "complaints-nlp-fca-triage-ml",
+    titleEn: "FCA Complaints NLP Triage for Financial Services",
+    titleUk: "NLP-тріаж скарг FCA для фінансових послуг",
+    category: "ai",
+    icon: "💬",
+    whoEn: "UK banks, insurers, lenders, financial services complaints teams",
+    whoUk: "UK банки, страховики, кредитори, команди скарг фінансових послуг",
+    problemEn:
+      "FCA rules impose strict deadlines and DISP handling requirements on complaints, yet inbound complaints arrive as unstructured text across email, web forms, and call transcripts. Manual triage is slow and inconsistent, urgent vulnerable-customer cases can sit in a queue, misrouting wastes specialist time, and breaching the eight-week deadline or mishandling a vulnerable customer risks FCA censure and Financial Ombudsman referrals.",
+    problemUk:
+      "Правила FCA встановлюють жорсткі строки та вимоги обробки DISP до скарг, але вхідні скарги надходять як неструктурований текст через email, вебформи та транскрипти дзвінків. Ручний тріаж повільний і непослідовний, термінові кейси вразливих клієнтів можуть лежати в черзі, неправильна маршрутизація марнує час спеціалістів, а порушення восьмитижневого строку чи неналежна обробка вразливого клієнта ризикує осудом FCA та зверненнями до Фінансового омбудсмена.",
+    solutionEn:
+      "We build a multi-class NLP triage engine that classifies each complaint by product, root cause, and DISP category, scores urgency, and detects vulnerable-customer and potential-redress signals from the text. Complaints are auto-routed to the right specialist team with a priority and suggested deadline, while a dashboard tracks FCA timeliness across the portfolio. The model is explainable and auditable for FCA and internal compliance review.",
+    solutionUk:
+      "Ми будуємо багатокласовий NLP-рушій тріажу, що класифікує кожну скаргу за продуктом, кореневою причиною та категорією DISP, оцінює терміновість і виявляє сигнали вразливого клієнта та потенційної компенсації з тексту. Скарги автоматично маршрутизуються до правильної команди спеціалістів з пріоритетом та запропонованим строком, тоді як дашборд відстежує своєчасність FCA по портфелю. Модель пояснювана й аудитована для перевірки FCA та внутрішнього комплаєнсу.",
+    resultQuoteEn:
+      "Firms reduce manual triage effort by 67%, achieve 94% routing accuracy, and improve FCA deadline compliance through automatic urgency scoring and vulnerable-customer detection.",
+    resultQuoteUk:
+      "Фірми скорочують ручний тріаж на 67%, досягають 94% точності маршрутизації та покращують дотримання строків FCA завдяки автоматичній оцінці терміновості та виявленню вразливих клієнтів.",
+    metaTitleEn: "FCA Complaints NLP Triage | Financial Services | Codeworth",
+    metaTitleUk: "NLP-тріаж скарг FCA | Фінансові послуги | Codeworth",
+    metaDescriptionEn:
+      "Multi-class NLP + urgency scoring for FCA complaints triage. Manual effort −67%, 94% routing accuracy. DISP-aligned. Codeworth.",
+    metaDescriptionUk:
+      "Багатокласове NLP + оцінка терміновості для тріажу скарг FCA. Ручна праця −67%, 94% точність. Відповідає DISP. Codeworth.",
+    relatedPortfolio: ["fraud-detection-bank", "ai-chatbot-saas"],
+    relatedServices: ["nlp", "machine-learning"],
+    relatedExtras: ["doc-intelligence", "compliance-audit-trail"],
+  },
+  {
+    slug: "causal-ml-marketing-attribution",
+    titleEn: "Causal ML Marketing Attribution",
+    titleUk: "Causal ML атрибуція маркетингу",
+    category: "ai",
+    icon: "📊",
+    whoEn: "UK e-commerce brands, marketing teams, growth and performance marketers",
+    whoUk: "UK e-commerce бренди, маркетингові команди, growth та performance маркетологи",
+    problemEn:
+      "Last-click and rules-based attribution systematically misallocate marketing budget by crediting whichever channel happened to be touched last, while correlational mix models confuse activity with causation. With third-party cookies disappearing and budgets under pressure, marketers cannot tell which spend actually causes incremental sales versus which would have converted anyway, so high-performing channels are starved and vanity channels are over-funded.",
+    problemUk:
+      "Атрибуція за останнім кліком та правилами систематично неправильно розподіляє маркетинговий бюджет, приписуючи заслугу тому каналу, до якого випадково торкнулися востаннє, тоді як кореляційні mix-моделі плутають активність із причинністю. Зі зникненням сторонніх cookie та тиском на бюджети маркетологи не можуть сказати, які витрати справді спричиняють інкрементальні продажі, а які конвертували б усе одно, тож високоефективні канали голодують, а марнославні канали переінвестуються.",
+    solutionEn:
+      "We build a causal attribution system using causal forests (the grf framework) and geo-based experiments to estimate the true incremental effect of each channel and campaign rather than mere correlation. The model produces heterogeneous treatment effects by segment, powers budget-reallocation recommendations toward genuinely incremental spend, and is validated against holdout geo-experiments so finance can trust the numbers in a cookieless world.",
+    solutionUk:
+      "Ми будуємо систему причинної атрибуції з використанням causal forests (фреймворк grf) та гео-експериментів для оцінки справжнього інкрементального ефекту кожного каналу й кампанії замість простої кореляції. Модель видає гетерогенні ефекти впливу за сегментами, живить рекомендації перерозподілу бюджету в бік справді інкрементальних витрат і валідується проти holdout гео-експериментів, тож фінанси можуть довіряти цифрам у світі без cookie.",
+    resultQuoteEn:
+      "Brands improve marketing ROI by 34% by shifting budget toward genuinely incremental channels, with causal estimates validated against geo-experiments rather than last-click guesswork.",
+    resultQuoteUk:
+      "Бренди покращують маркетинговий ROI на 34%, переміщуючи бюджет до справді інкрементальних каналів, причому причинні оцінки валідовані проти гео-експериментів, а не здогадок за останнім кліком.",
+    metaTitleEn: "Causal ML Marketing Attribution | Causal Forest | Codeworth",
+    metaTitleUk: "Causal ML атрибуція маркетингу | Causal Forest | Codeworth",
+    metaDescriptionEn:
+      "Causal forest (grf) + geo-experiments for marketing attribution. Marketing ROI +34%. Cookieless, incrementality-validated. Codeworth.",
+    metaDescriptionUk:
+      "Causal forest (grf) + гео-експерименти для атрибуції маркетингу. ROI +34%. Без cookie, валідовано інкрементальність. Codeworth.",
+    relatedPortfolio: ["churn-prediction-saas", "ai-chatbot-saas"],
+    relatedServices: ["machine-learning", "predictive-analytics"],
+    relatedExtras: ["personalisation-engine", "crm-ml-sync"],
+  },
 ];
 
 export const USE_CASE_CATEGORY_LABELS: Record<

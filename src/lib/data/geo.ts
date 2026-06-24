@@ -87,21 +87,21 @@ export const GEO_CITIES: GeoCity[] = [
     populationEn: "2.9 million",
     businesses: 145000,
     description:
-      "Манчестер — другий за величиною технологічний хаб Великобританії з активно зростаючою AI-екосистемою. Тут базуються великі рітейлери, фінтех-компанії та виробничі підприємства. ML-рішення для манчестерського бізнесу охоплюють demand forecasting для рітейлу, predictive maintenance для виробництва та churn prediction для SaaS-компаній.",
+      "Манчестер — другий за величиною технологічний хаб Великобританії з активно зростаючою AI-екосистемою. Auto Trader будує ML для оцінки вартості авто та рекомендацій, Co-op застосовує машинне навчання для рітейлу і логістики, TalkTalk — для прогнозу відтоку в телекомі, а Університет Манчестера є провідним ML-дослідницьким центром. NHS Greater Manchester впроваджує клінічний ML по всьому регіону. Codeworth розробляє production ML для манчестерського бізнесу за ставками на 30–40% нижчими за лондонські.",
     descriptionEn:
-      "Manchester is the UK's second-largest tech hub with a rapidly growing AI ecosystem anchored by major retailers, fintech firms, and manufacturing companies. The city's mix of retail, manufacturing, and financial services creates strong demand for demand forecasting, predictive maintenance, and fraud detection ML. Codeworth delivers production ML for Manchester businesses at rates 30–40% below London equivalents.",
-    seoTitle: "ML-консалтинг у Манчестері | Машинне навчання для рітейлу | Codeworth",
-    seoTitleEn: "Machine Learning Consultant Manchester | ML Agency | Codeworth",
+      "Manchester is the UK's second-largest tech hub with a rapidly growing AI ecosystem. Auto Trader builds ML for vehicle valuation and recommendations, the Co-op applies machine learning across retail and supply chain, TalkTalk uses ML for telecom churn prediction, and the University of Manchester is a leading ML research centre. NHS Greater Manchester deploys clinical ML across the region. Codeworth delivers production ML for Manchester businesses at rates 30–40% below London equivalents.",
+    seoTitle: "ML Consultancy Manchester | Machine Learning Agency | Codeworth",
+    seoTitleEn: "ML Consultancy Manchester | Machine Learning Agency | Codeworth",
     seoDesc:
-      "Машинне навчання у Манчестері: demand forecasting, predictive maintenance, fraud detection. Від £4,000. Codeworth.",
+      "ML-консалтинг у Манчестері: retail ML (Auto Trader, Co-op), telecom churn (TalkTalk), NHS GM clinical AI. Від £4,000. Codeworth.",
     seoDescEn:
-      "Machine learning consultant Manchester: demand forecasting, predictive maintenance, churn prediction. From £4,000. Codeworth ML agency.",
+      "ML consultancy Manchester: retail ML (Auto Trader, Co-op), telecom churn (TalkTalk), NHS Greater Manchester clinical AI. From £4,000. Codeworth.",
     stats: [
-      { label: "Tech-компаній", labelEn: "Tech companies", value: "12,000+" },
-      { label: "Рітейл-підприємств", labelEn: "Retail businesses", value: "10,200+" },
-      { label: "Виробничих підприємств", labelEn: "Manufacturing firms", value: "3,840+" },
+      { label: "Tech- та рітейл-компаній", labelEn: "Tech & retail companies", value: "12,000+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "9,800+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "560+" },
       { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£66k" },
-      { label: "Зростання AI-сектору (2р)", labelEn: "AI sector growth (2yr)", value: "+41%" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "13+" },
     ],
     faq: [
       {
@@ -117,16 +117,16 @@ export const GEO_CITIES: GeoCity[] = [
         aEn: "Manchester ML consulting is 20–30% cheaper than London. Our fixed-price packages start from £4,000 for a PoC up to £25,000 for a production MLOps system with drift monitoring.",
       },
       {
-        q: "Чи маєте ви досвід з манчестерськими рітейлерами?",
-        qEn: "Do you have experience with Manchester retailers?",
-        a: "Так. Ми розробляли demand forecasting та personalisation ML для UK e-commerce та multi-location retail. Стек: XGBoost + Prophet для прогнозування, collaborative filtering для рекомендацій.",
-        aEn: "Yes. We have built demand forecasting and personalisation ML for UK e-commerce and multi-location retail. Stack: XGBoost + Prophet for forecasting, collaborative filtering for personalisation.",
+        q: "Чи маєте ви досвід з манчестерськими рітейлерами на кшталт Co-op та Auto Trader?",
+        qEn: "Do you have experience with Manchester retailers like Co-op and Auto Trader?",
+        a: "Так. Ми розробляли demand forecasting та personalisation ML для UK e-commerce і multi-location retail — задачі, близькі до Co-op (логістика, прогноз попиту) та Auto Trader (оцінка вартості, рекомендації). Стек: XGBoost + Prophet для прогнозування, collaborative filtering та gradient boosting для рекомендацій і pricing.",
+        aEn: "Yes. We have built demand forecasting and personalisation ML for UK e-commerce and multi-location retail — close to Co-op (supply chain, demand) and Auto Trader (valuation, recommendations) use cases. Stack: XGBoost + Prophet for forecasting, collaborative filtering and gradient boosting for recommendations and pricing.",
       },
       {
-        q: "Як довго займає ML-проєкт для виробничого підприємства у Манчестері?",
-        qEn: "How long does an ML project take for a Manchester manufacturing firm?",
-        a: "Базовий predictive maintenance PoC — 4–5 тижнів. Повноцінна система з SCADA-інтеграцією та MLOps — 10–14 тижнів.",
-        aEn: "A baseline predictive maintenance PoC takes 4–5 weeks. A full system with SCADA integration and MLOps pipeline takes 10–14 weeks.",
+        q: "Чи можете ви будувати churn prediction для телеком-компаній на кшталт TalkTalk?",
+        qEn: "Can you build churn prediction for telecom firms like TalkTalk?",
+        a: "Так. Для телекому ми будуємо churn prediction (60-денне попередження) на даних usage, billing та support-тикетів, next-best-action для retention та network anomaly detection. Типовий результат — відтік −25–30%. Стек: gradient boosting + survival models.",
+        aEn: "Yes. For telecom we build churn prediction (60-day early warning) on usage, billing, and support-ticket data, next-best-action for retention, and network anomaly detection — close to TalkTalk-scale use cases. Typical result: churn −25–30%. Stack: gradient boosting + survival models.",
       },
       {
         q: "Чи підтримуєте ви моделі після запуску?",
@@ -146,52 +146,52 @@ export const GEO_CITIES: GeoCity[] = [
     populationEn: "2.6 million",
     businesses: 95000,
     description:
-      "Бірмінгем — провідний промисловий та фінансовий центр Мідлендсу з великими виробничими підприємствами, автомобільними компаніями, фінансовими інститутами та зростаючим SaaS-сектором. ML-застосування охоплюють predictive maintenance для промислових підприємств, fraud detection для фінансових компаній та demand forecasting для рітейлу.",
+      "Бірмінгем — серце автомобільної промисловості Великобританії та потужний фінансовий центр Мідлендсу. Jaguar Land Rover активно впроваджує ML для контролю якості та оптимізації виробництва, HSBC та Lloyds мають великі аналітичні хаби в місті, а NHS University Hospitals Birmingham є одним із найбільших NHS Trust у країні. Codeworth розробляє ML-рішення для бірмінгемських автовиробників, банків та NHS з урахуванням специфіки кожного сектору.",
     descriptionEn:
-      "Birmingham is the Midlands' leading industrial and financial centre, home to major automotive manufacturers, engineering firms, and financial institutions including HSBC UK and Deutsche Bank. The city's manufacturing heritage creates strong demand for predictive maintenance, quality control CV, and process optimisation ML. Codeworth helps Birmingham businesses deploy ML without hiring full in-house data science teams.",
-    seoTitle: "ML-консалтинг у Бірмінгемі | Машинне навчання для виробництва | Codeworth",
-    seoTitleEn: "Machine Learning Consultant Birmingham | ML Agency | Codeworth",
+      "Birmingham is the heart of UK automotive manufacturing and a major Midlands financial centre. Jaguar Land Rover actively deploys ML for quality control, battery health monitoring, and supply chain optimisation. HSBC UK and Lloyds Banking Group operate large analytics hubs in the city, and NHS University Hospitals Birmingham is one of the UK's largest NHS Trusts. Codeworth builds production ML for Birmingham's automotive, banking, and healthcare sectors without the overhead of a full in-house data science team.",
+    seoTitle: "ML-консалтинг у Бірмінгемі | Машинне навчання для автомобільної галузі | Codeworth",
+    seoTitleEn: "ML Consultancy Birmingham | Machine Learning Agency | Codeworth",
     seoDesc:
-      "Машинне навчання у Бірмінгемі: predictive maintenance, fraud detection, NLP. Від £4,000. Codeworth.",
+      "ML-консалтинг у Бірмінгемі: Jaguar Land Rover automotive ML, HSBC banking AI, NHS healthcare ML. Від £4,000. Codeworth.",
     seoDescEn:
-      "Machine learning consultant Birmingham: predictive maintenance, fraud detection, demand forecasting. From £4,000. Codeworth.",
+      "ML consultancy Birmingham: automotive ML, banking fraud detection, NHS clinical AI. JLR, HSBC, Lloyds supply chain. From £4,000. Codeworth.",
     stats: [
-      { label: "Виробничих підприємств", labelEn: "Manufacturing firms", value: "6,250+" },
-      { label: "Фінансових компаній", labelEn: "Financial companies", value: "3,350+" },
+      { label: "Автомобільних компаній (регіон)", labelEn: "Automotive companies (region)", value: "2,800+" },
+      { label: "Data scientists у місті", labelEn: "Data scientists in the city", value: "8,400+" },
       { label: "Tech-стартапів", labelEn: "Tech startups", value: "2,300+" },
       { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£62k" },
-      { label: "Зростання digital-сектора", labelEn: "Digital sector growth (2yr)", value: "+34%" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "12+" },
     ],
     faq: [
       {
-        q: "Які ML-рішення потрібні бірмінгемському виробництву?",
-        qEn: "What ML solutions do Birmingham manufacturing firms need?",
-        a: "Найпопулярніші: predictive maintenance (прогноз відмов по сенсорних даних), computer vision для контролю якості (виявлення дефектів на конвеєрі), та process optimisation ML для зниження браку.",
-        aEn: "Most popular: predictive maintenance (equipment failure prediction from sensor data), computer vision for quality control (defect detection on production lines), and process optimisation ML to reduce scrap rates and energy consumption.",
+        q: "Чи є у вас досвід ML для Jaguar Land Rover та їх постачальників?",
+        qEn: "Do you have ML experience for Jaguar Land Rover and their suppliers?",
+        a: "Так. Ми будуємо ML для автомобільного виробництва: predictive maintenance з LSTM-автоенкодерами на вібраційних і температурних даних, computer vision для QC зварних швів та фарбування (YOLOv8), EV battery health monitoring та demand forecasting для ланцюга постачання. Досвід SCADA/OPC-UA інтеграцій.",
+        aEn: "Yes. We build ML for automotive manufacturing: predictive maintenance with LSTM autoencoders on vibration and temperature data, computer vision for weld and paint QC (YOLOv8), EV battery health monitoring, and supply chain demand forecasting. Experience with SCADA/OPC-UA integrations relevant to JLR-tier suppliers.",
       },
       {
-        q: "Чи є у вас досвід з автомобільним виробництвом?",
-        qEn: "Do you have automotive manufacturing experience?",
-        a: "Так. Ми розробляли ML для виробничих підприємств із SCADA-інтеграцією (Ignition, Siemens SIMATIC), OPC-UA endpoints та CMMS. Стек: LSTM Autoencoder для аномалій, YOLOv8 для CV-контролю якості.",
-        aEn: "Yes. We have built ML for manufacturing plants with SCADA integration (Ignition, Siemens SIMATIC), OPC-UA endpoints, and CMMS. Stack: LSTM Autoencoder for anomaly detection, YOLOv8 for computer vision quality control.",
+        q: "Які ML-рішення потрібні HSBC та Lloyds у Бірмінгемі?",
+        qEn: "What ML solutions do HSBC and Lloyds operations in Birmingham need?",
+        a: "Великі банки та їх партнери потребують: fraud detection з XGBoost+SHAP (FCA SS1/23 compliant), credit scoring на альтернативних даних, NLP для автоматизації compliance документів, churn prediction для роздрібних клієнтів та AML transaction monitoring. Всі рішення — з Model Risk Management документацією.",
+        aEn: "Large bank operations and their partners need: fraud detection with XGBoost+SHAP (FCA SS1/23 compliant), credit scoring on alternative data, NLP for compliance document automation, retail churn prediction, and AML transaction monitoring. All solutions include Model Risk Management documentation.",
       },
       {
-        q: "Скільки коштує ML для виробництва у Бірмінгемі?",
-        qEn: "How much does manufacturing ML cost in Birmingham?",
-        a: "Базовий predictive maintenance пакет — від £7,000 (5 тижнів). Повна industrial ML система з CV та MLOps — від £25,000 (14 тижнів). PoC-формат для пілотів — від £4,000.",
-        aEn: "Baseline predictive maintenance package starts at £7,000 (5 weeks). Full industrial ML with CV and MLOps starts at £25,000 (14 weeks). PoC format from £4,000.",
+        q: "Скільки коштує ML для NHS University Hospitals Birmingham?",
+        qEn: "How much does ML cost for NHS University Hospitals Birmingham?",
+        a: "Клінічний ML для NHS: PoC від £4,000 (4–6 тижнів). Ключові моделі: patient readmission prediction, A&E demand forecasting, sepsis early warning. Повна NHS-система з DSPT compliance, FHIR R4 та GDPR Article 9 — від £15,000.",
+        aEn: "Clinical ML for NHS: PoC from £4,000 (4–6 weeks). Key models: patient readmission prediction, A&E demand forecasting, sepsis early warning. Full NHS system with DSPT compliance, FHIR R4 integration, and GDPR Article 9 compliance from £15,000.",
       },
       {
-        q: "Як ви інтегруєтесь із застарілими промисловими системами?",
-        qEn: "How do you integrate with legacy industrial systems?",
-        a: "Ми маємо конектори для OSIsoft PI, Wonderware, Ignition, GE Digital та OPC-UA/Modbus ендпойнтів. Для унікальних систем будуємо кастомні ETL-пайплайни без потреби замінювати існуючу інфраструктуру.",
-        aEn: "We have connectors for OSIsoft PI, Wonderware, Ignition, GE Digital, and OPC-UA/Modbus. For unique systems we build custom ETL pipelines — no need to replace existing infrastructure.",
+        q: "Чи підходять ваші ML-рішення для manufacturing SMEs у Бірмінгемі?",
+        qEn: "Are your ML solutions suitable for Birmingham manufacturing SMEs?",
+        a: "Так. Ми маємо пакет для SME: sensor data integration, baseline predictive maintenance, OEE dashboard — від £7,000. Не потребує великої in-house команди. Made Smarter West Midlands гранти можуть покрити до 50% вартості.",
+        aEn: "Yes. We have an SME package: sensor data integration, baseline predictive maintenance, OEE dashboard — from £7,000. No large in-house team required. Made Smarter West Midlands grants can cover up to 50% of the cost.",
       },
       {
-        q: "Чи можна почати з малого пілота?",
-        qEn: "Can we start with a small pilot?",
-        a: "Так, це рекомендований підхід. Спочатку — 4-тижневий PoC на одній виробничій лінії. Після підтвердження ROI — масштабування на весь завод. Ризик мінімальний, вартість початку — від £4,000.",
-        aEn: "Yes, that is our recommended approach. Start with a 4-week PoC on one production line. After confirming ROI, scale to the full plant. Minimal risk, starting cost from £4,000.",
+        q: "Чи можна почати з малого пілота у Бірмінгемі?",
+        qEn: "Can we start with a small pilot in Birmingham?",
+        a: "Так, це рекомендований підхід. 4-тижневий PoC на одному процесі або датасеті — від £4,000. Після підтвердження ROI — масштабування. Безкоштовна discovery-сесія (60 хвилин) для оцінки вашого кейсу.",
+        aEn: "Yes, that is our recommended approach. A 4-week PoC on one process or dataset from £4,000. After confirming ROI, scale to full deployment. Free discovery session (60 minutes) to assess your use case.",
       },
     ],
   },
@@ -205,21 +205,21 @@ export const GEO_CITIES: GeoCity[] = [
     populationEn: "560,000",
     businesses: 32000,
     description:
-      "Единбург — технологічна столиця Шотландії та провідний центр AI-досліджень Великобританії. Місто є домом для Університету Единбурга (один з найвидатніших ML-дослідницьких центрів Європи), великих банків та страхових компаній, а також активної SaaS-екосистеми. ML-застосування особливо сильні у фінансових послугах, страхуванні та охороні здоров'я.",
+      "Единбург — технологічна столиця Шотландії та провідний центр AI-досліджень Великобританії. RBS/NatWest і Standard Life будують ML для ризик-скорингу й fraud detection, Skyscanner застосовує машинне навчання для ранжування і прогнозу цін, Amazon має dev-центр у місті, а Університет Единбурга і Robotics Lab при Heriot-Watt є провідними ML/робототехнічними центрами Європи. Codeworth розробляє ML для фінансових послуг, travel-tech і NHS Scotland.",
     descriptionEn:
-      "Edinburgh is Scotland's tech capital and one of the UK's leading AI research hubs, home to the University of Edinburgh — one of Europe's top ML research centres with Alan Turing Institute partnerships. Major financial institutions including NatWest and Standard Life Aberdeen base significant data operations here. The city's blend of financial services, NHS Scotland, and a vibrant SaaS startup scene creates diverse ML demand.",
-    seoTitle: "ML-консалтинг в Единбурзі | Машинне навчання для фінансів | Codeworth",
-    seoTitleEn: "Machine Learning Consultant Edinburgh | ML Agency Scotland | Codeworth",
+      "Edinburgh is Scotland's tech capital and one of the UK's leading AI research hubs. RBS/NatWest and Standard Life build ML for risk scoring and fraud detection, Skyscanner applies machine learning to ranking and price prediction, Amazon runs a development centre in the city, and the University of Edinburgh and the Robotics Lab at Heriot-Watt are among Europe's top ML and robotics centres. Codeworth delivers ML for financial services, travel-tech, and NHS Scotland.",
+    seoTitle: "ML Consultancy Edinburgh | Machine Learning Agency | Codeworth",
+    seoTitleEn: "ML Consultancy Edinburgh | Machine Learning Agency | Codeworth",
     seoDesc:
-      "Машинне навчання в Единбурзі: фінансові послуги, NHS Scotland, SaaS. Від £4,000. Codeworth.",
+      "ML-консалтинг в Единбурзі: banking (RBS/NatWest), Standard Life, travel ML (Skyscanner), Heriot-Watt robotics. Від £4,000. Codeworth.",
     seoDescEn:
-      "Machine learning consultant Edinburgh: financial services, NHS Scotland, SaaS ML. From £4,000. Codeworth ML agency.",
+      "ML consultancy Edinburgh: banking (RBS/NatWest), Standard Life, travel ML (Skyscanner), Heriot-Watt robotics. From £4,000. Codeworth.",
     stats: [
-      { label: "Фінансових компаній", labelEn: "Financial companies", value: "1,700+" },
-      { label: "Дослідницьких інститутів", labelEn: "Research institutes", value: "14" },
-      { label: "Tech-компаній", labelEn: "Tech companies", value: "5,400+" },
+      { label: "Фінансових і tech-компаній", labelEn: "Finance & tech companies", value: "7,100+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "8,200+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "480+" },
       { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£70k" },
-      { label: "AI-патентів від унів.", labelEn: "AI patents from local unis", value: "290+" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "12+" },
     ],
     faq: [
       {
@@ -241,16 +241,16 @@ export const GEO_CITIES: GeoCity[] = [
         aEn: "Edinburgh rates are 15–25% below London. Fixed-price packages: PoC from £4,000 (4–6 weeks), production ML system from £12,000–£30,000.",
       },
       {
-        q: "Чи підходять ваші рішення для edinburgh-based insurance firms?",
-        qEn: "Are your solutions suitable for Edinburgh insurance firms?",
-        a: "Так. Для страхових компаній ми будуємо: actuarial ML для прогнозу збитків, fraud detection для страхових претензій, NLP для обробки claims. Всі рішення включають Solvency II/FCA Conduct Risk документацію.",
-        aEn: "Yes. For insurance firms we build: actuarial ML for loss prediction, claims fraud detection, NLP for automated claims processing. All solutions include Solvency II and FCA Conduct Risk documentation.",
+        q: "Чи підходять ваші рішення для travel-tech на кшталт Skyscanner та для Amazon dev-центру?",
+        qEn: "Are your solutions suitable for travel-tech like Skyscanner and Amazon's Edinburgh dev centre?",
+        a: "Так. Для travel-tech (Skyscanner) — learning-to-rank для пошуку, price-prediction моделі, demand forecasting та personalisation. Для масштабних dev-команд на кшталт Amazon — production MLOps, A/B-евалуація та recommender systems. Плюс actuarial/claims-fraud ML для страховиків Единбурга (Solvency II/FCA).",
+        aEn: "Yes. For travel-tech (Skyscanner) — learning-to-rank for search, price-prediction models, demand forecasting, and personalisation. For large dev teams like Amazon's Edinburgh centre — production MLOps, A/B evaluation, and recommender systems. Plus actuarial/claims-fraud ML for Edinburgh insurers (Solvency II/FCA).",
       },
       {
-        q: "Чи маєте ви зв'язки з Університетом Единбурга?",
-        qEn: "Do you follow research from the University of Edinburgh?",
-        a: "Ми стежимо за ML-дослідженнями University of Edinburgh (School of Informatics) та Alan Turing Institute і впроваджуємо останні academic advances у production-рішення — RAGAS для оцінки RAG-систем, fairness-aware credit scoring тощо.",
-        aEn: "We closely follow ML research from the University of Edinburgh and Alan Turing Institute, incorporating recent advances — including RAGAS for RAG evaluation and fairness-aware credit scoring — into our production implementations.",
+        q: "Чи стежите ви за дослідженнями Університету Единбурга та Robotics Lab при Heriot-Watt?",
+        qEn: "Do you follow research from the University of Edinburgh and the Heriot-Watt Robotics Lab?",
+        a: "Так. Ми стежимо за ML-дослідженнями University of Edinburgh (School of Informatics), Alan Turing Institute та Edinburgh Centre for Robotics при Heriot-Watt і доводимо academic advances до production — RAGAS для оцінки RAG-систем, fairness-aware credit scoring, reinforcement learning для роботики.",
+        aEn: "Yes. We follow ML research from the University of Edinburgh (School of Informatics), the Alan Turing Institute, and the Edinburgh Centre for Robotics at Heriot-Watt, taking academic advances into production — RAGAS for RAG evaluation, fairness-aware credit scoring, and reinforcement learning for robotics.",
       },
     ],
   },
@@ -264,21 +264,21 @@ export const GEO_CITIES: GeoCity[] = [
     populationEn: "470,000",
     businesses: 28000,
     description:
-      "Брістоль — третій за розміром tech-кластер Великобританії після Лондона і Манчестера з особливою силою в аерокосмічному секторі (Airbus, Rolls-Royce, BAE Systems), розвиненою AgriTech-екосистемою та зростаючим SaaS-ринком. ML-застосування охоплюють predictive maintenance для авіаційних компонентів, precision agriculture та MLOps для SaaS.",
+      "Брістоль — третій за розміром tech-кластер Великобританії з особливою силою в аерокосмосі (Airbus UK будує ML для predictive maintenance компонентів), фінтеху (Hargreaves Lansdown застосовує ML для investment-аналітики й fraud detection), медіа (Channel 4) та енергетиці (OVO Energy використовує ML для прогнозу попиту і smart-grid). Університет Брістоля є провідним AI-дослідницьким центром. Codeworth розробляє production ML для брістольського аерокосмосу, фінтеху, медіа та енергетики.",
     descriptionEn:
-      "Bristol is the UK's third-largest tech cluster, with exceptional strength in aerospace (Airbus, Rolls-Royce, BAE Systems), a thriving deep-tech startup scene, and growing AgriTech driven by the South West's agricultural base. ML opportunities span predictive maintenance for aerospace components, precision agriculture for the surrounding region, computer vision for manufacturing quality, and MLOps for SaaS companies.",
-    seoTitle: "ML-консалтинг у Брістолі | Машинне навчання для аерокосмосу | Codeworth",
-    seoTitleEn: "Machine Learning Consultant Bristol | ML Agency South West | Codeworth",
+      "Bristol is the UK's third-largest tech cluster, with exceptional strength in aerospace (Airbus UK builds ML for component predictive maintenance), fintech (Hargreaves Lansdown uses ML for investment analytics and fraud detection), media (Channel 4), and energy (OVO Energy applies ML to demand forecasting and smart-grid optimisation). The University of Bristol is a leading AI research centre. Codeworth delivers production ML for Bristol's aerospace, fintech, media, and energy sectors.",
+    seoTitle: "ML Consultancy Bristol | Machine Learning Agency | Codeworth",
+    seoTitleEn: "ML Consultancy Bristol | Machine Learning Agency | Codeworth",
     seoDesc:
-      "Машинне навчання у Брістолі: аерокосмос, agritech, SaaS ML. Від £4,000. Codeworth.",
+      "ML-консалтинг у Брістолі: aerospace (Airbus), fintech (Hargreaves Lansdown), energy (OVO), Channel 4. Від £4,000. Codeworth.",
     seoDescEn:
-      "Machine learning consultant Bristol: aerospace predictive maintenance, agritech, SaaS ML. From £4,000. Codeworth.",
+      "ML consultancy Bristol: aerospace ML (Airbus), fintech (Hargreaves Lansdown), energy (OVO Energy), Channel 4. From £4,000. Codeworth.",
     stats: [
-      { label: "Аерокосмічних компаній", labelEn: "Aerospace companies", value: "960+" },
-      { label: "Tech-компаній", labelEn: "Tech companies", value: "8,200+" },
-      { label: "AgriTech-стартапів", labelEn: "AgriTech startups", value: "145+" },
+      { label: "Аерокосмічних і фін-компаній", labelEn: "Aerospace & finance companies", value: "1,200+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "7,400+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "560+" },
       { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£67k" },
-      { label: "Deep-tech стартапів", labelEn: "Deep-tech startups", value: "420+" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "10+" },
     ],
     faq: [
       {
@@ -300,10 +300,10 @@ export const GEO_CITIES: GeoCity[] = [
         aEn: "Packages start from £4,000 for a PoC. Predictive maintenance for aerospace from £7,000. Full SaaS ML suite from £18,000.",
       },
       {
-        q: "Чи розробляєте ви AgriTech ML для Південного Заходу Англії?",
-        qEn: "Do you build AgriTech ML for the South West?",
-        a: "Так. Crop yield prediction (Sentinel-2 + погода + ґрунтові сенсори), pest detection (YOLOv8 на дронових знімках), та precision irrigation ML для фермерів Брістоля та навколишнього регіону.",
-        aEn: "Yes. Crop yield prediction (Sentinel-2 + weather + soil sensors), pest detection (YOLOv8 on drone imagery), and precision irrigation ML that cuts input costs by 18% for South West farmers.",
+        q: "Чи будуєте ви ML для фінтеху та енергетики на кшталт Hargreaves Lansdown і OVO Energy?",
+        qEn: "Do you build ML for fintech and energy firms like Hargreaves Lansdown and OVO Energy?",
+        a: "Так. Для інвестиційного фінтеху — fraud detection, портфельна аналітика, churn та NLP для compliance (FCA SS1/23). Для енергетики на кшталт OVO — demand/load forecasting (MAPE <2.5%), smart-meter anomaly detection та tariff-optimisation ML. Університет Брістоля — джерело сильних academic-методів, які ми доводимо до production.",
+        aEn: "Yes. For investment fintech — fraud detection, portfolio analytics, churn, and NLP for compliance (FCA SS1/23), relevant to Hargreaves Lansdown. For energy firms like OVO Energy — demand/load forecasting (MAPE <2.5%), smart-meter anomaly detection, and tariff-optimisation ML. We translate University of Bristol-grade academic methods into production systems.",
       },
       {
         q: "Чи підтримуєте ви моделі після деплою?",
@@ -323,21 +323,21 @@ export const GEO_CITIES: GeoCity[] = [
     populationEn: "1.9 million",
     businesses: 68000,
     description:
-      "Лідс — провідний фінансовий та digital-хаб Йоркширу з розвиненим сектором фінансових послуг. Місто є домом для Асda, Marks & Spencer, Yorkshire Building Society та великих NHS Trust. ML-застосування охоплюють demand forecasting для рітейлерів, fraud detection для банків та credit unions, та clinical ML для NHS West Yorkshire.",
+      "Лідс — провідний фінансовий та digital-хаб Йоркширу і місце розташування штаб-квартири NHS Digital. Asda (HQ) застосовує ML для grocery-forecasting та цін, Yorkshire Bank і Leeds Building Society — для credit scoring і fraud detection, Sky UK має великий dev-центр у місті, а Direct Line будує actuarial та claims-fraud ML. Codeworth розробляє production ML для лідського рітейлу, банків, страховиків і NHS West Yorkshire.",
     descriptionEn:
-      "Leeds is Yorkshire's leading financial and digital hub, home to Asda (HQ), Marks & Spencer IT operations, Yorkshire Building Society, and major NHS Trusts. The city's blend of retail, financial services, and public sector creates strong ML demand across demand forecasting for grocery retail, fraud detection for building societies, and clinical ML for NHS West Yorkshire ICB.",
-    seoTitle: "ML-консалтинг у Лідсі | Машинне навчання для рітейлу та фінансів | Codeworth",
-    seoTitleEn: "Machine Learning Consultant Leeds | ML Agency Yorkshire | Codeworth",
+      "Leeds is Yorkshire's leading financial and digital hub and the home of NHS Digital's headquarters. Asda (HQ) applies ML to grocery demand forecasting and pricing, Yorkshire Bank and Leeds Building Society use ML for credit scoring and fraud detection, Sky UK runs a large development centre in the city, and Direct Line builds actuarial and claims-fraud ML. Codeworth delivers production ML for Leeds retail, banking, insurance, and NHS West Yorkshire ICB.",
+    seoTitle: "ML Consultancy Leeds | Machine Learning Agency | Codeworth",
+    seoTitleEn: "ML Consultancy Leeds | Machine Learning Agency | Codeworth",
     seoDesc:
-      "Машинне навчання у Лідсі: рітейл forecasting, fraud detection, clinical ML. Від £4,000. Codeworth.",
+      "ML-консалтинг у Лідсі: retail (Asda), banking (Yorkshire Bank, Leeds BS), insurance (Direct Line), NHS Digital. Від £4,000. Codeworth.",
     seoDescEn:
-      "Machine learning consultant Leeds: retail demand forecasting, fraud detection, clinical ML. From £4,000. Codeworth.",
+      "ML consultancy Leeds: retail ML (Asda), banking (Yorkshire Bank, Leeds Building Society), insurance (Direct Line), NHS Digital. From £4,000. Codeworth.",
     stats: [
-      { label: "Рітейл-підприємств", labelEn: "Retail businesses", value: "7,450+" },
-      { label: "Фінансових компаній", labelEn: "Financial companies", value: "2,200+" },
-      { label: "Tech-компаній", labelEn: "Tech companies", value: "6,500+" },
+      { label: "Рітейл- та фін-компаній", labelEn: "Retail & finance companies", value: "9,650+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "6,800+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "420+" },
       { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£64k" },
-      { label: "NHS Trust-ів", labelEn: "NHS Trusts", value: "14" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "11+" },
     ],
     faq: [
       {
@@ -347,16 +347,16 @@ export const GEO_CITIES: GeoCity[] = [
         aEn: "Major opportunities in demand forecasting (especially grocery and fashion), personalisation engines for e-commerce, and dynamic pricing. Asda and M&S already use ML at scale — smaller retailers can access similar capabilities from £5,000.",
       },
       {
-        q: "Чи маєте ви досвід з Yorkshire Building Society та Credit Unions?",
-        qEn: "Do you have experience with Yorkshire Building Society and Credit Unions?",
-        a: "Ми розробляємо ML для будівельних товариств та кредитних спілок: credit scoring на альтернативних даних, fraud detection для mortgage applications, та churn prediction. Всі рішення відповідають FCA Conduct Rules та PRA Model Risk Guidelines.",
-        aEn: "We build ML for building societies and credit unions: credit scoring on alternative data, fraud detection for mortgage applications, and churn prediction. All solutions comply with FCA Conduct Rules and PRA Model Risk Guidelines.",
+        q: "Чи маєте ви досвід з Yorkshire Bank, Leeds Building Society та Direct Line?",
+        qEn: "Do you have experience relevant to Yorkshire Bank, Leeds Building Society and Direct Line?",
+        a: "Так. Для банків і будівельних товариств — credit scoring на альтернативних даних, fraud detection для mortgage applications і churn prediction. Для страховиків на кшталт Direct Line — actuarial loss models, claims-fraud detection та NLP для обробки претензій. Усі рішення відповідають FCA Conduct Rules, PRA Model Risk Guidelines та Solvency II.",
+        aEn: "Yes. For banks and building societies — credit scoring on alternative data, fraud detection for mortgage applications, and churn prediction. For insurers like Direct Line — actuarial loss models, claims-fraud detection, and NLP for claims processing. All comply with FCA Conduct Rules, PRA Model Risk Guidelines, and Solvency II.",
       },
       {
-        q: "Як ML допомагає NHS West Yorkshire?",
-        qEn: "How can ML help NHS West Yorkshire?",
-        a: "Ключові застосування: patient readmission prediction (−34% повторні госпіталізації), bed demand forecasting, та NLP для автоматизованої обробки клінічних нотаток. Всі рішення — з NHS DSPT compliance.",
-        aEn: "Key applications: patient readmission prediction (−34% readmissions), bed demand forecasting for capacity planning, and NLP for automated clinical note processing. All solutions include NHS DSPT compliance.",
+        q: "Як ML допомагає NHS West Yorkshire та чи працюєте ви зі стандартами NHS Digital?",
+        qEn: "How can ML help NHS West Yorkshire and do you align with NHS Digital standards?",
+        a: "Так — штаб-квартира NHS Digital у Лідсі задає стандарти, яких ми дотримуємось. Ключові застосування: patient readmission prediction (−34% повторні госпіталізації), bed demand forecasting та NLP для обробки клінічних нотаток. Усі рішення — з NHS DSPT compliance, FHIR R4 та GDPR Article 9.",
+        aEn: "Yes — NHS Digital's Leeds HQ sets the standards we build to. Key applications: patient readmission prediction (−34% readmissions), bed demand forecasting, and NLP for clinical note processing. All solutions include NHS DSPT compliance, FHIR R4, and GDPR Article 9.",
       },
       {
         q: "Скільки коштує ML у Лідсі?",
@@ -382,21 +382,21 @@ export const GEO_CITIES: GeoCity[] = [
     populationEn: "1.8 million",
     businesses: 52000,
     description:
-      "Глазго — найбільше місто Шотландії та активно зростаючий tech-хаб з особливою силою у сфері охорони здоров'я (NHS Greater Glasgow and Clyde — найбільший NHS Trust Великобританії), енергетики (renewables, North Sea) та фінансових послуг. Codeworth допомагає глазгоському бізнесу впроваджувати ML для клінічних рішень, оптимізації відновлюваної енергетики та predictive maintenance.",
+      "Глазго — найбільше місто Шотландії та активно зростаючий tech-хаб. NHS Greater Glasgow and Clyde (найбільший NHS Trust Великобританії) впроваджує клінічний ML, Barclays розгорнув великий tech-хаб у місті, енергокомпанії SSE та ScottishPower застосовують ML для прогнозу генерації і smart-grid, а Університет Глазго є провідним AI-дослідницьким центром. Codeworth допомагає глазгоському бізнесу з клінічним ML, energy forecasting, fraud detection і predictive maintenance.",
     descriptionEn:
-      "Glasgow is Scotland's largest city with exceptional strength in healthcare (NHS Greater Glasgow and Clyde — the UK's largest NHS Trust), energy (offshore wind, North Sea decommissioning, hydrogen), and financial services. The city also has a growing cybersecurity cluster. Codeworth helps Glasgow businesses deploy ML for clinical decision support, renewable energy forecasting, and offshore asset predictive maintenance.",
-    seoTitle: "ML-консалтинг у Глазго | Машинне навчання для медицини та енергетики | Codeworth",
-    seoTitleEn: "Machine Learning Consultant Glasgow | ML Agency Scotland | Codeworth",
+      "Glasgow is Scotland's largest city and a growing tech hub. NHS Greater Glasgow and Clyde (the UK's largest NHS Trust) deploys clinical ML, Barclays runs a major technology hub in the city, energy firms SSE and ScottishPower apply ML to generation forecasting and smart-grid optimisation, and the University of Glasgow is a leading AI research centre. Codeworth helps Glasgow businesses with clinical ML, energy forecasting, fraud detection, and predictive maintenance.",
+    seoTitle: "ML Consultancy Glasgow | Machine Learning Agency | Codeworth",
+    seoTitleEn: "ML Consultancy Glasgow | Machine Learning Agency | Codeworth",
     seoDesc:
-      "Машинне навчання у Глазго: NHS, відновлювана енергетика, offshore ML. Від £4,000. Codeworth.",
+      "ML-консалтинг у Глазго: NHS clinical AI, Barclays tech hub, energy ML (SSE, ScottishPower). Від £4,000. Codeworth.",
     seoDescEn:
-      "Machine learning consultant Glasgow: NHS clinical ML, renewable energy forecasting, offshore predictive maintenance. From £4,000. Codeworth.",
+      "ML consultancy Glasgow: NHS clinical AI, Barclays tech hub, energy ML (SSE, ScottishPower). From £4,000. Codeworth.",
     stats: [
-      { label: "Медичних організацій", labelEn: "Healthcare organisations", value: "2,500+" },
-      { label: "Енергетичних компаній", labelEn: "Energy companies", value: "1,700+" },
-      { label: "Tech-компаній", labelEn: "Tech companies", value: "7,000+" },
+      { label: "Медичних і енерго-компаній", labelEn: "Healthcare & energy firms", value: "4,200+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "7,600+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "390+" },
       { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£65k" },
-      { label: "Offshore ML проєктів (регіон)", labelEn: "Offshore ML projects (region)", value: "95+" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "11+" },
     ],
     faq: [
       {
@@ -406,16 +406,16 @@ export const GEO_CITIES: GeoCity[] = [
         aEn: "Yes. Clinical ML with full DSPT compliance, GDPR Article 9, NICE evidence standards, and DCB0129 clinical safety case. FHIR R4 connectors for EMIS and SystmOne. Key models: readmission prediction, sepsis early warning, bed demand forecasting.",
       },
       {
-        q: "Чи є у вас досвід ML для відновлюваної енергетики?",
-        qEn: "Do you have renewable energy ML experience?",
-        a: "Так. Wind/solar generation forecasting (MAPE <3.5% на 48-годинний горизонт), load forecasting (MAPE <2.1%) та battery dispatch optimisation. NWP weather model integration (ECMWF, MetOffice) стандартна.",
-        aEn: "Yes. Wind/solar generation forecasting (MAPE <3.5% on 48-hour horizon), grid load forecasting (MAPE <2.1%), and battery dispatch optimisation. NWP weather model integration (ECMWF, MetOffice) is standard.",
+        q: "Чи є у вас досвід ML для енергокомпаній на кшталт SSE та ScottishPower?",
+        qEn: "Do you have energy ML experience relevant to SSE and ScottishPower?",
+        a: "Так. Wind/solar generation forecasting (MAPE <3.5% на 48-годинний горизонт), load forecasting (MAPE <2.1%), smart-meter anomaly detection та battery dispatch optimisation — задачі, типові для SSE і ScottishPower. NWP weather model integration (ECMWF, MetOffice) стандартна.",
+        aEn: "Yes. Wind/solar generation forecasting (MAPE <3.5% on 48-hour horizon), grid load forecasting (MAPE <2.1%), smart-meter anomaly detection, and battery dispatch optimisation — typical SSE and ScottishPower use cases. NWP weather model integration (ECMWF, MetOffice) is standard.",
       },
       {
-        q: "Чи підходять ваші рішення для нафтогазового сектору?",
-        qEn: "Are your solutions suitable for the oil and gas sector?",
-        a: "Так. Для offshore активів: predictive maintenance (LSTM на вібраційних та температурних сенсорах), corrosion detection CV та pipeline integrity ML. Включають offshore safety documentation та ATEX-сумісний деплой.",
-        aEn: "Yes. For offshore assets: predictive maintenance (LSTM on vibration and temperature sensors), corrosion detection computer vision, and pipeline integrity ML. All include offshore safety documentation and ATEX-compatible deployment.",
+        q: "Чи будуєте ви ML для банків на кшталт Barclays tech hub у Глазго?",
+        qEn: "Do you build ML for banking operations like the Barclays tech hub in Glasgow?",
+        a: "Так. Для масштабних банківських tech-хабів (Barclays має великий у Глазго) — fraud detection з XGBoost+SHAP (FCA SS1/23), AML transaction monitoring, credit scoring та production MLOps. Ми доводимо до production останні методи з Університету Глазго (School of Computing Science).",
+        aEn: "Yes. For large banking technology hubs (Barclays runs a major one in Glasgow) — fraud detection with XGBoost+SHAP (FCA SS1/23), AML transaction monitoring, credit scoring, and production MLOps. We take recent methods from the University of Glasgow (School of Computing Science) into production.",
       },
       {
         q: "Скільки коштує ML у Глазго?",
@@ -500,21 +500,21 @@ export const GEO_CITIES: GeoCity[] = [
     populationEn: "140,000",
     businesses: 12000,
     description:
-      "Кембридж — глобальний центр AI та deep tech досліджень, де концентрація ML-таланту на душу населення є найвищою у Великобританії. Університет Кембриджу, ARM Holdings, Wayve та сотні deep tech стартапів формують унікальну екосистему для передових ML-проєктів. Cambridge AI Cluster (Silicon Fen) залучив £8+ млрд венчурних інвестицій за останні 5 років.",
+      "Кембридж — глобальний центр AI та deep tech, де концентрація ML-таланту на душу населення найвища у Великобританії. AstraZeneca застосовує AI для drug discovery, ARM Holdings будує ML для проєктування чипів, Microsoft Research Cambridge веде fundamental AI-дослідження, а Cambridge Consultants розробляє custom-ML для клієнтів по всьому світу. Університет Кембриджу і сотні deep tech стартапів формують Silicon Fen, що залучив £9+ млрд венчурних інвестицій. Codeworth надає research-grade ML із суворою евалуацією.",
     descriptionEn:
-      "Cambridge is a global AI and deep tech research powerhouse — the UK's highest per-capita concentration of ML talent. University of Cambridge, ARM Holdings, Wayve, and hundreds of deep tech startups form the 'Silicon Fen' AI cluster, which attracted £8bn+ in venture investment over five years. Cambridge businesses demand research-grade ML solutions with rigorous evaluation standards.",
-    seoTitle: "ML-консалтинг у Кембриджі | Машинне навчання Silicon Fen | Codeworth",
-    seoTitleEn: "Machine Learning Consultant Cambridge | AI Agency Silicon Fen | Codeworth",
+      "Cambridge is a global AI and deep tech powerhouse — the UK's highest per-capita concentration of ML talent. AstraZeneca applies AI to drug discovery, ARM Holdings builds ML for chip design, Microsoft Research Cambridge runs fundamental AI research, and Cambridge Consultants develops custom ML for clients worldwide. The University of Cambridge and hundreds of deep tech startups form the 'Silicon Fen' cluster, which attracted £9bn+ in venture investment. Codeworth delivers research-grade ML with rigorous evaluation standards.",
+    seoTitle: "ML Consultancy Cambridge | Machine Learning Agency | Codeworth",
+    seoTitleEn: "ML Consultancy Cambridge | Machine Learning Agency | Codeworth",
     seoDesc:
-      "ML-консалтинг у Кембриджі: deep learning, NLP, computer vision. Silicon Fen AI cluster. Від £4,000. Codeworth.",
+      "ML-консалтинг у Кембриджі: pharma AI (AstraZeneca), chip ML (ARM), deep learning, NLP. Silicon Fen. Від £4,000. Codeworth.",
     seoDescEn:
-      "Machine learning consultant Cambridge: deep learning, NLP, computer vision for Silicon Fen startups. From £4,000. Codeworth.",
+      "ML consultancy Cambridge: pharma AI (AstraZeneca), chip ML (ARM Holdings), deep learning, NLP for Silicon Fen. From £4,000. Codeworth.",
     stats: [
-      { label: "AI-стартапів (Silicon Fen)", labelEn: "AI startups (Silicon Fen)", value: "720+" },
-      { label: "ML-дослідників (Uni Cam)", labelEn: "ML researchers (Uni Cambridge)", value: "960+" },
-      { label: "VC-інвестиції в AI (5р)", labelEn: "VC investment in AI (5yr)", value: "£9.5bn+" },
-      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£82k" },
       { label: "Deep tech компаній", labelEn: "Deep tech companies", value: "1,700+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "11,500+" },
+      { label: "AI-стартапів (Silicon Fen)", labelEn: "AI startups (Silicon Fen)", value: "720+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£82k" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "13+" },
     ],
     faq: [
       {
@@ -542,10 +542,10 @@ export const GEO_CITIES: GeoCity[] = [
         aEn: "Our packages start from £4,000 (PoC). For Cambridge deep tech startups with Innovate UK or other grant funding, we offer flexible milestone-based payment terms.",
       },
       {
-        q: "Чи маєте ви досвід з фармацевтичним та біотех ML?",
-        qEn: "Do you have experience with pharma and biotech ML?",
-        a: "Так. Drug discovery ML (molecule property prediction), clinical trial outcome modelling, genomics data pipelines та medical imaging. Дотримання GxP, MHRA та NHS IG вимог.",
-        aEn: "Yes. Drug discovery ML (molecule property prediction), clinical trial outcome modelling, genomics data pipelines, and medical imaging. Compliance with GxP, MHRA, and NHS IG requirements.",
+        q: "Чи маєте ви досвід з pharma ML (AstraZeneca) та chip/hardware ML (ARM Holdings)?",
+        qEn: "Do you have experience with pharma ML (AstraZeneca) and chip/hardware ML (ARM Holdings)?",
+        a: "Так. Для фарми на кшталт AstraZeneca — drug discovery ML (molecule property prediction), clinical trial outcome modelling, genomics pipelines та medical imaging (GxP/MHRA/NHS IG). Для chip-дизайну на кшталт ARM — ML для design-space exploration, performance prediction та telemetry anomaly detection. Ми працюємо на research-grade рівні, близькому до Microsoft Research та Cambridge Consultants.",
+        aEn: "Yes. For pharma like AstraZeneca — drug discovery ML (molecule property prediction), clinical trial outcome modelling, genomics pipelines, and medical imaging (GxP/MHRA/NHS IG). For chip design like ARM Holdings — ML for design-space exploration, performance prediction, and telemetry anomaly detection. We work at a research-grade level close to Microsoft Research and Cambridge Consultants.",
       },
     ],
   },
@@ -559,28 +559,28 @@ export const GEO_CITIES: GeoCity[] = [
     populationEn: "160,000",
     businesses: 14000,
     description:
-      "Оксфорд — другий за значимістю UK академічний AI центр після Кембриджу. Oxford Internet Institute, Oxford Robotics Institute та численні spinout компанії (включно з Exscientia — першою AI drug discovery компанією на LSE) формують унікальне середовище для biomed ML, NLP та safety-focused AI. Місцевий ринок охоплює фармацевтику, освіту та advanced manufacturing.",
+      "Оксфорд — другий за значимістю UK академічний AI центр після Кембриджу. Oxford Biomedica застосовує AI для drug discovery та cell/gene therapy, завод BMW MINI у Каулі використовує ML для контролю якості й виробництва, Sophos будує ML для кібербезпеки, а Oxbotica (тепер Oxa) розробляє автономні транспортні засоби. Oxford ML Lab та Robotics Institute задають академічний рівень. Codeworth надає production ML для оксфордської фарми, автовиробництва, кібербезпеки та AV-сектору.",
     descriptionEn:
-      "Oxford is the UK's second most significant academic AI hub, home to the Oxford Internet Institute, Oxford Robotics Institute, and spinouts including Exscientia (the first AI drug discovery company on the London Stock Exchange). Strengths: biomed ML, NLP, and AI safety research. The Oxford ecosystem spans pharma, MedTech, education technology, and advanced manufacturing.",
-    seoTitle: "ML-консалтинг в Оксфорді | Машинне навчання для бізнесу | Codeworth",
-    seoTitleEn: "Machine Learning Consultant Oxford | ML Agency Oxfordshire | Codeworth",
+      "Oxford is the UK's second most significant academic AI hub. Oxford Biomedica applies AI to drug discovery and cell/gene therapy, the BMW MINI plant at Cowley uses ML for quality control and production, Sophos builds ML for cybersecurity, and Oxbotica (now Oxa) develops autonomous vehicles. The Oxford ML lab and Robotics Institute set the academic standard. Codeworth delivers production ML for Oxford's pharma, automotive, cybersecurity, and AV sectors.",
+    seoTitle: "ML Consultancy Oxford | Machine Learning Agency | Codeworth",
+    seoTitleEn: "ML Consultancy Oxford | Machine Learning Agency | Codeworth",
     seoDesc:
-      "ML-консалтинг в Оксфорді: biomed ML, NLP, predictive analytics. Від £4,000. Codeworth.",
+      "ML-консалтинг в Оксфорді: pharma AI (Oxford Biomedica), automotive ML (BMW MINI), cybersecurity (Sophos), AVs (Oxbotica). Від £4,000. Codeworth.",
     seoDescEn:
-      "Machine learning consultant Oxford: biomed ML, NLP, predictive analytics for Oxfordshire businesses. From £4,000. Codeworth.",
+      "ML consultancy Oxford: pharma AI (Oxford Biomedica), automotive ML (BMW MINI), cybersecurity (Sophos), AVs (Oxbotica). From £4,000. Codeworth.",
     stats: [
-      { label: "Фармацевтичних компаній", labelEn: "Pharmaceutical companies", value: "240+" },
+      { label: "Pharma та MedTech компаній", labelEn: "Pharma & MedTech companies", value: "455+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "9,200+" },
       { label: "AI spinouts (Uni Oxford)", labelEn: "AI spinouts (Uni Oxford)", value: "360+" },
-      { label: "MedTech компаній", labelEn: "MedTech companies", value: "215+" },
       { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£78k" },
-      { label: "EdTech стартапів", labelEn: "EdTech startups", value: "145+" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "12+" },
     ],
     faq: [
       {
-        q: "Чи є у вас досвід ML для фармацевтики в Оксфорді?",
-        qEn: "Do you have experience with pharma ML in Oxford?",
-        a: "Так. Drug discovery ML (QSAR modelling, molecule screening), clinical data analysis та bioinformatics pipelines. MHRA та ICH E9 guidance compliance для regulatory submissions.",
-        aEn: "Yes. Drug discovery ML (QSAR modelling, molecule property screening), clinical data analysis, and bioinformatics pipelines. MHRA and ICH E9 guidance compliance for regulatory submissions.",
+        q: "Чи є у вас досвід ML для фарми на кшталт Oxford Biomedica?",
+        qEn: "Do you have pharma ML experience relevant to Oxford Biomedica?",
+        a: "Так. Для фарми/біотеху на кшталт Oxford Biomedica — drug discovery ML (QSAR modelling, molecule screening), cell/gene therapy process analytics, clinical data analysis та bioinformatics pipelines. MHRA та ICH E9 guidance compliance для regulatory submissions.",
+        aEn: "Yes. For pharma/biotech like Oxford Biomedica — drug discovery ML (QSAR modelling, molecule screening), cell/gene therapy process analytics, clinical data analysis, and bioinformatics pipelines. MHRA and ICH E9 guidance compliance for regulatory submissions.",
       },
       {
         q: "Скільки коштує ML для MedTech стартапу в Оксфорді?",
@@ -601,10 +601,10 @@ export const GEO_CITIES: GeoCity[] = [
         aEn: "Yes. We understand the IP transfer process and Oxford University Innovation (OUI) requirements. We help spin-outs scale ML from research prototype to commercial product.",
       },
       {
-        q: "Чи підходить Codeworth для EdTech ML в Оксфорді?",
-        qEn: "Is Codeworth suitable for EdTech ML in Oxford?",
-        a: "Так. Adaptive learning systems, assessment ML, student outcome prediction та personalised content recommendation. Досвід GDPR for children's data та UK PECR compliance для EdTech платформ.",
-        aEn: "Yes. Adaptive learning systems, assessment ML, student outcome prediction, and personalised content recommendation. Experience with GDPR for children's data and UK PECR compliance for EdTech platforms.",
+        q: "Чи будуєте ви ML для автовиробництва (BMW MINI), кібербезпеки (Sophos) та AV (Oxbotica)?",
+        qEn: "Do you build ML for automotive (BMW MINI), cybersecurity (Sophos), and AVs (Oxbotica)?",
+        a: "Так. Для заводу на кшталт BMW MINI у Каулі — computer vision QC (YOLOv8), predictive maintenance та supply-chain forecasting. Для кібербезпеки на кшталт Sophos — malware/anomaly detection та NLP для threat intelligence. Для AV-сектору на кшталт Oxbotica — perception ML, sensor fusion та safety-critical evaluation з повною explainability.",
+        aEn: "Yes. For an automotive plant like BMW MINI at Cowley — computer vision QC (YOLOv8), predictive maintenance, and supply-chain forecasting. For cybersecurity like Sophos — malware/anomaly detection and NLP for threat intelligence. For AVs like Oxbotica — perception ML, sensor fusion, and safety-critical evaluation with full explainability.",
       },
     ],
   },
@@ -618,21 +618,21 @@ export const GEO_CITIES: GeoCity[] = [
     populationEn: "560,000",
     businesses: 28000,
     description:
-      "Шеффілд — промисловий центр UK, що активно трансформується через advanced manufacturing та Industry 4.0 технології. AMRC (Advanced Manufacturing Research Centre) при Університеті Шеффілда є світовим лідером у machine learning для manufacturing — computer vision для QA, predictive maintenance та digital twin systems. Boeing, Rolls-Royce та BAE Systems є якорними партнерами.",
+      "Шеффілд — промисловий центр UK, що трансформується через advanced manufacturing та Industry 4.0. AMRC (Advanced Manufacturing Research Centre) при Університеті Шеффілда — світовий лідер у ML для виробництва (computer vision QA, predictive maintenance, digital twin), а School of Computer Science Університету є сильним ML-центром. Gripple впроваджує industrial IoT та ML на власних лініях, NHS Sheffield застосовує клінічний ML. Boeing, Rolls-Royce та BAE Systems — якорні партнери AMRC. Codeworth розробляє production ML для шеффілдського виробництва та NHS.",
     descriptionEn:
-      "Sheffield is the UK's advanced manufacturing hub, actively transforming through Industry 4.0 and ML-driven production optimisation. The AMRC (Advanced Manufacturing Research Centre) at the University of Sheffield is a world leader in ML for manufacturing — computer vision for quality assurance, predictive maintenance, and digital twin systems. Boeing, Rolls-Royce, and BAE Systems are anchor partners.",
-    seoTitle: "ML-консалтинг у Шеффілді | Машинне навчання для Manufacturing | Codeworth",
-    seoTitleEn: "Machine Learning Consultant Sheffield | ML for Manufacturing UK | Codeworth",
+      "Sheffield is the UK's advanced manufacturing hub, transforming through Industry 4.0 and ML-driven production. The AMRC (Advanced Manufacturing Research Centre) at the University of Sheffield is a world leader in ML for manufacturing (computer vision QA, predictive maintenance, digital twins), and the University's School of Computer Science is a strong ML centre. Gripple deploys industrial IoT and ML on its own lines, and NHS Sheffield applies clinical ML. Boeing, Rolls-Royce, and BAE Systems are AMRC anchor partners. Codeworth delivers production ML for Sheffield manufacturing and the NHS.",
+    seoTitle: "ML Consultancy Sheffield | Machine Learning Agency | Codeworth",
+    seoTitleEn: "ML Consultancy Sheffield | Machine Learning Agency | Codeworth",
     seoDesc:
-      "ML-консалтинг у Шеффілді: computer vision QA, predictive maintenance, Industry 4.0. Від £4,000. Codeworth.",
+      "ML-консалтинг у Шеффілді: AMRC manufacturing ML, industrial IoT (Gripple), computer vision QA, NHS Sheffield. Від £4,000. Codeworth.",
     seoDescEn:
-      "Machine learning consultant Sheffield: computer vision QA, predictive maintenance, Industry 4.0 ML. From £4,000. Codeworth.",
+      "ML consultancy Sheffield: AMRC manufacturing ML, industrial IoT (Gripple), computer vision QA, NHS Sheffield. From £4,000. Codeworth.",
     stats: [
       { label: "Manufacturing компаній", labelEn: "Manufacturing companies", value: "3,350+" },
-      { label: "AMRC партнерів", labelEn: "AMRC partners", value: "145+" },
-      { label: "Advanced manufacturing jobs", labelEn: "Advanced manufacturing jobs", value: "60,000+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "5,200+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "260+" },
       { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£60k" },
-      { label: "Industry 4.0 проєктів (5р)", labelEn: "Industry 4.0 projects (5yr)", value: "480+" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "10+" },
     ],
     faq: [
       {
@@ -654,10 +654,10 @@ export const GEO_CITIES: GeoCity[] = [
         aEn: "Typical project: sensor API integration, feature engineering on vibration/temperature/power data, XGBoost or LSTM model, alert pipeline. PoC £5,000–£8,000 (4–6 weeks). Production: £15,000–£35,000.",
       },
       {
-        q: "Чи підходить Codeworth для Sheffield steel / metals sector?",
-        qEn: "Is Codeworth suitable for Sheffield's steel and metals sector?",
-        a: "Так. Досвід з process optimisation ML для metals: temperature prediction, yield optimisation, scrap reduction через ML-моделювання хімічного складу та параметрів прокатки.",
-        aEn: "Yes. Experience with process optimisation ML for metals: temperature prediction, yield optimisation, scrap reduction through ML modelling of chemical composition and rolling parameters.",
+        q: "Чи будуєте ви industrial IoT ML (Gripple) та клінічний ML для NHS Sheffield?",
+        qEn: "Do you build industrial IoT ML (Gripple) and clinical ML for NHS Sheffield?",
+        a: "Так. Для industrial IoT на кшталт Gripple — sensor-stream анотація, predictive maintenance і process optimisation ML (temperature/yield/scrap) на edge та в хмарі. Для NHS Sheffield — patient readmission prediction, bed demand forecasting та NLP для клінічних нотаток з повним DSPT compliance, GDPR Article 9 і NICE standards.",
+        aEn: "Yes. For industrial IoT like Gripple — sensor-stream analytics, predictive maintenance, and process optimisation ML (temperature/yield/scrap) at the edge and in the cloud. For NHS Sheffield — patient readmission prediction, bed demand forecasting, and NLP for clinical notes with full DSPT compliance, GDPR Article 9, and NICE standards.",
       },
       {
         q: "Чи є гранти для Industry 4.0 ML у Шеффілді?",
@@ -677,21 +677,21 @@ export const GEO_CITIES: GeoCity[] = [
     populationEn: "300,000",
     businesses: 18000,
     description:
-      "Ньюкасл є стратегічним AI хабом Північно-Східної Англії з сильним фокусом на охорону здоров'я ML (NHS Newcastle, National Innovation Centre for Data). Місцевий уряд активно субсидує AI впровадження через North East Investment Zone. Університети Ньюкасла та Нортумбрії виробляють значну кількість ML-спеціалістів, що робить місто привабливим для ML-стартапів з точки зору вартості talent.",
+      "Ньюкасл — стратегічний AI хаб Північно-Східної Англії. Sage Group (HQ) вбудовує AI в ERP та accounting-софт, Procter & Gamble має великий data-центр у регіоні, NHS North East застосовує клінічний ML, а Університет Ньюкасла й National Innovation Centre for Data (NICD) є провідними ML-центрами. Поруч завод Nissan у Сандерленді впроваджує ML для контролю якості й виробництва. Codeworth розробляє production ML для ньюкаслських SaaS, NHS, виробництва та фінтеху за конкурентними ставками.",
     descriptionEn:
-      "Newcastle is the strategic AI hub of North East England with a strong focus on healthcare ML (Newcastle Hospitals NHS, National Innovation Centre for Data) and financial services. The North East Investment Zone provides active AI adoption subsidies. Newcastle and Northumbria Universities produce substantial ML talent, making the city attractive for ML startups from a cost perspective — significantly lower than London or Cambridge.",
-    seoTitle: "ML-консалтинг у Ньюкаслі | Машинне навчання для Північно-Схід | Codeworth",
-    seoTitleEn: "Machine Learning Consultant Newcastle | ML Agency North East | Codeworth",
+      "Newcastle is the strategic AI hub of North East England. Sage Group (HQ) embeds AI into ERP and accounting software, Procter & Gamble runs a large data operation in the region, NHS North East deploys clinical ML, and Newcastle University plus the National Innovation Centre for Data (NICD) are leading ML centres. Nearby, the Nissan plant in Sunderland uses ML for quality control and production. Codeworth delivers production ML for Newcastle SaaS, NHS, manufacturing, and fintech at competitive rates.",
+    seoTitle: "ML Consultancy Newcastle | Machine Learning Agency | Codeworth",
+    seoTitleEn: "ML Consultancy Newcastle | Machine Learning Agency | Codeworth",
     seoDesc:
-      "ML-консалтинг у Ньюкаслі: NHS ML, data analytics, predictive models. Від £3,500. Codeworth.",
+      "ML-консалтинг у Ньюкаслі: ERP/AI (Sage), P&G data, NHS North East, Nissan Sunderland ML. Від £3,500. Codeworth.",
     seoDescEn:
-      "Machine learning consultant Newcastle: NHS ML, data analytics, predictive models for North East businesses. From £3,500. Codeworth.",
+      "ML consultancy Newcastle: ERP/AI (Sage Group), P&G data, NHS North East, Nissan Sunderland ML. From £3,500. Codeworth.",
     stats: [
-      { label: "Охорони здоров'я організацій", labelEn: "Healthcare organisations", value: "720+" },
-      { label: "Tech компаній", labelEn: "Tech companies", value: "2,200+" },
-      { label: "Фінансових послуг компаній", labelEn: "Financial services firms", value: "480+" },
+      { label: "Tech- та SaaS-компаній", labelEn: "Tech & SaaS companies", value: "2,200+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "4,100+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "210+" },
       { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£55k" },
-      { label: "North East Investment Zone grants", labelEn: "NE Investment Zone grants", value: "£95M+" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "9+" },
     ],
     faq: [
       {
@@ -701,10 +701,10 @@ export const GEO_CITIES: GeoCity[] = [
         aEn: "Yes. ML for NHS with full DSPT compliance, UK GDPR, and NICE guidelines. Key models for Newcastle NHS: patient readmission prediction, surgical outcome risk scoring, A&E demand forecasting.",
       },
       {
-        q: "Чи є гранти для AI у Ньюкаслі?",
-        qEn: "Are there AI grants available in Newcastle?",
-        a: "Так. North East Investment Zone, Innovate UK North East, British Business Bank scale-up loans. National Innovation Centre for Data (NICD) при Newcastle University також надає технічну підтримку ML проєктам.",
-        aEn: "Yes. North East Investment Zone, Innovate UK North East cluster, British Business Bank scale-up loans. The National Innovation Centre for Data (NICD) at Newcastle University also provides technical support for ML projects.",
+        q: "Чи є гранти для AI у Ньюкаслі та чи стежите ви за дослідженнями Newcastle University?",
+        qEn: "Are there AI grants in Newcastle and do you follow Newcastle University ML research?",
+        a: "Так. North East Investment Zone, Innovate UK North East, British Business Bank scale-up loans. Ми стежимо за ML-дослідженнями Newcastle University (School of Computing) та National Innovation Centre for Data (NICD) і доводимо їх до production. NICD також надає технічну підтримку ML-проєктам.",
+        aEn: "Yes. North East Investment Zone, Innovate UK North East cluster, British Business Bank scale-up loans. We follow ML research from Newcastle University (School of Computing) and the National Innovation Centre for Data (NICD), taking it into production. NICD also provides technical support for ML projects.",
       },
       {
         q: "Скільки коштує ML-консалтинг у Ньюкаслі?",
@@ -713,10 +713,10 @@ export const GEO_CITIES: GeoCity[] = [
         aEn: "Newcastle is one of the UK's most cost-effective cities for ML. Our packages start from £3,500 (PoC). Lower local overheads allow us to offer more competitive rates than London-based ML agencies.",
       },
       {
-        q: "Чи маєте ви досвід з North East fintech?",
-        qEn: "Do you have North East fintech experience?",
-        a: "Так. Bagshot, Atom Bank та інші North East fintech компанії використовують ML для credit scoring, fraud detection та customer analytics. Ми будуємо FCA-compliant ML для UK fintech.",
-        aEn: "Yes. Atom Bank and other North East fintech companies actively use ML for credit scoring, fraud detection, and customer analytics. We build FCA-compliant ML solutions for UK fintech of all sizes.",
+        q: "Чи будуєте ви ML для SaaS (Sage), data (P&G) та виробництва (Nissan Sunderland)?",
+        qEn: "Do you build ML for SaaS (Sage), data (P&G), and manufacturing (Nissan Sunderland)?",
+        a: "Так. Для ERP/accounting SaaS на кшталт Sage Group — anomaly detection у транзакціях, cash-flow forecasting, document NLP та churn prediction. Для data-операцій на кшталт P&G — demand forecasting і marketing-mix ML. Для заводу на кшталт Nissan у Сандерленді — computer vision QC (YOLOv8) та predictive maintenance. Плюс FCA-compliant ML для North East fintech (Atom Bank).",
+        aEn: "Yes. For ERP/accounting SaaS like Sage Group — transaction anomaly detection, cash-flow forecasting, document NLP, and churn prediction. For data operations like P&G — demand forecasting and marketing-mix ML. For a plant like Nissan in Sunderland — computer vision QC (YOLOv8) and predictive maintenance. Plus FCA-compliant ML for North East fintech (Atom Bank).",
       },
       {
         q: "Чи обслуговуєте ви весь North East регіон?",

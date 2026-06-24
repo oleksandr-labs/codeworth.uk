@@ -1,27 +1,27 @@
 # codeworth.uk — ML Adaptation Master Log
 
-**Мета:** Документація всіх змін по адаптації сайту під Machine Learning (Sprints 6–57).
+**Мета:** Документація всіх змін по адаптації сайту під Machine Learning (Sprints 6–65).
 **Початок роботи:** 2026-06-23
 **Остання зміна:** 2026-06-24
 **Виконавець:** Claude AI (паралельні агент-спринти)
 
 ---
 
-## Підсумок поточного стану (після Sprint 57)
+## Підсумок поточного стану (після Sprint 65)
 
 | Файл | До адаптації | Поточний стан | Зміна |
 |------|-------------|---------------|-------|
-| `blog.ts` | ~40 постів | **234 пости** | +194 |
-| `glossary.ts` | 146 термінів | **420 термінів** | +274 |
-| `portfolio.ts` | ~30 кейсів | **85 кейсів** | +55 |
-| `compare.ts` | 10 сторінок | **52 сторінки** | +42 |
+| `blog.ts` | ~40 постів | **249 постів** | +209 |
+| `glossary.ts` | 146 термінів | **450 термінів** | +304 |
+| `portfolio.ts` | ~30 кейсів | **95 кейсів** | +65 |
+| `compare.ts` | 10 сторінок | **60 сторінок** | +50 |
 | `mlNiches.ts` | 6 ніш | **22 ніші** | +16 |
 | `aiNiches.ts` | — | **14 ніш** | — |
-| `useCases.ts` | 7 кейсів | **38 кейсів** | +31 |
-| `resources.ts` | 26 ресурсів | **85 ресурсів** | +59 |
-| `reviews.ts` | 9 відгуків | **45 відгуків** | +36 |
-| `careers.ts` | 8 позицій | **32 позиції** | +24 |
-| `geo.ts` | 19 міст | **25 міст** | +6 |
+| `useCases.ts` | 7 кейсів | **50 кейсів** | +43 |
+| `resources.ts` | 26 ресурсів | **95 ресурсів** | +69 |
+| `reviews.ts` | 9 відгуків | **50 відгуків** | +41 |
+| `careers.ts` | 8 позицій | **36 позицій** | +28 |
+| `geo.ts` | 19 міст | **25 міст** (15 з ML-контентом) | +6 |
 
 ---
 
@@ -765,20 +765,63 @@
 
 ---
 
-## Що ще потрібно зробити (Backlog — після Sprint 57)
+## Sprint 58 — Glossary +25 (2026-06-24, ✅ DONE)
+- **`glossary.ts`** — pension/wealth ML, advanced NLP/LLM, regulatory AI UK, CV advanced, time series advanced (395→420)
 
-### Контент (пріоритет: MEDIUM)
-- [ ] **Blog**: 234 → 260+ постів (+26)
-- [ ] **Glossary**: 420 → 450+ термінів (+30)
-- [ ] **Portfolio**: 85 → 95+ кейсів (+10)
-- [ ] **Compare**: 52 → 60+ сторінок (+8)
-- [ ] **Reviews**: 45 → 50+ відгуків (+5)
-- [ ] **Careers**: 32 → 36+ позицій (+4)
-- [ ] **Resources**: 85 → 95+ ресурсів (+10)
+## Sprint 59 — Reviews +6 / Careers +5 / Resources +13 (2026-06-24, ✅ DONE)
+- **`reviews.ts`** ClearBank/Barts NHS/Betfair/Direct Line/OakNorth/Reach (33→39)
+- **`careers.ts`** RL engineer, ML platform, NLP applied scientist, data governance, client success (22→27)
+- **`resources.ts`** +13 guides (58→71)
+
+---
+
+## 🔥 Велика хвиля Sprints 60–65 (2026-06-24, ✅ DONE) — «100 задач», 8 паралельних агентів (Opus)
+
+> Запущено 8 паралельних агентів. Перший прохід на Sonnet впав на ліміті (reset 30.06) — встигли лише Reviews+Careers. Перезапущено на **Opus** — усе завершено. TSC чистий ✅.
+
+### Sprint 60 — Glossary +30 (450 total)
+- **`glossary.ts`** — 6 груп: Pension/ALM ML (duration-matching, LDI, buyout-readiness, longevity-swap, solvency-ii-ml), Causal/XAI (do-calculus, SCM, causal-forest, mediation, shap-waterfall), UK Regulatory AI (fca-consumer-duty-ml, national-ai-strategy, ico-legitimate-interests, drcf-principles, ai-safety-institute), CV Advanced (semantic-segmentation-cv, pose/object-tracking, depth, image-anomaly), Time Series (lstm, arima-vs-ml, tick-data, nowcasting, multivariate), MLOps (pipeline-orchestration, k8s-deploy, feature-store-platform, serving-latency, cost-optimization)
+- 8 колізій слугів розв'язано суфіксами
+
+### Sprint 61 — Portfolio +10 (95 total)
+- **`portfolio.ts`** — telecom 5G, NHS radiology CV, agritech soil, AML graph, e-com returns, legal M&A NLP, media personalisation, warehouse optimisation, B2B telecom churn, complaints NLP
+- ⚠️ виправлено `relatedMLNichePage`: /ml/finance→/ml/banking, /ml/agriculture→/ml/agritech, /ml/media→/ml/media-entertainment, /ml/telecom→/ml/saas (були 404)
+- `complexity` поле приймає лише "simple"|"medium"|"complex" (НЕ "High")
+
+### Sprint 62 — Compare +8 (60 total)
+- **`compare.ts`** — vs-splunk-enterprise-security-ml, vs-tableau-ai-analytics, vs-dataiku-platform, vs-rapidminer-studio, vs-alteryx-analytics, vs-sas-viya-ml, vs-tibco-spotfire, vs-power-bi-premium-ml
+- ⚠️ `competitorColor`/`competitorBg` = Tailwind-класи (text-red-700/bg-red-50), НЕ hex
+
+### Sprint 63 — Use Cases +11 (50 total)
+- **`useCases.ts`** — 5G optimisation, radiology triage, soil health, AML graph, returns prediction, M&A NLP, content rec, warehouse slotting, B2B churn, complaints NLP, causal marketing attribution
+- `category` union приймає лише "ai" для ML/AI-кейсів
+
+### Sprint 64 — Reviews +5 / Careers +4 / Resources +10
+- **`reviews.ts`** review-046..050: MobileSphere, North Thames NHS, GreenHarvest, Sterling Bank, StyleVault (45→50, fiveStars 36)
+- **`careers.ts`** computer-vision-engineer-senior, ml-research-scientist, data-analyst-ml-insights, technical-sales-ml-consultant (32→36)
+- **`resources.ts`** +10 guides/checklists (telecom 5G, NHS CE-marking, agritech, AML graph, e-com returns, legal NLP, media rec, warehouse, complaints FCA, causal marketing) (85→95)
+
+### Sprint 65 — Blog +15 (249 total)
+- **`blog.ts`** — construction safety IoT, graph ML fraud, energy market forecasting, responsible ML framework, last-mile EV logistics, LLM RAG enterprise, PE deal flow, time series anomaly manufacturing, retail loyalty, AI regulation roadmap 2026, NHS elective recovery, document intelligence insurance, pension de-risking, edge ML IoT, AI safety enterprise
+
+### Sprint 66 — Geo 10 cities ML content + page polish
+- **`geo.ts`** — ML-контент для Birmingham, Manchester, Leeds, Bristol, Edinburgh, Glasgow, Cambridge, Oxford, Sheffield, Newcastle (реальні компанії: JLR, Auto Trader, Asda, Airbus, RBS, AstraZeneca, ARM, Oxbotica, AMRC, Sage). Тепер 15/25 міст з ML-контентом
+- **`contact/page.tsx`** — виправлено невідповідність UK-цін (Discovery £3,000 → PoC від £1,800, узгоджено з EN та рештою сайту)
+
+---
+
+## Що ще потрібно зробити (Backlog — після Sprint 66)
+
+### Контент (пріоритет: LOW — широке покриття досягнуто)
+- [ ] **Blog**: 249 → 280+ постів
+- [ ] **Glossary**: 450 → 480+ термінів
+- [ ] **Portfolio**: 95 → 110+ кейсів
+- [ ] **Compare**: 60 → 70+ сторінок
 
 ### Структурні покращення (пріоритет: LOW)
 - [ ] OG images для `/niches/[slug]` — немає файлів, є 404 (низький пріоритет)
-- [ ] Location pages: ML-специфічний контент для решти 20 міст (5 вже оновлено в Sprint 56)
+- [ ] Location pages: ML-специфічний контент для решти 10 міст (15/25 вже оновлено)
+- [ ] Перевірити всі `relatedMLNichePage` у portfolio.ts на валідність ніш
 
 ---
 

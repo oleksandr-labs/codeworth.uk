@@ -11,10 +11,10 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isUk = lang === "uk";
   return {
-    title: isUk ? "Контакти — Codeworth | Зв'яжіться з нами" : "Contact — Codeworth | Get in Touch",
+    title: isUk ? "Розпочніть ML-проєкт — Codeworth | Контакти" : "Start Your ML Project — Codeworth | Contact",
     description: isUk
-      ? "Зв'яжіться з командою Codeworth для обговорення вашого проєкту. Telegram, Email, телефон. Відповідаємо протягом 2 годин."
-      : "Contact the Codeworth team to discuss your project. Telegram, Email, phone. We respond within 2 hours.",
+      ? "Безкоштовна оцінка датасету. UK-команда ML-інженерів, FCA-aware. Зв'яжіться з Codeworth для обговорення вашого ML-проєкту. Відповідаємо протягом 2 годин."
+      : "Free dataset assessment. UK-based ML engineering team, FCA-aware. Contact Codeworth to discuss your ML project. We respond within 2 hours.",
     alternates: buildAlternates(lang, 'contact'),
     openGraph: {
       title: isUk ? "Контакти — Codeworth" : "Contact — Codeworth",
@@ -35,8 +35,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 }
 
 const QUICK_FAQ_UK = [
-  { q: "Скільки коштує ML-проєкт?", a: "Discovery від £3,000, PoC від £15,000, production ML-система від £40,000. Точна ціна після аудиту даних." },
-  { q: "Скільки часу займає розробка?", a: "PoC — 4–6 тижнів, production ML — 8–12 тижнів, enterprise-система — 12–20 тижнів." },
+  { q: "Скільки коштує ML-проєкт?", a: "Від £1,800 за PoC до £12,000+ за enterprise ML-систему. Точна ціна після аудиту даних." },
+  { q: "Скільки часу займає розробка?", a: "PoC — 3–4 тижні, production ML — 8–12 тижнів, enterprise-система — 12–20 тижнів." },
   { q: "Чи потрібні нам власні дані?", a: "Для більшості ML-задач достатньо 1–10 тис. прикладів. Допомагаємо з розміткою та доповненням." },
   { q: "Чи є гарантія якості моделі?", a: "Гарантуємо мінімальний F1-score або AUC перед здачею. 90 днів гарантійної підтримки." },
   { q: "Чи є безкоштовна початкова консультація?", a: "Так — 30-хвилинний discovery call у відеоформаті, без жодних зобов'язань." },
@@ -116,13 +116,13 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
               </p>
               <h1 className="text-5xl lg:text-6xl font-heading font-extrabold text-neutral-900 dark:text-white mb-4">
                 {isUk
-                  ? <>{`Обговоримо`}<br /><span className="gradient-text">{`ваш проєкт?`}</span></>
-                  : <>{"Let's discuss"}<br /><span className="gradient-text">{"your project?"}</span></>}
+                  ? <>{`Розпочніть`}<br /><span className="gradient-text">{`ML-проєкт`}</span></>
+                  : <>{"Start Your"}<br /><span className="gradient-text">{"ML Project"}</span></>}
               </h1>
               <p className="text-lg text-neutral-500">
                 {isUk
-                  ? "Відповідаємо протягом 2 годин у робочий час. Безкоштовна консультація без зобов'язань."
-                  : "We respond within 2 hours during business hours. Free consultation, no obligations."}
+                  ? "Безкоштовна оцінка датасету. UK-команда, FCA-aware. Відповідаємо протягом 2 годин."
+                  : "Free dataset assessment. UK-based team, FCA-aware. We respond within 2 hours."}
               </p>
             </div>
           </Container>
