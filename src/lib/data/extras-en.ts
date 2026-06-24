@@ -832,4 +832,46 @@ export const EXTRAS_EN: Record<string, { titleEn: string; descriptionEn: string 
     titleEn: "AI Smart Image Crop",
     descriptionEn: "Automatic image cropping to required aspect ratios (1:1, 16:9, 4:3, banner). Smart crop: AI identifies the main subject — face, product, logo — and frames around it. Batch processing up to 500 images. Niches: e-commerce catalogues, social media marketing, property photography.",
   },
+
+  // ML extras (2026-06-24)
+  "ml-anomaly-detector": {
+    titleEn: "Anomaly Detection Module",
+    descriptionEn: "ML model monitors business data streams in real time and flags unusual patterns: suspicious transactions, quality deviations and operational failures. Configurable alert thresholds with Slack or email notifications. Ideal for finance, manufacturing and logistics.",
+  },
+  "ml-nlp-email-classifier": {
+    titleEn: "Smart Email Classifier",
+    descriptionEn: "NLP model automatically routes inbound emails by intent, urgency and topic to the correct team or system. Reduces email handling time by 60–80% and eliminates manual triage for high-volume inboxes.",
+  },
+  "ml-churn-predictor": {
+    titleEn: "Customer Churn Predictor",
+    descriptionEn: "ML model identifies customers likely to leave within 30, 60 or 90 days and automatically fires retention triggers — discounts, call tasks or personalised offers. Reduces churn by 20–35% with CRM integration.",
+  },
+  "ml-sentiment-dashboard": {
+    titleEn: "Sentiment Intelligence Dashboard",
+    descriptionEn: "Real-time NLP analysis of customer feedback, reviews and support tickets. Trend charts, negative-spike alerts and product-level or channel-level breakdown help your team act before issues escalate.",
+  },
+  "ml-cv-quality-inspector": {
+    titleEn: "Visual Quality Inspector",
+    descriptionEn: "Computer Vision detects defects and anomalies on production lines in real time: scratches, cracks, misaligned labels and packaging faults. YOLOv8 + camera feed integration with instant reject signals.",
+  },
+  "ml-forecasting-engine": {
+    titleEn: "Demand Forecasting Engine",
+    descriptionEn: "Time-series ML forecasts sales, inventory and resource needs accounting for UK seasonality, bank holidays and market trends. Supports Prophet, XGBoost and LSTM. Dashboard with 7–90 day horizon and replenishment recommendations.",
+  },
+  "ml-entity-extractor": {
+    titleEn: "Entity Extraction Pipeline",
+    descriptionEn: "NLP pipeline automatically locates and structures names, dates, monetary amounts, company names and legal terms from unstructured documents — contracts, emails and reports. Outputs to JSON or direct CRM integration.",
+  },
+  "ml-personalized-notifications": {
+    titleEn: "ML Push Notification Optimiser",
+    descriptionEn: "ML determines the optimal send time, message content and channel (email, SMS or web push) for each individual user. A/B message testing and open-rate analytics included in the dashboard.",
+  },
+  "ml-document-classifier": {
+    titleEn: "Intelligent Document Router",
+    descriptionEn: "ML automatically classifies incoming documents — invoices, contracts, applications and briefs — and routes each to the correct team or workflow. Cuts manual sorting effort and reduces misfiling risk significantly.",
+  },
+  "ml-risk-scorer": {
+    titleEn: "ML Risk Scoring API",
+    descriptionEn: "Real-time API scores transactions or events across hundreds of features and returns a numeric risk score with SHAP explainability for every decision. FCA-aligned transparency, audit logging and ready to integrate with any platform.",
+  },
 };

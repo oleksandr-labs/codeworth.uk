@@ -67,3 +67,11 @@
 - [x] geo.ts: +3 new city pages (Leicester, Coventry, Reading) with stats + 5 FAQs each
 - [x] glossary.ts: +20 terms (bias-variance, regularization, dropout, batch norm, learning rate, SMOTE, data versioning, experiment tracking, CI/CD ML, OCR, question-answering, summarisation, ICO enforcement, MLOps maturity levels, confusion matrix, data pipeline, etc.)
 - [x] faq/page.tsx: +2 new sections (Compliance & Regulation × 5 Q&A, Technology & Integration × 5 Q&A) — FAQ page now ~32 items
+
+## Session 2026-06-24 — Sprint 8
+
+### Done (Sprint 8)
+- [x] startup.ts: filled STARTUP_SOLUTIONS with 8 ML UK startup packages (ML SaaS, Fintech ML MVP, HealthTech ML MVP, B2B Analytics, ML Marketplace, D2C Personalisation, LegalTech NLP, Impact ML)
+- [x] extras.ts: +10 ML extras (anomaly detector, email NLP classifier, churn predictor, sentiment dashboard, CV quality inspector, forecasting engine, entity extractor, notification optimizer, document classifier, risk scorer API)
+- [x] industries.ts: NEW FILE created — 8 UK industries with 4 ML applications each (financial services, healthcare, manufacturing, retail, legal, energy, insurance, logistics)
+- [x] faq/page.tsx: +2 sections (MLOps and Infrastructure x5 Q&A, Data and Privacy x5 Q&A)

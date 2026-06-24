@@ -1139,6 +1139,183 @@ export const GEO_CITIES: GeoCity[] = [
       },
     ],
   },
+  {
+    slug: "plymouth",
+    nameUk: "Плімут",
+    nameEn: "Plymouth",
+    region: "Девон, Південно-Захід Англії",
+    regionEn: "Devon, South West England",
+    population: "264 тис.",
+    populationEn: "264,000",
+    businesses: 14000,
+    description:
+      "Плімут — провідний центр оборонних та морських технологій Великобританії. Тут розташовані Babcock International, Devonport Naval Base та QinetiQ, що формують потужний кластер оборонного AI та морського машинного навчання. Університет Плімута веде активні дослідження у галузі AI, а Plymouth Marine Laboratory використовує ML для аналізу океанічних даних. Команда Codeworth розробляє ML-рішення для оборонного сектору, морської промисловості та «розумного» порту.",
+    descriptionEn:
+      "Plymouth is the UK's foremost hub for defence and maritime technology. Babcock International, Devonport Naval Base, and QinetiQ anchor a strong defence AI and maritime ML cluster. Plymouth University's AI lab drives applied research, while Plymouth Marine Laboratory applies machine learning to ocean data analytics. Codeworth delivers ML solutions for Plymouth's defence contractors, maritime operators, and smart port initiatives.",
+    seoTitle: "ML-консалтинг у Плімуті | Оборонні та морські технології AI | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Plymouth | Defence & Maritime AI | Codeworth",
+    seoDesc:
+      "ML-консалтинг у Плімуті: оборонний AI, морське машинне навчання, смарт-порт. Від £4,000. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Plymouth: defence AI, maritime ML, smart port analytics. From £4,000. Codeworth ML agency.",
+    stats: [
+      { label: "ML-компаній у регіоні", labelEn: "ML companies in the region", value: "195+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "1,280+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "44+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£44,000" },
+      { label: "Реалізованих проєктів Codeworth", labelEn: "Codeworth projects delivered", value: "2" },
+    ],
+    faq: [
+      {
+        q: "Як AI застосовується в оборонному секторі Плімута?",
+        qEn: "How is AI used in Plymouth's defence sector?",
+        a: "Оборонні компанії Плімута — Babcock, Devonport та QinetiQ — використовують ML для прогнозованого технічного обслуговування суден, розпізнавання об'єктів на підводних апаратах, кіберзахисту оборонних мереж та аналізу розвідувальних даних. AI допомагає скорочувати витрати на технічне обслуговування та підвищувати надійність обладнання.",
+        aEn: "Plymouth's defence companies — Babcock, Devonport, and QinetiQ — use ML for predictive vessel maintenance, object recognition on autonomous underwater vehicles, cybersecurity of defence networks, and intelligence data analysis. AI reduces maintenance costs and improves equipment reliability across naval operations.",
+      },
+      {
+        q: "Які морські ML-застосунки розробляє Плімут?",
+        qEn: "What marine ML applications does Plymouth develop?",
+        a: "Plymouth Marine Laboratory використовує ML для класифікації планктону, моніторингу якості океанічної води та прогнозування кліматичних змін. Морські компанії міста застосовують ML для оптимізації маршрутів суден, скорочення витрати палива та планування технічного обслуговування флоту.",
+        aEn: "Plymouth Marine Laboratory uses ML for plankton classification, ocean water quality monitoring, and climate change prediction. Maritime companies apply ML to vessel route optimisation, fuel consumption reduction, and fleet maintenance planning.",
+      },
+      {
+        q: "Як розвивається ML-екосистема Південно-Захід Англії?",
+        qEn: "How is the South West England ML ecosystem developing?",
+        a: "Південний захід Англії формує унікальну ML-нішу, орієнтовану на оборонні та морські технології. Університети Плімута, Екзетера та Бристоля готують спеціалістів з AI. Регіональні гранти для оборонно-промислового комплексу стимулюють ML-інновації, а Агенція оборонних науки та технологій (Dstl) фінансує дослідницькі партнерства.",
+        aEn: "South West England is building a unique ML niche focused on defence and maritime technology. Plymouth, Exeter, and Bristol universities supply AI talent. Regional grants for the defence industrial base drive ML innovation, and the Defence Science and Technology Laboratory (Dstl) funds research partnerships.",
+      },
+      {
+        q: "Що досліджує лабораторія AI Університету Плімута?",
+        qEn: "What does Plymouth University's AI lab research?",
+        a: "Лабораторія AI Університету Плімута зосереджена на робототехніці та автономних системах, обробці природної мови для морських застосувань, комп'ютерному зорі для підводних апаратів і ML для охорони здоров'я. Співпраця з місцевими оборонними підприємствами забезпечує прикладний характер досліджень.",
+        aEn: "Plymouth University's AI lab focuses on robotics and autonomous systems, natural language processing for maritime applications, computer vision for underwater vehicles, and ML for healthcare. Collaboration with local defence firms ensures research stays applied and commercially relevant.",
+      },
+      {
+        q: "Чи застосовується AI у державних оборонних закупівлях у Плімуті?",
+        qEn: "Is AI used in defence procurement in Plymouth?",
+        a: "Так. Міністерство оборони Великобританії та великі оборонні підрядники Плімута активно інтегрують AI у процеси закупівель: від прогнозування попиту на запчастини до оцінювання ризиків у ланцюгах постачання. ML допомагає виявляти аномалії в контрактах та оптимізувати логістику.",
+        aEn: "Yes. The UK MoD and Plymouth's major defence contractors are integrating AI into procurement processes: from spare parts demand forecasting to supply chain risk assessment. ML helps detect contract anomalies and optimise logistics across naval supply chains.",
+      },
+    ],
+  },
+  {
+    slug: "derby",
+    nameUk: "Дербі",
+    nameEn: "Derby",
+    region: "Дербішир, Іст-Мідлендс",
+    regionEn: "Derbyshire, East Midlands",
+    population: "261 тис.",
+    populationEn: "261,000",
+    businesses: 16000,
+    description:
+      "Дербі — серце британської аерокосмічної та передової виробничої промисловості. Тут розташована штаб-квартира Rolls-Royce, виробництво компонентів Airbus та завод Toyota Manufacturing UK, що формують потужний кластер промислового AI та предиктивного технічного обслуговування. Університет Дербі веде дослідження у галузі AI для виробництва, а кластер передового машинобудування Іст-Мідлендс приваблює ML-інвестиції. Codeworth розробляє ML-рішення для аерокосмічного та автомобільного секторів.",
+    descriptionEn:
+      "Derby is the heart of the UK aerospace and advanced manufacturing industry. Rolls-Royce global headquarters, Airbus component manufacturing, and Toyota Manufacturing UK anchor a powerful industrial AI and predictive maintenance cluster. The University of Derby drives AI research for manufacturing, and the East Midlands advanced manufacturing cluster attracts ML investment. Codeworth builds ML solutions for Derby's aerospace and automotive sectors.",
+    seoTitle: "ML-консалтинг у Дербі | Аерокосмічний та виробничий AI | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Derby | Aerospace & Manufacturing AI | Codeworth",
+    seoDesc:
+      "ML-консалтинг у Дербі: аерокосмічний AI, предиктивне обслуговування, виробничий ML. Від £4,000. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Derby: aerospace AI, predictive maintenance, manufacturing ML. From £4,000. Codeworth ML agency.",
+    stats: [
+      { label: "ML-компаній у регіоні", labelEn: "ML companies in the region", value: "230+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "1,540+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "51+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£46,000" },
+      { label: "Реалізованих проєктів Codeworth", labelEn: "Codeworth projects delivered", value: "3" },
+    ],
+    faq: [
+      {
+        q: "Як Rolls-Royce використовує ML у Дербі?",
+        qEn: "How does Rolls-Royce use ML in Derby?",
+        a: "Rolls-Royce застосовує ML для предиктивного обслуговування авіадвигунів через платформу IntelligentEngine, аналізу телеметрії польотів у реальному часі, оптимізації виробничих процесів та контролю якості за допомогою комп'ютерного зору. Центр даних компанії у Дербі обробляє мільярди точок даних щодня.",
+        aEn: "Rolls-Royce uses ML for predictive aero-engine maintenance through its IntelligentEngine platform, real-time flight telemetry analysis, manufacturing process optimisation, and computer vision quality control. The company's data centre in Derby processes billions of data points daily to keep engines airworthy.",
+      },
+      {
+        q: "Які можливості ML є у виробництві Дербі?",
+        qEn: "What ML opportunities exist in Derby manufacturing?",
+        a: "Виробничий сектор Дербі потребує ML для прогнозованого технічного обслуговування обладнання, виявлення дефектів за допомогою комп'ютерного зору, оптимізації ланцюгів постачання та планування виробництва. Toyota UK та Airbus активно інвестують у цифрові двійники та AI-автоматизацію.",
+        aEn: "Derby's manufacturing sector needs ML for equipment predictive maintenance, computer vision defect detection, supply chain optimisation, and production scheduling. Toyota UK and Airbus are actively investing in digital twins and AI-driven automation to improve quality and reduce downtime.",
+      },
+      {
+        q: "Як розвиваються ML-інвестиції в Іст-Мідлендс?",
+        qEn: "How is ML investment developing in the East Midlands?",
+        a: "Іст-Мідлендс отримує значні інвестиції в ML завдяки кластеру передового машинобудування. Midlands Engine інвестиційний фонд підтримує AI-стартапи. Аерокосмічна та автомобільна промисловість залучають провідних ML-спеціалістів, а близькість до Нотінгему та Лестера розширює талант-пул.",
+        aEn: "East Midlands is attracting significant ML investment through its advanced manufacturing cluster. The Midlands Engine investment fund supports AI startups. Aerospace and automotive sectors attract top ML talent, and proximity to Nottingham and Leicester broadens the talent pool for growing tech companies.",
+      },
+      {
+        q: "Як Toyota застосовує ML у своєму ланцюгу постачання в Дербі?",
+        qEn: "How does Toyota use ML in its Derby supply chain?",
+        a: "Toyota Manufacturing UK у Дербі використовує ML для прогнозування попиту на компоненти, оптимізації логістики між постачальниками, виявлення аномалій у виробничих процесах за методологією Toyota Production System та предиктивного обслуговування роботизованих ліній.",
+        aEn: "Toyota Manufacturing UK in Derby uses ML for component demand forecasting, supplier logistics optimisation, anomaly detection in production processes aligned with Toyota Production System methodology, and predictive maintenance of robotic assembly lines.",
+      },
+      {
+        q: "Де знайти ML-таланти у Дербі?",
+        qEn: "Where can you find ML talent in Derby?",
+        a: "Університет Дербі готує ML-спеціалістів з акцентом на промислові застосування. Місцеві ML-спільноти та hackathon-заходи об'єднують фахівців аерокосмічного та автомобільного секторів. Дербі також привертає ML-спеціалістів з Бірмінгема та Нотінгему завдяки розвиненій транспортній інфраструктурі.",
+        aEn: "The University of Derby trains ML specialists with an emphasis on industrial applications. Local ML meetups and hackathons connect professionals from aerospace and automotive sectors. Derby also attracts ML talent from Birmingham and Nottingham thanks to strong rail and road connections.",
+      },
+    ],
+  },
+  {
+    slug: "portsmouth",
+    nameUk: "Портсмут",
+    nameEn: "Portsmouth",
+    region: "Гемпшир, Південна Англія",
+    regionEn: "Hampshire, South East England",
+    population: "215 тис.",
+    populationEn: "215,000",
+    businesses: 13000,
+    description:
+      "Портсмут — провідний центр військово-морського оборонного AI та кібербезпеки Великобританії. BAE Systems і Міністерство оборони Великобританії формують потужний кластер оборонних технологій, а Університет Портсмута відомий дослідженнями у галузі AI та кібербезпеки. Морський фінтех та цифровий ігровий кластер додають різноманіття технологічній екосистемі. Команда Codeworth розробляє ML-рішення для оборонного сектору, кібербезпеки та морської аналітики.",
+    descriptionEn:
+      "Portsmouth is a leading UK hub for naval defence AI and cybersecurity. BAE Systems and the UK Ministry of Defence anchor a powerful defence technology cluster, while the University of Portsmouth is recognised for AI and cybersecurity research. Maritime fintech and a digital gaming cluster add diversity to the tech ecosystem. Codeworth builds ML solutions for Portsmouth's defence sector, cybersecurity firms, and maritime data analytics.",
+    seoTitle: "ML-консалтинг у Портсмуті | Оборонний AI та кібербезпека | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Portsmouth | Defence AI & Cybersecurity ML | Codeworth",
+    seoDesc:
+      "ML-консалтинг у Портсмуті: оборонний AI, кібербезпека ML, морська аналітика. Від £4,000. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Portsmouth: defence AI, cybersecurity ML, maritime data science. From £4,000. Codeworth ML agency.",
+    stats: [
+      { label: "ML-компаній у регіоні", labelEn: "ML companies in the region", value: "210+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "1,390+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "47+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£45,000" },
+      { label: "Реалізованих проєктів Codeworth", labelEn: "Codeworth projects delivered", value: "2" },
+    ],
+    faq: [
+      {
+        q: "Як AI застосовується в оборонному секторі Портсмута?",
+        qEn: "How is AI used in Portsmouth's defence sector?",
+        a: "BAE Systems та підрозділи Міністерства оборони у Портсмуті використовують AI для аналізу розвідувальних даних, предиктивного обслуговування бойових кораблів, виявлення кіберзагроз у військових мережах та автономних морських систем. Портсмут є одним із ключових центрів розробки оборонного AI в Великобританії.",
+        aEn: "BAE Systems and MoD units in Portsmouth use AI for intelligence data analysis, predictive maintenance of warships, cyber threat detection in military networks, and autonomous maritime systems. Portsmouth is one of the UK's key centres for defence AI development and testing.",
+      },
+      {
+        q: "Які ML-методи застосовуються в кібербезпеці Портсмута?",
+        qEn: "What ML methods are used in Portsmouth cybersecurity?",
+        a: "Кібербезпекові компанії Портсмута активно використовують ML для виявлення аномалій у мережевому трафіку, класифікації шкідливого програмного забезпечення, прогнозування кіберінцидентів та автоматизованого реагування на загрози. Університет Портсмута проводить дослідження adversarial ML та stealthy attack detection.",
+        aEn: "Portsmouth cybersecurity companies use ML for network traffic anomaly detection, malware classification, cyber incident prediction, and automated threat response. The University of Portsmouth conducts research in adversarial ML and stealthy attack detection relevant to both defence and commercial cybersecurity.",
+      },
+      {
+        q: "Які ML-курси пропонує Університет Портсмута?",
+        qEn: "What ML courses does the University of Portsmouth offer?",
+        a: "Університет Портсмута пропонує програми з AI та машинного навчання, кібербезпеки та цифрової криміналістики, науки про дані, а також спеціалізований курс AI для оборонних та морських застосувань. Партнерство з оборонною промисловістю забезпечує практичну орієнтацію програм.",
+        aEn: "The University of Portsmouth offers programmes in AI and machine learning, cybersecurity and digital forensics, data science, and a specialist course in AI for defence and maritime applications. Industry partnerships with defence contractors ensure graduates have practical, employment-ready skills.",
+      },
+      {
+        q: "Як розвивається морська наука про дані у Портсмуті?",
+        qEn: "How is maritime data science developing in Portsmouth?",
+        a: "Портсмут розвиває морську науку про дані через аналітику трафіку судноплавства, оптимізацію портових операцій за допомогою IoT-сенсорів, ML для прогнозування морського страхування та аналіз даних морського фінтеху. Близькість до Саутгемптона розширює можливості регіонального морського технологічного кластеру.",
+        aEn: "Portsmouth is developing maritime data science through shipping traffic analytics, port operations optimisation with IoT sensors, ML for marine insurance forecasting, and maritime fintech data analysis. Proximity to Southampton extends the regional maritime tech cluster's capabilities.",
+      },
+      {
+        q: "Чи є у Портсмуті технологічний коридор Південного узбережжя?",
+        qEn: "Is Portsmouth part of a South coast tech corridor?",
+        a: "Так. Портсмут входить до технологічного коридору Південного узбережжя разом з Саутгемптоном, Борнмутом та Брайтоном. Цей коридор спеціалізується на оборонних технологіях, морській промисловості та цифровому медіа. M27/A3(M) та залізничні сполучення полегшують переміщення спеціалістів між містами регіону.",
+        aEn: "Yes. Portsmouth is part of the South coast tech corridor alongside Southampton, Bournemouth, and Brighton. This corridor specialises in defence technology, maritime industry, and digital media. M27/A3(M) and rail connections facilitate talent mobility between cities, creating a cohesive regional ML ecosystem.",
+      },
+    ],
+  },
 ];
 
 export function getCity(slug: string): GeoCity | undefined {

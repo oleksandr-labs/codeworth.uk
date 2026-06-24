@@ -181,6 +181,58 @@ const FAQ_SECTIONS_EN = [
     ],
   },
   {
+    id: "mlops-infrastructure",
+    title: "MLOps and Infrastructure",
+    items: [
+      {
+        q: "What is MLOps and why does it matter?",
+        a: "MLOps is the set of practices that deploys, monitors, and maintains ML models reliably in production. Without it, models degrade silently as data distributions shift. For UK regulated industries, MLOps is not optional — FCA SS1/23 and NHS audit trail requirements both demand documented, reproducible model lifecycle management. Codeworth builds MLOps tooling into every production ML project as standard.",
+      },
+      {
+        q: "Which cloud platform should we choose for UK ML workloads — Azure, AWS, or GCP?",
+        a: "The right choice depends on your regulatory context and existing tooling. Azure UK South is the preferred option for FCA-regulated workloads because it satisfies UK data residency requirements and integrates natively with Microsoft 365 compliance tooling. AWS offers the broadest ML service catalogue (SageMaker, Bedrock, Rekognition) and is strongest for general ML engineering. GCP and Vertex AI suit research-oriented teams and BigQuery-heavy data stacks. NHS Digital projects typically require Azure UK South or AWS eu-west-2 (London) for data residency. Codeworth is cloud-agnostic and recommends based on your specific compliance, cost, and integration requirements.",
+      },
+      {
+        q: "How much data storage does an ML project typically require?",
+        a: "Storage requirements vary significantly by model type. NLP models with text datasets typically need 10–50 GB. Computer vision projects with image or video data commonly require 100–500 GB or more. Tabular models for fraud detection or credit scoring are usually under 10 GB. The critical factor is not volume but data quality — a clean, well-labelled 5 GB dataset frequently outperforms a noisy 100 GB one. We conduct a two-week data readiness audit at project start to assess what you have, what is missing, and what needs cleaning before modelling begins.",
+      },
+      {
+        q: "What is model monitoring and how frequently should it run?",
+        a: "Model monitoring tracks data drift (changes in input feature distributions) and model performance degradation (drop in precision, recall, or AUC on live data) after deployment. Monitoring frequency depends on your risk profile: FCA-regulated models (credit, insurance) require daily automated checks with alert thresholds defined in the model risk register. NHS clinical models typically run on weekly monitoring cycles. Standard commercial models are monitored monthly. All Codeworth MLOps setups include automated alerting via Slack or email when drift or performance metrics cross agreed thresholds.",
+      },
+      {
+        q: "Can you migrate our existing on-premise ML models to the cloud?",
+        a: "Yes. We have experience migrating on-premise model serving environments to Azure UK South, AWS eu-west-2 (London), and hybrid configurations where sensitive data remains on-prem while compute scales in the cloud. A typical migration takes 4–8 weeks and includes model re-validation in the new environment, infrastructure-as-code documentation, and a data residency confirmation sign-off. All migrated models undergo performance regression testing to confirm cloud results match on-premise baselines before go-live.",
+      },
+    ],
+  },
+  {
+    id: "data-and-privacy",
+    title: "Data and Privacy",
+    items: [
+      {
+        q: "How does Codeworth handle our data under UK GDPR?",
+        a: "We act as a data processor under UK GDPR. Before any data transfer we sign a Data Processing Agreement (DPA) that specifies lawful basis, retention periods, and sub-processor chains. Your data is used exclusively for the contracted project and is not used for any other client engagement or to train internal models. All data is deleted or returned at project completion in accordance with the DPA. We maintain a UK GDPR-compliant data register and can provide documentation for your own compliance records or DPO review.",
+      },
+      {
+        q: "What is the minimum amount of data needed to build an ML model?",
+        a: "Minimum viable data depends on the task. Binary classification models typically need at least 1,000 labelled examples per class, though 5,000+ per class is preferable for production accuracy. Time series forecasting models require at least two full years of historical data to capture seasonal patterns. NLP text classifiers can work with as few as 500 labelled examples per category when combined with active learning and pre-trained transformer fine-tuning. We complete a data readiness assessment at the start of every engagement so you know exactly what you have and what gaps need addressing before modelling begins.",
+      },
+      {
+        q: "Can you work with synthetic or anonymised data?",
+        a: "Yes. For sectors where real data cannot leave the organisation we use synthetic data generation techniques including CTGAN (Conditional Tabular GAN) and differential privacy methods to produce statistically representative training sets. Anonymised financial datasets approved for NHS and FCA-regulated use cases are also available for benchmarking and pre-training. We document the synthetic data generation methodology in the model card so your compliance team has full audit trail visibility.",
+      },
+      {
+        q: "Do you sign NDAs, and how is intellectual property handled?",
+        a: "Yes. We sign mutual NDAs at project start before any confidential information is exchanged. All intellectual property arrangements are specified in the project contract: the client owns 100% of all code, trained model weights, training datasets, and documentation produced during the engagement. Codeworth retains no ownership or licence rights. We may reference the project type and sector in our portfolio as an anonymised case study unless you request full confidentiality, in which case we sign a non-reference clause.",
+      },
+      {
+        q: "What happens to our data and models if Codeworth stops operating?",
+        a: "Our standard DPA includes data return and destruction provisions that apply regardless of the reason for contract termination, including business cessation. All code is held in client-owned or client-accessible repositories throughout the project, not just at handover. Trained model weights and artefacts are stored on client infrastructure or transferred to client-controlled cloud storage. In the event of business discontinuation, we commit to a 30-day wind-down period to complete data transfer and model handover. These provisions are enforceable contract terms, not informal commitments.",
+      },
+    ],
+  },
+  {
     id: "support",
     title: "Support",
     items: [
@@ -346,6 +398,58 @@ const FAQ_SECTIONS_UK = [
       {
         q: "Чи надаєте ви документацію моделі та передачу?",
         a: "Так. Кожна продакшн ML-поставка включає: картку моделі (призначення, метрики продуктивності, обмеження, опис навчальних даних), діаграму технічної архітектури, документацію API, MLOps runbook та запис у реєстрі ризиків моделей, що відповідає FCA. Також надаємо 4 тижні hypercare-підтримки після запуску та опційний MLOps-ретейнер від £800/місяць.",
+      },
+    ],
+  },
+  {
+    id: "mlops-infrastructure",
+    title: "MLOps та Інфраструктура",
+    items: [
+      {
+        q: "Що таке MLOps і чому це важливо?",
+        a: "MLOps — це набір практик, що забезпечує надійне розгортання, моніторинг та підтримку ML-моделей у продакшні. Без MLOps моделі деградують непомітно зі зміною розподілу даних. Для регульованих галузей UK MLOps є обов'язковим: вимоги FCA SS1/23 та аудиторські слідства NHS вимагають документованого та відтворюваного управління життєвим циклом моделей. Codeworth вбудовує MLOps-інструментарій у кожен продакшн ML-проєкт як стандарт.",
+      },
+      {
+        q: "Яку хмарну платформу обрати для ML в UK — Azure, AWS чи GCP?",
+        a: "Правильний вибір залежить від регуляторного контексту та наявної інфраструктури. Azure UK South є пріоритетним варіантом для FCA-регульованих навантажень — задовольняє вимоги до резидентності даних у UK та нативно інтегрується з інструментами відповідності Microsoft 365. AWS пропонує найширший каталог ML-сервісів (SageMaker, Bedrock, Rekognition) і є найсильнішим для загальної ML-інженерії. GCP та Vertex AI підходять командам, орієнтованим на дослідження, та стекам на основі BigQuery. Проєкти NHS Digital зазвичай вимагають Azure UK South або AWS eu-west-2 (Лондон) для резидентності даних. Codeworth не прив'язаний до конкретної хмари та рекомендує платформу виходячи з ваших вимог до відповідності, вартості та інтеграції.",
+      },
+      {
+        q: "Скільки сховища даних зазвичай потребує ML-проєкт?",
+        a: "Вимоги до сховища суттєво різняться залежно від типу моделі. NLP-моделі з текстовими датасетами зазвичай потребують 10–50 ГБ. Проєкти з комп'ютерного зору з зображеннями або відео — від 100 до 500+ ГБ. Табличні моделі для fraud detection або кредитного скорингу зазвичай займають менше 10 ГБ. Критичний фактор — не обсяг, а якість даних: чистий, добре розмічений датасет на 5 ГБ часто перевершує зашумлений на 100 ГБ. На початку кожного проєкту ми проводимо двотижневий аудит готовності даних.",
+      },
+      {
+        q: "Що таке моніторинг моделі і як часто він має запускатися?",
+        a: "Моніторинг моделі відстежує дрейф даних (зміни в розподілі вхідних ознак) та деградацію продуктивності моделі (падіння precision, recall або AUC на живих даних) після деплою. Частота моніторингу залежить від профілю ризику: FCA-регульовані моделі (кредит, страхування) вимагають щоденних автоматизованих перевірок. Клінічні моделі NHS зазвичай моніторяться щотижня. Стандартні комерційні моделі — щомісяця. Всі MLOps-налаштування Codeworth включають автоматичне сповіщення через Slack або email при перевищенні погоджених порогів.",
+      },
+      {
+        q: "Чи можна перенести наші on-premise ML-моделі в хмару?",
+        a: "Так. Ми маємо досвід міграції on-premise середовищ сервінгу моделей до Azure UK South, AWS eu-west-2 (Лондон) та гібридних конфігурацій. Типова міграція займає 4–8 тижнів і включає повторну валідацію моделі в новому середовищі, документацію у вигляді infrastructure-as-code та підтвердження резидентності даних. Всі перенесені моделі проходять регресійне тестування продуктивності для підтвердження відповідності хмарних результатів базовим on-premise показникам.",
+      },
+    ],
+  },
+  {
+    id: "data-and-privacy",
+    title: "Дані та Конфіденційність",
+    items: [
+      {
+        q: "Як Codeworth обробляє наші дані відповідно до UK GDPR?",
+        a: "Ми діємо як обробник даних за UK GDPR. До будь-якої передачі даних ми підписуємо Угоду про обробку даних (DPA), що визначає правову підставу, строки зберігання та ланцюжки суб-обробників. Ваші дані використовуються виключно для замовленого проєкту і не застосовуються для інших клієнтів чи навчання власних моделей. Всі дані видаляються або повертаються після завершення проєкту відповідно до DPA. Ми ведемо реєстр даних, що відповідає UK GDPR, та надаємо документацію для ваших власних комплаєнс-записів або перевірки DPO.",
+      },
+      {
+        q: "Яка мінімальна кількість даних потрібна для побудови ML-моделі?",
+        a: "Мінімальний обсяг залежить від задачі. Моделі бінарної класифікації зазвичай потребують щонайменше 1 000 розмічених прикладів на клас, хоча для продакшн-точності краще 5 000+. Моделі прогнозування часових рядів вимагають щонайменше двох повних років історичних даних для охоплення сезонних патернів. NLP-класифікатори тексту можуть працювати з 500 розміченими прикладами на категорію у поєднанні з активним навчанням та файнтюнінгом трансформерів. На початку кожного проєкту ми проводимо оцінку готовності даних.",
+      },
+      {
+        q: "Чи можете ви працювати із синтетичними або анонімізованими даними?",
+        a: "Так. Для секторів, де реальні дані не можуть виходити за межі організації, ми використовуємо методи генерації синтетичних даних, включаючи CTGAN та диференційну приватність. Анонімізовані фінансові датасети, схвалені для NHS та FCA-регульованих кейсів, також доступні для бенчмаркінгу. Ми документуємо методологію генерації синтетичних даних у картці моделі для повного аудиторського сліду.",
+      },
+      {
+        q: "Чи підписуєте ви NDA і як врегульовано питання інтелектуальної власності?",
+        a: "Так. Ми підписуємо взаємні NDA на початку проєкту до будь-якого обміну конфіденційною інформацією. Всі домовленості щодо інтелектуальної власності зафіксовано в проєктному договорі: клієнт володіє 100% всього коду, ваг навченої моделі, навчальних датасетів та документації. Codeworth не зберігає жодних прав власності або ліцензій. Ми можемо посилатися на тип проєкту та сектор у портфоліо як анонімний кейс, якщо ви не вимагаєте повної конфіденційності.",
+      },
+      {
+        q: "Що станеться з нашими даними та моделями, якщо Codeworth припинить роботу?",
+        a: "Наш стандартний DPA включає положення про повернення та знищення даних, що застосовуються незалежно від причини припинення договору, включаючи закриття бізнесу. Весь код зберігається в репозиторіях, що належать клієнту або доступні йому, протягом усього проєкту. Навчені ваги моделей та артефакти зберігаються на інфраструктурі клієнта або передаються до хмарного сховища під його контролем. У разі закриття бізнесу ми зобов'язуємось забезпечити 30-денний перехідний період для завершення передачі даних і моделей.",
       },
     ],
   },
