@@ -859,7 +859,7 @@ const SERVICES_EN: Record<string, Partial<Service>> = {
     description: "GPT bots, computer vision, NLP — AI that automates real business processes and cuts costs.",
     longDescription: "We deploy AI solutions across the full spectrum: RAG chatbots that handle up to 68% of support tickets without a human agent, Computer Vision systems that catch 96% more production defects, NLP that analyses thousands of reviews per minute, and GenAI that creates content 12× faster. We select the right approach — Prompt Engineering, RAG, or Fine-tuning — based on your task and budget.",
     deliveryTime: "2–10 weeks",
-    priceFrom: "from £375",
+    priceFrom: "£375",
     metaDescription: "AI development for UK businesses — GPT chatbots, RAG, NLP, computer vision, GenAI. Codeworth from £375. Real results: -68% support load, -96% missed defects.",
     keyword: "AI development UK",
     features: [
@@ -983,7 +983,7 @@ const SERVICES_EN: Record<string, Partial<Service>> = {
     description: "Custom ML models, predictive analytics and MLOps — turning your data into a competitive edge.",
     longDescription: "We build and deploy full-cycle ML solutions: fraud detection (-97% fraud in 2 months), churn prediction (-31%), demand forecasting (-34% excess stock), recommendation engines (+176% CTR), and dynamic pricing (+18% margin). From data audit and model training to production deployment with MLOps monitoring and automated retraining.",
     deliveryTime: "4–12 weeks",
-    priceFrom: "from £750",
+    priceFrom: "£750",
     metaDescription: "Machine Learning for UK businesses — fraud detection, churn prediction, recommendations, MLOps. Codeworth from £750. Real results: -97% fraud, +176% recommendation CTR, -34% excess stock.",
     keyword: "machine learning development UK",
     features: [
@@ -1077,7 +1077,7 @@ const SERVICES_EN: Record<string, Partial<Service>> = {
     description: "Text classification, NER, sentiment analysis, RAG — turning unstructured text into business insights at scale.",
     longDescription: "We build full-cycle NLP systems: from support ticket classifiers (93% accuracy) to enterprise RAG pipelines for corporate documents. We process hundreds of thousands of texts daily — reviews, contracts, tickets, medical notes. Multilingual NLP supported: EN + UK + PL.",
     deliveryTime: "3–8 weeks",
-    priceFrom: "from £1,125",
+    priceFrom: "£1,125",
     metaDescription: "NLP development services UK — text classification, NER, sentiment analysis, RAG pipelines. Codeworth from £1,125. Real results: 93% ticket classification accuracy, -65% triage time.",
     keyword: "NLP development services UK",
     features: [
@@ -1160,7 +1160,7 @@ const SERVICES_EN: Record<string, Partial<Service>> = {
     description: "Object detection, quality inspection, medical imaging and OCR — ML systems that see better than humans.",
     longDescription: "We build CV systems for automated visual inspection: from YOLOv8 defect detection on production lines (-96% missed defects) to medical imaging analytics and OCR for documents. We deploy on edge devices (NVIDIA Jetson), cloud or on-premise depending on your latency and GDPR requirements.",
     deliveryTime: "4–10 weeks",
-    priceFrom: "from £1,500",
+    priceFrom: "£1,500",
     metaDescription: "Computer vision development services UK — YOLOv8 object detection, OCR, quality inspection, medical imaging. Codeworth from £1,500. Real results: -96% missed defects, ×12 inspection speed.",
     keyword: "computer vision development UK",
     features: [
@@ -1243,7 +1243,7 @@ const SERVICES_EN: Record<string, Partial<Service>> = {
     description: "MLOps pipelines, drift monitoring and automated retraining — keeping your ML models accurate in production.",
     longDescription: "87% of ML models never reach production. We solve exactly that problem: building automated CI/CD for ML, setting up data and concept drift monitoring, automating retraining via Airflow DAG. The result — models don't degrade within 3–6 months, they stay accurate. Includes MLOps Retainer £800/mo for ongoing support.",
     deliveryTime: "2–6 weeks (setup), then retainer",
-    priceFrom: "from £750",
+    priceFrom: "£750",
     metaDescription: "MLOps services UK — CI/CD for ML, model serving, drift monitoring, auto-retraining. Codeworth from £750 or £800/mo retainer. 87% of models without MLOps degrade within 6 months.",
     keyword: "MLOps services UK",
     features: [
@@ -1325,7 +1325,7 @@ const SERVICES_EN: Record<string, Partial<Service>> = {
     description: "Enterprise RAG systems, fine-tuned LLMs and AI chatbots — with GDPR-compliant architecture for UK/EU business.",
     longDescription: "We build enterprise-grade LLM applications: RAG systems for corporate knowledge bases, fine-tuned models for your domain (healthcare, legal, finance), AI chatbots for customer support. Key focus: GDPR/UK GDPR compliance, option for full on-premise deployment without sending data to OpenAI.",
     deliveryTime: "2–8 weeks",
-    priceFrom: "from £1,125",
+    priceFrom: "£1,125",
     metaDescription: "LLM & RAG development services UK — GPT-4o, Llama 3, enterprise chatbots, knowledge base Q&A. Codeworth from £1,125. GDPR-compliant, on-premise deployment available.",
     keyword: "LLM development company UK",
     features: [
@@ -1413,7 +1413,7 @@ const SERVICES_EN: Record<string, Partial<Service>> = {
     description: "ML-powered demand, churn, revenue and risk forecasting — turning your data into accurate business predictions.",
     longDescription: "We specialise in business forecasting with ML: demand forecasting (MAPE < 10%), churn prediction (AUC > 0.90), credit risk scoring and revenue forecasting. From data audit to production ML model with SHAP explanations and MLOps monitoring. Average ROI for retail clients: 12× in the first year.",
     deliveryTime: "3–10 weeks",
-    priceFrom: "from £750",
+    priceFrom: "£750",
     metaDescription: "Predictive analytics services UK — ML demand forecasting, churn prediction, credit risk scoring. Codeworth from £750. MAPE < 10%, AUC > 0.90. Real results: -34% excess stock, -31% churn.",
     keyword: "predictive analytics company UK",
     features: [
