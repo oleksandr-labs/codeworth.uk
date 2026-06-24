@@ -101,3 +101,11 @@
   - computer-vision: 6 → 11 items (hardware requirements, training data volume, CCTV integration, UK GDPR for people CV, validation methodology)
   - nlp: 6 → 11 items (UK legal/financial models, NLP vs LLM, UK English handling, OCR+NLP pipelines, achievable accuracy)
   - llm-rag: 6 → 11 items (LLM selection UK regulated, hallucination prevention, RAG vs fine-tuning, production costs, confidential documents)
+
+
+## Session 2026-06-24 — Sprint 12
+
+### Done (Sprint 12)
+- [x] portfolio.ts: +5 case studies (Aviva claims ML, Rolls-Royce CV turbine inspection, Octopus Energy demand forecasting, Nationwide mortgage NLP, NHS Sepsis early warning)
+- [x] geo.ts: +2 cities (Nottingham, Sunderland) — total 24 UK cities
+- [x] contact/page.tsx: +4 FAQ items (project start time, outside London, estimate info needed, client references)
