@@ -39,6 +39,10 @@ const QUICK_FAQ_UK = [
   { q: "Скільки часу займає розробка?", a: "PoC — 4–6 тижнів, production ML — 8–12 тижнів, enterprise-система — 12–20 тижнів." },
   { q: "Чи потрібні нам власні дані?", a: "Для більшості ML-задач достатньо 1–10 тис. прикладів. Допомагаємо з розміткою та доповненням." },
   { q: "Чи є гарантія якості моделі?", a: "Гарантуємо мінімальний F1-score або AUC перед здачею. 90 днів гарантійної підтримки." },
+  { q: "Чи є безкоштовна початкова консультація?", a: "Так — 30-хвилинний discovery call у відеоформаті, без жодних зобов'язань." },
+  { q: "Чи можна зустрітися особисто у Великій Британії?", a: "Так. На запит зустрічаємося з клієнтами у Лондоні, Манчестері, Единбурзі та інших містах Великої Британії." },
+  { q: "Яку інформацію підготувати до першого дзвінка?", a: "Короткий опис бізнес-проблеми, доступні джерела даних, приблизні терміни та бюджет. Усім іншим займаємося ми." },
+  { q: "Як швидко ви можете розпочати проєкт?", a: "Більшість проєктів стартують упродовж 1–2 тижнів після підписання договору. PoC-проєкти можуть розпочатися за кілька днів у разі термінових потреб." },
 ];
 
 const QUICK_FAQ_EN = [
@@ -46,6 +50,10 @@ const QUICK_FAQ_EN = [
   { q: "How long does development take?", a: "PoC — 3–4 weeks, production ML — 8–12 weeks, enterprise platform — 12–20 weeks." },
   { q: "Do we need our own data?", a: "Most ML tasks need 1–10K labelled examples. We help with annotation and data augmentation." },
   { q: "Is there a quality guarantee?", a: "We guarantee minimum F1-score or AUC before delivery. 3-month warranty support included." },
+  { q: "Do you offer a free initial consultation?", a: "Yes — 30-minute discovery call via video, no obligation." },
+  { q: "Can we meet in person in the UK?", a: "Yes. We meet clients in London, Manchester, Edinburgh and other UK cities on request." },
+  { q: "What information should I prepare for the first call?", a: "Brief description of the business problem, current data sources available, rough timeline, and budget range. We handle everything else." },
+  { q: "How quickly can you start a project?", a: "Most projects can start within 1-2 weeks of contract signature. PoC projects can begin in days for urgent requirements." },
 ];
 
 const localBusinessSchema = {

@@ -48,3 +48,13 @@
 - [x] glossary.ts: added 20 more terms (precision/recall, overfitting, ensemble, Random Forest, time-series, anomaly detection, PCA, data warehouse/lake, model serving, shadow mode, GDPR Article 22, DPIA, MLflow, etc.)
 - [x] services.ts: year refs updated, GPT-3→GPT-4o, Python 3.12
 - [x] niches.ts: year refs updated
+
+## Session 2026-06-23 — Sprint 4: Blog 121-130, FAQ expansion, extras cleanup, 20 glossary, 4 compare
+
+### Done (Sprint 4)
+- [x] blog.ts: added posts 121-130 (A/B testing, accounting ML, last-mile logistics, ML apprenticeships UK, SaaS ML, telecoms ML, model monitoring, LLM security, wealth management ML, ML strategy guide) — each with faq:[5] bilingual
+- [x] pricing/page.tsx: FAQ expanded from 5 → 10 questions (pause project, startup PoC, model performance guarantee, NDA/DPA, cloud-agnostic)
+- [x] contact/page.tsx: quick FAQ expanded from 4 → 8 questions
+- [x] extras-demos.ts: replaced 5 web-dev demos (website-redesign, website-quiz, landing-copywriter, saas-landing, fitness-landing) with ML equivalents (ml-roi-demo, ml-readiness-quiz, model-card-demo, fraud-detection-demo, churn-prediction-demo)
+- [x] glossary.ts: added 20 more terms (hyperparameter tuning, pipeline automation, active learning, GNN, tabular ML, counterfactual explanation, shadow/canary/blue-green deployment, tokenization, semantic similarity, data governance, cost-per-inference, etc.)
+- [x] compare.ts: added 4 more comparison pages (vs Accenture, vs freelance ML engineer, vs DIY MLOps, vs Google Vertex AI)
