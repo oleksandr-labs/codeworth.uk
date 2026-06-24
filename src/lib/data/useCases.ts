@@ -451,6 +451,246 @@ export const USE_CASES: UseCase[] = [
     relatedServices: ["machine-learning", "mlops"],
     relatedExtras: ["erp-ml-integration", "supply-chain-analytics"],
   },
+  {
+    slug: "ma-due-diligence-automation",
+    titleEn: "M&A Due Diligence Automation",
+    titleUk: "Автоматизація M&A due diligence",
+    category: "ai",
+    icon: "⚖️",
+    whoEn: "Magic Circle and Silver Circle law firms, corporate M&A teams",
+    whoUk: "Magic Circle та Silver Circle юридичні фірми, корпоративні M&A команди",
+    problemEn:
+      "Magic Circle and Silver Circle law firms spend 3-4 weeks per transaction on manual contract review, consuming £800/hour senior associate time on mechanical document extraction.",
+    problemUk:
+      "Magic Circle та Silver Circle юридичні фірми витрачають 3-4 тижні на транзакцію на ручний перегляд контрактів, використовуючи час старших помічників за £800/год на механічне вилучення документів.",
+    solutionEn:
+      "Fine-tuned BERT/LegalBERT extracts clauses, flags risks (indemnities, change of control, IP assignment), and cross-references anomalies across 400-600 page data rooms in hours.",
+    solutionUk:
+      "Fine-tuned BERT/LegalBERT витягує пункти, сигналізує про ризики та перехресно посилається на аномалії у кімнатах даних на 400-600 сторінок за години.",
+    resultQuoteEn:
+      "Due diligence review reduced from 3-4 weeks to 4-5 days. Associate time on mechanical review cut 73%. Firms win competitive mandates citing faster timelines.",
+    resultQuoteUk:
+      "Due diligence скорочено з 3-4 тижнів до 4-5 днів. Час на механічний перегляд зменшено на 73%. Фірми виграють мандати завдяки швидшим термінам.",
+    metaTitleEn: "M&A Due Diligence Automation | LegalBERT | Codeworth",
+    metaTitleUk: "Автоматизація M&A Due Diligence | LegalBERT | Codeworth",
+    metaDescriptionEn:
+      "Fine-tuned BERT/LegalBERT for M&A data rooms. Review time 3-4 weeks → 4-5 days. Associate time cut 73%. Codeworth.",
+    metaDescriptionUk:
+      "Fine-tuned BERT/LegalBERT для M&A data rooms. Перегляд 3-4 тижні → 4-5 днів. Час асоціата скорочено на 73%. Codeworth.",
+    relatedPortfolio: ["nlp-contract-analysis", "fraud-detection-bank"],
+    relatedServices: ["nlp", "machine-learning", "artificial-intelligence"],
+    relatedExtras: ["legal-rag", "doc-intelligence"],
+  },
+  {
+    slug: "variable-rate-application-agritech",
+    titleEn: "Variable Rate Application for Arable Farms",
+    titleUk: "Диференційоване внесення добрив для орних ферм",
+    category: "erp",
+    icon: "🌾",
+    whoEn: "UK arable farm estates, AgriTech operators, farm management consultancies",
+    whoUk: "UK орні ферми, AgriTech оператори, консультанти з управління фермами",
+    problemEn:
+      "UK arable farms applying uniform fertiliser rates across variable soil types waste 20-30% of input costs in productive zones while under-performing in marginal areas.",
+    problemUk:
+      "UK орні ферми що вносять однорідні норми добрив на різних типах ґрунту витрачають 20-30% витрат на виробничі зони та недовиконують на маргінальних ділянках.",
+    solutionEn:
+      "Sentinel-2 satellite imagery combined with soil sensor data and 5-year yield maps generates per-field VRA prescriptions exported directly to John Deere and CNH machinery.",
+    solutionUk:
+      "Супутникові знімки Sentinel-2 разом з даними ґрунтових датчиків та 5-річними картами врожайності генерують рецепти VRA на поле, що експортуються прямо на техніку John Deere і CNH.",
+    resultQuoteEn:
+      "22% reduction in fertiliser costs (£340K/year on 12,000-hectare estate). 8% average yield improvement. 1,240 tonnes CO2e ELMS carbon credits earned.",
+    resultQuoteUk:
+      "Зниження витрат на добрива на 22% (£340K/рік на 12 000 га). Середнє підвищення врожайності на 8%. Отримано 1 240 тонн CO2e вуглецевих кредитів ELMS.",
+    metaTitleEn: "ML Variable Rate Application for UK Arable Farms | Codeworth",
+    metaTitleUk: "ML Диференційоване внесення добрив для UK ферм | Codeworth",
+    metaDescriptionEn:
+      "Sentinel-2 + soil sensors → VRA prescriptions. Fertiliser costs −22% (£340K/year). ELMS carbon credits. John Deere/CNH export. Codeworth.",
+    metaDescriptionUk:
+      "Sentinel-2 + ґрунтові датчики → рецепти VRA. Витрати на добрива −22% (£340K/рік). Вуглецеві кредити ELMS. Codeworth.",
+    relatedPortfolio: ["churn-prediction-saas", "fraud-detection-bank"],
+    relatedServices: ["machine-learning", "mlops"],
+    relatedExtras: ["iot-ml-pipeline", "supply-chain-analytics"],
+  },
+  {
+    slug: "ml-portfolio-optimisation-wealth",
+    titleEn: "ML-Enhanced Portfolio Construction for UK Wealth Managers",
+    titleUk: "ML-покращена побудова портфелів для UK wealth managers",
+    category: "ai",
+    icon: "📈",
+    whoEn: "UK wealth managers, DFMs, multi-family offices, FCA-regulated investment firms",
+    whoUk: "UK wealth managers, DFM, multi-family offices, FCA-регульовані інвестиційні фірми",
+    problemEn:
+      "Traditional mean-variance optimisation underperforms during UK market regime changes (2022 rate cycle, 2023 banking stress). Manual rebalancing cannot react fast enough to maintain FCA Consumer Duty suitability.",
+    problemUk:
+      "Традиційна mean-variance оптимізація недостатньо ефективна під час змін ринкового режиму UK. Ручне ребалансування не може реагувати достатньо швидко для підтримки відповідності FCA Consumer Duty.",
+    solutionEn:
+      "Black-Litterman combined with Hidden Markov Model regime detection and factor exposure management. Consumer Duty suitability reports auto-generated per client per rebalancing event.",
+    solutionUk:
+      "Black-Litterman поєднаний з Hidden Markov Model для виявлення режимів та управління факторним впливом. Звіти відповідності Consumer Duty автоматично генеруються для кожного клієнта.",
+    resultQuoteEn:
+      "Sharpe ratio improved 0.31 to 0.47. Maximum drawdown reduced 18% during volatile periods. 4 hours/advisor/month saved on Consumer Duty documentation.",
+    resultQuoteUk:
+      "Sharpe ratio покращився з 0.31 до 0.47. Максимальна просадка зменшилась на 18%. Збережено 4 год/менеджер/міс на документацію Consumer Duty.",
+    metaTitleEn: "ML Portfolio Optimisation for UK Wealth Managers | Codeworth",
+    metaTitleUk: "ML оптимізація портфелів для UK wealth managers | Codeworth",
+    metaDescriptionEn:
+      "Black-Litterman + HMM regime detection. Sharpe 0.31 → 0.47, drawdown −18%. FCA Consumer Duty reports automated. Codeworth.",
+    metaDescriptionUk:
+      "Black-Litterman + HMM виявлення режимів. Sharpe 0.31 → 0.47, просадка −18%. Автоматичні звіти FCA Consumer Duty. Codeworth.",
+    relatedPortfolio: ["fraud-detection-bank", "churn-prediction-saas"],
+    relatedServices: ["machine-learning", "artificial-intelligence", "mlops"],
+    relatedExtras: ["ml-explainability", "compliance-audit-trail"],
+  },
+  {
+    slug: "nhs-dna-prediction",
+    titleEn: "Did-Not-Attend (DNA) Prediction for NHS Outpatients",
+    titleUk: "Прогнозування неявок (DNA) для амбулаторних пацієнтів NHS",
+    category: "ai",
+    icon: "🏥",
+    whoEn: "NHS trusts, acute hospital groups, community health providers",
+    whoUk: "NHS трасти, гострі лікарняні групи, постачальники громадської охорони здоров'я",
+    problemEn:
+      "NHS trusts lose £1.2B annually to missed outpatient appointments. Rule-based reminder systems achieve only 12% reduction in DNAs while flooding low-risk patients with unnecessary communications.",
+    problemUk:
+      "NHS трасти щорічно втрачають £1.2 млрд через пропущені амбулаторні прийоми. Системи нагадувань на основі правил досягають лише 12% зниження DNA.",
+    solutionEn:
+      "ML model combining patient history, appointment type, distance, weather, and day-of-week signals. High-risk patients receive targeted interventions (calls, transport assistance, rescheduling offers).",
+    solutionUk:
+      "ML модель що поєднує історію пацієнта, тип прийому, відстань, погоду та сигнали дня тижня. Пацієнти з високим ризиком отримують цільові втручання.",
+    resultQuoteEn:
+      "33% reduction in non-attendances. £490K annual saving per trust. Caldicott Guardian and NHS DSPT compliant. Model explainability report provided for clinical governance.",
+    resultQuoteUk:
+      "Зниження неявок на 33%. £490K економія на рік на траст. Відповідність Caldicott Guardian та NHS DSPT. Надано звіт про інтерпретованість моделі.",
+    metaTitleEn: "NHS DNA Prediction | ML Outpatient No-Show | Codeworth",
+    metaTitleUk: "NHS Прогноз неявок DNA | ML | Codeworth",
+    metaDescriptionEn:
+      "ML model for NHS DNA prediction. Non-attendances −33%, £490K saved per trust. NHS DSPT & Caldicott compliant. Codeworth.",
+    metaDescriptionUk:
+      "ML модель для прогнозу неявок NHS. Неявки −33%, £490K економія на траст. Відповідність NHS DSPT. Codeworth.",
+    relatedPortfolio: ["fraud-detection-bank", "churn-prediction-saas"],
+    relatedServices: ["machine-learning", "predictive-analytics"],
+    relatedExtras: ["clinical-ai-validation", "ml-explainability"],
+  },
+  {
+    slug: "ecommerce-personalised-recommendations",
+    titleEn: "Personalised Product Recommendations for UK E-commerce",
+    titleUk: "Персоналізовані рекомендації продуктів для UK e-commerce",
+    category: "ecommerce",
+    icon: "🛒",
+    whoEn: "UK online retailers, DTC brands, marketplace sellers",
+    whoUk: "UK онлайн-рітейлери, DTC бренди, продавці маркетплейсів",
+    problemEn:
+      "UK online retailers average 2.3% conversion rate. Showing all customers the same bestseller list ignores individual preferences and leaves 40-60% of product catalogue permanently undiscovered.",
+    problemUk:
+      "UK онлайн-рітейлери в середньому мають 2.3% конверсії. Показуючи всім клієнтам однаковий список бестселерів ігнорує індивідуальні вподобання.",
+    solutionEn:
+      "Two-tower neural network collaborative filtering personalises homepage, email, and basket page recommendations. Cold-start handled with content-based features for new products and new users.",
+    solutionUk:
+      "Two-tower нейромережний collaborative filtering персоналізує рекомендації на головній сторінці, в електронній пошті та на сторінці кошика.",
+    resultQuoteEn:
+      "Average order value increased 19%. Email CTR improved from 3.1% to 7.8%. 26% of revenue now from recommended products (up from 8%). Paid back in 6 weeks.",
+    resultQuoteUk:
+      "Середня вартість замовлення збільшилась на 19%. CTR електронної пошти покращився з 3.1% до 7.8%. 26% доходу тепер від рекомендованих продуктів.",
+    metaTitleEn: "Personalised Product Recommendations for UK E-commerce | Codeworth",
+    metaTitleUk: "Персоналізовані рекомендації для UK e-commerce | Codeworth",
+    metaDescriptionEn:
+      "Two-tower neural network recommendations. AOV +19%, email CTR 3.1% → 7.8%, 26% revenue from recs. ROI in 6 weeks. Codeworth.",
+    metaDescriptionUk:
+      "Two-tower нейромережеві рекомендації. AOV +19%, CTR 3.1% → 7.8%, 26% доходу від рекомендацій. Окупність за 6 тижнів. Codeworth.",
+    relatedPortfolio: ["churn-prediction-saas", "ai-chatbot-saas"],
+    relatedServices: ["machine-learning", "artificial-intelligence"],
+    relatedExtras: ["personalisation-engine", "crm-ml-sync"],
+  },
+  {
+    slug: "ueba-insider-threat-detection",
+    titleEn: "UEBA Insider Threat and Account Takeover Detection",
+    titleUk: "Виявлення внутрішніх загроз та захоплення акаунтів через UEBA",
+    category: "ai",
+    icon: "🔐",
+    whoEn: "UK fintechs, challenger banks, payment processors, regulated financial firms",
+    whoUk: "UK фінтехи, челленджер-банки, платіжні процесори, регульовані фінансові фірми",
+    problemEn:
+      "Rule-based fraud detection triggers 34% false positive rate — blocking legitimate customers and overwhelming fraud operations teams. Sophisticated account takeover attacks evade static rules.",
+    problemUk:
+      "Виявлення шахрайства на основі правил дає 34% хибних спрацювань — блокуючи законних клієнтів та перевантажуючи команди боротьби з шахрайством.",
+    solutionEn:
+      "LSTM autoencoders detect session behavioural anomalies. Graph ML identifies fraud rings through relationship analysis. Sub-100ms real-time scoring with adaptive thresholds via champion/challenger.",
+    solutionUk:
+      "LSTM автоенкодери виявляють аномалії поведінки сесії. Graph ML ідентифікує шахрайські кільця. Оцінка в реальному часі менш ніж за 100 мс.",
+    resultQuoteEn:
+      "Fraud losses reduced 71% (£128K/month saved). False positive rate 34% to 6.2%. Fraud ops workload cut 58%. FCA-compliant adverse action notices auto-generated.",
+    resultQuoteUk:
+      "Шахрайські збитки зменшено на 71% (заощаджено £128K/міс). Хибні спрацювання 34% до 6.2%. Навантаження на ops скорочено на 58%.",
+    metaTitleEn: "UEBA Insider Threat & Account Takeover Detection | Codeworth",
+    metaTitleUk: "UEBA виявлення внутрішніх загроз та ATO | Codeworth",
+    metaDescriptionEn:
+      "LSTM + Graph ML for UEBA. Fraud losses −71% (£128K/month), false positives 34% → 6.2%. FCA adverse action notices. Codeworth.",
+    metaDescriptionUk:
+      "LSTM + Graph ML для UEBA. Шахрайство −71% (£128K/міс), хибні спрацювання 34% → 6.2%. Codeworth.",
+    relatedPortfolio: ["fraud-detection-bank", "fraud-detection-fintech"],
+    relatedServices: ["machine-learning", "artificial-intelligence", "mlops"],
+    relatedExtras: ["ml-explainability", "compliance-audit-trail"],
+  },
+  {
+    slug: "saas-churn-prediction-prevention",
+    titleEn: "Customer Churn Prediction and Prevention for UK SaaS",
+    titleUk: "Прогнозування та запобігання відтоку клієнтів для UK SaaS",
+    category: "ai",
+    icon: "📊",
+    whoEn: "UK SaaS companies, subscription platforms, B2B software vendors",
+    whoUk: "UK SaaS компанії, підписочні платформи, B2B постачальники програмного забезпечення",
+    problemEn:
+      "UK SaaS companies average 15-20% annual churn. Customer success teams discover at-risk accounts only when cancellation notices arrive — too late for effective intervention.",
+    problemUk:
+      "UK SaaS компанії мають 15-20% річного відтоку. Команди customer success дізнаються про проблемні акаунти лише коли надходять повідомлення про скасування — надто пізно.",
+    solutionEn:
+      "Gradient boosting model on 60+ product usage signals (login frequency, feature adoption, support tickets, invoice latency). At-risk score updated daily. Automated playbooks trigger CS outreach at optimal intervention points.",
+    solutionUk:
+      "Gradient boosting модель на 60+ сигналах використання продукту. Оцінка ризику оновлюється щодня. Автоматизовані playbooks запускають outreach CS у оптимальні моменти втручання.",
+    resultQuoteEn:
+      "Churn rate reduced from 18% to 11% in 12 months. MRR saved: £380K/year. CS team capacity freed by 35% through prioritised outreach list. 94% model accuracy at 30-day horizon.",
+    resultQuoteUk:
+      "Відтік знизився з 18% до 11% за 12 місяців. Збережений MRR: £380K/рік. Потужність CS команди звільнена на 35% завдяки пріоритетному списку.",
+    metaTitleEn: "SaaS Churn Prediction & Prevention for UK | Codeworth",
+    metaTitleUk: "Прогноз та запобігання відтоку SaaS для UK | Codeworth",
+    metaDescriptionEn:
+      "Gradient boosting on 60+ usage signals. Churn 18% → 11%, MRR saved £380K/year. CS capacity freed 35%. Codeworth.",
+    metaDescriptionUk:
+      "Gradient boosting на 60+ сигналах. Відтік 18% → 11%, збережений MRR £380K/рік. CS потужність +35%. Codeworth.",
+    relatedPortfolio: ["ml-churn-predictor", "churn-prediction-saas"],
+    relatedServices: ["machine-learning", "predictive-analytics"],
+    relatedExtras: ["crm-ml-sync"],
+  },
+  {
+    slug: "food-manufacturing-predictive-maintenance",
+    titleEn: "Predictive Maintenance for UK Food Manufacturing",
+    titleUk: "Прогностичне обслуговування для UK харчового виробництва",
+    category: "automation",
+    icon: "⚙️",
+    whoEn: "UK food manufacturers, FMCG producers, beverage companies, co-packers",
+    whoUk: "UK харчові виробники, FMCG виробники, виробники напоїв, co-packers",
+    problemEn:
+      "Unplanned equipment downtime in UK food manufacturing costs £180K-£500K per hour (including regulatory compliance implications for batch recall). Preventive maintenance schedules are based on calendar time, not actual equipment condition.",
+    problemUk:
+      "Незапланований простій обладнання у UK харчовому виробництві коштує £180K-£500K на годину. Профілактичне обслуговування базується на календарному часі, а не фактичному стані обладнання.",
+    solutionEn:
+      "Multivariate time-series anomaly detection on vibration, temperature, pressure, and power consumption sensors. LSTM model trained on 3 years of historical failure data predicts failures 72-96 hours before occurrence.",
+    solutionUk:
+      "Багатовимірне виявлення аномалій часового ряду на датчиках вібрації, температури, тиску та споживання енергії. LSTM модель прогнозує відмови за 72-96 годин.",
+    resultQuoteEn:
+      "Unplanned downtime reduced 67%. Maintenance costs cut 31% through condition-based scheduling. OEE improved from 71% to 84%. ROI achieved in 7 months.",
+    resultQuoteUk:
+      "Незапланований простій скорочено на 67%. Витрати на обслуговування знижено на 31%. OEE покращився з 71% до 84%. ROI досягнуто за 7 місяців.",
+    metaTitleEn: "Predictive Maintenance for UK Food Manufacturing | Codeworth",
+    metaTitleUk: "Прогностичне обслуговування для UK харчового виробництва | Codeworth",
+    metaDescriptionEn:
+      "LSTM anomaly detection on IoT sensors. Downtime −67%, maintenance costs −31%, OEE 71% → 84%. ROI in 7 months. Codeworth.",
+    metaDescriptionUk:
+      "LSTM виявлення аномалій на IoT датчиках. Простій −67%, обслуговування −31%, OEE 71% → 84%. ROI за 7 місяців. Codeworth.",
+    relatedPortfolio: ["churn-prediction-saas", "fraud-detection-bank"],
+    relatedServices: ["machine-learning", "mlops"],
+    relatedExtras: ["iot-ml-pipeline", "anomaly-detection"],
+  },
 ];
 
 export const USE_CASE_CATEGORY_LABELS: Record<
