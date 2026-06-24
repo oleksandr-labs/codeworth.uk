@@ -68,6 +68,15 @@
 - [x] glossary.ts: +20 terms (bias-variance, regularization, dropout, batch norm, learning rate, SMOTE, data versioning, experiment tracking, CI/CD ML, OCR, question-answering, summarisation, ICO enforcement, MLOps maturity levels, confusion matrix, data pipeline, etc.)
 - [x] faq/page.tsx: +2 new sections (Compliance & Regulation × 5 Q&A, Technology & Integration × 5 Q&A) — FAQ page now ~32 items
 
+## Session 2026-06-24 — Sprint 6
+
+### Done (Sprint 6)
+- [x] blog.ts: posts 141-150 — retail banking ML, cybersecurity ML, model cards FCA, data labelling strategy, LLM evaluation, knowledge graphs, infra cost optimisation, private equity ML, government/public sector ML, ML success factors 2026 — each with faq:[5]
+- [x] portfolio.ts: +5 case studies (Nexus Insurtech GBM, Thornton and Ross NLP pharma, UK SME retail demand forecasting, Magic Circle RAG, UK social housing predictive maintenance)
+- [x] compare.ts: +4 pages (vs-palantir, vs-pwc-ai, vs-snowflake-ml, vs-h2o-automl)
+- [x] glossary.ts: +20 terms (specificity, ROC/PR curves, SGD, backprop, CNN, RNN, object detection, semantic segmentation, POS tagging, word2vec, LLM hallucination, UK AISI, Solvency II, Basel IV, MLOps platform, inference server, data mesh, lakehouse, dependency parsing)
+- [x] geo.ts: +3 cities (Plymouth, Derby, Portsmouth) — total 22 UK cities
+
 ## Session 2026-06-24 — Sprint 8
 
 ### Done (Sprint 8)
