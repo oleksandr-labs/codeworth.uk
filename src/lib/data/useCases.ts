@@ -691,6 +691,486 @@ export const USE_CASES: UseCase[] = [
     relatedServices: ["machine-learning", "mlops"],
     relatedExtras: ["iot-ml-pipeline", "anomaly-detection"],
   },
+  {
+    slug: "telecoms-churn-prediction",
+    titleEn: "Telecom Operator Churn Prediction with Survival Analysis",
+    titleUk: "Прогнозування відтоку телеком-оператора за допомогою survival analysis",
+    category: "ai",
+    icon: "📡",
+    whoEn: "UK telecom operators, MVNOs, broadband providers",
+    whoUk: "UK телеком-оператори, MVNO, постачальники широкосмугового зв'язку",
+    problemEn:
+      "UK telecom operators face intense switching pressure driven by OFCOM portability rules and aggressive offers from BT, EE, and Vodafone. Retention campaigns sent to the entire base waste budget and accelerate switching for customers who were not planning to leave.",
+    problemUk:
+      "UK телеком-оператори стикаються з інтенсивним тиском переходу клієнтів завдяки правилам OFCOM та агресивним пропозиціям BT, EE та Vodafone. Кампанії утримання, що надсилаються по всій базі, витрачають бюджет та прискорюють перехід клієнтів, які не планували йти.",
+    solutionEn:
+      "We build a survival analysis pipeline combined with XGBoost on OFCOM switching data, call detail records, and contract tenure signals. The model outputs 30/60/90-day churn probability per subscriber with top intervention features, enabling targeted retention offers only to genuinely at-risk customers.",
+    solutionUk:
+      "Ми будуємо пайплайн survival analysis у поєднанні з XGBoost на даних переходу OFCOM, деталях дзвінків та сигналах тривалості контракту. Модель видає ймовірність відтоку за 30/60/90 днів на абонента з топ-ознаками для втручання, дозволяючи цільові пропозиції утримання лише реально ризикованим клієнтам.",
+    resultQuoteEn:
+      "Clients reduce monthly churn by 23%, cut retention campaign spend by 35% through precise targeting, and recover £290,000 per year in subscriber revenue on a 500,000-subscriber base.",
+    resultQuoteUk:
+      "Клієнти скорочують місячний відтік на 23%, зменшують витрати на кампанії утримання на 35% завдяки точному таргетингу та повертають £290,000 на рік у доходах від абонентів на базі 500,000 абонентів.",
+    metaTitleEn: "Telecom Churn Prediction | Survival Analysis + XGBoost | Codeworth",
+    metaTitleUk: "Прогноз відтоку телеком | Survival Analysis + XGBoost | Codeworth",
+    metaDescriptionEn:
+      "Survival analysis + XGBoost for OFCOM-regulated telecoms. Monthly churn −23%, campaign spend −35%. BT/EE/Vodafone market. Codeworth.",
+    metaDescriptionUk:
+      "Survival analysis + XGBoost для OFCOM-ринку. Відтік −23%, витрати на кампанії −35%. Codeworth.",
+    relatedPortfolio: ["ml-churn-predictor", "churn-prediction-saas"],
+    relatedServices: ["machine-learning", "predictive-analytics"],
+    relatedExtras: ["crm-ml-sync"],
+  },
+  {
+    slug: "media-content-recommendation",
+    titleEn: "Broadcaster Content Recommendation Engine",
+    titleUk: "Движок рекомендацій контенту для мовника",
+    category: "ai",
+    icon: "📺",
+    whoEn: "UK broadcasters, streaming platforms, VOD services",
+    whoUk: "UK мовники, стрімінгові платформи, VOD-сервіси",
+    problemEn:
+      "UK broadcasters including BBC and ITV compete against Netflix and Disney for viewing time. Generic top-content carousels ignore individual viewing history, leading to low session depth and high abandonment rates. GDPR pseudonymisation requirements constrain the use of personal identifiers in recommendation models.",
+    problemUk:
+      "Британські мовники, включаючи BBC та ITV, конкурують з Netflix та Disney за час перегляду. Загальні каруселі топ-контенту ігнорують індивідуальну історію перегляду, що призводить до низької глибини сесії та високого відсотку виходу. Вимоги GDPR щодо псевдонімізації обмежують використання персональних ідентифікаторів у рекомендаційних моделях.",
+    solutionEn:
+      "We deploy a collaborative filtering engine with NLP content embeddings built on pseudonymised viewing signals in compliance with GDPR and Ofcom guidelines. The system personalises homepage, continue-watching, and end-card recommendations, with A/B testing infrastructure to measure watch-time uplift per cohort.",
+    solutionUk:
+      "Ми розгортаємо движок collaborative filtering з NLP-ембедингами контенту на основі псевдонімізованих сигналів перегляду відповідно до GDPR та рекомендацій Ofcom. Система персоналізує головну сторінку, рекомендації продовження перегляду та фінальні картки з A/B-тестовою інфраструктурою для вимірювання приросту часу перегляду по когортах.",
+    resultQuoteEn:
+      "Watch-time per session increases 34%. Content discovery rate for catalogue titles outside top 100 improves by 48%. Subscriber churn attributable to content dissatisfaction falls 19%.",
+    resultQuoteUk:
+      "Час перегляду за сесію зростає на 34%. Рівень відкриття контенту поза топ-100 покращується на 48%. Відтік підписників через незадоволеність контентом падає на 19%.",
+    metaTitleEn: "Content Recommendation Engine for UK Broadcasters | Codeworth",
+    metaTitleUk: "Движок рекомендацій контенту для UK мовників | Codeworth",
+    metaDescriptionEn:
+      "Collaborative filtering + NLP embeddings. Watch-time +34%, GDPR pseudonymised. BBC/ITV/VOD scale. Ofcom compliant. Codeworth.",
+    metaDescriptionUk:
+      "Collaborative filtering + NLP ембединги. Час перегляду +34%, GDPR-псевдонімізація. Відповідність Ofcom. Codeworth.",
+    relatedPortfolio: ["churn-prediction-saas", "ai-chatbot-saas"],
+    relatedServices: ["machine-learning", "artificial-intelligence"],
+    relatedExtras: ["personalisation-engine"],
+  },
+  {
+    slug: "government-fraud-detection-ml",
+    titleEn: "Government Benefits and Tax Fraud Detection with ML",
+    titleUk: "Виявлення шахрайства з пільгами та податками в держсекторі за допомогою ML",
+    category: "ai",
+    icon: "🏛️",
+    whoEn: "UK government departments, HMRC, DWP, local authorities",
+    whoUk: "Державні відомства UK, HMRC, DWP, місцеві органи влади",
+    problemEn:
+      "UK benefit fraud and error costs the public purse over £8 billion annually. HMRC and DWP rely on rule-based checks that flag only high-volume pattern matches, missing sophisticated multi-claim and identity fraud. Cabinet Office AI framework mandates explainability and human oversight for every automated public-sector decision.",
+    problemUk:
+      "Шахрайство та помилки з пільгами у Великобританії коштують державній скарбниці понад £8 млрд щорічно. HMRC та DWP покладаються на перевірки на основі правил, що виявляють лише патерни великого обсягу, пропускаючи складне шахрайство з кількома заявками та ідентифікаційне шахрайство. Рамкова AI-стратегія Cabinet Office зобов'язує забезпечити пояснюваність та людський нагляд за кожним автоматизованим рішенням.",
+    solutionEn:
+      "We build an anomaly detection and graph ML pipeline that cross-references claimant data across benefit streams and tax records to surface fraud rings and identity re-use. Every flag includes a SHAP-driven plain-English explanation for investigator review, and all model decisions are logged for Cabinet Office AI framework audit compliance.",
+    solutionUk:
+      "Ми будуємо пайплайн виявлення аномалій та graph ML, що перехресно посилається на дані заявників по потоках пільг та податкових записах для виявлення шахрайських угруповань та повторного використання ідентичностей. Кожен сигнал включає SHAP-пояснення зрозумілою мовою для огляду слідчих, а всі рішення моделі реєструються для перевірки відповідності AI-стратегії Cabinet Office.",
+    resultQuoteEn:
+      "Pilot deployments prevent an estimated £245M in fraudulent claims in year one, with investigator referral precision improving from 31% to 74% and false-positive investigation workload reduced by 58%.",
+    resultQuoteUk:
+      "Пілотні розгортання запобігають приблизно £245M шахрайських виплат у першому році, точність направлень слідчих покращується з 31% до 74%, а навантаження на розслідування хибних спрацювань знижується на 58%.",
+    metaTitleEn: "Government Fraud Detection ML | HMRC DWP | Codeworth",
+    metaTitleUk: "ML-виявлення шахрайства в держсекторі | HMRC DWP | Codeworth",
+    metaDescriptionEn:
+      "Anomaly detection + graph ML for HMRC/DWP fraud. £245M prevented. Cabinet Office AI framework compliant. SHAP explainability. Codeworth.",
+    metaDescriptionUk:
+      "Anomaly detection + graph ML для HMRC/DWP. £245M запобіжено. Відповідність Cabinet Office AI. SHAP-пояснення. Codeworth.",
+    relatedPortfolio: ["fraud-detection-bank", "fraud-detection-fintech"],
+    relatedServices: ["machine-learning", "artificial-intelligence", "mlops"],
+    relatedExtras: ["ml-explainability", "compliance-audit-trail"],
+  },
+  {
+    slug: "construction-defect-detection",
+    titleEn: "Building Defect Detection via Computer Vision",
+    titleUk: "Виявлення будівельних дефектів за допомогою комп'ютерного зору",
+    category: "ai",
+    icon: "🏗️",
+    whoEn: "UK construction contractors, housing developers, building inspectors",
+    whoUk: "UK будівельні підрядники, забудовники, будівельні інспектори",
+    problemEn:
+      "Post-Grenfell safety standards and CDM 2015 regulations require thorough defect documentation at every stage of construction. Manual visual inspection misses 20-35% of structural and finishing defects, leading to costly remediation, BIM record inaccuracies, and potential liability under the Building Safety Act 2022.",
+    problemUk:
+      "Стандарти безпеки після Грейнфелл та норми CDM 2015 вимагають ретельної документації дефектів на кожному етапі будівництва. Ручний візуальний огляд пропускає 20-35% структурних та оздоблювальних дефектів, що призводить до дорогих виправлень, неточностей BIM-записів та потенційної відповідальності згідно із Законом про безпеку будівель 2022 року.",
+    solutionEn:
+      "We train a YOLOv8 object detection model on a custom dataset of UK construction defect imagery covering cracks, water ingress, fire-stopping gaps, and cladding anomalies. The model runs on-site via mobile app or drone feed, logs findings directly to your BIM model, and generates a CDM-compliant defect report with GPS coordinates and photographic evidence.",
+    solutionUk:
+      "Ми навчаємо модель виявлення об'єктів YOLOv8 на кастомному датасеті зображень будівельних дефектів UK, що охоплює тріщини, проникнення води, прогалини у вогнезахисті та аномалії облицювання. Модель працює на будівельному майданчику через мобільний додаток або відеопотік дрона, реєструє знахідки безпосередньо у BIM-модель та генерує CDM-сумісний звіт про дефекти з GPS-координатами та фотодоказами.",
+    resultQuoteEn:
+      "Missed defect rate falls 67%, site inspection time reduces by 41%, and remediation costs decrease by £180,000 per major project through earlier detection.",
+    resultQuoteUk:
+      "Частка пропущених дефектів падає на 67%, час інспекції об'єкта скорочується на 41%, а витрати на усунення знижуються на £180,000 на великий проект завдяки ранньому виявленню.",
+    metaTitleEn: "Construction Defect Detection | YOLOv8 | BIM | Codeworth",
+    metaTitleUk: "Виявлення будівельних дефектів | YOLOv8 | BIM | Codeworth",
+    metaDescriptionEn:
+      "YOLOv8 defect detection for UK construction. Missed defects −67%. CDM 2015 + BIM compliant. Drone and mobile deployment. Codeworth.",
+    metaDescriptionUk:
+      "YOLOv8 виявлення дефектів для будівництва UK. Пропущені дефекти −67%. CDM 2015 + BIM. Codeworth.",
+    relatedPortfolio: ["fraud-detection-bank", "churn-prediction-saas"],
+    relatedServices: ["computer-vision", "machine-learning"],
+    relatedExtras: ["dicom-integration"],
+  },
+  {
+    slug: "dynamic-pricing-retail-ml",
+    titleEn: "Dynamic Pricing for UK Retailers with CMA-Compliant ML",
+    titleUk: "Динамічне ціноутворення для UK ритейлу з ML, сумісним з CMA",
+    category: "ecommerce",
+    icon: "🏷️",
+    whoEn: "UK omnichannel retailers, grocery chains, marketplace sellers",
+    whoUk: "UK омніканальні ритейлери, продовольчі мережі, продавці маркетплейсів",
+    problemEn:
+      "UK retailers using static price lists lose 12-18% gross margin to competitors with dynamic pricing capabilities. Manual repricing cannot react to intraday competitor moves while staying within Competition Act 1998 and CMA guidance on algorithmic pricing collusion risks.",
+    problemUk:
+      "UK ритейлери зі статичними прайсами втрачають 12-18% валової маржі конкурентам із можливостями динамічного ціноутворення. Ручне переоцінювання не може реагувати на внутрішньоденні кроки конкурентів, дотримуючись при цьому Закону про конкуренцію 1998 року та рекомендацій CMA щодо ризиків алгоритмічного цінового змови.",
+    solutionEn:
+      "We build a price elasticity ML model on your sales history, competitor price feeds, and demand signals, with CMA-compliant guardrails that prevent algorithmic price signalling. The engine reprices up to 50,000 SKUs every 15 minutes while enforcing margin floors, MAP agreements, and a full audit trail for CMA review.",
+    solutionUk:
+      "Ми будуємо ML-модель цінової еластичності на основі вашої торгової історії, цінових фідів конкурентів та сигналів попиту з захисними бар'єрами, що відповідають CMA та запобігають алгоритмічним сигналам про ціни. Движок переоцінює до 50,000 SKU кожні 15 хвилин, дотримуючись мінімальної маржі, MAP-угод та повного журналу аудиту для перевірки CMA.",
+    resultQuoteEn:
+      "UK retailers using the engine see gross margin improve by 4.2 percentage points, stockout rate fall by 28%, and pricing team manual workload reduced by 80%.",
+    resultQuoteUk:
+      "UK ритейлери, що використовують движок, бачать покращення валової маржі на 4.2 відсоткових пункти, зниження відсутності товарів на 28% та скорочення ручного навантаження на команду ціноутворення на 80%.",
+    metaTitleEn: "Dynamic Pricing ML for UK Retailers | CMA Compliant | Codeworth",
+    metaTitleUk: "ML динамічне ціноутворення для UK ритейлу | CMA | Codeworth",
+    metaDescriptionEn:
+      "Price elasticity ML: 50k SKUs repriced every 15 min. Gross margin +4.2pp. CMA + Competition Act 1998 compliant guardrails. Codeworth.",
+    metaDescriptionUk:
+      "ML цінової еластичності: 50k SKU кожні 15 хв. Маржа +4.2pp. CMA + Закон про конкуренцію 1998. Codeworth.",
+    relatedPortfolio: ["churn-prediction-saas", "fraud-detection-bank"],
+    relatedServices: ["machine-learning", "mlops"],
+    relatedExtras: ["pricing-engine", "competitor-price-feed"],
+  },
+  {
+    slug: "clinical-coding-automation",
+    titleEn: "NHS Clinical Coding Automation with BERT",
+    titleUk: "Автоматизація клінічного кодування NHS за допомогою BERT",
+    category: "automation",
+    icon: "🩺",
+    whoEn: "NHS trusts, private hospital groups, clinical coding departments",
+    whoUk: "NHS трасти, приватні лікарняні групи, відділи клінічного кодування",
+    problemEn:
+      "NHS clinical coding departments face a 40% vacancy rate for certified clinical coders. Manual ICD-10 and SNOMED coding of discharge summaries takes 45-90 minutes per episode, delays HRG-based tariff submissions, and introduces a 6-9% error rate that affects NHS trust income. NHS DSPT and Information Governance Toolkit requirements mandate strict access controls on patient data used in ML training.",
+    problemUk:
+      "Відділи клінічного кодування NHS мають рівень вакансій 40% для сертифікованих клінічних кодерів. Ручне кодування ICD-10 та SNOMED виписних епікризів займає 45-90 хвилин на епізод, затримує подання тарифів на основі HRG та вносить 6-9% похибок, що впливають на дохід NHS-трасту. Вимоги NHS DSPT та IG Toolkit зобов'язують суворий контроль доступу до даних пацієнтів, що використовуються при навчанні ML.",
+    solutionEn:
+      "We fine-tune a clinical BERT model on NHS discharge summary corpora to automatically assign ICD-10 primary and secondary diagnosis codes and SNOMED procedure codes. The pipeline integrates with your PAS and EPR systems, achieves 94.3% coding accuracy, flags low-confidence episodes for human review, and operates entirely within your NHS network under DSPT compliance.",
+    solutionUk:
+      "Ми дообробляємо клінічну BERT-модель на корпусах виписних епікризів NHS для автоматичного присвоєння кодів первинного та вторинного діагнозу ICD-10 і кодів процедур SNOMED. Пайплайн інтегрується з вашими системами PAS та EPR, досягає 94.3% точності кодування, позначає епізоди з низькою впевненістю для людського огляду та працює повністю у вашій мережі NHS відповідно до DSPT.",
+    resultQuoteEn:
+      "Clinical coding time falls 62%, coding accuracy improves to 94.3%, and trusts recover an additional £420,000 per year in correctly coded HRG tariff income.",
+    resultQuoteUk:
+      "Час клінічного кодування скорочується на 62%, точність кодування покращується до 94.3%, а трасти отримують додаткові £420,000 на рік у правильно закодованому тарифному доході HRG.",
+    metaTitleEn: "NHS Clinical Coding Automation | BERT ICD-10 SNOMED | Codeworth",
+    metaTitleUk: "Автоматизація клінічного кодування NHS | BERT ICD-10 | Codeworth",
+    metaDescriptionEn:
+      "Fine-tuned clinical BERT for ICD-10/SNOMED coding. Manual time −62%, accuracy 94.3%. NHS DSPT + IG Toolkit compliant. Codeworth.",
+    metaDescriptionUk:
+      "Fine-tuned BERT для ICD-10/SNOMED. Час −62%, точність 94.3%. NHS DSPT + IG Toolkit. Codeworth.",
+    relatedPortfolio: ["fraud-detection-bank", "churn-prediction-saas"],
+    relatedServices: ["nlp", "machine-learning", "artificial-intelligence"],
+    relatedExtras: ["clinical-ai-validation", "doc-intelligence"],
+  },
+  {
+    slug: "logistics-route-optimisation",
+    titleEn: "Last-Mile Delivery Route Optimisation with ML",
+    titleUk: "Оптимізація маршрутів доставки останньої милі за допомогою ML",
+    category: "erp",
+    icon: "🚚",
+    whoEn: "UK logistics operators, courier networks, grocery delivery services",
+    whoUk: "UK логістичні оператори, кур'єрські мережі, служби доставки продуктів",
+    problemEn:
+      "UK last-mile delivery operators including Royal Mail, DPD, and Evri face rising fuel costs and customer expectations for 2-hour delivery windows. Static route plans built the night before cannot adapt to real-time traffic, failed deliveries, or surge demand from same-day orders, leading to 18-22% route inefficiency and CO2 overshoot on SECR reporting.",
+    problemUk:
+      "UK-оператори доставки останньої милі, включаючи Royal Mail, DPD та Evri, стикаються із зростанням витрат на паливо та очікуваннями клієнтів щодо 2-годинних вікон доставки. Статичні плани маршрутів, складені напередодні ввечері, не можуть адаптуватися до трафіку в реальному часі, невдалих доставок або сплеску попиту від замовлень того ж дня, що призводить до 18-22% неефективності маршрутів та перевищення CO2 у звітності SECR.",
+    solutionEn:
+      "We deploy Google OR-Tools vehicle routing combined with ML demand forecasting that pre-positions delivery density by postcode district. Real-time re-routing integrates TfL API, Royal Mail address database, and failed-delivery feedback loops. The system generates SECR-ready CO2 per-route reporting automatically.",
+    solutionUk:
+      "Ми розгортаємо маршрутизацію транспортних засобів Google OR-Tools у поєднанні з ML-прогнозом попиту, що попередньо розміщує щільність доставок за поштовими районами. Маршрутизація в реальному часі інтегрує TfL API, базу даних адрес Royal Mail та петлі зворотного зв'язку про невдалі доставки. Система автоматично генерує SECR-готові звіти CO2 на маршрут.",
+    resultQuoteEn:
+      "Fuel costs reduce by 18%, CO2 emissions per delivery fall 22%, first-attempt delivery success rate improves from 81% to 94%, and routing team planning time is cut by 3 hours per day.",
+    resultQuoteUk:
+      "Витрати на паливо знижуються на 18%, викиди CO2 на доставку падають на 22%, частка успішних доставок з першої спроби покращується з 81% до 94%, а час планування маршрутів скорочується на 3 години на день.",
+    metaTitleEn: "Last-Mile Route Optimisation ML | UK Logistics | Codeworth",
+    metaTitleUk: "ML оптимізація маршрутів для UK логістики | Codeworth",
+    metaDescriptionEn:
+      "OR-Tools + ML demand forecasting for last-mile. Fuel −18%, CO2 −22%, first-attempt delivery 81% → 94%. SECR reporting. Codeworth.",
+    metaDescriptionUk:
+      "OR-Tools + ML прогноз попиту. Паливо −18%, CO2 −22%, доставка з першої спроби 81% → 94%. SECR. Codeworth.",
+    relatedPortfolio: ["churn-prediction-saas", "fraud-detection-bank"],
+    relatedServices: ["machine-learning", "mlops"],
+    relatedExtras: ["supply-chain-analytics", "erp-ml-integration"],
+  },
+  {
+    slug: "rental-yield-prediction-proptech",
+    titleEn: "Rental Yield Prediction for UK PropTech Platforms",
+    titleUk: "Прогнозування дохідності оренди для UK PropTech платформ",
+    category: "ai",
+    icon: "🏠",
+    whoEn: "UK PropTech platforms, buy-to-let investors, property management firms",
+    whoUk: "UK PropTech платформи, інвестори в оренду, фірми управління нерухомістю",
+    problemEn:
+      "UK buy-to-let investors relying on Rightmove and Zoopla asking rents overpay by 8-15% on acquisition or underestimate void periods, destroying projected yield. Manual LHA rate lookups and Land Registry comparable analysis take 4-6 hours per property, limiting the number of deals an investor can assess.",
+    problemUk:
+      "UK інвестори в оренду, що покладаються на запитані орендні ставки Rightmove та Zoopla, переплачують на 8-15% при придбанні або недооцінюють порожні періоди, знищуючи прогнозовану дохідність. Ручний пошук ставок LHA та аналіз порівнянних даних Land Registry займають 4-6 годин на об'єкт, обмежуючи кількість угод, які інвестор може оцінити.",
+    solutionEn:
+      "We build an XGBoost rental yield prediction model combining Land Registry sold prices, Rightmove asking rents, LHA reference rates, postcode-level amenity scores, school Ofsted ratings, and transport accessibility indices. The model achieves a mean absolute percentage error of 3.8% on held-out test sets and scores new properties in under 2 seconds via API.",
+    solutionUk:
+      "Ми будуємо XGBoost-модель прогнозування дохідності оренди, що поєднує ціни продажу Land Registry, запитані орендні ставки Rightmove, референтні ставки LHA, оцінки зручностей на рівні поштового індексу, рейтинги шкіл Ofsted та індекси транспортної доступності. Модель досягає середньої абсолютної відсоткової похибки 3.8% на тестових вибірках і оцінює нові об'єкти менш ніж за 2 секунди через API.",
+    resultQuoteEn:
+      "PropTech platforms using the model see investor acquisition overpay reduced by 11%, portfolio yield improve by 0.6 percentage points, and property assessment throughput increase 8-fold.",
+    resultQuoteUk:
+      "PropTech платформи, що використовують модель, бачать зниження переплати інвесторів при придбанні на 11%, покращення дохідності портфеля на 0.6 відсоткових пункти та 8-кратне збільшення пропускної здатності оцінки об'єктів.",
+    metaTitleEn: "Rental Yield Prediction ML for UK PropTech | Codeworth",
+    metaTitleUk: "ML прогноз дохідності оренди для UK PropTech | Codeworth",
+    metaDescriptionEn:
+      "XGBoost + Land Registry + LHA: rental yield MAPE 3.8%. Investor overpay −11%, yield +0.6pp. Rightmove/Zoopla features. Codeworth.",
+    metaDescriptionUk:
+      "XGBoost + Land Registry + LHA: MAPE 3.8%. Переплата −11%, дохідність +0.6pp. Codeworth.",
+    relatedPortfolio: ["churn-prediction-saas", "fraud-detection-bank"],
+    relatedServices: ["machine-learning", "predictive-analytics"],
+    relatedExtras: ["ml-explainability"],
+  },
+  {
+    slug: "carbon-footprint-prediction-ml",
+    titleEn: "Manufacturing Carbon Footprint Prediction with ML",
+    titleUk: "Прогнозування вуглецевого сліду виробництва за допомогою ML",
+    category: "automation",
+    icon: "🌿",
+    whoEn: "UK manufacturers, industrial companies, TCFD-reporting corporates",
+    whoUk: "UK виробники, промислові компанії, корпорації з TCFD-звітністю",
+    problemEn:
+      "UK manufacturers under UK ETS and TCFD mandatory reporting obligations struggle to produce accurate scope 1 and scope 2 emission forecasts from heterogeneous IoT sensor data, energy bills, and production schedules. Manual emissions accounting introduces a 15-25% forecasting error that inflates UK ETS allowance purchases and creates greenwashing liability risk.",
+    problemUk:
+      "UK виробники, зобов'язані звітувати за UK ETS та TCFD, стикаються з труднощами при формуванні точних прогнозів викидів scope 1 та scope 2 з неоднорідних даних IoT-датчиків, рахунків за енергію та виробничих графіків. Ручний облік викидів вносить 15-25% прогнозну похибку, що збільшує закупівлю квот UK ETS та створює ризик відповідальності за гринвошинг.",
+    solutionEn:
+      "We build a gradient boosting emissions forecasting model on your IoT sensor streams (energy consumption, fuel usage, process temperatures), production plan data, and utility meter readings. The model provides 12-week rolling scope 1 and scope 2 forecasts at plant and process level, with TCFD-formatted reporting dashboards and UK ETS allowance purchase recommendations.",
+    solutionUk:
+      "Ми будуємо модель прогнозування викидів на gradient boosting на основі ваших потоків IoT-датчиків (споживання енергії, використання палива, технологічні температури), даних виробничого плану та показань лічильників комунальних послуг. Модель надає 12-тижневі ковзні прогнози scope 1 та scope 2 на рівні заводу та процесу з інформаційними панелями у форматі TCFD та рекомендаціями щодо закупівлі квот UK ETS.",
+    resultQuoteEn:
+      "Scope 1 and 2 emissions forecasting error reduces by 28%, UK ETS allowance over-purchase falls by £340,000 per year, and TCFD reporting preparation time is cut from 6 weeks to 4 days.",
+    resultQuoteUk:
+      "Прогнозна похибка викидів scope 1 та 2 знижується на 28%, надлишкова закупівля квот UK ETS падає на £340,000 на рік, а час підготовки TCFD-звітності скорочується з 6 тижнів до 4 днів.",
+    metaTitleEn: "Manufacturing Carbon Footprint ML | UK ETS + TCFD | Codeworth",
+    metaTitleUk: "ML вуглецевий слід виробництва | UK ETS + TCFD | Codeworth",
+    metaDescriptionEn:
+      "Gradient boosting on IoT sensors for scope 1/2 forecasting. Forecast error −28%, ETS over-purchase −£340k/year. TCFD dashboards. Codeworth.",
+    metaDescriptionUk:
+      "Gradient boosting на IoT для scope 1/2. Похибка −28%, надлишок ETS −£340k/рік. TCFD. Codeworth.",
+    relatedPortfolio: ["churn-prediction-saas", "fraud-detection-bank"],
+    relatedServices: ["machine-learning", "mlops"],
+    relatedExtras: ["iot-ml-pipeline", "anomaly-detection"],
+  },
+  {
+    slug: "knowledge-graph-legal-research",
+    titleEn: "Legal Research Knowledge Graph for UK Law Firms",
+    titleUk: "Граф знань для юридичних досліджень у UK юридичних фірмах",
+    category: "ai",
+    icon: "⚖️",
+    whoEn: "UK law firms, barristers chambers, in-house legal teams, legal publishers",
+    whoUk: "UK юридичні фірми, барристерські камери, корпоративні юридичні відділи",
+    problemEn:
+      "UK lawyers spend 30-40% of billable time on case law research across legislation.gov.uk, Westlaw, and LexisNexis. Disconnected search results miss analogous authorities from adjacent practice areas, and citation networks are too large to traverse manually. SRA continuing competence requirements demand up-to-date awareness of recent decisions.",
+    problemUk:
+      "UK юристи витрачають 30-40% оплачуваного часу на дослідження прецедентного права через legislation.gov.uk, Westlaw та LexisNexis. Роз'єднані результати пошуку пропускають аналогічні авторитети із суміжних галузей права, а мережі цитування занадто великі для ручного обходу. Вимоги SRA щодо постійної компетентності зобов'язують бути в курсі останніх рішень.",
+    solutionEn:
+      "We build a legal knowledge graph using NLP entity extraction on UK case law and statute corpora, stored in Neo4j and queryable via SPARQL and natural language. The system surfaces analogous precedents across practice areas, traces citation lineage, and links statutory provisions to case law interpretation automatically. Associates receive a structured research memo in under 8 minutes.",
+    solutionUk:
+      "Ми будуємо граф юридичних знань за допомогою NLP-вилучення сутностей з корпусів прецедентного права та статутів UK, збереженого в Neo4j та доступного через SPARQL та природну мову. Система виявляє аналогічні прецеденти по галузях права, відстежує ланцюжки цитування та автоматично пов'язує статутні норми з тлумаченням прецедентного права. Помічники отримують структурований меморандум з дослідженнями менш ніж за 8 хвилин.",
+    resultQuoteEn:
+      "Legal research time reduces by 74%, associates surface relevant precedents missed in initial searches 3.2× more often, and firms bill 28% more research hours per associate per month.",
+    resultQuoteUk:
+      "Час юридичних досліджень скорочується на 74%, помічники виявляють релевантні прецеденти, пропущені в початкових пошуках, у 3.2 рази частіше, а фірми виставляють рахунки на 28% більше годин досліджень на помічника на місяць.",
+    metaTitleEn: "Legal Research Knowledge Graph | NLP + Neo4j | UK Law | Codeworth",
+    metaTitleUk: "Граф знань для юридичних досліджень | NLP + Neo4j | Codeworth",
+    metaDescriptionEn:
+      "NLP + Neo4j knowledge graph for UK case law. Research time −74%. legislation.gov.uk + SRA compliant. SPARQL + natural language queries. Codeworth.",
+    metaDescriptionUk:
+      "NLP + Neo4j для прецедентного права UK. Дослідження −74%. SRA-відповідність. Codeworth.",
+    relatedPortfolio: ["nlp-contract-analysis", "fraud-detection-bank"],
+    relatedServices: ["nlp", "artificial-intelligence", "llm-rag"],
+    relatedExtras: ["legal-rag", "doc-intelligence"],
+  },
+  {
+    slug: "hr-skills-gap-analysis-ml",
+    titleEn: "HR Skills Gap Analysis and Succession Planning with ML",
+    titleUk: "ML-аналіз прогалин навичок та планування наступності в HR",
+    category: "ai",
+    icon: "👥",
+    whoEn: "UK enterprises, HR departments, people analytics teams",
+    whoUk: "UK підприємства, HR-відділи, команди people analytics",
+    problemEn:
+      "UK HR teams spend 6-8 weeks per cycle manually mapping competency frameworks to employee profiles for skills gap analysis. The process relies on self-reported data, misses latent skills visible in work outputs, and cannot identify succession candidates for critical roles at pace. Equality Act 2010 requires that any scoring model used in employment decisions be free from protected characteristic bias.",
+    problemUk:
+      "UK HR-команди витрачають 6-8 тижнів на цикл, вручну зіставляючи рамки компетенцій з профілями співробітників для аналізу прогалин навичок. Процес покладається на самозвітні дані, пропускає приховані навички, видимі у результатах роботи, і не може швидко визначити кандидатів для наступності на критичних посадах. Закон про рівність 2010 року вимагає, щоб будь-яка скорингова модель, що використовується в рішеннях про зайнятість, була вільна від упередженості щодо захищених характеристик.",
+    solutionEn:
+      "We build an NLP clustering pipeline that analyses performance reviews, project outputs, and job description embeddings to surface latent skills and map each employee to a competency vector. The model identifies skills gaps, succession readiness scores, and learning path recommendations. Every model output is audited for Equality Act 2010 protected characteristic bias before deployment.",
+    solutionUk:
+      "Ми будуємо NLP-пайплайн кластеризації, що аналізує відгуки про ефективність, результати проектів та ембединги посадових інструкцій для виявлення прихованих навичок та відображення кожного співробітника на вектор компетентності. Модель визначає прогалини навичок, оцінки готовності до наступності та рекомендації щодо навчального шляху. Кожен результат моделі перевіряється на упередженість щодо захищених характеристик Закону про рівність 2010 перед розгортанням.",
+    resultQuoteEn:
+      "Skills gap identification time falls by 45%, succession planning cycle compresses from 8 weeks to 9 days, and HR teams identify 3.1× more internal promotion candidates per quarter.",
+    resultQuoteUk:
+      "Час виявлення прогалин навичок скорочується на 45%, цикл планування наступності стискається з 8 тижнів до 9 днів, а HR-команди виявляють у 3.1 рази більше кандидатів для внутрішнього просування на квартал.",
+    metaTitleEn: "HR Skills Gap Analysis ML | Equality Act 2010 | Codeworth",
+    metaTitleUk: "ML аналіз прогалин навичок HR | Закон про рівність | Codeworth",
+    metaDescriptionEn:
+      "NLP clustering for skills gap and succession planning. Identification time −45%. Equality Act 2010 bias audit included. Codeworth.",
+    metaDescriptionUk:
+      "NLP кластеризація для прогалин навичок та наступності. Час −45%. Аудит Закону про рівність 2010. Codeworth.",
+    relatedPortfolio: ["churn-prediction-saas", "ai-chatbot-saas"],
+    relatedServices: ["nlp", "machine-learning", "artificial-intelligence"],
+    relatedExtras: ["ml-explainability"],
+  },
+  {
+    slug: "insurance-claims-image-assessment",
+    titleEn: "Motor Insurance Claims Image Damage Assessment",
+    titleUk: "Оцінка пошкоджень за зображеннями у страхуванні автомобілів",
+    category: "ai",
+    icon: "🚗",
+    whoEn: "UK motor insurers, claims management companies, vehicle repairers",
+    whoUk: "UK страховики автомобілів, компанії управління претензіями, авторемонтники",
+    problemEn:
+      "UK motor insurers process 2.8 million claims annually, with each physical inspection costing £180-£350 and taking 3-5 working days to schedule. Manual assessments introduce 12-18% repair estimate variance, enabling fraud inflation and lengthening claims cycles. FCA PS20/2 requires fair claims handling and transparent settlement decision rationale under the Insurance Distribution Directive.",
+    problemUk:
+      "UK страховики автомобілів обробляють 2.8 мільйона претензій щорічно, при цьому кожна фізична інспекція коштує £180-£350 та займає 3-5 робочих днів для планування. Ручна оцінка вносить 12-18% дисперсію в кошторис ремонту, дозволяючи завищення через шахрайство та подовжуючи цикли претензій. FCA PS20/2 вимагає справедливого врегулювання претензій та прозорого обгрунтування рішень щодо виплат.",
+    solutionEn:
+      "We train a CNN damage assessment model on ABI-standardised vehicle damage imagery to classify damage severity, estimate repair cost bands, and flag fraud indicators such as pre-existing damage and staged accident patterns. Claims scoring under 87% auto-settlement confidence are routed to human assessors. Every decision includes a visual explanation overlay for FCA PS20/2 compliance.",
+    solutionUk:
+      "Ми навчаємо CNN-модель оцінки пошкоджень на стандартизованих ABI зображеннях пошкоджень транспортних засобів для класифікації тяжкості пошкоджень, оцінки діапазонів вартості ремонту та позначення індикаторів шахрайства, таких як попередні пошкодження та інсценовані шаблони аварій. Претензії з оцінкою автоматичного врегулювання нижче 87% впевненості направляються до оцінщиків-людей. Кожне рішення включає накладення візуального пояснення для відповідності FCA PS20/2.",
+    resultQuoteEn:
+      "87% of straightforward claims settle automatically, average claims cycle time reduces from 12 days to 3.4 days, and fraudulent inflation detection improves by 43%.",
+    resultQuoteUk:
+      "87% простих претензій врегульовуються автоматично, середній час циклу претензій скорочується з 12 до 3.4 дня, а виявлення шахрайського завищення покращується на 43%.",
+    metaTitleEn: "Motor Insurance Claims Image AI | FCA PS20/2 | Codeworth",
+    metaTitleUk: "AI оцінка збитків страхування авто | FCA PS20/2 | Codeworth",
+    metaDescriptionEn:
+      "CNN motor damage assessment: 87% auto-settlement rate, cycle 12 → 3.4 days. FCA PS20/2 + ABI compliant. Fraud detection included. Codeworth.",
+    metaDescriptionUk:
+      "CNN оцінка пошкоджень авто: 87% авто-врегулювання, цикл 12 → 3.4 дні. FCA PS20/2 + ABI. Codeworth.",
+    relatedPortfolio: ["fraud-detection-bank", "fraud-detection-fintech"],
+    relatedServices: ["computer-vision", "machine-learning", "artificial-intelligence"],
+    relatedExtras: ["ml-explainability", "compliance-audit-trail"],
+  },
+  {
+    slug: "sports-performance-analytics-ml",
+    titleEn: "Sports Performance Analytics with ML and Pose Estimation",
+    titleUk: "Аналітика спортивних показників за допомогою ML та оцінки пози",
+    category: "ai",
+    icon: "⚽",
+    whoEn: "UK Premier League clubs, national governing bodies, UK Sport-funded programmes",
+    whoUk: "UK клуби Прем'єр-ліги, національні керуючі органи, програми UK Sport",
+    problemEn:
+      "Premier League clubs and UK Sport-funded programmes generate terabytes of GPS, accelerometer, and video data per week that coaching staff cannot process manually. Injury prediction models built on aggregate load data miss biomechanical risk factors visible only in pose estimation, leading to 22% of soft tissue injuries that could have been prevented with earlier intervention.",
+    problemUk:
+      "Клуби Прем'єр-ліги та програми UK Sport генерують терабайти даних GPS, акселерометра та відео на тиждень, які тренерський штаб не може обробляти вручну. Моделі прогнозування травм, побудовані на агрегованих даних навантаження, пропускають біомеханічні фактори ризику, видимі лише в оцінці пози, що призводить до 22% травм м'яких тканин, яким можна було б запобігти раніше.",
+    solutionEn:
+      "We build a multi-modal ML pipeline combining time-series load data from GPS vests with MediaPipe and OpenPose biomechanical analysis of training and match footage. The system outputs individualised injury risk scores updated after each session, performance trend analysis, and recommended load adjustments, integrated with your squad management platform.",
+    solutionUk:
+      "Ми будуємо мультимодальний ML-пайплайн, що поєднує часові ряди даних навантаження від GPS-жилетів з біомеханічним аналізом MediaPipe та OpenPose відеозаписів тренувань та матчів. Система видає індивідуалізовані оцінки ризику травм, оновлювані після кожної сесії, аналіз тенденцій ефективності та рекомендовані коригування навантаження, інтегровані з вашою платформою управління командою.",
+    resultQuoteEn:
+      "Soft tissue injury prediction accuracy improves by 12 percentage points, injury-related missed match days reduce by 31%, and coaching staff analysis preparation time falls by 4 hours per match week.",
+    resultQuoteUk:
+      "Точність прогнозування травм м'яких тканин покращується на 12 відсоткових пунктів, кількість пропущених матчів через травми знижується на 31%, а час підготовки аналізу тренерського штабу скорочується на 4 години на матчтиждень.",
+    metaTitleEn: "Sports Performance Analytics ML | Premier League | Codeworth",
+    metaTitleUk: "ML аналітика спортивних показників | Прем'єр-ліга | Codeworth",
+    metaDescriptionEn:
+      "Time series + pose estimation for Premier League and UK Sport. Injury prediction +12pp accuracy, missed days −31%. Codeworth.",
+    metaDescriptionUk:
+      "Часові ряди + оцінка пози для Прем'єр-ліги та UK Sport. Прогноз травм +12pp, пропущені дні −31%. Codeworth.",
+    relatedPortfolio: ["churn-prediction-saas", "fraud-detection-bank"],
+    relatedServices: ["machine-learning", "computer-vision", "predictive-analytics"],
+    relatedExtras: ["anomaly-detection"],
+  },
+  {
+    slug: "ecommerce-return-prediction-ml",
+    titleEn: "E-commerce Product Return Prediction with LightGBM",
+    titleUk: "Прогнозування повернень товарів в e-commerce за допомогою LightGBM",
+    category: "ecommerce",
+    icon: "↩️",
+    whoEn: "UK online retailers, fashion brands, electronics e-commerce",
+    whoUk: "UK онлайн-ритейлери, fashion бренди, e-commerce електроніки",
+    problemEn:
+      "UK e-commerce returns cost retailers an estimated £7 billion annually. High return rates in fashion and electronics are driven by size uncertainty, misleading product imagery, and serial returners exploiting the Consumer Rights Act 2015 free 14-day return window. Without return prediction, fulfilling and processing avoidable returns costs £18-£35 per item in logistics and restocking.",
+    problemUk:
+      "Повернення в UK e-commerce обходяться ритейлерам приблизно в £7 млрд щорічно. Високі ставки повернень у fashion та електроніці обумовлені невизначеністю розміру, оманливими зображеннями продуктів та серійними поверненнями, що використовують безкоштовне 14-денне вікно повернення за Законом про права споживачів 2015 року. Без прогнозу повернень виконання та обробка запобіжних повернень коштує £18-£35 на одиницю у логістиці та поповненні запасів.",
+    solutionEn:
+      "We train a LightGBM return prediction model on order features including product category, price point, customer return history, review sentiment, and size-chart engagement signals. High-return-risk orders trigger pre-emptive interventions such as personalised fit advice, enhanced product imagery, or review prompts before dispatch. Serial returner detection operates within Consumer Rights Act 2015 boundaries.",
+    solutionUk:
+      "Ми навчаємо LightGBM-модель прогнозування повернень на ознаках замовлення, включаючи категорію продукту, цінову точку, історію повернень клієнта, сентимент відгуків та сигнали взаємодії з таблицею розмірів. Замовлення з високим ризиком повернення запускають превентивні втручання, такі як персоналізовані поради щодо відповідності, покращені зображення продукту або запити відгуків перед відправкою. Виявлення серійних покупців, що повертають, здійснюється в межах Закону про права споживачів 2015 року.",
+    resultQuoteEn:
+      "Avoidable return rate falls 31%, generating £2.1 million per year in logistics and restocking savings for a £50M turnover retailer, while customer satisfaction scores remain stable.",
+    resultQuoteUk:
+      "Частка запобіжних повернень падає на 31%, генеруючи £2.1 мільйона на рік у заощадженнях на логістику та поповнення запасів для ритейлера з оборотом £50M, тоді як оцінки задоволеності клієнтів залишаються стабільними.",
+    metaTitleEn: "E-commerce Return Prediction ML | LightGBM | Codeworth",
+    metaTitleUk: "ML прогноз повернень e-commerce | LightGBM | Codeworth",
+    metaDescriptionEn:
+      "LightGBM return prediction. Avoidable returns −31%, £2.1M/year savings. Consumer Rights Act 2015 compliant. Codeworth.",
+    metaDescriptionUk:
+      "LightGBM прогноз повернень. Запобіжні повернення −31%, £2.1M/рік. Закон про права споживачів 2015. Codeworth.",
+    relatedPortfolio: ["churn-prediction-saas", "ai-chatbot-saas"],
+    relatedServices: ["machine-learning", "predictive-analytics"],
+    relatedExtras: ["personalisation-engine", "crm-ml-sync"],
+  },
+  {
+    slug: "proptech-planning-approval-ml",
+    titleEn: "Planning Permission Outcome Prediction for UK PropTech",
+    titleUk: "Прогнозування результату дозволу на планування для UK PropTech",
+    category: "ai",
+    icon: "📋",
+    whoEn: "UK property developers, PropTech platforms, planning consultants",
+    whoUk: "UK забудовники, PropTech платформи, консультанти з планування",
+    problemEn:
+      "UK developers spend £25,000-£80,000 on planning applications with a 30% national refusal rate. Pre-application feasibility assessments rely on manual LPA policy interpretation that takes 3-4 weeks and misses analogous appeal decisions published in the PINS database. TCPA 1990 interpretation varies significantly across 333 local planning authorities.",
+    problemUk:
+      "UK забудовники витрачають £25,000-£80,000 на заявки на планування з 30% національним рівнем відмов. Попередня оцінка здійсненності покладається на ручну інтерпретацію політики LPA, що займає 3-4 тижні та пропускає аналогічні апеляційні рішення, опубліковані в базі даних PINS. Інтерпретація TCPA 1990 значно варіюється по 333 місцевих органах планування.",
+    solutionEn:
+      "We build a Random Forest planning outcome prediction model trained on LPA historical decision data, PINS appeal outcomes, site characteristics, and local plan policies. The model predicts approval probability at 78% accuracy for major residential applications, surfaces the top risk factors specific to the LPA, and recommends analogous approved applications as precedent evidence.",
+    solutionUk:
+      "Ми будуємо модель прогнозування результатів планування на Random Forest, навчену на даних про рішення LPA, результатах апеляцій PINS, характеристиках ділянки та місцевих планових політиках. Модель прогнозує ймовірність схвалення з точністю 78% для великих житлових заявок, виявляє топ-фактори ризику, специфічні для LPA, та рекомендує аналогічні схвалені заявки як прецедентні докази.",
+    resultQuoteEn:
+      "Developers using the model reduce abortive planning spend by 34%, improve application approval rates by 18 percentage points through better-targeted proposals, and compress pre-application feasibility from 4 weeks to 5 days.",
+    resultQuoteUk:
+      "Забудовники, що використовують модель, скорочують витрати на планування, що не дало результатів, на 34%, покращують рівень схвалення заявок на 18 відсоткових пунктів завдяки більш цільовим пропозиціям та стискають попереднє планування здійсненності з 4 тижнів до 5 днів.",
+    metaTitleEn: "Planning Permission Prediction ML | UK PropTech | PINS | Codeworth",
+    metaTitleUk: "ML прогноз дозволу на планування | UK PropTech | PINS | Codeworth",
+    metaDescriptionEn:
+      "Random Forest on LPA + PINS data. 78% prediction accuracy. Approval rate +18pp, abortive spend −34%. TCPA 1990. Codeworth.",
+    metaDescriptionUk:
+      "Random Forest на LPA + PINS. Точність 78%. Схвалення +18pp, невдалі витрати −34%. TCPA 1990. Codeworth.",
+    relatedPortfolio: ["churn-prediction-saas", "fraud-detection-bank"],
+    relatedServices: ["machine-learning", "predictive-analytics"],
+    relatedExtras: ["ml-explainability"],
+  },
+  {
+    slug: "charity-donor-lifetime-value-ml",
+    titleEn: "Charity Donor LTV Prediction and Campaign Optimisation",
+    titleUk: "Прогнозування LTV донора та оптимізація кампаній для благодійних організацій",
+    category: "ai",
+    icon: "❤️",
+    whoEn: "UK charities, fundraising teams, third-sector organisations",
+    whoUk: "UK благодійні організації, команди збору коштів, організації третього сектора",
+    problemEn:
+      "UK charities spend 22-28% of fundraising budgets on communications to lapsed and low-value donors while under-investing in high-lifetime-value supporters. Manual RFM segmentation misses complex giving pattern signals, and Gift Aid reclaim delays cost charities an average of £48,000 per year through missed higher-rate taxpayer declarations. GDPR legitimate interest balancing tests must be documented for every marketing communication to donors.",
+    problemUk:
+      "UK благодійні організації витрачають 22-28% бюджетів на збір коштів на комунікацію з пасивними та низькоцінними донорами, недоінвестуючи у прихильників з високою довічною цінністю. Ручна RFM-сегментація пропускає складні сигнали патернів пожертвувань, а затримки з поверненням Gift Aid обходяться благодійним організаціям у середньому в £48,000 на рік через пропущені декларації платників податків за вищою ставкою. Тест балансування законних інтересів GDPR повинен документуватися для кожної маркетингової комунікації з донорами.",
+    solutionEn:
+      "We build a donor lifetime value prediction model combining survival models and RFM features trained on your donation history, Gift Aid declarations, and campaign response data. The system segments donors into LTV deciles, optimises communication frequency per segment to maximise net income, and auto-generates GDPR legitimate interest balancing test documentation for Charity Commission audit readiness.",
+    solutionUk:
+      "Ми будуємо модель прогнозування довічної цінності донора, що поєднує survival models та RFM-ознаки, навчені на вашій історії пожертвувань, деклараціях Gift Aid та даних про відгуки на кампанії. Система сегментує донорів на децилі LTV, оптимізує частоту комунікацій на сегмент для максимізації чистого доходу та автоматично генерує документацію тесту балансування законних інтересів GDPR для готовності до перевірки Charity Commission.",
+    resultQuoteEn:
+      "Charities see donation ROI improve by 28%, communications budget waste reduce by 34%, and Gift Aid reclaim completeness improve by 19 percentage points through better higher-rate taxpayer identification.",
+    resultQuoteUk:
+      "Благодійні організації бачать покращення ROI пожертвувань на 28%, скорочення витраченого бюджету на комунікації на 34% та покращення повноти повернення Gift Aid на 19 відсоткових пунктів завдяки кращій ідентифікації платників податків за вищою ставкою.",
+    metaTitleEn: "Charity Donor LTV Prediction | Gift Aid | GDPR | Codeworth",
+    metaTitleUk: "Прогноз LTV донора | Gift Aid | GDPR | Codeworth",
+    metaDescriptionEn:
+      "Survival models + RFM for charity donor LTV. Donation ROI +28%, Gift Aid completeness +19pp. Charity Commission + GDPR compliant. Codeworth.",
+    metaDescriptionUk:
+      "Survival models + RFM для LTV донора. ROI +28%, Gift Aid +19pp. Charity Commission + GDPR. Codeworth.",
+    relatedPortfolio: ["churn-prediction-saas", "ai-chatbot-saas"],
+    relatedServices: ["machine-learning", "predictive-analytics"],
+    relatedExtras: ["crm-ml-sync", "ml-explainability"],
+  },
 ];
 
 export const USE_CASE_CATEGORY_LABELS: Record<

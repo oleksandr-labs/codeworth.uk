@@ -1,25 +1,26 @@
 # codeworth.uk — ML Adaptation Master Log
 
-**Мета:** Документація всіх змін по адаптації сайту під Machine Learning (Sprints 6–46).
+**Мета:** Документація всіх змін по адаптації сайту під Machine Learning (Sprints 6–51).
 **Початок роботи:** 2026-06-23
 **Остання зміна:** 2026-06-24
 **Виконавець:** Claude AI (паралельні агент-спринти)
 
 ---
 
-## Підсумок поточного стану (після Sprint 46)
+## Підсумок поточного стану (після Sprint 51)
 
 | Файл | До адаптації | Поточний стан | Зміна |
 |------|-------------|---------------|-------|
-| `blog.ts` | ~40 постів | **~207 постів** | +167 |
-| `glossary.ts` | 146 термінів | **~354 терміни** | +208 |
-| `portfolio.ts` | ~30 кейсів | **68 кейсів** | +38 |
-| `compare.ts` | 10 сторінок | **36 сторінок** | +26 |
+| `blog.ts` | ~40 постів | **~223 пости** | +183 |
+| `glossary.ts` | 146 термінів | **~374 терміни** | +228 |
+| `portfolio.ts` | ~30 кейсів | **76 кейсів** | +46 |
+| `compare.ts` | 10 сторінок | **44 сторінки** | +34 |
 | `mlNiches.ts` | 6 ніш | **22 ніші** | +16 |
-| `useCases.ts` | 7 кейсів | **22 кейси** | +15 |
-| `resources.ts` | 26 ресурсів | **48 ресурсів** | +22 |
-| `reviews.ts` | 9 відгуків | **26 відгуків** | +17 |
-| `careers.ts` | 8 позицій | **18 позицій** | +10 |
+| `aiNiches.ts` | — | **14 ніш** | — |
+| `useCases.ts` | 7 кейсів | **38 кейсів** | +31 |
+| `resources.ts` | 26 ресурсів | **58 ресурсів** | +32 |
+| `reviews.ts` | 9 відгуків | **32 відгуки** | +23 |
+| `careers.ts` | 8 позицій | **22 позиції** | +14 |
 | `reviews.ts` | 9 відгуків | **20 відгуків** | +11 |
 | `careers.ts` | 8 позицій | **14 позицій** | +6 |
 | `geo.ts` | 19 міст | **25 міст** | +6 |
@@ -603,43 +604,110 @@
 
 ---
 
-## Що ще потрібно зробити (Backlog — після Sprint 46)
+## Sprint 47 — Blog +12 UK ML posts (2026-06-24, ✅ DONE)
 
-### Контент (пріоритет: HIGH)
-- [ ] **Blog**: 207 → 250+ постів (+43)
-  - GPT-4o fine-tuning for UK regulated industries
-  - ML for UK startups: when to build vs buy
-  - Responsible AI audit framework UK
-  - ML for UK media & broadcasting (BBC/ITV use cases)
-  - Continual learning / online learning for UK systems
-  - ML for UK telecoms (churn, network optimisation)
-- [ ] **Glossary**: ~354 → 420+ термінів (+66)
-  - Pension/Wealth: liability-matching, ALM-model, QROPS-ML
-  - PropTech extended: epc-rating-ml, planning-approval-ml
-  - Telecom ML: network-slicing-ml, customer-lifetime-value-telecom
-  - Advanced NLP: coreference-resolution, named-entity-recognition-uk
-- [ ] **Portfolio**: 68 → 85+ кейсів (+17)
-  - UK telecoms churn prediction
-  - UK media/broadcasting recommender
-  - UK government/public sector ML (HMRC, DWP)
-- [ ] **Compare**: 36 → 50+ сторінок (+14)
-  - vs-anthropic-claude-api, vs-mistral-enterprise
-  - vs-ml6-group, vs-datatonic (UK ML consultancies)
-  - vs-thoughtworks-ai, vs-quantexa
-- [ ] **Reviews**: 26 → 36+ відгуків (+10)
-- [ ] **Careers**: 18 → 24+ позицій (+6)
-- [ ] **Resources**: 48 → 70+ ресурсів (+22)
-- [ ] **Use Cases**: 22 → 38+ кейсів (+16)
+### Виконано
+- **`blog.ts`** — +12 нових постів (223 total):
+  - `ml-telecoms-churn-network-uk` — BT/Vodafone churn, IRSF fraud, OFCOM
+  - `responsible-ai-audit-guide-uk` — bias testing, UK AI White Paper 2023
+  - `continual-learning-uk-systems` — concept drift, FCA governance
+  - `ml-for-uk-media-broadcasting` — BBC/ITV/Channel 4, Online Safety Act
+  - `ml-government-fraud-detection-uk` — HMRC Connect, DWP, ATRS
+  - `ml-startups-build-vs-buy-uk` — PoC economics, Innovate UK grants
+  - `tabular-data-deep-learning-uk` — TabNet vs XGBoost, FT-Transformer
+  - `ml-pricing-optimisation-uk` — dynamic pricing, FCA PS21/5, CMA
+  - `ml-for-uk-construction-bim` — YOLOv8 defects, CDM, Golden Thread
+  - `clinical-nlp-uk-nhs` — SNOMED CT, ICD-10, CogStack, DSP Toolkit
+  - `ml-knowledge-graph-enterprise-uk` — Neo4j, SPARQL, NHS/FCA KG
+  - `ml-last-mile-delivery-optimisation-uk` — DPD/Evri/Royal Mail, CO2
+
+---
+
+## Sprint 48 — Glossary +20 advanced terms (2026-06-24, ✅ DONE)
+
+### Виконано
+- **`glossary.ts`** — +20 нових термінів (~374 total):
+  - **PropTech Extended** (5): epc-rating-ml, planning-approval-prediction-ml, leasehold-valuation-ml, rental-yield-prediction-ml, mortgage-affordability-ml
+  - **Telecom ML** (5): churn-propensity-telecom, network-anomaly-detection-ml, customer-ltv-telecom, spectrum-management-ml, nps-prediction-telecom
+  - **Advanced NLP** (5): named-entity-recognition-uk, coreference-resolution, semantic-similarity-uk, dependency-parsing, zero-shot-classification-uk
+  - **Government & Public Sector AI** (5): algorithmic-impact-assessment, automated-decision-making-public, govuk-ai-standard, public-sector-data-sharing-ml, procurement-ml-crown-commercial
+
+---
+
+## Sprint 49 — Portfolio +8 + Compare +8 (2026-06-24, ✅ DONE)
+
+### Виконано
+- **`portfolio.ts`** — +8 UK ML кейсів (76 total):
+  - uk-telecoms-churn-ml, uk-media-content-recommendation, uk-hmrc-fraud-detection-ml
+  - uk-construction-defect-detection-cv, uk-retailer-dynamic-pricing-ml
+  - uk-nhs-clinical-coding-nlp, uk-logistics-route-optimisation-ml, uk-proptech-rental-yield-ml
+- **`compare.ts`** — +8 порівнянь (44 total):
+  - vs-anthropic-claude-api, vs-datatonic-uk, vs-quantexa-analytics
+  - vs-thoughtworks-ai, vs-chatgpt-enterprise, vs-aws-comprehend
+  - vs-microsoft-ml-studio, vs-no-code-ai-tools
+
+---
+
+## Sprint 50 — Reviews +6 / Careers +4 / Resources +10 (2026-06-24, ✅ DONE)
+
+### Виконано
+- **`reviews.ts`** — +6 відгуків (32 total, fiveStars: 20):
+  - review-027..032: BrightWave Telecom, NorthStar Broadcasting, HMRC Digital, Pinnacle Construction, QuickShift Logistics, LandLogic Property
+- **`careers.ts`** — +4 позиції (22 total):
+  - senior-ml-engineer £75k–£110k (urgent), graduate-ml-analyst £35k–£45k
+  - generative-ai-specialist £80k–£115k (urgent), data-engineer-ml-pipelines £60k–£88k
+- **`resources.ts`** — +10 ресурсів (58 total):
+  - telecoms/media/gov/construction/clinical-NLP/continual-learning guides
+  - ml-roi-business-case-template, ai-strategy-template-uk, dynamic-pricing guide, knowledge-graph guide
+
+---
+
+## Sprint 51 — Use Cases +16 (2026-06-24, ✅ DONE)
+
+### Виконано
+- **`useCases.ts`** — +16 кейсів (38 total):
+  - telecoms-churn-prediction, media-content-recommendation, government-fraud-detection-ml
+  - construction-defect-detection, dynamic-pricing-retail-ml, clinical-coding-automation
+  - logistics-route-optimisation, rental-yield-prediction-proptech, carbon-footprint-prediction-ml
+  - knowledge-graph-legal-research, hr-skills-gap-analysis-ml, insurance-claims-image-assessment
+  - sports-performance-analytics-ml, ecommerce-return-prediction-ml
+  - proptech-planning-approval-ml, charity-donor-lifetime-value-ml
+
+---
+
+## ✅ Структурний аудит (2026-06-24)
+- **WhyUsSection.tsx** — повністю ML-специфічний, без змін потрібно
+- **HowWeWorkSection.tsx** — 5 ML фаз (Discovery→Data Prep→Training→Deploy→Monitor), без змін
+- **aiNiches.ts** — 14 AI ніш з повними даними (packages/FAQ/ROI/technologies)
+
+---
+
+## Що ще потрібно зробити (Backlog — після Sprint 51)
+
+### Контент (пріоритет: MEDIUM — базовий покриття досягнуто)
+- [ ] **Blog**: 223 → 260+ постів (+37)
+  - GPT-4o/Claude fine-tuning for UK regulated industries
+  - ML for UK sports analytics (Premier League, Betfair)
+  - Quantum ML outlook for UK finance
+  - Privacy-preserving ML: federated learning in NHS
+  - MLOps on-prem vs cloud cost comparison UK
+- [ ] **Glossary**: ~374 → 420+ термінів (+46)
+  - Pension/Wealth: liability-matching, ALM-model, longevity-swap-ml
+  - Sports analytics: expected-goals-ml, xG-model, player-valuation-ml
+  - Advanced MLOps: experiment-tracking, hyperparameter-search-distributed
+- [ ] **Portfolio**: 76 → 90+ кейсів (+14)
+- [ ] **Compare**: 44 → 55+ сторінок (+11): vs-mistral, vs-ml6-group, vs-iguazio, vs-sagemaker-studio-lab
+- [ ] **Reviews**: 32 → 40+ відгуків (+8)
+- [ ] **Careers**: 22 → 28+ позицій (+6)
+- [ ] **Resources**: 58 → 75+ ресурсів (+17)
 
 ### Структурні покращення (пріоритет: MEDIUM)
 - [ ] Internal links audit — нішева → service → pricing → contact
-- [ ] AI niches: перевірити повноцінність aiNiches.ts (6 ніш: healthcare/ecommerce/fintech/marketing/manufacturing/hr)
-- [ ] Location pages: перевірити ML-специфічний контент для 25 міст
-- [ ] WhyUsSection/HowWeWorkSection: перевірити ML-позиціонування актуальне
-- [ ] Use Cases +16: додати PropTech/Pension/Charity/Telecom/Media/Gov кейси
+- [ ] Location pages: ML-специфічний контент для всіх 25 міст (перевірити geo.ts)
+- [ ] HowWeWorkSection: дрібне покращення — додати назви моделей (XGBoost/transformers/LSTM) до кроку 3
 
 ### Інфраструктура (пріоритет: LOW)
-- [ ] OG images для niches: `/og/niches/*.png` — немає файлів, є 404
+- [ ] OG images для `/niches/[slug]` — немає файлів, є 404 (низький пріоритет)
 
 ---
 
