@@ -845,6 +845,142 @@ export const RESOURCES: Resource[] = [
       "Tooling: SDV, Gretel.ai, MOSTLY AI, synthpop (R) — comparison for UK use cases",
     ],
   },
+  {
+    slug: "uk-ml-procurement-guide",
+    titleEn: "UK Business ML Procurement Guide: What to Ask Before You Sign",
+    titleUk: "Посібник із закупівлі ML для UK бізнесу: що запитати перед підписанням",
+    descriptionEn:
+      "A practical checklist for UK businesses procuring ML services — covering technical due diligence, UK GDPR data processing agreements, model governance requirements, and red flags to watch for in vendor proposals.",
+    descriptionUk:
+      "Практичний чекліст для UK бізнесу при закупівлі ML послуг — охоплює технічний due diligence, угоди про обробку даних UK GDPR, вимоги до управління моделями та тривожні сигнали в пропозиціях постачальників.",
+    category: "guide",
+    format: "page",
+    emailRequired: false,
+    relatedService: "machine-learning",
+    tags: ["ML Procurement", "UK GDPR", "Due Diligence", "Vendor Selection"],
+    updatedAt: "2026-06-24",
+    isNew: true,
+    readTime: 12,
+  },
+  {
+    slug: "fca-ml-compliance-checklist",
+    titleEn: "FCA ML Compliance Checklist for UK Financial Services",
+    titleUk: "Чекліст відповідності ML FCA для UK фінансових послуг",
+    descriptionEn:
+      "Step-by-step compliance checklist covering FCA Consumer Duty outcomes, PS22/9 AI/ML guidance, PRA SS1/23 model risk management, and SR 11-7 model risk principles for ML deployments in UK regulated firms.",
+    descriptionUk:
+      "Покроковий чекліст відповідності охоплює результати FCA Consumer Duty, керівництво PS22/9 AI/ML, управління модельним ризиком PRA SS1/23 та принципи ризику моделей SR 11-7.",
+    category: "checklist",
+    format: "interactive",
+    emailRequired: false,
+    relatedService: "mlops",
+    tags: ["FCA", "PRA", "Consumer Duty", "Model Risk", "Compliance"],
+    updatedAt: "2026-06-24",
+    isNew: true,
+    readTime: 15,
+  },
+  {
+    slug: "ml-roi-framework-uk",
+    titleEn: "How to Calculate ML ROI: A Framework for UK Business Cases",
+    titleUk: "Як розрахувати ROI від ML: фреймворк для UK бізнес-кейсів",
+    descriptionEn:
+      "A structured framework for building the business case for ML investment — covering cost quantification, benefit modelling, risk-adjusted ROI, and presenting to UK CFOs and boards. Includes worked examples from banking, retail, and healthcare.",
+    descriptionUk:
+      "Структурований фреймворк для побудови бізнес-кейсу для інвестицій в ML — охоплює кількісну оцінку витрат, моделювання вигод, скоригований на ризик ROI та презентацію для CFO та рад UK компаній.",
+    category: "guide",
+    format: "page",
+    emailRequired: false,
+    relatedService: "machine-learning",
+    tags: ["ROI", "Business Case", "ML Investment", "CFO", "UK Business"],
+    updatedAt: "2026-06-24",
+    isNew: true,
+    readTime: 18,
+  },
+  {
+    slug: "mlops-maturity-model-uk",
+    titleEn: "MLOps Maturity Model for UK Enterprises: From Ad-Hoc to Production-Grade",
+    titleUk: "Модель зрілості MLOps для UK підприємств: від ad-hoc до production-рівня",
+    descriptionEn:
+      "A 5-level MLOps maturity framework assessing model deployment, monitoring, governance, and automation capabilities. Includes a self-assessment questionnaire and roadmap for UK organisations moving from experimental to production ML.",
+    descriptionUk:
+      "П'ятирівнева модель зрілості MLOps для оцінки розгортання моделей, моніторингу, управління та можливостей автоматизації. Включає анкету самооцінки та дорожню карту.",
+    category: "guide",
+    format: "page",
+    emailRequired: false,
+    relatedService: "mlops",
+    tags: ["MLOps", "Maturity Model", "Model Deployment", "Governance", "Automation"],
+    updatedAt: "2026-06-24",
+    isNew: true,
+    readTime: 20,
+  },
+  {
+    slug: "uk-ai-regulation-2026",
+    titleEn: "UK AI Regulation 2026: What Businesses Need to Know",
+    titleUk: "Регулювання AI у Великобританії 2026: що потрібно знати бізнесу",
+    descriptionEn:
+      "An overview of the UK AI regulatory landscape in 2026 — covering the UK AI Safety Institute, the AI Opportunities Action Plan, sector-specific guidance (FCA, ICO, CQC, Ofcom), and how UK regulation diverges from the EU AI Act.",
+    descriptionUk:
+      "Огляд регуляторного ландшафту AI у Великобританії 2026 — охоплює Інститут безпеки AI UK, План дій AI Opportunities, галузеве керівництво та відмінності від Закону EU AI Act.",
+    category: "guide",
+    format: "page",
+    emailRequired: false,
+    relatedService: "machine-learning",
+    tags: ["UK AI Regulation", "ICO", "FCA", "EU AI Act", "AI Safety Institute"],
+    updatedAt: "2026-06-24",
+    isNew: true,
+    readTime: 14,
+  },
+  {
+    slug: "ml-data-preparation-guide",
+    titleEn: "Data Preparation for ML: The Unglamorous Work That Determines Success",
+    titleUk: "Підготовка даних для ML: нецікава робота що визначає успіх",
+    descriptionEn:
+      "A practical guide to data preparation — data quality assessment, missing value strategies, feature engineering, train/test split best practices, and handling imbalanced datasets. Covers common mistakes that sink UK ML projects before they start.",
+    descriptionUk:
+      "Практичний посібник з підготовки даних — оцінка якості даних, стратегії відсутніх значень, feature engineering, найкращі практики розподілу train/test та обробка незбалансованих наборів даних.",
+    category: "guide",
+    format: "page",
+    emailRequired: false,
+    relatedService: "machine-learning",
+    tags: ["Data Preparation", "Feature Engineering", "Data Quality", "Imbalanced Data", "Python"],
+    updatedAt: "2026-06-24",
+    isNew: true,
+    readTime: 16,
+  },
+  {
+    slug: "hiring-ml-talent-uk",
+    titleEn: "Hiring ML Engineers and Data Scientists in the UK: Salaries, Skills, and Avoiding Mistakes",
+    titleUk: "Наймання ML інженерів та Data Scientists у Великобританії: зарплати, навички та уникнення помилок",
+    descriptionEn:
+      "A practical guide to hiring ML talent in the UK — covering current salary benchmarks (£55K-£120K), role definitions (ML Engineer vs Data Scientist vs MLOps), interview questions, and the build-vs-buy-vs-partner decision for UK companies.",
+    descriptionUk:
+      "Практичний посібник по найму ML-спеціалістів у Великобританії — бенчмарки зарплат (£55K-£120K), визначення ролей, питання для інтерв'ю та рішення про власну команду vs аутсорс vs партнерство.",
+    category: "guide",
+    format: "page",
+    emailRequired: false,
+    relatedService: "machine-learning",
+    tags: ["Hiring", "ML Engineers", "UK Salaries", "Data Science", "Talent"],
+    updatedAt: "2026-06-24",
+    isNew: true,
+    readTime: 12,
+  },
+  {
+    slug: "python-ml-stack-2026",
+    titleEn: "The Python ML Stack in 2026: Essential Libraries for Production ML",
+    titleUk: "Python ML Stack 2026: основні бібліотеки для production ML",
+    descriptionEn:
+      "A curated guide to the Python ML ecosystem in 2026 — from data processing (pandas, polars) to modelling (scikit-learn, XGBoost, PyTorch) to MLOps (MLflow, Evidently AI, BentoML) — with guidance on when to use what.",
+    descriptionUk:
+      "Вибраний посібник по екосистемі Python ML 2026 — від обробки даних (pandas, polars) до моделювання (scikit-learn, XGBoost, PyTorch) до MLOps (MLflow, Evidently AI, BentoML).",
+    category: "guide",
+    format: "page",
+    emailRequired: false,
+    relatedService: "mlops",
+    tags: ["Python", "ML Libraries", "PyTorch", "scikit-learn", "MLOps", "2026"],
+    updatedAt: "2026-06-24",
+    isNew: true,
+    readTime: 10,
+  },
 ];
 
 export const RESOURCE_SLUGS = RESOURCES.map((r) => r.slug);
