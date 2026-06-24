@@ -10,6 +10,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { Check, ChevronRight, ArrowRight, Database, TrendingUp, BookOpen, Shield } from "lucide-react";
 import { EmojiIcon } from "@/components/ui/EmojiIcon";
+import { GEO_CITIES } from "@/lib/data/geo";
 
 export async function generateStaticParams() {
   return ML_NICHES.map((n) => ({ niche: n.slug }));
@@ -454,6 +455,37 @@ export default async function MLNichePage({
           </Container>
         </section>
 
+        {/* Cities we serve */}
+        <section className="py-14 bg-slate-900 border-t border-slate-800">
+          <Container>
+            <h2 className="text-2xl font-bold text-white mb-2">
+              {isUk ? "Міста у Великобританії" : "Cities we serve across the UK"}
+            </h2>
+            <p className="text-slate-400 mb-8 max-w-xl">
+              {isUk
+                ? "Надаємо ML-консалтинг для бізнесів по всій Великобританії — дистанційно та на місці."
+                : "We deliver ML consulting to businesses across the UK — remotely and on-site."}
+            </p>
+            <div className="flex flex-wrap gap-3">
+              {GEO_CITIES.slice(0, 16).map((city) => (
+                <Link
+                  key={city.slug}
+                  href={`/${lang}/location/${city.slug}`}
+                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 hover:border-blue-500/60 hover:text-white hover:bg-slate-800/80 text-sm transition-colors"
+                >
+                  {isUk ? city.nameUk : city.nameEn}
+                </Link>
+              ))}
+              <Link
+                href={`/${lang}/location`}
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-indigo-600/20 border border-indigo-500/40 text-indigo-300 hover:border-indigo-400 hover:text-white text-sm transition-colors"
+              >
+                {isUk ? "Всі міста →" : "All locations →"}
+              </Link>
+            </div>
+          </Container>
+        </section>
+
         {/* Cross-links */}
         {(niche.crossLinkAINiche || niche.crossLinkMLNiche) && (
           <section className="py-12 bg-slate-950 border-t border-slate-800">
@@ -476,6 +508,13 @@ export default async function MLNichePage({
                   className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-slate-700 text-slate-300 hover:border-slate-500 hover:text-white text-sm transition-colors"
                 >
                   {isUk ? "Повний ML-сервіс" : "Full ML service"}
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  href={`/${lang}/pricing`}
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-indigo-700 text-indigo-300 hover:border-indigo-500 hover:text-white text-sm transition-colors"
+                >
+                  {isUk ? "Ціни та пакети" : "Pricing & packages"}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>

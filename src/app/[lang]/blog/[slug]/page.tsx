@@ -19,28 +19,19 @@ import { cn } from "@/lib/utils";
 
 // Map blog categories → relevant service slugs
 const CATEGORY_SERVICES: Record<string, string[]> = {
-  "SEO та просування": ["seo", "ads", "smm"],
-  "Веб-розробка": ["website-dev", "landing", "mobile"],
-  "Дизайн і UX": ["design", "branding"],
-  "E-commerce": ["ecommerce", "crm", "ads"],
-  "Кейси клієнтів": ["website-dev", "ecommerce", "seo"],
-  "Маркетплейс і нішеві рішення": ["website-dev", "support", "crm"],
-  "Маркетинг": ["smm", "ads", "seo"],
-  "Бізнес та зростання": ["website-dev", "crm", "ads"],
-  "Безпека": ["website-dev", "support"],
-  "Право та GDPR": ["website-dev", "support"],
+  // ML/AI categories (primary)
+  "Machine Learning": ["machine-learning", "predictive-analytics", "mlops"],
+  "Artificial Intelligence": ["artificial-intelligence", "llm-rag", "machine-learning"],
+  "MLOps": ["mlops", "machine-learning", "artificial-intelligence"],
+  "NLP": ["nlp", "llm-rag", "machine-learning"],
+  "Computer Vision": ["computer-vision", "machine-learning", "artificial-intelligence"],
+  "Predictive Analytics": ["predictive-analytics", "machine-learning", "mlops"],
+  // Legacy / fallback categories
   "AI та Автоматизація": ["artificial-intelligence", "machine-learning", "nlp"],
   "Автоматизація": ["artificial-intelligence", "llm-rag", "mlops"],
   "Аналітика та дані": ["machine-learning", "predictive-analytics", "mlops"],
-  "Мобільний веб та PWA": ["mobile", "website-dev", "design"],
-  "Соціальні мережі": ["smm", "ads", "branding"],
-  "Хостинг та інфраструктура": ["website-dev", "support"],
-  "Локальний SEO": ["seo", "ads"],
-  "Контент-маркетинг": ["smm", "seo", "ads"],
-  "Конверсія (CRO)": ["website-dev", "design", "seo"],
-  "Email-маркетинг": ["smm", "ads"],
-  "Продуктивність": ["crm", "website-dev"],
-  "Інструменти та технології": ["website-dev", "support"],
+  "Право та GDPR": ["machine-learning", "nlp", "artificial-intelligence"],
+  "Бізнес та зростання": ["machine-learning", "predictive-analytics", "artificial-intelligence"],
 };
 
 export const revalidate = 300; // ISR: revalidate every 5 minutes

@@ -1,28 +1,26 @@
 # codeworth.uk — ML Adaptation Master Log
 
-**Мета:** Документація всіх змін по адаптації сайту під Machine Learning (Sprints 6–51).
+**Мета:** Документація всіх змін по адаптації сайту під Machine Learning (Sprints 6–57).
 **Початок роботи:** 2026-06-23
 **Остання зміна:** 2026-06-24
 **Виконавець:** Claude AI (паралельні агент-спринти)
 
 ---
 
-## Підсумок поточного стану (після Sprint 51)
+## Підсумок поточного стану (після Sprint 57)
 
 | Файл | До адаптації | Поточний стан | Зміна |
 |------|-------------|---------------|-------|
-| `blog.ts` | ~40 постів | **~223 пости** | +183 |
-| `glossary.ts` | 146 термінів | **~374 терміни** | +228 |
-| `portfolio.ts` | ~30 кейсів | **76 кейсів** | +46 |
-| `compare.ts` | 10 сторінок | **44 сторінки** | +34 |
+| `blog.ts` | ~40 постів | **234+ пости** (Sprint 52 ✅) | +194+ |
+| `glossary.ts` | 146 термінів | **395 термінів** | +249 |
+| `portfolio.ts` | ~30 кейсів | **85 кейсів** | +55 |
+| `compare.ts` | 10 сторінок | **52 сторінки** | +42 |
 | `mlNiches.ts` | 6 ніш | **22 ніші** | +16 |
 | `aiNiches.ts` | — | **14 ніш** | — |
 | `useCases.ts` | 7 кейсів | **38 кейсів** | +31 |
-| `resources.ts` | 26 ресурсів | **58 ресурсів** | +32 |
-| `reviews.ts` | 9 відгуків | **32 відгуки** | +23 |
-| `careers.ts` | 8 позицій | **22 позиції** | +14 |
-| `reviews.ts` | 9 відгуків | **20 відгуків** | +11 |
-| `careers.ts` | 8 позицій | **14 позицій** | +6 |
+| `resources.ts` | 26 ресурсів | **71 ресурс** | +45 |
+| `reviews.ts` | 9 відгуків | **39 відгуків** | +30 |
+| `careers.ts` | 8 позицій | **27 позицій** | +19 |
 | `geo.ts` | 19 міст | **25 міст** | +6 |
 
 ---
@@ -682,32 +680,105 @@
 
 ---
 
-## Що ще потрібно зробити (Backlog — після Sprint 51)
+## Sprint 52 — Blog +15 UK ML posts (2026-06-24, ✅ DONE)
 
-### Контент (пріоритет: MEDIUM — базовий покриття досягнуто)
-- [ ] **Blog**: 223 → 260+ постів (+37)
-  - GPT-4o/Claude fine-tuning for UK regulated industries
-  - ML for UK sports analytics (Premier League, Betfair)
-  - Quantum ML outlook for UK finance
-  - Privacy-preserving ML: federated learning in NHS
-  - MLOps on-prem vs cloud cost comparison UK
-- [ ] **Glossary**: ~374 → 420+ термінів (+46)
-  - Pension/Wealth: liability-matching, ALM-model, longevity-swap-ml
-  - Sports analytics: expected-goals-ml, xG-model, player-valuation-ml
-  - Advanced MLOps: experiment-tracking, hyperparameter-search-distributed
-- [ ] **Portfolio**: 76 → 90+ кейсів (+14)
-- [ ] **Compare**: 44 → 55+ сторінок (+11): vs-mistral, vs-ml6-group, vs-iguazio, vs-sagemaker-studio-lab
-- [ ] **Reviews**: 32 → 40+ відгуків (+8)
-- [ ] **Careers**: 22 → 28+ позицій (+6)
-- [ ] **Resources**: 58 → 75+ ресурсів (+17)
+### Виконано
+- **`blog.ts`** — +15 нових постів (234 total):
+  - `gpt4o-fine-tuning-uk-regulated-industries` — GPT-4o fine-tuning для UK regulated industries
+  - `ml-sports-analytics-premier-league-uk` — ML для UK sports analytics (Premier League, Betfair)
+  - `quantum-ml-uk-finance-outlook` — Quantum ML outlook для UK finance
+  - `federated-learning-nhs-privacy-uk` — Federated learning для NHS privacy
+  - `mlops-onprem-vs-cloud-uk-cost` — MLOps on-prem vs cloud cost UK
+  - `ml-insurance-underwriting-uk-2026` — ML в UK insurance underwriting
+  - `ml-asset-management-alternative-data-uk` — ML та alternative data в asset management
+  - `ml-bias-detection-fairness-uk-2026` — ML bias detection та fairness audit UK
+  - `nhs-waiting-list-ml-optimisation` — ML для NHS waiting list optimisation
+  - `llm-deployment-production-uk` — LLM deployment in production UK
+  - `ml-retail-banking-open-banking-uk` — ML у UK retail banking open banking
+  - `synthetic-data-healthcare-uk-2026` — Synthetic data для UK healthcare
+  - `ml-model-monitoring-drift-uk` — ML model monitoring та data drift detection
+  - `ml-wealthtech-suitability-assessment-uk` — ML у UK WealthTech suitability assessment
+  - `causal-ml-business-decisions-uk` — Causal ML для бізнес-рішень UK
 
-### Структурні покращення (пріоритет: MEDIUM)
-- [ ] Internal links audit — нішева → service → pricing → contact
-- [ ] Location pages: ML-специфічний контент для всіх 25 міст (перевірити geo.ts)
-- [ ] HowWeWorkSection: дрібне покращення — додати назви моделей (XGBoost/transformers/LSTM) до кроку 3
+---
 
-### Інфраструктура (пріоритет: LOW)
+## Sprint 53 — Glossary +21 advanced terms (2026-06-24, ✅ DONE)
+
+### Виконано
+- **`glossary.ts`** — +21 нових термінів (395 total):
+  - **Insurance Underwriting** (5): loss-development-factor, combined-ratio-ml, actuarial-gradient-boosting, uw-scorecard-ml, reinsurance-pricing-ml
+  - **Asset Management** (5): smart-beta-ml, factor-investing-ml, portfolio-attribution-ml, liquidity-risk-ml, esg-data-integration-ml
+  - **Sports Analytics** (5): expected-goals-ml, player-valuation-ml, injury-prediction-ml, scouting-ml, match-outcome-prediction-ml
+  - **MLOps Advanced** (6): hyperparameter-search-distributed, ml-observability, feature-importance-drift, canary-model-release, ab-testing-ml-models, model-compression-quantization
+
+---
+
+## Sprint 54 — Portfolio +9 + Compare +8 (2026-06-24, ✅ DONE)
+
+### Виконано
+- **`portfolio.ts`** — +9 UK ML кейсів (85 total):
+  - `uk-insurance-underwriting-ml`, `uk-asset-manager-alt-data-ml`, `uk-nhs-waiting-list-ml`
+  - `uk-retail-banking-open-banking-ml`, `uk-sports-analytics-premier-league`
+  - `uk-wealthtech-suitability-ml`, `uk-synthetic-data-healthcare-ml`
+  - `uk-energy-demand-forecasting-ml`, `uk-legal-document-generation-ml`
+- **`compare.ts`** — +8 порівнянь (52 total):
+  - `vs-mistral-enterprise`, `vs-ml6-group`, `vs-iguazio-mlrun`, `vs-c3-ai`
+  - `vs-amazon-bedrock-service`, `vs-google-cloud-ai`, `vs-sisense-analytics`, `vs-outsystems-ai`
+
+---
+
+## Sprint 55 — Reviews +7 / Careers +5 / Resources +13 (2026-06-24, ✅ DONE)
+
+### Виконано
+- **`reviews.ts`** — +7 відгуків (39 total)
+- **`careers.ts`** — +5 позицій (27 total)
+- **`resources.ts`** — +13 ресурсів (71 total):
+  - insurance-ml-pricing-guide, alt-data-ml-toolkit, nhs-waiting-list-ml-playbook
+  - sports-analytics-ml-guide, wealthtech-suitability-ml-framework
+  - synthetic-data-guide-healthcare, energy-demand-forecasting-uk
+  - mlops-monitoring-drift-playbook, llm-production-deployment-guide
+  - ml-bias-audit-framework-uk, causal-ml-business-guide, open-banking-ml-guide, quantum-ml-outlook-uk
+
+---
+
+## Sprint 56 — Geo 5 cities ML content upgrade (2026-06-24, ✅ DONE)
+
+### Виконано
+- **`geo.ts`** — ML-специфічний контент для 5 міст:
+  - **Brighton** — FinTech/AI: Farewill, Brandwatch, Fathom Analytics
+  - **Southampton** — Maritime/Defence: BAE Systems Maritime, Ordnance Survey
+  - **Leicester** — Retail/Manufacturing: NEXT plc, Walkers
+  - **Coventry** — Automotive/EV: Jaguar Land Rover, WMG Warwick
+  - **Plymouth** — Marine/Defence: Devonport Naval Base, Plymouth Marine Lab
+
+---
+
+## Sprint 57 — Structural fixes: internal links + "Cities we serve" (2026-06-24, ✅ DONE)
+
+### Виконано
+- **`src/app/[lang]/blog/[slug]/page.tsx`** — CATEGORY_SERVICES повністю переписано на ML-категорії (виправлено stale web-dev ключі)
+- **`src/app/[lang]/ml/[niche]/page.tsx`**:
+  - "Ціни та пакети" кнопка у Cross-links (після "Full ML service")
+  - "Cities we serve" секція (16 міст + "All locations →") перед Cross-links
+- **`src/app/[lang]/services/[slug]/page.tsx`** — "View pricing" кнопка поряд із "Other Services"
+- **`src/components/home/HowWeWorkSection.tsx`** — крок 03: назви моделей XGBoost/transformers/LSTM/ensemble
+
+---
+
+## Що ще потрібно зробити (Backlog — після Sprint 57)
+
+### Контент (пріоритет: MEDIUM)
+- [ ] **Blog**: 234 → 260+ постів (+26)
+- [ ] **Glossary**: 395 → 420+ термінів (+25)
+- [ ] **Portfolio**: 85 → 95+ кейсів (+10)
+- [ ] **Compare**: 52 → 60+ сторінок (+8)
+- [ ] **Reviews**: 39 → 45+ відгуків (+6)
+- [ ] **Careers**: 27 → 32+ позицій (+5)
+- [ ] **Resources**: 71 → 85+ ресурсів (+14)
+
+### Структурні покращення (пріоритет: LOW)
 - [ ] OG images для `/niches/[slug]` — немає файлів, є 404 (низький пріоритет)
+- [ ] Location pages: ML-специфічний контент для решти 20 міст (5 вже оновлено в Sprint 56)
 
 ---
 
@@ -722,15 +793,3 @@
 7. **Деплой** — завжди через GitHub Actions, НЕ на сервері напряму.
 8. **readTime** — число (INT), НЕ рядок ("10 min" → `10`).
 9. **GLOSSARY_TERMS vs GLOSSARY_CATEGORIES** — нові терміни лише у `GLOSSARY_TERMS` (рядки ~95+), НЕ у `GLOSSARY_CATEGORIES` (рядки 25–93).
-
----
-
-## Технічні правила (важливо для майбутніх спринтів)
-
-1. **Backticks у glossary.ts** — НЕ використовувати всередині template literals у `fullDescription`. Замінювати plain text.
-2. **Blog post обов'язкові поля** — `featured`, `category`, `tags`, `emoji`, `color`, `excerpt` — ЗАВЖДИ.
-3. **content/contentEn** — прості рядкові масиви, НЕ об'єкти.
-4. **faq** — РІВНО 5 об'єктів `{q, qEn, a, aEn}`.
-5. **Trailing comma** — останній запис у масиві НЕ має коми.
-6. **Дублюючі slug** — перевіряти перед додаванням нових постів.
-7. **Деплой** — завжди через GitHub Actions, НЕ на сервері напряму.

@@ -816,7 +816,16 @@ export default async function ServicePage({ params }: Props) {
         {/* Other services */}
         <section className="py-16 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100">
           <Container>
-            <h3 className="text-lg font-heading font-bold text-neutral-700 dark:text-neutral-300 mb-6">{isUk ? "Інші послуги" : "Other Services"}</h3>
+            <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
+              <h3 className="text-lg font-heading font-bold text-neutral-700 dark:text-neutral-300">{isUk ? "Інші послуги" : "Other Services"}</h3>
+              <Link
+                href={`/${lang}/pricing`}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold transition-colors"
+              >
+                {isUk ? "Переглянути ціни" : "View pricing"}
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+              </Link>
+            </div>
             <div className="flex flex-wrap gap-3">
               {SERVICES_DATA.filter((s) => s.slug !== service.slug).map((rawS) => {
                 const s = getServiceLocalized(rawS.slug, lang) ?? rawS;

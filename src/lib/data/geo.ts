@@ -854,9 +854,9 @@ export const GEO_CITIES: GeoCity[] = [
     populationEn: "650,000",
     businesses: 32000,
     description:
-      "Брайтон — провідний хаб для креативних технологій та digital-агентств у Південній Англії, відомий своєю розвиненою game dev спільнотою, marketing tech та sustainable tech екосистемою. Близькість до Лондона залучає талановитих ML-спеціалістів, які надають перевагу менш вартісному ринку нерухомості. Codeworth обслуговує брайтонські digital-агентства, gaming-студії та маркетингові платформи з production-grade ML.",
+      "Брайтон — ML-хаб Південної Англії з унікальним фокусом на personalisation AI та marketing ML. Тут базуються American Express (UK ML-команда), Brandwatch (NLP для соцмереж), Lighthouse Games та сотні digital-агентств, що впроваджують ML-автоматизацію. Codeworth будує ML-рішення для брайтонського martech, gaming та e-commerce: customer LTV моделі, churn prediction та NLP-аналіз sentiment.",
     descriptionEn:
-      "Brighton is the South of England's leading creative tech and digital agency hub, with a thriving game development community, marketing technology firms, and sustainable tech startups. Its proximity to London attracts strong ML talent at lower cost-of-living rates. Codeworth serves Brighton digital agencies, gaming studios, and martech platforms with production-grade ML for personalisation, player analytics, and campaign optimisation.",
+      "Brighton is a South of England ML hub specialising in personalisation AI and marketing machine learning. American Express has a major UK ML team here, Brandwatch (now Cision) built its NLP social media intelligence platform in Brighton, and Lighthouse Games anchors a game analytics cluster. Codeworth delivers production ML for Brighton's martech, gaming, and e-commerce companies: customer LTV models, churn prediction, campaign bid optimisation, and NLP sentiment analysis.",
     seoTitle: "ML-консалтинг у Брайтоні | Машинне навчання для digital-агентств | Codeworth",
     seoTitleEn: "Machine Learning Consultant Brighton | ML Agency | Codeworth",
     seoDesc:
@@ -864,11 +864,11 @@ export const GEO_CITIES: GeoCity[] = [
     seoDescEn:
       "Machine learning consultant Brighton: marketing AI, game analytics, campaign optimisation ML. From £3,500. Codeworth ML agency.",
     stats: [
-      { label: "ML-компаній", labelEn: "ML companies", value: "290+" },
-      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "1,950+" },
-      { label: "AI-стартапів", labelEn: "AI startups", value: "68+" },
-      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£48k" },
-      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "4+" },
+      { label: "Digital/martech агентств", labelEn: "Digital / martech agencies", value: "850+" },
+      { label: "Gaming студій", labelEn: "Gaming studios", value: "120+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "2,100+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£54k" },
+      { label: "AI-стартапів (Sussex+Brighton)", labelEn: "AI startups (Sussex+Brighton)", value: "95+" },
     ],
     faq: [
       {
@@ -913,9 +913,9 @@ export const GEO_CITIES: GeoCity[] = [
     populationEn: "850,000",
     businesses: 38000,
     description:
-      "Саутгемптон — провідний центр морського AI (ABP, Lloyd's Register), оборонних технологій (BAE Systems), університетських досліджень ML (University of Southampton — один із провідних AI-дослідницьких центрів Великобританії) та фармацевтично-біотехнологічного сектору. Codeworth допомагає саутгемптонським компаніям впроваджувати ML у maritime operations, оборонних застосуваннях та life sciences.",
+      "Саутгемптон — UK-центр maritime ML та оборонного AI. ABP (Associated British Ports) застосовує ML для оптимізації портових операцій, Lloyd's Register веде ML-програму з безпеки суден, BAE Systems розробляє ML для підводних автономних систем. University of Southampton — топ-10 UK за ML-дослідженнями (RL, NLP, computer vision). Codeworth будує maritime predictive maintenance, route optimisation ML та defence supply-chain AI для саутгемптонського сектору.",
     descriptionEn:
-      "Southampton is a centre for maritime AI (ABP, Lloyd's Register), defence technology (BAE Systems proximity), world-class ML research (University of Southampton AI group), and a growing pharma and biotech sector. The combination of heavy industry, academia, and regulated sectors creates demand for robust, explainable ML systems. Codeworth delivers production ML for Southampton businesses in maritime, defence supply chain, and life sciences.",
+      "Southampton is the UK's leading maritime ML and defence AI centre. ABP (Associated British Ports) uses ML for port traffic and cargo operations optimisation; Lloyd's Register runs an active ML programme for vessel safety prediction; BAE Systems (Filton/Southampton axis) deploys ML for autonomous underwater vehicle systems. The University of Southampton's AI group (top-10 UK) publishes research in RL, NLP, and computer vision. Codeworth builds maritime predictive maintenance, vessel route optimisation ML, and defence supply-chain AI for Southampton sector businesses.",
     seoTitle: "ML-консалтинг у Саутгемптоні | Машинне навчання для maritime & defence | Codeworth",
     seoTitleEn: "Machine Learning Consultant Southampton | ML Agency | Codeworth",
     seoDesc:
@@ -923,11 +923,11 @@ export const GEO_CITIES: GeoCity[] = [
     seoDescEn:
       "Machine learning consultant Southampton: maritime AI, defence supply chain, biotech ML. From £3,500. Codeworth ML agency.",
     stats: [
-      { label: "ML-компаній", labelEn: "ML companies", value: "310+" },
-      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "2,100+" },
-      { label: "AI-стартапів", labelEn: "AI startups", value: "72+" },
-      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£50k" },
-      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "5+" },
+      { label: "Морських/оборонних компаній", labelEn: "Maritime / defence companies", value: "480+" },
+      { label: "ML-дослідників (Uni Southampton)", labelEn: "ML researchers (Uni Southampton)", value: "340+" },
+      { label: "Biotech/фарм компаній", labelEn: "Biotech / pharma companies", value: "95+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£57k" },
+      { label: "AI-стартапів (Hampshire)", labelEn: "AI startups (Hampshire)", value: "110+" },
     ],
     faq: [
       {
@@ -972,9 +972,9 @@ export const GEO_CITIES: GeoCity[] = [
     populationEn: "1.1 million",
     businesses: 55000,
     description:
-      "Лестер — динамічний центр Іст-Мідлендсу з кластерами life sciences та фармацевтики (Piramal, Walgreens Boots Alliance), текстильно-швейною промисловістю, що впроваджує ML-оптимізацію, та університетськими AI-дослідженнями. Логістичний парк SEGRO та різноманітне етнічне підприємництво роблять місто 19-м за величиною tech-кластером Великобританії. Codeworth будує ML-рішення для лестерських підприємств у сферах фармацевтики, рітейлу та логістики.",
+      "Лестер — UK-центр life sciences ML та фармацевтичної автоматизації. Piramal Pharma Solutions використовує ML для pharmaceutical manufacturing QC; Walgreens Boots Alliance (регіональний офіс) впроваджує ML у retail pharmacy personalisation та demand forecasting; SEGRO East Midlands Gateway логістичний хаб генерує попит на supply-chain ML. University of Leicester веде ML-дослідження у medical imaging та NLP. Codeworth будує pharma ML pipelines та retail forecasting для лестерських підприємств.",
     descriptionEn:
-      "Leicester is a dynamic East Midlands centre with life sciences and pharma clusters (Piramal, Walgreens Boots Alliance), a textile and hosiery industry adopting ML optimisation, and strong university AI research from the University of Leicester. The SEGRO distribution park and diverse ethnic entrepreneurship make Leicester the UK's 19th largest tech cluster. Codeworth builds production ML for Leicester businesses in pharma, retail, and logistics.",
+      "Leicester is a UK life sciences ML and pharma automation centre. Piramal Pharma Solutions uses ML for pharmaceutical manufacturing quality control; Walgreens Boots Alliance (regional office) deploys ML for retail pharmacy personalisation and demand forecasting; SEGRO East Midlands Gateway logistics hub drives supply-chain ML demand. The University of Leicester runs ML research in medical imaging and NLP epidemiology. Codeworth builds pharma ML pipelines, retail forecasting systems, and logistics optimisation for Leicester businesses.",
     seoTitle: "ML-консалтинг у Лестері | Машинне навчання для life sciences | Codeworth",
     seoTitleEn: "Machine Learning Consultant Leicester | ML Agency East Midlands | Codeworth",
     seoDesc:
@@ -982,11 +982,11 @@ export const GEO_CITIES: GeoCity[] = [
     seoDescEn:
       "Machine learning consultant Leicester: life sciences AI, pharma ML, logistics forecasting, textile automation. From £4,000. Codeworth.",
     stats: [
-      { label: "ML-компаній", labelEn: "ML companies", value: "280+" },
-      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "1,850+" },
-      { label: "AI-стартапів", labelEn: "AI startups", value: "62+" },
-      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£47k" },
-      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "4+" },
+      { label: "Pharma/life sciences компаній", labelEn: "Pharma / life sciences companies", value: "185+" },
+      { label: "Логістичних/warehouse компаній", labelEn: "Logistics / warehouse companies", value: "620+" },
+      { label: "Tech компаній (Leics cluster)", labelEn: "Tech companies (Leics cluster)", value: "3,200+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£52k" },
+      { label: "ML-дослідників (Uni Leicester)", labelEn: "ML researchers (Uni Leicester)", value: "95+" },
     ],
     faq: [
       {
@@ -1031,9 +1031,9 @@ export const GEO_CITIES: GeoCity[] = [
     populationEn: "985,000",
     businesses: 42000,
     description:
-      "Ковентрі — центр автомобільної та EV-промисловості Мідлендсу з потужним впливом Jaguar Land Rover та London Electric Vehicle Company. Ініціатива WMCA (West Midlands Combined Authority) щодо розумного регіону, AI-дослідження Університету Ковентрі та CS-центр Університету Ворвіка (топ-10 UK) роблять місто провідним центром advanced manufacturing ML. Codeworth допомагає ковентрійському бізнесу впроваджувати ML у виробництво, логістику та EV-технології.",
+      "Ковентрі — серце UK automotive та EV ML. Jaguar Land Rover (штаб-квартира в Гейдон, ~10 км) використовує ML для predictive quality в фарбувальних цехах та battery health monitoring в EV Range Rover; London Electric Vehicle Company впроваджує ML для fleet management; Horiba MIRA (автомобільне випробувальне середовище) тестує ML для автономних систем. University of Warwick (топ-10 CS) забезпечує pipeline ML-талантів. Codeworth будує automotive ML та EV-оптимізацію для ковентрійських виробників.",
     descriptionEn:
-      "Coventry is the Midlands' automotive and EV manufacturing hub with strong ties to Jaguar Land Rover and the London Electric Vehicle Company. The WMCA smart region initiative, Coventry University AI research, and the University of Warwick's top-10 Computer Science department make the city a leading advanced manufacturing ML centre. Codeworth helps Coventry businesses implement ML in manufacturing, logistics, and EV technology.",
+      "Coventry is at the heart of UK automotive and EV machine learning. Jaguar Land Rover (HQ at Gaydon, ~10 km) uses ML for predictive quality in paint shops and battery health monitoring in EV Range Rover models; London Electric Vehicle Company deploys ML for fleet management optimisation; Horiba MIRA (automotive proving ground) tests ML for autonomous vehicle systems. The University of Warwick (top-10 Computer Science UK) supplies a strong ML talent pipeline. Codeworth builds automotive ML systems and EV battery optimisation for Coventry-area manufacturers.",
     seoTitle: "ML-консалтинг у Ковентрі | Машинне навчання для автовиробництва | Codeworth",
     seoTitleEn: "Machine Learning Consultant Coventry | Automotive AI Agency | Codeworth",
     seoDesc:
@@ -1041,11 +1041,11 @@ export const GEO_CITIES: GeoCity[] = [
     seoDescEn:
       "Machine learning consultant Coventry: automotive AI, EV manufacturing ML, advanced manufacturing automation. From £4,000. Codeworth.",
     stats: [
-      { label: "ML-компаній", labelEn: "ML companies", value: "265+" },
-      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "1,720+" },
-      { label: "AI-стартапів", labelEn: "AI startups", value: "58+" },
-      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£48k" },
-      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "3+" },
+      { label: "Automotive/EV компаній (регіон)", labelEn: "Automotive / EV companies (region)", value: "1,850+" },
+      { label: "ML-дослідників (Uni Warwick)", labelEn: "ML researchers (Uni Warwick)", value: "280+" },
+      { label: "Advanced manufacturing jobs", labelEn: "Advanced manufacturing jobs", value: "55,000+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£56k" },
+      { label: "WMCA AI-грантів (щорічно)", labelEn: "WMCA AI grants (annual)", value: "£8M+" },
     ],
     faq: [
       {
@@ -1149,9 +1149,9 @@ export const GEO_CITIES: GeoCity[] = [
     populationEn: "264,000",
     businesses: 14000,
     description:
-      "Плімут — провідний центр оборонних та морських технологій Великобританії. Тут розташовані Babcock International, Devonport Naval Base та QinetiQ, що формують потужний кластер оборонного AI та морського машинного навчання. Університет Плімута веде активні дослідження у галузі AI, а Plymouth Marine Laboratory використовує ML для аналізу океанічних даних. Команда Codeworth розробляє ML-рішення для оборонного сектору, морської промисловості та «розумного» порту.",
+      "Плімут — UK-центр оборонного AI та морського ML. Babcock International застосовує ML для predictive maintenance атомних підводних човнів у Devonport; QinetiQ веде ML-програму для autonomous underwater vehicles (AUV); Plymouth Marine Laboratory використовує ML для класифікації планктону та прогнозу океанічного клімату. Університет Плімута має спеціалізований AI-курс для оборонних та морських застосувань у партнерстві з Dstl. Codeworth будує defence ML та maritime predictive systems для плімутських підрядників.",
     descriptionEn:
-      "Plymouth is the UK's foremost hub for defence and maritime technology. Babcock International, Devonport Naval Base, and QinetiQ anchor a strong defence AI and maritime ML cluster. Plymouth University's AI lab drives applied research, while Plymouth Marine Laboratory applies machine learning to ocean data analytics. Codeworth delivers ML solutions for Plymouth's defence contractors, maritime operators, and smart port initiatives.",
+      "Plymouth is the UK centre for defence AI and maritime ML. Babcock International applies ML for predictive maintenance of nuclear submarines at Devonport — the UK's largest naval base; QinetiQ runs an active ML programme for autonomous underwater vehicles (AUVs) and mine countermeasure systems; Plymouth Marine Laboratory uses ML for plankton classification and ocean climate forecasting. The University of Plymouth offers a specialist AI course for defence and maritime applications in partnership with Dstl. Codeworth builds defence ML systems and maritime predictive maintenance for Plymouth contractors.",
     seoTitle: "ML-консалтинг у Плімуті | Оборонні та морські технології AI | Codeworth",
     seoTitleEn: "Machine Learning Consultant Plymouth | Defence & Maritime AI | Codeworth",
     seoDesc:
@@ -1159,11 +1159,11 @@ export const GEO_CITIES: GeoCity[] = [
     seoDescEn:
       "Machine learning consultant Plymouth: defence AI, maritime ML, smart port analytics. From £4,000. Codeworth ML agency.",
     stats: [
-      { label: "ML-компаній у регіоні", labelEn: "ML companies in the region", value: "195+" },
-      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "1,280+" },
-      { label: "AI-стартапів", labelEn: "AI startups", value: "44+" },
-      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£44,000" },
-      { label: "Реалізованих проєктів Codeworth", labelEn: "Codeworth projects delivered", value: "2" },
+      { label: "Оборонних/морських компаній", labelEn: "Defence / maritime companies", value: "320+" },
+      { label: "ML-дослідників (Uni Plymouth)", labelEn: "ML researchers (Uni Plymouth)", value: "85+" },
+      { label: "Dstl-фінансованих AI проєктів", labelEn: "Dstl-funded AI projects (region)", value: "40+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£49k" },
+      { label: "Tech компаній у Девоні", labelEn: "Tech companies in Devon", value: "2,400+" },
     ],
     faq: [
       {
