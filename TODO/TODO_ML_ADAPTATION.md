@@ -27,6 +27,9 @@
 | `mlNiches.ts` | 6 ніш | **11 ніш** | +5 |
 | `resources.ts` | 26 ресурсів | **34 ресурси** | +8 (Sprint 15) |
 | `useCases.ts` | 7 кейсів | **15 кейсів** | +8 (Sprint 16) |
+| `glossary.ts` | 450+ термінів | **315 slugs / ~317 термінів** | +24 (Sprint 20) |
+| `blog.ts` | 170 постів | **184+ постів** | +7+7 (Sprint 19+22) |
+| `mlNiches.ts` | 15 ніш | **16 ніш** | +1 insurance (Sprint 21) |
 
 ---
 
@@ -259,33 +262,87 @@
 
 ---
 
+---
+
+## Sprint 19 — Blog Topic Clusters +7 (2026-06-24, ✅ DONE commit 657b848)
+
+### Виконано
+- **`blog.ts`** — +7 top-priority topic cluster posts:
+  - `machine-learning-cost-uk` — "How Much Does ML Cost UK? 2026 Pricing Guide"
+  - `what-is-mlops` — "What is MLOps? Complete Guide for UK Businesses"
+  - `gdpr-machine-learning-uk` — "GDPR Compliance in ML UK 2026"
+  - `ml-project-phases` — "ML Project Lifecycle: 8 Phases PoC to Production"
+  - `ai-chatbot-rag-guide` — "Building RAG AI Chatbot for UK Business"
+  - `llm-vs-traditional-ml` — "LLM vs Traditional ML: Which for UK Business?"
+  - `ml-roi-business-guide` — "Measuring ML ROI for UK Businesses"
+
+---
+
+## Sprint 20 — Glossary +24 (2026-06-24, ✅ DONE commit 464bea1)
+
+### Виконано
+- **`glossary.ts`** — +24 нових ML терміни по 4 нішах:
+  - **Insurance** (6): glm-insurance, credibility-theory, telematics-ubi, claims-severity-model, ibnr-reserving, whiplash-reform-ml
+  - **Energy** (6): balancing-mechanism, demand-response, capacity-market, smart-meter-analytics, battery-degradation-model, ofgem-price-cap-ml
+  - **Private Equity** (6): deal-sourcing-ml, portfolio-monitoring-ml, ebitda-normalisation-nlp, exit-timing-ml, lbo-ml, esg-scoring-pe
+  - **Education** (6): adaptive-learning, knowledge-tracing, dropout-prediction, learning-analytics, automated-grading, vle-engagement-ml
+- Загальна кількість: 315 slug entries у glossary.ts
+
+---
+
+## Sprint 21 — mlNiches Insurance Niche (2026-06-24, in progress)
+
+### Заплановано
+- **`mlNiches.ts`** — Insurance & InsurTech нова ніша:
+  - ML pricing (GLM+XGBoost hybrid, FCA PS20/2 compliant)
+  - Fraud detection ML (network analysis + NLP + image forensics)
+  - Claims automation (FNOL NLP + CV damage assessment)
+  - 3 packages: Starter £8k → Pricing Engine £25k → Full Platform £60k
+
+---
+
+## Sprint 22 — Blog +7 General ML Topics (2026-06-24, in progress)
+
+### Заплановано
+- **`blog.ts`** — +7 нових постів:
+  - `nlp-for-uk-business-guide` — NLP 7 applications with UK ROI
+  - `computer-vision-uk-industry-guide` — CV across UK industries
+  - `hiring-ml-team-uk` — Hiring ML team: salaries, roles, build vs buy
+  - `llm-providers-comparison-uk` — OpenAI vs Anthropic vs Google for UK
+  - `ml-for-uk-sme-guide` — ML for UK small businesses
+  - `ml-consulting-vs-in-house-uk` — Consulting vs in-house ML team
+  - `data-engineering-for-ml-uk` — Data engineering for ML pipelines
+
+---
+
 ## Що ще потрібно зробити (Backlog)
 
-### Критичний пріоритет — Нові service pages
-- [ ] `/services/nlp` — NLP Development service page
-- [ ] `/services/computer-vision` — Computer Vision service page
-- [ ] `/services/mlops` — MLOps Services page
-- [ ] `/services/llm-rag` — LLM & RAG Development page
-- [ ] `/services/predictive-analytics` — Predictive Analytics page
+### Service pages
+- ✅ Всі 7 service pages реалізовані через динамічний `/services/[slug]` + services.ts data
 
 ### Блог — Topic clusters (ще не закриті)
-- [ ] `machine-learning-cost-uk` — "How much does ML cost UK?"
-- [ ] `what-is-mlops` — "What is MLOps?" (HIGH PAA volume)
-- [ ] `ml-roi-business-guide` — "Measuring ML ROI"
-- [ ] `gdpr-machine-learning-uk` — "GDPR Compliance in ML UK"
-- [ ] `ml-project-phases` — "ML Project Lifecycle: PoC to Production"
-- [ ] `ai-chatbot-rag-guide` — "Building RAG AI Chatbot"
-- [ ] `llm-vs-traditional-ml` — "LLM vs Traditional ML"
+- [ ] `ml-governance-uk-2026` — ML governance framework UK
+- [ ] `openai-fine-tuning-guide-uk` — GPT fine-tuning for UK businesses
+- [ ] `ml-testing-validation-uk` — Testing ML models for UK regulated sectors
+- [ ] `transformers-explained-uk` — Transformer architecture explained
+- [ ] `time-series-forecasting-uk` — Time series forecasting guide
 
 ### Глосарій
-- [ ] Термінологія для /ml/insurance (actuarial ML, GLM, credibility theory)
-- [ ] Термінологія для /ml/energy (BEIS, National Grid ESO, demand response)
-- [ ] Термінологія для /ml/private-equity (deal sourcing ML, portfolio monitoring)
-- [ ] Термінологія для /ai/education (EdTech ML, adaptive learning, dropout prediction)
+- ✅ Insurance: glm-insurance, credibility-theory, telematics-ubi, claims-severity-model, ibnr-reserving, whiplash-reform-ml
+- ✅ Energy: balancing-mechanism, demand-response, capacity-market, smart-meter-analytics, battery-degradation-model, ofgem-price-cap-ml
+- ✅ Private Equity: deal-sourcing-ml, portfolio-monitoring-ml, ebitda-normalisation-nlp, exit-timing-ml, lbo-ml, esg-scoring-pe
+- ✅ Education: adaptive-learning, knowledge-tracing, dropout-prediction, learning-analytics, automated-grading, vle-engagement-ml
+- [ ] Regulatory AI terms: EU AI Act, UK AI White Paper, algorithmic accountability
+- [ ] MLOps advanced: feature drift, model registry, shadow mode deployment
+
+### ML Niches
+- ✅ Insurance niche додано до mlNiches.ts (Sprint 21)
+- [ ] Education niche в mlNiches.ts
+- [ ] Private equity niche в mlNiches.ts
 
 ### Інфраструктура
-- [ ] OG images для всіх blog posts (програматичні через /og/ route)
-- [ ] FAQPage schema.org audit — перевірити всі нішеві сторінки
+- [ ] OG images для blog posts (програматичні через /og/ route)
+- [ ] FAQPage schema.org audit — нішеві сторінки
 - [ ] Internal links audit — нішева → service → pricing → contact
 
 ---
