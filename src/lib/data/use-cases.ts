@@ -370,4 +370,244 @@ export const USE_CASES: UseCase[] = [
     relatedServices: ["artificial-intelligence"],
     relatedExtras: [],
   },
+  {
+    slug: "ml-for-credit-risk",
+    title: "ML-скоринг кредитного ризику для UK-фінтех",
+    titleEn: "ML Credit Risk Scoring for UK Fintech",
+    category: "ai",
+    icon: "💳",
+    who: "UK-фінтех, банки, BNPL-провайдери та кредитні спілки",
+    whoEn: "UK fintech lenders, banks, BNPL providers, and credit unions",
+    problem:
+      "Традиційні GLM-моделі не захоплюють нелінійні взаємозв'язки між ознаками та не використовують дані Open Banking. IFRS 9 ECL-розрахунки вимагають точних моделей PD/LGD/EAD, а FCA Consumer Duty — пояснюваності кожного рішення.",
+    problemEn:
+      "Traditional GLM models miss non-linear feature interactions and do not exploit Open Banking data. IFRS 9 ECL calculations require accurate PD/LGD/EAD models, while FCA Consumer Duty mandates explainable decisions for every applicant.",
+    solution:
+      "Ми замінюємо GLM на gradient boosting (XGBoost/LightGBM) із SHAP-поясненнями та інтегруємо транзакційні сигнали Open Banking. Моделі проходять валідацію за PRA-стандартами та відповідають IFRS 9 ECL. Від £9,500.",
+    solutionEn:
+      "We replace GLMs with gradient boosting (XGBoost/LightGBM) plus SHAP explanations and integrate Open Banking transactional signals. Models are PRA-validated and IFRS 9 ECL compliant. From £9,500.",
+    resultQuote:
+      "Покращення Gini-коефіцієнта на 8–15 пунктів, скорочення втрат від дефолтів на 15–22%, повна відповідність IFRS 9 та FCA Consumer Duty.",
+    resultQuoteEn:
+      "8–15 Gini point improvement, 15–22% reduction in default losses, full IFRS 9 and FCA Consumer Duty compliance.",
+    relatedPortfolio: [],
+    relatedServices: ["artificial-intelligence"],
+    relatedExtras: [],
+  },
+  {
+    slug: "ml-for-hr-analytics",
+    title: "ML для HR-аналітики та утримання талантів",
+    titleEn: "ML for HR Analytics and Talent Retention",
+    category: "ai",
+    icon: "🧑‍💼",
+    who: "HR-відділи UK-компаній з 100+ співробітниками",
+    whoEn: "HR departments at UK companies with 100+ employees",
+    problem:
+      "Плинність кадрів коштує 6–9 місячних зарплат на заміну. Прогалини в навичках виявляються лише під час ревізій продуктивності. Відбір кандидатів залишається суб'єктивним і уповільнює найм.",
+    problemEn:
+      "Attrition costs 6–9 months of salary per replacement. Skills gaps surface only at performance reviews. Candidate screening stays subjective and slows hiring.",
+    solution:
+      "Ми будуємо модель прогнозування відтоку за 90 днів, NLP-аналіз прогалин навичок із резюме та оглядів продуктивності, а також інструмент ранжування кандидатів для скорочення часу найму. Від £5,500.",
+    solutionEn:
+      "We build a 90-day attrition prediction model, NLP skills-gap analysis from CVs and performance reviews, and a candidate-ranking tool to cut time-to-hire. From £5,500.",
+    resultQuote:
+      "Зниження плинності кадрів на 20–30%, скорочення витрат на найм на 35%, раннє виявлення прогалин навичок за 6+ місяців.",
+    resultQuoteEn:
+      "20–30% attrition reduction, 35% lower hiring costs, skills-gap visibility 6+ months ahead.",
+    relatedPortfolio: [],
+    relatedServices: ["artificial-intelligence"],
+    relatedExtras: [],
+  },
+  {
+    slug: "computer-vision-retail-analytics",
+    title: "Комп'ютерний зір для аналітики роздрібної торгівлі",
+    titleEn: "Computer Vision Retail Analytics",
+    category: "ai",
+    icon: "🏪",
+    who: "UK-ритейлери, торгові мережі та торгові центри",
+    whoEn: "UK retailers, grocery chains, and shopping centres",
+    problem:
+      "Без даних про відвідуваність та поведінку покупців менеджери не можуть оптимізувати розміщення товарів, скорочувати черги або вимірювати вплив акцій на трафік у магазині.",
+    problemEn:
+      "Without footfall and shopper behaviour data, managers cannot optimise product placement, cut queue times, or measure the in-store impact of promotions.",
+    solution:
+      "Ми розгортаємо CV-систему на основі CCTV: підрахунок відвідуваності, теплові карти переміщень, виявлення черг та моніторинг наявності товарів на полицях. Без збереження персональних даних, відповідає UK GDPR. Від £7,000.",
+    solutionEn:
+      "We deploy a CV system on existing CCTV: footfall counting, movement heatmaps, queue detection, and shelf-availability monitoring. No PII stored, UK GDPR compliant. From £7,000.",
+    resultQuote:
+      "Зростання конверсії на 12–18%, скорочення часу очікування в черзі на 40%, підвищення доступності товарів на полицях на 25%.",
+    resultQuoteEn:
+      "12–18% conversion uplift, 40% queue wait-time reduction, 25% improvement in shelf availability.",
+    relatedPortfolio: [],
+    relatedServices: ["artificial-intelligence"],
+    relatedExtras: [],
+  },
+  {
+    slug: "llm-rag-for-customer-support",
+    title: "LLM RAG для підтримки клієнтів UK SaaS",
+    titleEn: "LLM RAG for UK SaaS Customer Support",
+    category: "ai",
+    icon: "🎧",
+    who: "UK SaaS-компанії з базою знань та тикет-системою",
+    whoEn: "UK SaaS companies with a knowledge base and ticket system",
+    problem:
+      "Служба підтримки першого рівня витрачає 70% часу на повторювані запити. SLA порушуються у пікові години, а найм додаткових агентів непропорційно збільшує витрати.",
+    problemEn:
+      "Tier-1 support spends 70% of time on repetitive queries. SLAs breach during peak hours, and hiring more agents increases costs disproportionately.",
+    solution:
+      "Ми будуємо RAG-агента на основі вашої бази знань: автоматичні відповіді на 60% тикетів, безшовна ескалація до людини, інтеграція з Zendesk/Intercom. CSAT-моніторинг вбудований. Від £5,500.",
+    solutionEn:
+      "We build a RAG agent over your knowledge base: automatic resolution of 60% of tickets, seamless human escalation, Zendesk/Intercom integration. CSAT monitoring built in. From £5,500.",
+    resultQuote:
+      "Автоматичне відхилення 60% тикетів першого рівня, CSAT понад 4.2, скорочення середнього часу обробки на 55%.",
+    resultQuoteEn:
+      "60% tier-1 ticket deflection, CSAT above 4.2, 55% reduction in average handling time.",
+    relatedPortfolio: ["ai-chatbot-saas"],
+    relatedServices: ["artificial-intelligence"],
+    relatedExtras: ["ai-chatbot-rag"],
+  },
+  {
+    slug: "ml-price-optimisation",
+    title: "ML-оптимізація цін для UK e-commerce",
+    titleEn: "ML Price Optimisation for UK E-commerce",
+    category: "ai",
+    icon: "🏷️",
+    who: "UK e-commerce-ритейлери та маркетплейс-продавці",
+    whoEn: "UK e-commerce retailers and marketplace sellers",
+    problem:
+      "Статичні ціни залишають виручку на столі під час піків попиту і знижують конкурентоспроможність у повільні періоди. Ручне коригування не встигає за змінами конкурентів у реальному часі.",
+    problemEn:
+      "Static prices leave revenue on the table during demand peaks and reduce competitiveness in slow periods. Manual adjustments cannot keep pace with real-time competitor moves.",
+    solution:
+      "Ми будуємо ML-рушій динамічного ціноутворення, що балансує дохід і конверсію: аналіз еластичності попиту, моніторинг конкурентів, A/B-тести цін. В межах правил CMA. Від £7,500.",
+    solutionEn:
+      "We build an ML dynamic pricing engine balancing revenue and conversion: demand elasticity modelling, competitor monitoring, price A/B testing. Within CMA guidelines. From £7,500.",
+    resultQuote:
+      "Зростання доходу на 8–14%, покращення маржі на 4–7 відсоткових пунктів, підвищення конверсії без шкоди для прибутку.",
+    resultQuoteEn:
+      "8–14% revenue uplift, 4–7 percentage-point margin improvement, conversion gains without sacrificing profitability.",
+    relatedPortfolio: [],
+    relatedServices: ["artificial-intelligence"],
+    relatedExtras: [],
+  },
+  {
+    slug: "nlp-contract-review",
+    title: "NLP-аналіз контрактів для юридичних і закупівельних команд",
+    titleEn: "NLP Contract Review for Legal and Procurement Teams",
+    category: "ai",
+    icon: "📝",
+    who: "Юридичні фірми, відділи закупівель та корпоративні юридичні команди у Великобританії",
+    whoEn: "UK law firms, procurement departments, and in-house legal teams",
+    problem:
+      "Ручний перегляд контрактів займає 2–4 години на документ. Ключові ризикові клаузули пропускаються через втому або обсяг. Юридичні ресурси витрачаються на механічні завдання замість стратегічних.",
+    problemEn:
+      "Manual contract review takes 2–4 hours per document. Key risk clauses are missed due to fatigue or volume. Legal resources are consumed by mechanical tasks instead of strategic work.",
+    solution:
+      "Ми розробляємо NLP-систему для вилучення клаузул, класифікації ризиків та порівняння зі стандартними шаблонами. Позначає нестандартні умови та потенційні пастки. Від £6,500.",
+    solutionEn:
+      "We build an NLP pipeline for clause extraction, risk classification, and deviation flagging against standard templates. Highlights non-standard terms and potential traps. From £6,500.",
+    resultQuote:
+      "Перегляд контрактів у 10 разів швидше, скорочення пропущених ризикових клаузул на 85%, вивільнення старших юристів для роботи з вищою доданою вартістю.",
+    resultQuoteEn:
+      "10x faster contract review, 85% reduction in missed risk clauses, senior lawyer time freed for higher-value work.",
+    relatedPortfolio: [],
+    relatedServices: ["artificial-intelligence"],
+    relatedExtras: [],
+  },
+  {
+    slug: "ml-energy-forecasting",
+    title: "ML-прогнозування попиту на електроенергію",
+    titleEn: "ML Energy Demand Forecasting",
+    category: "ai",
+    icon: "⚡",
+    who: "UK-постачальники електроенергії, мережеві оператори та промислові споживачі",
+    whoEn: "UK energy suppliers, network operators, and large industrial consumers",
+    problem:
+      "Неточні прогнози попиту призводять до дисбалансу в мережі та штрафних витрат на балансування. Традиційні статистичні моделі не враховують погоду, поведінку споживачів та відновлювальну генерацію.",
+    problemEn:
+      "Inaccurate demand forecasts lead to grid imbalance and costly balancing charges. Traditional statistical models fail to account for weather, consumer behaviour, and renewable generation.",
+    solution:
+      "Ми будуємо ML-ансамбль для добового та тижневого прогнозування попиту: градієнтний бустинг + LSTM із зовнішніми ознаками (погода, свята, тарифи). Інтеграція з SCADA та торговими системами. Від £8,000.",
+    solutionEn:
+      "We build an ML ensemble for day-ahead and week-ahead demand forecasting: gradient boosting + LSTM with exogenous features (weather, holidays, tariffs). SCADA and trading system integration. From £8,000.",
+    resultQuote:
+      "Скорочення витрат на дисбаланс на 22%, покращення точності прогнозу на 30 відсоткових пунктів, зниження пікових закупівель на 15%.",
+    resultQuoteEn:
+      "22% imbalance cost reduction, 30 percentage-point forecast accuracy improvement, 15% reduction in peak procurement costs.",
+    relatedPortfolio: [],
+    relatedServices: ["artificial-intelligence"],
+    relatedExtras: [],
+  },
+  {
+    slug: "ml-healthcare-readmission",
+    title: "ML-прогнозування повторної госпіталізації NHS",
+    titleEn: "ML Healthcare Readmission Prediction for NHS",
+    category: "ai",
+    icon: "🩺",
+    who: "Трасти NHS та організації первинної медичної допомоги у Великобританії",
+    whoEn: "NHS Trusts and UK primary care organisations",
+    problem:
+      "30-денна повторна госпіталізація є ключовим показником якості NHS і дорого коштує системі. Клінічні команди не мають інструментів для раннього виявлення пацієнтів з високим ризиком виписки.",
+    problemEn:
+      "30-day readmission is a key NHS quality indicator and costly to the system. Clinical teams lack tools to identify high-risk patients at the point of discharge.",
+    solution:
+      "Ми будуємо модель прогнозування ризику повторної госпіталізації на основі даних EPR: діагнози, коморбідності, соціальні фактори, попередні госпіталізації. Відповідає вимогам DSPT та NHS DTAC. Від £7,500.",
+    solutionEn:
+      "We build a readmission risk prediction model on EPR data: diagnoses, comorbidities, social factors, prior admissions. DSPT and NHS DTAC compliant. From £7,500.",
+    resultQuote:
+      "Зниження рівня повторної госпіталізації на 18%, цільові втручання для 20% пацієнтів з найвищим ризиком, економія £1,200–£2,800 на запобіжній госпіталізації.",
+    resultQuoteEn:
+      "18% readmission rate reduction, targeted interventions for the top 20% highest-risk patients, £1,200–£2,800 saved per prevented readmission.",
+    relatedPortfolio: [],
+    relatedServices: ["artificial-intelligence"],
+    relatedExtras: [],
+  },
+  {
+    slug: "ml-saas-conversion-optimisation",
+    title: "ML-оптимізація конверсії пробного періоду SaaS",
+    titleEn: "ML SaaS Trial-to-Paid Conversion Optimisation",
+    category: "ai",
+    icon: "📈",
+    who: "UK SaaS-компанії з моделлю freemium або пробного доступу",
+    whoEn: "UK SaaS companies with freemium or free-trial acquisition models",
+    problem:
+      "Більшість пробних користувачів не переходять на платний план. Onboarding однаковий для всіх, попри різну поведінку та наміри. Продажі витрачають час на ліди з низькою ймовірністю конверсії.",
+    problemEn:
+      "Most trial users do not convert to paid. Onboarding is the same for everyone despite different behaviour and intent signals. Sales spends time on low-probability leads.",
+    solution:
+      "Ми будуємо ML-скоринг конверсії пробного підписника: поведінкові ознаки в продукті, сигнали залученості, ICP-відповідність. Персоналізований onboarding-тригер для сегментів з високим балом. Від £5,000.",
+    solutionEn:
+      "We build an ML conversion score for trial users: in-product behavioural features, engagement signals, ICP fit. Personalised onboarding triggers fire for high-score segments. From £5,000.",
+    resultQuote:
+      "Зростання конверсії пробного доступу на 24%, скорочення витрат на залучення клієнтів на 18%, фокус продажів на ліди з найвищим балом.",
+    resultQuoteEn:
+      "24% trial-to-paid conversion uplift, 18% lower customer acquisition cost, sales focused on the highest-scoring leads.",
+    relatedPortfolio: [],
+    relatedServices: ["artificial-intelligence"],
+    relatedExtras: [],
+  },
+  {
+    slug: "ml-social-care-needs-prediction",
+    title: "ML-прогнозування потреб соціальної допомоги для місцевих рад",
+    titleEn: "ML Social Care Needs Prediction for Local Councils",
+    category: "ai",
+    icon: "🏛️",
+    who: "Місцеві ради та органи соціальної допомоги Великобританії",
+    whoEn: "UK local councils and adult social care authorities",
+    problem:
+      "Запити на соціальну допомогу часто надходять у стані кризи, коли втручання обходиться найдорожче. Без прогностичних моделей ресурси розподіляються реактивно, а не превентивно.",
+    problemEn:
+      "Social care referrals often arrive in crisis, when intervention is most expensive. Without predictive models, resources are allocated reactively rather than preventively.",
+    solution:
+      "Ми будуємо модель раннього виявлення ризику на основі деперсоналізованих адміністративних даних: використання послуг, демографія, взаємодія з NHS. Відповідає UK GDPR та стандартам місцевих органів влади. Від £10,000.",
+    solutionEn:
+      "We build an early-risk identification model on de-personalised administrative data: service usage, demographics, NHS interactions. UK GDPR and local authority data-sharing standards compliant. From £10,000.",
+    resultQuote:
+      "Економія £4,200 на кейс завдяки ранньому втручанню, скорочення термінових направлень на 28%, оптимізація розподілу ресурсів соціальної допомоги.",
+    resultQuoteEn:
+      "£4,200 saved per case through early intervention, 28% reduction in emergency referrals, optimised social care resource allocation.",
+    relatedPortfolio: [],
+    relatedServices: ["artificial-intelligence"],
+    relatedExtras: [],
+  },
 ];

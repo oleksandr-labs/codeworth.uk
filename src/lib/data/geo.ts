@@ -1316,6 +1316,124 @@ export const GEO_CITIES: GeoCity[] = [
       },
     ],
   },
+  {
+    slug: "nottingham",
+    nameUk: "Ноттінгем",
+    nameEn: "Nottingham",
+    region: "Іст-Мідлендс",
+    regionEn: "East Midlands",
+    population: "330,000",
+    populationEn: "330,000",
+    businesses: 18500,
+    description:
+      "Ноттінгем — провідний хаб ігрової та творчої технологічної індустрії Великобританії, де поєднуються потужний сектор фінансових послуг та зростаючий ML-кластер. Тут розташовані штаб-квартири Experian та Boots UK, регіональний офіс Capital One UK та значний кластер ігрових студій. Університет Ноттінгема веде передові дослідження у сфері AI, а коридор Іст-Мідлендс формує нову хвилю ML-стартапів. Codeworth надає ML-консалтинг для ноттінгемських компаній фінансового сектору, охорони здоров'я та ігрової індустрії.",
+    descriptionEn:
+      "Nottingham is a leading UK games and creative tech hub with a powerful financial services sector and a growing ML cluster. Experian and Boots UK are headquartered here alongside Capital One UK's regional office and a vibrant games studio cluster. The University of Nottingham drives cutting-edge AI research while the East Midlands tech corridor fosters a new wave of ML startups. Codeworth delivers ML consulting for Nottingham businesses across financial data, digital health, and interactive entertainment.",
+    seoTitle: "ML-консалтинг у Ноттінгемі | Машинне навчання для бізнесу | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Nottingham | ML Agency | Codeworth",
+    seoDesc:
+      "ML-консалтинг у Ноттінгемі: Experian data science, Boots digital health AI, ігрова аналітика. Від £4,000. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Nottingham: financial data science, digital health AI, games analytics. From £4,000. Codeworth ML agency.",
+    stats: [
+      { label: "ML-компаній у місті", labelEn: "ML companies in the city", value: "280+" },
+      { label: "ML-спеціалістів", labelEn: "ML specialists", value: "1,820+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "63+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£47,000" },
+      { label: "Реалізованих проєктів Codeworth", labelEn: "Codeworth projects delivered", value: "4" },
+    ],
+    faq: [
+      {
+        q: "Як Experian у Ноттінгемі використовує ML у data science?",
+        qEn: "How does Experian in Nottingham use ML for data science?",
+        a: "Experian — один із найбільших роботодавців у сфері data science у Ноттінгемі, що розробляє кредитні скорингові моделі, системи виявлення шахрайства та ML-інструменти для аналізу фінансових даних. Codeworth допомагає компаніям-партнерам Experian та фінтех-стартапам регіону будувати сумісні ML-пайплайни, що інтегруються з продуктами Experian API.",
+        aEn: "Experian is one of Nottingham's largest data science employers, developing credit scoring models, fraud detection systems, and ML-powered financial analytics tools. Codeworth helps Experian partner companies and regional fintech startups build compatible ML pipelines that integrate with Experian's API products.",
+      },
+      {
+        q: "Чи може Boots UK впровадити AI у цифрову охорону здоров'я з Ноттінгема?",
+        qEn: "Can Boots UK adopt AI for digital health from its Nottingham base?",
+        a: "Так. Boots UK зі штаб-квартирою у Ноттінгемі активно інвестує у цифрову трансформацію охорони здоров'я. Codeworth розробляє ML-рішення для рітейл-аптек: персоналізовані рекомендації щодо здоров'я, прогнозування попиту на ліки та NLP-обробку даних пацієнтів із дотриманням вимог MHRA та ICO.",
+        aEn: "Yes. Boots UK, headquartered in Nottingham, is actively investing in digital health transformation. Codeworth builds ML solutions for retail pharmacy: personalised health recommendations, medicine demand forecasting, and NLP processing of patient data compliant with MHRA and ICO regulations.",
+      },
+      {
+        q: "Що таке ML-коридор Іст-Мідлендс і як він впливає на бізнес?",
+        qEn: "What is the East Midlands ML corridor and how does it affect business?",
+        a: "ML-коридор Іст-Мідлендс — це мережа технологічних компаній, університетів та інвесторів, що простягається від Ноттінгема до Лестера та Дербі. Завдяки нижчій вартості оренди офісів і розгалуженій мережі фахівців регіон пропонує привабливий баланс «лондонська якість — регіональна вартість» для ML-проєктів.",
+        aEn: "The East Midlands ML corridor is a network of tech companies, universities, and investors spanning Nottingham, Leicester, and Derby. With lower office costs and a deep talent pool, the region offers an attractive London-quality-at-regional-cost proposition for ML projects.",
+      },
+      {
+        q: "Які ML-дослідження веде Університет Ноттінгема?",
+        qEn: "What AI research does the University of Nottingham conduct?",
+        a: "Університет Ноттінгема веде дослідження у сферах комп'ютерного зору, обробки природної мови та AI для охорони здоров'я через такі підрозділи, як IDAC та Nottingham Biomedical Research Centre. Codeworth співпрацює з університетськими стартапами, допомагаючи перетворювати академічні ML-прототипи на комерційні продукти.",
+        aEn: "The University of Nottingham conducts research in computer vision, natural language processing, and healthcare AI through units such as IDAC and the Nottingham Biomedical Research Centre. Codeworth partners with university spin-outs to commercialise academic ML prototypes into production-grade systems.",
+      },
+      {
+        q: "Чи активний ринок ML для фінансових послуг у Ноттінгемі?",
+        qEn: "Is the ML market for financial services active in Nottingham?",
+        a: "Так. Присутність Experian, Capital One UK та низки страхових компаній і кредитних посередників формує стабільний попит на ML у фінансовому секторі. Основні напрями: кредитний скоринг, виявлення шахрайства, оцінка ризиків та автоматизація клієнтського сервісу. Codeworth виконав 4 ML-проєкти для ноттінгемських фінансових клієнтів.",
+        aEn: "Yes. The presence of Experian, Capital One UK, and a cluster of insurance companies and credit intermediaries creates sustained ML demand in financial services. Key use cases include credit scoring, fraud detection, risk assessment, and customer service automation. Codeworth has delivered 4 ML projects for Nottingham financial clients.",
+      },
+    ],
+  },
+  {
+    slug: "sunderland",
+    nameUk: "Сандерленд",
+    nameEn: "Sunderland",
+    region: "Норт-Іст Англія",
+    regionEn: "North East England",
+    population: "275,000",
+    populationEn: "275,000",
+    businesses: 9800,
+    description:
+      "Сандерленд — хаб технологічного зростання Північно-Східної Англії, що поєднує передове виробництво Nissan UK, кластер офшорної вітроенергетики та цифрові ініціативи Software Centre Sunderland. Університет Сандерленда розвиває програми AI та data science, а державні програми Levelling Up залучають ML-інвестиції в регіон. Codeworth надає ML-консалтинг для сандерлендських компаній у сферах виробництва, відновлюваної енергетики та програмного забезпечення.",
+    descriptionEn:
+      "Sunderland is a North East England tech growth hub combining Nissan UK's advanced manufacturing, a burgeoning offshore wind energy ML cluster, and the Sunderland Software Centre digital initiative. The University of Sunderland drives AI and data science programmes while UK Levelling Up funding channels ML investment into the region. Codeworth provides ML consulting for Sunderland businesses across manufacturing, renewable energy, and software development.",
+    seoTitle: "ML-консалтинг у Сандерленді | Машинне навчання для бізнесу | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Sunderland | ML Agency | Codeworth",
+    seoDesc:
+      "ML-консалтинг у Сандерленді: Nissan manufacturing AI, offshore wind ML, Levelling Up tech. Від £4,000. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Sunderland: manufacturing AI, offshore wind ML, North East tech growth. From £4,000. Codeworth ML agency.",
+    stats: [
+      { label: "ML-компаній у місті", labelEn: "ML companies in the city", value: "165+" },
+      { label: "ML-спеціалістів", labelEn: "ML specialists", value: "980+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "38+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£41,000" },
+      { label: "Реалізованих проєктів Codeworth", labelEn: "Codeworth projects delivered", value: "1" },
+    ],
+    faq: [
+      {
+        q: "Як завод Nissan у Сандерленді використовує ML у виробництві?",
+        qEn: "How does the Nissan Sunderland plant use ML in manufacturing?",
+        a: "Завод Nissan у Сандерленді є одним із найавтоматизованіших автомобільних виробництв у Великобританії та активно впроваджує ML для прогнозованого технічного обслуговування, контролю якості за допомогою комп'ютерного зору та оптимізації ланцюжка постачання. Codeworth допомагає підрядникам і постачальникам Nissan розробляти ML-рішення, сумісні з виробничою екосистемою Nissan.",
+        aEn: "The Nissan Sunderland plant is one of the UK's most automated automotive facilities, actively deploying ML for predictive maintenance, computer-vision quality control, and supply chain optimisation. Codeworth helps Nissan contractors and suppliers build ML solutions compatible with Nissan's manufacturing ecosystem.",
+      },
+      {
+        q: "Як розвивається технологічна сцена Північно-Східної Англії?",
+        qEn: "How is the North East England tech scene developing?",
+        a: "Технологічна сцена Північного Сходу стрімко зростає завдяки державним програмам Levelling Up, ініціативі North East Local Enterprise Partnership та інвестиціям у цифрову інфраструктуру. Сандерленд, Ньюкасл та Гейтсгед формують взаємопов'язаний технологічний кластер із доступним талантом і нижчими операційними витратами порівняно з Лондоном.",
+        aEn: "The North East tech scene is growing rapidly through Levelling Up programmes, the North East Local Enterprise Partnership, and digital infrastructure investment. Sunderland, Newcastle, and Gateshead form an interconnected tech cluster offering accessible talent and lower operating costs compared to London.",
+      },
+      {
+        q: "Які можливості ML існують у секторі офшорної вітроенергетики поблизу Сандерленда?",
+        qEn: "What ML opportunities exist in offshore wind energy near Sunderland?",
+        a: "Узбережжя Північно-Східної Англії є одним із найперспективніших районів офшорної вітроенергетики у Великобританії. ML застосовується для прогнозування відмов турбін, оптимізації виробітку енергії, планування технічного обслуговування та моделювання морського середовища. Codeworth розробляє ML-системи для енергетичних компаній і сервісних підрядників Норт-Іст.",
+        aEn: "The North East coastline is one of the UK's prime offshore wind zones. ML is applied to turbine failure prediction, energy yield optimisation, maintenance scheduling, and marine environment modelling. Codeworth builds ML systems for North East energy companies and service contractors operating in this sector.",
+      },
+      {
+        q: "Що таке Software Centre Sunderland і як він підтримує AI?",
+        qEn: "What is Sunderland Software Centre and how does it support AI?",
+        a: "Sunderland Software Centre — це ініціатива цифрового розвитку міста, що об'єднує технологічні компанії, стартапи та навчальні програми під одним дахом. Центр підтримує розробку AI-рішень, надаючи коворкінг-простір, доступ до університетських досліджень та мережеві заходи для ML-фахівців Норт-Іст.",
+        aEn: "Sunderland Software Centre is a city digital development initiative that co-locates tech companies, startups, and training programmes. The centre supports AI development by providing co-working space, access to university research, and networking events for North East ML practitioners.",
+      },
+      {
+        q: "Як програма Levelling Up впливає на ML-інвестиції у Сандерленді?",
+        qEn: "How does the Levelling Up programme affect ML investment in Sunderland?",
+        a: "Програма Levelling Up спрямовує значні кошти на цифрову інфраструктуру, перекваліфікацію кадрів та підтримку технологічних підприємств у Сандерленді та ширшому регіоні Норт-Іст. Це знижує бар'єри для впровадження ML для місцевого бізнесу та залучає нових технологічних інвесторів. Codeworth використовує ці можливості для надання ML-рішень, що кваліфікуються під грантове фінансування.",
+        aEn: "The Levelling Up programme directs significant funding to digital infrastructure, workforce reskilling, and tech business support in Sunderland and the broader North East. This lowers ML adoption barriers for local businesses and attracts new tech investors. Codeworth helps clients structure ML projects that qualify for Innovate UK and regional grant funding.",
+      },
+    ],
+  },
 ];
 
 export function getCity(slug: string): GeoCity | undefined {

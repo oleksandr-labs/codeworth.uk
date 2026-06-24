@@ -57,6 +57,7 @@ const TIMELINE_UK = [
   { year: "2023", title: "ML-консалтинг", text: "Офіційна реєстрація, розширення до 5 спеціалістів. 10+ успішних ML-проєктів." },
   { year: "2024", title: "Масштабування", text: "Запуск MLOps-практики. Fraud detection для FinTech. 60+ задеплоєних моделей." },
   { year: "2025", title: "Codeworth 2.0", text: "Новий сайт, ML-портфоліо, вихід на UK та EU ринки." },
+  { year: "2026", title: "Новий рівень", text: "150+ блог-постів, 22 міста UK, 80+ ML-моделей — новий рівень ML-консалтингу" },
 ];
 
 const TIMELINE_EN = [
@@ -65,6 +66,7 @@ const TIMELINE_EN = [
   { year: "2023", title: "ML Consultancy", text: "Official registration, expanded to 5 specialists. 10+ successful ML projects." },
   { year: "2024", title: "Scaling Up", text: "MLOps practice launch. Fraud detection for FinTech. 60+ deployed models." },
   { year: "2025", title: "Codeworth 2.0", text: "New website, ML portfolio, expansion to UK and EU markets." },
+  { year: "2026", title: "New Standard", text: "150+ blog posts, 22 UK cities, 80+ ML models delivered — a new standard for UK ML consultancy" },
 ];
 
 const TECH_STACK = [
@@ -83,17 +85,17 @@ const TECH_STACK = [
 ];
 
 const STATS_UK = [
-  { end: 60, suffix: "+", label: "ML-моделей" },
-  { end: 15, suffix: "+", label: "Галузей" },
+  { end: 80, suffix: "+", label: "ML-моделей" },
+  { end: 18, suffix: "+", label: "Галузей" },
   { end: 5, suffix: "+", label: "Роки в ML" },
-  { end: 12, suffix: "", label: "Спеціалістів" },
+  { end: 15, suffix: "", label: "Спеціалістів" },
 ];
 
 const STATS_EN = [
-  { end: 60, suffix: "+", label: "ML Models" },
-  { end: 15, suffix: "+", label: "Industries" },
+  { end: 80, suffix: "+", label: "ML Models" },
+  { end: 18, suffix: "+", label: "Industries" },
   { end: 5, suffix: "+", label: "Years in ML" },
-  { end: 12, suffix: "", label: "Specialists" },
+  { end: 15, suffix: "", label: "Specialists" },
 ];
 
 const organizationSchema = {

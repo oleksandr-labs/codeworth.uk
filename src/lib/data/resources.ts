@@ -14,6 +14,8 @@ export interface Resource {
   tags: string[];
   updatedAt: string;
   isPopular?: boolean;
+  isNew?: boolean;
+  url?: string;
   readTime?: number; // minutes
   items?: string[]; // checklist items preview (uk)
   itemsEn?: string[]; // checklist items preview (en)
