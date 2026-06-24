@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, ArrowRight, Rocket } from "lucide-react";
 import { EmojiIcon } from "@/components/ui/EmojiIcon";
+import { FlagIcon } from "@/components/ui/FlagIcon";
 import { cn } from "@/lib/utils";
 import { Container } from "./Container";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
@@ -29,8 +30,8 @@ const NAV_LINKS_EN = [
 ];
 
 const LANGUAGES = [
-  { code: "en", flag: "🇬🇧", label: "English" },
-  { code: "uk", flag: "🇺🇦", label: "Українська" },
+  { code: "en", label: "English" },
+  { code: "uk", label: "Українська" },
 ];
 
 export function Header() {
@@ -249,7 +250,7 @@ export function Header() {
                 aria-haspopup="listbox"
                 className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-neutral-500 dark:text-neutral-400 hover:text-indigo-600 dark:hover:text-indigo-400 rounded-lg hover:bg-indigo-50 dark:hover:bg-indigo-950/50 transition-all duration-150"
               >
-                <span className="text-base leading-none">{currentLang.flag}</span>
+                <FlagIcon code={lang as "en" | "uk"} size={20} />
                 <span className="uppercase text-xs font-semibold tracking-wide">{lang}</span>
                 <ChevronDown className={cn("w-3 h-3 transition-transform duration-200", langMenuOpen && "rotate-180")} />
               </button>
@@ -275,7 +276,7 @@ export function Header() {
                           : "text-neutral-700 dark:text-neutral-300"
                       )}
                     >
-                      <span className="text-base leading-none">{l.flag}</span>
+                      <FlagIcon code={l.code as "en" | "uk"} size={20} />
                       {l.label}
                       {lang === l.code && <span className="ml-auto text-indigo-500 dark:text-indigo-400">✓</span>}
                     </Link>
@@ -303,7 +304,7 @@ export function Header() {
               className="flex items-center gap-1 p-2 rounded-lg text-neutral-500 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors text-sm"
               onClick={() => analytics.languageSwitch(lang, lang === "en" ? "uk" : "en")}
             >
-              <span className="text-base leading-none">{lang === "en" ? "🇺🇦" : "🇬🇧"}</span>
+              <FlagIcon code={lang === "en" ? "uk" : "en"} size={20} />
             </Link>
             <button
               className="p-2 rounded-lg text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
@@ -350,7 +351,7 @@ export function Header() {
                         : "border-neutral-200 dark:border-neutral-700 text-neutral-600 dark:text-neutral-300 hover:border-indigo-200 dark:hover:border-indigo-800"
                     )}
                   >
-                    <span className="text-base leading-none">{l.flag}</span>
+                    <FlagIcon code={l.code as "en" | "uk"} size={18} />
                     {l.label}
                   </Link>
                 ))}
