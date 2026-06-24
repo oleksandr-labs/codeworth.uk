@@ -33,7 +33,7 @@ export async function generateMetadata({
       description: desc,
       type: "website",
       url: `https://codeworth.uk/${lang}/resources`,
-      images: [{ url: "/og/resources.png", width: 1200, height: 630, alt: title }],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: title }],
     },
     alternates: buildAlternates(lang, "/resources"),
   };

@@ -41,12 +41,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         : `Articles tagged «${decoded}» on the Codeworth blog.`,
       type: "website",
       url: `https://codeworth.uk/${lang}/blog/tag/${tag}`,
-      images: [{ url: "/og/blog.png", width: 1200, height: 630, alt: isUk ? "Блог Codeworth" : "Codeworth Blog" }],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: isUk ? "Блог Codeworth" : "Codeworth Blog" }],
     },
     twitter: {
       card: "summary_large_image",
       title: isUk ? `#${decoded} — Блог Codeworth` : `#${decoded} — Codeworth Blog`,
-      images: ["/og/blog.png"],
+      images: ["/opengraph-image"],
     },
     alternates: buildAlternates(lang, `blog/tag/${tag}`),
   };

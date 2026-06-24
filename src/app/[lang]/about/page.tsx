@@ -26,13 +26,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         : "ML company: custom models, fraud detection, NLP, computer vision and MLOps for UK and EU businesses.",
       type: "website",
       url: `https://codeworth.uk/${lang}/about`,
-      images: [{ url: "/og/about.png", width: 1200, height: 630, alt: "Codeworth Team" }],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Codeworth Team" }],
     },
     twitter: {
       card: "summary_large_image",
       title: isUk ? "Про нас — Codeworth" : "About Us — Codeworth",
       description: isUk ? "Команда Codeworth — ML-компанія для бізнесу." : "Codeworth team — ML company for business.",
-      images: ["/og/about.png"],
+      images: ["/opengraph-image"],
     },
   };
 }
@@ -86,14 +86,14 @@ const TECH_STACK = [
 
 const STATS_UK = [
   { end: 80, suffix: "+", label: "ML-моделей" },
-  { end: 18, suffix: "+", label: "Галузей" },
+  { end: 22, suffix: "+", label: "Галузей" },
   { end: 5, suffix: "+", label: "Роки в ML" },
   { end: 15, suffix: "", label: "Спеціалістів" },
 ];
 
 const STATS_EN = [
   { end: 80, suffix: "+", label: "ML Models" },
-  { end: 18, suffix: "+", label: "Industries" },
+  { end: 22, suffix: "+", label: "Industries" },
   { end: 5, suffix: "+", label: "Years in ML" },
   { end: 15, suffix: "", label: "Specialists" },
 ];

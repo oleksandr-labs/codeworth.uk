@@ -23,13 +23,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         : "Contact the Codeworth team. Telegram, Email, phone. We respond within 2 hours.",
       type: "website",
       url: `https://codeworth.uk/${lang}/contact`,
-      images: [{ url: "/og/contact.png", width: 1200, height: 630, alt: isUk ? "Контакти Codeworth" : "Codeworth Contacts" }],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: isUk ? "Контакти Codeworth" : "Codeworth Contacts" }],
     },
     twitter: {
       card: "summary_large_image",
       title: isUk ? "Контакти — Codeworth" : "Contact — Codeworth",
       description: isUk ? "Відповідаємо протягом 2 годин." : "We respond within 2 hours.",
-      images: ["/og/contact.png"],
+      images: ["/opengraph-image"],
     },
   };
 }

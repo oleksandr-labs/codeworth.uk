@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         : "Practical guides on ML, NLP, Computer Vision, MLOps, LLM & RAG, and predictive analytics from Codeworth.",
       type: "website",
       url: `https://codeworth.uk/${lang}/blog`,
-      images: [{ url: "/og/blog.png", width: 1200, height: 630, alt: isUk ? "Блог Codeworth" : "Codeworth Blog" }],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: isUk ? "Блог Codeworth" : "Codeworth Blog" }],
     },
     twitter: {
       card: "summary_large_image",
@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       description: isUk
         ? "ML, NLP, MLOps, LLM & RAG — гіди та кейси від команди Codeworth."
         : "ML, NLP, MLOps, LLM & RAG — guides and case studies from the Codeworth team.",
-      images: ["/og/blog.png"],
+      images: ["/opengraph-image"],
     },
   };
 }

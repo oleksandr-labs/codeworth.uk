@@ -27,14 +27,14 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         : `${NICHES_DATA.length}+ live demos. Launch in 3–7 days from £499. Customized for your brand.`,
       type: "website",
       url: `https://codeworth.uk/${lang}/niches`,
-      images: [{ url: "/og/niches.png", width: 1200, height: 630, alt: isUk ? "Нішеві сайти Codeworth" : "Codeworth Niche Websites" }],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: isUk ? "Нішеві сайти Codeworth" : "Codeworth Niche Websites" }],
     },
     twitter: {
       card: "summary_large_image",
       title: isUk
         ? `Готові рішення для ${NICHES_DATA.length}+ ніш — Codeworth | від £499`
         : `Ready-Made Solutions for ${NICHES_DATA.length}+ Solutions — Codeworth | from £499`,
-      images: ["/og/niches.png"],
+      images: ["/opengraph-image"],
     },
     alternates: buildAlternates(lang, 'niches'),
   };

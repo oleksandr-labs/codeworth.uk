@@ -35,7 +35,7 @@ export async function generateMetadata({
         : "Free tools for ML projects.",
       type: "website",
       url: `https://codeworth.uk/${lang}/tools`,
-      images: [{ url: "/og/tools.png", width: 1200, height: 630, alt: "Free ML Tools — Codeworth" }],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Free ML Tools — Codeworth" }],
     },
     twitter: {
       card: "summary_large_image",
@@ -43,7 +43,7 @@ export async function generateMetadata({
       description: isUk
         ? "Безкоштовні інструменти для ML-проєктів."
         : "Free tools for ML projects.",
-      images: ["/og/tools.png"],
+      images: ["/opengraph-image"],
     },
   };
 }

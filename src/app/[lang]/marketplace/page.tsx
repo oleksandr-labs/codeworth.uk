@@ -24,13 +24,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         : "Ready-made ML solutions for UK business. Fixed price, deployment in 4–8 weeks.",
       type: "website",
       url: `https://codeworth.uk/${lang}/marketplace`,
-      images: [{ url: "/og/marketplace.png", width: 1200, height: 630, alt: isUk ? "ML-пакети Codeworth" : "Codeworth ML Packages" }],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: isUk ? "ML-пакети Codeworth" : "Codeworth ML Packages" }],
     },
     twitter: {
       card: "summary_large_image",
       title: isUk ? "ML-пакети | Codeworth" : "ML Packages | Codeworth",
       description: isUk ? "Готові ML-рішення. Швидкий старт, фіксована ціна." : "Ready-made ML solutions. Fast start, fixed price.",
-      images: ["/og/marketplace.png"],
+      images: ["/opengraph-image"],
     },
   };
 }

@@ -27,13 +27,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         : "PoC from £1,800, Production from £4,500, MLOps retainer from £800/month.",
       type: "website",
       url: `https://codeworth.uk/${lang}/pricing`,
-      images: [{ url: "/og/pricing.png", width: 1200, height: 630, alt: isUk ? "ML-ціни Codeworth" : "Codeworth ML Pricing" }],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: isUk ? "ML-ціни Codeworth" : "Codeworth ML Pricing" }],
     },
     twitter: {
       card: "summary_large_image",
       title: isUk ? "ML-ціни — Codeworth" : "ML Pricing — Codeworth",
       description: isUk ? "Прозорі ціни на ML/AI від Codeworth." : "Transparent ML/AI pricing by Codeworth.",
-      images: ["/og/pricing.png"],
+      images: ["/opengraph-image"],
     },
   };
 }

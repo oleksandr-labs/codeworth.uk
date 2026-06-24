@@ -14,16 +14,16 @@ const ROTATING_WORDS_EN = ["predictions", "fraud detection", "NLP tasks", "compu
 const TECH_LOGOS = ["Python", "PyTorch", "TensorFlow", "MLflow", "LangChain", "FastAPI"];
 
 const STATS_UK = [
-  { end: 40, suffix: "+", label: "ML-моделей" },
-  { end: 12, suffix: "+", label: "Галузей" },
-  { end: 4, suffix: "+", label: "Роки в ML" },
+  { end: 80, suffix: "+", label: "ML-моделей" },
+  { end: 22, suffix: "+", label: "Галузей" },
+  { end: 5, suffix: "+", label: "Роки в ML" },
   { end: 340, suffix: "%", label: "Середній ROI" },
 ];
 
 const STATS_EN = [
-  { end: 40, suffix: "+", label: "ML Models" },
-  { end: 12, suffix: "+", label: "Industries" },
-  { end: 4, suffix: "+", label: "Years in ML" },
+  { end: 80, suffix: "+", label: "ML Models" },
+  { end: 22, suffix: "+", label: "Industries" },
+  { end: 5, suffix: "+", label: "Years in ML" },
   { end: 340, suffix: "%", label: "Avg ROI" },
 ];
 
@@ -86,7 +86,7 @@ export function HeroSection() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-100 dark:border-indigo-900/60 text-sm font-medium text-indigo-700 dark:text-indigo-300">
             <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
-            {isUk ? "Приймаємо нові проєкти" : "Taking on new projects"}
+            {isUk ? "UK ML-компанія" : "UK-based ML consultancy"}
             <span className="text-indigo-400">•</span>
             {isUk ? "Безкоштовна консультація" : "Free consultation"}
           </div>
@@ -110,11 +110,11 @@ export function HeroSection() {
           {/* Subheading */}
           <p className="text-lg sm:text-xl text-neutral-500 dark:text-neutral-400 mb-10 max-w-2xl mx-auto leading-relaxed">
             {isUk ? (
-              <>Codeworth — ML-компанія. Розробляємо моделі, що{" "}
+              <>ML-компанія для UK бізнесу. Розробляємо моделі, що{" "}
               <span className="text-neutral-700 dark:text-neutral-300 font-medium">перетворюють дані у бізнес-результати</span>.
               Від прототипу до продакшену.</>
             ) : (
-              <>Codeworth — an ML company. We build models that{" "}
+              <>ML consultancy for UK businesses. We build models that{" "}
               <span className="text-neutral-700 dark:text-neutral-300 font-medium">convert data into business outcomes</span>.
               From prototype to production.</>
             )}

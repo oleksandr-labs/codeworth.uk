@@ -32,13 +32,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         : "ML/AI projects by Codeworth: predictive analytics, NLP, CV for FinTech, Healthcare, Retail.",
       type: "website",
       url: `https://codeworth.uk/${lang}/portfolio`,
-      images: [{ url: "/og/portfolio.png", width: 1200, height: 630, alt: isUk ? "Портфоліо Codeworth" : "Codeworth Portfolio" }],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: isUk ? "Портфоліо Codeworth" : "Codeworth Portfolio" }],
     },
     twitter: {
       card: "summary_large_image",
       title: isUk ? "ML/AI Портфоліо — Codeworth" : "ML/AI Portfolio — Codeworth",
       description: isUk ? "Реальні ML/AI проєкти від Codeworth для FinTech, Healthcare, Retail." : "Real ML/AI projects by Codeworth for FinTech, Healthcare, Retail.",
-      images: ["/og/portfolio.png"],
+      images: ["/opengraph-image"],
     },
   };
 }

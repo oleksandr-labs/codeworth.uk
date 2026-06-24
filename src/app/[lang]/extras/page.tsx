@@ -21,13 +21,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         : "Ready-to-deploy AI products: RAG chatbots, CV, NLP, recommendation engines.",
       type: "website",
       url: `https://codeworth.uk/${lang}/extras`,
-      images: [{ url: "/og/extras.png", width: 1200, height: 630, alt: isUk ? "AI-модулі Codeworth" : "Codeworth AI Modules" }],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: isUk ? "AI-модулі Codeworth" : "Codeworth AI Modules" }],
     },
     twitter: {
       card: "summary_large_image",
       title: isUk ? "AI-модулі — Codeworth" : "AI Modules — Codeworth",
       description: isUk ? "29+ готових AI-продуктів від £350." : "29+ ready-to-deploy AI products from £350.",
-      images: ["/og/extras.png"],
+      images: ["/opengraph-image"],
     },
     alternates: buildAlternates(lang, 'extras'),
   };

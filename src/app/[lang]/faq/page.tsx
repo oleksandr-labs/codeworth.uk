@@ -24,13 +24,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         : "Answers about ML development, pricing, data, and model support.",
       type: "website",
       url: `https://codeworth.uk/${lang}/faq`,
-      images: [{ url: "/og/faq.png", width: 1200, height: 630, alt: "FAQ — Codeworth" }],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "FAQ — Codeworth" }],
     },
     twitter: {
       card: "summary_large_image",
       title: "FAQ — Codeworth",
       description: isUk ? "Відповіді на питання про ML/AI від Codeworth." : "Answers about ML/AI from Codeworth.",
-      images: ["/og/faq.png"],
+      images: ["/opengraph-image"],
     },
   };
 }

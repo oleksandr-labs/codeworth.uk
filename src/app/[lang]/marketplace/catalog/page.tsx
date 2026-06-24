@@ -39,12 +39,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         : "33 ready-made niche websites for business. Filter by category, price, and complexity.",
       type: "website",
       url: `https://codeworth.uk/${lang}/marketplace/catalog`,
-      images: [{ url: "/og/marketplace.png", width: 1200, height: 630, alt: isUk ? "Каталог Codeworth" : "Codeworth Catalog" }],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: isUk ? "Каталог Codeworth" : "Codeworth Catalog" }],
     },
     twitter: {
       card: "summary_large_image",
       title: isUk ? "Каталог готових рішень — Codeworth" : "Ready-Made Solutions Catalog — Codeworth",
-      images: ["/og/marketplace.png"],
+      images: ["/opengraph-image"],
     },
     alternates: buildAlternates(lang, 'marketplace/catalog'),
   };

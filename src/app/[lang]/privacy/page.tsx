@@ -20,11 +20,11 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         : "Terms for collection and processing of personal data at Codeworth web studio.",
       type: "website",
       url: `https://codeworth.uk/${lang}/privacy`,
-      images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "Codeworth" }],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Codeworth" }],
     },
     twitter: {
       card: "summary_large_image",
-      images: ["/og/home.png"],
+      images: ["/opengraph-image"],
     },
     alternates: buildAlternates(lang, 'privacy'),
   };

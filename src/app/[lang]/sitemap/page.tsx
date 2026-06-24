@@ -36,12 +36,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         : "Complete Codeworth site map — all ML/AI service pages, case studies, blog, and company pages.",
       type: "website",
       url: `https://codeworth.uk/${lang}/sitemap`,
-      images: [{ url: "/og/sitemap.png", width: 1200, height: 630, alt: isUk ? "Карта сайту Codeworth" : "Codeworth Site Map" }],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: isUk ? "Карта сайту Codeworth" : "Codeworth Site Map" }],
     },
     twitter: {
       card: "summary_large_image",
       title: isUk ? "Карта сайту — Codeworth" : "Site Map — Codeworth",
-      images: ["/og/sitemap.png"],
+      images: ["/opengraph-image"],
     },
     alternates: buildAlternates(lang, 'sitemap'),
   };

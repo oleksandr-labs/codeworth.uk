@@ -28,13 +28,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         : "NLP, computer vision, MLOps, LLM & RAG, predictive analytics and custom ML models by Codeworth.",
       type: "website",
       url: `https://codeworth.uk/${lang}/services`,
-      images: [{ url: "/og/services.png", width: 1200, height: 630, alt: isUk ? "ML-послуги Codeworth" : "Codeworth ML Services" }],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: isUk ? "ML-послуги Codeworth" : "Codeworth ML Services" }],
     },
     twitter: {
       card: "summary_large_image",
       title: isUk ? "ML-послуги — Codeworth" : "ML Services — Codeworth",
       description: isUk ? "Fraud detection, NLP, MLOps та комп'ютерний зір від Codeworth." : "Fraud detection, NLP, MLOps and computer vision by Codeworth.",
-      images: ["/og/services.png"],
+      images: ["/opengraph-image"],
     },
   };
 }

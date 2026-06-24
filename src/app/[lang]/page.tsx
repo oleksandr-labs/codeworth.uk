@@ -123,7 +123,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         : "Custom ML models, fraud detection, NLP, computer vision and MLOps for businesses.",
       type: "website",
       url: `https://codeworth.uk/${lang}`,
-      images: [{ url: "/og/home.png", width: 1200, height: 630, alt: isUk ? "Codeworth — ML-компанія" : "Codeworth — ML Company" }],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: isUk ? "Codeworth — ML-компанія" : "Codeworth — ML Company" }],
     },
     twitter: {
       card: "summary_large_image",
@@ -131,7 +131,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       description: isUk
         ? "Fraud detection, NLP, MLOps. Proof of concept за 3 тижні."
         : "Fraud detection, NLP, MLOps. Proof of concept in 3 weeks.",
-      images: ["/og/home.png"],
+      images: ["/opengraph-image"],
     },
     alternates: buildAlternates(lang),
   };
@@ -159,7 +159,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     name: "Codeworth",
     url: "https://codeworth.uk",
     logo: "https://codeworth.uk/logo.png",
-    image: "https://codeworth.uk/og/home.png",
+    image: "https://codeworth.uk/opengraph-image",
     description: isUk
       ? "ML/AI консалтинг для бізнесу — кастомні ML-моделі, NLP, комп'ютерний зір, MLOps, LLM та RAG системи."
       : "ML/AI consultancy for business — custom ML models, NLP, computer vision, MLOps, LLM and RAG systems.",

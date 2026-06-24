@@ -38,7 +38,7 @@ export async function generateMetadata({
         : "15 ready-made solutions for business challenges.",
       type: "website",
       url: `https://codeworth.uk/${lang}/use-cases`,
-      images: [{ url: "/og/use-cases.png", width: 1200, height: 630, alt: "Use Cases — Codeworth" }],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Use Cases — Codeworth" }],
     },
   };
 }

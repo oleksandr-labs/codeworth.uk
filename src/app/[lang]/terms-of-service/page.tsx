@@ -20,11 +20,11 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         : "Conditions for machine learning, AI consulting, and MLOps services from Codeworth.",
       type: "website",
       url: `https://codeworth.uk/${lang}/terms-of-service`,
-      images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "Codeworth" }],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Codeworth" }],
     },
     twitter: {
       card: "summary_large_image",
-      images: ["/og/home.png"],
+      images: ["/opengraph-image"],
     },
     alternates: buildAlternates(lang, 'terms-of-service'),
   };

@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         : "PoC in 3 weeks. Innovate UK grant support. Series A ML validation.",
       type: "website",
       url: `https://codeworth.uk/${lang}/startup`,
-      images: [{ url: "/og/startup.png", width: 1200, height: 630, alt: isUk ? "ML для стартапів Codeworth" : "Codeworth ML for Startups" }],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: isUk ? "ML для стартапів Codeworth" : "Codeworth ML for Startups" }],
     },
   };
 }

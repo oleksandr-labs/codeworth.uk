@@ -24,9 +24,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       description: desc,
       type: "website",
       url: `https://codeworth.uk/${lang}/location`,
-      images: [{ url: "/og/location.png", width: 1200, height: 630, alt: title }],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: title }],
     },
-    twitter: { card: "summary_large_image", title, images: ["/og/location.png"] },
+    twitter: { card: "summary_large_image", title, images: ["/opengraph-image"] },
     alternates: buildAlternates(lang, "/location"),
   };
 }
