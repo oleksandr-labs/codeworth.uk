@@ -1434,6 +1434,65 @@ export const GEO_CITIES: GeoCity[] = [
       },
     ],
   },
+  {
+    slug: "belfast",
+    nameUk: "Белфаст",
+    nameEn: "Belfast",
+    region: "Північна Ірландія",
+    regionEn: "Northern Ireland",
+    population: "340 тис.",
+    populationEn: "340,000",
+    businesses: 28000,
+    description:
+      "Белфаст — провідний центр фінансових технологій та аутсорсингу Великобританії, де розташовані великі операційні хаби Citi, Allstate, PwC та Deloitte. Університет Квінз Белфаст веде активні дослідження у сферах кібербезпеки та ML. Місто стало стратегічним майданчиком для глобальних фінансових компаній, що впроваджують ML для автоматизації фінансових операцій, управління ризиками та виявлення шахрайства. Codeworth надає ML-консалтинг для белфастських фінансових та технологічних компаній.",
+    descriptionEn:
+      "Belfast is a major UK hub for financial services back-office operations and tech outsourcing, home to large operational centres for Citi (1,600+ staff), Allstate (Northern Ireland's largest private employer), PwC, and Deloitte. Queen's University Belfast drives cybersecurity and ML research through its Institute of Electronics, Communications and Information Technology. The city's concentration of financial operations creates strong demand for ML-powered fraud detection, financial operations automation, and regulatory compliance AI. Codeworth builds production ML for Belfast financial services and tech firms.",
+    seoTitle: "ML-консалтинг у Белфасті | Машинне навчання для фінансів | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Belfast | ML Agency Northern Ireland | Codeworth",
+    seoDesc:
+      "Машинне навчання у Белфасті: fraud detection, фінансовий ML, кібербезпека, NLP-автоматизація. Від £4,000. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Belfast: fraud detection, financial operations ML, cybersecurity AI. From £4,000. Codeworth ML agency.",
+    stats: [
+      { label: "Фінансових компаній", labelEn: "Financial services firms", value: "1,200+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "3,800+" },
+      { label: "Tech-компаній", labelEn: "Tech companies", value: "1,500+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£52k" },
+      { label: "Зростання фінтех-сектору (2р)", labelEn: "Fintech sector growth (2yr)", value: "+38%" },
+    ],
+    faq: [
+      {
+        q: "Які ML-рішення найбільш затребувані у Белфасті?",
+        qEn: "Which ML solutions are most in demand in Belfast?",
+        a: "Для белфастських фінансових компаній (Citi, Allstate, страхові): fraud detection, credit risk scoring, NLP для автоматизації claims та compliance. Для tech-аутсорсингу: NLP пайплайни, MLOps-інфраструктура. Для кібербезпеки: anomaly detection та threat intelligence ML.",
+        aEn: "For Belfast financial firms (Citi, Allstate, insurance): fraud detection, credit risk scoring, NLP for claims and compliance automation. For tech outsourcing: NLP pipelines and MLOps infrastructure. For cybersecurity: anomaly detection and threat intelligence ML.",
+      },
+      {
+        q: "Скільки коштує ML-консалтинг у Белфасті?",
+        qEn: "How much does ML consulting cost in Belfast?",
+        a: "Белфаст пропонує одні з найнижчих ставок ML-консалтингу у Великобританії — на 25–35% нижче лондонського рівня. Наші фіксовані пакети стартують від £4,000 для PoC до £22,000 для production ML-системи з MLOps.",
+        aEn: "Belfast offers some of the lowest ML consulting rates in the UK — 25–35% below London equivalents. Our fixed-price packages start from £4,000 for a PoC up to £22,000 for a production ML system with MLOps monitoring.",
+      },
+      {
+        q: "Чи маєте ви досвід роботи з фінансовими операціями глобальних банків?",
+        qEn: "Do you have experience with global bank financial operations ML?",
+        a: "Так. Ми будуємо ML-рішення для фінансових операцій: fraud detection моделі з SHAP-поясненнями для FCA compliance, credit scoring з Model Risk Management документацією, NLP для автоматизації document processing та compliance звітності.",
+        aEn: "Yes. We build ML for financial operations: fraud detection models with SHAP explainability for FCA compliance, credit scoring with Model Risk Management documentation, and NLP for document processing and compliance reporting automation.",
+      },
+      {
+        q: "Чи підтримуєте ви кібербезпекові ML-рішення для белфастських компаній?",
+        qEn: "Do you support cybersecurity ML for Belfast companies?",
+        a: "Так. Белфаст має активний кластер кібербезпеки завдяки Queen's University Belfast та LORCA NI. Ми розробляємо anomaly detection системи, ML-моделі для threat intelligence та NLP-рішення для аналізу security-логів. Стек: isolation forests, autoencoders, BERT для log analysis.",
+        aEn: "Yes. Belfast has an active cybersecurity cluster anchored by Queen's University Belfast and LORCA NI. We build anomaly detection systems, ML threat intelligence models, and NLP solutions for security log analysis. Stack: isolation forests, autoencoders, BERT for log analysis.",
+      },
+      {
+        q: "Яка роль Queen's University Belfast в AI-екосистемі міста?",
+        qEn: "What is Queen's University Belfast's role in the city's AI ecosystem?",
+        a: "Queen's University Belfast (QUB) веде дослідження ML та кібербезпеки через Institute of Electronics, Communications and Information Technology (ECIT). QUB є партнером Alan Turing Institute та публікує роботи з NLP, federated learning та medical ML. Codeworth відстежує академічні публікації QUB та впроваджує нові методи у production-рішення для белфастських клієнтів.",
+        aEn: "Queen's University Belfast (QUB) leads ML and cybersecurity research through its Institute of Electronics, Communications and Information Technology (ECIT), an Alan Turing Institute partner. QUB publishes research in NLP, federated learning, and medical ML. Codeworth tracks QUB academic output and incorporates recent methods into production solutions for Belfast clients.",
+      },
+    ],
+  },
 ];
 
 export function getCity(slug: string): GeoCity | undefined {
