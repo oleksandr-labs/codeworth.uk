@@ -1,23 +1,25 @@
 # codeworth.uk — ML Adaptation Master Log
 
-**Мета:** Документація всіх змін по адаптації сайту під Machine Learning (Sprints 6–37).
+**Мета:** Документація всіх змін по адаптації сайту під Machine Learning (Sprints 6–46).
 **Початок роботи:** 2026-06-23
 **Остання зміна:** 2026-06-24
 **Виконавець:** Claude AI (паралельні агент-спринти)
 
 ---
 
-## Підсумок поточного стану (після Sprint 37)
+## Підсумок поточного стану (після Sprint 46)
 
-| Файл | До адаптації | Після (Sprint 37) | Зміна |
-|------|-------------|-------------------|-------|
-| `blog.ts` | ~40 постів | **~196 постів** | +156 |
-| `glossary.ts` | 146 термінів | **339 термінів** | +193 |
-| `portfolio.ts` | ~30 кейсів | **63 кейси** | +33 |
-| `compare.ts` | 10 сторінок | **31 сторінка** | +21 |
+| Файл | До адаптації | Поточний стан | Зміна |
+|------|-------------|---------------|-------|
+| `blog.ts` | ~40 постів | **~207 постів** | +167 |
+| `glossary.ts` | 146 термінів | **~354 терміни** | +208 |
+| `portfolio.ts` | ~30 кейсів | **68 кейсів** | +38 |
+| `compare.ts` | 10 сторінок | **36 сторінок** | +26 |
 | `mlNiches.ts` | 6 ніш | **22 ніші** | +16 |
 | `useCases.ts` | 7 кейсів | **22 кейси** | +15 |
-| `resources.ts` | 26 ресурсів | **40 ресурсів** | +14 |
+| `resources.ts` | 26 ресурсів | **48 ресурсів** | +22 |
+| `reviews.ts` | 9 відгуків | **26 відгуків** | +17 |
+| `careers.ts` | 8 позицій | **18 позицій** | +10 |
 | `reviews.ts` | 9 відгуків | **20 відгуків** | +11 |
 | `careers.ts` | 8 позицій | **14 позицій** | +6 |
 | `geo.ts` | 19 міст | **25 міст** | +6 |
@@ -474,42 +476,184 @@
 
 ---
 
-## Що ще потрібно зробити (Backlog)
+## Sprint 38 — Blog +7 UK ML posts (2026-06-24, ✅ DONE commit 743d056)
 
-### Service pages
-- ✅ Всі 7 service pages реалізовані через динамічний `/services/[slug]` + services.ts data
+### Виконано
+- **`blog.ts`** — +7 нових UK ML постів:
+  - `ml-for-uk-legal-tech` — ML в UK Legal Tech (due diligence, SRA compliance)
+  - `ml-feature-engineering-guide` — Feature Engineering практичний посібник
+  - `ai-agents-uk-business-2026` — AI Agents для UK бізнесу 2026
+  - `ml-for-uk-recruitment-hr` — ML в UK рекрутингу (Equality Act, ICO)
+  - `llm-fine-tuning-vs-rag-guide` — Fine-tuning vs RAG вибір архітектури
+  - `ml-wealth-management-ai-uk-2026` — ML в UK wealth management
+  - `ml-model-interpretability-uk-regulated` — Інтерпретованість ML в регульованих галузях UK
 
-### Блог — Topic clusters
-- ✅ `ml-governance-uk-2026` — Sprint 25
-- ✅ `openai-fine-tuning-guide-uk` — Sprint 25
-- ✅ `ml-testing-validation-uk` — Sprint 25
-- ✅ `transformers-explained-uk` — Sprint 25
-- ✅ `time-series-forecasting-uk` — Sprint 25
-- ✅ `ml-for-uk-legal-tech` — Sprint 30
-- ✅ `llm-fine-tuning-vs-rag-guide` — Sprint 30
-- ✅ `ml-model-interpretability-uk-regulated` — Sprint 30
-- ✅ `ai-agents-uk-business-2026` — Sprint 30
+---
 
-### Глосарій
-- ✅ Insurance терміни (Sprint 20)
-- ✅ Energy терміни (Sprint 20)
-- ✅ Private Equity терміни (Sprint 20)
-- ✅ Education терміни (Sprint 20)
-- ✅ Regulatory AI: uk-ai-white-paper, eu-ai-act-uk-impact, algorithmic-accountability (Sprint 24)
-- ✅ MLOps advanced: feature-drift, model-registry, shadow-mode-deployment (Sprint 24)
-- ✅ LLM: few-shot-prompting, context-window, prompt-injection, guardrails-llm (Sprint 24)
-- ✅ differential-privacy, automl, knowledge-graph, nlg, recommender-system (Sprint 31)
+## Sprint 39 — relatedBlogSlugs на ML niche pages (2026-06-24, ✅ DONE commit 45dd6c4)
 
-### ML Niches (mlNiches.ts — 22 ніші)
-- ✅ banking, healthcare, retail, manufacturing, logistics, energy, real-estate, saas, agritech, cybersecurity
-- ✅ insurance (Sprint 21), education (Sprint 23), private-equity (Sprint 23)
-- ✅ legal-tech (Sprint 34), agritech-precision-farming (Sprint 34)
-- ✅ wealth-management (Sprint 37), hospitality (Sprint 37)
+### Виконано
+- **`src/lib/types/niches.ts`** — додано `relatedBlogSlugs?: string[]` до BaseNicheData інтерфейсу
+- **`src/app/[lang]/ml/[niche]/page.tsx`** — рендеринг related blog articles секції на кожній ML нішевій сторінці (BLOG_POSTS lookup + dedup + cap at 3)
 
-### Інфраструктура (залишається)
-- [ ] FAQPage schema.org JSON-LD на нішевих сторінках `/ml/[slug]` та `/ai/[slug]`
-- [ ] OG images для blog posts (програматичні через /og/ route або static fallback)
+---
+
+## Sprint 40 — Header/Footer professional upgrade (2026-06-24, ✅ DONE commit b2dbec7)
+
+### Виконано
+- **`src/components/layout/Header.tsx`**:
+  - Прибрано "AI Modules" з nav, додано "Pricing"
+  - Services dropdown: додано "Compare solutions" + "Resources"
+  - CTA: "Free consultation" / "Безкоштовна консультація" + Rocket icon
+- **`src/components/layout/Footer.tsx`**:
+  - Видалено "Sitemap" посилання з підвалу (з усіх місць)
+  - Додано "Resources" + "Compare" до COMPANY
+  - Додано Manufacturing до AI niches, Insurance + Legal Tech до ML niches
+  - Бренд-опис з UK GDPR/FCA positioning
+  - Локація: London, UK + Kyiv, Ukraine
+  - LinkedIn + GitHub соцкнопки
+  - CTA "Start a project" + ArrowUpRight
+
+---
+
+## Sprint 41 — FlagIcon SVG (2026-06-24, ✅ DONE commit 6362445)
+
+### Виконано
+- **`src/components/ui/FlagIcon.tsx`** — новий компонент (inline SVG, без залежностей)
+  - FlagGB: Union Jack (#012169, white/red diagonals + cross)
+  - FlagUA: двополосний (#005BBB/#FFD500)
+- **`src/components/layout/Header.tsx`** — замінено emoji прапори (🇬🇧🇺🇦 не рендеряться на Windows) на `<FlagIcon>` у всіх 4 місцях (desktop button/dropdown, mobile toggle/menu)
+
+---
+
+## Sprint 42 — Polish: UK geo-signal, stats alignment, OG 404 fix (2026-06-24, ✅ DONE commit 907c53b)
+
+### Виконано
+- **`HeroSection.tsx`**:
+  - Бейдж: "UK-based ML consultancy" (замість нейтрального)
+  - Субтайтл: "ML consultancy for UK businesses"
+  - Статистика: 40→80+ models, 12→22+ industries, 4→5+ years
+- **`about/page.tsx`**: industries 18→22+ (узгоджено з hero)
+- **19 сторінок** — виправлено OG 404: всі `/og/*.png` (яких немає у public/) → `/opengraph-image`
+  - Сторінки: home, about, pricing, contact, blog, services, portfolio, compare, extras, faq, marketplace, use-cases, privacy, terms, startup, location, tools, niches, sitemap, resources
+
+---
+
+## Sprint 43 — Blog +10 UK ML posts (2026-06-24, ✅ DONE)
+
+### Виконано
+- **`blog.ts`** — +10 нових постів (207 total):
+  - `ml-proptech-uk-2026` — AVM models, Rightmove/Zoopla, RICS compliance
+  - `explainable-ai-nhs-clinical-decisions` — XAI для NHS CDSS, DCB0129, NICE
+  - `ml-pension-fund-uk` — ALM, longevity risk, Pensions Regulator
+  - `ml-model-versioning-cicd` — DVC, MLflow, automated retraining
+  - `anomaly-detection-uk-utilities` — Smart meter fraud, Ofgem, SCADA ML
+  - `ml-for-uk-charity-sector` — Donor churn, fundraising ML, 360Giving
+  - `graph-neural-networks-uk-finance` — Fraud rings, AML networks, FCA
+  - `ml-supply-chain-resilience-uk` — Post-Brexit demand forecasting, OTIF
+  - `multimodal-ai-uk-retail` — Visual search, AR try-on, GDPR biometric
+  - `ml-cybersecurity-threat-detection-uk` — SIEM, UEBA, NCSC CAF
+
+---
+
+## Sprint 44 — Glossary +15 advanced terms (2026-06-24, ✅ DONE)
+
+### Виконано
+- **`glossary.ts`** — +15 нових термінів (~354 total):
+  - **PropTech ML** (3): automated-valuation-model, conveyancing-nlp, spatial-ml
+  - **Healthcare AI** (3): clinical-decision-support-ai, digital-pathology-ml, ics-population-health-ml
+  - **Cybersecurity ML** (3): siem-ml-enhancement, ueba-insider-threat, threat-hunting-ml
+  - **Advanced MLOps** (4): data-versioning-dvc, model-registry-mlflow, continuous-training-ct, feature-store-architecture
+  - **Responsible AI** (2): counterfactual-fairness, model-documentation-cards
+
+---
+
+## Sprint 45 — Portfolio +5 + Compare +5 (2026-06-24, ✅ DONE)
+
+### Виконано
+- **`portfolio.ts`** — +5 UK ML кейсів (68 total):
+  - `uk-proptech-avm-system` — PropNest AVM, MAPE 4.2%, £72K/20 тиж
+  - `uk-charity-donor-ml` — Beacon Trust, -28% churn, +£340K/рік
+  - `uk-pension-fund-risk-ml` — Meridian Pension, -18% VaR, £95K/24 тиж
+  - `uk-nhs-clinical-decision-support` — NHS Trust sepsis/AKI, -31%, £65K/18 тиж
+  - `uk-cybersecurity-ueba-siem` — SIEM+UEBA, -67% false positives, £82K/20 тиж
+- **`compare.ts`** — +5 порівнянь (36 total):
+  - vs-openai-platform, vs-huggingface-enterprise, vs-scale-ai
+  - vs-weights-biases, vs-databricks-managed
+
+---
+
+## Sprint 46 — Reviews +6 / Careers +4 / Resources +8 (2026-06-24, ✅ DONE)
+
+### Виконано
+- **`reviews.ts`** — +6 відгуків (26 total, REVIEWS_AGGREGATE оновлено):
+  - review-021: PropNest UK (AVM) / review-022: Meridian Pension
+  - review-023: Royal Midlands NHS / review-024: Beacon Cancer Trust
+  - review-025: Meridian Capital Cyber / review-026: FlexDrive Insure
+- **`careers.ts`** — +4 позиції (18 total):
+  - ml-product-manager £65k–£95k
+  - data-scientist-regulated-industries £60k–£90k (urgent)
+  - ai-solutions-architect £85k–£125k
+  - ml-engagement-manager £75k–£105k
+- **`resources.ts`** — +8 ресурсів (48 total):
+  - proptech-avm-guide-uk, nhs-ai-governance-framework (checklist)
+  - cyber-ml-siem-playbook, ml-for-charities-uk
+  - pension-fund-ml-toolkit (checklist), graph-ml-aml-guide
+  - ml-contract-checklist-uk (checklist), responsible-ai-audit-uk (checklist)
+
+---
+
+## Що ще потрібно зробити (Backlog — після Sprint 46)
+
+### Контент (пріоритет: HIGH)
+- [ ] **Blog**: 207 → 250+ постів (+43)
+  - GPT-4o fine-tuning for UK regulated industries
+  - ML for UK startups: when to build vs buy
+  - Responsible AI audit framework UK
+  - ML for UK media & broadcasting (BBC/ITV use cases)
+  - Continual learning / online learning for UK systems
+  - ML for UK telecoms (churn, network optimisation)
+- [ ] **Glossary**: ~354 → 420+ термінів (+66)
+  - Pension/Wealth: liability-matching, ALM-model, QROPS-ML
+  - PropTech extended: epc-rating-ml, planning-approval-ml
+  - Telecom ML: network-slicing-ml, customer-lifetime-value-telecom
+  - Advanced NLP: coreference-resolution, named-entity-recognition-uk
+- [ ] **Portfolio**: 68 → 85+ кейсів (+17)
+  - UK telecoms churn prediction
+  - UK media/broadcasting recommender
+  - UK government/public sector ML (HMRC, DWP)
+- [ ] **Compare**: 36 → 50+ сторінок (+14)
+  - vs-anthropic-claude-api, vs-mistral-enterprise
+  - vs-ml6-group, vs-datatonic (UK ML consultancies)
+  - vs-thoughtworks-ai, vs-quantexa
+- [ ] **Reviews**: 26 → 36+ відгуків (+10)
+- [ ] **Careers**: 18 → 24+ позицій (+6)
+- [ ] **Resources**: 48 → 70+ ресурсів (+22)
+- [ ] **Use Cases**: 22 → 38+ кейсів (+16)
+
+### Структурні покращення (пріоритет: MEDIUM)
 - [ ] Internal links audit — нішева → service → pricing → contact
+- [ ] AI niches: перевірити повноцінність aiNiches.ts (6 ніш: healthcare/ecommerce/fintech/marketing/manufacturing/hr)
+- [ ] Location pages: перевірити ML-специфічний контент для 25 міст
+- [ ] WhyUsSection/HowWeWorkSection: перевірити ML-позиціонування актуальне
+- [ ] Use Cases +16: додати PropTech/Pension/Charity/Telecom/Media/Gov кейси
+
+### Інфраструктура (пріоритет: LOW)
+- [ ] OG images для niches: `/og/niches/*.png` — немає файлів, є 404
+
+---
+
+## Технічні правила (важливо для майбутніх спринтів)
+
+1. **Backticks у glossary.ts** — НЕ використовувати всередині template literals у `fullDescription`. Замінювати plain text.
+2. **Blog post обов'язкові поля** — `featured`, `category`, `tags`, `emoji`, `color`, `excerpt` — ЗАВЖДИ.
+3. **content/contentEn** — прості рядкові масиви, НЕ об'єкти.
+4. **faq** — РІВНО 5 об'єктів `{q, qEn, a, aEn}`.
+5. **Trailing comma** — останній запис у масиві НЕ має коми.
+6. **Дублюючі slug** — перевіряти перед додаванням нових постів.
+7. **Деплой** — завжди через GitHub Actions, НЕ на сервері напряму.
+8. **readTime** — число (INT), НЕ рядок ("10 min" → `10`).
+9. **GLOSSARY_TERMS vs GLOSSARY_CATEGORIES** — нові терміни лише у `GLOSSARY_TERMS` (рядки ~95+), НЕ у `GLOSSARY_CATEGORIES` (рядки 25–93).
 
 ---
 
