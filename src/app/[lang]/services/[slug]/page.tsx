@@ -7,7 +7,6 @@ import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { SERVICES_DATA, getServiceLocalized } from "@/lib/data/services";
 import { BLOG_POSTS, getPostTitle, getPostExcerpt } from "@/lib/data/blog";
-import { NICHES_DATA, getNicheLocalized } from "@/lib/data/niches";
 import { ArrowRight, Check, Clock, ChevronRight, TrendingUp, TrendingDown, Minus } from "lucide-react";
 import { EmojiIcon } from "@/components/ui/EmojiIcon";
 import { cn } from "@/lib/utils";
@@ -68,20 +67,6 @@ export default async function ServicePage({ params }: Props) {
     );
   }).slice(0, 3);
   const blogPosts = relatedPosts.length >= 2 ? relatedPosts : BLOG_POSTS.slice(0, 3);
-
-  // Pick 3 relevant niches based on service keyword match, then fall back to first 3
-  const relatedNichesRaw = (() => {
-    const keywords = [service.slug, service.shortTitle.toLowerCase(), service.keyword?.toLowerCase()].filter(Boolean) as string[];
-    const matched = NICHES_DATA.filter((n) =>
-      keywords.some((kw) =>
-        n.slug.includes(kw) ||
-        n.title.toLowerCase().includes(kw) ||
-        n.subtitle.toLowerCase().includes(kw)
-      )
-    );
-    return matched.length >= 2 ? matched.slice(0, 3) : NICHES_DATA.slice(0, 3);
-  })();
-  const relatedNiches = relatedNichesRaw.map((n) => getNicheLocalized(n.slug, lang) ?? n);
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -715,41 +700,6 @@ export default async function ServicePage({ params }: Props) {
             </Container>
           </section>
         )}
-
-        {/* Related niches */}
-        <section className="py-16 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100">
-          <Container>
-            <div className="flex items-center justify-between mb-8">
-              <div>
-                <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-1">{isUk ? "Готові рішення" : "Ready-Made Solutions"}</p>
-                <h3 className="text-2xl font-heading font-bold text-neutral-900">{isUk ? "Для вашої ніші" : "For Your Niche"}</h3>
-              </div>
-              <Link href={`/${lang}/niches`} className="text-sm text-indigo-600 font-medium hover:underline flex items-center gap-1">
-                {isUk ? "Всі рішення" : "All Solutions"} <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {relatedNiches.map((niche) => (
-                <Link
-                  key={niche.slug}
-                  href={`/${lang}/niches/${niche.slug}`}
-                  className="group flex items-start gap-4 p-5 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-indigo-200 hover:shadow-md transition-all"
-                >
-                  <div
-                    className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
-                    style={{ background: `${niche.color}22` }}
-                  >
-                    <EmojiIcon emoji={niche.emoji} className="w-8 h-8 text-white/80" />
-                  </div>
-                  <div>
-                    <p className="font-heading font-bold text-neutral-900 dark:text-white group-hover:text-indigo-700 transition-colors text-sm">{niche.title}</p>
-                    <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5 line-clamp-2">{niche.subtitle}</p>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </Container>
-        </section>
 
         {/* AI/ML niche hub cross-link */}
         {(slug === "artificial-intelligence" || slug === "machine-learning") && (

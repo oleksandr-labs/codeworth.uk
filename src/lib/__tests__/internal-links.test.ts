@@ -7,7 +7,6 @@
 
 import { SERVICES_DATA } from "../data/services";
 import { BLOG_POSTS } from "../data/blog";
-import { NICHES_DATA } from "../data/niches";
 import { PROJECTS } from "../data/portfolio";
 import { AI_NICHES } from "../data/aiNiches";
 import { ML_NICHES } from "../data/mlNiches";
@@ -24,14 +23,6 @@ const VALID_STATIC_ROUTES = [
   "/contact",
   "/extras",
   "/faq",
-  "/marketplace",
-  "/marketplace/account",
-  "/marketplace/cart",
-  "/marketplace/catalog",
-  "/marketplace/checkout",
-  "/marketplace/compare",
-  "/marketplace/login",
-  "/niches",
   "/offline",
   "/portfolio",
   "/pricing",
@@ -52,9 +43,7 @@ const VALID_DYNAMIC_PATTERNS = [
   /^\/blog\/tag\/[a-z0-9-]+$/,
   /^\/blog\/author\/[a-z0-9-]+$/,
   /^\/blog\/category\/[a-z0-9-]+$/,
-  /^\/niches\/[a-z0-9-]+$/,
   /^\/portfolio\/[a-z0-9-]+$/,
-  /^\/marketplace\/product\/[a-z0-9-]+$/,
   /^\/ai\/[a-z0-9-]+$/,
   /^\/ml\/[a-z0-9-]+$/,
   /^\/startup\/[a-z0-9-]+$/,
@@ -85,22 +74,9 @@ describe("Internal Links Integrity", () => {
     });
   });
 
-  it("all niche slugs produce valid routes", () => {
-    NICHES_DATA.forEach((n) => {
-      expect(isValidRoute(`/niches/${n.slug}`)).toBe(true);
-    });
-  });
-
   it("all portfolio slugs produce valid routes", () => {
     PROJECTS.forEach((p) => {
       expect(isValidRoute(`/portfolio/${p.slug}`)).toBe(true);
-    });
-  });
-
-  it("blog nicheSlug references point to valid niche pages", () => {
-    const nicheSlugs = new Set(NICHES_DATA.map((n) => n.slug));
-    BLOG_POSTS.filter((p) => p.nicheSlug).forEach((p) => {
-      expect(nicheSlugs.has(p.nicheSlug!)).toBe(true);
     });
   });
 
@@ -111,12 +87,6 @@ describe("Internal Links Integrity", () => {
       const dynamicPage = path.join(appDir, "[lang]", "services", "[slug]", "page.tsx");
       expect(fs.existsSync(dynamicPage)).toBe(true);
     });
-  });
-
-  it("all niche pages physically exist in app directory", () => {
-    const appDir = path.resolve(__dirname, "../../app");
-    const dynamicPage = path.join(appDir, "[lang]", "niches", "[slug]", "page.tsx");
-    expect(fs.existsSync(dynamicPage)).toBe(true);
   });
 
   it("all blog pages physically exist in app directory", () => {
@@ -144,11 +114,11 @@ describe("Internal Links Integrity", () => {
   });
 
   it("max depth from homepage is 3 clicks for all content", () => {
-    // Depth 1: /, /services, /blog, /portfolio, /niches, /ai, /ml (from header)
-    // Depth 2: /services/[slug], /blog/[slug], /portfolio/[slug], /niches/[slug], /ai/[niche], /ml/[niche]
-    // Depth 3: /blog/tag/[tag], /blog/author/[slug], /blog/category/[cat], /marketplace/product/[slug]
+    // Depth 1: /, /services, /blog, /portfolio, /ai, /ml (from header)
+    // Depth 2: /services/[slug], /blog/[slug], /portfolio/[slug], /ai/[niche], /ml/[niche]
+    // Depth 3: /blog/tag/[tag], /blog/author/[slug], /blog/category/[cat]
     const depth2Routes = ["/ai/healthcare", "/ml/banking"];
-    const depth3Routes = ["/blog/tag/seo", "/marketplace/product/restaurant", "/blog/author/olena-marchenko"];
+    const depth3Routes = ["/blog/tag/seo", "/blog/author/olena-marchenko"];
     depth2Routes.forEach((route) => {
       expect(route.split("/").filter(Boolean).length).toBeLessThanOrEqual(2);
     });

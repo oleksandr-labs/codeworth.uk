@@ -8,14 +8,7 @@ import * as fs from "fs";
 import * as path from "path";
 
 // Pages that are intentionally CSR (authenticated/interactive)
-const ALLOWED_CSR_PATHS = [
-  "marketplace/account",
-  "marketplace/cart",
-  "marketplace/checkout",
-  "marketplace/compare",
-  "marketplace/login",
-  "admin",
-];
+const ALLOWED_CSR_PATHS: string[] = [];
 
 function getAllPageFiles(dir: string): string[] {
   const results: string[] = [];
@@ -61,23 +54,6 @@ describe("SSR/SSG enforcement for public pages", () => {
       throw new Error(
         `The following public pages use "use client" (should be Server Components):\n${violations.map((v) => `  - ${v}`).join("\n")}`
       );
-    }
-  });
-
-  it("all authenticated page sections have use client or delegate to client components", () => {
-    // Verify the CSR pages actually do use client (under [lang] segment)
-    const csr_pages = [
-      "[lang]/marketplace/account/page.tsx",
-      "[lang]/marketplace/cart/page.tsx",
-      "[lang]/marketplace/checkout/page.tsx",
-      "[lang]/marketplace/login/page.tsx",
-    ];
-
-    // These pages may be Server Components that render Client Components
-    // We just verify they exist
-    for (const pagePath of csr_pages) {
-      const fullPath = path.join(appDir, pagePath);
-      expect(fs.existsSync(fullPath)).toBe(true);
     }
   });
 

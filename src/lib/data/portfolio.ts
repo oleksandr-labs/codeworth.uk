@@ -18,8 +18,6 @@ export interface Project {
   result: string;
   color: string;
   emoji: string;
-  /** Slug of the /niches/[slug] demo page */
-  nicheSlug?: string;
   /** Detailed case study content */
   caseStudy?: CaseStudy;
   /** English translations for bilingual portfolio case pages */
@@ -32,8 +30,6 @@ export interface Project {
   deliveryDays?: number;
   /** Key features included in this type of project (3-5 items) */
   packageIncludes?: string[];
-  /** Slug of the corresponding marketplace product if available */
-  marketplaceSlug?: string;
   /** Industry vertical for AI/ML case cross-linking */
   industry?: string;
   /** Related AI niche page (e.g. "/ai/healthcare") */
@@ -59,7 +55,6 @@ export const PROJECTS: Project[] = [
     resultEn: "Support load reduced by 68%. Response time: from 4 hours to 12 seconds.",
     color: "from-violet-500 to-indigo-600",
     emoji: "🤖",
-    nicheSlug: "saas",
     caseStudy: {
       challenge: "SaaS-компанія отримувала 200+ однотипних запитань на підтримку щодня. Команда з 3 людей витрачала 80% часу на повторювальні відповіді замість розвитку продукту.",
       solution: "Розробили RAG-бот на GPT-4o: завантажили 500+ сторінок документації у Qdrant Vector DB, налаштували LangChain RAG-пайплайн, інтегрували у сайт та Telegram. Бот відповідає точно з посиланням на документацію.",
@@ -135,7 +130,6 @@ export const PROJECTS: Project[] = [
     resultEn: "Client staff turnover -28% in 6 months. Platform ROI: $8 per $1 invested.",
     color: "from-violet-700 to-blue-800",
     emoji: "📊",
-    nicheSlug: "saas",
     caseStudy: { challenge: "HR-директори отримували сюрпризи — ключові співробітники йшли несподівано, без попередніх сигналів.", solution: "AI-модель прогнозу плинності на основі 12 факторів ризику дала HR можливість діяти превентивно.", results: ["Плинність клієнтів -28%", "ROI: $8/$1", "Retention-заходів впроваджено: 340+"] },
     caseStudyEn: { challenge: "HR directors faced surprises — key employees left unexpectedly without advance signals.", solution: "AI turnover prediction model based on 12 risk factors gave HR the ability to act preventively.", results: ["Client turnover -28%", "ROI: $8/$1", "Retention actions taken: 340+"] },
   },
@@ -1207,7 +1201,6 @@ export const PROJECTS: Project[] = [
     resultEn: "30-day readmission −34%. ICU complications −28%. ICU mortality −18%. ROI: 6 months.",
     color: "from-teal-700 to-cyan-900",
     emoji: "🏥",
-    nicheSlug: "medical",
     caseStudy: {
       challenge: "Клінічна мережа з 4 лікарень витрачала значні ресурси на лікування ускладнень, які частково можна було попередити. 18.4% пацієнтів повторно госпіталізувались протягом 30 днів після виписки. Лікарі не мали інструменту для систематичного виявлення пацієнтів групи ризику при госпіталізації — рішення приймались на основі клінічного досвіду без підтримки даних.",
       solution: "XGBoost-ансамбль на 140+ клінічних фічах: лабораторні показники (загальний аналіз крові, CRP, лактат), вітальні знаки (NEWS2-скор), діагнози ICD-10, анамнез госпіталізацій, вік, хронічні захворювання, медикаменти. FHIR R4-інтеграція з MIS (MEDsystem + 1С-Медицина): автоматичне завантаження нових показників кожні 4 год. SHAP-пояснення на рівні пацієнта: топ-5 факторів ризику + рекомендовані дії (алерт лікарю). Next.js дашборд відділення: список пацієнтів за рівнем ризику, тренди за зміни, прогноз виписки. GDPR Art. 9 сумісність: дані залишаються на серверах лікарні.",
@@ -1252,7 +1245,6 @@ export const PROJECTS: Project[] = [
     resultEn: "Description writing time −85% (30 min → 2 min). Qualified leads +38%. Website conversion +24%.",
     color: "from-cyan-600 to-teal-800",
     emoji: "🏡",
-    nicheSlug: "realestate",
     caseStudy: {
       challenge: "Лондонське агентство нерухомості витрачало 25–30 хвилин на кожен опис об'єкта (18 агентів × 15 нових оголошень на тиждень = 67+ годин щотижня). Сайт не обслуговував запити потенційних покупців поза робочими годинами — 43% трафіку приходило ввечері та у вихідні, коли агенти недоступні.",
       solution: "GPT-4o генератор описів: агент заповнює структуровану форму (тип, кімнати, локація, особливості) → AI генерує опис для Rightmove (250 слів), Zoopla (150 слів), Instagram (280 символів) та email-розсилки одночасно. RAG-чат-бот на базі LangChain + Qdrant: завантажений усіма активними оголошеннями, ринковими даними (Land Registry), транспортними зв'язками. Відповідає на запити покупців, кваліфікує інтерес (бюджет, терміни, пріоритети), записує перегляди. Семантичний пошук: покупець описує бажання природньою мовою → система знаходить найближчі варіанти за embedding-схожістю.",

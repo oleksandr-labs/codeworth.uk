@@ -57,8 +57,8 @@ describe("NotFound (not-found.tsx)", () => {
     expect(screen.getByRole("link", { name: /наші послуги/i })).toHaveAttribute("href", "/uk/services");
   });
 
-  it("кнопка 'Маркетплейс' веде на /uk/marketplace/catalog", () => {
-    expect(screen.getByRole("link", { name: /маркетплейс/i })).toHaveAttribute("href", "/uk/marketplace/catalog");
+  it("кнопка 'Портфоліо' веде на /uk/portfolio", () => {
+    expect(screen.getByRole("link", { name: /портфоліо/i })).toHaveAttribute("href", "/uk/portfolio");
   });
 
   it("відображає популярні посилання: Портфоліо, Блог, Ціни, Контакти, FAQ", () => {

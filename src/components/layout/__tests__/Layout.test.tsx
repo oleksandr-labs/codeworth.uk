@@ -42,10 +42,6 @@ jest.mock("@/components/ui/ThemeToggle", () => ({
   ThemeToggle: () => <button>ThemeToggle</button>,
 }));
 
-jest.mock("@/components/ui/MiniCart", () => ({
-  MiniCart: () => <button>Cart</button>,
-}));
-
 jest.mock("@/lib/data/services", () => ({
   SERVICES_DATA: [
     {
@@ -145,9 +141,8 @@ describe("Header", () => {
     expect(logoLink).toBeInTheDocument();
   });
 
-  it("renders desktop nav links for Marketplace, Portfolio, Pricing, Blog", () => {
+  it("renders desktop nav links for Portfolio, Pricing, Blog", () => {
     render(<Header />);
-    expect(screen.getByRole("link", { name: /маркетплейс/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /портфоліо/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /ціни/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /блог/i })).toBeInTheDocument();

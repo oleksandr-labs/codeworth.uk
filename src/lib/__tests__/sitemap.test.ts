@@ -1,14 +1,13 @@
 /**
  * Sitemap integrity test — verifies that sitemap.ts generates entries
  * for all content types: static pages, services, blog posts, blog tags,
- * portfolio, niches, and marketplace products.
+ * and portfolio.
  */
 
 import sitemap from "../../app/sitemap";
 import { SERVICES_DATA } from "../data/services";
 import { BLOG_POSTS, BLOG_CATEGORIES } from "../data/blog";
 import { PROJECTS } from "../data/portfolio";
-import { NICHES_DATA } from "../data/niches";
 import { GEO_CITIES } from "../data/geo";
 import { COMPARE_DATA } from "../data/compare";
 import { GLOSSARY_TERMS } from "../data/glossary";
@@ -37,7 +36,7 @@ describe("Sitemap — structure", () => {
   it("every entry has a url string", () => {
     sitemap().forEach((e) => {
       expect(typeof e.url).toBe("string");
-      expect(e.url).toMatch(/^https:\/\/Codeworth\.com\.ua\//);
+      expect(e.url).toMatch(/^https:\/\/codeworth\.uk\//);
     });
   });
 
@@ -68,10 +67,9 @@ describe("Sitemap — structure", () => {
 
 describe("Sitemap — static pages", () => {
   const staticPaths = [
-    "/", "/about", "/services", "/extras", "/marketplace",
-    "/niches", "/portfolio", "/pricing", "/blog", "/contact",
+    "/", "/about", "/services", "/extras",
+    "/portfolio", "/pricing", "/blog", "/contact",
     "/faq", "/privacy", "/terms-of-service", "/sitemap",
-    "/marketplace/catalog",
   ];
 
   for (const locale of LOCALES) {
@@ -112,24 +110,6 @@ describe("Sitemap — dynamic content", () => {
     });
   });
 
-  it("includes all niche pages for both locales", () => {
-    const urls = getUrls();
-    NICHES_DATA.forEach((n) => {
-      LOCALES.forEach((locale) => {
-        expect(urls).toContain(`${BASE_URL}/${locale}/niches/${n.slug}`);
-      });
-    });
-  });
-
-  it("includes all marketplace product pages for both locales", () => {
-    const urls = getUrls();
-    NICHES_DATA.forEach((n) => {
-      LOCALES.forEach((locale) => {
-        expect(urls).toContain(`${BASE_URL}/${locale}/marketplace/product/${n.slug}`);
-      });
-    });
-  });
-
   it("includes blog tag pages", () => {
     const urls = getUrls();
     const allTags = [...new Set(BLOG_POSTS.flatMap((p) => p.tags))];
@@ -147,12 +127,10 @@ describe("Sitemap — total count", () => {
   it("generates correct total entries count", () => {
     const entries = sitemap();
     const localeCount = LOCALES.length;
-    const staticCount = 29 * localeCount; // 29 static paths in sitemap.ts (added /ai-solutions)
+    const staticCount = 26 * localeCount; // static paths in sitemap.ts
     const serviceCount = SERVICES_DATA.length * localeCount;
     const blogCount = BLOG_POSTS.length * localeCount;
     const portfolioCount = PROJECTS.length * localeCount;
-    const nicheCount = NICHES_DATA.length * localeCount;
-    const productCount = NICHES_DATA.length * localeCount;
     const allTags = [...new Set(BLOG_POSTS.flatMap((p) => p.tags))];
     const tagCount = allTags.length * localeCount;
     const locationCount = GEO_CITIES.length * localeCount;
@@ -172,8 +150,6 @@ describe("Sitemap — total count", () => {
       serviceCount +
       blogCount +
       portfolioCount +
-      nicheCount +
-      productCount +
       tagCount +
       locationCount +
       compareCount +

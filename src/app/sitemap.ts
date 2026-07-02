@@ -2,7 +2,6 @@ import type { MetadataRoute } from "next";
 import { SERVICES_DATA } from "@/lib/data/services";
 import { BLOG_POSTS } from "@/lib/data/blog";
 import { PROJECTS } from "@/lib/data/portfolio";
-import { NICHES_DATA } from "@/lib/data/niches";
 import { GEO_CITIES } from "@/lib/data/geo";
 import { COMPARE_DATA } from "@/lib/data/compare";
 import { GLOSSARY_TERMS } from "@/lib/data/glossary";
@@ -51,8 +50,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/ml", freq: "weekly" as const, pri: 0.9 },
     { path: "/use-cases", freq: "monthly" as const, pri: 0.8 },
     { path: "/extras", freq: "weekly" as const, pri: 0.9 },
-    { path: "/marketplace", freq: "weekly" as const, pri: 0.9 },
-    { path: "/niches", freq: "weekly" as const, pri: 0.8 },
     { path: "/portfolio", freq: "weekly" as const, pri: 0.8 },
     { path: "/pricing", freq: "monthly" as const, pri: 0.8 },
     { path: "/blog", freq: "daily" as const, pri: 0.8 },
@@ -61,7 +58,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/privacy", freq: "yearly" as const, pri: 0.3 },
     { path: "/terms-of-service", freq: "yearly" as const, pri: 0.3 },
     { path: "/sitemap", freq: "monthly" as const, pri: 0.4 },
-    { path: "/marketplace/catalog", freq: "weekly" as const, pri: 0.9 },
     { path: "/location", freq: "monthly" as const, pri: 0.8 },
     { path: "/compare", freq: "monthly" as const, pri: 0.8 },
     { path: "/glossary", freq: "weekly" as const, pri: 0.8 },
@@ -92,14 +88,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const portfolioPages = PROJECTS.flatMap((p) =>
     forAllLocales(`/portfolio/${p.slug}`, { lastModified: now, changeFrequency: "monthly", priority: 0.6 })
-  );
-
-  const nichePages = NICHES_DATA.flatMap((n) =>
-    forAllLocales(`/niches/${n.slug}`, { lastModified: now, changeFrequency: "monthly", priority: 0.7 })
-  );
-
-  const marketplaceProductPages = NICHES_DATA.flatMap((n) =>
-    forAllLocales(`/marketplace/product/${n.slug}`, { lastModified: now, changeFrequency: "monthly", priority: 0.8 })
   );
 
   const geoPages = GEO_CITIES.flatMap((c) =>
@@ -152,8 +140,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...blogPages,
     ...blogTagPages,
     ...portfolioPages,
-    ...nichePages,
-    ...marketplaceProductPages,
     ...geoPages,
     ...comparePages,
     ...glossaryTermPages,

@@ -31,12 +31,6 @@ describe("PROJECTS", () => {
     slugs.forEach((s) => expect(s).toMatch(/^[a-z0-9-]+$/));
   });
 
-  it("projects with nicheSlug have valid slug format", () => {
-    PROJECTS.filter((p) => p.nicheSlug).forEach((p) => {
-      expect(p.nicheSlug).toMatch(/^[a-z0-9-]+$/);
-    });
-  });
-
   it("projects with caseStudy have all required caseStudy fields", () => {
     PROJECTS.filter((p) => p.caseStudy).forEach((p) => {
       const cs = p.caseStudy!;
@@ -47,25 +41,6 @@ describe("PROJECTS", () => {
     });
   });
 
-  it("includes the new real-estate-agency project", () => {
-    const project = PROJECTS.find((p) => p.slug === "real-estate-agency");
-    expect(project).toBeDefined();
-    expect(project?.nicheSlug).toBe("realestate");
-    expect(project?.complexity).toBe("complex");
-  });
-
-  it("includes the new education-platform project", () => {
-    const project = PROJECTS.find((p) => p.slug === "education-platform");
-    expect(project).toBeDefined();
-    expect(project?.nicheSlug).toBe("education");
-  });
-
-  it("includes the new travel-hotel project", () => {
-    const project = PROJECTS.find((p) => p.slug === "travel-hotel");
-    expect(project).toBeDefined();
-    expect(project?.nicheSlug).toBe("travel");
-    expect(project?.complexity).toBe("medium");
-  });
 });
 
 describe("CATEGORIES and NICHES", () => {

@@ -2,8 +2,6 @@
   "nav": {
     "services": "Services",
     "extras": "Add-ons",
-    "marketplace": "Marketplace",
-    "niches": "Niches",
     "portfolio": "Portfolio",
     "pricing": "Pricing",
     "blog": "Blog",
@@ -15,7 +13,7 @@
     "services": "Services",
     "company": "Company",
     "socials": "Socials",
-    "tagline": "Full-cycle web studio — websites, e-commerce, PWA, SEO, CRM, UI/UX design and a marketplace of ready-made solutions.",
+    "tagline": "A UK-based ML & AI consultancy — custom machine learning, computer vision, NLP and MLOps for businesses.",
     "rights": "All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",

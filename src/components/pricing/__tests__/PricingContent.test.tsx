@@ -64,10 +64,4 @@ describe("PricingContent", () => {
     expect(screen.getAllByText(/днів|тижні|тиждень/i).length).toBeGreaterThan(0);
   });
 
-  it("посилання на маркетплейс присутнє у вкладці разових послуг", () => {
-    render(<PricingContent />);
-    const allLinks = screen.getAllByRole("link");
-    const hasMarketplace = allLinks.some((l) => l.getAttribute("href") === "/uk/marketplace");
-    expect(hasMarketplace).toBe(true);
-  });
 });

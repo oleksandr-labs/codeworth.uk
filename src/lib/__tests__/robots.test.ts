@@ -35,8 +35,8 @@ describe("robots.txt — blocked paths", () => {
     expect(getDisallow()).toContain("/api/");
   });
 
-  it("blocks /marketplace/account/", () => {
-    expect(getDisallow()).toContain("/marketplace/account/");
+  it("blocks /dashboard/", () => {
+    expect(getDisallow()).toContain("/dashboard/");
   });
 
   it("blocks /_next/", () => {
@@ -74,9 +74,9 @@ describe("robots.txt — public SEO pages NOT blocked", () => {
     expect(d.every((r) => !r.startsWith("/blog"))).toBe(true);
   });
 
-  it("does not block /marketplace/ product pages", () => {
+  it("does not block /portfolio/", () => {
     const d = getDisallow();
-    expect(d.every((r) => !r.startsWith("/marketplace/product"))).toBe(true);
+    expect(d.every((r) => !r.startsWith("/portfolio"))).toBe(true);
   });
 });
 

@@ -139,7 +139,7 @@ export default function DashboardClient() {
 
   useEffect(() => {
     if (!isLoading && !user) {
-      router.replace(`/${lang}/marketplace/login`);
+      router.replace(`/${lang}/contact`);
     }
   }, [isLoading, user, router, lang]);
 
@@ -753,7 +753,7 @@ export default function DashboardClient() {
                       </ul>
                       {!plan.current && (
                         <Link
-                          href={`/${lang}/marketplace/catalog`}
+                          href={`/${lang}/pricing`}
                           className="block text-center bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-700 transition-colors"
                         >
                           {isUk ? "Оновити" : "Upgrade"}

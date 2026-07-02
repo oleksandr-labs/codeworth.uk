@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import { ArrowUpRight, ExternalLink, Search, X, ZoomIn, ShoppingCart, TrendingUp } from "lucide-react";
+import { ArrowUpRight, Search, X, ZoomIn, ShoppingCart, TrendingUp } from "lucide-react";
 import { EmojiIcon } from "@/components/ui/EmojiIcon";
 import { PROJECTS } from "@/lib/data/portfolio";
 import { cn } from "@/lib/utils";
@@ -284,15 +284,6 @@ export function PortfolioContent() {
                         {isUk ? "Деталі" : "Details"}
                         <ArrowUpRight className="w-4 h-4" />
                       </Link>
-                      {project.nicheSlug && (
-                        <Link
-                          href={lp(`/niches/${project.nicheSlug}`)}
-                          className="px-4 py-2.5 rounded-xl bg-indigo-500/80 text-white font-semibold text-sm flex items-center gap-2 hover:bg-indigo-500 transition-colors border border-white/20"
-                        >
-                          {isUk ? "Демо" : "Demo"}
-                          <ExternalLink className="w-4 h-4" />
-                        </Link>
-                      )}
                     </div>
                     <Link
                       href={lp(`/contact?project=${project.slug}`)}

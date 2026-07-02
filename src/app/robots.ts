@@ -16,9 +16,6 @@ export default function robots(): MetadataRoute.Robots {
           "/pricing",
           "/contact",
           "/faq",
-          "/marketplace/",
-          "/marketplace/catalog",
-          "/niches/",
           "/glossary/",
           "/reviews",
           "/resources/",
@@ -36,10 +33,6 @@ export default function robots(): MetadataRoute.Robots {
           // Auth & private user pages
           "/admin/",
           "/dashboard/",
-          "/marketplace/cart/",
-          "/marketplace/checkout/",
-          "/marketplace/login/",
-          "/marketplace/account/",
           // API routes — never index
           "/api/",
           // Next.js internals

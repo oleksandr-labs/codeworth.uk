@@ -295,7 +295,7 @@ export default function StyleGuidePage() {
               Детальніше:{" "}
               <Link href="/portfolio" className="text-indigo-600 hover:underline">Портфоліо</Link>
               {" · "}
-              <Link href="/marketplace" className="text-indigo-600 hover:underline">Маркетплейс</Link>
+              <Link href="/services" className="text-indigo-600 hover:underline">Послуги</Link>
               {" · "}
               <Link href="/" className="text-indigo-600 hover:underline">Головна</Link>
             </p>

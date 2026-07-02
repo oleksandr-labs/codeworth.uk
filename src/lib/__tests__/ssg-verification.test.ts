@@ -22,11 +22,6 @@ const PUBLIC_SSG_PAGES = [
   "[lang]/contact/page.tsx",                  // /contact
   "[lang]/extras/page.tsx",                   // /extras
   "[lang]/faq/page.tsx",                      // /faq
-  "[lang]/marketplace/page.tsx",             // /marketplace
-  "[lang]/marketplace/catalog/page.tsx",     // /marketplace/catalog
-  "[lang]/marketplace/product/[slug]/page.tsx", // /marketplace/product/[slug]
-  "[lang]/niches/page.tsx",                    // /niches
-  "[lang]/niches/[slug]/page.tsx",           // /niches/[slug]
   "[lang]/portfolio/page.tsx",                // /portfolio
   "[lang]/portfolio/[slug]/page.tsx",        // /portfolio/[slug]
   "[lang]/pricing/page.tsx",                  // /pricing

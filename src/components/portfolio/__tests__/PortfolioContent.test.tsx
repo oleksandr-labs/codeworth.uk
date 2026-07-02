@@ -179,13 +179,6 @@ describe("PortfolioContent", () => {
     expect(caseLinks[0]).toHaveAttribute("href", "/uk/portfolio/restaurant-cafe");
   });
 
-  it("картка має посилання 'Демо' для проєктів з nicheSlug", () => {
-    render(<PortfolioContent />);
-    const demoLinks = screen.getAllByRole("link", { name: /демо/i });
-    expect(demoLinks.length).toBe(3);
-    expect(demoLinks[0]).toHaveAttribute("href", "/uk/niches/restaurant");
-  });
-
   it("відображає результат проєкту (📈 метрика)", () => {
     render(<PortfolioContent />);
     expect(screen.getByText(/бронювань \+60%/i)).toBeInTheDocument();

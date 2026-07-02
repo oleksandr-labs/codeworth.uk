@@ -7,7 +7,6 @@ import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { BLOG_POSTS, BLOG_CATEGORIES, getPostTitle, getPostExcerpt } from "@/lib/data/blog";
 import { getAuthorByName, getAuthorBySlug } from "@/lib/data/blogAuthors";
-import { getNicheLocalized } from "@/lib/data/niches";
 import { SERVICES_DATA, getServiceLocalized } from "@/lib/data/services";
 import { Clock, Calendar, ArrowLeft, ArrowRight, ChevronRight } from "lucide-react";
 import { NewsletterForm } from "@/components/ui/NewsletterForm";
@@ -115,8 +114,6 @@ export default async function BlogPostPage({ params }: Props) {
   const suggestions = [...sameCategory, ...otherPosts].slice(0, 3);
 
   const categoryObj = BLOG_CATEGORIES.find((c) => c.label.uk === post.category);
-
-  const relatedNiche = post.nicheSlug ? getNicheLocalized(post.nicheSlug, lang) : null;
 
   const relatedServiceSlugs = CATEGORY_SERVICES[post.category] ?? ["website-dev", "seo"];
   const relatedServices = relatedServiceSlugs
@@ -468,26 +465,6 @@ export default async function BlogPostPage({ params }: Props) {
                         </Link>
                       ))}
                     </div>
-                  </div>
-                )}
-
-                {/* Niche demo link */}
-                {relatedNiche && (
-                  <div className={`p-5 rounded-2xl bg-linear-to-br ${relatedNiche.gradient} text-white`}>
-                    <div className="mb-2"><EmojiIcon emoji={relatedNiche.emoji} className="w-8 h-8 text-white/80" /></div>
-                    <h3 className="font-heading font-bold text-white mb-1 text-sm">{isUk ? "Готове рішення" : "Ready-Made Solution"}</h3>
-                    <p className="text-xs text-white/80 mb-3">{relatedNiche.subtitle}</p>
-                    <div className="text-xs text-white/70 mb-3">
-                      {isUk
-                        ? `від ${relatedNiche.priceFrom.toLocaleString("uk-UA")} грн • ${relatedNiche.deliveryDays} днів`
-                        : `from $${relatedNiche.priceFrom} • ${relatedNiche.deliveryDays} days`}
-                    </div>
-                    <Link
-                      href={`/${lang}/niches/${relatedNiche.slug}`}
-                      className="block w-full text-center py-2 rounded-lg bg-white/20 hover:bg-white/30 text-white text-sm font-semibold transition-colors"
-                    >
-                      {isUk ? "Переглянути демо →" : "View Demo →"}
-                    </Link>
                   </div>
                 )}
 

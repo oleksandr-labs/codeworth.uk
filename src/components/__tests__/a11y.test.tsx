@@ -15,9 +15,6 @@ import { Skeleton, SkeletonCard, SkeletonText } from "../ui/Skeleton";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { ShareButtons } from "../ui/ShareButtons";
 import { EmptyState } from "../ui/EmptyState";
-import { NicheCalculator } from "../niches/NicheCalculator";
-import { NicheStats } from "../niches/NicheStats";
-import { BookingSection } from "../niches/BookingSection";
 import { Footer } from "../layout/Footer";
 import { TestimonialsSection } from "../home/TestimonialsSection";
 import { ClientLogosSection } from "../home/ClientLogosSection";
@@ -26,18 +23,14 @@ import { WhyUsSection } from "../home/WhyUsSection";
 import { HowWeWorkSection } from "../home/HowWeWorkSection";
 import { MarketplaceTeaser } from "../home/MarketplaceTeaser";
 import { BlogPreviewSection } from "../home/BlogPreviewSection";
-import { BMICalculator } from "../niches/BMICalculator";
-import { ComparePanel } from "../ui/ComparePanel";
 import { BeforeAfter } from "../ui/BeforeAfter";
 import CookieConsent from "../ui/CookieConsent";
 import { BackToTop } from "../ui/BackToTop";
 import { FloatingChat } from "../ui/FloatingChat";
 import { Lightbox } from "../ui/Lightbox";
-import { MiniCart } from "../ui/MiniCart";
 import { ThemeToggle } from "../ui/ThemeToggle";
 import { ContactForm } from "../contact/ContactForm";
 import { SpeedTestTool } from "../resources/SpeedTestTool";
-import type { NicheCalculatorStep } from "@/lib/data/niches";
 
 expect.extend(toHaveNoViolations);
 
@@ -69,27 +62,6 @@ jest.mock("next/link", () => {
 jest.mock("next/navigation", () => ({
   useParams: () => ({ lang: "uk" }),
   useSearchParams: () => ({ get: () => null }),
-}));
-
-jest.mock("@/hooks/useCompare", () => ({
-  useCompare: () => ({
-    items: [
-      { slug: "restaurant", title: "Ресторан / Кафе", emoji: "🍽", complexity: "medium", priceFrom: 9900 },
-      { slug: "beauty", title: "Салон краси", emoji: "💇", complexity: "medium", priceFrom: 8000 },
-    ],
-    removeItem: jest.fn(),
-    clearAll: jest.fn(),
-  }),
-}));
-
-jest.mock("@/hooks/useCart", () => ({
-  useCart: () => ({
-    items: [],
-    count: 0,
-    subtotal: 0,
-    removeItem: jest.fn(),
-    isHydrated: true,
-  }),
 }));
 
 jest.mock("../ui/ThemeProvider", () => ({
@@ -368,39 +340,6 @@ describe("Accessibility (axe)", () => {
     });
   });
 
-  describe("NicheCalculator", () => {
-    const CALC_STEPS: NicheCalculatorStep[] = [
-      {
-        label: "Тип послуги",
-        options: [
-          { label: "Базова", price: 500 },
-          { label: "Стандарт", price: 1000 },
-        ],
-      },
-      {
-        label: "Доставка",
-        options: [
-          { label: "Самовивіз", price: 0 },
-          { label: "По місту", price: 150 },
-        ],
-      },
-    ];
-
-    it("default state has no axe violations", async () => {
-      const { container } = render(
-        <NicheCalculator steps={CALC_STEPS} color="#6366f1" />
-      );
-      expect(await axe(container)).toHaveNoViolations();
-    });
-
-    it("has no axe violations with custom title", async () => {
-      const { container } = render(
-        <NicheCalculator steps={CALC_STEPS} color="#10b981" title="Розрахунок ціни" />
-      );
-      expect(await axe(container)).toHaveNoViolations();
-    });
-  });
-
   describe("Footer", () => {
     it("has no axe violations", async () => {
       const { container } = render(<Footer />);
@@ -411,36 +350,6 @@ describe("Accessibility (axe)", () => {
   describe("TestimonialsSection", () => {
     it("has no axe violations", async () => {
       const { container } = render(<TestimonialsSection />);
-      expect(await axe(container)).toHaveNoViolations();
-    });
-  });
-
-  describe("BookingSection", () => {
-    const MOCK_SERVICES = [
-      { name: "Стрижка", price: "від 350 ₴", duration: "60 хв", icon: "✂️" },
-      { name: "Фарбування", price: "від 800 ₴", duration: "2–3 год", icon: "🎨" },
-    ];
-
-    it("step 1 (service selection) has no axe violations", async () => {
-      const { container } = render(
-        <BookingSection
-          services={MOCK_SERVICES}
-          color="#6366f1"
-          gradient="from-indigo-600 to-purple-600"
-        />
-      );
-      expect(await axe(container)).toHaveNoViolations();
-    });
-
-    it("has no axe violations with custom title", async () => {
-      const { container } = render(
-        <BookingSection
-          services={MOCK_SERVICES}
-          color="#10b981"
-          gradient="from-emerald-600 to-teal-600"
-          title="Запис до майстра"
-        />
-      );
       expect(await axe(container)).toHaveNoViolations();
     });
   });
@@ -520,25 +429,6 @@ describe("Accessibility (axe)", () => {
     });
   });
 
-  describe("BMICalculator", () => {
-    it("UK locale has no axe violations", async () => {
-      const { container } = render(<BMICalculator lang="uk" color="#6366f1" />);
-      expect(await axe(container)).toHaveNoViolations();
-    });
-
-    it("EN locale has no axe violations", async () => {
-      const { container } = render(<BMICalculator lang="en" color="#10b981" />);
-      expect(await axe(container)).toHaveNoViolations();
-    });
-  });
-
-  describe("ComparePanel", () => {
-    it("panel with 2 items has no axe violations", async () => {
-      const { container } = render(<ComparePanel />);
-      expect(await axe(container)).toHaveNoViolations();
-    });
-  });
-
   describe("BeforeAfter", () => {
     it("has no axe violations with default labels", async () => {
       const { container } = render(
@@ -606,23 +496,9 @@ describe("Accessibility (axe)", () => {
     });
   });
 
-  describe("MiniCart", () => {
-    it("empty cart has no axe violations", async () => {
-      const { container } = render(<MiniCart />);
-      expect(await axe(container)).toHaveNoViolations();
-    });
-  });
-
   describe("ThemeToggle", () => {
     it("closed state has no axe violations", async () => {
       const { container } = render(<ThemeToggle />);
-      expect(await axe(container)).toHaveNoViolations();
-    });
-  });
-
-  describe("NicheStats", () => {
-    it("has no axe violations", async () => {
-      const { container } = render(<NicheStats color="#6366f1" />);
       expect(await axe(container)).toHaveNoViolations();
     });
   });

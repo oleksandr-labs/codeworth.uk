@@ -6,149 +6,8 @@ import { ArrowLeft, ArrowRight, Check, ChevronRight, ExternalLink, Monitor, Shop
 import { PROJECTS, COMPLEXITY_LABELS } from "@/lib/data/portfolio";
 import { PageAnalytics } from "@/components/analytics/PageAnalytics";
 
-/** Portfolio cases with a dedicated real-design demo page at /demo */
+/** Portfolio cases with a dedicated real-design demo page at /demo (ERP/ML case studies only) */
 const DEDICATED_DEMOS = new Set([
-  "math-school-online",
-  "music-school-melody",
-  "coding-bootcamp-devstart",
-  "language-school-speakeasy",
-  "agroua-farm",
-  "agrodrone-tech",
-  "organicbox-csa",
-  "vynohrad-winery",
-  "pasika-honey",
-  "fashion-store",
-  "sportpeak-equipment",
-  "toyland-kids",
-  "fine-dining",
-  "beauty-studio",
-  "fitness-gym",
-  "coffee-bar",
-  "pastry-shop",
-  "travel-agency",
-  "estate-agency",
-  "dental-studio",
-  "autopro-service",
-  "barber-lordcut",
-  "vr-zone",
-  "budpro-builders",
-  "greenleaf-cafe",
-  "lexua-law",
-  "petcare-vet",
-  "bloom-flowers",
-  "eventmaster-agency",
-  "lasertag-arena",
-  "quickbite-delivery",
-  "calmmind-therapy",
-  "ai-chatbot-saas",
-  "travel-hotel",
-  "photographer-portfolio",
-  "cleaning-service",
-  "ngo-charity-landing",
-  "craft-workshop-landing",
-  "architecture-studio",
-  "interior-design-studio",
-  "restaurant-cafe",
-  "beauty-salon",
-  "medical-clinic",
-  "fitness-club",
-  "bakery",
-  "law-firm",
-  "construction",
-  "real-estate-agency",
-  "education-platform",
-  "auto-service",
-  "events-agency",
-  "veterinary-clinic",
-  "food-delivery-app",
-  "flower-shop",
-  "psychology-coach",
-  "professional-courses-portal",
-  "personal-trainer-landing",
-  "dental-clinic-landing",
-  "pharmacy-online-landing",
-  "saas-product-landing",
-  "logistics-b2b-landing",
-  "tattoo-spa",
-  "hammam-turkish-spa",
-  "recruitment-platform",
-  "business-consulting",
-  "electronics-store",
-  "bespoke-tailoring-atelier",
-  "art-creativity-kids",
-  "furniture-store",
-  "used-car-marketplace",
-  "car-detailing-wrap",
-  "nail-art-studio",
-  "post-construction-cleaning",
-  "commercial-cleaning",
-  "mobile-coffee-truck",
-  "specialty-teahouse",
-  "digital-transformation-consulting",
-  "legaltech-consulting",
-  "ceramics-studio-shop",
-  "leather-goods-workshop",
-  "repair-service",
-  "smarthome-store",
-  "entertainment-center",
-  "festival-ticketing",
-  "conference-platform",
-  "fashion-brand",
-  "vintage-thrift-shop",
-  "yoga-studio",
-  "premium-floral-design",
-  "kids-center",
-  "stem-robotics-kids",
-  "family-law",
-  "ip-law",
-  "bakery-pastry",
-  "artisan-bread-bakery",
-  "kids-coding-school",
-  "language-school",
-  "online-education",
-  "wildflower-eco-shop",
-  "meal-prep-service",
-  "corporate-lunch",
-  "warehouse-rental",
-  "last-mile-courier",
-  "fertility-center",
-  "animal-rescue-fund",
-  "ngo-foundation",
-  "war-reconstruction-ngo",
-  "online-pharmacy",
-  "herbal-natural-pharmacy",
-  "pharmacy-express-delivery",
-  "photography-studio",
-  "newborn-photography",
-  "commercial-photography",
-  "couples-counseling",
-  "psychology-platform",
-  "villa-rental",
-  "residential-complex",
-  "it-headhunter",
-  "general-staffing-agency",
-  "hr-payroll-saas",
-  "project-management-saas",
-  "piercing-body-art-studio",
-  "yacht-charter",
-  "hostel-booking",
-  "emergency-vet-clinic",
-  "petshop-vet-combo",
-  "personal-trainer",
-  "window-manufacturer",
-  "luxury-kitchen-studio",
-  "smart-kids-development",
-  "financial-advisory",
-  "glowbar-beauty",
-  "ink-city-tattoo",
-  "aqua-zen-spa",
-  "bridal-luxury-salon",
-  "executive-hunt",
-  "ai-resume-screener",
-  "ai-price-optimizer",
-  "ai-doc-analyzer",
-  "ai-predictive-maintenance",
-  "ai-image-search",
   "erp-wholesale",
   "erp-restaurant-chain",
   "erp-construction",
@@ -157,6 +16,7 @@ const DEDICATED_DEMOS = new Set([
   "erp-clinic",
   "erp-logistics",
 ]);
+
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
@@ -341,13 +201,9 @@ export default async function PortfolioProjectPage({ params }: Props) {
                     <span className="font-semibold text-sm">{result}</span>
                   </div>
                   <div className="flex flex-wrap gap-3">
-                    {(project.nicheSlug || DEDICATED_DEMOS.has(project.slug)) && (
+                    {DEDICATED_DEMOS.has(project.slug) && (
                       <Button
-                        href={
-                          DEDICATED_DEMOS.has(project.slug)
-                            ? `/${lang}/portfolio/${project.slug}/demo`
-                            : `/${lang}/niches/${project.nicheSlug}`
-                        }
+                        href={`/${lang}/portfolio/${project.slug}/demo`}
                         variant="secondary"
                         size="lg"
                       >
@@ -395,14 +251,9 @@ export default async function PortfolioProjectPage({ params }: Props) {
           </section>
 
           {/* ── Live Demo Preview ─────────────────────────────────────── */}
-          {(project.nicheSlug || DEDICATED_DEMOS.has(project.slug)) && (() => {
-            const hasDedicated = DEDICATED_DEMOS.has(project.slug);
-            const demoHref = hasDedicated
-              ? `/${lang}/portfolio/${project.slug}/demo`
-              : `/${lang}/niches/${project.nicheSlug}`;
-            const demoLabel = hasDedicated
-              ? project.title.toLowerCase().replace(/\s+/g, "") + ".ua"
-              : `codeworth.uk/niches/${project.nicheSlug}`;
+          {DEDICATED_DEMOS.has(project.slug) && (() => {
+            const demoHref = `/${lang}/portfolio/${project.slug}/demo`;
+            const demoLabel = project.title.toLowerCase().replace(/\s+/g, "") + ".ua";
 
             return (
               <section className="py-16 bg-neutral-50 dark:bg-neutral-900 /80">
@@ -410,18 +261,12 @@ export default async function PortfolioProjectPage({ params }: Props) {
                   <div className="flex items-center justify-between mb-6 flex-wrap gap-4">
                     <div>
                       <h2 className="text-2xl font-bold font-syne text-neutral-900 dark:text-white">
-                        {hasDedicated
-                          ? (isUk ? "Демо готового сайту" : "Live Website Demo")
-                          : (isUk ? "Живе демо рішення" : "Live Solution Demo")}
+                        {isUk ? "Демо готового сайту" : "Live Website Demo"}
                       </h2>
                       <p className="text-neutral-500 dark:text-neutral-400 mt-1 text-sm">
-                        {hasDedicated
-                          ? (isUk
-                              ? "Реальний дизайн клієнтського сайту — унікальна розробка під проєкт"
-                              : "Real client website design — unique build for this project")
-                          : (isUk
-                              ? "Інтерактивний превью — прокрутіть сторінку або відкрийте на повний екран"
-                              : "Interactive preview — scroll the page or open in full screen")}
+                        {isUk
+                          ? "Реальний дизайн клієнтського сайту — унікальна розробка під проєкт"
+                          : "Real client website design — unique build for this project"}
                       </p>
                     </div>
                     <Link
@@ -715,26 +560,6 @@ export default async function PortfolioProjectPage({ params }: Props) {
                       {isUk ? "Замовити зараз" : "Order Now"}
                     </Link>
                   </div>
-
-                  {project.nicheSlug && (
-                    <Link
-                      href={`/${lang}/niches/${project.nicheSlug}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-3 p-4 rounded-2xl bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-100 dark:border-indigo-900/60 hover:bg-indigo-100 dark:hover:bg-indigo-950/70 transition-colors group"
-                    >
-                      <Monitor className="w-5 h-5 text-indigo-600 dark:text-indigo-400 shrink-0" />
-                      <div>
-                        <div className="font-semibold text-indigo-700 dark:text-indigo-400 text-sm group-hover:underline">
-                          {isUk ? "Переглянути живе демо" : "View Live Demo"}
-                        </div>
-                        <div className="text-xs text-indigo-500 dark:text-indigo-500">
-                          /niches/{project.nicheSlug}
-                        </div>
-                      </div>
-                      <ExternalLink className="w-4 h-4 text-indigo-400 ml-auto shrink-0" />
-                    </Link>
-                  )}
 
                   {project.relatedAINichePage && (
                     <Link

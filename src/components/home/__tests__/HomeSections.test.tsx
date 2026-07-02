@@ -54,6 +54,9 @@ jest.mock("lucide-react", () => {
     Scissors: icon("Scissors"),
     Stethoscope: icon("Stethoscope"),
     ShoppingBag: icon("ShoppingBag"),
+    ShoppingCart: icon("ShoppingCart"),
+    Banknote: icon("Banknote"),
+    Building2: icon("Building2"),
     Star: icon("Star"),
     ChevronLeft: icon("ChevronLeft"),
     ChevronRight: icon("ChevronRight"),
@@ -176,26 +179,23 @@ describe("MarketplaceTeaser", () => {
 
   it("shows Ukrainian heading copy", () => {
     render(<MarketplaceTeaser lang="uk" />);
-    expect(screen.getByText(/Маркетплейс готових рішень/i)).toBeInTheDocument();
-    expect(screen.getByText("Готові рішення для")).toBeInTheDocument();
-    expect(screen.getByText("вашого бізнесу")).toBeInTheDocument();
+    expect(screen.getByText(/AI за галузями/i)).toBeInTheDocument();
+    expect(screen.getByText(/AI\/ML рішення для/i)).toBeInTheDocument();
+    expect(screen.getByText("вашої галузі")).toBeInTheDocument();
   });
 
-  it("renders all 4 niche cards", () => {
+  it("renders all 4 industry cards", () => {
     render(<MarketplaceTeaser lang="uk" />);
-    expect(screen.getByText("Ресторан / Кафе")).toBeInTheDocument();
-    expect(screen.getByText("Салон краси")).toBeInTheDocument();
-    expect(screen.getByText("Медична клініка")).toBeInTheDocument();
-    expect(screen.getByText("Інтернет-магазин")).toBeInTheDocument();
+    expect(screen.getByText("FinTech та Банкінг")).toBeInTheDocument();
+    expect(screen.getByText("Охорона здоров'я")).toBeInTheDocument();
+    expect(screen.getByText("Retail та E-commerce")).toBeInTheDocument();
+    expect(screen.getByText("Виробництво")).toBeInTheDocument();
   });
 
-  it("Browse marketplace and extras links point to correct localized hrefs", () => {
+  it("Browse case studies link points to correct localized href", () => {
     render(<MarketplaceTeaser lang="uk" />);
-    const marketplaceLink = screen.getByRole("link", { name: /дивитися маркетплейс/i });
-    expect(marketplaceLink).toHaveAttribute("href", "/uk/marketplace");
-
-    const extrasLink = screen.getByRole("link", { name: /доробки та модулі/i });
-    expect(extrasLink).toHaveAttribute("href", "/uk/extras");
+    const casesLink = screen.getByRole("link", { name: /дивитися кейси/i });
+    expect(casesLink).toHaveAttribute("href", "/uk/portfolio");
   });
 });
 

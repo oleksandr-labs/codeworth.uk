@@ -76,24 +76,23 @@ describe("TestimonialsSection", () => {
 
 // ── MarketplaceTeaser ─────────────────────────────────────────────────
 describe("MarketplaceTeaser", () => {
-  it("відображає заголовок маркетплейсу", () => {
+  it("відображає заголовок 'AI за галузями'", () => {
     render(<MarketplaceTeaser lang="uk" />);
-    expect(screen.getByText(/маркетплейс готових рішень/i)).toBeInTheDocument();
+    expect(screen.getByText(/AI за галузями/i)).toBeInTheDocument();
   });
 
-  it("показує 4 нішеві картки", () => {
+  it("показує 4 галузеві картки", () => {
     render(<MarketplaceTeaser lang="uk" />);
-    expect(screen.getByText("Ресторан / Кафе")).toBeInTheDocument();
-    expect(screen.getByText("Салон краси")).toBeInTheDocument();
-    expect(screen.getByText("Медична клініка")).toBeInTheDocument();
-    expect(screen.getByText("Інтернет-магазин")).toBeInTheDocument();
+    expect(screen.getByText("FinTech та Банкінг")).toBeInTheDocument();
+    expect(screen.getByText("Охорона здоров'я")).toBeInTheDocument();
+    expect(screen.getByText("Retail та E-commerce")).toBeInTheDocument();
+    expect(screen.getByText("Виробництво")).toBeInTheDocument();
   });
 
-  it("кнопка 'Дивитися маркетплейс' веде на /marketplace", () => {
+  it("кнопка 'Дивитися кейси' веде на /portfolio", () => {
     render(<MarketplaceTeaser lang="uk" />);
-    const links = screen.getAllByRole("link", { name: /маркетплейс/i });
-    const mainLink = links.find((l) => l.getAttribute("href") === "/uk/marketplace");
-    expect(mainLink).toBeInTheDocument();
+    const link = screen.getByRole("link", { name: /дивитися кейси/i });
+    expect(link).toHaveAttribute("href", "/uk/portfolio");
   });
 
   it("відображає теги популярності (Популярне, Нове тощо)", () => {

@@ -2,10 +2,10 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Codeworth — Веб-студія повного циклу",
+    name: "Codeworth — ML & AI Consultancy",
     short_name: "Codeworth",
     description:
-      "Розробка сайтів, інтернет-магазинів, PWA та маркетплейс готових рішень для бізнесу в Україні.",
+      "Custom machine learning and AI solutions for UK businesses — from proof of concept to production MLOps.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",
@@ -46,9 +46,9 @@ export default function manifest(): MetadataRoute.Manifest {
         description: "Зв'яжіться з нами",
       },
       {
-        name: "Маркетплейс",
-        url: "/marketplace",
-        description: "Готові рішення для бізнесу",
+        name: "Послуги",
+        url: "/services",
+        description: "AI/ML послуги для бізнесу",
       },
     ],
   };
