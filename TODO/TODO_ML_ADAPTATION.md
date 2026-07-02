@@ -812,8 +812,12 @@
 
 ## Що ще потрібно зробити (Backlog — після Sprint 66)
 
-### 🔴 HIGH PRIORITY — залишки старого бізнесу в коді (аудит 2026-07-02)
-Контент переписано під ML, але **функціонал старої веб-студії/маркетплейсу досі живий**: `/marketplace/*` (кошик/чекаут/LiqPay/admin), зламана `/niches`, 148 не-ML portfolio-демо, `CN-` (CodeNest) префікс у order ID. Повний план: **[TODO_REMOVE_LEGACY_ECOMMERCE.md](TODO_REMOVE_LEGACY_ECOMMERCE.md)**. Робити ПЕРЕД наступними контент-спринтами.
+### ✅ Залишки старого бізнесу в коді — ВИДАЛЕНО (2026-07-02, commit 64b38c9)
+Аудит виявив, що контент переписано під ML, але **функціонал старої веб-студії/маркетплейсу лишався живим**: `/marketplace/*` (кошик/чекаут/LiqPay/admin), зламана `/niches`, 147 не-ML portfolio-демо, `CN-` (CodeNest) префікс у order ID, легасі `extras-demos`/`extras-en`, застарілий tagline у словниках. Повний punch-list і деталі: **[TODO_REMOVE_LEGACY_ECOMMERCE.md](TODO_REMOVE_LEGACY_ECOMMERCE.md)**.
+- Видалено 324 файли / ~151k рядків (marketplace, /niches, LiqPay+order API, 147 legacy demo-компонентів портфоліо, WebsiteCostCalculator, orphaned extras/dictionary записи)
+- `tsc --noEmit` чисто; `npm test` 1046/1173 passing (залишок — pre-existing контент-дрейф тестів, не пов'язаний з цим прибиранням)
+- Задеплоєно через GitHub Actions (push у master, 10a6a77→64b38c9)
+- Виявлено бонусом: усі 94 записи в `portfolio.ts` вже були 100% ML-контентом — старі "легасі" кейси (пекарня, автосалон тощо) існували лише в мертвій мапі демо-компонентів, не в самому контенті портфоліо
 
 ### Контент (пріоритет: LOW — широке покриття досягнуто)
 - [ ] **Blog**: 249 → 280+ постів
