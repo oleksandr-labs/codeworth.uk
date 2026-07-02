@@ -1,5 +1,27 @@
 # Codeworth.uk TODO & Done Log
 
+## Session 2026-07-02 — Legacy E-commerce/Web-Studio Removal
+
+**Коміти:** 64b38c9, df02924 (репо oleksandr-labs/codeworth.uk, master)
+
+Аудит показав, що попри повну переробку контенту під ML (сесії нижче), у коді досі жив
+функціонал старого бізнесу CodeNest (веб-студія + маркетплейс шаблонів сайтів). Повний
+план і деталі: [TODO/TODO_REMOVE_LEGACY_ECOMMERCE.md](TODO/TODO_REMOVE_LEGACY_ECOMMERCE.md).
+
+### Done
+- [x] Видалено `/marketplace/*` (catalog/product/cart/checkout/login/account/compare) + `/admin/marketplace` — живий e-commerce маркетплейс з кошиком/чекаутом
+- [x] Видалено зламану `/niches` + `/niches/[slug]` (дані NICHES_DATA були порожні, роут лишався живим і індексувався з title "0+ ніш")
+- [x] Прибрано `src/app/api/liqpay/*` (український платіжний шлюз) + `src/app/api/order` (order-backend з `CN-` (CodeNest) префіксом ID)
+- [x] Прогeruovано `DEMOS` map у `portfolio/[slug]/demo/page.tsx` з ~155 до 7 ERP/ML-демо; видалено 147 legacy demo-компонентів (пекарня/автосалон/юрфірма тощо)
+- [x] Видалено orphaned `WebsiteCostCalculator.tsx`, прибрано non-ML записи з `extras-demos.ts`/`extras-en.ts`
+- [x] Очищено `footer.tagline`/`nav.marketplace`/`nav.niches` у dictionaries (en/uk)
+- [x] Оновлено `sitemap.ts`/`robots.ts` (прибрано записи видалених роутів)
+- [x] Виправлено ~24 тестові сюїти, зламані видаленнями
+- [x] Верифіковано: `tsc --noEmit` чисто; 1046/1173 тестів проходять (залишок — pre-existing контент-дрейф тестів, не пов'язаний з цим прибиранням); задеплоєно через GitHub Actions
+- [x] Виявлено бонусом: усі 94 записи в `portfolio.ts` вже були 100% ML-контентом — старі "легасі" кейси існували лише в мертвій мапі демо-компонентів
+
+**Разом:** 324 файли / ~151k рядків видалено.
+
 ## Session 2026-06-23 — ML Rebranding + Actualization Sprint
 
 ### Done (this chat)
