@@ -23,11 +23,12 @@ const BASE_URL = "https://codeworth.uk";
 
 type SitemapEntry = MetadataRoute.Sitemap[number];
 
-function forAllLocales(
+function forLocale(
+  locale: (typeof locales)[number],
   path: string,
   opts: Omit<SitemapEntry, "url" | "alternates">
-): SitemapEntry[] {
-  return locales.map((locale) => ({
+): SitemapEntry {
+  return {
     url: `${BASE_URL}/${locale}${path}`,
     alternates: {
       languages: Object.fromEntries(
@@ -35,10 +36,20 @@ function forAllLocales(
       ),
     },
     ...opts,
-  }));
+  };
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
+// Split the sitemap by locale (one file per language) so each generated
+// file stays well under browsers'/crawlers' comfortable size — a single
+// combined file with all locales exceeded 4,200 URLs / 1.6MB, which made
+// Chrome silently fall back to rendering it as unstyled raw text instead
+// of the usual XML tree view.
+export async function generateSitemaps() {
+  return locales.map((_, id) => ({ id }));
+}
+
+export default async function sitemap({ id }: { id: Promise<string> }): Promise<MetadataRoute.Sitemap> {
+  const locale = locales[Number(await id)];
   const now = new Date();
 
   const staticPaths = [
@@ -70,71 +81,71 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/showcase", freq: "monthly" as const, pri: 0.6 },
   ];
 
-  const staticPages = staticPaths.flatMap(({ path, freq, pri }) =>
-    forAllLocales(path, { lastModified: now, changeFrequency: freq, priority: pri })
+  const staticPages = staticPaths.map(({ path, freq, pri }) =>
+    forLocale(locale, path, { lastModified: now, changeFrequency: freq, priority: pri })
   );
 
-  const servicePages = SERVICES_DATA.flatMap((s) =>
-    forAllLocales(`/services/${s.slug}`, { lastModified: now, changeFrequency: "monthly", priority: 0.8 })
+  const servicePages = SERVICES_DATA.map((s) =>
+    forLocale(locale, `/services/${s.slug}`, { lastModified: now, changeFrequency: "monthly", priority: 0.8 })
   );
 
-  const blogPages = BLOG_POSTS.flatMap((p) =>
-    forAllLocales(`/blog/${p.slug}`, { lastModified: new Date(p.date), changeFrequency: "monthly", priority: 0.7 })
+  const blogPages = BLOG_POSTS.map((p) =>
+    forLocale(locale, `/blog/${p.slug}`, { lastModified: new Date(p.date), changeFrequency: "monthly", priority: 0.7 })
   );
 
-  const blogTagPages = getAllBlogTags().flatMap((tag) =>
-    forAllLocales(`/blog/tag/${encodeURIComponent(tag)}`, { lastModified: now, changeFrequency: "weekly", priority: 0.5 })
+  const blogTagPages = getAllBlogTags().map((tag) =>
+    forLocale(locale, `/blog/tag/${encodeURIComponent(tag)}`, { lastModified: now, changeFrequency: "weekly", priority: 0.5 })
   );
 
-  const portfolioPages = PROJECTS.flatMap((p) =>
-    forAllLocales(`/portfolio/${p.slug}`, { lastModified: now, changeFrequency: "monthly", priority: 0.6 })
+  const portfolioPages = PROJECTS.map((p) =>
+    forLocale(locale, `/portfolio/${p.slug}`, { lastModified: now, changeFrequency: "monthly", priority: 0.6 })
   );
 
-  const geoPages = GEO_CITIES.flatMap((c) =>
-    forAllLocales(`/location/${c.slug}`, { lastModified: now, changeFrequency: "monthly", priority: 0.8 })
+  const geoPages = GEO_CITIES.map((c) =>
+    forLocale(locale, `/location/${c.slug}`, { lastModified: now, changeFrequency: "monthly", priority: 0.8 })
   );
 
-  const comparePages = COMPARE_DATA.flatMap((c) =>
-    forAllLocales(`/compare/${c.slug}`, { lastModified: now, changeFrequency: "monthly", priority: 0.8 })
+  const comparePages = COMPARE_DATA.map((c) =>
+    forLocale(locale, `/compare/${c.slug}`, { lastModified: now, changeFrequency: "monthly", priority: 0.8 })
   );
 
-  const glossaryTermPages = GLOSSARY_TERMS.flatMap((t) =>
-    forAllLocales(`/glossary/${t.slug}`, { lastModified: now, changeFrequency: "monthly", priority: 0.7 })
+  const glossaryTermPages = GLOSSARY_TERMS.map((t) =>
+    forLocale(locale, `/glossary/${t.slug}`, { lastModified: now, changeFrequency: "monthly", priority: 0.7 })
   );
 
-  const resourcePages = RESOURCES.flatMap((r) =>
-    forAllLocales(`/resources/${r.slug}`, { lastModified: now, changeFrequency: "monthly", priority: 0.7 })
+  const resourcePages = RESOURCES.map((r) =>
+    forLocale(locale, `/resources/${r.slug}`, { lastModified: now, changeFrequency: "monthly", priority: 0.7 })
   );
 
-  const careerPages = JOBS.flatMap((j) =>
-    forAllLocales(`/careers/${j.slug}`, { lastModified: new Date(j.datePosted), changeFrequency: "weekly", priority: 0.6 })
+  const careerPages = JOBS.map((j) =>
+    forLocale(locale, `/careers/${j.slug}`, { lastModified: new Date(j.datePosted), changeFrequency: "weekly", priority: 0.6 })
   );
 
-  const aiNichePages = AI_NICHES.flatMap((n) =>
-    forAllLocales(`/ai/${n.slug}`, { lastModified: now, changeFrequency: "monthly", priority: 0.8 })
+  const aiNichePages = AI_NICHES.map((n) =>
+    forLocale(locale, `/ai/${n.slug}`, { lastModified: now, changeFrequency: "monthly", priority: 0.8 })
   );
 
-  const mlNichePages = ML_NICHES.flatMap((n) =>
-    forAllLocales(`/ml/${n.slug}`, { lastModified: now, changeFrequency: "monthly", priority: 0.8 })
+  const mlNichePages = ML_NICHES.map((n) =>
+    forLocale(locale, `/ml/${n.slug}`, { lastModified: now, changeFrequency: "monthly", priority: 0.8 })
   );
 
-  const startupPages = STARTUP_SOLUTIONS.flatMap((s) =>
-    forAllLocales(`/startup/${s.slug}`, { lastModified: now, changeFrequency: "monthly", priority: 0.7 })
+  const startupPages = STARTUP_SOLUTIONS.map((s) =>
+    forLocale(locale, `/startup/${s.slug}`, { lastModified: now, changeFrequency: "monthly", priority: 0.7 })
   );
 
-  const useCasePages = USE_CASES.flatMap((uc) =>
-    forAllLocales(`/use-cases/${uc.slug}`, { lastModified: now, changeFrequency: "monthly", priority: 0.7 })
+  const useCasePages = USE_CASES.map((uc) =>
+    forLocale(locale, `/use-cases/${uc.slug}`, { lastModified: now, changeFrequency: "monthly", priority: 0.7 })
   );
 
-  const blogAuthorPages = BLOG_AUTHORS.flatMap((a) =>
-    forAllLocales(`/blog/author/${a.slug}`, { lastModified: now, changeFrequency: "monthly", priority: 0.6 })
+  const blogAuthorPages = BLOG_AUTHORS.map((a) =>
+    forLocale(locale, `/blog/author/${a.slug}`, { lastModified: now, changeFrequency: "monthly", priority: 0.6 })
   );
 
-  const blogCategoryPages = BLOG_CATEGORIES.filter((c) => c.id !== "all").flatMap((c) =>
-    forAllLocales(`/blog/category/${c.id}`, { lastModified: now, changeFrequency: "weekly", priority: 0.8 })
+  const blogCategoryPages = BLOG_CATEGORIES.filter((c) => c.id !== "all").map((c) =>
+    forLocale(locale, `/blog/category/${c.id}`, { lastModified: now, changeFrequency: "weekly", priority: 0.8 })
   );
 
-  return [
+  const allPages = [
     ...staticPages,
     ...servicePages,
     ...blogPages,
@@ -152,4 +163,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...blogAuthorPages,
     ...blogCategoryPages,
   ];
+
+  // Some data sources (e.g. geo/compare/glossary) contain duplicate slugs,
+  // which would otherwise emit the same URL twice — dedupe defensively.
+  const seen = new Set<string>();
+  return allPages.filter((entry) => {
+    if (seen.has(entry.url)) return false;
+    seen.add(entry.url);
+    return true;
+  });
 }

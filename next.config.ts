@@ -107,8 +107,11 @@ const nextConfig: NextConfig = {
       { source: "/", destination: "/en" },
       // Any path without locale prefix → /en/path
       // Excludes: uk, api, _next, static files, special routes
+      // "sitemap\.xml" and "sitemap/N.xml" are the metadata sitemap files
+      // (must stay unprefixed); bare "/sitemap" is still rewritten to
+      // "/en/sitemap" since that's the human-facing page under [lang].
       {
-        source: "/:path((?!en|uk|api|_next|favicon|manifest\\.json|sw\\.js|robots\\.txt|sitemap\\.xml|og|opengraph|apple-icon).*)",
+        source: "/:path((?!en|uk|api|_next|favicon|manifest\\.json|sw\\.js|robots\\.txt|sitemap\\.xml|sitemap/\\d+\\.xml|og|opengraph|apple-icon).*)",
         destination: "/en/:path",
       },
     ];
