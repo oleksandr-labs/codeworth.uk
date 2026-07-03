@@ -105,6 +105,12 @@ const nextConfig: NextConfig = {
     return [
       // Root → /en
       { source: "/", destination: "/en" },
+      // Public /sitemap.xml → the real index route. Next.js reserves the
+      // literal /sitemap.xml path for the sitemap.ts metadata convention
+      // and won't let a route.ts claim it directly (even in split mode,
+      // where sitemap.ts itself only serves /sitemap/0.xml, /sitemap/1.xml),
+      // so the index lives at /sitemap-index.xml and gets rewritten here.
+      { source: "/sitemap.xml", destination: "/sitemap-index.xml" },
       // Any path without locale prefix → /en/path
       // Excludes: uk, api, _next, static files, special routes
       // "sitemap\.xml" and "sitemap/N.xml" are the metadata sitemap files

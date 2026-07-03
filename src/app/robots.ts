@@ -53,10 +53,7 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: "anthropic-ai", disallow: ["/"] },
       { userAgent: "ClaudeBot", disallow: ["/"] },
     ],
-    // sitemap.ts is split per-locale via generateSitemaps() (→ /sitemap/0.xml,
-    // /sitemap/1.xml); Next.js does not auto-generate a /sitemap.xml index for
-    // that case, so list each locale file directly.
-    sitemap: ["https://codeworth.uk/sitemap/0.xml", "https://codeworth.uk/sitemap/1.xml"],
+    sitemap: "https://codeworth.uk/sitemap.xml",
     host: "https://codeworth.uk",
   };
 }
