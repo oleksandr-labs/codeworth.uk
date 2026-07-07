@@ -42,11 +42,11 @@ export function MetaTagGenerator({ isUk }: Props) {
   const t = isUk
     ? {
         title: "Заголовок сторінки (title)",
-        titlePh: "Наприклад: Розробка сайтів в Києві | Codeworth",
+        titlePh: "Наприклад: ML-консалтинг для UK бізнесу | Codeworth",
         desc: "Мета-опис (description)",
         descPh: "Короткий опис сторінки для пошукових систем...",
         keys: "Ключові слова (через кому)",
-        keysPh: "розробка сайтів, веб-студія, Next.js",
+        keysPh: "machine learning, AI-консалтинг, MLOps",
         urlLabel: "URL сторінки",
         urlPh: "https://example.com/page",
         result: "Готовий HTML-код",

@@ -38,6 +38,66 @@ export interface Project {
   relatedMLNichePage?: string;
 }
 
+// project.industry holds inconsistent raw values accumulated across content
+// sprints (mixed casing, synonyms like "realestate"/"real-estate"/"proptech") —
+// normalize to a canonical id here rather than rewriting every project record.
+const INDUSTRY_ALIAS_MAP: Record<string, string> = {
+  Healthcare: "healthcare",
+  FinTech: "fintech",
+  finance: "fintech",
+  "financial-services": "fintech",
+  "Financial Services": "fintech",
+  LegalTech: "legal",
+  Insurance: "insurance",
+  Energy: "energy",
+  realestate: "real-estate",
+  proptech: "real-estate",
+  agriculture: "agritech",
+  hr: "hr-tech",
+  "FMCG/Retail": "retail",
+  Aerospace: "aerospace",
+};
+
+const INDUSTRY_LABELS: Record<string, string> = {
+  healthcare: "Healthcare",
+  retail: "Retail",
+  banking: "Banking",
+  legal: "Legal",
+  insurance: "Insurance",
+  logistics: "Logistics",
+  fintech: "FinTech",
+  ecommerce: "E-commerce",
+  telecommunications: "Telecommunications",
+  saas: "SaaS",
+  "real-estate": "Real Estate",
+  media: "Media",
+  energy: "Energy",
+  education: "Education",
+  agritech: "AgriTech",
+  wealthtech: "WealthTech",
+  "wealth-management": "Wealth Management",
+  "sports-analytics": "Sports Analytics",
+  "public-sector": "Public Sector",
+  marketing: "Marketing",
+  manufacturing: "Manufacturing",
+  "hr-tech": "HR Tech",
+  hospitality: "Hospitality",
+  government: "Government",
+  construction: "Construction",
+  charity: "Charity",
+  "asset-management": "Asset Management",
+  aerospace: "Aerospace",
+};
+
+export function getProjectIndustryId(project: Project): string {
+  if (!project.industry) return "";
+  return INDUSTRY_ALIAS_MAP[project.industry] ?? project.industry.toLowerCase();
+}
+
+export function getIndustryLabel(id: string): string {
+  return INDUSTRY_LABELS[id] ?? id;
+}
+
 export const PROJECTS: Project[] = [
   {
     slug: "ai-chatbot-saas",

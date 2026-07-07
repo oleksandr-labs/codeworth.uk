@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
-import { BLOG_POSTS, BLOG_CATEGORIES, getPostTitle, getPostExcerpt } from "@/lib/data/blog";
+import { BLOG_POSTS, BLOG_CATEGORIES, getPostTitle, getPostExcerpt, getPostCategoryId } from "@/lib/data/blog";
 import { getAuthorByName, getAuthorBySlug } from "@/lib/data/blogAuthors";
 import { SERVICES_DATA, getServiceLocalized } from "@/lib/data/services";
 import { Clock, Calendar, ArrowLeft, ArrowRight, ChevronRight } from "lucide-react";
@@ -16,21 +16,14 @@ import { ReadingProgress } from "@/components/blog/ReadingProgress";
 import { cn } from "@/lib/utils";
 
 
-// Map blog categories → relevant service slugs
+// Map normalized blog category id (see getPostCategoryId) → relevant service slugs
 const CATEGORY_SERVICES: Record<string, string[]> = {
-  // ML/AI categories (primary)
-  "Machine Learning": ["machine-learning", "predictive-analytics", "mlops"],
-  "Artificial Intelligence": ["artificial-intelligence", "llm-rag", "machine-learning"],
-  "MLOps": ["mlops", "machine-learning", "artificial-intelligence"],
-  "NLP": ["nlp", "llm-rag", "machine-learning"],
-  "Computer Vision": ["computer-vision", "machine-learning", "artificial-intelligence"],
-  "Predictive Analytics": ["predictive-analytics", "machine-learning", "mlops"],
-  // Legacy / fallback categories
-  "AI та Автоматизація": ["artificial-intelligence", "machine-learning", "nlp"],
-  "Автоматизація": ["artificial-intelligence", "llm-rag", "mlops"],
-  "Аналітика та дані": ["machine-learning", "predictive-analytics", "mlops"],
-  "Право та GDPR": ["machine-learning", "nlp", "artificial-intelligence"],
-  "Бізнес та зростання": ["machine-learning", "predictive-analytics", "artificial-intelligence"],
+  "machine-learning": ["machine-learning", "predictive-analytics", "mlops"],
+  "artificial-intelligence": ["artificial-intelligence", "llm-rag", "machine-learning"],
+  "mlops": ["mlops", "machine-learning", "artificial-intelligence"],
+  "nlp": ["nlp", "llm-rag", "machine-learning"],
+  "computer-vision": ["computer-vision", "machine-learning", "artificial-intelligence"],
+  "predictive-analytics": ["predictive-analytics", "machine-learning", "mlops"],
 };
 
 export const revalidate = 300; // ISR: revalidate every 5 minutes
@@ -113,9 +106,10 @@ export default async function BlogPostPage({ params }: Props) {
   const otherPosts = BLOG_POSTS.filter((p) => p.slug !== slug && p.category !== post.category);
   const suggestions = [...sameCategory, ...otherPosts].slice(0, 3);
 
-  const categoryObj = BLOG_CATEGORIES.find((c) => c.label.uk === post.category);
+  const postCategoryId = getPostCategoryId(post);
+  const categoryObj = BLOG_CATEGORIES.find((c) => c.id === postCategoryId);
 
-  const relatedServiceSlugs = CATEGORY_SERVICES[post.category] ?? ["website-dev", "seo"];
+  const relatedServiceSlugs = CATEGORY_SERVICES[postCategoryId] ?? ["machine-learning", "artificial-intelligence"];
   const relatedServices = relatedServiceSlugs
     .map((s) => SERVICES_DATA.find((sd) => sd.slug === s))
     .filter(Boolean)

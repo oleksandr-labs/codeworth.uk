@@ -431,7 +431,7 @@ export default async function ShowcasePage({
                   </p>
                   <div className="flex gap-2 mt-auto">
                     <Link
-                      href={`/${lang}/extras/${extra.id}`}
+                      href={`/${lang}/extras/demo/${extra.id}`}
                       className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg bg-indigo-600 text-white text-xs font-semibold hover:bg-indigo-700 transition-colors"
                     >
                       <ExternalLink className="w-3.5 h-3.5" />

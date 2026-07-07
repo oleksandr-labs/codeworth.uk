@@ -64,24 +64,47 @@ export default async function GlossaryTermPage({
     .map((slug) => GLOSSARY_TERMS.find((t) => t.slug === slug))
     .filter(Boolean) as typeof GLOSSARY_TERMS;
 
+  // term.relatedService accumulated ~23 raw values across content sprints (mostly
+  // legacy web-studio service slugs) — normalize to one of the 7 real /services/*
+  // slugs so the CTA link below never 404s.
+  const SERVICE_ALIAS_MAP: Record<string, string> = {
+    "machine-learning": "machine-learning",
+    "ml-engineering": "machine-learning",
+    "data-analytics": "predictive-analytics",
+    "predictive-analytics": "predictive-analytics",
+    "artificial-intelligence": "artificial-intelligence",
+    "ai-strategy": "artificial-intelligence",
+    "ai-development": "artificial-intelligence",
+    design: "artificial-intelligence",
+    landing: "artificial-intelligence",
+    mobile: "artificial-intelligence",
+    seo: "artificial-intelligence",
+    ads: "predictive-analytics",
+    smm: "predictive-analytics",
+    "email-marketing": "predictive-analytics",
+    ecommerce: "predictive-analytics",
+    mlops: "mlops",
+    compliance: "mlops",
+    infrastructure: "mlops",
+    integrations: "mlops",
+    crm: "mlops",
+    nlp: "nlp",
+    "computer-vision": "computer-vision",
+    "llm-rag": "llm-rag",
+    chatbots: "llm-rag",
+  };
+
   const SERVICE_NAMES: Record<string, { uk: string; en: string }> = {
-    "website-dev": { uk: "Розробка сайтів", en: "Website Development" },
-    landing: { uk: "Лендінги", en: "Landing Pages" },
-    ecommerce: { uk: "Інтернет-магазини", en: "E-Commerce" },
-    seo: { uk: "SEO-просування", en: "SEO Services" },
-    design: { uk: "UI/UX Дизайн", en: "UI/UX Design" },
-    mobile: { uk: "Мобільні PWA", en: "Mobile PWA" },
-    integrations: { uk: "Інтеграції", en: "Integrations" },
     "artificial-intelligence": { uk: "Штучний інтелект", en: "Artificial Intelligence" },
     "machine-learning": { uk: "Machine Learning", en: "Machine Learning" },
-    ads: { uk: "Реклама", en: "Advertising" },
-    chatbots: { uk: "Чат-боти", en: "Chatbots" },
-    "email-marketing": { uk: "Email-маркетинг", en: "Email Marketing" },
-    smm: { uk: "SMM", en: "SMM" },
-    crm: { uk: "CRM-інтеграції", en: "CRM Integrations" },
-    branding: { uk: "Брендинг", en: "Branding" },
-    support: { uk: "Технічна підтримка", en: "Technical Support" },
+    nlp: { uk: "NLP та обробка тексту", en: "NLP & Text Processing" },
+    "computer-vision": { uk: "Комп'ютерний зір", en: "Computer Vision" },
+    mlops: { uk: "MLOps", en: "MLOps" },
+    "llm-rag": { uk: "LLM та RAG", en: "LLM & RAG" },
+    "predictive-analytics": { uk: "Предиктивна аналітика", en: "Predictive Analytics" },
   };
+
+  const relatedServiceSlug = term.relatedService ? SERVICE_ALIAS_MAP[term.relatedService] : undefined;
 
   const relatedBlogPost = term.relatedBlogPost
     ? BLOG_POSTS.find((p) => p.slug === term.relatedBlogPost)
@@ -176,7 +199,7 @@ export default async function GlossaryTermPage({
               )}
 
               {/* How Codeworth applies */}
-              {term.relatedService && SERVICE_NAMES[term.relatedService] && (
+              {relatedServiceSlug && SERVICE_NAMES[relatedServiceSlug] && (
                 <div className="bg-gray-50 dark:bg-neutral-900 border border-gray-200 dark:border-neutral-700 rounded-xl p-5 mb-10">
                   <h3 className="font-semibold text-gray-800 dark:text-neutral-200 mb-2">
                     {isUk
@@ -185,11 +208,11 @@ export default async function GlossaryTermPage({
                   </h3>
                   <p className="text-gray-600 dark:text-neutral-300 mb-4">
                     {isUk
-                      ? `Codeworth використовує ${term.termUk} у послузі «${SERVICE_NAMES[term.relatedService].uk}». Хочете дізнатись більше або замовити — звертайтесь до нас.`
-                      : `Codeworth applies ${term.termEn} in the "${SERVICE_NAMES[term.relatedService].en}" service. Want to learn more or order — contact us.`}
+                      ? `Codeworth використовує ${term.termUk} у послузі «${SERVICE_NAMES[relatedServiceSlug].uk}». Хочете дізнатись більше або замовити — звертайтесь до нас.`
+                      : `Codeworth applies ${term.termEn} in the "${SERVICE_NAMES[relatedServiceSlug].en}" service. Want to learn more or order — contact us.`}
                   </p>
                   <Link
-                    href={`/${lang}/services/${term.relatedService}`}
+                    href={`/${lang}/services/${relatedServiceSlug}`}
                     className="inline-flex items-center gap-2 text-indigo-600 font-medium hover:text-indigo-800 transition-colors"
                   >
                     {isUk ? "Дізнатись про послугу" : "Learn about the service"}

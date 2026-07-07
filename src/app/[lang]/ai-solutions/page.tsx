@@ -67,7 +67,9 @@ export default async function AISolutionsCatalogPage({ params }: Props) {
           priceCurrency: isUk ? "UAH" : "GBP",
           availability: "https://schema.org/InStock",
         },
-        url: `https://codeworth.uk/${lang}/extras/${product.id}`,
+        url: product.hasDemo
+          ? `https://codeworth.uk/${lang}/extras/demo/${product.id}`
+          : `https://codeworth.uk/${lang}/extras`,
         provider: {
           "@type": "Organization",
           name: "Codeworth",
@@ -201,7 +203,7 @@ function ProductCard({
 
   return (
     <Link
-      href={`/${lang}/extras/${product.id}`}
+      href={product.hasDemo ? `/${lang}/extras/demo/${product.id}` : `/${lang}/extras`}
       className={`group rounded-2xl border bg-white dark:bg-neutral-800 p-6 hover:shadow-xl transition-all hover:-translate-y-1 ${
         highlight ? "border-violet-200 ring-1 ring-violet-100" : "border-neutral-100 dark:border-neutral-700"
       }`}

@@ -125,7 +125,7 @@ export async function POST(request: NextRequest) {
   <div style="max-width:520px;margin:32px auto;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
     <div style="background:#1E1B4B;padding:28px 36px;text-align:center;">
       <h1 style="color:#fff;margin:0;font-size:20px;font-weight:700;">Codeworth</h1>
-      <p style="color:#a5b4fc;margin:6px 0 0;font-size:13px;">Web Studio &amp; Marketplace</p>
+      <p style="color:#a5b4fc;margin:6px 0 0;font-size:13px;">ML &amp; AI Consultancy</p>
     </div>
     <div style="padding:36px;">
       <h2 style="color:#1E1B4B;font-size:18px;margin:0 0 12px;">Ми отримали вашу заявку ✅</h2>

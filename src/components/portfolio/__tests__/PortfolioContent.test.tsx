@@ -78,6 +78,8 @@ jest.mock("@/lib/data/portfolio", () => ({
     medium: { label: "🟡 Середній", color: "bg-amber-50 text-amber-700" },
     complex: { label: "🔴 Складний", color: "bg-red-50 text-red-700" },
   },
+  getProjectIndustryId: (p: { industry?: string }) => p.industry ?? "",
+  getIndustryLabel: (id: string) => id,
 }));
 
 describe("PortfolioContent", () => {
