@@ -67,6 +67,32 @@ export async function POST(request: NextRequest) {
 
     const payload = parsed.data;
 
+    // Send lead to internal CRM (source of truth for follow-up)
+    const crmUrl = process.env.CRM_INGEST_URL;
+    const crmToken = process.env.CRM_INGEST_TOKEN;
+    if (crmUrl && crmToken) {
+      try {
+        await fetch(crmUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-Ingest-Token": crmToken,
+          },
+          body: JSON.stringify({
+            source: "codeworth.uk",
+            form_type: "contact",
+            name: payload.name,
+            contact: payload.contact,
+            service: payload.service ?? "",
+            budget: payload.budget ?? "",
+            message: payload.message ?? "",
+          }),
+        });
+      } catch {
+        // CRM ingest failure is non-critical — Telegram/email below are the fallback
+      }
+    }
+
     // Send to Telegram if configured
     const telegramToken = process.env.TELEGRAM_BOT_TOKEN;
     const telegramChatId = process.env.TELEGRAM_CHAT_ID;

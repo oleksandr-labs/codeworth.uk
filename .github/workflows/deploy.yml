@@ -83,6 +83,8 @@ jobs:
             sync_env "TELEGRAM_CHAT_ID"      "${{ secrets.TELEGRAM_CHAT_ID }}"
             sync_env "RESEND_API_KEY"        "${{ secrets.RESEND_API_KEY }}"
             sync_env "RECAPTCHA_SECRET_KEY"  "${{ secrets.RECAPTCHA_SECRET_KEY }}"
+            sync_env "CRM_INGEST_URL"        "${{ secrets.CRM_INGEST_URL }}"
+            sync_env "CRM_INGEST_TOKEN"      "${{ secrets.CRM_INGEST_TOKEN }}"
             sync_env "LIQPAY_PUBLIC_KEY"     "${{ secrets.LIQPAY_PUBLIC_KEY }}"
             sync_env "LIQPAY_PRIVATE_KEY"    "${{ secrets.LIQPAY_PRIVATE_KEY }}"
 
