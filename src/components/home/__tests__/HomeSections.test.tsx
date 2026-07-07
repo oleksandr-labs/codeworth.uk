@@ -66,7 +66,7 @@ jest.mock("lucide-react", () => {
 import { BlogPreviewSection } from "../BlogPreviewSection";
 import { ClientLogosSection } from "../ClientLogosSection";
 import { HowWeWorkSection } from "../HowWeWorkSection";
-import { MarketplaceTeaser } from "../MarketplaceTeaser";
+import { IndustriesTeaser } from "../IndustriesTeaser";
 import { TestimonialsSection } from "../TestimonialsSection";
 
 // ─────────────────────────────────────────────
@@ -169,23 +169,23 @@ describe("HowWeWorkSection", () => {
 });
 
 // ─────────────────────────────────────────────
-// MarketplaceTeaser
+// IndustriesTeaser
 // ─────────────────────────────────────────────
-describe("MarketplaceTeaser", () => {
+describe("IndustriesTeaser", () => {
   it("renders without error", () => {
-    const { container } = render(<MarketplaceTeaser lang="uk" />);
+    const { container } = render(<IndustriesTeaser lang="uk" />);
     expect(container).toBeTruthy();
   });
 
   it("shows Ukrainian heading copy", () => {
-    render(<MarketplaceTeaser lang="uk" />);
+    render(<IndustriesTeaser lang="uk" />);
     expect(screen.getByText(/AI за галузями/i)).toBeInTheDocument();
     expect(screen.getByText(/AI\/ML рішення для/i)).toBeInTheDocument();
     expect(screen.getByText("вашої галузі")).toBeInTheDocument();
   });
 
   it("renders all 4 industry cards", () => {
-    render(<MarketplaceTeaser lang="uk" />);
+    render(<IndustriesTeaser lang="uk" />);
     expect(screen.getByText("FinTech та Банкінг")).toBeInTheDocument();
     expect(screen.getByText("Охорона здоров'я")).toBeInTheDocument();
     expect(screen.getByText("Retail та E-commerce")).toBeInTheDocument();
@@ -193,7 +193,7 @@ describe("MarketplaceTeaser", () => {
   });
 
   it("Browse case studies link points to correct localized href", () => {
-    render(<MarketplaceTeaser lang="uk" />);
+    render(<IndustriesTeaser lang="uk" />);
     const casesLink = screen.getByRole("link", { name: /дивитися кейси/i });
     expect(casesLink).toHaveAttribute("href", "/uk/portfolio");
   });

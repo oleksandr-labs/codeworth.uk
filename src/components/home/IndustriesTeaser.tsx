@@ -64,7 +64,7 @@ const INDUSTRIES_EN = [
   },
 ];
 
-export function MarketplaceTeaser({ lang }: { lang: string }) {
+export function IndustriesTeaser({ lang }: { lang: string }) {
   const isUk = lang === "uk";
   const INDUSTRIES = isUk ? INDUSTRIES_UK : INDUSTRIES_EN;
   const lp = (path: string) => `/${lang}${path}`;

@@ -21,7 +21,7 @@ import { ClientLogosSection } from "../home/ClientLogosSection";
 import { ServicesSection } from "../home/ServicesSection";
 import { WhyUsSection } from "../home/WhyUsSection";
 import { HowWeWorkSection } from "../home/HowWeWorkSection";
-import { MarketplaceTeaser } from "../home/MarketplaceTeaser";
+import { IndustriesTeaser } from "../home/IndustriesTeaser";
 import { BlogPreviewSection } from "../home/BlogPreviewSection";
 import { BeforeAfter } from "../ui/BeforeAfter";
 import CookieConsent from "../ui/CookieConsent";
@@ -503,9 +503,9 @@ describe("Accessibility (axe)", () => {
     });
   });
 
-  describe("MarketplaceTeaser", () => {
+  describe("IndustriesTeaser", () => {
     it("has no axe violations", async () => {
-      const { container } = render(<MarketplaceTeaser lang="uk" />);
+      const { container } = render(<IndustriesTeaser lang="uk" />);
       expect(await axe(container)).toHaveNoViolations();
     });
   });

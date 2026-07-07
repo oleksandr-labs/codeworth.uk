@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { TestimonialsSection } from "../TestimonialsSection";
-import { MarketplaceTeaser } from "../MarketplaceTeaser";
+import { IndustriesTeaser } from "../IndustriesTeaser";
 import { ServicesSection } from "../ServicesSection";
 import { WhyUsSection } from "../WhyUsSection";
 import { HowWeWorkSection } from "../HowWeWorkSection";
@@ -74,15 +74,15 @@ describe("TestimonialsSection", () => {
   });
 });
 
-// ── MarketplaceTeaser ─────────────────────────────────────────────────
-describe("MarketplaceTeaser", () => {
+// ── IndustriesTeaser ─────────────────────────────────────────────────
+describe("IndustriesTeaser", () => {
   it("відображає заголовок 'AI за галузями'", () => {
-    render(<MarketplaceTeaser lang="uk" />);
+    render(<IndustriesTeaser lang="uk" />);
     expect(screen.getByText(/AI за галузями/i)).toBeInTheDocument();
   });
 
   it("показує 4 галузеві картки", () => {
-    render(<MarketplaceTeaser lang="uk" />);
+    render(<IndustriesTeaser lang="uk" />);
     expect(screen.getByText("FinTech та Банкінг")).toBeInTheDocument();
     expect(screen.getByText("Охорона здоров'я")).toBeInTheDocument();
     expect(screen.getByText("Retail та E-commerce")).toBeInTheDocument();
@@ -90,13 +90,13 @@ describe("MarketplaceTeaser", () => {
   });
 
   it("кнопка 'Дивитися кейси' веде на /portfolio", () => {
-    render(<MarketplaceTeaser lang="uk" />);
+    render(<IndustriesTeaser lang="uk" />);
     const link = screen.getByRole("link", { name: /дивитися кейси/i });
     expect(link).toHaveAttribute("href", "/uk/portfolio");
   });
 
   it("відображає теги популярності (Популярне, Нове тощо)", () => {
-    render(<MarketplaceTeaser lang="uk" />);
+    render(<IndustriesTeaser lang="uk" />);
     expect(screen.getByText("Популярне")).toBeInTheDocument();
     expect(screen.getByText("Нове")).toBeInTheDocument();
   });
