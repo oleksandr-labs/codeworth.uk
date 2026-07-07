@@ -140,7 +140,7 @@ export function ApplyForm({ positionTitle, lang: _lang, isUk }: Props) {
       </div>
 
       {status === "error" && (
-        <div role="alert" className="flex items-start gap-2 bg-red-50 border border-red-200 rounded-xl px-4 py-3">
+        <div role="alert" aria-live="assertive" className="flex items-start gap-2 bg-red-50 border border-red-200 rounded-xl px-4 py-3">
           <AlertCircle className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
           <span className="text-sm text-red-700">{errorMsg}</span>
         </div>

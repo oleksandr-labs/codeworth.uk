@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     openGraph: {
       title: isUk ? "Політика конфіденційності — Codeworth" : "Privacy Policy — Codeworth",
       description: isUk
-        ? "Умови збору та обробки персональних даних у веб-студії Codeworth."
-        : "Terms for collection and processing of personal data at Codeworth web studio.",
+        ? "Умови збору та обробки персональних даних у Codeworth."
+        : "Terms for collection and processing of personal data at Codeworth.",
       type: "website",
       url: `https://codeworth.uk/${lang}/privacy`,
       images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Codeworth" }],
@@ -82,14 +82,14 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
                   </p>
                   <h2>1. Хто ми</h2>
                   <p>
-                    Codeworth — веб-студія повного циклу, що надає послуги розробки сайтів, SEO,
-                    дизайну та продає готові нішеві рішення через маркетплейс.
+                    Codeworth — ML/AI-консалтингова компанія, що розробляє продакшн-системи
+                    машинного навчання, рішення для роботи з даними та MLOps для бізнесу у Великій Британії.
                   </p>
                   <ul>
                     <li>Сайт: codeworth.uk</li>
                     <li>Email: hello@codeworth.uk</li>
                     <li>Telegram: @codeworth_uk</li>
-                    <li>Місцезнаходження: м. Київ, Україна</li>
+                    <li>Місцезнаходження: Велика Британія</li>
                   </ul>
                   <h2>2. Які дані ми збираємо</h2>
                   <p>Ми збираємо лише ті дані, які необхідні для надання послуг та покращення вашого досвіду:</p>

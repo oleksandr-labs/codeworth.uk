@@ -236,7 +236,9 @@ export default async function ComparePage({ params }: { params: Promise<Params> 
                 <h3 className="font-heading font-extrabold text-xl text-neutral-900 dark:text-white mb-2">
                   {isUk ? "Обирайте Codeworth, якщо:" : "Choose Codeworth if:"}
                 </h3>
-                <p className="text-sm text-indigo-600 font-medium mb-5">Codeworth web studio</p>
+                <p className="text-sm text-indigo-600 font-medium mb-5">
+                  {isUk ? "ML/AI-консалтинг Codeworth" : "Codeworth ML/AI consultancy"}
+                </p>
                 <ul className="space-y-3">
                   {(isUk ? data.useCasesCodeworthUk : data.useCasesCodeworthEn).map((item) => (
                     <li key={item} className="flex items-start gap-3">

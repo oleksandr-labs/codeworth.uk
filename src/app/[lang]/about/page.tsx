@@ -103,7 +103,7 @@ const organizationSchema = {
   "@type": "Organization",
   name: "Codeworth",
   url: "https://codeworth.uk",
-  logo: "https://codeworth.uk/logo.svg",
+  logo: "https://codeworth.uk/icon-512.png",
   description: "ML-компанія — кастомні моделі машинного навчання, fraud detection, NLP, комп'ютерний зір та MLOps для UK та EU бізнесу.",
   foundingDate: "2021",
   numberOfEmployees: { "@type": "QuantitativeValue", value: 12 },

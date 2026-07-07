@@ -23,8 +23,8 @@ export async function generateMetadata({
     ? "Безкоштовні матеріали для бізнесу — чек-листи, гайди, шаблони | Codeworth"
     : "Free Business Resources — Checklists, Guides, Templates | Codeworth";
   const desc = isUk
-    ? "Завантажте безкоштовно: чек-ліст запуску сайту, SEO-аудит, гайди з цифрового маркетингу. 9+ практичних матеріалів від веб-студії Codeworth."
-    : "Download for free: website launch checklist, SEO audit, digital marketing guides. 9+ practical resources from Codeworth web studio.";
+    ? "Завантажте безкоштовно: чек-ліст оцінки ROI від ML, гайди з MLOps та роботи з даними. 9+ практичних матеріалів від ML/AI-консалтингу Codeworth."
+    : "Download for free: ML ROI assessment checklist, MLOps and data readiness guides. 9+ practical resources from Codeworth ML/AI consultancy.";
   return {
     title,
     description: desc,
@@ -177,18 +177,18 @@ export default async function ResourcesPage({
           <Container>
             <div className="text-center text-white">
               <h2 className="text-2xl font-bold mb-3">
-                {isUk ? "Хочете профі-аудит вашого сайту?" : "Want a Pro Audit of Your Website?"}
+                {isUk ? "Хочете безкоштовну ML-консультацію?" : "Want a Free ML Consultation?"}
               </h2>
               <p className="text-indigo-200 mb-6 max-w-lg mx-auto">
                 {isUk
-                  ? "Наші спеціалісти проведуть повний SEO та UX-аудит і дадуть конкретні рекомендації."
-                  : "Our specialists will conduct a full SEO and UX audit with concrete recommendations."}
+                  ? "Наші ML-інженери оцінять ваш кейс і дадуть конкретні рекомендації щодо впровадження."
+                  : "Our ML engineers will assess your use case and give concrete implementation recommendations."}
               </p>
               <Link
                 href={`/${lang}/contact`}
                 className="inline-flex items-center gap-2 bg-white text-indigo-600 font-semibold px-8 py-3 rounded-xl hover:bg-indigo-50 transition-colors"
               >
-                {isUk ? "Замовити аудит" : "Order Audit"}
+                {isUk ? "Отримати консультацію" : "Get a Consultation"}
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>

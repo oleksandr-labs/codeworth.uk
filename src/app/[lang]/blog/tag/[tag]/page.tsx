@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ? `#${decoded} — Статті блогу Codeworth`
       : `#${decoded} — Codeworth Blog Articles`,
     description: isUk
-      ? `${posts.length} ${posts.length === 1 ? "стаття" : posts.length < 5 ? "статті" : "статей"} з тегом «${decoded}» у блозі веб-студії Codeworth.`
+      ? `${posts.length} ${posts.length === 1 ? "стаття" : posts.length < 5 ? "статті" : "статей"} з тегом «${decoded}» у блозі Codeworth.`
       : `${posts.length} ${posts.length === 1 ? "article" : "articles"} tagged «${decoded}» on the Codeworth blog.`,
     openGraph: {
       title: isUk ? `#${decoded} — Блог Codeworth` : `#${decoded} — Codeworth Blog`,

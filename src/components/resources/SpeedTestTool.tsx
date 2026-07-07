@@ -217,10 +217,10 @@ export function SpeedTestTool({ lang }: { lang: string }) {
                   : "Codeworth improves Core Web Vitals and PageSpeed Score for Next.js, WordPress, and other platforms."}
               </p>
               <Link
-                href={`/${lang}/services/seo`}
+                href={`/${lang}/contact`}
                 className="inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-700 hover:text-indigo-900 transition-colors"
               >
-                {isUk ? "Замовити SEO-оптимізацію →" : "Order SEO Optimization →"}
+                {isUk ? "Замовити оптимізацію →" : "Order optimization →"}
               </Link>
             </div>
           </div>

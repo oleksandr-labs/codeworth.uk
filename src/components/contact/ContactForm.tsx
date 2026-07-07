@@ -104,7 +104,7 @@ export function ContactForm() {
       setStatus("success");
       formRef.current?.reset();
     } catch {
-      setErrorMsg(isUk ? "Мережева помилка. Спробуйте ще раз або напишіть у Telegram." : "Network error. Please try again or write to us on Telegram.");
+      setErrorMsg(isUk ? "Мережева помилка. Спробуйте ще раз або напишіть на hello@codeworth.uk чи в Telegram." : "Network error. Please try again, or email hello@codeworth.uk or message us on Telegram.");
       setStatus("error");
     }
   }
@@ -164,7 +164,7 @@ export function ContactForm() {
             name="contact"
             type="text"
             required
-            placeholder="hello@company.ua або +380..."
+            placeholder={isUk ? "hello@company.co.uk або +44..." : "hello@company.co.uk or +44..."}
             autoComplete="email"
             className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-neutral-900 dark:text-white focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 dark:focus:ring-indigo-900 transition-all placeholder:text-neutral-400 dark:placeholder:text-neutral-500"
           />

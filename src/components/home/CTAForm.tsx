@@ -66,7 +66,7 @@ export function CTAForm() {
       </div>
       {status === "error" && (
         <p className="text-red-300 text-xs mt-2">
-          {isUk ? "Помилка. Напишіть нам у Telegram." : "Error. Please message us on Telegram."}
+          {isUk ? "Помилка. Напишіть на hello@codeworth.uk або в Telegram." : "Error. Please email hello@codeworth.uk or message us on Telegram."}
         </p>
       )}
       <button

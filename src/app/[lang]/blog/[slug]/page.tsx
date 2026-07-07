@@ -159,7 +159,7 @@ export default async function BlogPostPage({ params }: Props) {
       "@type": "Organization",
       name: "Codeworth",
       url: "https://codeworth.uk",
-      logo: { "@type": "ImageObject", url: "https://codeworth.uk/logo.png" },
+      logo: { "@type": "ImageObject", url: "https://codeworth.uk/icon-512.png" },
     },
     datePublished: post.date,
     dateModified: post.updatedDate ?? post.date,

@@ -19,12 +19,6 @@ jest.mock("next/link", () => {
   return MockLink;
 });
 
-// ── Cart mock ─────────────────────────────────────────────────────────────────
-const mockUseCart = jest.fn(() => ({ count: 0 }));
-jest.mock("@/hooks/useCart", () => ({
-  useCart: () => mockUseCart(),
-}));
-
 // Helper to set the pathname mock
 function setPathname(path: string) {
   // eslint-disable-next-line @typescript-eslint/no-require-imports
@@ -33,7 +27,6 @@ function setPathname(path: string) {
 
 beforeEach(() => {
   setPathname("/uk");
-  mockUseCart.mockReturnValue({ count: 0 });
 });
 
 describe("BottomNav", () => {
@@ -41,7 +34,7 @@ describe("BottomNav", () => {
     render(<BottomNav />);
     expect(screen.getByText("Головна")).toBeInTheDocument();
     expect(screen.getByText("Послуги")).toBeInTheDocument();
-    expect(screen.getByText("Маркетплейс")).toBeInTheDocument();
+    expect(screen.getByText("Портфоліо")).toBeInTheDocument();
     expect(screen.getByText("Блог")).toBeInTheDocument();
     expect(screen.getByText("Контакти")).toBeInTheDocument();
   });
@@ -79,20 +72,4 @@ describe("BottomNav", () => {
     expect(servicesLink).toHaveAttribute("aria-current", "page");
   });
 
-  it("не показує cart badge коли count = 0", () => {
-    render(<BottomNav />);
-    expect(screen.queryByText("0")).not.toBeInTheDocument();
-  });
-
-  it("показує cart badge коли є товари в кошику", () => {
-    mockUseCart.mockReturnValue({ count: 3 });
-    render(<BottomNav />);
-    expect(screen.getByText("3")).toBeInTheDocument();
-  });
-
-  it("показує 9+ коли count > 9", () => {
-    mockUseCart.mockReturnValue({ count: 12 });
-    render(<BottomNav />);
-    expect(screen.getByText("9+")).toBeInTheDocument();
-  });
 });

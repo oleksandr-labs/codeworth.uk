@@ -95,21 +95,21 @@ describe("Container", () => {
 import { Footer } from "../Footer";
 
 describe("Footer", () => {
-  it("renders without error and shows the studio tagline", () => {
+  it("renders without error and shows the ML/AI consultancy tagline", () => {
     render(<Footer />);
-    expect(screen.getByText(/будуємо цифрові гнізда/i)).toBeInTheDocument();
+    expect(screen.getByText(/production-ready AI\/ML рішення/i)).toBeInTheDocument();
   });
 
   it("renders Ukrainian service links with locale-prefixed hrefs", () => {
     render(<Footer />);
-    expect(screen.getByRole("link", { name: /розробка сайтів/i })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: /machine learning/i })).toHaveAttribute(
       "href",
-      "/uk/services/website-dev"
+      "/uk/services/machine-learning"
     );
-    expect(screen.getByRole("link", { name: /інтернет-магазини/i })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /seo-просування/i })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: /nlp та обробка тексту/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /mlops та деплой/i })).toHaveAttribute(
       "href",
-      "/uk/services/seo"
+      "/uk/services/mlops"
     );
   });
 
@@ -121,8 +121,8 @@ describe("Footer", () => {
 
   it("renders social links and the current copyright year", () => {
     render(<Footer />);
-    expect(screen.getByRole("link", { name: /telegram/i })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /instagram/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /linkedin/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /github/i })).toBeInTheDocument();
     const year = new Date().getFullYear().toString();
     expect(screen.getByText(new RegExp(year))).toBeInTheDocument();
   });

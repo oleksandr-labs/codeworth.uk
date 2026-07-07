@@ -93,13 +93,8 @@ const organizationSchema = {
   "@type": "Organization",
   name: "Codeworth",
   url: "https://codeworth.uk",
-  logo: "https://codeworth.uk/logo.svg",
+  logo: "https://codeworth.uk/icon-512.png",
   description: "AI and Machine Learning consultancy — custom ML models, fraud detection, churn prediction, NLP, computer vision and MLOps for UK businesses.",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Київ",
-    addressCountry: "UA",
-  },
   email: "hello@codeworth.uk",
 };
 

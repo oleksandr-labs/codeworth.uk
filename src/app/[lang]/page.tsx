@@ -158,7 +158,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     "@id": "https://codeworth.uk/#organization",
     name: "Codeworth",
     url: "https://codeworth.uk",
-    logo: "https://codeworth.uk/logo.png",
+    logo: "https://codeworth.uk/icon-512.png",
     image: "https://codeworth.uk/opengraph-image",
     description: isUk
       ? "ML/AI консалтинг для бізнесу — кастомні ML-моделі, NLP, комп'ютерний зір, MLOps, LLM та RAG системи."

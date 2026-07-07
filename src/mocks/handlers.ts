@@ -10,16 +10,4 @@ export const handlers = [
   http.post("/api/newsletter", () => {
     return HttpResponse.json({ ok: true, message: "Підписка оформлена" }, { status: 200 });
   }),
-
-  // POST /api/auth/login
-  http.post("/api/auth/login", async ({ request }) => {
-    const body = (await request.json()) as { email?: string; password?: string };
-    if (body?.email === "demo@Codeworth.ua" && body?.password === "demo1234") {
-      return HttpResponse.json(
-        { ok: true, user: { email: "demo@Codeworth.ua", name: "Demo User", role: "user" } },
-        { status: 200 }
-      );
-    }
-    return HttpResponse.json({ ok: false, error: "Невірні дані" }, { status: 401 });
-  }),
 ];
