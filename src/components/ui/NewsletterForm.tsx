@@ -8,15 +8,21 @@ interface Props {
   className?: string;
 }
 
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 export function NewsletterForm({ variant = "inline", className = "" }: Props) {
   const isUk = useLocale() === "uk";
   const [email, setEmail] = useState("");
+  const [touched, setTouched] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const emailValid = EMAIL_RE.test(email.trim());
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (status === "loading" || status === "success") return;
+    setTouched(true);
+    if (!emailValid) return;
 
     setStatus("loading");
     setErrorMsg("");
@@ -62,14 +68,20 @@ export function NewsletterForm({ variant = "inline", className = "" }: Props) {
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          onBlur={() => setTouched(true)}
           placeholder="your@email.com"
           required
-          aria-describedby={errorMsg ? "newsletter-error-compact" : undefined}
-          className="w-full px-3 py-2 rounded-lg border border-indigo-200 bg-white dark:bg-neutral-900 text-sm dark:text-white mb-2 focus:outline-none focus:border-indigo-400 dark:border-indigo-700 placeholder:text-neutral-400 dark:placeholder:text-neutral-500"
+          aria-invalid={touched && !emailValid}
+          aria-describedby={errorMsg || (touched && !emailValid) ? "newsletter-error-compact" : undefined}
+          className={`w-full px-3 py-2 rounded-lg border bg-white dark:bg-neutral-900 text-sm dark:text-white mb-2 focus:outline-none placeholder:text-neutral-400 dark:placeholder:text-neutral-500 ${
+            touched && !emailValid
+              ? "border-red-300 focus:border-red-400"
+              : "border-indigo-200 dark:border-indigo-700 focus:border-indigo-400"
+          }`}
         />
-        {errorMsg && (
+        {(errorMsg || (touched && !emailValid)) && (
           <p id="newsletter-error-compact" role="alert" aria-live="assertive" className="text-xs text-red-500 mb-2">
-            {errorMsg}
+            {errorMsg || (isUk ? "Введіть коректний email" : "Enter a valid email address")}
           </p>
         )}
         <button
@@ -95,10 +107,16 @@ export function NewsletterForm({ variant = "inline", className = "" }: Props) {
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
+        onBlur={() => setTouched(true)}
         placeholder="your@email.com"
         required
-        aria-describedby={errorMsg ? "newsletter-error-inline" : undefined}
-        className="flex-1 px-5 py-3 rounded-xl border border-indigo-200 bg-white dark:bg-neutral-900 text-neutral-900 dark:text-white placeholder:text-neutral-400 focus:outline-none focus:border-indigo-400 transition-colors"
+        aria-invalid={touched && !emailValid}
+        aria-describedby={errorMsg || (touched && !emailValid) ? "newsletter-error-inline" : undefined}
+        className={`flex-1 px-5 py-3 rounded-xl border bg-white dark:bg-neutral-900 text-neutral-900 dark:text-white placeholder:text-neutral-400 focus:outline-none transition-colors ${
+          touched && !emailValid
+            ? "border-red-300 focus:border-red-400"
+            : "border-indigo-200 focus:border-indigo-400"
+        }`}
       />
       <button
         type="submit"
@@ -109,9 +127,9 @@ export function NewsletterForm({ variant = "inline", className = "" }: Props) {
       >
         <span aria-live="polite">{status === "loading" ? (isUk ? "Надсилаємо..." : "Sending...") : (isUk ? "Підписатися" : "Subscribe")}</span>
       </button>
-      {errorMsg && (
+      {(errorMsg || (touched && !emailValid)) && (
         <p id="newsletter-error-inline" role="alert" aria-live="assertive" className="text-xs text-red-500 text-center w-full">
-          {errorMsg}
+          {errorMsg || (isUk ? "Введіть коректний email" : "Enter a valid email address")}
         </p>
       )}
     </form>

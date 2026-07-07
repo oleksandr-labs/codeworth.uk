@@ -5,6 +5,11 @@ import { CheckCircle, Loader2, Send } from "lucide-react";
 
 type PartnerType = "referral" | "agency" | "tech";
 
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const inputClasses =
+  "w-full px-4 py-2.5 border rounded-xl bg-white dark:bg-neutral-900 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-neutral-500 focus:outline-none focus:ring-2 focus:border-transparent text-sm";
+
 const TYPE_OPTIONS: { value: PartnerType; label: { uk: string; en: string }; description: { uk: string; en: string } }[] = [
   {
     value: "referral",
@@ -27,7 +32,11 @@ export function PartnershipForm({ lang }: { lang: string }) {
   const isUk = lang === "uk";
 
   const [name, setName] = useState("");
+  const [nameTouched, setNameTouched] = useState(false);
   const [email, setEmail] = useState("");
+  const [emailTouched, setEmailTouched] = useState(false);
+  const nameValid = name.trim().length >= 2;
+  const emailValid = EMAIL_RE.test(email.trim());
   const [type, setType] = useState<PartnerType>("referral");
   const [description, setDescription] = useState("");
   const [audience, setAudience] = useState("");
@@ -38,6 +47,9 @@ export function PartnershipForm({ lang }: { lang: string }) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setNameTouched(true);
+    setEmailTouched(true);
+    if (!nameValid || !emailValid) return;
     setLoading(true);
     setError(null);
 
@@ -68,10 +80,10 @@ export function PartnershipForm({ lang }: { lang: string }) {
   if (success) {
     return (
       <div className="flex flex-col items-center gap-4 py-10 text-center">
-        <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center">
-          <CheckCircle className="w-7 h-7 text-green-600" />
+        <div className="w-14 h-14 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center">
+          <CheckCircle className="w-7 h-7 text-green-600 dark:text-green-400" />
         </div>
-        <h3 className="text-xl font-semibold text-gray-900">
+        <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
           {isUk ? "Заявку отримано!" : "Application received!"}
         </h3>
         <p className="text-gray-600 dark:text-neutral-300 max-w-sm">
@@ -108,9 +120,20 @@ export function PartnershipForm({ lang }: { lang: string }) {
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
+            onBlur={() => setNameTouched(true)}
+            aria-invalid={nameTouched && !nameValid}
             placeholder={isUk ? "Олена Коваль" : "Jane Smith"}
-            className="w-full px-4 py-2.5 border border-gray-300 rounded-xl text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm"
+            className={`${inputClasses} ${
+              nameTouched && !nameValid
+                ? "border-red-300 focus:ring-red-500"
+                : "border-gray-300 dark:border-neutral-700 focus:ring-indigo-500"
+            }`}
           />
+          {nameTouched && !nameValid && (
+            <p className="mt-1 text-xs text-red-600">
+              {isUk ? "Ім'я має містити щонайменше 2 символи" : "Name must be at least 2 characters"}
+            </p>
+          )}
         </div>
         <div>
           <label htmlFor="partner-email" className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-1.5">
@@ -122,9 +145,20 @@ export function PartnershipForm({ lang }: { lang: string }) {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            onBlur={() => setEmailTouched(true)}
+            aria-invalid={emailTouched && !emailValid}
             placeholder="you@company.com"
-            className="w-full px-4 py-2.5 border border-gray-300 rounded-xl text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm"
+            className={`${inputClasses} ${
+              emailTouched && !emailValid
+                ? "border-red-300 focus:ring-red-500"
+                : "border-gray-300 dark:border-neutral-700 focus:ring-indigo-500"
+            }`}
           />
+          {emailTouched && !emailValid && (
+            <p className="mt-1 text-xs text-red-600">
+              {isUk ? "Введіть коректний email" : "Enter a valid email address"}
+            </p>
+          )}
         </div>
       </div>
 
@@ -138,7 +172,7 @@ export function PartnershipForm({ lang }: { lang: string }) {
               key={opt.value}
               className={`relative flex flex-col gap-1 p-3 border-2 rounded-xl cursor-pointer transition-colors ${
                 type === opt.value
-                  ? "border-indigo-500 bg-indigo-50"
+                  ? "border-indigo-500 bg-indigo-50 dark:bg-indigo-950"
                   : "border-gray-200 dark:border-neutral-700 hover:border-indigo-300"
               }`}
             >
@@ -150,7 +184,7 @@ export function PartnershipForm({ lang }: { lang: string }) {
                 onChange={() => setType(opt.value)}
                 className="sr-only"
               />
-              <span className="text-sm font-semibold text-gray-900">{opt.label[isUk ? "uk" : "en"]}</span>
+              <span className="text-sm font-semibold text-gray-900 dark:text-white">{opt.label[isUk ? "uk" : "en"]}</span>
               <span className="text-xs text-gray-500 dark:text-neutral-400 leading-snug">{opt.description[isUk ? "uk" : "en"]}</span>
             </label>
           ))}
@@ -168,7 +202,7 @@ export function PartnershipForm({ lang }: { lang: string }) {
           value={audience}
           onChange={(e) => setAudience(e.target.value)}
           placeholder={isUk ? "напр. 500+ підписників, 20 клієнтів/міс" : "e.g. 500+ followers, 20 clients/mo"}
-          className="w-full px-4 py-2.5 border border-gray-300 rounded-xl text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm"
+          className={`${inputClasses} border-gray-300 dark:border-neutral-700 focus:ring-indigo-500`}
         />
       </div>
 
@@ -189,12 +223,12 @@ export function PartnershipForm({ lang }: { lang: string }) {
               ? "Хто ви, чим займаєтесь, чому хочете стати партнером Codeworth..."
               : "Who you are, what you do, why you want to partner with Codeworth..."
           }
-          className="w-full px-4 py-2.5 border border-gray-300 rounded-xl text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm resize-none"
+          className={`${inputClasses} border-gray-300 dark:border-neutral-700 focus:ring-indigo-500 resize-none`}
         />
       </div>
 
       {error && (
-        <p role="alert" className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-2">
+        <p role="alert" aria-live="assertive" className="text-sm text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-950 border border-red-200 dark:border-red-800 rounded-xl px-4 py-2">
           {error}
         </p>
       )}

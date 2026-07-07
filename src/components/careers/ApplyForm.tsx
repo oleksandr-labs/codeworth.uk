@@ -10,13 +10,28 @@ interface Props {
   isUk: boolean;
 }
 
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const inputClasses =
+  "w-full rounded-xl px-4 py-2.5 text-sm border bg-white dark:bg-neutral-900 text-neutral-900 dark:text-white focus:outline-none focus:ring-2 focus:border-transparent transition";
+
 export function ApplyForm({ positionTitle, lang: _lang, isUk }: Props) {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const formRef = useRef<HTMLFormElement>(null);
 
+  const [nameValue, setNameValue] = useState("");
+  const [nameTouched, setNameTouched] = useState(false);
+  const [emailValue, setEmailValue] = useState("");
+  const [emailTouched, setEmailTouched] = useState(false);
+  const nameValid = nameValue.trim().length >= 2;
+  const emailValid = EMAIL_RE.test(emailValue.trim());
+
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setNameTouched(true);
+    setEmailTouched(true);
+    if (!nameValid || !emailValid) return;
     setStatus("loading");
     setErrorMsg("");
 
@@ -52,12 +67,12 @@ export function ApplyForm({ positionTitle, lang: _lang, isUk }: Props) {
 
   if (status === "success") {
     return (
-      <div className="bg-green-50 border border-green-200 rounded-2xl p-6 text-center">
+      <div className="bg-green-50 dark:bg-green-950 border border-green-200 dark:border-green-800 rounded-2xl p-6 text-center">
         <CheckCircle className="w-10 h-10 text-green-500 mx-auto mb-3" />
-        <h3 className="font-bold text-green-900 text-lg mb-2">
+        <h3 className="font-bold text-green-900 dark:text-green-300 text-lg mb-2">
           {isUk ? "Заявку надіслано!" : "Application Sent!"}
         </h3>
-        <p className="text-green-700 text-sm">
+        <p className="text-green-700 dark:text-green-400 text-sm">
           {isUk
             ? "Дякуємо за інтерес! Ми розглянемо вашу заявку та напишемо протягом 2 робочих днів."
             : "Thank you for your interest! We'll review your application and get back to you within 2 business days."}
@@ -83,9 +98,22 @@ export function ApplyForm({ positionTitle, lang: _lang, isUk }: Props) {
           minLength={2}
           maxLength={100}
           autoComplete="name"
-          className="w-full border border-gray-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
+          value={nameValue}
+          onChange={(e) => setNameValue(e.target.value)}
+          onBlur={() => setNameTouched(true)}
+          aria-invalid={nameTouched && !nameValid}
+          className={`${inputClasses} ${
+            nameTouched && !nameValid
+              ? "border-red-300 focus:ring-red-500"
+              : "border-gray-300 dark:border-neutral-700 focus:ring-indigo-500"
+          }`}
           placeholder={isUk ? "Олексій Коваленко" : "Alex Smith"}
         />
+        {nameTouched && !nameValid && (
+          <p className="mt-1 text-xs text-red-600">
+            {isUk ? "Ім'я має містити щонайменше 2 символи" : "Name must be at least 2 characters"}
+          </p>
+        )}
       </div>
 
       <div>
@@ -99,9 +127,22 @@ export function ApplyForm({ positionTitle, lang: _lang, isUk }: Props) {
           required
           maxLength={254}
           autoComplete="email"
-          className="w-full border border-gray-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
+          value={emailValue}
+          onChange={(e) => setEmailValue(e.target.value)}
+          onBlur={() => setEmailTouched(true)}
+          aria-invalid={emailTouched && !emailValid}
+          className={`${inputClasses} ${
+            emailTouched && !emailValid
+              ? "border-red-300 focus:ring-red-500"
+              : "border-gray-300 dark:border-neutral-700 focus:ring-indigo-500"
+          }`}
           placeholder="you@example.com"
         />
+        {emailTouched && !emailValid && (
+          <p className="mt-1 text-xs text-red-600">
+            {isUk ? "Введіть коректний email" : "Enter a valid email address"}
+          </p>
+        )}
       </div>
 
       <div>
@@ -113,7 +154,7 @@ export function ApplyForm({ positionTitle, lang: _lang, isUk }: Props) {
           name="portfolioUrl"
           type="url"
           maxLength={500}
-          className="w-full border border-gray-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
+          className={`${inputClasses} border-gray-300 dark:border-neutral-700 focus:ring-indigo-500`}
           placeholder="https://github.com/username"
         />
       </div>
@@ -130,7 +171,7 @@ export function ApplyForm({ positionTitle, lang: _lang, isUk }: Props) {
           minLength={20}
           maxLength={3000}
           rows={5}
-          className="w-full border border-gray-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition resize-none"
+          className={`${inputClasses} border-gray-300 dark:border-neutral-700 focus:ring-indigo-500 resize-none`}
           placeholder={
             isUk
               ? "Розкажіть про свій досвід, чому хочете приєднатися до Codeworth та що вас виділяє серед інших кандидатів..."
@@ -140,9 +181,9 @@ export function ApplyForm({ positionTitle, lang: _lang, isUk }: Props) {
       </div>
 
       {status === "error" && (
-        <div role="alert" aria-live="assertive" className="flex items-start gap-2 bg-red-50 border border-red-200 rounded-xl px-4 py-3">
+        <div role="alert" aria-live="assertive" className="flex items-start gap-2 bg-red-50 dark:bg-red-950 border border-red-200 dark:border-red-800 rounded-xl px-4 py-3">
           <AlertCircle className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
-          <span className="text-sm text-red-700">{errorMsg}</span>
+          <span className="text-sm text-red-700 dark:text-red-400">{errorMsg}</span>
         </div>
       )}
 
