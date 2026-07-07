@@ -1,8 +1,8 @@
 # codeworth.uk — ML Adaptation Master Log
 
-**Мета:** Документація всіх змін по адаптації сайту під Machine Learning (Sprints 6–65).
+**Мета:** Документація всіх змін по адаптації сайту під Machine Learning (Sprints 6–67).
 **Початок роботи:** 2026-06-23
-**Остання зміна:** 2026-06-24
+**Остання зміна:** 2026-07-07
 **Виконавець:** Claude AI (паралельні агент-спринти)
 
 ---
@@ -807,6 +807,21 @@
 ### Sprint 66 — Geo 10 cities ML content + page polish
 - **`geo.ts`** — ML-контент для Birmingham, Manchester, Leeds, Bristol, Edinburgh, Glasgow, Cambridge, Oxford, Sheffield, Newcastle (реальні компанії: JLR, Auto Trader, Asda, Airbus, RBS, AstraZeneca, ARM, Oxbotica, AMRC, Sage). Тепер 15/25 міст з ML-контентом
 - **`contact/page.tsx`** — виправлено невідповідність UK-цін (Discovery £3,000 → PoC від £1,800, узгоджено з EN та рештою сайту)
+
+### Sprint 67 — CRM leads intake, manifest/FAQ fix, trust/SEO аудит, довидалення legacy (2026-07-07)
+- **CRM lead integration** — `api/contact/route.ts` + `api/apply/route.ts` тепер шлють ліди у внутрішню CRM (`POST /api/crm/leads/ingest`, shared-secret `X-Ingest-Token`) на додачу до Telegram/Resend; секрети `CRM_INGEST_URL`/`CRM_INGEST_TOKEN` додані як GH Actions secrets; нова таблиця `leads` + вкладка «Заявки» на боці CRM (`dashboard/TODO_CRM.md` → розділ 4); перевірено end-to-end на проді. Виявлено попутно: `TELEGRAM_BOT_TOKEN`/`RESEND_API_KEY` GH secrets були відсутні — ліди раніше не потрапляли нікуди
+- **Manifest/іконки** — `public/manifest.json` мав биті шляхи `/icons/icon-192.png` (старий marketplace-брендинг, файлів не існувало) і не був тим самим файлом, що генерував незалінкований `src/app/manifest.ts` (видалено як мертвий код); згенеровано реальні `icon-192.png`/`icon-512.png` з наявної бренд-марки (та сама, що на `opengraph-image.tsx`)
+- **FAQ-акордеон стандартизовано** — спільний `FAQSection`/`NicheFAQ` (перше питання розгорнуте, наступні 2 згорнуті, решта за "показати ще") тепер на 7 сторінках (home, pricing, services, services/[slug], location/[city], ai/[niche], ml/[niche]) — раніше лише на home, решта показували всі відповіді одразу
+- **Trust/SEO аудит** (фоновий Explore-агент + ручна перевірка кожної знахідки):
+  - Organization JSON-LD (`layout.tsx`) та укр. Privacy Policy — прибрано адресу «Київ, Україна», суперечила UK-позиціонуванню (about/page.tsx вже мав London/GB коректно; EN-версія Privacy вже була коректна)
+  - Биті JSON-LD `logo: logo.svg/logo.png` (файлів не існувало) на 4 сторінках → `icon-512.png`
+  - Битий лінк `/services/seo` (не існує серед 7 реальних послуг) у `SpeedTestTool.tsx` → `/contact`
+  - UA-стиль плейсхолдер контакт-форми (`hello@company.ua`, `+380`) → UK-стиль; error-стани форм тепер згадують email поряд з Telegram
+  - Залишки "web studio"/"веб-студія" в `compare/[slug]/page.tsx`, `resources/page.tsx` (meta+CTA), `glossary.ts` (5 прикладів), `blog/tag/[tag]/page.tsx` (meta)
+  - Хибні знахідки агента (перевірено, змін не було): `/style-guide` та `/offline` вже мали `robots: noindex`; "Лондон, UK · Київ, Україна" у Footer — свідома заява про подвійний офіс, не помилка
+- **Довидалено legacy web-studio код**, пропущений в Sprint 2026-07-02 (доповнення до [TODO_REMOVE_LEGACY_ECOMMERCE.md](TODO_REMOVE_LEGACY_ECOMMERCE.md)): сирітський `/dashboard` (964 рядки, customizer/subscription UI, ніде не залінкований) + fake localStorage `useAuth`/`/api/auth/login`, мертві `useCart`/`useCompare` хуки, e2e-тести на видалені `/marketplace`+`/auth` роути (`marketplace.spec.ts`, `auth.spec.ts`)
+- **Побіжно полагоджено 2 unit-тести** (`Layout.test.tsx`, `BottomNav.test.tsx`), що вже провалювались до цієї сесії — перевіряли контент доби веб-студії, якого давно нема в компонентах (studio tagline, Telegram/Instagram соцлінки, "Маркетплейс" nav-item); базовий рівень тестового боргу до сесії: 126 provalених з 1173, після — 120 (без регресій, лише прибрані/полагоджені)
+- Деплой: 3 коміти через GitHub Actions (`268016e`, `13e678e`, `3aaa068`), усі successful build+deploy
 
 ---
 

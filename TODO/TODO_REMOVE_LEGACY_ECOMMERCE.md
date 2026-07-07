@@ -1,4 +1,6 @@
 > ✅ **ВИКОНАНО 2026-07-02 (commit 64b38c9).** Усі пункти нижче реалізовано: 324 файли / ~151k рядків видалено, `tsc --noEmit` чисто, `npm test` 1046/1173 (залишок — pre-existing контент-дрейф, не пов'язаний з цим прибиранням), задеплоєно через GitHub Actions. Файл лишено як історичний reference/чекліст.
+>
+> ⚠️ **Доповнення 2026-07-07 (Sprint 67, commit 3aaa068):** первинний аудит не відловив ще 4 сироти тієї ж категорії — сторінка `/dashboard` (customizer/subscription UI, ніде не залінкована) + fake `useAuth`/`/api/auth/login`, мертві `useCart`/`useCompare` хуки, e2e-тести `marketplace.spec.ts`/`auth.spec.ts` (перевіряли вже видалені роути). Усі видалено, деталі — [TODO_ML_ADAPTATION.md → Sprint 67](TODO_ML_ADAPTATION.md).
 
 # codeworth.uk — Видалення залишків веб-студії/e-commerce (HIGH PRIORITY)
 

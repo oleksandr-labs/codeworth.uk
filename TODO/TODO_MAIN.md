@@ -231,6 +231,11 @@
 - [ ] [Продуктивність](tech/TODO_optimization.md) — bundle analyzer, ANALYZE=true
 - [ ] [Безпека](tech/TODO_security.md) — перевірити CSP headers
 - [ ] [Тестування](tech/TODO_testing.md) — оновити тести після ML-реброндингу
+- ✅ [CRM Lead Integration](tech/TODO_integrations.md#crm-та-lead-management) (2026-07-07) — contact/apply форми шлють ліди у внутрішню CRM (`CRM_INGEST_URL`/`CRM_INGEST_TOKEN`), деталі схеми/API в `dashboard/TODO_CRM.md`
+- ✅ Trust/SEO аудит (2026-07-07) — прибрано адресу Кyiv з Organization JSON-LD та укр. Privacy Policy (невідповідність UK-позиціонуванню), биті `logo.svg/png` посилання, битий `/services/seo` лінк, залишки "web studio" в compare/resources/glossary
+- ✅ Довидалено legacy web-studio код, пропущений в Sprint 2026-07-02 (див. [TODO_REMOVE_LEGACY_ECOMMERCE.md](TODO_REMOVE_LEGACY_ECOMMERCE.md)) — сирітський `/dashboard` (customizer/subscription), `useAuth`/`useCart`/`useCompare`, e2e-тести на видалені `/marketplace`+`/auth` роути
+- ✅ Manifest/іконки (2026-07-07) — `public/manifest.json` мав биті `/icons/icon-*.png` (старий marketplace-брендинг) і не був тим самим файлом, що генерував `src/app/manifest.ts` (мертвий, видалено); згенеровано реальні `icon-192.png`/`icon-512.png`
+- ✅ FAQ-акордеон стандартизовано (2026-07-07) — спільний `FAQSection`/`NicheFAQ` на 7 сторінках (3 питання, перше розгорнуте, решта за "показати ще"), раніше лише на головній
 
 ### GitHub Actions CI/CD
 - Деплой: push to `main` → build → rsync → atlas

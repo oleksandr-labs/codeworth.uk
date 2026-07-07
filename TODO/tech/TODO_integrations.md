@@ -16,10 +16,10 @@
 - [ ] Yandex.Metrica (не актуально)
 
 ## CRM та Lead Management
-- [ ] Інтеграція з CRM (KeyCRM, Zoho, Pipedrive, HubSpot)
-- [ ] Автоматичний імпорт лідів з форм
-- [ ] Webhooks для синхронізації даних
-- [ ] API інтеграція для двостороннього зв'язку
+- ✅ Інтеграція з внутрішньою CRM (2026-07-07) — власна CRM на Hetzner ERP Dashboard (`C:\HETZNER\dashboard\`, репо `hetzner-static-various-sites`, документація `TODO_CRM.md` → розділ 4 «Заявки»), не сторонній SaaS (KeyCRM/Zoho/Pipedrive/HubSpot не використовуються)
+- ✅ Автоматичний імпорт лідів з форм — `api/contact/route.ts` та `api/apply/route.ts` шлють POST на CRM ingest-ендпоінт одразу після валідації (до Telegram/Resend-блоків, які лишаються як fallback-канали)
+- ✅ Webhooks/API інтеграція — `POST /api/crm/leads/ingest` на боці CRM, авторизація через shared-secret `X-Ingest-Token` (env vars `CRM_INGEST_URL` + `CRM_INGEST_TOKEN`, задані як GH Actions secrets репо codeworth.uk, синкаються в `.env` сервера через `deploy.yml`)
+- [ ] Двосторонній зв'язок (CRM → сайт, напр. статус заявки в акаунті клієнта) — не реалізовано, наразі лише сайт → CRM
 
 ## Месенджери та чат
 - ✅ Telegram Bot API (сповіщення про нові заявки) — `api/contact/route.ts`, `api/newsletter/route.ts`, `api/order/route.ts`
