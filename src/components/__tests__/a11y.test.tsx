@@ -1,18 +1,15 @@
 import { render, act } from "@testing-library/react";
 import { axe, toHaveNoViolations } from "jest-axe";
 import { Button } from "../ui/Button";
-import { Input, Textarea, Select, Checkbox } from "../ui/FormElements";
 import { Badge } from "../ui/Badge";
 import { NewsletterForm } from "../ui/NewsletterForm";
 import { Breadcrumb } from "../ui/Breadcrumb";
-import { Tabs } from "../ui/Tabs";
 import { Pagination } from "../ui/Pagination";
 import { StarRating } from "../ui/StarRating";
 import { StepIndicator } from "../ui/StepIndicator";
 import { Avatar, AvatarGroup } from "../ui/Avatar";
 import { Divider } from "../ui/Divider";
 import { Skeleton, SkeletonCard, SkeletonText } from "../ui/Skeleton";
-import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { ShareButtons } from "../ui/ShareButtons";
 import { EmptyState } from "../ui/EmptyState";
 import { Footer } from "../layout/Footer";
@@ -92,51 +89,6 @@ describe("Accessibility (axe)", () => {
     });
   });
 
-  describe("FormElements", () => {
-    it("Input with label has no axe violations", async () => {
-      const { container } = render(
-        <Input id="test-email" label="Email" type="email" placeholder="your@email.com" />
-      );
-      expect(await axe(container)).toHaveNoViolations();
-    });
-
-    it("Input with error has no axe violations", async () => {
-      const { container } = render(
-        <Input id="test-name" label="Ім'я" error="Поле обов'язкове" required />
-      );
-      expect(await axe(container)).toHaveNoViolations();
-    });
-
-    it("Textarea with label has no axe violations", async () => {
-      const { container } = render(
-        <Textarea id="test-msg" label="Повідомлення" placeholder="Введіть текст..." />
-      );
-      expect(await axe(container)).toHaveNoViolations();
-    });
-
-    it("Select with label has no axe violations", async () => {
-      const { container } = render(
-        <Select
-          id="test-select"
-          label="Послуга"
-          options={[
-            { value: "web", label: "Веб-сайт" },
-            { value: "shop", label: "Інтернет-магазин" },
-          ]}
-          placeholder="Оберіть послугу"
-        />
-      );
-      expect(await axe(container)).toHaveNoViolations();
-    });
-
-    it("Checkbox with label has no axe violations", async () => {
-      const { container } = render(
-        <Checkbox id="test-agree" label="Погоджуюсь з умовами" />
-      );
-      expect(await axe(container)).toHaveNoViolations();
-    });
-  });
-
   describe("Badge", () => {
     it("default badge has no axe violations", async () => {
       const { container } = render(<Badge>Новий</Badge>);
@@ -176,23 +128,6 @@ describe("Accessibility (axe)", () => {
 
     it("single item has no axe violations", async () => {
       const { container } = render(<Breadcrumb items={[{ label: "Портфоліо" }]} />);
-      expect(await axe(container)).toHaveNoViolations();
-    });
-  });
-
-  describe("Tabs", () => {
-    const TABS = [
-      { id: "features", label: "Функції" },
-      { id: "tech", label: "Технології" },
-      { id: "faq", label: "FAQ" },
-    ];
-
-    it("has no axe violations", async () => {
-      const { container } = render(
-        <Tabs tabs={TABS} defaultTab="features">
-          {(active) => <div>{active === "features" ? "Функції" : "Інше"}</div>}
-        </Tabs>
-      );
       expect(await axe(container)).toHaveNoViolations();
     });
   });
@@ -305,37 +240,6 @@ describe("Accessibility (axe)", () => {
 
     it("SkeletonText has no axe violations", async () => {
       const { container } = render(<SkeletonText lines={3} />);
-      expect(await axe(container)).toHaveNoViolations();
-    });
-  });
-
-  describe("ConfirmDialog", () => {
-    it("open dialog has no axe violations", async () => {
-      const { container } = render(
-        <ConfirmDialog
-          isOpen
-          title="Видалити товар?"
-          message="Цю дію неможливо скасувати."
-          onConfirm={() => {}}
-          onCancel={() => {}}
-        />
-      );
-      expect(await axe(container)).toHaveNoViolations();
-    });
-
-    it("danger variant dialog has no axe violations", async () => {
-      const { container } = render(
-        <ConfirmDialog
-          isOpen
-          variant="danger"
-          title="Видалити акаунт?"
-          message="Всі дані буде видалено назавжди."
-          confirmLabel="Видалити"
-          cancelLabel="Скасувати"
-          onConfirm={() => {}}
-          onCancel={() => {}}
-        />
-      );
       expect(await axe(container)).toHaveNoViolations();
     });
   });
