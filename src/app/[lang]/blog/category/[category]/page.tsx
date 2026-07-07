@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
-import { BLOG_POSTS, BLOG_CATEGORIES, getPostTitle, getPostExcerpt } from "@/lib/data/blog";
+import { BLOG_POSTS, BLOG_CATEGORIES, getPostTitle, getPostExcerpt, getPostCategoryId } from "@/lib/data/blog";
 import { Clock, Calendar, ArrowLeft, LayoutGrid } from "lucide-react";
 import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
@@ -25,8 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!cat) return {};
   const isUk = lang === "uk";
   const label = isUk ? cat.label.uk : cat.label.en;
-  const posts = BLOG_POSTS.filter((p) => p.category === cat.label.uk);
-  const count = posts.length;
+  const count = BLOG_POSTS.filter((p) => getPostCategoryId(p) === cat.id).length;
   const desc = isUk
     ? `${count} ${count === 1 ? "стаття" : count < 5 ? "статті" : "статей"} у категорії «${label}» — блог Codeworth.`
     : `${count} ${count === 1 ? "article" : "articles"} in the «${label}» category on the Codeworth blog.`;
@@ -66,7 +65,7 @@ export default async function BlogCategoryPage({ params }: Props) {
   const cat = BLOG_CATEGORIES.find((c) => c.id === category);
   if (!cat) notFound();
 
-  const posts = BLOG_POSTS.filter((p) => p.category === cat.label.uk).sort(
+  const posts = BLOG_POSTS.filter((p) => getPostCategoryId(p) === cat.id).sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
   if (!posts.length) notFound();
@@ -214,7 +213,7 @@ export default async function BlogCategoryPage({ params }: Props) {
                   </h3>
                   <div className="flex flex-col gap-1.5">
                     {allCategories.map((c) => {
-                      const catPostCount = BLOG_POSTS.filter((p) => p.category === c.label.uk).length;
+                      const catPostCount = BLOG_POSTS.filter((p) => getPostCategoryId(p) === c.id).length;
                       return (
                         <Link
                           key={c.id}

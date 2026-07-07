@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import { Clock, ArrowRight, BookOpen, Search, X, Tag, Layers, ExternalLink, ArrowUpDown } from "lucide-react";
-import { BLOG_POSTS, BLOG_CATEGORIES, getPostTitle, getPostExcerpt } from "@/lib/data/blog";
+import { BLOG_POSTS, BLOG_CATEGORIES, getPostTitle, getPostExcerpt, getPostCategoryId } from "@/lib/data/blog";
 import { getAuthorByName } from "@/lib/data/blogAuthors";
 import { cn } from "@/lib/utils";
 import { Pagination } from "@/components/ui/Pagination";
@@ -24,7 +24,8 @@ const ALL_OTHERS = BLOG_POSTS.filter((p) => !p.featured);
 // Counts computed once at module level (static data)
 const CATEGORY_COUNTS: Record<string, number> = {};
 ALL_OTHERS.forEach((p) => {
-  CATEGORY_COUNTS[p.category] = (CATEGORY_COUNTS[p.category] || 0) + 1;
+  const catId = getPostCategoryId(p);
+  CATEGORY_COUNTS[catId] = (CATEGORY_COUNTS[catId] || 0) + 1;
 });
 
 const TAG_COUNTS: Record<string, number> = {};
@@ -73,7 +74,7 @@ export function BlogContent() {
     } else {
       posts = !activeCategory
         ? ALL_OTHERS
-        : ALL_OTHERS.filter((p) => p.category === activeCategory);
+        : ALL_OTHERS.filter((p) => getPostCategoryId(p) === activeCategory);
       if (activeTag) posts = posts.filter((p) => p.tags.includes(activeTag));
     }
     return [...posts].sort((a, b) => {
@@ -211,7 +212,7 @@ export function BlogContent() {
               </span>
               {activeCategory && (
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-600 text-white text-xs font-medium">
-                  {BLOG_CATEGORY_LIST.find(c => c.label.uk === activeCategory)?.label[isUk ? "uk" : "en"] ?? activeCategory}
+                  {BLOG_CATEGORY_LIST.find(c => c.id === activeCategory)?.label[isUk ? "uk" : "en"] ?? activeCategory}
                   <button
                     onClick={() => {
                       setActiveCategory("");
@@ -308,7 +309,10 @@ export function BlogContent() {
                   </div>
                   <div className="p-6">
                     <span className="inline-block px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold mb-3">
-                      {post.category}
+                      {(() => {
+                        const cat = BLOG_CATEGORY_LIST.find((c) => c.id === getPostCategoryId(post));
+                        return cat ? (isUk ? cat.label.uk : cat.label.en) : post.category;
+                      })()}
                     </span>
                     <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-2 leading-tight group-hover:text-indigo-700 transition-colors">
                       {getPostTitle(post, lang)}
@@ -404,12 +408,12 @@ export function BlogContent() {
               </li>
               {BLOG_CATEGORY_LIST.map((cat) => {
                 const catLabel = isUk ? cat.label.uk : cat.label.en;
-                const isActive = cat.label.uk === activeCategory;
+                const isActive = cat.id === activeCategory;
                 return (
                   <li key={cat.id} className="flex items-center gap-1">
                     <button
                       onClick={() => {
-                        setActiveCategory(cat.label.uk);
+                        setActiveCategory(cat.id);
                         setActiveTag(null);
                         resetPage();
                       }}
@@ -440,7 +444,7 @@ export function BlogContent() {
                             : "bg-neutral-100 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400"
                         )}
                       >
-                        {CATEGORY_COUNTS[cat.label.uk] || 0}
+                        {CATEGORY_COUNTS[cat.id] || 0}
                       </span>
                     </button>
                     <Link

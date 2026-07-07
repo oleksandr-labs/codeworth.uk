@@ -12880,13 +12880,73 @@ export const BLOG_CATEGORIES: BlogCategory[] = [
     label: { en: 'All Articles', uk: 'Всi' },
   },
   {
-    id: 'ai',
-    label: { en: 'AI & Machine Learning', uk: 'AI та Машинне навчання' },
-    description: { en: 'Machine learning, deep learning, NLP, computer vision, MLOps, AI strategy', uk: "Машинне навчання, глибоке навчання, NLP, комп'ютерний зір, MLOps, AI-стратегія" },
+    id: 'machine-learning',
+    label: { en: 'Machine Learning', uk: 'Машинне навчання' },
+    description: { en: 'Predictive models, fraud detection, demand forecasting, churn prediction, and other production ML use cases', uk: 'Прогнозні моделі, виявлення шахрайства, прогнозування попиту, відтоку клієнтів та інші продакшн ML-кейси' },
+    icon: '🧠',
+    color: 'indigo',
+  },
+  {
+    id: 'artificial-intelligence',
+    label: { en: 'Artificial Intelligence', uk: 'Штучний інтелект' },
+    description: { en: 'AI strategy, automation, GPT-based tools, and business applications of AI', uk: 'AI-стратегія, автоматизація, GPT-інструменти та бізнес-застосування штучного інтелекту' },
     icon: '🤖',
     color: 'violet',
   },
+  {
+    id: 'nlp',
+    label: { en: 'NLP & LLM', uk: 'NLP та LLM' },
+    description: { en: 'Text processing, document classification, RAG systems, and large language models', uk: 'Обробка тексту, класифікація документів, RAG-системи та великі мовні моделі' },
+    icon: '💬',
+    color: 'blue',
+  },
+  {
+    id: 'computer-vision',
+    label: { en: 'Computer Vision', uk: "Комп'ютерний зір" },
+    description: { en: 'Image analysis, object detection, defect detection, and visual quality control', uk: "Аналіз зображень, розпізнавання об'єктів, виявлення дефектів та візуальний контроль якості" },
+    icon: '👁️',
+    color: 'emerald',
+  },
+  {
+    id: 'mlops',
+    label: { en: 'MLOps', uk: 'MLOps' },
+    description: { en: 'Model deployment, monitoring, drift detection, and production ML infrastructure', uk: 'Деплой моделей, моніторинг, виявлення drift та продакшн ML-інфраструктура' },
+    icon: '⚙️',
+    color: 'amber',
+  },
+  {
+    id: 'predictive-analytics',
+    label: { en: 'Predictive Analytics', uk: 'Предиктивна аналітика' },
+    description: { en: 'Forecasting, risk scoring, and data-driven decision making for finance and operations', uk: 'Прогнозування, скоринг ризиків та дата-орієнтоване прийняття рішень для фінансів та операцій' },
+    icon: '📊',
+    color: 'rose',
+  },
 ];
+
+// post.category holds inconsistent raw values accumulated across content sprints
+// (mix of slugs and localized labels) — normalize to a BLOG_CATEGORIES id here
+// rather than rewriting every post record.
+const CATEGORY_ALIAS_MAP: Record<string, string> = {
+  'ml': 'machine-learning',
+  'Machine Learning': 'machine-learning',
+  'ai': 'artificial-intelligence',
+  'AI та Автоматизація': 'artificial-intelligence',
+  'Artificial Intelligence': 'artificial-intelligence',
+  'tech': 'artificial-intelligence',
+  'mlops': 'mlops',
+  'MLOps': 'mlops',
+  'NLP': 'nlp',
+  'Computer Vision': 'computer-vision',
+  'Predictive Analytics': 'predictive-analytics',
+};
+
+export function getPostCategoryId(post: BlogPost): string {
+  return CATEGORY_ALIAS_MAP[post.category] ?? 'artificial-intelligence';
+}
+
+export function getCategoryById(id: string): BlogCategory | undefined {
+  return BLOG_CATEGORIES.find((c) => c.id === id);
+}
 
 export function getPostTitle(post: BlogPost, lang: string): string {
   return lang === 'uk' ? post.title : (post.titleEn ?? post.title);

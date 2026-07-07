@@ -5,7 +5,26 @@ import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import Link from "next/link";
 import { BlogContent } from "@/components/blog/BlogContent";
-import { BLOG_POSTS, BLOG_CATEGORIES } from "@/lib/data/blog";
+import { BLOG_POSTS, BLOG_CATEGORIES, getPostCategoryId } from "@/lib/data/blog";
+import { ArrowRight } from "lucide-react";
+
+const CATEGORY_BADGE_CLASSES: Record<string, string> = {
+  indigo: "bg-indigo-50 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300",
+  violet: "bg-violet-50 dark:bg-violet-950 text-violet-700 dark:text-violet-300",
+  blue: "bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-300",
+  emerald: "bg-emerald-50 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300",
+  amber: "bg-amber-50 dark:bg-amber-950 text-amber-700 dark:text-amber-300",
+  rose: "bg-rose-50 dark:bg-rose-950 text-rose-700 dark:text-rose-300",
+};
+
+const CATEGORY_HOVER_BORDER_CLASSES: Record<string, string> = {
+  indigo: "hover:border-indigo-300 dark:hover:border-indigo-700",
+  violet: "hover:border-violet-300 dark:hover:border-violet-700",
+  blue: "hover:border-blue-300 dark:hover:border-blue-700",
+  emerald: "hover:border-emerald-300 dark:hover:border-emerald-700",
+  amber: "hover:border-amber-300 dark:hover:border-amber-700",
+  rose: "hover:border-rose-300 dark:hover:border-rose-700",
+};
 
 export const revalidate = 300; // ISR: revalidate every 5 minutes
 
@@ -107,18 +126,52 @@ export default async function BlogPage({ params }: { params: Promise<{ lang: str
                 </div>
               </div>
 
-              <div className="flex flex-wrap justify-center gap-2">
-                {HERO_CATEGORIES.map((cat) => (
+            </div>
+          </Container>
+        </section>
+
+        {/* Browse by category — primary discovery entry point */}
+        <section className="py-16 bg-neutral-50 dark:bg-neutral-900 border-b border-neutral-100 dark:border-neutral-800">
+          <Container>
+            <h2 className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest mb-6 text-center">
+              {isUk ? "Огляд за категоріями" : "Browse by Category"}
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+              {HERO_CATEGORIES.map((cat) => {
+                const count = BLOG_POSTS.filter((p) => getPostCategoryId(p) === cat.id).length;
+                const badgeClasses = CATEGORY_BADGE_CLASSES[cat.color ?? "indigo"] ?? CATEGORY_BADGE_CLASSES.indigo;
+                const hoverBorderClasses = CATEGORY_HOVER_BORDER_CLASSES[cat.color ?? "indigo"] ?? CATEGORY_HOVER_BORDER_CLASSES.indigo;
+                return (
                   <Link
                     key={cat.id}
                     href={`/${lang}/blog/category/${cat.id}`}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-sm text-neutral-600 dark:text-neutral-300 font-medium shadow-sm hover:border-indigo-300 hover:text-indigo-600 transition-colors"
+                    className={`group flex items-start gap-4 p-5 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:shadow-md transition-all duration-200 ${hoverBorderClasses}`}
                   >
-                    <span aria-hidden="true">{cat.icon}</span>
-                    {isUk ? cat.label.uk : cat.label.en}
+                    <div className={`shrink-0 w-11 h-11 rounded-xl flex items-center justify-center text-xl ${badgeClasses}`}>
+                      <span aria-hidden="true">{cat.icon}</span>
+                    </div>
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-2 mb-1">
+                        <h3 className="font-heading font-bold text-neutral-900 dark:text-white leading-tight">
+                          {isUk ? cat.label.uk : cat.label.en}
+                        </h3>
+                        <span className="text-xs text-neutral-400 dark:text-neutral-500 shrink-0">
+                          {count} {isUk ? "статей" : "articles"}
+                        </span>
+                      </div>
+                      {cat.description && (
+                        <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed line-clamp-2">
+                          {isUk ? cat.description.uk : cat.description.en}
+                        </p>
+                      )}
+                      <span className="inline-flex items-center gap-1 text-xs font-semibold text-indigo-600 dark:text-indigo-400 mt-2 group-hover:gap-1.5 transition-all">
+                        {isUk ? "Переглянути" : "Browse"}
+                        <ArrowRight className="w-3 h-3" />
+                      </span>
+                    </div>
                   </Link>
-                ))}
-              </div>
+                );
+              })}
             </div>
           </Container>
         </section>
