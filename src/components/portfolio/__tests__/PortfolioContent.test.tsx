@@ -125,7 +125,9 @@ describe("PortfolioContent", () => {
     const input = screen.getByPlaceholderText(/пошук проєктів/i);
     fireEvent.change(input, { target: { value: "ресторан" } });
     fireEvent.click(screen.getByRole("button", { name: /очистити пошук/i }));
-    expect(screen.getAllByRole("heading", { level: 3 }).length).toBe(3);
+    expect(screen.getByText("Ресторан «Смачно»")).toBeInTheDocument();
+    expect(screen.getByText("Beauty Room Kyiv")).toBeInTheDocument();
+    expect(screen.getByText("МедЦентр «Здоров'я»")).toBeInTheDocument();
   });
 
   it("фільтрує за категорією 'Портал'", () => {

@@ -72,137 +72,207 @@ export function PortfolioContent() {
     });
   }, [activeCategory, activeComplexity, activeIndustry, query]);
 
+  const hasActiveFilters = activeCategory !== "" || activeComplexity !== "all" || activeIndustry !== "";
+
+  function clearFilters() {
+    setActiveCategory("");
+    setActiveComplexity("all");
+    setActiveIndustry("");
+    setQuery("");
+  }
+
   return (
     <section className="py-24 bg-white dark:bg-neutral-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Search */}
-        <div className="relative mb-6">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400 pointer-events-none" />
-          <input
-            type="search"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder={isUk ? "Пошук проєктів..." : "Search projects..."}
-            className="w-full pl-11 pr-10 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all placeholder:text-neutral-400 text-sm"
-          />
-          {query && (
-            <button
-              onClick={() => setQuery("")}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-700"
-              aria-label={isUk ? "Очистити пошук" : "Clear search"}
-            >
-              <X className="w-4 h-4" />
-            </button>
-          )}
-        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-8 items-start">
+          {/* ── Sidebar filters ── */}
+          <aside className={cn("lg:sticky lg:top-24 space-y-6", query && "opacity-40 pointer-events-none")}>
+            {/* Category */}
+            <div className="rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white dark:bg-neutral-800 p-5">
+              <h3 className="font-heading font-bold text-neutral-900 dark:text-white text-sm uppercase tracking-wide mb-3">
+                {isUk ? "Категорія" : "Category"}
+              </h3>
+              <div className="flex flex-col gap-1">
+                <button
+                  onClick={() => setActiveCategory("")}
+                  className={cn(
+                    "text-left px-3 py-2 rounded-xl text-sm font-medium transition-all",
+                    activeCategory === ""
+                      ? "bg-indigo-600 text-white shadow-sm"
+                      : "text-neutral-600 dark:text-neutral-300 hover:bg-indigo-50 hover:text-indigo-700"
+                  )}
+                >
+                  {isUk ? "Всі" : "All"}
+                </button>
+                {PROJECT_CATEGORIES.map((cat) => (
+                  <button
+                    key={cat}
+                    onClick={() => setActiveCategory(cat)}
+                    className={cn(
+                      "text-left px-3 py-2 rounded-xl text-sm font-medium transition-all",
+                      activeCategory === cat
+                        ? "bg-indigo-600 text-white shadow-sm"
+                        : "text-neutral-600 dark:text-neutral-300 hover:bg-indigo-50 hover:text-indigo-700"
+                    )}
+                  >
+                    {cat}
+                  </button>
+                ))}
+              </div>
+            </div>
 
-        {/* Legend */}
-        <div className={cn("flex flex-wrap items-center gap-3 mb-6", query && "opacity-40 pointer-events-none")}>
-          <span className="text-sm text-neutral-500 dark:text-neutral-400 mr-2">{isUk ? "Складність:" : "Complexity:"}</span>
-          {Object.entries(COMPLEXITY_LABELS).map(([key, val]) => (
-            <span key={key} className={cn("px-3 py-1 rounded-full text-xs font-semibold", val.color)}>
-              {val.label}
-            </span>
-          ))}
-        </div>
-
-        {/* Category filter */}
-        <div className={cn("flex flex-wrap gap-2 mb-4", query && "opacity-40 pointer-events-none")}>
-          <button
-            onClick={() => setActiveCategory("")}
-            className={cn(
-              "px-4 py-2 rounded-xl text-sm font-medium transition-all",
-              activeCategory === ""
-                ? "bg-indigo-600 text-white shadow-sm"
-                : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-indigo-50 hover:text-indigo-700"
+            {/* Industry (AI/ML cross-linking) */}
+            {PROJECT_INDUSTRIES.length > 0 && (
+              <div className="rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white dark:bg-neutral-800 p-5">
+                <h3 className="font-heading font-bold text-neutral-900 dark:text-white text-sm uppercase tracking-wide mb-3">
+                  {isUk ? "Галузь" : "Industry"}
+                </h3>
+                <div className="flex flex-col gap-1 max-h-72 overflow-y-auto pr-1">
+                  <button
+                    onClick={() => setActiveIndustry("")}
+                    className={cn(
+                      "text-left px-3 py-1.5 rounded-lg text-sm font-medium transition-all",
+                      activeIndustry === ""
+                        ? "bg-violet-600 text-white shadow-sm"
+                        : "text-neutral-600 dark:text-neutral-300 hover:bg-violet-50 hover:text-violet-700"
+                    )}
+                  >
+                    {isUk ? "Всі галузі" : "All industries"}
+                  </button>
+                  {PROJECT_INDUSTRIES.map((ind) => (
+                    <button
+                      key={ind}
+                      onClick={() => setActiveIndustry(ind)}
+                      className={cn(
+                        "text-left px-3 py-1.5 rounded-lg text-sm font-medium transition-all",
+                        activeIndustry === ind
+                          ? "bg-violet-600 text-white shadow-sm"
+                          : "text-neutral-600 dark:text-neutral-300 hover:bg-violet-50 hover:text-violet-700"
+                      )}
+                    >
+                      {ind}
+                    </button>
+                  ))}
+                </div>
+              </div>
             )}
-          >
-            {isUk ? "Всі" : "All"}
-          </button>
-          {PROJECT_CATEGORIES.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={cn(
-                "px-4 py-2 rounded-xl text-sm font-medium transition-all",
-                activeCategory === cat
-                  ? "bg-indigo-600 text-white shadow-sm"
-                  : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-indigo-50 hover:text-indigo-700"
-              )}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
 
-        {/* Industry filter (AI/ML cross-linking) */}
-        {PROJECT_INDUSTRIES.length > 0 && (
-          <div className={cn("flex flex-wrap gap-2 mb-4", query && "opacity-40 pointer-events-none")}>
-            <button
-              onClick={() => setActiveIndustry("")}
-              className={cn(
-                "px-3 py-1.5 rounded-lg text-xs font-medium transition-all",
-                activeIndustry === ""
-                  ? "bg-violet-600 text-white shadow-sm"
-                  : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-violet-50 hover:text-violet-700"
-              )}
-            >
-              {isUk ? "Всі галузі" : "All industries"}
-            </button>
-            {PROJECT_INDUSTRIES.map((ind) => (
+            {/* Complexity */}
+            <div className="rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white dark:bg-neutral-800 p-5">
+              <h3 className="font-heading font-bold text-neutral-900 dark:text-white text-sm uppercase tracking-wide mb-3">
+                {isUk ? "Складність" : "Complexity"}
+              </h3>
+              <div className="flex flex-col gap-1">
+                {COMPLEXITIES.map((c) => (
+                  <button
+                    key={c.value}
+                    onClick={() => setActiveComplexity(c.value)}
+                    className={cn(
+                      "text-left px-3 py-2 rounded-xl text-sm font-medium transition-all",
+                      activeComplexity === c.value
+                        ? "bg-neutral-900 dark:bg-neutral-700 text-white shadow-sm"
+                        : "text-neutral-600 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-700"
+                    )}
+                  >
+                    {c.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {hasActiveFilters && (
               <button
-                key={ind}
-                onClick={() => setActiveIndustry(ind)}
-                className={cn(
-                  "px-3 py-1.5 rounded-lg text-xs font-medium transition-all",
-                  activeIndustry === ind
-                    ? "bg-violet-600 text-white shadow-sm"
-                    : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-violet-50 hover:text-violet-700"
-                )}
+                onClick={clearFilters}
+                className="w-full text-center px-3 py-2 rounded-xl text-sm font-medium text-indigo-600 hover:bg-indigo-50 dark:hover:bg-indigo-950 transition-colors"
               >
-                {ind}
+                {isUk ? "Скинути всі фільтри" : "Clear all filters"}
               </button>
-            ))}
-          </div>
-        )}
+            )}
+          </aside>
 
-        {/* Complexity filter */}
-        <div className={cn("flex flex-wrap gap-2 mb-10", query && "opacity-40 pointer-events-none")}>
-          {COMPLEXITIES.map((c) => (
-            <button
-              key={c.value}
-              onClick={() => setActiveComplexity(c.value)}
-              className={cn(
-                "px-4 py-2 rounded-xl text-sm font-medium transition-all",
-                activeComplexity === c.value
-                  ? "bg-neutral-900 text-white shadow-sm"
-                  : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200"
+          {/* ── Main content ── */}
+          <div>
+            {/* Search */}
+            <div className="relative mb-4">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400 pointer-events-none" />
+              <input
+                type="search"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder={isUk ? "Пошук проєктів..." : "Search projects..."}
+                className="w-full pl-11 pr-10 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all placeholder:text-neutral-400 text-sm bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white"
+              />
+              {query && (
+                <button
+                  onClick={() => setQuery("")}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-700"
+                  aria-label={isUk ? "Очистити пошук" : "Clear search"}
+                >
+                  <X className="w-4 h-4" />
+                </button>
               )}
-            >
-              {c.label}
-            </button>
-          ))}
-        </div>
+            </div>
 
-        {/* Count */}
-        <p className="text-sm text-neutral-400 mb-6">
-          {isUk ? `Показано ${filtered.length} з ${PROJECTS.length} проєктів` : `Showing ${filtered.length} of ${PROJECTS.length} projects`}
-        </p>
+            {/* Legend */}
+            <div className="flex flex-wrap items-center gap-3 mb-6">
+              <span className="text-sm text-neutral-500 dark:text-neutral-400 mr-2">{isUk ? "Складність:" : "Complexity:"}</span>
+              {Object.entries(COMPLEXITY_LABELS).map(([key, val]) => (
+                <span key={key} className={cn("px-3 py-1 rounded-full text-xs font-semibold", val.color)}>
+                  {val.label}
+                </span>
+              ))}
+            </div>
 
-        {/* Grid */}
-        {filtered.length === 0 ? (
-          <div className="text-center py-20 text-neutral-400">
-            <EmptyState variant="search" size={130} className="mb-4" />
-            <p className="text-lg">{query ? (isUk ? "Нічого не знайдено. Спробуйте інший запит." : "Nothing found. Try a different query.") : (isUk ? "Проєктів не знайдено" : "No projects found")}</p>
-            <button
-              onClick={() => { setActiveCategory(""); setActiveComplexity("all"); setActiveIndustry(""); setQuery(""); }}
-              className="mt-4 text-indigo-600 hover:underline text-sm"
-            >
-              {isUk ? "Скинути фільтри" : "Clear filters"}
-            </button>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Active filter chips */}
+            {(hasActiveFilters && !query) && (
+              <div className="flex flex-wrap items-center gap-2 mb-4">
+                <span className="text-sm text-neutral-500 dark:text-neutral-400">{isUk ? "Фільтр:" : "Filter:"}</span>
+                {activeCategory && (
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-600 text-white text-xs font-medium">
+                    {activeCategory}
+                    <button onClick={() => setActiveCategory("")} aria-label={isUk ? "Прибрати категорію" : "Remove category filter"}>
+                      <X className="w-3 h-3" />
+                    </button>
+                  </span>
+                )}
+                {activeIndustry && (
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-violet-600 text-white text-xs font-medium">
+                    {activeIndustry}
+                    <button onClick={() => setActiveIndustry("")} aria-label={isUk ? "Прибрати галузь" : "Remove industry filter"}>
+                      <X className="w-3 h-3" />
+                    </button>
+                  </span>
+                )}
+                {activeComplexity !== "all" && (
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-neutral-900 dark:bg-neutral-700 text-white text-xs font-medium">
+                    {COMPLEXITIES.find((c) => c.value === activeComplexity)?.label}
+                    <button onClick={() => setActiveComplexity("all")} aria-label={isUk ? "Прибрати складність" : "Remove complexity filter"}>
+                      <X className="w-3 h-3" />
+                    </button>
+                  </span>
+                )}
+              </div>
+            )}
+
+            {/* Count */}
+            <p className="text-sm text-neutral-400 mb-6">
+              {isUk ? `Показано ${filtered.length} з ${PROJECTS.length} проєктів` : `Showing ${filtered.length} of ${PROJECTS.length} projects`}
+            </p>
+
+            {/* Grid */}
+            {filtered.length === 0 ? (
+              <div className="text-center py-20 text-neutral-400">
+                <EmptyState variant="search" size={130} className="mb-4" />
+                <p className="text-lg">{query ? (isUk ? "Нічого не знайдено. Спробуйте інший запит." : "Nothing found. Try a different query.") : (isUk ? "Проєктів не знайдено" : "No projects found")}</p>
+                <button
+                  onClick={clearFilters}
+                  className="mt-4 text-indigo-600 hover:underline text-sm"
+                >
+                  {isUk ? "Скинути фільтри" : "Clear filters"}
+                </button>
+              </div>
+            ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
             {filtered.map((project) => {
               const complexity = COMPLEXITY_LABELS[project.complexity];
               return (
@@ -297,7 +367,9 @@ export function PortfolioContent() {
               );
             })}
           </div>
-        )}
+            )}
+          </div>
+        </div>
       </div>
 
       {/* Lightbox */}
