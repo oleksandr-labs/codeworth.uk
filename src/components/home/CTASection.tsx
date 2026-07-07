@@ -2,7 +2,7 @@ import { MessageCircle } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { CTAForm } from "./CTAForm";
 
-export function CTASection({ lang }: { lang: string }) {
+export function CTASection({ lang, expanded = false }: { lang: string; expanded?: boolean }) {
   const isUk = lang === "uk";
 
   return (
@@ -42,7 +42,7 @@ export function CTASection({ lang }: { lang: string }) {
           </p>
 
           {/* Contact form */}
-          <CTAForm />
+          <CTAForm expanded={expanded} />
 
           {/* Alternative contact */}
           <div className="flex items-center justify-center gap-2 text-white/60 text-sm">

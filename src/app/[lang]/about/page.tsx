@@ -311,7 +311,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
           </Container>
         </section>
 
-        <CTASection lang={lang} />
+        <CTASection lang={lang} expanded />
       </main>
       <Footer />
     </div>

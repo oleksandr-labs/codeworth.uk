@@ -3,10 +3,18 @@
 import { useState } from "react";
 import { ArrowRight, Loader2, CheckCircle } from "lucide-react";
 import { useLocale } from "@/components/layout/LocaleProvider";
+import { SERVICE_OPTIONS_UK, SERVICE_OPTIONS_EN, BUDGET_OPTIONS_UK, BUDGET_OPTIONS_EN } from "@/lib/contactOptions";
 
-export function CTAForm() {
+const inputClasses =
+  "px-5 py-3.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:outline-none focus:border-white/40 focus:bg-white/15 transition-all";
+const selectClasses =
+  "px-5 py-3.5 rounded-xl bg-white/10 border border-white/20 text-white focus:outline-none focus:border-white/40 focus:bg-white/15 transition-all [&>option]:text-neutral-900";
+
+export function CTAForm({ expanded = false }: { expanded?: boolean }) {
   const lang = useLocale();
   const isUk = lang === "uk";
+  const SERVICE_OPTIONS = isUk ? SERVICE_OPTIONS_UK : SERVICE_OPTIONS_EN;
+  const BUDGET_OPTIONS = isUk ? BUDGET_OPTIONS_UK : BUDGET_OPTIONS_EN;
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -21,7 +29,9 @@ export function CTAForm() {
         body: JSON.stringify({
           name: data.get("name") as string,
           contact: data.get("contact") as string,
-          service: isUk ? "Безкоштовна консультація (CTA)" : "Free consultation (CTA)",
+          service: (data.get("service") as string) || (isUk ? "Безкоштовна консультація (CTA)" : "Free consultation (CTA)"),
+          budget: (data.get("budget") as string) || undefined,
+          message: (data.get("message") as string) || undefined,
         }),
       });
       setStatus(res.ok ? "success" : "error");
@@ -42,7 +52,7 @@ export function CTAForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-lg mx-auto mb-10">
+    <form onSubmit={handleSubmit} className={expanded ? "max-w-2xl mx-auto mb-10" : "max-w-lg mx-auto mb-10"}>
       {/* Honeypot */}
       <input type="text" name="website" tabIndex={-1} aria-hidden="true" className="hidden" />
       <div className="flex flex-col sm:flex-row gap-3">
@@ -53,7 +63,7 @@ export function CTAForm() {
           minLength={2}
           placeholder={isUk ? "Ваше ім'я" : "Your name"}
           autoComplete="name"
-          className="flex-1 px-5 py-3.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:outline-none focus:border-white/40 focus:bg-white/15 transition-all"
+          className={`flex-1 ${inputClasses}`}
         />
         <input
           name="contact"
@@ -61,9 +71,33 @@ export function CTAForm() {
           required
           placeholder={isUk ? "Телефон або Email" : "Phone or Email"}
           autoComplete="email"
-          className="flex-1 px-5 py-3.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:outline-none focus:border-white/40 focus:bg-white/15 transition-all"
+          className={`flex-1 ${inputClasses}`}
         />
       </div>
+      {expanded && (
+        <>
+          <div className="flex flex-col sm:flex-row gap-3 mt-3">
+            <select name="service" defaultValue="" className={`flex-1 ${selectClasses}`}>
+              <option value="" className="text-neutral-900">{isUk ? "Тип послуги" : "Service type"}</option>
+              {SERVICE_OPTIONS.map((o) => (
+                <option key={o} value={o} className="text-neutral-900">{o}</option>
+              ))}
+            </select>
+            <select name="budget" defaultValue="" className={`flex-1 ${selectClasses}`}>
+              <option value="" className="text-neutral-900">{isUk ? "Бюджет проєкту" : "Project budget"}</option>
+              {BUDGET_OPTIONS.map((o) => (
+                <option key={o} value={o} className="text-neutral-900">{o}</option>
+              ))}
+            </select>
+          </div>
+          <textarea
+            name="message"
+            rows={4}
+            placeholder={isUk ? "Розкажіть про ваш бізнес, задачу та побажання..." : "Tell us about your business, task, and requirements..."}
+            className={`w-full mt-3 resize-none ${inputClasses}`}
+          />
+        </>
+      )}
       {status === "error" && (
         <p className="text-red-300 text-xs mt-2">
           {isUk ? "Помилка. Напишіть на hello@codeworth.uk або в Telegram." : "Error. Please email hello@codeworth.uk or message us on Telegram."}
