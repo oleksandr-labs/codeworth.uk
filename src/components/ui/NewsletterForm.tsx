@@ -98,7 +98,7 @@ export function NewsletterForm({ variant = "inline", className = "" }: Props) {
         placeholder="your@email.com"
         required
         aria-describedby={errorMsg ? "newsletter-error-inline" : undefined}
-        className="flex-1 px-5 py-3 rounded-xl border border-indigo-200 bg-white text-neutral-900 dark:text-white placeholder:text-neutral-400 focus:outline-none focus:border-indigo-400 transition-colors"
+        className="flex-1 px-5 py-3 rounded-xl border border-indigo-200 bg-white dark:bg-neutral-900 text-neutral-900 dark:text-white placeholder:text-neutral-400 focus:outline-none focus:border-indigo-400 transition-colors"
       />
       <button
         type="submit"

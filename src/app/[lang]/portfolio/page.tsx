@@ -102,7 +102,7 @@ export default async function PortfolioPage({ params }: { params: Promise<{ lang
         </section>
 
         {/* Stats row */}
-        <section className="py-10 bg-white dark:bg-neutral-800 border-y border-neutral-100">
+        <section className="py-10 bg-white dark:bg-neutral-800 border-y border-neutral-100 dark:border-neutral-700">
           <Container>
             <div className="flex flex-wrap items-center justify-center gap-10 text-center">
               {[
@@ -123,7 +123,7 @@ export default async function PortfolioPage({ params }: { params: Promise<{ lang
         </section>
 
         {/* How ML projects work */}
-        <section className="py-16 bg-white dark:bg-neutral-800 border-b border-neutral-100">
+        <section className="py-16 bg-white dark:bg-neutral-800 border-b border-neutral-100 dark:border-neutral-700">
           <Container>
             <div className="max-w-xl mx-auto text-center mb-10">
               <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
@@ -188,7 +188,7 @@ export default async function PortfolioPage({ params }: { params: Promise<{ lang
         </section>
 
         {/* ML results metrics */}
-        <section className="py-16 bg-neutral-50 dark:bg-neutral-900 border-b border-neutral-100">
+        <section className="py-16 bg-neutral-50 dark:bg-neutral-900 border-b border-neutral-100 dark:border-neutral-700">
           <Container>
             <div className="max-w-2xl mx-auto text-center mb-10">
               <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">

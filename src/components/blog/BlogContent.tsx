@@ -169,7 +169,7 @@ export function BlogContent() {
           placeholder={isUk ? "Пошук статей..." : "Search articles..."}
           aria-label={isUk ? "Пошук статей" : "Search articles"}
           aria-controls="blog-results"
-          className="w-full pl-11 pr-10 py-3.5 rounded-xl border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all placeholder:text-neutral-400 text-sm bg-white"
+          className="w-full pl-11 pr-10 py-3.5 rounded-xl border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all placeholder:text-neutral-400 text-sm bg-white dark:bg-neutral-800"
         />
         {query && (
           <button
@@ -191,7 +191,7 @@ export function BlogContent() {
           value={sortOrder}
           onChange={(e) => { setSortOrder(e.target.value as "newest" | "oldest"); resetPage(); }}
           aria-label={isUk ? "Сортування" : "Sort order"}
-          className="pl-9 pr-3 py-3.5 rounded-xl border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all text-sm bg-white text-neutral-700 dark:text-neutral-300 appearance-none cursor-pointer"
+          className="pl-9 pr-3 py-3.5 rounded-xl border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all text-sm bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 appearance-none cursor-pointer"
         >
           <option value="newest">{isUk ? "Новіші" : "Newest"}</option>
           <option value="oldest">{isUk ? "Старіші" : "Oldest"}</option>
@@ -206,7 +206,7 @@ export function BlogContent() {
           {/* Active filter chips */}
           {(activeCategory || activeTag) && !query && (
             <div className="flex items-center gap-2 mb-6 flex-wrap">
-              <span className="text-sm text-neutral-500">
+              <span className="text-sm text-neutral-500 dark:text-neutral-400">
                 {isUk ? "Фільтр:" : "Filter:"}
               </span>
               {activeCategory && (
@@ -281,7 +281,7 @@ export function BlogContent() {
                 <Link
                   key={post.slug}
                   href={lp(`/blog/${post.slug}`)}
-                  className="group rounded-2xl border border-neutral-100 dark:border-neutral-700 overflow-hidden hover:shadow-lg hover:shadow-neutral-200/60 transition-all duration-300 hover:-translate-y-1 bg-white"
+                  className="group rounded-2xl border border-neutral-100 dark:border-neutral-700 overflow-hidden hover:shadow-lg hover:shadow-neutral-200/60 transition-all duration-300 hover:-translate-y-1 bg-white dark:bg-neutral-800"
                 >
                   <div
                     className={cn(
@@ -316,7 +316,7 @@ export function BlogContent() {
                     <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-4 line-clamp-3">
                       {getPostExcerpt(post, lang)}
                     </p>
-                    <div className="flex items-center justify-between text-xs text-neutral-400 pt-3 border-t border-neutral-100">
+                    <div className="flex items-center justify-between text-xs text-neutral-400 pt-3 border-t border-neutral-100 dark:border-neutral-700">
                       <div className="flex items-center gap-2 min-w-0">
                         {(() => {
                           const author = getAuthorByName(post.author);
@@ -338,7 +338,7 @@ export function BlogContent() {
                           ) : (
                             <>
                               {avatar}
-                              <span className="truncate text-neutral-500">{authorFirstName}</span>
+                              <span className="truncate text-neutral-500 dark:text-neutral-400">{authorFirstName}</span>
                             </>
                           );
                         })()}
@@ -367,7 +367,7 @@ export function BlogContent() {
         {/* ── Right Sidebar ── */}
         <aside className="lg:sticky lg:top-8 space-y-5">
           {/* Categories */}
-          <div className="rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white p-5">
+          <div className="rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white dark:bg-neutral-800 p-5">
             <div className="flex items-center gap-2 mb-4">
               <Layers className="w-4 h-4 text-indigo-500" />
               <h3 className="font-heading font-bold text-neutral-900 dark:text-white text-sm uppercase tracking-wide">
@@ -395,7 +395,7 @@ export function BlogContent() {
                       "text-xs px-2 py-0.5 rounded-full font-medium",
                       activeCategory === ""
                         ? "bg-white/20 text-white"
-                        : "bg-neutral-100 dark:bg-neutral-800 text-neutral-500"
+                        : "bg-neutral-100 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400"
                     )}
                   >
                     {ALL_OTHERS.length}
@@ -437,7 +437,7 @@ export function BlogContent() {
                           "text-xs px-2 py-0.5 rounded-full font-medium shrink-0 ml-2",
                           isActive
                             ? "bg-white/20 text-white"
-                            : "bg-neutral-100 dark:bg-neutral-800 text-neutral-500"
+                            : "bg-neutral-100 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400"
                         )}
                       >
                         {CATEGORY_COUNTS[cat.label.uk] || 0}
@@ -458,7 +458,7 @@ export function BlogContent() {
           </div>
 
           {/* Tags */}
-          <div className="rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white p-5">
+          <div className="rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white dark:bg-neutral-800 p-5">
             <div className="flex items-center gap-2 mb-4">
               <Tag className="w-4 h-4 text-indigo-500" />
               <h3 className="font-heading font-bold text-neutral-900 dark:text-white text-sm uppercase tracking-wide">

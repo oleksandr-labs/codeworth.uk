@@ -27,8 +27,8 @@ const COLORS = [
   { name: "Red 500", hex: "#EF4444", class: "bg-red-500" },
   { name: "Neutral 900", hex: "#171717", class: "bg-neutral-900" },
   { name: "Neutral 500", hex: "#737373", class: "bg-neutral-500" },
-  { name: "Neutral 100", hex: "#F5F5F5", class: "bg-neutral-100 dark:bg-neutral-800 border border-neutral-200" },
-  { name: "White", hex: "#FFFFFF", class: "bg-white border border-neutral-200" },
+  { name: "Neutral 100", hex: "#F5F5F5", class: "bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700" },
+  { name: "White", hex: "#FFFFFF", class: "bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700" },
 ];
 
 const GRADIENTS = [
@@ -164,7 +164,7 @@ export default function StyleGuidePage() {
               <span className="px-3 py-1 rounded-full bg-red-100 text-red-700 text-xs font-medium">🔴 Складний</span>
               <span className="px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 text-xs font-medium">Тег</span>
               <span className="px-3 py-1 rounded-full bg-violet-100 text-violet-700 text-xs font-medium">SEO</span>
-              <span className="px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 text-xs font-medium">Next.js</span>
+              <span className="px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 text-xs font-medium">Next.js</span>
             </div>
           </Section>
 
@@ -227,8 +227,8 @@ export default function StyleGuidePage() {
                 <div className="text-xs text-neutral-400 font-mono mb-4">Тіні</div>
                 <div className="flex flex-wrap gap-6">
                   {SHADOWS.map((s) => (
-                    <div key={s.name} className={`w-24 h-20 rounded-xl bg-white ${s.class} flex items-end justify-center pb-2`}>
-                      <span className="text-xs text-neutral-500">{s.name}</span>
+                    <div key={s.name} className={`w-24 h-20 rounded-xl bg-white dark:bg-neutral-800 ${s.class} flex items-end justify-center pb-2`}>
+                      <span className="text-xs text-neutral-500 dark:text-neutral-400">{s.name}</span>
                     </div>
                   ))}
                 </div>
@@ -291,7 +291,7 @@ export default function StyleGuidePage() {
 
           {/* Links */}
           <div className="py-12">
-            <p className="text-sm text-neutral-500">
+            <p className="text-sm text-neutral-500 dark:text-neutral-400">
               Детальніше:{" "}
               <Link href="/portfolio" className="text-indigo-600 hover:underline">Портфоліо</Link>
               {" · "}

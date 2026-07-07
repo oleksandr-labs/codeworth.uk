@@ -113,7 +113,7 @@ export default async function BlogAuthorPage({ params }: Props) {
           <section className="py-16 bg-white dark:bg-neutral-950">
             <Container>
               <div className="flex items-center justify-between mb-8">
-                <h2 className="text-xl font-heading font-bold text-neutral-900">
+                <h2 className="text-xl font-heading font-bold text-neutral-900 dark:text-white">
                   {isUk ? `Статті від ${name}` : `Articles by ${name}`}
                 </h2>
                 <Link href={`/${lang}/blog`} className="flex items-center gap-1.5 text-sm text-indigo-600 font-medium hover:underline">
@@ -132,7 +132,7 @@ export default async function BlogAuthorPage({ params }: Props) {
                     <Link
                       key={post.slug}
                       href={`/${lang}/blog/${post.slug}`}
-                      className="group rounded-2xl border border-neutral-100 dark:border-neutral-700 overflow-hidden hover:shadow-lg hover:shadow-neutral-200/60 transition-all duration-300 hover:-translate-y-1 bg-white"
+                      className="group rounded-2xl border border-neutral-100 dark:border-neutral-700 overflow-hidden hover:shadow-lg hover:shadow-neutral-200/60 transition-all duration-300 hover:-translate-y-1 bg-white dark:bg-neutral-800"
                     >
                       <div className={cn("h-36 bg-linear-to-br flex items-center justify-center", post.color)}>
                         <EmojiIcon emoji={post.emoji} className="w-12 h-12 text-white/80" />
@@ -147,7 +147,7 @@ export default async function BlogAuthorPage({ params }: Props) {
                         <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-3 line-clamp-2">
                           {getPostExcerpt(post, lang)}
                         </p>
-                        <div className="flex items-center justify-between text-xs text-neutral-400 pt-3 border-t border-neutral-100">
+                        <div className="flex items-center justify-between text-xs text-neutral-400 pt-3 border-t border-neutral-100 dark:border-neutral-700">
                           <span>{formatDate(post.updatedDate ?? post.date, lang)}</span>
                           <span className="flex items-center gap-1">
                             <Clock className="w-3 h-3" />
@@ -163,7 +163,7 @@ export default async function BlogAuthorPage({ params }: Props) {
           </section>
 
           {/* Other authors */}
-          <section className="py-12 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100">
+          <section className="py-12 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100 dark:border-neutral-700">
             <Container>
               <h2 className="text-lg font-heading font-bold text-neutral-900 dark:text-white mb-6">
                 {isUk ? "Інші автори" : "Other Authors"}

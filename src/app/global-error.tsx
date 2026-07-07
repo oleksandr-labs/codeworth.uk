@@ -33,7 +33,7 @@ export default function GlobalError({
 
   return (
     <html lang={lang}>
-      <body className="min-h-screen flex flex-col items-center justify-center bg-white antialiased p-6">
+      <body className="min-h-screen flex flex-col items-center justify-center bg-white dark:bg-neutral-800 antialiased p-6">
         <div
           role="alert"
           aria-live="assertive"

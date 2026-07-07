@@ -148,7 +148,7 @@ export default async function GlossaryTermPage({
         </section>
 
         {/* Content */}
-        <section className="py-12 bg-white">
+        <section className="py-12 bg-white dark:bg-neutral-900">
           <Container>
             <div className="max-w-3xl mx-auto">
               {/* Full description */}

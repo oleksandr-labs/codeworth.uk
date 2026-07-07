@@ -26,12 +26,12 @@ export function ImpactNgoPreview() {
             <span className="font-bold text-white">35% of goal</span>
           </div>
           <div className="h-3 bg-green-800 rounded-full overflow-hidden">
-            <div className="h-full bg-white rounded-full" style={{ width: "35%" }} />
+            <div className="h-full bg-white dark:bg-neutral-800 rounded-full" style={{ width: "35%" }} />
           </div>
         </div>
         <div className="flex items-center justify-center gap-3 flex-wrap">
           {[["$10", "Plant 3 trees"], ["$25", "Plant 10 trees"], ["$100", "Plant 50 trees"]].map(([a, l]) => (
-            <button key={a} className="bg-white text-green-800 font-bold px-5 py-2.5 rounded-xl text-sm">{a} — {l}</button>
+            <button key={a} className="bg-white dark:bg-neutral-800 text-green-800 font-bold px-5 py-2.5 rounded-xl text-sm">{a} — {l}</button>
           ))}
         </div>
         <p className="text-xs text-green-300 mt-3">Tax deductible · 100% to planting · Full transparency</p>
@@ -58,7 +58,7 @@ export function ImpactNgoPreview() {
         <h3 className="font-bold text-gray-900 dark:text-white mb-3">Transparent financials</h3>
         <div className="flex items-center justify-center gap-4 text-xs flex-wrap">
           {[["82%", "Direct to planting"], ["11%", "Operations"], ["7%", "Education programs"]].map(([p, l]) => (
-            <div key={l} className="bg-white border border-green-200 px-4 py-2 rounded-full">
+            <div key={l} className="bg-white dark:bg-neutral-800 border border-green-200 px-4 py-2 rounded-full">
               <span className="font-bold text-green-700">{p}</span>
               <span className="text-gray-500 dark:text-neutral-400 ml-1">{l}</span>
             </div>

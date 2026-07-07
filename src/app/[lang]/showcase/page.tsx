@@ -224,7 +224,7 @@ export default async function ShowcasePage({
                 <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-rose-100 text-rose-700">❌ {isUk ? "Скасовано" : "Cancelled"}</span>
                 <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-700">ℹ️ {isUk ? "Новий" : "New"}</span>
                 <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-violet-100 text-violet-700">⭐ {isUk ? "Популярне" : "Popular"}</span>
-                <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-neutral-200 text-neutral-600">{isUk ? "Неактивний" : "Inactive"}</span>
+                <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-neutral-200 text-neutral-600 dark:text-neutral-300">{isUk ? "Неактивний" : "Inactive"}</span>
               </div>
               <div className="flex flex-wrap gap-2 items-center">
                 {["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "Vercel", "OpenAI", "Telegram", "LiqPay"].map((tag) => (
@@ -256,7 +256,7 @@ export default async function ShowcasePage({
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
 
               {/* Product card */}
-              <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white overflow-hidden hover:shadow-md transition-shadow">
+              <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 overflow-hidden hover:shadow-md transition-shadow">
                 <div className="h-40 bg-linear-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-5xl">🛒</div>
                 <div className="p-5">
                   <div className="flex items-center justify-between mb-2">
@@ -282,7 +282,7 @@ export default async function ShowcasePage({
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-full bg-linear-to-br from-indigo-400 to-purple-500 flex items-center justify-center text-white font-bold text-sm">О</div>
                   <div>
-                    <p className="text-sm font-bold text-neutral-900">{isUk ? "Олена К." : "Olena K."}</p>
+                    <p className="text-sm font-bold text-neutral-900 dark:text-white">{isUk ? "Олена К." : "Olena K."}</p>
                     <p className="text-xs text-neutral-400">{isUk ? "Власниця салону краси" : "Beauty salon owner"}</p>
                   </div>
                 </div>
@@ -354,15 +354,15 @@ export default async function ShowcasePage({
             <div className="grid sm:grid-cols-2 gap-6 max-w-2xl">
               <div className="space-y-1">
                 <label className="block text-sm font-semibold text-neutral-700">{isUk ? "Ім'я" : "Name"}</label>
-                <input type="text" placeholder={isUk ? "Введіть ваше ім'я" : "Enter your name"} className="w-full px-4 py-2.5 rounded-xl border border-neutral-300 bg-white text-neutral-900 dark:text-white text-sm placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" readOnly />
+                <input type="text" placeholder={isUk ? "Введіть ваше ім'я" : "Enter your name"} className="w-full px-4 py-2.5 rounded-xl border border-neutral-300 bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white text-sm placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" readOnly />
               </div>
               <div className="space-y-1">
                 <label className="block text-sm font-semibold text-neutral-700">Email</label>
-                <input type="email" placeholder="hello@company.com" className="w-full px-4 py-2.5 rounded-xl border border-neutral-300 bg-white text-neutral-900 dark:text-white text-sm placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" readOnly />
+                <input type="email" placeholder="hello@company.com" className="w-full px-4 py-2.5 rounded-xl border border-neutral-300 bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white text-sm placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" readOnly />
               </div>
               <div className="space-y-1">
                 <label className="block text-sm font-semibold text-neutral-700">{isUk ? "Послуга" : "Service"}</label>
-                <select className="w-full px-4 py-2.5 rounded-xl border border-neutral-300 bg-white text-neutral-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <select className="w-full px-4 py-2.5 rounded-xl border border-neutral-300 bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
                   <option>{isUk ? "Корпоративний сайт" : "Corporate website"}</option>
                   <option>{isUk ? "Інтернет-магазин" : "Online store"}</option>
                   <option>{isUk ? "AI-рішення" : "AI solution"}</option>
@@ -371,7 +371,7 @@ export default async function ShowcasePage({
               <div className="space-y-1">
                 <label className="block text-sm font-semibold text-neutral-700">{isUk ? "Пошук" : "Search"}</label>
                 <div className="relative">
-                  <input type="text" placeholder={isUk ? "Пошук..." : "Search..."} className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-neutral-300 bg-white text-neutral-900 dark:text-white text-sm placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-indigo-500" readOnly />
+                  <input type="text" placeholder={isUk ? "Пошук..." : "Search..."} className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-neutral-300 bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white text-sm placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-indigo-500" readOnly />
                   <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                 </div>
               </div>

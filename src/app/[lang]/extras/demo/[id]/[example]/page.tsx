@@ -83,7 +83,7 @@ export default async function ExtraDemoExamplePage({ params }: Props) {
   const orderHref = `/${lang}/contact?subject=${subject}&extra=${extra.id}`;
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white dark:bg-neutral-950">
       {/* Breadcrumb */}
       <nav className="border-b border-neutral-100 dark:border-neutral-700 bg-neutral-50">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400 flex-wrap">
@@ -109,7 +109,7 @@ export default async function ExtraDemoExamplePage({ params }: Props) {
       </nav>
 
       {/* Demo header */}
-      <header className="border-b border-neutral-100 dark:border-neutral-700 bg-white sticky top-0 z-10">
+      <header className="border-b border-neutral-100 dark:border-neutral-700 bg-white dark:bg-neutral-900 sticky top-0 z-10">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <EmojiIcon emoji={extra.emoji} className="w-6 h-6 text-indigo-500" />
@@ -167,7 +167,7 @@ export default async function ExtraDemoExamplePage({ params }: Props) {
                         {isUk ? e.industryUk : e.industry}
                       </span>
                     </div>
-                    <div className="p-4 bg-white">
+                    <div className="p-4 bg-white dark:bg-neutral-900">
                       <p className="font-semibold text-neutral-900 dark:text-white text-sm group-hover:text-indigo-700 transition-colors">
                         {isUk ? e.titleUk : e.title}
                       </p>

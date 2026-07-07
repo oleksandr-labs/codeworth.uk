@@ -31,7 +31,7 @@ export function MobileAppPreview() {
               AI-powered workouts, real-time tracking, nutrition guidance — everything you need to reach your goals faster.
             </p>
             <div className="flex gap-3 flex-wrap">
-              <button className="bg-white text-gray-900 dark:text-white font-bold px-5 py-2.5 rounded-xl text-sm flex items-center gap-2">
+              <button className="bg-white dark:bg-neutral-800 text-gray-900 dark:text-white font-bold px-5 py-2.5 rounded-xl text-sm flex items-center gap-2">
                 🍎 <span>Download on App Store</span>
               </button>
               <button className="bg-white/20 text-white border border-white/30 px-5 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2">
@@ -63,7 +63,7 @@ export function MobileAppPreview() {
       </section>
 
       {/* Features */}
-      <section className="px-8 py-10 bg-white">
+      <section className="px-8 py-10 bg-white dark:bg-neutral-800">
         <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white text-center mb-8">Everything in one app</h2>
         <div className="grid grid-cols-3 gap-5 max-w-3xl mx-auto">
           {[
@@ -97,7 +97,7 @@ export function MobileAppPreview() {
             { name: "James T.", text: "Best fitness app I've ever used. Worth every penny." },
             { name: "Anna K.", text: "The nutrition tracker alone is worth downloading." },
           ].map((r) => (
-            <div key={r.name} className="bg-white rounded-xl p-4 border border-gray-100">
+            <div key={r.name} className="bg-white dark:bg-neutral-800 rounded-xl p-4 border border-gray-100">
               <div className="text-yellow-400 text-xs mb-2">★★★★★</div>
               <div className="text-xs text-gray-700 dark:text-neutral-300 mb-2">{r.text}</div>
               <div className="text-xs text-gray-400 dark:text-neutral-500 font-semibold">{r.name}</div>
@@ -110,8 +110,8 @@ export function MobileAppPreview() {
       <div className="px-8 py-5 bg-blue-600 text-white flex items-center justify-between">
         <div className="text-sm font-bold">Ready to transform your fitness?</div>
         <div className="flex gap-2">
-          <button className="bg-white text-gray-900 dark:text-white text-xs font-bold px-4 py-2 rounded-lg">🍎 App Store</button>
-          <button className="bg-white text-gray-900 dark:text-white text-xs font-bold px-4 py-2 rounded-lg">▶ Google Play</button>
+          <button className="bg-white dark:bg-neutral-800 text-gray-900 dark:text-white text-xs font-bold px-4 py-2 rounded-lg">🍎 App Store</button>
+          <button className="bg-white dark:bg-neutral-800 text-gray-900 dark:text-white text-xs font-bold px-4 py-2 rounded-lg">▶ Google Play</button>
         </div>
       </div>
     </div>

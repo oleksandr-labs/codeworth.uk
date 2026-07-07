@@ -50,7 +50,7 @@ export default async function TermsOfServicePage({ params }: { params: Promise<{
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <main id="main-content" className="flex-1">
         {/* Hero */}
-        <section className="pt-32 pb-12 bg-neutral-50 dark:bg-neutral-900 border-b border-neutral-100">
+        <section className="pt-32 pb-12 bg-neutral-50 dark:bg-neutral-900 border-b border-neutral-100 dark:border-neutral-700">
           <Container>
             <div className="max-w-3xl">
               <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
@@ -59,7 +59,7 @@ export default async function TermsOfServicePage({ params }: { params: Promise<{
               <h1 className="text-4xl font-heading font-extrabold text-neutral-900 dark:text-white mb-3">
                 {isUk ? "Угода користувача" : "Terms of Service"}
               </h1>
-              <p className="text-neutral-500">
+              <p className="text-neutral-500 dark:text-neutral-400">
                 {isUk
                   ? `Остання редакція: ${LAST_UPDATED} · Набуває чинності з моменту публікації`
                   : `Last updated: March 1, 2025 · Effective upon publication`}
@@ -75,7 +75,7 @@ export default async function TermsOfServicePage({ params }: { params: Promise<{
 
               {isUk ? (
                 <>
-                  <p className="lead text-neutral-600">
+                  <p className="lead text-neutral-600 dark:text-neutral-300">
                     Ця Угода користувача регулює умови надання послуг компанією Codeworth
                     (далі — «Виконавець», «ми») клієнтам (далі — «Замовник», «ви»).
                     Використовуючи сайт або замовляючи послуги, ви погоджуєтесь з умовами цієї Угоди.
@@ -184,7 +184,7 @@ export default async function TermsOfServicePage({ params }: { params: Promise<{
                 </>
               ) : (
                 <>
-                  <p className="lead text-neutral-600">
+                  <p className="lead text-neutral-600 dark:text-neutral-300">
                     This Terms of Service Agreement governs the provision of services by Codeworth
                     (hereinafter — "Service Provider", "we") to clients (hereinafter — "Client", "you").
                     By using the website or ordering services, you agree to the terms of this Agreement.
@@ -301,7 +301,7 @@ export default async function TermsOfServicePage({ params }: { params: Promise<{
               )}
 
               <div className="mt-10 p-5 rounded-2xl bg-indigo-50 border border-indigo-100 not-prose">
-                <p className="text-sm text-neutral-600">
+                <p className="text-sm text-neutral-600 dark:text-neutral-300">
                   {isUk ? "Також ознайомтесь з нашою" : "Also read our"}{" "}
                   <Link href={`/${lang}/privacy`} className="text-indigo-600 font-semibold hover:underline">
                     {isUk ? "Політикою конфіденційності" : "Privacy Policy"}

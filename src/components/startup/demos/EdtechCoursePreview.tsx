@@ -27,7 +27,7 @@ export function EdtechCoursePreview() {
           <span>👥 2,400+ alumni</span>
           <span>📅 8 weeks · live</span>
         </div>
-        <button className="bg-white text-teal-800 font-bold px-8 py-3 rounded-xl text-sm">Enroll for $997 →</button>
+        <button className="bg-white dark:bg-neutral-800 text-teal-800 font-bold px-8 py-3 rounded-xl text-sm">Enroll for $997 →</button>
         <p className="text-xs text-teal-300 mt-3">30-day money-back guarantee if you don&apos;t land your first customer</p>
       </section>
 

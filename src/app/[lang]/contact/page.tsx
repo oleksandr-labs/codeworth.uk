@@ -119,7 +119,7 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
                   ? <>{`Розпочніть`}<br /><span className="gradient-text">{`ML-проєкт`}</span></>
                   : <>{"Start Your"}<br /><span className="gradient-text">{"ML Project"}</span></>}
               </h1>
-              <p className="text-lg text-neutral-500">
+              <p className="text-lg text-neutral-500 dark:text-neutral-400">
                 {isUk
                   ? "Безкоштовна оцінка датасету. UK-команда, FCA-aware. Відповідаємо протягом 2 годин."
                   : "Free dataset assessment. UK-based team, FCA-aware. We respond within 2 hours."}
@@ -129,14 +129,14 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
         </section>
 
         {/* Quick FAQ */}
-        <section className="py-12 bg-neutral-50 dark:bg-neutral-900 border-b border-neutral-100">
+        <section className="py-12 bg-neutral-50 dark:bg-neutral-900 border-b border-neutral-100 dark:border-neutral-700">
           <Container>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
               {QUICK_FAQ.map((item) => (
                 <div key={item.q} className="p-5 rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 hover:border-indigo-200 hover:shadow-sm transition-all">
                   <div className="flex items-center gap-2 mb-2">
                     <HelpCircle className="w-4 h-4 text-indigo-500 shrink-0" />
-                    <h3 className="text-sm font-heading font-bold text-neutral-900">{item.q}</h3>
+                    <h3 className="text-sm font-heading font-bold text-neutral-900 dark:text-white">{item.q}</h3>
                   </div>
                   <p className="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed">{item.a}</p>
                 </div>
@@ -184,7 +184,7 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
                       </div>
                       <div>
                         <p className="text-xs text-neutral-400 mb-0.5">{isUk ? "Розташування" : "Location"}</p>
-                        <span className="font-medium text-neutral-900">{isUk ? "Лондон, Великобританія" : "London, United Kingdom"}</span>
+                        <span className="font-medium text-neutral-900 dark:text-white">{isUk ? "Лондон, Великобританія" : "London, United Kingdom"}</span>
                         <p className="text-xs text-neutral-400">
                           {isUk ? "Дистанційно — UK / EU" : "Remote — UK / EU"}
                         </p>
@@ -196,7 +196,7 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
                       </div>
                       <div>
                         <p className="text-xs text-neutral-400 mb-0.5">{isUk ? "Графік роботи" : "Working Hours"}</p>
-                        <span className="font-medium text-neutral-900">{isUk ? "Пн–Пт: 9:00–19:00" : "Mon–Fri: 9:00–19:00"}</span>
+                        <span className="font-medium text-neutral-900 dark:text-white">{isUk ? "Пн–Пт: 9:00–19:00" : "Mon–Fri: 9:00–19:00"}</span>
                         <p className="text-xs text-neutral-400">
                           {isUk ? "Відповідь протягом 2 годин" : "Response within 2 hours"}
                         </p>

@@ -43,7 +43,7 @@ function DemoBlock({ label, children, dark = false }: { label: string; children:
       <p className="text-xs font-semibold text-neutral-400 uppercase tracking-widest mb-3">{label}</p>
       <div className={cn(
         "rounded-2xl p-6 border",
-        dark ? "bg-neutral-900 border-neutral-700" : "bg-neutral-50 dark:bg-neutral-900 border-neutral-200"
+        dark ? "bg-neutral-900 border-neutral-700" : "bg-neutral-50 dark:bg-neutral-900 border-neutral-200 dark:border-neutral-700"
       )}>
         {children}
       </div>
@@ -226,7 +226,7 @@ export function ShowcaseClient() {
         <DemoBlock label="Star rating">
           <div className="flex items-center gap-4">
             <StarRating value={rating} onChange={setRating} />
-            <span className="text-sm text-neutral-500">{rating}/5 — {isUk ? "натисніть для оцінки" : "click to rate"}</span>
+            <span className="text-sm text-neutral-500 dark:text-neutral-400">{rating}/5 — {isUk ? "натисніть для оцінки" : "click to rate"}</span>
           </div>
         </DemoBlock>
 
@@ -242,7 +242,7 @@ export function ShowcaseClient() {
               <input
                 type="text"
                 placeholder={isUk ? "Введіть ім'я" : "Enter your name"}
-                className="w-full px-4 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent placeholder-neutral-400"
+                className="w-full px-4 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent placeholder-neutral-400"
               />
             </div>
             <div>
@@ -250,7 +250,7 @@ export function ShowcaseClient() {
               <input
                 type="email"
                 placeholder="hello@example.com"
-                className="w-full px-4 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent placeholder-neutral-400"
+                className="w-full px-4 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent placeholder-neutral-400"
               />
             </div>
             <div>
@@ -259,7 +259,7 @@ export function ShowcaseClient() {
                 <input
                   type="search"
                   placeholder={isUk ? "Пошук…" : "Search…"}
-                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent placeholder-neutral-400"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent placeholder-neutral-400"
                 />
                 <span className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400">🔍</span>
               </div>
@@ -268,7 +268,7 @@ export function ShowcaseClient() {
               <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1">
                 {isUk ? "Вибір" : "Select"}
               </label>
-              <select className="w-full px-4 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 text-neutral-700">
+              <select className="w-full px-4 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 text-neutral-700">
                 <option>{isUk ? "Оберіть послугу" : "Choose a service"}</option>
                 <option>{isUk ? "Веб-сайт" : "Website"}</option>
                 <option>{isUk ? "Магазин" : "Online Store"}</option>
@@ -302,7 +302,7 @@ export function ShowcaseClient() {
           <textarea
             rows={4}
             placeholder={isUk ? "Розкажіть про вашу задачу…" : "Tell us about your challenge…"}
-            className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent placeholder-neutral-400 resize-none"
+            className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent placeholder-neutral-400 resize-none"
           />
         </DemoBlock>
 
@@ -393,17 +393,17 @@ export function ShowcaseClient() {
 
         <DemoBlock label="Pricing card">
           <div className="max-w-xs">
-            <div className="rounded-2xl border-2 border-indigo-500 bg-white overflow-hidden shadow-lg shadow-indigo-100">
+            <div className="rounded-2xl border-2 border-indigo-500 bg-white dark:bg-neutral-800 overflow-hidden shadow-lg shadow-indigo-100">
               <div className="bg-indigo-600 px-6 py-4">
                 <p className="text-white font-bold text-lg">Business</p>
                 <p className="text-indigo-200 text-sm">{isUk ? "Для зростаючих компаній" : "For growing companies"}</p>
               </div>
               <div className="px-6 py-5">
                 <div className="flex items-baseline gap-1 mb-4">
-                  <span className="text-3xl font-extrabold text-neutral-900">£2,500</span>
+                  <span className="text-3xl font-extrabold text-neutral-900 dark:text-white">£2,500</span>
                   <span className="text-neutral-400 text-sm">/ {isUk ? "проєкт" : "project"}</span>
                 </div>
-                <ul className="space-y-2 mb-5 text-sm text-neutral-600">
+                <ul className="space-y-2 mb-5 text-sm text-neutral-600 dark:text-neutral-300">
                   {(isUk ? ["До 20 сторінок", "SEO-оптимізація", "Admin панель", "Підтримка 6 міс"] : ["Up to 20 pages", "SEO optimisation", "Admin panel", "6 months support"]).map((f) => (
                     <li key={f} className="flex items-center gap-2">
                       <Check className="w-4 h-4 text-emerald-500 shrink-0" />
@@ -426,7 +426,7 @@ export function ShowcaseClient() {
             <div className="mt-4 flex items-center gap-3">
               <Avatar size="sm" name="Olena K" status="online" />
               <div>
-                <p className="text-sm font-semibold text-neutral-900">Olena K.</p>
+                <p className="text-sm font-semibold text-neutral-900 dark:text-white">Olena K.</p>
                 <p className="text-xs text-neutral-400">{isUk ? "Власниця салону краси" : "Beauty salon owner"}</p>
               </div>
             </div>
@@ -438,7 +438,7 @@ export function ShowcaseClient() {
             <div className="h-40 bg-linear-to-br from-indigo-500 to-violet-600 relative flex items-center justify-center">
               <span className="text-5xl">🛒</span>
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-white text-indigo-700 text-sm font-bold px-4 py-2 rounded-xl">
+                <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-white dark:bg-neutral-800 text-indigo-700 text-sm font-bold px-4 py-2 rounded-xl">
                   {isUk ? "Переглянути" : "View case"}
                 </span>
               </div>

@@ -94,7 +94,7 @@ export default async function UseCaseDetailPage({
       <main id="main-content" className="flex-1">
 
         {/* Breadcrumb */}
-        <div className="pt-24 pb-0 bg-white dark:bg-neutral-800 border-b border-neutral-100">
+        <div className="pt-24 pb-0 bg-white dark:bg-neutral-800 border-b border-neutral-100 dark:border-neutral-700">
           <Container>
             <nav className="flex items-center gap-2 text-xs text-neutral-400 pb-4">
               <Link href={`/${lang}`} className="hover:text-neutral-600 dark:text-neutral-300 transition-colors">
@@ -129,7 +129,7 @@ export default async function UseCaseDetailPage({
               {(uc.whoUk || uc.whoEn) && (
                 <p className="text-sm font-semibold text-neutral-400 mb-3">
                   {isUk ? "Для кого:" : "Who it's for:"}{" "}
-                  <span className="text-neutral-600">{isUk ? uc.whoUk : uc.whoEn}</span>
+                  <span className="text-neutral-600 dark:text-neutral-300">{isUk ? uc.whoUk : uc.whoEn}</span>
                 </p>
               )}
               <p className="text-xl text-neutral-600 dark:text-neutral-300 leading-relaxed">
@@ -171,7 +171,7 @@ export default async function UseCaseDetailPage({
 
                 {/* Result quote */}
                 <blockquote className="relative pl-6 border-l-4 border-indigo-500">
-                  <CheckCircle2 className="absolute -left-2.5 top-0 w-5 h-5 bg-white text-indigo-600" />
+                  <CheckCircle2 className="absolute -left-2.5 top-0 w-5 h-5 bg-white dark:bg-neutral-800 text-indigo-600" />
                   <p className="text-lg font-semibold text-neutral-800 dark:text-neutral-200 italic">
                     "{isUk ? uc.resultQuoteUk : uc.resultQuoteEn}"
                   </p>
@@ -197,7 +197,7 @@ export default async function UseCaseDetailPage({
                   </p>
                   <Link
                     href={`/${lang}/contact`}
-                    className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-white text-indigo-700 font-bold text-sm hover:bg-indigo-50 transition-colors"
+                    className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-white dark:bg-neutral-800 text-indigo-700 font-bold text-sm hover:bg-indigo-50 transition-colors"
                   >
                     <MessageCircle className="w-4 h-4" />
                     {isUk ? "Отримати консультацію" : "Get a consultation"}
@@ -206,7 +206,7 @@ export default async function UseCaseDetailPage({
 
                 {/* Related portfolio */}
                 {uc.relatedPortfolio.length > 0 && (
-                  <div className="p-5 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white">
+                  <div className="p-5 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800">
                     <h3 className="text-sm font-bold text-neutral-500 dark:text-neutral-400 uppercase tracking-widest mb-3">
                       {isUk ? "Схожі кейси" : "Related Cases"}
                     </h3>
@@ -228,7 +228,7 @@ export default async function UseCaseDetailPage({
 
                 {/* Related services */}
                 {uc.relatedServices.length > 0 && (
-                  <div className="p-5 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white">
+                  <div className="p-5 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800">
                     <h3 className="text-sm font-bold text-neutral-500 dark:text-neutral-400 uppercase tracking-widest mb-3">
                       {isUk ? "Пов'язані послуги" : "Related Services"}
                     </h3>
@@ -255,7 +255,7 @@ export default async function UseCaseDetailPage({
 
         {/* Related use cases */}
         {relatedCases.length > 0 && (
-          <section className="py-16 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100">
+          <section className="py-16 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100 dark:border-neutral-700">
             <Container>
               <h2 className="text-2xl font-heading font-extrabold text-neutral-900 dark:text-white mb-8">
                 {isUk ? "Схожі рішення" : "Similar Solutions"}

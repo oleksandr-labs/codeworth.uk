@@ -129,7 +129,7 @@ export function ColorContrastChecker({ isUk }: Props) {
                 value={c.value}
                 onChange={(e) => c.setter(e.target.value)}
                 maxLength={7}
-                className="flex-1 px-3 py-2 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm font-mono focus:outline-none focus:ring-2 focus:ring-indigo-400 uppercase"
+                className="flex-1 px-3 py-2 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-indigo-400 uppercase"
               />
             </div>
           </div>
@@ -170,7 +170,7 @@ export function ColorContrastChecker({ isUk }: Props) {
           <div>
             <p className="text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-3">{t.preview}</p>
             <div
-              className="w-full h-full min-h-40 rounded-2xl p-6 border border-neutral-200"
+              className="w-full h-full min-h-40 rounded-2xl p-6 border border-neutral-200 dark:border-neutral-700"
               style={{ backgroundColor: bg, color: fg }}
             >
               <p className="text-xl font-bold mb-2">{t.previewBig}</p>

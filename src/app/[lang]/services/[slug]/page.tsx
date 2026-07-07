@@ -172,7 +172,7 @@ export default async function ServicePage({ params }: Props) {
         <section className="py-24 bg-white dark:bg-neutral-950">
           <Container>
             <div className="max-w-2xl mx-auto text-center mb-16">
-              <h2 className="text-4xl font-heading font-extrabold text-neutral-900">
+              <h2 className="text-4xl font-heading font-extrabold text-neutral-900 dark:text-white">
                 {isUk ? "Що ви отримуєте" : "What You Get"}
               </h2>
             </div>
@@ -192,7 +192,7 @@ export default async function ServicePage({ params }: Props) {
 
         {/* Tech Stack */}
         {service.techStack && service.techStack.length > 0 && (
-          <section className="py-12 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100">
+          <section className="py-12 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100 dark:border-neutral-700">
             <Container>
               <p className="text-center text-xs font-semibold text-neutral-400 uppercase tracking-widest mb-6">
                 {isUk ? "Технологічний стек" : "Technology Stack"}
@@ -213,13 +213,13 @@ export default async function ServicePage({ params }: Props) {
 
         {/* Live Demo — AI Copywriter (artificial-intelligence only) */}
         {service.demoComponent === "ai-copywriter" && (
-          <section className="py-24 bg-white dark:bg-neutral-800 border-t border-neutral-100">
+          <section className="py-24 bg-white dark:bg-neutral-800 border-t border-neutral-100 dark:border-neutral-700">
             <Container>
               <div className="max-w-2xl mx-auto text-center mb-12">
                 <p className="text-sm font-semibold text-violet-600 uppercase tracking-widest mb-3">
                   {isUk ? "Спробуйте самі" : "Try It Yourself"}
                 </p>
-                <h2 className="text-4xl font-heading font-extrabold text-neutral-900">
+                <h2 className="text-4xl font-heading font-extrabold text-neutral-900 dark:text-white">
                   {isUk ? "AI-копірайтер — live демо" : "AI Copywriter — Live Demo"}
                 </h2>
                 <p className="mt-4 text-neutral-500 dark:text-neutral-400 text-base">
@@ -235,13 +235,13 @@ export default async function ServicePage({ params }: Props) {
 
         {/* Live Demo — AI EdTech (artificial-intelligence only) */}
         {slug === "artificial-intelligence" && (
-          <section className="py-24 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100">
+          <section className="py-24 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100 dark:border-neutral-700">
             <Container>
               <div className="max-w-2xl mx-auto text-center mb-12">
                 <p className="text-sm font-semibold text-violet-600 uppercase tracking-widest mb-3">
                   {isUk ? "Спробуйте самі" : "Try It Yourself"}
                 </p>
-                <h2 className="text-4xl font-heading font-extrabold text-neutral-900">
+                <h2 className="text-4xl font-heading font-extrabold text-neutral-900 dark:text-white">
                   {isUk ? "AI-Навчання — live демо" : "AI Learning — Live Demo"}
                 </h2>
                 <p className="mt-4 text-neutral-500 dark:text-neutral-400 text-base">
@@ -257,13 +257,13 @@ export default async function ServicePage({ params }: Props) {
 
         {/* Live Demo — AI Hospitality (artificial-intelligence only) */}
         {slug === "artificial-intelligence" && (
-          <section className="py-24 bg-white dark:bg-neutral-800 border-t border-neutral-100">
+          <section className="py-24 bg-white dark:bg-neutral-800 border-t border-neutral-100 dark:border-neutral-700">
             <Container>
               <div className="max-w-2xl mx-auto text-center mb-12">
                 <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
                   {isUk ? "Спробуйте самі" : "Try It Yourself"}
                 </p>
-                <h2 className="text-4xl font-heading font-extrabold text-neutral-900">
+                <h2 className="text-4xl font-heading font-extrabold text-neutral-900 dark:text-white">
                   {isUk ? "AI-Консьєрж Готелю — live демо" : "Hotel AI Concierge — Live Demo"}
                 </h2>
                 <p className="mt-4 text-neutral-500 dark:text-neutral-400 text-base">
@@ -279,13 +279,13 @@ export default async function ServicePage({ params }: Props) {
 
         {/* MLOps Pipeline Diagram — machine-learning only */}
         {slug === "machine-learning" && (
-          <section className="py-24 bg-white dark:bg-neutral-800 border-t border-neutral-100">
+          <section className="py-24 bg-white dark:bg-neutral-800 border-t border-neutral-100 dark:border-neutral-700">
             <Container>
               <div className="max-w-2xl mx-auto text-center mb-12">
                 <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-3">
                   {isUk ? "Як це влаштовано" : "How It Works"}
                 </p>
-                <h2 className="text-4xl font-heading font-extrabold text-neutral-900">
+                <h2 className="text-4xl font-heading font-extrabold text-neutral-900 dark:text-white">
                   {isUk ? "MLOps в продакшені" : "MLOps in Production"}
                 </h2>
                 <p className="mt-4 text-neutral-500 dark:text-neutral-400 text-base">
@@ -301,13 +301,13 @@ export default async function ServicePage({ params }: Props) {
 
         {/* Dataset Readiness Calculator — machine-learning only */}
         {slug === "machine-learning" && (
-          <section className="py-24 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100">
+          <section className="py-24 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100 dark:border-neutral-700">
             <Container>
               <div className="max-w-2xl mx-auto text-center mb-12">
                 <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-3">
                   {isUk ? "Інструмент" : "Tool"}
                 </p>
-                <h2 className="text-4xl font-heading font-extrabold text-neutral-900">
+                <h2 className="text-4xl font-heading font-extrabold text-neutral-900 dark:text-white">
                   {isUk ? "Чи вистачає у вас даних для ML?" : "Do You Have Enough Data for ML?"}
                 </h2>
                 <p className="mt-4 text-neutral-500 dark:text-neutral-400 text-base">
@@ -323,13 +323,13 @@ export default async function ServicePage({ params }: Props) {
 
         {/* ML APIs catalog — machine-learning only */}
         {slug === "machine-learning" && (
-          <section className="py-24 bg-white dark:bg-neutral-800 border-t border-neutral-100">
+          <section className="py-24 bg-white dark:bg-neutral-800 border-t border-neutral-100 dark:border-neutral-700">
             <Container>
               <div className="max-w-2xl mx-auto text-center mb-12">
                 <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-3">
                   {isUk ? "ML APIs" : "ML APIs"}
                 </p>
-                <h2 className="text-4xl font-heading font-extrabold text-neutral-900">
+                <h2 className="text-4xl font-heading font-extrabold text-neutral-900 dark:text-white">
                   {isUk ? "Готові ML-API для бізнес-задач" : "Ready ML APIs for Business Use Cases"}
                 </h2>
                 <p className="mt-4 text-neutral-500 dark:text-neutral-400 text-base">
@@ -420,13 +420,13 @@ export default async function ServicePage({ params }: Props) {
 
         {/* Comparison Table — AI approaches */}
         {service.comparisonTable && service.comparisonTable.length > 0 && (
-          <section className="py-24 bg-white dark:bg-neutral-800 border-t border-neutral-100">
+          <section className="py-24 bg-white dark:bg-neutral-800 border-t border-neutral-100 dark:border-neutral-700">
             <Container>
               <div className="max-w-2xl mx-auto text-center mb-12">
                 <p className="text-sm font-semibold text-violet-600 uppercase tracking-widest mb-3">
                   {isUk ? "Як обрати підхід" : "Choosing the Right Approach"}
                 </p>
-                <h2 className="text-4xl font-heading font-extrabold text-neutral-900">
+                <h2 className="text-4xl font-heading font-extrabold text-neutral-900 dark:text-white">
                   {isUk ? "Prompt Engineering vs RAG vs Fine-tuning" : "Prompt Engineering vs RAG vs Fine-tuning"}
                 </h2>
               </div>
@@ -441,10 +441,10 @@ export default async function ServicePage({ params }: Props) {
                   </thead>
                   <tbody>
                     {service.comparisonTable.map((row, i) => (
-                      <tr key={row.approach} className={i % 2 === 0 ? "bg-white" : "bg-neutral-50"}>
+                      <tr key={row.approach} className={i % 2 === 0 ? "bg-white dark:bg-neutral-800" : "bg-neutral-50"}>
                         <td className="px-5 py-4 font-heading font-bold text-neutral-900 dark:text-white whitespace-nowrap">{row.approach}</td>
-                        <td className="px-5 py-4 text-neutral-600">{isUk ? row.ukDesc : row.enDesc}</td>
-                        <td className="px-5 py-4 text-neutral-600">{isUk ? row.ukWhen : row.enWhen}</td>
+                        <td className="px-5 py-4 text-neutral-600 dark:text-neutral-300">{isUk ? row.ukDesc : row.enDesc}</td>
+                        <td className="px-5 py-4 text-neutral-600 dark:text-neutral-300">{isUk ? row.ukWhen : row.enWhen}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -460,7 +460,7 @@ export default async function ServicePage({ params }: Props) {
             <Container>
               <div className="max-w-2xl mx-auto text-center mb-12">
                 <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">{isUk ? "Тарифи" : "Packages"}</p>
-                <h2 className="text-4xl font-heading font-extrabold text-neutral-900">
+                <h2 className="text-4xl font-heading font-extrabold text-neutral-900 dark:text-white">
                   {isUk ? "Оберіть свій пакет" : "Choose Your Package"}
                 </h2>
               </div>
@@ -471,7 +471,7 @@ export default async function ServicePage({ params }: Props) {
                     className={`relative rounded-2xl p-7 border-2 flex flex-col ${
                       pkg.highlight
                         ? `border-indigo-600 bg-linear-to-br ${service.gradient} text-white shadow-xl`
-                        : "border-neutral-100 dark:border-neutral-700 bg-white"
+                        : "border-neutral-100 dark:border-neutral-700 bg-white dark:bg-neutral-800"
                     }`}
                   >
                     {pkg.highlight && (
@@ -479,20 +479,20 @@ export default async function ServicePage({ params }: Props) {
                         {isUk ? "Рекомендовано" : "Recommended"}
                       </div>
                     )}
-                    <div className={`text-lg font-heading font-bold mb-1 ${pkg.highlight ? "text-white" : "text-neutral-900"}`}>
+                    <div className={`text-lg font-heading font-bold mb-1 ${pkg.highlight ? "text-white" : "text-neutral-900 dark:text-white"}`}>
                       {pkg.name}
                     </div>
-                    <div className={`text-xs mb-5 ${pkg.highlight ? "text-white/70" : "text-neutral-500"}`}>
+                    <div className={`text-xs mb-5 ${pkg.highlight ? "text-white/70" : "text-neutral-500 dark:text-neutral-400"}`}>
                       {pkg.desc}
                     </div>
-                    <div className={`text-2xl font-sans font-extrabold tabular-nums tracking-tight mb-6 ${pkg.highlight ? "text-white" : "text-neutral-900"}`}>
+                    <div className={`text-2xl font-sans font-extrabold tabular-nums tracking-tight mb-6 ${pkg.highlight ? "text-white" : "text-neutral-900 dark:text-white"}`}>
                       {pkg.price}
                     </div>
                     <ul className="space-y-2.5 mb-8 flex-1">
                       {pkg.features.map((f) => (
                         <li key={f} className="flex items-start gap-2">
                           <Check className={`w-4 h-4 shrink-0 mt-0.5 ${pkg.highlight ? "text-white" : "text-indigo-600"}`} />
-                          <span className={`text-sm ${pkg.highlight ? "text-white/80" : "text-neutral-600"}`}>{f}</span>
+                          <span className={`text-sm ${pkg.highlight ? "text-white/80" : "text-neutral-600 dark:text-neutral-300"}`}>{f}</span>
                         </li>
                       ))}
                     </ul>
@@ -515,13 +515,13 @@ export default async function ServicePage({ params }: Props) {
 
         {/* Before / After — ROI metrics */}
         {service.beforeAfter && service.beforeAfter.length > 0 && (
-          <section className="py-24 bg-white dark:bg-neutral-800 border-t border-neutral-100">
+          <section className="py-24 bg-white dark:bg-neutral-800 border-t border-neutral-100 dark:border-neutral-700">
             <Container>
               <div className="max-w-2xl mx-auto text-center mb-12">
                 <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
                   {isUk ? "ROI у цифрах" : "ROI in Numbers"}
                 </p>
-                <h2 className="text-4xl font-heading font-extrabold text-neutral-900">
+                <h2 className="text-4xl font-heading font-extrabold text-neutral-900 dark:text-white">
                   {isUk ? "Бізнес-метрики до і після впровадження" : "Business Metrics Before & After Implementation"}
                 </h2>
               </div>
@@ -537,9 +537,9 @@ export default async function ServicePage({ params }: Props) {
                   </thead>
                   <tbody>
                     {service.beforeAfter.map((row, i) => (
-                      <tr key={row.metric} className={i % 2 === 0 ? "bg-white" : "bg-neutral-50"}>
-                        <td className="px-5 py-4 font-semibold text-neutral-900">{row.metric}</td>
-                        <td className="px-5 py-4 text-neutral-500">{row.before}</td>
+                      <tr key={row.metric} className={i % 2 === 0 ? "bg-white dark:bg-neutral-800" : "bg-neutral-50"}>
+                        <td className="px-5 py-4 font-semibold text-neutral-900 dark:text-white">{row.metric}</td>
+                        <td className="px-5 py-4 text-neutral-500 dark:text-neutral-400">{row.before}</td>
                         <td className="px-5 py-4 text-neutral-700 dark:text-neutral-300 font-medium">{row.after}</td>
                         <td className="px-5 py-4">
                           <span className={cn(
@@ -565,7 +565,7 @@ export default async function ServicePage({ params }: Props) {
             <Container>
               <div className="max-w-2xl mx-auto text-center mb-16">
                 <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">{isUk ? "Для кого" : "Who It's For"}</p>
-                <h2 className="text-4xl font-heading font-extrabold text-neutral-900">
+                <h2 className="text-4xl font-heading font-extrabold text-neutral-900 dark:text-white">
                   {isUk ? "Приклади по нішах" : "Niche Examples"}
                 </h2>
               </div>
@@ -590,7 +590,7 @@ export default async function ServicePage({ params }: Props) {
             <Container>
               <div className="max-w-2xl mx-auto text-center mb-16">
                 <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">{isUk ? "Процес" : "Process"}</p>
-                <h2 className="text-4xl font-heading font-extrabold text-neutral-900">
+                <h2 className="text-4xl font-heading font-extrabold text-neutral-900 dark:text-white">
                   {isUk ? "Як це працює" : "How It Works"}
                 </h2>
               </div>
@@ -611,11 +611,11 @@ export default async function ServicePage({ params }: Props) {
 
         {/* Case Studies */}
         {service.caseStudies && service.caseStudies.length > 0 && (
-          <section className="py-24 bg-white dark:bg-neutral-800 border-t border-neutral-100">
+          <section className="py-24 bg-white dark:bg-neutral-800 border-t border-neutral-100 dark:border-neutral-700">
             <Container>
               <div className="max-w-2xl mx-auto text-center mb-16">
                 <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">{isUk ? "Приклади" : "Examples"}</p>
-                <h2 className="text-4xl font-heading font-extrabold text-neutral-900">
+                <h2 className="text-4xl font-heading font-extrabold text-neutral-900 dark:text-white">
                   {isUk ? "Приклади результатів" : "Example Results"}
                 </h2>
               </div>
@@ -654,10 +654,10 @@ export default async function ServicePage({ params }: Props) {
 
         {/* Related blog posts */}
         {blogPosts.length > 0 && (
-          <section className="py-16 bg-white dark:bg-neutral-800 border-t border-neutral-100">
+          <section className="py-16 bg-white dark:bg-neutral-800 border-t border-neutral-100 dark:border-neutral-700">
             <Container>
               <div className="flex items-center justify-between mb-8">
-                <h3 className="text-2xl font-heading font-bold text-neutral-900">{isUk ? "Читайте також" : "Read Also"}</h3>
+                <h3 className="text-2xl font-heading font-bold text-neutral-900 dark:text-white">{isUk ? "Читайте також" : "Read Also"}</h3>
                 <Link href={`/${lang}/blog`} className="text-sm text-indigo-600 font-medium hover:underline flex items-center gap-1">
                   {isUk ? "Всі статті" : "All Articles"} <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
@@ -667,7 +667,7 @@ export default async function ServicePage({ params }: Props) {
                   <Link
                     key={post.slug}
                     href={`/${lang}/blog/${post.slug}`}
-                    className="group rounded-2xl border border-neutral-100 dark:border-neutral-700 overflow-hidden hover:shadow-lg hover:shadow-neutral-200/60 transition-all duration-300 hover:-translate-y-1 bg-white"
+                    className="group rounded-2xl border border-neutral-100 dark:border-neutral-700 overflow-hidden hover:shadow-lg hover:shadow-neutral-200/60 transition-all duration-300 hover:-translate-y-1 bg-white dark:bg-neutral-800"
                   >
                     <div className={cn(`h-28 bg-linear-to-br flex items-center justify-center`, post.color)}>
                       <EmojiIcon emoji={post.emoji} className="w-10 h-10 text-white/80" />
@@ -689,7 +689,7 @@ export default async function ServicePage({ params }: Props) {
 
         {/* AI/ML niche hub cross-link */}
         {(slug === "artificial-intelligence" || slug === "machine-learning") && (
-          <section className="py-12 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100">
+          <section className="py-12 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100 dark:border-neutral-700">
             <Container>
               <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div>
@@ -703,7 +703,7 @@ export default async function ServicePage({ params }: Props) {
                       ? (isUk ? "AI-рішення для вашої галузі" : "AI solutions for your industry")
                       : (isUk ? "ML-рішення для вашої галузі" : "ML solutions for your industry")}
                   </h3>
-                  <p className="text-sm text-neutral-500">
+                  <p className="text-sm text-neutral-500 dark:text-neutral-400">
                     {slug === "artificial-intelligence"
                       ? (isUk ? "10 спеціалізованих AI-рішень: медицина, e-commerce, FinTech, маркетинг та інші" : "10 specialised AI solutions: healthcare, e-commerce, FinTech, marketing and more")
                       : (isUk ? "10 ML-рішень для банків, рітейлу, SaaS, логістики та інших галузей" : "10 ML solutions for banking, retail, SaaS, logistics and more industries")}
@@ -723,7 +723,7 @@ export default async function ServicePage({ params }: Props) {
 
         {/* Cross-link to related service */}
         {service.crossLink && (
-          <section className="py-16 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100">
+          <section className="py-16 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100 dark:border-neutral-700">
             <Container>
               <div className={`rounded-2xl p-8 bg-linear-to-br ${service.gradient} text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6`}>
                 <div>
@@ -750,7 +750,7 @@ export default async function ServicePage({ params }: Props) {
         )}
 
         {/* Other services */}
-        <section className="py-16 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100">
+        <section className="py-16 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100 dark:border-neutral-700">
           <Container>
             <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
               <h3 className="text-lg font-heading font-bold text-neutral-700 dark:text-neutral-300">{isUk ? "Інші послуги" : "Other Services"}</h3>

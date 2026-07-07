@@ -175,7 +175,7 @@ export function MlRoiCalculator({ isUk }: Props) {
 
   const btnBase = "inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold transition-colors";
   const btnPrimary = `${btnBase} bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-40 disabled:cursor-not-allowed`;
-  const btnSecondary = `${btnBase} border border-neutral-200 dark:border-neutral-700 bg-white text-neutral-700 hover:border-neutral-300`;
+  const btnSecondary = `${btnBase} border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-700 hover:border-neutral-300`;
 
   function OptionButton({ id, label, desc, icon, selected, onClick }: { id: string; label: string; desc: string; icon: string; selected: boolean; onClick: () => void }) {
     return (
@@ -286,7 +286,7 @@ export function MlRoiCalculator({ isUk }: Props) {
           <div className="text-center mb-8">
             <span className="text-5xl block mb-3">📊</span>
             <h2 className="text-2xl font-bold text-neutral-900 dark:text-white mb-2">{t.resultTitle}</h2>
-            <p className="text-sm text-neutral-500">{t.resultSub}</p>
+            <p className="text-sm text-neutral-500 dark:text-neutral-400">{t.resultSub}</p>
           </div>
 
           {/* Price Range */}
@@ -303,12 +303,12 @@ export function MlRoiCalculator({ isUk }: Props) {
           {/* Breakdown */}
           <div className="space-y-3 mb-6">
             <div className="flex justify-between py-3 border-b border-neutral-100 dark:border-neutral-700 text-sm">
-              <span className="text-neutral-600">{t.labelBase}</span>
+              <span className="text-neutral-600 dark:text-neutral-300">{t.labelBase}</span>
               <span className="font-semibold">{fmtGbp(price.baseMin)} — {fmtGbp(price.baseMax)}</span>
             </div>
             {price.deployAdd > 0 && (
               <div className="flex justify-between py-3 border-b border-neutral-100 dark:border-neutral-700 text-sm">
-                <span className="text-neutral-600">{t.labelDeploy}</span>
+                <span className="text-neutral-600 dark:text-neutral-300">{t.labelDeploy}</span>
                 <span className="font-semibold">+{fmtGbp(price.deployAdd)} — +{fmtGbp(price.deployAddMax)}</span>
               </div>
             )}
@@ -323,7 +323,7 @@ export function MlRoiCalculator({ isUk }: Props) {
               <span className="text-blue-600">{fmtGbp(price.total)} — {fmtGbp(price.totalMax)}</span>
             </div>
             <div className="flex justify-between py-3 text-sm">
-              <span className="text-neutral-600">{t.labelRoi}</span>
+              <span className="text-neutral-600 dark:text-neutral-300">{t.labelRoi}</span>
               <span className="font-semibold text-green-600">{isUk ? ROI_ESTIMATES[problem].uk : ROI_ESTIMATES[problem].en}</span>
             </div>
           </div>
@@ -338,7 +338,7 @@ export function MlRoiCalculator({ isUk }: Props) {
             <p className="text-xs text-neutral-400">{t.ctaSub}</p>
             <button
               onClick={() => { setStep(0); setProblem(null); setData(null); setDeploy(null); setTimeline(null); }}
-              className="flex items-center gap-2 mx-auto text-xs text-neutral-500 hover:text-neutral-700 transition-colors"
+              className="flex items-center gap-2 mx-auto text-xs text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 transition-colors"
             >
               <RefreshCw className="w-3.5 h-3.5" /> {t.restart}
             </button>

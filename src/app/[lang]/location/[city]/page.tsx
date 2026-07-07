@@ -220,7 +220,7 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
               <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
                 {isUk ? `Послуги у ${cityName}` : `Services in ${cityName}`}
               </p>
-              <h2 className="text-3xl lg:text-4xl font-heading font-extrabold text-neutral-900">
+              <h2 className="text-3xl lg:text-4xl font-heading font-extrabold text-neutral-900 dark:text-white">
                 {isUk ? "ML та AI послуги для вашого бізнесу" : "ML and AI services for your business"}
               </h2>
             </div>
@@ -247,7 +247,7 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
               <h2 className="text-3xl lg:text-4xl font-heading font-extrabold text-neutral-900 dark:text-white mb-4">
                 {isUk ? `Чому обирають Codeworth у ${cityName}` : `Why businesses in ${cityName} choose Codeworth`}
               </h2>
-              <p className="text-neutral-500">
+              <p className="text-neutral-500 dark:text-neutral-400">
                 {isUk
                   ? "Ми розуміємо UK-специфіку ML: від FCA compliance до NHS data requirements — будуємо ML, що реально працює в production"
                   : "We understand UK ML specifics: from FCA compliance to NHS data requirements — we build ML that actually works in production"}
@@ -255,13 +255,13 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {WHY_US.map((item) => (
-                <div key={item.labelUk} className="flex gap-4 p-5 rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-100">
+                <div key={item.labelUk} className="flex gap-4 p-5 rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700">
                   <span className="text-2xl shrink-0">{item.icon}</span>
                   <div>
                     <div className="font-heading font-bold text-neutral-900 dark:text-white mb-1">
                       {isUk ? item.labelUk : item.labelEn}
                     </div>
-                    <p className="text-sm text-neutral-500">{isUk ? item.descUk : item.descEn}</p>
+                    <p className="text-sm text-neutral-500 dark:text-neutral-400">{isUk ? item.descUk : item.descEn}</p>
                   </div>
                 </div>
               ))}
@@ -287,7 +287,7 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
                 <div key={step.num} className="relative">
                   <div className="text-6xl font-heading font-extrabold text-neutral-100 mb-3">{step.num}</div>
                   <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-2">{isUk ? step.uk : step.en}</h3>
-                  <p className="text-sm text-neutral-500">{isUk ? step.dUk : step.dEn}</p>
+                  <p className="text-sm text-neutral-500 dark:text-neutral-400">{isUk ? step.dUk : step.dEn}</p>
                 </div>
               ))}
             </div>
@@ -304,7 +304,7 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
         )}
 
         {/* Other cities */}
-        <section className="py-16 bg-white dark:bg-neutral-800 border-t border-neutral-100">
+        <section className="py-16 bg-white dark:bg-neutral-800 border-t border-neutral-100 dark:border-neutral-700">
           <Container>
             <h2 className="text-xl font-heading font-bold text-neutral-900 dark:text-white mb-6">
               {isUk ? "Також працюємо у містах:" : "We also serve cities:"}

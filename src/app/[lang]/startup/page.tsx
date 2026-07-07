@@ -285,7 +285,7 @@ export default async function StartupPage({ params }: { params: Promise<{ lang: 
                   { icon: "💸", uk: "R&D Tax Credits", en: "R&D Tax Credits", dUk: "Структуруємо ML-розробку для HMRC R&D tax credit eligibility. 20–30% eligible costs повертаються.", dEn: "We structure ML development for HMRC R&D tax credit eligibility. 20–30% of eligible costs returned." },
                   { icon: "📊", uk: "Investor-Ready ML", en: "Investor-Ready ML", dUk: "Cambridge Innovation Capital, Parkwalk, Deeptech Labs — ми знаємо що хочуть бачити UK VC у ML due diligence.", dEn: "Cambridge Innovation Capital, Parkwalk, Deeptech Labs — we know what UK VCs expect in ML due diligence." },
                 ].map((item) => (
-                  <div key={item.uk} className="bg-gray-50 dark:bg-neutral-800 rounded-2xl p-6 border border-neutral-100">
+                  <div key={item.uk} className="bg-gray-50 dark:bg-neutral-800 rounded-2xl p-6 border border-neutral-100 dark:border-neutral-700">
                     <span className="text-3xl mb-3 block">{item.icon}</span>
                     <h3 className="font-bold text-gray-900 dark:text-white mb-2">{isUk ? item.uk : item.en}</h3>
                     <p className="text-gray-500 text-sm">{isUk ? item.dUk : item.dEn}</p>
@@ -306,7 +306,7 @@ export default async function StartupPage({ params }: { params: Promise<{ lang: 
               <p className="text-violet-100 mb-6">
                 {isUk ? "Discovery Call безкоштовний. Відповідаємо протягом 2 годин." : "Discovery Call is free. We respond within 2 hours."}
               </p>
-              <Link href={`/${lang}/contact`} className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-violet-600 font-bold hover:bg-violet-50 transition-colors">
+              <Link href={`/${lang}/contact`} className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white dark:bg-neutral-800 text-violet-600 font-bold hover:bg-violet-50 transition-colors">
                 {isUk ? "Розпочати" : "Get Started"} <ArrowRight className="w-4 h-4" />
               </Link>
             </div>

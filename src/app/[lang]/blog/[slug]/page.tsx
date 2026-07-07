@@ -423,7 +423,7 @@ export default async function BlogPostPage({ params }: Props) {
               {/* Sidebar */}
               <aside className="lg:col-span-1 space-y-8">
                 {/* Author */}
-                <div className="p-5 rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white">
+                <div className="p-5 rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white dark:bg-neutral-800">
                   <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-4 text-sm uppercase tracking-wider">{isUk ? "Автор" : "Author"}</h3>
                   {(() => {
                     const sidebarAuthor = getAuthorByName(post.author);
@@ -451,7 +451,7 @@ export default async function BlogPostPage({ params }: Props) {
 
                 {/* Related posts */}
                 {suggestions.length > 0 && (
-                  <div className="p-5 rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white">
+                  <div className="p-5 rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white dark:bg-neutral-800">
                     <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-4 text-sm uppercase tracking-wider">{isUk ? "Схожі статті" : "Related Articles"}</h3>
                     <div className="space-y-4">
                       {suggestions.map((related) => (
@@ -481,14 +481,14 @@ export default async function BlogPostPage({ params }: Props) {
 
         {/* Related Articles — full-width bottom section */}
         {suggestions.length > 0 && (
-          <section className="py-16 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100">
+          <section className="py-16 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100 dark:border-neutral-700">
             <Container>
               <div className="flex items-center justify-between mb-8">
                 <div>
                   <p className="text-xs font-semibold text-indigo-600 uppercase tracking-widest mb-1">
                     {isUk ? "Читайте також" : "Keep Reading"}
                   </p>
-                  <h2 className="text-2xl font-heading font-extrabold text-neutral-900">
+                  <h2 className="text-2xl font-heading font-extrabold text-neutral-900 dark:text-white">
                     {isUk ? `Більше про ${post.category}` : `More in ${categoryObj ? categoryObj.label.en : post.category}`}
                   </h2>
                 </div>
@@ -520,7 +520,7 @@ export default async function BlogPostPage({ params }: Props) {
                       <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed line-clamp-2 mb-4">
                         {s.excerpt}
                       </p>
-                      <div className="flex items-center justify-between text-xs text-neutral-400 pt-3 border-t border-neutral-100">
+                      <div className="flex items-center justify-between text-xs text-neutral-400 pt-3 border-t border-neutral-100 dark:border-neutral-700">
                         <span>{s.author.split(" ")[0]}</span>
                         <span className="flex items-center gap-1">
                           <Clock className="w-3 h-3" />

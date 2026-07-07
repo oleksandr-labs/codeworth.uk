@@ -8,7 +8,7 @@ export function AgencyPortfolioPreview() {
         </div>
         <div className="flex items-center gap-5 text-xs text-slate-400">
           <span>Work</span><span>Services</span><span>About</span>
-          <span className="bg-white text-slate-900 px-3 py-1.5 rounded-lg font-bold">Start a Project</span>
+          <span className="bg-white dark:bg-neutral-800 text-slate-900 px-3 py-1.5 rounded-lg font-bold">Start a Project</span>
         </div>
       </nav>
 
@@ -22,7 +22,7 @@ export function AgencyPortfolioPreview() {
             Strategic branding & web design for ambitious companies. From seed-stage to Series B.
           </p>
           <div className="flex items-center gap-4">
-            <button className="bg-white text-slate-900 font-bold px-6 py-3 rounded-xl text-sm">See our work →</button>
+            <button className="bg-white dark:bg-neutral-800 text-slate-900 font-bold px-6 py-3 rounded-xl text-sm">See our work →</button>
             <button className="border border-slate-700 text-white px-5 py-3 rounded-xl text-sm">Book a call</button>
           </div>
         </div>
@@ -37,7 +37,7 @@ export function AgencyPortfolioPreview() {
         </div>
       </section>
 
-      <section className="px-8 py-10 bg-white">
+      <section className="px-8 py-10 bg-white dark:bg-neutral-800">
         <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6">Selected Work</h2>
         <div className="grid grid-cols-3 gap-4">
           {[
@@ -57,7 +57,7 @@ export function AgencyPortfolioPreview() {
       <section className="px-8 py-8 bg-slate-950 text-white text-center">
         <h2 className="text-xl font-bold mb-2">Ready to build something great?</h2>
         <p className="text-slate-400 text-sm mb-5">We take on 3 new clients per quarter. Spots fill fast.</p>
-        <button className="bg-white text-slate-900 font-bold px-8 py-3 rounded-xl text-sm">Start Your Project →</button>
+        <button className="bg-white dark:bg-neutral-800 text-slate-900 font-bold px-8 py-3 rounded-xl text-sm">Start Your Project →</button>
       </section>
     </div>
   );

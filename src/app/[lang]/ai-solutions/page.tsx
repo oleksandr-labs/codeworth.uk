@@ -203,7 +203,7 @@ function ProductCard({
     <Link
       href={`/${lang}/extras/${product.id}`}
       className={`group rounded-2xl border bg-white dark:bg-neutral-800 p-6 hover:shadow-xl transition-all hover:-translate-y-1 ${
-        highlight ? "border-violet-200 ring-1 ring-violet-100" : "border-neutral-100"
+        highlight ? "border-violet-200 ring-1 ring-violet-100" : "border-neutral-100 dark:border-neutral-700"
       }`}
     >
       <div className="flex items-start justify-between gap-3 mb-3">
@@ -226,7 +226,7 @@ function ProductCard({
           </span>
         ))}
       </div>
-      <div className="flex items-center justify-between pt-4 border-t border-neutral-100">
+      <div className="flex items-center justify-between pt-4 border-t border-neutral-100 dark:border-neutral-700">
         <span className="text-sm font-semibold text-indigo-700">{price}</span>
         <span className="text-xs text-neutral-400">
           {product.deliveryDays} {isUk ? "днів" : "days"}

@@ -66,7 +66,7 @@ export function BlogPreviewSection({ lang }: { lang: string }) {
                 <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-4 line-clamp-2">
                   {getPostExcerpt(post, lang)}
                 </p>
-                <div className="flex items-center justify-between text-xs text-neutral-400 pt-3 border-t border-neutral-100">
+                <div className="flex items-center justify-between text-xs text-neutral-400 pt-3 border-t border-neutral-100 dark:border-neutral-700">
                   <div className="flex items-center gap-1.5 min-w-0">
                     {(() => {
                       const author = getAuthorByName(post.author);

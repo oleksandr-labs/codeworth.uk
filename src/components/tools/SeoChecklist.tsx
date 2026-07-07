@@ -66,7 +66,7 @@ const CATEGORIES = [
 const PRIORITY_COLORS = {
   critical: "bg-red-100 text-red-700 border-red-200",
   important: "bg-amber-100 text-amber-700 border-amber-200",
-  nice: "bg-neutral-100 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400 border-neutral-200",
+  nice: "bg-neutral-100 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400 border-neutral-200 dark:border-neutral-700",
 };
 
 export function SeoChecklist({ isUk }: Props) {
@@ -105,7 +105,7 @@ export function SeoChecklist({ isUk }: Props) {
       {/* Score header */}
       <div className="flex items-center justify-between mb-6">
         <div>
-          <p className="text-3xl font-sans font-extrabold tabular-nums tracking-tight text-neutral-900">{pct}%</p>
+          <p className="text-3xl font-sans font-extrabold tabular-nums tracking-tight text-neutral-900 dark:text-white">{pct}%</p>
           <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-0.5">{statusLabel()}</p>
         </div>
         <div className="text-right">
@@ -138,7 +138,7 @@ export function SeoChecklist({ isUk }: Props) {
                   <span>{cat.icon}</span>
                   {isUk ? cat.label : cat.labelEn}
                 </h3>
-                <span className="text-xs text-neutral-500">{catDone}/{catItems.length}</span>
+                <span className="text-xs text-neutral-500 dark:text-neutral-400">{catDone}/{catItems.length}</span>
               </div>
               <div className="space-y-2">
                 {catItems.map((item) => (
@@ -155,7 +155,7 @@ export function SeoChecklist({ isUk }: Props) {
                       className={`w-5 h-5 rounded-md border-2 flex items-center justify-center shrink-0 mt-0.5 transition-colors ${
                         checked.has(item.id)
                           ? "bg-green-500 border-green-500"
-                          : "border-neutral-300 bg-white"
+                          : "border-neutral-300 bg-white dark:bg-neutral-800"
                       }`}
                     >
                       {checked.has(item.id) && <Check className="w-3 h-3 text-white" />}
@@ -174,7 +174,7 @@ export function SeoChecklist({ isUk }: Props) {
         })}
       </div>
 
-      <div className="mt-8 flex flex-wrap gap-3 items-center justify-between pt-6 border-t border-neutral-100">
+      <div className="mt-8 flex flex-wrap gap-3 items-center justify-between pt-6 border-t border-neutral-100 dark:border-neutral-700">
         <div className="flex gap-3 text-xs">
           <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg border bg-red-50 text-red-700 border-red-200 font-semibold">{isUk ? "Критичний" : "Critical"}</span>
           <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg border bg-amber-50 text-amber-700 border-amber-200 font-semibold">{isUk ? "Важливий" : "Important"}</span>

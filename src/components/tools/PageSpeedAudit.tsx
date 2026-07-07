@@ -44,7 +44,7 @@ function ScoreRing({ score }: { score: number }) {
           />
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <span className="text-2xl font-extrabold text-neutral-900">{score}</span>
+          <span className="text-2xl font-extrabold text-neutral-900 dark:text-white">{score}</span>
         </div>
       </div>
       <span className="text-xs font-semibold px-2 py-0.5 rounded-full" style={{ backgroundColor: color + "22", color }}>
@@ -156,7 +156,7 @@ export function PageSpeedAudit({ isUk }: Props) {
       <div>
         <div className="flex items-center gap-3 mb-2">
           <Gauge className="w-6 h-6 text-indigo-600" />
-          <h2 className="text-2xl font-heading font-extrabold text-neutral-900">{t.heading}</h2>
+          <h2 className="text-2xl font-heading font-extrabold text-neutral-900 dark:text-white">{t.heading}</h2>
         </div>
         <p className="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed">{t.sub}</p>
       </div>
@@ -198,7 +198,7 @@ export function PageSpeedAudit({ isUk }: Props) {
 
       {/* Loading state */}
       {loading && (
-        <div className="flex flex-col items-center gap-4 py-10 text-neutral-500">
+        <div className="flex flex-col items-center gap-4 py-10 text-neutral-500 dark:text-neutral-400">
           <Loader2 className="w-10 h-10 animate-spin text-indigo-500" />
           <p className="text-sm">{t.checking}</p>
           <p className="text-xs text-neutral-400">{t.note}</p>
@@ -209,7 +209,7 @@ export function PageSpeedAudit({ isUk }: Props) {
       {result && !loading && (
         <div className="space-y-6">
           {/* Score */}
-          <div className="flex flex-col sm:flex-row items-center gap-6 p-6 rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200">
+          <div className="flex flex-col sm:flex-row items-center gap-6 p-6 rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700">
             <ScoreRing score={result.score} />
             <div className="flex-1 text-center sm:text-left">
               <p className="text-sm font-semibold text-neutral-500 dark:text-neutral-400 mb-1">{t.scoreLabel}</p>
@@ -223,10 +223,10 @@ export function PageSpeedAudit({ isUk }: Props) {
             <h3 className="text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-3">{t.metrics}</h3>
             <div className="grid grid-cols-2 gap-3">
               {metrics.map(({ icon, label, value }) => (
-                <div key={label} className="p-4 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white">
+                <div key={label} className="p-4 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800">
                   <div className="flex items-center gap-2 text-indigo-500 mb-1">{icon}</div>
                   <p className="text-xs text-neutral-500 dark:text-neutral-400 mb-0.5 leading-snug">{label}</p>
-                  <p className="text-lg font-bold text-neutral-900">{value ?? "—"}</p>
+                  <p className="text-lg font-bold text-neutral-900 dark:text-white">{value ?? "—"}</p>
                 </div>
               ))}
             </div>

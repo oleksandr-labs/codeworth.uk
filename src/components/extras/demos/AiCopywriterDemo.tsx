@@ -266,7 +266,7 @@ export function AiCopywriterDemo({ isUk }: Props) {
               onChange={(e) => setBrandName(e.target.value)}
               type="text"
               placeholder={isUk ? "Наприклад: La Maison, FitLife, MedCare..." : "e.g. La Maison, FitLife, MedCare..."}
-              className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white focus:border-violet-400 focus:outline-none text-sm"
+              className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 focus:border-violet-400 focus:outline-none text-sm"
             />
           </div>
 
@@ -313,7 +313,7 @@ export function AiCopywriterDemo({ isUk }: Props) {
             <p className="text-xs text-violet-600 font-semibold mb-1">
               {isUk ? "💡 Як це працює" : "💡 How it works"}
             </p>
-            <p className="text-xs text-neutral-500">
+            <p className="text-xs text-neutral-500 dark:text-neutral-400">
               {isUk
                 ? "AI аналізує нішу, тон та бренд — генерує заголовок, підзаголовок, CTA та tagline. Натискайте «Інший варіант» для нових текстів."
                 : "AI analyses niche, tone and brand — generates headline, subheadline, CTA and tagline. Click 'Another variant' for fresh copy."}
@@ -326,7 +326,7 @@ export function AiCopywriterDemo({ isUk }: Props) {
           {!result && !generating && (
             <div className="flex-1 flex flex-col items-center justify-center text-center text-neutral-400">
               <span className="text-6xl mb-4">✍️</span>
-              <p className="text-sm font-medium text-neutral-500">
+              <p className="text-sm font-medium text-neutral-500 dark:text-neutral-400">
                 {isUk ? "Тут з'явиться ваш текст" : "Your copy will appear here"}
               </p>
               <p className="text-xs mt-1">

@@ -23,12 +23,12 @@ export function MarketplaceTwoSidedPreview() {
           Zero commission for founding members. Join now and lock in your free spot.
         </p>
         <div className="flex items-center justify-center gap-3">
-          <button className="bg-white text-indigo-700 font-bold px-6 py-3 rounded-xl text-sm">Join as Buyer</button>
+          <button className="bg-white dark:bg-neutral-800 text-indigo-700 font-bold px-6 py-3 rounded-xl text-sm">Join as Buyer</button>
           <button className="bg-indigo-500 border border-white/30 text-white font-bold px-6 py-3 rounded-xl text-sm">Start Selling</button>
         </div>
       </section>
 
-      <section className="px-8 py-12 bg-white">
+      <section className="px-8 py-12 bg-white dark:bg-neutral-800">
         <div className="grid grid-cols-2 gap-6 max-w-3xl mx-auto">
           <div className="rounded-2xl p-6 bg-indigo-50 border border-indigo-100">
             <div className="text-2xl mb-3">🛍️</div>

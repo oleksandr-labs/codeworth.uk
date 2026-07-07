@@ -195,7 +195,7 @@ export function SchemaGenerator({ isUk }: Props) {
               >
                 <span className="text-lg">{s.icon}</span>
                 <div>
-                  <p className="font-semibold text-neutral-900">{isUk ? s.label : s.labelEn}</p>
+                  <p className="font-semibold text-neutral-900 dark:text-white">{isUk ? s.label : s.labelEn}</p>
                   <p className="text-neutral-400">{isUk ? s.desc : s.descEn}</p>
                 </div>
               </button>
@@ -214,7 +214,7 @@ export function SchemaGenerator({ isUk }: Props) {
                   value={fields[f.key] ?? ""}
                   onChange={(e) => setFields((prev) => ({ ...prev, [f.key]: e.target.value }))}
                   placeholder={f.ph}
-                  className="w-full px-3 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                  className="w-full px-3 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
                 />
               </div>
             ))}

@@ -95,7 +95,7 @@ export default async function ToolPage({
     generator: { uk: "Генератор", en: "Generator" },
   };
 
-  const catColor = CATEGORY_COLORS[tool.category] ?? "bg-neutral-100 dark:bg-neutral-800 text-neutral-600";
+  const catColor = CATEGORY_COLORS[tool.category] ?? "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300";
   const catLabel = CATEGORY_LABELS[tool.category];
 
   const otherTools = TOOLS.filter((t) => t.isBuilt && t.slug !== slug).slice(0, 3);
@@ -130,7 +130,7 @@ export default async function ToolPage({
                   {tool.badge && (
                     <span
                       className={`px-2.5 py-1 rounded-lg text-xs font-semibold ${
-                        tool.badge === "New" ? "bg-green-500 text-white" : "bg-white text-indigo-700"
+                        tool.badge === "New" ? "bg-green-500 text-white" : "bg-white dark:bg-neutral-800 text-indigo-700"
                       }`}
                     >
                       {tool.badge}
@@ -154,7 +154,7 @@ export default async function ToolPage({
         {/* Tool */}
         <section className="py-16">
           <Container>
-            <div className="bg-white rounded-3xl border border-neutral-200 dark:border-neutral-700 shadow-sm p-8 lg:p-12">
+            <div className="bg-white dark:bg-neutral-800 rounded-3xl border border-neutral-200 dark:border-neutral-700 shadow-sm p-8 lg:p-12">
               <ToolComponent slug={slug} isUk={isUk} />
             </div>
           </Container>
@@ -189,7 +189,7 @@ export default async function ToolPage({
               <div className="mt-8 text-center">
                 <Link
                   href={`/${lang}/tools`}
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm font-semibold text-neutral-700 dark:text-neutral-300 hover:border-indigo-400 hover:text-indigo-600 transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-sm font-semibold text-neutral-700 dark:text-neutral-300 hover:border-indigo-400 hover:text-indigo-600 transition-colors"
                 >
                   {isUk ? "Переглянути всі інструменти →" : "View all tools →"}
                 </Link>

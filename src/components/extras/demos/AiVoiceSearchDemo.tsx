@@ -169,7 +169,7 @@ export function AiVoiceSearchDemo({ isUk }: Props) {
             }}
             type="text"
             placeholder={isUk ? "Або введіть текстом і натисніть Enter..." : "Or type and press Enter..."}
-            className="w-full pl-4 pr-10 py-3.5 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white focus:border-blue-400 focus:outline-none text-sm shadow-sm"
+            className="w-full pl-4 pr-10 py-3.5 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 focus:border-blue-400 focus:outline-none text-sm shadow-sm"
           />
           {query && (
             <button
@@ -254,7 +254,7 @@ export function AiVoiceSearchDemo({ isUk }: Props) {
 
       {heard && searched && !processing && (
         <div className="flex items-center gap-2 mb-5 flex-wrap">
-          <span className="text-xs text-neutral-500">{isUk ? "Результати для" : "Results for"}:</span>
+          <span className="text-xs text-neutral-500 dark:text-neutral-400">{isUk ? "Результати для" : "Results for"}:</span>
           <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">
             &ldquo;{heard}&rdquo;
           </span>
@@ -314,8 +314,8 @@ export function AiVoiceSearchDemo({ isUk }: Props) {
         </div>
       )}
 
-      <div className="mt-8 p-4 bg-neutral-50 dark:bg-neutral-900 rounded-2xl border border-neutral-200">
-        <p className="text-xs text-neutral-500">
+      <div className="mt-8 p-4 bg-neutral-50 dark:bg-neutral-900 rounded-2xl border border-neutral-200 dark:border-neutral-700">
+        <p className="text-xs text-neutral-500 dark:text-neutral-400">
           <span className="font-semibold text-neutral-700">
             {isUk ? "🔊 Мікрофон:" : "🔊 Microphone:"}
           </span>{" "}

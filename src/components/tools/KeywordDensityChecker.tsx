@@ -109,7 +109,7 @@ export function KeywordDensityChecker({ isUk }: Props) {
             onChange={(e) => setText(e.target.value)}
             placeholder={t.textPh}
             rows={10}
-            className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 resize-none"
+            className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 resize-none"
           />
         </div>
 
@@ -122,7 +122,7 @@ export function KeywordDensityChecker({ isUk }: Props) {
               value={focusKeyword}
               onChange={(e) => setFocusKeyword(e.target.value)}
               placeholder={t.focusPh}
-              className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
+              className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
             />
           </div>
 
@@ -134,9 +134,9 @@ export function KeywordDensityChecker({ isUk }: Props) {
                 { label: t.chars, value: stats.chars },
                 { label: t.avgWord, value: `${stats.avgWordLen.toFixed(1)} ${t.chars_sym}` },
               ].map((s) => (
-                <div key={s.label} className="flex items-center justify-between p-3 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-100">
-                  <span className="text-xs text-neutral-500">{s.label}</span>
-                  <span className="text-sm font-bold text-neutral-900">{s.value}</span>
+                <div key={s.label} className="flex items-center justify-between p-3 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-100 dark:border-neutral-700">
+                  <span className="text-xs text-neutral-500 dark:text-neutral-400">{s.label}</span>
+                  <span className="text-sm font-bold text-neutral-900 dark:text-white">{s.value}</span>
                 </div>
               ))}
 
@@ -158,26 +158,26 @@ export function KeywordDensityChecker({ isUk }: Props) {
       {stats ? (
         <div>
           <h3 className="text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-3">{t.top}</h3>
-          <div className="overflow-x-auto rounded-xl border border-neutral-200">
+          <div className="overflow-x-auto rounded-xl border border-neutral-200 dark:border-neutral-700">
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-neutral-100 dark:border-neutral-700 bg-neutral-50">
-                  <th className="text-left px-4 py-3 text-xs font-semibold text-neutral-500">#</th>
-                  <th className="text-left px-4 py-3 text-xs font-semibold text-neutral-500">{t.word}</th>
-                  <th className="text-right px-4 py-3 text-xs font-semibold text-neutral-500">{t.count}</th>
-                  <th className="text-right px-4 py-3 text-xs font-semibold text-neutral-500">{t.density}</th>
+                  <th className="text-left px-4 py-3 text-xs font-semibold text-neutral-500 dark:text-neutral-400">#</th>
+                  <th className="text-left px-4 py-3 text-xs font-semibold text-neutral-500 dark:text-neutral-400">{t.word}</th>
+                  <th className="text-right px-4 py-3 text-xs font-semibold text-neutral-500 dark:text-neutral-400">{t.count}</th>
+                  <th className="text-right px-4 py-3 text-xs font-semibold text-neutral-500 dark:text-neutral-400">{t.density}</th>
                 </tr>
               </thead>
               <tbody>
                 {stats.sorted.map((row, i) => {
                   const isFocus = focusKeyword && row.word === focusKeyword.toLowerCase();
                   return (
-                    <tr key={row.word} className={`border-b border-neutral-50 last:border-0 ${isFocus ? "bg-indigo-50" : i % 2 === 0 ? "bg-white" : "bg-neutral-50/50"}`}>
+                    <tr key={row.word} className={`border-b border-neutral-50 last:border-0 ${isFocus ? "bg-indigo-50" : i % 2 === 0 ? "bg-white dark:bg-neutral-800" : "bg-neutral-50/50"}`}>
                       <td className="px-4 py-2.5 text-xs text-neutral-400">{i + 1}</td>
-                      <td className="px-4 py-2.5 font-mono text-sm text-neutral-900">{row.word}</td>
+                      <td className="px-4 py-2.5 font-mono text-sm text-neutral-900 dark:text-white">{row.word}</td>
                       <td className="px-4 py-2.5 text-right text-neutral-700">{row.count}</td>
                       <td className="px-4 py-2.5 text-right">
-                        <span className={`font-semibold ${parseFloat(row.density) >= 1 && parseFloat(row.density) <= 3 ? "text-green-600" : "text-neutral-600"}`}>
+                        <span className={`font-semibold ${parseFloat(row.density) >= 1 && parseFloat(row.density) <= 3 ? "text-green-600" : "text-neutral-600 dark:text-neutral-300"}`}>
                           {row.density}%
                         </span>
                       </td>
@@ -189,7 +189,7 @@ export function KeywordDensityChecker({ isUk }: Props) {
           </div>
         </div>
       ) : (
-        <div className="flex items-center justify-center h-40 rounded-2xl border-2 border-dashed border-neutral-200">
+        <div className="flex items-center justify-center h-40 rounded-2xl border-2 border-dashed border-neutral-200 dark:border-neutral-700">
           <p className="text-sm text-neutral-400">{t.empty}</p>
         </div>
       )}

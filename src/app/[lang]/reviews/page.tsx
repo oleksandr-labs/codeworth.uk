@@ -172,7 +172,7 @@ export default async function ReviewsPage({
                   href="mailto:feedback@codeworth.uk"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-white text-gray-800 dark:text-neutral-200 border-2 border-gray-200 dark:border-neutral-700 font-semibold px-6 py-3 rounded-xl hover:border-indigo-400 transition-colors"
+                  className="inline-flex items-center justify-center gap-2 bg-white dark:bg-neutral-800 text-gray-800 dark:text-neutral-200 border-2 border-gray-200 dark:border-neutral-700 font-semibold px-6 py-3 rounded-xl hover:border-indigo-400 transition-colors"
                 >
                   <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
                   {isUk ? "Google відгук" : "Google Review"}

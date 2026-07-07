@@ -105,7 +105,7 @@ export function MetaTagGenerator({ isUk }: Props) {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder={t.titlePh}
-            className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
           />
           <div className="mt-1.5 flex items-center justify-between text-xs text-neutral-400">
             <span>{t.titleTip}</span>
@@ -124,7 +124,7 @@ export function MetaTagGenerator({ isUk }: Props) {
             onChange={(e) => setDescription(e.target.value)}
             placeholder={t.descPh}
             rows={3}
-            className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 resize-none"
+            className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 resize-none"
           />
           <div className="mt-1.5 flex items-center justify-between text-xs text-neutral-400">
             <span>{t.descTip}</span>
@@ -143,7 +143,7 @@ export function MetaTagGenerator({ isUk }: Props) {
             value={keywords}
             onChange={(e) => setKeywords(e.target.value)}
             placeholder={t.keysPh}
-            className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
           />
         </div>
 
@@ -155,7 +155,7 @@ export function MetaTagGenerator({ isUk }: Props) {
             value={url}
             onChange={(e) => setUrl(e.target.value)}
             placeholder={t.urlPh}
-            className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
           />
         </div>
       </div>

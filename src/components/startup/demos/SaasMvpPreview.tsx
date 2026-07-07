@@ -42,7 +42,7 @@ export function SaasMvpPreview() {
       </section>
 
       {/* Features */}
-      <section className="px-8 py-12 bg-white">
+      <section className="px-8 py-12 bg-white dark:bg-neutral-800">
         <div className="text-center mb-8">
           <h2 className="text-2xl font-extrabold text-gray-900">Everything your team needs</h2>
         </div>
@@ -72,9 +72,9 @@ export function SaasMvpPreview() {
         </div>
         <div className="grid grid-cols-3 gap-4 max-w-3xl mx-auto">
           {[
-            { name: "Starter", price: "$0", desc: "Up to 5 users", features: ["10 projects", "1 GB storage", "Basic analytics", "Email support"], color: "border-gray-200 dark:border-neutral-700 bg-white" },
+            { name: "Starter", price: "$0", desc: "Up to 5 users", features: ["10 projects", "1 GB storage", "Basic analytics", "Email support"], color: "border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800" },
             { name: "Pro", price: "$29/mo", desc: "Per workspace", features: ["Unlimited projects", "50 GB storage", "Advanced analytics", "Priority support", "Integrations"], color: "border-indigo-500 bg-indigo-50", popular: true },
-            { name: "Enterprise", price: "Custom", desc: "Tailored plan", features: ["Unlimited everything", "SSO / SAML", "Dedicated support", "SLA guarantee", "Custom training"], color: "border-gray-200 dark:border-neutral-700 bg-white" },
+            { name: "Enterprise", price: "Custom", desc: "Tailored plan", features: ["Unlimited everything", "SSO / SAML", "Dedicated support", "SLA guarantee", "Custom training"], color: "border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800" },
           ].map((plan) => (
             <div key={plan.name} className={`rounded-xl p-5 border-2 ${plan.color}`}>
               {plan.popular && <div className="text-xs font-bold text-indigo-600 mb-2">⭐ Most Popular</div>}

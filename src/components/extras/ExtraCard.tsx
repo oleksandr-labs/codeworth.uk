@@ -52,10 +52,10 @@ export function ExtraCard({ extra }: ExtraCardProps) {
       </div>
 
       {/* Footer */}
-      <div className="flex items-center justify-between pt-4 border-t border-neutral-100">
+      <div className="flex items-center justify-between pt-4 border-t border-neutral-100 dark:border-neutral-700">
         <div>
           <p className="text-xs text-neutral-400 mb-0.5">{isUk ? "Від" : "From"}</p>
-          <p className="font-bold text-neutral-900">
+          <p className="font-bold text-neutral-900 dark:text-white">
             {formatExtrasPrice(extra.priceFrom, isUk)}
           </p>
         </div>

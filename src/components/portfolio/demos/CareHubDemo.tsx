@@ -275,7 +275,7 @@ export function CareHubDemo({ lang }: { lang: string }) {
       </div>
 
       {/* ── TAB NAV ── */}
-      <div className="bg-white border-b border-gray-200 px-6 sticky top-0 z-20 shadow-sm">
+      <div className="bg-white dark:bg-neutral-800 border-b border-gray-200 px-6 sticky top-0 z-20 shadow-sm">
         <div className="max-w-6xl mx-auto flex">
           {TABS.map(({ id, label, Icon }) => (
             <button
@@ -306,7 +306,7 @@ export function CareHubDemo({ lang }: { lang: string }) {
                   className={`px-4 py-1.5 rounded-full text-sm font-semibold transition-colors ${
                     day === i
                       ? "bg-sky-600 text-white"
-                      : "bg-white border border-gray-200 text-gray-600 hover:border-sky-300"
+                      : "bg-white dark:bg-neutral-800 border border-gray-200 text-gray-600 hover:border-sky-300"
                   }`}
                 >
                   {d}
@@ -318,7 +318,7 @@ export function CareHubDemo({ lang }: { lang: string }) {
             </div>
 
             {/* Grid */}
-            <div className="bg-white rounded-2xl border border-gray-200 overflow-auto shadow-sm">
+            <div className="bg-white dark:bg-neutral-800 rounded-2xl border border-gray-200 overflow-auto shadow-sm">
               {/* Header */}
               <div className="grid grid-cols-[4rem_1fr_1fr_1fr_1fr] min-w-160">
                 <div className="bg-gray-50 border-b border-r border-gray-200 h-12" />
@@ -395,10 +395,10 @@ export function CareHubDemo({ lang }: { lang: string }) {
                 value={search}
                 onChange={e => setSearch(e.target.value)}
                 placeholder={isUk ? "Пошук за ім'ям або NHS номером…" : "Search by name or NHS number…"}
-                className="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-sky-400 shadow-sm"
+                className="w-full pl-10 pr-4 py-3 bg-white dark:bg-neutral-800 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-sky-400 shadow-sm"
               />
             </div>
-            <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+            <div className="bg-white dark:bg-neutral-800 rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
               <div className="grid grid-cols-[1fr_auto_auto_auto_auto] px-4 py-2.5 border-b border-gray-200 text-[10px] font-bold text-gray-400 uppercase gap-4">
                 <span>{isUk?"Пацієнт":"Patient"}</span>
                 <span>NHS #</span>
@@ -443,7 +443,7 @@ export function CareHubDemo({ lang }: { lang: string }) {
                 </div>
               ))}
             </div>
-            <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+            <div className="bg-white dark:bg-neutral-800 rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
               <div className="grid grid-cols-[2fr_1fr_auto_auto_1.5fr_auto] px-4 py-2.5 border-b border-gray-200 text-[10px] font-bold text-gray-400 uppercase gap-4">
                 <span>{isUk?"Матеріал":"Item"}</span>
                 <span>{isUk?"Категорія":"Category"}</span>
@@ -485,7 +485,7 @@ export function CareHubDemo({ lang }: { lang: string }) {
         {/* ── CQC ── */}
         {tab === "cqc" && (
           <div className="space-y-3">
-            <div className="bg-white rounded-2xl border border-gray-200 p-5 shadow-sm flex items-center justify-between flex-wrap gap-4 mb-2">
+            <div className="bg-white dark:bg-neutral-800 rounded-2xl border border-gray-200 p-5 shadow-sm flex items-center justify-between flex-wrap gap-4 mb-2">
               <div>
                 <div className="text-xs font-bold text-gray-400 uppercase tracking-wide mb-1">
                   {isUk?"Загальна готовність CQC":"Overall CQC Readiness"}
@@ -499,7 +499,7 @@ export function CareHubDemo({ lang }: { lang: string }) {
               </div>
             </div>
             {CQC_DOMAINS.map(d => (
-              <div key={d.id} className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+              <div key={d.id} className="bg-white dark:bg-neutral-800 rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
                 <button
                   className="w-full px-5 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
                   onClick={() => setExpandedCqc(expandedCqc===d.id ? null : d.id)}
@@ -558,7 +558,7 @@ export function CareHubDemo({ lang }: { lang: string }) {
       {openAppt && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={() => setOpenAppt(null)}>
           <div className="absolute inset-0 bg-black/40" />
-          <div onClick={e => e.stopPropagation()} className="relative bg-white rounded-2xl w-full max-w-sm shadow-2xl overflow-hidden">
+          <div onClick={e => e.stopPropagation()} className="relative bg-white dark:bg-neutral-800 rounded-2xl w-full max-w-sm shadow-2xl overflow-hidden">
             <div className={`px-5 py-4 border-b border-gray-200 ${APPT_CELL[openAppt.status]}`}>
               <div className="flex items-start justify-between">
                 <div>
@@ -611,7 +611,7 @@ export function CareHubDemo({ lang }: { lang: string }) {
       {openPatient && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={() => setOpenPatient(null)}>
           <div className="absolute inset-0 bg-black/40" />
-          <div onClick={e => e.stopPropagation()} className="relative bg-white rounded-2xl w-full max-w-sm shadow-2xl overflow-hidden">
+          <div onClick={e => e.stopPropagation()} className="relative bg-white dark:bg-neutral-800 rounded-2xl w-full max-w-sm shadow-2xl overflow-hidden">
             <div className="bg-linear-to-r from-sky-600 to-blue-700 px-5 py-4 text-white flex items-start justify-between">
               <div>
                 <div className="text-sky-200 text-[10px] font-bold uppercase">Patient record</div>

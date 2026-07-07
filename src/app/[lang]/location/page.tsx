@@ -88,7 +88,7 @@ export default async function LocationIndexPage({ params }: { params: Promise<{ 
                 <Link
                   key={city.slug}
                   href={`/${lang}/location/${city.slug}`}
-                  className="group rounded-2xl border border-neutral-100 dark:border-neutral-700 p-6 hover:shadow-lg hover:shadow-neutral-100 hover:-translate-y-1 transition-all duration-300 bg-white"
+                  className="group rounded-2xl border border-neutral-100 dark:border-neutral-700 p-6 hover:shadow-lg hover:shadow-neutral-100 hover:-translate-y-1 transition-all duration-300 bg-white dark:bg-neutral-800"
                 >
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex items-center gap-2">
@@ -120,7 +120,7 @@ export default async function LocationIndexPage({ params }: { params: Promise<{ 
                 <h2 className="text-3xl font-heading font-extrabold text-neutral-900 dark:text-white mb-4">
                   {isUk ? "Чому Codeworth для UK бізнесу?" : "Why Codeworth for UK Businesses?"}
                 </h2>
-                <p className="text-neutral-500">
+                <p className="text-neutral-500 dark:text-neutral-400">
                   {isUk
                     ? "Ми розуміємо UK-специфіку: FCA compliance, NHS data requirements, Consumer Duty — і будуємо ML-рішення, що відповідають регуляторним вимогам."
                     : "We understand UK-specific requirements: FCA compliance, NHS data standards, Consumer Duty — and build ML solutions that meet regulatory demands."}
@@ -153,7 +153,7 @@ export default async function LocationIndexPage({ params }: { params: Promise<{ 
                   <div key={item.uk} className="rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 p-6">
                     <span className="text-3xl mb-4 block">{item.icon}</span>
                     <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-2">{isUk ? item.uk : item.en}</h3>
-                    <p className="text-sm text-neutral-500">{isUk ? item.dUk : item.dEn}</p>
+                    <p className="text-sm text-neutral-500 dark:text-neutral-400">{isUk ? item.dUk : item.dEn}</p>
                   </div>
                 ))}
               </div>

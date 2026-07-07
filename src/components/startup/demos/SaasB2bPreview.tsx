@@ -24,7 +24,7 @@ export function SaasB2bPreview() {
             Enterprise-grade workflow automation built for operations teams. No IT dependency required.
           </p>
           <div className="flex items-center gap-3">
-            <button className="bg-white text-blue-900 font-bold px-6 py-3 rounded-xl text-sm">Book a 30-min Demo</button>
+            <button className="bg-white dark:bg-neutral-800 text-blue-900 font-bold px-6 py-3 rounded-xl text-sm">Book a 30-min Demo</button>
             <button className="border border-blue-400/40 text-white px-5 py-3 rounded-xl text-sm">Download ROI calculator</button>
           </div>
         </div>
@@ -62,7 +62,7 @@ export function SaasB2bPreview() {
       <section className="px-8 py-10 bg-blue-700 text-white text-center">
         <h2 className="text-xl font-bold mb-2">Ready to see AutomateIQ in action?</h2>
         <p className="text-blue-200 text-sm mb-5">30-minute demo. No commitment. ROI estimate included.</p>
-        <button className="bg-white text-blue-800 font-bold px-8 py-3 rounded-xl text-sm">Schedule Your Demo →</button>
+        <button className="bg-white dark:bg-neutral-800 text-blue-800 font-bold px-8 py-3 rounded-xl text-sm">Schedule Your Demo →</button>
       </section>
     </div>
   );

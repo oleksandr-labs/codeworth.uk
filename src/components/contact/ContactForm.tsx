@@ -180,7 +180,7 @@ export function ContactForm() {
             id="contact-service"
             name="service"
             defaultValue={defaultService}
-            className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all text-neutral-700 dark:text-neutral-300 bg-white"
+            className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all text-neutral-700 dark:text-neutral-300 bg-white dark:bg-neutral-900"
           >
             <option value="">{isUk ? "Оберіть послугу" : "Select a service"}</option>
             {SERVICE_OPTIONS.map((o) => (
@@ -195,7 +195,7 @@ export function ContactForm() {
           <select
             id="contact-budget"
             name="budget"
-            className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all text-neutral-700 dark:text-neutral-300 bg-white"
+            className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all text-neutral-700 dark:text-neutral-300 bg-white dark:bg-neutral-900"
           >
             <option value="">{isUk ? "Оберіть діапазон" : "Select a range"}</option>
             {BUDGET_OPTIONS.map((o) => (

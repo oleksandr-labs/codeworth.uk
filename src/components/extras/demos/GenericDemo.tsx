@@ -70,7 +70,7 @@ function SaasLanding({ isUk }: { isUk: boolean }) {
         <div className="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-xl p-1">
           {(["monthly", "yearly"] as const).map((b) => (
             <button key={b} onClick={() => setBilling(b)}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${billing === b ? "bg-white shadow text-neutral-900" : "text-neutral-500"}`}>
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${billing === b ? "bg-white dark:bg-neutral-800 shadow text-neutral-900 dark:text-white" : "text-neutral-500 dark:text-neutral-400"}`}>
               {b === "monthly" ? (isUk ? "Щомісяця" : "Monthly") : (isUk ? "Щорічно −20%" : "Yearly −20%")}
             </button>
           ))}
@@ -78,14 +78,14 @@ function SaasLanding({ isUk }: { isUk: boolean }) {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {plans.map((p) => (
-          <div key={p.name} className={`rounded-2xl p-6 border ${p.highlight ? "border-indigo-500 bg-indigo-600 text-white shadow-xl" : "border-neutral-200 dark:border-neutral-700 bg-white"}`}>
-            <p className={`text-sm font-semibold mb-2 ${p.highlight ? "text-indigo-200" : "text-neutral-500"}`}>{p.name}</p>
-            <p className={`text-3xl font-bold mb-4 ${p.highlight ? "text-white" : "text-neutral-900"}`}>
+          <div key={p.name} className={`rounded-2xl p-6 border ${p.highlight ? "border-indigo-500 bg-indigo-600 text-white shadow-xl" : "border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800"}`}>
+            <p className={`text-sm font-semibold mb-2 ${p.highlight ? "text-indigo-200" : "text-neutral-500 dark:text-neutral-400"}`}>{p.name}</p>
+            <p className={`text-3xl font-bold mb-4 ${p.highlight ? "text-white" : "text-neutral-900 dark:text-white"}`}>
               ${p.price}<span className={`text-sm font-normal ${p.highlight ? "text-indigo-200" : "text-neutral-400"}`}>/mo</span>
             </p>
             <ul className="space-y-2 mb-6">
               {p.features.map((f) => (
-                <li key={f} className={`text-sm flex items-center gap-2 ${p.highlight ? "text-indigo-100" : "text-neutral-600"}`}>
+                <li key={f} className={`text-sm flex items-center gap-2 ${p.highlight ? "text-indigo-100" : "text-neutral-600 dark:text-neutral-300"}`}>
                   <span>✓</span>{f}
                 </li>
               ))}
@@ -278,9 +278,9 @@ function EcommerceFaq({ isUk }: { isUk: boolean }) {
 function SaasPricing({ isUk }: { isUk: boolean }) {
   const [yearly, setYearly] = useState(false);
   const plans = [
-    { name: "Free", price: 0, color: "border-neutral-200", btn: "bg-neutral-100 dark:bg-neutral-800 text-neutral-800", features: isUk ? ["1 проєкт", "2 ГБ", "Community підтримка"] : ["1 project", "2 GB storage", "Community support"] },
+    { name: "Free", price: 0, color: "border-neutral-200 dark:border-neutral-700", btn: "bg-neutral-100 dark:bg-neutral-800 text-neutral-800", features: isUk ? ["1 проєкт", "2 ГБ", "Community підтримка"] : ["1 project", "2 GB storage", "Community support"] },
     { name: "Pro", price: yearly ? 20 : 25, color: "border-indigo-500", btn: "bg-indigo-600 text-white", badge: isUk ? "Популярний" : "Popular", features: isUk ? ["10 проєктів", "50 ГБ", "Email підтримка", "API ключі"] : ["10 projects", "50 GB", "Email support", "API keys"] },
-    { name: "Business", price: yearly ? 56 : 70, color: "border-neutral-200", btn: "bg-neutral-800 text-white", features: isUk ? ["Необмежено", "500 ГБ", "Пріоритет 24/7", "SLA 99.9%", "SSO"] : ["Unlimited", "500 GB", "24/7 priority", "SLA 99.9%", "SSO"] },
+    { name: "Business", price: yearly ? 56 : 70, color: "border-neutral-200 dark:border-neutral-700", btn: "bg-neutral-800 text-white", features: isUk ? ["Необмежено", "500 ГБ", "Пріоритет 24/7", "SLA 99.9%", "SSO"] : ["Unlimited", "500 GB", "24/7 priority", "SLA 99.9%", "SSO"] },
   ];
   return (
     <div>
@@ -292,11 +292,11 @@ function SaasPricing({ isUk }: { isUk: boolean }) {
       </p>
       <div className="flex justify-center mb-8">
         <label className="flex items-center gap-3 cursor-pointer">
-          <span className={`text-sm font-medium ${!yearly ? "text-neutral-900" : "text-neutral-400"}`}>{isUk ? "Щомісяця" : "Monthly"}</span>
+          <span className={`text-sm font-medium ${!yearly ? "text-neutral-900 dark:text-white" : "text-neutral-400"}`}>{isUk ? "Щомісяця" : "Monthly"}</span>
           <div onClick={() => setYearly(!yearly)} className={`w-12 h-6 rounded-full transition-colors ${yearly ? "bg-indigo-600" : "bg-neutral-300"} relative`}>
             <div className={`absolute top-1 w-4 h-4 rounded-full bg-white dark:bg-neutral-800 shadow transition-transform ${yearly ? "translate-x-7" : "translate-x-1"}`} />
           </div>
-          <span className={`text-sm font-medium ${yearly ? "text-neutral-900" : "text-neutral-400"}`}>{isUk ? "Щорічно" : "Yearly"} <span className="text-green-600 text-xs">−20%</span></span>
+          <span className={`text-sm font-medium ${yearly ? "text-neutral-900 dark:text-white" : "text-neutral-400"}`}>{isUk ? "Щорічно" : "Yearly"} <span className="text-green-600 text-xs">−20%</span></span>
         </label>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
@@ -379,13 +379,13 @@ function EcommercePopup({ isUk }: { isUk: boolean }) {
 
       {show && (
         <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl p-8 max-w-sm w-full shadow-2xl relative">
+          <div className="bg-white dark:bg-neutral-800 rounded-3xl p-8 max-w-sm w-full shadow-2xl relative">
             <button onClick={() => setShow(false)} className="absolute top-4 right-4 text-neutral-400 hover:text-neutral-600 dark:text-neutral-300 text-lg">✕</button>
             {done ? (
               <div className="text-center py-4">
                 <div className="text-5xl mb-3">🎉</div>
                 <h3 className="font-heading text-xl font-bold text-neutral-900 dark:text-white mb-2">{isUk ? "Промокод надіслано!" : "Promo code sent!"}</h3>
-                <p className="text-sm text-neutral-500">{isUk ? "Перевірте вашу пошту" : "Check your inbox"}</p>
+                <p className="text-sm text-neutral-500 dark:text-neutral-400">{isUk ? "Перевірте вашу пошту" : "Check your inbox"}</p>
               </div>
             ) : (
               <>
@@ -435,12 +435,12 @@ function ServicePopup({ isUk }: { isUk: boolean }) {
       </div>
       {show && (
         <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl p-8 max-w-sm w-full shadow-2xl relative">
-            <button onClick={() => setShow(false)} className="absolute top-4 right-4 text-neutral-400 hover:text-neutral-600">✕</button>
+          <div className="bg-white dark:bg-neutral-800 rounded-3xl p-8 max-w-sm w-full shadow-2xl relative">
+            <button onClick={() => setShow(false)} className="absolute top-4 right-4 text-neutral-400 hover:text-neutral-600 dark:text-neutral-300">✕</button>
             {sent ? (
               <div className="text-center py-4">
                 <div className="text-5xl mb-3">✅</div>
-                <h3 className="font-heading text-xl font-bold text-neutral-900">{isUk ? "Заявку отримано!" : "Request received!"}</h3>
+                <h3 className="font-heading text-xl font-bold text-neutral-900 dark:text-white">{isUk ? "Заявку отримано!" : "Request received!"}</h3>
                 <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-2">{isUk ? "Передзвонимо протягом 15 хвилин" : "We'll call back within 15 minutes"}</p>
               </div>
             ) : (
@@ -450,7 +450,7 @@ function ServicePopup({ isUk }: { isUk: boolean }) {
                   <h3 className="font-heading text-xl font-bold text-neutral-900 dark:text-white mb-1">
                     {isUk ? "Безкоштовна консультація" : "Free Consultation"}
                   </h3>
-                  <p className="text-sm text-neutral-500">{isUk ? "Залиште номер — передзвонимо за 15 хв" : "Leave your number — callback in 15 min"}</p>
+                  <p className="text-sm text-neutral-500 dark:text-neutral-400">{isUk ? "Залиште номер — передзвонимо за 15 хв" : "Leave your number — callback in 15 min"}</p>
                 </div>
                 <div className="space-y-3 mb-4">
                   <input type="text" placeholder={isUk ? "Ваше ім'я" : "Your name"}
@@ -506,16 +506,16 @@ function BlogSearch({ isUk }: { isUk: boolean }) {
             className="w-full pl-10 pr-4 py-4 rounded-2xl border-2 border-neutral-200 dark:border-neutral-700 focus:border-indigo-400 focus:outline-none text-sm shadow-sm" />
         </div>
         {q.length > 1 && (
-          <div className="bg-white rounded-2xl border border-neutral-200 dark:border-neutral-700 shadow-lg overflow-hidden">
+          <div className="bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-200 dark:border-neutral-700 shadow-lg overflow-hidden">
             {results.length === 0 ? (
               <p className="px-5 py-4 text-sm text-neutral-400">{isUk ? "Нічого не знайдено" : "No results"}</p>
             ) : results.map((r, i) => (
               <div key={i} className="px-5 py-3 flex items-center gap-3 hover:bg-indigo-50 transition-colors cursor-pointer border-b border-neutral-100 dark:border-neutral-700 last:border-0">
                 <span className="text-xs bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-full shrink-0">{r.category}</span>
-                <span className="text-sm text-neutral-900">{highlight(r.title)}</span>
+                <span className="text-sm text-neutral-900 dark:text-white">{highlight(r.title)}</span>
               </div>
             ))}
-            <div className="px-5 py-2 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100">
+            <div className="px-5 py-2 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100 dark:border-neutral-700">
               <p className="text-xs text-neutral-400">{isUk ? `Знайдено: ${results.length}` : `${results.length} result${results.length !== 1 ? "s" : ""}`}</p>
             </div>
           </div>
@@ -559,7 +559,7 @@ function NovaPoshtaCheckout({ isUk }: { isUk: boolean }) {
       <div className="max-w-lg mx-auto bg-amber-50 rounded-3xl p-8">
         <div className="flex items-center gap-3 mb-6">
           <span className="text-2xl">📦</span>
-          <h3 className="font-semibold text-neutral-900">{isUk ? "Нова Пошта" : "Nova Poshta"}</h3>
+          <h3 className="font-semibold text-neutral-900 dark:text-white">{isUk ? "Нова Пошта" : "Nova Poshta"}</h3>
           <span className="ml-auto text-sm font-bold text-amber-700">{cost} ₴</span>
         </div>
 
@@ -569,7 +569,7 @@ function NovaPoshtaCheckout({ isUk }: { isUk: boolean }) {
           <div className="relative">
             <input value={city} onChange={(e) => setCity(e.target.value)} type="text"
               placeholder={isUk ? "Введіть місто..." : "Enter city..."}
-              className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white focus:border-amber-400 focus:outline-none text-sm" />
+              className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 focus:border-amber-400 focus:outline-none text-sm" />
             {city && city.length > 0 && (
               <div className="absolute top-full left-0 right-0 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-xl mt-1 shadow-lg z-10 overflow-hidden">
                 {cities.filter((c) => c.toLowerCase().includes(city.toLowerCase())).map((c) => (
@@ -593,7 +593,7 @@ function NovaPoshtaCheckout({ isUk }: { isUk: boolean }) {
               { id: "courier" as const, label: isUk ? "🚚 Кур'єр" : "🚚 Courier" },
             ].map((m) => (
               <button key={m.id} onClick={() => { setMethod(m.id); setBranch(""); }}
-                className={`py-2 rounded-xl border text-xs font-medium transition-all ${method === m.id ? "border-amber-500 bg-amber-500 text-white" : "border-neutral-200 dark:border-neutral-700 bg-white text-neutral-700 dark:text-neutral-300 hover:border-amber-300"}`}>
+                className={`py-2 rounded-xl border text-xs font-medium transition-all ${method === m.id ? "border-amber-500 bg-amber-500 text-white" : "border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:border-amber-300"}`}>
                 {m.label}
               </button>
             ))}
@@ -607,7 +607,7 @@ function NovaPoshtaCheckout({ isUk }: { isUk: boolean }) {
               {method === "branch" ? (isUk ? "Відділення" : "Branch") : (isUk ? "Поштомат" : "Locker")}
             </label>
             <select value={branch} onChange={(e) => setBranch(e.target.value)}
-              className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white focus:border-amber-400 focus:outline-none text-sm">
+              className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 focus:border-amber-400 focus:outline-none text-sm">
               <option value="">{isUk ? "Оберіть..." : "Select..."}</option>
               {(method === "branch" ? branches : lockers).map((b) => (
                 <option key={b}>{b}</option>
@@ -619,18 +619,18 @@ function NovaPoshtaCheckout({ isUk }: { isUk: boolean }) {
           <div className="mb-6">
             <label className="block text-xs font-semibold text-neutral-600 dark:text-neutral-300 mb-1.5">{isUk ? "Адреса доставки" : "Delivery address"}</label>
             <input type="text" placeholder={isUk ? "Вулиця, будинок, квартира" : "Street, building, apartment"}
-              className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white focus:border-amber-400 focus:outline-none text-sm" />
+              className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 focus:border-amber-400 focus:outline-none text-sm" />
           </div>
         )}
 
-        <div className="bg-white rounded-xl p-4 flex items-center justify-between">
+        <div className="bg-white dark:bg-neutral-800 rounded-xl p-4 flex items-center justify-between">
           <div>
-            <p className="text-xs text-neutral-500">{isUk ? "Вартість доставки" : "Shipping cost"}</p>
-            <p className="font-bold text-neutral-900">{cost} ₴</p>
+            <p className="text-xs text-neutral-500 dark:text-neutral-400">{isUk ? "Вартість доставки" : "Shipping cost"}</p>
+            <p className="font-bold text-neutral-900 dark:text-white">{cost} ₴</p>
           </div>
           <div className="text-right">
-            <p className="text-xs text-neutral-500">{isUk ? "Орієнтовний термін" : "Est. delivery"}</p>
-            <p className="font-bold text-neutral-900">{isUk ? "1–2 дні" : "1–2 days"}</p>
+            <p className="text-xs text-neutral-500 dark:text-neutral-400">{isUk ? "Орієнтовний термін" : "Est. delivery"}</p>
+            <p className="font-bold text-neutral-900 dark:text-white">{isUk ? "1–2 дні" : "1–2 days"}</p>
           </div>
         </div>
       </div>
@@ -654,17 +654,17 @@ function LiqPayDemo({ isUk }: { isUk: boolean }) {
         <div className="flex items-center gap-2 mb-8">
           {(isUk ? ["Кошик", "Оплата", "Статус"] : ["Cart", "Payment", "Status"]).map((s, i) => (
             <div key={s} className="flex-1 flex items-center gap-2">
-              <div className={`w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center ${i < (step === "cart" ? 1 : step === "pay" ? 2 : 3) ? "bg-green-500 text-white" : "bg-neutral-200 text-neutral-500"}`}>
+              <div className={`w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center ${i < (step === "cart" ? 1 : step === "pay" ? 2 : 3) ? "bg-green-500 text-white" : "bg-neutral-200 text-neutral-500 dark:text-neutral-400"}`}>
                 {i < (step === "cart" ? 1 : step === "pay" ? 2 : 3) ? "✓" : i + 1}
               </div>
-              <span className="text-xs text-neutral-500">{s}</span>
+              <span className="text-xs text-neutral-500 dark:text-neutral-400">{s}</span>
               {i < 2 && <div className="flex-1 h-px bg-neutral-200" />}
             </div>
           ))}
         </div>
 
         {step === "cart" && (
-          <div className="bg-white rounded-2xl border border-neutral-200 dark:border-neutral-700 p-6">
+          <div className="bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-200 dark:border-neutral-700 p-6">
             <h3 className="font-semibold text-neutral-900 dark:text-white mb-4">{isUk ? "Ваше замовлення" : "Your order"}</h3>
             {[{ name: isUk ? "Навушники Sony WH-1000XM5" : "Sony WH-1000XM5 Headphones", price: 8999 }, { name: isUk ? "Чохол захисний" : "Protective case", price: 299 }].map((item) => (
               <div key={item.name} className="flex justify-between py-2 border-b border-neutral-100 dark:border-neutral-700 text-sm">
@@ -672,7 +672,7 @@ function LiqPayDemo({ isUk }: { isUk: boolean }) {
                 <span className="font-medium">{item.price.toLocaleString("uk-UA")} ₴</span>
               </div>
             ))}
-            <div className="flex justify-between py-3 font-bold text-neutral-900">
+            <div className="flex justify-between py-3 font-bold text-neutral-900 dark:text-white">
               <span>{isUk ? "Разом" : "Total"}</span>
               <span>9 298 ₴</span>
             </div>
@@ -683,7 +683,7 @@ function LiqPayDemo({ isUk }: { isUk: boolean }) {
         )}
 
         {step === "pay" && (
-          <div className="bg-white rounded-2xl border border-neutral-200 dark:border-neutral-700 p-6">
+          <div className="bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-200 dark:border-neutral-700 p-6">
             <h3 className="font-semibold text-neutral-900 dark:text-white mb-4">{isUk ? "Спосіб оплати" : "Payment method"}</h3>
             <div className="grid grid-cols-3 gap-2 mb-4">
               {["LiqPay", "Monobank", "Apple Pay"].map((m, i) => (
@@ -700,8 +700,8 @@ function LiqPayDemo({ isUk }: { isUk: boolean }) {
               </div>
             </div>
             <div className="bg-green-50 rounded-xl p-3 flex justify-between text-sm mb-4">
-              <span className="text-neutral-600">{isUk ? "До оплати:" : "Amount:"}</span>
-              <span className="font-bold text-neutral-900">9 298 ₴</span>
+              <span className="text-neutral-600 dark:text-neutral-300">{isUk ? "До оплати:" : "Amount:"}</span>
+              <span className="font-bold text-neutral-900 dark:text-white">9 298 ₴</span>
             </div>
             <button onClick={() => setStep("done")} className="w-full py-3 rounded-xl bg-green-600 text-white font-semibold hover:bg-green-700 transition-colors">
               {isUk ? "Оплатити 9 298 ₴" : "Pay 9,298 ₴"}
@@ -710,7 +710,7 @@ function LiqPayDemo({ isUk }: { isUk: boolean }) {
         )}
 
         {step === "done" && (
-          <div className="bg-white rounded-2xl border border-neutral-200 dark:border-neutral-700 p-8 text-center">
+          <div className="bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-200 dark:border-neutral-700 p-8 text-center">
             <div className="text-5xl mb-4">✅</div>
             <h3 className="font-heading text-xl font-bold text-neutral-900 dark:text-white mb-1">{isUk ? "Оплату прийнято!" : "Payment successful!"}</h3>
             <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-2">{isUk ? "Замовлення #UA-20264812" : "Order #UA-20264812"}</p>
@@ -742,7 +742,7 @@ function TelegramBotDemo({ isUk }: { isUk: boolean }) {
       <div className="max-w-lg mx-auto">
         {/* Form that triggers the bot */}
         {!sent ? (
-          <div className="bg-white rounded-2xl border border-neutral-200 dark:border-neutral-700 p-6 mb-6">
+          <div className="bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-200 dark:border-neutral-700 p-6 mb-6">
             <h3 className="font-semibold text-neutral-900 dark:text-white mb-4">{isUk ? "Нове замовлення (симуляція)" : "New order (simulation)"}</h3>
             <div className="space-y-3 mb-4">
               <input type="text" defaultValue={isUk ? "Олена Мельник" : "Elena Melnyk"} className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 text-sm" readOnly />
@@ -828,12 +828,12 @@ function GoogleMapsDemo({ isUk }: { isUk: boolean }) {
       </p>
       <div className="max-w-2xl mx-auto flex flex-col sm:flex-row gap-4 bg-neutral-100 dark:bg-neutral-800 rounded-3xl overflow-hidden">
         {/* Sidebar */}
-        <div className="sm:w-52 p-4 bg-white space-y-2 shrink-0">
+        <div className="sm:w-52 p-4 bg-white dark:bg-neutral-800 space-y-2 shrink-0">
           <p className="text-xs font-bold text-neutral-400 uppercase tracking-wider mb-3">{isUk ? "Наші філії" : "Our locations"}</p>
           {LOCATIONS.map((loc) => (
             <button key={loc.id} onClick={() => setActive(loc.id)}
               className={`w-full text-left rounded-xl p-3 text-sm transition-all ${active === loc.id ? "bg-green-100 border border-green-300" : "hover:bg-neutral-50 dark:hover:bg-neutral-800 dark:bg-neutral-900 border border-transparent"}`}>
-              <p className={`font-semibold ${active === loc.id ? "text-green-800" : "text-neutral-900"}`}>
+              <p className={`font-semibold ${active === loc.id ? "text-green-800" : "text-neutral-900 dark:text-white"}`}>
                 📍 {isUk ? loc.name : loc.nameEn}
               </p>
               <p className="text-xs text-neutral-400 mt-0.5">{loc.hours}</p>
@@ -871,7 +871,7 @@ function GoogleMapsDemo({ isUk }: { isUk: boolean }) {
             return (
               <div style={pos} className="absolute -translate-x-1/2 bg-white dark:bg-neutral-800 rounded-2xl p-3 shadow-xl z-20 min-w-40">
                 <p className="font-semibold text-neutral-900 dark:text-white text-xs">{isUk ? loc.name : loc.nameEn}</p>
-                <p className="text-xs text-neutral-500">{loc.hours}</p>
+                <p className="text-xs text-neutral-500 dark:text-neutral-400">{loc.hours}</p>
                 <p className="text-xs text-green-700 font-medium mt-1">{loc.phone}</p>
                 <button className="mt-2 text-xs text-blue-600 hover:underline block">{isUk ? "Маршрут →" : "Directions →"}</button>
               </div>
@@ -922,7 +922,7 @@ function AiChatbotDemo({ isUk }: { isUk: boolean }) {
       <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-8">
         {isUk ? "GPT-4o навчений на документах клієнта. Відповідає на FAQ 24/7, fallback на живого оператора." : "GPT-4o trained on client's documents. Answers FAQ 24/7, falls back to a live agent."}
       </p>
-      <div className="max-w-md mx-auto rounded-3xl overflow-hidden shadow-xl border border-neutral-200">
+      <div className="max-w-md mx-auto rounded-3xl overflow-hidden shadow-xl border border-neutral-200 dark:border-neutral-700">
         {/* Header */}
         <div className="bg-gradient-to-r from-indigo-600 to-violet-600 px-5 py-4 flex items-center gap-3">
           <div className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center text-lg">🧠</div>
@@ -939,7 +939,7 @@ function AiChatbotDemo({ isUk }: { isUk: boolean }) {
         </div>
 
         {/* Messages */}
-        <div className="bg-white min-h-56 max-h-72 overflow-y-auto p-4 space-y-3">
+        <div className="bg-white dark:bg-neutral-800 min-h-56 max-h-72 overflow-y-auto p-4 space-y-3">
           {msgs.map((m, i) => (
             <div key={i} className={`flex items-end gap-2 ${m.role === "user" ? "justify-end" : ""}`}>
               {m.role === "bot" && (
@@ -953,7 +953,7 @@ function AiChatbotDemo({ isUk }: { isUk: boolean }) {
         </div>
 
         {/* Quick questions */}
-        <div className="bg-white border-t border-neutral-100 dark:border-neutral-700 px-4 py-2 flex gap-1.5 flex-wrap">
+        <div className="bg-white dark:bg-neutral-800 border-t border-neutral-100 dark:border-neutral-700 px-4 py-2 flex gap-1.5 flex-wrap">
           {QUICK.map((q) => (
             <button key={q} onClick={() => send(q.slice(2).trim())}
               className="text-xs px-3 py-1.5 bg-indigo-50 text-indigo-700 rounded-full hover:bg-indigo-100 transition-colors whitespace-nowrap">
@@ -1019,7 +1019,7 @@ function AdminBlogDemo({ isUk }: { isUk: boolean }) {
         {/* Toolbar */}
         <div className="flex items-center justify-between mb-4 gap-4 flex-wrap">
           <div className="flex gap-4 text-sm">
-            <span className="text-neutral-500">{isUk ? "Всього:" : "Total:"} <strong className="text-neutral-900">{posts.length}</strong></span>
+            <span className="text-neutral-500 dark:text-neutral-400">{isUk ? "Всього:" : "Total:"} <strong className="text-neutral-900 dark:text-white">{posts.length}</strong></span>
             <span className="text-green-700">{isUk ? "Опубліковано:" : "Published:"} <strong>{published}</strong></span>
             <span className="text-amber-700">{isUk ? "Чернеток:" : "Drafts:"} <strong>{drafts}</strong></span>
           </div>
@@ -1034,7 +1034,7 @@ function AdminBlogDemo({ isUk }: { isUk: boolean }) {
           <div className="bg-indigo-50 border border-indigo-200 rounded-2xl p-4 mb-4 flex gap-3">
             <input value={newTitle} onChange={(e) => setNewTitle(e.target.value)}
               placeholder={isUk ? "Заголовок нової статті..." : "New article title..."}
-              className="flex-1 px-4 py-2 rounded-xl border border-indigo-200 text-sm focus:outline-none focus:border-indigo-400 bg-white" />
+              className="flex-1 px-4 py-2 rounded-xl border border-indigo-200 text-sm focus:outline-none focus:border-indigo-400 bg-white dark:bg-neutral-800" />
             <button onClick={addPost} className="px-4 py-2 bg-indigo-600 text-white rounded-xl text-sm font-semibold hover:bg-indigo-700 transition-colors">
               {isUk ? "Додати" : "Add"}
             </button>
@@ -1045,7 +1045,7 @@ function AdminBlogDemo({ isUk }: { isUk: boolean }) {
         )}
 
         {/* Table */}
-        <div className="bg-white border border-neutral-200 dark:border-neutral-700 rounded-2xl overflow-hidden">
+        <div className="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl overflow-hidden">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-neutral-100 dark:border-neutral-700 bg-neutral-50">
@@ -1091,7 +1091,7 @@ function AdminBlogDemo({ isUk }: { isUk: boolean }) {
       {/* Delete confirm modal */}
       {delId !== null && (
         <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl p-6 max-w-sm w-full shadow-2xl">
+          <div className="bg-white dark:bg-neutral-800 rounded-2xl p-6 max-w-sm w-full shadow-2xl">
             <h3 className="font-bold text-neutral-900 dark:text-white mb-2">{isUk ? "Видалити статтю?" : "Delete article?"}</h3>
             <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-5">{isUk ? "Цю дію неможливо скасувати." : "This action cannot be undone."}</p>
             <div className="flex gap-3">
@@ -1155,7 +1155,7 @@ function BundleBuilderDemo({ isUk }: { isUk: boolean }) {
         {/* Summary sidebar */}
         <div className="sm:w-52 shrink-0">
           <p className="text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3">{isUk ? "Ваш набір:" : "Your bundle:"}</p>
-          <div className="bg-white border border-neutral-200 dark:border-neutral-700 rounded-2xl p-4 sticky top-4">
+          <div className="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl p-4 sticky top-4">
             {selected.length === 0 ? (
               <p className="text-sm text-neutral-400 text-center py-4">{isUk ? "Нічого не обрано" : "Nothing selected"}</p>
             ) : (
@@ -1292,7 +1292,7 @@ function AiSmartSearchDemo({ isUk }: { isUk: boolean }) {
         )}
 
         {q.trim().length > 1 && (
-          <div className="bg-white rounded-2xl border border-neutral-200 dark:border-neutral-700 shadow-sm overflow-hidden">
+          <div className="bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-200 dark:border-neutral-700 shadow-sm overflow-hidden">
             {results.length === 0 ? (
               <p className="px-5 py-6 text-sm text-neutral-400 text-center">{isUk ? "Нічого не знайдено" : "Nothing found"}</p>
             ) : (
@@ -1398,7 +1398,7 @@ function AdminAppointmentsDemo({ isUk }: { isUk: boolean }) {
         {/* Appointments list */}
         <div className="space-y-2">
           {appts.map((appt) => (
-            <div key={appt.id} className={`bg-white border border-neutral-200 dark:border-neutral-700 rounded-2xl px-4 py-3 flex items-center gap-4 transition-opacity ${appt.status === "cancelled" ? "opacity-50" : ""}`}>
+            <div key={appt.id} className={`bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl px-4 py-3 flex items-center gap-4 transition-opacity ${appt.status === "cancelled" ? "opacity-50" : ""}`}>
               <div className="w-14 text-center shrink-0">
                 <p className="font-bold text-neutral-900 dark:text-white text-sm">{appt.time}</p>
               </div>
@@ -1531,7 +1531,7 @@ function BeforeAfterDemo({ isUk }: { isUk: boolean }) {
 
       <div className="max-w-lg mx-auto">
         <div ref={ref}
-          className="relative rounded-2xl overflow-hidden h-64 cursor-col-resize select-none shadow-xl border border-neutral-200"
+          className="relative rounded-2xl overflow-hidden h-64 cursor-col-resize select-none shadow-xl border border-neutral-200 dark:border-neutral-700"
           onMouseMove={e => { if (dragging) update(e.clientX); }}
           onTouchMove={e => update(e.touches[0].clientX)}>
 
@@ -1548,7 +1548,7 @@ function BeforeAfterDemo({ isUk }: { isUk: boolean }) {
 
           {/* Handle */}
           <div
-            className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 bg-white rounded-full shadow-xl flex items-center justify-center cursor-col-resize z-10 border border-neutral-200"
+            className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 bg-white dark:bg-neutral-800 rounded-full shadow-xl flex items-center justify-center cursor-col-resize z-10 border border-neutral-200 dark:border-neutral-700"
             style={{ left: `${pos}%` }}
             onMouseDown={() => setDragging(true)}
             onTouchStart={() => setDragging(true)}>
@@ -1632,7 +1632,7 @@ function LeadQuizDemo({ isUk }: { isUk: boolean }) {
       </p>
 
       <div className="max-w-md mx-auto">
-        <div className="bg-white border border-neutral-200 dark:border-neutral-700 rounded-2xl p-6 shadow-lg">
+        <div className="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-2xl p-6 shadow-lg">
           {done ? (
             <div className="text-center py-4">
               <div className="text-5xl mb-4">🎉</div>
@@ -1987,7 +1987,7 @@ function NewsletterInlineDemo({ isUk }: { isUk: boolean }) {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder={t.ph}
-                  className="flex-1 sm:w-48 px-4 py-3 rounded-xl border border-indigo-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                  className="flex-1 sm:w-48 px-4 py-3 rounded-xl border border-indigo-200 bg-white dark:bg-neutral-800 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
                 />
                 <button
                   onClick={() => email.includes("@") && setSubmitted(true)}
@@ -2119,7 +2119,7 @@ function BackToTopDemo({ isUk }: { isUk: boolean }) {
       <div className="mt-4 flex gap-3">
         <button
           onClick={() => setShown(!shown)}
-          className="px-4 py-2 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-xs font-semibold text-neutral-700 dark:text-neutral-300 hover:border-neutral-300 transition-colors"
+          className="px-4 py-2 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-xs font-semibold text-neutral-700 dark:text-neutral-300 hover:border-neutral-300 transition-colors"
         >
           {shown
             ? (isUk ? "Приховати кнопку" : "Hide button")
@@ -2242,7 +2242,7 @@ function CookieBannerDemo({ isUk }: { isUk: boolean }) {
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
               <div className="flex-1">
                 <p className="text-xs font-semibold text-neutral-900 dark:text-white mb-0.5">🍪 {isUk ? "Ми використовуємо cookies" : "We use cookies"}</p>
-                <p className="text-xs text-neutral-500">{isUk ? "Для покращення досвіду та аналітики." : "To improve your experience and analytics."}</p>
+                <p className="text-xs text-neutral-500 dark:text-neutral-400">{isUk ? "Для покращення досвіду та аналітики." : "To improve your experience and analytics."}</p>
               </div>
               <div className="flex gap-2 shrink-0">
                 <button onClick={() => setCustomizing(true)} className="px-3 py-1.5 rounded-lg border border-neutral-200 dark:border-neutral-700 text-xs font-semibold text-neutral-600 dark:text-neutral-300 hover:bg-neutral-50">
@@ -2267,7 +2267,7 @@ function CookieBannerDemo({ isUk }: { isUk: boolean }) {
                       onClick={() => setPrefs(p => ({ ...p, [key]: !p[key] }))}
                       className={`w-8 h-4.5 rounded-full transition-colors relative ${prefs[key] ? "bg-indigo-600" : "bg-neutral-200"}`}
                     >
-                      <span className={`absolute top-0.5 w-3.5 h-3.5 rounded-full bg-white transition-all ${prefs[key] ? "left-4" : "left-0.5"}`} />
+                      <span className={`absolute top-0.5 w-3.5 h-3.5 rounded-full bg-white dark:bg-neutral-800 transition-all ${prefs[key] ? "left-4" : "left-0.5"}`} />
                     </button>
                   </label>
                 ))}
@@ -2311,7 +2311,7 @@ function SocialShareDemo({ isUk }: { isUk: boolean }) {
       </p>
 
       {/* Demo article card */}
-      <div className="border border-neutral-200 dark:border-neutral-700 rounded-3xl bg-white overflow-hidden">
+      <div className="border border-neutral-200 dark:border-neutral-700 rounded-3xl bg-white dark:bg-neutral-800 overflow-hidden">
         <div className="bg-linear-to-r from-indigo-600 to-violet-600 h-24 flex items-center justify-center text-white text-3xl">📝</div>
         <div className="p-5">
           <p className="text-xs text-indigo-600 font-semibold uppercase tracking-wide mb-1">{isUk ? "Веб-розробка" : "Web Development"}</p>
@@ -2319,7 +2319,7 @@ function SocialShareDemo({ isUk }: { isUk: boolean }) {
             {isUk ? "Як вибрати CMS для інтернет-магазину у 2026 році" : "How to Choose a CMS for Your Online Store in 2026"}
           </h3>
 
-          <div className="flex items-center justify-between gap-4 pt-4 border-t border-neutral-100">
+          <div className="flex items-center justify-between gap-4 pt-4 border-t border-neutral-100 dark:border-neutral-700">
             <div className="flex gap-1.5">
               {platforms.map((p) => (
                 <button
@@ -2403,7 +2403,7 @@ function StickyCTADemo({ isUk }: { isUk: boolean }) {
         <div className="flex gap-2">
           <button
             onClick={() => setVariant(variant === "top" ? "bottom" : "top")}
-            className="px-4 py-2 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-xs font-semibold text-neutral-700 dark:text-neutral-300 hover:border-neutral-300 transition-colors"
+            className="px-4 py-2 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-xs font-semibold text-neutral-700 dark:text-neutral-300 hover:border-neutral-300 transition-colors"
           >
             {t.togglePos}
           </button>

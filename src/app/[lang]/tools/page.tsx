@@ -64,7 +64,7 @@ const CATEGORY_COLORS: Record<string, string> = {
 
 function ToolCard({ tool, isUk, lang }: { tool: Tool; isUk: boolean; lang: string }) {
   const categoryLabel = CATEGORY_LABELS[tool.category];
-  const categoryColor = CATEGORY_COLORS[tool.category] ?? "bg-neutral-100 dark:bg-neutral-800 text-neutral-600";
+  const categoryColor = CATEGORY_COLORS[tool.category] ?? "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300";
 
   return (
     <div className="group relative flex flex-col p-6 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:shadow-md transition-shadow duration-200">
@@ -82,7 +82,7 @@ function ToolCard({ tool, isUk, lang }: { tool: Tool; isUk: boolean; lang: strin
           </span>
         )}
         {!tool.isBuilt && (
-          <span className="px-2 py-0.5 rounded-full text-xs font-semibold bg-neutral-200 text-neutral-500">
+          <span className="px-2 py-0.5 rounded-full text-xs font-semibold bg-neutral-200 text-neutral-500 dark:text-neutral-400">
             {isUk ? "Незабаром" : "Coming soon"}
           </span>
         )}
@@ -102,7 +102,7 @@ function ToolCard({ tool, isUk, lang }: { tool: Tool; isUk: boolean; lang: strin
       </p>
 
       {/* Footer */}
-      <div className="flex items-center justify-between mt-auto pt-4 border-t border-neutral-100">
+      <div className="flex items-center justify-between mt-auto pt-4 border-t border-neutral-100 dark:border-neutral-700">
         <span className={`px-2.5 py-1 rounded-lg text-xs font-semibold ${categoryColor}`}>
           {isUk ? categoryLabel?.uk : categoryLabel?.en}
         </span>
@@ -172,7 +172,7 @@ export default async function ToolsPage({
           <section key={cat.id} className="py-16 border-b border-neutral-100 dark:border-neutral-700 last:border-0">
             <Container>
               <div className="flex items-center gap-3 mb-8">
-                <h2 className="text-2xl font-heading font-extrabold text-neutral-900">
+                <h2 className="text-2xl font-heading font-extrabold text-neutral-900 dark:text-white">
                   {isUk ? cat.labelUk : cat.labelEn}
                 </h2>
                 <span className="px-2.5 py-1 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400 text-xs font-semibold">

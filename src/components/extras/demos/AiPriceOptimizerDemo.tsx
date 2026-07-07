@@ -126,7 +126,7 @@ export function AiPriceOptimizerDemo({ variant, isUk }: { variant: string; isUk:
     if (product.recommendedUah < product.currentUah) {
       return { arrow: "↓", label: isUk ? "знизити" : "decrease", color: "text-red-600 bg-red-50 border-red-200" };
     }
-    return { arrow: "✓", label: isUk ? "оптимально" : "optimal", color: "text-neutral-500 dark:text-neutral-400 bg-neutral-50 dark:bg-neutral-900 border-neutral-200" };
+    return { arrow: "✓", label: isUk ? "оптимально" : "optimal", color: "text-neutral-500 dark:text-neutral-400 bg-neutral-50 dark:bg-neutral-900 border-neutral-200 dark:border-neutral-700" };
   }
 
   return (
@@ -145,7 +145,7 @@ export function AiPriceOptimizerDemo({ variant, isUk }: { variant: string; isUk:
       <div className="overflow-x-auto rounded-2xl border border-neutral-200 dark:border-neutral-700 shadow-sm mb-6">
         <table className="w-full text-sm">
           <thead>
-            <tr className="bg-neutral-50 dark:bg-neutral-900 border-b border-neutral-200">
+            <tr className="bg-neutral-50 dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-700">
               <th className="text-left px-4 py-3 font-semibold text-neutral-700 dark:text-neutral-300 text-xs uppercase tracking-wide">
                 {isUk ? "Товар" : "Product"}
               </th>
@@ -171,15 +171,15 @@ export function AiPriceOptimizerDemo({ variant, isUk }: { variant: string; isUk:
                 <tr
                   key={product.id}
                   className={`border-b border-neutral-100 dark:border-neutral-700 last:border-0 transition-colors ${
-                    isApplied ? "bg-green-50" : i % 2 === 0 ? "bg-white" : "bg-neutral-50/50"
+                    isApplied ? "bg-green-50" : i % 2 === 0 ? "bg-white dark:bg-neutral-900" : "bg-neutral-50/50"
                   }`}
                 >
                   <td className="px-4 py-3.5">
-                    <span className="font-medium text-neutral-900">
+                    <span className="font-medium text-neutral-900 dark:text-white">
                       {isUk ? product.nameUk : product.nameEn}
                     </span>
                   </td>
-                  <td className="px-4 py-3.5 text-right text-neutral-500">
+                  <td className="px-4 py-3.5 text-right text-neutral-500 dark:text-neutral-400">
                     {formatPrice(product.currentUah, isUk)}
                   </td>
                   <td className="px-4 py-3.5 text-right">

@@ -161,7 +161,7 @@ export function ERPDiscoverySection({ lang }: { lang: string }) {
               {step > 0 && (
                 <button
                   onClick={() => setStep(s => s - 1)}
-                  className="mt-5 text-xs text-neutral-500 hover:text-neutral-300 transition-colors w-full text-center"
+                  className="mt-5 text-xs text-neutral-500 dark:text-neutral-400 hover:text-neutral-300 transition-colors w-full text-center"
                 >
                   ← {isUk ? "Назад" : "Back"}
                 </button>
@@ -191,7 +191,7 @@ export function ERPDiscoverySection({ lang }: { lang: string }) {
                   if (!opt) return null;
                   return (
                     <div key={s.key} className="bg-white/5 rounded-xl px-3 py-2">
-                      <div className="text-[10px] text-neutral-500 uppercase tracking-wide">{isUk ? s.q.uk.split("?")[0] : s.q.en.split("?")[0]}</div>
+                      <div className="text-[10px] text-neutral-500 dark:text-neutral-400 uppercase tracking-wide">{isUk ? s.q.uk.split("?")[0] : s.q.en.split("?")[0]}</div>
                       <div className="text-sm font-medium text-white mt-0.5 flex items-center gap-1.5"><EmojiIcon emoji={opt.emoji} className="w-4 h-4 shrink-0" />{isUk ? opt.uk : opt.en}</div>
                     </div>
                   );
@@ -208,7 +208,7 @@ export function ERPDiscoverySection({ lang }: { lang: string }) {
               </Link>
               <button
                 onClick={() => { setStep(0); setAnswers({}); }}
-                className="mt-3 text-xs text-neutral-500 hover:text-neutral-300 transition-colors"
+                className="mt-3 text-xs text-neutral-500 dark:text-neutral-400 hover:text-neutral-300 transition-colors"
               >
                 {isUk ? "Пройти ще раз" : "Start over"}
               </button>

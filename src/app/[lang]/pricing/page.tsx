@@ -161,7 +161,7 @@ export default async function PricingPage({ params }: { params: Promise<{ lang: 
         </section>
 
         {/* Trust badges */}
-        <section className="py-8 bg-white dark:bg-neutral-800 border-y border-neutral-100">
+        <section className="py-8 bg-white dark:bg-neutral-800 border-y border-neutral-100 dark:border-neutral-700">
           <Container>
             <div className="flex flex-wrap items-center justify-center gap-8 text-sm font-medium text-neutral-600 dark:text-neutral-300">
               <span className="flex items-center gap-2"><Shield className="w-4 h-4 text-emerald-500" /> {isUk ? "Без прихованих платежів" : "No hidden fees"}</span>

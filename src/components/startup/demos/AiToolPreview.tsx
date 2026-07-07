@@ -28,7 +28,7 @@ export function AiToolPreview() {
         </div>
       </section>
 
-      <section className="px-8 py-10 bg-white">
+      <section className="px-8 py-10 bg-white dark:bg-neutral-800">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-6">
             <h2 className="text-xl font-bold text-gray-900">Before vs After NeuralFlow</h2>

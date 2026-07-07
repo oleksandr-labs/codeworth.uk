@@ -22,7 +22,7 @@ export function CrowdfundingPreview() {
         <p className="text-orange-100 text-base mb-6 max-w-md mx-auto">
           Fresh juice anywhere. USB-C charged. No plastic waste. Ship Dec 2026.
         </p>
-        <button className="bg-white text-orange-600 font-bold px-8 py-3 rounded-xl text-sm mb-4">
+        <button className="bg-white dark:bg-neutral-800 text-orange-600 font-bold px-8 py-3 rounded-xl text-sm mb-4">
           🎯 Back this project from $49
         </button>
       </section>

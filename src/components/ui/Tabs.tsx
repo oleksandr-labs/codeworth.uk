@@ -56,7 +56,7 @@ export function Tabs({ tabs, defaultTab, children, className }: TabsProps) {
             className={cn(
               "px-5 py-2 rounded-lg text-sm font-medium transition-all duration-200",
               active === tab.id
-                ? "bg-white text-neutral-900 dark:text-white shadow-sm"
+                ? "bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white shadow-sm"
                 : "text-neutral-500 dark:text-neutral-400 hover:text-neutral-700"
             )}
           >

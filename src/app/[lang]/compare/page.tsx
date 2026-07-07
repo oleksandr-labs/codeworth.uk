@@ -97,7 +97,7 @@ export default async function CompareIndexPage({ params }: { params: Promise<{ l
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-1.5">
                           <div className="w-2 h-2 rounded-full bg-emerald-400" />
-                          <span className="text-xs text-neutral-500">
+                          <span className="text-xs text-neutral-500 dark:text-neutral-400">
                             {isUk ? `Codeworth виграє ${codeworthWins}/${total}` : `Codeworth wins ${codeworthWins}/${total}`}
                           </span>
                         </div>

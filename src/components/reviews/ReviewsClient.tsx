@@ -63,7 +63,7 @@ function FilterChip({
       className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all border ${
         active
           ? "bg-indigo-600 text-white border-indigo-600 shadow-sm"
-          : "bg-white text-gray-600 dark:text-neutral-300 border-gray-200 dark:border-neutral-700 hover:border-indigo-300 hover:text-indigo-600"
+          : "bg-white dark:bg-neutral-800 text-gray-600 dark:text-neutral-300 border-gray-200 dark:border-neutral-700 hover:border-indigo-300 hover:text-indigo-600"
       }`}
     >
       {children}
@@ -132,7 +132,7 @@ export function ReviewsClient({ reviews, lang, isUk }: Props) {
     <section className="py-16 bg-gray-50" id="reviews-list">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Filter bar */}
-        <div className="bg-white rounded-2xl border border-gray-200 dark:border-neutral-700 shadow-sm p-4 mb-8">
+        <div className="bg-white dark:bg-neutral-800 rounded-2xl border border-gray-200 dark:border-neutral-700 shadow-sm p-4 mb-8">
           <div className="flex items-center gap-2 mb-4">
             <Filter className="w-4 h-4 text-gray-500" />
             <span className="text-sm font-semibold text-gray-700">
@@ -238,7 +238,7 @@ export function ReviewsClient({ reviews, lang, isUk }: Props) {
             filtered.map((review) => (
               <article
                 key={review.id}
-                className="bg-white rounded-2xl p-6 border border-gray-200 dark:border-neutral-700 shadow-sm flex flex-col"
+                className="bg-white dark:bg-neutral-800 rounded-2xl p-6 border border-gray-200 dark:border-neutral-700 shadow-sm flex flex-col"
               >
                 <div className="flex items-start justify-between mb-3">
                   <StarRating rating={review.rating} />

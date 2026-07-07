@@ -118,7 +118,7 @@ export function UtmBuilder({ isUk }: Props) {
           value={baseUrl}
           onChange={(e) => setBaseUrl(e.target.value)}
           placeholder={t.baseUrlPh}
-          className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
+          className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
         />
       </div>
 
@@ -130,7 +130,7 @@ export function UtmBuilder({ isUk }: Props) {
             <button
               key={p.label}
               onClick={() => { setSource(p.source); setMedium(p.medium); }}
-              className="px-3 py-1.5 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white text-xs font-semibold text-neutral-600 dark:text-neutral-300 hover:border-indigo-400 hover:text-indigo-600 transition-colors"
+              className="px-3 py-1.5 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-xs font-semibold text-neutral-600 dark:text-neutral-300 hover:border-indigo-400 hover:text-indigo-600 transition-colors"
             >
               {p.label}
             </button>
@@ -151,7 +151,7 @@ export function UtmBuilder({ isUk }: Props) {
               value={f.value}
               onChange={(e) => f.setter(e.target.value)}
               placeholder={f.ph}
-              className="w-full px-3 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-xs focus:outline-none focus:ring-2 focus:ring-indigo-400"
+              className="w-full px-3 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-xs focus:outline-none focus:ring-2 focus:ring-indigo-400"
             />
           </div>
         ))}

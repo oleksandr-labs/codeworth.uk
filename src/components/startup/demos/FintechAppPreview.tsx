@@ -24,7 +24,7 @@ export function FintechAppPreview() {
             <p className="text-emerald-200 text-base mb-6">
               3% cashback. No hidden fees. Open in 4 minutes with your phone.
             </p>
-            <button className="bg-white text-emerald-800 font-bold px-6 py-3 rounded-xl text-sm mr-3">Open Free Account</button>
+            <button className="bg-white dark:bg-neutral-800 text-emerald-800 font-bold px-6 py-3 rounded-xl text-sm mr-3">Open Free Account</button>
           </div>
           <div className="bg-emerald-700/40 rounded-2xl p-5 border border-emerald-600/40">
             <div className="text-xs text-emerald-300 mb-3 font-semibold">Your ClearBank Card</div>
@@ -64,7 +64,7 @@ export function FintechAppPreview() {
       <section className="px-8 py-8 bg-emerald-50 text-center">
         <div className="flex items-center justify-center gap-4 text-xs text-gray-500 dark:text-neutral-400 flex-wrap">
           {["🔒 256-bit encryption", "🏦 FSCS protected up to £85,000", "⭐ 4.8/5 on Trustpilot", "📱 iOS & Android"].map((b) => (
-            <span key={b} className="bg-white border border-gray-200 dark:border-neutral-700 px-3 py-1.5 rounded-full">{b}</span>
+            <span key={b} className="bg-white dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700 px-3 py-1.5 rounded-full">{b}</span>
           ))}
         </div>
       </section>

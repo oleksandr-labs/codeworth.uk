@@ -75,7 +75,7 @@ const CATEGORY_GRADIENT: Record<UseCaseCategory, string> = {
 
 function UseCaseCard({ uc, isUk, lang }: { uc: UseCase; isUk: boolean; lang: string }) {
   const catLabel = USE_CASE_CATEGORY_LABELS[uc.category];
-  const colorPill = CATEGORY_COLORS[catLabel.color] ?? "bg-neutral-100 dark:bg-neutral-800 text-neutral-600";
+  const colorPill = CATEGORY_COLORS[catLabel.color] ?? "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300";
   const gradient = CATEGORY_GRADIENT[uc.category];
 
   return (
@@ -92,7 +92,7 @@ function UseCaseCard({ uc, isUk, lang }: { uc: UseCase; isUk: boolean; lang: str
       <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-4 flex-1 line-clamp-3">
         {isUk ? uc.problemUk : uc.problemEn}
       </p>
-      <div className="flex items-center justify-between mt-auto pt-4 border-t border-neutral-100">
+      <div className="flex items-center justify-between mt-auto pt-4 border-t border-neutral-100 dark:border-neutral-700">
         <span className={`px-2.5 py-1 rounded-lg text-xs font-semibold ${colorPill}`}>
           {isUk ? catLabel.uk : catLabel.en}
         </span>
@@ -174,7 +174,7 @@ export default async function UseCasesPage({
             <Container>
               <div className="flex items-center gap-3 mb-8">
                 <span className="text-2xl">{CATEGORY_ICONS[cat.id]}</span>
-                <h2 className="text-2xl font-heading font-extrabold text-neutral-900">
+                <h2 className="text-2xl font-heading font-extrabold text-neutral-900 dark:text-white">
                   {isUk ? cat.uk : cat.en}
                 </h2>
                 <span className="px-2.5 py-1 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400 text-xs font-semibold">

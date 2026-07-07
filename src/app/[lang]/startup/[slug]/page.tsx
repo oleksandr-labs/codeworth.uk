@@ -163,9 +163,9 @@ export default async function StartupSolutionPage({ params }: Props) {
         <main id="main-content" className="flex-1">
 
           {/* Breadcrumb */}
-          <div className="bg-white border-b border-neutral-100">
+          <div className="bg-white dark:bg-neutral-800 border-b border-neutral-100 dark:border-neutral-700">
             <Container>
-              <div className="py-3 flex items-center gap-2 text-sm text-neutral-500">
+              <div className="py-3 flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400">
                 <Link href={lp("/")} className="hover:text-neutral-800 dark:text-neutral-200 transition-colors">{isUk ? "Головна" : "Home"}</Link>
                 <span>/</span>
                 <Link href={lp("/startup")} className="hover:text-neutral-800 dark:text-neutral-200 transition-colors">
@@ -199,7 +199,7 @@ export default async function StartupSolutionPage({ params }: Props) {
                 <div className="flex flex-wrap items-center justify-center gap-4">
                   <Link
                     href={lp(`/contact?source=startup&slug=${slug}&package=standard`)}
-                    className="inline-flex items-center gap-2 bg-white text-gray-900 dark:text-white font-bold px-7 py-3.5 rounded-2xl hover:bg-white/90 transition-colors shadow-lg"
+                    className="inline-flex items-center gap-2 bg-white dark:bg-neutral-800 text-gray-900 dark:text-white font-bold px-7 py-3.5 rounded-2xl hover:bg-white/90 transition-colors shadow-lg"
                   >
                     <ShoppingCart className="w-5 h-5" />
                     {isUk ? `Замовити від £${solution.priceFrom}` : `Order from £${solution.priceFrom}`}
@@ -215,17 +215,17 @@ export default async function StartupSolutionPage({ params }: Props) {
 
           {/* Demo Preview */}
           {DemoComponent && (
-            <section className="py-12 bg-neutral-100 dark:bg-neutral-800 border-b border-neutral-200">
+            <section className="py-12 bg-neutral-100 dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
               <Container>
                 <div className="text-center mb-6">
                   <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-2">
                     {isUk ? "Жива демо-версія" : "Live Preview"}
                   </p>
-                  <h2 className="text-2xl font-heading font-bold text-neutral-900">
+                  <h2 className="text-2xl font-heading font-bold text-neutral-900 dark:text-white">
                     {isUk ? "Саме так виглядатиме ваш лендінг" : "This is exactly what your landing will look like"}
                   </h2>
                 </div>
-                <div className="rounded-2xl overflow-hidden border border-neutral-300 shadow-xl bg-white">
+                <div className="rounded-2xl overflow-hidden border border-neutral-300 shadow-xl bg-white dark:bg-neutral-800">
                   <DemoComponent />
                 </div>
               </Container>
@@ -240,7 +240,7 @@ export default async function StartupSolutionPage({ params }: Props) {
                 <div className="lg:col-span-2 space-y-8">
 
                   {/* For whom */}
-                  <div className="bg-white rounded-2xl border border-neutral-100 dark:border-neutral-700 p-6">
+                  <div className="bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-100 dark:border-neutral-700 p-6">
                     <div className="flex items-center gap-2 mb-4">
                       <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center">
                         <Target className="w-4 h-4 text-indigo-600" />
@@ -280,7 +280,7 @@ export default async function StartupSolutionPage({ params }: Props) {
                   </div>
 
                   {/* Sections included */}
-                  <div className="bg-white rounded-2xl border border-neutral-100 dark:border-neutral-700 p-6">
+                  <div className="bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-100 dark:border-neutral-700 p-6">
                     <div className="flex items-center gap-2 mb-4">
                       <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center">
                         <Layers className="w-4 h-4 text-indigo-600" />
@@ -323,7 +323,7 @@ export default async function StartupSolutionPage({ params }: Props) {
                       </div>
                       <Link
                         href={lp(`/contact?source=startup&slug=${slug}&package=standard`)}
-                        className="block w-full text-center bg-white text-gray-900 dark:text-white font-bold py-3 rounded-xl hover:bg-white/90 transition-colors"
+                        className="block w-full text-center bg-white dark:bg-neutral-800 text-gray-900 dark:text-white font-bold py-3 rounded-xl hover:bg-white/90 transition-colors"
                       >
                         {isUk ? "Замовити зараз" : "Order Now"}
                       </Link>
@@ -355,10 +355,10 @@ export default async function StartupSolutionPage({ params }: Props) {
           </div>
 
           {/* Packages */}
-          <section className="py-16 bg-neutral-50 dark:bg-neutral-900 border-y border-neutral-100">
+          <section className="py-16 bg-neutral-50 dark:bg-neutral-900 border-y border-neutral-100 dark:border-neutral-700">
             <Container>
               <div className="text-center mb-10">
-                <h2 className="text-3xl font-heading font-extrabold text-neutral-900">
+                <h2 className="text-3xl font-heading font-extrabold text-neutral-900 dark:text-white">
                   {isUk ? "Оберіть пакет" : "Choose Your Package"}
                 </h2>
               </div>
@@ -369,7 +369,7 @@ export default async function StartupSolutionPage({ params }: Props) {
                     className={`rounded-2xl p-6 border-2 ${
                       pkg.highlight
                         ? "border-indigo-600 bg-indigo-50"
-                        : "border-neutral-200 dark:border-neutral-700 bg-white"
+                        : "border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800"
                     }`}
                   >
                     {pkg.highlight && (
@@ -438,7 +438,7 @@ export default async function StartupSolutionPage({ params }: Props) {
           )}
 
           {/* Back nav */}
-          <div className="py-8 bg-white dark:bg-neutral-800 border-t border-neutral-100">
+          <div className="py-8 bg-white dark:bg-neutral-800 border-t border-neutral-100 dark:border-neutral-700">
             <Container>
               <Link
                 href={lp("/startup")}

@@ -5,7 +5,7 @@ export default function ServicesLoading() {
   return (
     <main className="flex-1">
       {/* Hero skeleton */}
-      <section className="py-20 bg-neutral-50 dark:bg-neutral-900 border-b border-neutral-100">
+      <section className="py-20 bg-neutral-50 dark:bg-neutral-900 border-b border-neutral-100 dark:border-neutral-700">
         <Container>
           <Skeleton className="h-4 w-32 mb-4" />
           <Skeleton className="h-12 w-72 mb-4 max-w-full" />

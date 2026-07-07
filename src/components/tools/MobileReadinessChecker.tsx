@@ -79,7 +79,7 @@ export function MobileReadinessChecker({ isUk }: Props) {
       {/* Score */}
       <div className="flex items-center justify-between mb-4">
         <div>
-          <p className="text-3xl font-sans font-extrabold tabular-nums tracking-tight text-neutral-900">{pct}%</p>
+          <p className="text-3xl font-sans font-extrabold tabular-nums tracking-tight text-neutral-900 dark:text-white">{pct}%</p>
           <p className={`text-sm font-semibold mt-0.5 ${gradeColor}`}>{gradeLabel}</p>
         </div>
         <div className="text-right">
@@ -119,7 +119,7 @@ export function MobileReadinessChecker({ isUk }: Props) {
                         : "border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 hover:border-neutral-300"
                     }`}
                   >
-                    <div className={`w-5 h-5 rounded-md border-2 flex items-center justify-center shrink-0 mt-0.5 transition-colors ${checked.has(item.id) ? "bg-green-500 border-green-500" : "border-neutral-300 bg-white"}`}>
+                    <div className={`w-5 h-5 rounded-md border-2 flex items-center justify-center shrink-0 mt-0.5 transition-colors ${checked.has(item.id) ? "bg-green-500 border-green-500" : "border-neutral-300 bg-white dark:bg-neutral-800"}`}>
                       {checked.has(item.id) && <Check className="w-3 h-3 text-white" />}
                     </div>
                     <span className={`text-sm flex-1 leading-relaxed ${checked.has(item.id) ? "line-through text-neutral-400" : "text-neutral-700"}`}>

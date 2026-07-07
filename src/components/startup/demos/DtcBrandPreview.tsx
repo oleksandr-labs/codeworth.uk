@@ -80,7 +80,7 @@ export function DtcBrandPreview() {
             { name: "Olivia K.", text: "I've tried dozens of serums. This is the only one that actually delivers on its promises.", before: "Fine lines", after: "Visibly smoother" },
             { name: "Sophie R.", text: "The scent is divine and it absorbs immediately. No greasy feeling whatsoever.", before: "Redness", after: "Calm & even" },
           ].map((r) => (
-            <div key={r.name} className="bg-white rounded-xl p-4 border border-rose-100">
+            <div key={r.name} className="bg-white dark:bg-neutral-800 rounded-xl p-4 border border-rose-100">
               <div className="text-yellow-400 text-xs mb-2">★★★★★</div>
               <div className="text-xs text-gray-700 dark:text-neutral-300 mb-3 italic">&ldquo;{r.text}&rdquo;</div>
               <div className="flex gap-2 mb-2">

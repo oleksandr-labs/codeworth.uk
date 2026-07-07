@@ -220,7 +220,7 @@ function ResourceCard({
   return (
     <Link
       href={`/${lang}/resources/${resource.slug}`}
-      className="bg-white rounded-xl p-5 border border-gray-200 dark:border-neutral-700 hover:border-indigo-300 hover:shadow-md transition-all group flex flex-col"
+      className="bg-white dark:bg-neutral-800 rounded-xl p-5 border border-gray-200 dark:border-neutral-700 hover:border-indigo-300 hover:shadow-md transition-all group flex flex-col"
     >
       <div className="flex items-center justify-between mb-3">
         <span className="text-xs font-medium text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full">

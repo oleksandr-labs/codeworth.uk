@@ -145,7 +145,7 @@ export default async function BlogTagPage({ params }: Props) {
                         <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed line-clamp-2 mb-4">
                           {getPostExcerpt(post, lang)}
                         </p>
-                        <div className="flex items-center gap-4 text-xs text-neutral-400 pt-3 border-t border-neutral-100">
+                        <div className="flex items-center gap-4 text-xs text-neutral-400 pt-3 border-t border-neutral-100 dark:border-neutral-700">
                           <span className="flex items-center gap-1">
                             <Calendar className="w-3 h-3" />
                             {formatDate(post.date, lang)}
@@ -173,7 +173,7 @@ export default async function BlogTagPage({ params }: Props) {
 
               {/* Sidebar — all tags */}
               <aside className="lg:col-span-1">
-                <div className="bg-white rounded-2xl border border-neutral-100 dark:border-neutral-700 p-5 sticky top-24">
+                <div className="bg-white dark:bg-neutral-800 rounded-2xl border border-neutral-100 dark:border-neutral-700 p-5 sticky top-24">
                   <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-4 text-sm uppercase tracking-wider">
                     {isUk ? "Всі теги" : "All Tags"}
                   </h3>
@@ -185,7 +185,7 @@ export default async function BlogTagPage({ params }: Props) {
                         className={`text-xs px-3 py-1.5 rounded-full border transition-colors ${
                           t === decoded
                             ? "bg-indigo-600 text-white border-indigo-600"
-                            : "bg-white text-neutral-600 dark:text-neutral-300 border-neutral-200 dark:border-neutral-700 hover:border-indigo-300 hover:text-indigo-600"
+                            : "bg-white dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 border-neutral-200 dark:border-neutral-700 hover:border-indigo-300 hover:text-indigo-600"
                         }`}
                       >
                         #{t}

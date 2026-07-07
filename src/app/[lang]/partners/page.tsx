@@ -331,7 +331,7 @@ export default async function PartnersPage({
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
               {benefits.map((b) => (
-                <div key={b.title} className="bg-white rounded-xl p-5 border border-blue-100">
+                <div key={b.title} className="bg-white dark:bg-neutral-800 rounded-xl p-5 border border-blue-100">
                   <div className="text-2xl mb-3">{b.emoji}</div>
                   <h3 className="font-semibold text-gray-900 dark:text-white mb-1">{b.title}</h3>
                   <p className="text-sm text-gray-600">{b.desc}</p>
@@ -375,7 +375,7 @@ export default async function PartnersPage({
                   className={`rounded-2xl p-6 border ${
                     tier.highlighted
                       ? "bg-blue-600 border-blue-500 text-white"
-                      : "bg-white border-gray-200"
+                      : "bg-white dark:bg-neutral-800 border-gray-200"
                   }`}
                 >
                   <h3 className={`text-xl font-bold mb-2 ${tier.highlighted ? "text-white" : "text-gray-900"}`}>

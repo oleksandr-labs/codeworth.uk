@@ -52,7 +52,7 @@ export function NewsletterPreview() {
       </div>
 
       {/* Recent issues preview */}
-      <section className="px-8 py-10 bg-white">
+      <section className="px-8 py-10 bg-white dark:bg-neutral-800">
         <h2 className="text-xl font-extrabold text-gray-900 dark:text-white mb-6">Recent issues</h2>
         <div className="space-y-3 max-w-3xl">
           {[
@@ -113,7 +113,7 @@ export function NewsletterPreview() {
       <div className="px-8 py-6 bg-amber-500 text-white text-center">
         <div className="font-bold text-lg mb-1">Join 8,400+ readers this Thursday</div>
         <div className="text-amber-100 text-sm mb-4">It's free. Forever.</div>
-        <button className="bg-white text-amber-700 font-bold px-8 py-3 rounded-2xl text-sm hover:bg-amber-50 transition-colors shadow">
+        <button className="bg-white dark:bg-neutral-800 text-amber-700 font-bold px-8 py-3 rounded-2xl text-sm hover:bg-amber-50 transition-colors shadow">
           Subscribe — it's free
         </button>
       </div>

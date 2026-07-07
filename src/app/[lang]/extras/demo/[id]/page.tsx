@@ -61,10 +61,10 @@ export default async function ExtraDemoGalleryPage({ params }: Props) {
   const orderHref = `/${lang}/contact?subject=${subject}&extra=${extra.id}`;
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white dark:bg-neutral-800">
       {/* Breadcrumb */}
       <nav className="border-b border-neutral-100 dark:border-neutral-700 bg-neutral-50">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center gap-2 text-sm text-neutral-500">
+        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400">
           <Link href={`/${lang}`} className="hover:text-indigo-600 transition-colors">
             {isUk ? "Головна" : "Home"}
           </Link>

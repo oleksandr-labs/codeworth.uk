@@ -23,7 +23,7 @@ export function CommunityPlatformPreview() {
           Weekly expert sessions, deal flow, peer accountability, and the best founders community you&apos;ll ever join.
         </p>
         <div className="flex items-center justify-center gap-3">
-          <button className="bg-white text-purple-800 font-bold px-6 py-3 rounded-xl text-sm">Join as Founding Member — $49/mo</button>
+          <button className="bg-white dark:bg-neutral-800 text-purple-800 font-bold px-6 py-3 rounded-xl text-sm">Join as Founding Member — $49/mo</button>
         </div>
         <p className="text-xs text-purple-300 mt-3">Regular price $97/mo · Lock in your rate forever</p>
       </section>

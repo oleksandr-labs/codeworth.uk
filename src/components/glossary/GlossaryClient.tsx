@@ -68,7 +68,7 @@ export function GlossaryClient({ lang, isUk }: Props) {
       </section>
 
       {/* Category filters */}
-      <section className="bg-white border-b sticky top-0 z-10">
+      <section className="bg-white dark:bg-neutral-900 border-b sticky top-0 z-10">
         <Container>
           <div className="flex gap-2 overflow-x-auto py-3 scrollbar-hide" role="tablist" aria-label={isUk ? "Категорії" : "Categories"}>
             <button
@@ -121,7 +121,7 @@ export function GlossaryClient({ lang, isUk }: Props) {
                     <Link
                       key={term.slug}
                       href={`/${lang}/glossary/${term.slug}`}
-                      className="bg-white rounded-xl p-5 border border-gray-200 dark:border-neutral-700 hover:border-indigo-300 hover:shadow-md transition-all group"
+                      className="bg-white dark:bg-neutral-800 rounded-xl p-5 border border-gray-200 dark:border-neutral-700 hover:border-indigo-300 hover:shadow-md transition-all group"
                     >
                       <div className="flex items-start justify-between mb-2">
                         <span className="text-xs font-medium text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full">

@@ -208,7 +208,7 @@ export function PortfolioContent() {
               return (
                 <div
                   key={project.slug}
-                  className="group relative rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white overflow-hidden hover:shadow-xl hover:shadow-neutral-200/60 transition-all duration-300 hover:-translate-y-1"
+                  className="group relative rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white dark:bg-neutral-800 overflow-hidden hover:shadow-xl hover:shadow-neutral-200/60 transition-all duration-300 hover:-translate-y-1"
                 >
                   {/* Visual preview — click to open lightbox */}
                   <button
@@ -264,7 +264,7 @@ export function PortfolioContent() {
                       ))}
                     </div>
 
-                    <div className="flex flex-wrap gap-1.5 pt-3 border-t border-neutral-100">
+                    <div className="flex flex-wrap gap-1.5 pt-3 border-t border-neutral-100 dark:border-neutral-700">
                       {project.tech.map((t) => (
                         <span key={t} className="text-xs text-neutral-400">{t}</span>
                       ))}

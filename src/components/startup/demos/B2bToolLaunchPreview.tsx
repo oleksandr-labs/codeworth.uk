@@ -44,7 +44,7 @@ export function B2bToolLaunchPreview() {
         </div>
       </section>
 
-      <section className="px-8 py-10 bg-white">
+      <section className="px-8 py-10 bg-white dark:bg-neutral-800">
         <h2 className="text-xl font-bold text-gray-900 dark:text-white text-center mb-6">Team-first pricing</h2>
         <div className="grid grid-cols-3 gap-4 max-w-3xl mx-auto">
           {[
@@ -52,7 +52,7 @@ export function B2bToolLaunchPreview() {
             { name: "Growth", price: "$9", per: "/user/mo", desc: "25–100 seats · popular", features: ["Everything in Team", "Unlimited history", "Priority support", "Custom workflows"], popular: true },
             { name: "Enterprise", price: "Custom", per: "", desc: "100+ seats", features: ["SSO / SAML", "Dedicated CSM", "SLA 99.99%", "On-prem option"] },
           ].map((p) => (
-            <div key={p.name} className={`rounded-xl p-5 border-2 ${p.popular ? "border-cyan-500 bg-cyan-50" : "border-gray-200 dark:border-neutral-700 bg-white"}`}>
+            <div key={p.name} className={`rounded-xl p-5 border-2 ${p.popular ? "border-cyan-500 bg-cyan-50" : "border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800"}`}>
               {p.popular && <div className="text-xs font-bold text-cyan-600 mb-2">⭐ Most popular</div>}
               <div className="font-bold text-gray-900">{p.name}</div>
               <div className="flex items-end gap-1 my-2">

@@ -114,7 +114,7 @@ export function ERPRoiCalculator({ lang }: Props) {
           <div className="flex flex-col gap-4">
             {/* Main result */}
             <div className="bg-neutral-900 dark:bg-neutral-950 rounded-2xl p-6 text-white flex-1">
-              <p className="text-xs text-neutral-500 uppercase tracking-wider mb-5">
+              <p className="text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-wider mb-5">
                 {isUk ? "Ваш розрахунок" : "Your numbers"}
               </p>
 
@@ -133,7 +133,7 @@ export function ERPRoiCalculator({ lang }: Props) {
                     <span className="text-sm text-neutral-300 font-medium">
                       {isUk ? "Потенційна економія з ERP" : "Potential ERP savings"}
                     </span>
-                    <span className="block text-[10px] text-neutral-600 mt-0.5">
+                    <span className="block text-[10px] text-neutral-600 dark:text-neutral-300 mt-0.5">
                       {isUk ? "68% автоматизація на основі наших кейсів" : "68% automation based on our case studies"}
                     </span>
                   </div>
@@ -144,7 +144,7 @@ export function ERPRoiCalculator({ lang }: Props) {
 
                 <div className="grid grid-cols-2 gap-3">
                   <div className="bg-white/5 rounded-xl p-3 text-center">
-                    <div className="text-xs text-neutral-500 mb-1">
+                    <div className="text-xs text-neutral-500 dark:text-neutral-400 mb-1">
                       {isUk ? "Орієнтовна вартість ERP" : "ERP investment"}
                     </div>
                     <div className="text-lg font-black text-white tabular-nums">{fmt(projectCost)}</div>
@@ -162,7 +162,7 @@ export function ERPRoiCalculator({ lang }: Props) {
                 {/* Bar visualisation */}
                 <div className="pt-2 space-y-2">
                   <div>
-                    <div className="flex justify-between text-[10px] text-neutral-600 mb-1">
+                    <div className="flex justify-between text-[10px] text-neutral-600 dark:text-neutral-300 mb-1">
                       <span>{isUk ? "Поточні витрати" : "Current cost"}</span>
                       <span className="text-red-400">{fmt(annualAdminCost)}/yr</span>
                     </div>
@@ -171,7 +171,7 @@ export function ERPRoiCalculator({ lang }: Props) {
                     </div>
                   </div>
                   <div>
-                    <div className="flex justify-between text-[10px] text-neutral-600 mb-1">
+                    <div className="flex justify-between text-[10px] text-neutral-600 dark:text-neutral-300 mb-1">
                       <span>{isUk ? "Залишкові витрати після ERP" : "After ERP"}</span>
                       <span className="text-emerald-400">{fmt(annualAdminCost - estimatedSaving)}/yr</span>
                     </div>

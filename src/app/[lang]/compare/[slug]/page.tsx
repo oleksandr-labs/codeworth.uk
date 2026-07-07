@@ -318,7 +318,7 @@ export default async function ComparePage({ params }: { params: Promise<Params> 
         </section>
 
         {/* Other comparisons */}
-        <section className="py-12 bg-white dark:bg-neutral-800 border-t border-neutral-100">
+        <section className="py-12 bg-white dark:bg-neutral-800 border-t border-neutral-100 dark:border-neutral-700">
           <Container>
             <h2 className="text-lg font-heading font-bold text-neutral-900 dark:text-white mb-5">
               {isUk ? "Інші порівняння:" : "Other comparisons:"}

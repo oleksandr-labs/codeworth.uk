@@ -127,7 +127,7 @@ export default async function CareerPositionPage({
         </section>
 
         {/* Content */}
-        <section className="py-12 bg-white">
+        <section className="py-12 bg-white dark:bg-neutral-950">
           <Container>
             <div className="grid lg:grid-cols-3 gap-10">
               {/* Main content */}
@@ -239,7 +239,7 @@ export default async function CareerPositionPage({
                 <Link
                   key={j.slug}
                   href={`/${lang}/careers/${j.slug}`}
-                  className="bg-white border border-gray-200 dark:border-neutral-700 rounded-xl p-4 hover:border-indigo-300 transition-colors group"
+                  className="bg-white dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700 rounded-xl p-4 hover:border-indigo-300 transition-colors group"
                 >
                   <p className="font-medium text-gray-900 dark:text-white group-hover:text-indigo-700 transition-colors mb-1">
                     {isUk ? j.titleUk : j.titleEn}

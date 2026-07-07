@@ -303,11 +303,11 @@ export function AiEdtechDemo({ isUk }: Props) {
               <div className="flex gap-4">
                 <div className="text-center">
                   <div className="text-2xl font-heading font-bold text-violet-700">{score}</div>
-                  <div className="text-xs text-neutral-500">{isUk ? "балів" : "points"}</div>
+                  <div className="text-xs text-neutral-500 dark:text-neutral-400">{isUk ? "балів" : "points"}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-heading font-bold text-violet-700">{answered}</div>
-                  <div className="text-xs text-neutral-500">{isUk ? "запитань" : "questions"}</div>
+                  <div className="text-xs text-neutral-500 dark:text-neutral-400">{isUk ? "запитань" : "questions"}</div>
                 </div>
               </div>
             </div>
@@ -334,7 +334,7 @@ export function AiEdtechDemo({ isUk }: Props) {
             <p className="text-xs text-violet-600 font-semibold mb-1">
               {isUk ? "💡 Як AI адаптується" : "💡 How AI adapts"}
             </p>
-            <p className="text-xs text-neutral-500">
+            <p className="text-xs text-neutral-500 dark:text-neutral-400">
               {isUk
                 ? "Після 3 правильних відповідей поспіль AI автоматично підвищує складність. Після 2 помилок — знижує."
                 : "After 3 correct answers in a row AI raises difficulty. After 2 mistakes it drops the level."}
@@ -347,7 +347,7 @@ export function AiEdtechDemo({ isUk }: Props) {
           {!question && !loading && (
             <div className="flex-1 flex flex-col items-center justify-center text-center text-neutral-400">
               <span className="text-6xl mb-4">🎓</span>
-              <p className="text-sm font-medium text-neutral-500">
+              <p className="text-sm font-medium text-neutral-500 dark:text-neutral-400">
                 {isUk ? "Запитання з'явиться тут" : "Question will appear here"}
               </p>
               <p className="text-xs mt-1">

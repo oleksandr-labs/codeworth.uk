@@ -43,7 +43,7 @@ export function CareersJobList({ jobs, lang, isUk }: CareersJobListProps) {
   const btnBase =
     "px-3 py-1.5 rounded-lg text-sm font-medium transition-colors border";
   const btnActive = "bg-indigo-600 text-white border-indigo-600";
-  const btnInactive = "bg-white text-gray-600 dark:text-neutral-300 border-gray-200 dark:border-neutral-700 hover:border-indigo-300 hover:text-indigo-600";
+  const btnInactive = "bg-white dark:bg-neutral-800 text-gray-600 dark:text-neutral-300 border-gray-200 dark:border-neutral-700 hover:border-indigo-300 hover:text-indigo-600";
 
   return (
     <div>

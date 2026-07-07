@@ -99,7 +99,7 @@ export function RobotsTxtGenerator({ isUk }: Props) {
             type="text"
             value={userAgent}
             onChange={(e) => setUserAgent(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm font-mono focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-indigo-400"
           />
         </div>
 
@@ -124,7 +124,7 @@ export function RobotsTxtGenerator({ isUk }: Props) {
               onChange={(e) => setDisallowInput(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && addPath()}
               placeholder={t.addPh}
-              className="flex-1 px-3 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm font-mono focus:outline-none focus:ring-2 focus:ring-indigo-400"
+              className="flex-1 px-3 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-indigo-400"
             />
             <button
               onClick={addPath}
@@ -144,7 +144,7 @@ export function RobotsTxtGenerator({ isUk }: Props) {
             onChange={(e) => setCrawlDelay(e.target.value)}
             placeholder={t.crawlPh}
             min={0}
-            className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
           />
         </div>
 
@@ -156,7 +156,7 @@ export function RobotsTxtGenerator({ isUk }: Props) {
             value={sitemapUrl}
             onChange={(e) => setSitemapUrl(e.target.value)}
             placeholder={t.sitemapPh}
-            className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            className="w-full px-4 py-3 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
           />
         </div>
 
