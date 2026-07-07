@@ -11,8 +11,16 @@ interface FAQItem {
 
 const VISIBLE_COUNT = 3;
 
-export function FAQSection({ items, isUk }: { items: FAQItem[]; isUk: boolean }) {
-  const [expanded, setExpanded] = useState<number | null>(null);
+interface FAQSectionProps {
+  items: FAQItem[];
+  isUk: boolean;
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+}
+
+export function FAQSection({ items, isUk, eyebrow, title, subtitle }: FAQSectionProps) {
+  const [expanded, setExpanded] = useState<number | null>(0);
   const [showAll, setShowAll] = useState(false);
 
   const visible = showAll ? items : items.slice(0, VISIBLE_COUNT);
@@ -22,14 +30,14 @@ export function FAQSection({ items, isUk }: { items: FAQItem[]; isUk: boolean })
     <section className="py-24 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100 dark:border-neutral-800">
       <Container>
         <div className="max-w-2xl mx-auto text-center mb-12">
-          <p className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest mb-3">FAQ</p>
+          <p className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest mb-3">{eyebrow ?? "FAQ"}</p>
           <h2 className="text-4xl font-heading font-extrabold text-neutral-900 dark:text-white">
-            {isUk ? "Часті питання" : "Frequently Asked Questions"}
+            {title ?? (isUk ? "Часті питання" : "Frequently Asked Questions")}
           </h2>
           <p className="mt-4 text-neutral-500 dark:text-neutral-400">
-            {isUk
+            {subtitle ?? (isUk
               ? "Відповіді на найпоширеніші запитання про ML/AI розробку та роботу з Codeworth."
-              : "Answers to the most common questions about ML/AI development and working with Codeworth."}
+              : "Answers to the most common questions about ML/AI development and working with Codeworth.")}
           </p>
         </div>
 

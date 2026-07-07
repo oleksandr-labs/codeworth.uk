@@ -8,8 +8,9 @@ import { getPostTitle, getPostExcerpt } from "@/lib/data/blog";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
-import { Check, ChevronRight, Clock, ArrowRight, Zap, Code2, BookOpen } from "lucide-react";
+import { Check, ChevronRight, Clock, ArrowRight, Zap, Code2 } from "lucide-react";
 import { EmojiIcon } from "@/components/ui/EmojiIcon";
+import { NicheFAQ } from "@/components/niche/NicheFAQ";
 
 export async function generateStaticParams() {
   return AI_NICHES.map((n) => ({ niche: n.slug }));
@@ -374,27 +375,7 @@ export default async function AINichePage({
           );
         })()}
 
-        {/* FAQ */}
-        <section className="py-16 bg-slate-900">
-          <Container>
-            <h2 className="text-3xl font-bold text-white mb-10">
-              {isUk ? "Часті запитання" : "FAQ"}
-            </h2>
-            <div className="max-w-3xl space-y-6">
-              {niche.faq.map((f, i) => (
-                <div key={i} className="rounded-xl border border-slate-700 bg-slate-800/50 p-6">
-                  <h3 className="font-semibold text-white mb-3 flex items-start gap-2">
-                    <BookOpen className="w-4 h-4 text-violet-400 shrink-0 mt-0.5" />
-                    {isUk ? f.questionUk : f.question}
-                  </h3>
-                  <p className="text-slate-300 text-sm leading-relaxed">
-                    {isUk ? f.answerUk : f.answer}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </Container>
-        </section>
+        <NicheFAQ items={niche.faq} isUk={isUk} accentColor="text-violet-400" />
 
         {/* Cross-links */}
         {(niche.crossLinkMLNiche || niche.crossLinkAINiche) && (

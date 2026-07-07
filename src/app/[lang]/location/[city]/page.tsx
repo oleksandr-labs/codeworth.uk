@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { GEO_CITIES, GEO_CITY_SLUGS, getCity } from "@/lib/data/geo";
 import { MapPin, ArrowRight } from "lucide-react";
+import { FAQSection } from "@/components/home/FAQSection";
 
 type Params = { lang: string; city: string };
 
@@ -295,25 +296,11 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
 
         {/* FAQ */}
         {city.faq.length > 0 && (
-          <section className="py-20 bg-neutral-50 dark:bg-neutral-900 ">
-            <Container>
-              <div className="max-w-3xl mx-auto">
-                <h2 className="text-2xl font-heading font-extrabold text-neutral-900 dark:text-white mb-10 text-center">
-                  {isUk ? `Часті питання — ML-консалтинг у ${cityName}` : `FAQ — ML consulting in ${cityName}`}
-                </h2>
-                <div className="space-y-4">
-                  {city.faq.map((item) => (
-                    <div key={item.q} className="rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 p-6">
-                      <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-2">
-                        {isUk ? item.q : item.qEn}
-                      </h3>
-                      <p className="text-neutral-600 dark:text-neutral-300 text-sm leading-relaxed">{isUk ? item.a : item.aEn}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </Container>
-          </section>
+          <FAQSection
+            items={city.faq.map((item) => ({ q: isUk ? item.q : item.qEn, a: isUk ? item.a : item.aEn }))}
+            isUk={isUk}
+            title={isUk ? `Часті питання — ML-консалтинг у ${cityName}` : `FAQ — ML consulting in ${cityName}`}
+          />
         )}
 
         {/* Other cities */}

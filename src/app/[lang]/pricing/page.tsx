@@ -4,6 +4,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { CTASection } from "@/components/home/CTASection";
+import { FAQSection } from "@/components/home/FAQSection";
 import { PricingContent } from "@/components/pricing/PricingContent";
 import { PriceCalculator } from "@/components/pricing/PriceCalculator";
 import { Shield, Clock, CreditCard } from "lucide-react";
@@ -174,27 +175,12 @@ export default async function PricingPage({ params }: { params: Promise<{ lang: 
 
         <PriceCalculator />
 
-        {/* FAQ */}
-        <section className="py-24 bg-neutral-50 dark:bg-neutral-900 ">
-          <Container>
-            <div className="max-w-2xl mx-auto text-center mb-12">
-              <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">
-                {isUk ? "Питання і відповіді" : "Questions & Answers"}
-              </p>
-              <h2 className="text-4xl font-heading font-extrabold text-neutral-900">
-                {isUk ? "FAQ по цінах" : "Pricing FAQ"}
-              </h2>
-            </div>
-            <div className="max-w-3xl mx-auto space-y-4">
-              {FAQ.map((item) => (
-                <div key={item.q} className="p-6 rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-100">
-                  <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-2">{item.q}</h3>
-                  <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">{item.a}</p>
-                </div>
-              ))}
-            </div>
-          </Container>
-        </section>
+        <FAQSection
+          items={FAQ}
+          isUk={isUk}
+          eyebrow={isUk ? "Питання і відповіді" : "Questions & Answers"}
+          title={isUk ? "FAQ по цінах" : "Pricing FAQ"}
+        />
 
         <CTASection lang={lang} />
       </main>

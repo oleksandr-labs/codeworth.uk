@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import { Clock, ArrowRight, BookOpen, Search, X, Tag, Layers, ExternalLink, ArrowUpDown, Globe } from "lucide-react";
+import { Clock, ArrowRight, BookOpen, Search, X, Tag, Layers, ExternalLink, ArrowUpDown } from "lucide-react";
 import { BLOG_POSTS, BLOG_CATEGORIES, getPostTitle, getPostExcerpt } from "@/lib/data/blog";
 import { getAuthorByName } from "@/lib/data/blogAuthors";
 import { cn } from "@/lib/utils";
@@ -54,7 +54,6 @@ export function BlogContent() {
   const [activeTag, setActiveTag] = useState<string | null>(null);
   const [query, setQuery] = useState("");
   const [sortOrder, setSortOrder] = useState<"newest" | "oldest">("newest");
-  const [langFilter, setLangFilter] = useState<"all" | "en" | "uk">("all");
   const [page, setPage] = useState(1);
   const [showAllTags, setShowAllTags] = useState(false);
 
@@ -77,13 +76,11 @@ export function BlogContent() {
         : ALL_OTHERS.filter((p) => p.category === activeCategory);
       if (activeTag) posts = posts.filter((p) => p.tags.includes(activeTag));
     }
-    if (langFilter === "en") posts = posts.filter((p) => p.contentEn && p.contentEn.length > 0);
-    if (langFilter === "uk") posts = posts.filter((p) => p.content && p.content.length > 0);
     return [...posts].sort((a, b) => {
       const diff = new Date(b.date).getTime() - new Date(a.date).getTime();
       return sortOrder === "newest" ? diff : -diff;
     });
-  }, [activeCategory, activeTag, query, sortOrder, langFilter]);
+  }, [activeCategory, activeTag, query, sortOrder]);
 
   const totalPages = Math.ceil(filtered.length / POSTS_PER_PAGE);
   const paginated = filtered.slice((page - 1) * POSTS_PER_PAGE, page * POSTS_PER_PAGE);
@@ -95,7 +92,6 @@ export function BlogContent() {
     setActiveTag(null);
     setQuery("");
     setSortOrder("newest");
-    setLangFilter("all");
     setPage(1);
   };
   const handlePageChange = (p: number) => {
@@ -188,25 +184,6 @@ export function BlogContent() {
           </button>
         )}
       </div>
-      {/* Language filter */}
-      <div className="flex items-center gap-1 shrink-0 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white p-1">
-        <Globe className="w-4 h-4 text-neutral-400 ml-2 shrink-0" aria-hidden="true" />
-        {(["all", "en", "uk"] as const).map((lf) => (
-          <button
-            key={lf}
-            onClick={() => { setLangFilter(lf); resetPage(); }}
-            aria-pressed={langFilter === lf}
-            className={cn(
-              "px-3 py-1.5 rounded-lg text-xs font-semibold transition-all leading-none",
-              langFilter === lf
-                ? "bg-indigo-600 text-white shadow-sm"
-                : "text-neutral-500 dark:text-neutral-400 hover:text-neutral-800 dark:text-neutral-200 hover:bg-neutral-50"
-            )}
-          >
-            {lf === "all" ? (isUk ? "Всі" : "All") : lf === "en" ? "🇬🇧 EN" : "🇺🇦 UK"}
-          </button>
-        ))}
-      </div>
       {/* Sort */}
       <div className="relative shrink-0">
         <ArrowUpDown className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400 pointer-events-none" aria-hidden="true" />
@@ -227,7 +204,7 @@ export function BlogContent() {
         {/* ── Main content ── */}
         <div>
           {/* Active filter chips */}
-          {(activeCategory || activeTag || langFilter !== "all") && !query && (
+          {(activeCategory || activeTag) && !query && (
             <div className="flex items-center gap-2 mb-6 flex-wrap">
               <span className="text-sm text-neutral-500">
                 {isUk ? "Фільтр:" : "Filter:"}
@@ -255,17 +232,6 @@ export function BlogContent() {
                       resetPage();
                     }}
                     aria-label="Remove tag filter"
-                  >
-                    <X className="w-3 h-3" />
-                  </button>
-                </span>
-              )}
-              {langFilter !== "all" && (
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-600 text-white text-xs font-medium">
-                  {langFilter === "en" ? "🇬🇧 EN" : "🇺🇦 UK"}
-                  <button
-                    onClick={() => { setLangFilter("all"); resetPage(); }}
-                    aria-label="Remove language filter"
                   >
                     <X className="w-3 h-3" />
                   </button>

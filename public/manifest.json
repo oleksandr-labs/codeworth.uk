@@ -1,29 +1,29 @@
 {
-  "name": "Codeworth — Веб-студія повного циклу",
+  "name": "Codeworth — ML & AI Consultancy",
   "short_name": "Codeworth",
-  "description": "Веб-студія повного циклу. Розробка сайтів, інтернет-магазинів, PWA та маркетплейс готових рішень для бізнесу в Україні.",
+  "description": "Custom machine learning and AI solutions for UK businesses — from proof of concept to production MLOps.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#1E1B4B",
-  "theme_color": "#1E1B4B",
+  "background_color": "#ffffff",
+  "theme_color": "#4F46E5",
   "orientation": "portrait-primary",
   "lang": "uk",
   "scope": "/",
   "icons": [
     {
-      "src": "/icons/icon-192.png",
+      "src": "/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icons/icon-512.png",
+      "src": "/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icons/icon-512.png",
+      "src": "/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
@@ -32,18 +32,18 @@
   "categories": ["business", "productivity"],
   "shortcuts": [
     {
-      "name": "Маркетплейс",
-      "short_name": "Маркетплейс",
-      "description": "Перейти до каталогу готових рішень",
-      "url": "/marketplace/catalog",
-      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
-    },
-    {
       "name": "Контакти",
       "short_name": "Контакти",
       "description": "Зв'язатися з Codeworth",
       "url": "/contact",
-      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Послуги",
+      "short_name": "Послуги",
+      "description": "AI/ML послуги для бізнесу",
+      "url": "/services",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
     }
   ]
 }

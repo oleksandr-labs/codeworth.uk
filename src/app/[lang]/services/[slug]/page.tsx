@@ -16,6 +16,7 @@ import { AiHospitalityDemo } from "@/components/extras/demos/AiHospitalityDemo";
 import { MLOpsPipelineDiagram } from "@/components/services/MLOpsPipelineDiagram";
 import { DatasetCalculator } from "@/components/services/DatasetCalculator";
 import { ServiceStickyCta } from "@/components/services/ServiceStickyCta";
+import { FAQSection } from "@/components/home/FAQSection";
 
 interface Props {
   params: Promise<{ lang: string; slug: string }>;
@@ -633,38 +634,23 @@ export default async function ServicePage({ params }: Props) {
           </section>
         )}
 
-        {/* FAQ */}
-        <section className="py-24 bg-white dark:bg-neutral-950">
-          <Container>
-            <div className="max-w-2xl mx-auto text-center mb-12">
-              <h2 className="text-4xl font-heading font-extrabold text-neutral-900">
-                {isUk ? "Часті питання" : "FAQ"}
-              </h2>
-            </div>
-            <div className="max-w-3xl mx-auto space-y-4">
-              {service.faq.map((item) => (
-                <div key={item.q} className="p-6 rounded-2xl border border-neutral-100">
-                  <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-2">{item.q}</h3>
-                  <p className="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed">{item.a}</p>
-                </div>
-              ))}
-            </div>
+        <FAQSection items={service.faq} isUk={isUk} title={isUk ? "Часті питання" : "FAQ"} />
 
-            {/* More questions CTA */}
-            <div className="max-w-3xl mx-auto mt-8 text-center">
-              <p className="text-neutral-500 dark:text-neutral-400 text-sm">
-                {isUk ? "Не знайшли відповідь?" : "Didn't find an answer?"}{" "}
-                <Link href={`/${lang}/contact`} className="text-indigo-600 font-medium hover:underline">
-                  {isUk ? "Напишіть нам" : "Contact us"}
-                </Link>
-                {" "}{isUk ? "або перегляньте" : "or check the"}{" "}
-                <Link href={`/${lang}/faq`} className="text-indigo-600 font-medium hover:underline">
-                  {isUk ? "повний FAQ" : "full FAQ"}
-                </Link>
-              </p>
-            </div>
-          </Container>
-        </section>
+        {/* More questions CTA */}
+        <div className="bg-neutral-50 dark:bg-neutral-900 pb-16">
+          <div className="max-w-3xl mx-auto text-center px-6">
+            <p className="text-neutral-500 dark:text-neutral-400 text-sm">
+              {isUk ? "Не знайшли відповідь?" : "Didn't find an answer?"}{" "}
+              <Link href={`/${lang}/contact`} className="text-indigo-600 font-medium hover:underline">
+                {isUk ? "Напишіть нам" : "Contact us"}
+              </Link>
+              {" "}{isUk ? "або перегляньте" : "or check the"}{" "}
+              <Link href={`/${lang}/faq`} className="text-indigo-600 font-medium hover:underline">
+                {isUk ? "повний FAQ" : "full FAQ"}
+              </Link>
+            </p>
+          </div>
+        </div>
 
         {/* Related blog posts */}
         {blogPosts.length > 0 && (

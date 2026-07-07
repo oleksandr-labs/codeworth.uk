@@ -7,6 +7,7 @@ import { Container } from "@/components/layout/Container";
 import { CTASection } from "@/components/home/CTASection";
 import { SERVICES_DATA, getServiceLocalized } from "@/lib/data/services";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
+import { FAQSection } from "@/components/home/FAQSection";
 import { ArrowRight, CheckCircle, Clock, Users, Star } from "lucide-react";
 import { CountUp } from "@/components/ui/CountUp";
 
@@ -268,30 +269,14 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
           </Container>
         </section>
 
-        {/* FAQ */}
-        <section className="py-24 bg-white dark:bg-neutral-800 border-t border-neutral-100 dark:border-neutral-700">
-          <Container>
-            <div className="max-w-2xl mx-auto text-center mb-12">
-              <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-3">FAQ</p>
-              <h2 className="text-4xl font-heading font-extrabold text-neutral-900 dark:text-white">
-                {isUk ? "Часті питання про ML-послуги" : "Frequently Asked Questions"}
-              </h2>
-              <p className="mt-4 text-neutral-500 dark:text-neutral-400">
-                {isUk
-                  ? "Все, що варто знати перед початком ML-проєкту."
-                  : "Everything worth knowing before starting an ML project."}
-              </p>
-            </div>
-            <div className="max-w-3xl mx-auto space-y-4">
-              {faqItems.map((item) => (
-                <div key={item.q} className="p-6 rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900">
-                  <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-2">{item.q}</h3>
-                  <p className="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed">{item.a}</p>
-                </div>
-              ))}
-            </div>
-          </Container>
-        </section>
+        <FAQSection
+          items={faqItems}
+          isUk={isUk}
+          title={isUk ? "Часті питання про ML-послуги" : "Frequently Asked Questions"}
+          subtitle={isUk
+            ? "Все, що варто знати перед початком ML-проєкту."
+            : "Everything worth knowing before starting an ML project."}
+        />
 
         <TestimonialsSection />
         <CTASection lang={lang} />
