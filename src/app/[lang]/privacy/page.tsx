@@ -96,9 +96,8 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
                   <h3>2.1 Дані, які ви надаєте самостійно</h3>
                   <ul>
                     <li><strong>Контактна форма</strong> — ім'я, email, телефон, опис проєкту</li>
-                    <li><strong>Форма замовлення</strong> — ім'я, email, телефон, обраний продукт/послуга</li>
+                    <li><strong>Форма заявки на вакансію</strong> — ім'я, email, посилання на портфоліо, супровідний лист</li>
                     <li><strong>Підписка на блог</strong> — email-адреса</li>
-                    <li><strong>Реєстрація в кабінеті</strong> — ім'я, email, пароль (у хешованому вигляді)</li>
                   </ul>
                   <h3>2.2 Технічні дані (збираються автоматично)</h3>
                   <ul>
@@ -109,38 +108,37 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
                   </ul>
                   <h2>3. Для чого ми використовуємо ваші дані</h2>
                   <ul>
-                    <li>Обробка та виконання замовлень на послуги або продукти маркетплейсу</li>
-                    <li>Зв'язок з вами щодо вашого проєкту або замовлення</li>
+                    <li>Обробка заявок на ML/AI-консультацію та вакансії</li>
+                    <li>Зв'язок з вами щодо вашого проєкту або заявки</li>
                     <li>Відправка розсилки (тільки за вашою згодою)</li>
-                    <li>Покращення якості сайту та продуктів</li>
+                    <li>Покращення якості сайту та послуг</li>
                     <li>Аналіз трафіку та ефективності маркетингових кампаній</li>
                     <li>Дотримання законодавчих вимог</li>
                   </ul>
                   <h2>4. Кому ми передаємо дані</h2>
                   <p>Ми <strong>не продаємо</strong> ваші персональні дані третім особам. Ми можемо передавати дані лише в таких випадках:</p>
                   <ul>
-                    <li><strong>Платіжні системи</strong> (LiqPay, Stripe) — для обробки платежів</li>
+                    <li><strong>Внутрішня CRM</strong> — облік заявок відповідальними за продажі</li>
                     <li><strong>Google Analytics / GA4</strong> — анонімізована статистика поведінки відвідувачів</li>
                     <li><strong>Telegram</strong> — сповіщення про нові заявки (для внутрішнього використання)</li>
-                    <li><strong>Провайдер хостингу</strong> (Vercel) — для розміщення та роботи сайту</li>
+                    <li><strong>Провайдер хостингу</strong> (Hetzner) — для розміщення та роботи сайту</li>
                     <li><strong>Держоргани</strong> — за наявності законних підстав та судових рішень</li>
                   </ul>
                   <h2>5. Як довго ми зберігаємо дані</h2>
                   <ul>
-                    <li><strong>Дані контактних форм</strong> — до 2 років або до виконання замовлення</li>
-                    <li><strong>Дані облікових записів</strong> — весь строк існування акаунту + 1 рік після видалення</li>
+                    <li><strong>Дані контактних форм та заявок</strong> — до 2 років або до завершення проєкту</li>
                     <li><strong>Дані аналітики</strong> — до 26 місяців (стандарт Google Analytics)</li>
                     <li><strong>Email-підписники</strong> — до відписки або запиту на видалення</li>
                   </ul>
                   <h2>6. Cookies</h2>
                   <ul>
-                    <li><strong>Необхідні (завжди активні)</strong> — базова робота сайту: сесія, кошик, тема</li>
+                    <li><strong>Необхідні (завжди активні)</strong> — базова робота сайту: сесія, тема</li>
                     <li><strong>Аналітичні</strong> — Google Analytics для аналізу трафіку (потребують вашої згоди)</li>
                     <li><strong>Маркетингові</strong> — ретаргетинг та реклама (потребують вашої згоди)</li>
                   </ul>
                   <p>Ви можете керувати згодою через cookie-банер або налаштування браузера.</p>
                   <h2>7. Ваші права</h2>
-                  <p>Відповідно до GDPR та законодавства України ви маєте право:</p>
+                  <p>Відповідно до UK GDPR та Data Protection Act 2018 ви маєте право:</p>
                   <ul>
                     <li><strong>Доступ</strong> — запитати які дані ми маємо про вас</li>
                     <li><strong>Виправлення</strong> — попросити виправити неточні дані</li>
@@ -153,7 +151,6 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
                   <h2>8. Безпека даних</h2>
                   <ul>
                     <li>HTTPS/TLS шифрування всіх передач даних</li>
-                    <li>Хешування паролів (bcrypt)</li>
                     <li>Обмежений доступ за принципом мінімальних привілеїв</li>
                     <li>Регулярне резервне копіювання</li>
                     <li>Захист від SQL-ін'єкцій та XSS через серверну валідацію</li>
@@ -192,9 +189,8 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
                   <h3>2.1 Data you provide directly</h3>
                   <ul>
                     <li><strong>Contact form</strong> — name, email, phone, project description</li>
-                    <li><strong>Order form</strong> — name, email, phone, selected product/service</li>
+                    <li><strong>Job application form</strong> — name, email, portfolio link, cover letter</li>
                     <li><strong>Blog subscription</strong> — email address</li>
-                    <li><strong>Account registration</strong> — name, email, password (hashed)</li>
                   </ul>
                   <h3>2.2 Technical data (collected automatically)</h3>
                   <ul>
@@ -205,38 +201,37 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
                   </ul>
                   <h2>3. How we use your data</h2>
                   <ul>
-                    <li>Processing and fulfilling service or marketplace product orders</li>
-                    <li>Communicating with you about your project or order</li>
+                    <li>Processing enquiries for ML/AI consulting and job applications</li>
+                    <li>Communicating with you about your project or application</li>
                     <li>Sending newsletters (only with your consent)</li>
-                    <li>Improving site quality and products</li>
+                    <li>Improving site quality and services</li>
                     <li>Traffic analysis and marketing campaign effectiveness</li>
                     <li>Compliance with legal requirements</li>
                   </ul>
                   <h2>4. Who we share data with</h2>
                   <p>We <strong>do not sell</strong> your personal data to third parties. We may share data only in these cases:</p>
                   <ul>
-                    <li><strong>Payment systems</strong> (LiqPay, Stripe) — for payment processing</li>
+                    <li><strong>Internal CRM</strong> — for our sales team to track enquiries</li>
                     <li><strong>Google Analytics / GA4</strong> — anonymised visitor behaviour statistics</li>
                     <li><strong>Telegram</strong> — notifications about new enquiries (internal use)</li>
-                    <li><strong>Hosting provider</strong> (Vercel) — for site hosting and operation</li>
+                    <li><strong>Hosting provider</strong> (Hetzner) — for site hosting and operation</li>
                     <li><strong>Government authorities</strong> — when required by law or court order</li>
                   </ul>
                   <h2>5. How long we retain data</h2>
                   <ul>
-                    <li><strong>Contact form data</strong> — up to 2 years or until order fulfilment</li>
-                    <li><strong>Account data</strong> — for the lifetime of the account + 1 year after deletion</li>
+                    <li><strong>Contact and application form data</strong> — up to 2 years or until the project concludes</li>
                     <li><strong>Analytics data</strong> — up to 26 months (Google Analytics standard)</li>
                     <li><strong>Email subscribers</strong> — until unsubscription or deletion request</li>
                   </ul>
                   <h2>6. Cookies</h2>
                   <ul>
-                    <li><strong>Necessary (always active)</strong> — basic site functionality: session, cart, theme</li>
+                    <li><strong>Necessary (always active)</strong> — basic site functionality: session, theme</li>
                     <li><strong>Analytics</strong> — Google Analytics for traffic analysis (require your consent)</li>
                     <li><strong>Marketing</strong> — retargeting and advertising (require your consent)</li>
                   </ul>
                   <p>You can manage consent through the cookie banner or browser settings.</p>
                   <h2>7. Your rights</h2>
-                  <p>Under GDPR and Ukrainian law, you have the right to:</p>
+                  <p>Under UK GDPR and the Data Protection Act 2018, you have the right to:</p>
                   <ul>
                     <li><strong>Access</strong> — request what data we hold about you</li>
                     <li><strong>Rectification</strong> — ask us to correct inaccurate data</li>
@@ -249,7 +244,6 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
                   <h2>8. Data security</h2>
                   <ul>
                     <li>HTTPS/TLS encryption for all data transfers</li>
-                    <li>Password hashing (bcrypt)</li>
                     <li>Limited access on a least-privilege basis</li>
                     <li>Regular backups</li>
                     <li>Protection against SQL injection and XSS via server-side validation</li>
