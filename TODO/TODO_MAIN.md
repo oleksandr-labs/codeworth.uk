@@ -236,6 +236,8 @@
 - ✅ Довидалено legacy web-studio код, пропущений в Sprint 2026-07-02 (див. [TODO_REMOVE_LEGACY_ECOMMERCE.md](TODO_REMOVE_LEGACY_ECOMMERCE.md)) — сирітський `/dashboard` (customizer/subscription), `useAuth`/`useCart`/`useCompare`, e2e-тести на видалені `/marketplace`+`/auth` роути
 - ✅ Manifest/іконки (2026-07-07) — `public/manifest.json` мав биті `/icons/icon-*.png` (старий marketplace-брендинг) і не був тим самим файлом, що генерував `src/app/manifest.ts` (мертвий, видалено); згенеровано реальні `icon-192.png`/`icon-512.png`
 - ✅ FAQ-акордеон стандартизовано (2026-07-07) — спільний `FAQSection`/`NicheFAQ` на 7 сторінках (3 питання, перше розгорнуте, решта за "показати ще"), раніше лише на головній
+- ✅ Другий раунд правок (2026-07-07/08) — dark-mode аудит (426 фіксів), pricing +2 пакети, інтерактивна contact-форма, критичний баг фільтрації блогу (категорії ніколи не збігались), portfolio-сайдбар, MarketplaceTeaser→IndustriesTeaser, довидалення 12 orphaned компонентів, legal-сторінки (Privacy/Terms — застарілі маркетплейс/LiqPay/Ukrainian-law залишки), нормалізований показ категорії блогу у 5 місцях, ~10 неправдивих тверджень про Codeworth у глосарії (Vercel/LiqPay/design system/Figma). Деталі й повний список комітів — [TODO_ML_ADAPTATION.md → Sprint 67](TODO_ML_ADAPTATION.md)
+- ⚠️ **Аналітика/безпека не live** (2026-07-08) — GA4/FB Pixel/Google Ads/reCAPTCHA/Telegram/Resend код готовий, але секрети відсутні в GH — див. [tech/TODO_integrations.md](tech/TODO_integrations.md)
 
 ### GitHub Actions CI/CD
 - Деплой: push to `main` → build → rsync → atlas
