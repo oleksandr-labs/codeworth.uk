@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
-import { BLOG_POSTS, BLOG_CATEGORIES, getPostTitle, getPostExcerpt, getPostCategoryId } from "@/lib/data/blog";
+import { BLOG_POSTS, BLOG_CATEGORIES, getPostTitle, getPostExcerpt, getPostCategoryId, getPostCategoryLabel } from "@/lib/data/blog";
 import { getAuthorByName, getAuthorBySlug } from "@/lib/data/blogAuthors";
 import { SERVICES_DATA, getServiceLocalized } from "@/lib/data/services";
 import { Clock, Calendar, ArrowLeft, ArrowRight, ChevronRight } from "lucide-react";
@@ -108,6 +108,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   const postCategoryId = getPostCategoryId(post);
   const categoryObj = BLOG_CATEGORIES.find((c) => c.id === postCategoryId);
+  const categoryLabel = getPostCategoryLabel(post, lang);
 
   const relatedServiceSlugs = CATEGORY_SERVICES[postCategoryId] ?? ["machine-learning", "artificial-intelligence"];
   const relatedServices = relatedServiceSlugs
@@ -209,21 +210,21 @@ export default async function BlogPostPage({ params }: Props) {
               <ChevronRight className="w-4 h-4" />
               {categoryObj ? (
                 <Link href={`/${lang}/blog/category/${categoryObj.id}`} className="text-white/90 hover:text-white truncate max-w-50 transition-colors">
-                  {post.category}
+                  {categoryLabel}
                 </Link>
               ) : (
-                <span className="text-white/90 truncate max-w-50">{post.category}</span>
+                <span className="text-white/90 truncate max-w-50">{categoryLabel}</span>
               )}
             </nav>
             <div className="max-w-3xl">
               {categoryObj ? (
                 <Link href={`/${lang}/blog/category/${categoryObj.id}`} className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 text-white text-sm font-medium mb-4 hover:bg-white/30 transition-colors">
                   {categoryObj.icon && <span aria-hidden="true">{categoryObj.icon}</span>}
-                  {post.category}
+                  {categoryLabel}
                 </Link>
               ) : (
                 <span className="inline-block px-3 py-1 rounded-full bg-white/20 text-white text-sm font-medium mb-4">
-                  {post.category}
+                  {categoryLabel}
                 </span>
               )}
               <h1 className="text-3xl lg:text-5xl font-heading font-extrabold text-white mb-5 leading-tight">
@@ -483,7 +484,7 @@ export default async function BlogPostPage({ params }: Props) {
                     {isUk ? "Читайте також" : "Keep Reading"}
                   </p>
                   <h2 className="text-2xl font-heading font-extrabold text-neutral-900 dark:text-white">
-                    {isUk ? `Більше про ${post.category}` : `More in ${categoryObj ? categoryObj.label.en : post.category}`}
+                    {isUk ? `Більше про ${categoryLabel}` : `More in ${categoryLabel}`}
                   </h2>
                 </div>
                 <Link

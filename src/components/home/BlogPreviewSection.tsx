@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
-import { BLOG_POSTS, getPostTitle, getPostExcerpt } from "@/lib/data/blog";
+import { BLOG_POSTS, getPostTitle, getPostExcerpt, getPostCategoryLabel } from "@/lib/data/blog";
 import { getAuthorByName } from "@/lib/data/blogAuthors";
 import { Clock, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -58,7 +58,7 @@ export function BlogPreviewSection({ lang }: { lang: string }) {
               {/* Content */}
               <div className="p-6">
                 <span className="inline-block px-2.5 py-0.5 rounded-full bg-indigo-50 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300 text-xs font-semibold mb-3">
-                  {post.category}
+                  {getPostCategoryLabel(post, lang)}
                 </span>
                 <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-2 leading-tight group-hover:text-indigo-700 transition-colors line-clamp-2">
                   {getPostTitle(post, lang)}

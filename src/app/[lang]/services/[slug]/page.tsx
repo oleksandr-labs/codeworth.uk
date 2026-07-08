@@ -6,7 +6,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { SERVICES_DATA, getServiceLocalized } from "@/lib/data/services";
-import { BLOG_POSTS, getPostTitle, getPostExcerpt } from "@/lib/data/blog";
+import { BLOG_POSTS, getPostTitle, getPostExcerpt, getPostCategoryLabel } from "@/lib/data/blog";
 import { ArrowRight, Check, Clock, ChevronRight, TrendingUp, TrendingDown, Minus } from "lucide-react";
 import { EmojiIcon } from "@/components/ui/EmojiIcon";
 import { cn } from "@/lib/utils";
@@ -674,7 +674,7 @@ export default async function ServicePage({ params }: Props) {
                     </div>
                     <div className="p-4">
                       <span className="inline-block px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold mb-2">
-                        {post.category}
+                        {getPostCategoryLabel(post, lang)}
                       </span>
                       <h4 className="font-heading font-bold text-neutral-900 dark:text-white text-sm leading-tight group-hover:text-indigo-700 transition-colors line-clamp-2">
                         {getPostTitle(post, lang)}

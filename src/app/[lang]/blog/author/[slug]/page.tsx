@@ -6,7 +6,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { BLOG_AUTHORS, getAuthorBySlug } from "@/lib/data/blogAuthors";
-import { BLOG_POSTS, getPostTitle, getPostExcerpt } from "@/lib/data/blog";
+import { BLOG_POSTS, getPostTitle, getPostExcerpt, getPostCategoryLabel } from "@/lib/data/blog";
 import { Clock, ArrowLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { EmojiIcon } from "@/components/ui/EmojiIcon";
@@ -139,7 +139,7 @@ export default async function BlogAuthorPage({ params }: Props) {
                       </div>
                       <div className="p-5">
                         <span className="inline-block px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold mb-2">
-                          {post.category}
+                          {getPostCategoryLabel(post, lang)}
                         </span>
                         <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-2 leading-tight group-hover:text-indigo-700 transition-colors line-clamp-2">
                           {getPostTitle(post, lang)}

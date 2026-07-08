@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import { Clock, ArrowRight, BookOpen, Search, X, Tag, Layers, ExternalLink, ArrowUpDown } from "lucide-react";
-import { BLOG_POSTS, BLOG_CATEGORIES, getPostTitle, getPostExcerpt, getPostCategoryId } from "@/lib/data/blog";
+import { BLOG_POSTS, BLOG_CATEGORIES, getPostTitle, getPostExcerpt, getPostCategoryId, getPostCategoryLabel } from "@/lib/data/blog";
 import { getAuthorByName } from "@/lib/data/blogAuthors";
 import { cn } from "@/lib/utils";
 import { Pagination } from "@/components/ui/Pagination";
@@ -309,10 +309,7 @@ export function BlogContent() {
                   </div>
                   <div className="p-6">
                     <span className="inline-block px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold mb-3">
-                      {(() => {
-                        const cat = BLOG_CATEGORY_LIST.find((c) => c.id === getPostCategoryId(post));
-                        return cat ? (isUk ? cat.label.uk : cat.label.en) : post.category;
-                      })()}
+                      {getPostCategoryLabel(post, lang)}
                     </span>
                     <h3 className="font-heading font-bold text-neutral-900 dark:text-white mb-2 leading-tight group-hover:text-indigo-700 transition-colors">
                       {getPostTitle(post, lang)}

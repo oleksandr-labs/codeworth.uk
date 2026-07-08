@@ -12948,6 +12948,14 @@ export function getCategoryById(id: string): BlogCategory | undefined {
   return BLOG_CATEGORIES.find((c) => c.id === id);
 }
 
+// Normalized, human-readable category label for display — use instead of
+// raw post.category, which holds inconsistent slugs/labels (see CATEGORY_ALIAS_MAP).
+export function getPostCategoryLabel(post: BlogPost, lang: string): string {
+  const cat = getCategoryById(getPostCategoryId(post));
+  if (!cat) return post.category;
+  return lang === 'uk' ? cat.label.uk : cat.label.en;
+}
+
 export function getPostTitle(post: BlogPost, lang: string): string {
   return lang === 'uk' ? post.title : (post.titleEn ?? post.title);
 }

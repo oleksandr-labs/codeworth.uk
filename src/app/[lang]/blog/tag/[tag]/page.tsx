@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
-import { BLOG_POSTS, getPostTitle, getPostExcerpt } from "@/lib/data/blog";
+import { BLOG_POSTS, getPostTitle, getPostExcerpt, getPostCategoryLabel } from "@/lib/data/blog";
 import { Clock, Calendar, ArrowLeft, Tag } from "lucide-react";
 import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
@@ -137,7 +137,7 @@ export default async function BlogTagPage({ params }: Props) {
 
                       <div className="p-5">
                         <span className="inline-block text-xs font-semibold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-full mb-3">
-                          {post.category}
+                          {getPostCategoryLabel(post, lang)}
                         </span>
                         <h2 className="font-heading font-bold text-neutral-900 dark:text-white group-hover:text-indigo-700 transition-colors leading-snug mb-2 line-clamp-2">
                           {getPostTitle(post, lang)}
