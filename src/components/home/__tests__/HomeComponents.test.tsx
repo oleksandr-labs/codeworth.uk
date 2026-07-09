@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import { TestimonialsSection } from "../TestimonialsSection";
 import { IndustriesTeaser } from "../IndustriesTeaser";
 import { ServicesSection } from "../ServicesSection";
@@ -34,23 +34,24 @@ describe("TestimonialsSection", () => {
     expect(screen.getByText(/відгуки клієнтів/i)).toBeInTheDocument();
   });
 
-  it("показує 85+ компаній", () => {
+  it("переходить на другу сторінку відгуків при натисканні 'Наступні'", () => {
     render(<TestimonialsSection />);
-    expect(screen.getByText(/85\+ компаній/i)).toBeInTheDocument();
+    fireEvent.click(screen.getByLabelText("Наступні відгуки"));
+    expect(screen.getByText("Дарина Кириленко")).toBeInTheDocument();
   });
 
   it("відображає перші 3 відгуки (перша сторінка)", () => {
     render(<TestimonialsSection />);
-    expect(screen.getByText("Олена Коваль")).toBeInTheDocument();
-    expect(screen.getByText("Дмитро Савченко")).toBeInTheDocument();
-    expect(screen.getByText("Марія Петренко")).toBeInTheDocument();
+    expect(screen.getByText("Тарас Гнатенко")).toBeInTheDocument();
+    expect(screen.getByText("Ольга Мороз")).toBeInTheDocument();
+    expect(screen.getByText("Микола Власенко")).toBeInTheDocument();
   });
 
   it("відображає назви компаній першої сторінки", () => {
     render(<TestimonialsSection />);
-    expect(screen.getByText(/Beauty Room Kyiv/i)).toBeInTheDocument();
-    expect(screen.getByText(/TechCargo Logistics/i)).toBeInTheDocument();
-    expect(screen.getByText(/Sweet Bakery UA/i)).toBeInTheDocument();
+    expect(screen.getByText(/Fintechlabs UA/i)).toBeInTheDocument();
+    expect(screen.getByText(/RetailCore UA/i)).toBeInTheDocument();
+    expect(screen.getByText(/LogiSmart/i)).toBeInTheDocument();
   });
 
   it("показує зірки для 3 видимих відгуків", () => {
@@ -109,20 +110,20 @@ describe("ServicesSection", () => {
     expect(screen.getByText(/наші послуги/i)).toBeInTheDocument();
   });
 
-  it("відображає картку 'Розробка сайтів'", () => {
+  it("відображає картку 'Розробка ML-моделей'", () => {
     render(<ServicesSection lang="uk" />);
-    expect(screen.getByText("Розробка сайтів")).toBeInTheDocument();
+    expect(screen.getByText("Розробка ML-моделей")).toBeInTheDocument();
   });
 
-  it("відображає картку 'SEO-просування'", () => {
+  it("відображає картку 'Виявлення шахрайства'", () => {
     render(<ServicesSection lang="uk" />);
-    expect(screen.getByText("SEO-просування")).toBeInTheDocument();
+    expect(screen.getByText("Виявлення шахрайства")).toBeInTheDocument();
   });
 
   it("картки мають посилання на відповідні сторінки послуг", () => {
     render(<ServicesSection lang="uk" />);
-    const webDevLink = screen.getByRole("link", { name: /розробка сайтів/i });
-    expect(webDevLink).toHaveAttribute("href", "/uk/services/website-dev");
+    const mlModelsLink = screen.getByRole("link", { name: /розробка ml-моделей/i });
+    expect(mlModelsLink).toHaveAttribute("href", "/uk/services/ml-models");
   });
 
   it("кнопка 'Переглянути всі послуги' веде на /services", () => {
@@ -141,8 +142,8 @@ describe("WhyUsSection", () => {
 
   it("відображає переваги компанії", () => {
     render(<WhyUsSection lang="uk" />);
-    expect(screen.getByText(/швидкий запуск/i)).toBeInTheDocument();
-    expect(screen.getByText(/преміальний дизайн/i)).toBeInTheDocument();
+    expect(screen.getByText(/швидкий прототип/i)).toBeInTheDocument();
+    expect(screen.getByText(/продакшн-якість/i)).toBeInTheDocument();
   });
 });
 
@@ -150,46 +151,46 @@ describe("WhyUsSection", () => {
 describe("ClientLogosSection", () => {
   it("відображає trust badges", () => {
     render(<ClientLogosSection lang="uk" />);
-    expect(screen.getByText("SSL & HTTPS")).toBeInTheDocument();
-    expect(screen.getByText("Lighthouse 90+")).toBeInTheDocument();
-    expect(screen.getByText("24/7 підтримка")).toBeInTheDocument();
-    expect(screen.getByText("LCP < 2.5с")).toBeInTheDocument();
+    expect(screen.getByText("F1 Score > 0.92")).toBeInTheDocument();
+    expect(screen.getByText("GDPR & ISO 27001")).toBeInTheDocument();
+    expect(screen.getByText("< 100ms inference")).toBeInTheDocument();
+    expect(screen.getByText("MLOps 24/7")).toBeInTheDocument();
   });
 
   it("відображає логотипи клієнтів", () => {
     render(<ClientLogosSection lang="uk" />);
-    expect(screen.getByText("Beauty Room")).toBeInTheDocument();
-    expect(screen.getByText("TechCargo")).toBeInTheDocument();
-    expect(screen.getByText("InvoiceFlow")).toBeInTheDocument();
+    expect(screen.getByText("Fintechlabs")).toBeInTheDocument();
+    expect(screen.getByText("RetailCore")).toBeInTheDocument();
+    expect(screen.getByText("HealthDesk")).toBeInTheDocument();
   });
 
   it("відображає 12 логотипів клієнтів", () => {
     render(<ClientLogosSection lang="uk" />);
-    expect(screen.getByText("Нам довіряють компанії по всій Україні")).toBeInTheDocument();
+    expect(screen.getByText("Компанії, що довіряють нашим ML-рішенням")).toBeInTheDocument();
   });
 
   it("trust badges мають 4 елементи", () => {
     render(<ClientLogosSection lang="uk" />);
-    expect(screen.getByText("Захищене з'єднання")).toBeInTheDocument();
-    expect(screen.getByText("Продуктивність та SEO")).toBeInTheDocument();
-    expect(screen.getByText("Завжди на зв'язку")).toBeInTheDocument();
-    expect(screen.getByText("Core Web Vitals")).toBeInTheDocument();
+    expect(screen.getByText("Точність моделей")).toBeInTheDocument();
+    expect(screen.getByText("Безпека даних")).toBeInTheDocument();
+    expect(screen.getByText("Real-time рішення")).toBeInTheDocument();
+    expect(screen.getByText("Безперервний моніторинг")).toBeInTheDocument();
   });
 });
 
 // ── HowWeWorkSection ──────────────────────────────────────────────────
 describe("HowWeWorkSection", () => {
-  it("відображає заголовок 'Як ми працюємо'", () => {
+  it("відображає заголовок 'Як ми будуємо ML-рішення'", () => {
     render(<HowWeWorkSection lang="uk" />);
-    expect(screen.getByText(/як ми працюємо/i)).toBeInTheDocument();
+    expect(screen.getByText(/як ми будуємо ml-рішення/i)).toBeInTheDocument();
   });
 
   it("відображає 5 кроків процесу", () => {
     render(<HowWeWorkSection lang="uk" />);
     // Check key steps
-    expect(screen.getByText(/брифінг/i)).toBeInTheDocument();
-    expect(screen.getByText(/дизайн/i)).toBeInTheDocument();
-    expect(screen.getByText(/розробка/i)).toBeInTheDocument();
+    expect(screen.getByText(/discovery та аудит даних/i)).toBeInTheDocument();
+    expect(screen.getByText(/підготовка даних/i)).toBeInTheDocument();
+    expect(screen.getByText(/навчання та оцінка/i)).toBeInTheDocument();
   });
 
   it("кнопка CTA веде на /contact", () => {

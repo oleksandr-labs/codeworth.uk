@@ -421,7 +421,7 @@ export function ShowcaseClient() {
           <div className="max-w-sm rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 p-6 shadow-sm">
             <StarRating value={5} readonly />
             <p className="mt-3 text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed italic">
-              "{isUk ? "Codeworth перетворили наш сайт за 3 тижні. Записи виросли на 60%." : "Codeworth transformed our site in 3 weeks. Bookings grew by 60%."}"
+              &ldquo;{isUk ? "Codeworth перетворили наш сайт за 3 тижні. Записи виросли на 60%." : "Codeworth transformed our site in 3 weeks. Bookings grew by 60%."}&rdquo;
             </p>
             <div className="mt-4 flex items-center gap-3">
               <Avatar size="sm" name="Olena K" status="online" />

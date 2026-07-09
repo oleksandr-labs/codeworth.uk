@@ -58,6 +58,7 @@
 
 ## CI/CD Pipeline
 - ✅ GitHub Actions CI — `.github/workflows/ci.yml` (test + lint + npm audit + build + E2E)
+- ✅ Лінт-гейт полагоджено (2026-07-09) — `npm run lint` падав з 73 помилками (без `continue-on-error`, тобто блокував будь-який PR); зараз exit 0. `next` оновлено 16.2.0→16.2.10 (закрито 3 high npm audit вразливості). Деталі — [TODO_testing.md#eslint](TODO_testing.md#eslint)
 - ✅ Автоматичні тести перед деплоєм — 1320+ unit тестів + Playwright E2E
 - ✅ Lighthouse CI на PR — `.github/workflows/lighthouse.yml`
 - ✅ CodeQL SAST — `.github/workflows/codeql.yml`

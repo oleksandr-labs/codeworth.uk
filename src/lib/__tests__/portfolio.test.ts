@@ -49,11 +49,11 @@ describe("CATEGORIES and NICHES", () => {
     expect(CATEGORIES.length).toBeGreaterThan(0);
   });
 
-  it("NICHES includes new categories", () => {
+  it("NICHES includes expected categories", () => {
     expect(Array.isArray(NICHES)).toBe(true);
-    expect(NICHES).toContain("Нерухомість");
-    expect(NICHES).toContain("Освіта");
-    expect(NICHES).toContain("Туризм");
+    expect(NICHES).toContain("Healthcare");
+    expect(NICHES).toContain("Fintech");
+    expect(NICHES).toContain("Retail");
   });
 
   it("NICHES includes 'Всі' as first entry", () => {

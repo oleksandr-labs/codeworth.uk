@@ -138,12 +138,16 @@ export function ChainOpsDemo({ lang }: { lang: string }) {
   const weekTotal   = rota.reduce((s, row) => s + row.filter(Boolean).length * SHIFT_HOURS, 0);
   const dayCover    = (d: number) => rota.reduce((s, row) => s + (row[d] ? 1 : 0), 0);
 
+  // Only invoked from the onClick below, never during render — the mock waste
+  // entry's random qty/time is fine to generate on click.
+  /* eslint-disable react-hooks/purity */
   const logWaste = (cat: string) => {
     const qty  = parseFloat((Math.random() * 1.8 + 0.3).toFixed(1));
     const mins = Math.floor(Math.random() * 60).toString().padStart(2, "0");
     const hrs  = (9 + Math.floor(Math.random() * 9)).toString().padStart(2, "0");
     setWasteLog(prev => [{ cat, qty, venue: selected.name, time: `${hrs}:${mins}` }, ...prev].slice(0, 15));
   };
+  /* eslint-enable react-hooks/purity */
 
   const wasteCostToday = wasteLog.reduce((s, e) => {
     const cat = WASTE_CATEGORIES.find(c => c.name === e.cat);

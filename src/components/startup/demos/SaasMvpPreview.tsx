@@ -68,7 +68,7 @@ export function SaasMvpPreview() {
       <section className="px-8 py-12 bg-gray-50 dark:bg-neutral-900 border-t border-gray-100">
         <div className="text-center mb-8">
           <h2 className="text-2xl font-extrabold text-gray-900">Simple, transparent pricing</h2>
-          <p className="text-gray-500 dark:text-neutral-400 text-sm mt-1">Start free. Upgrade when you're ready.</p>
+          <p className="text-gray-500 dark:text-neutral-400 text-sm mt-1">Start free. Upgrade when you&apos;re ready.</p>
         </div>
         <div className="grid grid-cols-3 gap-4 max-w-3xl mx-auto">
           {[

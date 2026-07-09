@@ -43,7 +43,7 @@ export function MobileAppPreview() {
           <div className="shrink-0 w-40 h-72 rounded-3xl bg-gray-900 border-4 border-gray-700 relative overflow-hidden shadow-2xl">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-4 bg-gray-900 rounded-b-xl z-10" />
             <div className="absolute inset-0 bg-gradient-to-b from-blue-500 to-cyan-600 p-3 pt-6">
-              <div className="text-white text-xs font-bold mb-2">Today's Workout</div>
+              <div className="text-white text-xs font-bold mb-2">Today&apos;s Workout</div>
               <div className="bg-white/20 rounded-xl p-2 mb-2">
                 <div className="text-white text-xs font-semibold">Upper Body HIIT</div>
                 <div className="text-white/70 text-xs">32 min · 340 kcal</div>

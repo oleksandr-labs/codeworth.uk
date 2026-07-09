@@ -40,9 +40,9 @@ describe("ExtraCard", () => {
     expect(screen.getByText(/Автоматизація прийому замовлень/i)).toBeInTheDocument();
   });
 
-  it("відображає emoji", () => {
-    render(<ExtraCard extra={BASE_EXTRA} />);
-    expect(screen.getByText("🤖")).toBeInTheDocument();
+  it("відображає іконку (EmojiIcon мапить 🤖 на lucide Bot)", () => {
+    const { container } = render(<ExtraCard extra={BASE_EXTRA} />);
+    expect(container.querySelector("svg.lucide-bot")).toBeInTheDocument();
   });
 
   it("відображає теги", () => {
@@ -51,9 +51,9 @@ describe("ExtraCard", () => {
     expect(screen.getByText("Автоматизація")).toBeInTheDocument();
   });
 
-  it("відображає ціну 'Від' (UK locale → ₴)", () => {
+  it("відображає ціну 'Від' у GBP (£)", () => {
     render(<ExtraCard extra={BASE_EXTRA} />);
-    expect(screen.getByText(/4\s*000\s*₴/)).toBeInTheDocument();
+    expect(screen.getByText("£4,000")).toBeInTheDocument();
   });
 
   it("відображає кількість днів доставки", () => {

@@ -88,7 +88,7 @@ describe("ThemeToggle", () => {
     fireEvent.click(screen.getByRole("button", { name: /перемкнути тему/i }));
     fireEvent.click(screen.getByText("Темна"));
 
-    expect(localStorage.getItem("Codeworth-theme")).toBe("dark");
+    expect(localStorage.getItem("codeworth-theme")).toBe("dark");
   });
 
   it("accepts custom className", () => {

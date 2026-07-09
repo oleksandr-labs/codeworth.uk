@@ -15,8 +15,10 @@ export function NavProgress() {
     prevPathname.current = pathname;
 
     // Start loading animation
-    setVisible(true);
-    setProgress(15);
+    const t0 = setTimeout(() => {
+      setVisible(true);
+      setProgress(15);
+    }, 0);
 
     const t1 = setTimeout(() => setProgress(40), 100);
     const t2 = setTimeout(() => setProgress(65), 300);
@@ -30,6 +32,7 @@ export function NavProgress() {
     }, 900);
 
     return () => {
+      clearTimeout(t0);
       clearTimeout(t1);
       clearTimeout(t2);
       clearTimeout(t3);

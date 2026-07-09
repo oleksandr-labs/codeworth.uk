@@ -45,6 +45,10 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     const initial: Theme = stored || "system";
     const resolved = initial === "system" ? getSystemTheme() : initial;
 
+    // localStorage/matchMedia are browser-only, so this read can't happen during
+    // SSR or in a lazy useState initializer — it must run once after mount, and
+    // deferring the resulting setState would flash the wrong theme on first paint.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setThemeState(initial);
     setResolvedTheme(resolved);
     applyTheme(resolved);

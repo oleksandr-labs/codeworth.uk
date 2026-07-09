@@ -3969,8 +3969,8 @@ export const PROJECTS: Project[] = [
   },
 ];
 
-export const CATEGORIES = ["Всi", "AI / ML"];
-export const NICHES = ["Всi", "Healthcare", "Fintech", "Retail", "Real Estate", "Legal", "HR", "Agriculture", "Manufacturing", "Marketing", "Logistics"];
+export const CATEGORIES = ["Всі", "AI / ML"];
+export const NICHES = ["Всі", "Healthcare", "Fintech", "Retail", "Real Estate", "Legal", "HR", "Agriculture", "Manufacturing", "Marketing", "Logistics"];
 export const COMPLEXITY_LABELS = {
   simple: { label: "Simple", color: "bg-emerald-100 text-emerald-700" },
   medium: { label: "Medium", color: "bg-amber-100 text-amber-700" },

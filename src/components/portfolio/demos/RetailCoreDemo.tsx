@@ -27,6 +27,12 @@ const CATEGORIES = [
   { name: "Accessories",  pct: 9,  colour: "#64748b" },
 ];
 
+// Cumulative pct at the start of each slice, precomputed once (not mutated during render)
+const CATEGORY_CUMULATIVE = CATEGORIES.reduce<number[]>((acc, c, i) => {
+  acc.push(i === 0 ? 0 : acc[i - 1] + CATEGORIES[i - 1].pct);
+  return acc;
+}, []);
+
 const SALES_7D = [142, 168, 155, 189, 174, 212, 228];
 
 const DISPLAY_STORES = ["Oxford St", "Canary Wharf", "Westfield W12", "Covent Gdn", "Shoreditch", "Westfield E20", "Webshop"];
@@ -110,7 +116,6 @@ export function RetailCoreDemo({ lang }: { lang: string }) {
   const savedToday   = TRANSFERS_DATA.filter(t => approved.has(t.id)).reduce((s, t) => s + t.saving, 0);
 
   const circumference = 2 * Math.PI * 42;
-  let cumulative = 0;
 
   const NAV: { key: Tab; icon: string; label: string }[] = [
     { key: "dashboard", icon: "📊", label: isUk ? "Дашборд"      : "Dashboard" },
@@ -235,10 +240,9 @@ export function RetailCoreDemo({ lang }: { lang: string }) {
                   </div>
                   <div className="flex items-center gap-4">
                     <svg viewBox="0 0 100 100" className="w-28 h-28 -rotate-90 shrink-0">
-                      {CATEGORIES.map(c => {
+                      {CATEGORIES.map((c, i) => {
                         const dash   = (c.pct / 100) * circumference;
-                        const offset = -(cumulative / 100) * circumference;
-                        cumulative  += c.pct;
+                        const offset = -(CATEGORY_CUMULATIVE[i] / 100) * circumference;
                         return (
                           <circle key={c.name} cx="50" cy="50" r="42" fill="none" stroke={c.colour}
                             strokeWidth="14" strokeDasharray={`${dash} ${circumference}`} strokeDashoffset={offset} />

@@ -214,7 +214,7 @@
 ### UI / Design System
 - [ ] [UI-компоненти](design/TODO_ui.md) — перевірити що немає "web studio" залишків
 - [ ] [Стилі](design/TODO_styles.md) — Tailwind v4 (bg-linear-to-*, не bg-gradient-to-*)
-- [ ] [Emoji → SVG](design/emoji_to_svg/TODO_emoji_to_svg.md) — замінити emoji на SVG icons де можливо
+- ✅ [Emoji → SVG](design/TODO_emoji_to_svg.md) — Фаза 2 фактично завершена: `EmojiIcon.tsx` існує і використовується у 36 файлах (портфоліо, ніші, послуги, extras, blog); файл `niches.ts`/marketplace-сторінка з Фази 4 більше не існують (видалені разом з legacy e-commerce) — сам TODO-документ застарів, оновити його статуси (2026-07-09)
 - [ ] [Mobile First](design/TODO_responsive.md) — перевірити нові service pages на мобільному
 
 ---
@@ -222,15 +222,17 @@
 ## Tech
 
 ### Критичні технічні задачі
-- [ ] **Sitemap bug fix** — `/sitemap/page.tsx` рядки 237-276: NICHES_DATA + nichesByCategory ще посилаються на видалені imports → компайл-помилка
-- [ ] **Test files** — оновити test mock data (HomeHero.test.tsx та інші з web dev slug'ами)
-- [ ] `src/components/tools/WebsiteCostCalculator.tsx` — ще має web dev контент (низький пріоритет)
+- ✅ **Sitemap bug fix** (2026-07-09) — перевірено: `/[lang]/sitemap/page.tsx` вже чистий, жодних посилань на видалені `NICHES_DATA`/`nichesByCategory`; `tsc --noEmit` 0 помилок. Пункт застарів, реальної проблеми не було
+- ✅ **Test files** (2026-07-09) — усі 20 застарілих тестових файлів (94 тести) оновлено під поточний ML/AI-брендинг; 972/972 тестів проходять у 87 suites. По дорозі виправлено 2 реальні дрібні багі в даних: 12 постів блогу мали биту `color: "emerald"` замість градієнта, портфоліо-ніші мали "Всi" з латинською `i` замість кириличної `і`
+- ✅ `src/components/tools/WebsiteCostCalculator.tsx` (2026-07-09) — перевірено: файл вже видалений, жодних orphan-імпортів не знайдено
 
 ### Стандартні tech задачі
 - [ ] [Сервер та хостинг](tech/TODO_server.md) — atlas 88.198.199.50, nginx, SSL
-- [ ] [Продуктивність](tech/TODO_optimization.md) — bundle analyzer, ANALYZE=true
-- [ ] [Безпека](tech/TODO_security.md) — перевірити CSP headers
-- [ ] [Тестування](tech/TODO_testing.md) — оновити тести після ML-реброндингу
+- ✅ [Продуктивність](tech/TODO_optimization.md) (перевірено 2026-07-09) — 41/56 вже виконано; залишок потребує live-трафіку/платних сервісів (Core Web Vitals real-user monitoring, CDN, Edge Functions, Sentry RUM) — не механічна правка коду
+- ✅ [Безпека](tech/TODO_security.md) (перевірено 2026-07-09) — CSP/HSTS/X-Frame-Options/Permissions-Policy вже повністю налаштовані в `next.config.ts`; залишок (NextAuth, 2FA, Cloudflare WAF, Sentry) — Phase 2/3, потребує інфраструктурних рішень і платних сервісів
+- ✅ npm audit (2026-07-09) — 7 вразливостей (3 high) → 2 moderate; `next` 16.2.0→16.2.10 (патч), транзитивний `ws` виправлено через `npm audit fix`
+- ✅ **ESLint gate був червоний в CI** (2026-07-09) — `npm run lint` падав з 73 помилками (без `continue-on-error` у `ci.yml`, тобто будь-який PR блокувався); виправлено все, `eslint .` тепер exit 0 (61 warning лишились, не блокують). Реальні знахідки серед помилок: `Math.random()` у JSX-рендері `GenericDemo.tsx` (номер заявки в Telegram-демо змінювався на кожен ре-рендер — виправлено генерацією в onClick + state), мутація змінної під час `.map()` в рендері `RetailCoreDemo.tsx` (замінено на precomputed масив), 2 компоненти створювались всередині рендеру в `BeforeAfterDemo`. Решта — unescaped JSX-лапки (~45) та обґрунтовані `eslint-disable` для навмисних патернів (global-error.tsx `<a>` замість `<Link>`, ThemeProvider localStorage-read-on-mount). Деталі — [tech/TODO_testing.md](tech/TODO_testing.md#eslint)
+- ✅ [Тестування](tech/TODO_testing.md) (оновлено 2026-07-09) — 972/972 тестів (87 suites) зелені після ML-ребрендингу; було 94 биті тести у 20 файлах
 - ✅ [CRM Lead Integration](tech/TODO_integrations.md#crm-та-lead-management) (2026-07-07) — contact/apply форми шлють ліди у внутрішню CRM (`CRM_INGEST_URL`/`CRM_INGEST_TOKEN`), деталі схеми/API в `dashboard/TODO_CRM.md`
 - ✅ Trust/SEO аудит (2026-07-07) — прибрано адресу Кyiv з Organization JSON-LD та укр. Privacy Policy (невідповідність UK-позиціонуванню), биті `logo.svg/png` посилання, битий `/services/seo` лінк, залишки "web studio" в compare/resources/glossary
 - ✅ Довидалено legacy web-studio код, пропущений в Sprint 2026-07-02 (див. [TODO_REMOVE_LEGACY_ECOMMERCE.md](TODO_REMOVE_LEGACY_ECOMMERCE.md)) — сирітський `/dashboard` (customizer/subscription), `useAuth`/`useCart`/`useCompare`, e2e-тести на видалені `/marketplace`+`/auth` роути

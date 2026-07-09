@@ -32,7 +32,7 @@ describe("Button", () => {
   });
 
   it("renders as <a> when href is provided", () => {
-    render(<Button href="/contact">Зв'язатися</Button>);
+    render(<Button href="/contact">Зв&apos;язатися</Button>);
     const link = screen.getByRole("link");
     expect(link).toHaveAttribute("href", "/contact");
   });

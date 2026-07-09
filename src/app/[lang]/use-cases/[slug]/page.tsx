@@ -173,7 +173,7 @@ export default async function UseCaseDetailPage({
                 <blockquote className="relative pl-6 border-l-4 border-indigo-500">
                   <CheckCircle2 className="absolute -left-2.5 top-0 w-5 h-5 bg-white dark:bg-neutral-800 text-indigo-600" />
                   <p className="text-lg font-semibold text-neutral-800 dark:text-neutral-200 italic">
-                    "{isUk ? uc.resultQuoteUk : uc.resultQuoteEn}"
+                    &ldquo;{isUk ? uc.resultQuoteUk : uc.resultQuoteEn}&rdquo;
                   </p>
                   <footer className="mt-2 text-sm text-neutral-400">
                     — Codeworth {isUk ? "клієнтський кейс" : "client case study"}

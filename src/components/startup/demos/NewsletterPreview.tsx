@@ -104,7 +104,7 @@ export function NewsletterPreview() {
           <div className="font-bold text-gray-900">Alex Romanov</div>
           <div className="text-xs text-gray-500 dark:text-neutral-400 mt-0.5">ex-Google · 3× founder · Investor</div>
           <div className="text-xs text-gray-600 dark:text-neutral-300 mt-2 leading-relaxed">
-            I read 200+ articles a week so you don't have to. Building in public since 2019.
+            I read 200+ articles a week so you don&apos;t have to. Building in public since 2019.
           </div>
         </div>
       </section>
@@ -112,9 +112,9 @@ export function NewsletterPreview() {
       {/* Final CTA */}
       <div className="px-8 py-6 bg-amber-500 text-white text-center">
         <div className="font-bold text-lg mb-1">Join 8,400+ readers this Thursday</div>
-        <div className="text-amber-100 text-sm mb-4">It's free. Forever.</div>
+        <div className="text-amber-100 text-sm mb-4">It&apos;s free. Forever.</div>
         <button className="bg-white dark:bg-neutral-800 text-amber-700 font-bold px-8 py-3 rounded-2xl text-sm hover:bg-amber-50 transition-colors shadow">
-          Subscribe — it's free
+          Subscribe — it&apos;s free
         </button>
       </div>
     </div>

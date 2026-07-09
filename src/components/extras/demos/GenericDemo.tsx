@@ -729,6 +729,7 @@ function LiqPayDemo({ isUk }: { isUk: boolean }) {
 function TelegramBotDemo({ isUk }: { isUk: boolean }) {
   const [sent, setSent] = useState(false);
   const [action, setAction] = useState<string | null>(null);
+  const [ticketNumber, setTicketNumber] = useState(0);
 
   return (
     <div>
@@ -751,7 +752,7 @@ function TelegramBotDemo({ isUk }: { isUk: boolean }) {
                 <option>{isUk ? "Розробка сайту" : "Website Development"}</option>
               </select>
             </div>
-            <button onClick={() => setSent(true)} className="w-full py-3 rounded-xl bg-sky-500 text-white font-semibold hover:bg-sky-600 transition-colors">
+            <button onClick={() => { setTicketNumber(Math.floor(Math.random() * 9000 + 1000)); setSent(true); }} className="w-full py-3 rounded-xl bg-sky-500 text-white font-semibold hover:bg-sky-600 transition-colors">
               {isUk ? "📤 Відправити → Telegram" : "📤 Send → Telegram"}
             </button>
           </div>
@@ -768,7 +769,7 @@ function TelegramBotDemo({ isUk }: { isUk: boolean }) {
               </div>
             </div>
             <div className="bg-[#232e3c] rounded-2xl p-4 mb-3 text-sm leading-relaxed">
-              <p className="text-sky-400 font-bold mb-2">🔔 {isUk ? "НОВА ЗАЯВКА" : "NEW REQUEST"} #{Math.floor(Math.random() * 9000 + 1000)}</p>
+              <p className="text-sky-400 font-bold mb-2">🔔 {isUk ? "НОВА ЗАЯВКА" : "NEW REQUEST"} #{ticketNumber}</p>
               <p><span className="text-neutral-400">👤 {isUk ? "Клієнт:" : "Client:"}</span> {isUk ? "Олена Мельник" : "Elena Melnyk"}</p>
               <p><span className="text-neutral-400">📞 {isUk ? "Телефон:" : "Phone:"}</span> +38 (067) 123-45-67</p>
               <p><span className="text-neutral-400">🛠 {isUk ? "Послуга:" : "Service:"}</span> {isUk ? "Розробка сайту" : "Website Development"}</p>
@@ -1461,7 +1462,7 @@ function BeforeAfterDemo({ isUk }: { isUk: boolean }) {
     { key: "reno" as const, label: isUk ? "🏠 Ремонт" : "🏠 Renovation" },
   ];
 
-  const BeforeContent = () => scene === "web" ? (
+  const beforeContent = scene === "web" ? (
     <div className="w-full h-full bg-gray-100 dark:bg-neutral-800 p-4" style={{ fontFamily: "Georgia, serif" }}>
       <div className="bg-gray-600 text-white px-3 py-2 text-xs">Welcome to our company website</div>
       <div className="mt-2 flex gap-3 text-xs text-blue-700 underline"><span>Home</span><span>Services</span><span>About</span><span>Contact</span></div>
@@ -1486,7 +1487,7 @@ function BeforeAfterDemo({ isUk }: { isUk: boolean }) {
     </div>
   );
 
-  const AfterContent = () => scene === "web" ? (
+  const afterContent = scene === "web" ? (
     <div className="w-full h-full bg-gradient-to-br from-indigo-950 to-violet-900 p-4 text-white">
       <div className="flex items-center justify-between mb-3">
         <span className="font-bold text-sm">🚀 BrandName</span>
@@ -1536,11 +1537,11 @@ function BeforeAfterDemo({ isUk }: { isUk: boolean }) {
           onTouchMove={e => update(e.touches[0].clientX)}>
 
           {/* Before — base layer */}
-          <div className="absolute inset-0"><BeforeContent /></div>
+          <div className="absolute inset-0">{beforeContent}</div>
 
           {/* After — clipped overlay */}
           <div className="absolute inset-0 overflow-hidden" style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}>
-            <AfterContent />
+            {afterContent}
           </div>
 
           {/* Divider line */}

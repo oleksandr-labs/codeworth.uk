@@ -2266,7 +2266,7 @@ export const BLOG_POSTS: BlogPost[] = [
     author: "Codeworth Team",
     featured: false,
     emoji: "🏥",
-    color: "emerald",
+    color: "from-emerald-500 to-teal-600",
     cluster: "F",
     seoKeyword: { en: "machine learning healthcare UK NHS", uk: "машинне навчання охорона здоров'я NHS UK" },
     wordCount: 1800,
@@ -2319,7 +2319,7 @@ export const BLOG_POSTS: BlogPost[] = [
     author: "Codeworth Team",
     featured: false,
     emoji: "⚙️",
-    color: "slate",
+    color: "from-slate-600 to-gray-700",
     cluster: "C",
     seoKeyword: { en: "MLOps best practices UK", uk: "MLOps найкращі практики UK" },
     wordCount: 1700,
@@ -2366,7 +2366,7 @@ export const BLOG_POSTS: BlogPost[] = [
     author: "Codeworth Team",
     featured: false,
     emoji: "🎯",
-    color: "cyan",
+    color: "from-cyan-500 to-blue-600",
     cluster: "A",
     seoKeyword: { en: "AI personalization SaaS UK", uk: "AI персоналізація SaaS UK" },
     wordCount: 1600,
@@ -2413,7 +2413,7 @@ export const BLOG_POSTS: BlogPost[] = [
     author: "Codeworth Team",
     featured: false,
     emoji: "🏢",
-    color: "violet",
+    color: "from-violet-500 to-purple-600",
     cluster: "B",
     seoKeyword: { en: "LLM RAG enterprise UK", uk: "LLM RAG enterprise UK корпоративний AI" },
     wordCount: 2000,
@@ -9609,7 +9609,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: 11,
     author: "marcus-powell",
     emoji: "🏠",
-    color: "emerald",
+    color: "from-emerald-500 to-teal-600",
     content: [
       "Автоматизовані моделі оцінки (AVM) стали центральним елементом UK PropTech екосистеми. Mortgage lenders використовують AVM для швидкої initial valuation перед повним survey, зменшуючи час від application до offer з тижнів до годин. Основні гравці UK ринку — Halifax AVM, Nationwide House Price Index ML engine, та Hometrack (Zoopla subsidiary) — обробляють мільйони оцінок щороку. Точність вимірюється через Mean Absolute Percentage Error (MAPE): провідні UK AVM досягають MAPE 3–5% у liquid ринках (London, Manchester, Birmingham) та 8–15% у rural та illiquid областях де comparable transactions рідкісні.",
       "Дані Rightmove та Zoopla є критичним input для UK AVM. Rightmove публікує 1M+ property listings та 600,000+ sold prices щороку. Zoopla надає Automated Valuation через власний AVM engine плюс Hometrack commercial data API для lenders та developers. HM Land Registry PRICE PAID DATA є єдиним офіційним джерелом completed transaction prices — безкоштовний, оновлюється щомісяця, містить 27M+ transactions з 1995 року. Feature engineering для UK AVM: bedroom count та floor area (EPC data), postcode-level crime statistics (ONS), flood risk (Environment Agency), transport accessibility (TfL/Traveline), та school ratings (Ofsted catchment areas).",
@@ -9672,7 +9672,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: 12,
     author: "priya-ramanathan",
     emoji: "🏥",
-    color: "rose",
+    color: "from-rose-500 to-pink-600",
     content: [
       "Клінічні системи підтримки прийняття рішень (CDSS) на основі ML трансформують NHS, але їх впровадження вимагає суттєво вищого рівня обгрунтування ніж у комерційному секторі. NICE (National Institute for Health and Care Excellence) опублікував Evidence Standards Framework для digital health technologies (DHTs) у 2019, оновлений у 2022 та 2024 — він визначає чотири tier evidence requirements залежно від clinical risk: Tier A (найвищий ризик, вимагає RCT або high-quality observational evidence) до Tier D (lowest risk, базова функціональність). ML-based CDSS, що впливають на treatment decisions, як правило потрапляють до Tier B або A — вимагаючи peer-reviewed клінічні validation studies.",
       "DCB0129 — Clinical Risk Management Standard for Health IT — є обов'язковим для всіх health IT систем у NHS England включаючи AI/ML CDSS. Стандарт вимагає: (1) Clinical Safety Officer (CSO) — named кваліфікований клінічний фахівець відповідальний за safety; (2) Clinical Risk Management Plan — документований підхід до ідентифікації та управління clinical hazards; (3) Hazard Log — реєстр всіх ідентифікованих hazards з risk rating та mitigation; (4) Clinical Safety Case Report перед deployment. Для AI систем специфічний challenge: як документувати hazards що виникають з model uncertainty та edge cases що система ніколи не бачила у training.",
@@ -9735,7 +9735,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: 10,
     author: "james-hartley",
     emoji: "💼",
-    color: "indigo",
+    color: "from-indigo-500 to-blue-600",
     content: [
       "UK pension funds управляють активами понад £2.5 трлн — одним з найбільших пулів institutionally managed capital у Європі. Традиційно управління пенсійними фондами спиралось на actuarial методи та deterministic liability projections. ML трансформує цей сектор через три основних channels: (1) більш точне моделювання longevity risk через ML survival models; (2) dynamic Asset-Liability Management (ALM) через reinforcement learning; (3) покращена macro factor analysis для strategic asset allocation. The Pensions Regulator (TPR) та Pension Protection Fund (PPF) активно стежать за технологічними трансформаціями у секторі.",
       "Asset-Liability Management (ALM) є центральним завданням для UK defined benefit (DB) pension schemes. Традиційний підхід: deterministic projections liability cash flows та immunization через LDI (Liability Driven Investment) — match duration та convexity активів до liabilities. ML enhancement: (1) Stochastic scenario generation через VAR (Vector Autoregression) або GAN models замість simplified assumed correlations; (2) Regime-switching models для economic scenarios — ринок 2022 показав що fixed-parameter ALM models не передбачали simultaneous gilt yield spike та LDI collateral crisis; (3) Reinforcement learning для dynamic rebalancing між growth assets та LDI що оптимізує за funding ratio stability rather than returns alone.",
@@ -9798,7 +9798,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: 13,
     author: "sarah-chen",
     emoji: "⚙️",
-    color: "sky",
+    color: "from-sky-600 to-blue-800",
     content: [
       "ML модель без версіонування — це технічний борг що накопичується з кожним retrain. Класичні проблеми: 'яка версія моделі зараз у production?', 'чому accuracy знизилась після останнього deploy?', 'який training dataset відповідає цьому model checkpoint?' MLOps практики вирішують ці проблеми через систематичне версіонування artifacts: model weights, training data, feature engineering code, та hyperparameters. UK tech teams що впроваджують MLOps репортують зниження debugging time на 40-60% та прискорення deployment cycles з тижнів до годин.",
       "DVC (Data Version Control) є git-подібним інструментом для версіонування ML data та model artifacts. DVC зберігає pointer files у git repo (дрібні .dvc файли), а самі large files — у remote storage (AWS S3, Azure Blob, GCS). Базовий workflow: 'dvc init' ініціалізує DVC у git repo; 'dvc add data/train.csv' додає dataset до DVC tracking; 'dvc push' завантажує до remote storage. DVC pipelines ('dvc.yaml') визначають ML workflow як DAG: data preparation stage, feature engineering stage, training stage, evaluation stage. Key benefit: 'dvc repro' автоматично перезапускає лише ті stages що мають changed inputs — reproducibility без manual management.",
@@ -9861,7 +9861,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: 11,
     author: "marcus-powell",
     emoji: "⚡",
-    color: "amber",
+    color: "from-amber-500 to-orange-600",
     content: [
       "UK utilities sector — gas, electricity, та water — обробляє петабайти sensor та meter data щодня. National Grid ESO manages over 300,000 monitoring points; UKPN (UK Power Networks) отримує дані з 8M+ smart meters у Londоні та South East. Smart meter rollout у UK досяг 60% coverage у 2025, генеруючи half-hourly consumption reads що є потужним сигналом для ML anomaly detection. Energy theft коштує UK industry approximately £400M щороку (Energy Networks Association estimate), а network inefficiency — додаткові £200-300M у unnecessary losses.",
       "Isolation Forest та Autoencoder для smart meter anomaly detection є двома найбільш ефективними підходами. Isolation Forest: unsupervised алгоритм що 'isolates' anomalies через random feature splitting — anomalies ізолюються з меншою кількістю splits. Ефективний для: unusual consumption patterns, billing anomalies, та suspected bypass tampering. Autoencoder neural network: навчається reconstruct 'normal' consumption profiles; high reconstruction error сигналізує anomaly. Перевага autoencoder: може захоплювати complex temporal patterns у half-hourly data — наприклад, consumption що відповідає commercial operation але з residential tariff.",
@@ -9924,7 +9924,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: 9,
     author: "james-hartley",
     emoji: "🤝",
-    color: "teal",
+    color: "from-teal-600 to-cyan-700",
     content: [
       "UK благодійний сектор управляє понад 170,000 registered charities з загальним доходом понад £80B щороку (Charity Commission). Більшість середніх та великих UK charities залежать від regular giving programs — direct debits від donors що становлять predictable, recurring income. Typical UK charity витрачає £1.50–£3.00 на залучення нового donor але лише £0.20–£0.50 на retention existing donor. ML donor churn prediction може ідентифікувати at-risk donors до того як вони скасують donation, дозволяючи targeted retention interventions що cost-effective трансформують fundraising economics.",
       "Donor churn prediction модель для UK charity: ключові features включають recency (скільки часів з останнього donation), frequency (кількість donations за рік), monetary value (середня donation amount) — RFM framework. Додаткові features: donation channel (online, post, phone, face-to-face), response до попередніх retention комунікацій, lifetime giving value, participation у events та volunteering, та email engagement metrics. Target variable: donor що не зробив donation протягом 12 місяців після regular pattern вважається churned. XGBoost classifier на UK charity dataset (n=50,000+ donors) типово досягає AUC 0.78–0.85 для 6-місячного churn prediction.",
@@ -9987,7 +9987,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: 12,
     author: "sarah-chen",
     emoji: "🕸️",
-    color: "violet",
+    color: "from-violet-500 to-purple-600",
     content: [
       "Традиційні ML підходи до fraud detection аналізують кожну транзакцію або аккаунт ізольовано — treating entities як незалежні спостереження. Але фінансове шахрайство та money laundering є fundamentally graph problems: fraud rings складаються з мережі пов'язаних рахунків; money mule networks мають характерні flow patterns між accounts; synthetic identity fraud використовує shared phone numbers, addresses, та device fingerprints між множиною fraudulent identities. Graph Neural Networks (GNN) враховують ці структурні відносини, досягаючи 20-40% вищого fraud detection rate ніж традиційні tabular ML models у benchmark studies від UK major banks.",
       "Граф фінансових транзакцій для UK bank: nodes — це рахунки, merchants, та individuals; edges — транзакції з timestamp, amount, та channel attributes. Побудова такого графу: UK retail bank з 5M customers має приблизно 50M+ транзакцій щомісяця — граф з 5M+ nodes та 50M+ edges за типовий rolling window. GraphSAGE (Graph Sample and Aggregate) є найбільш практичним GNN архітектурою для таких масштабів: замість обробки всього графу, GraphSAGE семплює neighborhood кожного node та aggregates features — scalable до billion-node graphs. Альтернативи: Graph Attention Networks (GAT) для задач де важлива відносна важливість edges; Temporal GNN для capturing time-evolving fraud patterns.",
@@ -10050,7 +10050,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: 10,
     author: "marcus-powell",
     emoji: "🚢",
-    color: "sky",
+    color: "from-sky-600 to-blue-800",
     content: [
       "UK supply chains зазнали безпрецедентних disruptions: Brexit trade friction (нові customs procedures, Rules of Origin requirements, SPS checks), COVID-19 supplier network collapses, та 2021-2022 global shipping crisis (Suez Canal blockage, port congestion). Make UK (UK manufacturing association) повідомляє що 67% UK manufacturers змінили supply chain структуру post-Brexit — збільшивши UK-sourcing або nearshoring до European suppliers. ML є ключовим інструментом для navigating цієї новою складністю: probabilistic demand forecasting, supplier risk scoring, та dynamic safety stock optimization у волатильному environment.",
       "Demand forecasting post-Brexit вимагає врахування нових volatility sources. Традиційні forecasting методи (ARIMA, exponential smoothing) були калібровані на pre-Brexit baseline demand patterns. Post-Brexit additions: (1) Exchange rate volatility (GBP/EUR, GBP/USD) як demand driver для import-sensitive products; (2) Port delay distributions (Dover/Folkestone, Immingham) — нові SPS checks збільшили customs processing variability; (3) Seasonal Brexit effects — початок кварталів з major regulatory changes (January 2024 Border Target Operating Model implementation) створюють short-term demand spikes для stockpiling. LightGBM з цими додатковими features досягає MAPE покращення 15-25% vs traditional ARIMA для affected product categories.",
@@ -10113,7 +10113,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: 10,
     author: "priya-ramanathan",
     emoji: "🛍️",
-    color: "rose",
+    color: "from-rose-500 to-pink-600",
     content: [
       "UK роздрібна торгівля є одним з найбільш technologically advanced секторів у світі — з 35M+ active online shoppers та e-commerce penetration 28% (ONS 2024). Мультимодальний AI — системи що розуміють та генерують content через кілька modalities (text, image, video) — трансформує UK retail через: (1) visual product search (search by image); (2) AI-powered product recommendations що combine text та visual features; (3) AR try-on experiences для fashion та beauty; (4) automated product catalog enrichment. ASOS, Marks and Spencer, та John Lewis є серед UK retailers що активно інвестують у ці технології.",
       "Visual product search architecture для UK retail: customer фотографує product (або screenshot з Instagram) та expects знайти similar items у retailer catalog. Technical pipeline: (1) Image embedding generation — CLIP (Contrastive Language-Image Pre-training від OpenAI) або fashion-specific models (FashionCLIP) encode image у dense vector у embedding space; (2) Vector similarity search — FAISS (Facebook AI Similarity Search) або Pinecone vector database для nearest-neighbor search по catalog embeddings; (3) Re-ranking — combine visual similarity з business logic (margin, stock availability, personalization). ASOS visual search обробляє 3M+ searches/місяць — демонструючи production scale feasibility.",
@@ -10176,7 +10176,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: 12,
     author: "james-hartley",
     emoji: "🔐",
-    color: "indigo",
+    color: "from-indigo-500 to-blue-600",
     content: [
       "UK є однією з найбільш targeted країн для кібератак у Європі — NCSC Annual Review 2024 повідомляє про 2,544 cyber incidents що вимагали NCSC response, включаючи 12 nationally significant incidents. UK organizations витрачають £5B+ щороку на cybersecurity (TechUK estimate), але traditional signature-based SIEM (Security Information and Event Management) системи все частіше неефективні проти sophisticated threats: zero-day exploits, living-off-the-land attacks, та AI-augmented adversarial campaigns. ML трансформує три ключові areas: SIEM event correlation, User and Entity Behavior Analytics (UEBA), та proactive threat hunting.",
       "ML-enhanced SIEM: традиційні SIEM (Splunk, IBM QRadar, Microsoft Sentinel) correlate security events через rule-based alerts. Проблема: UK mid-size organization генерує 100,000+ security events щодня — аналітики страждають від alert fatigue з false positive rate 95%+. ML вирішення: (1) Unsupervised anomaly detection на log streams — Isolation Forest або Autoencoder навчається на 'normal' network behavior та flagging statistical deviations; (2) Supervised ML для known attack pattern classification — Random Forest trained на MITRE ATT&CK TTP features; (3) Alert prioritization — ML risk scoring що combines multiple low-confidence alerts у high-confidence incident. Microsoft Sentinel (Azure UK South) має native ML capabilities включаючи entity behavior analytics та anomaly detection rules.",
@@ -10239,7 +10239,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: 11,
     author: "marcus-powell",
     emoji: "📡",
-    color: "sky",
+    color: "from-sky-600 to-blue-800",
     content: [
       "UK телекомунікаційний ринок є одним з найбільш конкурентних у світі: BT Group, Vodafone UK, Virgin Media O2, EE та Three UK борються за 67 мільйонів абонентів. Щорічний churn у UK mobile segment сягає 18-22%, тоді як залучення нового клієнта коштує у 5-7 разів дорожче утримання існуючого. ML-рішення для churn prediction стали стратегічним пріоритетом для всіх великих UK операторів. OFCOM, регулятор телекомунікацій UK, посилює вимоги до transparency цінових пропозицій та захисту споживачів, що додає додатковий контекст для customer analytics.",
       "Churn prediction у telecoms: класичний підхід використовує градієнтний бустинг (XGBoost, LightGBM) на агрегованих ознаках: тривалість контракту, частота дзвінків до service центру, зміни у споживанні даних, платіжна поведінка, NPS score. Сучасні підходи включають sequence models на event logs — LSTM або Transformer на послідовності взаємодій клієнта. Feature importance analysis показує що ключові предиктори churn у UK mobile: дзвінки до complaints department (3x підвищений ризик), зниження використання даних на 40%+ за місяць, та service outage events у billing period. Early churn prediction window — 60-90 днів до очікуваного відтоку — дає retention team достатньо часу для intervention.",
@@ -10302,7 +10302,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: 12,
     author: "priya-ramanathan",
     emoji: "⚖️",
-    color: "violet",
+    color: "from-violet-500 to-purple-600",
     content: [
       "UK AI White Paper 2023 ('A pro-innovation approach to AI regulation') встановив п'ять cross-sectoral principles для Responsible AI: safety and security, transparency and explainability, fairness, accountability and governance, та contestability and redress. На відміну від EU AI Act, UK підхід є principles-based а не rules-based — існуючі регулятори (FCA, ICO, CQC, Ofcom) відповідають за enforcement у своїх секторах. Для UK організацій це означає що Responsible AI аудит потрібно калібрувати під конкретний regulatory context: фінансовий сектор отримає різні очікування від FCA, ніж NHS від CQC або HR системи від ICO.",
       "Bias testing методологія: algorithmic bias може виникати на різних рівнях — у training data (historical discrimination), у feature selection (proxy discrimination через seemingly neutral variables), або у model architecture. Систематичний bias audit включає: (1) Demographic parity — чи однакова positive prediction rate для різних груп (race, gender, age)? (2) Equalized odds — чи однакові TPR та FPR для різних груп? (3) Calibration — чи відповідають predicted probabilities реальним outcomes для кожної групи? UK Equality Act 2010 protected characteristics: age, disability, gender reassignment, marriage, pregnancy, race, religion, sex, sexual orientation. Аудит повинен тестувати кожну relevant protected characteristic.",
@@ -10365,7 +10365,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: 10,
     author: "sarah-chen",
     emoji: "🔄",
-    color: "teal",
+    color: "from-teal-600 to-cyan-700",
     content: [
       "Production ML моделі деградують з часом — явище відоме як concept drift. У UK regulated sectors це особливо критично: модель кредитного скорингу навчена до COVID-19 буде systematically incorrect після економічних шоків 2020-2021; fraud detection model навчена до widespread contactless payments буде пропускати нові fraud patterns. Continual learning (також: online learning, lifelong learning, incremental learning) — сімейство підходів що дозволяють моделям адаптуватись до нових даних без повного перенавчання. Але UK regulated sectors мають специфічні governance requirements що роблять continual learning складнішим ніж у нерегульованих domains.",
       "Concept drift taxonomy: розуміння типів drift допомагає вибрати правильну стратегію: (1) Sudden drift — абруптна зміна distribution (economic shock, pandemic, regulatory change). Виявляється швидко через performance monitoring; (2) Gradual drift — повільна зміна over months/years (customer behavior evolution, demographic shifts). Складніше виявити, потребує довгострокового моніторингу; (3) Recurring drift — сезонні та циклічні patterns (holiday retail behavior, tax season financial behavior). Може оброблятись через time-aware models; (4) Virtual drift — зміна input distribution без зміни conditional distribution p(y|x) — не вимагає retraining але впливає на performance metrics. Evidently AI та Nannyml є популярними UK-deployed drift detection platforms.",
@@ -10428,7 +10428,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: 11,
     author: "james-hartley",
     emoji: "📺",
-    color: "rose",
+    color: "from-rose-500 to-pink-600",
     content: [
       "UK є одним з найбагатших медіаринків у світі: BBC (з BBC iPlayer та BBC Sounds), ITV (ITVX), Channel 4 (All 4), Sky (NOW TV) та стрімінгові гіганти Netflix та Disney+ конкурують за увагу 67 мільйонів British viewers. ML трансформує UK broadcasting у декількох напрямках: content recommendation та discovery, automated subtitling та accessibility, audience analytics та segmentation, та content moderation. Офком (Ofcom) — UK communications regulator — встановлює frameworks що безпосередньо впливають на те як ML може застосовуватися у UK медіа контексті.",
       "Content recommendation systems у UK broadcasting: BBC iPlayer recommendation engine — найбільша publicly-funded streaming recommendation system у UK. BBC Research & Development опублікував дослідження на тему content-based та collaborative filtering hybridization для BBC Sounds. Ключова складність для public broadcasters: BBC Charter obligations вимагають represent all parts of UK та avoid filter bubbles — pure collaborative filtering може reinforceувати existing viewing habits. BBC підхід: hybrid між popularity-based recommendations, content-based filtering на editorial metadata, та light collaborative filtering. ITV та Channel 4 як комерційні broadcaster мають менше restrictions та застосовують більш aggressive personalization для максимізації viewing time та ad relevance.",
@@ -10491,7 +10491,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: 12,
     author: "marcus-powell",
     emoji: "🏛️",
-    color: "amber",
+    color: "from-amber-500 to-orange-600",
     content: [
       "UK держсектор щороку втрачає мільярди фунтів через fraud та error: HMRC оцінює tax gap у £36 млрд за 2022-23; DWP оцінює welfare benefit fraud та error у £8.3 млрд за 2023-24. ML стало ключовим інструментом для UK public sector fraud prevention, але з важливими відмінностями від приватного сектору: government decisions мають public law obligations, judicial review exposure, та strict transparency requirements. Central Digital and Data Office (CDDO) та Government Digital Service (GDS) координують AI adoption стратегію.",
       "HMRC та ML: HMRC's Connect system є одним з найбільших ML fraud detection deployments у UK public sector. Connect aggregates data з 40+ sources: company filings, land registry, banking data, та cross-government data через Data Sharing frameworks. ML use cases: (1) Tax return anomaly detection — unsupervised ML для flagging returns що deviate від peer groups (same industry, similar turnover); (2) VAT fraud detection — ML graph analysis виявляє carousel fraud networks; (3) Off-payroll working (IR35) compliance — ML classification contractors; (4) Crypto asset reporting — ML на blockchain analytics для identifying unreported crypto gains. HMRC є legally cautious про публічне описання своїх ML methods щоб не enable tax avoidance.",
@@ -10554,7 +10554,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: 10,
     author: "priya-ramanathan",
     emoji: "🚀",
-    color: "emerald",
+    color: "from-emerald-500 to-teal-600",
     content: [
       "UK tech startup ecosystem є третьою за розміром у світі після US та China: London, Cambridge, Manchester, Edinburgh та Oxford формують major hubs. Для UK B2B SaaS стартапів рішення 'build vs buy ML' є часто не просто технічним, а стратегічним: ML може бути core differentiator що неможливо аутсорсити, або commodity capability де купівля готового рішення є набагато ефективнішою. Помилки у цьому рішенні коштують дорого: build when should buy означає months of ML engineering витраченого на non-differentiating capability; buy when should build означає vendor dependency та limited competitive moat.",
       "Framework для build vs buy decision: три ключові питання для UK стартапу: (1) Чи є ML ваш core product differentiator? Якщо competitive advantage — унікальні insights з proprietary data або novel ML methodology — build. Якщо ML є enabling technology для delivering value в іншій area — buy або use APIs; (2) Чи маєте ви unique proprietary data? ML на commoditized public data рідко дає competitive advantage — якщо у вас є unique dataset, build може бути justified; (3) Який ваш ML maturity? Якщо у вас немає ML engineers та clean data pipeline — купівля best-in-class SaaS ML tool зараз та build пізніше може бути smarter progression. Rule of thumb: якщо ML feature займає менше 20% product value — buy. Якщо більше 50% — build або hire.",
@@ -10617,7 +10617,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: 11,
     author: "sarah-chen",
     emoji: "📊",
-    color: "indigo",
+    color: "from-indigo-500 to-blue-600",
     content: [
       "Довгий час у ML спільноті панувало правило: 'gradient boosting для табличних даних, neural networks для image та text.' XGBoost та LightGBM домінували tabl leaderboards. Але з 2021 з'явилась хвиля deep learning архітектур для табличних даних: TabNet (Google), FT-Transformer (Yandex), SAINT, та NODE. UK фінансова індустрія — з її великими структурованими датасетами у credit, insurance та wealth management — є ідеальним proving ground для цього питання. Відповідь виявилась nuanced: deep learning для табличних даних є кращим у деяких сценаріях, але загалом XGBoost залишається strong baseline що важко перевершити.",
       "TabNet архітектура: розроблений Google Research (Arik and Pfister, 2021), TabNet використовує sequential attention mechanism для feature selection — в кожному decision step модель вибирає які features є релевантні. Ключові переваги: (1) Built-in interpretability — attention weights показують які features використовуються на кожному step; (2) Unsupervised pre-training можливість — корисно для UK financial use cases де labeled data scarce; (3) Performance на missing data — sequential attention naturally handles missing values. Недоліки: training є значно повільнішим ніж XGBoost; hyperparameter tuning складніший; потребує більших датасетів (typically 50K+ rows) для competitive performance.",
@@ -10680,7 +10680,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: 10,
     author: "james-hartley",
     emoji: "💷",
-    color: "amber",
+    color: "from-amber-500 to-orange-600",
     content: [
       "Цінова оптимізація є одним з найбільш measurable ML use cases: кожен відсоток покращення margin translates безпосередньо до P&L. UK ритейлери, готельні мережі та страховики активно використовують ML для pricing. Але UK regulatory context додає важливі constraints: Competition and Markets Authority (CMA) actively monitors algorithmic pricing на predatory pricing та coordinated pricing concerns; Financial Conduct Authority (FCA) має specific rules щодо insurance pricing practices; Consumer Rights Act 2015 захищає consumers від misleading pricing. Розуміння цих boundaries є essential для будь-якого UK pricing ML deployment.",
       "Dynamic pricing у UK retail: Tesco, Sainsbury's, ASDA та Amazon UK використовують різні forms ML-driven pricing. Amazon UK змінює ціни мільйони разів на добу через його dynamic pricing engine. UK supermarkets більш conservative через ESL (Electronic Shelf Labels) infrastructure costs та consumer backlash risk. ML approaches: (1) Demand forecasting model — predict demand при різних price points; (2) Price elasticity estimation — ML regression для estimating price sensitivity per product/category; (3) Competitive intelligence — scraping competitor prices та automated price matching; (4) Markdown optimization — ML для timing та depth markdowns на perishable goods. UK CMA проводив market study retail pricing algorithms у 2023 — не знайшов evidence collusion але продовжує monitoring.",
@@ -10743,7 +10743,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: 11,
     author: "marcus-powell",
     emoji: "🏗️",
-    color: "teal",
+    color: "from-teal-600 to-cyan-700",
     content: [
       "UK будівельна індустрія є одним з найбільших секторів економіки — £130 млрд щороку та 2.4 мільйони зайнятих. Але галузь має серйозні проблеми з productivity: UK construction productivity є на 20-30% нижчою ніж manufacturing sector, rework коштує до 5% project value, та major projects систематично перевищують budget та timeline. ML разом з BIM (Building Information Modelling) proposes transformative solutions: automated defect detection через computer vision, predictive planning approval analytics, та intelligent project risk management. UK уряд через Construction Strategy 2025 та Transforming Infrastructure Performance programme активно promotes digital transformation у будівництві.",
       "Computer Vision для defect detection у UK construction: традиційне site inspection є manual, inconsistent та post-facto. CV-based inspection ML: (1) Crack detection — CNN models (ResNet, EfficientNet) trained на labeled crack images досягають 90%+ accuracy для detecting structural cracks у concrete, masonry та render; (2) Rebar spacing verification — CV вимірює rebar spacing у ненастановленому concrete через overhead або drone cameras; (3) Material quality inspection — detecting defective brickwork, poor joint finishing, damaged insulation; (4) Progress monitoring — site photos compared з BIM model для automated percentage complete estimation. UK companies: Buildots використовує 360-degree cameras та AI для real-time construction progress monitoring; Disperse (London startup) надає CV defect detection as-a-service для UK general contractors.",
@@ -10806,7 +10806,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: 12,
     author: "priya-ramanathan",
     emoji: "🏥",
-    color: "emerald",
+    color: "from-emerald-500 to-teal-600",
     content: [
       "NHS є largest employer у UK та один з найбільших у світі — 1.5 мільйона collaborators, 1.2 мільярди appointments щороку. Клінічна документація є переважно у free-text форматі: discharge summaries, clinic letters, nursing notes, radiology reports. Clinical NLP трансформує цю unstructured text data у structured, actionable insights. Три ключові application areas для NHS: automated clinical coding (SNOMED CT та ICD-10), discharge summary analysis, та clinical trial matching. NHS DSP (Data Security and Protection) Toolkit та IG (Information Governance) Toolkit визначають requirements для будь-якого ML system що обробляє patient data.",
       "SNOMED CT та автоматичне клінічне кодування: SNOMED CT (Systematized Nomenclature of Medicine Clinical Terms) є comprehensive clinical terminology що NHS mandate для Electronic Health Records. SNOMED CT містить 350,000+ concepts та є backbone NHS 111, Summary Care Record, та hospital EPR systems. NLP SNOMED CT mapping pipeline: (1) Named Entity Recognition (NER) — ідентифікація clinical entities (symptoms, diagnoses, medications, procedures) у free text; (2) Entity Normalization — mapping recognized entities до SNOMED CT codes через lookup та ML disambiguation; (3) Negation detection — 'no evidence of pneumonia' vs 'pneumonia' є critical distinction; (4) Temporal reasoning — 'history of diabetes' vs 'current diabetes' змінює code assignment. Clinical NLP models: медичні NLP моделі (ClinicalBERT, BioMedBERT, Bio+Clinical BERT) trained на clinical corpora significantly outperform general-purpose BERT for NHS text.",
@@ -10869,7 +10869,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: 11,
     author: "sarah-chen",
     emoji: "🕸️",
-    color: "violet",
+    color: "from-violet-500 to-purple-600",
     content: [
       "Knowledge graphs (KG) представляють знання як мережу entities та їх relationships — на відміну від traditional relational databases де дані зберігаються у tables, або document databases де дані є semi-structured JSON. KG технологія стала практичною для enterprise завдяки: Neo4j (провідна graph database), Amazon Neptune, та Google Cloud Spanner з graph capabilities. Для UK enterprise три сектори демонструють найвищу value реалізацію: legal research (юридичні фірми що хочуть navigate complex legislation та case law), NHS (клінічні ontologies та patient pathway graphs), та financial services (FCA regulatory graphs та fraud network analysis).",
       "Knowledge graphs у UK legal research: UK legal система базується на common law із centuries of case law та statute. Knowledge graph value proposition для legal research: (1) Case law network — судові рішення як nodes з directed edges representing citation relationships; ML на citation graph може identify landmark cases, predict precedent relevance, та suggest analogous cases; (2) Legislation dependency graph — UK statute law має complex cross-references та amendment chains; KG represents these relationships navigably; (3) Entity extraction + graph — NLP extracts legal entities (parties, judges, courts, statutes) від case text та populates KG; (4) Regulatory mapping — law firm compliance departments map regulatory obligations до business processes. UK legaltech companies: Lexis Nexis UK, Westlaw Edge UK, та UK startups (Luminance, Eigen Technologies) використовують KG-adjacent approaches для legal AI.",
@@ -10932,7 +10932,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: 10,
     author: "james-hartley",
     emoji: "🚚",
-    color: "rose",
+    color: "from-rose-500 to-pink-600",
     content: [
       "UK e-commerce ринок є третім за розміром у світі — £138 млрд щороку — з понад 8 мільйонами parcels доставлених щодня. Last-mile delivery є найдорожчою та найскладнішою частиною supply chain: 53% total delivery cost може припадати на last mile. Ключові гравці UK last-mile logistics: Royal Mail (Universal Service Obligation), DPD UK, Evri (колишній Hermes), DHL Express UK, Amazon Logistics UK, та Yodel. Всі major carriers активно використовують ML для route optimization, demand forecasting, та driver management. UK Net Zero 2050 commitments додають pressure до decarbonize logistics fleet.",
       "Route optimization ML: класична Vehicle Routing Problem (VRP) є NP-hard — exact solutions неможливі для large scale. UK carriers з тисячами daily routes використовують combination of: (1) OR-Tools (Google open-source) або specialized solvers (Hexaly, OptaPlanner) для VRP optimization; (2) ML для prediction delivery time windows та parking/access difficulty per location — UK-specific challenge через narrow streets, permit parking, та city centre access restrictions; (3) Reinforcement Learning (RL) для adaptive routing — learning від driver experience та real-time conditions; (4) Sequence optimization — given fixed stops, ML finds optimal visitation order accounting for time windows та traffic patterns. DPD UK Chronopost та Amazon Flex routing система є серед найбільш sophisticated UK implementations.",
@@ -10995,7 +10995,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: 11,
     author: "sarah-chen",
     emoji: "🏦",
-    color: "indigo",
+    color: "from-indigo-500 to-blue-600",
     content: [
       "GPT-4o fine-tuning відкриває значні можливості для UK regulated industries — від банківського сектору до охорони здоров'я. Однак regulatory landscape у UK робить fine-tuning значно складнішим ніж для нерегульованих галузей. FCA AI governance framework, GDPR обмеження на training data, та data residency вимоги формують унікальне середовище де технічні рішення мають відповідати правовим зобов'язанням. OpenAI у 2024 році запустив enterprise tier з більшими гарантіями data privacy що відкрило двері для regulated UK businesses.",
       "FCA AI governance та fine-tuning: FCA Discussion Paper DP5/22 та наступні Policy Statements встановили принципи AI governance для UK фінансових послуг. Для fine-tuning моделей у regulated context: (1) Model documentation — детальна документація training data sources, fine-tuning methodology, та evaluation results є обов'язковою; (2) Explainability obligations — fine-tuned моделі у credit decisioning або insurance underwriting повинні забезпечувати пояснення рішень відповідно до Consumer Duty; (3) Model risk management (MRM) — FCA очікує robust MRM framework включаючи pre-deployment validation та ongoing monitoring fine-tuned моделей; (4) Audit trail — кожна версія fine-tuned моделі та її performance metrics мають зберігатися для potential FCA inspection.",
@@ -11058,7 +11058,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: 10,
     author: "marcus-powell",
     emoji: "⚽",
-    color: "emerald",
+    color: "from-emerald-500 to-teal-600",
     content: [
       "UK є глобальним лідером у sports analytics — Premier League є найбагатшою футбольною лігою світу з £3.6 млрд TV rights deal, Betfair є найбільшою betting exchange у світі, а компанії StatsBomb та Opta (Stats Perform) базовані у UK та постачають data провідним клубам світу. Machine learning у sports analytics вийшов далеко за межі простої статистики — сучасні ML системи прогнозують результати матчів, оцінюють transfer value гравців, передбачають травми, та генерують tactical insights що раніше були доступні лише elite coaching staff.",
       "Expected Goals (xG) моделі: математична основа сучасного football analytics. xG model оцінює ймовірність гола для кожного удару на основі: позиції удару (distance та angle до воріт), типу удару (header, foot, body), pass type що передував удару (cross, through ball, set piece), game situation (open play, corner, free kick), та goalkeeper position. Технічно: logistic regression є baseline; сучасні implementations використовують gradient boosting (XGBoost, LightGBM) або neural networks на StatsBomb open data або Opta licensed data. StatsBomb xG model навчений на мільйонах ударів з tracking data. Premier League clubs (Liverpool, Manchester City) мають власні proprietary xG models що враховують additional features недоступні у commercial data providers. Post-shot xG (PSxG) також враховує ball placement та goalkeeper positioning після удару — більш predictive of actual scoring.",
@@ -11121,7 +11121,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: 12,
     author: "priya-ramanathan",
     emoji: "⚛️",
-    color: "violet",
+    color: "from-violet-500 to-purple-600",
     content: [
       "Quantum computing та machine learning конвергенція — одна з найбільш обговорюваних тем у UK financial services technology. HSBC, Barclays, та Standard Chartered активно фінансують quantum computing research та запустили pilot programs. UK Government's National Quantum Strategy (2023) виділила £2.5 млрд на quantum technologies протягом 10 років. Однак реальність NISQ (Noisy Intermediate-Scale Quantum) era є значно складнішою ніж маркетингові обіцянки quantum hardware vendors. Цей огляд дає чесну оцінку де quantum ML може принести реальну цінність UK financial sector та де ще є роки до practical advantage.",
       "NISQ era реальність: сучасні quantum computers (IBM Quantum, Google Sycamore, IonQ) мають 100-1000+ qubits але з high noise levels та short coherence times. NISQ limitations для financial ML: (1) Circuit depth обмеження — noisy qubits вимагають shallow circuits; deep quantum neural networks є error-prone; (2) Qubit connectivity — not all-to-all connectivity обмежує quantum circuit expressiveness; (3) Measurement noise — shot noise вимагає thousands of circuit repetitions для reliable expectation values; (4) Classical simulation overhead — для багатьох financial datasets класичний GPU може симулювати NISQ-scale quantum circuits faster than actual quantum hardware. Practical implication: більшість NISQ quantum ML experiments у finance є proof-of-concept на toy datasets; не ready for production financial workloads. Fault-tolerant quantum computers (1M+ physical qubits) потребують 10-15 років для development.",
@@ -11184,7 +11184,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: 11,
     author: "priya-ramanathan",
     emoji: "🏥",
-    color: "teal",
+    color: "from-teal-600 to-cyan-700",
     content: [
       "NHS є однією з найбагатших health data repositories у світі — 67+ мільйонів пацієнтів, десятиліття electronic health records, та унікальна universal coverage structure що eliminated selection bias що plague інші health systems. Однак ця data є highly sensitive та regulated під UK GDPR Article 9 (special category health data), Data Security and Protection Toolkit, та Common Law Duty of Confidentiality. Federated learning є технологічним підходом що дозволяє навчати ML models across distributed NHS datasets без centrally collecting raw patient data — потенційно вирішуючи privacy та governance tension що historically блокував NHS AI adoption.",
       "Federated learning архітектура для NHS: замість sending patient data до central server, federated learning sends model updates (gradients) до central aggregator. Типова NHS federated setup: (1) Hub — central ML server (наприклад NHSX AI Lab або commercial partner); (2) Spokes — individual NHS Trusts, GP surgeries, або ICS (Integrated Care Systems); кожен spoke зберігає local patient data; (3) Training round — hub distributes current model weights до spokes; кожен spoke trains locally на свої patients; spokes надсилають gradient updates (не raw data) назад до hub; hub aggregates updates (FedAvg algorithm); (4) Convergence — after multiple rounds, global model incorporates learning from all sites without raw data leaving individual Trusts. NHS implementations: HealthChain (NHS-partnered federated learning platform), AIDE (AI Deployment Engine, NHS DigiTrials), та academic implementations через N3C UK equivalent.",
@@ -11247,7 +11247,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: 10,
     author: "james-hartley",
     emoji: "☁️",
-    color: "sky",
+    color: "from-sky-600 to-blue-800",
     content: [
       "Рішення між MLOps on-premises та cloud deployment є одним з найважливіших стратегічних виборів для UK organisations що будують ML capabilities. Це не чисто технічне рішення — воно охоплює GDPR compliance, data sovereignty, regulatory requirements, total cost of ownership (TCO), та operational complexity. У UK context є додаткові нюанси: FCA та PRA regulated firms мають explicit вимоги до outsourcing та cloud adoption; NHS та public sector мають DSPT та government cloud security requirements; та Brexit створив нову legal landscape для EU-UK data flows.",
       "Data sovereignty та GDPR compliance у cloud: UK GDPR (post-Brexit version of EU GDPR) застосовується до processing personal data у cloud. Key considerations: (1) UK adequacy decision — EU визнало UK adequate для data transfers (2021); UK→EU transfers ok; але це periodically reviewed та може змінитися; (2) Cloud provider data centres — AWS London (eu-west-2), Azure UK South/UK West, Google Cloud London (europe-west2) усі зберігають data в UK; (3) Sub-processor chains — major cloud providers мають long list of sub-processors (monitoring, support tools) що можуть involve non-UK data access; GDPR Article 28 sub-processor requirements застосовуються; (4) Law enforcement access — USA CLOUD Act дозволяє US law enforcement request data від US-headquartered cloud providers (AWS, Azure, GCP) навіть для UK-region data; для regulated UK firms це є risk consideration; (5) On-premises advantage — data never leaves controlled infrastructure; no third-party sub-processor concerns.",
@@ -11310,7 +11310,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: 11,
     author: "marcus-powell",
     emoji: "🛡️",
-    color: "amber",
+    color: "from-amber-500 to-orange-600",
     content: [
       "UK insurance market є третім за розміром у світі — £300+ млрд annual gross written premium. London market (Lloyd's of London та London company market) є global hub для specialty та reinsurance. ML adoption у insurance underwriting перетворює traditional actuarial methods: від GLM (Generalised Linear Models) що домінували протягом 30 років до gradient boosting та deep learning approaches що promise більшу predictive accuracy. Однак regulated nature UK insurance market означає що ML adoption відбувається у рамках FCA PS20/2, PRA SS3/19, та Solvency II Internal Model requirements.",
       "GLM vs Gradient Boosting для insurance pricing: GLM є cornerstone traditional insurance pricing: (1) GLM advantages — transparent, interpretable coefficients; actuaries можуть explain rating factors; regulatory acceptable під Solvency II; additive structure дозволяє easy rate filing; multiplicative GLMs (log link) є industry standard для frequency/severity modelling; (2) GLM limitations — assumes specific functional form; не captures complex interactions між features без explicit engineering; limited predictive power для highly correlated features. Gradient Boosting (XGBoost, LightGBM): (1) Advantages — automatic feature interaction detection; outperforms GLM на most insurance datasets (5-15% lift у Gini coefficient); handles missing values та non-linear relationships; (2) Limitations — less interpretable; FCA та PRA вимагають explainability для pricing decisions; SHAP values необхідні для regulatory compliance. UK practice: gradient boosting models validated та approved для use у Solvency II Internal Models якщо governance framework meets PRA expectations.",
@@ -11373,7 +11373,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: 11,
     author: "sarah-chen",
     emoji: "📈",
-    color: "emerald",
+    color: "from-emerald-500 to-teal-600",
     content: [
       "UK asset management industry є другою за розміром у світі після США — £10+ трлн assets under management (AUM). Компанії як BlackRock (UK operation), Schroders, Legal & General Investment Management (LGIM), та Baillie Gifford є global players що активно інвестують у ML capabilities. ML adoption у asset management охоплює: alpha generation (знаходження excess returns), risk management, portfolio construction, та operational efficiency. UK regulatory framework під FCA MAR (Market Abuse Regulation), MiFID II, та Senior Managers and Certification Regime (SMCR) формує специфічні вимоги до ML deployment у investment management context.",
       "ML-enhanced factor models: traditional factor investing (Fama-French, AQR) базується на empirically documented return predictors (value, momentum, quality, size). ML додає кілька вимірів: (1) Feature engineering — ML identifes novel factor combinations та interactions що традиційні linear models пропускають; non-linear factor relationships; (2) Factor timing — ML models для динамічного weighting factors залежно від macroeconomic regime; LSTM та Transformer models на macroeconomic time series; (3) Alternative factor construction — NLP sentiment scores як ML-constructed factors; analyst revision momentum; ESG ratings ML processing; (4) Signal decay analysis — ML для estimating factor half-life та optimal rebalancing frequency; (5) Transaction cost optimization — ML для estimating market impact та optimal execution timing. Research від AQR, Two Sigma, та academic papers (Gu, Kelly, Xiu 2020 — 'Empirical Asset Pricing via Machine Learning') показує ML factor models outperform linear factor models на US data; replication UK data є active research area.",
@@ -11436,7 +11436,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: 10,
     author: "priya-ramanathan",
     emoji: "⚖️",
-    color: "rose",
+    color: "from-rose-500 to-pink-600",
     content: [
       "ML bias у фінансових послугах є не тільки технічна проблема — це юридичний, regulatory, та reputational ризик для UK firms. Equality Act 2010 захищає 9 characteristics від discrimination: age, disability, gender reassignment, marriage/civil partnership, pregnancy/maternity, race, religion/belief, sex, та sexual orientation. UK Financial Conduct Authority через Consumer Duty та FCA PS22/3 (Diversity and Inclusion) вимагає firms demonstrate fair treatment outcomes. Якщо ML model у credit decisioning, insurance pricing, або employment screening produces discriminatorily worse outcomes для protected groups — firm може faced з regulatory enforcement, litigation, та reputational damage.",
       "Типи ML bias та їх прояви у UK financial services: (1) Historical bias — training data reflects historical discrimination; ML model perpetuates it. Приклад: якщо historically UK banks were less likely to approve mortgages у certain postcodes (redlining analogues), ML trained на historical data може reproduce цей pattern; (2) Representation bias — protected groups underrepresented у training data; model performs worse для них. UK context: elderly customers, disabled customers, ethnic minorities можуть бути underrepresented у digital-first training datasets; (3) Measurement bias — proxy variables що correlate з protected characteristics used у model. Приклад: postcode as credit risk feature correlates strongly з race та socioeconomic background у UK; (4) Aggregation bias — single model applied до groups що have different optimal models; (5) Evaluation bias — model evaluated на majority group benchmark що не representative minority group performance.",
@@ -11499,7 +11499,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: 10,
     author: "marcus-powell",
     emoji: "🏥",
-    color: "teal",
+    color: "from-teal-600 to-cyan-700",
     content: [
       "NHS elective waiting lists досягли рекордних 7.5+ мільйонів pathways у 2024 році — legacy COVID-19 та decades-long underfunding. NHS England Elective Recovery Programme є амбітна ініціатива для elimination of 2-year waits by 2024 та 18-week waits by 2025. ML є центральним у технологічній стратегії NHS для waiting list management: від RTT (Referral to Treatment) time prediction до ICS (Integrated Care System) cross-site capacity optimization. NHSE Model Health System та NHS Rightcare програми all incorporate ML-based analytics. Однак NHS data infrastructure challenges (legacy systems, incomplete RTT data, EHR interoperability) ускладнюють ML deployment.",
       "RTT prediction ML: Referral to Treatment time є key NHS performance metric — 92% patients повинні починати treatment within 18 weeks від referral. ML approaches для RTT prediction: (1) Patient-level RTT wait time prediction — ML trained на patient demographics, referral urgency, diagnosis code, specialty, GP practice, та historical pathway data; Random Forest та XGBoost models показують RMSE 2-4 weeks на test sets; (2) Pathway complexity scoring — ML identifying complex pathways (multiple diagnostic tests, specialist consultations) що predicted to breach 18 weeks; proactive pathway management; (3) DNA (Did Not Attend) prediction — ML predicting appointment non-attendance; proactive rebooking або overbooking strategy; 15-20% NHS appointments є DNAs; (4) Clock stop prediction — predicting likely clock stop events (treatment decision, patient choice) для accurate RTT management. NHS iPlayer та NHS RTT tracker integrate ML predictions у operational dashboards для NHS Trust RTT teams.",
@@ -11562,7 +11562,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: 12,
     author: "james-hartley",
     emoji: "🤖",
-    color: "indigo",
+    color: "from-indigo-500 to-blue-600",
     content: [
       "LLM enterprise deployment є одним з найактивніших технологічних рішень що UK enterprises приймають у 2026 році. Вибір між API-based deployment (OpenAI, Anthropic, Azure OpenAI) та self-hosted open-source LLMs (Llama, Mistral, Qwen) має profound implications для cost, data privacy, performance, та operational complexity. UK context робить цей вибір складнішим: GDPR та UK data protection law, FCA regulatory requirements для financial services, NHS data sovereignty вимоги, та UK NCSC guidance на AI security. Цей guide provides cost-based, privacy-based, та operational frameworks для UK enterprise LLM deployment decision.",
       "API vs self-hosted: fundamental trade-offs: API deployment (OpenAI, Azure OpenAI, Anthropic Claude): (1) Advantages — zero infrastructure management; latest models available immediately; high quality out-of-box; no GPU procurement; scalable instantly; (2) Disadvantages — data sent до third-party servers (privacy implications); cost scales linearly з usage; vendor lock-in; latency dependent on internet connectivity та provider SLA; no control over model updates. Self-hosted (Llama 3.1, Mistral, Qwen): (1) Advantages — complete data control; predictable infrastructure cost; no per-token cost at inference time; customizable; air-gapped possible для highest security; (2) Disadvantages — significant GPU infrastructure investment; MLOps overhead для model serving; typically lower quality than frontier models (GPT-4o, Claude 3.5 Sonnet); engineering team requirement; model updates are manual process.",

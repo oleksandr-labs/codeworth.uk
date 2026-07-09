@@ -50,9 +50,10 @@ describe("EXTRAS", () => {
     });
   });
 
-  it("has items in all 10 categories", () => {
+  it("has items in the ai category (the only current category)", () => {
     const categories = new Set(EXTRAS.map((e) => e.category));
-    expect(categories.size).toBe(10);
+    expect(categories.size).toBe(1);
+    expect(categories.has("ai")).toBe(true);
   });
 });
 

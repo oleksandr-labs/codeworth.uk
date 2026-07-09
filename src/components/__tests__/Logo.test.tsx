@@ -37,7 +37,7 @@ describe("LogoWordmark", () => {
   it("renders Codeworth text", () => {
     render(<LogoWordmark />);
     expect(screen.getByText("Code")).toBeInTheDocument();
-    expect(screen.getByText("Nest")).toBeInTheDocument();
+    expect(screen.getByText("worth")).toBeInTheDocument();
   });
 
   it("renders the LogoIcon inside", () => {

@@ -37,14 +37,14 @@ export function AiToolPreview() {
             <div className="rounded-xl p-4 bg-red-50 border border-red-100">
               <div className="text-xs font-bold text-red-500 mb-2">❌ Without AI</div>
               <div className="text-xs text-gray-600 dark:text-neutral-300 leading-relaxed italic">
-                "We are pleased to offer our customers a wide range of solutions that meet their needs in today&apos;s competitive market environment..."
+                &ldquo;We are pleased to offer our customers a wide range of solutions that meet their needs in today&apos;s competitive market environment...&rdquo;
               </div>
               <div className="mt-3 text-xs text-red-400">3 hours · generic · low engagement</div>
             </div>
             <div className="rounded-xl p-4 bg-violet-50 border border-violet-200">
               <div className="text-xs font-bold text-violet-600 mb-2">✅ With NeuralFlow</div>
               <div className="text-xs text-gray-800 dark:text-neutral-200 leading-relaxed font-medium">
-                "Stop wasting 3 hours writing copy that nobody reads. NeuralFlow writes it in 90 seconds — and your customers actually click."
+                &ldquo;Stop wasting 3 hours writing copy that nobody reads. NeuralFlow writes it in 90 seconds — and your customers actually click.&rdquo;
               </div>
               <div className="mt-3 text-xs text-violet-500">90 seconds · on-brand · 3× CTR</div>
             </div>

@@ -35,14 +35,14 @@ describe("ContactForm — UK locale", () => {
 
   it("renders UK service options", () => {
     render(<ContactForm />);
-    expect(screen.getByText("Розробка сайту")).toBeInTheDocument();
-    expect(screen.getByText("Інтернет-магазин")).toBeInTheDocument();
-    expect(screen.getByText("SEO-просування")).toBeInTheDocument();
+    expect(screen.getByText("Machine Learning (ML-модель)")).toBeInTheDocument();
+    expect(screen.getByText("PoC / Proof of Concept")).toBeInTheDocument();
+    expect(screen.getByText("Консультація по ML/AI")).toBeInTheDocument();
   });
 
   it("renders UK budget options", () => {
     render(<ContactForm />);
-    expect(screen.getByText("До 10 000 грн")).toBeInTheDocument();
+    expect(screen.getByText("До £1,800 (PoC)")).toBeInTheDocument();
     expect(screen.getByText("Поки не визначився")).toBeInTheDocument();
   });
 
@@ -162,7 +162,7 @@ describe("ContactForm — extra search param", () => {
       return null;
     });
     render(<ContactForm />);
-    expect(screen.getByText("Доробка / Модуль")).toBeInTheDocument();
+    expect(screen.getByText("AI-модуль / Готове рішення")).toBeInTheDocument();
     const textarea = screen.getByPlaceholderText(/Розкажіть про ваш бізнес/);
     expect((textarea as HTMLTextAreaElement).value).toContain("Хочу замовити");
   });

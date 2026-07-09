@@ -271,7 +271,7 @@ export function AiHospitalityDemo({ isUk }: Props) {
               <p className="text-xs font-semibold text-indigo-500 mb-1.5">
                 {isUk ? "Наступне повідомлення гостя:" : "Next guest message:"}
               </p>
-              <p className="text-sm text-neutral-700 dark:text-neutral-300 italic">"{nextGuestMsg}"</p>
+              <p className="text-sm text-neutral-700 dark:text-neutral-300 italic">&ldquo;{nextGuestMsg}&rdquo;</p>
             </div>
           ) : step >= 2 ? (
             <div className="p-4 bg-emerald-50 rounded-2xl border border-emerald-100 text-center">

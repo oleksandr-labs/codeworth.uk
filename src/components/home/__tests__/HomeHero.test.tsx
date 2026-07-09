@@ -10,13 +10,15 @@ import { WhyUsSection } from "../WhyUsSection";
 // ── Global mocks ─────────────────────────────────────────────────────────────
 
 jest.mock("next/link", () => {
-  const L = ({ children, href }: any) => <a href={href}>{children}</a>;
+  const L = ({ children, href }: { children: React.ReactNode; href: string }) => (
+    <a href={href}>{children}</a>
+  );
   L.displayName = "Link";
   return L;
 });
 
 jest.mock("next/image", () => {
-  const I = ({ src, alt }: any) => <img src={src} alt={alt} />;
+  const I = ({ src, alt }: { src: string; alt: string }) => <img src={src} alt={alt} />;
   I.displayName = "Image";
   return I;
 });
@@ -52,7 +54,7 @@ describe("HeroSection", () => {
       unobserve: jest.fn(),
       disconnect: jest.fn(),
     };
-    (global as any).IntersectionObserver = jest.fn(() => mockObserver);
+    global.IntersectionObserver = jest.fn(() => mockObserver) as unknown as typeof IntersectionObserver;
   });
 
   it("renders without errors", () => {
@@ -61,18 +63,19 @@ describe("HeroSection", () => {
 
   it("shows the UK badge text", () => {
     render(<HeroSection />);
-    expect(screen.getByText(/приймаємо нові проєкти/i)).toBeInTheDocument();
+    expect(screen.getByText(/UK ML-компанія/i)).toBeInTheDocument();
+    expect(screen.getByText(/Безкоштовна консультація/i)).toBeInTheDocument();
   });
 
   it("shows the UK heading text", () => {
     render(<HeroSection />);
-    expect(screen.getByText(/розробка/i)).toBeInTheDocument();
-    expect(screen.getByText(/для вашого бізнесу/i)).toBeInTheDocument();
+    expect(screen.getByText(/AI для/i)).toBeInTheDocument();
+    expect(screen.getByText(/у вашому бізнесі/i)).toBeInTheDocument();
   });
 
   it("shows the subheading with Codeworth name", () => {
     render(<HeroSection />);
-    expect(screen.getByText(/Codeworth/i)).toBeInTheDocument();
+    expect(screen.getByText(/ML-компанія для UK бізнесу/i)).toBeInTheDocument();
   });
 
   it("renders CTA buttons linking to /uk/contact and /uk/portfolio", () => {
@@ -80,29 +83,29 @@ describe("HeroSection", () => {
     const consultationLink = screen.getByRole("link", { name: /отримати консультацію/i });
     expect(consultationLink).toHaveAttribute("href", "/uk/contact");
 
-    const portfolioLink = screen.getByRole("link", { name: /дивитися портфоліо/i });
+    const portfolioLink = screen.getByRole("link", { name: /дивитися рішення/i });
     expect(portfolioLink).toHaveAttribute("href", "/uk/portfolio");
   });
 
   it("renders all four stat labels", () => {
     render(<HeroSection />);
-    expect(screen.getByText("Проєктів")).toBeInTheDocument();
-    expect(screen.getByText("Клієнтів")).toBeInTheDocument();
-    expect(screen.getByText("Роки роботи")).toBeInTheDocument();
-    expect(screen.getByText("Задоволені")).toBeInTheDocument();
+    expect(screen.getByText("ML-моделей")).toBeInTheDocument();
+    expect(screen.getByText("Галузей")).toBeInTheDocument();
+    expect(screen.getByText("Роки в ML")).toBeInTheDocument();
+    expect(screen.getByText("Середній ROI")).toBeInTheDocument();
   });
 
   it("renders stat values via CountUp mock", () => {
     render(<HeroSection />);
-    expect(screen.getByText("120+")).toBeInTheDocument();
-    expect(screen.getByText("98%")).toBeInTheDocument();
+    expect(screen.getByText("80+")).toBeInTheDocument();
+    expect(screen.getByText("340%")).toBeInTheDocument();
   });
 
   it("renders all tech stack logos", () => {
     render(<HeroSection />);
-    expect(screen.getByText("Next.js")).toBeInTheDocument();
-    expect(screen.getByText("TypeScript")).toBeInTheDocument();
-    expect(screen.getByText("PostgreSQL")).toBeInTheDocument();
+    expect(screen.getByText("Python")).toBeInTheDocument();
+    expect(screen.getByText("PyTorch")).toBeInTheDocument();
+    expect(screen.getByText("TensorFlow")).toBeInTheDocument();
   });
 
   it("renders the scroll indicator", () => {
@@ -125,15 +128,15 @@ describe("ServicesSection — EN locale", () => {
 
   it("shows English service titles", () => {
     render(<ServicesSection lang="en" />);
-    expect(screen.getByText("Website Development")).toBeInTheDocument();
-    expect(screen.getByText("Online Stores")).toBeInTheDocument();
-    expect(screen.getByText("SEO Promotion")).toBeInTheDocument();
+    expect(screen.getByText("Custom ML Models")).toBeInTheDocument();
+    expect(screen.getByText("Natural Language Processing")).toBeInTheDocument();
+    expect(screen.getByText("Computer Vision")).toBeInTheDocument();
   });
 
   it("service links use /en/ prefix", () => {
     render(<ServicesSection lang="en" />);
-    const webDevLink = screen.getByRole("link", { name: /website development/i });
-    expect(webDevLink).toHaveAttribute("href", "/en/services/website-dev");
+    const mlModelsLink = screen.getByRole("link", { name: /custom ml models/i });
+    expect(mlModelsLink).toHaveAttribute("href", "/en/services/ml-models");
   });
 
   it("shows 'View all services' CTA in English", () => {
@@ -157,19 +160,19 @@ describe("WhyUsSection — EN locale", () => {
 
   it("shows English reason titles", () => {
     render(<WhyUsSection lang="en" />);
-    expect(screen.getByText("Fast Launch")).toBeInTheDocument();
-    expect(screen.getByText("Premium Design")).toBeInTheDocument();
-    expect(screen.getByText("Quality Guarantee")).toBeInTheDocument();
+    expect(screen.getByText("Rapid Prototyping")).toBeInTheDocument();
+    expect(screen.getByText("Production-Ready Models")).toBeInTheDocument();
+    expect(screen.getByText("Data Privacy First")).toBeInTheDocument();
   });
 
   it("renders all six reason cards", () => {
     render(<WhyUsSection lang="en" />);
     const reasonTitles = [
-      "Fast Launch",
-      "Premium Design",
-      "SEO from Day One",
-      "Security & Reliability",
-      "Quality Guarantee",
+      "Rapid Prototyping",
+      "Production-Ready Models",
+      "Data Privacy First",
+      "Measurable ROI",
+      "MLOps from Day One",
       "Partnership, Not a Deal",
     ];
     reasonTitles.forEach((title) => {
@@ -177,8 +180,8 @@ describe("WhyUsSection — EN locale", () => {
     });
   });
 
-  it("shows the 'because we deliver' tagline", () => {
+  it("shows the 'because ML actually delivers ROI' tagline", () => {
     render(<WhyUsSection lang="en" />);
-    expect(screen.getByText(/because we deliver/i)).toBeInTheDocument();
+    expect(screen.getByText(/because ML actually delivers ROI/i)).toBeInTheDocument();
   });
 });

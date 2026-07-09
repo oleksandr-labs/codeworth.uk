@@ -1,67 +1,56 @@
 import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { PricingContent } from "../PricingContent";
-
-jest.mock("next/link", () => {
-  const MockLink = ({ children, href }: { children: React.ReactNode; href: string }) => (
-    <a href={href}>{children}</a>
-  );
-  MockLink.displayName = "MockLink";
-  return MockLink;
-});
 
 jest.mock("@/components/layout/LocaleProvider", () => ({
   useLocale: () => "uk",
 }));
 
 describe("PricingContent", () => {
-  it("відображає перемикач вкладок", () => {
+  it("відображає заголовок розділу тарифів на ML-розробку", () => {
     render(<PricingContent />);
-    expect(screen.getByRole("button", { name: /разові послуги/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /щомісячна підписка/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /тарифи на ml-розробку/i })).toBeInTheDocument();
   });
 
-  it("за замовчуванням активна вкладка 'Разові послуги'", () => {
+  it("відображає 5 тарифних планів", () => {
     render(<PricingContent />);
-    expect(screen.getByText(/тарифи розробки/i)).toBeInTheDocument();
-  });
-
-  it("відображає 3 тарифи розробки (Starter, Business, Enterprise)", () => {
-    render(<PricingContent />);
-    expect(screen.getByText("Starter")).toBeInTheDocument();
-    expect(screen.getByText("Business")).toBeInTheDocument();
-    expect(screen.getByText("Enterprise")).toBeInTheDocument();
+    expect(screen.getByText("Data Readiness Audit")).toBeInTheDocument();
+    expect(screen.getByText("Proof of Concept")).toBeInTheDocument();
+    expect(screen.getByText("LLM & RAG Quick Start")).toBeInTheDocument();
+    expect(screen.getByText("Production ML")).toBeInTheDocument();
+    expect(screen.getByText("Enterprise / MLOps")).toBeInTheDocument();
   });
 
   it("відображає ціни тарифів", () => {
     render(<PricingContent />);
-    expect(screen.getByText(/15\s*000/)).toBeInTheDocument();
-    expect(screen.getByText(/40\s*000/)).toBeInTheDocument();
+    expect(screen.getByText("£950")).toBeInTheDocument();
+    expect(screen.getByText("£1,800")).toBeInTheDocument();
+    expect(screen.getByText("від £4,500")).toBeInTheDocument();
     expect(screen.getByText(/Індивідуально/i)).toBeInTheDocument();
   });
 
-  it("відображає badge 'Найпопулярніший' для Business", () => {
+  it("відображає badge 'Найпопулярніший' для Production ML", () => {
     render(<PricingContent />);
     expect(screen.getByText(/найпопулярніший/i)).toBeInTheDocument();
   });
 
   it("кнопки CTA ведуть на /contact", () => {
     render(<PricingContent />);
-    const contactLinks = screen.getAllByRole("link", { name: /замовити/i });
+    const links = screen.getAllByRole("link");
+    const contactLinks = links.filter((a) => (a.getAttribute("href") || "").includes("/contact"));
     expect(contactLinks.length).toBeGreaterThan(0);
-    expect(contactLinks[0].getAttribute("href")).toContain("/contact");
-  });
-
-  it("перехід на вкладку 'Щомісячна підписка' показує інший контент", () => {
-    render(<PricingContent />);
-    fireEvent.click(screen.getByRole("button", { name: /щомісячна підписка/i }));
-    // Subscription tab content — DEV_PLANS should be gone
-    expect(screen.queryByText("Starter")).not.toBeInTheDocument();
   });
 
   it("відображає терміни виконання", () => {
     render(<PricingContent />);
-    expect(screen.getAllByText(/днів|тижні|тиждень/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/термін/i).length).toBeGreaterThan(0);
   });
 
+  it("відображає розділ MLOps Ретейнер з окремою ціною та CTA", () => {
+    render(<PricingContent />);
+    expect(screen.getByRole("heading", { name: /mlops ретейнер/i })).toBeInTheDocument();
+    expect(screen.getByText("from £800")).toBeInTheDocument();
+    const link = screen.getByRole("link", { name: /підключити ретейнер/i });
+    expect(link).toHaveAttribute("href", expect.stringContaining("/contact"));
+  });
 });

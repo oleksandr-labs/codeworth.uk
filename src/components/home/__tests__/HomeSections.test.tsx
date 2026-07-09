@@ -49,6 +49,8 @@ jest.mock("lucide-react", () => {
     Palette: icon("Palette"),
     Code2: icon("Code2"),
     Rocket: icon("Rocket"),
+    Database: icon("Database"),
+    Activity: icon("Activity"),
     LifeBuoy: icon("LifeBuoy"),
     Utensils: icon("Utensils"),
     Scissors: icon("Scissors"),
@@ -87,7 +89,7 @@ describe("BlogPreviewSection", () => {
   it("shows subtitle copy", () => {
     render(<BlogPreviewSection lang="uk" />);
     expect(
-      screen.getByText("Корисний контент про веб-розробку, SEO та маркетинг.")
+      screen.getByText("Корисний контент про ML, AI та підготовку даних.")
     ).toBeInTheDocument();
   });
 
@@ -110,28 +112,28 @@ describe("ClientLogosSection", () => {
 
   it("shows trust-badge labels for Ukrainian locale", () => {
     render(<ClientLogosSection lang="uk" />);
-    expect(screen.getByText("SSL & HTTPS")).toBeInTheDocument();
-    expect(screen.getByText("Lighthouse 90+")).toBeInTheDocument();
-    expect(screen.getByText("24/7 підтримка")).toBeInTheDocument();
-    expect(screen.getByText("LCP < 2.5с")).toBeInTheDocument();
+    expect(screen.getByText("F1 Score > 0.92")).toBeInTheDocument();
+    expect(screen.getByText("GDPR & ISO 27001")).toBeInTheDocument();
+    expect(screen.getByText("< 100ms inference")).toBeInTheDocument();
+    expect(screen.getByText("MLOps 24/7")).toBeInTheDocument();
   });
 
   it("shows the trusted-companies tagline", () => {
     render(<ClientLogosSection lang="uk" />);
     expect(
-      screen.getByText("Нам довіряють компанії по всій Україні")
+      screen.getByText("Компанії, що довіряють нашим ML-рішенням")
     ).toBeInTheDocument();
   });
 
   it("renders all 12 client logo entries", () => {
     render(<ClientLogosSection lang="uk" />);
-    expect(screen.getByText("Beauty Room")).toBeInTheDocument();
-    expect(screen.getByText("GreenFarm")).toBeInTheDocument();
+    expect(screen.getByText("Fintechlabs")).toBeInTheDocument();
+    expect(screen.getByText("AgroTrack")).toBeInTheDocument();
     // Total count: 12 named clients
     const clients = [
-      "Beauty Room", "TechCargo", "Sweet Bakery", "FitLife Club",
-      "MedCenter+", "LexPro Law", "InvoiceFlow", "AutoFix",
-      "KidSpace", "GreenFarm", "ModaUA", "BudPro",
+      "Fintechlabs", "RetailCore", "HealthDesk", "LogiSmart",
+      "ShopIQ", "AgroTrack", "DocuFlow", "SecureID",
+      "MarketBoost", "TriageAI", "VoiceIQ", "ContentForge",
     ];
     clients.forEach((name) => expect(screen.getByText(name)).toBeInTheDocument());
   });
@@ -148,22 +150,22 @@ describe("HowWeWorkSection", () => {
 
   it("shows Ukrainian section heading", () => {
     render(<HowWeWorkSection lang="uk" />);
-    expect(screen.getByText("Як ми працюємо")).toBeInTheDocument();
+    expect(screen.getByText("Як ми будуємо ML-рішення")).toBeInTheDocument();
     expect(screen.getByText("Процес")).toBeInTheDocument();
   });
 
   it("renders all 5 step titles", () => {
     render(<HowWeWorkSection lang="uk" />);
-    expect(screen.getByText("Брифінг та аналіз")).toBeInTheDocument();
-    expect(screen.getByText("Дизайн")).toBeInTheDocument();
-    expect(screen.getByText("Розробка")).toBeInTheDocument();
-    expect(screen.getByText("Здача та запуск")).toBeInTheDocument();
-    expect(screen.getByText("Підтримка")).toBeInTheDocument();
+    expect(screen.getByText("Discovery та аудит даних")).toBeInTheDocument();
+    expect(screen.getByText("Підготовка даних")).toBeInTheDocument();
+    expect(screen.getByText("Навчання та оцінка")).toBeInTheDocument();
+    expect(screen.getByText("Деплой та інтеграція")).toBeInTheDocument();
+    expect(screen.getByText("Моніторинг та перенавчання")).toBeInTheDocument();
   });
 
   it("CTA link points to /uk/contact", () => {
     render(<HowWeWorkSection lang="uk" />);
-    const cta = screen.getByRole("link", { name: /почати проєкт/i });
+    const cta = screen.getByRole("link", { name: /почати ml-проєкт/i });
     expect(cta).toHaveAttribute("href", "/uk/contact");
   });
 });
@@ -210,9 +212,9 @@ describe("TestimonialsSection", () => {
 
   it("shows Ukrainian heading", () => {
     render(<TestimonialsSection />);
-    expect(screen.getByText("Відгуки клієнтів")).toBeInTheDocument();
-    expect(screen.getByText("Нам довіряють")).toBeInTheDocument();
-    expect(screen.getByText("85+ компаній")).toBeInTheDocument();
+    expect(screen.getAllByText("Відгуки клієнтів").length).toBeGreaterThan(0);
+    expect(screen.getByText(/Довіряють/)).toBeInTheDocument();
+    expect(screen.getByText("ML-команди")).toBeInTheDocument();
   });
 
   it("renders the first page of 3 testimonial cards", () => {
@@ -220,7 +222,7 @@ describe("TestimonialsSection", () => {
     const items = screen.getAllByRole("listitem");
     expect(items).toHaveLength(3);
     // First testimonial on page 0
-    expect(screen.getByText("Олена Коваль")).toBeInTheDocument();
+    expect(screen.getByText("Тарас Гнатенко")).toBeInTheDocument();
   });
 
   it("navigates to the next page when Next button is clicked", () => {
@@ -228,6 +230,6 @@ describe("TestimonialsSection", () => {
     const nextBtn = screen.getByRole("button", { name: /наступні відгуки/i });
     fireEvent.click(nextBtn);
     // Second page shows testimonials 4–6
-    expect(screen.getByText("Андрій Мельник")).toBeInTheDocument();
+    expect(screen.getByText("Дарина Кириленко")).toBeInTheDocument();
   });
 });

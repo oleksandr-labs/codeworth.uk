@@ -1,8 +1,8 @@
 import { SERVICES_DATA, getService } from "../data/services";
 
 describe("SERVICES_DATA", () => {
-  it("contains 2 services (AI + ML)", () => {
-    expect(SERVICES_DATA).toHaveLength(2);
+  it("contains 7 services (AI, ML, NLP, Computer Vision, MLOps, LLM/RAG, Predictive Analytics)", () => {
+    expect(SERVICES_DATA).toHaveLength(7);
   });
 
   it("every service has required fields", () => {
@@ -120,9 +120,14 @@ describe("ServiceCaseStudy data", () => {
     });
   });
 
-  it("all client names are unique across all services", () => {
-    const allClients = SERVICES_DATA.flatMap((s) => s.caseStudies!.map((cs) => cs.client));
-    expect(new Set(allClients).size).toBe(allClients.length);
+  // Clients legitimately recur across related services (e.g. a fraud-detection
+  // client from Machine Learning reappears in MLOps once the model ships) —
+  // uniqueness only needs to hold within a single service's own case studies.
+  it("client names are unique within each service's own case studies", () => {
+    SERVICES_DATA.forEach((s) => {
+      const clients = s.caseStudies!.map((cs) => cs.client);
+      expect(new Set(clients).size).toBe(clients.length);
+    });
   });
 });
 

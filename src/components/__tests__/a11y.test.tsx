@@ -79,7 +79,7 @@ describe("Accessibility (axe)", () => {
     });
 
     it("button as link has no axe violations", async () => {
-      const { container } = render(<Button href="/contact">Зв'язатися</Button>);
+      const { container } = render(<Button href="/contact">Зв&apos;язатися</Button>);
       expect(await axe(container)).toHaveNoViolations();
     });
 

@@ -84,7 +84,7 @@ export default async function TermsOfServicePage({ params }: { params: Promise<{
                   <p>
                     Виконавець надає такі послуги: розробку та деплой моделей машинного навчання;
                     AI-консалтинг та стратегію; data science та аналітику; MLOps-інфраструктуру;
-                    обробку природної мови (NLP); комп'ютерний зір; розробку LLM/RAG-рішень.
+                    обробку природної мови (NLP); комп&apos;ютерний зір; розробку LLM/RAG-рішень.
                   </p>
                   <h2>2. Порядок замовлення</h2>
                   <ol>
@@ -104,7 +104,7 @@ export default async function TermsOfServicePage({ params }: { params: Promise<{
                   <h2>4. Строки виконання</h2>
                   <p>
                     Строки вказані у Statement of Work (SOW) або комерційній пропозиції.
-                    Виконавець зобов'язується дотримуватись погоджених етапів. Зміни скоупу
+                    Виконавець зобов&apos;язується дотримуватись погоджених етапів. Зміни скоупу
                     або доступності даних можуть вплинути на строки — про це повідомляється письмово.
                   </p>
                   <h2>5. Права інтелектуальної власності</h2>
@@ -192,7 +192,7 @@ export default async function TermsOfServicePage({ params }: { params: Promise<{
                 <>
                   <p className="lead text-neutral-600 dark:text-neutral-300">
                     This Terms of Service Agreement governs the provision of services by Codeworth
-                    (hereinafter — "Service Provider", "we") to clients (hereinafter — "Client", "you").
+                    (hereinafter — &ldquo;Service Provider&rdquo;, &ldquo;we&rdquo;) to clients (hereinafter — &ldquo;Client&rdquo;, &ldquo;you&rdquo;).
                     By using the website or ordering services, you agree to the terms of this Agreement.
                   </p>
                   <h2>1. Subject of the Agreement</h2>
@@ -230,7 +230,7 @@ export default async function TermsOfServicePage({ params }: { params: Promise<{
                     </li>
                     <li>
                       The Service Provider retains rights to reusable frameworks, libraries, and
-                      know-how not specific to the Client's data or business
+                      know-how not specific to the Client&apos;s data or business
                     </li>
                     <li>
                       The Service Provider reserves the right to reference the project in their

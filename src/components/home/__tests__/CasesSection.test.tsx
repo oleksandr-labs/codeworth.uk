@@ -24,12 +24,12 @@ jest.mock("@/components/layout/LocaleProvider", () => ({
 describe("CasesSection", () => {
   it("відображає заголовок секції", () => {
     render(<CasesSection lang="uk" />);
-    expect(screen.getByText("Реальні результати клієнтів")).toBeInTheDocument();
+    expect(screen.getByText("Що може досягти ваш бізнес")).toBeInTheDocument();
   });
 
   it("відображає підзаголовок з описом", () => {
     render(<CasesSection lang="uk" />);
-    expect(screen.getByText(/цифри, а не обіцянки/i)).toBeInTheDocument();
+    expect(screen.getByText(/приклади того, що отримують бізнеси/i)).toBeInTheDocument();
   });
 
   it("відображає 3 кейси", () => {
@@ -45,25 +45,27 @@ describe("CasesSection", () => {
 
   it("відображає посилання на всі кейси", () => {
     render(<CasesSection lang="uk" />);
-    const allLink = screen.getByRole("link", { name: /усі кейси/i });
+    const allLink = screen.getByRole("link", { name: /усі рішення/i });
     expect(allLink).toHaveAttribute("href", "/uk/portfolio");
   });
 
   it("відображає emoji-заголовки кейсів", () => {
     render(<CasesSection lang="uk" />);
-    // First 3 projects with caseStudy have emoji in portfolio.ts
-    expect(screen.getByText("🍽")).toBeInTheDocument();
-    expect(screen.getByText("✂️")).toBeInTheDocument();
+    // First 3 projects with caseStudy have emoji in portfolio.ts, rendered as
+    // lucide icons via EmojiIcon (🤖→Bot, 📊→BarChart3, 📋→ClipboardList)
+    expect(document.querySelector(".lucide-bot")).toBeInTheDocument();
+    expect(document.querySelector(".lucide-chart-column")).toBeInTheDocument();
+    expect(document.querySelector(".lucide-clipboard-list")).toBeInTheDocument();
   });
 
   it("відображає метрики результатів", () => {
     render(<CasesSection lang="uk" />);
-    // First case result: "Кількість онлайн-бронювань +60% за перший місяць"
-    expect(screen.getByText(/\+60%/)).toBeInTheDocument();
+    // First case result[0]: "68% запитань вирішується автоматично без участі людини"
+    expect(screen.getByText(/68% запитань вирішується автоматично/)).toBeInTheDocument();
   });
 
   it("секція має правильний aria-роль section", () => {
     render(<CasesSection lang="uk" />);
-    expect(screen.getByText("Кейси")).toBeInTheDocument();
+    expect(screen.getByText("Приклади рішень")).toBeInTheDocument();
   });
 });

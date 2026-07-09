@@ -78,7 +78,7 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
                   <p className="lead text-neutral-600 dark:text-neutral-300">
                     Ця Політика конфіденційності описує, як Codeworth (далі — «ми», «нас») збирає,
                     використовує та захищає ваші персональні дані під час використання сайту{" "}
-                    <Link href="https://codeworth.uk">codeworth.uk</Link> та пов'язаних сервісів.
+                    <Link href="https://codeworth.uk">codeworth.uk</Link> та пов&apos;язаних сервісів.
                   </p>
                   <h2>1. Хто ми</h2>
                   <p>
@@ -95,8 +95,8 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
                   <p>Ми збираємо лише ті дані, які необхідні для надання послуг та покращення вашого досвіду:</p>
                   <h3>2.1 Дані, які ви надаєте самостійно</h3>
                   <ul>
-                    <li><strong>Контактна форма</strong> — ім'я, email, телефон, опис проєкту</li>
-                    <li><strong>Форма заявки на вакансію</strong> — ім'я, email, посилання на портфоліо, супровідний лист</li>
+                    <li><strong>Контактна форма</strong> — ім&apos;я, email, телефон, опис проєкту</li>
+                    <li><strong>Форма заявки на вакансію</strong> — ім&apos;я, email, посилання на портфоліо, супровідний лист</li>
                     <li><strong>Підписка на блог</strong> — email-адреса</li>
                   </ul>
                   <h3>2.2 Технічні дані (збираються автоматично)</h3>
@@ -109,7 +109,7 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
                   <h2>3. Для чого ми використовуємо ваші дані</h2>
                   <ul>
                     <li>Обробка заявок на ML/AI-консультацію та вакансії</li>
-                    <li>Зв'язок з вами щодо вашого проєкту або заявки</li>
+                    <li>Зв&apos;язок з вами щодо вашого проєкту або заявки</li>
                     <li>Відправка розсилки (тільки за вашою згодою)</li>
                     <li>Покращення якості сайту та послуг</li>
                     <li>Аналіз трафіку та ефективності маркетингових кампаній</li>
@@ -153,7 +153,7 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
                     <li>HTTPS/TLS шифрування всіх передач даних</li>
                     <li>Обмежений доступ за принципом мінімальних привілеїв</li>
                     <li>Регулярне резервне копіювання</li>
-                    <li>Захист від SQL-ін'єкцій та XSS через серверну валідацію</li>
+                    <li>Захист від SQL-ін&apos;єкцій та XSS через серверну валідацію</li>
                   </ul>
                   <h2>9. Зміни до цієї Політики</h2>
                   <p>
@@ -169,7 +169,7 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
               ) : (
                 <>
                   <p className="lead text-neutral-600 dark:text-neutral-300">
-                    This Privacy Policy describes how Codeworth (hereinafter — "we", "us") collects,
+                    This Privacy Policy describes how Codeworth (hereinafter — &ldquo;we&rdquo;, &ldquo;us&rdquo;) collects,
                     uses, and protects your personal data when you use the website{" "}
                     <Link href="https://codeworth.uk">codeworth.uk</Link> and related services.
                   </p>
@@ -235,7 +235,7 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
                   <ul>
                     <li><strong>Access</strong> — request what data we hold about you</li>
                     <li><strong>Rectification</strong> — ask us to correct inaccurate data</li>
-                    <li><strong>Erasure</strong> ("right to be forgotten")</li>
+                    <li><strong>Erasure</strong> (&ldquo;right to be forgotten&rdquo;)</li>
                     <li><strong>Restriction</strong> — limit the processing of your data</li>
                     <li><strong>Portability</strong> — receive your data in a machine-readable format</li>
                     <li><strong>Withdrawal of consent</strong> — at any time</li>

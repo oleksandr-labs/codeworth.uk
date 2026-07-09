@@ -27,9 +27,9 @@ jest.mock("@/lib/data/extras", () => ({
 }));
 
 describe("ExtrasHero", () => {
-  it("відображає заголовок 'Доробки та модулі'", () => {
+  it("відображає заголовок 'Готові AI-модулі'", () => {
     render(<ExtrasHero lang="uk" />);
-    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(/доробки та/i);
+    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(/готові ai-\s*модулі/i);
   });
 
   it("показує загальну кількість доробок", () => {
@@ -40,17 +40,17 @@ describe("ExtrasHero", () => {
 
   it("показує кількість популярних доробок", () => {
     render(<ExtrasHero lang="uk" />);
-    expect(screen.getByText(/популярних доробок/i)).toBeInTheDocument();
+    expect(screen.getByText(/популярних/i)).toBeInTheDocument();
   });
 
-  it("показує мінімальну вартість", () => {
+  it("показує мінімальну вартість (статичний текст, не залежить від мокнутих EXTRAS)", () => {
     render(<ExtrasHero lang="uk" />);
-    expect(screen.getByText(/від 800 ₴/)).toBeInTheDocument();
+    expect(screen.getByText(/від 2\s*500 ₴/)).toBeInTheDocument();
   });
 
   it("показує строк виконання", () => {
     render(<ExtrasHero lang="uk" />);
-    expect(screen.getByText(/1–14 днів/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/3–14 днів/i).length).toBeGreaterThan(0);
   });
 
   it("відображає категорії доробок", () => {
@@ -67,6 +67,6 @@ describe("ExtrasHero", () => {
 
   it("відображає опис секції", () => {
     render(<ExtrasHero lang="uk" />);
-    expect(screen.getByText(/вже маєте сайт/i)).toBeInTheDocument();
+    expect(screen.getByText(/готові ai-продукти для швидкого деплою/i)).toBeInTheDocument();
   });
 });

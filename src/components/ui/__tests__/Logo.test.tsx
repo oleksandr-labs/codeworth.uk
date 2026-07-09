@@ -27,10 +27,10 @@ describe("LogoIcon", () => {
 });
 
 describe("LogoWordmark", () => {
-  it("відображає текст 'Code' та 'Nest'", () => {
+  it("відображає текст 'Code' та 'worth'", () => {
     render(<LogoWordmark />);
     expect(screen.getByText("Code")).toBeInTheDocument();
-    expect(screen.getByText("Nest")).toBeInTheDocument();
+    expect(screen.getByText("worth")).toBeInTheDocument();
   });
 
   it("містить SVG логотип (LogoIcon)", () => {

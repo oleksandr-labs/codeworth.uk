@@ -9,12 +9,10 @@ export default function GlobalError({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
-  const [lang, setLang] = useState("uk");
-
-  useEffect(() => {
-    const seg = window.location.pathname.split("/");
-    if (seg[1] === "en") setLang("en");
-  }, []);
+  const [lang] = useState(() => {
+    if (typeof window === "undefined") return "uk";
+    return window.location.pathname.split("/")[1] === "en" ? "en" : "uk";
+  });
 
   const isUk = lang === "uk";
 
@@ -60,6 +58,7 @@ export default function GlobalError({
             >
               {isUk ? "Спробувати знову" : "Try again"}
             </button>
+            {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- global-error.tsx replaces the entire root layout when it renders; the App Router context Link depends on may be the thing that crashed, so Next's own docs use a plain <a> here for a resilient fallback */}
             <a
               href="/"
               className="px-6 py-3 border border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-xl font-semibold hover:bg-neutral-50 dark:hover:bg-neutral-800 dark:bg-neutral-900 transition-colors"

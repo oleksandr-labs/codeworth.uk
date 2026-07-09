@@ -26,17 +26,13 @@ describe("CTASection", () => {
     expect(screen.getByTestId("cta-form")).toBeInTheDocument();
   });
 
-  it("містить посилання на Telegram", () => {
+  it("містить згадку про Telegram як альтернативний контакт", () => {
+    // NOTE: the component only renders the word "Telegram" as plain text,
+    // not as an actual <a href="https://t.me/..."> link. There is no
+    // clickable Telegram link in CTASection today.
     render(<CTASection lang="uk" />);
-    const telegramLink = screen.getByRole("link", { name: /telegram/i });
-    expect(telegramLink).toHaveAttribute("href", expect.stringContaining("t.me"));
-  });
-
-  it("Telegram посилання відкривається у новій вкладці", () => {
-    render(<CTASection lang="uk" />);
-    const telegramLink = screen.getByRole("link", { name: /telegram/i });
-    expect(telegramLink).toHaveAttribute("target", "_blank");
-    expect(telegramLink).toHaveAttribute("rel", expect.stringContaining("noopener"));
+    expect(screen.getByText("Telegram")).toBeInTheDocument();
+    expect(screen.getByText(/або напишіть нам у/i)).toBeInTheDocument();
   });
 
   it("відображає badge 'Зараз приймаємо нові проєкти'", () => {

@@ -38,18 +38,18 @@ describe("FloatingChat (UK locale)", () => {
     expect(screen.getByRole("button", { name: /написати нам/i })).toBeInTheDocument();
   });
 
-  it("месенджери приховані за замовчуванням", () => {
+  it("меню приховане за замовчуванням", () => {
     render(<FloatingChat />);
-    expect(screen.queryByText("Telegram")).not.toBeInTheDocument();
-    expect(screen.queryByText("Instagram")).not.toBeInTheDocument();
+    expect(screen.queryByText("Швидка відповідь")).not.toBeInTheDocument();
+    expect(screen.queryByText("Форма на сайті")).not.toBeInTheDocument();
   });
 
-  it("клік по кнопці відкриває список месенджерів", () => {
+  it("клік по кнопці відкриває меню", () => {
     render(<FloatingChat />);
     const btn = screen.getByRole("button", { name: /написати нам/i });
     fireEvent.click(btn);
-    expect(screen.getByText("Telegram")).toBeInTheDocument();
-    expect(screen.getByText("Instagram")).toBeInTheDocument();
+    expect(screen.getByText("Швидка відповідь")).toBeInTheDocument();
+    expect(screen.getByText("Форма на сайті")).toBeInTheDocument();
   });
 
   it("кнопка отримує aria-expanded=true при відкритті", () => {
@@ -60,13 +60,13 @@ describe("FloatingChat (UK locale)", () => {
     expect(btn).toHaveAttribute("aria-expanded", "true");
   });
 
-  it("повторний клік закриває список", () => {
+  it("повторний клік закриває меню", () => {
     render(<FloatingChat />);
     const btn = screen.getByRole("button");
     fireEvent.click(btn);
-    expect(screen.getByText("Telegram")).toBeInTheDocument();
+    expect(screen.getByText("Швидка відповідь")).toBeInTheDocument();
     fireEvent.click(btn);
-    expect(screen.queryByText("Telegram")).not.toBeInTheDocument();
+    expect(screen.queryByText("Швидка відповідь")).not.toBeInTheDocument();
   });
 
   it("кнопка закриття має aria-label 'Закрити чат'", () => {
@@ -75,18 +75,18 @@ describe("FloatingChat (UK locale)", () => {
     expect(screen.getByRole("button", { name: /закрити чат/i })).toBeInTheDocument();
   });
 
-  it("посилання Telegram веде на t.me", () => {
+  it("посилання 'Форма на сайті' веде на сторінку контактів", () => {
     render(<FloatingChat />);
     fireEvent.click(screen.getByRole("button"));
-    const tgLink = screen.getByRole("menuitem", { name: /telegram/i });
-    expect(tgLink.getAttribute("href")).toContain("t.me");
+    const contactLink = screen.getByRole("menuitem", { name: /форма на сайті/i });
+    expect(contactLink.getAttribute("href")).toBe("/uk/contact");
   });
 
-  it("посилання Instagram веде на instagram.com", () => {
+  it("клік по 'Швидка відповідь' відкриває чат зі швидкими питаннями", () => {
     render(<FloatingChat />);
-    fireEvent.click(screen.getByRole("button"));
-    const igLink = screen.getByRole("menuitem", { name: /instagram/i });
-    expect(igLink.getAttribute("href")).toContain("instagram.com");
+    fireEvent.click(screen.getByRole("button", { name: /написати нам/i }));
+    fireEvent.click(screen.getByText("Швидка відповідь"));
+    expect(screen.getByText("Скільки коштує сайт?")).toBeInTheDocument();
   });
 
   it("меню contacts має aria-label='Контакти' у UK локалі", () => {
@@ -106,11 +106,11 @@ describe("FloatingChat (EN locale)", () => {
     expect(screen.getByRole("button", { name: /contact us/i })).toBeInTheDocument();
   });
 
-  it("opens messenger list on click", () => {
+  it("opens menu on click", () => {
     render(<FloatingChat />);
     fireEvent.click(screen.getByRole("button", { name: /contact us/i }));
-    expect(screen.getByText("Telegram")).toBeInTheDocument();
-    expect(screen.getByText("Instagram")).toBeInTheDocument();
+    expect(screen.getByText("Quick answer")).toBeInTheDocument();
+    expect(screen.getByText("Contact form")).toBeInTheDocument();
   });
 
   it("close button has English aria-label", () => {
@@ -129,5 +129,12 @@ describe("FloatingChat (EN locale)", () => {
     render(<FloatingChat />);
     fireEvent.click(screen.getByRole("button", { name: /contact us/i }));
     expect(screen.getByText("Quick answer")).toBeInTheDocument();
+  });
+
+  it("contact form link points to /en/contact", () => {
+    render(<FloatingChat />);
+    fireEvent.click(screen.getByRole("button", { name: /contact us/i }));
+    const contactLink = screen.getByRole("menuitem", { name: /contact form/i });
+    expect(contactLink.getAttribute("href")).toBe("/en/contact");
   });
 });

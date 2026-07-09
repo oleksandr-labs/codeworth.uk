@@ -32,6 +32,9 @@ jest.mock("@/components/layout/LocaleProvider", () => ({
 }));
 
 jest.mock("@/lib/data/blog", () => ({
+  getPostTitle: (post: { title: string }) => post.title,
+  getPostExcerpt: (post: { excerpt: string }) => post.excerpt,
+  getPostCategoryLabel: (post: { category: string }) => post.category,
   BLOG_POSTS: [
     {
       slug: "seo-tips",
@@ -79,16 +82,16 @@ describe("HeroSection", () => {
     expect(screen.getByRole("heading", { level: 1 })).toBeInTheDocument();
   });
 
-  it("відображає статистику — 120+ проєктів", () => {
+  it("відображає статистику — 80+ ML-моделей", () => {
     render(<HeroSection />);
-    expect(screen.getByText(/120\+/)).toBeInTheDocument();
+    expect(screen.getByText(/80\+/)).toBeInTheDocument();
   });
 
-  it("відображає статистику — клієнтів і роки роботи", () => {
+  it("відображає статистику — галузі та роки в ML", () => {
     render(<HeroSection />);
-    expect(screen.getAllByText(/проєктів/i).length).toBeGreaterThan(0);
-    expect(screen.getAllByText(/клієнтів/i).length).toBeGreaterThan(0);
-    expect(screen.getByText(/роки роботи/i)).toBeInTheDocument();
+    expect(screen.getByText("Галузей")).toBeInTheDocument();
+    expect(screen.getByText(/роки в ml/i)).toBeInTheDocument();
+    expect(screen.getByText("Середній ROI")).toBeInTheDocument();
   });
 
   it("кнопка 'Отримати консультацію' веде на /contact", () => {
@@ -97,22 +100,22 @@ describe("HeroSection", () => {
     expect(link).toHaveAttribute("href", "/uk/contact");
   });
 
-  it("кнопка 'Дивитися портфоліо' веде на /portfolio", () => {
+  it("кнопка 'Дивитися рішення' веде на /portfolio", () => {
     render(<HeroSection />);
-    const link = screen.getByRole("link", { name: /дивитися портфоліо/i });
+    const link = screen.getByRole("link", { name: /дивитися рішення/i });
     expect(link).toHaveAttribute("href", "/uk/portfolio");
   });
 
   it("відображає технологічний стек", () => {
     render(<HeroSection />);
-    expect(screen.getByText("Next.js")).toBeInTheDocument();
-    expect(screen.getByText("TypeScript")).toBeInTheDocument();
-    expect(screen.getByText("Tailwind")).toBeInTheDocument();
+    expect(screen.getByText("Python")).toBeInTheDocument();
+    expect(screen.getByText("PyTorch")).toBeInTheDocument();
+    expect(screen.getByText("TensorFlow")).toBeInTheDocument();
   });
 
-  it("містить badge про прийом нових проєктів", () => {
+  it("містить badge про безкоштовну консультацію", () => {
     render(<HeroSection />);
-    expect(screen.getByText(/приймаємо нові проєкти/i)).toBeInTheDocument();
+    expect(screen.getByText(/безкоштовна консультація/i)).toBeInTheDocument();
   });
 });
 

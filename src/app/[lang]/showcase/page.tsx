@@ -277,7 +277,7 @@ export default async function ShowcasePage({
                   {[1,2,3,4,5].map((i) => <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />)}
                 </div>
                 <p className="text-neutral-700 dark:text-neutral-300 text-sm leading-relaxed mb-4">
-                  "{isUk ? "Codeworth зробили наш сайт за 3 тижні. Конверсія з 1.2% до 3.8% — говорить сама за себе." : "Codeworth built our site in 3 weeks. Conversion from 1.2% to 3.8% — says it all."}"
+                  &ldquo;{isUk ? "Codeworth зробили наш сайт за 3 тижні. Конверсія з 1.2% до 3.8% — говорить сама за себе." : "Codeworth built our site in 3 weeks. Conversion from 1.2% to 3.8% — says it all."}&rdquo;
                 </p>
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-full bg-linear-to-br from-indigo-400 to-purple-500 flex items-center justify-center text-white font-bold text-sm">О</div>

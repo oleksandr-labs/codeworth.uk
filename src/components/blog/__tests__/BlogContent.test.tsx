@@ -27,54 +27,71 @@ jest.mock("@/components/ui/NewsletterForm", () => ({
   NewsletterForm: () => <div data-testid="newsletter-form" />,
 }));
 
-jest.mock("@/lib/data/blog", () => ({
-  BLOG_CATEGORIES: [
+jest.mock("@/lib/data/blog", () => {
+  const CATEGORIES = [
     { id: "all", label: { en: "All Articles", uk: "Всі" } },
     { id: "seo", label: { en: "SEO & Promotion", uk: "SEO та просування" }, icon: "🔍" },
     { id: "development", label: { en: "Web Development", uk: "Веб-розробка" }, icon: "🌐" },
-  ],
-  BLOG_POSTS: [
-    {
-      slug: "seo-guide",
-      title: "Next.js та SEO: повний гід",
-      excerpt: "Як налаштувати SEO у Next.js.",
-      category: "SEO та просування",
-      tags: ["Next.js", "SEO"],
-      date: "2024-11-20",
-      readTime: 12,
-      author: "Олексій Коваленко",
-      featured: true,
-      emoji: "🚀",
-      color: "from-indigo-500 to-violet-600",
+  ];
+  const CATEGORY_MAP: Record<string, string> = {
+    "SEO та просування": "seo",
+    "Веб-розробка": "development",
+  };
+  return {
+    BLOG_CATEGORIES: CATEGORIES,
+    BLOG_POSTS: [
+      {
+        slug: "seo-guide",
+        title: "Next.js та SEO: повний гід",
+        excerpt: "Як налаштувати SEO у Next.js.",
+        category: "SEO та просування",
+        tags: ["Next.js", "SEO"],
+        date: "2024-11-20",
+        readTime: 12,
+        author: "Олексій Коваленко",
+        featured: true,
+        emoji: "🚀",
+        color: "from-indigo-500 to-violet-600",
+      },
+      {
+        slug: "tailwind-css",
+        title: "Tailwind CSS v4: дизайн-система",
+        excerpt: "Огляд нових можливостей Tailwind v4.",
+        category: "Веб-розробка",
+        tags: ["Tailwind", "CSS"],
+        date: "2024-11-10",
+        readTime: 8,
+        author: "Денис Бондаренко",
+        featured: false,
+        emoji: "🎨",
+        color: "from-cyan-400 to-blue-500",
+      },
+      {
+        slug: "ecommerce-next",
+        title: "E-commerce на Next.js",
+        excerpt: "Огляд підходів до інтернет-магазину.",
+        category: "Веб-розробка",
+        tags: ["Next.js", "E-commerce"],
+        date: "2024-10-15",
+        readTime: 10,
+        author: "Марина Сидоренко",
+        featured: false,
+        emoji: "🛒",
+        color: "from-emerald-400 to-teal-500",
+      },
+    ],
+    getPostCategoryId: (post: { category: string }) => CATEGORY_MAP[post.category] ?? "development",
+    getPostCategoryLabel: (post: { category: string }, lang: string) => {
+      const id = CATEGORY_MAP[post.category] ?? "development";
+      const cat = CATEGORIES.find((c) => c.id === id);
+      return lang === "uk" ? cat?.label.uk : cat?.label.en;
     },
-    {
-      slug: "tailwind-css",
-      title: "Tailwind CSS v4: дизайн-система",
-      excerpt: "Огляд нових можливостей Tailwind v4.",
-      category: "Веб-розробка",
-      tags: ["Tailwind", "CSS"],
-      date: "2024-11-10",
-      readTime: 8,
-      author: "Денис Бондаренко",
-      featured: false,
-      emoji: "🎨",
-      color: "from-cyan-400 to-blue-500",
-    },
-    {
-      slug: "ecommerce-next",
-      title: "E-commerce на Next.js",
-      excerpt: "Огляд підходів до інтернет-магазину.",
-      category: "Веб-розробка",
-      tags: ["Next.js", "E-commerce"],
-      date: "2024-10-15",
-      readTime: 10,
-      author: "Марина Сидоренко",
-      featured: false,
-      emoji: "🛒",
-      color: "from-emerald-400 to-teal-500",
-    },
-  ],
-}));
+    getPostTitle: (post: { title: string; titleEn?: string }, lang: string) =>
+      lang === "uk" ? post.title : (post.titleEn ?? post.title),
+    getPostExcerpt: (post: { excerpt: string; excerptEn?: string }, lang: string) =>
+      lang === "uk" ? post.excerpt : (post.excerptEn ?? post.excerpt),
+  };
+});
 
 describe("BlogContent", () => {
   it("відображає featured-пост", () => {

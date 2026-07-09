@@ -60,7 +60,7 @@ describe("ThemeProvider", () => {
   });
 
   it("reads stored theme from localStorage on mount", () => {
-    localStorage.setItem("Codeworth-theme", "dark");
+    localStorage.setItem("codeworth-theme", "dark");
     render(
       <ThemeProvider>
         <ThemeConsumer />
@@ -71,7 +71,7 @@ describe("ThemeProvider", () => {
   });
 
   it("applies dark class to documentElement when theme is dark", () => {
-    localStorage.setItem("Codeworth-theme", "dark");
+    localStorage.setItem("codeworth-theme", "dark");
     render(
       <ThemeProvider>
         <ThemeConsumer />
@@ -83,7 +83,7 @@ describe("ThemeProvider", () => {
 
   it("removes dark class from documentElement when theme is light", () => {
     document.documentElement.classList.add("dark");
-    localStorage.setItem("Codeworth-theme", "light");
+    localStorage.setItem("codeworth-theme", "light");
     render(
       <ThemeProvider>
         <ThemeConsumer />
@@ -102,7 +102,7 @@ describe("ThemeProvider", () => {
     act(() => {
       screen.getByText("Set Dark").click();
     });
-    expect(localStorage.getItem("Codeworth-theme")).toBe("dark");
+    expect(localStorage.getItem("codeworth-theme")).toBe("dark");
   });
 
   it("setTheme('dark') updates resolvedTheme to dark", () => {
@@ -118,7 +118,7 @@ describe("ThemeProvider", () => {
   });
 
   it("setTheme('light') updates resolvedTheme to light", () => {
-    localStorage.setItem("Codeworth-theme", "dark");
+    localStorage.setItem("codeworth-theme", "dark");
     render(
       <ThemeProvider>
         <ThemeConsumer />

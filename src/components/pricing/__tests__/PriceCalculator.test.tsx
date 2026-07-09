@@ -17,88 +17,89 @@ jest.mock("@/components/layout/LocaleProvider", () => ({
 describe("PriceCalculator", () => {
   it("відображає заголовок калькулятора", () => {
     render(<PriceCalculator />);
-    expect(screen.getByText(/розрахуйте вартість проєкту/i)).toBeInTheDocument();
+    expect(screen.getByText(/розрахуйте орієнтовну вартість/i)).toBeInTheDocument();
   });
 
-  it("відображає всі типи проєктів", () => {
+  it("відображає всі типи ML-проєктів", () => {
     render(<PriceCalculator />);
-    expect(screen.getByRole("button", { name: /лендінг/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /корпоративний сайт/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /інтернет-магазин/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /портал/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /PoC \/ Proof of Concept/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /Production ML-модель/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /Кастомна NLP-система/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /Комп'ютерний зір/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /Enterprise ML-платформа/i })).toBeInTheDocument();
   });
 
-  it("початкова ціна відповідає базовій вартості лендінгу (8 000 грн)", () => {
+  it("початкова ціна відповідає базовій вартості PoC (£1,800)", () => {
     render(<PriceCalculator />);
-    expect(screen.getAllByText(/8[\s\u00a0]*000\s*₴/).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/£1,800/).length).toBeGreaterThan(0);
   });
 
   it("зміна типу проєкту оновлює ціну", () => {
     render(<PriceCalculator />);
-    fireEvent.click(screen.getByRole("button", { name: /корпоративний сайт/i }));
-    expect(screen.getAllByText(/20[\s\u00a0]*000\s*₴/).length).toBeGreaterThan(0);
+    fireEvent.click(screen.getByRole("button", { name: /Production ML-модель/i }));
+    expect(screen.getAllByText(/£4,500/).length).toBeGreaterThan(0);
   });
 
-  it("відображає список додаткових функцій", () => {
+  it("відображає список додаткових компонентів", () => {
     render(<PriceCalculator />);
-    expect(screen.getByText(/CMS/i)).toBeInTheDocument();
-    expect(screen.getByText(/SEO-оптимізація/i)).toBeInTheDocument();
-    expect(screen.getByText(/блог/i)).toBeInTheDocument();
+    expect(screen.getByText(/Data labelling & annotation/i)).toBeInTheDocument();
+    expect(screen.getByText(/MLOps pipeline setup/i)).toBeInTheDocument();
+    expect(screen.getByText(/On-prem deployment/i)).toBeInTheDocument();
   });
 
-  it("додавання функції збільшує загальну вартість", () => {
+  it("додавання компонента збільшує загальну вартість", () => {
     render(<PriceCalculator />);
-    // Initial price: 8000 (landing), after adding CMS (+5000) = 13000
-    fireEvent.click(screen.getByRole("button", { name: /CMS/i }));
-    expect(screen.getAllByText(/13[\s\u00a0]*000\s*₴/).length).toBeGreaterThan(0);
+    // Initial price: £1,800 (PoC), after adding Data labelling (+£800) = £2,600
+    fireEvent.click(screen.getByRole("button", { name: /Data labelling & annotation/i }));
+    expect(screen.getAllByText(/£2,600/).length).toBeGreaterThan(0);
   });
 
-  it("повторне натискання на функцію прибирає її і ціну", () => {
+  it("повторне натискання на компонент прибирає його і ціну", () => {
     render(<PriceCalculator />);
-    const cmsBtn = screen.getByRole("button", { name: /CMS/i });
-    fireEvent.click(cmsBtn); // додати
-    fireEvent.click(cmsBtn); // прибрати
-    expect(screen.getAllByText(/8[\s\u00a0]*000\s*₴/).length).toBeGreaterThan(0);
+    const featureBtn = screen.getByRole("button", { name: /Data labelling & annotation/i });
+    fireEvent.click(featureBtn); // додати
+    fireEvent.click(featureBtn); // прибрати
+    expect(screen.getAllByText(/£1,800/).length).toBeGreaterThan(0);
   });
 
-  it("відображає плани підтримки", () => {
+  it("відображає плани MLOps-підтримки", () => {
     render(<PriceCalculator />);
-    expect(screen.getByRole("button", { name: /без підтримки/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /lite/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /pro/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /full/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /Без підтримки/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /Basic MLOps/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /Professional/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /Enterprise \(custom\)/i })).toBeInTheDocument();
   });
 
-  it("вибір плану підтримки показує щомісячну вартість", () => {
+  it("вибір плану Professional показує щомісячну вартість MLOps", () => {
     render(<PriceCalculator />);
-    fireEvent.click(screen.getByRole("button", { name: /^Pro/i }));
-    expect(screen.getByText(/7[\s\u00a0]*000\s*₴\/місяць/i)).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: /^Professional/i }));
+    expect(screen.getByText(/£1,500\/міс MLOps/i)).toBeInTheDocument();
   });
 
   it("'Без підтримки' не показує щомісячну вартість", () => {
     render(<PriceCalculator />);
-    fireEvent.click(screen.getByRole("button", { name: /^Pro/i }));
-    fireEvent.click(screen.getByRole("button", { name: /без підтримки/i }));
-    expect(screen.queryByText(/\/місяць/i)).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: /^Professional/i }));
+    fireEvent.click(screen.getByRole("button", { name: /^Без підтримки/i }));
+    expect(screen.queryByText(/\/міс MLOps/i)).not.toBeInTheDocument();
   });
 
-  it("кнопка 'Замовити консультацію' веде на /contact", () => {
+  it("кнопка 'Замовити безкоштовну консультацію' веде на /contact", () => {
     render(<PriceCalculator />);
-    const link = screen.getByRole("link", { name: /замовити консультацію/i });
+    const link = screen.getByRole("link", { name: /замовити безкоштовну консультацію/i });
     expect(link.getAttribute("href")).toContain("/contact");
   });
 
   it("посилання консультації містить тип проєкту і бюджет", () => {
     render(<PriceCalculator />);
-    const link = screen.getByRole("link", { name: /замовити консультацію/i });
+    const link = screen.getByRole("link", { name: /замовити безкоштовну консультацію/i });
     const href = link.getAttribute("href") ?? "";
     expect(href).toContain("service=");
     expect(href).toContain("budget=");
   });
 
-  it("після вибору кількох функцій показує рядок 'Разом'", () => {
+  it("після вибору кількох компонентів показує рядок 'Разом'", () => {
     render(<PriceCalculator />);
-    fireEvent.click(screen.getByRole("button", { name: /CMS/i }));
+    fireEvent.click(screen.getByRole("button", { name: /Data labelling & annotation/i }));
     expect(screen.getByText(/разом/i)).toBeInTheDocument();
   });
 });
