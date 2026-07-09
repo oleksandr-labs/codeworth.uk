@@ -84,6 +84,14 @@
 - ✅ Додати `/ml` + 10 `/ml/[niche]` slugs до `internal-links.test.ts` — 12/12 тестів ✅
 - ✅ Перевірити глибину: `/ai/healthcare` = 2 кліки від головної ✅
 
+## ✅ ВИПРАВЛЕНО 2026-07-09 (код-аудит) — розбіжність зі статусом "нема битих посилань"
+`internal-links.test.ts` перевіряв посилання, побудовані з `SERVICES_DATA`/blog/portfolio/niche-даних, але **не** обходив хардкоджені href у React-компонентах головної сторінки:
+
+- [x] **Критично, виправлено**: `src/components/home/ServicesSection.tsx` більше не хардкодить `/services/ml-models`, `/services/fraud-detection`, `/services/ai-chatbots`, `/services/ai-consulting` (жодного з них не було в `SERVICES_DATA`) — переписано на ітерацію по `SERVICES_DATA`/`getServiceLocalized`, як і `services/page.tsx`. Дрейф структурно неможливий.
+- [x] Додано тест до `internal-links.test.ts` ("homepage ServicesSection only links to real service slugs"), що грепає компонент на хардкоджені `/services/:slug` href і звіряє з `SERVICES_DATA`.
+- [x] Cross-link `/ai/[niche]` + `/ml/[niche]` розширено на всі 7 сервісів через мапу `NICHE_HUB` у `[slug]/page.tsx` (artificial-intelligence/nlp/computer-vision/llm-rag → `/ai`; machine-learning/mlops/predictive-analytics → `/ml`), замість гейту лише на 2 slug.
+- [x] ✅ **ВИПРАВЛЕНО 2026-07-09**: `Service.crossLink` (один об'єкт) замінено на `Service.crossLinks: ServiceCrossLink[]` — кожен з 7 сервісів тепер має 2 релевантні cross-link на сусідні послуги (напр. artificial-intelligence → machine-learning + llm-rag; predictive-analytics → machine-learning + mlops) замість одного. `[slug]/page.tsx` рендерить їх грідом карток (1-2 колонки залежно від кількості). Додано тест у `services.test.ts` ("every service has at least one crossLink pointing to a real, different service slug") для запобігання дрейфу slug.
+
 ## Технічне
 - ✅ Перевірити відсутність битих посилань — `lib/__tests__/internal-links.test.ts` (9 тестів: service/blog/niche/portfolio slugs, nicheSlug references, app directory verification, depth check)
 - ✅ Не допускати циклічних посилань — перевірено автотестами

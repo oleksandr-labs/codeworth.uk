@@ -28,7 +28,7 @@
 - [x] Article — `blog/[slug]/page.tsx` (headline, author, publisher, datePublished, keywords)
 - [x] CreativeWork — `portfolio/[slug]/page.tsx` для кейсів портфоліо
 - [x] ItemList — `services/page.tsx` (всі послуги), `extras/page.tsx` (42 доробки), `portfolio/page.tsx`
-- [ ] Review/Rating — після накопичення реальних відгуків
+- [ ] Review/Rating — після накопичення реальних відгуків. ⚠️ **Перевірено 2026-07-09**: `src/lib/data/reviews.ts` містить лише вигадані маркетингові приклади відгуків (`verified: true`, але автори/компанії не реальні) — НЕ використовувати ці дані для `Review`/`AggregateRating` schema, це порушує Google policy щодо fake review markup. Деталі: `TODO/pages/services/TODO_services_overview.md`.
 - [x] Замінити placeholder телефон `+38-000-000-00-00` в Organization Schema — **виконано 2026-05-01**: contactPoint видалено, замінено на `email: "hello@codenest.com.ua"`
 
 ## Технічні мета-теги
@@ -60,6 +60,17 @@
 - [ ] Schema Markup Validator (schema.org/validator) — перевірити всі JSON-LD блоки
 
 ---
+
+## Service Schema баги на /services/[slug] (аудит 2026-07-09, ✅ ВИПРАВЛЕНО того ж дня)
+Джерело: код-аудит `src/app/[lang]/services/[slug]/page.tsx` (~788 рядків) + `src/lib/data/services.ts`. Конкретні розбіжності schema.org, знайдені в JSON-LD `Service`/`Offer`/`BreadcrumbList` — усі нижче виправлено:
+
+- [x] **Валюта переплутана**: `priceCurrency` було `"UAH"` попри GBP-ціни на сторінці → виправлено на `"GBP"`.
+- [x] **`offers.price` — рядок з символом валюти**: тепер `service.priceFrom.replace(/[^0-9.]/g, "")` (число без `£`/ком) замість `"£375"` напряму.
+- [x] **URL у JSON-LD без локалі**: `serviceSchema.url` і `breadcrumbSchema.item[].item` тепер через `localePath(lang, path)` з `src/i18n.ts` — EN канонічний на корені (без префіксу), UK з `/uk/` префіксом, синхронно з фактичним `<link rel="canonical">` (`buildAlternates()`).
+- [x] **Хардкоджені українські breadcrumb-лейбли**: замінено на `isUk ? "Головна" : "Home"` / `isUk ? "Послуги" : "Services"` — узгоджено з рештою файлу.
+- [x] **Додано `serviceType`, `areaServed`, `inLanguage`** у Service schema: `serviceType: service.shortTitle`, `areaServed: ["GB", "UA"]`, `inLanguage` через `HREFLANG_CODES[lang]`.
+- [x] **Додано `hasOfferCatalog`** (`OfferCatalog`/`Offer[]`) на основі `service.packages` — раніше 3 тарифні пакети на сторінці не мали жодної schema-розмітки.
+- [ ] **AggregateRating/Review у Service schema — навмисно НЕ підключено**: перевірено `lib/data/reviews.ts` — усі записи вигадані маркетингові приклади, не реальні відгуки (докладніше вище "Review/Rating"). Підключати тільки коли з'являться справжні верифіковані відгуки.
 
 ### Примітки
 - Кожен title має містити ключове слово ближче до початку та бути унікальним.

@@ -1,8 +1,8 @@
 # codeworth.uk — ML Adaptation Master Log
 
-**Мета:** Документація всіх змін по адаптації сайту під Machine Learning (Sprints 6–67).
+**Мета:** Документація всіх змін по адаптації сайту під Machine Learning (Sprints 6–68).
 **Початок роботи:** 2026-06-23
-**Остання зміна:** 2026-07-07
+**Остання зміна:** 2026-07-09
 **Виконавець:** Claude AI (паралельні агент-спринти)
 
 ---
@@ -842,6 +842,28 @@
 - **`85cd4fb`** — нормалізатор категорій блогу (`getPostCategoryId`) з попереднього кроку виправив ФІЛЬТРАЦІЮ, але сирий `post.category` (напр. "ml", "AI та Автоматизація") далі показувався користувачу в 5 місцях: сторінка самого посту (breadcrumb/бейдж/"More in..."), архів автора, тег-архів, related-posts на service-сторінках, прев'ю блогу на головній. Додано `getPostCategoryLabel(post, lang)` в `blog.ts`, замінено всі 5 місць + inline-дублікат тієї ж логіки в `BlogContent.tsx`
 - **`c2ea408`** — глосарій має легасі-секцію `WEB DEV/HOSTING/ANALYTICS` (лишена як фонові терміни поруч з ML/AI-контентом), у якій ~10 термінів прямо стверджували неправду про поточний Codeworth: "розробляє e-commerce на Next.js + Stripe/LiqPay", "деплоїть усі проєкти на Vercel" (насправді Hetzner+GitHub Actions), "будує дизайн-систему для кожного клієнта", "завжди проєктує Mobile First", "додає PWA до всіх проєктів", "розробляє Figma-прототипи перед кожним проєктом", і буквальний приклад "Кошик та кабінет користувача в маркетплейсі Codeworth — використовують CSR". Прибрано ці твердження, лишено нейтральні визначення термінів і те, що досі правда про власний стек сайту (SSG, Tailwind v4, GitHub Actions CI/CD, `/location/[city]` сторінки)
 - **Виявлено, але НЕ виправлено кодом** (бізнес-рішення, не інженерне) — `gh secret list` підтвердив: `NEXT_PUBLIC_GA_ID`, `NEXT_PUBLIC_FB_PIXEL_ID`, `NEXT_PUBLIC_GOOGLE_ADS_ID`, `NEXT_PUBLIC_RECAPTCHA_SITE_KEY`+`RECAPTCHA_SECRET_KEY` відсутні в GH secrets — GA4/FB Pixel/Google Ads/reCAPTCHA код готовий, деградує тихо (без падінь), але фактично не працює. Деталі й статус — [tech/TODO_integrations.md](tech/TODO_integrations.md). Користувачу дана покрокова інструкція створення кожного облікового запису 2026-07-08 (в чаті, не в файлах — потребує реальних акаунтів Google/Facebook)
+
+### Sprint 68 — Services SEO-аудит (2 раунди) + виправлення + trust-signal корекція (2026-07-09)
+
+**Раунд 1+2 аудиту** (фонові Explore-агенти, код-рев'ю усіх 7 сторінок послуг: `services.ts`, `[slug]/page.tsx`, `services/page.tsx`, `ServicesSection.tsx`, `FAQSection.tsx`, `sitemap.ts`) — знайдено й виправлено того ж дня:
+
+- **Биті посилання з головної** — `src/components/home/ServicesSection.tsx` хардкодив 8 плиток з 4 неіснуючими slug (`ml-models`, `fraud-detection`, `ai-chatbots`, `ai-consulting` — 404 на найавторитетнішій сторінці сайту). Переписано на ітерацію по `SERVICES_DATA`/`getServiceLocalized` (як вже робив `services/page.tsx`), дрейф структурно неможливий. Додано регресійний тест у `internal-links.test.ts`.
+- **Service schema (`[slug]/page.tsx`)**: `priceCurrency` UAH→GBP (ціни на сторінці завжди в £), `offers.price` рядок з `£`/комами → чисте число, `serviceSchema.url`/`breadcrumbSchema.item[].item` тепер через `localePath(lang, path)` з `i18n.ts` (раніше однаковий URL без локалі для EN і UK — не збігався з canonical), хардкоджені укр. breadcrumb-лейбли → `isUk`-розгалуження, додано `serviceType`/`areaServed`/`inLanguage`, додано `hasOfferCatalog` (`OfferCatalog`/`Offer[]`) на основі `service.packages` (раніше 3 тарифні пакети не мали жодної schema).
+- **FAQPage DOM ≠ JSON-LD** — `FAQSection.tsx` рендерив у SSR DOM лише перші 3 питання (`.slice()`), решта монтувались тільки по кліку "Show more", хоча JSON-LD видавав усі 10-14. Виправлено: усі питання завжди в DOM, приховані — через CSS `hidden`, не умовний unmount.
+- **Niche cross-link на 2/7** — `/ai`/`/ml` хаб-банер був захардкоджений лише на `artificial-intelligence`/`machine-learning`. Додано мапу `NICHE_HUB` на всі 7 (nlp/computer-vision/llm-rag → `/ai`; mlops/predictive-analytics → `/ml`).
+- **`Service.crossLink` → `crossLinks[]`** — кожен з 7 сервісів мав лише 1 суміжне посилання; тепер 2 релевантних на сервіс (напр. artificial-intelligence → machine-learning + llm-rag). Додано тест цілісності slug у `services.test.ts`.
+- **Перемішана мова FAQ** — `nlp`/`computer-vision`/`mlops` мали по 5 англійських Q&A, вставлених у переважно українську базову `SERVICES_DATA` (рендерились і в укр. акордеоні, і в укр. FAQPage JSON-LD). Перекладено на українську в базовому масиві, оригінали перенесено в `SERVICES_EN[slug].faq`.
+- **UK-гео-модифікатор у title** — `SERVICES_EN["artificial-intelligence"/"machine-learning"].title` не мали "Services UK" (5 інших сервісів вже мали) → вирівняно.
+- **Bundle/CWV** — 5 демо-компонентів (`AiCopywriterDemo`, `AiEdtechDemo`, `AiHospitalityDemo`, `MLOpsPipelineDiagram`, `DatasetCalculator`), що рендеряться лише на 2/7 сторінок, статично імпортувались у спільний `[slug]/page.tsx` → JS вантажився і на 5 сторінках, які їх не використовують. Переведено на `next/dynamic`.
+- **Sitemap priority** — усі 7 сторінок мали однаковий `priority: 0.8`; флагманські `artificial-intelligence`/`machine-learning` (окремі `/ai`/`/ml` хаби) підняті до `0.9`.
+
+**⚠️ Знайдено й НЕ реалізовано навмисно (ризик Google policy)**: `src/lib/data/reviews.ts` містить ~20 записів з `verified: true`, але автори/компанії вигадані — не підключено до `AggregateRating`/`Review` schema (fake review markup порушує policy Google, може призвести до ручного видалення rich results).
+
+**⚠️ Знайдена й виправлена власна помилка цієї ж сесії**: спочатку додав на всі 7 сторінок послуг компонент `ClientLogosSection` разом із чипами вигаданих назв компаній ("Fintechlabs", "RetailCore" тощо) як "довіра-сигнал". `TODO_improvements_june_2026.md` документує, що **реальний клієнт раніше вже скаржився саме на фейкові відгуки та невідомі компанії** — після чого `TestimonialsSection` прибрали з головної, статистику переформулювали. Компонент отримав новий prop `showClientLogos` (default `true` на головній, `false` на service pages) — на сторінках послуг лишились тільки нейтральні benchmark-бейджі (F1 Score, GDPR/ISO 27001, latency, MLOps 24/7), без чипів клієнтських назв.
+
+**Перевірка**: `tsc --noEmit` чисто, `npm test` 974/974 (до сесії 973/973, +1 новий тест на crossLinks). Жодних cron-задач чи DB-міграцій не додавалось (сайт повністю SSG, без БД). Деплой — через GitHub Actions (push у master), без ручних дій на сервері.
+
+Деталі кожного пункту з посиланнями на конкретні рядки коду: `TODO/pages/services/TODO_services_overview.md` (розділи "SEO-аудит послуг" раунд 1 і 2), `TODO/seo/TODO_metadata.md`, `TODO/seo/TODO_internal_links.md`, `TODO/seo/TODO_technical_seo.md`, `TODO/seo/TODO_hreflang.md`, `TODO/pages/TODO_faq.md`, `TODO/seo/TODO_SEO_MASTER.md` (виправлено застарілі "❌ НЕ ІСНУЄ" позначки — усі 5 сторінок давно реалізовані).
 
 ---
 

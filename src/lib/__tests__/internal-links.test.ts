@@ -113,6 +113,22 @@ describe("Internal Links Integrity", () => {
     expect(fs.existsSync(path.join(appDir, "[lang]", "ml", "[niche]", "page.tsx"))).toBe(true);
   });
 
+  it("homepage ServicesSection only links to real service slugs", () => {
+    // Regression test: ServicesSection.tsx previously hardcoded 8 service tiles with
+    // 4 slugs (ml-models, fraud-detection, ai-chatbots, ai-consulting) that never
+    // existed in SERVICES_DATA, producing 404s from the homepage. This test fails
+    // if any hardcoded /services/:slug href drifts from the real service list again.
+    const source = fs.readFileSync(
+      path.resolve(__dirname, "../../components/home/ServicesSection.tsx"),
+      "utf-8"
+    );
+    const hrefMatches = [...source.matchAll(/\/services\/([a-z0-9-]+)/g)].map((m) => m[1]);
+    const validSlugs = new Set(SERVICES_DATA.map((s) => s.slug));
+    hrefMatches.forEach((slug) => {
+      expect(validSlugs.has(slug)).toBe(true);
+    });
+  });
+
   it("max depth from homepage is 3 clicks for all content", () => {
     // Depth 1: /, /services, /blog, /portfolio, /ai, /ml (from header)
     // Depth 2: /services/[slug], /blog/[slug], /portfolio/[slug], /ai/[niche], /ml/[niche]

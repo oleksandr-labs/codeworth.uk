@@ -1,6 +1,7 @@
 import { Container } from "@/components/layout/Container";
 import { Shield, Award, Clock, Zap } from "lucide-react";
 import { EmojiIcon } from "@/components/ui/EmojiIcon";
+import { cn } from "@/lib/utils";
 
 const CLIENT_LOGOS = [
   { name: "Fintechlabs", emoji: "🏦", color: "from-emerald-500 to-teal-600" },
@@ -31,7 +32,16 @@ const TRUST_BADGES_EN = [
   { icon: Clock, label: "MLOps 24/7", desc: "Continuous monitoring" },
 ];
 
-export function ClientLogosSection({ lang }: { lang: string }) {
+interface ClientLogosSectionProps {
+  lang: string;
+  // The CLIENT_LOGOS chips are illustrative company names, not real clients.
+  // A past real client complained about fake reviews/unrecognised company names,
+  // so this list is intentionally homepage-only — do not enable it on pages that
+  // read as claims about a specific visitor's industry (e.g. service pages).
+  showClientLogos?: boolean;
+}
+
+export function ClientLogosSection({ lang, showClientLogos = true }: ClientLogosSectionProps) {
   const isUk = lang === "uk";
   const TRUST_BADGES = isUk ? TRUST_BADGES_UK : TRUST_BADGES_EN;
 
@@ -39,7 +49,7 @@ export function ClientLogosSection({ lang }: { lang: string }) {
     <section className="py-16 bg-neutral-50 dark:bg-neutral-900 border-y border-neutral-100 dark:border-neutral-800">
       <Container>
         {/* Trust badges */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+        <div className={cn("grid grid-cols-2 md:grid-cols-4 gap-4", showClientLogos && "mb-12")}>
           {TRUST_BADGES.map((badge) => (
             <div key={badge.label} className="flex items-center gap-3 p-4 rounded-xl bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700">
               <div className="w-10 h-10 rounded-lg bg-indigo-50 dark:bg-indigo-950/40 flex items-center justify-center shrink-0">
@@ -53,24 +63,28 @@ export function ClientLogosSection({ lang }: { lang: string }) {
           ))}
         </div>
 
-        {/* Client list */}
-        <div className="text-center mb-8">
-          <p className="text-sm text-neutral-500 dark:text-neutral-400 font-medium">
-            {isUk ? "Компанії, що довіряють нашим ML-рішенням" : "Companies trusting our ML solutions"}
-          </p>
-        </div>
-
-        <div className="flex flex-wrap items-center justify-center gap-4">
-          {CLIENT_LOGOS.map((client) => (
-            <div
-              key={client.name}
-              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 hover:border-indigo-200 dark:hover:border-indigo-700 hover:shadow-sm transition-all"
-            >
-              <EmojiIcon emoji={client.emoji} className="w-5 h-5 text-neutral-600 dark:text-neutral-300" />
-              <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">{client.name}</span>
+        {showClientLogos && (
+          <>
+            {/* Client list */}
+            <div className="text-center mb-8">
+              <p className="text-sm text-neutral-500 dark:text-neutral-400 font-medium">
+                {isUk ? "Компанії, що довіряють нашим ML-рішенням" : "Companies trusting our ML solutions"}
+              </p>
             </div>
-          ))}
-        </div>
+
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              {CLIENT_LOGOS.map((client) => (
+                <div
+                  key={client.name}
+                  className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 hover:border-indigo-200 dark:hover:border-indigo-700 hover:shadow-sm transition-all"
+                >
+                  <EmojiIcon emoji={client.emoji} className="w-5 h-5 text-neutral-600 dark:text-neutral-300" />
+                  <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">{client.name}</span>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
       </Container>
     </section>
   );

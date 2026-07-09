@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { Container } from "@/components/layout/Container";
+import { cn } from "@/lib/utils";
 
 interface FAQItem {
   q: string;
@@ -23,7 +24,10 @@ export function FAQSection({ items, isUk, eyebrow, title, subtitle }: FAQSection
   const [expanded, setExpanded] = useState<number | null>(0);
   const [showAll, setShowAll] = useState(false);
 
-  const visible = showAll ? items : items.slice(0, VISIBLE_COUNT);
+  // All items stay mounted in the DOM (only visually hidden via CSS below) so the
+  // rendered page always matches the FAQPage JSON-LD emitted by the parent page —
+  // Google expects FAQPage rich-result content to be physically present, not
+  // conditionally unmounted behind a "show more" click.
   const hiddenCount = items.length - VISIBLE_COUNT;
 
   return (
@@ -42,12 +46,15 @@ export function FAQSection({ items, isUk, eyebrow, title, subtitle }: FAQSection
         </div>
 
         <div className="max-w-3xl mx-auto space-y-3">
-          {visible.map((item, i) => {
+          {items.map((item, i) => {
             const open = expanded === i;
             return (
               <div
                 key={item.q}
-                className="rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white dark:bg-neutral-800 overflow-hidden"
+                className={cn(
+                  "rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-white dark:bg-neutral-800 overflow-hidden",
+                  !showAll && i >= VISIBLE_COUNT && "hidden"
+                )}
               >
                 <button
                   onClick={() => setExpanded(open ? null : i)}

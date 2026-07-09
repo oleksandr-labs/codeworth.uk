@@ -110,20 +110,20 @@ describe("ServicesSection", () => {
     expect(screen.getByText(/наші послуги/i)).toBeInTheDocument();
   });
 
-  it("відображає картку 'Розробка ML-моделей'", () => {
+  it("відображає картку 'Штучний інтелект'", () => {
     render(<ServicesSection lang="uk" />);
-    expect(screen.getByText("Розробка ML-моделей")).toBeInTheDocument();
+    expect(screen.getByText("Штучний інтелект")).toBeInTheDocument();
   });
 
-  it("відображає картку 'Виявлення шахрайства'", () => {
+  it("відображає картку 'Predictive Analytics'", () => {
     render(<ServicesSection lang="uk" />);
-    expect(screen.getByText("Виявлення шахрайства")).toBeInTheDocument();
+    expect(screen.getByText("Predictive Analytics")).toBeInTheDocument();
   });
 
-  it("картки мають посилання на відповідні сторінки послуг", () => {
+  it("картки мають посилання на реальні slug з SERVICES_DATA (регресія: раніше вели на неіснуючі /services/ml-models тощо → 404)", () => {
     render(<ServicesSection lang="uk" />);
-    const mlModelsLink = screen.getByRole("link", { name: /розробка ml-моделей/i });
-    expect(mlModelsLink).toHaveAttribute("href", "/uk/services/ml-models");
+    const aiLink = screen.getByRole("link", { name: /штучний інтелект/i });
+    expect(aiLink).toHaveAttribute("href", "/uk/services/artificial-intelligence");
   });
 
   it("кнопка 'Переглянути всі послуги' веде на /services", () => {

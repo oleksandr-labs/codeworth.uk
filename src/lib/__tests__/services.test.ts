@@ -55,6 +55,22 @@ describe("SERVICES_DATA", () => {
       expect(s.priceFrom.length).toBeGreaterThan(0);
     });
   });
+
+  it("every service has at least one crossLink pointing to a real, different service slug", () => {
+    const validSlugs = new Set(SERVICES_DATA.map((s) => s.slug));
+    SERVICES_DATA.forEach((s) => {
+      expect(s.crossLinks).toBeDefined();
+      expect(s.crossLinks!.length).toBeGreaterThan(0);
+      s.crossLinks!.forEach((cl) => {
+        expect(validSlugs.has(cl.slug)).toBe(true);
+        expect(cl.slug).not.toBe(s.slug);
+        expect(cl.ukLabel).toBeTruthy();
+        expect(cl.enLabel).toBeTruthy();
+        expect(cl.ukDesc).toBeTruthy();
+        expect(cl.enDesc).toBeTruthy();
+      });
+    });
+  });
 });
 
 describe("getService()", () => {

@@ -128,15 +128,15 @@ describe("ServicesSection — EN locale", () => {
 
   it("shows English service titles", () => {
     render(<ServicesSection lang="en" />);
-    expect(screen.getByText("Custom ML Models")).toBeInTheDocument();
-    expect(screen.getByText("Natural Language Processing")).toBeInTheDocument();
+    expect(screen.getByText("Machine Learning")).toBeInTheDocument();
+    expect(screen.getByText("NLP")).toBeInTheDocument();
     expect(screen.getByText("Computer Vision")).toBeInTheDocument();
   });
 
-  it("service links use /en/ prefix", () => {
+  it("service links point to real SERVICES_DATA slugs (regression: previously 404'd on ml-models/fraud-detection/ai-chatbots/ai-consulting)", () => {
     render(<ServicesSection lang="en" />);
-    const mlModelsLink = screen.getByRole("link", { name: /custom ml models/i });
-    expect(mlModelsLink).toHaveAttribute("href", "/en/services/ml-models");
+    const mlLink = screen.getByRole("link", { name: /machine learning/i });
+    expect(mlLink).toHaveAttribute("href", "/en/services/machine-learning");
   });
 
   it("shows 'View all services' CTA in English", () => {

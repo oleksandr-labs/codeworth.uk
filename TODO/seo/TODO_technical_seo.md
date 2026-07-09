@@ -46,6 +46,7 @@
 
 ## Core Web Vitals
 - [ ] Перевірка після деплою на Vercel (LCP/CLS/INP)
+- [x] ✅ **ВИПРАВЛЕНО 2026-07-09 (round 2)**: `src/app/[lang]/services/[slug]/page.tsx` раніше статично імпортував `AiCopywriterDemo`, `AiEdtechDemo`, `AiHospitalityDemo`, `MLOpsPipelineDiagram`, `DatasetCalculator` на рівні модуля — тепер усі 5 обгорнуті в `next/dynamic(() => import(...).then(m => m.X))`, тож їхній JS більше не потрапляє в бандл сторінок nlp/computer-vision/llm-rag/predictive-analytics, які їх не використовують.
 
 ## Технічна оптимізація
 - [x] Security headers (CSP, HSTS, X-Frame-Options) — `next.config.ts`
@@ -107,6 +108,7 @@
 - ✅ robots.txt тест у CI — `src/lib/__tests__/robots.test.ts` (12 тестів: заблоковані paths, AI/ML НЕ заблоковані, query params, sitemap URL) — реалізовано 2026-05-03
 
 ## PageSpeed та зображення
+- [ ] **Виявлено 2026-07-09 (round 2), НЕ виправлено** — потребує реального фото/діаграм контенту, не лише коду: на сторінках `/services/[slug]` взагалі немає жодного зображення — grep по `next/image`/`<img>`/`Image` в `src/` дає збіги лише в тестах, `location/[city]/page.tsx`, `proxy.ts`, `utils.ts`. Весь шаблон послуги (hero, features, tech stack, пакети, кейси) побудований на Tailwind-картках, Lucide-іконках та emoji (`EmojiIcon`) — без діаграм, скріншотів, архітектурних ілюстрацій чи фото команди. Єдиний візуальний артефакт — `og:image` (`/og/services/${slug}.png`, існування не перевірено). Це підсилює "тонкий контент" з першого раунду чисто структурною причиною: немає навіть інвентарю зображень, щоб додати alt-текст, і немає візуальної диференціації, що знижує pogo-sticking у SERP.
 - [ ] `next/image` — перевірити що всі зображення мають `priority` prop на above-the-fold (hero)
 - ✅ WebP/AVIF формат — перевірено 2026-05-03: `next.config.ts` містить `images.formats: ["image/avif","image/webp"]`
 - [ ] `sizes` prop для responsive зображень — уникати завантаження великих картинок на мобільному
@@ -127,6 +129,7 @@ const mlNiches = ['banking','retail','saas','logistics','manufacturing','agritec
 - [x] ~~Додати `/en/ml` + `/uk/ml` (overview) до `sitemap.ts`~~ — ✅ Реалізовано (sitemap.ts: path "/ml")
 - [x] ~~Додати 20 ML нішевих URL до `sitemap.ts`~~ — ✅ Реалізовано (mlNichePages via ML_NICHES)
 - **Загалом:** +42 нових URL у sitemap — ✅ Реалізовано (2026-05-02)
+- [x] ✅ **ВИПРАВЛЕНО 2026-07-09 (round 2)**: `src/app/sitemap.ts` раніше виставляв однаковий `priority: 0.8` для всіх 7 сторінок послуг — тепер `artificial-intelligence`/`machine-learning` (флагманські, мають окремі `/ai`/`/ml` niche-хаби з priority 0.9) отримують `priority: 0.9`, решта 5 лишились на `0.8`.
 
 ### Schema.org для нових сторінок
 

@@ -33,6 +33,8 @@
 - ✅ Кожна UK сторінка має `canonical: "/uk/..."` — аналогічно через `buildAlternates()`
 - ✅ Немає cross-language canonical — `buildAlternates()` завжди використовує поточний `lang`
 - ✅ `/` (root) редиректить на `/en/` — перевірено 2026-05-03: `src/proxy.ts` redirect на `/${locale}${pathname}` (default locale = 'en')
+- [x] ✅ **ВИПРАВЛЕНО 2026-07-09**: на `/services/[slug]` `<link rel="canonical">` вже коректно локалізовано через `buildAlternates()`, але вбудований JSON-LD (`serviceSchema.url`, `breadcrumbSchema.item[].item`) використовував ту саму URL БЕЗ префіксу локалі для EN і UK — тепер обидва використовують `localePath(lang, path)` з `i18n.ts` (EN канонічний на корені без префіксу, UK з `/uk/`), синхронно з `buildAlternates()`/canonical.
+- [ ] Перевірити, чи такий самий патерн (JSON-LD URL без локалі) є на інших `[slug]`-сторінках (blog, portfolio) — якщо так, це системна проблема генерації schema, не лише services. **Не перевірено в цьому раунді.**
 
 ## OG локалі (вже виконано, перевірка)
 - [x] `og:locale: "en_GB"` на EN сторінках

@@ -4,6 +4,7 @@
 **Ринок:** Великобританія (EN, первинний), Україна (UK, вторинний).
 **Статус:** 🔲 В роботі
 **Оновлено:** 2026-06-23
+**⚠️ Оновлено 2026-07-09**: усі 5 сторінок, позначені нижче як "❌ НЕ ІСНУЄ" (nlp, computer-vision, mlops, llm-rag, predictive-analytics), **вже реалізовані** (`src/lib/data/services.ts`, 7 сервісів разом) — розділ "🔍 Відсутні сторінки" застарів, залишений нижче для історії. Того ж дня проведено повний SEO-аудит усіх 7 сторінок послуг (2 раунди) і виправлено: биті посилання з головної (4/8 плиток на `/services/ml-models` тощо вели на 404), Service schema (валюта UAH→GBP, ціна-рядок→число, URL без локалі, відсутні serviceType/areaServed/inLanguage/hasOfferCatalog), FAQPage DOM≠JSON-LD, niche cross-link лише на 2/7 сервісів, перемішана мова FAQ на 3 uk-сторінках, `crossLink`→`crossLinks[]`. Деталі й статус кожного пункту — `TODO/pages/services/TODO_services_overview.md`, `TODO/seo/TODO_metadata.md`, `TODO/seo/TODO_internal_links.md`, `TODO/seo/TODO_technical_seo.md`, `TODO/seo/TODO_hreflang.md`, `TODO/pages/TODO_faq.md`; повний лог — `TODO_ML_ADAPTATION.md` (Sprint 68).
 
 ---
 
@@ -13,11 +14,11 @@
 Tier 1 — Money Pages (комерційний intent, найвища пріоритетність)
 ├── /services/machine-learning        ← "machine learning company UK"
 ├── /services/artificial-intelligence ← "AI development company UK"
-├── /services/nlp                     ← "NLP development UK" [❌ НЕ ІСНУЄ]
-├── /services/computer-vision         ← "computer vision development UK" [❌ НЕ ІСНУЄ]
-├── /services/mlops                   ← "MLOps services UK" [❌ НЕ ІСНУЄ]
-├── /services/llm-rag                 ← "LLM RAG chatbot UK" [❌ НЕ ІСНУЄ]
-├── /services/predictive-analytics    ← "predictive analytics UK" [❌ НЕ ІСНУЄ]
+├── /services/nlp                     ← "NLP development UK" [✅ реалізовано]
+├── /services/computer-vision         ← "computer vision development UK" [✅ реалізовано]
+├── /services/mlops                   ← "MLOps services UK" [✅ реалізовано]
+├── /services/llm-rag                 ← "LLM RAG chatbot UK" [✅ реалізовано]
+├── /services/predictive-analytics    ← "predictive analytics UK" [✅ реалізовано]
 ├── /pricing                          ← "ML development cost UK"
 └── /contact                          ← "ML consultancy quote UK"
 
@@ -119,9 +120,9 @@ Tier 4 — Blog / Informational (inbound + E-E-A-T)
 
 ---
 
-## 🔍 Відсутні сторінки (найвищий SEO-пріоритет)
+## 🔍 Відсутні сторінки (найвищий SEO-пріоритет) — ✅ ЗАКРИТО, залишено для історії
 
-### ❌ Критично відсутні (Tier 1 service pages)
+> Усі 5 сторінок нижче були відсутні станом на 2026-06-23; всі 5 давно реалізовані в `services.ts`/`[slug]/page.tsx` (7 сервісів разом), а 2026-07-09 пройшли повний SEO-аудит і виправлення (див. примітку на початку файлу). Секція нижче — застарілий keyword-план, корисний як довідка по PAA/use cases для контенту, не як список задач.
 
 #### 1. `/services/nlp` — NLP & Text Processing
 - **Primary:** `NLP development services UK`
@@ -129,7 +130,7 @@ Tier 4 — Blog / Informational (inbound + E-E-A-T)
 - **PAA:** "What is NLP in machine learning?", "How much does NLP development cost UK?"
 - **Use cases:** sentiment analysis, ticket classification, document extraction, RAG
 - **Пов'язані:** `/ai/healthcare`, `/ml/banking`, blog NLP posts
-- **Статус:** ❌ Сторінка не існує → TODO в `pages/services/TODO_nlp.md`
+- **Статус:** ✅ Реалізовано
 
 #### 2. `/services/computer-vision` — Computer Vision
 - **Primary:** `computer vision development UK`
@@ -137,7 +138,7 @@ Tier 4 — Blog / Informational (inbound + E-E-A-T)
 - **PAA:** "What is computer vision used for?", "How much does CV system cost?"
 - **Use cases:** QC inspection, OCR, visual search, medical imaging
 - **Пов'язані:** `/ml/healthcare`, `/ai/ecommerce`, portfolio CV projects
-- **Статус:** ❌ Сторінка не існує → TODO в `pages/services/TODO_computer_vision.md`
+- **Статус:** ✅ Реалізовано
 
 #### 3. `/services/mlops` — MLOps & ML Deployment
 - **Primary:** `MLOps services UK`
@@ -145,7 +146,7 @@ Tier 4 — Blog / Informational (inbound + E-E-A-T)
 - **PAA:** "What is MLOps?", "Do I need MLOps for my ML model?"
 - **Use cases:** model monitoring, drift detection, CI/CD for ML, retraining pipelines
 - **Пов'язані:** `/pricing` (MLOps retainer), `/services/machine-learning`
-- **Статус:** ❌ Сторінка не існує → TODO в `pages/services/TODO_mlops_service.md`
+- **Статус:** ✅ Реалізовано
 
 #### 4. `/services/llm-rag` — LLM & RAG Development
 - **Primary:** `LLM development company UK`, `RAG chatbot development UK`
@@ -153,7 +154,7 @@ Tier 4 — Blog / Informational (inbound + E-E-A-T)
 - **PAA:** "What is RAG in AI?", "How to build a custom chatbot UK?"
 - **Use cases:** customer support bot, document Q&A, internal knowledge base
 - **Пов'язані:** `/extras` (AI modules), `/ai/ecommerce`, `/ai/hr`
-- **Статус:** ❌ Сторінка не існує → TODO в `pages/services/TODO_llm_rag.md`
+- **Статус:** ✅ Реалізовано
 
 #### 5. `/services/predictive-analytics` — Predictive Analytics
 - **Primary:** `predictive analytics company UK`
@@ -161,7 +162,7 @@ Tier 4 — Blog / Informational (inbound + E-E-A-T)
 - **PAA:** "What is predictive analytics?", "Predictive analytics vs business intelligence?"
 - **Use cases:** demand forecasting, churn prediction, revenue forecasting, risk scoring
 - **Пов'язані:** `/ml/retail`, `/ml/banking`, `/ml/saas`
-- **Статус:** ❌ Сторінка не існує → TODO в `pages/services/TODO_predictive_analytics.md`
+- **Статус:** ✅ Реалізовано
 
 ---
 

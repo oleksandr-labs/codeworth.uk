@@ -78,7 +78,7 @@ export interface Service {
   caseStudies?: ServiceCaseStudy[];
   useCases?: ServiceUseCase[];
   techStack?: string[];
-  crossLink?: ServiceCrossLink;
+  crossLinks?: ServiceCrossLink[];
   comparisonTable?: ServiceComparisonRow[];
   beforeAfter?: ServiceBeforeAfterRow[];
   demoComponent?: "ai-copywriter" | "ai-edtech" | "ai-hospitality";
@@ -157,13 +157,22 @@ export const SERVICES_DATA: Service[] = [
     priceFrom: "£375",
     techStack: ["OpenAI GPT-4o", "Claude 3.5 Sonnet", "LangChain", "LlamaIndex", "Qdrant", "Pinecone", "YOLOv8", "OpenCV", "Whisper", "HuggingFace", "FastAPI", "Python", "Docker"],
     demoComponent: "ai-copywriter",
-    crossLink: {
-      slug: "machine-learning",
-      ukLabel: "Потрібна кастомна ML-модель?",
-      enLabel: "Need a custom ML model?",
-      ukDesc: "Fraud detection, прогноз попиту, рекомендаційні системи та MLOps — дивіться наш розділ Machine Learning.",
-      enDesc: "Fraud detection, demand forecasting, recommendation engines and MLOps — see our Machine Learning service.",
-    },
+    crossLinks: [
+      {
+        slug: "machine-learning",
+        ukLabel: "Потрібна кастомна ML-модель?",
+        enLabel: "Need a custom ML model?",
+        ukDesc: "Fraud detection, прогноз попиту, рекомендаційні системи та MLOps — дивіться наш розділ Machine Learning.",
+        enDesc: "Fraud detection, demand forecasting, recommendation engines and MLOps — see our Machine Learning service.",
+      },
+      {
+        slug: "llm-rag",
+        ukLabel: "Потрібна корпоративна RAG-система?",
+        enLabel: "Need an enterprise-grade RAG system?",
+        ukDesc: "Fine-tuning LLM під ваш домен, on-premise деплой, GDPR-compliant архітектура — дивіться LLM / RAG.",
+        enDesc: "Domain fine-tuning, on-premise deployment, GDPR-compliant architecture — see LLM / RAG.",
+      },
+    ],
     comparisonTable: [
       {
         approach: "Prompt Engineering",
@@ -295,13 +304,22 @@ export const SERVICES_DATA: Service[] = [
     deliveryTime: "4–12 тижнів",
     priceFrom: "£750",
     techStack: ["Python", "XGBoost", "LightGBM", "PyTorch", "scikit-learn", "Prophet", "MLflow", "Airflow", "Kafka", "Redis", "FastAPI", "Docker", "SHAP", "OR-Tools", "GeoPandas", "PostGIS", "TimescaleDB", "Sentinel-2 API"],
-    crossLink: {
-      slug: "artificial-intelligence",
-      ukLabel: "Шукаєте GPT-бота або NLP?",
-      enLabel: "Looking for a GPT bot or NLP?",
-      ukDesc: "Чат-боти з базою знань (RAG), комп'ютерний зір, аналіз документів, генерація контенту — дивіться наш розділ Artificial Intelligence.",
-      enDesc: "Knowledge-base chatbots (RAG), computer vision, document analysis, content generation — see our Artificial Intelligence service.",
-    },
+    crossLinks: [
+      {
+        slug: "artificial-intelligence",
+        ukLabel: "Шукаєте GPT-бота або NLP?",
+        enLabel: "Looking for a GPT bot or NLP?",
+        ukDesc: "Чат-боти з базою знань (RAG), комп'ютерний зір, аналіз документів, генерація контенту — дивіться наш розділ Artificial Intelligence.",
+        enDesc: "Knowledge-base chatbots (RAG), computer vision, document analysis, content generation — see our Artificial Intelligence service.",
+      },
+      {
+        slug: "predictive-analytics",
+        ukLabel: "Потрібне вузькоспеціалізоване прогнозування?",
+        enLabel: "Need specialised forecasting instead?",
+        ukDesc: "Demand forecasting, churn prediction, credit risk scoring з SHAP-поясненнями — дивіться Predictive Analytics.",
+        enDesc: "Demand forecasting, churn prediction, credit risk scoring with SHAP explanations — see Predictive Analytics.",
+      },
+    ],
     beforeAfter: [
       { metric: "Відтік клієнтів (churn)", before: "8.4% / міс", after: "5.8% / міс", improvement: "−31%" },
       { metric: "Fraud rate (платіжна платформа)", before: "1.8% транзакцій", after: "0.054% транзакцій", improvement: "−97%" },
@@ -394,22 +412,31 @@ export const SERVICES_DATA: Service[] = [
       { q: "Скільки коштує NLP-система?", a: "Базовий класифікатор (до 5 класів, BERT fine-tuning): від £1,125. Повна NLP-система (14+ класів, NER + sentiment, CRM-інтеграція, MLOps): від £2,000. Enterprise-платформа зі streaming та on-premise — за погодженням." },
       { q: "Чи можна NLP інтегрувати в Zendesk або Salesforce?", a: "Так. Ми інтегруємо NLP-моделі через REST API у будь-який helpdesk або CRM: Zendesk (webhook trigger), Salesforce (Apex callout), Freshdesk, Intercom, або власну систему. Час реакції < 200ms, щоб не сповільнювати workflow операторів." },
       { q: "Що таке RAG і коли варто використовувати NLP замість нього?", a: "RAG — пошук + генерація відповіді з бази документів (підходить для Q&A, чат-ботів). NLP — класифікація, витяг сутностей, sentiment (підходить для структурування даних, routing, аналітики). Часто вони доповнюють одне одного: NLP класифікує запит → RAG знаходить відповідь у базі → GPT-4o формулює." },
-      { q: "Which NLP models work best for UK legal and financial documents?", a: "General-purpose models (BERT, RoBERTa) work well as starting points. Domain-specific models improve significantly: LegalBERT for UK legal documents, FinBERT for financial text, BioBERT for clinical/life sciences content. For very specialised UK content (FCA Handbook, Companies Act, NHS clinical pathways), fine-tuning on domain data typically adds 8-15% precision over base models. We benchmark multiple models on a sample of your data before committing to an architecture." },
-      { q: "What is the difference between NLP and an LLM?", a: "Traditional NLP uses task-specific models — a sentiment classifier, a named entity recogniser, a document classifier — each trained for a specific task with labelled data. LLMs (GPT-4, Claude, Llama) are general-purpose models that can perform many NLP tasks through prompting without task-specific training. LLMs are more flexible but more expensive, slower, and harder to guarantee consistency for high-volume production pipelines. The right choice depends on your use case — we often combine both: an LLM for complex reasoning tasks, a traditional NLP model for high-volume classification." },
-      { q: "How do you handle UK English spelling and terminology in NLP models?", a: "UK English has systematic differences from US English that affect NLP model performance: spelling (colour vs color, analyse vs analyze), vocabulary (flat vs apartment, CV vs resume), regulatory terminology (FCA not SEC, VAT not sales tax). We apply UK English pre-processing, fine-tune on UK text corpora where possible, and include UK-specific evaluation benchmarks. This is particularly important for finance and legal NLP where US-trained models miss UK-specific entities and terminology." },
-      { q: "Can NLP handle handwritten documents or scanned PDFs?", a: "NLP processes text, not images. Handwritten or scanned documents first require Optical Character Recognition (OCR) — Tesseract (open-source), AWS Textract, Azure Form Recognizer, or Google Document AI — before NLP can process the extracted text. We deliver end-to-end pipelines combining OCR and NLP for document digitisation projects. Quality of OCR output significantly affects NLP accuracy — poor scan quality (faded ink, skewed pages, handwriting) requires pre-processing and may limit achievable NLP accuracy." },
-      { q: "What NLP accuracy is achievable for UK document classification?", a: "For well-defined document classification tasks (contract type, invoice routing, regulatory filing categorisation) with sufficient labelled data (1,000+ examples), F1 scores of 0.90-0.97 are achievable. For more subjective tasks (intent classification, sentiment with nuanced context) 0.80-0.90 F1 is typical. For complex information extraction (clause-level contract analysis, multi-entity relationship extraction), precision above 0.85 with recall above 0.80 is the practical target. We set realistic expectations during scoping and always measure against your current manual process." },
+      { q: "Які NLP-моделі найкраще підходять для юридичних та фінансових документів у Великій Британії?", a: "Моделі загального призначення (BERT, RoBERTa) добре підходять як стартова точка. Доменно-специфічні моделі суттєво покращують результат: LegalBERT для юридичних документів UK, FinBERT для фінансових текстів, BioBERT для клінічного контенту. Для вузькоспеціалізованого UK-контенту (FCA Handbook, Companies Act, клінічні протоколи NHS) fine-tuning на доменних даних зазвичай додає 8–15% точності порівняно з базовими моделями. Ми тестуємо кілька моделей на вибірці ваших даних перед вибором архітектури." },
+      { q: "Яка різниця між NLP та LLM?", a: "Традиційний NLP використовує вузькоспеціалізовані моделі — класифікатор sentiment, NER, класифікатор документів — кожна навчена під конкретну задачу на розмічених даних. LLM (GPT-4, Claude, Llama) — моделі загального призначення, що виконують багато NLP-задач через промптинг без спеціального навчання. LLM гнучкіші, але дорожчі, повільніші, і складніше гарантувати консистентність для високонавантажених продакшн-пайплайнів. Правильний вибір залежить від задачі — ми часто поєднуємо обидва підходи: LLM для складних задач з міркуванням, класичний NLP для високооб'ємної класифікації." },
+      { q: "Як ви враховуєте британську орфографію та термінологію в NLP-моделях?", a: "Британська англійська систематично відрізняється від американської й це впливає на якість NLP-моделі: орфографія (colour проти color, analyse проти analyze), лексика (flat проти apartment, CV проти resume), регуляторна термінологія (FCA, а не SEC; VAT, а не sales tax). Ми застосовуємо UK English препроцесинг, донавчаємо на UK-корпусах де це можливо, і додаємо UK-специфічні бенчмарки оцінки. Це особливо важливо для фінансового та юридичного NLP, де моделі, навчені на US-даних, пропускають UK-специфічні сутності й терміни." },
+      { q: "Чи може NLP обробляти рукописні документи або скановані PDF?", a: "NLP обробляє текст, а не зображення. Рукописні або скановані документи спершу потребують OCR (оптичне розпізнавання символів) — Tesseract (open-source), AWS Textract, Azure Form Recognizer або Google Document AI — перед тим, як NLP зможе обробити витягнутий текст. Ми постачаємо end-to-end пайплайни, що поєднують OCR та NLP для проєктів оцифрування документів. Якість OCR суттєво впливає на точність NLP — погана якість сканування (вицвіле чорнило, перекошені сторінки, рукописний текст) вимагає препроцесингу і може обмежити досяжну точність NLP." },
+      { q: "Яка точність NLP-класифікації документів досяжна для UK-бізнесів?", a: "Для чітко визначених задач класифікації документів (тип договору, маршрутизація рахунків, категоризація регуляторної звітності) за достатньої кількості розмічених прикладів (1000+) досяжні F1-показники 0.90–0.97. Для більш суб'єктивних задач (класифікація наміру, sentiment з нюансованим контекстом) типовий показник — 0.80–0.90 F1. Для складного витягу інформації (аналіз договору на рівні клаузул, витяг зв'язків між множинними сутностями) практична мета — precision понад 0.85 при recall понад 0.80. Ми встановлюємо реалістичні очікування на етапі оцінки і завжди порівнюємо з вашим поточним ручним процесом." },
     ],
     deliveryTime: "3–8 тижнів",
     priceFrom: "£1,125",
     techStack: ["BERT", "XLM-R", "DistilBERT", "spaCy", "HuggingFace", "LangChain", "Qdrant", "FastAPI", "Python", "Docker", "MLflow"],
-    crossLink: {
-      slug: "artificial-intelligence",
-      ukLabel: "Потрібен GPT-бот на основі ваших документів?",
-      enLabel: "Need a GPT chatbot trained on your documents?",
-      ukDesc: "Чат-боти 24/7, RAG-рішення та GenAI — дивіться наш розділ Artificial Intelligence.",
-      enDesc: "24/7 chatbots, RAG solutions and GenAI — see our Artificial Intelligence service.",
-    },
+    crossLinks: [
+      {
+        slug: "artificial-intelligence",
+        ukLabel: "Потрібен GPT-бот на основі ваших документів?",
+        enLabel: "Need a GPT chatbot trained on your documents?",
+        ukDesc: "Чат-боти 24/7, RAG-рішення та GenAI — дивіться наш розділ Artificial Intelligence.",
+        enDesc: "24/7 chatbots, RAG solutions and GenAI — see our Artificial Intelligence service.",
+      },
+      {
+        slug: "llm-rag",
+        ukLabel: "Потрібен глибший RAG-пошук по документах?",
+        enLabel: "Need deeper RAG search over your documents?",
+        ukDesc: "До 1M+ документів у векторній базі, fine-tuning LLM під ваш домен — дивіться LLM / RAG.",
+        enDesc: "Up to 1M+ documents in a vector store, domain fine-tuning — see LLM / RAG.",
+      },
+    ],
     beforeAfter: [
       { metric: "Час тріажу тікетів підтримки", before: "4.5 год / 100 тікетів", after: "1.6 год / 100 тікетів", improvement: "−65%" },
       { metric: "SLA compliance (helpdesk)", before: "67%", after: "95%+", improvement: "+28 пп" },
@@ -498,22 +525,31 @@ export const SERVICES_DATA: Service[] = [
       { q: "Де обробляються відеодані?", a: "Для GDPR-чутливих задач (обличчя, медичні дані) — виключно on-premise або на вашому приватному сервері. Для загальних задач (дефекти, QR-коди) — cloud inference (AWS Rekognition або власний GPU-сервер в EU). Підписуємо NDA та DPA до початку роботи." },
       { q: "Скільки коштує CV-система для виробничого контролю якості?", a: "PoC (перша модель, 1–3 типи дефектів, REST API): від £1,500. Production-система (5+ типів дефектів, real-time відеоаналіз, дашборд, edge деплой): від £3,000. Enterprise (10+ камер, MES інтеграція, on-premise): за погодженням." },
       { q: "Чи підходить CV для мобільного застосунку?", a: "Так. Конвертуємо моделі в TFLite або Core ML для iOS/Android. Типові задачі: сканування документів, визначення продуктів за фото, AR-try-on для fashion. Inference на пристрої — без відправки зображень на сервер." },
-      { q: "What hardware is required to run computer vision in production?", a: "It depends on throughput and latency requirements. For real-time video processing (security cameras, production line inspection at 30+ fps), NVIDIA GPU inference (T4, A10G, or Jetson edge devices) is standard. For batch processing (analysing photos uploaded overnight), CPU inference is sufficient and much cheaper. We right-size hardware to use case — many UK manufacturing quality inspection deployments run on NVIDIA Jetson at the factory floor for sub-50ms latency without cloud round-trip." },
-      { q: "How much training data does a computer vision model need?", a: "Object detection and classification models typically need 1,000-5,000 labelled images per class for good performance using transfer learning from ImageNet pre-trained models. Medical imaging and highly specific industrial defect detection may require 5,000-20,000 labelled examples due to high precision requirements. Data augmentation (rotation, crop, brightness, synthetic data generation) can reduce requirements by 40-60%. We conduct a data readiness assessment before confirming project scope." },
-      { q: "Can computer vision work with existing CCTV or industrial cameras?", a: "Yes. We integrate with RTSP streams from IP cameras, USB/GigE industrial cameras, and existing CCTV infrastructure. Frame capture and pre-processing handles common issues: variable lighting, camera angle variation, motion blur. We have integrated with Axis, Hikvision, and Bosch cameras for UK retail and manufacturing clients. New camera specification recommendations provided if existing hardware is insufficient." },
-      { q: "What are the UK GDPR implications of using computer vision on people?", a: "Computer vision capturing or processing images of identifiable individuals is personal data processing under UK GDPR. Legitimate interest or contract legal basis must be documented. A Data Protection Impact Assessment (DPIA) is required. Biometric data (facial recognition) is special category data requiring explicit consent or specific legal basis. ICO guidance on workplace CCTV and facial recognition is strict — Codeworth provides GDPR compliance documentation as standard for all people-facing CV deployments." },
-      { q: "How is computer vision model quality validated before deployment?", a: "We use held-out test sets (data never seen during training) to measure precision, recall, F1, and mAP for detection tasks. For safety-critical applications (medical imaging, industrial quality inspection), we additionally run human expert comparison studies measuring model performance against qualified professionals. NHS clinical AI requires validation meeting the SAFE framework. UK manufacturing QC deployments include a parallel-run period comparing model decisions against existing manual inspection before full deployment." },
+      { q: "Яке обладнання потрібне для запуску комп'ютерного зору в продакшні?", a: "Залежить від вимог до пропускної здатності та затримки. Для обробки відео в реальному часі (камери безпеки, інспекція виробничої лінії на 30+ fps) стандарт — GPU-інференс NVIDIA (T4, A10G або edge-пристрої Jetson). Для пакетної обробки (аналіз фото, завантажених за ніч) достатньо CPU-інференсу, і це набагато дешевше. Ми підбираємо обладнання під задачу — багато британських виробничих QC-деплойментів працюють на NVIDIA Jetson прямо на заводі для затримки менше 50мс без звернення до хмари." },
+      { q: "Скільки навчальних даних потрібно моделі комп'ютерного зору?", a: "Моделі детекції об'єктів і класифікації зазвичай потребують 1000–5000 розмічених зображень на клас для гарної якості при transfer learning з ImageNet. Медична візуалізація та вузькоспеціалізована детекція промислового браку можуть вимагати 5000–20000 розмічених прикладів через високі вимоги до точності. Аугментація даних (поворот, обрізка, яскравість, генерація синтетичних даних) може скоротити ці вимоги на 40–60%. Ми проводимо оцінку готовності даних перед фіксацією обсягу проєкту." },
+      { q: "Чи може комп'ютерний зір працювати з наявними CCTV або промисловими камерами?", a: "Так. Ми інтегруємось з RTSP-потоками IP-камер, USB/GigE промисловими камерами та наявною CCTV-інфраструктурою. Захоплення кадрів і препроцесинг вирішують типові проблеми: змінне освітлення, варіації кута камери, розмиття руху. Ми інтегрувались з камерами Axis, Hikvision та Bosch для британських ритейл- і виробничих клієнтів. За потреби надаємо рекомендації щодо нового обладнання, якщо наявне недостатнє." },
+      { q: "Які наслідки UK GDPR при використанні комп'ютерного зору щодо людей?", a: "Комп'ютерний зір, що фіксує або обробляє зображення ідентифікованих осіб, є обробкою персональних даних за UK GDPR. Потрібно задокументувати правову підставу (legitimate interest або договір). Обов'язкова оцінка впливу на захист даних (DPIA). Біометричні дані (розпізнавання обличчя) — особлива категорія даних, що вимагає явної згоди або окремої правової підстави. Настанови ICO щодо CCTV на робочому місці та розпізнавання обличчя суворі — Codeworth надає документацію про відповідність GDPR за замовчуванням для всіх CV-рішень, що стосуються людей." },
+      { q: "Як перевіряється якість моделі комп'ютерного зору перед деплоєм?", a: "Ми використовуємо відкладені тестові набори (дані, не бачені під час навчання) для вимірювання precision, recall, F1 та mAP для задач детекції. Для критичних для безпеки застосувань (медична візуалізація, промисловий контроль якості) ми додатково проводимо порівняльні дослідження з експертами-людьми. Клінічний AI для NHS вимагає валідації за фреймворком SAFE. Британські виробничі QC-деплойменти включають період паралельного запуску, що порівнює рішення моделі з наявним ручним контролем перед повним розгортанням." },
     ],
     deliveryTime: "4–10 тижнів",
     priceFrom: "£1,500",
     techStack: ["YOLOv8", "YOLOv10", "EfficientDet", "PyTorch", "OpenCV", "TensorRT", "ONNX", "PaddleOCR", "CLIP", "Albumentations", "FastAPI", "Docker", "NVIDIA Jetson"],
-    crossLink: {
-      slug: "machine-learning",
-      ukLabel: "Потрібна предиктивна аналітика з CV-даних?",
-      enLabel: "Need predictive analytics from CV data?",
-      ukDesc: "ML-моделі для прогнозу збоїв на основі CV-метрик, predictive maintenance — дивіться Machine Learning.",
-      enDesc: "ML models predicting failures from CV metrics, predictive maintenance — see Machine Learning.",
-    },
+    crossLinks: [
+      {
+        slug: "machine-learning",
+        ukLabel: "Потрібна предиктивна аналітика з CV-даних?",
+        enLabel: "Need predictive analytics from CV data?",
+        ukDesc: "ML-моделі для прогнозу збоїв на основі CV-метрик, predictive maintenance — дивіться Machine Learning.",
+        enDesc: "ML models predicting failures from CV metrics, predictive maintenance — see Machine Learning.",
+      },
+      {
+        slug: "artificial-intelligence",
+        ukLabel: "Потрібен ширший AI-набір рішень?",
+        enLabel: "Need a broader AI toolkit?",
+        ukDesc: "GPT-боти, NLP, GenAI поруч із комп'ютерним зором — дивіться повний розділ Artificial Intelligence.",
+        enDesc: "GPT chatbots, NLP, GenAI alongside computer vision — see the full Artificial Intelligence service.",
+      },
+    ],
     beforeAfter: [
       { metric: "Пропущені дефекти (візуальний QA)", before: "15% дефектів пропущено", after: "0.6% дефектів пропущено", improvement: "−96%" },
       { metric: "Швидкість контролю якості", before: "1 оператор — 200 одиниць/год", after: "Автоматично — 2 400 одиниць/год", improvement: "×12" },
@@ -601,22 +637,31 @@ export const SERVICES_DATA: Service[] = [
       { q: "Скільки коштують MLOps-послуги?", a: "Базовий MLOps setup (CI/CD + model serving + monitoring для 1 моделі): від £750. Повна платформа (3–5 моделей + Airflow + A/B testing): від £1,500. MLOps Retainer (ongoing): £800/міс без зобов'язань." },
       { q: "Чи можна впровадити MLOps для вже існуючої моделі?", a: "Так, це навіть поширеніший сценарій. Аудитуємо поточний деплой, виявляємо ризики (відсутність моніторингу, ручне перенавчання, відсутність версіонування), впроваджуємо MLOps поступово без зупинки production." },
       { q: "Які MLOps-інструменти ви використовуєте?", a: "Orchestration: Airflow, Prefect, ZenML. Serving: FastAPI, BentoML, Seldon Core. Monitoring: Evidently AI, Grafana, Prometheus. Tracking: MLflow, Weights & Biases. CI/CD: GitHub Actions, Docker, Kubernetes. Вибір залежить від вашого стеку та бюджету." },
-      { q: "What MLOps tools does Codeworth use?", a: "Our primary MLOps stack is MLflow for experiment tracking and model registry, Seldon Core for Kubernetes-native model serving, Evidently AI for drift monitoring, Airflow for pipeline orchestration, and GitHub Actions for CI/CD. We adapt to client existing tooling — if you already use SageMaker, Azure ML, or Vertex AI, we build within your platform." },
-      { q: "How long does it take to set up an MLOps pipeline?", a: "A standard MLOps pipeline (experiment tracking, model registry, automated deployment, drift monitoring) takes 2-4 weeks to build and 1-2 weeks to validate. For clients starting from scratch with no existing CI/CD or cloud infrastructure, allow 6-8 weeks. We deliver fully documented pipelines with runbooks so your team can operate them independently." },
-      { q: "What is model drift and how do you detect it?", a: "Model drift is when a deployed ML model degrades because the real-world data patterns it was trained on have changed. Data drift means input feature distributions shift (customer demographics evolve); concept drift means the relationship between features and outcomes changes (fraud patterns evolve as criminals adapt). We detect drift using Population Stability Index (PSI) and statistical tests, with automated alerts when thresholds are breached. FCA SS1/23 requires documented drift monitoring for regulated ML models." },
-      { q: "Can you integrate MLOps with our existing CI/CD pipelines?", a: "Yes. We integrate ML model deployment into existing GitHub Actions, Azure DevOps, or Jenkins pipelines. Model promotion triggers (staging to production) are added as pipeline gates alongside existing code deployment steps. Model versioning in MLflow or the native registry integrates with git tags. We have done this for clients using Azure DevOps in FCA-regulated environments and GitHub Actions in NHS-compliant architectures." },
-      { q: "What are the FCA requirements for ML model monitoring?", a: "FCA SS1/23 Model Risk Management requires documented ongoing monitoring of material ML models — performance metrics tracked over time, data drift detected and investigated, model recalibration trigger thresholds defined, and a model risk governance process with escalation paths. Monitoring must be proportionate to model materiality. Codeworth delivers FCA SS1/23 compliant monitoring dashboards and governance documentation as part of every regulated MLOps engagement." },
+      { q: "Які MLOps-інструменти використовує Codeworth?", a: "Наш основний MLOps-стек: MLflow для трекінгу експериментів і model registry, Seldon Core для Kubernetes-native serving моделей, Evidently AI для моніторингу дрейфу, Airflow для оркестрації пайплайнів, GitHub Actions для CI/CD. Ми адаптуємось під наявний стек клієнта — якщо ви вже використовуєте SageMaker, Azure ML чи Vertex AI, ми будуємо рішення у вашій платформі." },
+      { q: "Скільки часу займає налаштування MLOps-пайплайну?", a: "Стандартний MLOps-пайплайн (трекінг експериментів, model registry, автоматизований деплой, моніторинг дрейфу) займає 2–4 тижні на побудову і 1–2 тижні на валідацію. Для клієнтів, що починають з нуля без наявного CI/CD чи хмарної інфраструктури, закладайте 6–8 тижнів. Ми постачаємо повністю задокументовані пайплайни з runbook, щоб ваша команда могла керувати ними самостійно." },
+      { q: "Що таке дрейф моделі і як ви його виявляєте?", a: "Дрейф моделі — це коли задеплоєна ML-модель деградує, бо реальні патерни даних, на яких вона навчалась, змінились. Data drift означає зсув розподілу вхідних фіч (демографія клієнтів змінюється); concept drift означає зміну зв'язку між фічами та результатом (патерни шахрайства еволюціонують разом зі зловмисниками). Ми виявляємо дрейф за допомогою Population Stability Index (PSI) та статистичних тестів з автоматичними алертами при перевищенні порогу. FCA SS1/23 вимагає задокументованого моніторингу дрейфу для регульованих ML-моделей." },
+      { q: "Чи можете ви інтегрувати MLOps у наші наявні CI/CD пайплайни?", a: "Так. Ми інтегруємо деплой ML-моделей у наявні пайплайни GitHub Actions, Azure DevOps або Jenkins. Тригери просування моделі (staging → production) додаються як gate поряд з наявними кроками деплою коду. Версіонування моделей у MLflow чи нативному registry інтегрується з git-тегами. Ми робили це для клієнтів з Azure DevOps у FCA-регульованих середовищах та GitHub Actions в архітектурах, сумісних з NHS." },
+      { q: "Які вимоги FCA до моніторингу ML-моделей?", a: "FCA SS1/23 Model Risk Management вимагає задокументованого постійного моніторингу матеріальних ML-моделей — відстеження метрик якості з часом, виявлення й розслідування дрейфу даних, визначені порогові тригери для рекалібрування моделі, та процес governance ризиків моделі з шляхами ескалації. Моніторинг має бути пропорційним матеріальності моделі. Codeworth постачає дашборди моніторингу та документацію governance, сумісні з FCA SS1/23, у складі кожного регульованого MLOps-проєкту." },
     ],
     deliveryTime: "2–6 тижнів (setup), потім retainer",
     priceFrom: "£750",
     techStack: ["MLflow", "Prefect", "Apache Airflow", "Evidently AI", "FastAPI", "BentoML", "Seldon Core", "Prometheus", "Grafana", "Docker", "Kubernetes", "GitHub Actions"],
-    crossLink: {
-      slug: "machine-learning",
-      ukLabel: "Потрібна розробка ML-моделі з нуля?",
-      enLabel: "Need an ML model built from scratch?",
-      ukDesc: "Fraud detection, churn prediction, demand forecasting, рекомендації — дивіться Machine Learning.",
-      enDesc: "Fraud detection, churn prediction, demand forecasting, recommendation engines — see Machine Learning.",
-    },
+    crossLinks: [
+      {
+        slug: "machine-learning",
+        ukLabel: "Потрібна розробка ML-моделі з нуля?",
+        enLabel: "Need an ML model built from scratch?",
+        ukDesc: "Fraud detection, churn prediction, demand forecasting, рекомендації — дивіться Machine Learning.",
+        enDesc: "Fraud detection, churn prediction, demand forecasting, recommendation engines — see Machine Learning.",
+      },
+      {
+        slug: "predictive-analytics",
+        ukLabel: "Модель вже є, потрібен лише моніторинг у продакшні?",
+        enLabel: "Already have a model and just need production monitoring?",
+        ukDesc: "MLOps Retainer підтримує саме прогнозні моделі: drift alerts, перенавчання за розкладом — дивіться Predictive Analytics.",
+        enDesc: "Our MLOps Retainer keeps forecasting models healthy in production: drift alerts, scheduled retraining — see Predictive Analytics.",
+      },
+    ],
     beforeAfter: [
       { metric: "Виявлення drift моделі", before: "2 тижні (ручний аналіз)", after: "48 год (автоматичний алерт)", improvement: "−86%" },
       { metric: "Час від коміту до production", before: "3–5 днів (ручний деплой)", after: "2 год (automated pipeline)", improvement: "−83%" },
@@ -709,13 +754,22 @@ export const SERVICES_DATA: Service[] = [
     deliveryTime: "2–8 тижнів",
     priceFrom: "£1,125",
     techStack: ["GPT-4o", "Claude 3.5", "Llama 3", "Mistral", "LangChain", "LlamaIndex", "Qdrant", "Pinecone", "vLLM", "Ollama", "FastAPI", "Python", "Docker"],
-    crossLink: {
-      slug: "nlp",
-      ukLabel: "Потрібна класифікація або NER без LLM?",
-      enLabel: "Need classification or NER without LLM overhead?",
-      ukDesc: "Для задач з великим обсягом (мільйони текстів) та без потреби в генерації — класичний NLP (BERT) дешевший і швидший.",
-      enDesc: "For high-throughput tasks (millions of texts) where generation isn't needed — classic NLP (BERT) is cheaper and faster.",
-    },
+    crossLinks: [
+      {
+        slug: "nlp",
+        ukLabel: "Потрібна класифікація або NER без LLM?",
+        enLabel: "Need classification or NER without LLM overhead?",
+        ukDesc: "Для задач з великим обсягом (мільйони текстів) та без потреби в генерації — класичний NLP (BERT) дешевший і швидший.",
+        enDesc: "For high-throughput tasks (millions of texts) where generation isn't needed — classic NLP (BERT) is cheaper and faster.",
+      },
+      {
+        slug: "artificial-intelligence",
+        ukLabel: "Потрібне ширше AI-рішення, не лише LLM?",
+        enLabel: "Need a broader AI solution, not just an LLM?",
+        ukDesc: "Комп'ютерний зір, GenAI-контент, голосовий AI поруч із чат-ботами — дивіться повний розділ Artificial Intelligence.",
+        enDesc: "Computer vision, GenAI content, voice AI alongside chatbots — see the full Artificial Intelligence service.",
+      },
+    ],
     beforeAfter: [
       { metric: "Запити підтримки, закриті AI", before: "0% (ручна обробка)", after: "68% закриває RAG-бот", improvement: "+68 пп" },
       { metric: "Час пошуку в корп. документах", before: "25 хв / запит (ручний пошук)", after: "12 сек / запит (RAG)", improvement: "−99%" },
@@ -812,13 +866,22 @@ export const SERVICES_DATA: Service[] = [
     deliveryTime: "3–10 тижнів",
     priceFrom: "£750",
     techStack: ["XGBoost", "LightGBM", "Prophet", "LSTM", "scikit-learn", "SHAP", "Optuna", "Airflow", "FastAPI", "MLflow", "Plotly", "Python", "PostgreSQL"],
-    crossLink: {
-      slug: "machine-learning",
-      ukLabel: "Потрібна складніша ML-платформа?",
-      enLabel: "Need a more comprehensive ML platform?",
-      ukDesc: "Реkoмендаційні системи, fraud detection, MLOps-платформа для кількох моделей — дивіться Machine Learning.",
-      enDesc: "Recommendation engines, fraud detection, multi-model MLOps platform — see Machine Learning.",
-    },
+    crossLinks: [
+      {
+        slug: "machine-learning",
+        ukLabel: "Потрібна складніша ML-платформа?",
+        enLabel: "Need a more comprehensive ML platform?",
+        ukDesc: "Реkoмендаційні системи, fraud detection, MLOps-платформа для кількох моделей — дивіться Machine Learning.",
+        enDesc: "Recommendation engines, fraud detection, multi-model MLOps platform — see Machine Learning.",
+      },
+      {
+        slug: "mlops",
+        ukLabel: "Модель готова, потрібен деплой і моніторинг?",
+        enLabel: "Model is ready — need deployment and monitoring?",
+        ukDesc: "CI/CD для ML, drift monitoring, автоматичне перенавчання — дивіться MLOps.",
+        enDesc: "CI/CD for ML, drift monitoring, automated retraining — see MLOps.",
+      },
+    ],
     beforeAfter: [
       { metric: "Точність прогнозу попиту (MAPE)", before: "27% (ручний прогноз)", after: "8.3% (XGBoost + Prophet)", improvement: "−69%" },
       { metric: "Надлишок запасів на складах", before: "baseline", after: "−34%", improvement: "−34%" },
@@ -854,7 +917,7 @@ export function getService(slug: string): Service | undefined {
 // EN locale overrides — key fields translated for the EN locale
 const SERVICES_EN: Record<string, Partial<Service>> = {
   "artificial-intelligence": {
-    title: "Artificial Intelligence for Business",
+    title: "AI Development Services UK",
     shortTitle: "Artificial Intelligence",
     description: "GPT bots, computer vision, NLP — AI that automates real business processes and cuts costs.",
     longDescription: "We deploy AI solutions across the full spectrum: RAG chatbots that handle up to 68% of support tickets without a human agent, Computer Vision systems that catch 96% more production defects, NLP that analyses thousands of reviews per minute, and GenAI that creates content 12× faster. We select the right approach — Prompt Engineering, RAG, or Fine-tuning — based on your task and budget.",
@@ -978,7 +1041,7 @@ const SERVICES_EN: Record<string, Partial<Service>> = {
     ],
   },
   "machine-learning": {
-    title: "Machine Learning for Business",
+    title: "Machine Learning Development Services UK",
     shortTitle: "Machine Learning",
     description: "Custom ML models, predictive analytics and MLOps — turning your data into a competitive edge.",
     longDescription: "We build and deploy full-cycle ML solutions: fraud detection (-97% fraud in 2 months), churn prediction (-31%), demand forecasting (-34% excess stock), recommendation engines (+176% CTR), and dynamic pricing (+18% margin). From data audit and model training to production deployment with MLOps monitoring and automated retraining.",
@@ -1127,6 +1190,11 @@ const SERVICES_EN: Record<string, Partial<Service>> = {
       { q: "How much does an NLP system cost in the UK?", a: "Basic classifier (up to 5 classes, BERT fine-tuning): from £1,125. Full NLP system (14+ classes, NER + sentiment, CRM integration, MLOps): from £2,000. Enterprise streaming platform: on request." },
       { q: "Can NLP integrate with Zendesk or Salesforce?", a: "Yes. We integrate NLP models via REST API into any helpdesk or CRM: Zendesk (webhook trigger), Salesforce (Apex callout), Freshdesk, Intercom, or a custom system. Response time < 200ms so it doesn't slow down agent workflow." },
       { q: "What is RAG and when should I use NLP instead?", a: "RAG — search + answer generation from a document base (ideal for Q&A, chatbots). NLP — classification, entity extraction, sentiment (ideal for structuring data, routing, analytics). They often complement each other: NLP classifies the request → RAG finds the answer in the knowledge base → GPT-4o formulates the response." },
+      { q: "Which NLP models work best for UK legal and financial documents?", a: "General-purpose models (BERT, RoBERTa) work well as starting points. Domain-specific models improve significantly: LegalBERT for UK legal documents, FinBERT for financial text, BioBERT for clinical/life sciences content. For very specialised UK content (FCA Handbook, Companies Act, NHS clinical pathways), fine-tuning on domain data typically adds 8-15% precision over base models. We benchmark multiple models on a sample of your data before committing to an architecture." },
+      { q: "What is the difference between NLP and an LLM?", a: "Traditional NLP uses task-specific models — a sentiment classifier, a named entity recogniser, a document classifier — each trained for a specific task with labelled data. LLMs (GPT-4, Claude, Llama) are general-purpose models that can perform many NLP tasks through prompting without task-specific training. LLMs are more flexible but more expensive, slower, and harder to guarantee consistency for high-volume production pipelines. The right choice depends on your use case — we often combine both: an LLM for complex reasoning tasks, a traditional NLP model for high-volume classification." },
+      { q: "How do you handle UK English spelling and terminology in NLP models?", a: "UK English has systematic differences from US English that affect NLP model performance: spelling (colour vs color, analyse vs analyze), vocabulary (flat vs apartment, CV vs resume), regulatory terminology (FCA not SEC, VAT not sales tax). We apply UK English pre-processing, fine-tune on UK text corpora where possible, and include UK-specific evaluation benchmarks. This is particularly important for finance and legal NLP where US-trained models miss UK-specific entities and terminology." },
+      { q: "Can NLP handle handwritten documents or scanned PDFs?", a: "NLP processes text, not images. Handwritten or scanned documents first require Optical Character Recognition (OCR) — Tesseract (open-source), AWS Textract, Azure Form Recognizer, or Google Document AI — before NLP can process the extracted text. We deliver end-to-end pipelines combining OCR and NLP for document digitisation projects. Quality of OCR output significantly affects NLP accuracy — poor scan quality (faded ink, skewed pages, handwriting) requires pre-processing and may limit achievable NLP accuracy." },
+      { q: "What NLP accuracy is achievable for UK document classification?", a: "For well-defined document classification tasks (contract type, invoice routing, regulatory filing categorisation) with sufficient labelled data (1,000+ examples), F1 scores of 0.90-0.97 are achievable. For more subjective tasks (intent classification, sentiment with nuanced context) 0.80-0.90 F1 is typical. For complex information extraction (clause-level contract analysis, multi-entity relationship extraction), precision above 0.85 with recall above 0.80 is the practical target. We set realistic expectations during scoping and always measure against your current manual process." },
     ],
     beforeAfter: [
       { metric: "Support ticket triage time", before: "4.5 h per 100 tickets", after: "1.6 h per 100 tickets", improvement: "−65%" },
@@ -1210,6 +1278,11 @@ const SERVICES_EN: Record<string, Partial<Service>> = {
       { q: "Where is video data processed?", a: "For GDPR-sensitive tasks (faces, medical data) — exclusively on-premise or on your private server. For general tasks (defects, QR codes) — cloud inference (AWS or own EU GPU server). We sign NDA and DPA before any work begins." },
       { q: "How much does a CV system for manufacturing QC cost?", a: "PoC (first model, 1–3 defect types, REST API): from £1,500. Production system (5+ defect types, real-time video, dashboard, edge deployment): from £3,000. Enterprise (10+ cameras, MES integration, on-premise): on request." },
       { q: "Does CV work in mobile apps?", a: "Yes. We convert models to TFLite or Core ML for iOS/Android. Typical tasks: document scanning, product identification by photo, AR try-on for fashion. On-device inference — no images sent to a server." },
+      { q: "What hardware is required to run computer vision in production?", a: "It depends on throughput and latency requirements. For real-time video processing (security cameras, production line inspection at 30+ fps), NVIDIA GPU inference (T4, A10G, or Jetson edge devices) is standard. For batch processing (analysing photos uploaded overnight), CPU inference is sufficient and much cheaper. We right-size hardware to use case — many UK manufacturing quality inspection deployments run on NVIDIA Jetson at the factory floor for sub-50ms latency without cloud round-trip." },
+      { q: "How much training data does a computer vision model need?", a: "Object detection and classification models typically need 1,000-5,000 labelled images per class for good performance using transfer learning from ImageNet pre-trained models. Medical imaging and highly specific industrial defect detection may require 5,000-20,000 labelled examples due to high precision requirements. Data augmentation (rotation, crop, brightness, synthetic data generation) can reduce requirements by 40-60%. We conduct a data readiness assessment before confirming project scope." },
+      { q: "Can computer vision work with existing CCTV or industrial cameras?", a: "Yes. We integrate with RTSP streams from IP cameras, USB/GigE industrial cameras, and existing CCTV infrastructure. Frame capture and pre-processing handles common issues: variable lighting, camera angle variation, motion blur. We have integrated with Axis, Hikvision, and Bosch cameras for UK retail and manufacturing clients. New camera specification recommendations provided if existing hardware is insufficient." },
+      { q: "What are the UK GDPR implications of using computer vision on people?", a: "Computer vision capturing or processing images of identifiable individuals is personal data processing under UK GDPR. Legitimate interest or contract legal basis must be documented. A Data Protection Impact Assessment (DPIA) is required. Biometric data (facial recognition) is special category data requiring explicit consent or specific legal basis. ICO guidance on workplace CCTV and facial recognition is strict — Codeworth provides GDPR compliance documentation as standard for all people-facing CV deployments." },
+      { q: "How is computer vision model quality validated before deployment?", a: "We use held-out test sets (data never seen during training) to measure precision, recall, F1, and mAP for detection tasks. For safety-critical applications (medical imaging, industrial quality inspection), we additionally run human expert comparison studies measuring model performance against qualified professionals. NHS clinical AI requires validation meeting the SAFE framework. UK manufacturing QC deployments include a parallel-run period comparing model decisions against existing manual inspection before full deployment." },
     ],
     beforeAfter: [
       { metric: "Missed defects (visual QA)", before: "15% of defects missed", after: "0.6% of defects missed", improvement: "−96%" },
@@ -1292,6 +1365,11 @@ const SERVICES_EN: Record<string, Partial<Service>> = {
       { q: "How much do MLOps services cost in the UK?", a: "Basic MLOps setup (CI/CD + model serving + monitoring for 1 model): from £750. Full platform (3–5 models + Airflow + A/B testing): from £1,500. MLOps Retainer (ongoing): £800/mo, no commitment." },
       { q: "Can you implement MLOps for an existing model?", a: "Yes — this is actually the more common scenario. We audit the current deployment, identify risks (missing monitoring, manual retraining, no versioning), and implement MLOps gradually without stopping production." },
       { q: "What MLOps tools do you use?", a: "Orchestration: Airflow, Prefect, ZenML. Serving: FastAPI, BentoML, Seldon Core. Monitoring: Evidently AI, Grafana, Prometheus. Tracking: MLflow, Weights & Biases. CI/CD: GitHub Actions, Docker, Kubernetes. The choice depends on your stack and budget." },
+      { q: "What MLOps tools does Codeworth use?", a: "Our primary MLOps stack is MLflow for experiment tracking and model registry, Seldon Core for Kubernetes-native model serving, Evidently AI for drift monitoring, Airflow for pipeline orchestration, and GitHub Actions for CI/CD. We adapt to client existing tooling — if you already use SageMaker, Azure ML, or Vertex AI, we build within your platform." },
+      { q: "How long does it take to set up an MLOps pipeline?", a: "A standard MLOps pipeline (experiment tracking, model registry, automated deployment, drift monitoring) takes 2-4 weeks to build and 1-2 weeks to validate. For clients starting from scratch with no existing CI/CD or cloud infrastructure, allow 6-8 weeks. We deliver fully documented pipelines with runbooks so your team can operate them independently." },
+      { q: "What is model drift and how do you detect it?", a: "Model drift is when a deployed ML model degrades because the real-world data patterns it was trained on have changed. Data drift means input feature distributions shift (customer demographics evolve); concept drift means the relationship between features and outcomes changes (fraud patterns evolve as criminals adapt). We detect drift using Population Stability Index (PSI) and statistical tests, with automated alerts when thresholds are breached. FCA SS1/23 requires documented drift monitoring for regulated ML models." },
+      { q: "Can you integrate MLOps with our existing CI/CD pipelines?", a: "Yes. We integrate ML model deployment into existing GitHub Actions, Azure DevOps, or Jenkins pipelines. Model promotion triggers (staging to production) are added as pipeline gates alongside existing code deployment steps. Model versioning in MLflow or the native registry integrates with git tags. We have done this for clients using Azure DevOps in FCA-regulated environments and GitHub Actions in NHS-compliant architectures." },
+      { q: "What are the FCA requirements for ML model monitoring?", a: "FCA SS1/23 Model Risk Management requires documented ongoing monitoring of material ML models — performance metrics tracked over time, data drift detected and investigated, model recalibration trigger thresholds defined, and a model risk governance process with escalation paths. Monitoring must be proportionate to model materiality. Codeworth delivers FCA SS1/23 compliant monitoring dashboards and governance documentation as part of every regulated MLOps engagement." },
     ],
     beforeAfter: [
       { metric: "Model drift detection time", before: "2 weeks (manual analysis)", after: "48 hours (automated alert)", improvement: "−86%" },

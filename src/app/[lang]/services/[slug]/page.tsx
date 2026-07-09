@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { buildAlternates } from "@/i18n";
+import dynamic from "next/dynamic";
+import { buildAlternates, localePath, HREFLANG_CODES, type Locale } from "@/i18n";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Header } from "@/components/layout/Header";
@@ -10,17 +11,33 @@ import { BLOG_POSTS, getPostTitle, getPostExcerpt, getPostCategoryLabel } from "
 import { ArrowRight, Check, Clock, ChevronRight, TrendingUp, TrendingDown, Minus } from "lucide-react";
 import { EmojiIcon } from "@/components/ui/EmojiIcon";
 import { cn } from "@/lib/utils";
-import { AiCopywriterDemo } from "@/components/extras/demos/AiCopywriterDemo";
-import { AiEdtechDemo } from "@/components/extras/demos/AiEdtechDemo";
-import { AiHospitalityDemo } from "@/components/extras/demos/AiHospitalityDemo";
-import { MLOpsPipelineDiagram } from "@/components/services/MLOpsPipelineDiagram";
-import { DatasetCalculator } from "@/components/services/DatasetCalculator";
 import { ServiceStickyCta } from "@/components/services/ServiceStickyCta";
 import { FAQSection } from "@/components/home/FAQSection";
+import { ClientLogosSection } from "@/components/home/ClientLogosSection";
+
+// Only rendered on the artificial-intelligence / machine-learning pages — dynamically
+// imported so their JS isn't shipped to the other 5 service pages that never use them.
+const AiCopywriterDemo = dynamic(() => import("@/components/extras/demos/AiCopywriterDemo").then((m) => m.AiCopywriterDemo));
+const AiEdtechDemo = dynamic(() => import("@/components/extras/demos/AiEdtechDemo").then((m) => m.AiEdtechDemo));
+const AiHospitalityDemo = dynamic(() => import("@/components/extras/demos/AiHospitalityDemo").then((m) => m.AiHospitalityDemo));
+const MLOpsPipelineDiagram = dynamic(() => import("@/components/services/MLOpsPipelineDiagram").then((m) => m.MLOpsPipelineDiagram));
+const DatasetCalculator = dynamic(() => import("@/components/services/DatasetCalculator").then((m) => m.DatasetCalculator));
 
 interface Props {
   params: Promise<{ lang: string; slug: string }>;
 }
+
+// Which programmatic niche hub (/ai/[niche] or /ml/[niche]) each service cross-links to.
+// Text/generative/vision services point to the AI hub; classic ML/ops/analytics point to ML.
+const NICHE_HUB: Record<string, "ai" | "ml"> = {
+  "artificial-intelligence": "ai",
+  "llm-rag": "ai",
+  "nlp": "ai",
+  "computer-vision": "ai",
+  "machine-learning": "ml",
+  "mlops": "ml",
+  "predictive-analytics": "ml",
+};
 
 export async function generateStaticParams() {
   return SERVICES_DATA.map((s) => ({ slug: s.slug }));
@@ -57,6 +74,7 @@ export default async function ServicePage({ params }: Props) {
   const isUk = lang === "uk";
   const service = getServiceLocalized(slug, lang);
   if (!service) notFound();
+  const nicheHub = NICHE_HUB[slug];
 
   const Icon = service.icon;
 
@@ -69,31 +87,63 @@ export default async function ServicePage({ params }: Props) {
   }).slice(0, 3);
   const blogPosts = relatedPosts.length >= 2 ? relatedPosts : BLOG_POSTS.slice(0, 3);
 
+  const BASE_URL = "https://codeworth.uk";
+  const canonicalUrl = `${BASE_URL}${localePath(lang, `/services/${service.slug}`)}`;
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Головна", item: "https://codeworth.uk" },
-      { "@type": "ListItem", position: 2, name: "Послуги", item: "https://codeworth.uk/services" },
+      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `${BASE_URL}${localePath(lang)}` },
+      { "@type": "ListItem", position: 2, name: isUk ? "Послуги" : "Services", item: `${BASE_URL}${localePath(lang, "/services")}` },
       { "@type": "ListItem", position: 3, name: service.title },
     ],
   };
+
+  // Extracts a plain numeric price from free-form strings like "від £1,125" or
+  // "from £750/mo" — returns undefined for negotiable packages ("за узгодженням" /
+  // "on request") so we omit price rather than emit a bogus "0".
+  const parsePrice = (raw: string): string | undefined => {
+    const match = raw.replace(/,/g, "").match(/\d+(\.\d+)?/);
+    return match ? match[0] : undefined;
+  };
+
+  const offerCatalog = service.packages && service.packages.length > 0
+    ? {
+        "@type": "OfferCatalog",
+        name: isUk ? "Тарифні пакети" : "Pricing Packages",
+        itemListElement: service.packages.map((pkg) => {
+          const numericPrice = parsePrice(pkg.price);
+          return {
+            "@type": "Offer",
+            name: pkg.name,
+            description: pkg.desc,
+            ...(numericPrice ? { priceCurrency: "GBP", price: numericPrice } : {}),
+            availability: "https://schema.org/InStock",
+          };
+        }),
+      }
+    : undefined;
 
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
     name: service.title,
     description: service.description,
+    serviceType: service.shortTitle,
+    areaServed: ["GB", "UA"],
+    inLanguage: HREFLANG_CODES[lang as Locale] ?? HREFLANG_CODES.en,
     provider: {
       "@type": "Organization",
       name: "Codeworth",
-      url: "https://codeworth.uk",
+      url: BASE_URL,
     },
-    url: `https://codeworth.uk/services/${service.slug}`,
+    url: canonicalUrl,
+    ...(offerCatalog ? { hasOfferCatalog: offerCatalog } : {}),
     offers: {
       "@type": "Offer",
-      priceCurrency: "UAH",
-      price: service.priceFrom,
+      priceCurrency: "GBP",
+      price: service.priceFrom.replace(/[^0-9.]/g, ""),
       availability: "https://schema.org/InStock",
     },
   };
@@ -167,6 +217,13 @@ export default async function ServicePage({ params }: Props) {
             </div>
           </Container>
         </section>
+
+        {/* Trust signals — benchmark badges only (F1 Score, GDPR/ISO 27001, latency,
+            MLOps 24/7), no client-name chips. The homepage's CLIENT_LOGOS list is
+            illustrative company names, not real clients — a past real client
+            complained about exactly this ("fake reviews / unrecognised companies"),
+            so it stays homepage-only and isn't propagated to service pages. */}
+        <ClientLogosSection lang={lang} showClientLogos={false} />
 
         {/* Features */}
         <section className="py-24 bg-white dark:bg-neutral-950">
@@ -688,29 +745,29 @@ export default async function ServicePage({ params }: Props) {
         )}
 
         {/* AI/ML niche hub cross-link */}
-        {(slug === "artificial-intelligence" || slug === "machine-learning") && (
+        {nicheHub && (
           <section className="py-12 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100 dark:border-neutral-700">
             <Container>
               <div className="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div>
                   <p className="text-xs font-semibold text-indigo-600 uppercase tracking-widest mb-1">
-                    {slug === "artificial-intelligence"
+                    {nicheHub === "ai"
                       ? (isUk ? "AI по галузях" : "AI by Industry")
                       : (isUk ? "ML по галузях" : "ML by Industry")}
                   </p>
                   <h3 className="text-lg font-heading font-bold text-neutral-900 dark:text-white mb-1">
-                    {slug === "artificial-intelligence"
+                    {nicheHub === "ai"
                       ? (isUk ? "AI-рішення для вашої галузі" : "AI solutions for your industry")
                       : (isUk ? "ML-рішення для вашої галузі" : "ML solutions for your industry")}
                   </h3>
                   <p className="text-sm text-neutral-500 dark:text-neutral-400">
-                    {slug === "artificial-intelligence"
+                    {nicheHub === "ai"
                       ? (isUk ? "10 спеціалізованих AI-рішень: медицина, e-commerce, FinTech, маркетинг та інші" : "10 specialised AI solutions: healthcare, e-commerce, FinTech, marketing and more")
                       : (isUk ? "10 ML-рішень для банків, рітейлу, SaaS, логістики та інших галузей" : "10 ML solutions for banking, retail, SaaS, logistics and more industries")}
                   </p>
                 </div>
                 <Link
-                  href={`/${lang}/${slug === "artificial-intelligence" ? "ai" : "ml"}`}
+                  href={`/${lang}/${nicheHub}`}
                   className="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm transition-colors"
                 >
                   {isUk ? "Переглянути всі" : "Browse all"}
@@ -721,29 +778,36 @@ export default async function ServicePage({ params }: Props) {
           </section>
         )}
 
-        {/* Cross-link to related service */}
-        {service.crossLink && (
+        {/* Cross-link to related services (2-3 per service, each with its own anchor context) */}
+        {service.crossLinks && service.crossLinks.length > 0 && (
           <section className="py-16 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100 dark:border-neutral-700">
             <Container>
-              <div className={`rounded-2xl p-8 bg-linear-to-br ${service.gradient} text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6`}>
-                <div>
-                  <p className="text-white/70 text-sm font-semibold uppercase tracking-widest mb-2">
-                    {isUk ? "Суміжна послуга" : "Related Service"}
-                  </p>
-                  <h3 className="text-2xl font-heading font-bold mb-2">
-                    {isUk ? service.crossLink.ukLabel : service.crossLink.enLabel}
-                  </h3>
-                  <p className="text-white/80 text-sm max-w-lg">
-                    {isUk ? service.crossLink.ukDesc : service.crossLink.enDesc}
-                  </p>
-                </div>
-                <Link
-                  href={`/${lang}/services/${service.crossLink.slug}`}
-                  className="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-neutral-900 dark:text-white font-bold text-sm hover:bg-white/90 transition-colors"
-                >
-                  {isUk ? "Дізнатись більше" : "Learn More"}
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
+              <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-6">
+                {isUk ? "Суміжні послуги" : "Related Services"}
+              </p>
+              <div className={cn("grid gap-6", service.crossLinks.length > 1 ? "sm:grid-cols-2" : "grid-cols-1")}>
+                {service.crossLinks.map((cl) => (
+                  <div
+                    key={cl.slug}
+                    className={`rounded-2xl p-8 bg-linear-to-br ${service.gradient} text-white flex flex-col justify-between gap-6`}
+                  >
+                    <div>
+                      <h3 className="text-xl font-heading font-bold mb-2">
+                        {isUk ? cl.ukLabel : cl.enLabel}
+                      </h3>
+                      <p className="text-white/80 text-sm">
+                        {isUk ? cl.ukDesc : cl.enDesc}
+                      </p>
+                    </div>
+                    <Link
+                      href={`/${lang}/services/${cl.slug}`}
+                      className="self-start inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-neutral-900 dark:text-white font-bold text-sm hover:bg-white/90 transition-colors"
+                    >
+                      {isUk ? "Дізнатись більше" : "Learn More"}
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                ))}
               </div>
             </Container>
           </section>

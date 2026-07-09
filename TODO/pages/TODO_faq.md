@@ -66,3 +66,7 @@
 ### Примітки
 - FAQ з Schema.org FAQPage може давати відображення у "featured snippets" Google — це безкоштовний трафік.
 - Оновлювати FAQ на основі реальних запитань клієнтів у месенджерах/email.
+
+## ✅ ВИПРАВЛЕНО 2026-07-09 — FAQPage schema vs DOM mismatch на сторінках послуг
+Стосувалось `src/components/home/FAQSection.tsx`, який використовується і на `/services/[slug]`, і на `/faq`:
+- [x] Раніше `FAQSection.tsx` рендерив у DOM лише перші 3 питання (`items.slice(0, VISIBLE_COUNT)`), решта монтувались тільки після кліку "Show more" — не збігалось з повним `FAQPage` JSON-LD (10-14 питань). Виправлено: тепер усі `items` завжди мапляться в DOM, а приховані (понад `VISIBLE_COUNT`) лише візуально ховаються через Tailwind `hidden` (CSS), не через умовний `.slice()`. DOM тепер завжди відповідає JSON-LD, і на `/services/[slug]`, і на `/faq` (обидві сторінки використовують той самий компонент).

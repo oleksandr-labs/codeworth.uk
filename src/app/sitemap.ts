@@ -85,8 +85,15 @@ export default async function sitemap({ id }: { id: Promise<string> }): Promise<
     forLocale(locale, path, { lastModified: now, changeFrequency: freq, priority: pri })
   );
 
+  // Flagship services (own dedicated /ai and /ml niche-hub trees at priority 0.9) get a
+  // slightly higher weight than the other 5 services that share their content depth.
+  const FLAGSHIP_SERVICE_SLUGS = new Set(["artificial-intelligence", "machine-learning"]);
   const servicePages = SERVICES_DATA.map((s) =>
-    forLocale(locale, `/services/${s.slug}`, { lastModified: now, changeFrequency: "monthly", priority: 0.8 })
+    forLocale(locale, `/services/${s.slug}`, {
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: FLAGSHIP_SERVICE_SLUGS.has(s.slug) ? 0.9 : 0.8,
+    })
   );
 
   const blogPages = BLOG_POSTS.map((p) =>
