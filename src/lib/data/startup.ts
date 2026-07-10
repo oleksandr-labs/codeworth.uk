@@ -434,6 +434,198 @@ export const STARTUP_SOLUTIONS: StartupSolution[] = [
     textColor: "text-green-700",
     icon: "leaf",
   },
+  {
+    slug: "insurtech-ml-mvp",
+    title: "Insurtech ML MVP",
+    titleEn: "Insurtech ML MVP",
+    category: "fintech",
+    tagline: "ML-андеррайтинг та claims-тріаж для UK insurtech-стартапів з FCA-документацією",
+    taglineEn: "ML underwriting and claims triage for UK insurtech startups with FCA documentation",
+    description:
+      "Розробляємо MVP для автоматизованого андеррайтингу ризиків та тріажу страхових вимог: модель ціноутворення на основі ризик-факторів, детекція шахрайських заявок (computer vision для фотофіксації збитків + tabular ML) та пріоритизація claims за складністю. Повний пакет документації для FCA-авторизації страхових посередників та Consumer Duty. За даними ABI, UK insurtech-ринок зростає на 15%+ на рік, а автоматизація claims знижує operating ratio на 8-12 п.п.",
+    descriptionEn:
+      "We build an MVP for automated risk underwriting and claims triage: risk-factor-based pricing models, fraudulent claim detection (computer vision for damage photos + tabular ML), and complexity-based claims prioritisation. Full documentation package for FCA insurance intermediary authorisation and Consumer Duty. Per ABI, the UK insurtech market grows 15%+ per year, and claims automation cuts operating ratio by 8-12 points.",
+    targetAudience:
+      "UK insurtech-стартапи, MGAs (managing general agents) та страхові брокери, що готуються до FCA-авторизації або масштабують claims-операції.",
+    targetAudienceEn:
+      "UK insurtech startups, MGAs (managing general agents), and insurance brokers preparing for FCA authorisation or scaling claims operations.",
+    hypothesis:
+      "ML-андеррайтинг та claims-тріаж скоротять час обробки заявки на 50%+ і знизять fraud leakage на 20%+ протягом першого року.",
+    hypothesisEn:
+      "ML underwriting and claims triage will cut claim processing time by 50%+ and reduce fraud leakage by 20%+ within the first year.",
+    deliveryDays: 63,
+    priceFrom: 11500,
+    tags: ["Insurtech", "FCA", "Underwriting", "Claims Triage", "Computer Vision", "Consumer Duty", "MGA"],
+    conversionGoal: "FCA-документація готова та перші 3 MGA/брокери підписують pilot",
+    conversionGoalEn: "FCA documentation ready and first 3 MGAs/brokers sign a pilot",
+    successMetric: "Claims-тріаж AUC-ROC > 0.82, скорочення часу обробки на 50%",
+    successMetricEn: "Claims triage AUC-ROC > 0.82, 50% reduction in processing time",
+    sections: [
+      "Дискавері: ризик-фактори та claims-дані",
+      "Модель ціноутворення ризику",
+      "Computer vision для фотофіксації збитків",
+      "Fraud-детекція заявок",
+      "FCA-документація та Consumer Duty alignment",
+      "Дашборд тріажу claims",
+      "QA, staging, production deploy",
+    ],
+    sectionsEn: [
+      "Discovery: risk factors and claims data",
+      "Risk pricing model",
+      "Computer vision for damage photo assessment",
+      "Claims fraud detection",
+      "FCA documentation and Consumer Duty alignment",
+      "Claims triage dashboard",
+      "QA, staging, production deploy",
+    ],
+    color: "bg-teal-500",
+    textColor: "text-teal-700",
+    icon: "umbrella",
+  },
+  {
+    slug: "agritech-ml-mvp",
+    title: "Agritech ML MVP",
+    titleEn: "Agritech ML MVP",
+    category: "impact",
+    tagline: "ML-прогнозування врожайності та точне землеробство для UK agritech-стартапів",
+    taglineEn: "Yield prediction and precision farming ML for UK agritech startups",
+    description:
+      "Будуємо MVP для точного землеробства: прогнозування врожайності на основі супутникових знімків (Sentinel-2 NDVI) та погодних даних Met Office, детекція хвороб рослин через computer vision з дрон-знімків, оптимізація іригації та добрив на основі ML-моделей ґрунту. Інтеграція з John Deere Operations Center або аналогічними farm-management системами. Defra звітує, що UK-фермерські господарства втрачають до £1.2 млрд на рік через неоптимальне управління врожаєм — точне землеробство скорочує ці втрати на 15-25%.",
+    descriptionEn:
+      "We build a precision farming MVP: yield prediction based on satellite imagery (Sentinel-2 NDVI) and Met Office weather data, plant disease detection via computer vision on drone imagery, and irrigation/fertiliser optimisation using soil ML models. Integration with John Deere Operations Center or similar farm-management systems. Defra reports UK farms lose up to £1.2bn per year from suboptimal crop management — precision farming cuts these losses by 15-25%.",
+    targetAudience:
+      "UK agritech-стартапи, farm-management SaaS-компанії та великі фермерські кооперативи, що хочуть впровадити ML для оптимізації врожайності.",
+    targetAudienceEn:
+      "UK agritech startups, farm-management SaaS companies, and large farming cooperatives looking to deploy ML for yield optimisation.",
+    hypothesis:
+      "ML-прогнозування врожайності та точне управління ресурсами підвищить врожайність на 10%+ та скоротить витрати на добрива/воду на 15%+.",
+    hypothesisEn:
+      "ML yield prediction and precision resource management will increase yield by 10%+ and cut fertiliser/water costs by 15%+.",
+    deliveryDays: 56,
+    priceFrom: 9000,
+    tags: ["Agritech", "Precision Farming", "NDVI", "Computer Vision", "Yield Prediction", "Sentinel-2", "Defra"],
+    conversionGoal: "3 фермерські господарства або кооперативи використовують платформу протягом сезону",
+    conversionGoalEn: "3 farms or cooperatives using the platform through a full season",
+    successMetric: "Точність прогнозу врожайності похибка < 10%, економія ресурсів 15%+",
+    successMetricEn: "Yield prediction error < 10%, resource savings of 15%+",
+    sections: [
+      "Дискавері: супутникові та погодні дані",
+      "Модель прогнозування врожайності (NDVI)",
+      "Computer vision для детекції хвороб рослин",
+      "Оптимізація іригації та добрив",
+      "Інтеграція з farm-management системами",
+      "Дашборд для фермера",
+      "QA, staging, production deploy",
+    ],
+    sectionsEn: [
+      "Discovery: satellite and weather data",
+      "Yield prediction model (NDVI)",
+      "Computer vision for plant disease detection",
+      "Irrigation and fertiliser optimisation",
+      "Farm-management system integration",
+      "Farmer-facing dashboard",
+      "QA, staging, production deploy",
+    ],
+    color: "bg-lime-500",
+    textColor: "text-lime-700",
+    icon: "sprout",
+  },
+  {
+    slug: "proptech-ml-mvp",
+    title: "Proptech ML MVP",
+    titleEn: "Proptech ML MVP",
+    category: "marketplace",
+    tagline: "ML-оцінка нерухомості (AVM) та прогноз орендного доходу для UK proptech",
+    taglineEn: "ML property valuation (AVM) and rental yield forecasting for UK proptech",
+    description:
+      "Розробляємо MVP автоматизованої моделі оцінки нерухомості (AVM) для UK-ринку: прогноз ціни на основі Land Registry Price Paid Data, EPC-рейтингів, локації та порівнянних об'єктів, прогнозування орендного доходу та yield для buy-to-let інвесторів, а також ризик-скоринг void-періодів. Інтеграція з Rightmove/Zoopla API для порівняльного аналізу. RICS-стандарти враховані в методології оцінки. За даними Zoopla, AVM-платформи скорочують час до угоди на 20%+ завдяки точнішому ціноутворенню.",
+    descriptionEn:
+      "We build an automated valuation model (AVM) MVP for the UK property market: price prediction based on Land Registry Price Paid Data, EPC ratings, location, and comparables, rental income and yield forecasting for buy-to-let investors, and void-period risk scoring. Rightmove/Zoopla API integration for comparative analysis. RICS standards are reflected in the valuation methodology. Per Zoopla, AVM platforms cut time-to-deal by 20%+ through more accurate pricing.",
+    targetAudience:
+      "UK proptech-стартапи, buy-to-let інвестиційні платформи та агентства нерухомості, що хочуть автоматизувати оцінку та прогноз дохідності.",
+    targetAudienceEn:
+      "UK proptech startups, buy-to-let investment platforms, and estate agencies looking to automate valuation and yield forecasting.",
+    hypothesis:
+      "ML-модель AVM з точністю в межах 5% від фактичної ціни продажу дозволить платформі стати довіреним джерелом оцінки для інвесторів та агентів.",
+    hypothesisEn:
+      "An ML AVM model accurate within 5% of actual sale price will make the platform a trusted valuation source for investors and agents.",
+    deliveryDays: 56,
+    priceFrom: 9500,
+    tags: ["Proptech", "AVM", "Land Registry", "EPC", "Buy-to-Let", "Rightmove", "RICS"],
+    conversionGoal: "1 000+ оцінок нерухомості виконано протягом перших 60 днів",
+    conversionGoalEn: "1,000+ property valuations completed within the first 60 days",
+    successMetric: "Похибка оцінки MAPE < 5% від фактичної ціни продажу",
+    successMetricEn: "Valuation error MAPE < 5% of actual sale price",
+    sections: [
+      "Дискавері: Land Registry та EPC дані",
+      "AVM-модель ціноутворення",
+      "Прогноз орендного доходу та yield",
+      "Ризик-скоринг void-періодів",
+      "Rightmove/Zoopla API інтеграція",
+      "Дашборд для інвесторів/агентів",
+      "QA, staging, production deploy",
+    ],
+    sectionsEn: [
+      "Discovery: Land Registry and EPC data",
+      "AVM pricing model",
+      "Rental income and yield forecasting",
+      "Void-period risk scoring",
+      "Rightmove/Zoopla API integration",
+      "Investor/agent-facing dashboard",
+      "QA, staging, production deploy",
+    ],
+    color: "bg-cyan-500",
+    textColor: "text-cyan-700",
+    icon: "home",
+  },
+  {
+    slug: "regtech-compliance-ml-mvp",
+    title: "Regtech Compliance ML MVP",
+    titleEn: "Regtech Compliance ML MVP",
+    category: "b2b",
+    tagline: "ML для автоматизації regulatory compliance: AML-скринінг, звітність та аудит-трейл",
+    taglineEn: "ML for automated regulatory compliance: AML screening, reporting, and audit trail",
+    description:
+      "Будуємо regtech MVP для автоматизації комплаєнс-процесів UK фінансових компаній: ML-скринінг AML/KYC (сплячі акаунти, sanctions-list matching, транзакційний моніторинг підозрілої активності), автоматична генерація regulatory reports (FCA GABRIEL/RegData) та повний audit-трейл рішень для перевірок. Graph ML для виявлення прихованих зв'язків між акторами. За даними LexisNexis, вартість комплаєнсу для UK фінансових установ перевищує £34 млрд на рік — автоматизація скорочує ці витрати на 25-40%.",
+    descriptionEn:
+      "We build a regtech MVP to automate compliance processes for UK financial firms: ML-based AML/KYC screening (dormant accounts, sanctions-list matching, transaction monitoring for suspicious activity), automated regulatory report generation (FCA GABRIEL/RegData), and a full audit trail of decisions for inspections. Graph ML for uncovering hidden links between actors. Per LexisNexis, compliance costs for UK financial institutions exceed £34bn per year — automation cuts these costs by 25-40%.",
+    targetAudience:
+      "UK фінансові установи, платіжні провайдери та RegTech-стартапи, що прагнуть автоматизувати AML/KYC та regulatory reporting.",
+    targetAudienceEn:
+      "UK financial institutions, payment providers, and RegTech startups seeking to automate AML/KYC and regulatory reporting.",
+    hypothesis:
+      "ML-автоматизація AML-скринінгу скоротить час review підозрілих транзакцій на 60%+ і знизить кількість false positives на 30%+.",
+    hypothesisEn:
+      "ML automation of AML screening will cut suspicious transaction review time by 60%+ and reduce false positives by 30%+.",
+    deliveryDays: 70,
+    priceFrom: 13000,
+    tags: ["Regtech", "AML", "KYC", "Graph ML", "FCA Reporting", "Sanctions Screening", "Audit Trail"],
+    conversionGoal: "Успішний pilot з 2 фінансовими установами та скорочення false positives на 30%",
+    conversionGoalEn: "Successful pilot with 2 financial institutions and 30% reduction in false positives",
+    successMetric: "Зниження false-positive rate на 30%+, повний audit trail для 100% рішень",
+    successMetricEn: "30%+ reduction in false-positive rate, full audit trail for 100% of decisions",
+    sections: [
+      "Дискавері: AML/KYC процеси та дані",
+      "Graph ML для мережевого аналізу",
+      "Транзакційний моніторинг та sanctions-скринінг",
+      "Автоматична генерація regulatory reports",
+      "Audit-трейл та dashboard для комплаєнс-команди",
+      "FCA-документація та валідація моделі",
+      "QA, penetration testing, production deploy",
+    ],
+    sectionsEn: [
+      "Discovery: AML/KYC processes and data",
+      "Graph ML for network analysis",
+      "Transaction monitoring and sanctions screening",
+      "Automated regulatory report generation",
+      "Audit trail and compliance-team dashboard",
+      "FCA documentation and model validation",
+      "QA, penetration testing, production deploy",
+    ],
+    color: "bg-indigo-500",
+    textColor: "text-indigo-700",
+    icon: "shield-check",
+  },
 ];
 
 export function getStartupSolution(slug: string): StartupSolution | undefined {

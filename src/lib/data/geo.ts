@@ -1493,6 +1493,1066 @@ export const GEO_CITIES: GeoCity[] = [
       },
     ],
   },
+  {
+    slug: "aberdeen",
+    nameUk: "Абердин",
+    nameEn: "Aberdeen",
+    region: "Абердиншир, Шотландія",
+    regionEn: "Aberdeenshire, Scotland",
+    population: "230 тис.",
+    populationEn: "230,000",
+    businesses: 14500,
+    description:
+      "Абердин — енергетична столиця Великобританії, центр нафтогазового сектору Північного моря та швидко зростаючого напрямку energy-tech. Компанії на кшталт BP, Shell, TAQA та десятки сервісних операторів впроваджують ML для прогнозного обслуговування бурового обладнання, оптимізації видобутку та переходу на відновлювану енергетику (офшорний вітер). Университет Абердина та Robert Gordon University готують інженерів даних для енергосектору. Codeworth будує ML-рішення для predictive maintenance, оптимізації енерговидобутку та ESG-звітності для абердинських енергокомпаній — тісно повʼязано з нашим напрямком /ml/energy.",
+    descriptionEn:
+      "Aberdeen is the UK's energy capital, hub of the North Sea oil and gas industry and a fast-growing energy-tech sector. Companies including BP, Shell, TAQA, and dozens of oilfield service operators use ML for predictive maintenance of drilling equipment, production optimisation, and the transition to offshore wind. The University of Aberdeen and Robert Gordon University train data engineers for the energy sector. Codeworth builds ML for predictive maintenance, production optimisation, and ESG reporting for Aberdeen energy companies — closely aligned with our /ml/energy practice.",
+    seoTitle: "ML-консалтинг у Абердині | Машинне навчання для енергетики | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Aberdeen | Energy ML Agency | Codeworth",
+    seoDesc:
+      "ML-консалтинг у Абердині: predictive maintenance, оптимізація видобутку, offshore wind ML. Від £4,000. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Aberdeen: predictive maintenance, production optimisation, offshore wind ML. From £4,000. Codeworth ML agency.",
+    stats: [
+      { label: "Енергетичних компаній", labelEn: "Energy companies", value: "850+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "2,900+" },
+      { label: "AI-стартапів (energy-tech)", labelEn: "AI startups (energy-tech)", value: "120+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£58k" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "6+" },
+    ],
+    faq: [
+      {
+        q: "Які ML-рішення найбільш затребувані у Абердині?",
+        qEn: "Which ML solutions are most in demand in Aberdeen?",
+        a: "Для нафтогазових операторів: predictive maintenance бурового та насосного обладнання, аномалія-детекція для запобігання аваріям, оптимізація видобутку. Для офшорного вітру: прогноз виробітку та планування техобслуговування турбін.",
+        aEn: "For oil and gas operators: predictive maintenance for drilling and pump equipment, anomaly detection to prevent failures, and production optimisation. For offshore wind: yield forecasting and turbine maintenance scheduling.",
+      },
+      {
+        q: "Чи маєте ви досвід з energy-даними (SCADA, сенсори)?",
+        qEn: "Do you have experience with energy sector data (SCADA, sensors)?",
+        a: "Так. Ми працюємо з часовими рядами SCADA-систем, вібро- та термосенсорами обладнання, будуємо LSTM/gradient boosting моделі для прогнозу відмов за 2-4 тижні до події. Це знижує незаплановані простої на 30-40%.",
+        aEn: "Yes. We work with SCADA time-series data and vibration/thermal sensor feeds, building LSTM and gradient-boosting models that predict failures 2-4 weeks in advance — cutting unplanned downtime by 30-40%.",
+      },
+      {
+        q: "Скільки коштує ML-проєкт для енергокомпанії в Абердині?",
+        qEn: "How much does an ML project cost for an Aberdeen energy company?",
+        a: "PoC на історичних даних обладнання — від £5,000-£9,000 (4-6 тижнів). Production predictive maintenance система з дашбордом і алертами — від £18,000-£45,000 залежно від кількості одиниць обладнання.",
+        aEn: "A PoC on historical equipment data starts from £5,000-£9,000 (4-6 weeks). A production predictive maintenance system with dashboards and alerting runs £18,000-£45,000 depending on equipment fleet size.",
+      },
+      {
+        q: "Чи підтримуєте ви ML для переходу на відновлювану енергетику?",
+        qEn: "Do you support ML for the renewable energy transition?",
+        a: "Так. Ми будуємо моделі прогнозу виробітку офшорних вітропарків (weather-driven forecasting), оптимізації балансування мережі та ESG-звітності для абердинських компаній, що диверсифікуються від нафтогазу до відновлюваної енергетики.",
+        aEn: "Yes. We build weather-driven yield forecasting models for offshore wind farms, grid-balancing optimisation, and ESG reporting ML for Aberdeen companies diversifying from oil and gas into renewables.",
+      },
+    ],
+  },
+  {
+    slug: "dundee",
+    nameUk: "Данді",
+    nameEn: "Dundee",
+    region: "Данді Сіті, Шотландія",
+    regionEn: "Dundee City, Scotland",
+    population: "150 тис.",
+    populationEn: "150,000",
+    businesses: 8200,
+    description:
+      "Данді — визнаний UNESCO City of Design та центр ігрової індустрії Великобританії: тут народилися Lemmings, Grand Theft Auto та Minecraft (студія 4J Studios). Abertay University має найстарішу в Європі програму розробки відеоігор, що живить локальний кластер game-tech і цифрових медіа. Data-driven геймдизайн, player behaviour analytics та ML для процедурної генерації контенту — швидко зростаючі напрямки. Codeworth розробляє ML для аналітики гравців, рекомендаційних систем та anti-cheat детекції для данді-студій.",
+    descriptionEn:
+      "Dundee is a UNESCO City of Design and the birthplace of UK gaming, home to studios behind Lemmings, Grand Theft Auto, and Minecraft (4J Studios). Abertay University runs Europe's oldest games development degree, feeding a thriving game-tech and digital media cluster. Data-driven game design, player behaviour analytics, and ML for procedural content generation are fast-growing niches. Codeworth builds ML for player analytics, recommendation engines, and anti-cheat detection for Dundee studios.",
+    seoTitle: "ML-консалтинг у Данді | Машинне навчання для геймдев | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Dundee | Games & Digital Media ML | Codeworth",
+    seoDesc:
+      "ML-консалтинг у Данді: player analytics, anti-cheat ML, процедурна генерація. Від £4,000. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Dundee: player analytics, anti-cheat ML, procedural content generation. From £4,000. Codeworth ML agency.",
+    stats: [
+      { label: "Ігрових та tech-студій", labelEn: "Games & tech studios", value: "180+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "1,400+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "60+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£48k" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "4+" },
+    ],
+    faq: [
+      {
+        q: "Які ML-рішення актуальні для ігрової індустрії Данді?",
+        qEn: "Which ML solutions are relevant to Dundee's games industry?",
+        a: "Player behaviour analytics для утримання гравців, рекомендаційні системи внутрішньоігрового контенту, anti-cheat детекція на основі аномалій, та процедурна генерація рівнів за допомогою ML.",
+        aEn: "Player behaviour analytics for retention, in-game content recommendation engines, anomaly-based anti-cheat detection, and ML-driven procedural level generation.",
+      },
+      {
+        q: "Чи працюєте ви зі студіями розміру інді або середнього масштабу?",
+        qEn: "Do you work with indie or mid-sized studios?",
+        a: "Так. Більшість наших ігрових клієнтів — студії 10-80 людей. Ми пропонуємо PoC-пакети від £4,500, що дозволяють протестувати гіпотезу (наприклад, churn-модель) на реальних даних гравців перед повним впровадженням.",
+        aEn: "Yes. Most of our games clients are 10-80 person studios. We offer PoC packages from £4,500 to test a hypothesis — like a churn model — on real player data before full deployment.",
+      },
+      {
+        q: "Скільки коштує player analytics система?",
+        qEn: "How much does a player analytics system cost?",
+        a: "Базова система churn prediction і сегментації гравців — від £6,000-£12,000. Повна аналітична платформа з рекомендаціями контенту та A/B-тестуванням — від £20,000-£40,000.",
+        aEn: "A basic churn prediction and player segmentation system starts from £6,000-£12,000. A full analytics platform with content recommendations and A/B testing runs £20,000-£40,000.",
+      },
+      {
+        q: "Яка роль Abertay University в AI-екосистемі Данді?",
+        qEn: "What role does Abertay University play in Dundee's AI ecosystem?",
+        a: "Abertay University готує розробників ігор та data scientists через програми Game Design and Production та Ethical Hacking, а її дослідницький центр GAME Lab активно вивчає ML у геймдизайні. Ми співпрацюємо з випускниками Abertay для доменної експертизи.",
+        aEn: "Abertay University trains game developers and data scientists through its Game Design and Production and Ethical Hacking programmes, and its GAME Lab research centre actively studies ML in game design. We collaborate with Abertay graduates for domain expertise.",
+      },
+    ],
+  },
+  {
+    slug: "york",
+    nameUk: "Йорк",
+    nameEn: "York",
+    region: "Норт-Йоркшир",
+    regionEn: "North Yorkshire",
+    population: "155 тис.",
+    populationEn: "155,000",
+    businesses: 9500,
+    description:
+      "Йорк поєднує статус провідного туристичного та історичного центру Великобританії з міцним фінтех і страховим бек-офісним сектором — тут розташовані офіси Aviva, Hiscox та низка страхових операторів. University of York — визнаний центр досліджень штучного інтелекту. Готельний і туристичний бізнес міста активно впроваджує ML для динамічного ціноутворення та прогнозу попиту, а страхові компанії — для underwriting та claims-автоматизації. Codeworth будує ML для страхового underwriting, прогнозування туристичного попиту та NLP-автоматизації документообігу.",
+    descriptionEn:
+      "York combines its status as a leading UK heritage and tourism destination with a solid insurance and fintech back-office sector — home to Aviva and Hiscox operations among others. The University of York is a recognised AI research centre. The city's hospitality and tourism businesses increasingly use ML for dynamic pricing and demand forecasting, while insurers apply it to underwriting and claims automation. Codeworth builds ML for insurance underwriting, tourism demand forecasting, and NLP document automation.",
+    seoTitle: "ML-консалтинг у Йорку | Машинне навчання для страхування та туризму | Codeworth",
+    seoTitleEn: "Machine Learning Consultant York | Insurance & Tourism ML | Codeworth",
+    seoDesc:
+      "ML-консалтинг у Йорку: страховий underwriting ML, прогноз туристичного попиту, NLP-автоматизація. Від £4,000. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant York: insurance underwriting ML, tourism demand forecasting, NLP document automation. From £4,000. Codeworth ML agency.",
+    stats: [
+      { label: "Страхових та фінансових компаній", labelEn: "Insurance & financial firms", value: "310+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "1,650+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "70+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£51k" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "5+" },
+    ],
+    faq: [
+      {
+        q: "Які ML-рішення актуальні для страхового сектору Йорка?",
+        qEn: "Which ML solutions are relevant to York's insurance sector?",
+        a: "Автоматизований underwriting з credit та risk-scoring моделями, NLP для обробки claims-документів, fraud detection для страхових виплат та прогноз збитковості портфеля.",
+        aEn: "Automated underwriting with credit and risk-scoring models, NLP for claims document processing, fraud detection for insurance payouts, and portfolio loss-ratio forecasting.",
+      },
+      {
+        q: "Чи можете ви будувати ML для прогнозу туристичного попиту?",
+        qEn: "Can you build ML for tourism demand forecasting?",
+        a: "Так. Для готелів та атракцій Йорка ми будуємо моделі прогнозу завантаженості (сезонність, події, погода) та dynamic pricing, що підвищують дохід на номер (RevPAR) на 8-15%.",
+        aEn: "Yes. For York hotels and attractions we build occupancy forecasting models (seasonality, events, weather) and dynamic pricing engines that lift revenue per available room (RevPAR) by 8-15%.",
+      },
+      {
+        q: "Скільки коштує ML-проєкт для страхової компанії в Йорку?",
+        qEn: "How much does an ML project cost for a York insurance company?",
+        a: "PoC для underwriting-моделі — від £5,000-£9,000. Production-система з SHAP-поясненнями та інтеграцією в policy admin систему — від £20,000-£45,000.",
+        aEn: "A PoC for an underwriting model starts from £5,000-£9,000. A production system with SHAP explainability and policy admin integration runs £20,000-£45,000.",
+      },
+      {
+        q: "Чи відповідають ваші моделі вимогам FCA для страхового underwriting?",
+        qEn: "Do your models meet FCA requirements for insurance underwriting?",
+        a: "Так. Ми документуємо моделі відповідно до FCA Consumer Duty та надаємо пояснення рішень (SHAP), необхідні для аудиту underwriting-процесів страховиками на кшталт Aviva та Hiscox.",
+        aEn: "Yes. We document models to FCA Consumer Duty standards and provide SHAP-based decision explanations required for underwriting audits by insurers like Aviva and Hiscox.",
+      },
+    ],
+  },
+  {
+    slug: "milton-keynes",
+    nameUk: "Мілтон-Кінз",
+    nameEn: "Milton Keynes",
+    region: "Бакінгемшир",
+    regionEn: "Buckinghamshire",
+    population: "230 тис.",
+    populationEn: "230,000",
+    businesses: 13800,
+    description:
+      "Мілтон-Кінз — один з найбільших логістичних хабів Великобританії: тут розташовані фулфілмент-центри Amazon, розподільчі центри Argos, Santander UK головний офіс, а також швидко зростаюча спільнота tech scale-ups. Розташування на перетині M1 та залізниць Лондон-Бірмінгем робить місто ключовим вузлом last-mile доставки. Codeworth будує ML для оптимізації маршрутизації доставки, прогнозу попиту складів та route optimization — тісно повʼязано з нашим напрямком /ml/logistics.",
+    descriptionEn:
+      "Milton Keynes is one of the UK's largest logistics hubs — home to Amazon fulfilment centres, Argos distribution operations, Santander UK's head office, and a fast-growing tech scale-up community. Sitting at the junction of the M1 and the London-Birmingham rail corridor makes it a key last-mile delivery node. Codeworth builds ML for delivery route optimisation, warehouse demand forecasting, and last-mile route planning — closely aligned with our /ml/logistics practice.",
+    seoTitle: "ML-консалтинг у Мілтон-Кінзі | Машинне навчання для логістики | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Milton Keynes | Logistics ML Agency | Codeworth",
+    seoDesc:
+      "ML-консалтинг у Мілтон-Кінзі: route optimization, прогноз попиту складів, last-mile ML. Від £4,000. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Milton Keynes: route optimisation, warehouse demand forecasting, last-mile ML. From £4,000. Codeworth ML agency.",
+    stats: [
+      { label: "Логістичних та tech-компаній", labelEn: "Logistics & tech companies", value: "1,900+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "2,300+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "95+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£56k" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "5+" },
+    ],
+    faq: [
+      {
+        q: "Які ML-рішення найбільш затребувані у Мілтон-Кінзі?",
+        qEn: "Which ML solutions are most in demand in Milton Keynes?",
+        a: "Route optimization для last-mile доставки, прогноз попиту складів для оптимізації запасів, computer vision для контролю якості на розподільчих лініях, та ML для планування workforce у фулфілмент-центрах.",
+        aEn: "Route optimisation for last-mile delivery, warehouse demand forecasting for inventory optimisation, computer vision for quality control on distribution lines, and workforce planning ML for fulfilment centres.",
+      },
+      {
+        q: "Чи маєте ви досвід з логістичними ML-задачами масштабу Amazon-фулфілмент?",
+        qEn: "Do you have experience with Amazon-fulfilment-scale logistics ML?",
+        a: "Так. Ми будуємо системи прогнозу попиту (XGBoost + Prophet), оптимізації маршрутів (vehicle routing problem solvers) та inventory optimisation для складів і розподільчих мереж, що знижують витрати доставки на 15-25%.",
+        aEn: "Yes. We build demand forecasting systems (XGBoost + Prophet), route optimisation (vehicle routing problem solvers), and inventory optimisation for warehouses and distribution networks, cutting delivery costs by 15-25%.",
+      },
+      {
+        q: "Скільки коштує route optimization система?",
+        qEn: "How much does a route optimisation system cost?",
+        a: "PoC на історичних маршрутах — від £5,500-£10,000. Production-система з real-time API інтеграцією та dispatch-дашбордом — від £22,000-£50,000 залежно від масштабу флоту.",
+        aEn: "A PoC on historical route data starts from £5,500-£10,000. A production system with real-time API integration and a dispatch dashboard runs £22,000-£50,000 depending on fleet size.",
+      },
+      {
+        q: "Чи працюєте ви з tech scale-ups у Мілтон-Кінзі?",
+        qEn: "Do you work with Milton Keynes tech scale-ups?",
+        a: "Так. Ми пропонуємо гнучкі PoC-пакети для scale-ups, що дозволяють протестувати ML-гіпотезу за 2-3 тижні перед залученням внутрішньої data-команди чи розширенням фінансування.",
+        aEn: "Yes. We offer flexible PoC packages for scale-ups, letting teams test an ML hypothesis in 2-3 weeks before hiring an internal data team or raising further funding.",
+      },
+    ],
+  },
+  {
+    slug: "norwich",
+    nameUk: "Норідж",
+    nameEn: "Norwich",
+    region: "Норфолк, Східна Англія",
+    regionEn: "Norfolk, East of England",
+    population: "145 тис.",
+    populationEn: "145,000",
+    businesses: 8600,
+    description:
+      "Норідж — історичний центр страхового сектору Великобританії, штаб-квартира Aviva, та зростаючий кластер agritech завдяки University of East Anglia (UEA) і сусідньому Norwich Research Park — одному з найбільших біологічних та агрокластерів Європи. Страхові компанії впроваджують ML для underwriting і claims-автоматизації, а agritech-стартапи — для прогнозу врожайності та точного землеробства. Codeworth будує ML для страхового ризик-скорингу та agritech-аналітики для норіджських компаній.",
+    descriptionEn:
+      "Norwich is the historic home of UK insurance, headquarters of Aviva, and a growing agritech cluster thanks to the University of East Anglia (UEA) and the neighbouring Norwich Research Park — one of Europe's largest bioscience and agricultural research clusters. Insurers apply ML to underwriting and claims automation, while agritech startups use it for yield forecasting and precision farming. Codeworth builds ML for insurance risk scoring and agritech analytics for Norwich businesses.",
+    seoTitle: "ML-консалтинг у Норіджі | Машинне навчання для страхування та agritech | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Norwich | Insurance & Agritech ML | Codeworth",
+    seoDesc:
+      "ML-консалтинг у Норіджі: страховий risk-scoring, agritech прогноз врожайності, NLP claims. Від £4,000. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Norwich: insurance risk scoring, agritech yield forecasting, NLP claims automation. From £4,000. Codeworth ML agency.",
+    stats: [
+      { label: "Страхових та agritech-компаній", labelEn: "Insurance & agritech companies", value: "420+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "1,300+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "65+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£49k" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "4+" },
+    ],
+    faq: [
+      {
+        q: "Які ML-рішення найбільш затребувані у Норіджі?",
+        qEn: "Which ML solutions are most in demand in Norwich?",
+        a: "Для страхового сектору (Aviva та інші): underwriting risk-scoring, NLP для claims-документів, fraud detection. Для agritech (Norwich Research Park): прогноз врожайності, computer vision для моніторингу культур, точне землеробство.",
+        aEn: "For insurance (Aviva and others): underwriting risk scoring, NLP for claims documents, fraud detection. For agritech (Norwich Research Park): yield forecasting, computer vision for crop monitoring, precision farming.",
+      },
+      {
+        q: "Чи маєте ви досвід з agritech ML для прогнозу врожайності?",
+        qEn: "Do you have experience with agritech yield-forecasting ML?",
+        a: "Так. Ми будуємо моделі прогнозу врожайності на основі супутникових знімків, погодних даних та даних сенсорів ґрунту (gradient boosting + time-series), а також computer vision для раннього виявлення хвороб рослин.",
+        aEn: "Yes. We build yield forecasting models using satellite imagery, weather data, and soil sensor feeds (gradient boosting + time-series), plus computer vision for early crop disease detection.",
+      },
+      {
+        q: "Скільки коштує ML-проєкт для страхової чи agritech-компанії?",
+        qEn: "How much does an ML project cost for an insurance or agritech company?",
+        a: "PoC — від £5,000-£9,000 (4-6 тижнів). Production-система (underwriting модель або yield-прогноз з дашбордом) — від £18,000-£42,000.",
+        aEn: "A PoC starts from £5,000-£9,000 (4-6 weeks). A production system (underwriting model or yield forecast with dashboard) runs £18,000-£42,000.",
+      },
+      {
+        q: "Чи співпрацюєте ви з UEA чи Norwich Research Park?",
+        qEn: "Do you collaborate with UEA or Norwich Research Park?",
+        a: "Ми не є формальним партнером UEA, але відстежуємо публікації Norwich Research Park з агрономії та біоінформатики й адаптуємо релевантні методи (наприклад, hyperspectral imaging аналіз) у production ML для наших клієнтів.",
+        aEn: "We're not a formal UEA partner, but we track Norwich Research Park publications in agronomy and bioinformatics and adapt relevant methods — such as hyperspectral imaging analysis — into production ML for our clients.",
+      },
+    ],
+  },
+  {
+    slug: "swansea",
+    nameUk: "Свонсі",
+    nameEn: "Swansea",
+    region: "Уельс",
+    regionEn: "Wales",
+    population: "246 тис.",
+    populationEn: "246,000",
+    businesses: 13200,
+    description:
+      "Свонсі — другий за величиною економічний центр Уельсу з активним фінтех-сектором (Admiral Group, Principality Building Society) та зростаючим напрямком відновлюваної енергетики через проєкт Swansea Bay Tidal Lagoon і University of Swansea. Місто отримало статус UK City of Sanctuary та розвиває сильну дослідницьку базу з ML і матеріалознавства (SPECIFIC Innovation and Knowledge Centre). Codeworth будує ML для страхового ризик-скорингу, оптимізації відновлюваної енергетики та NLP-автоматизації для свонсійського бізнесу.",
+    descriptionEn:
+      "Swansea is Wales's second-largest economic centre with an active fintech sector (Admiral Group, Principality Building Society) and a growing renewable energy focus through the Swansea Bay Tidal Lagoon project and Swansea University. The city has a strong ML and materials-science research base via the SPECIFIC Innovation and Knowledge Centre. Codeworth builds ML for insurance risk scoring, renewable energy optimisation, and NLP automation for Swansea businesses.",
+    seoTitle: "ML-консалтинг у Свонсі | Машинне навчання для фінтеху та енергетики | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Swansea | Fintech & Renewable Energy ML | Codeworth",
+    seoDesc:
+      "ML-консалтинг у Свонсі: страховий risk-scoring (Admiral), tidal energy ML, NLP-автоматизація. Від £4,000. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Swansea: insurance risk scoring (Admiral), tidal energy ML, NLP automation. From £4,000. Codeworth ML agency.",
+    stats: [
+      { label: "Фінансових та енергокомпаній", labelEn: "Financial & energy companies", value: "640+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "1,750+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "80+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£47k" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "4+" },
+    ],
+    faq: [
+      {
+        q: "Які ML-рішення затребувані у Свонсі?",
+        qEn: "Which ML solutions are in demand in Swansea?",
+        a: "Для страхового сектору (Admiral, Principality): fraud detection, credit risk scoring, telematics-based pricing. Для відновлюваної енергетики: прогноз виробітку припливної енергії, оптимізація мережі.",
+        aEn: "For insurance (Admiral, Principality): fraud detection, credit risk scoring, telematics-based pricing. For renewable energy: tidal energy yield forecasting and grid optimisation.",
+      },
+      {
+        q: "Чи будуєте ви ML для telematics-страхування (як у Admiral)?",
+        qEn: "Do you build ML for telematics insurance (like Admiral)?",
+        a: "Так. Ми розробляємо моделі pricing на основі telematics-даних (стиль водіння, час доби, локація), що дозволяють точніше оцінювати ризик і пропонувати персоналізовані тарифи — типова задача для страховиків масштабу Admiral.",
+        aEn: "Yes. We build telematics-based pricing models using driving behaviour, time-of-day, and location data, enabling more accurate risk assessment and personalised premiums — a common need for insurers at Admiral's scale.",
+      },
+      {
+        q: "Скільки коштує ML-консалтинг у Свонсі?",
+        qEn: "How much does ML consulting cost in Swansea?",
+        a: "Ставки у Свонсі на 30-40% нижчі за лондонські. PoC — від £4,500-£8,500, production-система — від £16,000-£38,000.",
+        aEn: "Swansea rates run 30-40% below London. A PoC starts from £4,500-£8,500, a production system from £16,000-£38,000.",
+      },
+      {
+        q: "Чи маєте ви досвід з tidal energy прогнозуванням?",
+        qEn: "Do you have experience with tidal energy forecasting?",
+        a: "Ми будуємо time-series моделі прогнозу виробітку для відновлюваних джерел на основі приливних таблиць, погодних даних та історичного виробітку — методологія, застосовна до проєктів на кшталт Swansea Bay Tidal Lagoon.",
+        aEn: "We build time-series yield forecasting models for renewable sources using tidal tables, weather data, and historical generation — a methodology applicable to projects like the Swansea Bay Tidal Lagoon.",
+      },
+    ],
+  },
+  {
+    slug: "bath",
+    nameUk: "Бат",
+    nameEn: "Bath",
+    region: "Сомерсет, Південно-Західна Англія",
+    regionEn: "Somerset, South West England",
+    population: "94 тис.",
+    populationEn: "94,000",
+    businesses: 6100,
+    description:
+      "Бат — місто зі статусом Світової спадщини ЮНЕСКО з високою концентрацією професійних послуг, консалтингу та швидко зростаючого кластеру SaaS scale-ups. University of Bath входить до топ-10 британських університетів з дослідженнями в галузі комп'ютерних наук. Малий і середній бізнес міста активно шукає ML для автоматизації консалтингових процесів, аналітики клієнтів та SaaS-продуктової аналітики. Codeworth будує ML-рішення для professional services та tech scale-ups Бата за конкурентними цінами поза лондонським ринком.",
+    descriptionEn:
+      "Bath, a UNESCO World Heritage city, has a high concentration of professional services, consultancies, and a fast-growing SaaS scale-up cluster. The University of Bath ranks among the UK's top 10 for computer science research. The city's SMEs increasingly seek ML for consulting process automation, customer analytics, and SaaS product analytics. Codeworth builds ML for Bath's professional services firms and tech scale-ups at rates well below the London market.",
+    seoTitle: "ML-консалтинг у Баті | Машинне навчання для SaaS та консалтингу | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Bath | SaaS & Professional Services ML | Codeworth",
+    seoDesc:
+      "ML-консалтинг у Баті: SaaS product analytics, автоматизація консалтингу, churn prediction. Від £4,000. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Bath: SaaS product analytics, consulting process automation, churn prediction. From £4,000. Codeworth ML agency.",
+    stats: [
+      { label: "Professional services та SaaS-компаній", labelEn: "Professional services & SaaS companies", value: "480+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "1,050+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "55+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£54k" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "4+" },
+    ],
+    faq: [
+      {
+        q: "Які ML-рішення затребувані у SaaS-компаній Бата?",
+        qEn: "Which ML solutions do Bath SaaS companies need?",
+        a: "Product analytics та churn prediction, автоматизація onboarding через NLP, рекомендаційні системи для фіч-адопції, та predictive scoring лідів для sales-команд.",
+        aEn: "Product analytics and churn prediction, NLP-driven onboarding automation, feature-adoption recommendation engines, and predictive lead scoring for sales teams.",
+      },
+      {
+        q: "Чи можете ви автоматизувати консалтингові процеси за допомогою ML?",
+        qEn: "Can you automate consulting processes with ML?",
+        a: "Так. Для консалтингових фірм ми будуємо NLP-системи для аналізу контрактів і звітів, автоматизацію research-завдань та predictive моделі для оцінки ризиків проєктів.",
+        aEn: "Yes. For consultancies we build NLP systems for contract and report analysis, research task automation, and predictive models for project risk assessment.",
+      },
+      {
+        q: "Скільки коштує ML для SaaS-стартапу в Баті?",
+        qEn: "How much does ML cost for a Bath SaaS startup?",
+        a: "PoC churn-моделі на ваших продуктових даних — від £4,500-£8,000. Production product analytics платформа — від £15,000-£35,000.",
+        aEn: "A PoC churn model on your product data starts from £4,500-£8,000. A production product analytics platform runs £15,000-£35,000.",
+      },
+      {
+        q: "Чи маєте ви досвід роботи з ранньостадійними scale-ups?",
+        qEn: "Do you have experience with early-stage scale-ups?",
+        a: "Так. Ми часто працюємо з Bath tech scale-ups на pre-Series A/B стадії, пропонуючи гнучкі помісячні engagement-моделі замість великих фіксованих контрактів.",
+        aEn: "Yes. We regularly work with Bath tech scale-ups at pre-Series A/B stage, offering flexible month-to-month engagement models instead of large fixed contracts.",
+      },
+    ],
+  },
+  {
+    slug: "exeter",
+    nameUk: "Ексетер",
+    nameEn: "Exeter",
+    region: "Девон, Південно-Західна Англія",
+    regionEn: "Devon, South West England",
+    population: "130 тис.",
+    populationEn: "130,000",
+    businesses: 7400,
+    description:
+      "Ексетер поєднує сильний agritech-сектор, страхових операторів та світового рівня кліматичну науку через Met Office, штаб-квартира якого розташована саме тут. University of Exeter — один із провідних центрів дослідження кліматичних даних і environmental ML у Європі. Місцевий бізнес впроваджує ML для прогнозу погодних ризиків, страхового underwriting та точного землеробства. Codeworth будує ML-рішення для кліматичної аналітики, agritech та страхового ризик-скорингу для ексетерських компаній.",
+    descriptionEn:
+      "Exeter combines a strong agritech sector, insurance operators, and world-class climate science through the Met Office, headquartered in the city. The University of Exeter is a leading centre for climate data research and environmental ML in Europe. Local businesses use ML for weather-risk forecasting, insurance underwriting, and precision farming. Codeworth builds ML for climate analytics, agritech, and insurance risk scoring for Exeter companies.",
+    seoTitle: "ML-консалтинг у Ексетері | Машинне навчання для клімату та agritech | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Exeter | Climate & Agritech ML | Codeworth",
+    seoDesc:
+      "ML-консалтинг у Ексетері: кліматична аналітика, agritech, страховий risk-scoring. Від £4,000. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Exeter: climate risk analytics, agritech, insurance risk scoring. From £4,000. Codeworth ML agency.",
+    stats: [
+      { label: "Agritech та страхових компаній", labelEn: "Agritech & insurance companies", value: "390+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "1,150+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "50+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£50k" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "4+" },
+    ],
+    faq: [
+      {
+        q: "Які ML-рішення затребувані у Ексетері?",
+        qEn: "Which ML solutions are in demand in Exeter?",
+        a: "Прогноз погодних ризиків для страхового underwriting, кліматичне моделювання для agritech, computer vision для моніторингу врожаю та точного землеробства.",
+        aEn: "Weather-risk forecasting for insurance underwriting, climate modelling for agritech, and computer vision for crop monitoring and precision farming.",
+      },
+      {
+        q: "Чи маєте ви досвід з кліматичними даними (як у Met Office)?",
+        qEn: "Do you have experience with climate data (Met Office-style)?",
+        a: "Ми не працюємо безпосередньо з Met Office, але маємо досвід побудови моделей на основі відкритих метеорологічних та кліматичних датасетів для прогнозування погодних ризиків у страхуванні та сільському господарстві.",
+        aEn: "We don't work directly with the Met Office, but we have experience building models on open meteorological and climate datasets for weather-risk forecasting in insurance and agriculture.",
+      },
+      {
+        q: "Скільки коштує ML-проєкт для agritech-компанії в Ексетері?",
+        qEn: "How much does an ML project cost for an Exeter agritech company?",
+        a: "PoC для прогнозу врожайності чи погодного ризику — від £5,000-£9,000. Production-система з інтеграцією сенсорних даних — від £18,000-£40,000.",
+        aEn: "A PoC for yield or weather-risk forecasting starts from £5,000-£9,000. A production system integrating sensor data runs £18,000-£40,000.",
+      },
+      {
+        q: "Чи можете ви будувати climate-risk моделі для страховиків?",
+        qEn: "Can you build climate-risk models for insurers?",
+        a: "Так. Ми будуємо моделі оцінки ризику повеней, штормів та посух для property insurance underwriting, використовуючи історичні кліматичні дані та геопросторовий аналіз.",
+        aEn: "Yes. We build flood, storm, and drought risk-assessment models for property insurance underwriting, using historical climate data and geospatial analysis.",
+      },
+    ],
+  },
+  {
+    slug: "luton",
+    nameUk: "Лутон",
+    nameEn: "Luton",
+    region: "Бедфордшир",
+    regionEn: "Bedfordshire",
+    population: "230 тис.",
+    populationEn: "230,000",
+    businesses: 11800,
+    description:
+      "Лутон — ключовий авіаційний та логістичний хаб Великобританії завдяки London Luton Airport, а також має міцну автомобільну спадщину (колишній завод Vauxhall) і сучасний логістично-виробничий сектор навколо M1. Авіакомпанії та логістичні оператори впроваджують ML для прогнозу пасажиропотоку, оптимізації розкладу та управління запасами запчастин. Codeworth будує ML для авіаційної аналітики, логістичної оптимізації та predictive maintenance для лутонських компаній.",
+    descriptionEn:
+      "Luton is a key UK aviation and logistics hub thanks to London Luton Airport, with a strong automotive heritage (the former Vauxhall plant) and a modern logistics-manufacturing sector along the M1 corridor. Airlines and logistics operators use ML for passenger-flow forecasting, schedule optimisation, and parts-inventory management. Codeworth builds ML for aviation analytics, logistics optimisation, and predictive maintenance for Luton businesses.",
+    seoTitle: "ML-консалтинг у Лутоні | Машинне навчання для авіації та логістики | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Luton | Aviation & Logistics ML | Codeworth",
+    seoDesc:
+      "ML-консалтинг у Лутоні: прогноз пасажиропотоку, логістична оптимізація, predictive maintenance. Від £4,000. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Luton: passenger-flow forecasting, logistics optimisation, predictive maintenance. From £4,000. Codeworth ML agency.",
+    stats: [
+      { label: "Авіаційних та логістичних компаній", labelEn: "Aviation & logistics companies", value: "870+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "1,400+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "45+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£53k" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "4+" },
+    ],
+    faq: [
+      {
+        q: "Які ML-рішення затребувані у Лутоні?",
+        qEn: "Which ML solutions are in demand in Luton?",
+        a: "Для авіації: прогноз пасажиропотоку, оптимізація розкладу рейсів та наземного обслуговування. Для логістики: route optimization, predictive maintenance автопарку та управління запасами.",
+        aEn: "For aviation: passenger-flow forecasting, flight schedule and ground-handling optimisation. For logistics: route optimisation, fleet predictive maintenance, and inventory management.",
+      },
+      {
+        q: "Чи маєте ви досвід з авіаційними даними (пасажиропотік, розклад)?",
+        qEn: "Do you have experience with aviation data (passenger flow, scheduling)?",
+        a: "Так. Ми будуємо time-series моделі прогнозу пасажиропотоку з урахуванням сезонності та подій, а також оптимізаційні моделі для розподілу gate-ресурсів і наземного персоналу.",
+        aEn: "Yes. We build time-series passenger-flow forecasting models accounting for seasonality and events, plus optimisation models for gate resource and ground-staff allocation.",
+      },
+      {
+        q: "Скільки коштує ML-проєкт для логістичної компанії в Лутоні?",
+        qEn: "How much does an ML project cost for a Luton logistics company?",
+        a: "PoC route optimization — від £5,000-£9,000. Production-система з real-time dispatch — від £20,000-£45,000.",
+        aEn: "A PoC route optimisation project starts from £5,000-£9,000. A production system with real-time dispatch runs £20,000-£45,000.",
+      },
+      {
+        q: "Чи будуєте ви predictive maintenance для автомобільного сектору?",
+        qEn: "Do you build predictive maintenance for the automotive sector?",
+        a: "Так. Спираючись на автомобільну спадщину Лутона, ми будуємо моделі прогнозу відмов виробничого обладнання та контролю якості на основі computer vision для виробничих ліній.",
+        aEn: "Yes. Building on Luton's automotive heritage, we develop equipment-failure prediction models and computer-vision-based quality control for manufacturing lines.",
+      },
+    ],
+  },
+  {
+    slug: "slough",
+    nameUk: "Слау",
+    nameEn: "Slough",
+    region: "Беркшир, Долина Темзи",
+    regionEn: "Berkshire, Thames Valley",
+    population: "164 тис.",
+    populationEn: "164,000",
+    businesses: 12600,
+    description:
+      "Слау — серце tech-коридору Долини Темзи: тут розташовані європейські чи регіональні штаб-квартири O2, Mars, Amazon UK та десятків інших глобальних корпорацій завдяки безпосередній близькості до аеропорту Хітроу і Лондона. Висока концентрація корпоративних headquarters створює значний попит на enterprise ML: аналітику supply chain, customer analytics та автоматизацію бек-офісу. Codeworth будує enterprise-grade ML-рішення для корпорацій та їхніх регіональних офісів у Слау.",
+    descriptionEn:
+      "Slough is the heart of the Thames Valley tech corridor — home to European or regional headquarters for O2, Mars, Amazon UK, and dozens of other global corporations, thanks to its proximity to Heathrow and London. The high concentration of corporate HQs drives strong demand for enterprise ML: supply chain analytics, customer analytics, and back-office automation. Codeworth builds enterprise-grade ML for corporations and their regional offices in Slough.",
+    seoTitle: "ML-консалтинг у Слау | Машинне навчання для корпорацій | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Slough | Enterprise ML Agency | Codeworth",
+    seoDesc:
+      "ML-консалтинг у Слау: supply chain analytics, customer analytics, автоматизація бек-офісу. Від £4,000. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Slough: supply chain analytics, customer analytics, back-office automation. From £4,000. Codeworth ML agency.",
+    stats: [
+      { label: "Корпоративних штаб-квартир", labelEn: "Corporate headquarters", value: "230+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "2,600+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "70+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£61k" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "5+" },
+    ],
+    faq: [
+      {
+        q: "Які ML-рішення затребувані у корпорацій в Слау?",
+        qEn: "Which ML solutions are in demand among Slough corporates?",
+        a: "Supply chain forecasting для FMCG-компаній (на кшталт Mars), customer analytics і churn prediction для телекому (O2), а також автоматизація фінансового бек-офісу через NLP.",
+        aEn: "Supply chain forecasting for FMCG companies (like Mars), customer analytics and churn prediction for telecom (O2), and financial back-office automation via NLP.",
+      },
+      {
+        q: "Чи працюєте ви з регіональними офісами глобальних корпорацій?",
+        qEn: "Do you work with regional offices of global corporations?",
+        a: "Так. Ми часто виступаємо як гнучкий ML-партнер для регіональних офісів, що не мають власної data science команди, але потребують production ML-рішень швидше і дешевше за внутрішню розробку.",
+        aEn: "Yes. We often act as a flexible ML partner for regional offices without an in-house data science team, delivering production ML faster and cheaper than internal development.",
+      },
+      {
+        q: "Скільки коштує enterprise ML-проєкт у Слау?",
+        qEn: "How much does an enterprise ML project cost in Slough?",
+        a: "PoC для конкретного відділу — від £6,000-£10,000. Повна enterprise-система з інтеграцією в існуючий стек — від £25,000-£60,000.",
+        aEn: "A PoC for a specific department starts from £6,000-£10,000. A full enterprise system integrated with existing infrastructure runs £25,000-£60,000.",
+      },
+      {
+        q: "Чи можете ви інтегруватися з існуючими enterprise-системами (SAP, Salesforce)?",
+        qEn: "Can you integrate with existing enterprise systems (SAP, Salesforce)?",
+        a: "Так. Ми маємо досвід інтеграції ML-моделей з SAP, Salesforce та іншими enterprise-платформами через API та ETL-пайплайни, що дозволяє впроваджувати ML без переробки існуючої інфраструктури.",
+        aEn: "Yes. We have experience integrating ML models with SAP, Salesforce, and other enterprise platforms via APIs and ETL pipelines, enabling ML adoption without reworking existing infrastructure.",
+      },
+    ],
+  },
+  {
+    slug: "warwick",
+    nameUk: "Ворик",
+    nameEn: "Warwick",
+    region: "Ворикшир, Уест-Мідлендс",
+    regionEn: "Warwickshire, West Midlands",
+    population: "145 тис.",
+    populationEn: "145,000",
+    businesses: 8100,
+    description:
+      "Ворик — науково-технологічне серце автомобільного кластеру Уест-Мідлендс завдяки WMG (Warwick Manufacturing Group) при University of Warwick, що співпрацює з Jaguar Land Rover, Aston Martin та десятками постачальників автопрому. WMG — провідний дослідницький центр Великобританії з ML для виробництва, батарейних технологій та автономних транспортних засобів. Codeworth будує ML для predictive maintenance, контролю якості на виробничих лініях та оптимізації supply chain для автовиробників і постачальників регіону — тісно повʼязано з нашим напрямком /ml/manufacturing.",
+    descriptionEn:
+      "Warwick is the research and technology heart of the West Midlands automotive cluster thanks to WMG (Warwick Manufacturing Group) at the University of Warwick, which partners with Jaguar Land Rover, Aston Martin, and dozens of automotive suppliers. WMG is a leading UK research centre for manufacturing ML, battery technology, and autonomous vehicles. Codeworth builds ML for predictive maintenance, production-line quality control, and supply chain optimisation for regional automakers and suppliers — closely aligned with our /ml/manufacturing practice.",
+    seoTitle: "ML-консалтинг у Ворику | Машинне навчання для автопрому | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Warwick | Automotive Manufacturing ML | Codeworth",
+    seoDesc:
+      "ML-консалтинг у Ворику: predictive maintenance, quality control CV, supply chain для автопрому. Від £4,000. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Warwick: predictive maintenance, computer vision quality control, automotive supply chain ML. From £4,000. Codeworth ML agency.",
+    stats: [
+      { label: "Автомобільних та виробничих компаній", labelEn: "Automotive & manufacturing companies", value: "560+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "1,900+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "75+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£57k" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "5+" },
+    ],
+    faq: [
+      {
+        q: "Які ML-рішення затребувані у автопромі Ворика?",
+        qEn: "Which ML solutions are in demand in Warwick's automotive sector?",
+        a: "Predictive maintenance виробничого обладнання, computer vision для контролю якості деталей на конвеєрі, оптимізація supply chain та ML для тестування батарейних технологій електромобілів.",
+        aEn: "Predictive maintenance of manufacturing equipment, computer-vision quality control on production lines, supply chain optimisation, and ML for EV battery technology testing.",
+      },
+      {
+        q: "Чи маєте ви досвід з автомобільними постачальниками масштабу JLR?",
+        qEn: "Do you have experience with JLR-scale automotive suppliers?",
+        a: "Ми не працювали безпосередньо з JLR, але маємо досвід побудови computer vision систем контролю якості (виявлення дефектів за фото/відео з конвеєра) та predictive maintenance для виробничого обладнання — задачі того ж класу, що й у постачальників JLR-рівня.",
+        aEn: "We haven't worked directly with JLR, but we have experience building computer-vision quality control systems (defect detection from production-line imagery) and predictive maintenance for manufacturing equipment — the same class of problems faced by JLR-tier suppliers.",
+      },
+      {
+        q: "Скільки коштує ML для виробничої лінії в Ворику?",
+        qEn: "How much does ML cost for a Warwick production line?",
+        a: "PoC computer vision для контролю якості — від £6,000-£11,000. Production-система з інтеграцією в конвеєр та real-time алертами — від £22,000-£55,000.",
+        aEn: "A PoC computer-vision quality control system starts from £6,000-£11,000. A production system integrated with the line and real-time alerting runs £22,000-£55,000.",
+      },
+      {
+        q: "Чи стежите ви за дослідженнями WMG (Warwick Manufacturing Group)?",
+        qEn: "Do you track WMG (Warwick Manufacturing Group) research?",
+        a: "Так. Ми відстежуємо публікації WMG з ML у виробництві, батарейних технологій та автономних транспортних засобів і адаптуємо релевантні методи (наприклад, digital twin моделювання) у production-рішення для наших клієнтів.",
+        aEn: "Yes. We track WMG research in manufacturing ML, battery technology, and autonomous vehicles, adapting relevant methods — such as digital twin modelling — into production solutions for our clients.",
+      },
+    ],
+  },
+  {
+    slug: "guildford",
+    nameUk: "Гілдфорд",
+    nameEn: "Guildford",
+    region: "Суррей, Південно-Східна Англія",
+    regionEn: "Surrey, South East England",
+    population: "150 тис.",
+    populationEn: "150,000",
+    businesses: 9800,
+    description:
+      "Гілдфорд — центр британської ігрової індустрії та софтверного кластеру Суррею: тут базуються Criterion Games, Media Molecule та десятки студій розробки програмного забезпечення, а University of Surrey веде провідні дослідження в галузі AI та 5G. Концентрація геймдев і software-компаній створює попит на player analytics, recommendation-системи та ML-інфраструктуру для SaaS-продуктів. Codeworth будує ML для геймдев-студій та software-компаній Гілдфорда.",
+    descriptionEn:
+      "Guildford is a centre of the UK games industry and Surrey's software cluster — home to Criterion Games, Media Molecule, and dozens of software development studios, with the University of Surrey leading research in AI and 5G. The concentration of games and software companies drives demand for player analytics, recommendation engines, and ML infrastructure for SaaS products. Codeworth builds ML for Guildford's games studios and software companies.",
+    seoTitle: "ML-консалтинг у Гілдфорді | Машинне навчання для геймдев та software | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Guildford | Games & Software ML | Codeworth",
+    seoDesc:
+      "ML-консалтинг у Гілдфорді: player analytics, recommendation-системи, SaaS ML-інфраструктура. Від £4,000. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Guildford: player analytics, recommendation engines, SaaS ML infrastructure. From £4,000. Codeworth ML agency.",
+    stats: [
+      { label: "Ігрових та software-компаній", labelEn: "Games & software companies", value: "310+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "2,100+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "90+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£62k" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "5+" },
+    ],
+    faq: [
+      {
+        q: "Які ML-рішення затребувані у геймдев-компаній Гілдфорда?",
+        qEn: "Which ML solutions do Guildford games companies need?",
+        a: "Player behaviour analytics та retention prediction, рекомендаційні системи ігрового контенту, procedural content generation та anti-cheat детекція на основі аномалій.",
+        aEn: "Player behaviour analytics and retention prediction, in-game content recommendation engines, procedural content generation, and anomaly-based anti-cheat detection.",
+      },
+      {
+        q: "Чи маєте ви досвід зі студіями масштабу Criterion Games чи Media Molecule?",
+        qEn: "Do you have experience with studios like Criterion Games or Media Molecule?",
+        a: "Ми не працювали безпосередньо з цими студіями, але маємо профільний досвід у player analytics та recommendation-системах для ігрових продуктів — саме той клас задач, що вирішують команди даних у студіях подібного масштабу.",
+        aEn: "We haven't worked directly with these studios, but we have relevant experience in player analytics and recommendation systems for games products — the same class of problems tackled by data teams at studios of this scale.",
+      },
+      {
+        q: "Скільки коштує ML для геймдев-студії в Гілдфорді?",
+        qEn: "How much does ML cost for a Guildford games studio?",
+        a: "PoC churn/retention моделі — від £4,500-£8,500. Production player analytics платформа з рекомендаціями — від £18,000-£40,000.",
+        aEn: "A PoC churn/retention model starts from £4,500-£8,500. A production player analytics platform with recommendations runs £18,000-£40,000.",
+      },
+      {
+        q: "Чи будуєте ви ML-інфраструктуру для SaaS-компаній Суррею?",
+        qEn: "Do you build ML infrastructure for Surrey SaaS companies?",
+        a: "Так. Ми проєктуємо MLOps-пайплайни (feature store, model monitoring, CI/CD для моделей) для software-компаній Гілдфорда, що масштабують свої продуктові ML-функції.",
+        aEn: "Yes. We design MLOps pipelines (feature stores, model monitoring, CI/CD for models) for Guildford software companies scaling their product ML features.",
+      },
+    ],
+  },
+  {
+    slug: "bradford",
+    nameUk: "Бредфорд",
+    nameEn: "Bradford",
+    region: "Уест-Йоркшир",
+    regionEn: "West Yorkshire",
+    population: "540 тис.",
+    populationEn: "540,000",
+    businesses: 22000,
+    description:
+      "Бредфорд — один з найбільших виробничих центрів Йоркширу з багатою текстильною спадщиною, що трансформується у сучасний виробничий та зростаючий tech/data сектор. Місто отримало статус UK City of Culture 2025 та активно інвестує в digital-трансформацію бізнесу. Порівняно з Лідсом чи Манчестером, у Бредфорді значно нижча конкуренція серед ML-постачальників при зростаючому попиті виробничих компаній на автоматизацію. Codeworth будує ML для контролю якості, predictive maintenance та оптимізації виробничих процесів для бредфордського бізнесу.",
+    descriptionEn:
+      "Bradford is one of Yorkshire's largest manufacturing centres, with a rich textile heritage now transforming into modern manufacturing and a growing tech/data sector. Designated UK City of Culture 2025, the city is investing heavily in digital business transformation. Compared to Leeds or Manchester, Bradford has significantly lower competition among ML providers, alongside rising demand from manufacturers for automation. Codeworth builds ML for quality control, predictive maintenance, and manufacturing process optimisation for Bradford businesses.",
+    seoTitle: "ML-консалтинг у Бредфорді | Машинне навчання для виробництва | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Bradford | Manufacturing ML Agency | Codeworth",
+    seoDesc:
+      "ML-консалтинг у Бредфорді: контроль якості CV, predictive maintenance, оптимізація виробництва. Від £4,000. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Bradford: computer vision quality control, predictive maintenance, manufacturing optimisation. From £4,000. Codeworth ML agency.",
+    stats: [
+      { label: "Виробничих компаній", labelEn: "Manufacturing companies", value: "3,400+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "2,200+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "85+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£46k" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "5+" },
+    ],
+    faq: [
+      {
+        q: "Які ML-рішення затребувані у виробничих компаній Бредфорда?",
+        qEn: "Which ML solutions do Bradford manufacturers need?",
+        a: "Computer vision для контролю якості продукції, predictive maintenance виробничого обладнання, оптимізація ланцюга поставок та прогноз попиту для планування виробництва.",
+        aEn: "Computer vision for product quality control, predictive maintenance of manufacturing equipment, supply chain optimisation, and demand forecasting for production planning.",
+      },
+      {
+        q: "Чому ML-консалтинг у Бредфорді дешевший за Лідс чи Манчестер?",
+        qEn: "Why is ML consulting cheaper in Bradford than Leeds or Manchester?",
+        a: "Нижча конкуренція серед локальних ML-постачальників та нижчі операційні витрати дозволяють пропонувати бредфордському бізнесу такі ж production-grade рішення за ставками на 15-25% нижчими за сусідні великі міста.",
+        aEn: "Lower competition among local ML providers and lower operating costs mean Bradford businesses can access the same production-grade solutions at rates 15-25% below neighbouring larger cities.",
+      },
+      {
+        q: "Скільки коштує ML-проєкт для виробничої компанії в Бредфорді?",
+        qEn: "How much does an ML project cost for a Bradford manufacturer?",
+        a: "PoC computer vision для контролю якості — від £5,000-£9,000. Production-система з інтеграцією в конвеєр — від £18,000-£42,000.",
+        aEn: "A PoC computer-vision quality control system starts from £5,000-£9,000. A production system integrated with the line runs £18,000-£42,000.",
+      },
+      {
+        q: "Чи допомагаєте ви бізнесу з City of Culture 2025 цифровою трансформацією?",
+        qEn: "Do you help businesses with City of Culture 2025 digital transformation?",
+        a: "Так. Ми консультуємо бредфордські компанії, що інвестують у digital-трансформацію на хвилі City of Culture 2025, впроваджуючи ML для аналітики відвідувачів, персоналізації та операційної ефективності.",
+        aEn: "Yes. We advise Bradford businesses investing in digital transformation around City of Culture 2025, implementing ML for visitor analytics, personalisation, and operational efficiency.",
+      },
+    ],
+  },
+  {
+    slug: "hull",
+    nameUk: "Гулль",
+    nameEn: "Hull",
+    region: "Іст-Йоркшир",
+    regionEn: "East Yorkshire",
+    population: "270 тис.",
+    populationEn: "270,000",
+    businesses: 13500,
+    description:
+      "Гулль (Кінгстон-апон-Гулль) — центр офшорної вітроенергетики Великобританії завдяки заводу Siemens Gamesa та порту, а також ключовий логістичний хаб на узбережжі Північного моря. Енергетичні компанії впроваджують ML для прогнозу виробітку вітропарків та predictive maintenance турбін, а портова логістика — для оптимізації вантажообігу. Codeworth будує ML для відновлюваної енергетики та портової логістики для гулльського бізнесу.",
+    descriptionEn:
+      "Hull (Kingston upon Hull) is the UK's offshore wind energy hub thanks to the Siemens Gamesa blade factory and port, and a key North Sea logistics gateway. Energy companies use ML for wind farm yield forecasting and turbine predictive maintenance, while port logistics operators apply it to cargo throughput optimisation. Codeworth builds ML for renewable energy and port logistics businesses in Hull.",
+    seoTitle: "ML-консалтинг у Гуллі | Машинне навчання для вітроенергетики та порту | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Hull | Offshore Wind & Port Logistics ML | Codeworth",
+    seoDesc:
+      "ML-консалтинг у Гуллі: прогноз виробітку вітропарків, predictive maintenance турбін, портова логістика. Від £4,000. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Hull: offshore wind yield forecasting, turbine predictive maintenance, port logistics ML. From £4,000. Codeworth ML agency.",
+    stats: [
+      { label: "Енергетичних та логістичних компаній", labelEn: "Energy & logistics companies", value: "740+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "1,300+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "40+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£45k" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "4+" },
+    ],
+    faq: [
+      {
+        q: "Які ML-рішення затребувані у Гуллі?",
+        qEn: "Which ML solutions are in demand in Hull?",
+        a: "Для офшорної вітроенергетики: прогноз виробітку турбін на основі погодних даних, predictive maintenance лопатей та генераторів. Для порту: оптимізація вантажообігу, прогноз завантаженості причалів.",
+        aEn: "For offshore wind: weather-driven turbine yield forecasting, predictive maintenance of blades and generators. For the port: cargo throughput optimisation and berth-utilisation forecasting.",
+      },
+      {
+        q: "Чи маєте ви досвід з offshore wind даними?",
+        qEn: "Do you have experience with offshore wind data?",
+        a: "Так. Ми будуємо моделі прогнозу виробітку на основі метеоданих і SCADA-сенсорів турбін, а також anomaly detection для раннього виявлення механічних несправностей — знижуючи незаплановані простої на 25-35%.",
+        aEn: "Yes. We build yield forecasting models using weather data and turbine SCADA sensors, plus anomaly detection for early mechanical fault identification — reducing unplanned downtime by 25-35%.",
+      },
+      {
+        q: "Скільки коштує ML-проєкт для енергетичної чи логістичної компанії в Гуллі?",
+        qEn: "How much does an ML project cost for a Hull energy or logistics company?",
+        a: "PoC — від £5,000-£9,000. Production predictive maintenance чи оптимізація логістики — від £18,000-£42,000.",
+        aEn: "A PoC starts from £5,000-£9,000. A production predictive maintenance or logistics optimisation system runs £18,000-£42,000.",
+      },
+      {
+        q: "Чи можете ви оптимізувати портову логістику за допомогою ML?",
+        qEn: "Can you optimise port logistics with ML?",
+        a: "Так. Ми будуємо моделі прогнозу завантаженості причалів, оптимізації розкладу розвантаження та route planning для контейнерних і вантажних потоків через порт Гулля.",
+        aEn: "Yes. We build berth-utilisation forecasting models, unloading schedule optimisation, and route planning for container and cargo flows through the Port of Hull.",
+      },
+    ],
+  },
+  {
+    slug: "wolverhampton",
+    nameUk: "Вулвергемптон",
+    nameEn: "Wolverhampton",
+    region: "Уест-Мідлендс",
+    regionEn: "West Midlands",
+    population: "265 тис.",
+    populationEn: "265,000",
+    businesses: 12400,
+    description:
+      "Вулвергемптон — важлива ланка автомобільного ланцюга поставок Уест-Мідлендс з десятками виробників компонентів та tier-2/tier-3 постачальників для великих автовиробників регіону. Виробничий сектор міста активно шукає ML для контролю якості, прогнозування відмов обладнання та оптимізації виробничих процесів у міру автоматизації заводів. Codeworth будує ML для автомобільного supply chain та контролю якості для вулвергемптонських виробників.",
+    descriptionEn:
+      "Wolverhampton is a key link in the West Midlands automotive supply chain, home to dozens of component manufacturers and tier-2/tier-3 suppliers for the region's major automakers. The city's manufacturing sector is increasingly seeking ML for quality control, equipment failure prediction, and process optimisation as factories automate. Codeworth builds ML for automotive supply chain and quality control for Wolverhampton manufacturers.",
+    seoTitle: "ML-консалтинг у Вулвергемптоні | Машинне навчання для автопрому | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Wolverhampton | Automotive Supply Chain ML | Codeworth",
+    seoDesc:
+      "ML-консалтинг у Вулвергемптоні: контроль якості CV, predictive maintenance, supply chain для автопрому. Від £4,000. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Wolverhampton: computer vision quality control, predictive maintenance, automotive supply chain ML. From £4,000. Codeworth ML agency.",
+    stats: [
+      { label: "Виробничих компаній", labelEn: "Manufacturing companies", value: "1,900+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "1,050+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "35+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£45k" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "4+" },
+    ],
+    faq: [
+      {
+        q: "Які ML-рішення затребувані у автомобільних постачальників Вулвергемптона?",
+        qEn: "Which ML solutions do Wolverhampton automotive suppliers need?",
+        a: "Computer vision для виявлення дефектів деталей на конвеєрі, predictive maintenance штампувального та зварювального обладнання, та оптимізація supply chain для узгодження з графіками tier-1 постачальників.",
+        aEn: "Computer vision for defect detection on production lines, predictive maintenance of stamping and welding equipment, and supply chain optimisation to align with tier-1 supplier schedules.",
+      },
+      {
+        q: "Чи маєте ви досвід з tier-2/tier-3 постачальниками?",
+        qEn: "Do you have experience with tier-2/tier-3 suppliers?",
+        a: "Так. Ми розуміємо специфіку роботи з jidoka та just-in-time графіками tier-2/3 постачальників і будуємо ML, що інтегрується з існуючими MES/ERP-системами без порушення виробничого циклу.",
+        aEn: "Yes. We understand the constraints of jidoka and just-in-time scheduling for tier-2/3 suppliers, and build ML that integrates with existing MES/ERP systems without disrupting the production cycle.",
+      },
+      {
+        q: "Скільки коштує computer vision система контролю якості?",
+        qEn: "How much does a computer vision quality control system cost?",
+        a: "PoC на зразках дефектів — від £5,000-£9,000. Production-система з камерами на лінії та real-time алертами — від £20,000-£45,000.",
+        aEn: "A PoC on defect samples starts from £5,000-£9,000. A production system with line-mounted cameras and real-time alerting runs £20,000-£45,000.",
+      },
+      {
+        q: "Чи можете ви прогнозувати відмови виробничого обладнання?",
+        qEn: "Can you predict manufacturing equipment failures?",
+        a: "Так. Ми будуємо моделі predictive maintenance на основі вібро- та термо-сенсорів, що прогнозують відмови за 1-3 тижні наперед, знижуючи незаплановані простої на 30%+.",
+        aEn: "Yes. We build predictive maintenance models using vibration and thermal sensor data that forecast failures 1-3 weeks ahead, cutting unplanned downtime by 30%+.",
+      },
+    ],
+  },
+  {
+    slug: "stoke-on-trent",
+    nameUk: "Сток-он-Трент",
+    nameEn: "Stoke-on-Trent",
+    region: "Стаффордшир",
+    regionEn: "Staffordshire",
+    population: "260 тис.",
+    populationEn: "260,000",
+    businesses: 11200,
+    description:
+      "Сток-он-Трент — історична столиця британської кераміки, що трансформується у центр передових матеріалів і сучасного виробництва. Місцеві компанії застосовують ML для контролю якості кераміки та матеріалів через computer vision, а логістичні оператори — для оптимізації розподілу. Staffordshire University розвиває дослідження в галузі матеріалознавства і AI. Codeworth будує ML для контролю якості виробництва, predictive maintenance та логістичної оптимізації для стоківського бізнесу.",
+    descriptionEn:
+      "Stoke-on-Trent, the historic home of British ceramics, is transforming into a hub for advanced materials and modern manufacturing. Local companies use ML for computer-vision-based ceramics and materials quality control, while logistics operators apply it to distribution optimisation. Staffordshire University is building research strength in materials science and AI. Codeworth builds ML for manufacturing quality control, predictive maintenance, and logistics optimisation for Stoke-on-Trent businesses.",
+    seoTitle: "ML-консалтинг у Сток-он-Тренті | Машинне навчання для виробництва | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Stoke-on-Trent | Manufacturing ML Agency | Codeworth",
+    seoDesc:
+      "ML-консалтинг у Сток-он-Тренті: контроль якості кераміки CV, predictive maintenance, логістика. Від £4,000. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Stoke-on-Trent: ceramics computer vision quality control, predictive maintenance, logistics ML. From £4,000. Codeworth ML agency.",
+    stats: [
+      { label: "Виробничих компаній", labelEn: "Manufacturing companies", value: "1,650+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "820+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "30+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£44k" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "4+" },
+    ],
+    faq: [
+      {
+        q: "Які ML-рішення затребувані у виробників кераміки та матеріалів Стока?",
+        qEn: "Which ML solutions do Stoke ceramics and materials manufacturers need?",
+        a: "Computer vision для виявлення дефектів обпалу та поверхневих тріщин, predictive maintenance печей і виробничих ліній, та прогноз попиту для планування партій виробництва.",
+        aEn: "Computer vision for detecting firing defects and surface cracks, predictive maintenance of kilns and production lines, and demand forecasting for batch production planning.",
+      },
+      {
+        q: "Скільки коштує ML для контролю якості на виробництві?",
+        qEn: "How much does ML for manufacturing quality control cost?",
+        a: "PoC computer vision на зразках дефектної продукції — від £4,500-£8,500. Production-система з камерами на лінії — від £16,000-£38,000.",
+        aEn: "A PoC computer vision system on defective sample product starts from £4,500-£8,500. A production system with line cameras runs £16,000-£38,000.",
+      },
+      {
+        q: "Чи маєте ви досвід з advanced materials виробництвом?",
+        qEn: "Do you have experience with advanced materials manufacturing?",
+        a: "Ми будуємо ML-рішення для контролю якості та predictive maintenance, застосовні як до традиційної кераміки, так і до сучасних advanced materials (технічна кераміка, композити), що розвиваються у регіоні.",
+        aEn: "We build ML for quality control and predictive maintenance applicable to both traditional ceramics and the modern advanced materials (technical ceramics, composites) growing in the region.",
+      },
+      {
+        q: "Чи можете ви оптимізувати логістику для виробників Стока?",
+        qEn: "Can you optimise logistics for Stoke manufacturers?",
+        a: "Так. Ми будуємо моделі прогнозу попиту та оптимізації маршрутів доставки для виробників, що постачають продукцію по всій Великобританії та на експорт.",
+        aEn: "Yes. We build demand forecasting and delivery route optimisation models for manufacturers distributing across the UK and to export markets.",
+      },
+    ],
+  },
+  {
+    slug: "middlesbrough",
+    nameUk: "Мідлсбро",
+    nameEn: "Middlesbrough",
+    region: "Норт-Йоркшир, Тіс-Веллі",
+    regionEn: "North Yorkshire, Tees Valley",
+    population: "174 тис.",
+    populationEn: "174,000",
+    businesses: 8900,
+    description:
+      "Мідлсбро — центр хімічної та процесної промисловості Тіс-Веллі, одного з найбільших промислових кластерів Великобританії, з десятками хімічних заводів, нафтопереробки та важкого машинобудування. Компанії регіону впроваджують ML для predictive maintenance критичного обладнання, оптимізації процесів та моніторингу безпеки. Teesside University готує інженерів для хімічної промисловості з акцентом на process engineering. Codeworth будує ML для predictive maintenance та оптимізації процесів для мідлсброзьких промислових компаній.",
+    descriptionEn:
+      "Middlesbrough is the centre of Tees Valley's chemical and process industries, one of the UK's largest industrial clusters, with dozens of chemical plants, refining operations, and heavy engineering firms. Regional companies use ML for predictive maintenance of critical equipment, process optimisation, and safety monitoring. Teesside University trains engineers for the chemical industry with a focus on process engineering. Codeworth builds ML for predictive maintenance and process optimisation for Middlesbrough industrial companies.",
+    seoTitle: "ML-консалтинг у Мідлсбро | Машинне навчання для хімічної промисловості | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Middlesbrough | Chemical & Process Industry ML | Codeworth",
+    seoDesc:
+      "ML-консалтинг у Мідлсбро: predictive maintenance, оптимізація процесів, моніторинг безпеки. Від £4,000. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Middlesbrough: predictive maintenance, process optimisation, safety monitoring ML. From £4,000. Codeworth ML agency.",
+    stats: [
+      { label: "Хімічних та промислових компаній", labelEn: "Chemical & industrial companies", value: "560+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "680+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "25+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£46k" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "3+" },
+    ],
+    faq: [
+      {
+        q: "Які ML-рішення затребувані у хімічній промисловості Мідлсбро?",
+        qEn: "Which ML solutions are in demand in Middlesbrough's chemical industry?",
+        a: "Predictive maintenance критичного обладнання (реактори, насоси, компресори), оптимізація процесних параметрів для зниження енерговитрат, та anomaly detection для моніторингу безпеки виробництва.",
+        aEn: "Predictive maintenance of critical equipment (reactors, pumps, compressors), process parameter optimisation to reduce energy consumption, and anomaly detection for production safety monitoring.",
+      },
+      {
+        q: "Чи маєте ви досвід з process-даними (тиск, температура, витрати)?",
+        qEn: "Do you have experience with process data (pressure, temperature, flow)?",
+        a: "Так. Ми працюємо з time-series даними промислових датчиків (DCS/SCADA), будуючи моделі прогнозу відмов та оптимізації setpoints, що знижують енерговитрати на 5-12% і незаплановані зупинки на 25-35%.",
+        aEn: "Yes. We work with industrial sensor time-series data (DCS/SCADA), building failure-prediction and setpoint-optimisation models that cut energy consumption by 5-12% and unplanned shutdowns by 25-35%.",
+      },
+      {
+        q: "Скільки коштує ML-проєкт для хімічного заводу в Мідлсбро?",
+        qEn: "How much does an ML project cost for a Middlesbrough chemical plant?",
+        a: "PoC на історичних процесних даних — від £5,500-£10,000. Production-система з інтеграцією в DCS та алертами — від £20,000-£48,000.",
+        aEn: "A PoC on historical process data starts from £5,500-£10,000. A production system integrated with DCS and alerting runs £20,000-£48,000.",
+      },
+      {
+        q: "Чи враховуєте ви вимоги безпеки промислових об'єктів (COMAH)?",
+        qEn: "Do you account for industrial safety requirements (COMAH)?",
+        a: "Так. Наші anomaly detection та predictive maintenance системи проєктуються з урахуванням вимог безпеки COMAH-об'єктів, забезпечуючи ранні алерти без хибних спрацювань, що можуть порушити безпечну експлуатацію.",
+        aEn: "Yes. Our anomaly detection and predictive maintenance systems are designed with COMAH site safety requirements in mind, providing early alerts without false positives that could disrupt safe operations.",
+      },
+    ],
+  },
+  {
+    slug: "swindon",
+    nameUk: "Свіндон",
+    nameEn: "Swindon",
+    region: "Вілтшир",
+    regionEn: "Wiltshire",
+    population: "230 тис.",
+    populationEn: "230,000",
+    businesses: 13100,
+    description:
+      "Свіндон поєднує автомобільну спадщину (колишній завод Honda) з розвиненим логістичним сектором на перетині M4 та зростаючим tech-кластером — тут розташовані офіси Nationwide Building Society, WHSmith та десятків tech-компаній. Логістичні оператори застосовують ML для оптимізації розподільчих мереж, а фінансові компанії — для кредитного скорингу. Codeworth будує ML для логістичної оптимізації, financial services та виробничої аналітики для свіндонського бізнесу.",
+    descriptionEn:
+      "Swindon combines automotive heritage (the former Honda plant) with a strong logistics sector at the M4 junction and a growing tech cluster — home to Nationwide Building Society, WHSmith, and dozens of tech companies. Logistics operators use ML for distribution network optimisation, while financial firms apply it to credit scoring. Codeworth builds ML for logistics optimisation, financial services, and manufacturing analytics for Swindon businesses.",
+    seoTitle: "ML-консалтинг у Свіндоні | Машинне навчання для логістики та фінансів | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Swindon | Logistics & Financial Services ML | Codeworth",
+    seoDesc:
+      "ML-консалтинг у Свіндоні: логістична оптимізація, кредитний скоринг, виробнича аналітика. Від £4,000. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Swindon: logistics optimisation, credit scoring, manufacturing analytics. From £4,000. Codeworth ML agency.",
+    stats: [
+      { label: "Логістичних та фінансових компаній", labelEn: "Logistics & financial companies", value: "780+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "1,550+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "60+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£54k" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "4+" },
+    ],
+    faq: [
+      {
+        q: "Які ML-рішення затребувані у Свіндоні?",
+        qEn: "Which ML solutions are in demand in Swindon?",
+        a: "Для логістики: route optimization та прогноз попиту на розподільчих центрах M4-коридору. Для фінансових компаній (Nationwide): кредитний скоринг та fraud detection. Для виробництва: predictive maintenance.",
+        aEn: "For logistics: route optimisation and demand forecasting for M4-corridor distribution centres. For financial firms (Nationwide): credit scoring and fraud detection. For manufacturing: predictive maintenance.",
+      },
+      {
+        q: "Чи маєте ви досвід з кредитним скорингом для building societies?",
+        qEn: "Do you have experience with credit scoring for building societies?",
+        a: "Так. Ми будуємо credit risk моделі з SHAP-поясненнями відповідно до вимог FCA Consumer Duty, застосовні для building societies та ощадних інституцій масштабу Nationwide.",
+        aEn: "Yes. We build credit risk models with SHAP explainability that meet FCA Consumer Duty requirements, applicable to building societies and savings institutions at Nationwide's scale.",
+      },
+      {
+        q: "Скільки коштує ML-проєкт для логістичної компанії в Свіндоні?",
+        qEn: "How much does an ML project cost for a Swindon logistics company?",
+        a: "PoC route optimization — від £5,000-£9,000. Production-система з інтеграцією в TMS — від £20,000-£44,000.",
+        aEn: "A PoC route optimisation project starts from £5,000-£9,000. A production system integrated with a TMS runs £20,000-£44,000.",
+      },
+      {
+        q: "Чи будуєте ви ML для колишніх автомобільних виробничих об'єктів?",
+        qEn: "Do you build ML for former automotive manufacturing sites?",
+        a: "Так. Ми будуємо predictive maintenance та quality control ML для виробничих компаній, що використовують інфраструктуру, успадковану від автомобільної промисловості Свіндона (штампування, складання, логістика запчастин).",
+        aEn: "Yes. We build predictive maintenance and quality control ML for manufacturers using infrastructure inherited from Swindon's automotive industry (stamping, assembly, parts logistics).",
+      },
+    ],
+  },
+  {
+    slug: "bournemouth",
+    nameUk: "Борнмут",
+    nameEn: "Bournemouth",
+    region: "Дорсет, Борнмут-Крайстчерч-Пул",
+    regionEn: "Dorset, Bournemouth-Christchurch-Poole",
+    population: "200 тис.",
+    populationEn: "200,000",
+    businesses: 12800,
+    description:
+      "Борнмут — важливий фінтех та страховий центр на південному узбережжі: тут розташовані офіси JPMorgan, LV= (Liverpool Victoria) та зростаюча креативно-цифрова індустрія. Bournemouth University має один з найсильніших у Великобританії факультетів медіа та комп'ютерної анімації. Фінансові компанії впроваджують ML для fraud detection та credit scoring, а креативний сектор — для генерації контенту і персоналізації. Codeworth будує ML для фінансових операцій та цифрової креативної індустрії Борнмута.",
+    descriptionEn:
+      "Bournemouth is a significant fintech and insurance centre on the south coast — home to JPMorgan and LV= (Liverpool Victoria) offices, alongside a growing digital creative industry. Bournemouth University has one of the UK's strongest media and computer animation faculties. Financial firms deploy ML for fraud detection and credit scoring, while the creative sector applies it to content generation and personalisation. Codeworth builds ML for financial operations and the digital creative industry in Bournemouth.",
+    seoTitle: "ML-консалтинг у Борнмуті | Машинне навчання для фінтеху та креативної індустрії | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Bournemouth | Fintech & Creative Industry ML | Codeworth",
+    seoDesc:
+      "ML-консалтинг у Борнмуті: fraud detection, credit scoring, ML для креативної індустрії. Від £4,000. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Bournemouth: fraud detection, credit scoring, creative industry ML. From £4,000. Codeworth ML agency.",
+    stats: [
+      { label: "Фінансових та креативних компаній", labelEn: "Financial & creative companies", value: "690+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "2,050+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "80+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£55k" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "5+" },
+    ],
+    faq: [
+      {
+        q: "Які ML-рішення затребувані у фінансових компаній Борнмута?",
+        qEn: "Which ML solutions do Bournemouth financial companies need?",
+        a: "Fraud detection та credit risk scoring для страхових операцій (LV=), NLP для claims-обробки, а також ML-моделі для управління інвестиційними портфелями та операційного ризику (JPMorgan-масштабу офіси).",
+        aEn: "Fraud detection and credit risk scoring for insurance operations (LV=), NLP for claims processing, and ML models for portfolio management and operational risk at JPMorgan-scale offices.",
+      },
+      {
+        q: "Чи будуєте ви ML для креативної/медіа-індустрії?",
+        qEn: "Do you build ML for the creative/media industry?",
+        a: "Так. Для медіа та анімаційних студій ми будуємо ML для автоматизації рендерингу, розпізнавання контенту та персоналізованих рекомендацій — актуально з огляду на сильну медіа-програму Bournemouth University.",
+        aEn: "Yes. For media and animation studios we build ML for render automation, content recognition, and personalised recommendations — relevant given Bournemouth University's strong media programme.",
+      },
+      {
+        q: "Скільки коштує ML-консалтинг у Борнмуті?",
+        qEn: "How much does ML consulting cost in Bournemouth?",
+        a: "PoC — від £5,000-£9,000. Production fraud detection чи credit scoring система з FCA-документацією — від £18,000-£45,000.",
+        aEn: "A PoC starts from £5,000-£9,000. A production fraud detection or credit scoring system with FCA documentation runs £18,000-£45,000.",
+      },
+      {
+        q: "Чи маєте ви досвід з операційним ризиком для великих фінансових офісів?",
+        qEn: "Do you have experience with operational risk for large financial offices?",
+        a: "Ми будуємо anomaly detection та ML-моделі раннього виявлення операційних ризиків (помилки в транзакціях, аномальна активність), застосовні для регіональних офісів глобальних банків масштабу JPMorgan.",
+        aEn: "We build anomaly detection and early operational-risk-warning ML models (transaction errors, anomalous activity), applicable to regional offices of global banks at JPMorgan's scale.",
+      },
+    ],
+  },
+  {
+    slug: "colchester",
+    nameUk: "Колчестер",
+    nameEn: "Colchester",
+    region: "Ессекс, Східна Англія",
+    regionEn: "Essex, East of England",
+    population: "192 тис.",
+    populationEn: "192,000",
+    businesses: 10400,
+    description:
+      "Колчестер — найстаріше зареєстроване місто Великобританії, що поєднує зростаючий tech-сектор при University of Essex (сильна школа комп'ютерних наук і штучного інтелекту) з логістичним вузлом на перетині A12 та близькості до порту Харідж. Місцевий бізнес шукає ML для оптимізації розподілу, аналітики клієнтів та автоматизації малого і середнього бізнесу. Codeworth будує ML-рішення для логістики та зростаючих tech-компаній Колчестера.",
+    descriptionEn:
+      "Colchester, Britain's oldest recorded town, combines a growing tech sector anchored by the University of Essex (a strong computer science and AI school) with a logistics node at the A12 junction near the Port of Harwich. Local businesses seek ML for distribution optimisation, customer analytics, and SME automation. Codeworth builds ML for logistics and growing tech companies in Colchester.",
+    seoTitle: "ML-консалтинг у Колчестері | Машинне навчання для логістики та tech | Codeworth",
+    seoTitleEn: "Machine Learning Consultant Colchester | Logistics & Tech ML Agency | Codeworth",
+    seoDesc:
+      "ML-консалтинг у Колчестері: логістична оптимізація, аналітика клієнтів, автоматизація МСБ. Від £4,000. Codeworth.",
+    seoDescEn:
+      "Machine learning consultant Colchester: logistics optimisation, customer analytics, SME automation. From £4,000. Codeworth ML agency.",
+    stats: [
+      { label: "Логістичних та tech-компаній", labelEn: "Logistics & tech companies", value: "560+" },
+      { label: "ML-спеціалістів у місті", labelEn: "ML specialists in the city", value: "980+" },
+      { label: "AI-стартапів", labelEn: "AI startups", value: "42+" },
+      { label: "Середня зарплата DS", labelEn: "Avg Data Scientist salary", value: "£48k" },
+      { label: "Реалізованих ML-проєктів", labelEn: "ML projects delivered", value: "3+" },
+    ],
+    faq: [
+      {
+        q: "Які ML-рішення затребувані у Колчестері?",
+        qEn: "Which ML solutions are in demand in Colchester?",
+        a: "Для логістики (порт Харідж, A12): route optimization та прогноз вантажопотоку. Для tech-стартапів при University of Essex: MVP ML-функції та customer analytics. Для МСБ: автоматизація через NLP.",
+        aEn: "For logistics (Port of Harwich, A12): route optimisation and freight-flow forecasting. For University of Essex tech startups: MVP ML features and customer analytics. For SMEs: NLP-driven automation.",
+      },
+      {
+        q: "Чи працюєте ви зі стартапами при University of Essex?",
+        qEn: "Do you work with University of Essex startups?",
+        a: "Так. Ми пропонуємо доступні PoC-пакети для ранньостадійних стартапів, що дозволяють протестувати ML-гіпотезу на обмеженому бюджеті перед залученням інвестицій чи грантів.",
+        aEn: "Yes. We offer accessible PoC packages for early-stage startups, letting them test an ML hypothesis on a limited budget before raising investment or grant funding.",
+      },
+      {
+        q: "Скільки коштує ML-проєкт для логістичної компанії в Колчестері?",
+        qEn: "How much does an ML project cost for a Colchester logistics company?",
+        a: "PoC route optimization чи прогноз попиту — від £4,500-£8,500. Production-система — від £16,000-£38,000.",
+        aEn: "A PoC route optimisation or demand forecast starts from £4,500-£8,500. A production system runs £16,000-£38,000.",
+      },
+      {
+        q: "Чи можете ви допомогти малому бізнесу Колчестера з автоматизацією?",
+        qEn: "Can you help Colchester small businesses with automation?",
+        a: "Так. Для МСБ ми пропонуємо доступні NLP-рішення для автоматизації обробки замовлень, клієнтської підтримки та email-класифікації — часто окупні за 2-4 місяці.",
+        aEn: "Yes. For SMEs we offer affordable NLP solutions for order processing automation, customer support, and email classification — typically paying back in 2-4 months.",
+      },
+    ],
+  },
 ];
 
 export function getCity(slug: string): GeoCity | undefined {

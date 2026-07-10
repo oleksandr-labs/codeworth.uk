@@ -1501,6 +1501,126 @@ export const USE_CASES: UseCase[] = [
     relatedServices: ["machine-learning", "predictive-analytics"],
     relatedExtras: ["personalisation-engine", "crm-ml-sync"],
   },
+  {
+    slug: "shadow-ai-governance-audit",
+    titleEn: "How to audit and govern shadow AI usage in your company",
+    titleUk: "Як провести аудит і взяти під контроль тіньове використання AI в компанії",
+    category: "trust",
+    icon: "🕵️",
+    whoEn: "Enterprises, regulated firms, IT security and compliance teams",
+    whoUk: "Великі компанії, регульовані фірми, IT-безпека та compliance-команди",
+    problemEn:
+      "Employees paste customer data, source code, and confidential documents into public AI tools (ChatGPT, Gemini, unauthorised browser extensions) without IT's knowledge or approval. Leadership has no visibility into which AI tools are used, what data leaves the company, or whether any of it violates GDPR, client contracts, or industry regulation — until a breach or audit finding forces the question.",
+    problemUk:
+      "Співробітники вставляють дані клієнтів, вихідний код і конфіденційні документи в публічні AI-інструменти (ChatGPT, Gemini, несанкціоновані розширення браузера) без відома чи схвалення IT. Керівництво не має видимості, які AI-інструменти використовуються, які дані виходять за межі компанії, і чи порушує це GDPR, клієнтські контракти чи галузеве регулювання — доки витік чи аудиторська перевірка не змусить поставити це питання.",
+    solutionEn:
+      "We run a shadow AI discovery and governance audit: network and SaaS-log analysis to map every AI tool actually in use across the organisation, a risk classification of each tool against your data sensitivity tiers and regulatory obligations, and a practical governance framework (approved tool allowlist, DLP rules, an internal-sanctioned AI alternative where needed, and staff usage policy) that fits how people already work instead of banning AI outright.",
+    solutionUk:
+      "Ми проводимо аудит виявлення тіньового AI та побудову governance: аналіз мережевих і SaaS-логів для карти всіх реально використовуваних AI-інструментів в організації, ризик-класифікацію кожного інструменту відносно рівнів чутливості даних і регуляторних зобов'язань, та практичний governance-фреймворк (allowlist схвалених інструментів, DLP-правила, санкціонована внутрішня AI-альтернатива за потреби, політика використання для персоналу) — що враховує реальні робочі звички, а не просто забороняє AI.",
+    resultQuoteEn:
+      "Organisations typically discover 3–5x more AI tools in active use than IT was aware of. After the audit and governance rollout, unsanctioned AI usage drops by 70%+ within two months, with a documented compliance trail for auditors and clients.",
+    resultQuoteUk:
+      "Організації зазвичай виявляють у 3–5 разів більше активно використовуваних AI-інструментів, ніж було відомо IT. Після аудиту й впровадження governance несанкціоноване використання AI падає на 70%+ протягом двох місяців, з документованим compliance-слідом для аудиторів і клієнтів.",
+    metaTitleEn: "Shadow AI Governance Audit | Discover & Control AI Tool Usage | Codeworth",
+    metaTitleUk: "Аудит тіньового AI | Виявлення та контроль AI-інструментів | Codeworth",
+    metaDescriptionEn:
+      "Shadow AI discovery, risk classification, and governance framework. Unsanctioned AI usage −70%. Codeworth.",
+    metaDescriptionUk:
+      "Виявлення тіньового AI, ризик-класифікація та governance-фреймворк. Несанкціоноване використання AI −70%. Codeworth.",
+    relatedPortfolio: ["gov-citizen-service-chatbot-rag", "uk-cybersecurity-ueba-siem"],
+    relatedServices: ["artificial-intelligence", "mlops"],
+    relatedExtras: ["ai-chatbot-rag", "ml-anomaly-detector"],
+  },
+  {
+    slug: "llm-context-caching-cost-reduction",
+    titleEn: "How to cut LLM API costs with prompt and context caching",
+    titleUk: "Як скоротити витрати на LLM API за допомогою кешування промптів і контексту",
+    category: "ai",
+    icon: "💸",
+    whoEn: "SaaS companies with AI features, high-volume chatbot operators, RAG platform owners",
+    whoUk: "SaaS-компанії з AI-функціями, оператори високонавантажених чат-ботів, власники RAG-платформ",
+    problemEn:
+      "LLM API costs scale directly with token volume, and most applications resend the same large system prompts, tool definitions, and retrieved context on every single call. As usage grows, the API bill grows just as fast — often faster than revenue — and nobody on the team has audited how much of that spend is genuinely novel context versus repeated boilerplate.",
+    problemUk:
+      "Витрати на LLM API прямо пропорційні обсягу токенів, а більшість застосунків повторно надсилають ті самі великі системні промпти, визначення інструментів і отриманий контекст при кожному виклику. З ростом використання рахунок за API зростає так само швидко — часто швидше за дохід — а ніхто в команді не аудитував, скільки з цих витрат — справді новий контекст, а скільки — повторюваний шаблон.",
+    solutionEn:
+      "We audit your prompt structure and implement prompt/context caching (Anthropic and OpenAI native caching APIs) by restructuring calls so static content — system instructions, tool schemas, retrieved documents, few-shot examples — sits in cacheable prefix blocks, while only the truly variable user input is sent fresh. We combine this with semantic response caching for repeated queries and right-sizing model choice per call type (cheaper models for classification/routing, premium models only where quality genuinely requires it).",
+    solutionUk:
+      "Ми аудитуємо структуру ваших промптів і впроваджуємо кешування промптів/контексту (нативні API кешування Anthropic та OpenAI), перебудовуючи виклики так, щоб статичний контент — системні інструкції, схеми інструментів, отримані документи, few-shot приклади — розташовувався в кешованих префіксних блоках, а надсилався заново лише справді змінний ввід користувача. Це поєднується з семантичним кешуванням відповідей на повторювані запити та підбором моделі під тип виклику (дешевші моделі для класифікації/маршрутизації, преміум-моделі лише там, де якість справді цього вимагає).",
+    resultQuoteEn:
+      "Clients typically see LLM API costs drop 40–75% within the first billing cycle after caching rollout, with no measurable degradation in response quality or latency — in most cases latency improves due to reduced prompt processing.",
+    resultQuoteUk:
+      "Клієнти зазвичай бачать падіння витрат на LLM API на 40–75% вже в перший розрахунковий період після впровадження кешування, без вимірного погіршення якості відповідей чи латентності — у більшості випадків латентність навіть покращується завдяки меншій обробці промпту.",
+    metaTitleEn: "LLM Cost Reduction via Context Caching | 40-75% Savings | Codeworth",
+    metaTitleUk: "Скорочення витрат на LLM через кешування контексту | -40-75% | Codeworth",
+    metaDescriptionEn:
+      "Prompt/context caching audit and implementation for LLM apps. API costs −40-75%. Codeworth.",
+    metaDescriptionUk:
+      "Аудит і впровадження кешування промптів/контексту для LLM-застосунків. Витрати на API −40-75%. Codeworth.",
+    relatedPortfolio: ["ai-chatbot-saas", "gov-citizen-service-chatbot-rag"],
+    relatedServices: ["llm-rag", "mlops"],
+    relatedExtras: ["ai-chatbot-rag", "ai-chat-summary"],
+  },
+  {
+    slug: "ai-agent-orchestration-multi-tool",
+    titleEn: "How to orchestrate multiple AI agents and tools reliably",
+    titleUk: "Як надійно оркеструвати кілька AI-агентів та інструментів",
+    category: "automation",
+    icon: "🕸️",
+    whoEn: "SaaS platforms, ops-heavy businesses, teams automating multi-step workflows",
+    whoUk: "SaaS-платформи, операційно-навантажені бізнеси, команди що автоматизують багатоетапні процеси",
+    problemEn:
+      "A single LLM call can't reliably handle a workflow that needs to search the web, query a database, call internal APIs, and hand off between specialised sub-tasks in the right order. Teams that try to bolt this together with ad-hoc prompt chains end up with brittle pipelines that silently fail, loop forever, or produce inconsistent results with no audit trail of which tool did what.",
+    problemUk:
+      "Один виклик LLM не може надійно впоратись з процесом, що потребує пошуку в вебі, запиту до бази даних, виклику внутрішніх API та передачі між спеціалізованими під-завданнями у правильному порядку. Команди, що намагаються зліпити це на ad-hoc ланцюжках промптів, отримують крихкі пайплайни, що тихо падають, зациклюються назавжди або дають неконсистентні результати без аудиторського сліду того, який інструмент що зробив.",
+    solutionEn:
+      "We design a multi-agent orchestration architecture (LangGraph or CrewAI-style state machines) with a supervisor agent that routes tasks to specialised sub-agents (research, data-retrieval, action-execution, verification), explicit state and error handling at each node, tool-call logging for full auditability, and hard guardrails (max steps, timeout, human-approval gates for irreversible actions) so the system fails safely instead of looping or hallucinating a completed task.",
+    solutionUk:
+      "Ми проєктуємо архітектуру мультиагентної оркестрації (LangGraph або CrewAI-подібні state machines) із супервізор-агентом, що маршрутизує завдання до спеціалізованих під-агентів (дослідження, отримання даних, виконання дій, верифікація), явним керуванням станом і помилками на кожному вузлі, логуванням викликів інструментів для повної аудитованості та жорсткими guardrails (максимум кроків, таймаут, ворота людського схвалення для незворотних дій), щоб система безпечно падала замість зациклення чи галюцинації про виконане завдання.",
+    resultQuoteEn:
+      "Multi-step workflows that previously required 3-4 disconnected tools and manual handoffs now run end-to-end with a single trigger. Clients see task completion rates rise from ~60% (ad-hoc prompt chains) to 94%+, with a full audit trail per run.",
+    resultQuoteUk:
+      "Багатоетапні процеси, що раніше вимагали 3-4 роз'єднані інструменти й ручні передачі, тепер виконуються end-to-end за одним тригером. Клієнти бачать зростання завершення завдань з ~60% (ad-hoc ланцюжки промптів) до 94%+, з повним аудиторським слідом кожного запуску.",
+    metaTitleEn: "Multi-Agent AI Orchestration | LangGraph & CrewAI | Codeworth",
+    metaTitleUk: "Оркестрація мультиагентного AI | LangGraph та CrewAI | Codeworth",
+    metaDescriptionEn:
+      "Multi-agent orchestration architecture: supervisor + sub-agents, guardrails, audit trail. Task completion 94%+. Codeworth.",
+    metaDescriptionUk:
+      "Архітектура мультиагентної оркестрації: супервізор + під-агенти, guardrails, аудиторський слід. Завершення завдань 94%+. Codeworth.",
+    relatedPortfolio: ["ai-doc-analyzer", "professional-services-ai-automation"],
+    relatedServices: ["llm-rag", "artificial-intelligence"],
+    relatedExtras: ["ai-chatbot-rag", "ml-document-classifier"],
+  },
+  {
+    slug: "telecoms-network-anomaly-detection",
+    titleEn: "How to detect telecoms network anomalies in real time with ML",
+    titleUk: "Як виявляти аномалії телеком-мережі в реальному часі за допомогою ML",
+    category: "automation",
+    icon: "📡",
+    whoEn: "Mobile network operators, ISPs, telecoms infrastructure teams",
+    whoUk: "Мобільні оператори, інтернет-провайдери, команди телеком-інфраструктури",
+    problemEn:
+      "Network teams typically learn about cell tower overload, quality degradation, or failing equipment from customer complaints on social media and the call centre — 6 to 48 hours after the problem actually started, by which point it has already driven up churn and support costs in the affected area.",
+    problemUk:
+      "Мережеві команди зазвичай дізнаються про перевантаження вишок, деградацію якості чи обладнання, що виходить з ладу, зі скарг клієнтів у соцмережах та колл-центрі — через 6-48 годин після фактичного початку проблеми, коли вона вже підвищила відтік і витрати на підтримку у постраждалому регіоні.",
+    solutionEn:
+      "We build a real-time anomaly detection system using an autoencoder trained on base-station telemetry (load, latency, packet loss, equipment temperature) under normal operating conditions. Deviations from the learned reconstruction error trigger alerts within minutes via a Kafka streaming pipeline, giving engineers the location and likely root cause before customers notice a problem.",
+    solutionUk:
+      "Ми будуємо систему виявлення аномалій у реальному часі на основі autoencoder, навченого на телеметрії базових станцій (завантаженість, латентність, packet loss, температура обладнання) у нормальному режимі роботи. Відхилення від засвоєної reconstruction error запускають алерти протягом хвилин через Kafka streaming pipeline, надаючи інженерам локацію та ймовірну причину до того, як клієнти помітять проблему.",
+    resultQuoteEn:
+      "Operators cut network anomaly detection time from 6-48 hours down to under 15 minutes, fixing 60%+ of incidents before the first customer complaint arrives and materially reducing churn in affected regions.",
+    resultQuoteUk:
+      "Оператори скорочують час виявлення аномалій мережі з 6-48 годин до менш ніж 15 хвилин, виправляючи 60%+ інцидентів до першої скарги клієнта та суттєво знижуючи відтік у постраждалих регіонах.",
+    metaTitleEn: "Telecoms Network Anomaly Detection | Real-Time ML | Codeworth",
+    metaTitleUk: "Виявлення аномалій телеком-мережі | Real-Time ML | Codeworth",
+    metaDescriptionEn:
+      "Autoencoder-based real-time network anomaly detection for telecoms. Detection time under 15 min. Codeworth.",
+    metaDescriptionUk:
+      "Real-time виявлення аномалій мережі на основі autoencoder для телекому. Час виявлення менше 15 хв. Codeworth.",
+    relatedPortfolio: ["telecoms-churn-network-anomaly-ml", "uk-telecom-network-optimisation-ml"],
+    relatedServices: ["machine-learning", "predictive-analytics"],
+    relatedExtras: ["ml-anomaly-detector", "ml-forecasting-engine"],
+  },
 ];
 
 export const USE_CASE_CATEGORY_LABELS: Record<

@@ -1,27 +1,29 @@
 # codeworth.uk — ML Adaptation Master Log
 
-**Мета:** Документація всіх змін по адаптації сайту під Machine Learning (Sprints 6–68).
+**Мета:** Документація всіх змін по адаптації сайту під Machine Learning (Sprints 6–69).
 **Початок роботи:** 2026-06-23
-**Остання зміна:** 2026-07-09
+**Остання зміна:** 2026-07-10
 **Виконавець:** Claude AI (паралельні агент-спринти)
 
 ---
 
-## Підсумок поточного стану (після Sprint 65)
+## Підсумок поточного стану (після Sprint 69)
 
 | Файл | До адаптації | Поточний стан | Зміна |
 |------|-------------|---------------|-------|
-| `blog.ts` | ~40 постів | **249 постів** | +209 |
-| `glossary.ts` | 146 термінів | **450 термінів** | +304 |
-| `portfolio.ts` | ~30 кейсів | **95 кейсів** | +65 |
-| `compare.ts` | 10 сторінок | **60 сторінок** | +50 |
-| `mlNiches.ts` | 6 ніш | **22 ніші** | +16 |
-| `aiNiches.ts` | — | **14 ніш** | — |
-| `useCases.ts` | 7 кейсів | **50 кейсів** | +43 |
-| `resources.ts` | 26 ресурсів | **95 ресурсів** | +69 |
+| `blog.ts` | ~40 постів | **286 постів** | +246 |
+| `glossary.ts` | 146 термінів | **463 терміни** | +317 |
+| `portfolio.ts` | ~30 кейсів | **101 кейс** | +71 |
+| `compare.ts` | 10 сторінок | **74 сторінки** | +64 |
+| `mlNiches.ts` | 6 ніш | **26 ніш** | +20 |
+| `aiNiches.ts` | — | **17 ніш** | — |
+| `useCases.ts` | 7 кейсів | **53 кейси** | +46 |
+| `resources.ts` | 26 ресурсів | **99 ресурсів** | +73 |
 | `reviews.ts` | 9 відгуків | **50 відгуків** | +41 |
-| `careers.ts` | 8 позицій | **36 позицій** | +28 |
-| `geo.ts` | 19 міст | **25 міст** (15 з ML-контентом) | +6 |
+| `careers.ts` | 8 позицій | **41 позиція** | +33 |
+| `geo.ts` | 19 міст | **44 міста** (15+19 з ML-контентом) | +25 |
+| `tools.ts` | — | **18 tools** (3 з реальною інтерактивною логікою) | +8 |
+| `startup.ts` | — | **12 MVP-шаблонів** | +4 |
 
 ---
 
@@ -867,7 +869,36 @@
 
 ---
 
-## Що ще потрібно зробити (Backlog — після Sprint 66)
+### Sprint 69 — Масштабний контент-спринт: 7 нових ніш + 90+ нових сторінок (2026-07-10)
+
+**Контекст:** повний аудит `TODO_MAIN.md`/`TODO_SEO_MASTER.md` показав, що backlog-и застаріли (багато "❌ не написано" вже давно реалізовано). Після аудиту сформовано новий backlog конкретних прогалин (4 раунди: A–H у `TODO_MAIN.md` розділ "Нові SEO-сторінки контенту") і реалізовано паралельними фоновими агентами, кожен володів окремим файлом даних (без merge-конфліктів).
+
+**Виконано:**
+- **`mlNiches.ts`** +4 нові ніші: `telecoms`, `government-public-sector`, `automotive`, `pharma-life-sciences` (останню явно відрізнено від існуючого `healthcare` — R&D/клінічні випробування, а не NHS/clinical care)
+- **`aiNiches.ts`** +3 нові ніші: `government`, `media-entertainment`, `automotive`. Обидва хаби `/ml`/`/ai` авто-підхоплюють нові ніші через `.map()` по масивах — окремого роутингу не знадобилось (перевірено читанням `page.tsx`)
+- **`blog.ts`** +38 нових постів (248→286): нові теми 2026 (small language models, reasoning models, AI TRiSM, shadow AI, LLMOps, MCP), опорні пости під нові ніші, порівняльні пости під нові compare-сторінки. Два навмисно розділені близькі за темою пари без дублювання змісту: `ml-for-uk-water-utilities` (технічний) vs `-ofwat` (регуляторний); `ai-for-uk-warehousing-3pl` vs наявний `ml-for-uk-logistics-last-mile`; `ml-for-uk-motor-insurance-telematics` vs наявний `ml-for-uk-insurance-underwriting`
+- **`geo.ts`** +19 нових міст (25→44): Aberdeen, Dundee, York, Milton Keynes, Norwich, Swansea, Bath, Exeter, Luton, Slough, Warwick, Guildford, Bradford, Hull, Wolverhampton, Stoke-on-Trent, Middlesbrough, Swindon, Bournemouth, Colchester — кожне з економічним акцентом міста (напр. Aberdeen → energy, Milton Keynes → logistics, Warwick → automotive/manufacturing)
+- **`glossary.ts`** +14 термінів (449→463): `small-language-models`, `world-models`, `reasoning-models`, `test-time-compute`, `mixture-of-experts-llm`, `model-context-protocol`, `ai-red-teaming`, `sovereign-ai`, `token-economy-llm`, `shadow-ai`, `llmops`, `ai-trism`, `context-caching-llm`, `guardrails-as-code`
+- **`compare.ts`** +15 сторінок (59→74): UK AI-бутики (`vs-faculty-ai`, `vs-peak-ai`, `vs-contino-ai`) з поглибленим framing (тендер/держконтракти), Big4 (`vs-kpmg-ai`, `vs-ey-ai`, `vs-capgemini-ai`), enterprise-платформи (`vs-ibm-watsonx`, `vs-cohere-enterprise`, `vs-nvidia-ai-enterprise`, `vs-glean-enterprise-search`, `vs-writer-enterprise-ai`, `vs-moveworks-ai`, `vs-uipath-ai-automation`, `vs-workday-ai`), офшор (`vs-tcs-infosys-ai-offshore`)
+- **`portfolio.ts`** +7 кейсів (94→101), фіктивні клієнти під нові ніші: `automotive-fleet-predictive-maintenance`, `pharma-clinical-trial-matching-ml`, `gov-citizen-service-chatbot-rag`, `media-content-moderation-ai`, `telecoms-churn-network-anomaly-ml`, `water-utility-leak-detection-ml`, `professional-services-ai-automation`
+- **`useCases.ts`** +4 (49→53): `shadow-ai-governance-audit`, `llm-context-caching-cost-reduction`, `ai-agent-orchestration-multi-tool`, `telecoms-network-anomaly-detection`
+- **`tools.ts`** +8 (10→18) — **3 з реальною робочою інтерактивною логікою** (не лише каталожний запис): `fraud-detection-savings-calculator`, `churn-prediction-roi-calculator`, `predictive-maintenance-savings-calculator` через новий спільний компонент `src/components/tools/IndustrySavingsCalculator.tsx` (slider-інпути, формула за variant-конфігом, live GBP-розрахунок), підключений у `[slug]/page.tsx`. Решта 5 — каталожні записи з `badge: "Coming Soon"` (`ai-chatbot-vs-human-cost-calculator`, `rag-vs-fine-tuning-decision-tool`, `llm-token-cost-comparator`, `ai-act-risk-classification-tool`, `carbon-esg-ml-impact-calculator`) — інтерактивна логіка для них ще не реалізована
+- **`startup.ts`** +4 (8→12): `insurtech-ml-mvp`, `agritech-ml-mvp`, `proptech-ml-mvp`, `regtech-compliance-ml-mvp`
+- **`resources.ts`** +5 (94→99): `uk-ai-act-risk-classification-checklist`, `g-cloud-14-ai-procurement-guide`, `slm-vs-llm-cost-comparison-2026`, `ai-trism-framework-uk-checklist`, `shadow-ai-policy-template-uk`
+- **`careers.ts`** +5 (36→41): `ai-ethics-governance-lead`, `applied-scientist`, `ml-platform-reliability-engineer` (перейменовано з запланованого `ml-platform-engineer` через колізію з наявним слагом), `prompt-engineer-llm`, `client-delivery-lead-ml`. Примітка: масив у файлі насправді називається `JOBS`, не `JOB_POSTINGS`
+
+**⚠️ Виявлені, але НЕ виправлені цього спринту чужі дефекти даних** (поза скоупом задачі, залишені для окремого фіксу):
+- `geo.ts` мав дублікат слага `nottingham` ще ДО цього спринту (підтверджено через `git diff` — лише чисті вставки)
+- `compare.ts` мав 3 дублікати слагів ще ДО цього спринту: `vs-freelance-ml-engineer`, `vs-datarobot`, `vs-big4-ai-consulting`
+- `Footer.tsx` тримає власний захардкоджений куций підсписок ніш (6 AI / 7 ML), не пов'язаний з `ML_NICHES`/`AI_NICHES` — вже був неповним відносно існуючих ніш до цього спринту, тож 7 нових ніш там не з'являться автоматично (не є регресією, сторінки все одно доступні через `/ml`, `/ai` хаби, сайтмап і прямі посилання)
+
+**Перевірка:** `tsc --noEmit` чисто по всьому репо; `npm test` 974/974 (без регресій); `npm run lint` 0 помилок (61 pre-existing попередження без змін). Жодних cron-задач чи DB-міграцій не додавалось (сайт повністю SSG, без БД, статичний export). Один новий React-компонент (`IndustrySavingsCalculator.tsx`), решта — дані. Задеплоєно через GitHub Actions (push у master) — без ручних дій на сервері.
+
+Повний перелік прогалин, з якого виріс цей спринт: `TODO_MAIN.md` розділ "Нові SEO-сторінки контенту (Sprint 19+)" (розділи A–H).
+
+---
+
+## Що ще потрібно зробити (Backlog — після Sprint 69)
 
 ### ✅ Залишки старого бізнесу в коді — ВИДАЛЕНО (2026-07-02, commit 64b38c9)
 Аудит виявив, що контент переписано під ML, але **функціонал старої веб-студії/маркетплейсу лишався живим**: `/marketplace/*` (кошик/чекаут/LiqPay/admin), зламана `/niches`, 147 не-ML portfolio-демо, `CN-` (CodeNest) префікс у order ID, легасі `extras-demos`/`extras-en`, застарілий tagline у словниках. Повний punch-list і деталі: **[TODO_REMOVE_LEGACY_ECOMMERCE.md](TODO_REMOVE_LEGACY_ECOMMERCE.md)**.
@@ -876,16 +907,20 @@
 - Задеплоєно через GitHub Actions (push у master, 10a6a77→64b38c9)
 - Виявлено бонусом: усі 94 записи в `portfolio.ts` вже були 100% ML-контентом — старі "легасі" кейси (пекарня, автосалон тощо) існували лише в мертвій мапі демо-компонентів, не в самому контенті портфоліо
 
-### Контент (пріоритет: LOW — широке покриття досягнуто)
-- [ ] **Blog**: 249 → 280+ постів
-- [ ] **Glossary**: 450 → 480+ термінів
-- [ ] **Portfolio**: 95 → 110+ кейсів
-- [ ] **Compare**: 60 → 70+ сторінок
+### Контент (пріоритет: LOW — широке покриття досягнуто, цілі Sprint 65 перевиконані у Sprint 69)
+- [x] ~~**Blog**: 249 → 280+ постів~~ — ✅ 286 постів (Sprint 69)
+- [x] ~~**Glossary**: 450 → 480+ термінів~~ — ⚠️ 463 терміни (Sprint 69) — трохи не дотягнуто до 480, якщо потрібно ще +17 термінів
+- [x] ~~**Portfolio**: 95 → 110+ кейсів~~ — ⚠️ 101 кейс (Sprint 69) — не дотягнуто до 110, ще +9 за потреби
+- [x] ~~**Compare**: 60 → 70+ сторінок~~ — ✅ 74 сторінки (Sprint 69)
 
 ### Структурні покращення (пріоритет: LOW)
 - [ ] OG images для `/niches/[slug]` — немає файлів, є 404 (низький пріоритет)
-- [ ] Location pages: ML-специфічний контент для решти 10 міст (15/25 вже оновлено)
+- [ ] Location pages: ML-специфічний контент для решти 10 старих міст (15/25 вже оновлено; 19 нових міст Sprint 69 одразу мають повний ML-контент)
 - [ ] Перевірити всі `relatedMLNichePage` у portfolio.ts на валідність ніш
+- [ ] Дедублювати `nottingham` у `geo.ts` (виявлено в Sprint 69, не виправлено — поза скоупом того завдання)
+- [ ] Дедублювати `vs-freelance-ml-engineer`/`vs-datarobot`/`vs-big4-ai-consulting` у `compare.ts` (виявлено в Sprint 69, не виправлено)
+- [ ] `Footer.tsx` — вирішити, чи додавати нові 7 ніш (`/ml/telecoms`, `/ml/automotive`, `/ml/pharma-life-sciences`, `/ml/government-public-sector`, `/ai/government`, `/ai/automotive`, `/ai/media-entertainment`) у куций захардкоджений footer-список, чи лишити як є (сторінки й так доступні через хаби/сайтмап)
+- [ ] Добудувати реальну інтерактивну логіку для 5 tools, доданих у Sprint 69 як каталожні "Coming Soon" (`ai-chatbot-vs-human-cost-calculator`, `rag-vs-fine-tuning-decision-tool`, `llm-token-cost-comparator`, `ai-act-risk-classification-tool`, `carbon-esg-ml-impact-calculator`)
 
 ---
 

@@ -14,6 +14,7 @@ import { ColorContrastChecker } from "@/components/tools/ColorContrastChecker";
 import { RobotsTxtGenerator } from "@/components/tools/RobotsTxtGenerator";
 import { MlRoiCalculator } from "@/components/tools/MlRoiCalculator";
 import { SchemaGenerator } from "@/components/tools/SchemaGenerator";
+import { IndustrySavingsCalculator } from "@/components/tools/IndustrySavingsCalculator";
 
 export async function generateStaticParams() {
   const builtTools = TOOLS.filter((t) => t.isBuilt);
@@ -66,6 +67,12 @@ function ToolComponent({ slug, isUk }: { slug: string; isUk: boolean }) {
       return <RobotsTxtGenerator isUk={isUk} />;
     case "schema-generator":
       return <SchemaGenerator isUk={isUk} />;
+    case "fraud-detection-savings-calculator":
+      return <IndustrySavingsCalculator isUk={isUk} variant="fraud" />;
+    case "churn-prediction-roi-calculator":
+      return <IndustrySavingsCalculator isUk={isUk} variant="churn" />;
+    case "predictive-maintenance-savings-calculator":
+      return <IndustrySavingsCalculator isUk={isUk} variant="maintenance" />;
     default:
       return null;
   }

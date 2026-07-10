@@ -17,6 +17,8 @@
 **Дата:** 2026-06-24 (оновлено після Sprints 6–18)
 **ML Adaptation Log:** [TODO_ML_ADAPTATION.md](TODO_ML_ADAPTATION.md) — повний журнал змін
 
+> **⚠️ Аудит реального масштабу (2026-07-10):** цей документ і `seo/TODO_SEO_MASTER.md` роками відставали від коду — багато пунктів, позначених `[ ]`/"ще не написано", **вже реалізовано**. Фактична інвентаризація `src/lib/data/`: **248 blog постів** (`blog.ts`), **25 міст** (`geo.ts` → `/location/[city]`), **59 compare-сторінок** (`compare.ts`), **94 use-case/resource сторінки** (`useCases.ts`+`resources.ts`, 49+94), **449 глосарій-термінів** (`glossary.ts`), **94 портфоліо-кейси**, **10 інтерактивних tools**, **8 startup MVP-шаблонів**, **20 ML-ніш** (`mlNiches.ts`) + **15 AI-ніш** (`aiNiches.ts`), **7 service pages**. Це на порядок більше, ніж описано нижче в розділах "Нішеві сторінки"/"Блог" — ті розділи лишені для історичного контексту keyword-стратегії, не як актуальний backlog. Новий backlog контенту — розділ [Нові SEO-сторінки (Sprint 19+)](#нові-seo-сторінки-контенту-sprint-19).
+
 ### Ключові вимоги
 - **SEO-first** — кожна сторінка оптимізована під конкретний ML/AI keyword cluster
 - **Двомовний контент** — EN (GBP £, первинна), UK (UAH ₴, вторинна); `defaultLocale = 'en'`
@@ -280,3 +282,200 @@
 12. [ ] Перший guest post TowardsDataScience
 13. [ ] Blog Cluster 4: Industry posts (highest ROI)
 14. [ ] GitHub open-source ML utils (authority signal)
+
+---
+
+## Нові SEO-сторінки контенту (Sprint 19+)
+
+> **✅ ЗАВЕРШЕНО (Sprint 69, 2026-07-10)** — увесь backlog розділів A–H нижче реалізовано паралельними фоновими агентами: 7 нових ніш, 38 blog-постів, 19 міст, 14 глосарій-термінів, 15 compare-сторінок, 7 portfolio-кейсів, 4 use-cases, 8 tools (3 з реальною інтерактивною логікою), 4 startup-шаблони, 5 resources, 5 careers-позицій. Повний наратив, точні числа до/після і 4 виявлені-але-не-виправлені дефекти (дублікат `nottingham` у geo.ts, 3 дублікати slug у compare.ts, куций Footer.tsx-список ніш, 5 tools без реальної логіки) — [TODO_ML_ADAPTATION.md → Sprint 69](../TODO_ML_ADAPTATION.md#sprint-69--масштабний-контент-спринт-7-нових-ніш--90-нових-сторінок-2026-07-10). Списки нижче лишені як історичний план (checkbox'и не проставлялись по одному пункту — дивись Sprint 69 запис на точну відповідність).
+>
+> Мета вихідного планування: сайт вже дуже насичений (248 blog / 25 міст / 59 compare / 94 use-case+resource / 449 глосарій), тож нові сторінки мали закривати конкретні прогалини, а не дублювати наявне. Перевірено проти реальних slug'ів у `src/lib/data/*.ts` (2026-07-10) — нижче тільки те, чого справді не було на момент планування.
+
+### A. Нові нішеві landing pages (є блог-контент, немає `/ml/[niche]` або `/ai/[niche]` сторінки)
+- [ ] `/ml/telecoms` — "ML for UK Telecoms" (churn prediction, network anomaly detection); блог-опора вже є: `ml-for-uk-telecoms`, `ml-telecoms-churn-network-uk`
+- [ ] `/ml/government-public-sector` — "ML for UK Government & Public Sector"; блог-опора: `ml-for-uk-government-public-sector`
+- [ ] `/ai/government` — "AI for UK Public Sector" (citizen-service chatbots, document automation, G-Cloud procurement) — жодного блог-посту немає, писати з нуля
+- [ ] `/ai/media-entertainment` — "AI for UK Media & Broadcasting" (content moderation, recommendation, dubbing/localisation); блог-опора частково: `ml-for-uk-media-audience`, `ml-for-uk-media-broadcasting`, `ml-for-uk-media-publishing`
+- [ ] `/ml/automotive` — "ML for UK Automotive & Fleet" (predictive maintenance, EV route optimisation, connected-car telematics) — нова вертикаль, жодного контенту
+- [ ] `/ml/pharma-life-sciences` — "ML for UK Pharma & Life Sciences" (clinical trial optimisation, drug discovery ML) — нова вертикаль, відрізняти від NHS/healthcare (R&D, не clinical care)
+- [ ] `/ai/automotive` — "AI for UK Automotive Retail" (dealership CV, virtual sales assistant)
+
+### B. Нові інтерактивні tools (найменша категорія — лише 10 існує, найбільший SEO-потенціал за unique-tool рефералами)
+- [ ] Fraud Detection Savings Calculator (банкінг, "how much can ML fraud detection save my bank")
+- [ ] Churn Prediction ROI Calculator (SaaS)
+- [ ] Predictive Maintenance Downtime Savings Calculator (manufacturing/automotive)
+- [ ] AI Chatbot vs Human Support Cost Calculator
+- [ ] RAG vs Fine-Tuning Decision Tool (інтерактивний квіз)
+- [ ] LLM Token Cost Comparator (OpenAI/Anthropic/Google API pricing)
+- [ ] EU/UK AI Act Risk Classification Tool (high/limited/minimal risk quiz) — висока PR/link-цінність, регуляторний topic 2026
+- [ ] Carbon/ESG ML Impact Calculator
+
+### C. Нові startup MVP-шаблони (8 існує)
+- [ ] InsurTech ML MVP
+- [ ] AgriTech ML MVP
+- [ ] PropTech ML MVP
+- [ ] RegTech/Compliance ML MVP
+
+### D. Нові міста (25 вже є в `geo.ts`: London/Manchester/Birmingham/Edinburgh/Bristol/Leeds/Glasgow/Cardiff/Cambridge/Oxford/Sheffield/Newcastle/Nottingham/Liverpool/Brighton/Southampton/Leicester/Coventry/Reading/Plymouth/Derby/Portsmouth/Sunderland/Belfast)
+- [ ] Aberdeen — "ML consultant Aberdeen" (energy/oil&gas data angle, синергія з `/ml/energy`)
+- [ ] Dundee — "AI company Dundee" (гейм-дев/тех кластер міста)
+- [ ] York
+- [ ] Milton Keynes — тех-хаб Thames Valley, синергія з `/ml/logistics` (Amazon/logistics hub)
+- [ ] Norwich
+- [ ] Swansea
+- [ ] Bath
+- [ ] Exeter
+
+### E. Наступний блог-спринт (Sprint 15–18) — нові slug'и, перевірено на відсутність дублів у `blog.ts`
+> Продовжує Sprint 14 (federated-learning-uk-privacy, llm-agents-agentic-ai-uk, ml-for-uk-insurtech, automl-platforms-uk-guide, synthetic-data-generation-uk, vector-databases-uk-enterprise, ml-for-uk-energy-trading, causal-inference-ml-uk, ml-model-compression-edge-uk, reinforcement-learning-uk-business — перевірити фактичний статус, TODO_ai_ml_blog_posts.md позначає їх "🔄 в процесі" з 2026-06-24, могли вже бути дописані)
+
+- [ ] `small-language-models-uk-edge-2026` — "Small Language Models vs LLMs: UK Edge Deployment Guide"
+- [ ] `multimodal-rag-uk-enterprise` — "Multimodal RAG for UK Enterprise: Text, Image, Table Retrieval"
+- [ ] `ai-agent-evaluation-benchmarks-uk` — "How to Evaluate AI Agents Before Production: UK Guide"
+- [ ] `digital-twins-ml-manufacturing-uk` — "Digital Twins with ML: UK Manufacturing Guide"
+- [ ] `zero-shot-few-shot-learning-business-uk` — "Zero-Shot and Few-Shot Learning for Business: When It Works"
+- [ ] `ai-cost-governance-uk-2026` — "AI Cost Governance: Controlling LLM Spend at Scale"
+- [ ] `data-mesh-for-ml-teams-uk` — "Data Mesh for ML Teams: UK Enterprise Guide"
+- [ ] `uk-ai-act-risk-classification-guide` — "UK/EU AI Act Risk Classification: A Practical Guide" (відрізнити від наявного `eu-ai-act-uk-impact-2026`)
+- [ ] `ai-public-sector-procurement-g-cloud-uk` — "AI Procurement via G-Cloud: A Guide for UK Public Sector"
+- [ ] `ai-agents-customer-service-uk-2026` — "AI Agents in Customer Service: 2026 UK Playbook"
+- [ ] `knowledge-graph-rag-hybrid-uk` — "Knowledge Graph + RAG Hybrid Retrieval: UK Enterprise Guide"
+- [ ] `ml-for-uk-automotive-fleet` — опора для нової ніші `/ml/automotive`
+- [ ] `ml-for-uk-pharma-clinical-trials` — опора для нової ніші `/ml/pharma-life-sciences`
+- [ ] `ai-content-moderation-uk-media` — опора для `/ai/media-entertainment`
+- [ ] `ai-dubbing-localisation-media-uk` — опора для `/ai/media-entertainment`
+- [ ] `llm-observability-production-uk` — "LLM Observability in Production: UK Guide" (не плутати з глосарій-терміном `llm-observability-vocabulary`)
+- [ ] `ai-voice-agents-uk-business-2026` — "Voice AI Agents for UK Business: 2026 Guide"
+- [ ] `ml-for-uk-water-utilities` — нова галузева вертикаль (leak detection, demand forecasting)
+- [ ] `computer-vision-checkout-free-retail-uk` — "Checkout-Free Retail with Computer Vision: UK Guide"
+- [ ] `ai-for-uk-professional-services-guide` — консалтинг/бухгалтерія/юр.фірми
+- [ ] `ml-model-risk-management-uk-banking` — SR 11-7 style model risk management (відрізнити від наявного `ml-bias-detection-uk-financial-services`)
+- [ ] `causal-ai-marketing-attribution-uk` — causal inference для маркетинг-атрибуції
+- [ ] `ai-agent-security-guardrails-uk` — "Securing AI Agents: Guardrails and Prompt-Injection Defence"
+
+**Перед написанням кожного:** перевірити `grep -o "slug: ['\"][a-z0-9-]*['\"]" src/lib/data/blog.ts` на дублікати — після Sprint 14 могли з'явитись схожі теми.
+
+### F. Round 2 (2026-07-10, продовження) — глосарій, use-cases, resources
+> Перевірено проти `glossary.ts` (435 термінів), `useCases.ts` (49), `resources.ts` (94) — нижче тільки відсутнє.
+
+**Нові глосарій-терміни** (2026 trending, відсутні в `glossary.ts`):
+- [ ] `small-language-models` — SLM vs LLM, on-device/edge inference
+- [ ] `world-models` — world models в AI-плануванні (за мотивами Sora/Genie-класу систем)
+- [ ] `reasoning-models` — test-time compute / chain-of-thought reasoning models (o-series/R1-клас)
+- [ ] `test-time-compute` — окремий термін від reasoning-models, фокус на inference-scaling
+- [ ] `mixture-of-experts` (MoE-архітектура для LLM, не плутати з наявним `mixture-of-experts-vocabulary` — той з іншого проєкту/namespace, перевірити колізію slug'ів)
+- [ ] `model-context-protocol` (MCP) — як AI-агенти підключаються до інструментів/даних
+- [ ] `ai-red-teaming` — тестування LLM на джейлбрейки перед продакшеном
+- [ ] `sovereign-ai` — data residency / on-prem LLM для регульованих UK-галузей (банкінг, NHS)
+- [ ] `token-economy-llm` — вартість inference по токенах, порівняння провайдерів
+
+**Нові use-cases** (49 наявних — додати під нові вертикалі з розділу A):
+- [ ] `fleet-predictive-maintenance-automotive` — опора для `/ml/automotive`
+- [ ] `clinical-trial-patient-matching-ml` — опора для `/ml/pharma-life-sciences`
+- [ ] `government-citizen-service-chatbot` — опора для `/ai/government`
+- [ ] `content-moderation-media-platform` — опора для `/ai/media-entertainment`
+- [ ] `water-leak-detection-ml` — опора для `ml-for-uk-water-utilities`
+
+**Нові resources** (94 наявних, переважно UK-інституційні гайди — додати свіжі 2026 джерела):
+- [ ] `uk-ai-act-risk-classification-checklist` — практичний checklist-ресурс (companion до blog `uk-ai-act-risk-classification-guide`)
+- [ ] `g-cloud-14-ai-procurement-guide` — G-Cloud 14 (Crown Commercial Service) для AI-закупівель у публічному секторі
+- [ ] `slm-vs-llm-cost-comparison-2026` — companion-ресурс до tool "LLM Token Cost Comparator"
+
+**Перед написанням:** `grep -o "slug: ['\"][a-z0-9-]*['\"]" src/lib/data/glossary.ts` (і відповідно `useCases.ts`/`resources.ts`) на дублікати.
+
+### G. Round 3 (2026-07-10, продовження) — compare, portfolio, careers, ще міста, ще блог
+> Перевірено проти `compare.ts` (59 "vs-*"), `portfolio.ts` (94), `careers.ts` (20), `geo.ts` (25+8 з розділу D) — нижче тільки відсутнє.
+
+**Нові compare-сторінки** (59 наявних покривають Big4/hyperscalers/AutoML — бракує UK-specific AI-бутиків і кількох платформ):
+- [ ] `vs-faculty-ai` — Faculty (UK AI consultancy, урядові контракти) — прямий UK-конкурент, найвища релевантність
+- [ ] `vs-peak-ai` — Peak AI (Manchester, "Decision Intelligence" платформа)
+- [ ] `vs-contino-ai` — Contino (UK cloud/AI консалтинг)
+- [ ] `vs-kpmg-ai` — KPMG AI Consulting
+- [ ] `vs-ey-ai` — EY.ai
+- [ ] `vs-capgemini-ai` — Capgemini Invent AI
+- [ ] `vs-ibm-watsonx` — IBM watsonx.ai platform
+- [ ] `vs-cohere-enterprise` — Cohere API (enterprise LLM)
+- [ ] `vs-nvidia-ai-enterprise` — NVIDIA AI Enterprise stack
+- [ ] `vs-tcs-infosys-ai-offshore` — офшорні гіганти (TCS/Infosys/Wipro) — "чому не офшор"
+
+**Нові portfolio case studies** (94 наявних, жодного під нові вертикалі з розділу A):
+- [ ] `automotive-fleet-predictive-maintenance` — опора для `/ml/automotive`
+- [ ] `pharma-clinical-trial-matching-ml` — опора для `/ml/pharma-life-sciences`
+- [ ] `gov-citizen-service-chatbot-rag` — опора для `/ai/government`
+- [ ] `media-content-moderation-ai` — опора для `/ai/media-entertainment`
+- [ ] `telecoms-churn-network-anomaly-ml` — опора для `/ml/telecoms`
+- [ ] `water-utility-leak-detection-ml` — опора для нової галузевої вертикалі
+- [ ] `professional-services-ai-automation` — опора для `ai-for-uk-professional-services-guide`
+
+**Нові careers ролі** (20 наявних, переважно engineering — бракує ролей non-eng і delivery):
+- [ ] `ai-ethics-governance-lead` — AI Ethics & Governance Lead (E-E-A-T сигнал + EU/UK AI Act релевантність)
+- [ ] `applied-scientist` — Applied Scientist (research-to-production, відрізняється від ml-research-engineer)
+- [ ] `ml-platform-engineer` — ML Platform Engineer (internal tooling, відрізняється від mlops-engineer)
+- [ ] `prompt-engineer-llm` — Prompt/LLM Engineer
+- [ ] `client-delivery-lead-ml` — Client Delivery Lead (non-tech, B2B trust сигнал)
+
+**Ще нові міста** (з розділу D вже заплановано 8: Aberdeen/Dundee/York/Milton Keynes/Norwich/Swansea/Bath/Exeter — додатково):
+- [ ] Luton
+- [ ] Slough — Thames Valley тех-кластер (синергія з `/services/llm-rag` — багато tech HQ)
+- [ ] Warwick — синергія з `/ml/manufacturing` (Warwick Manufacturing Group / автопром West Midlands)
+- [ ] Guildford — тех-кластер Surrey (гейм-дев/software)
+- [ ] Bradford / Hull — Yorkshire secondary hubs (низька конкуренція за "ML consultant")
+
+**Ще нові blog-slug'и** (Round 3, продовжує Sprint 15–18 з розділу E — перевірено на дублі проти 248 наявних):
+- [ ] `ai-consultancy-vs-boutique-uk` — "AI Boutique vs Big4 vs Faculty/Peak: How to Choose (UK 2026)" — опора для `vs-faculty-ai`/`vs-peak-ai`
+- [ ] `ml-for-uk-water-utilities-ofwat` — деталізація Ofwat-регулювання (доповнює `ml-for-uk-water-utilities`)
+- [ ] `ai-ethics-board-uk-setup-guide` — "Setting Up an AI Ethics Board: UK Business Guide"
+- [ ] `applied-ai-scientist-vs-ml-engineer-uk` — роз'яснювальний пост про ролі (підтримка careers-сторінок)
+- [ ] `nvidia-ai-enterprise-uk-cost-guide` — вартість NVIDIA AI Enterprise для UK підприємств
+- [ ] `cohere-vs-openai-vs-anthropic-enterprise-uk` — порівняння enterprise LLM API для UK бізнесу
+- [ ] `ai-for-uk-warehousing-3pl` — 3PL/warehouse automation (відрізнити від наявного `ml-for-uk-logistics-last-mile`)
+- [ ] `ml-for-uk-motor-insurance-telematics` — telematics-based motor insurance (вужче за наявний `ml-for-uk-insurance-underwriting`)
+- [ ] `ai-agent-orchestration-frameworks-uk` — LangGraph/CrewAI/AutoGen порівняння для UK enterprise
+- [ ] `offshore-vs-uk-ml-outsourcing-cost` — опора для `vs-tcs-infosys-ai-offshore`
+
+**Перед написанням кожного:** звірити slug проти `compare.ts`/`portfolio.ts`/`careers.ts`/`blog.ts`/`geo.ts` — паралельні спринти могли вже додати схоже.
+
+### H. Round 4 (2026-07-10, продовження) — глосарій хвиля 2, compare хвиля 2, use-cases/resources/tools, останні міста
+> Перевірено: `glossary.ts` (435, включно з `chain-of-thought`/`guardrails-llm` — вже є), `compare.ts` (59 + 10 з Round 3), `geo.ts` (25 наявних + 13 заплановано в розділах D/G — нижче фінальна хвиля).
+
+**Нові глосарій-терміни (хвиля 2)** — перевірено, відсутні в `glossary.ts`:
+- [ ] `test-time-compute` — inference-time scaling (окремо від `reasoning-models` з Round 2 — саме механізм, а не клас моделей)
+- [ ] `shadow-ai` — неавторизоване використання AI співробітниками (governance-ризик, високий бізнес-інтерес)
+- [ ] `llmops` — LLMOps як дисципліна (відрізняється від наявного MLOps-кластера термінів)
+- [ ] `ai-trism` — AI Trust, Risk & Security Management (Gartner-термін, добре для enterprise-аудиторії)
+- [ ] `context-caching-llm` — prompt/context caching для зниження вартості LLM API
+- [ ] `guardrails-as-code` — окремо від наявного `guardrails-llm` — фокус на CI/CD-інтеграції guardrails
+
+**Нові compare-сторінки (хвиля 2)** — enterprise AI-платформи, відсутні в `compare.ts`:
+- [ ] `vs-glean-enterprise-search` — Glean (enterprise AI search/knowledge)
+- [ ] `vs-writer-enterprise-ai` — Writer (enterprise generative AI platform)
+- [ ] `vs-moveworks-ai` — Moveworks (AI agent для IT/HR support)
+- [ ] `vs-uipath-ai-automation` — UiPath (RPA+AI automation) — релевантно для `/ai/hr`, `/ai/legal`
+- [ ] `vs-workday-ai` — Workday AI (HR/people analytics вбудований AI) — релевантно для `/ai/hr`
+
+**Нові use-cases** (49 наявних):
+- [ ] `shadow-ai-governance-audit` — опора для глосарій-терміну `shadow-ai`
+- [ ] `llm-context-caching-cost-reduction` — опора для `context-caching-llm`
+- [ ] `ai-agent-orchestration-multi-tool` — опора для blog `ai-agent-orchestration-frameworks-uk`
+- [ ] `telecoms-network-anomaly-detection` — опора для `/ml/telecoms`
+
+**Нові resources**:
+- [ ] `ai-trism-framework-uk-checklist` — companion до глосарій-терміну `ai-trism`
+- [ ] `shadow-ai-policy-template-uk` — готовий policy-темплейт для клієнтів (сильний lead-magnet)
+
+**Фінальна хвиля міст** (25 наявних + 13 заплановано в D/G = 38 — додатково remaining secondary UK hubs):
+- [ ] Wolverhampton
+- [ ] Stoke-on-Trent
+- [ ] Middlesbrough
+- [ ] Swindon
+- [ ] Bournemouth
+- [ ] Colchester
+
+**Ще blog-slug'и** (Round 4, доповнює хвилі E/G):
+- [ ] `shadow-ai-governance-uk-guide` — "Shadow AI: The Governance Risk No One's Tracking (UK Guide)"
+- [ ] `llmops-vs-mlops-uk-guide` — "LLMOps vs MLOps: What UK Enterprises Need to Know"
+- [ ] `ai-trism-framework-uk-2026` — "AI TRiSM: Trust, Risk and Security Management for UK Enterprise"
+- [ ] `enterprise-ai-search-glean-uk-guide` — опора для `vs-glean-enterprise-search`
+- [ ] `rpa-vs-ai-agents-uk-automation` — UiPath/RPA vs AI-agent автоматизація, опора для `vs-uipath-ai-automation`
+
+**Перед написанням кожного:** звірити проти `glossary.ts`/`compare.ts`/`useCases.ts`/`resources.ts`/`geo.ts`/`blog.ts` — це вже 4-й раунд, ризик колізій зростає.

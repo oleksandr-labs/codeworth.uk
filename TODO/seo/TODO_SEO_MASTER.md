@@ -4,6 +4,7 @@
 **Ринок:** Великобританія (EN, первинний), Україна (UK, вторинний).
 **Статус:** 🔲 В роботі
 **Оновлено:** 2026-06-23
+**⚠️ Оновлено 2026-07-10**: повна інвентаризація `src/lib/data/` показує масштаб сильно за межами цього документа: 248 blog постів, 25 міст (`/location/[city]`), 59 compare-сторінок, 49 use-cases + 94 resources, 449 глосарій-термінів, 94 портфоліо, 20 ML-ніш + 15 AI-ніш, 10 tools, 8 startup MVP. Новий backlog конкретних прогалин — [TODO_MAIN.md → Нові SEO-сторінки (Sprint 19+)](../TODO_MAIN.md#нові-seo-сторінки-контенту-sprint-19); підсумок нижче в розділі "📅 SEO-пріоритети".
 **⚠️ Оновлено 2026-07-09**: усі 5 сторінок, позначені нижче як "❌ НЕ ІСНУЄ" (nlp, computer-vision, mlops, llm-rag, predictive-analytics), **вже реалізовані** (`src/lib/data/services.ts`, 7 сервісів разом) — розділ "🔍 Відсутні сторінки" застарів, залишений нижче для історії. Того ж дня проведено повний SEO-аудит усіх 7 сторінок послуг (2 раунди) і виправлено: биті посилання з головної (4/8 плиток на `/services/ml-models` тощо вели на 404), Service schema (валюта UAH→GBP, ціна-рядок→число, URL без локалі, відсутні serviceType/areaServed/inLanguage/hasOfferCatalog), FAQPage DOM≠JSON-LD, niche cross-link лише на 2/7 сервісів, перемішана мова FAQ на 3 uk-сторінках, `crossLink`→`crossLinks[]`. Деталі й статус кожного пункту — `TODO/pages/services/TODO_services_overview.md`, `TODO/seo/TODO_metadata.md`, `TODO/seo/TODO_internal_links.md`, `TODO/seo/TODO_technical_seo.md`, `TODO/seo/TODO_hreflang.md`, `TODO/pages/TODO_faq.md`; повний лог — `TODO_ML_ADAPTATION.md` (Sprint 68).
 
 ---
@@ -357,6 +358,14 @@ Blog Post → Niche Page → Service Page → Pricing → Contact
 ---
 
 ## 📅 SEO-пріоритети (Roadmap)
+
+### Sprint 19+: Нові прогалини контенту — ✅ ЗАВЕРШЕНО (Sprint 69, 2026-07-10)
+> Повний наратив і точні числа — [TODO_ML_ADAPTATION.md → Sprint 69](../TODO_ML_ADAPTATION.md#sprint-69--масштабний-контент-спринт-7-нових-ніш--90-нових-сторінок-2026-07-10). Коротко:
+- [x] 7 нових нішевих landing pages: `/ml/telecoms`, `/ml/government-public-sector`, `/ai/government`, `/ai/media-entertainment`, `/ml/automotive`, `/ml/pharma-life-sciences`, `/ai/automotive`
+- [x] 8 нових інтерактивних tools (3 з реальною робочою логікою через новий `IndustrySavingsCalculator.tsx`, 5 каталожних "Coming Soon")
+- [x] 4 нові startup MVP-шаблони (InsurTech/AgriTech/PropTech/RegTech)
+- [x] 19 нових міст (Aberdeen, Dundee, York, Milton Keynes, Norwich, Swansea, Bath, Exeter, Luton, Slough, Warwick, Guildford, Bradford, Hull, Wolverhampton, Stoke-on-Trent, Middlesbrough, Swindon, Bournemouth, Colchester) — 25→44
+- [x] 38 нових blog-постів (248→286) — перевірено на відсутність дублів проти `blog.ts`, `tsc`/`lint`/`jest` (974/974) чисто
 
 ### Тиждень 1–2: Відсутні сторінки (критично)
 - [ ] Створити `/services/nlp` (NLP service page)

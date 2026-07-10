@@ -1,5 +1,25 @@
 # Codeworth.uk TODO & Done Log
 
+> **Примітка:** з Sprint 13+ детальний журнал ведеться в [TODO/TODO_ML_ADAPTATION.md](TODO/TODO_ML_ADAPTATION.md) — цей файл не оновлювався між Sprint 12 (2026-06-24) і записом нижче.
+
+## Session 2026-07-10 — Sprint 69: 7 нових ніш + 90+ нових сторінок
+
+Повний наратив, точні числа до/після та виявлені (не виправлені) чужі дефекти даних — [TODO/TODO_ML_ADAPTATION.md → Sprint 69](TODO/TODO_ML_ADAPTATION.md#sprint-69--масштабний-контент-спринт-7-нових-ніш--90-нових-сторінок-2026-07-10).
+
+### Done (Sprint 69)
+- [x] `mlNiches.ts`/`aiNiches.ts`: +7 нових ніш (telecoms, government-public-sector, automotive, pharma-life-sciences, government, media-entertainment, automotive)
+- [x] `blog.ts`: +38 постів (248→286)
+- [x] `geo.ts`: +19 міст (25→44)
+- [x] `glossary.ts`: +14 термінів (449→463)
+- [x] `compare.ts`: +15 сторінок (59→74)
+- [x] `portfolio.ts`: +7 кейсів (94→101)
+- [x] `useCases.ts`: +4 (49→53)
+- [x] `tools.ts`: +8, 3 з реальною інтерактивною логікою (10→18)
+- [x] `startup.ts`: +4 (8→12)
+- [x] `resources.ts`: +5 (94→99)
+- [x] `careers.ts`: +5 (36→41)
+- [x] `tsc --noEmit` чисто, `npm test` 974/974, `npm run lint` 0 помилок
+
 ## Session 2026-07-02 — Legacy E-commerce/Web-Studio Removal
 
 **Коміти:** 64b38c9, df02924 (репо oleksandr-labs/codeworth.uk, master)

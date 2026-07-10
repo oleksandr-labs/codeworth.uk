@@ -311,3 +311,37 @@
 - [x] Верифікувати що теги прив'язані до нішевих сторінок через `relatedService` — ✅ підтверджено: AI/ML пости мають `nicheSlug` поле + новий `relatedNichePage` для прямої перелінковки
 - [x] Додати `relatedNichePage` field до blog post data — ✅ реалізовано (2026-05-04): додано optional поле в `BlogPost` тип; **39 AI/ML постів** отримали `relatedNichePage`; нова секція "Related articles" на `/ai/[niche]` та `/ml/[niche]` сторінках через `getBlogPostsForNichePage()` helper
 - [x] Перевірити internal-links.test.ts після додавання нових постів — ✅ всі 12 тестів проходять (2026-05-04)
+
+---
+
+## Sprint 15–18 — ✅ ЗАВЕРШЕНО (Sprint 69, 2026-07-10)
+
+> Усі 23 пости нижче написані й додані до `blog.ts` (248→286, разом з ще 15 постами з паралельного Round 3/4 backlog у `TODO_MAIN.md`). Повний наратив і перевірка (tsc/lint/jest 974/974) — [TODO_ML_ADAPTATION.md → Sprint 69](../TODO_ML_ADAPTATION.md#sprint-69--масштабний-контент-спринт-7-нових-ніш--90-нових-сторінок-2026-07-10).
+
+| Slug | EN заголовок | Опора для | Статус |
+|------|-------------|-----------|--------|
+| `small-language-models-uk-edge-2026` | Small Language Models vs LLMs: UK Edge Deployment Guide | `/services/llm-rag` | [x] ✅ реалізовано (Sprint 69, 2026-07-10) |
+| `multimodal-rag-uk-enterprise` | Multimodal RAG for UK Enterprise: Text, Image, Table Retrieval | `/services/llm-rag` | [x] ✅ реалізовано (Sprint 69, 2026-07-10) |
+| `ai-agent-evaluation-benchmarks-uk` | How to Evaluate AI Agents Before Production: UK Guide | `/services/llm-rag` | [x] ✅ реалізовано (Sprint 69, 2026-07-10) |
+| `digital-twins-ml-manufacturing-uk` | Digital Twins with ML: UK Manufacturing Guide | `/ml/manufacturing` | [x] ✅ реалізовано (Sprint 69, 2026-07-10) |
+| `zero-shot-few-shot-learning-business-uk` | Zero-Shot and Few-Shot Learning for Business: When It Works | `/services/machine-learning` | [x] ✅ реалізовано (Sprint 69, 2026-07-10) |
+| `ai-cost-governance-uk-2026` | AI Cost Governance: Controlling LLM Spend at Scale | `/services/mlops` | [x] ✅ реалізовано (Sprint 69, 2026-07-10) |
+| `data-mesh-for-ml-teams-uk` | Data Mesh for ML Teams: UK Enterprise Guide | `/services/mlops` | [x] ✅ реалізовано (Sprint 69, 2026-07-10) |
+| `uk-ai-act-risk-classification-guide` | UK/EU AI Act Risk Classification: A Practical Guide | Compliance/E-E-A-T | [x] ✅ реалізовано (Sprint 69, 2026-07-10) (відрізнити від наявного `eu-ai-act-uk-impact-2026`) |
+| `ai-public-sector-procurement-g-cloud-uk` | AI Procurement via G-Cloud: A Guide for UK Public Sector | `/ai/government` (нова ніша) | [x] ✅ реалізовано (Sprint 69, 2026-07-10) |
+| `ai-agents-customer-service-uk-2026` | AI Agents in Customer Service: 2026 UK Playbook | `/services/llm-rag` | [x] ✅ реалізовано (Sprint 69, 2026-07-10) |
+| `knowledge-graph-rag-hybrid-uk` | Knowledge Graph + RAG Hybrid Retrieval: UK Enterprise Guide | `/services/llm-rag` | [x] ✅ реалізовано (Sprint 69, 2026-07-10) |
+| `ml-for-uk-automotive-fleet` | ML for UK Automotive Fleet: Predictive Maintenance & EV Routing | `/ml/automotive` (нова ніша) | [x] ✅ реалізовано (Sprint 69, 2026-07-10) |
+| `ml-for-uk-pharma-clinical-trials` | ML for UK Pharma: Clinical Trial Optimisation & Drug Discovery | `/ml/pharma-life-sciences` (нова ніша) | [x] ✅ реалізовано (Sprint 69, 2026-07-10) |
+| `ai-content-moderation-uk-media` | AI Content Moderation for UK Media: Ofcom-Ready Guide | `/ai/media-entertainment` (нова ніша) | [x] ✅ реалізовано (Sprint 69, 2026-07-10) |
+| `ai-dubbing-localisation-media-uk` | AI Dubbing and Localisation for UK Media | `/ai/media-entertainment` (нова ніша) | [x] ✅ реалізовано (Sprint 69, 2026-07-10) |
+| `llm-observability-production-uk` | LLM Observability in Production: UK Guide | `/services/mlops` | [x] ✅ реалізовано (Sprint 69, 2026-07-10) |
+| `ai-voice-agents-uk-business-2026` | Voice AI Agents for UK Business: 2026 Guide | `/services/llm-rag` | [x] ✅ реалізовано (Sprint 69, 2026-07-10) |
+| `ml-for-uk-water-utilities` | ML for UK Water Utilities: Leak Detection & Demand Forecasting | нова галузева вертикаль | [x] ✅ реалізовано (Sprint 69, 2026-07-10) |
+| `computer-vision-checkout-free-retail-uk` | Checkout-Free Retail with Computer Vision: UK Guide | `/services/computer-vision` | [x] ✅ реалізовано (Sprint 69, 2026-07-10) |
+| `ai-for-uk-professional-services-guide` | AI for UK Professional Services: Consulting, Accounting, Law | `/services/artificial-intelligence` | [x] ✅ реалізовано (Sprint 69, 2026-07-10) |
+| `ml-model-risk-management-uk-banking` | ML Model Risk Management for UK Banking (SR 11-7 style) | `/ml/banking` | [x] ✅ реалізовано (Sprint 69, 2026-07-10) (відрізнити від наявного `ml-bias-detection-uk-financial-services`) |
+| `causal-ai-marketing-attribution-uk` | Causal AI for Marketing Attribution: UK Guide | `/ai/marketing` | [x] ✅ реалізовано (Sprint 69, 2026-07-10) |
+| `ai-agent-security-guardrails-uk` | Securing AI Agents: Guardrails and Prompt-Injection Defence | `/services/llm-rag` | [x] ✅ реалізовано (Sprint 69, 2026-07-10) |
+
+**Перед написанням кожного поста:** повторно звірити slug проти актуального `blog.ts` (контент-спринти йдуть паралельно, могли з'явитись схожі теми з інших джерел).
