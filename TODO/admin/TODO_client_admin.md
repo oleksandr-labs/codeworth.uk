@@ -1,4 +1,6 @@
-﻿ Клієнтська Адмін-Панель (Client Admin Panel)
+﻿> ⚠️ **DEPRECATED (2026-07-12) — описана фіча видалена з коду.** Цей файл описує `/dashboard` (клієнтський кабінет) та `/admin/marketplace` — обидва роути **підтверджено відсутні** в `src/app/[lang]/` (перевірено `find`, 0 збігів). Видалено в Sprint 67 (2026-07-07) разом з рештою legacy-маркетплейсу — див. [TODO_REMOVE_LEGACY_ECOMMERCE.md](../TODO_REMOVE_LEGACY_ECOMMERCE.md) та `TODO_ML_ADAPTATION.md` (Sprint 67: "сирітський `/dashboard` (customizer/subscription), `useAuth`/`useCart`/`useCompare`"). Не використовувати як актуальний план — лишено для історії. Деталі — [tech/TODO_data_integrity.md](../tech/TODO_data_integrity.md) розділ 4.
+
+ Клієнтська Адмін-Панель (Client Admin Panel)
 
 **Концепція:** Коли клієнт купує готове рішення (нішевий сайт), він отримує доступ до власної адмін-панелі де може управляти контентом свого сайту без технічних знань.
 

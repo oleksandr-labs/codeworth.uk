@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/layout/Container";
 import { CountUp } from "@/components/ui/CountUp";
+import { LogoParticles } from "@/components/ui/LogoParticles";
 import { useLocale } from "@/components/layout/LocaleProvider";
 import { analytics } from "@/lib/analytics";
 
@@ -80,6 +81,12 @@ export function HeroSection() {
           }}
         />
       </div>
+
+      {/* Codeworth mark, particle-simulated in Three.js */}
+      <LogoParticles
+        size={340}
+        className="hidden xl:block absolute top-24 right-4 2xl:right-16 opacity-90"
+      />
 
       <Container className="relative py-20 lg:py-32">
         <div className="max-w-5xl mx-auto text-center">

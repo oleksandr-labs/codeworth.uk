@@ -19,6 +19,8 @@
 
 > **⚠️ Аудит реального масштабу (2026-07-10):** цей документ і `seo/TODO_SEO_MASTER.md` роками відставали від коду — багато пунктів, позначених `[ ]`/"ще не написано", **вже реалізовано**. Фактична інвентаризація `src/lib/data/`: **248 blog постів** (`blog.ts`), **25 міст** (`geo.ts` → `/location/[city]`), **59 compare-сторінок** (`compare.ts`), **94 use-case/resource сторінки** (`useCases.ts`+`resources.ts`, 49+94), **449 глосарій-термінів** (`glossary.ts`), **94 портфоліо-кейси**, **10 інтерактивних tools**, **8 startup MVP-шаблонів**, **20 ML-ніш** (`mlNiches.ts`) + **15 AI-ніш** (`aiNiches.ts`), **7 service pages**. Це на порядок більше, ніж описано нижче в розділах "Нішеві сторінки"/"Блог" — ті розділи лишені для історичного контексту keyword-стратегії, не як актуальний backlog. Новий backlog контенту — розділ [Нові SEO-сторінки (Sprint 19+)](#нові-seo-сторінки-контенту-sprint-19).
 
+> **✅ Sprint 69 завершив увесь backlog обсягу (2026-07-10), нове стратегічне резюме (2026-07-12, цифри перевірені `grep`-підрахунком по коду в 3-му проході аудиту — див. `TODO_ROADMAP.md` для методики):** контент-обсяг тепер перевищує типовий сайт такого розміру (**286 blog / 449 унікальних glossary термінів (463 записи, 14 дублікатів) / 71 унікальна compare-сторінка (74 записи, 3 дублікати) / 101 portfolio / 44 унікальних міста (45 записів, 1 дублікат) / 26 ML-ніш / 18 AI-ніш**). Подальше механічне нарощування обсягу має спадну віддачу. Повний **[roadmap Sprint 70+ → TODO_ROADMAP.md](TODO_ROADMAP.md)** з фазами: Phase 1 (аналітика/безпека форм не live, fake-review E-E-A-T ризик, відомі дефекти даних), Phase 2 (нова `/security` сторінка, аудит якості контенту на масштабі, чистка застарілих TODO), Phase 3 (продовження обсягу — лише якщо аудит покаже headroom). Нові файли: [seo/TODO_trust_authenticity.md](seo/TODO_trust_authenticity.md), [tech/TODO_data_integrity.md](tech/TODO_data_integrity.md), [pages/TODO_security_compliance.md](pages/TODO_security_compliance.md), [seo/TODO_content_quality_audit.md](seo/TODO_content_quality_audit.md).
+
 ### Ключові вимоги
 - **SEO-first** — кожна сторінка оптимізована під конкретний ML/AI keyword cluster
 - **Двомовний контент** — EN (GBP £, первинна), UK (UAH ₴, вторинна); `defaultLocale = 'en'`
@@ -479,3 +481,15 @@
 - [ ] `rpa-vs-ai-agents-uk-automation` — UiPath/RPA vs AI-agent автоматизація, опора для `vs-uipath-ai-automation`
 
 **Перед написанням кожного:** звірити проти `glossary.ts`/`compare.ts`/`useCases.ts`/`resources.ts`/`geo.ts`/`blog.ts` — це вже 4-й раунд, ризик колізій зростає.
+
+---
+
+## Roadmap Sprint 70+ (2026-07-12)
+
+> Розділи A–H вище (Sprint 19+) повністю реалізовані в Sprint 69. **Не додавати новий контент за цим самим патерном без прочитання [TODO_ROADMAP.md](TODO_ROADMAP.md) першою.** Стратегічний фокус змістився з обсягу на якість/довіру/технічний борг:
+
+- 🔴 Phase 1 — аналітика/безпека форм ([tech/TODO_integrations.md](tech/TODO_integrations.md)), fake-review E-E-A-T ризик ([seo/TODO_trust_authenticity.md](seo/TODO_trust_authenticity.md)), відомі дефекти даних ([tech/TODO_data_integrity.md](tech/TODO_data_integrity.md))
+- 🟡 Phase 2 — нова `/security` сторінка ([pages/TODO_security_compliance.md](pages/TODO_security_compliance.md)), аудит якості контенту на масштабі ([seo/TODO_content_quality_audit.md](seo/TODO_content_quality_audit.md))
+- 🟢 Phase 3 — продовження обсягу, лише за результатами Phase 2 аудиту
+
+Повний опис фаз, обґрунтування і залежності — [TODO_ROADMAP.md](TODO_ROADMAP.md).

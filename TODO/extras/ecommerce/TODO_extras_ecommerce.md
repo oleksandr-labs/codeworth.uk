@@ -1,6 +1,8 @@
 ﻿ ✅ Проаналізовано 2026-05-01 — 15 базових + 4 нових позиції (gift cards, bundle builder, recently viewed, invoice gen) в extras.ts.
 > ✅ Демо реалізовано 2026-05-01 — `ecom-bundle-builder` отримав інтерактивне live демо.
 
+> ⚠️ **DEPRECATED (2026-07-12) — фундамент, на який спирається цей файл, видалено.** Документ пропонує нові e-commerce extras "адаптовані з власного маркетплейсу CodeNest" (`CatalogClient.tsx`, `CartClient.tsx`, `CheckoutForm.tsx`, `AccountClient.tsx`, `AdminClient.tsx`, `/marketplace/*`) — уся ця інфраструктура видалена в Sprint 2026-07-02 (див. [TODO_REMOVE_LEGACY_ECOMMERCE.md](../../TODO_REMOVE_LEGACY_ECOMMERCE.md)). Сайт більше не має e-commerce/маркетплейс-функціоналу і не планує його повертати (позиціонування — ML/AI-консалтинг, не веб-студія). Не використовувати як план — лишено для історії. Деталі — [tech/TODO_data_integrity.md](../../tech/TODO_data_integrity.md) розділ 4.
+
 # 🛒 E-commerce Функції — Доробки
 
 > Модулі для інтернет-магазинів, каталогів товарів та онлайн-продажів.

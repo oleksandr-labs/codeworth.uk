@@ -1,4 +1,6 @@
-﻿ Внутрішня перелінковка (Internal Links)
+﻿> ⚠️ **Частково застаріло + нова верифікована знахідка (2026-07-12, 3-й прохід аудиту).** Розділ "Маркетплейс перелінковка" і "Cross-links з існуючих сторінок на нові AI/ML ніші" (`/niches/*`) описують видалену маркетплейс-інфраструктуру (`TODO_REMOVE_LEGACY_ECOMMERCE.md`) — не актуально. **Нова знахідка, перевірена напряму по коду:** `src/app/sitemap.ts` імпортує й покриває 11 з 12 масивів programmatic-даних (`SERVICES_DATA`, `BLOG_POSTS`, `PROJECTS`, `GEO_CITIES`, `COMPARE_DATA`, `GLOSSARY_TERMS`, `RESOURCES`, `JOBS`, `AI_NICHES`, `ML_NICHES`, `USE_CASES`, `STARTUP_SOLUTIONS`) — **але не `TOOLS`**. Усі 18 `/tools/[slug]` сторінок відсутні в sitemap (лише хаб `/tools` присутній). Це єдиний підтверджений orphan-from-sitemap programmatic-тип на сайті. Деталі й дія — [tech/TODO_data_integrity.md](../tech/TODO_data_integrity.md) розділ 5. (Header.tsx не лінкує ніші напряму — досяжні через `/ml`/`/ai` хаби, які коректно `.map()` по повних масивах, це нормальна 2-click глибина, не orphan.)
+
+ Внутрішня перелінковка (Internal Links)
 Опис: Оптимізація зв'язків між сторінками для розподілу ваги та покращення навігації.
 **Статус:** Частково виконано
 **✅ Проаналізовано 2026-05-01 — 16/17 задач виконані.**

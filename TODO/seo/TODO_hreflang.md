@@ -34,7 +34,25 @@
 - ✅ Немає cross-language canonical — `buildAlternates()` завжди використовує поточний `lang`
 - ✅ `/` (root) редиректить на `/en/` — перевірено 2026-05-03: `src/proxy.ts` redirect на `/${locale}${pathname}` (default locale = 'en')
 - [x] ✅ **ВИПРАВЛЕНО 2026-07-09**: на `/services/[slug]` `<link rel="canonical">` вже коректно локалізовано через `buildAlternates()`, але вбудований JSON-LD (`serviceSchema.url`, `breadcrumbSchema.item[].item`) використовував ту саму URL БЕЗ префіксу локалі для EN і UK — тепер обидва використовують `localePath(lang, path)` з `i18n.ts` (EN канонічний на корені без префіксу, UK з `/uk/`), синхронно з `buildAlternates()`/canonical.
-- [ ] Перевірити, чи такий самий патерн (JSON-LD URL без локалі) є на інших `[slug]`-сторінках (blog, portfolio) — якщо так, це системна проблема генерації schema, не лише services. **Не перевірено в цьому раунді.**
+- [x] Перевірити, чи такий самий патерн (JSON-LD URL без локалі) є на інших `[slug]`-сторінках (blog, portfolio) — **перевірено 2026-07-12 (3-й прохід аудиту TODO-дерева), знайдено пов'язаний, але інший за природою баг:**
+
+### JSON-LD мовна локалізація (3-й прохід, 2026-07-12)
+
+Не URL-без-локалі (та проблема з services вже виправлена 2026-07-09), а **текст JSON-LD хардкоджений українською незалежно від `lang`/`isUk`** на кількох `[slug]`-сторінках — реальний hreflang/structured-data mismatch: сторінка декларує `inLanguage: "en"` (де є), але текст у тому ж JSON-LD — українською.
+
+Перевірено напряму по коду (`grep -n "headline:\|name: post\.\|name: project\.\|name: term\." "src/app/[lang]/*/[slug]/page.tsx"`):
+
+| Файл | `headline` | `BreadcrumbList` | Статус |
+|---|---|---|---|
+| `blog/[slug]/page.tsx` | `post.title` — **завжди укр.**, не через `getPostTitle(post, lang)` (той helper коректно використовується лише для видимого H1, рядок 231) | `"Головна"`/`"Блог"` labels + `post.title` — **завжди укр.** | 🔴 Баг |
+| `portfolio/[slug]/page.tsx` | `isUk ? ... : ...` — ✅ коректно | `"Головна"` label + `project.title` — **завжди укр.** | 🟡 Частковий баг (лише breadcrumb) |
+| `glossary/[term]/page.tsx` | — | `term.termUk` — **завжди укр.**, немає `isUk`-розгалуження на `termEn` | 🔴 Баг |
+| `compare/[slug]/page.tsx` | — | `isUk ? data.seoTitleUk : data.seoTitleEn` — ✅ коректно | ✅ OK |
+| `resources/[slug]/page.tsx` | `isUk ? resource.titleUk : resource.titleEn` — ✅ коректно | `isUk ? resource.titleUk : resource.titleEn` — ✅ коректно | ✅ OK |
+
+**Дія:** у `blog/[slug]/page.tsx` — замінити `post.title` на `getPostTitle(post, lang)` у `headline` (рядок ~148) і в breadcrumb `ListItem` (рядок ~187), замінити хардкоджені `"Головна"`/`"Блог"` labels на `isUk ? "Головна" : "Home"` / `isUk ? "Блог" : "Blog"` (там де вони йдуть у `item.name`, не лише у видимому UI, який уже коректний). У `portfolio/[slug]/page.tsx` — та сама заміна breadcrumb labels + `project.title` → локалізований title. У `glossary/[term]/page.tsx` — замінити `term.termUk` на `isUk ? term.termUk : term.termEn` (перевірити чи `termEn` поле взагалі існує в типі). Повний технічний чекліст — [tech/TODO_data_integrity.md](../tech/TODO_data_integrity.md) розділ 7.
+
+**Масштаб впливу:** 286 blog-постів + 101 portfolio-кейс + 449 унікальних glossary-термінів на EN-версії сайту мають Article/BreadcrumbList JSON-LD з українським текстом усередині — не критичний crawl-блокер, але це сигнал мовної невідповідності, який Google може використати проти релевантності сторінки для EN-запитів.
 
 ## OG локалі (вже виконано, перевірка)
 - [x] `og:locale: "en_GB"` на EN сторінках

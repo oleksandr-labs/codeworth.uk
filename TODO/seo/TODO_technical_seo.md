@@ -1,4 +1,25 @@
-﻿ Технічне SEO (Technical SEO) — codenest.com.ua
+﻿> 🔴 **КРИТИЧНА ЗНАХІДКА (2026-07-12, 5-й прохід аудиту) — `next.config.ts` `redirects()` перманентно 301-редіректить `/location/*` і `/startup/*` ГЕТЬ від реально існуючих live-сторінок.**
+>
+> Перевірено напряму по коду (`next.config.ts` рядки ~150-171):
+> ```
+> { source: "/:lang/location/:path*", destination: "/:lang/services", permanent: true },
+> { source: "/location/:path*", destination: "/services", permanent: true },
+> { source: "/:lang/startup/:path*", destination: "/:lang/portfolio", permanent: true },
+> { source: "/startup/:path*", destination: "/portfolio", permanent: true },
+> ```
+> Водночас `src/app/[lang]/location/[city]/page.tsx` і `src/app/[lang]/startup/[slug]/page.tsx` — **повністю побудовані, живі сторінки** з власним `generateMetadata`, `buildAlternates` (canonical/hreflang), `notFound()`, включені в `sitemap.ts` через `GEO_CITIES` (44 унікальних міста) і `STARTUP_SOLUTIONS` (12 шаблонів). Next.js `redirects()` виконується ДО файлової маршрутизації — тобто **кожен запит на `/location/london`, `/en/location/london`, `/startup/insurtech-ml-mvp` тощо перманентно (301/308) редіректиться на `/services`/`/portfolio` ПЕРШ НІЖ Next взагалі спробує віддати реальну сторінку**. Це означає: 44 city-сторінки + 12 startup-сторінок (56 URL сумарно, помножено на 2 локалі = 112 URL) технічно існують у коді й у sitemap, але **недосяжні на живому сайті** — прямий перехід за їхнім власним canonical URL з sitemap.xml дає редірект на іншу сторінку. Google, що йде за sitemap URL, отримає 301 і, ймовірно, деіндексує/не проіндексує ці сторінки як окремі.
+> - [ ] **Дія (пріоритет P0, вище за все інше в цьому файлі):** прибрати ці 4 redirect-правила з `next.config.ts` (вони, ймовірно, залишок з ранньої фази, коли `/location`/`/startup` були ще stub/plaved-holder і свідомо редіректились на готові розділи — контент відтоді повністю побудовано, редіректи забули прибрати)
+> - [ ] Після видалення — перевірити `npm run build`/`generateStaticParams` не конфліктує з чимось іншим, і що жоден внутрішній лінк навмисно не покладався на цей редірект
+> - [ ] Перевірити чи є аналогічна проблема для `/niches/*` (редіректить на `/ai` — тут коректно, бо `/niches` дійсно видалено назавжди) і `/marketplace/*` (редіректить на `/use-cases` — також коректно, marketplace видалено) — ці два НЕ баг, лишити як є
+> - [ ] Побічний ефект: `/marketplace/account/orders → /marketplace/account` (перше правило в масиві, `permanent: false`) тепер мертве й зайве — `/marketplace/account` саме потрапляє під ширше правило `/marketplace/:path* → /use-cases`, тобто виходить подвійний редірект-ланцюжок (2 хопи) для URL, які й так більше не існують; можна безпечно видалити перше правило
+>
+> **Повний технічний чекліст і крос-посилання** — [tech/TODO_data_integrity.md](../tech/TODO_data_integrity.md), P0 у [TODO_ROADMAP.md](../TODO_ROADMAP.md).
+
+> ✅ **robots.ts перевірено напряму (2026-07-12):** `allow` покриває всі активні розділи (`/services/`, `/blog/`, `/compare/`, `/glossary/`, `/location/`, `/tools/`, `/ai/`, `/ml/` та ін.), `disallow` блокує `/admin/`, `/dashboard/`, `/api/`, query-parameter варіанти (`?sort=`, `?filter=` тощо). Додатково блокує AI-тренувальні краулери: `GPTBot`, `Google-Extended`, `anthropic-ai`, `ClaudeBot` — фактично зафіксовано, без оцінки чи це навмисне рішення.
+>
+> ✅ **Canonical/hreflang через `buildAlternates()` підтверджено на всіх перевірених `[slug]`-типах:** `compare/[slug]`, `location/[city]`, `glossary/[term]`, `blog/[slug]` — усі імпортують і викликають `buildAlternates(lang, path)` у `generateMetadata`. `notFound()` присутній на всіх 20 динамічних `[param]`-сторінках, що мають такий параметр (перевірено через `grep -c "notFound()"` по кожному `page.tsx` з `[...]` у шляху — 0 винятків).
+
+ Технічне SEO (Technical SEO) — codenest.com.ua
 Опис: Технічна оптимізація для пошукових систем. Індексація, сканування, структуровані дані, Core Web Vitals.
 **Статус:** Частково виконано
 **✅ Проаналізовано 2026-05-01 — 31/41 задач виконані.**
