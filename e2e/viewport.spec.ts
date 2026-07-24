@@ -37,15 +37,15 @@ for (const vp of VIEWPORTS) {
       await expect(nameInput).toBeVisible();
     });
 
-    test("Маркетплейс каталог — картки продуктів відображаються", async ({ page }) => {
-      await page.goto("/marketplace/catalog");
+    test("Use cases — картки відображаються", async ({ page }) => {
+      await page.goto("/use-cases");
       await expect(page.locator("h1, h2").first()).toBeVisible();
     });
 
-    test("Кошик — сторінка відкривається без помилок", async ({ page }) => {
+    test("FAQ — сторінка відкривається без помилок", async ({ page }) => {
       const errors: string[] = [];
       page.on("pageerror", (err) => errors.push(err.message));
-      await page.goto("/marketplace/cart");
+      await page.goto("/faq");
       await expect(page.locator("body")).toBeVisible();
       expect(errors).toHaveLength(0);
     });

@@ -10,6 +10,8 @@ export interface JobPosting {
   locationEn: string;
   salaryMin: number;
   salaryMax: number;
+  /** Salary period for salaryMin/salaryMax. Defaults to "year" when omitted. */
+  salaryPeriod?: "year" | "month";
   currency: string;
   descriptionUk: string;
   descriptionEn: string;
@@ -90,6 +92,7 @@ export const JOBS: JobPosting[] = [
     locationEn: "Remote, UK/EU",
     salaryMin: 4000,
     salaryMax: 7000,
+    salaryPeriod: "month",
     currency: "GBP",
     descriptionUk:
       "Розробляємо ML-рішення від збору даних до продакшену. Ви будуєте пайплайни обробки даних, навчаєте моделі, розгортаєте їх через FastAPI та підтримуєте MLOps-інфраструктуру.",
@@ -170,6 +173,7 @@ export const JOBS: JobPosting[] = [
     locationEn: "Remote, UK/EU",
     salaryMin: 3500,
     salaryMax: 6000,
+    salaryPeriod: "month",
     currency: "GBP",
     descriptionUk:
       "Проєктуєте та проводите ML-експерименти, виконуєте розвідувальний аналіз даних, інженерію ознак, оцінку та вдосконалення моделей.",
@@ -246,6 +250,7 @@ export const JOBS: JobPosting[] = [
     locationEn: "Remote, UK/EU",
     salaryMin: 4000,
     salaryMax: 7000,
+    salaryPeriod: "month",
     currency: "GBP",
     descriptionUk:
       "Будуєте та підтримуєте інфраструктуру, яка забезпечує надійну роботу ML-моделей у продакшені — CI/CD, моніторинг, виявлення дрейфу даних, автоматизація перенавчання.",
@@ -328,6 +333,7 @@ export const JOBS: JobPosting[] = [
     locationEn: "Remote, UK/EU",
     salaryMin: 7000,
     salaryMax: 10000,
+    salaryPeriod: "month",
     currency: "GBP",
     descriptionUk:
       "Керуєте доставкою ML-проєктів від discovery до продакшену. Визначаєте архітектуру, менторите інженерів, спілкуєтеся з клієнтами.",

@@ -105,7 +105,7 @@ describe("POST /api/newsletter", () => {
     expect(res.status).toBe(200);
   });
 
-  it("returns 500 on invalid JSON body", async () => {
+  it("returns 400 on invalid JSON body", async () => {
     const req = new NextRequest("http://localhost/api/newsletter", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -113,6 +113,6 @@ describe("POST /api/newsletter", () => {
     });
     const { POST } = await import("../route");
     const res = await POST(req);
-    expect(res.status).toBe(500);
+    expect(res.status).toBe(400);
   });
 });

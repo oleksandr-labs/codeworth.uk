@@ -13,7 +13,7 @@ const PAGES = [
   { path: "/pricing", label: "Ціни" },
   { path: "/contact", label: "Контакти" },
   { path: "/extras", label: "Доробки" },
-  { path: "/niches", label: "Ніші" },
+  { path: "/ai", label: "AI-рішення" },
 ];
 
 test.describe("i18n — locale redirect", () => {
@@ -97,56 +97,56 @@ test.describe("i18n — hreflang метадані", () => {
 
 test.describe("i18n — динамічні сторінки", () => {
   test("EN: blog post відкривається", async ({ page }) => {
-    await page.goto("/en/blog/next-js-seo-guide-2024");
+    await page.goto("/en/blog/ai-tools-small-business-2025");
     await expect(page.locator("h1").first()).toBeVisible();
     const lang = await page.locator("html").getAttribute("lang");
     expect(lang).toBe("en");
   });
 
   test("UK: blog post відкривається", async ({ page }) => {
-    await page.goto("/uk/blog/next-js-seo-guide-2024");
+    await page.goto("/uk/blog/ai-tools-small-business-2025");
     await expect(page.locator("h1").first()).toBeVisible();
     const lang = await page.locator("html").getAttribute("lang");
     expect(lang).toBe("uk");
   });
 
   test("EN: service page відкривається", async ({ page }) => {
-    await page.goto("/en/services/website-development");
+    await page.goto("/en/services/artificial-intelligence");
     await expect(page.locator("h1").first()).toBeVisible();
   });
 
   test("UK: service page відкривається", async ({ page }) => {
-    await page.goto("/uk/services/website-development");
+    await page.goto("/uk/services/artificial-intelligence");
     await expect(page.locator("h1").first()).toBeVisible();
   });
 
   test("EN: niche page відкривається", async ({ page }) => {
-    await page.goto("/en/niches/restaurant");
+    await page.goto("/en/ai/healthcare");
     await expect(page.locator("h1").first()).toBeVisible();
   });
 
   test("UK: niche page відкривається", async ({ page }) => {
-    await page.goto("/uk/niches/restaurant");
+    await page.goto("/uk/ai/healthcare");
     await expect(page.locator("h1").first()).toBeVisible();
   });
 
-  test("EN: marketplace product відкривається", async ({ page }) => {
-    await page.goto("/en/marketplace/product/restaurant");
+  test("EN: use case page відкривається", async ({ page }) => {
+    await page.goto("/en/use-cases/automate-support");
     await expect(page.locator("h1").first()).toBeVisible();
   });
 
-  test("UK: marketplace product відкривається", async ({ page }) => {
-    await page.goto("/uk/marketplace/product/restaurant");
+  test("UK: use case page відкривається", async ({ page }) => {
+    await page.goto("/uk/use-cases/automate-support");
     await expect(page.locator("h1").first()).toBeVisible();
   });
 
   test("EN: portfolio case відкривається", async ({ page }) => {
-    await page.goto("/en/portfolio/devstart-edtech-platform");
+    await page.goto("/en/portfolio/ai-chatbot-saas");
     await expect(page.locator("h1").first()).toBeVisible();
   });
 
   test("UK: portfolio case відкривається", async ({ page }) => {
-    await page.goto("/uk/portfolio/devstart-edtech-platform");
+    await page.goto("/uk/portfolio/ai-chatbot-saas");
     await expect(page.locator("h1").first()).toBeVisible();
   });
 });

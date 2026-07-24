@@ -60,8 +60,8 @@ const AI_NICHES_UK = [
   { label: "AI для e-commerce", href: "/ai/ecommerce" },
   { label: "AI для FinTech", href: "/ai/fintech" },
   { label: "AI для маркетингу", href: "/ai/marketing" },
-  { label: "AI для виробництва", href: "/ai/manufacturing" },
-  { label: "AI для HR", href: "/ai/hr" },
+  { label: "AI для рекрутингу та HR", href: "/ai/recruitment-hr" },
+  { label: "AI для держсектору", href: "/ai/government" },
 ];
 
 const AI_NICHES_EN = [
@@ -69,8 +69,8 @@ const AI_NICHES_EN = [
   { label: "AI for E-commerce", href: "/ai/ecommerce" },
   { label: "AI for FinTech", href: "/ai/fintech" },
   { label: "AI for Marketing", href: "/ai/marketing" },
-  { label: "AI for Manufacturing", href: "/ai/manufacturing" },
-  { label: "AI for HR", href: "/ai/hr" },
+  { label: "AI for Recruitment & HR", href: "/ai/recruitment-hr" },
+  { label: "AI for Government", href: "/ai/government" },
 ];
 
 const ML_NICHES_UK = [

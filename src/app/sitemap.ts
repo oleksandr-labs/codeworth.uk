@@ -11,6 +11,7 @@ import { AI_NICHES } from "@/lib/data/aiNiches";
 import { ML_NICHES } from "@/lib/data/mlNiches";
 import { USE_CASES } from "@/lib/data/useCases";
 import { STARTUP_SOLUTIONS } from "@/lib/data/startup";
+import { TOOLS } from "@/lib/data/tools";
 import { BLOG_AUTHORS } from "@/lib/data/blogAuthors";
 import { BLOG_CATEGORIES } from "@/lib/data/blog";
 import { locales, HREFLANG_CODES } from "@/i18n";
@@ -144,6 +145,13 @@ export default async function sitemap({ id }: { id: Promise<string> }): Promise<
     forLocale(locale, `/use-cases/${uc.slug}`, { lastModified: now, changeFrequency: "monthly", priority: 0.7 })
   );
 
+  // Only tools with a built page (`isBuilt: true`) actually render at
+  // /tools/[slug] — see generateStaticParams() in that route, which filters
+  // on the same flag. Unbuilt "Coming Soon" entries would 404.
+  const toolPages = TOOLS.filter((t) => t.isBuilt).map((t) =>
+    forLocale(locale, `/tools/${t.slug}`, { lastModified: now, changeFrequency: "monthly", priority: 0.7 })
+  );
+
   const blogAuthorPages = BLOG_AUTHORS.map((a) =>
     forLocale(locale, `/blog/author/${a.slug}`, { lastModified: now, changeFrequency: "monthly", priority: 0.6 })
   );
@@ -167,6 +175,7 @@ export default async function sitemap({ id }: { id: Promise<string> }): Promise<
     ...mlNichePages,
     ...startupPages,
     ...useCasePages,
+    ...toolPages,
     ...blogAuthorPages,
     ...blogCategoryPages,
   ];

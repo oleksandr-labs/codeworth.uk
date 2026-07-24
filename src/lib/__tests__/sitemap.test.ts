@@ -18,6 +18,7 @@ import { ML_NICHES } from "../data/mlNiches";
 import { USE_CASES } from "../data/useCases";
 import { STARTUP_SOLUTIONS } from "../data/startup";
 import { BLOG_AUTHORS } from "../data/blogAuthors";
+import { TOOLS } from "../data/tools";
 
 const BASE_URL = "https://codeworth.uk";
 const LOCALES = ["en", "uk"];
@@ -156,6 +157,7 @@ describe("Sitemap — total count", () => {
     const useCaseCount = USE_CASES.length * localeCount;
     const authorCount = BLOG_AUTHORS.length * localeCount;
     const categoryCount = BLOG_CATEGORIES.filter((c) => c.id !== "all").length * localeCount;
+    const toolCount = TOOLS.filter((t) => t.isBuilt).length * localeCount;
 
     const expected =
       staticCount +
@@ -173,7 +175,8 @@ describe("Sitemap — total count", () => {
       startupCount +
       useCaseCount +
       authorCount +
-      categoryCount;
+      categoryCount +
+      toolCount;
     expect(entries.length).toBe(expected);
   });
 });

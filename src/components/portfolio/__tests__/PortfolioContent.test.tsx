@@ -80,6 +80,8 @@ jest.mock("@/lib/data/portfolio", () => ({
   },
   getProjectIndustryId: (p: { industry?: string }) => p.industry ?? "",
   getIndustryLabel: (id: string) => id,
+  getProjectTitle: (p: { title: string; titleEn?: string }, lang: string) =>
+    lang === "uk" ? p.title : (p.titleEn ?? p.title),
 }));
 
 describe("PortfolioContent", () => {

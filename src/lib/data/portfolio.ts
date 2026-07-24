@@ -1348,9 +1348,9 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    slug: "aldermore-fraud-shield",
+    slug: "challenger-bank-fraud-shield",
     title: "Real-Time Fraud Detection for UK Digital Bank",
-    client: "Aldermore Bank",
+    client: "UK Digital Challenger Bank, London",
     category: "AI / ML",
     niche: "Фінанси",
     industry: "FinTech",
@@ -1368,7 +1368,7 @@ export const PROJECTS: Project[] = [
     emoji: "🏦",
     priceFrom: 8500,
     caseStudy: {
-      challenge: "Aldermore Bank стикався з зростаючим рівнем шахрайства в онлайн-транзакціях. Хибні спрацювання (false positives) блокували законних клієнтів та генерували chargeback-витрати. Існуюча система на основі правил не встигала адаптуватись до нових схем шахрайства, а відсутність SHAP-пояснень ускладнювала проходження FCA-аудитів.",
+      challenge: "Банк стикався з зростаючим рівнем шахрайства в онлайн-транзакціях. Хибні спрацювання (false positives) блокували законних клієнтів та генерували chargeback-витрати. Існуюча система на основі правил не встигала адаптуватись до нових схем шахрайства, а відсутність SHAP-пояснень ускладнювала проходження FCA-аудитів.",
       solution: "Розробили двоетапний XGBoost-скоринг: перший рівень — реальний час через AWS Lambda (< 50 мс), другий — асинхронний глибокий аналіз. Модель навчена на 80+ фічах поведінки та транзакцій. MLflow для версіонування та A/B-тестування нових моделей. SHAP-пояснення для кожного рішення відповідно до FCA SS1/23 та UK GDPR Article 22.",
       results: [
         "67% скорочення хибних спрацювань",
@@ -1379,7 +1379,7 @@ export const PROJECTS: Project[] = [
       ],
     },
     caseStudyEn: {
-      challenge: "Aldermore Bank faced rising fraud rates in online transactions. False positives were blocking legitimate customers and generating chargeback costs. The existing rule-based system couldn't adapt fast enough to new fraud patterns, and the absence of SHAP explanations complicated FCA audit compliance.",
+      challenge: "The bank faced rising fraud rates in online transactions. False positives were blocking legitimate customers and generating chargeback costs. The existing rule-based system couldn't adapt fast enough to new fraud patterns, and the absence of SHAP explanations complicated FCA audit compliance.",
       solution: "Developed a two-stage XGBoost scoring pipeline: real-time tier via AWS Lambda (< 50 ms), async deep-analysis tier for complex cases. Model trained on 80+ behavioural and transactional features. MLflow for model versioning and A/B testing. SHAP explanations for every decision in line with FCA SS1/23 and UK GDPR Article 22.",
       results: [
         "67% reduction in false positives",
@@ -1391,9 +1391,9 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    slug: "sheffield-nhs-deterioration",
+    slug: "nhs-trust-deterioration",
     title: "Patient Deterioration Early Warning ML System",
-    client: "Sheffield Teaching Hospitals NHS FT",
+    client: "NHS Foundation Trust (South Yorkshire)",
     category: "AI / ML",
     niche: "Медицина",
     industry: "Healthcare",
@@ -1411,7 +1411,7 @@ export const PROJECTS: Project[] = [
     emoji: "🏥",
     priceFrom: 9000,
     caseStudy: {
-      challenge: "Sheffield Teaching Hospitals NHS FT потребувала автоматизованого раннього попередження про погіршення стану пацієнтів. Існуючі NEWS2-показники оброблялись вручну медсестрами, що призводило до затримок у виявленні критичних змін та зайвих переводів до ВІТ. Рішення мало відповідати DSPT, NICE-настановам та вимогам клінічної безпеки DCB0129.",
+      challenge: "NHS Foundation Trust потребувала автоматизованого раннього попередження про погіршення стану пацієнтів. Існуючі NEWS2-показники оброблялись вручну медсестрами, що призводило до затримок у виявленні критичних змін та зайвих переводів до ВІТ. Рішення мало відповідати DSPT, NICE-настановам та вимогам клінічної безпеки DCB0129.",
       solution: "scikit-learn ensemble на NEWS2-компонентах та додаткових лабораторних маркерах (eGFR, лактат, тропонін). NHS FHIR R4 інтеграція з Azure Health Data Services для реального часу. Усі персональні дані залишаються в NHS-інфраструктурі. SHAP-пояснення для клініцистів. DSPT Data Security and Protection Toolkit оцінка пройдена, клінічна безпека DCB0129 задокументована.",
       results: [
         "18% зниження переводів до ВІТ за перші 6 місяців",
@@ -1422,7 +1422,7 @@ export const PROJECTS: Project[] = [
       ],
     },
     caseStudyEn: {
-      challenge: "Sheffield Teaching Hospitals NHS FT needed automated early warning for patient deterioration. Existing NEWS2 scoring was handled manually by nursing staff, leading to delays in detecting critical changes and avoidable ICU transfers. The solution had to meet DSPT requirements, NICE guidelines, and DCB0129 clinical safety standards.",
+      challenge: "The NHS Foundation Trust needed automated early warning for patient deterioration. Existing NEWS2 scoring was handled manually by nursing staff, leading to delays in detecting critical changes and avoidable ICU transfers. The solution had to meet DSPT requirements, NICE guidelines, and DCB0129 clinical safety standards.",
       solution: "scikit-learn ensemble on NEWS2 component features and additional laboratory markers (eGFR, lactate, troponin). NHS FHIR R4 integration with Azure Health Data Services for real-time data. All personal data stays within NHS infrastructure. SHAP explanations for clinicians. DSPT Data Security and Protection Toolkit assessment passed; DCB0129 clinical safety case documented.",
       results: [
         "18% reduction in ICU transfers in the first 6 months",
@@ -1773,10 +1773,10 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    slug: "aviva-claims-ml",
+    slug: "insurer-claims-ml",
     title: "ML-тріаж страхових претензій — 15 000 заявок на день",
     titleEn: "ML Insurance Claims Triage — 15,000 Claims per Day",
-    client: "Aviva UK (London)",
+    client: "UK P&C Insurer (15,000+ claims/day), London",
     category: "AI / ML",
     niche: "Insurance",
     year: 2026,
@@ -1792,8 +1792,8 @@ export const PROJECTS: Project[] = [
     industry: "Insurance",
     priceFrom: 14000,
     caseStudy: {
-      challenge: "Aviva щодня отримувала 15 000 претензій по майну та нещасних випадках. Ручна сортування займала до 2 годин на заявку, завантажувала досвідчених обробників рутинними справами та затримувала виплати по складних випадках. Рівень шахрайства серед незакритих справ сягав 4.3%.",
-      solution: "LightGBM-модель на ознаках заявки (тип претензії, сума, геолокація, поведінка подавача, зв'язані поліси) класифікує кожну заявку за трьома вимірами: складність (проста / середня / складна), ризик шахрайства (низький / середній / високий), рекомендований обробник. Kafka-потік забезпечує класифікацію в реальному часі. FastAPI інтегрується з CRM Aviva. MLflow відслідковує дрейф моделі та перенавчання.",
+      challenge: "Страховик щодня отримував 15 000 претензій по майну та нещасних випадках. Ручна сортування займала до 2 годин на заявку, завантажувала досвідчених обробників рутинними справами та затримувала виплати по складних випадках. Рівень шахрайства серед незакритих справ сягав 4.3%.",
+      solution: "LightGBM-модель на ознаках заявки (тип претензії, сума, геолокація, поведінка подавача, зв'язані поліси) класифікує кожну заявку за трьома вимірами: складність (проста / середня / складна), ризик шахрайства (низький / середній / високий), рекомендований обробник. Kafka-потік забезпечує класифікацію в реальному часі. FastAPI інтегрується з CRM страховика. MLflow відслідковує дрейф моделі та перенавчання.",
       results: [
         "62% заявок обробляється без участі людини (straight-through processing)",
         "Зниження річних витрат на обробку на £4.2M",
@@ -1803,8 +1803,8 @@ export const PROJECTS: Project[] = [
       ],
     },
     caseStudyEn: {
-      challenge: "Aviva received 15,000 P&C claims daily. Manual triage took up to 2 hours per claim, burdened experienced handlers with routine cases, and delayed payouts on complex claims. Fraud incidence among unscreened claims reached 4.3%.",
-      solution: "LightGBM model trained on claim features (claim type, value, geolocation, submitter behaviour, linked policies) classifies each claim across three dimensions: complexity (simple / medium / complex), fraud risk (low / medium / high), recommended handler tier. Kafka stream delivers real-time classification. FastAPI integrates with Aviva's CRM. MLflow monitors model drift and triggers retraining.",
+      challenge: "The insurer received 15,000 P&C claims daily. Manual triage took up to 2 hours per claim, burdened experienced handlers with routine cases, and delayed payouts on complex claims. Fraud incidence among unscreened claims reached 4.3%.",
+      solution: "LightGBM model trained on claim features (claim type, value, geolocation, submitter behaviour, linked policies) classifies each claim across three dimensions: complexity (simple / medium / complex), fraud risk (low / medium / high), recommended handler tier. Kafka stream delivers real-time classification. FastAPI integrates with the insurer's CRM. MLflow monitors model drift and triggers retraining.",
       results: [
         "62% of claims processed with no human touch (straight-through processing)",
         "£4.2M annual reduction in handling costs",
@@ -1815,10 +1815,10 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    slug: "rolls-royce-engine-ml",
+    slug: "aerospace-engine-ml",
     title: "CV-система виявлення дефектів лопаток турбін — точність 99.4%",
     titleEn: "CV Turbine Blade Defect Detection System — 99.4% Accuracy",
-    client: "Rolls-Royce (Derby)",
+    client: "UK Aerospace Engine Manufacturer, Midlands",
     category: "AI / ML",
     niche: "Manufacturing",
     year: 2026,
@@ -1834,7 +1834,7 @@ export const PROJECTS: Project[] = [
     industry: "Aerospace",
     priceFrom: 18000,
     caseStudy: {
-      challenge: "Rolls-Royce перевіряла лопатки турбін вибірково (30% партії) через обмеження ручного контролю. Час перевірки однієї лопатки — 8 хвилин. Дефекти у невибраних 70% виявлялися лише після збирання двигуна, що спричиняло дорогостійкий розбір. Ціна одного пропущеного дефекту на критичній деталі — десятки тисяч фунтів.",
+      challenge: "Виробник авіадвигунів перевіряв лопатки турбін вибірково (30% партії) через обмеження ручного контролю. Час перевірки однієї лопатки — 8 хвилин. Дефекти у невибраних 70% виявлялися лише після збирання двигуна, що спричиняло дорогостійкий розбір. Ціна одного пропущеного дефекту на критичній деталі — десятки тисяч фунтів.",
       solution: "PyTorch CNN (EfficientNet-B5) навчена на 180 000 анотованих зображеннях лопаток з 14 класами дефектів. Модель експортована в ONNX та оптимізована TensorRT для запуску на NVIDIA Jetson Orin безпосередньо на виробничій лінії. Час інференсу — 120 мс на лопатку. FastAPI-мікросервіс передає результати в MES. Автоматичне відхилення деталей з ризиком вище порогу.",
       results: [
         "Точність виявлення дефектів: 99.4%",
@@ -1845,7 +1845,7 @@ export const PROJECTS: Project[] = [
       ],
     },
     caseStudyEn: {
-      challenge: "Rolls-Royce inspected turbine blades on a 30% sample basis due to manual inspection constraints. One blade took 8 minutes to inspect. Defects in the remaining 70% were only discovered after engine assembly, triggering costly disassembly. A single missed defect on a safety-critical part carried a cost of tens of thousands of pounds.",
+      challenge: "The aerospace engine manufacturer inspected turbine blades on a 30% sample basis due to manual inspection constraints. One blade took 8 minutes to inspect. Defects in the remaining 70% were only discovered after engine assembly, triggering costly disassembly. A single missed defect on a safety-critical part carried a cost of tens of thousands of pounds.",
       solution: "PyTorch CNN (EfficientNet-B5) trained on 180,000 annotated blade images across 14 defect classes. Model exported to ONNX and optimised with TensorRT for deployment on NVIDIA Jetson Orin at the production line. Inference time: 120 ms per blade. FastAPI microservice feeds results into the MES. Parts exceeding the risk threshold are automatically rejected.",
       results: [
         "Defect detection precision: 99.4%",
@@ -1857,10 +1857,10 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    slug: "octopus-energy-demand-ml",
+    slug: "energy-retailer-demand-ml",
     title: "Прогнозування попиту на електроенергію по 4M домогосподарств UK",
     titleEn: "Electricity Demand Forecasting for 4M UK Households",
-    client: "Octopus Energy (London)",
+    client: "UK Energy Retailer (4M Household Accounts), London",
     category: "AI / ML",
     niche: "Energy",
     year: 2026,
@@ -1876,7 +1876,7 @@ export const PROJECTS: Project[] = [
     industry: "Energy",
     priceFrom: 16000,
     caseStudy: {
-      challenge: "Octopus Energy управляла 4M домогосподарств на динамічному тарифі Agile. Погана точність прогнозу попиту призводила до дорогих небалансових штрафів від Elexon та субоптимального ціноутворення. Існуюча модель давала MAPE 7.8% на 48-годинному горизонті. Піврічна гранулярність була критичною для торгівлі.",
+      challenge: "Енергопостачальник управляв 4M домогосподарств на динамічному тарифі Agile. Погана точність прогнозу попиту призводила до дорогих небалансових штрафів від Elexon та субоптимального ціноутворення. Існуюча модель давала MAPE 7.8% на 48-годинному горизонті. Піврічна гранулярність була критичною для торгівлі.",
       solution: "Ансамбль LightGBM + Temporal Fusion Transformer (TFT) з ознаками: погодний реаналіз ERA5, телеметрія розумних лічильників (SMETS2), банківські свята UK, шкільні канікули, сезонність тарифів. Airflow DAG оновлює прогноз кожні 30 хвилин. Результати зберігаються в PostgreSQL та візуалізуються в Grafana. Двигун тарифів Agile споживає прогноз через REST API.",
       results: [
         "MAPE знижено з 7.8% до 4.1% на 48-годинному горизонті",
@@ -1887,7 +1887,7 @@ export const PROJECTS: Project[] = [
       ],
     },
     caseStudyEn: {
-      challenge: "Octopus Energy managed 4M households on the dynamic Agile tariff. Poor demand forecast accuracy led to costly imbalance charges from Elexon and suboptimal pricing decisions. The existing model achieved MAPE 7.8% on a 48-hour horizon. Half-hourly granularity was critical for trading.",
+      challenge: "The energy retailer managed 4M households on the dynamic Agile tariff. Poor demand forecast accuracy led to costly imbalance charges from Elexon and suboptimal pricing decisions. The existing model achieved MAPE 7.8% on a 48-hour horizon. Half-hourly granularity was critical for trading.",
       solution: "LightGBM + Temporal Fusion Transformer (TFT) ensemble with features: ERA5 weather reanalysis, SMETS2 smart meter telemetry, UK bank holidays, school holidays, tariff seasonality. Airflow DAG refreshes the forecast every 30 minutes. Outputs stored in PostgreSQL and visualised in Grafana. Agile tariff engine consumes the forecast via REST API.",
       results: [
         "MAPE reduced from 7.8% to 4.1% on 48-hour horizon",
@@ -1899,10 +1899,10 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    slug: "nationwide-mortgage-nlp",
+    slug: "building-society-mortgage-nlp",
     title: "NLP-обробка документів іпотечних заявок — скорочення терміну на 5 днів",
     titleEn: "NLP Mortgage Application Document Processing — 5 Days Faster",
-    client: "Nationwide Building Society (Swindon)",
+    client: "UK Building Society (Mutual, Top-10 Mortgage Lender)",
     category: "AI / ML",
     niche: "Fintech",
     year: 2026,
@@ -1918,7 +1918,7 @@ export const PROJECTS: Project[] = [
     industry: "Financial Services",
     priceFrom: 13000,
     caseStudy: {
-      challenge: "Nationwide обробляла 2 400 іпотечних заявок на тиждень. Ручне введення даних з документів займало 3.5 год на заявку. Середній термін ухвалення рішення — 14 днів, що програвало цифровим конкурентам. FCA вимагала повний аудиторський слід кожного рішення.",
+      challenge: "Товариство обробляло 2 400 іпотечних заявок на тиждень. Ручне введення даних з документів займало 3.5 год на заявку. Середній термін ухвалення рішення — 14 днів, що програвало цифровим конкурентам. FCA вимагала повний аудиторський слід кожного рішення.",
       solution: "Hugging Face BERT fine-tuned для розпізнавання іменованих сутностей у фінансових документах UK. spaCy-правила обробляють структуровані поля (дати, суми, номери рахунків). FastAPI оркеструє пайплайн: OCR → NLP → валідація → запис у SQL Server. Azure UK South забезпечує відповідність вимогам GDPR та FCA щодо місця зберігання даних. MLflow відслідковує версії моделей та точність витягування.",
       results: [
         "Середній термін обробки іпотеки знижено на 5 днів",
@@ -1929,7 +1929,7 @@ export const PROJECTS: Project[] = [
       ],
     },
     caseStudyEn: {
-      challenge: "Nationwide processed 2,400 mortgage applications per week. Manual data entry from documents took 3.5 hours per application. Average decision time was 14 days, losing ground to digital-native competitors. FCA required a complete audit trail for every decision.",
+      challenge: "The building society processed 2,400 mortgage applications per week. Manual data entry from documents took 3.5 hours per application. Average decision time was 14 days, losing ground to digital-native competitors. FCA required a complete audit trail for every decision.",
       solution: "Hugging Face BERT fine-tuned for named entity recognition in UK financial documents. spaCy rules handle structured fields (dates, amounts, account numbers). FastAPI orchestrates the pipeline: OCR → NLP → validation → write to SQL Server. Azure UK South ensures GDPR and FCA data residency compliance. MLflow tracks model versions and extraction accuracy.",
       results: [
         "Average mortgage processing time reduced by 5 days",

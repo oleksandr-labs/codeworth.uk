@@ -131,6 +131,67 @@ const nextConfig: NextConfig = {
         destination: "/marketplace/account",
         permanent: false,
       },
+      // Portfolio case studies renamed off real client names (anonymized 2026-07-24)
+      {
+        source: "/:lang/portfolio/aldermore-fraud-shield",
+        destination: "/:lang/portfolio/challenger-bank-fraud-shield",
+        permanent: true,
+      },
+      {
+        source: "/portfolio/aldermore-fraud-shield",
+        destination: "/portfolio/challenger-bank-fraud-shield",
+        permanent: true,
+      },
+      {
+        source: "/:lang/portfolio/sheffield-nhs-deterioration",
+        destination: "/:lang/portfolio/nhs-trust-deterioration",
+        permanent: true,
+      },
+      {
+        source: "/portfolio/sheffield-nhs-deterioration",
+        destination: "/portfolio/nhs-trust-deterioration",
+        permanent: true,
+      },
+      {
+        source: "/:lang/portfolio/aviva-claims-ml",
+        destination: "/:lang/portfolio/insurer-claims-ml",
+        permanent: true,
+      },
+      {
+        source: "/portfolio/aviva-claims-ml",
+        destination: "/portfolio/insurer-claims-ml",
+        permanent: true,
+      },
+      {
+        source: "/:lang/portfolio/rolls-royce-engine-ml",
+        destination: "/:lang/portfolio/aerospace-engine-ml",
+        permanent: true,
+      },
+      {
+        source: "/portfolio/rolls-royce-engine-ml",
+        destination: "/portfolio/aerospace-engine-ml",
+        permanent: true,
+      },
+      {
+        source: "/:lang/portfolio/octopus-energy-demand-ml",
+        destination: "/:lang/portfolio/energy-retailer-demand-ml",
+        permanent: true,
+      },
+      {
+        source: "/portfolio/octopus-energy-demand-ml",
+        destination: "/portfolio/energy-retailer-demand-ml",
+        permanent: true,
+      },
+      {
+        source: "/:lang/portfolio/nationwide-mortgage-nlp",
+        destination: "/:lang/portfolio/building-society-mortgage-nlp",
+        permanent: true,
+      },
+      {
+        source: "/portfolio/nationwide-mortgage-nlp",
+        destination: "/portfolio/building-society-mortgage-nlp",
+        permanent: true,
+      },
       {
         source: "/:lang/services/ai-ml",
         destination: "/:lang/services/artificial-intelligence",
@@ -145,28 +206,6 @@ const nextConfig: NextConfig = {
       {
         source: "/erp-development",
         destination: "/services/machine-learning",
-        permanent: true,
-      },
-      // Location pages → services
-      {
-        source: "/:lang/location/:path*",
-        destination: "/:lang/services",
-        permanent: true,
-      },
-      {
-        source: "/location/:path*",
-        destination: "/services",
-        permanent: true,
-      },
-      // Startup landing pages → portfolio
-      {
-        source: "/:lang/startup/:path*",
-        destination: "/:lang/portfolio",
-        permanent: true,
-      },
-      {
-        source: "/startup/:path*",
-        destination: "/portfolio",
         permanent: true,
       },
       // Niches → AI solutions

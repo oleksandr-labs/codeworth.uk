@@ -150,7 +150,13 @@ export function LogoParticles({ className, size = 320 }: LogoParticlesProps) {
     const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
     camera.position.set(0, 0, 10);
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    let renderer: THREE.WebGLRenderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    } catch {
+      // WebGL unavailable (old browser, disabled GPU, test/SSR-like environment) — skip silently
+      return;
+    }
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     container.appendChild(renderer.domElement);
 

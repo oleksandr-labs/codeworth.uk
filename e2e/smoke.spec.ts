@@ -20,8 +20,11 @@ test.describe("Smoke Tests", () => {
     await expect(page.getByRole("button", { name: /надіслати|відправити/i })).toBeVisible();
   });
 
-  test("маркетплейс каталог завантажується", async ({ page }) => {
+  test("маркетплейс каталог редіректить на /use-cases", async ({ page }) => {
+    // Legacy /marketplace/catalog route was removed with the e-commerce
+    // feature; next.config.ts now permanently redirects it to /use-cases.
     await page.goto("/marketplace/catalog");
+    await expect(page).toHaveURL(/\/use-cases$/);
     await expect(page.locator("h1").first()).toBeVisible();
     // Жодних JS-помилок
     const errors: string[] = [];

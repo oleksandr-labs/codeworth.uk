@@ -122,7 +122,7 @@ export default async function CareersPage({
           "@type": "QuantitativeValue",
           minValue: job.salaryMin,
           maxValue: job.salaryMax,
-          unitText: "MONTH",
+          unitText: job.salaryPeriod === "month" ? "MONTH" : "YEAR",
         },
       },
       url: `https://codeworth.uk/${lang}/careers/${job.slug}`,

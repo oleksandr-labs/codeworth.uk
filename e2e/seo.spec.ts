@@ -14,21 +14,21 @@ const KEY_PAGES = [
   { path: "/blog", label: "Блог" },
   { path: "/contact", label: "Контакти" },
   { path: "/faq", label: "FAQ" },
-  { path: "/marketplace/catalog", label: "Маркетплейс каталог" },
-  { path: "/marketplace", label: "Маркетплейс" },
+  { path: "/use-cases", label: "Use Cases" },
+  { path: "/reviews", label: "Відгуки" },
   { path: "/extras", label: "Доробки" },
-  { path: "/niches", label: "Ніші" },
+  { path: "/ai", label: "AI-рішення" },
   { path: "/privacy", label: "Конфіденційність" },
   { path: "/terms-of-service", label: "Угода" },
   { path: "/sitemap", label: "Карта сайту" },
 ];
 
 const DYNAMIC_PAGES = [
-  { path: "/blog/next-js-seo-guide-2024", label: "Blog post" },
-  { path: "/services/website-development", label: "Service page" },
-  { path: "/niches/restaurant", label: "Niche page" },
-  { path: "/marketplace/product/restaurant", label: "Marketplace product" },
-  { path: "/portfolio/devstart-edtech-platform", label: "Portfolio case" },
+  { path: "/blog/ai-tools-small-business-2025", label: "Blog post" },
+  { path: "/services/artificial-intelligence", label: "Service page" },
+  { path: "/ai/healthcare", label: "Niche page" },
+  { path: "/use-cases/automate-support", label: "Use case" },
+  { path: "/portfolio/ai-chatbot-saas", label: "Portfolio case" },
 ];
 
 test.describe("SEO QA — технічні файли", () => {
@@ -165,7 +165,7 @@ test.describe("SEO QA — Schema.org JSON-LD", () => {
   });
 
   test("blog post має Article schema", async ({ page }) => {
-    await page.goto("/blog/next-js-seo-guide-2024");
+    await page.goto("/blog/ai-tools-small-business-2025");
     const schemas = await page.locator('script[type="application/ld+json"]').allTextContents();
     const hasArticle = schemas.some((s) => s.includes("Article"));
     expect(hasArticle).toBe(true);
@@ -186,7 +186,7 @@ test.describe("SEO QA — Schema.org JSON-LD", () => {
   });
 
   test("усі BreadcrumbList schema мають позиції", async ({ page }) => {
-    await page.goto("/blog/next-js-seo-guide-2024");
+    await page.goto("/blog/ai-tools-small-business-2025");
     const schemas = await page.locator('script[type="application/ld+json"]').allTextContents();
     const breadcrumb = schemas.find((s) => s.includes("BreadcrumbList"));
     expect(breadcrumb).toBeDefined();

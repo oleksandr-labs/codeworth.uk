@@ -33,10 +33,10 @@ test.describe("Visual Regression", () => {
     });
   });
 
-  test("маркетплейс каталог — сітка карток", async ({ page }) => {
-    await page.goto("/marketplace/catalog");
+  test("use cases — сітка карток", async ({ page }) => {
+    await page.goto("/use-cases");
     await waitForReady(page);
-    await expect(page).toHaveScreenshot("marketplace-catalog.png", {
+    await expect(page).toHaveScreenshot("use-cases-grid.png", {
       clip: { x: 0, y: 0, width: 1280, height: 800 },
       maxDiffPixelRatio: 0.02,
     });
@@ -79,11 +79,11 @@ test.describe("Visual Regression", () => {
     });
   });
 
-  test("мобільна: маркетплейс каталог (375px)", async ({ page }) => {
+  test("мобільна: use cases (375px)", async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 812 });
-    await page.goto("/marketplace/catalog");
+    await page.goto("/use-cases");
     await waitForReady(page);
-    await expect(page).toHaveScreenshot("marketplace-mobile.png", {
+    await expect(page).toHaveScreenshot("use-cases-mobile.png", {
       clip: { x: 0, y: 0, width: 375, height: 812 },
       maxDiffPixelRatio: 0.02,
     });

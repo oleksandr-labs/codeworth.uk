@@ -157,7 +157,13 @@ export function CareersJobList({ jobs, lang, isUk }: CareersJobListProps) {
                       {job.currency}
                     </p>
                     <p className="text-xs text-gray-400">
-                      {isUk ? "на місяць" : "per month"}
+                      {job.salaryPeriod === "month"
+                        ? isUk
+                          ? "на місяць"
+                          : "per month"
+                        : isUk
+                          ? "на рік"
+                          : "per year"}
                     </p>
                   </div>
                   <ArrowRight className="w-5 h-5 text-gray-300 group-hover:text-indigo-500 transition-colors shrink-0" />

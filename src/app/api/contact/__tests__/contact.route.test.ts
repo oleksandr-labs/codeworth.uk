@@ -103,7 +103,7 @@ describe("POST /api/contact", () => {
     delete process.env.TELEGRAM_CHAT_ID;
   });
 
-  it("returns 500 on invalid JSON body", async () => {
+  it("returns 400 on invalid JSON body", async () => {
     const req = new NextRequest("http://localhost/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -111,7 +111,7 @@ describe("POST /api/contact", () => {
     });
     const { POST } = await import("../route");
     const res = await POST(req);
-    expect(res.status).toBe(500);
+    expect(res.status).toBe(400);
   });
 
   it("returns 200 with optional fields (service, budget)", async () => {

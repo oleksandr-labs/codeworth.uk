@@ -44,6 +44,7 @@ export default async function CareerPositionPage({
   if (!job) notFound();
 
   const isUk = lang === "uk";
+  const salaryPeriod = job.salaryPeriod ?? "year";
 
   const jobPostingSchema = {
     "@context": "https://schema.org",
@@ -72,7 +73,7 @@ export default async function CareerPositionPage({
         "@type": "QuantitativeValue",
         minValue: job.salaryMin,
         maxValue: job.salaryMax,
-        unitText: "MONTH",
+        unitText: salaryPeriod === "month" ? "MONTH" : "YEAR",
       },
     },
     url: `https://codeworth.uk/${lang}/careers/${position}`,
@@ -120,7 +121,8 @@ export default async function CareerPositionPage({
                 {isUk ? job.typeUk : job.typeEn}
               </span>
               <span className="font-semibold text-white">
-                {job.salaryMin.toLocaleString()}–{job.salaryMax.toLocaleString()} {job.currency}/{isUk ? "міс" : "mo"}
+                {job.salaryMin.toLocaleString()}–{job.salaryMax.toLocaleString()} {job.currency}/
+                {salaryPeriod === "month" ? (isUk ? "міс" : "mo") : (isUk ? "рік" : "yr")}
               </span>
             </div>
           </Container>

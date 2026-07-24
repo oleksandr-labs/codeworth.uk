@@ -17,12 +17,12 @@ test.describe("Головна сторінка", () => {
   test("навігація містить логотип і основні пункти меню", async ({ page }) => {
     const nav = page.locator("nav").first();
     await expect(nav).toBeVisible();
-    await expect(page.getByRole("link", { name: /маркетплейс/i }).first()).toBeVisible();
+    await expect(page.getByRole("link", { name: /портфоліо/i }).first()).toBeVisible();
   });
 
-  test("посилання до маркетплейсу веде на /marketplace", async ({ page }) => {
-    await page.getByRole("link", { name: /маркетплейс/i }).first().click();
-    await expect(page).toHaveURL(/marketplace/);
+  test("посилання до портфоліо веде на /portfolio", async ({ page }) => {
+    await page.getByRole("link", { name: /портфоліо/i }).first().click();
+    await expect(page).toHaveURL(/portfolio/);
   });
 
   test("сторінка не має консольних JS-помилок", async ({ page }) => {

@@ -5,7 +5,7 @@
       "url": [
         "http://localhost:3000/",
         "http://localhost:3000/services",
-        "http://localhost:3000/marketplace/catalog",
+        "http://localhost:3000/use-cases",
         "http://localhost:3000/contact"
       ],
       "settings": {
