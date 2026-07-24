@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { PROJECTS } from "@/lib/data/portfolio";
+import { PROJECTS, getProjectTitle } from "@/lib/data/portfolio";
 import { WholesaleHubDemo } from "@/components/portfolio/demos/WholesaleHubDemo";
 import { ChainOpsDemo } from "@/components/portfolio/demos/ChainOpsDemo";
 import { BuildTrackDemo } from "@/components/portfolio/demos/BuildTrackDemo";
@@ -38,10 +38,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isUk = lang === "uk";
   const isErp = ERP_SLUGS.has(slug);
   const desc = isUk ? project.description : (project.descriptionEn ?? project.description);
+  const title = getProjectTitle(project, lang);
   return {
     title: isUk
-      ? `${project.title} — Демо сайту | Портфоліо Codeworth`
-      : `${project.title} — Live Demo | Codeworth Portfolio`,
+      ? `${title} — Демо сайту | Портфоліо Codeworth`
+      : `${title} — Live Demo | Codeworth Portfolio`,
     description: isUk
       ? `Інтерактивне демо: ${project.description}`
       : `Interactive demo: ${desc}`,
@@ -62,7 +63,7 @@ export default async function PortfolioDemoPage({ params }: Props) {
   const softwareLd = isErp && project ? {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: project.title,
+    name: getProjectTitle(project, lang),
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     description: project.descriptionEn ?? project.description,

@@ -124,14 +124,14 @@ export function BlogContent() {
             </div>
             <div className="p-8 lg:p-10 flex flex-col justify-center">
               <span className="inline-block px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold mb-4">
-                {featured.category}
+                {getPostCategoryLabel(featured, lang)}
               </span>
               <h2 className="text-2xl lg:text-3xl font-heading font-extrabold text-neutral-900 dark:text-white mb-3 group-hover:text-indigo-700 transition-colors leading-tight">
                 {getPostTitle(featured, lang)}
               </h2>
               <p className="text-neutral-500 dark:text-neutral-400 leading-relaxed mb-6">{getPostExcerpt(featured, lang)}</p>
               <div className="flex items-center gap-4 text-sm text-neutral-400 mb-6">
-                <span>{featured.author}</span>
+                <span>{isUk ? (getAuthorByName(featured.author)?.name ?? featured.author) : (getAuthorByName(featured.author)?.nameEn ?? featured.author)}</span>
                 <span>·</span>
                 <span>{formatDate(featured.date, lang)}</span>
                 <span>·</span>
@@ -321,10 +321,11 @@ export function BlogContent() {
                       <div className="flex items-center gap-2 min-w-0">
                         {(() => {
                           const author = getAuthorByName(post.author);
-                          const authorFirstName = post.author.split(" ")[0];
+                          const authorName = isUk ? (author?.name ?? post.author) : (author?.nameEn ?? post.author);
+                          const authorFirstName = authorName.split(" ")[0];
                           const avatar = (
                             <span className="w-5 h-5 rounded-full bg-indigo-50 flex items-center justify-center text-[10px] font-bold text-indigo-600 shrink-0">
-                              {author?.emoji ? <EmojiIcon emoji={author.emoji} className="w-8 h-8" /> : post.author[0]}
+                              {author?.emoji ? <EmojiIcon emoji={author.emoji} className="w-8 h-8" /> : authorName[0]}
                             </span>
                           );
                           return author ? (

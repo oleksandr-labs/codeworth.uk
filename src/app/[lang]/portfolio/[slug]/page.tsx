@@ -3,7 +3,7 @@ import { buildAlternates, localePath } from "@/i18n";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Check, ChevronRight, ExternalLink, Monitor, ShoppingCart, Clock, Package, BrainCircuit } from "lucide-react";
-import { PROJECTS, COMPLEXITY_LABELS } from "@/lib/data/portfolio";
+import { PROJECTS, COMPLEXITY_LABELS, getProjectTitle } from "@/lib/data/portfolio";
 import { PageAnalytics } from "@/components/analytics/PageAnalytics";
 
 /** Portfolio cases with a dedicated real-design demo page at /demo (ERP/ML case studies only) */
@@ -37,19 +37,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isUk = lang === "uk";
   const project = PROJECTS.find((p) => p.slug === slug);
   if (!project) return {};
+  const title = getProjectTitle(project, lang);
   const desc = isUk ? project.description : (project.descriptionEn ?? project.description);
   const res = isUk ? project.result : (project.resultEn ?? project.result);
   const ogTitle = isUk
-    ? `${project.title} — Кейс Codeworth`
-    : `${project.title} — Codeworth Case Study`;
+    ? `${title} — Кейс Codeworth`
+    : `${title} — Codeworth Case Study`;
   const ogDescription = isUk
     ? `${project.description} Результат: ${project.result}`
     : `${desc} Result: ${res}`;
   const ogImage = `/og/portfolio/${slug}.png`;
   return {
     title: isUk
-      ? `${project.title} — Кейс | Codeworth`
-      : `${project.title} — Case Study | Codeworth`,
+      ? `${title} — Кейс | Codeworth`
+      : `${title} — Case Study | Codeworth`,
     description: ogDescription,
     alternates: buildAlternates(lang, `portfolio/${slug}`),
     openGraph: {
@@ -57,7 +58,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: ogDescription,
       type: "article",
       url: `https://codeworth.uk/${lang}/portfolio/${slug}`,
-      images: [{ url: ogImage, width: 1200, height: 630, alt: project.title }],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
     },
     twitter: {
       card: "summary_large_image",
@@ -75,6 +76,7 @@ export default async function PortfolioProjectPage({ params }: Props) {
   if (!project) notFound();
 
   const complexity = COMPLEXITY_LABELS[project.complexity];
+  const title = getProjectTitle(project, lang);
   const description = isUk ? project.description : (project.descriptionEn ?? project.description);
   const result = isUk ? project.result : (project.resultEn ?? project.result);
   const caseStudy = isUk ? project.caseStudy : (project.caseStudyEn ?? project.caseStudy);
@@ -112,7 +114,7 @@ export default async function PortfolioProjectPage({ params }: Props) {
     itemListElement: [
       { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codeworth.uk${localePath(lang)}` },
       { "@type": "ListItem", position: 2, name: isUk ? "Портфоліо" : "Portfolio", item: `https://codeworth.uk${localePath(lang, "/portfolio")}` },
-      { "@type": "ListItem", position: 3, name: project.title },
+      { "@type": "ListItem", position: 3, name: title },
     ],
   };
 
@@ -120,8 +122,8 @@ export default async function PortfolioProjectPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: isUk
-      ? `${project.title} — Кейс Codeworth`
-      : `${project.title} — Codeworth Case Study`,
+      ? `${title} — Кейс Codeworth`
+      : `${title} — Codeworth Case Study`,
     description,
     image: `https://codeworth.uk/og/portfolio/${project.slug}.png`,
     author: { "@type": "Organization", name: "Codeworth", url: "https://codeworth.uk" },
@@ -141,7 +143,7 @@ export default async function PortfolioProjectPage({ params }: Props) {
   const productLd = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: isUk ? `${project.title} — Готовий сайт` : `${project.title} — Ready-Made Website`,
+    name: isUk ? `${title} — Готовий сайт` : `${title} — Ready-Made Website`,
     description: isUk
       ? `Готове рішення для ${project.niche ?? project.category}. Запуск за ${deliveryDays} днів.`
       : `Ready-made solution for ${project.niche ?? project.category}. Launch in ${deliveryDays} days.`,
@@ -177,7 +179,7 @@ export default async function PortfolioProjectPage({ params }: Props) {
                 <ChevronRight className="w-4 h-4 shrink-0" />
                 <Link href={`/${lang}/portfolio`} className="hover:text-white transition-colors">{isUk ? "Портфоліо" : "Portfolio"}</Link>
                 <ChevronRight className="w-4 h-4 shrink-0" />
-                <span className="text-white/90 truncate">{project.title}</span>
+                <span className="text-white/90 truncate">{title}</span>
               </nav>
 
               <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -193,7 +195,7 @@ export default async function PortfolioProjectPage({ params }: Props) {
                   </div>
                   <div className="mb-4"><EmojiIcon emoji={project.emoji} className="w-20 h-20 text-white/80" /></div>
                   <h1 className="text-4xl lg:text-5xl font-heading font-extrabold text-white mb-4 leading-tight">
-                    {project.title}
+                    {title}
                   </h1>
                   <p className="text-lg text-white/80 leading-relaxed mb-6">{description}</p>
                   <div className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/15 backdrop-blur-sm border border-white/20 text-white mb-8">
@@ -253,7 +255,7 @@ export default async function PortfolioProjectPage({ params }: Props) {
           {/* ── Live Demo Preview ─────────────────────────────────────── */}
           {DEDICATED_DEMOS.has(project.slug) && (() => {
             const demoHref = `/${lang}/portfolio/${project.slug}/demo`;
-            const demoLabel = project.title.toLowerCase().replace(/\s+/g, "") + ".ua";
+            const demoLabel = title.toLowerCase().replace(/\s+/g, "") + ".ua";
 
             return (
               <section className="py-16 bg-neutral-50 dark:bg-neutral-900 /80">
@@ -299,7 +301,7 @@ export default async function PortfolioProjectPage({ params }: Props) {
                       <a href={demoHref} target="_blank" rel="noopener noreferrer" className="block group">
                         <img
                           src={`/og/portfolio/${project.slug}.png`}
-                          alt={`${project.title} — demo`}
+                          alt={`${title} — demo`}
                           className="w-full h-auto block"
                           style={{ maxHeight: "640px", objectFit: "cover", objectPosition: "top" }}
                         />
@@ -617,7 +619,7 @@ export default async function PortfolioProjectPage({ params }: Props) {
                         <EmojiIcon emoji={p.emoji} className="w-8 h-8 text-white/80" />
                       </div>
                       <h4 className="font-heading font-bold text-neutral-900 dark:text-white text-sm group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors mb-1">
-                        {p.title}
+                        {getProjectTitle(p, lang)}
                       </h4>
                       <p className="text-xs text-neutral-400 dark:text-neutral-500">{p.category} · {p.year}</p>
                     </Link>
@@ -638,7 +640,7 @@ export default async function PortfolioProjectPage({ params }: Props) {
                     <div>
                       <div className="text-xs text-neutral-400 mb-0.5">{isUk ? "Попередній" : "Previous"}</div>
                       <div className="font-semibold text-sm text-neutral-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors line-clamp-1">
-                        {prevProject.title}
+                        {getProjectTitle(prevProject, lang)}
                       </div>
                     </div>
                   </Link>
@@ -654,7 +656,7 @@ export default async function PortfolioProjectPage({ params }: Props) {
                     <div>
                       <div className="text-xs text-neutral-400 mb-0.5">{isUk ? "Наступний" : "Next"}</div>
                       <div className="font-semibold text-sm text-neutral-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors line-clamp-1">
-                        {nextProject.title}
+                        {getProjectTitle(nextProject, lang)}
                       </div>
                     </div>
                     <ArrowRight className="w-5 h-5 text-neutral-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 shrink-0 transition-colors" />

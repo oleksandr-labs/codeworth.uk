@@ -70,13 +70,16 @@ export function BlogPreviewSection({ lang }: { lang: string }) {
                   <div className="flex items-center gap-1.5 min-w-0">
                     {(() => {
                       const author = getAuthorByName(post.author);
+                      const authorName = isUk ? (author?.name ?? post.author) : (author?.nameEn ?? post.author);
                       return (
-                        <span className="w-5 h-5 rounded-full bg-indigo-50 flex items-center justify-center text-[10px] font-bold text-indigo-600 shrink-0">
-                          {author?.emoji ? <EmojiIcon emoji={author.emoji} className="w-7 h-7" /> : (post.author?.[0] ?? "?")}
-                        </span>
+                        <>
+                          <span className="w-5 h-5 rounded-full bg-indigo-50 flex items-center justify-center text-[10px] font-bold text-indigo-600 shrink-0">
+                            {author?.emoji ? <EmojiIcon emoji={author.emoji} className="w-7 h-7" /> : (authorName?.[0] ?? "?")}
+                          </span>
+                          <span className="truncate">{authorName?.split(" ")[0] ?? ""}</span>
+                        </>
                       );
                     })()}
-                    <span className="truncate">{post.author?.split(" ")[0] ?? ""}</span>
                     {post.updatedDate && <span className="text-indigo-400 shrink-0">🔄</span>}
                   </div>
                   <span className="flex items-center gap-1 shrink-0">

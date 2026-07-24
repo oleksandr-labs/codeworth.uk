@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, TrendingUp } from "lucide-react";
 import { EmojiIcon } from "@/components/ui/EmojiIcon";
 import { Container } from "@/components/layout/Container";
-import { PROJECTS } from "@/lib/data/portfolio";
+import { PROJECTS, getProjectTitle } from "@/lib/data/portfolio";
 
 const FEATURED_CASES = PROJECTS.filter((p) => p.caseStudy).slice(0, 3);
 
@@ -27,7 +27,10 @@ export function CasesSection({ lang }: { lang: string }) {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {FEATURED_CASES.map((project) => (
+          {FEATURED_CASES.map((project) => {
+            const title = getProjectTitle(project, lang);
+            const description = isUk ? project.description : (project.descriptionEn ?? project.description);
+            return (
             <Link
               key={project.slug}
               href={`/${lang}/portfolio/${project.slug}`}
@@ -48,25 +51,25 @@ export function CasesSection({ lang }: { lang: string }) {
                 </div>
 
                 <h3 className="font-heading font-bold text-neutral-900 dark:text-white text-base mb-2 group-hover:text-indigo-700 transition-colors">
-                  {project.title}
+                  {title}
                 </h3>
 
                 <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-5 flex-1">
-                  {project.description}
+                  {description}
                 </p>
 
                 {/* Top metric */}
-                {project.caseStudy?.results[0] && (
+                {(isUk ? project.caseStudy?.results[0] : (project.caseStudyEn?.results[0] ?? project.caseStudy?.results[0])) && (
                   <div className="flex items-start gap-2 p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/60">
                     <TrendingUp className="w-4 h-4 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0" />
                     <span className="text-xs font-semibold text-emerald-700 dark:text-emerald-300 leading-snug">
-                      {project.caseStudy.results[0]}
+                      {isUk ? project.caseStudy?.results[0] : (project.caseStudyEn?.results[0] ?? project.caseStudy?.results[0])}
                     </span>
                   </div>
                 )}
               </div>
             </Link>
-          ))}
+          );})}
         </div>
 
         <div className="mt-10 text-center">

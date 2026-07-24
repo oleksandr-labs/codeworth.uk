@@ -124,9 +124,10 @@ export default async function BlogPostPage({ params }: Props) {
   const nextPost = currentIndex < BLOG_POSTS.length - 1 ? BLOG_POSTS[currentIndex + 1] : null;
 
   const authorData = getAuthorByName(post.author);
+  const authorDisplayName = isUk ? (authorData?.name ?? post.author) : (authorData?.nameEn ?? post.author);
   const authorSchema: Record<string, unknown> = {
     "@type": "Person",
-    name: isUk ? authorData?.name ?? post.author : authorData?.nameEn ?? post.author,
+    name: authorDisplayName,
     ...(authorData && {
       jobTitle: isUk ? authorData.role : authorData.roleEn,
       url: `https://codeworth.uk/${lang}/blog/author/${authorData.slug}`,
@@ -242,7 +243,7 @@ export default async function BlogPostPage({ params }: Props) {
                   <Clock className="w-4 h-4" />
                   {post.readTime} {isUk ? "хв читання" : "min read"}
                 </span>
-                <span className="font-medium text-white">{post.author}</span>
+                <span className="font-medium text-white">{authorDisplayName}</span>
                 {post.updatedDate && (
                   <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/20 text-white/90 text-xs font-medium">
                     🔄 {isUk ? "Оновлено" : "Updated"}: {formatDate(post.updatedDate, lang)}
@@ -354,15 +355,15 @@ export default async function BlogPostPage({ params }: Props) {
                   return (
                     <div className="mt-8 p-6 rounded-2xl border border-neutral-100 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900 flex gap-5">
                       <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-indigo-100 to-indigo-200 flex items-center justify-center shrink-0">
-                        {authorData?.emoji ? <EmojiIcon emoji={authorData.emoji} className="w-8 h-8" /> : post.author[0]}
+                        {authorData?.emoji ? <EmojiIcon emoji={authorData.emoji} className="w-8 h-8" /> : authorDisplayName[0]}
                       </div>
                       <div className="min-w-0">
                         <div className="font-heading font-bold text-neutral-900 dark:text-white text-base leading-tight">
                           {authorData ? (
                             <Link href={`/${lang}/blog/author/${authorData.slug}`} className="hover:text-indigo-700 transition-colors">
-                              {post.author}
+                              {authorDisplayName}
                             </Link>
-                          ) : post.author}
+                          ) : authorDisplayName}
                         </div>
                         <div className="text-xs text-indigo-600 font-medium mt-0.5 mb-2">
                           {authorData ? (isUk ? authorData.role : authorData.roleEn) : "Codeworth Team"}
@@ -387,7 +388,7 @@ export default async function BlogPostPage({ params }: Props) {
                         {isUk ? "Попередня стаття" : "Previous Article"}
                       </div>
                       <div className="text-sm font-medium text-neutral-800 dark:text-neutral-200 group-hover:text-indigo-700 transition-colors line-clamp-2 leading-tight">
-                        {prevPost.title}
+                        {getPostTitle(prevPost, lang)}
                       </div>
                     </Link>
                   ) : (
@@ -409,7 +410,7 @@ export default async function BlogPostPage({ params }: Props) {
                         <ArrowRight className="w-3 h-3" />
                       </div>
                       <div className="text-sm font-medium text-neutral-800 dark:text-neutral-200 group-hover:text-indigo-700 transition-colors line-clamp-2 leading-tight">
-                        {nextPost.title}
+                        {getPostTitle(nextPost, lang)}
                       </div>
                     </Link>
                   ) : (
@@ -428,15 +429,15 @@ export default async function BlogPostPage({ params }: Props) {
                     return (
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center shrink-0">
-                          {sidebarAuthor?.emoji ? <EmojiIcon emoji={sidebarAuthor.emoji} className="w-8 h-8 text-white/80" /> : post.author[0]}
+                          {sidebarAuthor?.emoji ? <EmojiIcon emoji={sidebarAuthor.emoji} className="w-8 h-8 text-white/80" /> : authorDisplayName[0]}
                         </div>
                         <div>
                           <div className="font-semibold text-neutral-900 dark:text-white text-sm">
                             {sidebarAuthor ? (
                               <Link href={`/${lang}/blog/author/${sidebarAuthor.slug}`} className="hover:text-indigo-700 transition-colors">
-                                {post.author}
+                                {authorDisplayName}
                               </Link>
-                            ) : post.author}
+                            ) : authorDisplayName}
                           </div>
                           <div className="text-xs text-indigo-600 font-medium">
                             {sidebarAuthor ? (isUk ? sidebarAuthor.role : sidebarAuthor.roleEn) : "Codeworth Team"}
@@ -455,7 +456,7 @@ export default async function BlogPostPage({ params }: Props) {
                       {suggestions.map((related) => (
                         <Link key={related.slug} href={`/${lang}/blog/${related.slug}`} className="group block">
                           <div className="text-sm font-medium text-neutral-800 dark:text-neutral-200 group-hover:text-indigo-700 transition-colors leading-tight mb-1">
-                            {related.title}
+                            {getPostTitle(related, lang)}
                           </div>
                           <div className="text-xs text-neutral-400 flex items-center gap-1">
                             <Clock className="w-3 h-3" /> {related.readTime} {isUk ? "хв" : "min"}
@@ -510,16 +511,16 @@ export default async function BlogPostPage({ params }: Props) {
                     </div>
                     <div className="p-5">
                       <span className="inline-block text-xs font-semibold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-full mb-3">
-                        {s.category}
+                        {getPostCategoryLabel(s, lang)}
                       </span>
                       <h3 className="font-heading font-bold text-neutral-900 dark:text-white group-hover:text-indigo-700 transition-colors leading-snug mb-2 line-clamp-2">
-                        {s.title}
+                        {getPostTitle(s, lang)}
                       </h3>
                       <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed line-clamp-2 mb-4">
-                        {s.excerpt}
+                        {getPostExcerpt(s, lang)}
                       </p>
                       <div className="flex items-center justify-between text-xs text-neutral-400 pt-3 border-t border-neutral-100 dark:border-neutral-700">
-                        <span>{s.author.split(" ")[0]}</span>
+                        <span>{(isUk ? (getAuthorByName(s.author)?.name ?? s.author) : (getAuthorByName(s.author)?.nameEn ?? s.author)).split(" ")[0]}</span>
                         <span className="flex items-center gap-1">
                           <Clock className="w-3 h-3" />
                           {s.readTime} {isUk ? "хв" : "min"}

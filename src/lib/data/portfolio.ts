@@ -21,6 +21,7 @@ export interface Project {
   /** Detailed case study content */
   caseStudy?: CaseStudy;
   /** English translations for bilingual portfolio case pages */
+  titleEn?: string;
   descriptionEn?: string;
   resultEn?: string;
   caseStudyEn?: CaseStudy;
@@ -98,10 +99,16 @@ export function getIndustryLabel(id: string): string {
   return INDUSTRY_LABELS[id] ?? id;
 }
 
+/** Returns the display title for a project, localized to `lang` (falls back to the Ukrainian title when no translation exists). */
+export function getProjectTitle(project: Project, lang: string): string {
+  return lang === "uk" ? project.title : (project.titleEn ?? project.title);
+}
+
 export const PROJECTS: Project[] = [
   {
     slug: "ai-chatbot-saas",
     title: "SupportAI — ШІ-підтримка для SaaS",
+    titleEn: "SupportAI — AI Support for SaaS",
     client: "SaaS-продукт",
     category: "AI / ML",
     niche: "IT / SaaS",
@@ -177,6 +184,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "hr-analytics-platform",
     title: "PeopleMetrics — HR-Аналітика та People Ops",
+    titleEn: "PeopleMetrics — HR Analytics & People Ops",
     client: "PeopleMetrics SaaS",
     category: "AI / ML",
     niche: "Рекрутинг / HR",
@@ -792,6 +800,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "ai-invoice-automation",
     title: "InvoiceAI — AI Обробка Рахунків та Документів",
+    titleEn: "InvoiceAI — AI Invoice & Document Processing",
     client: "Accounting Outsourcing Network, 240 SME clients, London",
     category: "AI / ML",
     industry: "fintech",
@@ -833,6 +842,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "ml-property-valuation",
     title: "EstateIQ — ML Автоматична Оцінка Нерухомості (AVM)",
+    titleEn: "EstateIQ — ML Automated Property Valuation (AVM)",
     client: "Property Agency Network, 18 offices, London (Canary Wharf, City, West End)",
     category: "AI / ML",
     niche: "Нерухомість",
@@ -872,6 +882,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "ai-bilingual-rag-chatbot",
     title: "DualBot — Білінгвальний RAG Чат-бот UK/UA",
+    titleEn: "DualBot — Bilingual RAG Chatbot UK/UA",
     client: "Service Centre Network (8 locations, London)",
     category: "AI / ML",
     industry: "saas",
@@ -912,6 +923,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "ai-rag-healthcare-system",
     title: "MedAssist — GDPR-Сумісна RAG-Система для Клініки",
+    titleEn: "MedAssist — GDPR-Compliant RAG System for Clinics",
     client: "Private Clinic, 12 doctors, 400+ patients/day, London",
     category: "AI / ML",
     industry: "healthcare",
@@ -954,6 +966,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "ml-fraud-detection-fca",
     title: "GuardAI — ML Fraud Detection з FCA Compliance",
+    titleEn: "GuardAI — ML Fraud Detection with FCA Compliance",
     client: "FinTech SaaS, 85 000 активних користувачів, Лондон",
     category: "AI / ML",
     niche: "Фінанси",
@@ -995,6 +1008,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "ml-harvest-precision-agriculture",
     title: "HarvestIQ — ML Точне Землеробство та Прогноз Врожайності",
+    titleEn: "HarvestIQ — ML Precision Agriculture & Yield Forecasting",
     client: "Агрохолдинг, 28 000 га (зернові + соняшник), Полтавська обл.",
     category: "AI / ML",
     industry: "agritech",
@@ -1036,6 +1050,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "ai-edtech-adaptive-lms",
     title: "LearnAI — Адаптивна AI-Платформа для EdTech",
+    titleEn: "LearnAI — Adaptive AI Platform for EdTech",
     client: "Онлайн-школа англійської мови, 3 400 студентів, UK + UA",
     category: "AI / ML",
     industry: "education",
@@ -1079,6 +1094,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "ai-voice-hotel-assistant",
     title: "VoiceIQ — Голосовий AI-Асистент для Готелю",
+    titleEn: "VoiceIQ — Voice AI Assistant for Hotels",
     client: "Бутік-готель, 47 номерів, South Kensington, Лондон",
     category: "AI / ML",
     industry: "hospitality",
@@ -1120,6 +1136,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "ml-supply-chain-fmcg",
     title: "SupplyIQ — ML Оптимізація Ланцюга Поставок",
+    titleEn: "SupplyIQ — ML Supply Chain Optimization",
     client: "FMCG-дистриб'ютор, 340 торгових точок, Мідлендс, Великобританія",
     category: "AI / ML",
     industry: "logistics",
@@ -1163,6 +1180,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "ml-support-triage-bert",
     title: "TriageAI — BERT Fine-tuning для Автоматизації Підтримки",
+    titleEn: "TriageAI — BERT Fine-Tuning for Support Automation",
     client: "B2B SaaS (project management), 4 200 корпоративних клієнтів, Лондон",
     category: "AI / ML",
     niche: "IT / SaaS",
@@ -1204,6 +1222,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "ai-content-studio",
     title: "ContentForge — GenAI Контент-Студія для Digital-Агентства",
+    titleEn: "ContentForge — GenAI Content Studio for Digital Agencies",
     client: "Digital-маркетингове агентство, 40 клієнтів, Кардіфф, Великобританія",
     category: "AI / ML",
     industry: "marketing",
@@ -1543,6 +1562,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "nexus-insurtech-gbm",
     title: "Nexus Insurtech — GBM-двигун ціноутворення",
+    titleEn: "Nexus Insurtech — GBM Pricing Engine",
     client: "Nexus Insurtech, Birmingham",
     category: "AI / ML",
     niche: "Fintech",
@@ -1585,6 +1605,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "thornton-ross-nlp-adverse",
     title: "Thornton & Ross — NLP класифікатор побічних ефектів",
+    titleEn: "Thornton & Ross — NLP Adverse Event Classifier",
     client: "Thornton and Ross Pharma, Huddersfield",
     category: "AI / ML",
     niche: "Healthcare",
@@ -1627,6 +1648,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "uk-sme-demand-forecasting-retail",
     title: "UK SME Retail Group — ML-прогнозування попиту",
+    titleEn: "UK SME Retail Group — ML Demand Forecasting",
     client: "UK SME Retail Group, Leeds",
     category: "AI / ML",
     niche: "Retail",
@@ -1668,6 +1690,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "legal-rag-uk-magic-circle",
     title: "Magic Circle Law Firm — RAG для due diligence",
+    titleEn: "Magic Circle Law Firm — RAG for Due Diligence",
     client: "UK Magic Circle Law Firm, London",
     category: "AI / ML",
     niche: "Legal",
@@ -1710,6 +1733,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "uk-social-housing-maintenance-ml",
     title: "UK Housing Association — ML предиктивне обслуговування",
+    titleEn: "UK Housing Association — ML Predictive Maintenance",
     client: "UK Housing Association, Manchester",
     category: "AI / ML",
     niche: "Manufacturing",
@@ -1751,6 +1775,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "aviva-claims-ml",
     title: "ML-тріаж страхових претензій — 15 000 заявок на день",
+    titleEn: "ML Insurance Claims Triage — 15,000 Claims per Day",
     client: "Aviva UK (London)",
     category: "AI / ML",
     niche: "Insurance",
@@ -1792,6 +1817,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "rolls-royce-engine-ml",
     title: "CV-система виявлення дефектів лопаток турбін — точність 99.4%",
+    titleEn: "CV Turbine Blade Defect Detection System — 99.4% Accuracy",
     client: "Rolls-Royce (Derby)",
     category: "AI / ML",
     niche: "Manufacturing",
@@ -1833,6 +1859,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "octopus-energy-demand-ml",
     title: "Прогнозування попиту на електроенергію по 4M домогосподарств UK",
+    titleEn: "Electricity Demand Forecasting for 4M UK Households",
     client: "Octopus Energy (London)",
     category: "AI / ML",
     niche: "Energy",
@@ -1874,6 +1901,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "nationwide-mortgage-nlp",
     title: "NLP-обробка документів іпотечних заявок — скорочення терміну на 5 днів",
+    titleEn: "NLP Mortgage Application Document Processing — 5 Days Faster",
     client: "Nationwide Building Society (Swindon)",
     category: "AI / ML",
     niche: "Fintech",
@@ -1915,6 +1943,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "nhs-sepsis-early-warning",
     title: "ML-система раннього попередження сепсису за 6 годин до клінічного початку",
+    titleEn: "ML Sepsis Early Warning System — 6 Hours Before Clinical Onset",
     client: "NHS Trust (Yorkshire)",
     category: "AI / ML",
     niche: "Healthcare",
@@ -1956,6 +1985,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "barclays-fraud-ml",
     title: "FraudNet — ML Виявлення Шахрайства (UK Retail Bank)",
+    titleEn: "FraudNet — ML Fraud Detection (UK Retail Bank)",
     client: "UK Retail Bank (Barclays-style), 2.4M активних карткових рахунків",
     category: "AI / ML",
     niche: "Fintech",
@@ -1999,6 +2029,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "uk-nhs-bed-management",
     title: "BedFlow — ML Управління Ліжковим Фондом NHS",
+    titleEn: "BedFlow — ML NHS Bed Capacity Management",
     client: "NHS Trust (700-ліжковий регіональний шпиталь), Midlands",
     category: "AI / ML",
     niche: "Healthcare",
@@ -2042,6 +2073,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "uk-insurtech-dynamic-pricing",
     title: "RateEngine — ML Динамічне Ціноутворення Страхування",
+    titleEn: "RateEngine — ML Dynamic Insurance Pricing",
     client: "UK InsurTech Startup (авто + телематика), серія A, London",
     category: "AI / ML",
     niche: "Insurance",
@@ -2085,6 +2117,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "uk-retailer-demand-ml",
     title: "DemandSense — ML Прогнозування Попиту (UK Multichannel Retail)",
+    titleEn: "DemandSense — ML Demand Forecasting (UK Multichannel Retail)",
     client: "UK Multichannel Retailer (Fashion & Home), 340 магазинів + online",
     category: "AI / ML",
     niche: "Retail",
@@ -2128,6 +2161,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "uk-proptech-valuation-ml",
     title: "ValuAI — ML Автоматизована Оцінка Нерухомості (AVM)",
+    titleEn: "ValuAI — ML Automated Property Valuation (AVM)",
     client: "UK PropTech Scale-up (автоматизована оцінка), Series B, London",
     category: "AI / ML",
     niche: "Real Estate",
@@ -2171,6 +2205,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "uk-edtech-knowledge-tracing",
     title: "AdaptLearn — Deep Knowledge Tracing для UK EdTech",
+    titleEn: "AdaptLearn — Deep Knowledge Tracing for UK EdTech",
     client: "UK EdTech Startup (adaptive learning platform), 45,000 students",
     category: "AI / ML",
     niche: "Healthcare",
@@ -2214,6 +2249,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "uk-pe-deal-sourcing-nlp",
     title: "DealSignal — NLP Deal Sourcing для UK Private Equity",
+    titleEn: "DealSignal — NLP Deal Sourcing for UK Private Equity",
     client: "UK Mid-Market Private Equity Firm (£800M AUM, 3 partners)",
     category: "AI / ML",
     niche: "Fintech",
@@ -2257,6 +2293,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "uk-retail-nlp-reviews",
     title: "SentinelReviews — Real-Time NLP Моніторинг Відгуків для UK Ритейлу",
+    titleEn: "SentinelReviews — Real-Time NLP Review Monitoring for UK Retail",
     client: "UK Multichannel Retailer (£320M turnover, 85 stores + ecommerce)",
     category: "AI / ML",
     niche: "Retail",
@@ -2300,6 +2337,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "uk-nhs-appointment-no-show",
     title: "AttendAI — ML Прогнозування Неявки Пацієнтів NHS",
+    titleEn: "AttendAI — ML NHS Patient No-Show Prediction",
     client: "NHS Foundation Trust (280,000 outpatient appointments/year)",
     category: "AI / ML",
     niche: "Healthcare",
@@ -2343,6 +2381,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "uk-insurance-telematics-pricing",
     title: "DriveFair — ML Телематична Тарифікація для UK InsurTech",
+    titleEn: "DriveFair — ML Telematics Pricing for UK InsurTech",
     client: "UK InsurTech (pay-per-mile motor insurance, 85,000 active policies)",
     category: "AI / ML",
     niche: "Fintech",
@@ -3970,6 +4009,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "automotive-fleet-predictive-maintenance",
     title: "FleetGuard — ML Прогнозування Поломок та Оптимізація EV-Маршрутів",
+    titleEn: "FleetGuard — ML Breakdown Prediction & EV Route Optimization",
     client: "Логістичний оператор комерційного автопарку (420 вантажівок + 60 EV-фургонів), UK",
     category: "AI / ML",
     niche: "Automotive / Fleet",
@@ -4013,6 +4053,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "pharma-clinical-trial-matching-ml",
     title: "TrialMatch — ML Підбір Пацієнтів для Клінічних Досліджень",
+    titleEn: "TrialMatch — ML Patient Matching for Clinical Trials",
     client: "CRO (Contract Research Organisation), 40+ активних клінічних досліджень, UK/EU",
     category: "AI / ML",
     niche: "Pharma / Life Sciences",
@@ -4056,6 +4097,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "gov-citizen-service-chatbot-rag",
     title: "CivicAssist — RAG-Чатбот для Звернень Громадян",
+    titleEn: "CivicAssist — RAG Chatbot for Citizen Services",
     client: "Місцева рада (район з населенням 340,000), UK",
     category: "AI / ML",
     niche: "Government",
@@ -4099,6 +4141,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "media-content-moderation-ai",
     title: "SafeStream — AI-Пайплайн Модерації Контенту",
+    titleEn: "SafeStream — AI Content Moderation Pipeline",
     client: "Стрімінгова платформа з UGC-розділом (2.1M активних користувачів), UK",
     category: "AI / ML",
     niche: "Media / Entertainment",
@@ -4142,6 +4185,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "telecoms-churn-network-anomaly-ml",
     title: "SignalGuard — ML Прогноз Відтоку та Виявлення Аномалій Мережі",
+    titleEn: "SignalGuard — ML Churn Prediction & Network Anomaly Detection",
     client: "Регіональний мобільний оператор (1.8M абонентів), UK",
     category: "AI / ML",
     niche: "Telecoms",
@@ -4185,6 +4229,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "water-utility-leak-detection-ml",
     title: "AquaSense — ML Виявлення Витоків у Водопровідній Мережі",
+    titleEn: "AquaSense — ML Water Network Leak Detection",
     client: "Регіональна водопостачальна компанія (12,000 км мережі), UK",
     category: "AI / ML",
     niche: "Water Utility",
@@ -4227,6 +4272,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "professional-services-ai-automation",
     title: "DocFlow AI — Автоматизація Документообігу для Консалтингу",
+    titleEn: "DocFlow AI — Document Workflow Automation for Consulting",
     client: "Мультидисциплінарна консалтингова фірма (бухоблік + юридичні послуги), 140 співробітників, UK",
     category: "AI / ML",
     niche: "Professional Services",

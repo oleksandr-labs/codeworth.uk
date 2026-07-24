@@ -4,7 +4,7 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import { ArrowUpRight, Search, X, ZoomIn, ShoppingCart, TrendingUp } from "lucide-react";
 import { EmojiIcon } from "@/components/ui/EmojiIcon";
-import { PROJECTS, getProjectIndustryId, getIndustryLabel } from "@/lib/data/portfolio";
+import { PROJECTS, getProjectIndustryId, getIndustryLabel, getProjectTitle } from "@/lib/data/portfolio";
 import { cn } from "@/lib/utils";
 import { Lightbox } from "@/components/ui/Lightbox";
 import type { LightboxImage } from "@/components/ui/Lightbox";
@@ -58,6 +58,7 @@ export function PortfolioContent() {
       return PROJECTS.filter(
         (p) =>
           p.title.toLowerCase().includes(q) ||
+          (p.titleEn ?? "").toLowerCase().includes(q) ||
           p.description.toLowerCase().includes(q) ||
           p.category.toLowerCase().includes(q) ||
           p.niche.toLowerCase().includes(q) ||
@@ -277,6 +278,8 @@ export function PortfolioContent() {
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
             {filtered.map((project) => {
               const complexity = COMPLEXITY_LABELS[project.complexity];
+              const title = getProjectTitle(project, lang);
+              const description = isUk ? project.description : (project.descriptionEn ?? project.description);
               return (
                 <div
                   key={project.slug}
@@ -287,14 +290,14 @@ export function PortfolioContent() {
                     type="button"
                     onClick={() => {
                       const imgs: LightboxImage[] = project.tech.map((t, i) => ({
-                        src: `https://placehold.co/1200x800/4f46e5/ffffff?text=${encodeURIComponent(project.title + ' — ' + t)}`,
-                        alt: `${project.title} — ${t}`,
-                        caption: `${project.title}: ${t}`,
+                        src: `https://placehold.co/1200x800/4f46e5/ffffff?text=${encodeURIComponent(title + ' — ' + t)}`,
+                        alt: `${title} — ${t}`,
+                        caption: `${title}: ${t}`,
                       }));
                       setLightbox({ images: imgs, index: 0 });
                     }}
                     className={cn("w-full h-48 bg-linear-to-br flex items-center justify-center relative group/prev cursor-zoom-in", project.color)}
-                    aria-label={isUk ? `Переглянути скріншоти: ${project.title}` : `View screenshots: ${project.title}`}
+                    aria-label={isUk ? `Переглянути скріншоти: ${title}` : `View screenshots: ${title}`}
                   >
                     <EmojiIcon emoji={project.emoji} className="w-16 h-16 text-white/80" />
                     <div className="absolute inset-0 bg-black/0 group-hover/prev:bg-black/25 transition-colors flex items-center justify-center">
@@ -307,7 +310,7 @@ export function PortfolioContent() {
                     <div className="flex items-start justify-between mb-2">
                       <div>
                         <h3 className="font-heading font-bold text-neutral-900 dark:text-white group-hover:text-indigo-700 transition-colors">
-                          {project.title}
+                          {title}
                         </h3>
                         <p className="text-xs text-neutral-400 mt-0.5">{project.category} · {project.year}</p>
                       </div>
@@ -321,11 +324,11 @@ export function PortfolioContent() {
                       </div>
                     </div>
 
-                    <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-4">{project.description}</p>
+                    <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-4">{description}</p>
 
                     <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-100 text-xs text-emerald-700 font-medium mb-4 flex items-center gap-1.5">
                       <TrendingUp className="w-3.5 h-3.5 shrink-0" />
-                      {project.result}
+                      {isUk ? project.result : (project.resultEn ?? project.result)}
                     </div>
 
                     <div className="flex flex-wrap gap-1.5 mb-4">

@@ -34,7 +34,7 @@ export async function generateMetadata({
     : `${term.termEn} — Definition and Examples | Codeworth Glossary`;
   const desc = isUk
     ? `${term.termUk}: ${term.shortDescription} Дізнайтесь більше у глосарії Codeworth.`
-    : `${term.termEn}: ${term.shortDescription} Learn more in the Codeworth glossary.`;
+    : `${term.termEn}: ${term.shortDescriptionEn ?? term.shortDescription} Learn more in the Codeworth glossary.`;
   return {
     title,
     description: desc,
@@ -129,7 +129,7 @@ export default async function GlossaryTermPage({
     "@context": "https://schema.org",
     "@type": "DefinedTerm",
     name: isUk ? term.termUk : term.termEn,
-    description: term.shortDescription,
+    description: isUk ? term.shortDescription : (term.shortDescriptionEn ?? term.shortDescription),
     inDefinedTermSet: {
       "@type": "DefinedTermSet",
       name: isUk ? "Глосарій Codeworth" : "Codeworth Glossary",
@@ -165,10 +165,12 @@ export default async function GlossaryTermPage({
             <h1 className="text-3xl sm:text-5xl font-bold text-white mb-4">
               {isUk ? term.termUk : term.termEn}
             </h1>
-            {term.termEn !== term.termUk && (
+            {term.termEn !== term.termUk && (isUk || !/[Ѐ-ӿ]/.test(term.termUk)) && (
               <p className="text-indigo-300 text-lg mb-4">{isUk ? term.termEn : term.termUk}</p>
             )}
-            <p className="text-xl text-gray-200 max-w-2xl leading-relaxed">{term.shortDescription}</p>
+            <p className="text-xl text-gray-200 max-w-2xl leading-relaxed">
+              {isUk ? term.shortDescription : (term.shortDescriptionEn ?? term.shortDescription)}
+            </p>
           </Container>
         </section>
 
@@ -178,7 +180,7 @@ export default async function GlossaryTermPage({
             <div className="max-w-3xl mx-auto">
               {/* Full description */}
               <div className="prose prose-lg max-w-none mb-10">
-                {term.fullDescription.split("\n\n").map((para, i) => (
+                {(isUk ? term.fullDescription : (term.fullDescriptionEn ?? term.fullDescription)).split("\n\n").map((para, i) => (
                   <p key={i} className="text-gray-700 dark:text-neutral-300 leading-relaxed mb-4"
                     dangerouslySetInnerHTML={{
                       __html: para
@@ -196,7 +198,7 @@ export default async function GlossaryTermPage({
                     <BookOpen className="w-5 h-5 text-indigo-600" />
                     <span className="font-semibold text-indigo-800">{isUk ? "Приклад" : "Example"}</span>
                   </div>
-                  <p className="text-indigo-900">{term.example}</p>
+                  <p className="text-indigo-900">{isUk ? term.example : (term.exampleEn ?? term.example)}</p>
                 </div>
               )}
 

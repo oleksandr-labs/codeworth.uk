@@ -7,6 +7,8 @@ import { GLOSSARY_TERMS, GLOSSARY_CATEGORIES, type GlossaryCategory } from "@/li
 import { Search, ArrowRight } from "lucide-react";
 import { EmojiIcon } from "@/components/ui/EmojiIcon";
 
+const CYRILLIC_RE = /[Ѐ-ӿ]/;
+
 interface Props {
   lang: string;
   isUk: boolean;
@@ -24,7 +26,8 @@ export function GlossaryClient({ lang, isUk }: Props) {
         !q ||
         t.termUk.toLowerCase().includes(q) ||
         t.termEn.toLowerCase().includes(q) ||
-        t.shortDescription.toLowerCase().includes(q);
+        t.shortDescription.toLowerCase().includes(q) ||
+        (t.shortDescriptionEn ?? "").toLowerCase().includes(q);
       return matchCat && matchSearch;
     });
   }, [search, activeCategory]);
@@ -132,12 +135,14 @@ export function GlossaryClient({ lang, isUk }: Props) {
                       <h2 className="font-semibold text-gray-900 dark:text-white mb-1 group-hover:text-indigo-700 transition-colors">
                         {isUk ? term.termUk : term.termEn}
                       </h2>
-                      {term.termEn !== term.termUk && (
+                      {term.termEn !== term.termUk && (isUk || !CYRILLIC_RE.test(term.termUk)) && (
                         <p className="text-xs text-gray-400 dark:text-neutral-500 mb-2">
                           {isUk ? term.termEn : term.termUk}
                         </p>
                       )}
-                      <p className="text-sm text-gray-600 dark:text-neutral-300 leading-relaxed line-clamp-2">{term.shortDescription}</p>
+                      <p className="text-sm text-gray-600 dark:text-neutral-300 leading-relaxed line-clamp-2">
+                        {isUk ? term.shortDescription : (term.shortDescriptionEn ?? term.shortDescription)}
+                      </p>
                     </Link>
                   );
                 })}

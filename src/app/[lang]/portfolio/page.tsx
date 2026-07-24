@@ -8,7 +8,8 @@ import { CTASection } from "@/components/home/CTASection";
 import { PortfolioContent } from "@/components/portfolio/PortfolioContent";
 import { CountUp } from "@/components/ui/CountUp";
 import { EmojiIcon } from "@/components/ui/EmojiIcon";
-import { PROJECTS } from "@/lib/data/portfolio";
+import { PROJECTS, getProjectTitle } from "@/lib/data/portfolio";
+import { localePath } from "@/i18n";
 
 export const revalidate = 3600;
 
@@ -43,25 +44,26 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   };
 }
 
-const portfolioItemListSchema = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  name: "Портфоліо Codeworth",
-  description: "ML/AI проєкти та кейси Codeworth",
-  url: "https://codeworth.uk/portfolio",
-  numberOfItems: PROJECTS.length,
-  itemListElement: PROJECTS.map((project, index) => ({
-    "@type": "ListItem",
-    position: index + 1,
-    name: project.title,
-    url: `https://codeworth.uk/portfolio/${project.slug}`,
-    description: project.description,
-  })),
-};
-
 export default async function PortfolioPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isUk = lang === "uk";
+
+  const portfolioItemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: isUk ? "Портфоліо Codeworth" : "Codeworth Portfolio",
+    description: isUk ? "ML/AI проєкти та кейси Codeworth" : "Codeworth ML/AI projects and case studies",
+    url: `https://codeworth.uk${localePath(lang, "/portfolio")}`,
+    numberOfItems: PROJECTS.length,
+    itemListElement: PROJECTS.map((project, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: getProjectTitle(project, lang),
+      url: `https://codeworth.uk${localePath(lang, `/portfolio/${project.slug}`)}`,
+      description: isUk ? project.description : (project.descriptionEn ?? project.description),
+    })),
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <script
@@ -219,7 +221,7 @@ export default async function PortfolioPage({ params }: { params: Promise<{ lang
                   color: "from-amber-500 to-orange-600",
                 },
                 {
-                  metric: "3 міс",
+                  metric: isUk ? "3 міс" : "3 mo",
                   label: isUk ? "до позитивного ROI у типовому Production ML проєкті" : "to positive ROI in a typical Production ML project",
                   example: isUk ? "Середнє по всіх кейсах 2024" : "Average across 2024 case studies",
                   color: "from-pink-500 to-rose-600",
