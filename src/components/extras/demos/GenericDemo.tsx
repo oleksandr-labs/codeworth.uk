@@ -669,12 +669,12 @@ function LiqPayDemo({ isUk }: { isUk: boolean }) {
             {[{ name: isUk ? "Навушники Sony WH-1000XM5" : "Sony WH-1000XM5 Headphones", price: 8999 }, { name: isUk ? "Чохол захисний" : "Protective case", price: 299 }].map((item) => (
               <div key={item.name} className="flex justify-between py-2 border-b border-neutral-100 dark:border-neutral-700 text-sm">
                 <span className="text-neutral-700">{item.name}</span>
-                <span className="font-medium">{item.price.toLocaleString("uk-UA")} ₴</span>
+                <span className="font-medium">{fmtUah(item.price, isUk)}</span>
               </div>
             ))}
             <div className="flex justify-between py-3 font-bold text-neutral-900 dark:text-white">
               <span>{isUk ? "Разом" : "Total"}</span>
-              <span>9 298 ₴</span>
+              <span>{fmtUah(9298, isUk)}</span>
             </div>
             <button onClick={() => setStep("pay")} className="w-full py-3 rounded-xl bg-green-600 text-white font-semibold hover:bg-green-700 transition-colors">
               {isUk ? "Перейти до оплати" : "Proceed to payment"}
@@ -1074,7 +1074,7 @@ function AdminBlogDemo({ isUk }: { isUk: boolean }) {
                     </button>
                   </td>
                   <td className="px-4 py-3 text-right text-neutral-500 dark:text-neutral-400 hidden md:table-cell">
-                    {post.views > 0 ? post.views.toLocaleString("uk-UA") : "—"}
+                    {post.views > 0 ? post.views.toLocaleString(isUk ? "uk-UA" : "en-US") : "—"}
                   </td>
                   <td className="px-4 py-3">
                     <div className="flex justify-end gap-1">
@@ -1313,7 +1313,7 @@ function AiSmartSearchDemo({ isUk }: { isUk: boolean }) {
                       <p className="text-sm font-medium text-neutral-900 dark:text-white truncate">{isUk ? r.nameUk : r.name}</p>
                       <p className="text-xs text-neutral-400">{isUk ? r.catUk : r.cat}</p>
                     </div>
-                    <p className="text-sm font-bold text-neutral-900 dark:text-white shrink-0">{r.price.toLocaleString("uk-UA")} ₴</p>
+                    <p className="text-sm font-bold text-neutral-900 dark:text-white shrink-0">{fmtUah(r.price, isUk)}</p>
                   </div>
                 ))}
                 <div className="px-5 py-2 bg-neutral-50 dark:bg-neutral-900 flex justify-between text-xs text-neutral-400">

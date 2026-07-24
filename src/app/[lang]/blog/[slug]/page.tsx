@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { buildAlternates } from "@/i18n";
+import { buildAlternates, localePath } from "@/i18n";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Header } from "@/components/layout/Header";
@@ -76,8 +76,11 @@ function formatDate(dateStr: string, lang: string) {
 
 // Static placeholder content (fallback if post has no custom content)
 function getPostContent(post: (typeof BLOG_POSTS)[0], isUk: boolean): string[] {
-  if (!isUk && post.contentEn && post.contentEn.length > 0) return post.contentEn;
-  if (post.content && post.content.length > 0) return post.content;
+  if (!isUk) {
+    if (post.contentEn && post.contentEn.length > 0) return post.contentEn;
+  } else if (post.content && post.content.length > 0) {
+    return post.content;
+  }
   if (isUk) {
     return [
       `${post.excerpt}`,
@@ -145,8 +148,8 @@ export default async function BlogPostPage({ params }: Props) {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: post.title,
-    description: post.excerpt,
+    headline: getPostTitle(post, lang),
+    description: getPostExcerpt(post, lang),
     image: `https://codeworth.uk/og/blog/${post.slug}.png`,
     author: authorSchema,
     ...(reviewerSchema && { reviewedBy: reviewerSchema }),
@@ -160,7 +163,7 @@ export default async function BlogPostPage({ params }: Props) {
     dateModified: post.updatedDate ?? post.date,
     url: `https://codeworth.uk/${lang}/blog/${post.slug}`,
     keywords: post.tags.join(", "),
-    articleSection: post.category,
+    articleSection: categoryLabel,
     inLanguage: isUk ? "uk" : "en",
     timeRequired: `PT${post.readTime}M`,
   };
@@ -182,9 +185,9 @@ export default async function BlogPostPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Головна", item: "https://codeworth.uk" },
-      { "@type": "ListItem", position: 2, name: "Блог", item: "https://codeworth.uk/blog" },
-      { "@type": "ListItem", position: 3, name: post.title },
+      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codeworth.uk${localePath(lang)}` },
+      { "@type": "ListItem", position: 2, name: isUk ? "Блог" : "Blog", item: `https://codeworth.uk${localePath(lang, "/blog")}` },
+      { "@type": "ListItem", position: 3, name: getPostTitle(post, lang) },
     ],
   };
 

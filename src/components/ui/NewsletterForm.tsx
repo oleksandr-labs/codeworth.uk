@@ -11,7 +11,8 @@ interface Props {
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export function NewsletterForm({ variant = "inline", className = "" }: Props) {
-  const isUk = useLocale() === "uk";
+  const lang = useLocale();
+  const isUk = lang === "uk";
   const [email, setEmail] = useState("");
   const [touched, setTouched] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -31,7 +32,7 @@ export function NewsletterForm({ variant = "inline", className = "" }: Props) {
       const res = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, lang }),
       });
       const data = await res.json();
 

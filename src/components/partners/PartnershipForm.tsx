@@ -57,7 +57,7 @@ export function PartnershipForm({ lang }: { lang: string }) {
       const resp = await fetch("/api/partnership", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, type, description, audience: audience || undefined, honeypot }),
+        body: JSON.stringify({ name, email, type, description, audience: audience || undefined, honeypot, lang }),
       });
       const data = await resp.json() as { success?: boolean; error?: string };
       if (!resp.ok) {

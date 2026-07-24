@@ -15,7 +15,7 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const inputClasses =
   "w-full rounded-xl px-4 py-2.5 text-sm border bg-white dark:bg-neutral-900 text-neutral-900 dark:text-white focus:outline-none focus:ring-2 focus:border-transparent transition";
 
-export function ApplyForm({ positionTitle, lang: _lang, isUk }: Props) {
+export function ApplyForm({ positionTitle, lang, isUk }: Props) {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const formRef = useRef<HTMLFormElement>(null);
@@ -43,6 +43,7 @@ export function ApplyForm({ positionTitle, lang: _lang, isUk }: Props) {
       portfolioUrl: (fd.get("portfolioUrl") as string) || undefined,
       coverLetter: fd.get("coverLetter") as string,
       website: fd.get("website") as string, // honeypot
+      lang,
     };
 
     try {

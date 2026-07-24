@@ -1,23 +1,25 @@
 import { rateLimit, getClientIp } from "@/lib/rateLimit";
 import { PartnershipSchema } from "@/lib/schemas";
 import { ZodError } from "zod";
+import { getRequestLang, localizeApiMessage } from "@/lib/apiLocale";
 
 export async function POST(req: Request) {
-  const ip = getClientIp(req as Parameters<typeof getClientIp>[0]);
-  const rl = rateLimit(ip, { limit: 3, windowMs: 60 * 60 * 1000 });
-  if (!rl.success) {
-    const retryAfter = Math.ceil((rl.resetAt - Date.now()) / 1000);
-    return Response.json(
-      { error: "Забагато спроб. Спробуйте пізніше." },
-      { status: 429, headers: { "Retry-After": String(retryAfter) } }
-    );
-  }
-
   let body: unknown;
   try {
     body = await req.json();
   } catch {
     return Response.json({ error: "Invalid JSON body" }, { status: 400 });
+  }
+  const lang = getRequestLang(body);
+
+  const ip = getClientIp(req as Parameters<typeof getClientIp>[0]);
+  const rl = rateLimit(ip, { limit: 3, windowMs: 60 * 60 * 1000 });
+  if (!rl.success) {
+    const retryAfter = Math.ceil((rl.resetAt - Date.now()) / 1000);
+    return Response.json(
+      { error: localizeApiMessage("Забагато спроб. Спробуйте пізніше.", lang) },
+      { status: 429, headers: { "Retry-After": String(retryAfter) } }
+    );
   }
 
   // Honeypot check
@@ -31,7 +33,7 @@ export async function POST(req: Request) {
   } catch (err) {
     if (err instanceof ZodError) {
       return Response.json(
-        { error: err.issues[0]?.message ?? "Validation error" },
+        { error: localizeApiMessage(err.issues[0]?.message ?? "Validation error", lang) },
         { status: 422 }
       );
     }

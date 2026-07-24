@@ -130,10 +130,12 @@ export function GlossaryClient({ lang, isUk }: Props) {
                         <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-indigo-500 transition-colors shrink-0" aria-hidden="true" />
                       </div>
                       <h2 className="font-semibold text-gray-900 dark:text-white mb-1 group-hover:text-indigo-700 transition-colors">
-                        {term.termUk}
+                        {isUk ? term.termUk : term.termEn}
                       </h2>
                       {term.termEn !== term.termUk && (
-                        <p className="text-xs text-gray-400 dark:text-neutral-500 mb-2">{term.termEn}</p>
+                        <p className="text-xs text-gray-400 dark:text-neutral-500 mb-2">
+                          {isUk ? term.termEn : term.termUk}
+                        </p>
                       )}
                       <p className="text-sm text-gray-600 dark:text-neutral-300 leading-relaxed line-clamp-2">{term.shortDescription}</p>
                     </Link>

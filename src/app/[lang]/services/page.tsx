@@ -116,7 +116,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
     itemListElement: SERVICES_DATA.map((s, i) => ({
       "@type": "ListItem",
       position: i + 1,
-      name: s.title,
+      name: getServiceLocalized(s.slug, lang)?.title ?? s.title,
       url: `https://codeworth.uk/${lang}/services/${s.slug}`,
     })),
   };

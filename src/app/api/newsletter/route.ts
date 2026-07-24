@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { rateLimit, getClientIp } from "@/lib/rateLimit";
 import { NewsletterSchema } from "@/lib/schemas";
+import { getRequestLang, localizeApiMessage } from "@/lib/apiLocale";
 
 function buildWelcomeEmail(email: string): string {
   return `<!DOCTYPE html>
@@ -55,12 +56,20 @@ export const runtime = "nodejs";
 const RATE_LIMIT = { limit: 3, windowMs: 5 * 60 * 1000 };
 
 export async function POST(request: NextRequest) {
+  let body: Record<string, unknown>;
+  try {
+    body = await request.json();
+  } catch {
+    return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
+  }
+  const lang = getRequestLang(body);
+
   // Rate limiting
   const ip = getClientIp(request);
   const rl = rateLimit(ip, RATE_LIMIT);
   if (!rl.success) {
     return NextResponse.json(
-      { error: "Забагато спроб. Спробуйте через кілька хвилин." },
+      { error: localizeApiMessage("Забагато спроб. Спробуйте через кілька хвилин.", lang) },
       {
         status: 429,
         headers: {
@@ -71,8 +80,6 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const body = await request.json();
-
     // Honeypot
     if (body.website) {
       return NextResponse.json({ success: true }, { status: 200 });
@@ -83,7 +90,7 @@ export async function POST(request: NextRequest) {
     if (!parsed.success) {
       const firstError = parsed.error.issues[0];
       return NextResponse.json(
-        { error: firstError?.message ?? "Введіть коректний email" },
+        { error: localizeApiMessage(firstError?.message ?? "Введіть коректний email", lang) },
         { status: 400 }
       );
     }
@@ -145,12 +152,12 @@ export async function POST(request: NextRequest) {
     }
 
     return NextResponse.json(
-      { success: true, message: "Дякуємо! Ви підписалися на розсилку Codeworth." },
+      { success: true, message: localizeApiMessage("Дякуємо! Ви підписалися на розсилку Codeworth.", lang) },
       { status: 200 }
     );
   } catch {
     return NextResponse.json(
-      { error: "Щось пішло не так. Спробуйте ще раз." },
+      { error: localizeApiMessage("Щось пішло не так. Спробуйте ще раз.", lang) },
       { status: 500 }
     );
   }

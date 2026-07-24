@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { buildAlternates } from "@/i18n";
+import { buildAlternates, localePath } from "@/i18n";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Check, ChevronRight, ExternalLink, Monitor, ShoppingCart, Clock, Package, BrainCircuit } from "lucide-react";
@@ -110,8 +110,8 @@ export default async function PortfolioProjectPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Головна", item: "https://codeworth.uk" },
-      { "@type": "ListItem", position: 2, name: "Портфоліо", item: "https://codeworth.uk/portfolio" },
+      { "@type": "ListItem", position: 1, name: isUk ? "Головна" : "Home", item: `https://codeworth.uk${localePath(lang)}` },
+      { "@type": "ListItem", position: 2, name: isUk ? "Портфоліо" : "Portfolio", item: `https://codeworth.uk${localePath(lang, "/portfolio")}` },
       { "@type": "ListItem", position: 3, name: project.title },
     ],
   };

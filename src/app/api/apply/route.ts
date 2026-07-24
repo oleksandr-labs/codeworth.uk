@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { rateLimit, getClientIp } from "@/lib/rateLimit";
 import { ApplySchema, type ApplyInput } from "@/lib/schemas";
+import { getRequestLang, localizeApiMessage } from "@/lib/apiLocale";
 
 export const runtime = "nodejs";
 
@@ -22,23 +23,24 @@ function buildTelegramMessage(data: ApplyInput): string {
 }
 
 export async function POST(request: NextRequest) {
+  let body: unknown;
+  try {
+    body = await request.json();
+  } catch {
+    return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
+  }
+  const lang = getRequestLang(body);
+
   const ip = getClientIp(request);
   const rl = rateLimit(ip, RATE_LIMIT);
   if (!rl.success) {
     return NextResponse.json(
-      { error: "Забагато спроб. Спробуйте через кілька хвилин." },
+      { error: localizeApiMessage("Забагато спроб. Спробуйте через кілька хвилин.", lang) },
       {
         status: 429,
         headers: { "Retry-After": String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
       }
     );
-  }
-
-  let body: unknown;
-  try {
-    body = await request.json();
-  } catch {
-    return NextResponse.json({ error: "Невалідний JSON" }, { status: 400 });
   }
 
   // Honeypot
@@ -50,7 +52,7 @@ export async function POST(request: NextRequest) {
   if (!parsed.success) {
     const firstError = parsed.error.issues[0];
     return NextResponse.json(
-      { error: firstError?.message ?? "Некоректні дані" },
+      { error: localizeApiMessage(firstError?.message ?? "Некоректні дані", lang) },
       { status: 400 }
     );
   }

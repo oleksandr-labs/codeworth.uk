@@ -103,7 +103,7 @@ export function StarRating({
 
       {reviewCount !== undefined && (
         <span className={cn("text-neutral-400 dark:text-neutral-500", textSizeMap[size])}>
-          ({reviewCount.toLocaleString("uk-UA")})
+          ({reviewCount.toLocaleString(isUk ? "uk-UA" : "en-US")})
         </span>
       )}
     </div>

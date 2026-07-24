@@ -121,7 +121,7 @@ export default async function GlossaryTermPage({
         name: isUk ? "Глосарій" : "Glossary",
         item: `https://codeworth.uk/${lang}/glossary`,
       },
-      { "@type": "ListItem", position: 3, name: term.termUk },
+      { "@type": "ListItem", position: 3, name: isUk ? term.termUk : term.termEn },
     ],
   };
 
@@ -155,16 +155,18 @@ export default async function GlossaryTermPage({
                 {isUk ? "Глосарій" : "Glossary"}
               </Link>
               <span className="mx-2">›</span>
-              <span className="text-white">{term.termUk}</span>
+              <span className="text-white">{isUk ? term.termUk : term.termEn}</span>
             </nav>
             <div className="flex items-center gap-2 mb-4">
               <span className="text-xs font-medium text-indigo-300 bg-indigo-900/50 border border-indigo-700 px-3 py-1 rounded-full">
                 {catMeta?.emoji && <EmojiIcon emoji={catMeta.emoji} className="w-3.5 h-3.5 inline-block align-middle mr-1" />}{isUk ? catMeta?.label : catMeta?.labelEn}
               </span>
             </div>
-            <h1 className="text-3xl sm:text-5xl font-bold text-white mb-4">{term.termUk}</h1>
+            <h1 className="text-3xl sm:text-5xl font-bold text-white mb-4">
+              {isUk ? term.termUk : term.termEn}
+            </h1>
             {term.termEn !== term.termUk && (
-              <p className="text-indigo-300 text-lg mb-4">{term.termEn}</p>
+              <p className="text-indigo-300 text-lg mb-4">{isUk ? term.termEn : term.termUk}</p>
             )}
             <p className="text-xl text-gray-200 max-w-2xl leading-relaxed">{term.shortDescription}</p>
           </Container>

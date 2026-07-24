@@ -72,6 +72,7 @@ export function ContactForm() {
       budget: formData.get("budget") as string,
       message: formData.get("message") as string,
       website: formData.get("website") as string,
+      lang,
       ...(recaptchaToken ? { recaptchaToken } : {}),
     };
 
